@@ -1,5 +1,5 @@
-author = Hiccup251
-version = 0.0.9
+author = Jofairden
+version = 0.0.10
 displayName = Even More Modifiers
 homepage = http://forums.terraria.org/index.php?threads/even-more-modifiers.45790/
 hideCode = false
@@ -7,3 +7,4 @@ hideResources = false
 includeSource = true
 languageVersion = 6
 buildIgnore = *.csproj, *.user, obj\*, bin\*, .vs\*
+includePdb = true

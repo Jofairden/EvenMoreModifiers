@@ -16,6 +16,7 @@ namespace Loot
                 AutoloadSounds = true
             };
         }
+
         public override void HandlePacket(BinaryReader reader, int whoAmI)
         {
             string msgType = reader.ReadString();
@@ -27,14 +28,14 @@ namespace Loot
             else if (msgType.Equals("SyncRolled"))
             {
                 Item item = Main.item[reader.ReadInt32()];
-                gItem info = item.GetGlobalItem<gItem>();
+                EMMItem info = item.GetGlobalItem<EMMItem>();
                 info.alreadyRolled = reader.ReadBoolean();
                 info.title = reader.ReadString();
             }
             else if (msgType.Equals("Reset"))
             {
                 Item item = Main.item[reader.ReadInt32()];
-                gItem info = item.GetGlobalItem<gItem>();
+                EMMItem info = item.GetGlobalItem<EMMItem>();
                 info.alreadyRolled = false;
                 info.prefixIDs = new int[] { -1, -1, -1, -1 };
                 info.prefixMagnitude = new int[] { -1, -1, -1, -1 };
