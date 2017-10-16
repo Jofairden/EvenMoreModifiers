@@ -6,6 +6,8 @@ using System.Threading.Tasks;
 
 namespace Loot.Modifiers
 {
+	public delegate void ModifierApplyDelegate(object target);
+
 	/// <summary>
 	/// Defines a modifier.
 	/// </summary>
@@ -17,14 +19,55 @@ namespace Loot.Modifiers
 		public string Name { get; protected set; }
 
 		/// <summary>
+		/// Describes our modifier (what does it do?)
+		/// </summary>
+		public string Description { get; private set; }
+
+		/// <summary>
 		/// The strength of our modifier. Our rarity is based on the modifier
 		/// </summary>
-		private float _strength;
+		public float Strength { get; private set; }
 
-		protected Modifier(string name)
+		/// <summary>
+		/// The rarity of this modifier
+		/// </summary>
+		public ModifierRarity Rarity { get; private set; }
+
+		private readonly ModifierApplyDelegate _applyDelegate;
+
+		protected Modifier(string name, string description = null, ModifierApplyDelegate applyDelegate = null)
 		{
 			Name = name;
-			_strength = 0f;
+			Description = description ?? string.Empty;
+			Strength = 0f;
+			Rarity = ModifierRarity.Common;
+			_applyDelegate = applyDelegate ?? (ModifierApplyDelegate)((target) => { });
 		}
+
+		/// <summary>
+		/// Explicitly state we want to modify the description
+		/// </summary>
+		/// <param name="newDescription"></param>
+		public void ChangeDescription(string newDescription)
+		{
+			Description = newDescription;
+		}
+
+		/// <summary>
+		/// Attempts to apply a rarity and returns succession
+		/// </summary>
+		public bool ApplyRarity(ModifierRarity rarity)
+		{
+			if (!rarity.MatchesRequirements(this))
+			{
+				return false;
+			}
+
+			Rarity = rarity;
+			return true;
+		}
+
+		public void Apply(object target)
+			=> _applyDelegate.Invoke(target);
 	}
 }

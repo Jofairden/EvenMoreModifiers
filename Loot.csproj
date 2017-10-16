@@ -58,6 +58,7 @@
     <Compile Include="Modifiers\ModifierRarity.cs" />
     <Compile Include="Modifiers\PlayerModifier.cs" />
     <Compile Include="Modifiers\ModifierLoader.cs" />
+    <Compile Include="Modifiers\RequirementPass.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="build.txt" />

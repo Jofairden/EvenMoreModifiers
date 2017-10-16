@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace Loot.Modifiers
 {
+	// @todo: honestly, is this needed?
 	/// <summary>
 	/// The modifier loader
 	/// </summary>

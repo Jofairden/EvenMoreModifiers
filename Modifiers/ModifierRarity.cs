@@ -10,17 +10,32 @@ namespace Loot.Modifiers
 	/// <summary>
 	/// Defines the rarity of a modifier
 	/// </summary>
-	public abstract class ModifierRarity
+	public class ModifierRarity
 	{
+		public static ModifierRarity Common = new ModifierRarity("Common", 0f, Color.White);
+		public static ModifierRarity Uncommon = new ModifierRarity("Uncommon", 1f, Color.Orange);
+		public static ModifierRarity Rare = new ModifierRarity("Rare", 2f, Color.Yellow);
+		public static ModifierRarity Legendary = new ModifierRarity("Legendary", 4f, Color.Red);
+		public static ModifierRarity Transcendent = new ModifierRarity("Transcendent", 8f, Color.Purple);
+
 		public string Name { get; protected set; }
 		public float RequiredStrength { get; protected set; }
 		public Color Color { get; protected set; }
 
-		protected ModifierRarity(string name, float requiredStrength, Color color)
+		private RequirementPassDelegate[] RequirementPasses { get; }
+
+		protected ModifierRarity(string name, float requiredStrength, Color color, params RequirementPassDelegate[] requirementPasses)
 		{
 			Name = name;
 			RequiredStrength = requiredStrength;
 			Color = color;
+			RequirementPasses = requirementPasses ?? new [] {(RequirementPassDelegate)((rarity, modifier) => true)};
 		}
+
+		/// <summary>
+		/// Returns if the specified modifier passes all the requirements
+		/// </summary>
+		public bool MatchesRequirements(Modifier modifier)
+			=> RequirementPasses.All(pass => pass.Invoke(this, modifier));
 	}
 }

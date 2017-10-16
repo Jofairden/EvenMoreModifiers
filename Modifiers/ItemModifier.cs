@@ -11,7 +11,8 @@ namespace Loot.Modifiers
 	/// </summary>
 	public sealed class ItemModifier : Modifier
 	{
-		public ItemModifier(string name) : base(name)
+		public ItemModifier(string name, string description = null, ModifierApplyDelegate applyDelegate = null) 
+			: base(name, description, applyDelegate)
 		{
 		}
 	}
