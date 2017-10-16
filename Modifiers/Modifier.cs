@@ -11,33 +11,9 @@ namespace Loot.Modifiers
 	/// </summary>
 	public abstract class Modifier
 	{
-		// @todo: should we convert enums to their own object type?
-		// a rarity has an associated color and required strength level
-
 		/// <summary>
-		/// Defines the name of a rarity
+		/// The name of our modifier, how it is identified
 		/// </summary>
-		public enum ModifierRarity
-		{
-			Common,
-			Uncommon,
-			Rare,
-			Legendary,
-			Transcendent
-		}
-
-		/// <summary>
-		/// Defines the color of a rarity
-		/// </summary>
-		public enum RarityColor
-		{
-			White,
-			Orange,
-			Yellow,
-			Red,
-			Purple
-		}
-
 		public string Name { get; protected set; }
 
 		/// <summary>

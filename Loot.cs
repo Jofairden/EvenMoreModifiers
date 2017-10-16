@@ -1,4 +1,5 @@
 ﻿using System.IO;
+using Loot.Modifiers;
 using Terraria;
 using Terraria.ModLoader;
 
@@ -21,11 +22,14 @@ namespace Loot
 		public override void Load()
 		{
 			Instance = this;
+			ModifierLoader.Load();
+			ModifierLoader.SetupContent();
 		}
 
 		public override void Unload()
 		{
 			Instance = null;
+			ModifierLoader.Unload();
 		}
 
 		// @todo: probably write our own handler for packets
