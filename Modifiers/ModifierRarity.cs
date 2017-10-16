@@ -37,5 +37,10 @@ namespace Loot.Modifiers
 		/// </summary>
 		public bool MatchesRequirements(Modifier modifier)
 			=> RequirementPasses.All(pass => pass.Invoke(this, modifier));
+
+		public override string ToString()
+		{
+			return LootUtils.JSLog(typeof(ModifierRarity), this);
+		}
 	}
 }

@@ -104,6 +104,12 @@ namespace Loot.Modifiers
 			return Modifiers.FirstOrDefault(modifier => name.Equals(modifier.Name, StringComparison.InvariantCultureIgnoreCase));
 		}
 
+		public static IReadOnlyCollection<ModifierRarity> RequestRarities()
+			=> Rarities.ToList().AsReadOnly();
+
+		public static IReadOnlyCollection<Modifier> RequestModifiers()
+			=> Modifiers.ToList().AsReadOnly();
+
 		internal static Exception ThrowException(string message)
 			=> new Exception($"{Loot.Instance.DisplayName ?? "EvenMoreModifiers"}: {message}");
 	}

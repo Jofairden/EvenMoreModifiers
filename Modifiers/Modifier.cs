@@ -68,5 +68,10 @@ namespace Loot.Modifiers
 
 		public void Apply(object target)
 			=> _applyDelegate.Invoke(target);
+
+		public override string ToString()
+		{
+			return LootUtils.JSLog(typeof(Modifier), this);
+		}
 	}
 }
