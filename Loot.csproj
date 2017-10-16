@@ -48,15 +48,15 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Items\gItem.cs" />
-    <Compile Include="Items\MagicDice.cs" />
     <Compile Include="Loot.cs" />
-    <Compile Include="MPlayer.cs" />
-    <Compile Include="NPCs\GNPC.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="build.txt" />
     <Content Include="description.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Items\" />
+    <Folder Include="NPCs\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
