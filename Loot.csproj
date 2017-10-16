@@ -50,6 +50,8 @@
   <ItemGroup>
     <Compile Include="Loot.cs" />
     <Compile Include="LootGlobalNPC.cs" />
+    <Compile Include="LootPlayer.cs" />
+    <Compile Include="MagicDice.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="build.txt" />

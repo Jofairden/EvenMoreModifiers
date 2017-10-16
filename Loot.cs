@@ -16,6 +16,7 @@ namespace Loot
             };
         }
 
+		// @todo: probably write our own handler for packets
         public override void HandlePacket(BinaryReader reader, int whoAmI)
         {
             
