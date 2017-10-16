@@ -6,6 +6,8 @@ namespace Loot
 {
     public class Loot : Mod
     {
+	    internal static Loot Instance;
+
         public Loot()
         {
             Properties = new ModProperties()
@@ -16,7 +18,17 @@ namespace Loot
             };
         }
 
-		// @todo: probably write our own handler for packets
+	    public override void Load()
+	    {
+		    Instance = this;
+	    }
+
+	    public override void Unload()
+	    {
+		    Instance = null;
+	    }
+
+	    // @todo: probably write our own handler for packets
         public override void HandlePacket(BinaryReader reader, int whoAmI)
         {
             
