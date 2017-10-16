@@ -40,7 +40,7 @@ namespace Loot.Modifiers
 			Name = name;
 			Description = description ?? string.Empty;
 			Strength = 0f;
-			Rarity = ModifierRarity.Common;
+			Rarity = ModifierLoader.OurRarities.Common;
 			_applyDelegate = applyDelegate ?? (ModifierApplyDelegate)((target) => { });
 		}
 
@@ -58,13 +58,12 @@ namespace Loot.Modifiers
 		/// </summary>
 		public bool ApplyRarity(ModifierRarity rarity)
 		{
-			if (!rarity.MatchesRequirements(this))
+			if (rarity.MatchesRequirements(this))
 			{
-				return false;
+				Rarity = rarity;
+				return true;
 			}
-
-			Rarity = rarity;
-			return true;
+			return false;
 		}
 
 		public void Apply(object target)
