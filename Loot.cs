@@ -53,14 +53,14 @@ namespace Loot
 		public override void Load()
 		{
 			Instance = this;
-			ModifierLoader.Load();
-			ModifierLoader.SetupContent();
+			Loader.Load();
+			Loader.SetupContent();
 		}
 
 		public override void Unload()
 		{
 			Instance = null;
-			ModifierLoader.Unload();
+			Loader.Unload();
 
 			// @todo this is not a feature of tml
 			// Attempt to unload our static variables

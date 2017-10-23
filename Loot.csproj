@@ -56,18 +56,23 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Effects\DebugEffect.cs" />
     <Compile Include="LootGlobalItem.cs" />
     <Compile Include="Loot.cs" />
     <Compile Include="LootGlobalNPC.cs" />
     <Compile Include="LootPlayer.cs" />
     <Compile Include="LootUtils.cs" />
     <Compile Include="MagicDice.cs" />
-    <Compile Include="Modifiers\ItemModifier.cs" />
     <Compile Include="Modifiers\Modifier.cs" />
     <Compile Include="Modifiers\ModifierRarity.cs" />
-    <Compile Include="Modifiers\PlayerModifier.cs" />
-    <Compile Include="Modifiers\ModifierLoader.cs" />
+    <Compile Include="Modifiers\ModifierTagSerializer.cs" />
+    <Compile Include="Modifiers\Loader.cs" />
     <Compile Include="Modifiers\RequirementPass.cs" />
+    <Compile Include="Rarities\CommonRarity.cs" />
+    <Compile Include="Rarities\LegendaryRarity.cs" />
+    <Compile Include="Rarities\RareRarity.cs" />
+    <Compile Include="Rarities\TranscendentRarity.cs" />
+    <Compile Include="Rarities\UncommonRarity.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="build.txt" />
