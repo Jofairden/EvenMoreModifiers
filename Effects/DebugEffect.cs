@@ -15,17 +15,18 @@ namespace Loot.Effects
     {
         public override float MinMagnitude => 0.5f;
         public override float MaxMagnitude => 2.5f;
+		public override float BasePower => 50f;
 
-        public override ModifierEffectTooltipLine[] TooltipLines => new[]
+		public override ModifierEffectTooltipLine[] TooltipLines => new[]
         {
-            new ModifierEffectTooltipLine { Text = $"Deals {(int)Magnitude * 100}% more damage", Color =  Color.Lime}
+            new ModifierEffectTooltipLine { Text = $"Deals {(int)Power}% more damage", Color =  Color.Lime}
         };
 
-        public override float Strength => 3f;
+        public override float RarityLevel => 3f;
 
         public override void ApplyItem(ModifierContext ctx)
         {
-            ctx.Item.damage *= (int)Magnitude;
+            ctx.Item.damage *= (int)(Power / 100f);
         }
     }
 
@@ -34,17 +35,17 @@ namespace Loot.Effects
 	{
         public override ModifierEffectTooltipLine[] TooltipLines => new[]
         {
-            new ModifierEffectTooltipLine { Text = "50% increased melee damage", Color =  Color.Lime},
-            new ModifierEffectTooltipLine { Text = "Player has inferno", Color =  Color.IndianRed},
-            new ModifierEffectTooltipLine { Text = "Player has godly defense", Color =  Color.SlateGray},
+            new ModifierEffectTooltipLine { Text = "50% increased melee damage",	Color =  Color.Lime},
+            new ModifierEffectTooltipLine { Text = "Player has inferno",			Color =  Color.IndianRed},
+            new ModifierEffectTooltipLine { Text = "Player has godly defense",		Color =  Color.SlateGray},
         };
 
-		public override float Strength => 5f;
+		public override float RarityLevel => 5f;
 
-        public override void UpdatePlayer(EMMPlayer player, ModifierItemStatus status)
-        {
-            if (status == ModifierItemStatus.Equipped)
-                player.player.GetModPlayer<LootDebugPlayer>().debugEffect = true;
-        }
+		public override void UpdateItem(ModifierContext ctx, bool equipped = false)
+		{
+			if (equipped)
+				(ctx.CustomData["EMMPlayer"] as EMMPlayer).player.GetModPlayer<LootDebugPlayer>().debugEffect = true;
+		}
     }
 }

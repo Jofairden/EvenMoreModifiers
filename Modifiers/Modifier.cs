@@ -9,49 +9,13 @@ using Terraria.ModLoader;
 
 namespace Loot.Modifiers
 {
-    public struct ModifierProperties
-    {
-        public bool CanApplyNPC;
-        public bool CanApplyPlayer;
-        public bool CanApplyItem;
-        public ModifierItemProperties ItemProperties;
-
-        public static ModifierProperties Default =>
-            new ModifierProperties()
-            {
-                CanApplyNPC = false,
-                CanApplyPlayer = false,
-                CanApplyItem = false,
-                ItemProperties =
-                new ModifierItemProperties
-                {
-                    CanApplyReforge = false,
-                    CanApplyCraft = false,
-                    CanApplyPickup = false
-                }
-            };
-    }
-
-    public struct ModifierItemProperties
-    {
-        public bool CanApplyReforge;
-        public bool CanApplyCraft;
-        public bool CanApplyPickup;
-    }
-
     public enum ModifierContextMethod
     {
         OnReforge,
         OnCraft,
         OnPickup,
-        ApplyPlayer,
-        ApplyNPC
-    }
-
-    public enum ModifierItemStatus
-    {
-        Inventory,
-        Equipped
+        UpdateItem,
+        UpdateNPC
     }
 
     public struct ModifierContext
@@ -60,55 +24,48 @@ namespace Loot.Modifiers
         public Player Player;
         public NPC NPC;
         public Item Item;
-        public List<object> CustomData;
+        public IDictionary<string, object> CustomData;
     }
 
 	/// <summary>
 	/// Defines a modifier.
 	/// </summary>
-	public abstract class Modifier
+	public abstract class Modifier : ICloneable
 	{
-		/// <summary>
-		/// The strength of our modifier, which is the sum of our effects' strength.
-		/// Our rarity is based on the total strength
-		/// </summary>
-		public float TotalStrength => 
-			Effects.Select(effect => effect.Strength).DefaultIfEmpty(0).Sum();
+        public uint Type { get; internal set; }
+        public Mod Mod { get; internal set; }
+        public ModifierRarity Rarity { get; internal set; }
+
+        public float TotalRarityLevel => 
+			Effects.Select(effect => effect.RarityLevel).DefaultIfEmpty(0).Sum();
 
         public IEnumerable<ModifierEffectTooltipLine[]> Description => 
             Effects.Select(effect => effect.TooltipLines);
 
         public virtual string Name => this.GetType().Name;
-        public uint Type { get; internal set; }
-        public Mod Mod { get; internal set; }
+        public virtual float RollWeight => 1f;
 
-        /// <summary>
-        /// The rarity of this modifier
-        /// </summary>
-        public ModifierRarity Rarity =>
-            LootLoader.Rarities.Select(r => r.Value).OrderByDescending(r => r.RequiredStrength)
-                .FirstOrDefault(r => r.MatchesRequirements(this));
-
-        public virtual float Weight => 1f;
-
-        /// <summary>
-        /// The effects this modifier has
-        /// </summary>
         public ModifierEffect[] Effects { get; protected set; }
 
-        public ModifierProperties Properties { get; protected set; } = ModifierProperties.Default;
+        internal ModifierRarity UpdateRarity()
+        {
+            Rarity = EMMLoader.GetModifierRarity(this);
+            return Rarity;
+        }
 
         internal bool _CanApply(ModifierContext ctx) {
             switch (ctx.Method)
             {
                 case ModifierContextMethod.OnCraft:
-                    return Properties.ItemProperties.CanApplyCraft && CanApplyCraft(ctx);
+                    return CanApplyCraft(ctx);
                 case ModifierContextMethod.OnPickup:
-                    return Properties.ItemProperties.CanApplyPickup && CanApplyPickup(ctx);
+                    return CanApplyPickup(ctx);
                 case ModifierContextMethod.OnReforge:
-                    return Properties.ItemProperties.CanApplyReforge && CanApplyReforge(ctx);
-                case ModifierContextMethod.ApplyPlayer:
-                    return Properties.CanApplyPlayer && CanApplyPlayer(ctx);
+                    return CanApplyReforge(ctx);
+                case ModifierContextMethod.UpdateItem:
+                    return CanUpdateItem(ctx);
+                case ModifierContextMethod.UpdateNPC:
+                    return CanUpdateItem(ctx);
                 default:
                     return true;
             }
@@ -118,14 +75,12 @@ namespace Loot.Modifiers
         public virtual bool CanApplyPickup(ModifierContext ctx) => true;
         public virtual bool CanApplyReforge(ModifierContext ctx) => true;
         public virtual bool CanApplyItem(ModifierContext ctx) => true;
-  
-        public virtual bool CanApplyNPC(ModifierContext ctx) => true;
-        public virtual bool CanApplyPlayer(ModifierContext ctx) => true;
+        public virtual bool CanUpdateItem(ModifierContext ctx) => true;
+        public virtual bool CanUpdateNPC(ModifierContext ctx) => true;
 
         internal void ApplyItem(ModifierContext ctx)
         {
-            if (Properties.CanApplyItem
-                && _CanApply(ctx))
+            if (_CanApply(ctx))
             {
                 foreach (var effect in Effects)
                 {
@@ -134,9 +89,38 @@ namespace Loot.Modifiers
             }
         }
 
+        internal void UpdateItem(ModifierContext ctx, bool equipped = false)
+        {
+            if (_CanApply(ctx))
+            {
+                foreach (var effect in Effects)
+                {
+                    effect.UpdateItem(ctx, equipped);
+                }
+            }
+        }
+
         public override string ToString()
-		{
-			return LootUtils.JSLog(typeof(Modifier), this);
-		}
-	}
+		    => LootUtils.JSLog(typeof(Modifier), this);
+
+        public virtual void OnClone(Modifier clone)
+        {
+
+        }
+
+        public object Clone()
+        {
+            Modifier clone = (Modifier)this.MemberwiseClone();
+            clone.Type = Type;
+            clone.Mod = Mod;
+            clone.Rarity = (ModifierRarity)Rarity?.Clone();
+            clone.Effects = 
+                Effects?
+                .Select(x => x?.Clone())
+                .Cast<ModifierEffect>()
+                .ToArray();
+            OnClone(clone);
+            return clone;
+        }
+    }
 }

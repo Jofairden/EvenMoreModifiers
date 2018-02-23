@@ -14,7 +14,6 @@ namespace Loot.Rarities
 		public override Color Color => Color.Red;
 		public override Color? OverrideNameColor => Color;
 		public override string ItemPrefix => "Legendary";
-		public override string ItemSuffix => "Of Debugging";
-		public override float RequiredStrength => 4f;
+		public override float RequiredRarityLevel => 4f;
 	}
 }

@@ -12,6 +12,6 @@ namespace Loot.Rarities
 	{
 		public override string Name => "Uncommon";
 		public override Color Color => Color.Orange;
-		public override float RequiredStrength => 1f;
+		public override float RequiredRarityLevel => 1f;
 	}
 }

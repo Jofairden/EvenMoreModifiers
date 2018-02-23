@@ -37,31 +37,22 @@ namespace Loot
 		public override bool CloneNewInstances => true;
 
 		public Modifier Modifier;
-        public float CombinedMagnitude { get; internal set; } = 0f;
 
         internal void RollNewModifier(ModifierContext ctx)
         {
-            CombinedMagnitude = 0f;
-            Modifier = LootLoader.GetWeightedModifier(ctx);
-            foreach (var e in Modifier.Effects)
-                CombinedMagnitude += e.RollMagnitude();
-        }
-
-        internal void UpdatePlayer(EMMPlayer player, ModifierItemStatus modifierPlayerUpdate)
-        {
-            if (Modifier != null && Modifier._CanApply(new ModifierContext { Player = player.player, Method = ModifierContextMethod.ApplyPlayer }))
-            {
-                foreach (var e in Modifier.Effects)
-                {
-                    e.UpdatePlayer(player, modifierPlayerUpdate);
-                }
-            }
+			Modifier = EMMLoader.GetWeightedModifier(ctx);
+			if (Modifier != null)
+			{
+				foreach (var e in Modifier.Effects)
+					e.RollAndApplyMagnitude();
+				Modifier.UpdateRarity();
+			}
         }
 
 		public override GlobalItem Clone(Item item, Item itemClone)
 		{
 			EMMItem clone = (EMMItem) base.Clone(item, itemClone);
-			clone.Modifier = Modifier;
+			clone.Modifier = (Modifier)Modifier?.Clone();
 			return clone;
 		}
 

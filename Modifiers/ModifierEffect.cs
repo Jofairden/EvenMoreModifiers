@@ -1,4 +1,5 @@
 ﻿using Microsoft.Xna.Framework;
+using System;
 using System.Collections.Generic;
 using Terraria;
 using Terraria.ModLoader;
@@ -14,34 +15,38 @@ namespace Loot.Modifiers
     /// <summary>
     /// Defines a modifier effect
     /// </summary>
-    public abstract class ModifierEffect
-    {
+    public abstract class ModifierEffect : ICloneable
+	{
         public Mod Mod { get; internal set; }
         public uint Type { get; internal set; }
-        public virtual string Name => this.GetType().Name;
-        public abstract ModifierEffectTooltipLine[] TooltipLines { get; }
-		public abstract float Strength { get; }
 		public float Magnitude { get; internal set; } = 1f;
+		public float Power { get; internal set; } = 1f;
+
+		public virtual string Name => this.GetType().Name;
+		public virtual float BasePower => 1f;
 		public virtual float MinMagnitude => 1f;
 		public virtual float MaxMagnitude => 1f;
-		internal float RollMagnitude()
+		public virtual float RarityLevel => 1f;
+
+		public abstract ModifierEffectTooltipLine[] TooltipLines { get; }
+
+		internal float RollAndApplyMagnitude()
 		{
 			Magnitude = MinMagnitude + Main.rand.NextFloat() * (MaxMagnitude - MinMagnitude);
-			return Magnitude;
+			Power = BasePower * Magnitude;
+			return Power;
 		}
 		
-		public virtual void UpdatePlayer(EMMPlayer player, ModifierItemStatus status)
+		public virtual void UpdateItem(ModifierContext ctx, bool equipped = false)
 		{
 
 		}
-		//public virtual void UpdateNPC(EMMPlayer player, ModifierItemStatus modifierPlayerUpdate)
-		//{
 
-		//}
 		public virtual void ApplyItem(ModifierContext ctx)
         {
 
         }
+
         public virtual void ApplyNPC(ModifierContext ctx)
         {
 
@@ -51,9 +56,21 @@ namespace Loot.Modifiers
 		{
 
 		}
-		//public virtual void ApplyPlayer(ModifierContext ctx)
-		//{
 
-		//}
+		public virtual void OnClone(ModifierEffect clone)
+		{
+
+		}
+
+		public object Clone()
+		{
+			ModifierEffect clone = (ModifierEffect)this.MemberwiseClone();
+			clone.Mod = Mod;
+			clone.Type = Type;
+			clone.Magnitude = Magnitude;
+			clone.Power = Power;
+			OnClone(clone);
+			return clone;
+		}
 	}
 }

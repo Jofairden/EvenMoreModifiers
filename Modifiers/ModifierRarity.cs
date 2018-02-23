@@ -1,8 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Microsoft.Xna.Framework;
 using Terraria.ModLoader;
 
@@ -11,41 +8,49 @@ namespace Loot.Modifiers
 	/// <summary>
 	/// Defines the rarity of a modifier
 	/// </summary>
-	public abstract class ModifierRarity
+	public abstract class ModifierRarity : ICloneable
 	{
 		public Mod Mod { get; internal set; }
 		public uint Type { get; internal set; }
-		public abstract string Name { get; }
 
-        /// <summary>
-        ///  The strength required that makes this rarity available
-        /// </summary>
-        public abstract float RequiredStrength { get; }
-
-        /// <summary>
-        /// The color this rarity will grant
-        /// </summary>
-        public abstract Color Color { get; }
+		public virtual string Name => this.GetType().Name;
 		public virtual Color? OverrideNameColor => null;
-
 		public virtual string ItemPrefix => null;
 		public virtual string ItemSuffix => null;
 
-		public RequirementPass.RequirementPassDelegate[] RequirementPasses { get; protected set; }
-            = new[] { (RequirementPass.RequirementPassDelegate)((rarity, modifier) => modifier.TotalStrength >= rarity.RequiredStrength) };
+		public abstract float RequiredRarityLevel { get; }
+        public abstract Color Color { get; }
 
-        /// <summary>
-        /// Returns if the specified modifier passes all the requirement passes
-        /// By default, runs one pass that returns true if the total strength matches or surpasses the required strength
-        /// </summary>
+		public RequirementPass.RequirementPassDelegate[] RequirementPasses { get; protected set; }
+			= new[]
+			{
+				(RequirementPass.RequirementPassDelegate)((rarity, modifier)
+					=> modifier.TotalRarityLevel >= rarity.RequiredRarityLevel)
+			};
+
         public virtual bool MatchesRequirements(Modifier modifier)
-		{
-			return RequirementPasses.All(pass => pass.Invoke(this, modifier));
-        }
+			=> RequirementPasses.All(pass => pass.Invoke(this, modifier));
 
 		public override string ToString()
+			=> LootUtils.JSLog(typeof(ModifierRarity), this);
+
+		public virtual void OnClone(ModifierRarity clone)
 		{
-			return LootUtils.JSLog(typeof(ModifierRarity), this);
+
+		}
+
+		public object Clone()
+		{
+			ModifierRarity clone = (ModifierRarity)this.MemberwiseClone();
+			clone.Mod = Mod;
+			clone.Type = Type;
+			clone.RequirementPasses = 
+				RequirementPasses
+				.Select(x => x?.Clone())
+				.Cast<RequirementPass.RequirementPassDelegate>()
+				.ToArray();
+			OnClone(clone);
+			return clone;
 		}
 	}
 }

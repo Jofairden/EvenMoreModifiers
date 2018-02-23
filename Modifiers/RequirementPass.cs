@@ -15,7 +15,7 @@ namespace Loot.Modifiers
         /// Defines a requirement pass inner function
         /// </summary>
         public delegate bool RequirementPassDelegate(ModifierRarity rarity, Modifier modifier);
-        public static RequirementPassDelegate MatchStrengthPass => new RequirementPassDelegate(((rarity, modifier) => modifier.TotalStrength >= rarity.RequiredStrength));
+        public static RequirementPassDelegate MatchStrengthPass => new RequirementPassDelegate(((rarity, modifier) => modifier.TotalRarityLevel >= rarity.RequiredRarityLevel));
 
         private readonly RequirementPassDelegate _innerFunc;
 

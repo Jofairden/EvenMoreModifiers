@@ -12,15 +12,6 @@ namespace Loot.Modifiers.Ours
     {
         public DebugModifier2()
         {
-            Properties = new ModifierProperties()
-            {
-                CanApplyPlayer = true,
-                ItemProperties = new ModifierItemProperties
-                {
-                    CanApplyReforge = true
-                },
-            };
-
             Effects = new[]
             {
                 Loot.Instance.GetModifierEffect<DebuggEffect2>()
@@ -37,15 +28,6 @@ namespace Loot.Modifiers.Ours
     {
         public DebugModifier()
         {
-            Properties = new ModifierProperties()
-            {
-                CanApplyPlayer = true,
-                ItemProperties = new ModifierItemProperties
-                {
-                    CanApplyReforge = true
-                },
-            };
-
             Effects = new[]
             {
                 Loot.Instance.GetModifierEffect<DebugEffect>()

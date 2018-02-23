@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Loot.Modifiers;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -17,14 +18,26 @@ namespace Loot
 
 		public override void UpdateEquips(ref bool wallSpeedBuff, ref bool tileSpeedBuff, ref bool tileRangeBuff)
 		{
+			ModifierContext ctx = new ModifierContext
+			{
+				Player = this.player,
+				CustomData = new Dictionary<string, object>()
+				{
+					{"EMMPlayer", this}
+				},
+				Method = ModifierContextMethod.UpdateItem 
+			};
+
 			foreach (var i in player.inventory.Where(x => !x.IsAir))
 			{
-				EMMItem.GetItemInfo(i).UpdatePlayer(this, Modifiers.ModifierItemStatus.Inventory);
+				ctx.Item = i;
+				EMMItem.GetItemInfo(i)?.Modifier?.UpdateItem(ctx);
 			}
 
 			foreach (var i in player.armor.Where(x => !x.IsAir))
 			{
-				EMMItem.GetItemInfo(i).UpdatePlayer(this, Modifiers.ModifierItemStatus.Equipped);
+				ctx.Item = i;
+				EMMItem.GetItemInfo(i)?.Modifier?.UpdateItem(ctx, true);
 			}
 		}
 	}

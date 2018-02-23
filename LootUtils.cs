@@ -11,14 +11,18 @@ namespace Loot
 {
 	internal static class LootUtils
 	{
-        public static T GetModifierRarity<T>(this Mod mod) where T : ModifierRarity => (T)GetModifierRarity(mod, typeof(T).Name);
+		public static ModifierRarity AsNewInstance(this ModifierRarity modifier) => (ModifierRarity)Activator.CreateInstance(modifier.GetType());
+		public static ModifierEffect AsNewInstance(this ModifierEffect modifier) => (ModifierEffect)Activator.CreateInstance(modifier.GetType());
+		public static Modifier AsNewInstance(this Modifier modifier) => (Modifier)Activator.CreateInstance(modifier.GetType());
+
+		public static T GetModifierRarity<T>(this Mod mod) where T : ModifierRarity => (T)GetModifierRarity(mod, typeof(T).Name);
         public static ModifierRarity GetModifierRarity(this Mod mod, string name)
         {
             List<RarityMap?> v;
-            if (LootLoader.RaritiesMap.TryGetValue(mod.Name, out v))
+            if (EMMLoader.RaritiesMap.TryGetValue(mod.Name, out v))
             {
                 var fod = v.FirstOrDefault(x => x.HasValue && x.Value.Name.Equals(name));
-                return fod?.Rarity;
+				return (ModifierRarity)fod?.Rarity.Clone();
             }
             return null;
         }
@@ -30,10 +34,10 @@ namespace Loot
         public static ModifierEffect GetModifierEffect(this Mod mod, string name)
         {
             List<EffectMap?> v;
-            if (LootLoader.EffectsMap.TryGetValue(mod.Name, out v))
+            if (EMMLoader.EffectsMap.TryGetValue(mod.Name, out v))
             {
                 var fod = v.FirstOrDefault(x => x.HasValue && x.Value.Name.Equals(name));
-                return fod?.Effect;
+				return (ModifierEffect)fod?.Effect.Clone();
             }
             return null;
         }
@@ -41,19 +45,34 @@ namespace Loot
         public static uint ModifierEffectType<T>(this Mod mod) where T : ModifierEffect => ModifierEffectType(mod, typeof(T).Name);
         public static uint ModifierEffectType(this Mod mod, string name) => GetModifierEffect(mod, name)?.Type ?? 0;
 
+		public static T GetModifier<T>(this Mod mod) where T : Modifier => (T)GetModifier(mod, typeof(T).Name);
+		public static Modifier GetModifier(this Mod mod, string name)
+		{
+			List<ModifierMap?> v;
+			if (EMMLoader.ModifiersMap.TryGetValue(mod.Name, out v))
+			{
+				var fod = v.FirstOrDefault(x => x.HasValue && x.Value.Name.Equals(name));
+				return (Modifier)fod?.Modifier.AsNewInstance().Clone();
+			}
+			return null;
+		}
+
+		public static uint ModifierType<T>(this Mod mod, string name) where T : Modifier => ModifierType(mod, typeof(T).Name);
+		public static uint ModifierType(this Mod mod, string name) => GetModifier(mod, name)?.Type ?? 0;
+
         /// <summary>
         /// Returns the ModifierRarity specified by type, null if not present
         /// </summary>
         /// <param name="type"></param>
         /// <returns></returns>
-        public static ModifierRarity GetRarity(ushort type) => LootLoader.GetRarity(type);
+        public static ModifierRarity GetRarity(ushort type) => EMMLoader.GetRarity(type);
 
         /// <summary>
         /// Returns the ModifierEffect specified by type, null if not present
         /// </summary>
         /// <param name="type"></param>
         /// <returns></returns>
-        public static ModifierEffect GetEffect(ushort type) => LootLoader.GetEffect(type);
+        public static ModifierEffect GetEffect(ushort type) => EMMLoader.GetEffect(type);
 
         public static byte[] ToByteArray<T>(this T obj)
 		{
