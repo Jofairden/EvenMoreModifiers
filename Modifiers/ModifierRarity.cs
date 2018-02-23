@@ -14,19 +14,34 @@ namespace Loot.Modifiers
 	public abstract class ModifierRarity
 	{
 		public Mod Mod { get; internal set; }
-		public ushort Type { get; internal set; }
+		public uint Type { get; internal set; }
 		public abstract string Name { get; }
-		public virtual float RequiredStrength { get; } = 0f;
-		public virtual Color Color { get; } = Color.White;
 
-		/// <summary>
-		/// Returns if the specified modifier passes all the requirements
-		/// By default, simply the required strength is checked
-		/// </summary>
-		public virtual bool MatchesRequirements(Modifier modifier)
+        /// <summary>
+        ///  The strength required that makes this rarity available
+        /// </summary>
+        public abstract float RequiredStrength { get; }
+
+        /// <summary>
+        /// The color this rarity will grant
+        /// </summary>
+        public abstract Color Color { get; }
+		public virtual Color? OverrideNameColor => null;
+
+		public virtual string ItemPrefix => null;
+		public virtual string ItemSuffix => null;
+
+		public RequirementPass.RequirementPassDelegate[] RequirementPasses { get; protected set; }
+            = new[] { (RequirementPass.RequirementPassDelegate)((rarity, modifier) => modifier.TotalStrength >= rarity.RequiredStrength) };
+
+        /// <summary>
+        /// Returns if the specified modifier passes all the requirement passes
+        /// By default, runs one pass that returns true if the total strength matches or surpasses the required strength
+        /// </summary>
+        public virtual bool MatchesRequirements(Modifier modifier)
 		{
-			return modifier.TotalStrength >= RequiredStrength;
-		}
+			return RequirementPasses.All(pass => pass.Invoke(this, modifier));
+        }
 
 		public override string ToString()
 		{

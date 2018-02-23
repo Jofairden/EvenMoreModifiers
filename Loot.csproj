@@ -51,22 +51,25 @@
     <Reference Include="System">
       <Private>True</Private>
     </Reference>
-    <Reference Include="Terraria">
-      <HintPath>..\..\..\..\..\..\..\Apps\Steam\steamapps\common\Terraria\Terraria.exe</HintPath>
+    <Reference Include="tModLoaderDebug">
+      <HintPath>..\..\..\..\..\..\..\Apps\Steam\steamapps\common\Terraria\tModLoaderDebug.exe</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Effects\DebugEffect.cs" />
+    <Compile Include="LootDebugPlayer.cs" />
     <Compile Include="LootGlobalItem.cs" />
     <Compile Include="Loot.cs" />
     <Compile Include="LootGlobalNPC.cs" />
-    <Compile Include="LootPlayer.cs" />
+    <Compile Include="EMMPlayer.cs" />
     <Compile Include="LootUtils.cs" />
     <Compile Include="MagicDice.cs" />
     <Compile Include="Modifiers\Modifier.cs" />
+    <Compile Include="Modifiers\ModifierEffect.cs" />
+    <Compile Include="LootLoader.cs" />
     <Compile Include="Modifiers\ModifierRarity.cs" />
     <Compile Include="Modifiers\ModifierTagSerializer.cs" />
-    <Compile Include="Modifiers\Loader.cs" />
+    <Compile Include="Modifiers\Ours\DebugModifier.cs" />
     <Compile Include="Modifiers\RequirementPass.cs" />
     <Compile Include="Rarities\CommonRarity.cs" />
     <Compile Include="Rarities\LegendaryRarity.cs" />
@@ -80,6 +83,9 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{82A7F48D-3B50-4B1E-B82E-3ADA8210C358}" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include=".editorconfig" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>

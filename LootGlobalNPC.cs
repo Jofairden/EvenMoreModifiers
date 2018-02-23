@@ -10,7 +10,7 @@ namespace Loot
 	/// <summary>
 	/// Holds entity based data
 	/// </summary>
-	class EMMNPC : GlobalNPC
+	public class EMMNPC : GlobalNPC
 	{
 		public override bool InstancePerEntity => true;
 		public override bool CloneNewInstances => true;
@@ -19,7 +19,7 @@ namespace Loot
 	/// <summary>
 	/// Handles data globally
 	/// </summary>
-	class LootNPC : GlobalNPC
+	public class LootNPC : GlobalNPC
 	{
 	}
 }
