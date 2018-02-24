@@ -32,7 +32,7 @@ namespace Loot.Modifiers
 			=> RequirementPasses.All(pass => pass.Invoke(this, modifier));
 
 		public override string ToString()
-			=> LootUtils.JSLog(typeof(ModifierRarity), this);
+			=> EMMUtils.JSLog(typeof(ModifierRarity), this);
 
 		public virtual void OnClone(ModifierRarity clone)
 		{

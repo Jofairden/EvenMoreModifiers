@@ -123,7 +123,7 @@ namespace Loot.Modifiers
 		{
 			var wr = new WeightedRandom<Modifier>();
 			foreach (var m in Modifiers.Where(x => x.Value._CanApply(ctx)))
-				wr.Add(m.Value, m.Value.RollWeight);
+				wr.Add(m.Value, m.Value.RollChance);
 			var mod = wr.Get();
 			return (Modifier)mod?.Clone();
 		}

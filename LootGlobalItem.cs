@@ -43,9 +43,14 @@ namespace Loot
 			Modifier = EMMLoader.GetWeightedModifier(ctx);
 			if (Modifier != null)
 			{
-				foreach (var e in Modifier.Effects)
-					e.RollAndApplyMagnitude();
-				Modifier.UpdateRarity();
+				if (Modifier.RollEffects(ctx).Length <= 0)
+					Modifier = null;
+				else
+				{
+					foreach (var e in Modifier.ActiveEffects)
+						e.RollAndApplyMagnitude();
+					Modifier.UpdateRarity();
+				}
 			}
         }
 
@@ -145,7 +150,7 @@ namespace Loot
                     foreach (var tt in ttcol)
                         tooltips.Insert(++i, new TooltipLine(mod, $"Modifier:Description:{i}", tt.Text) { overrideColor = tt.Color ?? Color.White });
                 
-                foreach (var e in m.Effects)
+                foreach (var e in m.ActiveEffects)
                     e.ModifyTooltips(item, tooltips);
             }
         }

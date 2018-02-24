@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using Loot.Rarities;
 using Terraria;
 using Terraria.ModLoader;
+using Terraria.Utilities;
 
 namespace Loot.Modifiers
 {
@@ -35,25 +36,58 @@ namespace Loot.Modifiers
         public uint Type { get; internal set; }
         public Mod Mod { get; internal set; }
         public ModifierRarity Rarity { get; internal set; }
+		protected ModifierEffect[] Effects;
+		public ModifierEffect[] ActiveEffects { get; internal set; }
 
-        public float TotalRarityLevel => 
-			Effects.Select(effect => effect.RarityLevel).DefaultIfEmpty(0).Sum();
+		public float TotalRarityLevel =>
+			ActiveEffects.Select(effect => effect.RarityLevel).DefaultIfEmpty(0).Sum();
 
-        public IEnumerable<ModifierEffectTooltipLine[]> Description => 
-            Effects.Select(effect => effect.TooltipLines);
+        public IEnumerable<ModifierEffectTooltipLine[]> Description =>
+			ActiveEffects.Select(effect => effect.TooltipLines);
 
         public virtual string Name => this.GetType().Name;
-        public virtual float RollWeight => 1f;
-
-        public ModifierEffect[] Effects { get; protected set; }
-
+        public virtual float RollChance => 1f;
+		
         internal ModifierRarity UpdateRarity()
         {
             Rarity = EMMLoader.GetModifierRarity(this);
             return Rarity;
         }
 
-        internal bool _CanApply(ModifierContext ctx) {
+		internal ModifierEffect[] RollEffects(ModifierContext ctx)
+		{
+			WeightedRandom<ModifierEffect> wr = new WeightedRandom<ModifierEffect>();
+			List<ModifierEffect> list = new List<ModifierEffect>();
+			foreach (var e in Effects.Where(x => x.CanRoll(ctx)))
+				wr.Add(e, e.RollChance);
+
+			if (wr.elements.Count <= 0)
+				return ActiveEffects;
+
+			for (int i = 0; i < 4; ++i)
+			{
+				if (wr.elements.Count <= 0 || Main.rand.NextFloat() > (EffectRollChance(i)))
+					break;
+
+				ModifierEffect e = wr.Get();
+				list.Add(e);
+				wr.elements.Remove(new Tuple<ModifierEffect, double>(e, e.RollChance));
+				wr.needsRefresh = true;
+			}
+
+			ActiveEffects = list.ToArray();
+			return ActiveEffects;
+		}
+
+		internal float EffectRollChance(int len)
+			=> 0.5f / (float)Math.Pow(2, len);
+
+
+		internal bool _CanApply(ModifierContext ctx) {
+
+			if (Effects.Length <= 0)
+				return false;
+
             switch (ctx.Method)
             {
                 case ModifierContextMethod.OnCraft:
@@ -71,7 +105,8 @@ namespace Loot.Modifiers
             }
         }
 
-        public virtual bool CanApplyCraft(ModifierContext ctx) => true;
+		public virtual bool CanRoll(ModifierContext ctx) => Effects.Length > 0 && Effects.Any(x => x.CanRoll(ctx));
+		public virtual bool CanApplyCraft(ModifierContext ctx) => true;
         public virtual bool CanApplyPickup(ModifierContext ctx) => true;
         public virtual bool CanApplyReforge(ModifierContext ctx) => true;
         public virtual bool CanApplyItem(ModifierContext ctx) => true;
@@ -82,7 +117,7 @@ namespace Loot.Modifiers
         {
             if (_CanApply(ctx))
             {
-                foreach (var effect in Effects)
+                foreach (var effect in ActiveEffects)
                 {
                     effect.ApplyItem(ctx);
                 }
@@ -93,7 +128,7 @@ namespace Loot.Modifiers
         {
             if (_CanApply(ctx))
             {
-                foreach (var effect in Effects)
+                foreach (var effect in ActiveEffects)
                 {
                     effect.UpdateItem(ctx, equipped);
                 }
@@ -101,7 +136,7 @@ namespace Loot.Modifiers
         }
 
         public override string ToString()
-		    => LootUtils.JSLog(typeof(Modifier), this);
+		    => EMMUtils.JSLog(typeof(Modifier), this);
 
         public virtual void OnClone(Modifier clone)
         {
@@ -119,7 +154,12 @@ namespace Loot.Modifiers
                 .Select(x => x?.Clone())
                 .Cast<ModifierEffect>()
                 .ToArray();
-            OnClone(clone);
+			clone.ActiveEffects =
+				ActiveEffects?
+				.Select(x => x?.Clone())
+				.Cast<ModifierEffect>()
+				.ToArray();
+				OnClone(clone);
             return clone;
         }
     }

@@ -27,6 +27,7 @@ namespace Loot.Modifiers
 		public virtual float MinMagnitude => 1f;
 		public virtual float MaxMagnitude => 1f;
 		public virtual float RarityLevel => 1f;
+		public virtual float RollChance => 1f;
 
 		public abstract ModifierEffectTooltipLine[] TooltipLines { get; }
 
@@ -36,6 +37,8 @@ namespace Loot.Modifiers
 			Power = BasePower * Magnitude;
 			return Power;
 		}
+
+		public virtual bool CanRoll(ModifierContext ctx) => true;
 		
 		public virtual void UpdateItem(ModifierContext ctx, bool equipped = false)
 		{

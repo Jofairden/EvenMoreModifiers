@@ -14,7 +14,7 @@ namespace Loot.Modifiers.Ours
         {
             Effects = new[]
             {
-                Loot.Instance.GetModifierEffect<DebuggEffect2>()
+                Loot.Instance.GetModifierEffect<MoreItemDamageEffect>()
             };
         }
 
@@ -28,10 +28,12 @@ namespace Loot.Modifiers.Ours
     {
         public DebugModifier()
         {
-            Effects = new[]
+            Effects = new ModifierEffect[]
             {
-                Loot.Instance.GetModifierEffect<DebugEffect>()
-            };
+                Loot.Instance.GetModifierEffect<InfernoEffect>(),
+                Loot.Instance.GetModifierEffect<GodlyDefenseEffect>(),
+                Loot.Instance.GetModifierEffect<MoreDamageEffect>()
+			};
         }
 
         public override bool CanApplyReforge(ModifierContext ctx)

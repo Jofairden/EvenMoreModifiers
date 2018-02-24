@@ -9,7 +9,7 @@ using Terraria.ModLoader;
 
 namespace Loot
 {
-	internal static class LootUtils
+	internal static class EMMUtils
 	{
 		public static ModifierRarity AsNewInstance(this ModifierRarity modifier) => (ModifierRarity)Activator.CreateInstance(modifier.GetType());
 		public static ModifierEffect AsNewInstance(this ModifierEffect modifier) => (ModifierEffect)Activator.CreateInstance(modifier.GetType());
