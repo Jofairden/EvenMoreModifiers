@@ -1,11 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Loot.Rarities;
 using Terraria;
 using Terraria.ModLoader;
+using Terraria.ModLoader.IO;
 using Terraria.Utilities;
 
 namespace Loot.Modifiers
@@ -31,21 +29,22 @@ namespace Loot.Modifiers
 	/// <summary>
 	/// Defines a modifier.
 	/// </summary>
-	public abstract class Modifier : ICloneable
+	[Serializable]
+	public abstract class Modifier : ICloneable/*, TagSerializable*/
 	{
 		public uint Type { get; internal set; }
 		public Mod Mod { get; internal set; }
 		public ModifierRarity Rarity { get; internal set; }
-		protected ModifierEffect[] Effects;
+		protected internal ModifierEffect[] Effects;
 		public ModifierEffect[] ActiveEffects { get; internal set; }
 
 		public float TotalRarityLevel =>
 			ActiveEffects.Select(effect => effect.RarityLevel).DefaultIfEmpty(0).Sum();
 
 		public IEnumerable<ModifierEffectTooltipLine[]> Description =>
-			ActiveEffects.Select(effect => effect.TooltipLines);
+			ActiveEffects.Select(effect => effect.Description);
 
-		public virtual string Name => this.GetType().Name;
+		public virtual string Name => GetType().Name;
 		public virtual float RollChance => 1f;
 
 		internal ModifierRarity UpdateRarity()
@@ -70,7 +69,7 @@ namespace Loot.Modifiers
 					break;
 
 				ModifierEffect e = wr.Get();
-				list.Add(e);
+				list.Add((ModifierEffect)e.Clone());
 				wr.elements.Remove(new Tuple<ModifierEffect, double>(e, e.RollChance));
 				wr.needsRefresh = true;
 			}
@@ -85,7 +84,6 @@ namespace Loot.Modifiers
 
 		internal bool _CanApply(ModifierContext ctx)
 		{
-
 			if (Effects.Length <= 0)
 				return false;
 
@@ -114,39 +112,32 @@ namespace Loot.Modifiers
 		public virtual bool CanUpdateItem(ModifierContext ctx) => true;
 		public virtual bool CanUpdateNPC(ModifierContext ctx) => true;
 
+		public virtual bool MatchesRarity(ModifierRarity rarity)
+			=> TotalRarityLevel >= rarity.RequiredRarityLevel;
+
 		internal void ApplyItem(ModifierContext ctx)
 		{
-			if (_CanApply(ctx))
-			{
-				foreach (var effect in ActiveEffects)
-				{
-					effect.ApplyItem(ctx);
-				}
-			}
+			foreach (var effect in ActiveEffects)
+				effect.ApplyItem(ctx);
 		}
 
 		internal void UpdateItem(ModifierContext ctx, bool equipped = false)
 		{
-			if (_CanApply(ctx))
-			{
-				foreach (var effect in ActiveEffects)
-				{
-					effect.UpdateItem(ctx, equipped);
-				}
-			}
+			foreach (var effect in ActiveEffects)
+				effect.UpdateItem(ctx, equipped);
 		}
 
 		public override string ToString()
 			=> EMMUtils.JSLog(typeof(Modifier), this);
 
-		public virtual void OnClone(Modifier clone)
+		public virtual void Clone(ref Modifier clone)
 		{
 
 		}
 
 		public object Clone()
 		{
-			Modifier clone = (Modifier)this.MemberwiseClone();
+			Modifier clone = (Modifier)MemberwiseClone();
 			clone.Type = Type;
 			clone.Mod = Mod;
 			clone.Rarity = (ModifierRarity)Rarity?.Clone();
@@ -160,8 +151,28 @@ namespace Loot.Modifiers
 				.Select(x => x?.Clone())
 				.Cast<ModifierEffect>()
 				.ToArray();
-			OnClone(clone);
+			Clone(ref clone);
 			return clone;
 		}
+
+		//public static Func<TagCompound, Modifier> DESERIALIZER = tag =>
+		//	{
+		//		TagSerializer serializer;
+		//		if (TagSerializer.TryGetSerializer(typeof(Modifier), out serializer))
+		//		{
+		//			return (Modifier)serializer.Deserialize(tag);
+		//		}
+		//		throw new Exception("DESERIALIZER for Modifier error");
+		//	};
+
+		//public TagCompound SerializeData()
+		//{
+		//	TagSerializer serializer;
+		//	if (TagSerializer.TryGetSerializer(GetType(), out serializer))
+		//	{
+		//		return (TagCompound)serializer.Serialize(this);
+		//	}
+		//	throw new Exception("SerializeData() for Modifier error");
+		//}
 	}
 }

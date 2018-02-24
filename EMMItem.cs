@@ -1,10 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Loot.Effects;
 using Loot.Modifiers;
 using Microsoft.Xna.Framework;
 using Terraria;
@@ -63,28 +58,29 @@ namespace Loot
 
 		//public override void Load(Item item, TagCompound tag)
 		//{
-		//	Modifier = ModifierTagSerializer.SetFromTag(tag);
+		//	var info = GetItemInfo(item);
+		//	info.Modifier = tag.Get<Modifier>("Modifier");
 		//}
 
 		//public override TagCompound Save(Item item)
-		//	=> ModifierTagSerializer.ToTag(Modifier);
-
-		//public override bool NeedsSaving(Item item)
 		//{
-		//	return Modifier != null;
+		//	return new TagCompound
+		//	{
+		//		{ "Modifier", GetItemInfo(item).Modifier }
+		//	};
 		//}
+
+		//public override bool NeedsSaving(Item item) => Modifier != null;
 
 		//public override void NetReceive(Item item, BinaryReader reader)
 		//{
-		//	int modLength = reader.Read();
-		//	Modifier = reader.ReadBytes(modLength).FromByteArray<Modifier>();
+		//	var tc = TagIO.FromStream(reader.BaseStream);
+		//	GetItemInfo(item).Modifier = tc.Get<Modifier>("Modifier");
 		//}
 
 		//public override void NetSend(Item item, BinaryWriter writer)
 		//{
-		//	var modBytes = Modifier.ToByteArray();
-		//	writer.Write(modBytes.Length);
-		//	writer.Write(modBytes);
+		//	TagIO.ToStream(GetItemInfo(item).Save(item), writer.BaseStream);
 		//}
 
 		public override void OnCraft(Item item, Recipe recipe)

@@ -130,13 +130,11 @@ namespace Loot.Modifiers
 
 		internal static ModifierRarity GetModifierRarity(Modifier modifier)
 		{
-			return
-				(ModifierRarity)Activator.CreateInstance(
-					Rarities
+			return (ModifierRarity)Rarities
 					.Select(r => r.Value)
 					.OrderByDescending(r => r.RequiredRarityLevel)
 					.FirstOrDefault(r => r.MatchesRequirements(modifier))
-					.GetType());
+					.Clone();
 		}
 
 		/// <summary>

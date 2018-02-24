@@ -1,9 +1,4 @@
 ﻿using Loot.Effects;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Terraria;
 
 namespace Loot.Modifiers.Ours
@@ -40,5 +35,6 @@ namespace Loot.Modifiers.Ours
 		{
 			return ctx.Item.accessory && Main.rand.NextBool(5);
 		}
+
 	}
 }

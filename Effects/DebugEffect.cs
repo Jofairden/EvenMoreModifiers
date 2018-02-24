@@ -1,42 +1,44 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Loot.Modifiers;
+﻿using Loot.Modifiers;
 using Microsoft.Xna.Framework;
-using Terraria;
-using Terraria.ModLoader;
+using System;
 
 namespace Loot.Effects
 {
-
 	public class MoreItemDamageEffect : ModifierEffect
 	{
+		public MoreItemDamageEffect()
+		{
+
+		}
+
+		public override ModifierEffectTooltipLine[] Description => new[]
+			{
+				new ModifierEffectTooltipLine { Text = $"Deals {(int)Power}% more damage", Color = Color.Lime}
+			};
+
 		public override float MinMagnitude => 0.5f;
 		public override float MaxMagnitude => 2.5f;
 		public override float BasePower => 50f;
-
-		public override ModifierEffectTooltipLine[] TooltipLines => new[]
-		{
-			new ModifierEffectTooltipLine { Text = $"Deals {(int)Power}% more damage", Color =  Color.Lime}
-		};
 
 		public override float RarityLevel => 3f;
 
 		public override void ApplyItem(ModifierContext ctx)
 		{
-			ctx.Item.damage *= (int)(Power / 100f);
+			ctx.Item.damage = (int)Math.Ceiling((float)ctx.Item.damage * Power / 100f);
 		}
 	}
 
-
 	public class InfernoEffect : ModifierEffect
 	{
-		public override ModifierEffectTooltipLine[] TooltipLines => new[]
+		public InfernoEffect()
 		{
-			new ModifierEffectTooltipLine { Text = "Player has inferno",            Color =  Color.IndianRed},
-		};
+
+		}
+
+		public override ModifierEffectTooltipLine[] Description => new[]
+			{
+				new ModifierEffectTooltipLine { Text = "Player has inferno", Color =  Color.IndianRed},
+			};
 
 		public override float RarityLevel => 3f;
 
@@ -49,10 +51,15 @@ namespace Loot.Effects
 
 	public class GodlyDefenseEffect : ModifierEffect
 	{
-		public override ModifierEffectTooltipLine[] TooltipLines => new[]
+		public GodlyDefenseEffect()
 		{
-			new ModifierEffectTooltipLine { Text = "Player has godly defense",      Color =  Color.SlateGray},
-		};
+
+		}
+
+		public override ModifierEffectTooltipLine[] Description => new[]
+			{
+				new ModifierEffectTooltipLine { Text = "Player has godly defense", Color =  Color.SlateGray},
+			};
 
 		public override float RarityLevel => 5f;
 
@@ -65,10 +72,15 @@ namespace Loot.Effects
 
 	public class MoreDamageEffect : ModifierEffect
 	{
-		public override ModifierEffectTooltipLine[] TooltipLines => new[]
-{
-			new ModifierEffectTooltipLine { Text = "Player deals 100% more damage", Color =  Color.SlateGray},
-		};
+		public MoreDamageEffect()
+		{
+
+		}
+
+		public override ModifierEffectTooltipLine[] Description => new[]
+			{
+				new ModifierEffectTooltipLine { Text = "Player deals 100% more damage", Color =  Color.SlateGray},
+			};
 
 		public override float RarityLevel => 5f;
 

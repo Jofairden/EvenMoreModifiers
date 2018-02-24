@@ -1,0 +1,92 @@
+if (Main.netMode == NetmodeID.MultiplayerClient)
+            {
+                ModPacket packet = PortableStorage.Instance.GetPacket();
+                packet.Write((byte)MessageType.SyncQEItems);
+                TagIO.Write(new TagCompound
+                {
+                    {"Items", PSWorld.Instance.SaveItems()}
+                }, packet);
+                packet.Send();
+            }
+			
+			
+			
+			
+			using Shockah.ItemAffix.Generator;
+using Terraria;
+using Terraria.World.Generation;
+
+namespace Shockah.ItemAffix
+{
+	public sealed class AffixWorldGenPass : GenPass
+	{
+		private readonly AffixMod mod;
+
+		public AffixWorldGenPass(AffixMod mod) : base(AffixMod.ModName, 1)
+		{
+			this.mod = mod;
+		}
+
+		public override void Apply(GenerationProgress progress)
+		{
+			progress.Message = "Applying affixes...";
+			foreach (Chest chest in Main.chest)
+			{
+				if (chest == null || chest.x <= 0 || chest.y <= 0)
+					continue;
+				foreach (Item item in chest.item)
+				{
+					if (!item.IsAir)
+					{
+						if (item.IsAffixableWeapon())
+						{
+							mod.ChestGenManager.GenerateAndApplyAffixes(item, new ChestAffixGenEnvironment(chest.x, chest.y));
+						}
+						else if (item.IsAffixableAccessory())
+						{
+							mod.AccessoryChestGenManager.GenerateAndApplyAffixes(item, new ChestAffixGenEnvironment(chest.x, chest.y));
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	public sealed class UnloadedAffix : Affix
+	{
+		public readonly TagCompound tag;
+
+		public UnloadedAffix(TagCompound tag) : base("Unloaded Affix")
+		{
+			this.tag = tag;
+		}
+
+		public override TagCompound SerializeData()
+		{
+			return tag;
+		}
+
+		[CallOrder(double.PositiveInfinity)]
+		public override string GetFormattedName(Item item, string oldName)
+		{
+			return base.GetFormattedName(item, oldName);
+		}
+}

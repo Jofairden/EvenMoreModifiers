@@ -1,10 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Diagnostics;
 using System.IO;
-using System.Reflection;
 using Loot.Modifiers;
 using Terraria.ModLoader;
+using Terraria.ModLoader.IO;
 
 
 /*
@@ -59,6 +57,12 @@ namespace Loot
 		public override void Load()
 		{
 			Instance = this;
+
+			TagSerializer.AddSerializer(new ModifierEffectTooltipLineTagSerializer());
+			TagSerializer.AddSerializer(new ModifierEffectTagSerializer());
+			TagSerializer.AddSerializer(new ModifierRarityTagSerializer());
+			TagSerializer.AddSerializer(new ModifierTagSerializer());
+
 			EMMLoader.Initialize();
 			EMMLoader.Load();
 			EMMLoader.SetupContent();
