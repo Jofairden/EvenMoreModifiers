@@ -19,7 +19,7 @@ namespace Loot.Modifiers
 		public virtual string ItemSuffix => null;
 
 		public abstract float RequiredRarityLevel { get; }
-        public abstract Color Color { get; }
+		public abstract Color Color { get; }
 
 		public RequirementPass.RequirementPassDelegate[] RequirementPasses { get; protected set; }
 			= new[]
@@ -28,7 +28,7 @@ namespace Loot.Modifiers
 					=> modifier.TotalRarityLevel >= rarity.RequiredRarityLevel)
 			};
 
-        public virtual bool MatchesRequirements(Modifier modifier)
+		public virtual bool MatchesRequirements(Modifier modifier)
 			=> RequirementPasses.All(pass => pass.Invoke(this, modifier));
 
 		public override string ToString()
@@ -44,7 +44,7 @@ namespace Loot.Modifiers
 			ModifierRarity clone = (ModifierRarity)this.MemberwiseClone();
 			clone.Mod = Mod;
 			clone.Type = Type;
-			clone.RequirementPasses = 
+			clone.RequirementPasses =
 				RequirementPasses
 				.Select(x => x?.Clone())
 				.Cast<RequirementPass.RequirementPassDelegate>()

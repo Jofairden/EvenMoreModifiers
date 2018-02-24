@@ -25,7 +25,7 @@ namespace Loot
 				{
 					{"EMMPlayer", this}
 				},
-				Method = ModifierContextMethod.UpdateItem 
+				Method = ModifierContextMethod.UpdateItem
 			};
 
 			foreach (var i in player.inventory.Where(x => !x.IsAir))

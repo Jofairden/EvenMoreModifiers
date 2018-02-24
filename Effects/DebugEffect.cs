@@ -11,32 +11,32 @@ using Terraria.ModLoader;
 namespace Loot.Effects
 {
 
-    public class MoreItemDamageEffect : ModifierEffect
-    {
-        public override float MinMagnitude => 0.5f;
-        public override float MaxMagnitude => 2.5f;
+	public class MoreItemDamageEffect : ModifierEffect
+	{
+		public override float MinMagnitude => 0.5f;
+		public override float MaxMagnitude => 2.5f;
 		public override float BasePower => 50f;
 
 		public override ModifierEffectTooltipLine[] TooltipLines => new[]
-        {
-            new ModifierEffectTooltipLine { Text = $"Deals {(int)Power}% more damage", Color =  Color.Lime}
-        };
+		{
+			new ModifierEffectTooltipLine { Text = $"Deals {(int)Power}% more damage", Color =  Color.Lime}
+		};
 
-        public override float RarityLevel => 3f;
+		public override float RarityLevel => 3f;
 
-        public override void ApplyItem(ModifierContext ctx)
-        {
-            ctx.Item.damage *= (int)(Power / 100f);
-        }
-    }
+		public override void ApplyItem(ModifierContext ctx)
+		{
+			ctx.Item.damage *= (int)(Power / 100f);
+		}
+	}
 
 
-    public class InfernoEffect : ModifierEffect
+	public class InfernoEffect : ModifierEffect
 	{
-        public override ModifierEffectTooltipLine[] TooltipLines => new[]
-        {
-            new ModifierEffectTooltipLine { Text = "Player has inferno",			Color =  Color.IndianRed},
-        };
+		public override ModifierEffectTooltipLine[] TooltipLines => new[]
+		{
+			new ModifierEffectTooltipLine { Text = "Player has inferno",            Color =  Color.IndianRed},
+		};
 
 		public override float RarityLevel => 3f;
 
@@ -45,14 +45,14 @@ namespace Loot.Effects
 			if (equipped)
 				ctx.Player.inferno = true;
 		}
-    }
+	}
 
 	public class GodlyDefenseEffect : ModifierEffect
 	{
 		public override ModifierEffectTooltipLine[] TooltipLines => new[]
 		{
-            new ModifierEffectTooltipLine { Text = "Player has godly defense",		Color =  Color.SlateGray},
-        };
+			new ModifierEffectTooltipLine { Text = "Player has godly defense",      Color =  Color.SlateGray},
+		};
 
 		public override float RarityLevel => 5f;
 

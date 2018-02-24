@@ -12,13 +12,13 @@ namespace Loot.Modifiers
 		public Color? Color;
 	}
 
-    /// <summary>
-    /// Defines a modifier effect
-    /// </summary>
-    public abstract class ModifierEffect : ICloneable
+	/// <summary>
+	/// Defines a modifier effect
+	/// </summary>
+	public abstract class ModifierEffect : ICloneable
 	{
-        public Mod Mod { get; internal set; }
-        public uint Type { get; internal set; }
+		public Mod Mod { get; internal set; }
+		public uint Type { get; internal set; }
 		public float Magnitude { get; internal set; } = 1f;
 		public float Power { get; internal set; } = 1f;
 
@@ -39,21 +39,21 @@ namespace Loot.Modifiers
 		}
 
 		public virtual bool CanRoll(ModifierContext ctx) => true;
-		
+
 		public virtual void UpdateItem(ModifierContext ctx, bool equipped = false)
 		{
 
 		}
 
 		public virtual void ApplyItem(ModifierContext ctx)
-        {
+		{
 
-        }
+		}
 
-        public virtual void ApplyNPC(ModifierContext ctx)
-        {
+		public virtual void ApplyNPC(ModifierContext ctx)
+		{
 
-        }
+		}
 
 		public virtual void ModifyTooltips(Item item, List<TooltipLine> tooltips)
 		{
