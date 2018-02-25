@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
+using System.Runtime.Remoting;
 using Terraria;
 using Terraria.ModLoader;
 using Terraria.ModLoader.IO;
@@ -30,7 +32,7 @@ namespace Loot.Modifiers
 	/// Defines a modifier.
 	/// </summary>
 	[Serializable]
-	public abstract class Modifier : ICloneable/*, TagSerializable*/
+	public abstract class Modifier : ICloneable, TagSerializable
 	{
 		public uint Type { get; internal set; }
 		public Mod Mod { get; internal set; }
@@ -155,24 +157,93 @@ namespace Loot.Modifiers
 			return clone;
 		}
 
-		//public static Func<TagCompound, Modifier> DESERIALIZER = tag =>
-		//	{
-		//		TagSerializer serializer;
-		//		if (TagSerializer.TryGetSerializer(typeof(Modifier), out serializer))
-		//		{
-		//			return (Modifier)serializer.Deserialize(tag);
-		//		}
-		//		throw new Exception("DESERIALIZER for Modifier error");
-		//	};
-
-		//public TagCompound SerializeData()
+		//protected static TagCompound Save(Modifier modifier)
 		//{
-		//	TagSerializer serializer;
-		//	if (TagSerializer.TryGetSerializer(GetType(), out serializer))
+		//	var tc = new TagCompound
 		//	{
-		//		return (TagCompound)serializer.Serialize(this);
+		//		{"Assembly", modifier.GetType().AssemblyQualifiedName },
+		//		{"TypeName", modifier.GetType().Name },
+		//		{"ModifierType", modifier.Type },
+		//		{"ModName", modifier.Mod.Name },
+		//		{"Rarity", ModifierRarity.Save(modifier.Rarity) },
+		//	};
+		//	tc.Add("Effects", modifier.Effects.Length);
+		//	if (modifier.Effects.Length > 0)
+		//	{
+		//		for (int i = 0; i < modifier.Effects.Length; ++i)
+		//		{
+		//			tc.Add($"Effect{i}", ModifierEffect.Save(modifier.Effects[i]));
+		//		}
 		//	}
-		//	throw new Exception("SerializeData() for Modifier error");
+		//	tc.Add("ActiveEffects", modifier.ActiveEffects.Length);
+		//	for (int i = 0; i < modifier.ActiveEffects.Length; ++i)
+		//	{
+		//		tc.Add($"ActiveEffect{i}", ModifierEffect.Save(modifier.ActiveEffects[i]));
+		//	}
+		//	return tc;
 		//}
+
+		protected internal static Modifier Load(TagCompound tag)
+		{
+			string modname = tag.GetString("ModName");
+			Assembly assembly;
+			if (EMMLoader.Mods.TryGetValue(modname, out assembly))
+			{
+				Modifier m = (Modifier)Activator.CreateInstance(assembly.GetType(tag.GetString("Type")));
+				m.Type = tag.Get<uint>("ModifierType");
+				m.Mod = ModLoader.GetMod(modname);
+				m.Rarity = tag.Get<ModifierRarity>("Rarity");
+				int effects = tag.GetAsInt("Effects");
+				if (effects > 0)
+				{
+					var list = new List<ModifierEffect>();
+					for (int i = 0; i < effects; ++i)
+					{
+						list.Add(tag.Get<ModifierEffect>($"Effect{i}"));
+					}
+					m.Effects = list.ToArray();
+				}
+				int activeeffects = tag.GetAsInt("ActiveEffects");
+				if (activeeffects > 0)
+				{
+					var list = new List<ModifierEffect>();
+					for (int i = 0; i < activeeffects; ++i)
+					{
+						list.Add(tag.Get<ModifierEffect>($"ActiveEffect{i}"));
+					}
+					m.ActiveEffects = list.ToArray();
+				}
+				return m;
+			}
+			throw new Exception($"Modifier load error for {modname}");
+		}
+
+		public static Func<TagCompound, Modifier> DESERIALIZER = tag => Load(tag);
+
+		public TagCompound SerializeData()
+		{
+			var modifier = this;
+			var tc = new TagCompound
+			{
+				{"Type", modifier.GetType().FullName },
+				{"ModifierType", modifier.Type },
+				{"ModName", modifier.Mod.Name },
+				{"Rarity", modifier.Rarity },
+			};
+			tc.Add("Effects", modifier.Effects.Length);
+			if (modifier.Effects.Length > 0)
+			{
+				for (int i = 0; i < modifier.Effects.Length; ++i)
+				{
+					tc.Add($"Effect{i}", modifier.Effects[i]);
+				}
+			}
+			tc.Add("ActiveEffects", modifier.ActiveEffects.Length);
+			for (int i = 0; i < modifier.ActiveEffects.Length; ++i)
+			{
+				tc.Add($"ActiveEffect{i}", modifier.ActiveEffects[i]);
+			}
+			return tc;
+		}
 	}
 }

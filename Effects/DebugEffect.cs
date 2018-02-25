@@ -1,11 +1,14 @@
 ﻿using Loot.Modifiers;
 using Microsoft.Xna.Framework;
 using System;
+using Terraria.ModLoader.IO;
 
 namespace Loot.Effects
 {
 	public class MoreItemDamageEffect : ModifierEffect
 	{
+		public new static Func<TagCompound, MoreItemDamageEffect> DESERIALIZER = tag => (MoreItemDamageEffect)ModifierEffect.DESERIALIZER(tag);
+
 		public MoreItemDamageEffect()
 		{
 
@@ -30,6 +33,8 @@ namespace Loot.Effects
 
 	public class InfernoEffect : ModifierEffect
 	{
+		public new static Func<TagCompound, InfernoEffect> DESERIALIZER = tag => (InfernoEffect)ModifierEffect.DESERIALIZER(tag);
+
 		public InfernoEffect()
 		{
 
@@ -51,6 +56,8 @@ namespace Loot.Effects
 
 	public class GodlyDefenseEffect : ModifierEffect
 	{
+		public new static Func<TagCompound, GodlyDefenseEffect> DESERIALIZER = tag => (GodlyDefenseEffect)ModifierEffect.DESERIALIZER(tag);
+
 		public GodlyDefenseEffect()
 		{
 
@@ -72,6 +79,8 @@ namespace Loot.Effects
 
 	public class MoreDamageEffect : ModifierEffect
 	{
+		public new static Func<TagCompound, MoreDamageEffect> DESERIALIZER = tag => (MoreDamageEffect)ModifierEffect.DESERIALIZER(tag);
+
 		public MoreDamageEffect()
 		{
 

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Linq;
+using System.Reflection;
 using Microsoft.Xna.Framework;
 using Terraria.ModLoader;
 using Terraria.ModLoader.IO;
@@ -9,7 +10,7 @@ namespace Loot.Modifiers
 	/// <summary>
 	/// Defines the rarity of a modifier
 	/// </summary>
-	public abstract class ModifierRarity : ICloneable/*, TagSerializable*/
+	public abstract class ModifierRarity : ICloneable, TagSerializable
 	{
 		public Mod Mod { get; internal set; }
 		public uint Type { get; internal set; }
@@ -40,6 +41,44 @@ namespace Loot.Modifiers
 			clone.Type = Type;
 			Clone(ref clone);
 			return clone;
+		}
+
+		//public static TagCompound Save(ModifierRarity rarity)
+		//{
+		//	return new TagCompound
+		//	{
+		//		{"Type", rarity.GetType() },
+		//		{"RarityType", rarity.Type },
+		//		{"ModName", rarity.Mod.Name },
+		//	};
+		//}
+
+		protected internal static ModifierRarity Load(TagCompound tag)
+		{
+			string modname = tag.GetString("ModName");
+			Assembly assembly;
+			if (EMMLoader.Mods.TryGetValue(modname, out assembly))
+			{
+				ModifierRarity r = (ModifierRarity)Activator.CreateInstance(assembly.GetType(tag.GetString("Type")));
+				r.Type = tag.Get<uint>("RarityType");
+				r.Mod = ModLoader.GetMod(modname);
+				return r;
+			}
+			throw new Exception($"ModifierEffect load error for {modname}");
+		}
+
+		public static Func<TagCompound, ModifierRarity> DESERIALIZER = tag => Load(tag);
+
+		public TagCompound SerializeData()
+		{
+			var rarity = this;
+			var tag = new TagCompound
+			{
+				{"Type", rarity.GetType().FullName },
+				{"RarityType", rarity.Type },
+				{"ModName", rarity.Mod.Name },
+			};
+			return tag;
 		}
 
 		//public static Func<TagCompound, ModifierRarity> DESERIALIZER = tag =>

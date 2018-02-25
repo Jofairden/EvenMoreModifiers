@@ -56,32 +56,27 @@ namespace Loot
 			return clone;
 		}
 
-		//public override void Load(Item item, TagCompound tag)
-		//{
-		//	var info = GetItemInfo(item);
-		//	info.Modifier = tag.Get<Modifier>("Modifier");
-		//}
+		public override void Load(Item item, TagCompound tag)
+		{
+			GetItemInfo(item).Modifier = Modifier.Load(tag);
+		}
 
-		//public override TagCompound Save(Item item)
-		//{
-		//	return new TagCompound
-		//	{
-		//		{ "Modifier", GetItemInfo(item).Modifier }
-		//	};
-		//}
+		public override TagCompound Save(Item item)
+		{
+			return GetItemInfo(item).Modifier.SerializeData();
+		}
 
-		//public override bool NeedsSaving(Item item) => Modifier != null;
+		public override bool NeedsSaving(Item item) => Modifier != null;
 
-		//public override void NetReceive(Item item, BinaryReader reader)
-		//{
-		//	var tc = TagIO.FromStream(reader.BaseStream);
-		//	GetItemInfo(item).Modifier = tc.Get<Modifier>("Modifier");
-		//}
+		public override void NetReceive(Item item, BinaryReader reader)
+		{
+			GetItemInfo(item).Modifier = Modifier.Load(TagIO.FromStream(reader.BaseStream));
+		}
 
-		//public override void NetSend(Item item, BinaryWriter writer)
-		//{
-		//	TagIO.ToStream(GetItemInfo(item).Save(item), writer.BaseStream);
-		//}
+		public override void NetSend(Item item, BinaryWriter writer)
+		{
+			TagIO.ToStream(GetItemInfo(item).Modifier.SerializeData(), writer.BaseStream);
+		}
 
 		public override void OnCraft(Item item, Recipe recipe)
 		{

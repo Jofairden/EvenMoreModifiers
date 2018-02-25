@@ -58,10 +58,10 @@ namespace Loot
 		{
 			Instance = this;
 
-			TagSerializer.AddSerializer(new ModifierEffectTooltipLineTagSerializer());
-			TagSerializer.AddSerializer(new ModifierEffectTagSerializer());
-			TagSerializer.AddSerializer(new ModifierRarityTagSerializer());
-			TagSerializer.AddSerializer(new ModifierTagSerializer());
+			//TagSerializer.AddSerializer(new ModifierEffectTooltipLineTagSerializer());
+			//TagSerializer.AddSerializer(new ModifierEffectTagSerializer());
+			//TagSerializer.AddSerializer(new ModifierRarityTagSerializer());
+			//TagSerializer.AddSerializer(new ModifierTagSerializer());
 
 			EMMLoader.Initialize();
 			EMMLoader.Load();
