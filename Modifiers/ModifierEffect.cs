@@ -42,7 +42,7 @@ namespace Loot.Modifiers
 
 		public virtual bool CanRoll(ModifierContext ctx) => true;
 
-		public virtual void UpdateItem(ModifierContext ctx, bool equipped = false)
+		public virtual void UpdateItem(ModifierContext ctx, bool isItemEquipped = false)
 		{
 
 		}
@@ -80,6 +80,7 @@ namespace Loot.Modifiers
 
 		/// <summary>
 		/// Allows modder to do custom loading here
+		/// Use the given TC to pull data you saved using <see cref="Save(TagCompound)"/>
 		/// </summary>
 		/// <param name="tag"></param>
 		public virtual void Load(TagCompound tag)
@@ -89,22 +90,12 @@ namespace Loot.Modifiers
 
 		/// <summary>
 		/// Allows modder to do custom saving here
+		/// Use the given TC to put data you want to save, which can be loaded using <see cref="Load(TagCompound)"/>
 		/// </summary>
 		/// <param name="tag"></param>
-		public virtual void Save(ref TagCompound tag)
+		public virtual void Save(TagCompound tag)
 		{
 
-		}
-
-		protected internal static TagCompound Save(ModifierEffect effect)
-		{
-			return new TagCompound {
-					{ "Type", effect.GetType().FullName },
-					{ "EffectType", effect.Type },
-					{ "ModName", effect.Mod.Name },
-					{ "Magnitude", effect.Magnitude },
-					{ "Power", effect.Power },
-				};
 		}
 
 		protected internal static ModifierEffect _Load(TagCompound tag)
@@ -118,9 +109,23 @@ namespace Loot.Modifiers
 				e.Mod = ModLoader.GetMod(modname);
 				e.Magnitude = tag.GetFloat("Magnitude");
 				e.Power = tag.GetFloat("Power");
+				e.Load(tag);
 				return e;
 			}
 			throw new Exception($"ModifierEffect load error for {modname}");
+		}
+
+		protected internal static TagCompound Save(ModifierEffect effect)
+		{
+			var tag = new TagCompound {
+					{ "Type", effect.GetType().FullName },
+					{ "EffectType", effect.Type },
+					{ "ModName", effect.Mod.Name },
+					{ "Magnitude", effect.Magnitude },
+					{ "Power", effect.Power },
+				};
+			effect.Save(tag);
+			return tag;
 		}
 	}
 }

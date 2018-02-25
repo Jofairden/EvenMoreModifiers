@@ -159,6 +159,7 @@ namespace Loot.Modifiers
 
 		/// <summary>
 		/// Allows modder to do custom loading here
+		/// Use the given TC to pull data you saved using <see cref="Save(TagCompound)"/>
 		/// </summary>
 		/// <param name="tag"></param>
 		public virtual void Load(TagCompound tag)
@@ -168,9 +169,10 @@ namespace Loot.Modifiers
 
 		/// <summary>
 		/// Allows modder to do custom saving here
+		/// Use the given TC to put data you want to save, which can be loaded using <see cref="Load(TagCompound)"/>
 		/// </summary>
 		/// <param name="tag"></param>
-		public virtual void Save(ref TagCompound tag)
+		public virtual void Save(TagCompound tag)
 		{
 
 		}
@@ -233,7 +235,7 @@ namespace Loot.Modifiers
 			{
 				tag.Add($"ActiveEffect{i}", ModifierEffect.Save(modifier.ActiveEffects[i]));
 			}
-			modifier.Save(ref tag);
+			modifier.Save(tag);
 			return tag;
 		}
 	}

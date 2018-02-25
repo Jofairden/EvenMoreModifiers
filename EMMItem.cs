@@ -8,18 +8,6 @@ using Terraria.ModLoader.IO;
 
 namespace Loot
 {
-	//public class Vector3TagSerializer : TagSerializer<Vector3, TagCompound>
-	//{
-	//	public override TagCompound Serialize(Vector3 value) => new TagCompound
-	//	{
-	//		["x"] = value.X,
-	//		["y"] = value.Y,
-	//		["z"] = value.Z,
-	//	};
-
-	//	public override Vector3 Deserialize(TagCompound tag) => new Vector3(tag.GetFloat("x"), tag.GetFloat("y"), tag.GetFloat("z"));
-	//}
-
 	/// <summary>
 	/// Holds entity based data
 	/// </summary>

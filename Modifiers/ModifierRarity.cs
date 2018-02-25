@@ -45,6 +45,7 @@ namespace Loot.Modifiers
 
 		/// <summary>
 		/// Allows modder to do custom loading here
+		/// Use the given TC to pull data you saved using <see cref="Save(TagCompound)"/>
 		/// </summary>
 		/// <param name="tag"></param>
 		public virtual void Load(TagCompound tag)
@@ -54,9 +55,10 @@ namespace Loot.Modifiers
 
 		/// <summary>
 		/// Allows modder to do custom saving here
+		/// Use the given TC to put data you want to save, which can be loaded using <see cref="Load(TagCompound)"/>
 		/// </summary>
 		/// <param name="tag"></param>
-		public virtual void Save(ref TagCompound tag)
+		public virtual void Save(TagCompound tag)
 		{
 
 		}
@@ -70,6 +72,7 @@ namespace Loot.Modifiers
 				ModifierRarity r = (ModifierRarity)Activator.CreateInstance(assembly.GetType(tag.GetString("Type")));
 				r.Type = tag.Get<uint>("RarityType");
 				r.Mod = ModLoader.GetMod(modname);
+				r.Load(tag);
 				return r;
 			}
 			throw new Exception($"ModifierRarity load error for {modname}");
@@ -77,12 +80,14 @@ namespace Loot.Modifiers
 
 		protected internal static TagCompound Save(ModifierRarity rarity)
 		{
-			return new TagCompound
+			var tag = new TagCompound
 			{
 				{"Type", rarity.GetType().FullName },
 				{"RarityType", rarity.Type },
 				{"ModName", rarity.Mod.Name },
 			};
+			rarity.Save(tag);
+			return tag;
 		}
 	}
 }
