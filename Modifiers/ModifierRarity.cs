@@ -10,7 +10,7 @@ namespace Loot.Modifiers
 	/// <summary>
 	/// Defines the rarity of a modifier
 	/// </summary>
-	public abstract class ModifierRarity : ICloneable, TagSerializable
+	public abstract class ModifierRarity : ICloneable
 	{
 		public Mod Mod { get; internal set; }
 		public uint Type { get; internal set; }
@@ -43,17 +43,25 @@ namespace Loot.Modifiers
 			return clone;
 		}
 
-		//public static TagCompound Save(ModifierRarity rarity)
-		//{
-		//	return new TagCompound
-		//	{
-		//		{"Type", rarity.GetType() },
-		//		{"RarityType", rarity.Type },
-		//		{"ModName", rarity.Mod.Name },
-		//	};
-		//}
+		/// <summary>
+		/// Allows modder to do custom loading here
+		/// </summary>
+		/// <param name="tag"></param>
+		public virtual void Load(TagCompound tag)
+		{
 
-		protected internal static ModifierRarity Load(TagCompound tag)
+		}
+
+		/// <summary>
+		/// Allows modder to do custom saving here
+		/// </summary>
+		/// <param name="tag"></param>
+		public virtual void Save(ref TagCompound tag)
+		{
+
+		}
+
+		protected internal static ModifierRarity _Load(TagCompound tag)
 		{
 			string modname = tag.GetString("ModName");
 			Assembly assembly;
@@ -64,41 +72,17 @@ namespace Loot.Modifiers
 				r.Mod = ModLoader.GetMod(modname);
 				return r;
 			}
-			throw new Exception($"ModifierEffect load error for {modname}");
+			throw new Exception($"ModifierRarity load error for {modname}");
 		}
 
-		public static Func<TagCompound, ModifierRarity> DESERIALIZER = tag => Load(tag);
-
-		public TagCompound SerializeData()
+		protected internal static TagCompound Save(ModifierRarity rarity)
 		{
-			var rarity = this;
-			var tag = new TagCompound
+			return new TagCompound
 			{
 				{"Type", rarity.GetType().FullName },
 				{"RarityType", rarity.Type },
 				{"ModName", rarity.Mod.Name },
 			};
-			return tag;
 		}
-
-		//public static Func<TagCompound, ModifierRarity> DESERIALIZER = tag =>
-		//{
-		//	TagSerializer serializer;
-		//	if (TagSerializer.TryGetSerializer(typeof(ModifierRarity), out serializer))
-		//	{
-		//		return (ModifierRarity)serializer.Deserialize(tag);
-		//	}
-		//	throw new Exception("DESERIALIZER for ModifierRarity error");
-		//};
-
-		//public TagCompound SerializeData()
-		//{
-		//	TagSerializer serializer;
-		//	if (TagSerializer.TryGetSerializer(GetType(), out serializer))
-		//	{
-		//		return (TagCompound)serializer.Serialize(this);
-		//	}
-		//	throw new Exception("SerializeData() for ModifierRarity error");
-		//}
 	}
 }

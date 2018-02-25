@@ -68,7 +68,6 @@
     <Compile Include="Modifiers\ModifierEffect.cs" />
     <Compile Include="EMMLoader.cs" />
     <Compile Include="Modifiers\ModifierRarity.cs" />
-    <Compile Include="Modifiers\ModifierTagSerializers.cs" />
     <Compile Include="Modifiers\Ours\DebugModifier.cs" />
     <Compile Include="Rarities\CommonRarity.cs" />
     <Compile Include="Rarities\LegendaryRarity.cs" />

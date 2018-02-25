@@ -7,8 +7,6 @@ namespace Loot.Modifiers.Ours
 {
 	internal class DebugModifier2 : Modifier
 	{
-		public new static Func<TagCompound, DebugModifier2> DESERIALIZER = tag => (DebugModifier2)Modifier.DESERIALIZER(tag);
-
 		public DebugModifier2()
 		{
 			Effects = new[]
@@ -25,8 +23,6 @@ namespace Loot.Modifiers.Ours
 
 	internal class DebugModifier : Modifier
 	{
-		public new static Func<TagCompound, DebugModifier> DESERIALIZER = tag => (DebugModifier)Modifier.DESERIALIZER(tag);
-
 		public DebugModifier()
 		{
 			Effects = new ModifierEffect[]

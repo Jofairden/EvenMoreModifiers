@@ -58,24 +58,24 @@ namespace Loot
 
 		public override void Load(Item item, TagCompound tag)
 		{
-			GetItemInfo(item).Modifier = Modifier.Load(tag);
+			GetItemInfo(item).Modifier = Modifier._Load(tag);
 		}
 
 		public override TagCompound Save(Item item)
 		{
-			return GetItemInfo(item).Modifier.SerializeData();
+			return Modifier.Save(GetItemInfo(item).Modifier);
 		}
 
 		public override bool NeedsSaving(Item item) => Modifier != null;
 
 		public override void NetReceive(Item item, BinaryReader reader)
 		{
-			GetItemInfo(item).Modifier = Modifier.Load(TagIO.FromStream(reader.BaseStream));
+			GetItemInfo(item).Modifier = Modifier._Load(TagIO.FromStream(reader.BaseStream));
 		}
 
 		public override void NetSend(Item item, BinaryWriter writer)
 		{
-			TagIO.ToStream(GetItemInfo(item).Modifier.SerializeData(), writer.BaseStream);
+			TagIO.ToStream(Modifier.Save(GetItemInfo(item).Modifier), writer.BaseStream);
 		}
 
 		public override void OnCraft(Item item, Recipe recipe)

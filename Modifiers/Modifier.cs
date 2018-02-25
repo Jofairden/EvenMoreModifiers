@@ -32,7 +32,7 @@ namespace Loot.Modifiers
 	/// Defines a modifier.
 	/// </summary>
 	[Serializable]
-	public abstract class Modifier : ICloneable, TagSerializable
+	public abstract class Modifier : ICloneable
 	{
 		public uint Type { get; internal set; }
 		public Mod Mod { get; internal set; }
@@ -157,33 +157,25 @@ namespace Loot.Modifiers
 			return clone;
 		}
 
-		//protected static TagCompound Save(Modifier modifier)
-		//{
-		//	var tc = new TagCompound
-		//	{
-		//		{"Assembly", modifier.GetType().AssemblyQualifiedName },
-		//		{"TypeName", modifier.GetType().Name },
-		//		{"ModifierType", modifier.Type },
-		//		{"ModName", modifier.Mod.Name },
-		//		{"Rarity", ModifierRarity.Save(modifier.Rarity) },
-		//	};
-		//	tc.Add("Effects", modifier.Effects.Length);
-		//	if (modifier.Effects.Length > 0)
-		//	{
-		//		for (int i = 0; i < modifier.Effects.Length; ++i)
-		//		{
-		//			tc.Add($"Effect{i}", ModifierEffect.Save(modifier.Effects[i]));
-		//		}
-		//	}
-		//	tc.Add("ActiveEffects", modifier.ActiveEffects.Length);
-		//	for (int i = 0; i < modifier.ActiveEffects.Length; ++i)
-		//	{
-		//		tc.Add($"ActiveEffect{i}", ModifierEffect.Save(modifier.ActiveEffects[i]));
-		//	}
-		//	return tc;
-		//}
+		/// <summary>
+		/// Allows modder to do custom loading here
+		/// </summary>
+		/// <param name="tag"></param>
+		public virtual void Load(TagCompound tag)
+		{
 
-		protected internal static Modifier Load(TagCompound tag)
+		}
+
+		/// <summary>
+		/// Allows modder to do custom saving here
+		/// </summary>
+		/// <param name="tag"></param>
+		public virtual void Save(ref TagCompound tag)
+		{
+
+		}
+
+		protected internal static Modifier _Load(TagCompound tag)
 		{
 			string modname = tag.GetString("ModName");
 			Assembly assembly;
@@ -192,14 +184,14 @@ namespace Loot.Modifiers
 				Modifier m = (Modifier)Activator.CreateInstance(assembly.GetType(tag.GetString("Type")));
 				m.Type = tag.Get<uint>("ModifierType");
 				m.Mod = ModLoader.GetMod(modname);
-				m.Rarity = tag.Get<ModifierRarity>("Rarity");
+				m.Rarity = ModifierRarity._Load(tag.Get<TagCompound>("Rarity"));
 				int effects = tag.GetAsInt("Effects");
 				if (effects > 0)
 				{
 					var list = new List<ModifierEffect>();
 					for (int i = 0; i < effects; ++i)
 					{
-						list.Add(tag.Get<ModifierEffect>($"Effect{i}"));
+						list.Add(ModifierEffect._Load(tag.Get<TagCompound>($"Effect{i}")));
 					}
 					m.Effects = list.ToArray();
 				}
@@ -209,41 +201,40 @@ namespace Loot.Modifiers
 					var list = new List<ModifierEffect>();
 					for (int i = 0; i < activeeffects; ++i)
 					{
-						list.Add(tag.Get<ModifierEffect>($"ActiveEffect{i}"));
+						list.Add(ModifierEffect._Load(tag.Get<TagCompound>($"ActiveEffect{i}")));
 					}
 					m.ActiveEffects = list.ToArray();
 				}
+				m.Load(tag);
 				return m;
 			}
 			throw new Exception($"Modifier load error for {modname}");
 		}
 
-		public static Func<TagCompound, Modifier> DESERIALIZER = tag => Load(tag);
-
-		public TagCompound SerializeData()
+		protected internal static TagCompound Save(Modifier modifier)
 		{
-			var modifier = this;
-			var tc = new TagCompound
+			var tag = new TagCompound
 			{
 				{"Type", modifier.GetType().FullName },
 				{"ModifierType", modifier.Type },
 				{"ModName", modifier.Mod.Name },
-				{"Rarity", modifier.Rarity },
+				{"Rarity", ModifierRarity.Save(modifier.Rarity) },
 			};
-			tc.Add("Effects", modifier.Effects.Length);
+			tag.Add("Effects", modifier.Effects.Length);
 			if (modifier.Effects.Length > 0)
 			{
 				for (int i = 0; i < modifier.Effects.Length; ++i)
 				{
-					tc.Add($"Effect{i}", modifier.Effects[i]);
+					tag.Add($"Effect{i}", ModifierEffect.Save(modifier.Effects[i]));
 				}
 			}
-			tc.Add("ActiveEffects", modifier.ActiveEffects.Length);
+			tag.Add("ActiveEffects", modifier.ActiveEffects.Length);
 			for (int i = 0; i < modifier.ActiveEffects.Length; ++i)
 			{
-				tc.Add($"ActiveEffect{i}", modifier.ActiveEffects[i]);
+				tag.Add($"ActiveEffect{i}", ModifierEffect.Save(modifier.ActiveEffects[i]));
 			}
-			return tc;
+			modifier.Save(ref tag);
+			return tag;
 		}
 	}
 }

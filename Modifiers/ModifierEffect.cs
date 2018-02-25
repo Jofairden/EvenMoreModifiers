@@ -17,7 +17,7 @@ namespace Loot.Modifiers
 	/// <summary>
 	/// Defines a modifier effect
 	/// </summary>
-	public abstract class ModifierEffect : ICloneable, TagSerializable
+	public abstract class ModifierEffect : ICloneable
 	{
 		public Mod Mod { get; internal set; }
 		public uint Type { get; internal set; }
@@ -78,18 +78,36 @@ namespace Loot.Modifiers
 			return clone;
 		}
 
-		//public static TagCompound Save(ModifierEffect effect)
-		//{
-		//	return new TagCompound {
-		//			{ "Type", effect.GetType() },
-		//			{ "EffectType", effect.Type },
-		//			{ "ModName", effect.Mod.Name },
-		//			{ "Magnitude", effect.Magnitude },
-		//			{ "Power", effect.Power  },
-		//		}; ;
-		//}
+		/// <summary>
+		/// Allows modder to do custom loading here
+		/// </summary>
+		/// <param name="tag"></param>
+		public virtual void Load(TagCompound tag)
+		{
 
-		protected internal static ModifierEffect Load(TagCompound tag)
+		}
+
+		/// <summary>
+		/// Allows modder to do custom saving here
+		/// </summary>
+		/// <param name="tag"></param>
+		public virtual void Save(ref TagCompound tag)
+		{
+
+		}
+
+		protected internal static TagCompound Save(ModifierEffect effect)
+		{
+			return new TagCompound {
+					{ "Type", effect.GetType().FullName },
+					{ "EffectType", effect.Type },
+					{ "ModName", effect.Mod.Name },
+					{ "Magnitude", effect.Magnitude },
+					{ "Power", effect.Power },
+				};
+		}
+
+		protected internal static ModifierEffect _Load(TagCompound tag)
 		{
 			string modname = tag.GetString("ModName");
 			Assembly assembly;
@@ -104,40 +122,5 @@ namespace Loot.Modifiers
 			}
 			throw new Exception($"ModifierEffect load error for {modname}");
 		}
-
-		public static Func<TagCompound, ModifierEffect> DESERIALIZER = tag => Load(tag);
-
-		public TagCompound SerializeData()
-		{
-			var effect = this;
-			var tag = new TagCompound {
-					{ "Type", effect.GetType().FullName },
-					{ "EffectType", effect.Type },
-					{ "ModName", effect.Mod.Name },
-					{ "Magnitude", effect.Magnitude },
-					{ "Power", effect.Power  },
-				}; ;
-			return tag;
-		}
-
-		//public static Func<TagCompound, ModifierEffect> DESERIALIZER = tag =>
-		//{
-		//	TagSerializer serializer;
-		//	if (TagSerializer.TryGetSerializer(typeof(ModifierEffect), out serializer))
-		//	{
-		//		return (ModifierEffect)serializer.Deserialize(tag);
-		//	}
-		//	throw new Exception("DESERIALIZER for ModifierEffect error");
-		//};
-
-		//public TagCompound SerializeData()
-		//{
-		//	TagSerializer serializer;
-		//	if (TagSerializer.TryGetSerializer(GetType(), out serializer))
-		//	{
-		//		return (TagCompound)serializer.Serialize(this);
-		//	}
-		//	throw new Exception("SerializeData() for ModifierEffect error");
-		//}
 	}
 }
