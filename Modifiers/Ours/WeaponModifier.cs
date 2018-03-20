@@ -12,14 +12,14 @@ namespace Loot.Modifiers.Ours
 		{
 			Effects = new ModifierEffect[]
 			{
-				/*Loot.Instance.GetModifierEffect<DamagePlusEffect>(),
+				Loot.Instance.GetModifierEffect<DamagePlusEffect>(),
 				Loot.Instance.GetModifierEffect<CritPlusEffect>(),
 				Loot.Instance.GetModifierEffect<SpeedPlusEffect>(),
 				Loot.Instance.GetModifierEffect<KnockbackPlusEffect>(),
-				Loot.Instance.GetModifierEffect<VelocityPlusEffect>(),*/
+				Loot.Instance.GetModifierEffect<VelocityPlusEffect>(),
 				Loot.Instance.GetModifierEffect<ManaReduceEffect>(),
-				Loot.Instance.GetModifierEffect<AmmoReduceEffect>()//,
-				/*Loot.Instance.GetModifierEffect<DamageWithManaCostEffect>(),
+				Loot.Instance.GetModifierEffect<AmmoReduceEffect>(),
+				Loot.Instance.GetModifierEffect<DamageWithManaCostEffect>(),
 				Loot.Instance.GetModifierEffect<DamagePlusDayEffect>(),
 				Loot.Instance.GetModifierEffect<DamagePlusNightEffect>(),
 				Loot.Instance.GetModifierEffect<CursedDamageEffect>(),
@@ -30,7 +30,7 @@ namespace Loot.Modifiers.Ours
 				Loot.Instance.GetModifierEffect<DebuffFrostburnEffect>(),
 				Loot.Instance.GetModifierEffect<DebuffCursedInfernoEffect>(),
 				Loot.Instance.GetModifierEffect<DebuffConfuseEffect>(),
-				Loot.Instance.GetModifierEffect<DebuffIchorEffect>()*/
+				Loot.Instance.GetModifierEffect<DebuffIchorEffect>()
 			};
 		}
 		
