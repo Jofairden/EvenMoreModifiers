@@ -88,24 +88,31 @@ namespace Loot
 
 		public override void Load(Item item, TagCompound tag)
 		{
-			GetItemInfo(item).Modifier = Modifier._Load(tag);
+			if (tag.ContainsKey("Type"))
+				GetItemInfo(item).Modifier = Modifier._Load(tag);
 			hasRolled = tag.GetBool("HasRolled");
 
 			ModifierContext ctx = new ModifierContext
 			{
 				Item = item
 			};
-			GetItemInfo(item).Modifier.ApplyItem(ctx);
+			Modifier?.ApplyItem(ctx);
 		}
 
 		public override TagCompound Save(Item item)
 		{
-			var tag = Modifier.Save(GetItemInfo(item).Modifier);
+			TagCompound tag;
+			if (Modifier != null)
+				tag = Modifier.Save(GetItemInfo(item).Modifier);
+			else
+				tag = new TagCompound();
+
 			tag.Add("HasRolled", hasRolled);
+
 			return tag;
 		}
 
-		public override bool NeedsSaving(Item item) => Modifier != null;
+		public override bool NeedsSaving(Item item) => Modifier != null || hasRolled;
 
 		public override void NetReceive(Item item, BinaryReader reader)
 		{
