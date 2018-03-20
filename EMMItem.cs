@@ -151,7 +151,7 @@ namespace Loot
 			ModifierContext ctx = new ModifierContext { Method = ModifierContextMethod.OnCraft, Item = item, Player = Main.LocalPlayer };
 
 			Modifier m = GetModifier(item);
-			if (!hasRolled && m == null)
+			if (m == null)
 				GetItemInfo(item)?.RollNewModifier(ctx);
 
 			m = GetModifier(item);
@@ -179,7 +179,7 @@ namespace Loot
 			ModifierContext ctx = new ModifierContext { Method = ModifierContextMethod.OnReforge, Item = item, Player = Main.LocalPlayer };
 
 			Modifier m = GetModifier(item);
-			if (!hasRolled && m == null)
+			if (m == null)
 				GetItemInfo(item)?.RollNewModifier(ctx);
 
 			m = GetModifier(item);
