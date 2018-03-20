@@ -22,7 +22,7 @@ namespace Loot
 
 		public Modifier Modifier;
 
-		public bool hasRolled;             // whether this item has rolled a modifier TODO: Save this
+		public bool hasRolled;             // whether this item has rolled a modifier
 
 		internal void RollNewModifier(ModifierContext ctx)
 		{
