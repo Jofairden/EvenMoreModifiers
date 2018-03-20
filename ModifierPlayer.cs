@@ -10,9 +10,9 @@ namespace Loot
 	/// <summary>
 	/// Holds player-entity data and handles it
 	/// </summary>
-	public class EMMPlayer : ModPlayer
+	public class ModifierPlayer : ModPlayer
 	{
-		public static EMMPlayer PlayerInfo(Player player) => player.GetModPlayer<EMMPlayer>();
+		public static ModifierPlayer PlayerInfo(Player player) => player.GetModPlayer<ModifierPlayer>();
 
 		// Globals for modifiers
 		public bool holdingCursed;    // Whether currently holding a cursed item (take 1 damage per second)

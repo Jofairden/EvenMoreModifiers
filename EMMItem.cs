@@ -22,37 +22,7 @@ namespace Loot
 
 		public Modifier Modifier;
 
-		// Special item parameters
 		public bool hasRolled;             // whether this item has rolled a modifier TODO: Save this
-		public float dontConsumeAmmo;      // % chance to not consume ammo
-		public float dayDamageBonus;       // % damage bonus during the day
-		public float nightDamageBonus;     // % damage bonus during the night
-		public float missingHealthBonus;   // damage bonus scale from missing health
-		public float velocityDamageBonus;  // damage bonus scale from velocity
-
-		public override bool ConsumeAmmo(Item item, Player player)
-		{
-			// Ammo consumption chance
-			return Main.rand.NextFloat() > dontConsumeAmmo;
-		}
-
-		public override void GetWeaponDamage(Item item, Player player, ref int damage)
-		{
-			if (Main.dayTime && dayDamageBonus > 0) damage = (int)Math.Ceiling(damage * (1 + dayDamageBonus / 100));
-			if (!Main.dayTime && dayDamageBonus > 0) damage = (int)Math.Ceiling(damage * (1 + nightDamageBonus / 100));
-			if (missingHealthBonus > 0)
-			{
-				// Formula ported from old mod
-				float mag = (missingHealthBonus * ((player.statLifeMax2 - player.statLife) / (float)player.statLifeMax2) * 6);
-				damage = (int)(damage * (1 + mag / 100));
-			}
-			if (velocityDamageBonus > 0 && player.velocity.Length() > 0)
-			{
-				// Formula ported from old mod
-				float magnitude = velocityDamageBonus * player.velocity.Length() / 4;
-				damage = (int)(damage * (1 + magnitude / 100));
-			}
-		}
 
 		internal void RollNewModifier(ModifierContext ctx)
 		{
@@ -119,11 +89,10 @@ namespace Loot
 		public override void Load(Item item, TagCompound tag)
 		{
 			GetItemInfo(item).Modifier = Modifier._Load(tag);
+			hasRolled = tag.GetBool("HasRolled");
 
-			// Apply on load. DUH.
 			ModifierContext ctx = new ModifierContext
 			{
-				Method = ModifierContextMethod.OnPickup,
 				Item = item
 			};
 			GetItemInfo(item).Modifier.ApplyItem(ctx);
@@ -131,7 +100,9 @@ namespace Loot
 
 		public override TagCompound Save(Item item)
 		{
-			return Modifier.Save(GetItemInfo(item).Modifier);
+			var tag = Modifier.Save(GetItemInfo(item).Modifier);
+			tag.Add("HasRolled", hasRolled);
+			return tag;
 		}
 
 		public override bool NeedsSaving(Item item) => Modifier != null;

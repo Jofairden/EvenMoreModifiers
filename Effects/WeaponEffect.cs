@@ -149,7 +149,7 @@ namespace Loot.Effects.WeaponEffects
 
 		public override void HoldItem(ModifierContext ctx)
 		{
-			EMMItem.GetItemInfo(ctx.Item).dontConsumeAmmo = Power/100;
+			ModifierItem.GetItemInfo(ctx.Item).dontConsumeAmmo = Power/100;
 		}
 	}
 
@@ -190,7 +190,7 @@ namespace Loot.Effects.WeaponEffects
 
 		public override void UpdateItem(ModifierContext ctx, bool isItemEquipped = false)
 		{
-			EMMItem.GetItemInfo(ctx.Item).dayDamageBonus = Power;
+			ModifierItem.GetItemInfo(ctx.Item).dayDamageBonus = Power;
 		}
 	}
 
@@ -207,7 +207,7 @@ namespace Loot.Effects.WeaponEffects
 
 		public override void UpdateItem(ModifierContext ctx, bool isItemEquipped = false)
 		{
-			EMMItem.GetItemInfo(ctx.Item).nightDamageBonus = Power;
+			ModifierItem.GetItemInfo(ctx.Item).nightDamageBonus = Power;
 		}
 	}
 
@@ -229,7 +229,7 @@ namespace Loot.Effects.WeaponEffects
 
 		public override void HoldItem(ModifierContext ctx)
 		{
-			EMMPlayer.PlayerInfo(ctx.Player).holdingCursed = true;
+			ModifierPlayer.PlayerInfo(ctx.Player).holdingCursed = true;
 		}
 	}
 
@@ -246,7 +246,7 @@ namespace Loot.Effects.WeaponEffects
 
 		public override void UpdateItem(ModifierContext ctx, bool equipped = false)
 		{
-			EMMItem.GetItemInfo(ctx.Item).missingHealthBonus = Power;
+			ModifierItem.GetItemInfo(ctx.Item).missingHealthBonus = Power;
 		}
 	}
 
@@ -263,7 +263,7 @@ namespace Loot.Effects.WeaponEffects
 
 		public override void UpdateItem(ModifierContext ctx, bool equipped = false)
 		{
-			EMMItem.GetItemInfo(ctx.Item).velocityDamageBonus = Power;
+			ModifierItem.GetItemInfo(ctx.Item).velocityDamageBonus = Power;
 		}
 	}
 
@@ -286,7 +286,7 @@ namespace Loot.Effects.WeaponEffects
 
 		public override void HoldItem(ModifierContext ctx)
 		{
-			EMMPlayer.PlayerInfo(ctx.Player).debuffChances.Add(new Tuple<float, int, int>(Power/100, buffType(), buffTime()));
+			ModifierPlayer.PlayerInfo(ctx.Player).debuffChances.Add(new Tuple<float, int, int>(Power/100, buffType(), buffTime()));
 		}
 	}
 	public class DebuffPoisonEffect : DebuffEffect
