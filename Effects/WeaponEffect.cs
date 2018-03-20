@@ -8,11 +8,6 @@ namespace Loot.Effects.WeaponEffects
 {
 	public class DamagePlusEffect : ModifierEffect
 	{
-		public DamagePlusEffect()
-		{
-
-		}
-
 		public override ModifierEffectTooltipLine[] Description => new[]
 			{
 				new ModifierEffectTooltipLine { Text = $"+{(int)Math.Round(Power)}% damage", Color = Color.Lime}
@@ -30,11 +25,6 @@ namespace Loot.Effects.WeaponEffects
 
 	public class CritPlusEffect : ModifierEffect
 	{
-		public CritPlusEffect()
-		{
-
-		}
-
 		public override ModifierEffectTooltipLine[] Description => new[]
 			{
 				new ModifierEffectTooltipLine { Text = $"+{(int)Math.Round(Power)}% crit chance", Color = Color.Lime}
@@ -52,11 +42,6 @@ namespace Loot.Effects.WeaponEffects
 
 	public class SpeedPlusEffect : ModifierEffect
 	{
-		public SpeedPlusEffect()
-		{
-
-		}
-
 		public override ModifierEffectTooltipLine[] Description => new[]
 			{
 				new ModifierEffectTooltipLine { Text = $"+{(int)Math.Round(Power)}% speed", Color = Color.Lime}
@@ -80,11 +65,6 @@ namespace Loot.Effects.WeaponEffects
 
 	public class KnockbackPlusEffect : ModifierEffect
 	{
-		public KnockbackPlusEffect()
-		{
-
-		}
-
 		public override ModifierEffectTooltipLine[] Description => new[]
 			{
 				new ModifierEffectTooltipLine { Text = $"+{(int)Math.Round(Power)}% knockback", Color = Color.Lime}
@@ -102,11 +82,6 @@ namespace Loot.Effects.WeaponEffects
 
 	public class VelocityPlusEffect : ModifierEffect
 	{
-		public VelocityPlusEffect()
-		{
-
-		}
-
 		public override ModifierEffectTooltipLine[] Description => new[]
 			{
 				new ModifierEffectTooltipLine { Text = $"+{(int)Math.Round(Power)}% velocity", Color = Color.Lime}
@@ -130,11 +105,6 @@ namespace Loot.Effects.WeaponEffects
 
 	public class ManaReduceEffect : ModifierEffect
 	{
-		public ManaReduceEffect()
-		{
-
-		}
-
 		public override ModifierEffectTooltipLine[] Description => new[]
 			{
 				new ModifierEffectTooltipLine { Text = $"-{(int)Math.Round(Power)}% mana cost", Color = Color.Lime}
