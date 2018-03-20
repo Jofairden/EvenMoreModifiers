@@ -16,7 +16,8 @@ namespace Loot.Modifiers
 		OnCraft,
 		OnPickup,
 		UpdateItem,
-		UpdateNPC
+		UpdateNPC,
+		HoldItem
 	}
 
 	public struct ModifierContext
@@ -61,9 +62,6 @@ namespace Loot.Modifiers
 			List<ModifierEffect> list = new List<ModifierEffect>();
 			foreach (var e in Effects.Where(x => x.CanRoll(ctx)))
 				wr.Add(e, e.RollChance);
-
-			if (wr.elements.Count <= 0)
-				return ActiveEffects;
 
 			for (int i = 0; i < 4; ++i)
 			{
@@ -127,6 +125,12 @@ namespace Loot.Modifiers
 		{
 			foreach (var effect in ActiveEffects)
 				effect.UpdateItem(ctx, equipped);
+		}
+
+		internal void HoldItem(ModifierContext ctx)
+		{
+			foreach (var effect in ActiveEffects)
+				effect.HoldItem(ctx);
 		}
 
 		public override string ToString()

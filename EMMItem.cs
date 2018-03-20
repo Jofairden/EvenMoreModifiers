@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.IO;
 using Loot.Modifiers;
 using Microsoft.Xna.Framework;
@@ -21,11 +22,46 @@ namespace Loot
 
 		public Modifier Modifier;
 
+		// Special item parameters
+		public bool hasRolled;             // whether this item has rolled a modifier TODO: Save this
+		public float dontConsumeAmmo;      // % chance to not consume ammo
+		public float dayDamageBonus;       // % damage bonus during the day
+		public float nightDamageBonus;     // % damage bonus during the night
+		public float missingHealthBonus;   // damage bonus scale from missing health
+		public float velocityDamageBonus;  // damage bonus scale from velocity
+
+		public override bool ConsumeAmmo(Item item, Player player)
+		{
+			// Ammo consumption chance
+			return Main.rand.NextFloat() > dontConsumeAmmo;
+		}
+
+		public override void GetWeaponDamage(Item item, Player player, ref int damage)
+		{
+			if (Main.dayTime && dayDamageBonus > 0) damage = (int)Math.Ceiling(damage * (1 + dayDamageBonus / 100));
+			if (!Main.dayTime && dayDamageBonus > 0) damage = (int)Math.Ceiling(damage * (1 + nightDamageBonus / 100));
+			if (missingHealthBonus > 0)
+			{
+				// Formula ported from old mod
+				float mag = (missingHealthBonus * ((player.statLifeMax2 - player.statLife) / (float)player.statLifeMax2) * 6);
+				damage = (int)(damage * (1 + mag / 100));
+			}
+			if (velocityDamageBonus > 0 && player.velocity.Length() > 0)
+			{
+				// Formula ported from old mod
+				float magnitude = velocityDamageBonus * player.velocity.Length() / 4;
+				damage = (int)(damage * (1 + magnitude / 100));
+			}
+		}
+
 		internal void RollNewModifier(ModifierContext ctx)
 		{
+			if (hasRolled) return;
+			
 			Modifier = EMMLoader.GetWeightedModifier(ctx);
 			if (Modifier != null)
 			{
+				hasRolled = true;
 				if (Modifier.RollEffects(ctx).Length <= 0)
 					Modifier = null;
 				else
@@ -35,6 +71,42 @@ namespace Loot
 					Modifier.UpdateRarity();
 				}
 			}
+		}
+
+		public override void UpdateInventory(Item item, Player player)
+		{
+			ModifierContext ctx = new ModifierContext
+			{
+				Player = player,
+				Item = item,
+				Method = ModifierContextMethod.UpdateItem
+			};
+
+			Modifier?.UpdateItem(ctx);
+		}
+
+		public override void UpdateEquip(Item item, Player player)
+		{
+			ModifierContext ctx = new ModifierContext
+			{
+				Player = player,
+				Item = item,
+				Method = ModifierContextMethod.UpdateItem
+			};
+
+			Modifier?.UpdateItem(ctx, true);
+		}
+
+		public override void HoldItem(Item item, Player player)
+		{
+			ModifierContext ctx = new ModifierContext
+			{
+				Player = player,
+				Item = item,
+				Method = ModifierContextMethod.HoldItem
+			};
+
+			Modifier?.HoldItem(ctx);
 		}
 
 		public override GlobalItem Clone(Item item, Item itemClone)
@@ -47,6 +119,14 @@ namespace Loot
 		public override void Load(Item item, TagCompound tag)
 		{
 			GetItemInfo(item).Modifier = Modifier._Load(tag);
+
+			// Apply on load. DUH.
+			ModifierContext ctx = new ModifierContext
+			{
+				Method = ModifierContextMethod.OnPickup,
+				Item = item
+			};
+			GetItemInfo(item).Modifier.ApplyItem(ctx);
 		}
 
 		public override TagCompound Save(Item item)
@@ -84,11 +164,13 @@ namespace Loot
 			ModifierContext ctx = new ModifierContext { Method = ModifierContextMethod.OnPickup, Item = item, Player = player };
 
 			Modifier m = GetModifier(item);
-			if (m == null)
-				GetItemInfo(item)?.RollNewModifier(ctx);
+			if (!hasRolled && m == null)
+			{
+				RollNewModifier(ctx);
 
-			m = GetModifier(item);
-			m?.ApplyItem(ctx);
+				m = GetModifier(item);
+				m?.ApplyItem(ctx);
+			}
 			return base.OnPickup(item, player);
 		}
 

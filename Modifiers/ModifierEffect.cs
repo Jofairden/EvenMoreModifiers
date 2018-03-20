@@ -42,6 +42,11 @@ namespace Loot.Modifiers
 
 		public virtual bool CanRoll(ModifierContext ctx) => true;
 
+		public virtual void HoldItem(ModifierContext ctx)
+		{
+
+		}
+
 		public virtual void UpdateItem(ModifierContext ctx, bool isItemEquipped = false)
 		{
 
