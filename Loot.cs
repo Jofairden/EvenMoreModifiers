@@ -1,7 +1,6 @@
 ﻿using System.IO;
 using Terraria.ModLoader;
 
-
 /*
  * (c) original version by hiccup
  * reworked and maintained by jofairden
@@ -10,33 +9,6 @@ using Terraria.ModLoader;
 
 namespace Loot
 {
-	/*
-	 * string[] titles = new string[] { "[Uncommon]", "[Rare]", "[Legendary]", "[Transcendent]" };
-        string title = "[Common]";
-        if (rarity > 3.5f)
-        {
-            title = titles[3];
-        }
-        else if (rarity > 2.5f)
-        {
-            title = titles[2];
-        }
-        else if (rarity > 1.5f)
-        {
-            title = titles[1];
-        }
-        else if (rarity > .5f)
-        {
-            title = titles[0];
-        }
-        info.title = title;
-
-		so total  sum of strengths, standard maximum being 1f
-		rarity was the sum of the effect magnitudes
-		in the original code, a magnitude float was rolled for each affix, which was then stored
-		whenever the effect would come into play, it would multiply the base  effect by that magnitude
-	 */
-
 	public class Loot : Mod
 	{
 		internal static Loot Instance;
@@ -54,11 +26,6 @@ namespace Loot
 		public override void Load()
 		{
 			Instance = this;
-
-			//TagSerializer.AddSerializer(new ModifierEffectTooltipLineTagSerializer());
-			//TagSerializer.AddSerializer(new ModifierEffectTagSerializer());
-			//TagSerializer.AddSerializer(new ModifierRarityTagSerializer());
-			//TagSerializer.AddSerializer(new ModifierTagSerializer());
 
 			EMMLoader.Initialize();
 			EMMLoader.Load();

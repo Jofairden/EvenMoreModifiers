@@ -6,7 +6,7 @@ namespace Loot.System
 	{
 		public AllModifiersPool()
 		{
-			Effects = EMMLoader.Modifiers.Select(x => x.Value).ToArray();
+			Modifiers = EMMLoader.Modifiers.Select(x => x.Value).ToArray();
 		}
 	}
 }

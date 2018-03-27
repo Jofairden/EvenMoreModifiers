@@ -48,7 +48,7 @@ namespace Loot
 			else
 			{
 				// If we have rolled modifiers, roll its power by magnitude, then update the rarity
-				foreach (var e in ModifierPool.Active)
+				foreach (var e in ModifierPool.ActiveModifiers)
 					e.RollPower();
 				ModifierPool.UpdateRarity();
 			}
@@ -134,7 +134,7 @@ namespace Loot
 		public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
 		{
 			var pool = GetPool(item);
-			if (pool != null && pool.Active.Length > 0)
+			if (pool != null && pool.ActiveModifiers.Length > 0)
 			{
 				int i = tooltips.FindIndex(x => x.mod == "Terraria" && x.Name == "ItemName");
 				if (i != -1)
@@ -156,7 +156,7 @@ namespace Loot
 					foreach (var tt in ttcol)
 						tooltips.Insert(++i, new TooltipLine(mod, $"Modifier:Description:{i}", tt.Text) { overrideColor = tt.Color ?? Color.White });
 
-				foreach (var e in pool.Active)
+				foreach (var e in pool.ActiveModifiers)
 					e.ModifyTooltips(item, tooltips);
 			}
 		}

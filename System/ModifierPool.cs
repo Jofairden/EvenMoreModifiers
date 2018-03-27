@@ -36,14 +36,14 @@ namespace Loot.System
 		public uint Type { get; internal set; }
 		public Mod Mod { get; internal set; }
 		public ModifierRarity Rarity { get; internal set; }
-		protected internal Modifier[] Effects;
-		public Modifier[] Active { get; internal set; }
+		protected internal Modifier[] Modifiers;
+		public Modifier[] ActiveModifiers { get; internal set; }
 
 		public float TotalRarityLevel =>
-			Active.Select(effect => effect.RarityLevel).DefaultIfEmpty(0).Sum();
+			ActiveModifiers.Select(effect => effect.RarityLevel).DefaultIfEmpty(0).Sum();
 
 		public IEnumerable<ModifierEffectTooltipLine[]> Description =>
-			Active.Select(effect => effect.Description);
+			ActiveModifiers.Select(effect => effect.Description);
 
 		public virtual string Name => GetType().Name;
 		public virtual float RollChance => 1f;
@@ -54,7 +54,7 @@ namespace Loot.System
 		public static ModifierPool GetModifierPool(ushort type)
 			=> EMMLoader.GetModifierPool(type);
 
-		public ModifierPool AsNewInstance() 
+		public ModifierPool AsNewInstance()
 			=> (ModifierPool)Activator.CreateInstance(GetType());
 
 		internal ModifierRarity UpdateRarity()
@@ -71,7 +71,7 @@ namespace Loot.System
 		{
 			WeightedRandom<Modifier> wr = new WeightedRandom<Modifier>();
 			List<Modifier> list = new List<Modifier>();
-			foreach (var e in Effects.Where(x => x.CanRoll(ctx)))
+			foreach (var e in Modifiers.Where(x => x.CanRoll(ctx)))
 				wr.Add(e, e.RollChance);
 
 			for (int i = 0; i < 4; ++i)
@@ -85,8 +85,8 @@ namespace Loot.System
 				wr.needsRefresh = true;
 			}
 
-			Active = list.ToArray();
-			return Active.Length > 0;
+			ActiveModifiers = list.ToArray();
+			return ActiveModifiers.Length > 0;
 		}
 
 		internal float ModifierRollChance(int len)
@@ -95,7 +95,7 @@ namespace Loot.System
 
 		internal bool _CanApply(ModifierContext ctx)
 		{
-			if (Effects.Length <= 0)
+			if (Modifiers.Length <= 0)
 				return false;
 
 			switch (ctx.Method)
@@ -111,17 +111,17 @@ namespace Loot.System
 			}
 		}
 
-		public virtual bool CanRoll(ModifierContext ctx) => Effects.Length > 0 && Effects.Any(x => x.CanRoll(ctx));
-		public virtual bool CanApplyCraft(ModifierContext ctx) => Effects.Any(x => x.CanApplyCraft(ctx));
-		public virtual bool CanApplyPickup(ModifierContext ctx) => Effects.Any(x => x.CanApplyPickup(ctx));
-		public virtual bool CanApplyReforge(ModifierContext ctx) => Effects.Any(x => x.CanApplyReforge(ctx));
+		public virtual bool CanRoll(ModifierContext ctx) => Modifiers.Length > 0 && Modifiers.Any(x => x.CanRoll(ctx));
+		public virtual bool CanApplyCraft(ModifierContext ctx) => Modifiers.Any(x => x.CanApplyCraft(ctx));
+		public virtual bool CanApplyPickup(ModifierContext ctx) => Modifiers.Any(x => x.CanApplyPickup(ctx));
+		public virtual bool CanApplyReforge(ModifierContext ctx) => Modifiers.Any(x => x.CanApplyReforge(ctx));
 
 		public virtual bool MatchesRarity(ModifierRarity rarity)
 			=> TotalRarityLevel >= rarity.RequiredRarityLevel;
 
 		internal void ApplyModifiers(Item item)
 		{
-			foreach (var effect in Active)
+			foreach (var effect in ActiveModifiers)
 				effect.Apply(item);
 		}
 
@@ -140,13 +140,13 @@ namespace Loot.System
 			clone.Type = Type;
 			clone.Mod = Mod;
 			clone.Rarity = (ModifierRarity)Rarity?.Clone();
-			clone.Effects =
-				Effects?
+			clone.Modifiers =
+				Modifiers?
 				.Select(x => x?.Clone())
 				.Cast<Modifier>()
 				.ToArray();
-			clone.Active =
-				Active?
+			clone.ActiveModifiers =
+				ActiveModifiers?
 				.Select(x => x?.Clone())
 				.Cast<Modifier>()
 				.ToArray();
@@ -184,7 +184,7 @@ namespace Loot.System
 				ModifierPool m;
 				try
 				{
-					m = (ModifierPool) Activator.CreateInstance(assembly.GetType(tag.GetString("Type")));
+					m = (ModifierPool)Activator.CreateInstance(assembly.GetType(tag.GetString("Type")));
 				}
 				catch (Exception)
 				{
@@ -209,7 +209,7 @@ namespace Loot.System
 						if (loaded != null)
 							list.Add(loaded);
 					}
-					m.Effects = list.ToArray();
+					m.Modifiers = list.ToArray();
 				}
 				int activeEffects = tag.GetAsInt("ActiveEffects");
 				if (activeEffects > 0)
@@ -222,7 +222,7 @@ namespace Loot.System
 						if (loaded != null)
 							list.Add(loaded);
 					}
-					m.Active = list.ToArray();
+					m.ActiveModifiers = list.ToArray();
 				}
 				m.Load(tag);
 
@@ -243,18 +243,18 @@ namespace Loot.System
 				{"ModName", modifierPool.Mod.Name },
 				{"Rarity", ModifierRarity.Save(modifierPool.Rarity) },
 			};
-			tag.Add("Effects", modifierPool.Effects.Length);
-			if (modifierPool.Effects.Length > 0)
+			tag.Add("Effects", modifierPool.Modifiers.Length);
+			if (modifierPool.Modifiers.Length > 0)
 			{
-				for (int i = 0; i < modifierPool.Effects.Length; ++i)
+				for (int i = 0; i < modifierPool.Modifiers.Length; ++i)
 				{
-					tag.Add($"Effect{i}", Modifier.Save(modifierPool.Effects[i]));
+					tag.Add($"Effect{i}", Modifier.Save(modifierPool.Modifiers[i]));
 				}
 			}
-			tag.Add("ActiveEffects", modifierPool.Active.Length);
-			for (int i = 0; i < modifierPool.Active.Length; ++i)
+			tag.Add("ActiveEffects", modifierPool.ActiveModifiers.Length);
+			for (int i = 0; i < modifierPool.ActiveModifiers.Length; ++i)
 			{
-				tag.Add($"ActiveEffect{i}", Modifier.Save(modifierPool.Active[i]));
+				tag.Add($"ActiveEffect{i}", Modifier.Save(modifierPool.ActiveModifiers[i]));
 			}
 			modifierPool.Save(tag);
 			return tag;

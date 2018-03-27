@@ -7,7 +7,7 @@ namespace Loot.Pools
 	{
 		public WeaponModifierPool()
 		{
-			Effects = new Modifier[]
+			Modifiers = new Modifier[]
 			{
 				Loot.Instance.GetModifier<DamagePlus>(),
 				Loot.Instance.GetModifier<CritPlus>(),

@@ -7,7 +7,7 @@ namespace Loot.Pools
 	{
 		public AccessoryModifierPool()
 		{
-			Effects = new Modifier[]
+			Modifiers = new Modifier[]
 			{
 				Loot.Instance.GetModifier<Inferno>(),
 				Loot.Instance.GetModifier<GodlyDefense>(),
