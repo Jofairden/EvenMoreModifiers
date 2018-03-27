@@ -1,7 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.IO;
-using Loot.Modifiers;
+using Loot.System;
 using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.ModLoader;
@@ -10,129 +9,102 @@ using Terraria.ModLoader.IO;
 namespace Loot
 {
 	/// <summary>
-	/// Holds entity based data
+	/// Defines an item that may be modified by modifiers from mods
 	/// </summary>
 	public sealed class EMMItem : GlobalItem
 	{
+		// Helpers
 		public static EMMItem GetItemInfo(Item item) => item.GetGlobalItem<EMMItem>();
-		public static Modifier GetModifier(Item item) => GetItemInfo(item)?.Modifier;
+		public static ModifierPool GetPool(Item item) => GetItemInfo(item)?.ModifierPool;
 
 		public override bool InstancePerEntity => true;
 		public override bool CloneNewInstances => true;
 
-		public Modifier Modifier;
+		public ModifierPool ModifierPool;
+		public bool HasRolled; 
 
-		public bool hasRolled;             // whether this item has rolled a modifier
+		// Attempts to roll new modifiers
+		internal ModifierPool RollNewPool(ModifierContext ctx)
+		{	
+			// Try getting a weighted pool, or roll all modifiers at random
+			bool rollPredefinedPool = Main.rand.NextFloat() <= 0.25f;
+			bool canRollRandom = !rollPredefinedPool;
+			if (rollPredefinedPool)
+			{
+				ModifierPool = EMMLoader.GetWeightedPool(ctx);
+				if (ModifierPool == null)
+					canRollRandom = true;
+			}
 
-		internal void RollNewModifier(ModifierContext ctx)
-		{
-			if (hasRolled) return;
-			
-			Modifier = EMMLoader.GetWeightedModifier(ctx);
-			if (Modifier == null) return;
+			if (canRollRandom)
+				ModifierPool = Loot.Instance.GetModifierPool<AllModifiersPool>();
 
-			hasRolled = true;
-			if (Modifier.RollEffects(ctx).Length <= 0)
-				Modifier = null;
+			// Now we have actually rolled
+			HasRolled = true;
+
+			// Attempt rolling modifiers
+			if (!ModifierPool.RollEffects(ctx))
+				ModifierPool = null; // reset (didn't roll anything)
 			else
 			{
-				foreach (var e in Modifier.ActiveEffects)
-					e.RollAndApplyMagnitude();
-				Modifier.UpdateRarity();
+				// If we have rolled modifiers, roll its power by magnitude, then update the rarity
+				foreach (var e in ModifierPool.Active)
+					e.RollPower();
+				ModifierPool.UpdateRarity();
 			}
-		}
-
-		public override void UpdateInventory(Item item, Player player)
-		{
-			ModifierContext ctx = new ModifierContext
-			{
-				Player = player,
-				Item = item,
-				Method = ModifierContextMethod.UpdateItem
-			};
-
-			Modifier?.UpdateItem(ctx);
-		}
-
-		public override void UpdateEquip(Item item, Player player)
-		{
-			ModifierContext ctx = new ModifierContext
-			{
-				Player = player,
-				Item = item,
-				Method = ModifierContextMethod.UpdateItem
-			};
-
-			Modifier?.UpdateItem(ctx, true);
-		}
-
-		public override void HoldItem(Item item, Player player)
-		{
-			ModifierContext ctx = new ModifierContext
-			{
-				Player = player,
-				Item = item,
-				Method = ModifierContextMethod.HoldItem
-			};
-
-			Modifier?.HoldItem(ctx);
+				
+			return ModifierPool;
 		}
 
 		public override GlobalItem Clone(Item item, Item itemClone)
 		{
 			EMMItem clone = (EMMItem)base.Clone(item, itemClone);
-			clone.Modifier = (Modifier)Modifier?.Clone();
+			clone.ModifierPool = (ModifierPool)ModifierPool?.Clone();
 			return clone;
 		}
 
 		public override void Load(Item item, TagCompound tag)
 		{
 			if (tag.ContainsKey("Type"))
-				GetItemInfo(item).Modifier = Modifier._Load(tag);
-			hasRolled = tag.GetBool("HasRolled");
+				ModifierPool = ModifierPool._Load(tag);
+			HasRolled = tag.GetBool("HasRolled");
 
-			ModifierContext ctx = new ModifierContext
-			{
-				Item = item
-			};
-			Modifier?.ApplyItem(ctx);
+			ModifierPool?.ApplyModifiers(item);
 		}
 
 		public override TagCompound Save(Item item)
 		{
-			TagCompound tag;
-			if (Modifier != null)
-				tag = Modifier.Save(GetItemInfo(item).Modifier);
-			else
-				tag = new TagCompound();
+			TagCompound tag = ModifierPool != null 
+				? ModifierPool.Save(ModifierPool) 
+				: new TagCompound();
 
-			tag.Add("HasRolled", hasRolled);
+			tag.Add("HasRolled", HasRolled);
 
 			return tag;
 		}
 
-		public override bool NeedsSaving(Item item) => Modifier != null || hasRolled;
+		public override bool NeedsSaving(Item item)
+			=> ModifierPool != null || HasRolled;
 
 		public override void NetReceive(Item item, BinaryReader reader)
 		{
-			GetItemInfo(item).Modifier = Modifier._Load(TagIO.FromStream(reader.BaseStream));
+			ModifierPool = ModifierPool._Load(TagIO.FromStream(reader.BaseStream));
 		}
 
 		public override void NetSend(Item item, BinaryWriter writer)
 		{
-			TagIO.ToStream(Modifier.Save(GetItemInfo(item).Modifier), writer.BaseStream);
+			TagIO.ToStream(ModifierPool.Save(ModifierPool), writer.BaseStream);
 		}
 
 		public override void OnCraft(Item item, Recipe recipe)
 		{
-			ModifierContext ctx = new ModifierContext { Method = ModifierContextMethod.OnCraft, Item = item, Player = Main.LocalPlayer };
+			ModifierContext ctx = new ModifierContext { Method = ModifierContextMethod.OnCraft, Item = item, Player = Main.LocalPlayer, Recipe = recipe };
 
-			Modifier m = GetModifier(item);
-			if (!hasRolled && m == null)
-				GetItemInfo(item)?.RollNewModifier(ctx);
+			ModifierPool pool = GetPool(item);
+			if (!HasRolled && pool == null)
+				pool = RollNewPool(ctx);
 
-			m = GetModifier(item);
-			m?.ApplyItem(ctx);
+			pool?.ApplyModifiers(item);
 			base.OnCraft(item, recipe);
 		}
 
@@ -140,14 +112,11 @@ namespace Loot
 		{
 			ModifierContext ctx = new ModifierContext { Method = ModifierContextMethod.OnPickup, Item = item, Player = player };
 
-			Modifier m = GetModifier(item);
-			if (!hasRolled && m == null)
-			{
-				RollNewModifier(ctx);
+			ModifierPool pool = GetPool(item);
+			if (!HasRolled && pool == null)
+				pool = RollNewPool(ctx);
 
-				m = GetModifier(item);
-				m?.ApplyItem(ctx);
-			}
+			pool?.ApplyModifiers(item);
 			return base.OnPickup(item, player);
 		}
 
@@ -155,40 +124,39 @@ namespace Loot
 		{
 			ModifierContext ctx = new ModifierContext { Method = ModifierContextMethod.OnReforge, Item = item, Player = Main.LocalPlayer };
 
-			Modifier m = GetModifier(item);
-			if (m == null)
-				GetItemInfo(item)?.RollNewModifier(ctx);
-
-			m = GetModifier(item);
-			m?.ApplyItem(ctx);
+			ModifierPool pool = RollNewPool(ctx);
+			pool?.ApplyModifiers(item);
 		}
 
+		/// <summary>
+		/// Will modify vanilla tooltips to add additional information for the affected item's modifiers
+		/// </summary>
 		public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
 		{
-			var m = GetModifier(item);
-			if (m != null)
+			var pool = GetPool(item);
+			if (pool != null && pool.Active.Length > 0)
 			{
 				int i = tooltips.FindIndex(x => x.mod == "Terraria" && x.Name == "ItemName");
 				if (i != -1)
 				{
 					var namelayer = tooltips[i];
-					if (m.Rarity.ItemPrefix != null)
-						namelayer.text = $"{m.Rarity.ItemPrefix} {namelayer.text}";
-					if (m.Rarity.ItemSuffix != null)
-						namelayer.text += $" {m.Rarity.ItemSuffix}";
-					if (m.Rarity.OverrideNameColor != null)
-						namelayer.overrideColor = m.Rarity.OverrideNameColor;
+					if (pool.Rarity.ItemPrefix != null)
+						namelayer.text = $"{pool.Rarity.ItemPrefix} {namelayer.text}";
+					if (pool.Rarity.ItemSuffix != null)
+						namelayer.text += $" {pool.Rarity.ItemSuffix}";
+					if (pool.Rarity.OverrideNameColor != null)
+						namelayer.overrideColor = pool.Rarity.OverrideNameColor;
 					tooltips[i] = namelayer;
 				}
 
 				i = tooltips.Count;
-				tooltips.Insert(i, new TooltipLine(mod, "Modifier:Name", $"[{m.Rarity.Name}]") { overrideColor = m.Rarity.Color });
+				tooltips.Insert(i, new TooltipLine(mod, "Modifier:Name", $"[{pool.Rarity.Name}]") { overrideColor = pool.Rarity.Color });
 
-				foreach (var ttcol in m.Description)
+				foreach (var ttcol in pool.Description)
 					foreach (var tt in ttcol)
 						tooltips.Insert(++i, new TooltipLine(mod, $"Modifier:Description:{i}", tt.Text) { overrideColor = tt.Color ?? Color.White });
 
-				foreach (var e in m.ActiveEffects)
+				foreach (var e in pool.Active)
 					e.ModifyTooltips(item, tooltips);
 			}
 		}

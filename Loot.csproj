@@ -39,11 +39,21 @@
     <StartupObject />
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Microsoft.Xna.Framework, Version=4.0.0.0, Culture=neutral, PublicKeyToken=842cf8be1de50553">
-      <Private>True</Private>
+    <Reference Include="Microsoft.Xna.Framework, Version=4.0.0.0, Culture=neutral, PublicKeyToken=842cf8be1de50553, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\dllReferences\Microsoft.Xna.Framework.dll</HintPath>
     </Reference>
-    <Reference Include="Microsoft.Xna.Framework.Game, Version=4.0.0.0, Culture=neutral, PublicKeyToken=842cf8be1de50553">
-      <Private>True</Private>
+    <Reference Include="Microsoft.Xna.Framework.Game, Version=4.0.0.0, Culture=neutral, PublicKeyToken=842cf8be1de50553, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\dllReferences\Microsoft.Xna.Framework.Game.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Xna.Framework.Graphics, Version=4.0.0.0, Culture=neutral, PublicKeyToken=842cf8be1de50553, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\dllReferences\Microsoft.Xna.Framework.Graphics.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Xna.Framework.Xact, Version=4.0.0.0, Culture=neutral, PublicKeyToken=842cf8be1de50553, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\dllReferences\Microsoft.Xna.Framework.Xact.dll</HintPath>
     </Reference>
     <Reference Include="ReLogic">
       <HintPath>..\..\..\..\..\GitHub\tModLoader\references\ReLogic.dll</HintPath>
@@ -56,41 +66,47 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Effects\AccessoryEffect.cs" />
-    <Compile Include="Effects\WeaponEffects\AmmoReduceEffect.cs" />
-    <Compile Include="Effects\WeaponEffects\CritPlusEffect.cs" />
-    <Compile Include="Effects\WeaponEffects\CursedDamageEffect.cs" />
-    <Compile Include="Effects\WeaponEffects\DamagePlusDayEffect.cs" />
-    <Compile Include="Effects\WeaponEffects\DamagePlusEffect.cs" />
-    <Compile Include="Effects\WeaponEffects\DamagePlusNightEffect.cs" />
-    <Compile Include="Effects\WeaponEffects\DamageWithManaCostEffect.cs" />
-    <Compile Include="Effects\WeaponEffects\DebuffConfuseEffect.cs" />
-    <Compile Include="Effects\WeaponEffects\DebuffCursedInfernoEffect.cs" />
-    <Compile Include="Effects\WeaponEffects\DebuffEffect.cs" />
-    <Compile Include="Effects\WeaponEffects\DebuffFireEffect.cs" />
-    <Compile Include="Effects\WeaponEffects\DebuffFrostburnEffect.cs" />
-    <Compile Include="Effects\WeaponEffects\DebuffIchorEffect.cs" />
-    <Compile Include="Effects\WeaponEffects\DebuffPoisonEffect.cs" />
-    <Compile Include="Effects\WeaponEffects\KnockbackPlusEffect.cs" />
-    <Compile Include="Effects\WeaponEffects\ManaReduceEffect.cs" />
-    <Compile Include="Effects\WeaponEffects\MissingHealthDamageEffect.cs" />
-    <Compile Include="Effects\WeaponEffects\SpeedPlusEffect.cs" />
-    <Compile Include="Effects\WeaponEffects\VelocityDamageEffect.cs" />
-    <Compile Include="Effects\WeaponEffects\VelocityPlusEffect.cs" />
+    <Compile Include="Modifiers\AccessoryModifier.cs" />
+    <Compile Include="Modifiers\AccessoryModifiers\GodlyDefense.cs" />
+    <Compile Include="Modifiers\AccessoryModifiers\Inferno.cs" />
+    <Compile Include="Modifiers\AccessoryModifiers\MoreDamage.cs" />
+    <Compile Include="Modifiers\ArmorModifier.cs" />
+    <Compile Include="Modifiers\WeaponModifiers\AmmoReduce.cs" />
+    <Compile Include="Modifiers\WeaponModifiers\CritPlus.cs" />
+    <Compile Include="Modifiers\WeaponModifiers\CursedDamage.cs" />
+    <Compile Include="Modifiers\WeaponModifiers\DamagePlusDaytime.cs" />
+    <Compile Include="Modifiers\WeaponModifiers\DamagePlus.cs" />
+    <Compile Include="Modifiers\WeaponModifiers\DamageWithManaCost.cs" />
+    <Compile Include="Modifiers\WeaponModifiers\DebuffConfuse.cs" />
+    <Compile Include="Modifiers\WeaponModifiers\DebuffCursedInferno.cs" />
+    <Compile Include="Modifiers\WeaponDebuffModifier.cs" />
+    <Compile Include="Modifiers\WeaponModifiers\DebuffOnFire.cs" />
+    <Compile Include="Modifiers\WeaponModifiers\DebuffFrostburn.cs" />
+    <Compile Include="Modifiers\WeaponModifiers\DebuffIchor.cs" />
+    <Compile Include="Modifiers\WeaponModifiers\DebuffPoison.cs" />
+    <Compile Include="Modifiers\WeaponModifiers\KnockbackPlus.cs" />
+    <Compile Include="Modifiers\WeaponModifiers\ManaReduce.cs" />
+    <Compile Include="Modifiers\WeaponModifiers\MissingHealthDamage.cs" />
+    <Compile Include="Modifiers\WeaponModifiers\SpeedPlus.cs" />
+    <Compile Include="Modifiers\WeaponModifiers\VelocityDamage.cs" />
+    <Compile Include="Modifiers\WeaponModifiers\VelocityPlus.cs" />
     <Compile Include="LootDebugPlayer.cs" />
     <Compile Include="EMMItem.cs" />
     <Compile Include="Loot.cs" />
     <Compile Include="LootGlobalNPC.cs" />
-    <Compile Include="LootUtils.cs" />
+    <Compile Include="EMMUtils.cs" />
     <Compile Include="MagicDice.cs" />
     <Compile Include="ModifierItem.cs" />
     <Compile Include="ModifierPlayer.cs" />
-    <Compile Include="Modifiers\Modifier.cs" />
-    <Compile Include="Modifiers\ModifierEffect.cs" />
+    <Compile Include="Modifiers\WeaponModifier.cs" />
+    <Compile Include="System\AllModifiersPool.cs" />
+    <Compile Include="System\IRollable.cs" />
+    <Compile Include="System\ModifierPool.cs" />
+    <Compile Include="System\Modifier.cs" />
     <Compile Include="EMMLoader.cs" />
-    <Compile Include="Modifiers\ModifierRarity.cs" />
-    <Compile Include="Modifiers\Ours\AccessoryModifier.cs" />
-    <Compile Include="Modifiers\Ours\WeaponModifier.cs" />
+    <Compile Include="System\ModifierRarity.cs" />
+    <Compile Include="Pools\AccessoryModifierPool.cs" />
+    <Compile Include="Pools\WeaponModifierPool.cs" />
     <Compile Include="Rarities\CommonRarity.cs" />
     <Compile Include="Rarities\LegendaryRarity.cs" />
     <Compile Include="Rarities\RareRarity.cs" />

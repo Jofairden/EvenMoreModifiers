@@ -1,8 +1,5 @@
-﻿using System;
-using System.IO;
-using Loot.Modifiers;
+﻿using System.IO;
 using Terraria.ModLoader;
-using Terraria.ModLoader.IO;
 
 
 /*
