@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.IO;
 using Loot.Modifiers;
 using Microsoft.Xna.Framework;
@@ -21,11 +22,16 @@ namespace Loot
 
 		public Modifier Modifier;
 
+		public bool hasRolled;             // whether this item has rolled a modifier
+
 		internal void RollNewModifier(ModifierContext ctx)
 		{
+			if (hasRolled) return;
+			
 			Modifier = EMMLoader.GetWeightedModifier(ctx);
 			if (Modifier != null)
 			{
+				hasRolled = true;
 				if (Modifier.RollEffects(ctx).Length <= 0)
 					Modifier = null;
 				else
@@ -37,6 +43,42 @@ namespace Loot
 			}
 		}
 
+		public override void UpdateInventory(Item item, Player player)
+		{
+			ModifierContext ctx = new ModifierContext
+			{
+				Player = player,
+				Item = item,
+				Method = ModifierContextMethod.UpdateItem
+			};
+
+			Modifier?.UpdateItem(ctx);
+		}
+
+		public override void UpdateEquip(Item item, Player player)
+		{
+			ModifierContext ctx = new ModifierContext
+			{
+				Player = player,
+				Item = item,
+				Method = ModifierContextMethod.UpdateItem
+			};
+
+			Modifier?.UpdateItem(ctx, true);
+		}
+
+		public override void HoldItem(Item item, Player player)
+		{
+			ModifierContext ctx = new ModifierContext
+			{
+				Player = player,
+				Item = item,
+				Method = ModifierContextMethod.HoldItem
+			};
+
+			Modifier?.HoldItem(ctx);
+		}
+
 		public override GlobalItem Clone(Item item, Item itemClone)
 		{
 			EMMItem clone = (EMMItem)base.Clone(item, itemClone);
@@ -46,15 +88,31 @@ namespace Loot
 
 		public override void Load(Item item, TagCompound tag)
 		{
-			GetItemInfo(item).Modifier = Modifier._Load(tag);
+			if (tag.ContainsKey("Type"))
+				GetItemInfo(item).Modifier = Modifier._Load(tag);
+			hasRolled = tag.GetBool("HasRolled");
+
+			ModifierContext ctx = new ModifierContext
+			{
+				Item = item
+			};
+			Modifier?.ApplyItem(ctx);
 		}
 
 		public override TagCompound Save(Item item)
 		{
-			return Modifier.Save(GetItemInfo(item).Modifier);
+			TagCompound tag;
+			if (Modifier != null)
+				tag = Modifier.Save(GetItemInfo(item).Modifier);
+			else
+				tag = new TagCompound();
+
+			tag.Add("HasRolled", hasRolled);
+
+			return tag;
 		}
 
-		public override bool NeedsSaving(Item item) => Modifier != null;
+		public override bool NeedsSaving(Item item) => Modifier != null || hasRolled;
 
 		public override void NetReceive(Item item, BinaryReader reader)
 		{
@@ -71,7 +129,7 @@ namespace Loot
 			ModifierContext ctx = new ModifierContext { Method = ModifierContextMethod.OnCraft, Item = item, Player = Main.LocalPlayer };
 
 			Modifier m = GetModifier(item);
-			if (m == null)
+			if (!hasRolled && m == null)
 				GetItemInfo(item)?.RollNewModifier(ctx);
 
 			m = GetModifier(item);
@@ -84,11 +142,13 @@ namespace Loot
 			ModifierContext ctx = new ModifierContext { Method = ModifierContextMethod.OnPickup, Item = item, Player = player };
 
 			Modifier m = GetModifier(item);
-			if (m == null)
-				GetItemInfo(item)?.RollNewModifier(ctx);
+			if (!hasRolled && m == null)
+			{
+				RollNewModifier(ctx);
 
-			m = GetModifier(item);
-			m?.ApplyItem(ctx);
+				m = GetModifier(item);
+				m?.ApplyItem(ctx);
+			}
 			return base.OnPickup(item, player);
 		}
 
