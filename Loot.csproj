@@ -56,19 +56,41 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Effects\DebugEffect.cs" />
+    <Compile Include="Effects\AccessoryEffect.cs" />
+    <Compile Include="Effects\WeaponEffects\AmmoReduceEffect.cs" />
+    <Compile Include="Effects\WeaponEffects\CritPlusEffect.cs" />
+    <Compile Include="Effects\WeaponEffects\CursedDamageEffect.cs" />
+    <Compile Include="Effects\WeaponEffects\DamagePlusDayEffect.cs" />
+    <Compile Include="Effects\WeaponEffects\DamagePlusEffect.cs" />
+    <Compile Include="Effects\WeaponEffects\DamagePlusNightEffect.cs" />
+    <Compile Include="Effects\WeaponEffects\DamageWithManaCostEffect.cs" />
+    <Compile Include="Effects\WeaponEffects\DebuffConfuseEffect.cs" />
+    <Compile Include="Effects\WeaponEffects\DebuffCursedInfernoEffect.cs" />
+    <Compile Include="Effects\WeaponEffects\DebuffEffect.cs" />
+    <Compile Include="Effects\WeaponEffects\DebuffFireEffect.cs" />
+    <Compile Include="Effects\WeaponEffects\DebuffFrostburnEffect.cs" />
+    <Compile Include="Effects\WeaponEffects\DebuffIchorEffect.cs" />
+    <Compile Include="Effects\WeaponEffects\DebuffPoisonEffect.cs" />
+    <Compile Include="Effects\WeaponEffects\KnockbackPlusEffect.cs" />
+    <Compile Include="Effects\WeaponEffects\ManaReduceEffect.cs" />
+    <Compile Include="Effects\WeaponEffects\MissingHealthDamageEffect.cs" />
+    <Compile Include="Effects\WeaponEffects\SpeedPlusEffect.cs" />
+    <Compile Include="Effects\WeaponEffects\VelocityDamageEffect.cs" />
+    <Compile Include="Effects\WeaponEffects\VelocityPlusEffect.cs" />
     <Compile Include="LootDebugPlayer.cs" />
     <Compile Include="EMMItem.cs" />
     <Compile Include="Loot.cs" />
     <Compile Include="LootGlobalNPC.cs" />
-    <Compile Include="EMMPlayer.cs" />
     <Compile Include="LootUtils.cs" />
     <Compile Include="MagicDice.cs" />
+    <Compile Include="ModifierItem.cs" />
+    <Compile Include="ModifierPlayer.cs" />
     <Compile Include="Modifiers\Modifier.cs" />
     <Compile Include="Modifiers\ModifierEffect.cs" />
     <Compile Include="EMMLoader.cs" />
     <Compile Include="Modifiers\ModifierRarity.cs" />
-    <Compile Include="Modifiers\Ours\DebugModifier.cs" />
+    <Compile Include="Modifiers\Ours\AccessoryModifier.cs" />
+    <Compile Include="Modifiers\Ours\WeaponModifier.cs" />
     <Compile Include="Rarities\CommonRarity.cs" />
     <Compile Include="Rarities\LegendaryRarity.cs" />
     <Compile Include="Rarities\RareRarity.cs" />
@@ -85,6 +107,7 @@
   <ItemGroup>
     <None Include=".editorconfig" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
     <PostBuildEvent>"D:\Apps\Steam\steamapps\common\Terraria\tModLoaderServer.exe" -build "$(ProjectDir)\" -eac "$(TargetPath)"</PostBuildEvent>

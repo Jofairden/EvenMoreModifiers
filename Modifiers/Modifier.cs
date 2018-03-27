@@ -32,7 +32,6 @@ namespace Loot.Modifiers
 	/// <summary>
 	/// Defines a modifier.
 	/// </summary>
-	[Serializable]
 	public abstract class Modifier : ICloneable
 	{
 		public uint Type { get; internal set; }
@@ -187,7 +186,18 @@ namespace Loot.Modifiers
 			Assembly assembly;
 			if (EMMLoader.Mods.TryGetValue(modname, out assembly))
 			{
-				Modifier m = (Modifier)Activator.CreateInstance(assembly.GetType(tag.GetString("Type")));
+				// If we manage to load null here, that means some modifier got unloaded
+				// TODO manage unloaded modifiers with an UnloadedModifier type?
+				Modifier m;
+				try
+				{
+					m = (Modifier) Activator.CreateInstance(assembly.GetType(tag.GetString("Type")));
+				}
+				catch (Exception)
+				{
+					return null;
+				}
+
 				m.Type = tag.Get<uint>("ModifierType");
 				m.Mod = ModLoader.GetMod(modname);
 				m.Rarity = ModifierRarity._Load(tag.Get<TagCompound>("Rarity"));
@@ -201,11 +211,11 @@ namespace Loot.Modifiers
 					}
 					m.Effects = list.ToArray();
 				}
-				int activeeffects = tag.GetAsInt("ActiveEffects");
-				if (activeeffects > 0)
+				int activeEffects = tag.GetAsInt("ActiveEffects");
+				if (activeEffects > 0)
 				{
 					var list = new List<ModifierEffect>();
-					for (int i = 0; i < activeeffects; ++i)
+					for (int i = 0; i < activeEffects; ++i)
 					{
 						list.Add(ModifierEffect._Load(tag.Get<TagCompound>($"ActiveEffect{i}")));
 					}

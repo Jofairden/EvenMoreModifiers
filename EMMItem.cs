@@ -15,7 +15,7 @@ namespace Loot
 	public sealed class EMMItem : GlobalItem
 	{
 		public static EMMItem GetItemInfo(Item item) => item.GetGlobalItem<EMMItem>();
-		public static Modifier GetModifier(Item item) => GetItemInfo(item)?.Modifier ?? null;
+		public static Modifier GetModifier(Item item) => GetItemInfo(item)?.Modifier;
 
 		public override bool InstancePerEntity => true;
 		public override bool CloneNewInstances => true;
@@ -29,17 +29,16 @@ namespace Loot
 			if (hasRolled) return;
 			
 			Modifier = EMMLoader.GetWeightedModifier(ctx);
-			if (Modifier != null)
+			if (Modifier == null) return;
+
+			hasRolled = true;
+			if (Modifier.RollEffects(ctx).Length <= 0)
+				Modifier = null;
+			else
 			{
-				hasRolled = true;
-				if (Modifier.RollEffects(ctx).Length <= 0)
-					Modifier = null;
-				else
-				{
-					foreach (var e in Modifier.ActiveEffects)
-						e.RollAndApplyMagnitude();
-					Modifier.UpdateRarity();
-				}
+				foreach (var e in Modifier.ActiveEffects)
+					e.RollAndApplyMagnitude();
+				Modifier.UpdateRarity();
 			}
 		}
 
