@@ -1,5 +1,4 @@
-﻿using Loot.Modifiers;
-using Loot.Modifiers.AccessoryModifiers;
+﻿using Loot.Modifiers.AccessoryModifiers;
 using Loot.System;
 
 namespace Loot.Pools
@@ -10,7 +9,7 @@ namespace Loot.Pools
 		{
 			Effects = new Modifier[]
 			{
-				//Loot.Instance.GetModifierEffect<Inferno>(),
+				Loot.Instance.GetModifier<Inferno>(),
 				Loot.Instance.GetModifier<GodlyDefense>(),
 				Loot.Instance.GetModifier<MoreDamage>()
 			};

@@ -77,16 +77,11 @@
     <Compile Include="Modifiers\WeaponModifiers\DamagePlusDaytime.cs" />
     <Compile Include="Modifiers\WeaponModifiers\DamagePlus.cs" />
     <Compile Include="Modifiers\WeaponModifiers\DamageWithManaCost.cs" />
-    <Compile Include="Modifiers\WeaponModifiers\DebuffConfuse.cs" />
-    <Compile Include="Modifiers\WeaponModifiers\DebuffCursedInferno.cs" />
     <Compile Include="Modifiers\WeaponDebuffModifier.cs" />
-    <Compile Include="Modifiers\WeaponModifiers\DebuffOnFire.cs" />
-    <Compile Include="Modifiers\WeaponModifiers\DebuffFrostburn.cs" />
-    <Compile Include="Modifiers\WeaponModifiers\DebuffIchor.cs" />
-    <Compile Include="Modifiers\WeaponModifiers\DebuffPoison.cs" />
     <Compile Include="Modifiers\WeaponModifiers\KnockbackPlus.cs" />
     <Compile Include="Modifiers\WeaponModifiers\ManaReduce.cs" />
     <Compile Include="Modifiers\WeaponModifiers\MissingHealthDamage.cs" />
+    <Compile Include="Modifiers\WeaponModifiers\RandomDebuff.cs" />
     <Compile Include="Modifiers\WeaponModifiers\SpeedPlus.cs" />
     <Compile Include="Modifiers\WeaponModifiers\VelocityDamage.cs" />
     <Compile Include="Modifiers\WeaponModifiers\VelocityPlus.cs" />

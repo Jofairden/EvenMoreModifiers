@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.IO;
 using Loot.System;
@@ -7,7 +6,6 @@ using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Terraria;
 using Terraria.ModLoader;
-using Terraria.ModLoader.IO;
 using Terraria.Utilities;
 
 namespace Loot
@@ -31,17 +29,6 @@ namespace Loot
 
 			return b;
 		}
-
-		//public override void ArmorArmGlowMask(int slot, Player drawPlayer, float shadow, ref int glowMask, ref Color color)
-		//{
-		//	base.ArmorArmGlowMask(slot, drawPlayer, shadow, ref glowMask, ref color);
-
-		//	Item i = drawPlayer.armor[slot];
-		//	ModifierPool pool = EMMItem.GetPool(i);
-		//	if (pool != null) 
-		//foreach (Modifier m in pool.Active)
-		//		m.ArmorArmGlowMask(slot, drawPlayer, shadow, ref glowMask, ref color);
-		//}
 
 		public override bool CanEquipAccessory(Item item, Player player, int slot)
 		{
@@ -158,36 +145,6 @@ namespace Loot
 			return b;
 		}
 
-		//public override void DrawArmorColor(EquipType type, int slot, Player drawPlayer, float shadow, ref Color color, ref int glowMask, ref Color glowMaskColor)
-		//{
-		//	base.DrawArmorColor(type, slot, drawPlayer, shadow, ref color, ref glowMask, ref glowMaskColor);
-		//}
-
-		//public override bool DrawBody(int body)
-		//{
-		//	return base.DrawBody(body);
-		//}
-
-		//public override void DrawHair(int head, ref bool drawHair, ref bool drawAltHair)
-		//{
-		//	base.DrawHair(head, ref drawHair, ref drawAltHair);
-		//}
-
-		//public override void DrawHands(int body, ref bool drawHands, ref bool drawArms)
-		//{
-		//	base.DrawHands(body, ref drawHands, ref drawArms);
-		//}
-
-		//public override bool DrawHead(int head)
-		//{
-		//	return base.DrawHead(head);
-		//}
-
-		//public override bool DrawLegs(int legs, int shoes)
-		//{
-		//	return base.DrawLegs(legs, shoes);
-		//}
-
 		public override Color? GetAlpha(Item item, Color lightColor)
 		{
 			Color? a = base.GetAlpha(item, lightColor);
@@ -281,16 +238,6 @@ namespace Loot
 			return b;
 		}
 
-		//public override Vector2? HoldoutOffset(int type)
-		//{
-		//	return base.HoldoutOffset(type);
-		//}
-
-		//public override Vector2? HoldoutOrigin(int type)
-		//{
-		//	return base.HoldoutOrigin(type);
-		//}
-
 		public override void HoldStyle(Item item, Player player)
 		{
 			base.HoldStyle(item, player);
@@ -311,21 +258,6 @@ namespace Loot
 					m.HorizontalWingSpeeds(item, player, ref speed, ref acceleration);
 		}
 
-		//public override bool IsAnglerQuestAvailable(int type)
-		//{
-		//	return base.IsAnglerQuestAvailable(type);
-		//}
-
-		//public override string IsArmorSet(Item head, Item body, Item legs)
-		//{
-		//	return base.IsArmorSet(head, body, legs);
-		//}
-
-		//public override string IsVanitySet(int head, int body, int legs)
-		//{
-		//	return base.IsVanitySet(head, body, legs);
-		//}
-
 		public override bool ItemSpace(Item item, Player player)
 		{
 			bool b = base.ItemSpace(item, player);
@@ -337,26 +269,6 @@ namespace Loot
 
 			return b;
 		}
-
-		//public override void Load(Item item, TagCompound tag)
-		//{
-		//	base.Load(item, tag);
-
-		//	ModifierPool pool = EMMItem.GetPool(item);
-		//	if (pool != null) 
-		//		foreach (Modifier m in pool.Active)
-		//			m.Load(item, tag);
-		//}
-
-		//public override void LoadLegacy(Item item, BinaryReader reader)
-		//{
-		//	base.LoadLegacy(item, reader);
-
-		//	ModifierPool pool = EMMItem.GetPool(item);
-		//	if (pool != null) 
-		//		 foreach (Modifier m in pool.Active)
-		//			m.LoadLegacy(item, reader);
-		//}
 
 		public override void MeleeEffects(Item item, Player player, Rectangle hitbox)
 		{
@@ -417,18 +329,6 @@ namespace Loot
 					m.ModifyTooltips(item, tooltips);
 		}
 
-		//public override bool NeedsSaving(Item item)
-		//{
-		//	bool b = base.NeedsSaving(item);
-
-		//	ModifierPool pool = EMMItem.GetPool(item);
-		//	if (pool != null) 
-		//		foreach (Modifier m in pool.Active)
-		//			b &= m.NeedsSaving(item);
-
-		//	return b;
-		//}
-
 		public override void NetReceive(Item item, BinaryReader reader)
 		{
 			base.NetReceive(item, reader);
@@ -448,11 +348,6 @@ namespace Loot
 				foreach (Modifier m in pool.Active)
 					m.NetSend(item, writer);
 		}
-
-		//public override GlobalItem NewInstance(Item item)
-		//{
-		//	return base.NewInstance(item);
-		//}
 
 		public override bool NewPreReforge(Item item)
 		{
@@ -507,11 +402,6 @@ namespace Loot
 
 			return b;
 		}
-
-		//public override void OpenVanillaBag(string context, Player player, int arg)
-		//{
-		//	base.OpenVanillaBag(context, player, arg);
-		//}
 
 		public override void PickAmmo(Item item, Player player, ref int type, ref float speed, ref int damage, ref float knockback)
 		{
@@ -631,16 +521,6 @@ namespace Loot
 			return b;
 		}
 
-		//public override bool PreOpenVanillaBag(string context, Player player, int arg)
-		//{
-		//	return base.PreOpenVanillaBag(context, player, arg);
-		//}
-
-		//public override void PreUpdateVanitySet(Player player, string set)
-		//{
-		//	base.PreUpdateVanitySet(player, set);
-		//}
-
 		public override bool ReforgePrice(Item item, ref int reforgePrice, ref bool canApplyDiscount)
 		{
 			bool b = base.ReforgePrice(item, ref reforgePrice, ref canApplyDiscount);
@@ -663,11 +543,6 @@ namespace Loot
 					m.RightClick(item, player);
 		}
 
-		//public override TagCompound Save(Item item)
-		//{
-		//	return base.Save(item);
-		//}
-
 		public override void SetDefaults(Item item)
 		{
 			base.SetDefaults(item);
@@ -677,11 +552,6 @@ namespace Loot
 				foreach (Modifier m in pool.Active)
 					m.SetDefaults(item);
 		}
-
-		//public override void SetMatch(int armorSlot, int type, bool male, ref int equipSlot, ref bool robes)
-		//{
-		//	base.SetMatch(armorSlot, type, male, ref equipSlot, ref robes);
-		//}
 
 		public override bool Shoot(Item item, Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)
 		{
@@ -715,11 +585,6 @@ namespace Loot
 					m.UpdateAccessory(item, player, hideVisual);
 		}
 
-		//public override void UpdateArmorSet(Player player, string set)
-		//{
-		//	base.UpdateArmorSet(player, set);
-		//}
-
 		public override void UpdateEquip(Item item, Player player)
 		{
 			base.UpdateEquip(item, player);
@@ -739,11 +604,6 @@ namespace Loot
 				foreach (Modifier m in pool.Active)
 					m.UpdateInventory(item, player);
 		}
-
-		//public override void UpdateVanitySet(Player player, string set)
-		//{
-		//	base.UpdateVanitySet(player, set);
-		//}
 
 		public override bool UseItem(Item item, Player player)
 		{
@@ -817,11 +677,6 @@ namespace Loot
 				foreach (Modifier m in pool.Active)
 					m.VerticalWingSpeeds(item, player, ref ascentWhenFalling, ref ascentWhenRising, ref maxCanAscendMultiplier, ref maxAscentMultiplier, ref constantAscend);
 		}
-
-		//public override bool WingUpdate(int wings, Player player, bool inUse)
-		//{
-		//	return base.WingUpdate(wings, player, inUse);
-		//}
 	}
 
 }

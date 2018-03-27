@@ -21,12 +21,7 @@ namespace Loot.Pools
 				Loot.Instance.GetModifier<CursedDamage>(),
 				Loot.Instance.GetModifier<MissingHealthDamage>(),
 				Loot.Instance.GetModifier<VelocityDamage>(),
-				Loot.Instance.GetModifier<DebuffPoison>(),
-				Loot.Instance.GetModifier<DebuffOnFire>(),
-				Loot.Instance.GetModifier<DebuffFrostburn>(),
-				Loot.Instance.GetModifier<DebuffCursedInferno>(),
-				Loot.Instance.GetModifier<DebuffConfuse>(),
-				Loot.Instance.GetModifier<DebuffIchor>()
+				Loot.Instance.GetModifier<RandomDebuff>(),
 			};
 		}
 	}

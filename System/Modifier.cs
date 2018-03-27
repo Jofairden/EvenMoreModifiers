@@ -164,6 +164,21 @@ namespace Loot.System
 		public sealed override bool Autoload(ref string name) => false;
 
 		// The following hooks aren't applicable in instanced context, so we seal them here so they can't be used
+		public sealed override bool InstancePerEntity => base.InstancePerEntity;
+		public sealed override bool CloneNewInstances => base.CloneNewInstances;
+		public sealed override GlobalItem Clone(Item item, Item itemClone) => base.Clone(item, itemClone);
+		public sealed override void ExtractinatorUse(int extractType, ref int resultType, ref int resultStack)
+		{
+		}
+		public sealed override void CaughtFishStack(int type, ref int stack)
+		{
+		}
+		public sealed override void AnglerChat(int type, ref string chat, ref string catchLocation)
+		{
+		}
+		public sealed override void ArmorSetShadows(Player player, string set)
+		{
+		}
 		public sealed override void ArmorArmGlowMask(int slot, Player drawPlayer, float shadow, ref int glowMask, ref Color color)
 		{
 		}
