@@ -67,7 +67,7 @@ namespace Loot.System
 		/// Roll active modifiers, can roll up to 4 maximum effects
 		/// Returns if any modifiers were activated
 		/// </summary>
-		internal bool RollEffects(ModifierContext ctx)
+		internal bool RollModifiers(ModifierContext ctx)
 		{
 			WeightedRandom<Modifier> wr = new WeightedRandom<Modifier>();
 			List<Modifier> list = new List<Modifier>();
@@ -76,7 +76,7 @@ namespace Loot.System
 
 			for (int i = 0; i < 4; ++i)
 			{
-				if (wr.elements.Count <= 0 || Main.rand.NextFloat() > EffectRollChance(i))
+				if (wr.elements.Count <= 0 || i > 0 && Main.rand.NextFloat() > ModifierRollChance(i))
 					break;
 
 				Modifier e = wr.Get();
@@ -89,7 +89,7 @@ namespace Loot.System
 			return Active.Length > 0;
 		}
 
-		internal float EffectRollChance(int len)
+		internal float ModifierRollChance(int len)
 			=> 0.5f / (float)Math.Pow(2, len);
 
 

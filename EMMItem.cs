@@ -43,7 +43,7 @@ namespace Loot
 			HasRolled = true;
 
 			// Attempt rolling modifiers
-			if (!ModifierPool.RollEffects(ctx))
+			if (!ModifierPool.RollModifiers(ctx))
 				ModifierPool = null; // reset (didn't roll anything)
 			else
 			{
