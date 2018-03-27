@@ -36,7 +36,7 @@ namespace Loot.Modifiers.WeaponModifiers
 		public override void Apply(Item item)
 		{
 			// If don't have an index stored, roll a new one
-			if (_index != -1)
+			if (_index == -1)
 				_index = Main.rand.Next(_len);
 		}
 
