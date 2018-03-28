@@ -6,9 +6,9 @@ namespace Loot.Modifiers.AccessoryModifiers
 {
 	public class MoreDamage : AccessoryModifier
 	{
-		public override ModifierEffectTooltipLine[] Description => new[]
+		public override ModifierTooltipLine[] Description => new[]
 		{
-			new ModifierEffectTooltipLine { Text = "Player deals 100% more damage", Color =  Color.SlateGray},
+			new ModifierTooltipLine { Text = "Player deals 100% more damage", Color =  Color.SlateGray},
 		};
 
 		public override float RarityLevel => 5f;

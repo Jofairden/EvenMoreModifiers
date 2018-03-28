@@ -8,9 +8,9 @@ namespace Loot.Modifiers.WeaponModifiers
 {
 	public class DamagePlusDaytime : WeaponModifier
 	{
-		public override ModifierEffectTooltipLine[] Description => new[]
+		public override ModifierTooltipLine[] Description => new[]
 			{
-				new ModifierEffectTooltipLine { Text = $"+{(int)Math.Round(Power)}% damage during the {(_duringDay ? "day" : "night")}", Color = Color.Lime}
+				new ModifierTooltipLine { Text = $"+{RoundedPower}% damage during the {(_duringDay ? "day" : "night")}", Color = Color.Lime}
 			};
 
 		public override float MinMagnitude => 1.0f / 15;

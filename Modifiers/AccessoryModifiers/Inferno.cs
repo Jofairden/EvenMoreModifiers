@@ -6,9 +6,9 @@ namespace Loot.Modifiers.AccessoryModifiers
 {
 	public class Inferno : AccessoryModifier
 	{
-		public override ModifierEffectTooltipLine[] Description => new[]
+		public override ModifierTooltipLine[] Description => new[]
 		{
-			new ModifierEffectTooltipLine { Text = "Player has inferno", Color =  Color.IndianRed},
+			new ModifierTooltipLine { Text = "Player has inferno", Color =  Color.IndianRed},
 		};
 
 		public override float RarityLevel => 3f;

@@ -40,10 +40,10 @@ namespace Loot.System
 		public Modifier[] ActiveModifiers { get; internal set; }
 
 		public float TotalRarityLevel =>
-			ActiveModifiers.Select(effect => effect.RarityLevel).DefaultIfEmpty(0).Sum();
+			ActiveModifiers.Select(m => m.RarityLevel).DefaultIfEmpty(0).Sum();
 
-		public IEnumerable<ModifierEffectTooltipLine[]> Description =>
-			ActiveModifiers.Select(effect => effect.Description);
+		public IEnumerable<ModifierTooltipLine[]> Description =>
+			ActiveModifiers.Select(m => m.Description);
 
 		public virtual string Name => GetType().Name;
 		public virtual float RollChance => 1f;
@@ -121,8 +121,8 @@ namespace Loot.System
 
 		internal void ApplyModifiers(Item item)
 		{
-			foreach (var effect in ActiveModifiers)
-				effect.Apply(item);
+			foreach (Modifier m in ActiveModifiers)
+				m.Apply(item);
 		}
 
 		/// <summary>
@@ -198,27 +198,27 @@ namespace Loot.System
 				bool rarityUnloaded = preloadRarity == null;
 				if (!rarityUnloaded)
 					m.Rarity = preloadRarity;
-				int effects = tag.GetAsInt("Effects");
-				if (effects > 0)
+				int modifiers = tag.GetAsInt("Modifiers");
+				if (modifiers > 0)
 				{
 					var list = new List<Modifier>();
-					for (int i = 0; i < effects; ++i)
+					for (int i = 0; i < modifiers; ++i)
 					{
 						// preload to take unloaded modifiers into account
-						var loaded = Modifier._Load(tag.Get<TagCompound>($"Effect{i}"));
+						var loaded = Modifier._Load(tag.Get<TagCompound>($"Modifier{i}"));
 						if (loaded != null)
 							list.Add(loaded);
 					}
 					m.Modifiers = list.ToArray();
 				}
-				int activeEffects = tag.GetAsInt("ActiveEffects");
-				if (activeEffects > 0)
+				int activeModifiers = tag.GetAsInt("ActiveModifiers");
+				if (activeModifiers > 0)
 				{
 					var list = new List<Modifier>();
-					for (int i = 0; i < activeEffects; ++i)
+					for (int i = 0; i < activeModifiers; ++i)
 					{
 						// preload to take unloaded modifiers into account
-						var loaded = Modifier._Load(tag.Get<TagCompound>($"ActiveEffect{i}"));
+						var loaded = Modifier._Load(tag.Get<TagCompound>($"ActiveModifier{i}"));
 						if (loaded != null)
 							list.Add(loaded);
 					}
@@ -229,6 +229,7 @@ namespace Loot.System
 				// If our rarity was unloaded, attempt rolling a new one that is applicable
 				if (rarityUnloaded)
 					m.Rarity = EMMLoader.GetPoolRarity(m);
+
 				return m;
 			}
 			throw new Exception($"Modifier load error for {modname}");
@@ -243,23 +244,22 @@ namespace Loot.System
 				{"ModName", modifierPool.Mod.Name },
 				{"Rarity", ModifierRarity.Save(modifierPool.Rarity) },
 			};
-			tag.Add("Effects", modifierPool.Modifiers.Length);
+			tag.Add("Modifiers", modifierPool.Modifiers.Length);
 			if (modifierPool.Modifiers.Length > 0)
 			{
 				for (int i = 0; i < modifierPool.Modifiers.Length; ++i)
 				{
-					tag.Add($"Effect{i}", Modifier.Save(modifierPool.Modifiers[i]));
+					tag.Add($"Modifier{i}", Modifier.Save(modifierPool.Modifiers[i]));
 				}
 			}
-			tag.Add("ActiveEffects", modifierPool.ActiveModifiers.Length);
+			tag.Add("ActiveModifiers", modifierPool.ActiveModifiers.Length);
 			for (int i = 0; i < modifierPool.ActiveModifiers.Length; ++i)
 			{
-				tag.Add($"ActiveEffect{i}", Modifier.Save(modifierPool.ActiveModifiers[i]));
+				tag.Add($"ActiveModifier{i}", Modifier.Save(modifierPool.ActiveModifiers[i]));
 			}
 			modifierPool.Save(tag);
 			return tag;
 		}
-
 
 		public override string ToString()
 			=> EMMUtils.JSLog(typeof(ModifierPool), this);

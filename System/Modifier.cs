@@ -8,7 +8,7 @@ using Terraria.ModLoader.IO;
 
 namespace Loot.System
 {
-	public struct ModifierEffectTooltipLine
+	public struct ModifierTooltipLine
 	{
 		public string Text;
 		public Color? Color;
@@ -36,7 +36,7 @@ namespace Loot.System
 		public virtual float RollChance => 1f;
 
 		// Must be getter due to various fields that can change interactively
-		public virtual ModifierEffectTooltipLine[] Description { get; }
+		public virtual ModifierTooltipLine[] Description { get; }
 
 		/// <summary>
 		/// Returns the Modifier specified by type, null if not present
@@ -54,7 +54,7 @@ namespace Loot.System
 		{
 			Magnitude = MinMagnitude + Main.rand.NextFloat() * (MaxMagnitude - MinMagnitude);
 			Power = BasePower * Magnitude;
-			RoundedPower = (int)Math.Round(Power);
+			RoundedPower = RoundedPower;
 			return Power;
 		}
 
@@ -86,7 +86,6 @@ namespace Loot.System
 		/// Allows modders to do custom cloning here
 		/// Happens after default cloning, which clones various info (mod, type, magnitude and power)
 		/// </summary>
-		/// <param name="clone"></param>
 		public virtual void Clone(ref Modifier clone)
 		{
 
@@ -141,37 +140,37 @@ namespace Loot.System
 					return null;
 				}
 
-				e.Type = tag.Get<uint>("EffectType");
+				e.Type = tag.Get<uint>("ModifierType");
 				e.Mod = ModLoader.GetMod(modname);
-				e.Magnitude = tag.GetAsShort("Magnitude");
-				e.Power = tag.GetAsShort("Power");
-				e.RoundedPower = tag.GetAsShort("RoundedPower");
+				e.Magnitude = tag.GetFloat("Magnitude");
+				e.Power = tag.GetFloat("Power");
+				e.RoundedPower = tag.GetInt("RoundedPower");
 				e.Load(tag);
 				return e;
 			}
-			throw new Exception($"ModifierEffect load error for {modname}");
+			throw new Exception($"Modifier load error for {modname}");
 		}
 
-		protected internal static TagCompound Save(Modifier effect)
+		protected internal static TagCompound Save(Modifier modifier)
 		{
 			var tag = new TagCompound {
-					{ "Type", effect.GetType().FullName },
-					{ "EffectType", effect.Type },
-					{ "ModName", effect.Mod.Name },
-					{ "Magnitude", effect.Magnitude },
-					{ "Power", effect.Power },
-					{ "RoundedPower", effect.RoundedPower }
+					{ "Type", modifier.GetType().FullName },
+					{ "ModifierType", modifier.Type },
+					{ "ModName", modifier.Mod.Name },
+					{ "Magnitude", modifier.Magnitude },
+					{ "Power", modifier.Power },
+					{ "RoundedPower", modifier.RoundedPower }
 				};
-			effect.Save(tag);
+			modifier.Save(tag);
 			return tag;
 		}
 
 		// Never autoload us
 		public sealed override bool Autoload(ref string name) => false;
+		public sealed override bool InstancePerEntity => true;
+		public sealed override bool CloneNewInstances => true;
 
-		// The following hooks aren't applicable in instanced context, so we seal them here so they can't be used
-		public sealed override bool InstancePerEntity => base.InstancePerEntity;
-		public sealed override bool CloneNewInstances => base.CloneNewInstances;
+		// The following hooks aren't applicable in instanced context, so we seal them here so they can't be used	
 		public sealed override GlobalItem Clone(Item item, Item itemClone) => base.Clone(item, itemClone);
 		public sealed override void ExtractinatorUse(int extractType, ref int resultType, ref int resultStack)
 		{

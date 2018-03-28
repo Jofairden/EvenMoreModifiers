@@ -7,9 +7,9 @@ namespace Loot.Modifiers.WeaponModifiers
 {
 	public class DamageWithManaCost : WeaponModifier
 	{
-		public override ModifierEffectTooltipLine[] Description => new[]
+		public override ModifierTooltipLine[] Description => new[]
 			{
-				new ModifierEffectTooltipLine { Text = $"+{(int)Math.Round(Power)}% damage, but added mana cost", Color = Color.Lime}
+				new ModifierTooltipLine { Text = $"+{RoundedPower}% damage, but added mana cost", Color = Color.Lime}
 			};
 
 		public override float MinMagnitude => 16f / 30;

@@ -466,23 +466,30 @@ namespace Loot
 		public static ModifierPlayer PlayerInfo(Player player) => player.GetModPlayer<ModifierPlayer>();
 
 		// Globals for modifiers
-		public bool holdingCursed;    // Whether currently holding a cursed item (take 1 damage per second)
-		public int luck;              // Luck (TODO: Implement this)
-		public float dodgeChance;     // Dodge chance (TODO: Implement this)
+		public bool HoldingCursed;    // Whether currently holding a cursed item (take 1 damage per second)
+		public int Luck;              // Luck (TODO: Implement this)
+		public float DodgeChance;     // Dodge chance (TODO: Implement this)
 
 		// List of current debuff chances. Tuple format is [chance, buffType, buffTime]
-		public List<Tuple<float, int, int>> debuffChances = new List<Tuple<float, int, int>>();
+		// TODO with c#7 we should favor a named tuple (waiting for TML support)
+		//public IList<(float chance, int type, int time)> DebuffChances;
+		public IList<Tuple<float, int, int>> DebuffChances = new List<Tuple<float, int, int>>();
+
+		public override void Initialize()
+		{
+			DebuffChances = new List<Tuple<float, int, int>>();
+		}
 
 		public override void ResetEffects()
 		{
-			luck = 0;
-			dodgeChance = 0;
-			debuffChances.Clear();
+			Luck = 0;
+			DodgeChance = 0;
+			DebuffChances.Clear();
 		}
 
 		public override void UpdateBadLifeRegen()
 		{
-			if (holdingCursed)
+			if (HoldingCursed)
 			{
 				if (player.lifeRegen > 0)
 				{
@@ -491,25 +498,31 @@ namespace Loot
 				player.lifeRegen -= 2;
 				player.lifeRegenTime = 0;
 			}
-			holdingCursed = false;
+			HoldingCursed = false;
+		}
+
+		private void AttemptDebuff(NPC target)
+		{
+			//foreach (var debuff in DebuffChances)
+			//{
+			//	if (Main.rand.NextFloat() < debuff.chance)
+			//		target.AddBuff(debuff.type, debuff.time);
+			//}
+			foreach (var x in DebuffChances)
+			{
+				if (Main.rand.NextFloat() < x.Item1)
+					target.AddBuff(x.Item2, x.Item3);
+			}
 		}
 
 		public override void OnHitNPC(Item item, NPC target, int damage, float knockback, bool crit)
 		{
-			debuffChances.ForEach((x) => 
-			{
-				if (Main.rand.NextFloat() < x.Item1)
-					target.AddBuff(x.Item2, x.Item3);
-			});
+			AttemptDebuff(target);
 		}
 
 		public override void OnHitNPCWithProj(Projectile proj, NPC target, int damage, float knockback, bool crit)
 		{
-			debuffChances.ForEach((x) =>
-			{
-				if (Main.rand.NextFloat() < x.Item1)
-					target.AddBuff(x.Item2, x.Item3);
-			});
+			AttemptDebuff(target);
 		}
 	}
 }

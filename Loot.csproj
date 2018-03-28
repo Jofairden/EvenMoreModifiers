@@ -61,6 +61,9 @@
     <Reference Include="System">
       <Private>True</Private>
     </Reference>
+    <Reference Include="System.ValueTuple, Version=4.0.1.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>packages\System.ValueTuple.4.3.0\lib\netstandard1.0\System.ValueTuple.dll</HintPath>
+    </Reference>
     <Reference Include="tModLoaderDebug">
       <HintPath>..\..\..\..\..\..\..\Apps\Steam\steamapps\common\Terraria\tModLoaderDebug.exe</HintPath>
     </Reference>
@@ -117,6 +120,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include=".editorconfig" />
+    <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

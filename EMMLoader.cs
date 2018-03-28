@@ -268,8 +268,8 @@ namespace Loot
 		/// </summary>
 		private static void AutoloadModifier(Type type, Mod mod)
 		{
-			Modifier effect = (Modifier)Activator.CreateInstance(type);
-			AddModifier(effect, mod);
+			Modifier modifier = (Modifier)Activator.CreateInstance(type);
+			AddModifier(modifier, mod);
 		}
 
 		/// <summary>

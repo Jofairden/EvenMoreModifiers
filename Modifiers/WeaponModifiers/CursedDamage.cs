@@ -7,9 +7,9 @@ namespace Loot.Modifiers.WeaponModifiers
 {
 	public class CursedDamage : WeaponModifier
 	{
-		public override ModifierEffectTooltipLine[] Description => new[]
+		public override ModifierTooltipLine[] Description => new[]
 			{
-				new ModifierEffectTooltipLine { Text = $"+{(int)Math.Round(Power)}% damage, but you are cursed", Color = Color.Lime}
+				new ModifierTooltipLine { Text = $"+{RoundedPower}% damage, but you are cursed", Color = Color.Lime}
 			};
 
 		public override float MinMagnitude => 16f / 30;
@@ -25,7 +25,7 @@ namespace Loot.Modifiers.WeaponModifiers
 		public override void HoldItem(Item item, Player player)
 		{
 			base.HoldItem(item, player);
-			ModifierPlayer.PlayerInfo(player).holdingCursed = true;
+			ModifierPlayer.PlayerInfo(player).HoldingCursed = true;
 		}
 	}
 }

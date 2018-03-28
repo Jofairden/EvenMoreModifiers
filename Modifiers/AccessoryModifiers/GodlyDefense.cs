@@ -6,9 +6,9 @@ namespace Loot.Modifiers.AccessoryModifiers
 {
 	public class GodlyDefense : AccessoryModifier
 	{
-		public override ModifierEffectTooltipLine[] Description => new[]
+		public override ModifierTooltipLine[] Description => new[]
 		{
-			new ModifierEffectTooltipLine { Text = "Player has godly defense", Color =  Color.SlateGray},
+			new ModifierTooltipLine { Text = "Player has godly defense", Color =  Color.SlateGray},
 		};
 
 		public override float RarityLevel => 5f;

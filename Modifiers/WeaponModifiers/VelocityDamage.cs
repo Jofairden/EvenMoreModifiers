@@ -7,9 +7,9 @@ namespace Loot.Modifiers.WeaponModifiers
 {
 	public class VelocityDamage : WeaponModifier
 	{
-		public override ModifierEffectTooltipLine[] Description => new[]
+		public override ModifierTooltipLine[] Description => new[]
 			{
-				new ModifierEffectTooltipLine { Text = $"Added damage based on velocity (multiplier: {Math.Round(Power/2, 1)}x)", Color = Color.Lime}
+				new ModifierTooltipLine { Text = $"Added damage based on velocity (multiplier: {Math.Round(Power/2, 1)}x)", Color = Color.Lime}
 			};
 
 		public override float MinMagnitude => 1f / 7;

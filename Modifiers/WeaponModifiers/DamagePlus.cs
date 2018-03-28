@@ -7,9 +7,9 @@ namespace Loot.Modifiers.WeaponModifiers
 {
 	public class DamagePlus : WeaponModifier
 	{
-		public override ModifierEffectTooltipLine[] Description => new[]
+		public override ModifierTooltipLine[] Description => new[]
 			{
-				new ModifierEffectTooltipLine { Text = $"+{(int)Math.Round(Power)}% damage", Color = Color.Lime}
+				new ModifierTooltipLine { Text = $"+{RoundedPower}% damage", Color = Color.Lime}
 			};
 
 		public override float MinMagnitude => 0.1f;

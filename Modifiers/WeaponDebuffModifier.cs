@@ -13,9 +13,9 @@ namespace Loot.Modifiers
 	/// </summary>
 	public abstract class WeaponDebuffModifier : WeaponModifier
 	{
-		public override ModifierEffectTooltipLine[] Description => new[]
+		public override ModifierTooltipLine[] Description => new[]
 		{
-			new ModifierEffectTooltipLine { Text = $"+{(int)Math.Round(Power)}% chance to inflict {GetBuffName()} for {BuffTime/60f}s", Color = Color.Lime }
+			new ModifierTooltipLine { Text = $"+{RoundedPower}% chance to inflict {GetBuffName()} for {BuffTime/60f}s", Color = Color.Lime }
 		};
 
 		public override float MinMagnitude => 0.02f;
@@ -35,7 +35,8 @@ namespace Loot.Modifiers
 
 		public override void HoldItem(Item item, Player player)
 		{
-			ModifierPlayer.PlayerInfo(player).debuffChances.Add(new Tuple<float, int, int>(Power / 100, BuffType, BuffTime));
+			//ModifierPlayer.PlayerInfo(player).DebuffChances.Add((chance: Power / 100, type: BuffType, time: BuffTime));
+			ModifierPlayer.PlayerInfo(player).DebuffChances.Add(new Tuple<float, int, int>(Power / 100, BuffType, BuffTime));
 		}
 	}
 }
