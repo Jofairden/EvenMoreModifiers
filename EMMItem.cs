@@ -21,9 +21,12 @@ namespace Loot
 		public override bool CloneNewInstances => true;
 
 		public ModifierPool ModifierPool;
-		public bool HasRolled; 
+		public bool HasRolled;
 
-		// Attempts to roll new modifiers
+		/// <summary>
+		/// Attempts to roll new modifiers
+		/// Has a set chance to hit a predefined pool of modifiers
+		/// </summary>
 		internal ModifierPool RollNewPool(ModifierContext ctx)
 		{	
 			// Try getting a weighted pool, or roll all modifiers at random

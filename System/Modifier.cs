@@ -26,6 +26,7 @@ namespace Loot.System
 		public uint Type { get; internal set; }
 		public float Magnitude { get; internal set; } = 1f;
 		public float Power { get; internal set; } = 1f;
+		public int RoundedPower { get; internal set; } = 1;
 
 		public new virtual string Name => GetType().Name;
 		public virtual float BasePower => 1f;
@@ -34,6 +35,7 @@ namespace Loot.System
 		public virtual float RarityLevel => 1f;
 		public virtual float RollChance => 1f;
 
+		// Must be getter due to various fields that can change interactively
 		public virtual ModifierEffectTooltipLine[] Description { get; }
 
 		/// <summary>
@@ -42,7 +44,7 @@ namespace Loot.System
 		public static Modifier GetModifier(ushort type)
 			=> EMMLoader.GetModifier(type);
 
-		public Modifier AsNewInstance() 
+		public Modifier AsNewInstance()
 			=> (Modifier)Activator.CreateInstance(GetType());
 
 		/// <summary>
@@ -52,13 +54,14 @@ namespace Loot.System
 		{
 			Magnitude = MinMagnitude + Main.rand.NextFloat() * (MaxMagnitude - MinMagnitude);
 			Power = BasePower * Magnitude;
+			RoundedPower = (int)Math.Round(Power);
 			return Power;
 		}
 
 		/// <summary>
 		/// If this Modifier can roll/apply 
 		/// </summary>
-		public virtual bool CanRoll(ModifierContext ctx) 
+		public virtual bool CanRoll(ModifierContext ctx)
 			=> true;
 
 		public virtual bool CanApplyCraft(ModifierContext ctx)
@@ -96,6 +99,7 @@ namespace Loot.System
 			clone.Type = Type;
 			clone.Magnitude = Magnitude;
 			clone.Power = Power;
+			clone.RoundedPower = RoundedPower;
 			Clone(ref clone);
 			return clone;
 		}
@@ -139,8 +143,9 @@ namespace Loot.System
 
 				e.Type = tag.Get<uint>("EffectType");
 				e.Mod = ModLoader.GetMod(modname);
-				e.Magnitude = tag.GetFloat("Magnitude");
-				e.Power = tag.GetFloat("Power");
+				e.Magnitude = tag.GetAsShort("Magnitude");
+				e.Power = tag.GetAsShort("Power");
+				e.RoundedPower = tag.GetAsShort("RoundedPower");
 				e.Load(tag);
 				return e;
 			}
@@ -155,6 +160,7 @@ namespace Loot.System
 					{ "ModName", effect.Mod.Name },
 					{ "Magnitude", effect.Magnitude },
 					{ "Power", effect.Power },
+					{ "RoundedPower", effect.RoundedPower }
 				};
 			effect.Save(tag);
 			return tag;
