@@ -39,11 +39,21 @@
     <StartupObject />
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Microsoft.Xna.Framework, Version=4.0.0.0, Culture=neutral, PublicKeyToken=842cf8be1de50553">
-      <Private>True</Private>
+    <Reference Include="Microsoft.Xna.Framework, Version=4.0.0.0, Culture=neutral, PublicKeyToken=842cf8be1de50553, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\dllReferences\Microsoft.Xna.Framework.dll</HintPath>
     </Reference>
-    <Reference Include="Microsoft.Xna.Framework.Game, Version=4.0.0.0, Culture=neutral, PublicKeyToken=842cf8be1de50553">
-      <Private>True</Private>
+    <Reference Include="Microsoft.Xna.Framework.Game, Version=4.0.0.0, Culture=neutral, PublicKeyToken=842cf8be1de50553, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\dllReferences\Microsoft.Xna.Framework.Game.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Xna.Framework.Graphics, Version=4.0.0.0, Culture=neutral, PublicKeyToken=842cf8be1de50553, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\dllReferences\Microsoft.Xna.Framework.Graphics.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Xna.Framework.Xact, Version=4.0.0.0, Culture=neutral, PublicKeyToken=842cf8be1de50553, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\dllReferences\Microsoft.Xna.Framework.Xact.dll</HintPath>
     </Reference>
     <Reference Include="ReLogic">
       <HintPath>..\..\..\..\..\GitHub\tModLoader\references\ReLogic.dll</HintPath>
@@ -51,24 +61,50 @@
     <Reference Include="System">
       <Private>True</Private>
     </Reference>
+    <Reference Include="System.ValueTuple, Version=4.0.1.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>packages\System.ValueTuple.4.3.0\lib\netstandard1.0\System.ValueTuple.dll</HintPath>
+    </Reference>
     <Reference Include="tModLoaderDebug">
       <HintPath>..\..\..\..\..\..\..\Apps\Steam\steamapps\common\Terraria\tModLoaderDebug.exe</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Effects\DebugEffect.cs" />
+    <Compile Include="Modifiers\AccessoryModifier.cs" />
+    <Compile Include="Modifiers\AccessoryModifiers\GodlyDefense.cs" />
+    <Compile Include="Modifiers\AccessoryModifiers\Inferno.cs" />
+    <Compile Include="Modifiers\AccessoryModifiers\MoreDamage.cs" />
+    <Compile Include="Modifiers\ArmorModifier.cs" />
+    <Compile Include="Modifiers\WeaponModifiers\AmmoReduce.cs" />
+    <Compile Include="Modifiers\WeaponModifiers\CritPlus.cs" />
+    <Compile Include="Modifiers\WeaponModifiers\CursedDamage.cs" />
+    <Compile Include="Modifiers\WeaponModifiers\DamagePlusDaytime.cs" />
+    <Compile Include="Modifiers\WeaponModifiers\DamagePlus.cs" />
+    <Compile Include="Modifiers\WeaponModifiers\DamageWithManaCost.cs" />
+    <Compile Include="Modifiers\WeaponDebuffModifier.cs" />
+    <Compile Include="Modifiers\WeaponModifiers\KnockbackPlus.cs" />
+    <Compile Include="Modifiers\WeaponModifiers\ManaReduce.cs" />
+    <Compile Include="Modifiers\WeaponModifiers\MissingHealthDamage.cs" />
+    <Compile Include="Modifiers\WeaponModifiers\RandomDebuff.cs" />
+    <Compile Include="Modifiers\WeaponModifiers\SpeedPlus.cs" />
+    <Compile Include="Modifiers\WeaponModifiers\VelocityDamage.cs" />
+    <Compile Include="Modifiers\WeaponModifiers\VelocityPlus.cs" />
     <Compile Include="LootDebugPlayer.cs" />
     <Compile Include="EMMItem.cs" />
     <Compile Include="Loot.cs" />
     <Compile Include="LootGlobalNPC.cs" />
-    <Compile Include="EMMPlayer.cs" />
-    <Compile Include="LootUtils.cs" />
+    <Compile Include="EMMUtils.cs" />
     <Compile Include="MagicDice.cs" />
-    <Compile Include="Modifiers\Modifier.cs" />
-    <Compile Include="Modifiers\ModifierEffect.cs" />
+    <Compile Include="ModifierItem.cs" />
+    <Compile Include="ModifierPlayer.cs" />
+    <Compile Include="Modifiers\WeaponModifier.cs" />
+    <Compile Include="System\AllModifiersPool.cs" />
+    <Compile Include="System\IRollable.cs" />
+    <Compile Include="System\ModifierPool.cs" />
+    <Compile Include="System\Modifier.cs" />
     <Compile Include="EMMLoader.cs" />
-    <Compile Include="Modifiers\ModifierRarity.cs" />
-    <Compile Include="Modifiers\Ours\DebugModifier.cs" />
+    <Compile Include="System\ModifierRarity.cs" />
+    <Compile Include="Pools\AccessoryModifierPool.cs" />
+    <Compile Include="Pools\WeaponModifierPool.cs" />
     <Compile Include="Rarities\CommonRarity.cs" />
     <Compile Include="Rarities\LegendaryRarity.cs" />
     <Compile Include="Rarities\RareRarity.cs" />
@@ -84,7 +120,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include=".editorconfig" />
+    <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
     <PostBuildEvent>"D:\Apps\Steam\steamapps\common\Terraria\tModLoaderServer.exe" -build "$(ProjectDir)\" -eac "$(TargetPath)"</PostBuildEvent>

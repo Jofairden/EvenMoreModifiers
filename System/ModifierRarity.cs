@@ -1,11 +1,10 @@
 ﻿using System;
-using System.Linq;
 using System.Reflection;
 using Microsoft.Xna.Framework;
 using Terraria.ModLoader;
 using Terraria.ModLoader.IO;
 
-namespace Loot.Modifiers
+namespace Loot.System
 {
 	/// <summary>
 	/// Defines the rarity of a modifier
@@ -23,11 +22,20 @@ namespace Loot.Modifiers
 		public abstract float RequiredRarityLevel { get; }
 		public abstract Color Color { get; }
 
-		public virtual bool MatchesRequirements(Modifier modifier)
-			=> modifier.MatchesRarity(this);
+		public virtual bool MatchesRequirements(ModifierPool modifierPool)
+			=> modifierPool.MatchesRarity(this);
 
 		public override string ToString()
 			=> EMMUtils.JSLog(typeof(ModifierRarity), this);
+
+		/// <summary>
+		/// Returns the ModifierRarity specified by type, null if not present
+		/// </summary>
+		public static ModifierRarity GetModifierRarity(ushort type)
+			=> EMMLoader.GetModifierRarity(type);
+
+		public ModifierRarity AsNewInstance()
+			=> (ModifierRarity)Activator.CreateInstance(GetType());
 
 		public virtual void Clone(ref ModifierRarity clone)
 		{
@@ -69,7 +77,17 @@ namespace Loot.Modifiers
 			Assembly assembly;
 			if (EMMLoader.Mods.TryGetValue(modname, out assembly))
 			{
-				ModifierRarity r = (ModifierRarity)Activator.CreateInstance(assembly.GetType(tag.GetString("Type")));
+				// If we load a null here, it means a rarity is unloaded
+				ModifierRarity r;
+				try
+				{
+					r = (ModifierRarity)Activator.CreateInstance(assembly.GetType(tag.GetString("Type")));
+				}
+				catch (Exception)
+				{
+					return null;
+				}
+
 				r.Type = tag.Get<uint>("RarityType");
 				r.Mod = ModLoader.GetMod(modname);
 				r.Load(tag);

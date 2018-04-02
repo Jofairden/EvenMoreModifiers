@@ -1,7 +1,5 @@
-﻿using Loot.Modifiers;
-using Microsoft.Xna.Framework;
-using System;
-using Terraria.ModLoader.IO;
+﻿using Microsoft.Xna.Framework;
+using Loot.System;
 
 namespace Loot.Rarities
 {
