@@ -3,7 +3,7 @@ using Loot.System;
 
 namespace Loot.Pools
 {
-	internal class AccessoryModifierPool : ModifierPool
+	/*internal class AccessoryModifierPool : ModifierPool
 	{
 		public AccessoryModifierPool()
 		{
@@ -14,5 +14,5 @@ namespace Loot.Pools
 				Loot.Instance.GetModifier<MoreDamage>()
 			};
 		}
-	}
+	}*/
 }
