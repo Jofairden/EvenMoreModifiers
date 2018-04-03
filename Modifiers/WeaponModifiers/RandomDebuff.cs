@@ -12,7 +12,7 @@ namespace Loot.Modifiers.WeaponModifiers
 		// TODO , this could should be added to to include min/max magnitude rolls, that influence the time and chance to apply 
 		internal static int[,] BuffPairs = 
 		{
-			{ BuffID.Confused, 120, },
+			{ BuffID.Confused, 120 },
 			{ BuffID.CursedInferno, 180 },
 			{ BuffID.Frostburn, 240 },
 			{ BuffID.Ichor, 180 },
