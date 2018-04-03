@@ -6,7 +6,7 @@ namespace Loot.Modifiers
 {
 	/// <summary>
 	/// Defines a modifier that can roll on an accessory item or an armor item
-	/// These modifiers will have 60% maximum Power on accessories (multiply by base.MaxMagnitude)
+	/// These modifiers will have 60% maximum Power on accessories
 	/// You can use this class and add to CanRoll by calling base.CanRoll(ctx) and then your own conditionals
 	/// </summary>
 	public abstract class EquipModifier : Modifier
