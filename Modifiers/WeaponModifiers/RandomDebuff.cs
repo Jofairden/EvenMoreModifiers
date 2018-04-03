@@ -15,7 +15,6 @@ namespace Loot.Modifiers.WeaponModifiers
 			{ BuffID.Confused, 120 },
 			{ BuffID.CursedInferno, 180 },
 			{ BuffID.Frostburn, 240 },
-			{ BuffID.Ichor, 180 },
 			{ BuffID.OnFire, 300 },
 			{ BuffID.Poisoned, 480 },
 		};

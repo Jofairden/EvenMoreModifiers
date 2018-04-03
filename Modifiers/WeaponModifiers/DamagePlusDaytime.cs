@@ -13,9 +13,8 @@ namespace Loot.Modifiers.WeaponModifiers
 				new ModifierTooltipLine { Text = $"+{RoundedPower}% damage during the {(_duringDay ? "day" : "night")}", Color = Color.Lime}
 			};
 
-		public override float MinMagnitude => 1.0f / 15;
-		public override float MaxMagnitude => 1.0f;
-		public override float BasePower => 15f;
+		public override float MinMagnitude => 1;
+		public override float MaxMagnitude => 15f;
 		public override float RollChance => base.RollChance * 2f; // because this is essentially 2 mods in one, double the roll chance
 
 		private bool _duringDay;
@@ -44,7 +43,7 @@ namespace Loot.Modifiers.WeaponModifiers
 		{
 			base.GetWeaponDamage(item, player, ref damage);
 			if (_duringDay && Main.dayTime || !_duringDay && !Main.dayTime)
-				damage = (int) Math.Ceiling(damage * (1 + Power / 100));
+				damage = (int) Math.Ceiling(damage * (1 + RoundedPower / 100));
 		}
 	}
 }

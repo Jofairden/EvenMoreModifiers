@@ -9,7 +9,7 @@ using Terraria.ModLoader;
 namespace Loot.Modifiers
 {
 	/// <summary>
-	/// Defines a debuff that can inflict a debuff, applicable for weapons
+	/// Defines a modifier that can inflict a debuff, applicable for weapons
 	/// </summary>
 	public abstract class WeaponDebuffModifier : WeaponModifier
 	{
@@ -18,9 +18,8 @@ namespace Loot.Modifiers
 			new ModifierTooltipLine { Text = $"+{RoundedPower}% chance to inflict {GetBuffName()} for {BuffTime/60f}s", Color = Color.Lime }
 		};
 
-		public override float MinMagnitude => 0.02f;
-		public override float MaxMagnitude => 1.0f;
-		public override float BasePower => 50f;
+		public override float MinMagnitude => 1f;
+		public override float MaxMagnitude => 50f;
 
 		public abstract int BuffType { get; }
 		public abstract int BuffTime { get; }
@@ -36,7 +35,7 @@ namespace Loot.Modifiers
 		public override void HoldItem(Item item, Player player)
 		{
 			//ModifierPlayer.PlayerInfo(player).DebuffChances.Add((chance: Power / 100, type: BuffType, time: BuffTime));
-			ModifierPlayer.PlayerInfo(player).DebuffChances.Add(new Tuple<float, int, int>(Power / 100, BuffType, BuffTime));
+			ModifierPlayer.PlayerInfo(player).DebuffChances.Add(new Tuple<float, int, int>(RoundedPower / 100, BuffType, BuffTime));
 		}
 	}
 }

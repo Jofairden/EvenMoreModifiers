@@ -25,8 +25,24 @@ namespace Loot.System
 		public Mod Mod { get; internal set; }
 		public uint Type { get; internal set; }
 		public float Magnitude { get; internal set; } = 1f;
-		public float Power { get; internal set; } = 1f;
-		public int RoundedPower { get; internal set; } = 1;
+
+		private float power = 1f;
+		public float Power {
+			get { return power; }
+			internal set {
+				power = value;
+				RoundedPower = power;
+			}
+		}
+
+		private float roundedPower = 1f;
+		public float RoundedPower {
+			get { return roundedPower; }
+			internal set
+			{
+				roundedPower = (float)Math.Round(value, RoundPrecision);
+			}
+		}
 
 		public new virtual string Name => GetType().Name;
 		public virtual float BasePower => 1f;
@@ -34,6 +50,7 @@ namespace Loot.System
 		public virtual float MaxMagnitude => 1f;
 		public virtual float RarityLevel => 1f;
 		public virtual float RollChance => 1f;
+		public virtual int RoundPrecision => 0;
 
 		// Must be getter due to various fields that can change interactively
 		public virtual ModifierTooltipLine[] Description { get; }
@@ -54,7 +71,6 @@ namespace Loot.System
 		{
 			Magnitude = MinMagnitude + Main.rand.NextFloat() * (MaxMagnitude - MinMagnitude);
 			Power = BasePower * Magnitude;
-			RoundedPower = RoundedPower;
 			return Power;
 		}
 
@@ -98,7 +114,6 @@ namespace Loot.System
 			clone.Type = Type;
 			clone.Magnitude = Magnitude;
 			clone.Power = Power;
-			clone.RoundedPower = RoundedPower;
 			Clone(ref clone);
 			return clone;
 		}
@@ -144,7 +159,6 @@ namespace Loot.System
 				e.Mod = ModLoader.GetMod(modname);
 				e.Magnitude = tag.GetFloat("Magnitude");
 				e.Power = tag.GetFloat("Power");
-				e.RoundedPower = tag.GetInt("RoundedPower");
 				e.Load(tag);
 				return e;
 			}

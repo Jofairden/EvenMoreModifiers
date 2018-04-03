@@ -12,9 +12,9 @@ namespace Loot.Modifiers.WeaponModifiers
 				new ModifierTooltipLine { Text = $"+{RoundedPower}% knockback", Color = Color.Lime}
 			};
 
-		public override float MinMagnitude => 0.05f;
-		public override float MaxMagnitude => 1.0f;
-		public override float BasePower => 20f;
+		public override float MinMagnitude => 1f;
+		public override float MaxMagnitude => 20f;
+	
 
 		public override bool CanRoll(ModifierContext ctx) 
 			=> base.CanRoll(ctx) && ctx.Item.knockBack > 0;
