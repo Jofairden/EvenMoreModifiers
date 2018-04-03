@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.IO;
 using Loot.System;
 using Microsoft.Xna.Framework;
@@ -58,42 +57,6 @@ namespace Loot
 			}
 				
 			return ModifierPool;
-		}
-
-		public override void UpdateInventory(Item item, Player player)
-		{
-			ModifierContext ctx = new ModifierContext
-			{
-				Player = player,
-				Item = item,
-				Method = ModifierContextMethod.UpdateItem
-			};
-
-			Modifier?.UpdateItem(ctx);
-		}
-
-		public override void UpdateEquip(Item item, Player player)
-		{
-			ModifierContext ctx = new ModifierContext
-			{
-				Player = player,
-				Item = item,
-				Method = ModifierContextMethod.UpdateItem
-			};
-
-			Modifier?.UpdateItem(ctx, true);
-		}
-
-		public override void HoldItem(Item item, Player player)
-		{
-			ModifierContext ctx = new ModifierContext
-			{
-				Player = player,
-				Item = item,
-				Method = ModifierContextMethod.HoldItem
-			};
-
-			Modifier?.HoldItem(ctx);
 		}
 
 		public override GlobalItem Clone(Item item, Item itemClone)
