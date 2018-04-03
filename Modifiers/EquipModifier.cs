@@ -11,7 +11,6 @@ namespace Loot.Modifiers
 	/// </summary>
 	public abstract class EquipModifier : Modifier
 	{
-
 		public override bool CanRoll(ModifierContext ctx)
 			=> ctx.Item.accessory || (ctx.Item.headSlot > 0 || ctx.Item.legSlot > 0 || ctx.Item.bodySlot > 0) && !ctx.Item.vanity;
 
