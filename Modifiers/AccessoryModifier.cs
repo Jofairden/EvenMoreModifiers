@@ -1,4 +1,5 @@
 ﻿using Loot.System;
+using Terraria;
 
 namespace Loot.Modifiers
 {
