@@ -17,7 +17,7 @@ namespace Loot.Modifiers.EquipModifiers
 		public override void UpdateEquip(Item item, Player player)
 		{
 			player.moveSpeed += RoundedPower / 100;
-			player.maxRunSpeed += RoundedPower / 100;
+			player.maxRunSpeed *= 1 + RoundedPower / 100;
 		}
 	}
 }

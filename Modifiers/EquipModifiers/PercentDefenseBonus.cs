@@ -12,7 +12,7 @@ namespace Loot.Modifiers.EquipModifiers
 		};
 
 		public override float MinMagnitude => 1f;
-		public override float MaxMagnitude => 15f;
+		public override float MaxMagnitude => 8f;
 
 		public override void UpdateEquip(Item item, Player player)
 		{
