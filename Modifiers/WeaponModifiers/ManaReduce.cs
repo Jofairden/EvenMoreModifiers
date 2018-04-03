@@ -22,7 +22,7 @@ namespace Loot.Modifiers.WeaponModifiers
 		{
 			base.Apply(item);
 			// Always reduce by at least 1 mana cost
-			item.mana = (int)Math.Floor(item.mana * (1 - Power / 100f));
+			item.mana = (int)Math.Floor(item.mana * (1 - RoundedPower / 100f));
 
 			// Don't go below 1 mana cost! 0 cost is too OP :P
 			if (item.mana < 1)

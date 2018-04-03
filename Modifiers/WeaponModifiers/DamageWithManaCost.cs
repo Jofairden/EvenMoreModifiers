@@ -21,7 +21,7 @@ namespace Loot.Modifiers.WeaponModifiers
 		public override void GetWeaponDamage(Item item, Player player, ref int damage)
 		{
 			base.GetWeaponDamage(item, player, ref damage);
-			damage = (int)Math.Ceiling(damage * (1 + Power / 100f));
+			damage = (int)Math.Ceiling(damage * (1 + RoundedPower / 100f));
 		}
 
 		public override void Apply(Item item)

@@ -22,7 +22,7 @@ namespace Loot.Modifiers.WeaponModifiers
 		public override void GetWeaponKnockback(Item item, Player player, ref float knockback)
 		{
 			base.GetWeaponKnockback(item, player, ref knockback);
-			knockback *= Power / 100 + 1;
+			knockback *= RoundedPower / 100 + 1;
 		}
 	}
 }

@@ -19,7 +19,7 @@ namespace Loot.Modifiers.WeaponModifiers
 		{
 			base.GetWeaponDamage(item, player, ref damage);
 			// Formula ported from old mod
-			float mag = (Power * ((player.statLifeMax2 - player.statLife) / (float)player.statLifeMax2) * 6);
+			float mag = (RoundedPower * ((player.statLifeMax2 - player.statLife) / (float)player.statLifeMax2) * 6);
 			damage = (int)(damage * (1 + mag / 100));
 		}
 	}
