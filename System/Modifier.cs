@@ -26,23 +26,17 @@ namespace Loot.System
 		public uint Type { get; internal set; }
 		public float Magnitude { get; internal set; } = 1f;
 
-		private float power = 1f;
+		private float _Power = 1f;
 		public float Power {
-			get { return power; }
-			internal set {
-				power = value;
-				RoundedPower = power;
+			get { return _Power; }
+			internal set
+			{
+				_Power = value;
+				RoundedPower = (float)Math.Round(_Power, RoundPrecision);
 			}
 		}
 
-		private float roundedPower = 1f;
-		public float RoundedPower {
-			get { return roundedPower; }
-			internal set
-			{
-				roundedPower = (float)Math.Round(value, RoundPrecision);
-			}
-		}
+		public float RoundedPower { get; private set; } = 1f;
 
 		public new virtual string Name => GetType().Name;
 		public virtual float BasePower => 1f;
