@@ -11,8 +11,8 @@ namespace Loot.Modifiers.EquipModifiers
 			new ModifierTooltipLine { Text = $"+{RoundedPower} life regen/minute", Color =  Color.LimeGreen},
 		};
 
-		public override float MinMagnitude => 1f;
-		public override float MaxMagnitude => 45f;
+		public override float GetMinMagnitude(Item item) => 1f;
+		public override float GetMaxMagnitude(Item item) => 45f;
 
 		public override void UpdateEquip(Item item, Player player)
 		{

@@ -12,8 +12,8 @@ namespace Loot.Modifiers.WeaponModifiers
 				new ModifierTooltipLine { Text = $"{RoundedPower}% chance to not consume ammo", Color = Color.Lime}
 			};
 
-		public override float MinMagnitude => 1f;
-		public override float MaxMagnitude => 20f;
+		public override float GetMinMagnitude(Item item) => 1f;
+		public override float GetMaxMagnitude(Item item) => 20f;
 
 		public override bool CanRoll(ModifierContext ctx)
 		{

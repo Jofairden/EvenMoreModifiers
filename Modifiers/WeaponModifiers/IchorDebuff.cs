@@ -6,7 +6,7 @@ namespace Loot.Modifiers.WeaponModifiers
 {
 	public sealed class IchorDebuff : WeaponDebuffModifier
 	{
-		public override float MaxMagnitude => 20f;
+		public override float GetMaxMagnitude(Item item) => 20f;
 
 		public override int BuffType => BuffID.Ichor;
 		public override int BuffTime => 180;

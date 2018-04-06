@@ -12,8 +12,8 @@ namespace Loot.Modifiers.WeaponModifiers
 				new ModifierTooltipLine { Text = $"+{RoundedPower}% damage, but added mana cost", Color = Color.Lime}
 			};
 
-		public override float MinMagnitude => 16f;
-		public override float MaxMagnitude => 30f;
+		public override float GetMinMagnitude(Item item) => 16f;
+		public override float GetMaxMagnitude(Item item) => 30f;
 
 		public override bool CanRoll(ModifierContext ctx) 
 			=> base.CanRoll(ctx) && ctx.Item.mana == 0;

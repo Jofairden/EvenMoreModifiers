@@ -41,7 +41,7 @@ namespace Loot.Modifiers.WeaponModifiers
 
 		public override int BuffType => BuffPairs[_index, 0];
 		public override int BuffTime => BuffPairs[_index, 1];
-		public override float RollChance => base.RollChance * _len;
+		public override float GetRollChance(Item item) => base.GetRollChance(item) * _len;
 
 		// TODO we need ModPlayer hooks here
 

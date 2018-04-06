@@ -18,8 +18,8 @@ namespace Loot.Modifiers
 			new ModifierTooltipLine { Text = $"+{RoundedPower}% chance to inflict {GetBuffName()} for {BuffTime/60f}s", Color = Color.Lime }
 		};
 
-		public override float MinMagnitude => 1f;
-		public override float MaxMagnitude => 50f;
+		public override float GetMinMagnitude(Item item) => 1f;
+		public override float GetMaxMagnitude(Item item) => 50f;
 
 		public abstract int BuffType { get; }
 		public abstract int BuffTime { get; }

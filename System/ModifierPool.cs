@@ -71,7 +71,7 @@ namespace Loot.System
 		{
 			WeightedRandom<Modifier> wr = new WeightedRandom<Modifier>();
 			List<Modifier> list = new List<Modifier>();
-			foreach (var e in Modifiers.Where(x => x.CanRoll(ctx)))
+			foreach (var e in Modifiers.Where(x => { x.SetProperties(ctx.Item); return x.CanRoll(ctx); }))
 				wr.Add(e, e.RollChance);
 
 			for (int i = 0; i < 4; ++i)
@@ -174,7 +174,7 @@ namespace Loot.System
 
 		}
 
-		protected internal static ModifierPool _Load(TagCompound tag)
+		protected internal static ModifierPool _Load(Item item, TagCompound tag)
 		{
 			string modname = tag.GetString("ModName");
 			Assembly assembly;
@@ -205,7 +205,7 @@ namespace Loot.System
 					for (int i = 0; i < modifiers; ++i)
 					{
 						// preload to take unloaded modifiers into account
-						var loaded = Modifier._Load(tag.Get<TagCompound>($"Modifier{i}"));
+						var loaded = Modifier._Load(item, tag.Get<TagCompound>($"Modifier{i}"));
 						if (loaded != null)
 							list.Add(loaded);
 					}
@@ -218,7 +218,7 @@ namespace Loot.System
 					for (int i = 0; i < activeModifiers; ++i)
 					{
 						// preload to take unloaded modifiers into account
-						var loaded = Modifier._Load(tag.Get<TagCompound>($"ActiveModifier{i}"));
+						var loaded = Modifier._Load(item, tag.Get<TagCompound>($"ActiveModifier{i}"));
 						if (loaded != null)
 							list.Add(loaded);
 					}

@@ -24,6 +24,16 @@ namespace Loot.System
 	{
 		public Mod Mod { get; internal set; }
 		public uint Type { get; internal set; }
+		public new virtual string Name => GetType().Name;
+
+		public float MinMagnitude { get; internal set; }
+		public float MaxMagnitude { get; internal set; }
+		public float MagnitudeStrength { get; internal set; }
+		public float BasePower { get; internal set; }
+		public float RarityLevel { get; internal set; }
+		public float RollChance { get; internal set; }
+		public int RoundPrecision { get; internal set; }
+
 		public float Magnitude { get; internal set; } = 1f;
 
 		private float _Power = 1f;
@@ -35,16 +45,7 @@ namespace Loot.System
 				RoundedPower = (float)Math.Round(_Power, RoundPrecision);
 			}
 		}
-
 		public float RoundedPower { get; private set; } = 1f;
-
-		public new virtual string Name => GetType().Name;
-		public virtual float BasePower => 1f;
-		public virtual float MinMagnitude => 1f;
-		public virtual float MaxMagnitude => 1f;
-		public virtual float RarityLevel => 1f;
-		public virtual float RollChance => 1f;
-		public virtual int RoundPrecision => 0;
 
 		// Must be getter due to various fields that can change interactively
 		public virtual ModifierTooltipLine[] Description { get; }
@@ -58,15 +59,33 @@ namespace Loot.System
 		public Modifier AsNewInstance()
 			=> (Modifier)Activator.CreateInstance(GetType());
 
-		/// <summary>
-		/// Rolls a magnitude between min and max
-		/// </summary>
-		internal float RollPower() // TODO support /luck/ stat
+		internal void RollPower(/*int luck = 0*/) // TODO support /luck/ stat
 		{
-			Magnitude = MinMagnitude + Main.rand.NextFloat() * (MaxMagnitude - MinMagnitude);
+			Magnitude = MinMagnitude + Main.rand.NextFloat() * (MaxMagnitude - MinMagnitude) * MagnitudeStrength;
 			Power = BasePower * Magnitude;
-			return Power;
 		}
+
+		internal void SetProperties(Item item)
+		{
+			MinMagnitude = GetMinMagnitude(item);
+			MaxMagnitude = GetMaxMagnitude(item);
+			MagnitudeStrength = GetMagnitudeStrength(item);
+			BasePower = GetBasePower(item);
+			RarityLevel = GetRarityLevel(item);
+			RollChance = GetRollChance(item);
+			RoundPrecision = GetRoundPrecision(item);
+		}
+
+		/// <summary>
+		/// Hooks for modifying the various properties of this modifier
+		/// </summary>
+		public virtual float GetMinMagnitude(Item item) => 1f;
+		public virtual float GetMaxMagnitude(Item item) => 1f;
+		public virtual float GetMagnitudeStrength(Item item) => 1f;
+		public virtual float GetBasePower(Item item) => 1f;
+		public virtual float GetRarityLevel(Item item) => 1f;
+		public virtual float GetRollChance(Item item) => 1f;
+		public virtual int GetRoundPrecision(Item item) => 0;
 
 		/// <summary>
 		/// If this Modifier can roll/apply 
@@ -104,10 +123,8 @@ namespace Loot.System
 		public new object Clone()
 		{
 			Modifier clone = (Modifier)MemberwiseClone();
-			clone.Mod = Mod;
-			clone.Type = Type;
-			clone.Magnitude = Magnitude;
-			clone.Power = Power;
+			//clone.Mod = Mod;
+			//clone.Type = Type;
 			Clone(ref clone);
 			return clone;
 		}
@@ -132,7 +149,7 @@ namespace Loot.System
 
 		}
 
-		protected internal static Modifier _Load(TagCompound tag)
+		protected internal static Modifier _Load(Item item, TagCompound tag)
 		{
 			string modname = tag.GetString("ModName");
 			Assembly assembly;
@@ -151,9 +168,10 @@ namespace Loot.System
 
 				e.Type = tag.Get<uint>("ModifierType");
 				e.Mod = ModLoader.GetMod(modname);
-				e.Magnitude = tag.GetFloat("Magnitude");
 				e.Power = tag.GetFloat("Power");
+				e.Magnitude = tag.GetFloat("Magnitude");
 				e.Load(tag);
+				e.SetProperties(item);
 				return e;
 			}
 			throw new Exception($"Modifier load error for {modname}");
@@ -165,9 +183,8 @@ namespace Loot.System
 					{ "Type", modifier.GetType().FullName },
 					{ "ModifierType", modifier.Type },
 					{ "ModName", modifier.Mod.Name },
-					{ "Magnitude", modifier.Magnitude },
 					{ "Power", modifier.Power },
-					{ "RoundedPower", modifier.RoundedPower }
+					{ "Magnitude", modifier.Magnitude }
 				};
 			modifier.Save(tag);
 			return tag;
@@ -199,10 +216,10 @@ namespace Loot.System
 		{
 		}
 		public sealed override bool DrawBody(int body) => base.DrawBody(body);
-		public override void DrawHair(int head, ref bool drawHair, ref bool drawAltHair)
+		public sealed override void DrawHair(int head, ref bool drawHair, ref bool drawAltHair)
 		{
 		}
-		public override void DrawHands(int body, ref bool drawHands, ref bool drawArms)
+		public sealed override void DrawHands(int body, ref bool drawHands, ref bool drawArms)
 		{
 		}
 		public sealed override bool DrawHead(int head) => base.DrawHead(head);

@@ -69,7 +69,7 @@ namespace Loot
 		public override void Load(Item item, TagCompound tag)
 		{
 			if (tag.ContainsKey("Type"))
-				ModifierPool = ModifierPool._Load(tag);
+				ModifierPool = ModifierPool._Load(item, tag);
 			HasRolled = tag.GetBool("HasRolled");
 
 			ModifierPool?.ApplyModifiers(item);
@@ -91,7 +91,7 @@ namespace Loot
 
 		public override void NetReceive(Item item, BinaryReader reader)
 		{
-			ModifierPool = ModifierPool._Load(TagIO.FromStream(reader.BaseStream));
+			ModifierPool = ModifierPool._Load(item, TagIO.FromStream(reader.BaseStream));
 		}
 
 		public override void NetSend(Item item, BinaryWriter writer)

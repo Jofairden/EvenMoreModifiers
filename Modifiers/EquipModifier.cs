@@ -11,13 +11,10 @@ namespace Loot.Modifiers
 	/// </summary>
 	public abstract class EquipModifier : Modifier
 	{
+		public override float GetMagnitudeStrength(Item item)
+			=> item.accessory ? 0.6f : 1f;
+
 		public override bool CanRoll(ModifierContext ctx)
 			=> ctx.Item.accessory || (ctx.Item.headSlot > 0 || ctx.Item.legSlot > 0 || ctx.Item.bodySlot > 0) && !ctx.Item.vanity;
-
-		public override void Apply(Item item)
-		{
-			if (item.accessory)
-				Power = BasePower * ((Magnitude - MinMagnitude) * 0.6f + MinMagnitude);
-		}
 	}
 }

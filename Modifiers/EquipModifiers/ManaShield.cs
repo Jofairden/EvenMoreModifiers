@@ -11,8 +11,8 @@ namespace Loot.Modifiers.EquipModifiers
 			new ModifierTooltipLine { Text = $"+{RoundedPower}% damage redirected to mana", Color =  Color.LimeGreen},
 		};
 
-		public override float MinMagnitude => 1f;
-		public override float MaxMagnitude => 6f;
+		public override float GetMinMagnitude(Item item) => 1f;
+		public override float GetMaxMagnitude(Item item) => 6f;
 
 		public override void UpdateEquip(Item item, Player player)
 		{

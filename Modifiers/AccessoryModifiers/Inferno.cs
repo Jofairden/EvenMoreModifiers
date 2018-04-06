@@ -11,7 +11,7 @@ namespace Loot.Modifiers.AccessoryModifiers
 			new ModifierTooltipLine { Text = "Player has inferno", Color =  Color.IndianRed},
 		};
 
-		public override float RarityLevel => 3f;
+		public override float GetRarityLevel(Item item) => 3f;
 
 		public override void UpdateAccessory(Item item, Player player, bool hideVisual)
 		{

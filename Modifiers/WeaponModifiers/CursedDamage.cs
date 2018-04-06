@@ -12,8 +12,8 @@ namespace Loot.Modifiers.WeaponModifiers
 				new ModifierTooltipLine { Text = $"+{RoundedPower}% damage, but you are cursed", Color = Color.Lime}
 			};
 
-		public override float MinMagnitude => 16f;
-		public override float MaxMagnitude => 30f;
+		public override float GetMinMagnitude(Item item) => 16f;
+		public override float GetMaxMagnitude(Item item) => 30f;
 
 		public override void GetWeaponDamage(Item item, Player player, ref int damage)
 		{

@@ -11,7 +11,7 @@ namespace Loot.Modifiers.AccessoryModifiers
 			new ModifierTooltipLine { Text = "Player deals 100% more damage", Color =  Color.SlateGray},
 		};
 
-		public override float RarityLevel => 5f;
+		public override float GetRarityLevel(Item item) => 5f;
 
 		public override void UpdateAccessory(Item item, Player player, bool hideVisual)
 		{
