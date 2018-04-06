@@ -12,9 +12,8 @@ namespace Loot.Modifiers.WeaponModifiers
 				new ModifierTooltipLine { Text = $"+{RoundedPower}% knockback", Color = Color.Lime}
 			};
 
-		public override float MinMagnitude => 0.05f;
-		public override float MaxMagnitude => 1.0f;
-		public override float BasePower => 20f;
+		public override float GetMinMagnitude(Item item) => 1f;
+		public override float GetMaxMagnitude(Item item) => 20f;
 
 		public override bool CanRoll(ModifierContext ctx) 
 			=> base.CanRoll(ctx) && ctx.Item.knockBack > 0;
@@ -22,7 +21,7 @@ namespace Loot.Modifiers.WeaponModifiers
 		public override void GetWeaponKnockback(Item item, Player player, ref float knockback)
 		{
 			base.GetWeaponKnockback(item, player, ref knockback);
-			knockback *= Power / 100 + 1;
+			knockback *= RoundedPower / 100 + 1;
 		}
 	}
 }

@@ -12,14 +12,13 @@ namespace Loot.Modifiers.WeaponModifiers
 				new ModifierTooltipLine { Text = $"+{RoundedPower}% damage", Color = Color.Lime}
 			};
 
-		public override float MinMagnitude => 0.1f;
-		public override float MaxMagnitude => 1.0f;
-		public override float BasePower => 10f;
+		public override float GetMinMagnitude(Item item) => 1f;
+		public override float GetMaxMagnitude(Item item) => 10f;
 
 		public override void GetWeaponDamage(Item item, Player player, ref int damage)
 		{
 			base.GetWeaponDamage(item, player, ref damage);
-			damage = (int)Math.Ceiling(damage * (1 + Power / 100f));
+			damage = (int)Math.Ceiling(damage * (1 + RoundedPower / 100f));
 		}
 	}
 }

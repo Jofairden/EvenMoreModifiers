@@ -9,18 +9,17 @@ namespace Loot.Modifiers.WeaponModifiers
 	{
 		public override ModifierTooltipLine[] Description => new[]
 			{
-				new ModifierTooltipLine { Text = $"Up to +{(int)Math.Round(Power*6)}% damage based on missing health", Color = Color.Lime}
+				new ModifierTooltipLine { Text = $"Up to +{RoundedPower}% damage based on missing health", Color = Color.Lime}
 			};
 
-		public override float MinMagnitude => 0.2f;
-		public override float MaxMagnitude => 1.0f;
-		public override float BasePower => 5f;
+		public override float GetMinMagnitude(Item item) => 6f;
+		public override float GetMaxMagnitude(Item item) => 30f;
 
 		public override void GetWeaponDamage(Item item, Player player, ref int damage)
 		{
 			base.GetWeaponDamage(item, player, ref damage);
 			// Formula ported from old mod
-			float mag = (Power * ((player.statLifeMax2 - player.statLife) / (float)player.statLifeMax2) * 6);
+			float mag = (RoundedPower * ((player.statLifeMax2 - player.statLife) / (float)player.statLifeMax2));
 			damage = (int)(damage * (1 + mag / 100));
 		}
 	}

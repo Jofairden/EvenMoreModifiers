@@ -12,9 +12,8 @@ namespace Loot.Modifiers.WeaponModifiers
 				new ModifierTooltipLine { Text = $"{RoundedPower}% chance to not consume ammo", Color = Color.Lime}
 			};
 
-		public override float MinMagnitude => 0.05f;
-		public override float MaxMagnitude => 1.0f;
-		public override float BasePower => 20f;
+		public override float GetMinMagnitude(Item item) => 1f;
+		public override float GetMaxMagnitude(Item item) => 20f;
 
 		public override bool CanRoll(ModifierContext ctx)
 		{
@@ -24,7 +23,7 @@ namespace Loot.Modifiers.WeaponModifiers
 
 		public override bool ConsumeAmmo(Item item, Player player)
 		{
-			return Main.rand.NextFloat() > Power / 100;
+			return Main.rand.NextFloat() > RoundedPower / 100;
 		}
 	}
 }

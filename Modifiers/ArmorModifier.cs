@@ -9,6 +9,6 @@ namespace Loot.Modifiers
 	public abstract class ArmorModifier : Modifier
 	{
 		public override bool CanRoll(ModifierContext ctx)
-			=> ctx.Item.defense > 0;
+			=> ctx.Item.defense > 0 && (ctx.Item.headSlot > 0 || ctx.Item.legSlot > 0 || ctx.Item.bodySlot > 0);
 	}
 }

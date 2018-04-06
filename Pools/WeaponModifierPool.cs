@@ -3,7 +3,7 @@ using Loot.System;
 
 namespace Loot.Pools
 {
-	internal class WeaponModifierPool : ModifierPool
+	/*internal class WeaponModifierPool : ModifierPool
 	{
 		public WeaponModifierPool()
 		{
@@ -24,5 +24,5 @@ namespace Loot.Pools
 				Loot.Instance.GetModifier<RandomDebuff>(),
 			};
 		}
-	}
+	}*/
 }

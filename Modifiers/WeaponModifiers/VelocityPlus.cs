@@ -12,9 +12,8 @@ namespace Loot.Modifiers.WeaponModifiers
 				new ModifierTooltipLine { Text = $"+{RoundedPower}% velocity", Color = Color.Lime}
 			};
 
-		public override float MinMagnitude => 0.05f;
-		public override float MaxMagnitude => 1.0f;
-		public override float BasePower => 20f;
+		public override float GetMinMagnitude(Item item) => 1f;
+		public override float GetMaxMagnitude(Item item) => 20f;
 
 		public override bool CanRoll(ModifierContext ctx) 
 			=> base.CanRoll(ctx) && ctx.Item.shoot > 0 && ctx.Item.shootSpeed > 0;
@@ -22,7 +21,7 @@ namespace Loot.Modifiers.WeaponModifiers
 		public override void Apply(Item item)
 		{
 			base.Apply(item);
-			item.shootSpeed *= Power / 100 + 1;
+			item.shootSpeed *= RoundedPower / 100 + 1;
 		}
 	}
 }

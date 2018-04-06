@@ -12,20 +12,24 @@ namespace Loot.Modifiers.WeaponModifiers
 				new ModifierTooltipLine { Text = $"+{RoundedPower}% speed", Color = Color.Lime}
 			};
 
-		public override float MinMagnitude => 0.1f;
-		public override float MaxMagnitude => 1.0f;
-		public override float BasePower => 10f;
+		public override float GetMinMagnitude(Item item) => 1f;
+		public override float GetMaxMagnitude(Item item) => 10f;
 
 		public override void Apply(Item item)
 		{
 			base.Apply(item);
-			// Floor the effect so that it will always increase speed by at least 1 frame
-			item.useTime = (int)Math.Floor((float)item.useTime * (1 - Power / 100f));
-			item.useAnimation = (int)Math.Floor((float)item.useAnimation * (1 - Power / 100f));
+			
+			item.useTime = (int)(item.useTime * (1 - RoundedPower / 100f));
+			item.useAnimation = (int)(item.useAnimation * (1 - RoundedPower / 100f));
 
 			// Don't go below the minimum
 			if (item.useTime < 2) item.useTime = 2;
 			if (item.useAnimation < 2) item.useAnimation = 2;
 		}
+
+		/*public override float UseTimeMultiplier(Item item, Player player)
+		{
+			return 1 - RoundedPower / 100;
+		}*/
 	}
 }

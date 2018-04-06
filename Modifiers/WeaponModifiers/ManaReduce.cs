@@ -12,9 +12,8 @@ namespace Loot.Modifiers.WeaponModifiers
 				new ModifierTooltipLine { Text = $"-{RoundedPower}% mana cost", Color = Color.Lime}
 			};
 
-		public override float MinMagnitude => (float)1 / 15;
-		public override float MaxMagnitude => 1.0f;
-		public override float BasePower => 15f;
+		public override float GetMinMagnitude(Item item) => 1f;
+		public override float GetMaxMagnitude(Item item) => 15f;
 
 		public override bool CanRoll(ModifierContext ctx) 
 			=> base.CanRoll(ctx) && ctx.Item.mana > 0;
@@ -23,7 +22,7 @@ namespace Loot.Modifiers.WeaponModifiers
 		{
 			base.Apply(item);
 			// Always reduce by at least 1 mana cost
-			item.mana = (int)Math.Floor(item.mana * (1 - Power / 100f));
+			item.mana = (int)Math.Floor(item.mana * (1 - RoundedPower / 100f));
 
 			// Don't go below 1 mana cost! 0 cost is too OP :P
 			if (item.mana < 1)

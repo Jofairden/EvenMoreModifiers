@@ -12,10 +12,9 @@ namespace Loot.Modifiers.WeaponModifiers
 		// TODO , this could should be added to to include min/max magnitude rolls, that influence the time and chance to apply 
 		internal static int[,] BuffPairs = 
 		{
-			{ BuffID.Confused, 120, },
+			{ BuffID.Confused, 120 },
 			{ BuffID.CursedInferno, 180 },
 			{ BuffID.Frostburn, 240 },
-			{ BuffID.Ichor, 180 },
 			{ BuffID.OnFire, 300 },
 			{ BuffID.Poisoned, 480 },
 		};
@@ -42,7 +41,7 @@ namespace Loot.Modifiers.WeaponModifiers
 
 		public override int BuffType => BuffPairs[_index, 0];
 		public override int BuffTime => BuffPairs[_index, 1];
-		public override float RollChance => base.RollChance * _len;
+		public override float GetRollChance(Item item) => base.GetRollChance(item) * _len;
 
 		// TODO we need ModPlayer hooks here
 
