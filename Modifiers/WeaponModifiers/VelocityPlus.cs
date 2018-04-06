@@ -9,19 +9,21 @@ namespace Loot.Modifiers.WeaponModifiers
 	{
 		public override ModifierTooltipLine[] Description => new[]
 			{
-				new ModifierTooltipLine { Text = $"+{RoundedPower}% velocity", Color = Color.Lime}
+				new ModifierTooltipLine { Text = $"+{Properties.RoundedPower}% velocity", Color = Color.Lime}
 			};
 
-		public override float GetMinMagnitude(Item item) => 1f;
-		public override float GetMaxMagnitude(Item item) => 20f;
+		public override ModifierProperties GetModifierProperties(Item item)
+		{
+			return base.GetModifierProperties(item).Set(maxMagnitude: 20f);
+		}
 
-		public override bool CanRoll(ModifierContext ctx) 
+		public override bool CanRoll(ModifierContext ctx)
 			=> base.CanRoll(ctx) && ctx.Item.shoot > 0 && ctx.Item.shootSpeed > 0;
 
 		public override void Apply(Item item)
 		{
 			base.Apply(item);
-			item.shootSpeed *= RoundedPower / 100 + 1;
+			item.shootSpeed *= Properties.RoundedPower / 100 + 1;
 		}
 	}
 }

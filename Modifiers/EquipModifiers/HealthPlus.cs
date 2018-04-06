@@ -8,15 +8,17 @@ namespace Loot.Modifiers.EquipModifiers
 	{
 		public override ModifierTooltipLine[] Description => new[]
 		{
-			new ModifierTooltipLine { Text = $"+{RoundedPower} max life", Color =  Color.LimeGreen},
+			new ModifierTooltipLine { Text = $"+{Properties.RoundedPower} max life", Color =  Color.LimeGreen},
 		};
 
-		public override float GetMinMagnitude(Item item) => 1f;
-		public override float GetMaxMagnitude(Item item) => 20f;
-		
+		public override ModifierProperties GetModifierProperties(Item item)
+		{
+			return base.GetModifierProperties(item).Set(maxMagnitude: 20f);
+		}
+
 		public override void UpdateEquip(Item item, Player player)
 		{
-			player.statLifeMax2 += (int)RoundedPower;
+			player.statLifeMax2 += (int)Properties.RoundedPower;
 		}
 	}
 }

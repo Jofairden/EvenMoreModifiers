@@ -9,18 +9,20 @@ namespace Loot.Modifiers.WeaponModifiers
 	{
 		public override ModifierTooltipLine[] Description => new[]
 			{
-				new ModifierTooltipLine { Text = $"+{RoundedPower}% speed", Color = Color.Lime}
+				new ModifierTooltipLine { Text = $"+{Properties.RoundedPower}% speed", Color = Color.Lime}
 			};
 
-		public override float GetMinMagnitude(Item item) => 1f;
-		public override float GetMaxMagnitude(Item item) => 10f;
+		public override ModifierProperties GetModifierProperties(Item item)
+		{
+			return base.GetModifierProperties(item).Set(maxMagnitude: 10f);
+		}
 
 		public override void Apply(Item item)
 		{
 			base.Apply(item);
-			
-			item.useTime = (int)(item.useTime * (1 - RoundedPower / 100f));
-			item.useAnimation = (int)(item.useAnimation * (1 - RoundedPower / 100f));
+
+			item.useTime = (int)(item.useTime * (1 - Properties.RoundedPower / 100f));
+			item.useAnimation = (int)(item.useAnimation * (1 - Properties.RoundedPower / 100f));
 
 			// Don't go below the minimum
 			if (item.useTime < 2) item.useTime = 2;
@@ -29,7 +31,7 @@ namespace Loot.Modifiers.WeaponModifiers
 
 		/*public override float UseTimeMultiplier(Item item, Player player)
 		{
-			return 1 - RoundedPower / 100;
+			return 1 - Properties.RoundedPower / 100;
 		}*/
 	}
 }

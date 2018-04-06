@@ -8,15 +8,17 @@ namespace Loot.Modifiers.EquipModifiers
 	{
 		public override ModifierTooltipLine[] Description => new[]
 		{
-			new ModifierTooltipLine { Text = $"+{RoundedPower} life regen/minute", Color =  Color.LimeGreen},
+			new ModifierTooltipLine { Text = $"+{Properties.RoundedPower} life regen/minute", Color =  Color.LimeGreen},
 		};
 
-		public override float GetMinMagnitude(Item item) => 1f;
-		public override float GetMaxMagnitude(Item item) => 45f;
+		public override ModifierProperties GetModifierProperties(Item item)
+		{
+			return base.GetModifierProperties(item).Set(maxMagnitude: 45f);
+		}
 
 		public override void UpdateEquip(Item item, Player player)
 		{
-			ModifierPlayer.PlayerInfo(player).LifeRegen += (int)RoundedPower;
+			ModifierPlayer.PlayerInfo(player).LifeRegen += (int)Properties.RoundedPower;
 		}
 	}
 }

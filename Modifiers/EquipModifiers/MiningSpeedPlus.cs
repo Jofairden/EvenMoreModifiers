@@ -8,15 +8,17 @@ namespace Loot.Modifiers.EquipModifiers
 	{
 		public override ModifierTooltipLine[] Description => new[]
 		{
-			new ModifierTooltipLine { Text = $"+{RoundedPower}% mining speed", Color =  Color.LimeGreen},
+			new ModifierTooltipLine { Text = $"+{Properties.RoundedPower}% mining speed", Color =  Color.LimeGreen},
 		};
 
-		public override float GetMinMagnitude(Item item) => 1f;
-		public override float GetMaxMagnitude(Item item) => 10f;
-		
+		public override ModifierProperties GetModifierProperties(Item item)
+		{
+			return base.GetModifierProperties(item).Set(maxMagnitude: 10f);
+		}
+
 		public override void UpdateEquip(Item item, Player player)
 		{
-			player.pickSpeed *= RoundedPower / 100;
+			player.pickSpeed *= Properties.RoundedPower / 100;
 		}
 	}
 }

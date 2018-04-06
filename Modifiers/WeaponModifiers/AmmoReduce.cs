@@ -9,11 +9,13 @@ namespace Loot.Modifiers.WeaponModifiers
 	{
 		public override ModifierTooltipLine[] Description => new[]
 			{
-				new ModifierTooltipLine { Text = $"{RoundedPower}% chance to not consume ammo", Color = Color.Lime}
+				new ModifierTooltipLine { Text = $"{Properties.RoundedPower}% chance to not consume ammo", Color = Color.Lime}
 			};
 
-		public override float GetMinMagnitude(Item item) => 1f;
-		public override float GetMaxMagnitude(Item item) => 20f;
+		public override ModifierProperties GetModifierProperties(Item item)
+		{
+			return base.GetModifierProperties(item).Set(maxMagnitude: 20f);
+		}
 
 		public override bool CanRoll(ModifierContext ctx)
 		{
@@ -23,7 +25,7 @@ namespace Loot.Modifiers.WeaponModifiers
 
 		public override bool ConsumeAmmo(Item item, Player player)
 		{
-			return Main.rand.NextFloat() > RoundedPower / 100;
+			return Main.rand.NextFloat() > Properties.RoundedPower / 100;
 		}
 	}
 }

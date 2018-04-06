@@ -8,16 +8,18 @@ namespace Loot.Modifiers.EquipModifiers
 	{
 		public override ModifierTooltipLine[] Description => new[]
 		{
-			new ModifierTooltipLine { Text = $"+{RoundedPower}% movement speed", Color =  Color.LimeGreen},
+			new ModifierTooltipLine { Text = $"+{Properties.RoundedPower}% movement speed", Color =  Color.LimeGreen},
 		};
 
-		public override float GetMinMagnitude(Item item) => 1f;
-		public override float GetMaxMagnitude(Item item) => 10f;
+		public override ModifierProperties GetModifierProperties(Item item)
+		{
+			return base.GetModifierProperties(item).Set(maxMagnitude: 10f);
+		}
 
 		public override void UpdateEquip(Item item, Player player)
 		{
-			player.moveSpeed += RoundedPower / 100;
-			player.maxRunSpeed *= 1 + RoundedPower / 100;
+			player.moveSpeed += Properties.RoundedPower / 100;
+			player.maxRunSpeed *= 1 + Properties.RoundedPower / 100;
 		}
 	}
 }

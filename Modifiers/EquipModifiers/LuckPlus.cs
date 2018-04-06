@@ -8,15 +8,17 @@ namespace Loot.Modifiers.EquipModifiers
 	{
 		public override ModifierTooltipLine[] Description => new[]
 		{
-			new ModifierTooltipLine { Text = $"+{RoundedPower} luck [WIP]", Color =  Color.LimeGreen},
+			new ModifierTooltipLine { Text = $"+{Properties.RoundedPower} luck [WIP]", Color =  Color.LimeGreen},
 		};
 
-		public override float GetMinMagnitude(Item item) => 1f;
-		public override float GetMaxMagnitude(Item item) => 10f;
-		
+		public override ModifierProperties GetModifierProperties(Item item)
+		{
+			return base.GetModifierProperties(item).Set(maxMagnitude: 10f);
+		}
+
 		public override void UpdateEquip(Item item, Player player)
 		{
-			ModifierPlayer.PlayerInfo(player).Luck += (int)RoundedPower;
+			ModifierPlayer.PlayerInfo(player).Luck += (int)Properties.RoundedPower;
 		}
 	}
 }

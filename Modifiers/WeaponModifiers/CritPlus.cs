@@ -9,15 +9,17 @@ namespace Loot.Modifiers.WeaponModifiers
 	{
 		public override ModifierTooltipLine[] Description => new[]
 			{
-				new ModifierTooltipLine { Text = $"+{RoundedPower}% crit chance", Color = Color.Lime}
+				new ModifierTooltipLine { Text = $"+{Properties.RoundedPower}% crit chance", Color = Color.Lime}
 			};
 
-		public override float GetMinMagnitude(Item item) => 1f;
-		public override float GetMaxMagnitude(Item item) => 10f;
+		public override ModifierProperties GetModifierProperties(Item item)
+		{
+			return base.GetModifierProperties(item).Set(maxMagnitude: 10f);
+		}
 
 		public override void GetWeaponCrit(Item item, Player player, ref int crit)
 		{
-			crit += (int)RoundedPower;
+			crit += (int)Properties.RoundedPower;
 		}
 	}
 }

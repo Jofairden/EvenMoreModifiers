@@ -15,11 +15,13 @@ namespace Loot.Modifiers
 	{
 		public override ModifierTooltipLine[] Description => new[]
 		{
-			new ModifierTooltipLine { Text = $"+{RoundedPower}% chance to inflict {GetBuffName()} for {BuffTime/60f}s", Color = Color.Lime }
+			new ModifierTooltipLine { Text = $"+{Properties.RoundedPower}% chance to inflict {GetBuffName()} for {BuffTime/60f}s", Color = Color.Lime }
 		};
 
-		public override float GetMinMagnitude(Item item) => 1f;
-		public override float GetMaxMagnitude(Item item) => 50f;
+		public override ModifierProperties GetModifierProperties(Item item)
+		{
+			return base.GetModifierProperties(item).Set(maxMagnitude: 50f);
+		}
 
 		public abstract int BuffType { get; }
 		public abstract int BuffTime { get; }
@@ -35,7 +37,7 @@ namespace Loot.Modifiers
 		public override void HoldItem(Item item, Player player)
 		{
 			//ModifierPlayer.PlayerInfo(player).DebuffChances.Add((chance: Power / 100, type: BuffType, time: BuffTime));
-			ModifierPlayer.PlayerInfo(player).DebuffChances.Add(new Tuple<float, int, int>(RoundedPower / 100, BuffType, BuffTime));
+			ModifierPlayer.PlayerInfo(player).DebuffChances.Add(new Tuple<float, int, int>(Properties.RoundedPower / 100, BuffType, BuffTime));
 		}
 	}
 }

@@ -9,16 +9,18 @@ namespace Loot.Modifiers.EquipModifiers
 	{
 		public override ModifierTooltipLine[] Description => new[]
 		{
-			new ModifierTooltipLine { Text = $"Knockback immunity", Color =  Color.LimeGreen},
+			new ModifierTooltipLine {Text = $"Knockback immunity", Color = Color.LimeGreen},
 		};
 
-		public override float GetRollChance(Item item) => 1/3f;   // 1/3rd the chance of other modifiers
-		public override float GetRarityLevel(Item item) => 3f;    // Also worth 3 times as much as normal modifiers
+		public override ModifierProperties GetModifierProperties(Item item)
+		{
+			return base.GetModifierProperties(item).Set(rollChance: .333f, rarityLevel: 3f);
+		}
 
 		public override bool CanRoll(ModifierContext ctx)
 		{
 			// Don't roll on items that already provide knockback immunity
-			switch(ctx.Item.type)
+			switch (ctx.Item.type)
 			{
 				case (ItemID.CobaltShield):
 				case (ItemID.ObsidianShield):

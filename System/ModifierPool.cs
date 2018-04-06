@@ -40,7 +40,7 @@ namespace Loot.System
 		public Modifier[] ActiveModifiers { get; internal set; }
 
 		public float TotalRarityLevel =>
-			ActiveModifiers.Select(m => m.RarityLevel).DefaultIfEmpty(0).Sum();
+			ActiveModifiers.Select(m => m.Properties.RarityLevel).DefaultIfEmpty(0).Sum();
 
 		public IEnumerable<ModifierTooltipLine[]> Description =>
 			ActiveModifiers.Select(m => m.Description);
@@ -71,8 +71,8 @@ namespace Loot.System
 		{
 			WeightedRandom<Modifier> wr = new WeightedRandom<Modifier>();
 			List<Modifier> list = new List<Modifier>();
-			foreach (var e in Modifiers.Where(x => { x.SetProperties(ctx.Item); return x.CanRoll(ctx); }))
-				wr.Add(e, e.RollChance);
+			foreach (var e in Modifiers.Where(x => { x.Properties = x.GetModifierProperties(ctx.Item).RollMagnitudeAndPower(); return x.CanRoll(ctx); }))
+				wr.Add(e, e.Properties.RollChance);
 
 			for (int i = 0; i < 4; ++i)
 			{
@@ -81,7 +81,7 @@ namespace Loot.System
 
 				Modifier e = wr.Get();
 				list.Add((Modifier)e.Clone());
-				wr.elements.Remove(new Tuple<Modifier, double>(e, e.RollChance));
+				wr.elements.Remove(new Tuple<Modifier, double>(e, e.Properties.RollChance));
 				wr.needsRefresh = true;
 			}
 

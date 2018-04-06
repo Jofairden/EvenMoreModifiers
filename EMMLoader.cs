@@ -307,14 +307,14 @@ namespace Loot
 		/// Requests all effects, and returns them as a readonly collection
 		/// </summary>
 		/// <returns></returns>
-		public static IReadOnlyCollection<Modifier> RequestModifiers() 
+		public static IReadOnlyCollection<Modifier> RequestModifiers()
 			=> Modifiers.Select(e => (Modifier)e.Value?.Clone()).ToList().AsReadOnly();
 
 		/// <summary>
 		/// Requests all rarities, and returns them as a readonly collection
 		/// </summary>
 		/// <returns></returns>
-		public static IReadOnlyCollection<ModifierRarity> RequestModifierRarities() 
+		public static IReadOnlyCollection<ModifierRarity> RequestModifierRarities()
 			=> Rarities.Select(r => (ModifierRarity)r.Value?.Clone()).ToList().AsReadOnly();
 
 		/// <summary>

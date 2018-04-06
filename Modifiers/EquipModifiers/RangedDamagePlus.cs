@@ -8,15 +8,17 @@ namespace Loot.Modifiers.EquipModifiers
 	{
 		public override ModifierTooltipLine[] Description => new[]
 		{
-			new ModifierTooltipLine { Text = $"+{RoundedPower}% ranged damage", Color =  Color.LimeGreen},
+			new ModifierTooltipLine { Text = $"+{Properties.RoundedPower}% ranged damage", Color =  Color.LimeGreen},
 		};
 
-		public override float GetMinMagnitude(Item item) => 1f;
-		public override float GetMaxMagnitude(Item item) => 8f;
+		public override ModifierProperties GetModifierProperties(Item item)
+		{
+			return base.GetModifierProperties(item).Set(maxMagnitude: 8f);
+		}
 
 		public override void UpdateEquip(Item item, Player player)
 		{
-			player.rangedDamage += RoundedPower / 100;
+			player.rangedDamage += Properties.RoundedPower / 100;
 		}
 	}
 }

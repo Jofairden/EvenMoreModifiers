@@ -14,6 +14,97 @@ namespace Loot.System
 		public Color? Color;
 	}
 
+	public struct ModifierProperties
+	{
+		public float MinMagnitude { get; private set; }
+		public float MaxMagnitude { get; private set; }
+		public float MagnitudeStrength { get; private set; }
+		public float BasePower { get; private set; }
+		public float RarityLevel { get; private set; }
+		public float RollChance { get; private set; }
+		public int RoundPrecision { get; private set; }
+		public float Magnitude { get; private set; }
+		private float _power;
+		public float Power
+		{
+			get { return _power; }
+			private set
+			{
+				_power = value;
+				RoundedPower = (float)Math.Round(value, RoundPrecision);
+			}
+		}
+		public float RoundedPower
+		{
+			get;
+			private set;
+		}
+
+		public ModifierProperties(float minMagnitude = 1f, float maxMagnitude = 1f, float magnitudeStrength = 1f, float basePower = 1f, float rarityLevel = 1f, float rollChance = 1f, int roundPrecision = 1, ModifierProperties? source = null) : this()
+		{
+			if (source.HasValue)
+				this = source.Value;
+
+			Set(minMagnitude, maxMagnitude, magnitudeStrength, basePower, rarityLevel, rollChance, roundPrecision);
+		}
+
+		public ModifierProperties Set(float minMagnitude = 1f, float maxMagnitude = 1f, float magnitudeStrength = 1f, float basePower = 1f, float rarityLevel = 1f, float rollChance = 1f, int roundPrecision = 0)
+		{
+			if (minMagnitude != MinMagnitude)
+				MinMagnitude = minMagnitude;
+
+			if (maxMagnitude != MaxMagnitude)
+				MaxMagnitude = maxMagnitude;
+
+			if (magnitudeStrength != MagnitudeStrength)
+				MagnitudeStrength = magnitudeStrength;
+
+			if (basePower != BasePower)
+				BasePower = basePower;
+
+			if (rarityLevel != RarityLevel)
+				RarityLevel = rarityLevel;
+
+			if (rollChance != RollChance)
+				RollChance = rollChance;
+
+			if (roundPrecision != RoundPrecision)
+				RoundPrecision = roundPrecision;
+
+			return this;
+		}
+
+		public ModifierProperties RollMagnitudeAndPower(float? magnitude = null, float? power = null)
+		{
+			/* Roll power TODO support /luck/ stat */
+			Magnitude = magnitude ?? (MinMagnitude + Main.rand.NextFloat() * (MaxMagnitude - MinMagnitude)) * MagnitudeStrength;
+			Power = power ?? BasePower * Magnitude;
+			return this;
+		}
+
+		public TagCompound Save()
+		{
+			return new TagCompound
+			{
+				{"Magnitude", Magnitude},
+				{"Power", Power}
+			};
+		}
+
+		public static ModifierProperties Load(TagCompound tag)
+		{
+			try
+			{
+				return new ModifierProperties().RollMagnitudeAndPower(tag.GetAsShort("Magnitude"), tag.GetAsShort("Power"));
+			}
+			catch (Exception)
+			{
+				return new ModifierProperties().RollMagnitudeAndPower();
+			}
+		}
+	}
+
+
 	/// <summary>
 	/// Defines a modifier, which is an unloaded GlobalItem
 	/// Making it a GlobalItem gives easy access to all hooks
@@ -26,26 +117,7 @@ namespace Loot.System
 		public uint Type { get; internal set; }
 		public new virtual string Name => GetType().Name;
 
-		public float MinMagnitude { get; internal set; }
-		public float MaxMagnitude { get; internal set; }
-		public float MagnitudeStrength { get; internal set; }
-		public float BasePower { get; internal set; }
-		public float RarityLevel { get; internal set; }
-		public float RollChance { get; internal set; }
-		public int RoundPrecision { get; internal set; }
-
-		public float Magnitude { get; internal set; } = 1f;
-
-		private float _Power = 1f;
-		public float Power {
-			get { return _Power; }
-			internal set
-			{
-				_Power = value;
-				RoundedPower = (float)Math.Round(_Power, RoundPrecision);
-			}
-		}
-		public float RoundedPower { get; private set; } = 1f;
+		public ModifierProperties Properties { get; internal set; }
 
 		// Must be getter due to various fields that can change interactively
 		public virtual ModifierTooltipLine[] Description { get; }
@@ -59,33 +131,10 @@ namespace Loot.System
 		public Modifier AsNewInstance()
 			=> (Modifier)Activator.CreateInstance(GetType());
 
-		internal void RollPower(/*int luck = 0*/) // TODO support /luck/ stat
+		public virtual ModifierProperties GetModifierProperties(Item item)
 		{
-			Magnitude = MinMagnitude + Main.rand.NextFloat() * (MaxMagnitude - MinMagnitude) * MagnitudeStrength;
-			Power = BasePower * Magnitude;
+			return new ModifierProperties();
 		}
-
-		internal void SetProperties(Item item)
-		{
-			MinMagnitude = GetMinMagnitude(item);
-			MaxMagnitude = GetMaxMagnitude(item);
-			MagnitudeStrength = GetMagnitudeStrength(item);
-			BasePower = GetBasePower(item);
-			RarityLevel = GetRarityLevel(item);
-			RollChance = GetRollChance(item);
-			RoundPrecision = GetRoundPrecision(item);
-		}
-
-		/// <summary>
-		/// Hooks for modifying the various properties of this modifier
-		/// </summary>
-		public virtual float GetMinMagnitude(Item item) => 1f;
-		public virtual float GetMaxMagnitude(Item item) => 1f;
-		public virtual float GetMagnitudeStrength(Item item) => 1f;
-		public virtual float GetBasePower(Item item) => 1f;
-		public virtual float GetRarityLevel(Item item) => 1f;
-		public virtual float GetRollChance(Item item) => 1f;
-		public virtual int GetRoundPrecision(Item item) => 0;
 
 		/// <summary>
 		/// If this Modifier can roll/apply 
@@ -123,8 +172,9 @@ namespace Loot.System
 		public new object Clone()
 		{
 			Modifier clone = (Modifier)MemberwiseClone();
-			//clone.Mod = Mod;
-			//clone.Type = Type;
+			clone.Mod = Mod;
+			clone.Type = Type;
+			clone.Properties = Properties;
 			Clone(ref clone);
 			return clone;
 		}
@@ -168,10 +218,9 @@ namespace Loot.System
 
 				e.Type = tag.Get<uint>("ModifierType");
 				e.Mod = ModLoader.GetMod(modname);
-				e.Power = tag.GetFloat("Power");
-				e.Magnitude = tag.GetFloat("Magnitude");
+				var p = ModifierProperties.Load(tag.GetCompound("ModifierProperties"));
+				e.Properties = e.GetModifierProperties(item).RollMagnitudeAndPower(p.Magnitude, p.Power);
 				e.Load(tag);
-				e.SetProperties(item);
 				return e;
 			}
 			throw new Exception($"Modifier load error for {modname}");
@@ -179,13 +228,13 @@ namespace Loot.System
 
 		protected internal static TagCompound Save(Modifier modifier)
 		{
-			var tag = new TagCompound {
-					{ "Type", modifier.GetType().FullName },
-					{ "ModifierType", modifier.Type },
-					{ "ModName", modifier.Mod.Name },
-					{ "Power", modifier.Power },
-					{ "Magnitude", modifier.Magnitude }
-				};
+			var tag = new TagCompound
+			{
+				{ "Type", modifier.GetType().FullName },
+				{ "ModifierType", modifier.Type },
+				{ "ModName", modifier.Mod.Name },
+				{ "ModifierProperties", modifier.Properties.Save() }
+			};
 			modifier.Save(tag);
 			return tag;
 		}

@@ -1,4 +1,5 @@
-﻿using Terraria;
+﻿using Loot.System;
+using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader.IO;
 
@@ -10,7 +11,7 @@ namespace Loot.Modifiers.WeaponModifiers
 	public sealed class RandomDebuff : WeaponDebuffModifier
 	{
 		// TODO , this could should be added to to include min/max magnitude rolls, that influence the time and chance to apply 
-		internal static int[,] BuffPairs = 
+		internal static int[,] BuffPairs =
 		{
 			{ BuffID.Confused, 120 },
 			{ BuffID.CursedInferno, 180 },
@@ -41,7 +42,11 @@ namespace Loot.Modifiers.WeaponModifiers
 
 		public override int BuffType => BuffPairs[_index, 0];
 		public override int BuffTime => BuffPairs[_index, 1];
-		public override float GetRollChance(Item item) => base.GetRollChance(item) * _len;
+
+		public override ModifierProperties GetModifierProperties(Item item)
+		{
+			return new ModifierProperties(source: base.GetModifierProperties(item)).Set(rollChance: _len);
+		}
 
 		// TODO we need ModPlayer hooks here
 

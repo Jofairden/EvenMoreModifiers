@@ -9,16 +9,18 @@ namespace Loot.Modifiers.WeaponModifiers
 	{
 		public override ModifierTooltipLine[] Description => new[]
 			{
-				new ModifierTooltipLine { Text = $"+{RoundedPower}% damage, but you are cursed", Color = Color.Lime}
+				new ModifierTooltipLine { Text = $"+{Properties.RoundedPower}% damage, but you are cursed", Color = Color.Lime}
 			};
 
-		public override float GetMinMagnitude(Item item) => 16f;
-		public override float GetMaxMagnitude(Item item) => 30f;
+		public override ModifierProperties GetModifierProperties(Item item)
+		{
+			return base.GetModifierProperties(item).Set(minMagnitude: 16f, maxMagnitude: 30f);
+		}
 
 		public override void GetWeaponDamage(Item item, Player player, ref int damage)
 		{
 			base.GetWeaponDamage(item, player, ref damage);
-			damage = (int)Math.Ceiling(damage * (1 + RoundedPower / 100f));
+			damage = (int)Math.Ceiling(damage * (1 + Properties.RoundedPower / 100f));
 		}
 
 		public override void HoldItem(Item item, Player player)

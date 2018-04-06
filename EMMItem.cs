@@ -28,7 +28,7 @@ namespace Loot
 		/// Has a set chance to hit a predefined pool of modifiers
 		/// </summary>
 		internal ModifierPool RollNewPool(ModifierContext ctx)
-		{	
+		{
 			// Try getting a weighted pool, or roll all modifiers at random
 			bool rollPredefinedPool = Main.rand.NextFloat() <= 0.25f;
 			bool canRollRandom = !rollPredefinedPool;
@@ -52,10 +52,11 @@ namespace Loot
 			{
 				// If we have rolled modifiers, roll its power by magnitude, then update the rarity
 				foreach (var e in ModifierPool.ActiveModifiers)
-					e.RollPower();
+					e.Properties.RollMagnitudeAndPower();
+
 				ModifierPool.UpdateRarity();
 			}
-				
+
 			return ModifierPool;
 		}
 
@@ -77,8 +78,8 @@ namespace Loot
 
 		public override TagCompound Save(Item item)
 		{
-			TagCompound tag = ModifierPool != null 
-				? ModifierPool.Save(ModifierPool) 
+			TagCompound tag = ModifierPool != null
+				? ModifierPool.Save(ModifierPool)
 				: new TagCompound();
 
 			tag.Add("HasRolled", HasRolled);

@@ -557,14 +557,14 @@ namespace Loot
 
 		public override bool PreHurt(bool pvp, bool quiet, ref int damage, ref int hitDirection, ref bool crit, ref bool customDamage, ref bool playSound, ref bool genGore, ref PlayerDeathReason damageSource)
 		{
-			if(Main.rand.NextFloat() < DodgeChance)
+			if (Main.rand.NextFloat() < DodgeChance)
 			{
 				player.NinjaDodge();
 				return false;
 			}
 
 			int manaBlock = (int)Math.Ceiling(damage * ManaShield);
-			if(manaBlock > 0 && player.statMana > 0)
+			if (manaBlock > 0 && player.statMana > 0)
 			{
 				damage -= manaBlock;
 				player.statMana -= manaBlock * 2;

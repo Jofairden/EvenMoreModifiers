@@ -8,15 +8,17 @@ namespace Loot.Modifiers.EquipModifiers
 	{
 		public override ModifierTooltipLine[] Description => new[]
 		{
-			new ModifierTooltipLine { Text = $"+{RoundedPower}% defense", Color =  Color.LimeGreen},
+			new ModifierTooltipLine { Text = $"+{Properties.RoundedPower}% defense", Color =  Color.LimeGreen},
 		};
 
-		public override float GetMinMagnitude(Item item) => 1f;
-		public override float GetMaxMagnitude(Item item) => 8f;
+		public override ModifierProperties GetModifierProperties(Item item)
+		{
+			return base.GetModifierProperties(item).Set(maxMagnitude: 8f);
+		}
 
 		public override void UpdateEquip(Item item, Player player)
 		{
-			ModifierPlayer.PlayerInfo(player).PercentDefBoost += RoundedPower / 100;
+			ModifierPlayer.PlayerInfo(player).PercentDefBoost += Properties.RoundedPower / 100;
 		}
 	}
 }
