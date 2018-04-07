@@ -473,11 +473,11 @@ namespace Loot
 		public int LightStrength;     // Light generation
 		public int LifeRegen;         // Health regeneration
 		public float DodgeChance;     // Dodge chance
-		public float CritDamage = 1f; // Crit damage multiplier
+		public float CritMulti = 1f; // Crit damage multiplier
 		public float SurvivalChance;  // Chance to survive lethal blow
 		public float ManaShield;      // % of damage redirected to mana
 		public float PercentDefBoost; // % defense bonus
-		public float HealthyFoesBonus = 1f; // Damage multiplier vs max life foes
+		public float HealthyFoesMulti = 1f; // Damage multiplier vs max life foes
 
 		// List of current debuff chances. Tuple format is [chance, buffType, buffTime]
 		// TODO with c#7 we should favor a named tuple (waiting for TML support)
@@ -495,11 +495,11 @@ namespace Loot
 			BonusImmunityTime = 0;
 			LightStrength = 0;
 			DodgeChance = 0;
-			CritDamage = 1f;
+			CritMulti = 1f;
 			SurvivalChance = 0;
 			ManaShield = 0;
 			PercentDefBoost = 0;
-			HealthyFoesBonus = 1f;
+			HealthyFoesMulti = 1f;
 			DebuffChances.Clear();
 		}
 
@@ -547,12 +547,12 @@ namespace Loot
 
 		private void CritBonus(ref int damage, bool crit)
 		{
-			if (crit) damage = (int)(Math.Ceiling(damage * CritDamage));
+			if (crit) damage = (int)Math.Ceiling(damage * CritMulti);
 		}
 
 		private void HealthyBonus(ref int damage, NPC npc)
 		{
-			if (npc.life == npc.lifeMax) damage = (int)(Math.Ceiling(damage * HealthyFoesBonus));
+			if (npc.life == npc.lifeMax) damage = (int)(Math.Ceiling(damage * HealthyFoesMulti));
 		}
 
 		public override bool PreHurt(bool pvp, bool quiet, ref int damage, ref int hitDirection, ref bool crit, ref bool customDamage, ref bool playSound, ref bool genGore, ref PlayerDeathReason damageSource)

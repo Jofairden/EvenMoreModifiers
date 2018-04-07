@@ -18,7 +18,7 @@ namespace Loot.Modifiers.EquipModifiers
 
 		public override void UpdateEquip(Item item, Player player)
 		{
-			ModifierPlayer.PlayerInfo(player).HealthyFoesBonus += Properties.RoundedPower / 100;
+			ModifierPlayer.PlayerInfo(player).HealthyFoesMulti += Properties.RoundedPower / 100;
 		}
 	}
 }
