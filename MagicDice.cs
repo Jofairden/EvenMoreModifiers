@@ -8,6 +8,11 @@ namespace Loot
 	/// </summary>
 	class MagicDice : ModItem
 	{
+		public override bool Autoload(ref string name)
+		{
+			return false;
+		}
+
 		public override void SetDefaults()
 		{
 			item.maxStack = 999;
