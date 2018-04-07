@@ -27,7 +27,8 @@ namespace Loot.Modifiers.EquipModifiers
 				case (ItemID.AnkhShield):
 					return false;
 			}
-			return true;
+
+			return base.CanRoll(ctx);
 		}
 
 		public override void UpdateEquip(Item item, Player player)
