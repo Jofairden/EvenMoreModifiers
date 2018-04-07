@@ -198,19 +198,19 @@ namespace Loot.System
 				bool rarityUnloaded = preloadRarity == null;
 				if (!rarityUnloaded)
 					m.Rarity = preloadRarity;
-				int modifiers = tag.GetAsInt("Modifiers");
-				if (modifiers > 0)
-				{
-					var list = new List<Modifier>();
-					for (int i = 0; i < modifiers; ++i)
-					{
-						// preload to take unloaded modifiers into account
-						var loaded = Modifier._Load(item, tag.Get<TagCompound>($"Modifier{i}"));
-						if (loaded != null)
-							list.Add(loaded);
-					}
-					m.Modifiers = list.ToArray();
-				}
+				//int modifiers = tag.GetAsInt("Modifiers");
+				//if (modifiers > 0)
+				//{
+				//	var list = new List<Modifier>();
+				//	for (int i = 0; i < modifiers; ++i)
+				//	{
+				//		// preload to take unloaded modifiers into account
+				//		var loaded = Modifier._Load(item, tag.Get<TagCompound>($"Modifier{i}"));
+				//		if (loaded != null)
+				//			list.Add(loaded);
+				//	}
+				//	m.Modifiers = list.ToArray();
+				//}
 				int activeModifiers = tag.GetAsInt("ActiveModifiers");
 				if (activeModifiers > 0)
 				{
@@ -244,14 +244,14 @@ namespace Loot.System
 				{"ModName", modifierPool.Mod.Name },
 				{"Rarity", ModifierRarity.Save(modifierPool.Rarity) },
 			};
-			tag.Add("Modifiers", modifierPool.Modifiers.Length);
-			if (modifierPool.Modifiers.Length > 0)
-			{
-				for (int i = 0; i < modifierPool.Modifiers.Length; ++i)
-				{
-					tag.Add($"Modifier{i}", Modifier.Save(modifierPool.Modifiers[i]));
-				}
-			}
+			//tag.Add("Modifiers", modifierPool.Modifiers.Length);
+			//if (modifierPool.Modifiers.Length > 0)
+			//{
+			//	for (int i = 0; i < modifierPool.Modifiers.Length; ++i)
+			//	{
+			//		tag.Add($"Modifier{i}", Modifier.Save(modifierPool.Modifiers[i]));
+			//	}
+			//}
 			tag.Add("ActiveModifiers", modifierPool.ActiveModifiers.Length);
 			for (int i = 0; i < modifierPool.ActiveModifiers.Length; ++i)
 			{
