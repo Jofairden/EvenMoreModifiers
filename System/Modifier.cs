@@ -95,7 +95,7 @@ namespace Loot.System
 		{
 			try
 			{
-				return new ModifierProperties().RollMagnitudeAndPower(tag.GetAsShort("Magnitude"), tag.GetAsShort("Power"));
+				return new ModifierProperties().RollMagnitudeAndPower(tag.GetFloat("Magnitude"), tag.GetFloat("Power"));
 			}
 			catch (Exception)
 			{
