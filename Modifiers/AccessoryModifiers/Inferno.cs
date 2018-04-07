@@ -13,7 +13,7 @@ namespace Loot.Modifiers.AccessoryModifiers
 
 		public override ModifierProperties GetModifierProperties(Item item)
 		{
-			return base.GetModifierProperties(item).Set(rarityLevel: 3f);
+			return base.GetModifierProperties(item).Set(rollChance: 0f, rarityLevel: 3f);
 		}
 
 		public override void UpdateAccessory(Item item, Player player, bool hideVisual)
