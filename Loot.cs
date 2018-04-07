@@ -29,7 +29,7 @@ namespace Loot
 
 			EMMLoader.Initialize();
 			EMMLoader.Load();
-			EMMLoader.SetupContent();
+			EMMLoader.SetupContent(this);
 		}
 
 		public override void Unload()

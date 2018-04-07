@@ -149,42 +149,48 @@ namespace Loot
 			return type < poolNextID ? (ModifierPool)Pools[type].Clone() : null;
 		}
 
+
 		/// <summary>
-		/// Will iterate registered mods, and attempt to autoload their rarities and effects
+		/// Sets up content for the specified mod
 		/// </summary>
-		internal static void SetupContent()
+		internal static void SetupContent(Mod mod)
 		{
-			foreach (var kvp in Mods)
+			bool? b = mod.GetType().GetField("loading", BindingFlags.Instance | BindingFlags.NonPublic)?.GetValue(mod) as bool?;
+			if (b != null && !b.Value)
 			{
-				var ordered = kvp.Value
-					.GetTypes()
-					.OrderBy(x => x.FullName, StringComparer.InvariantCulture)
-					.Where(t => t.IsClass && !t.IsAbstract); /* || type.GetConstructor(new Type[0]) == null*/
-
-				var rarities = ordered.Where(x => x.IsSubclassOf(typeof(ModifierRarity)));
-				var modifiers = ordered.Where(x => x.IsSubclassOf(typeof(Modifier)));
-				var pools = ordered.Where(x => x.IsSubclassOf(typeof(ModifierPool)));
-
-				// important: load things in order. (modifiers relies on all.. etc.)
-				foreach (Type type in rarities)
-				{
-					AutoloadModifierRarity(type, ModLoader.GetMod(kvp.Key));
-				}
-
-				foreach (Type type in modifiers)
-				{
-					AutoloadModifier(type, ModLoader.GetMod(kvp.Key));
-				}
-
-				foreach (Type type in pools)
-				{
-					AutoloadModifierPool(type, ModLoader.GetMod(kvp.Key));
-				}
+				throw new Exception("SetupContent for EMMLoader can only be called from Mod.Load or Mod.Autoload");
 			}
 
-			//ErrorLogger.ClearLog();
-			//ErrorLogger.Log(string.Join("\n", Rarities.Select(r => r.Value.Name)));
-			//ErrorLogger.Log(string.Join("\n", Effects.Select(e => e.Value.Description)));
+			if (!Mods.ContainsKey(mod.Name))
+			{
+				throw new Exception($"Mod {mod.Name} is not yet registered in EMMLoader");
+			}
+
+			var ordered = Mods.FirstOrDefault(x => x.Key.Equals(mod.Name))
+				.Value
+				.GetTypes()
+				.OrderBy(x => x.FullName, StringComparer.InvariantCulture)
+				.Where(t => t.IsClass && !t.IsAbstract); /* || type.GetConstructor(new Type[0]) == null*/
+
+			var rarities = ordered.Where(x => x.IsSubclassOf(typeof(ModifierRarity)));
+			var modifiers = ordered.Where(x => x.IsSubclassOf(typeof(Modifier)));
+			var pools = ordered.Where(x => x.IsSubclassOf(typeof(ModifierPool)));
+
+			// important: load things in order. (modifiers relies on all.. etc.)
+			foreach (Type type in rarities)
+			{
+				AutoloadModifierRarity(type, mod);
+			}
+
+			foreach (Type type in modifiers)
+			{
+				AutoloadModifier(type, mod);
+			}
+
+			foreach (Type type in pools)
+			{
+				AutoloadModifierPool(type, mod);
+			}
 		}
 
 		private static void AutoloadModifierPool(Type type, Mod mod)
