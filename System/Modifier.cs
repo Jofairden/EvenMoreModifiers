@@ -138,7 +138,7 @@ namespace Loot.System
 		protected internal bool _CanRoll(ModifierContext ctx)
 		{
 			Properties = GetModifierProperties(ctx.Item);
-			return ctx.Item.maxStack == 1 && !new int[] { ItemID.CopperCoin, ItemID.GoldCoin, ItemID.SilverCoin, ItemID.PlatinumCoin }.Contains(ctx.Item.type) && CanRoll(ctx);
+			return ctx.Item.maxStack == 1 && CanRoll(ctx);
 		}
 
 		/// <summary>
