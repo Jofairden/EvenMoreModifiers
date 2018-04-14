@@ -1,10 +1,10 @@
 author = Jofairden
-version = 0.0.10.3
+version = 0.0.10.4
 displayName = Even More Modifiers
 homepage = https://forums.terraria.org/index.php?threads/even-more-modifiers-relaunch-beta.68438/
 hideCode = false
 hideResources = false
 includeSource = true
 languageVersion = 6
-buildIgnore = *.csproj, *.user, obj\*, bin\*, .vs\*, .git\*, *.sln, *.csproj*, *.config, tmp.txt, .gitignore, packages\*, UnitTests.cs
+buildIgnore = *.csproj, *.user, obj\*, bin\*, .vs\*, .git\*, *.sln, *.csproj*, *.config, tmp.txt, .gitignore, packages\*, UnitTests.cs, TestResults\*
 includePdb = true

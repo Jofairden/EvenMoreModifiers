@@ -1,6 +1,4 @@
-﻿using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.IO;
+﻿using System.Collections.ObjectModel;
 using Loot.System;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;

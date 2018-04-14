@@ -1,7 +1,4 @@
-﻿using Loot.Modifiers.WeaponModifiers;
-using Loot.System;
-
-namespace Loot.Pools
+﻿namespace Loot.Pools
 {
 	/*internal class WeaponModifierPool : ModifierPool
 	{
