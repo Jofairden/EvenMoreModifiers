@@ -1,6 +1,8 @@
 ﻿using System;
+using System.IO;
 using System.Reflection;
 using Microsoft.Xna.Framework;
+using Terraria;
 using Terraria.ModLoader;
 using Terraria.ModLoader.IO;
 
@@ -52,21 +54,54 @@ namespace Loot.System
 		}
 
 		/// <summary>
+		/// Allows the modder to do custom NetReceive
+		/// </summary>
+		/// <param name="item"></param>
+		/// <param name="reader"></param>
+		public virtual void NetReceive(Item item, BinaryReader reader)
+		{
+		}
+
+		protected internal static ModifierRarity _NetReceive(Item item, BinaryReader reader)
+		{
+			string Type = reader.ReadString();
+			uint RarityType = reader.ReadUInt32();
+			string ModName = reader.ReadString();
+
+			Assembly assembly;
+			if (EMMLoader.Mods.TryGetValue(ModName, out assembly))
+			{
+				ModifierRarity r = (ModifierRarity)Activator.CreateInstance(assembly.GetType(Type));
+				r.Type = RarityType;
+				r.Mod = ModLoader.GetMod(ModName);
+				r.NetReceive(item, reader);
+				return r;
+			}
+			throw new Exception($"ModifierRarity _NetReceive error for {ModName}");
+		}
+
+		/// <summary>
+		/// Allows modder to do custom NetSend here
+		/// </summary>
+		/// <param name="item"></param>
+		/// <param name="writer"></param>
+		public virtual void NetSend(Item item, BinaryWriter writer)
+		{
+		}
+
+		protected internal static void _NetSend(ModifierRarity rarity, Item item, BinaryWriter writer)
+		{
+			writer.Write(rarity.GetType().FullName);
+			writer.Write(rarity.Type);
+			writer.Write(rarity.Mod.Name);
+		}
+
+		/// <summary>
 		/// Allows modder to do custom loading here
 		/// Use the given TC to pull data you saved using <see cref="Save(TagCompound)"/>
 		/// </summary>
 		/// <param name="tag"></param>
 		public virtual void Load(TagCompound tag)
-		{
-
-		}
-
-		/// <summary>
-		/// Allows modder to do custom saving here
-		/// Use the given TC to put data you want to save, which can be loaded using <see cref="Load(TagCompound)"/>
-		/// </summary>
-		/// <param name="tag"></param>
-		public virtual void Save(TagCompound tag)
 		{
 
 		}
@@ -94,6 +129,16 @@ namespace Loot.System
 				return r;
 			}
 			throw new Exception($"ModifierRarity load error for {modname}");
+		}
+
+		/// <summary>
+		/// Allows modder to do custom saving here
+		/// Use the given TC to put data you want to save, which can be loaded using <see cref="Load(TagCompound)"/>
+		/// </summary>
+		/// <param name="tag"></param>
+		public virtual void Save(TagCompound tag)
+		{
+
 		}
 
 		protected internal static TagCompound Save(ModifierRarity rarity)

@@ -1,4 +1,5 @@
-﻿using Loot.System;
+﻿using System.IO;
+using Loot.System;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader.IO;
@@ -23,21 +24,34 @@ namespace Loot.Modifiers.WeaponModifiers
 		private readonly int _len = BuffPairs.GetLength(0);
 		private int _index = -1;
 
+		public override void NetReceive(Item item, BinaryReader reader)
+		{
+			base.NetReceive(item, reader);
+			_index = reader.ReadInt32();
+		}
+
+		public override void NetSend(Item item, BinaryWriter writer)
+		{
+			base.NetSend(item, writer);
+			writer.Write(_index);
+		}
+
 		public override void Save(TagCompound tag)
 		{
+			base.Save(tag);
 			tag.Add("_index", _index);
 		}
 
 		public override void Load(TagCompound tag)
 		{
+			base.Load(tag);
 			_index = tag.GetAsInt("_index");
 		}
 
 		public override void Apply(Item item)
 		{
-			// If don't have an index stored, roll a new one
-			if (_index == -1)
-				_index = Main.rand.Next(_len);
+			base.Apply(item);
+			_index = Main.rand.Next(_len);
 		}
 
 		public override int BuffType => BuffPairs[_index, 0];

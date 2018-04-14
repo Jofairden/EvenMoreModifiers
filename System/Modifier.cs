@@ -82,6 +82,17 @@ namespace Loot.System
 			return this;
 		}
 
+		internal static ModifierProperties _NetReceive(Item item, BinaryReader reader)
+		{
+			return new ModifierProperties().RollMagnitudeAndPower(reader.ReadSingle(), reader.ReadSingle());
+		}
+
+		internal static void _NetSend(ModifierProperties properties, Item item, BinaryWriter writer)
+		{
+			writer.Write(properties.Magnitude);
+			writer.Write(properties.Power);
+		}
+
 		public TagCompound Save()
 		{
 			return new TagCompound
@@ -157,7 +168,6 @@ namespace Loot.System
 		/// </summary>
 		public virtual void Apply(Item item)
 		{
-
 		}
 
 		/// <summary>
@@ -166,7 +176,6 @@ namespace Loot.System
 		/// </summary>
 		public virtual void Clone(ref Modifier clone)
 		{
-
 		}
 
 		public new object Clone()
@@ -179,6 +188,37 @@ namespace Loot.System
 			return clone;
 		}
 
+		protected internal static Modifier _NetReceive(Item item, BinaryReader reader)
+		{
+			string Type = reader.ReadString();
+			uint ModifierType = reader.ReadUInt32();
+			string ModName = reader.ReadString();
+			ModifierProperties Properties = ModifierProperties._NetReceive(item, reader);
+
+			Assembly assembly;
+			if (EMMLoader.Mods.TryGetValue(ModName, out assembly))
+			{
+				Modifier m = (Modifier)Activator.CreateInstance(assembly.GetType(Type));
+				m.Type = ModifierType;
+				m.Mod = ModLoader.GetMod(ModName);
+				m.Properties = m.GetModifierProperties(item).RollMagnitudeAndPower(Properties.Magnitude, Properties.Power);
+				m.NetReceive(item, reader);
+				return m;
+			}
+
+			throw new Exception($"Modifier _NetReceive error for {ModName}");
+		}
+
+		protected internal static void _NetSend(Modifier modifier, Item item, BinaryWriter writer)
+		{
+			writer.Write(modifier.GetType().FullName);
+			writer.Write(modifier.Type);
+			writer.Write(modifier.Mod.Name);
+			ModifierProperties._NetSend(modifier.Properties, item, writer);
+
+			modifier.NetSend(item, writer);
+		}
+
 		/// <summary>
 		/// Allows modder to do custom loading here
 		/// Use the given TC to pull data you saved using <see cref="Save(TagCompound)"/>
@@ -186,17 +226,6 @@ namespace Loot.System
 		/// <param name="tag"></param>
 		public virtual void Load(TagCompound tag)
 		{
-
-		}
-
-		/// <summary>
-		/// Allows modder to do custom saving here
-		/// Use the given TC to put data you want to save, which can be loaded using <see cref="Load(TagCompound)"/>
-		/// </summary>
-		/// <param name="tag"></param>
-		public virtual void Save(TagCompound tag)
-		{
-
 		}
 
 		protected internal static Modifier _Load(Item item, TagCompound tag)
@@ -206,24 +235,33 @@ namespace Loot.System
 			if (EMMLoader.Mods.TryGetValue(modname, out assembly))
 			{
 				// If we load a null here, it means a modifier is unloaded
-				Modifier e;
+				Modifier m;
 				try
 				{
-					e = (Modifier)Activator.CreateInstance(assembly.GetType(tag.GetString("Type")));
+					m = (Modifier)Activator.CreateInstance(assembly.GetType(tag.GetString("Type")));
 				}
 				catch (Exception)
 				{
 					return null;
 				}
 
-				e.Type = tag.Get<uint>("ModifierType");
-				e.Mod = ModLoader.GetMod(modname);
+				m.Type = tag.Get<uint>("ModifierType");
+				m.Mod = ModLoader.GetMod(modname);
 				var p = ModifierProperties.Load(tag.GetCompound("ModifierProperties"));
-				e.Properties = e.GetModifierProperties(item).RollMagnitudeAndPower(p.Magnitude, p.Power);
-				e.Load(tag);
-				return e;
+				m.Properties = m.GetModifierProperties(item).RollMagnitudeAndPower(p.Magnitude, p.Power);
+				m.Load(tag);
+				return m;
 			}
 			throw new Exception($"Modifier load error for {modname}");
+		}
+
+		/// <summary>
+		/// Allows modder to do custom saving here
+		/// Use the given TC to put data you want to save, which can be loaded using <see cref="Load(TagCompound)"/>
+		/// </summary>
+		/// <param name="tag"></param>
+		public virtual void Save(TagCompound tag)
+		{
 		}
 
 		protected internal static TagCompound Save(Modifier modifier)

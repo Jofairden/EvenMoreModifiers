@@ -4,6 +4,7 @@ using System.IO;
 using Loot.System;
 using Microsoft.Xna.Framework;
 using Terraria;
+using Terraria.ID;
 using Terraria.ModLoader;
 using Terraria.ModLoader.IO;
 
@@ -93,46 +94,63 @@ namespace Loot
 
 		public override void NetReceive(Item item, BinaryReader reader)
 		{
-			ModifierPool = ModifierPool._Load(item, TagIO.FromStream(reader.BaseStream, compressed: false));
+			if (reader.ReadBoolean())
+				ModifierPool = ModifierPool._NetReceive(item, reader);
+
 			HasRolled = reader.ReadBoolean();
 		}
 
 		public override void NetSend(Item item, BinaryWriter writer)
 		{
-			TagIO.ToStream(ModifierPool.Save(ModifierPool), writer.BaseStream, compress: false);
+			bool hasPool = ModifierPool != null;
+			writer.Write(hasPool);
+			if (hasPool)
+				ModifierPool._NetSend(ModifierPool, item, writer);
+
 			writer.Write(HasRolled);
 		}
 
 		public override void OnCraft(Item item, Recipe recipe)
 		{
-			ModifierContext ctx = new ModifierContext { Method = ModifierContextMethod.OnCraft, Item = item, Player = Main.LocalPlayer, Recipe = recipe };
+			if (Main.netMode != NetmodeID.MultiplayerClient)
+			{
+				ModifierContext ctx = new ModifierContext { Method = ModifierContextMethod.OnCraft, Item = item, Player = Main.LocalPlayer, Recipe = recipe };
 
-			ModifierPool pool = GetPool(item);
-			if (!HasRolled && pool == null)
-				pool = RollNewPool(ctx);
+				ModifierPool pool = GetPool(item);
+				if (!HasRolled && pool == null)
+					pool = RollNewPool(ctx);
 
-			pool?.ApplyModifiers(item);
+				pool?.ApplyModifiers(item);
+			}
+
 			base.OnCraft(item, recipe);
 		}
 
 		public override bool OnPickup(Item item, Player player)
 		{
-			ModifierContext ctx = new ModifierContext { Method = ModifierContextMethod.OnPickup, Item = item, Player = player };
+			if (Main.netMode != NetmodeID.MultiplayerClient)
+			{
+				ModifierContext ctx = new ModifierContext { Method = ModifierContextMethod.OnPickup, Item = item, Player = player };
 
-			ModifierPool pool = GetPool(item);
-			if (!HasRolled && pool == null)
-				pool = RollNewPool(ctx);
+				ModifierPool pool = GetPool(item);
+				if (!HasRolled && pool == null)
+					pool = RollNewPool(ctx);
 
-			pool?.ApplyModifiers(item);
+				pool?.ApplyModifiers(item);
+			}
+
 			return base.OnPickup(item, player);
 		}
 
 		public override void PostReforge(Item item)
 		{
-			ModifierContext ctx = new ModifierContext { Method = ModifierContextMethod.OnReforge, Item = item, Player = Main.LocalPlayer };
+			if (Main.netMode != NetmodeID.MultiplayerClient)
+			{
+				ModifierContext ctx = new ModifierContext { Method = ModifierContextMethod.OnReforge, Item = item, Player = Main.LocalPlayer };
 
-			ModifierPool pool = RollNewPool(ctx);
-			pool?.ApplyModifiers(item);
+				ModifierPool pool = RollNewPool(ctx);
+				pool?.ApplyModifiers(item);
+			}
 		}
 
 		/// <summary>

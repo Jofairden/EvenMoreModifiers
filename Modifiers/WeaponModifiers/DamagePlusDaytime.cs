@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using Loot.System;
 using Microsoft.Xna.Framework;
 using Terraria;
@@ -24,6 +25,20 @@ namespace Loot.Modifiers.WeaponModifiers
 		{
 			base.Apply(item);
 			_duringDay = Main.rand.NextBool();
+		}
+
+		// Here we showcase custom MP syncing
+
+		public override void NetReceive(Item item, BinaryReader reader)
+		{
+			base.NetReceive(item, reader);
+			_duringDay = reader.ReadBoolean();
+		}
+
+		public override void NetSend(Item item, BinaryWriter writer)
+		{
+			base.NetSend(item, writer);
+			writer.Write(_duringDay);
 		}
 
 		// Here we showcase custom loading and saving for a modifier

@@ -319,35 +319,37 @@ namespace Loot
 					m.ModifyHitPvp(item, player, target, ref damage, ref crit);
 		}
 
-		public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
-		{
-			base.ModifyTooltips(item, tooltips);
+		// These are handled by EMMItem
 
-			ModifierPool pool = EMMItem.GetPool(item);
-			if (pool != null)
-				foreach (Modifier m in pool.ActiveModifiers)
-					m.ModifyTooltips(item, tooltips);
-		}
+		//public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
+		//{
+		//	base.ModifyTooltips(item, tooltips);
 
-		public override void NetReceive(Item item, BinaryReader reader)
-		{
-			base.NetReceive(item, reader);
+		//	ModifierPool pool = EMMItem.GetPool(item);
+		//	if (pool != null)
+		//		foreach (Modifier m in pool.ActiveModifiers)
+		//			m.ModifyTooltips(item, tooltips);
+		//}
 
-			ModifierPool pool = EMMItem.GetPool(item);
-			if (pool != null)
-				foreach (Modifier m in pool.ActiveModifiers)
-					m.NetReceive(item, reader);
-		}
+		//public override void NetReceive(Item item, BinaryReader reader)
+		//{
+		//	base.NetReceive(item, reader);
 
-		public override void NetSend(Item item, BinaryWriter writer)
-		{
-			base.NetSend(item, writer);
+		//	ModifierPool pool = EMMItem.GetPool(item);
+		//	if (pool != null)
+		//		foreach (Modifier m in pool.ActiveModifiers)
+		//			m.NetReceive(item, reader);
+		//}
 
-			ModifierPool pool = EMMItem.GetPool(item);
-			if (pool != null)
-				foreach (Modifier m in pool.ActiveModifiers)
-					m.NetSend(item, writer);
-		}
+		//public override void NetSend(Item item, BinaryWriter writer)
+		//{
+		//	base.NetSend(item, writer);
+
+		//	ModifierPool pool = EMMItem.GetPool(item);
+		//	if (pool != null)
+		//		foreach (Modifier m in pool.ActiveModifiers)
+		//			m.NetSend(item, writer);
+		//}
 
 		public override bool NewPreReforge(Item item)
 		{

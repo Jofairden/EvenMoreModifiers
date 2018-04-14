@@ -18,7 +18,7 @@ namespace Loot.Modifiers.EquipModifiers
 
 		public override void UpdateEquip(Item item, Player player)
 		{
-			ModifierPlayer.PlayerInfo(player).CritMulti += Properties.RoundedPower/100f;
+			ModifierPlayer.PlayerInfo(player).CritMulti += Properties.RoundedPower / 100f;
 		}
 	}
 }
