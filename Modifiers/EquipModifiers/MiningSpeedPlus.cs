@@ -18,7 +18,7 @@ namespace Loot.Modifiers.EquipModifiers
 
 		public override void UpdateEquip(Item item, Player player)
 		{
-			player.pickSpeed *= Properties.RoundedPower / 100;
+			player.pickSpeed -= (player.pickSpeed * Properties.RoundedPower / 100);
 		}
 	}
 }
