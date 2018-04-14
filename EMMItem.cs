@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
 using Loot.System;
 using Microsoft.Xna.Framework;
@@ -92,12 +93,14 @@ namespace Loot
 
 		public override void NetReceive(Item item, BinaryReader reader)
 		{
-			ModifierPool = ModifierPool._Load(item, TagIO.FromStream(reader.BaseStream));
+			ModifierPool = ModifierPool._Load(item, TagIO.FromStream(reader.BaseStream, compressed: false));
+			HasRolled = reader.ReadBoolean();
 		}
 
 		public override void NetSend(Item item, BinaryWriter writer)
 		{
-			TagIO.ToStream(ModifierPool.Save(ModifierPool), writer.BaseStream);
+			TagIO.ToStream(ModifierPool.Save(ModifierPool), writer.BaseStream, compress: false);
+			writer.Write(HasRolled);
 		}
 
 		public override void OnCraft(Item item, Recipe recipe)

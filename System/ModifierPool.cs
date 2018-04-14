@@ -176,6 +176,10 @@ namespace Loot.System
 
 		protected internal static ModifierPool _Load(Item item, TagCompound tag)
 		{
+			if (tag == null
+			    || tag.ContainsKey("EMMErr:PoolNullErr"))
+				return null;
+
 			string modname = tag.GetString("ModName");
 			Assembly assembly;
 			if (EMMLoader.Mods.TryGetValue(modname, out assembly))
@@ -237,6 +241,9 @@ namespace Loot.System
 
 		protected internal static TagCompound Save(ModifierPool modifierPool)
 		{
+			if (modifierPool == null)
+				return new TagCompound { { "EMMErr:PoolNullErr", "ModifierPool was null err" } };
+
 			var tag = new TagCompound
 			{
 				{"Type", modifierPool.GetType().FullName },
