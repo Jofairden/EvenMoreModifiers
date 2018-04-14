@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
 using Terraria;
+using Terraria.ID;
 using Terraria.ModLoader;
 using Terraria.ModLoader.IO;
 using Terraria.Utilities;
@@ -92,10 +93,10 @@ namespace Loot.System
 		internal float ModifierRollChance(int len)
 			=> 0.5f / (float)Math.Pow(2, len);
 
-
 		internal bool _CanApply(ModifierContext ctx)
 		{
-			if (Modifiers.Length <= 0)
+			if (Modifiers.Length <= 0
+			    || new int[]{ItemID.CopperCoin, ItemID.GoldCoin, ItemID.SilverCoin, ItemID.PlatinumCoin}.Contains(ctx.Item.type))
 				return false;
 
 			switch (ctx.Method)
@@ -177,7 +178,7 @@ namespace Loot.System
 		protected internal static ModifierPool _Load(Item item, TagCompound tag)
 		{
 			if (tag == null
-			    || tag.ContainsKey("EMMErr:PoolNullErr"))
+				|| tag.ContainsKey("EMMErr:PoolNullErr"))
 				return null;
 
 			string modname = tag.GetString("ModName");
@@ -202,19 +203,6 @@ namespace Loot.System
 				bool rarityUnloaded = preloadRarity == null;
 				if (!rarityUnloaded)
 					m.Rarity = preloadRarity;
-				//int modifiers = tag.GetAsInt("Modifiers");
-				//if (modifiers > 0)
-				//{
-				//	var list = new List<Modifier>();
-				//	for (int i = 0; i < modifiers; ++i)
-				//	{
-				//		// preload to take unloaded modifiers into account
-				//		var loaded = Modifier._Load(item, tag.Get<TagCompound>($"Modifier{i}"));
-				//		if (loaded != null)
-				//			list.Add(loaded);
-				//	}
-				//	m.Modifiers = list.ToArray();
-				//}
 				int activeModifiers = tag.GetAsInt("ActiveModifiers");
 				if (activeModifiers > 0)
 				{
@@ -251,14 +239,6 @@ namespace Loot.System
 				{"ModName", modifierPool.Mod.Name },
 				{"Rarity", ModifierRarity.Save(modifierPool.Rarity) },
 			};
-			//tag.Add("Modifiers", modifierPool.Modifiers.Length);
-			//if (modifierPool.Modifiers.Length > 0)
-			//{
-			//	for (int i = 0; i < modifierPool.Modifiers.Length; ++i)
-			//	{
-			//		tag.Add($"Modifier{i}", Modifier.Save(modifierPool.Modifiers[i]));
-			//	}
-			//}
 			tag.Add("ActiveModifiers", modifierPool.ActiveModifiers.Length);
 			for (int i = 0; i < modifierPool.ActiveModifiers.Length; ++i)
 			{
