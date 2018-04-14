@@ -76,6 +76,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="EMMWorld.cs" />
     <Compile Include="Modifiers\AccessoryModifier.cs" />
     <Compile Include="Modifiers\AccessoryModifiers\GodlyDefense.cs" />
     <Compile Include="Modifiers\AccessoryModifiers\Inferno.cs" />

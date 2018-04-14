@@ -15,6 +15,7 @@ namespace Loot.System
 		OnReforge,
 		OnCraft,
 		OnPickup,
+		WorldGeneration
 	}
 
 	public struct ModifierContext
