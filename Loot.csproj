@@ -132,6 +132,7 @@
     <Compile Include="ModifierPlayer.cs" />
     <Compile Include="Modifiers\WeaponModifier.cs" />
     <Compile Include="System\AllModifiersPool.cs" />
+    <Compile Include="System\IModifier.cs" />
     <Compile Include="System\ModifierPool.cs" />
     <Compile Include="System\Modifier.cs" />
     <Compile Include="EMMLoader.cs" />
@@ -155,6 +156,7 @@
   <ItemGroup>
     <None Include=".editorconfig" />
     <None Include="packages.config" />
+    <Compile Include="System\GlobalModifier.cs" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
