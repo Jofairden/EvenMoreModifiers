@@ -10,6 +10,7 @@ using Terraria.ModLoader;
 using RarityMap = System.Collections.Generic.KeyValuePair<string, Loot.System.ModifierRarity>;
 using ModifierMap = System.Collections.Generic.KeyValuePair<string, Loot.System.Modifier>;
 using PoolMap = System.Collections.Generic.KeyValuePair<string, Loot.System.ModifierPool>;
+using GlobalModifierMap = System.Collections.Generic.KeyValuePair<string, Loot.System.GlobalModifier>;
 
 namespace Loot
 {
@@ -59,6 +60,21 @@ namespace Loot
 
 		public static uint ModifierPoolType<T>(this Mod mod, string name) where T : ModifierPool => ModifierPoolType(mod, typeof(T).Name);
 		public static uint ModifierPoolType(this Mod mod, string name) => GetModifierPool(mod, name)?.Type ?? 0;
+
+		public static T GetGlobalModifier<T>(this Mod mod) where T : GlobalModifier => (T)GetGlobalModifier(mod, typeof(T).Name);
+		public static GlobalModifier GetGlobalModifier(this Mod mod, string name)
+		{
+			List<GlobalModifierMap> v;
+			if (EMMLoader.GlobalModifiersMap.TryGetValue(mod.Name, out v))
+			{
+				var fod = v.FirstOrDefault(x => x.Value.Name.Equals(name));
+				return fod.Value.AsNewInstance();
+			}
+			return null;
+		}
+
+		public static uint GlobalModifierType<T>(this Mod mod, string name) where T : GlobalModifier => GlobalModifierType(mod, typeof(T).Name);
+		public static uint GlobalModifierType(this Mod mod, string name) => GetGlobalModifier(mod, name)?.Type ?? 0;
 
 		public static byte[] ToByteArray<T>(this T obj)
 		{
