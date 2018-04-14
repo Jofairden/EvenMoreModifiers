@@ -15,6 +15,10 @@ Massive thanks to thegamemaster1234 for migrating a lot of already existing modi
 
 Thanks chicken-bones for some great insights how to approach things
 
+# Changelogs
+To see changelogs: [https://hackmd.io/s/HkYOPaynf](https://hackmd.io/s/HkYOPaynf)
+
 # Download
 Download on browser: [http://javid.ddns.net/tModLoader/download.php?Down=mods/Loot.tmod](http://javid.ddns.net/tModLoader/download.php?Down=mods/Loot.tmod)
+
 Download on Github: [https://github.com/Jofairden/EvenMoreModifiers/releases](https://github.com/Jofairden/EvenMoreModifiers/releases)
