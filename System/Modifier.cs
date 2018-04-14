@@ -1,8 +1,10 @@
 ﻿using System;
 using System.IO;
+using System.Linq;
 using System.Reflection;
 using Microsoft.Xna.Framework;
 using Terraria;
+using Terraria.ID;
 using Terraria.ModLoader;
 using Terraria.ModLoader.IO;
 
@@ -14,7 +16,7 @@ namespace Loot.System
 		public Color? Color;
 	}
 
-	public struct ModifierProperties
+	public class ModifierProperties
 	{
 		public float MinMagnitude { get; private set; }
 		public float MaxMagnitude { get; private set; }
@@ -40,37 +42,20 @@ namespace Loot.System
 			private set;
 		}
 
-		public ModifierProperties(float minMagnitude = 1f, float maxMagnitude = 1f, float magnitudeStrength = 1f, float basePower = 1f, float rarityLevel = 1f, float rollChance = 1f, int roundPrecision = 1, ModifierProperties? source = null) : this()
+		public ModifierProperties(float minMagnitude = 1f, float maxMagnitude = 1f, float magnitudeStrength = 1f, float basePower = 1f, float rarityLevel = 1f, float rollChance = 1f, int roundPrecision = 0)
 		{
-			if (source.HasValue)
-				this = source.Value;
-
 			Set(minMagnitude, maxMagnitude, magnitudeStrength, basePower, rarityLevel, rollChance, roundPrecision);
 		}
 
-		public ModifierProperties Set(float minMagnitude = 1f, float maxMagnitude = 1f, float magnitudeStrength = 1f, float basePower = 1f, float rarityLevel = 1f, float rollChance = 1f, int roundPrecision = 0)
+		public ModifierProperties Set(float? minMagnitude = null, float? maxMagnitude = null, float? magnitudeStrength = null, float? basePower = null, float? rarityLevel = null, float? rollChance = null, int? roundPrecision = null)
 		{
-			if (minMagnitude != MinMagnitude)
-				MinMagnitude = minMagnitude;
-
-			if (maxMagnitude != MaxMagnitude)
-				MaxMagnitude = maxMagnitude;
-
-			if (magnitudeStrength != MagnitudeStrength)
-				MagnitudeStrength = magnitudeStrength;
-
-			if (basePower != BasePower)
-				BasePower = basePower;
-
-			if (rarityLevel != RarityLevel)
-				RarityLevel = rarityLevel;
-
-			if (rollChance != RollChance)
-				RollChance = rollChance;
-
-			if (roundPrecision != RoundPrecision)
-				RoundPrecision = roundPrecision;
-
+			MinMagnitude = minMagnitude ?? MinMagnitude;
+			MaxMagnitude = maxMagnitude ?? MaxMagnitude;
+			MagnitudeStrength = magnitudeStrength ?? MagnitudeStrength;
+			BasePower = basePower ?? BasePower;
+			RarityLevel = rarityLevel ?? RarityLevel;
+			RollChance = rollChance ?? RollChance;
+			RoundPrecision = roundPrecision ?? RoundPrecision;
 			return this;
 		}
 
@@ -162,9 +147,24 @@ namespace Loot.System
 		public virtual bool CanApplyReforge(ModifierContext ctx)
 			=> true;
 
+		public sealed override void SetDefaults(Item item)
+		{
+			base.SetDefaults(item);
+			Apply(item);
+		}
+
+		/// <summary>
+		/// Allows modders to do something when the modifier is rolled on <param name="item">the given item</param>
+		/// </summary>
+		/// <param name="item">Item this modifier is rolled on</param>
+		public virtual void Roll(Item item)
+		{
+		}
+
 		/// <summary>
 		/// Allows modders to do something when this modifier is applied
 		/// If a modder needs ModPlayer hooks, they should make their own ModPlayer and apply fields using this hook
+		/// This is also called for <see cref="SetDefaults"/>
 		/// </summary>
 		public virtual void Apply(Item item)
 		{

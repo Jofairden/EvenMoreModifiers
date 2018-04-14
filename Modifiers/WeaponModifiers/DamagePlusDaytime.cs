@@ -21,9 +21,9 @@ namespace Loot.Modifiers.WeaponModifiers
 
 		private bool _duringDay;
 
-		public override void Apply(Item item)
+		public override void Roll(Item item)
 		{
-			base.Apply(item);
+			base.Roll(item);
 			_duringDay = Main.rand.NextBool();
 		}
 

@@ -66,6 +66,7 @@ namespace Loot
 		{
 			EMMItem clone = (EMMItem)base.Clone(item, itemClone);
 			clone.ModifierPool = (ModifierPool)ModifierPool?.Clone();
+			clone.ModifierPool?.ApplyModifiers(itemClone);
 			return clone;
 		}
 
@@ -98,6 +99,8 @@ namespace Loot
 				ModifierPool = ModifierPool._NetReceive(item, reader);
 
 			HasRolled = reader.ReadBoolean();
+
+			ModifierPool?.ApplyModifiers(item);
 		}
 
 		public override void NetSend(Item item, BinaryWriter writer)
@@ -112,14 +115,12 @@ namespace Loot
 
 		public override void OnCraft(Item item, Recipe recipe)
 		{
-			if (Main.netMode != NetmodeID.MultiplayerClient)
+			ModifierContext ctx = new ModifierContext { Method = ModifierContextMethod.OnCraft, Item = item, Player = Main.LocalPlayer, Recipe = recipe };
+
+			ModifierPool pool = GetPool(item);
+			if (!HasRolled && pool == null)
 			{
-				ModifierContext ctx = new ModifierContext { Method = ModifierContextMethod.OnCraft, Item = item, Player = Main.LocalPlayer, Recipe = recipe };
-
-				ModifierPool pool = GetPool(item);
-				if (!HasRolled && pool == null)
-					pool = RollNewPool(ctx);
-
+				pool = RollNewPool(ctx);
 				pool?.ApplyModifiers(item);
 			}
 
@@ -128,14 +129,12 @@ namespace Loot
 
 		public override bool OnPickup(Item item, Player player)
 		{
-			if (Main.netMode != NetmodeID.MultiplayerClient)
+			ModifierContext ctx = new ModifierContext { Method = ModifierContextMethod.OnPickup, Item = item, Player = player };
+
+			ModifierPool pool = GetPool(item);
+			if (!HasRolled && pool == null)
 			{
-				ModifierContext ctx = new ModifierContext { Method = ModifierContextMethod.OnPickup, Item = item, Player = player };
-
-				ModifierPool pool = GetPool(item);
-				if (!HasRolled && pool == null)
-					pool = RollNewPool(ctx);
-
+				pool = RollNewPool(ctx);
 				pool?.ApplyModifiers(item);
 			}
 
@@ -144,13 +143,10 @@ namespace Loot
 
 		public override void PostReforge(Item item)
 		{
-			if (Main.netMode != NetmodeID.MultiplayerClient)
-			{
-				ModifierContext ctx = new ModifierContext { Method = ModifierContextMethod.OnReforge, Item = item, Player = Main.LocalPlayer };
+			ModifierContext ctx = new ModifierContext { Method = ModifierContextMethod.OnReforge, Item = item, Player = Main.LocalPlayer };
 
-				ModifierPool pool = RollNewPool(ctx);
-				pool?.ApplyModifiers(item);
-			}
+			ModifierPool pool = RollNewPool(ctx);
+			pool?.ApplyModifiers(item);
 		}
 
 		/// <summary>

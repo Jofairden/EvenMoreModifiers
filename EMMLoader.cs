@@ -45,7 +45,7 @@ namespace Loot
 
 		internal static void Load()
 		{
-			RegisterMod(Loot.Instance);
+			
 		}
 
 		internal static void Unload()
@@ -78,7 +78,14 @@ namespace Loot
 				throw new Exception($"Mod {mod.Name} is already registered");
 			}
 
-			Mods.Add(new KeyValuePair<string, Assembly>(mod.Name, mod.Code));
+			Assembly code;
+#if DEBUG
+			code = Assembly.GetAssembly(mod.GetType());
+#else
+			code = mod.Code;
+#endif
+
+			Mods.Add(new KeyValuePair<string, Assembly>(mod.Name, code));
 			RaritiesMap.Add(new KeyValuePair<string, List<RarityMap>>(mod.Name, new List<RarityMap>()));
 			ModifiersMap.Add(new KeyValuePair<string, List<ModifierMap>>(mod.Name, new List<ModifierMap>()));
 			PoolsMap.Add(new KeyValuePair<string, List<PoolMap>>(mod.Name, new List<PoolMap>()));

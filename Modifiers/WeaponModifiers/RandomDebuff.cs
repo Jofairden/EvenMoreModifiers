@@ -19,6 +19,7 @@ namespace Loot.Modifiers.WeaponModifiers
 			{ BuffID.Frostburn, 240 },
 			{ BuffID.OnFire, 300 },
 			{ BuffID.Poisoned, 480 },
+			{ BuffID.Ichor, 180 },
 		};
 
 		private readonly int _len = BuffPairs.GetLength(0);
@@ -48,9 +49,9 @@ namespace Loot.Modifiers.WeaponModifiers
 			_index = tag.GetAsInt("_index");
 		}
 
-		public override void Apply(Item item)
+		public override void Roll(Item item)
 		{
-			base.Apply(item);
+			base.Roll(item);
 			_index = Main.rand.Next(_len);
 		}
 
@@ -59,7 +60,7 @@ namespace Loot.Modifiers.WeaponModifiers
 
 		public override ModifierProperties GetModifierProperties(Item item)
 		{
-			return new ModifierProperties(source: base.GetModifierProperties(item)).Set(rollChance: _len);
+			return base.GetModifierProperties(item).Set(rollChance: _len);
 		}
 
 		// TODO we need ModPlayer hooks here

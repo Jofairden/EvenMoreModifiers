@@ -82,7 +82,9 @@ namespace Loot.System
 					break;
 
 				Modifier e = wr.Get();
-				list.Add((Modifier)e.Clone());
+				Modifier eClone = (Modifier) e.Clone();
+				eClone.Roll(ctx.Item);
+				list.Add(eClone);
 				wr.elements.Remove(new Tuple<Modifier, double>(e, e.Properties.RollChance));
 				wr.needsRefresh = true;
 			}
@@ -96,8 +98,7 @@ namespace Loot.System
 
 		internal bool _CanApply(ModifierContext ctx)
 		{
-			if (Modifiers.Length <= 0
-				|| new int[] { ItemID.CopperCoin, ItemID.GoldCoin, ItemID.SilverCoin, ItemID.PlatinumCoin }.Contains(ctx.Item.type))
+			if (Modifiers.Length <= 0)
 				return false;
 
 			switch (ctx.Method)

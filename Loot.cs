@@ -13,9 +13,13 @@ namespace Loot
 	{
 		internal static Loot Instance;
 
+#if DEBUG
+		public override string Name => "Loot";
+#endif
+
 		public Loot()
 		{
-			Properties = new ModProperties()
+			Properties = new ModProperties
 			{
 				Autoload = true,
 				AutoloadGores = true,
@@ -29,6 +33,8 @@ namespace Loot
 
 			EMMLoader.Initialize();
 			EMMLoader.Load();
+
+			EMMLoader.RegisterMod(this);
 			EMMLoader.SetupContent(this);
 		}
 
