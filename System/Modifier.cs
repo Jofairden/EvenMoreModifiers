@@ -95,11 +95,11 @@ namespace Loot.System
 			}
 			catch (Exception)
 			{
+				// Something was wrong with the TC, roll new values
 				return new ModifierProperties().RollMagnitudeAndPower();
 			}
 		}
 	}
-
 
 	/// <summary>
 	/// Defines a modifier, which is an unloaded GlobalItem
@@ -107,7 +107,7 @@ namespace Loot.System
 	/// The various hooks are called by our own GlobalItem
 	/// In your Modifier, it is safe to assume when one of the hooks is called, that item currently is modified by this modifier
 	/// </summary>
-	public abstract class Modifier : GlobalItem, ICloneable, IRollable
+	public abstract class Modifier : GlobalItem, ICloneable
 	{
 		public Mod Mod { get; internal set; }
 		public uint Type { get; internal set; }
@@ -128,23 +128,48 @@ namespace Loot.System
 			=> (Modifier)Activator.CreateInstance(GetType());
 
 		public virtual ModifierProperties GetModifierProperties(Item item)
+			=> new ModifierProperties();
+
+		/* Global
+			For now:
+			We cannot roll on items that can stack
+			We cannot roll on coins
+		*/
+		protected internal bool _CanRoll(ModifierContext ctx)
 		{
-			return new ModifierProperties();
+			Properties = GetModifierProperties(ctx.Item);
+			return ctx.Item.maxStack == 1 && !new int[] { ItemID.CopperCoin, ItemID.GoldCoin, ItemID.SilverCoin, ItemID.PlatinumCoin }.Contains(ctx.Item.type) && CanRoll(ctx);
 		}
 
 		/// <summary>
-		/// If this Modifier can roll/apply 
+		/// If this Modifier can roll in the given context
 		/// </summary>
 		public virtual bool CanRoll(ModifierContext ctx)
 			=> true;
 
-		public virtual bool CanApplyCraft(ModifierContext ctx)
+		/// <summary>
+		/// Returns if this modifier can apply in the given context by craft
+		/// </summary>
+		public virtual bool CanRollCraft(ModifierContext ctx)
 			=> true;
 
-		public virtual bool CanApplyPickup(ModifierContext ctx)
+		/// <summary>
+		/// Returns if this modifier can apply in the given context by pickup
+		/// </summary>
+		public virtual bool CanRollPickup(ModifierContext ctx)
 			=> true;
 
-		public virtual bool CanApplyReforge(ModifierContext ctx)
+		/// <summary>
+		/// Returns if this modifier can apply in the given context by reforge
+		/// </summary>
+		public virtual bool CanRollReforge(ModifierContext ctx)
+			=> true;
+
+		/// <summary>
+		/// If the modifier is uniquely rolled in the given context
+		/// If true, the modifier cannot be rolled more than once on a given item
+		/// </summary>
+		public virtual bool UniqueRoll(ModifierContext ctx)
 			=> true;
 
 		public sealed override void SetDefaults(Item item)

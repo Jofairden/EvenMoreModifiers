@@ -33,13 +33,16 @@ namespace Loot.System
 	/// It allows to roll a 'themed' item if it hits an already defined pool
 	/// Up to 4 effects are drawn from the pool, and activated
 	/// </summary>
-	public abstract class ModifierPool : ICloneable, IRollable
+	public abstract class ModifierPool : ICloneable
 	{
 		public uint Type { get; internal set; }
 		public Mod Mod { get; internal set; }
 		public ModifierRarity Rarity { get; internal set; }
 		protected internal Modifier[] Modifiers;
 		public Modifier[] ActiveModifiers { get; internal set; }
+
+		protected internal IEnumerable<Modifier> RollableModifiers(ModifierContext ctx) =>
+			Modifiers.Where(x => x._CanRoll(ctx));
 
 		public float TotalRarityLevel =>
 			ActiveModifiers.Select(m => m.Properties.RarityLevel).DefaultIfEmpty(0).Sum();
@@ -73,7 +76,7 @@ namespace Loot.System
 		{
 			WeightedRandom<Modifier> wr = new WeightedRandom<Modifier>();
 			List<Modifier> list = new List<Modifier>();
-			foreach (var e in Modifiers.Where(x => { x.Properties = x.GetModifierProperties(ctx.Item).RollMagnitudeAndPower(); return x.CanRoll(ctx); }))
+			foreach (var e in RollableModifiers(ctx))
 				wr.Add(e, e.Properties.RollChance);
 
 			for (int i = 0; i < 4; ++i)
@@ -81,43 +84,67 @@ namespace Loot.System
 				if (wr.elements.Count <= 0 || i > 0 && Main.rand.NextFloat() > ModifierRollChance(i))
 					break;
 
+				// TODO configurable if duplicates can be rolled?
 				Modifier e = wr.Get();
-				Modifier eClone = (Modifier) e.Clone();
-				eClone.Roll(ctx.Item);
-				list.Add(eClone);
-				wr.elements.Remove(new Tuple<Modifier, double>(e, e.Properties.RollChance));
-				wr.needsRefresh = true;
+				//if (e.UniqueRoll(ctx))
+				//	wr.elements.Remove(new Tuple<Modifier, double>(e, e.Properties.RollChance));
+				//	wr.needsRefresh = true;
+
+				e = (Modifier)e.Clone();
+				e.Properties = e.GetModifierProperties(ctx.Item).RollMagnitudeAndPower();
+				e.Roll(ctx.Item);
+				list.Add(e);
+
+				//Modifier eClone = (Modifier)e.Clone();
+				//eClone.Roll(ctx.Item);
+				//list.Add(eClone);
+				//wr.elements.Remove(new Tuple<Modifier, double>(e, e.Properties.RollChance));
+				//wr.needsRefresh = true;
 			}
 
 			ActiveModifiers = list.ToArray();
 			return ActiveModifiers.Length > 0;
 		}
 
-		internal float ModifierRollChance(int len)
-			=> 0.5f / (float)Math.Pow(2, len);
+		//internal float ModifierRollChance(int len) => 0.5f / (float)Math.Pow(2, len);
+		internal float ModifierRollChance(int len) => 0.5f;
 
-		internal bool _CanApply(ModifierContext ctx)
+		/* Modder defined */
+		public virtual bool CanApply(IEnumerable<Modifier> rollableModifiers, ModifierContext ctx) => true;
+
+		/* Global */
+		protected internal bool _CanApply(ModifierContext ctx)
 		{
-			if (Modifiers.Length <= 0)
+			var rollableModifiers = RollableModifiers(ctx);
+
+			if (Modifiers.Length <= 0
+				|| !_CanRoll(rollableModifiers, ctx)
+				|| !CanApply(rollableModifiers, ctx))
 				return false;
 
 			switch (ctx.Method)
 			{
 				case ModifierContextMethod.OnCraft:
-					return CanApplyCraft(ctx);
+					return _CanRollCraft(rollableModifiers, ctx);
 				case ModifierContextMethod.OnPickup:
-					return CanApplyPickup(ctx);
+					return _CanRollPickup(rollableModifiers, ctx);
 				case ModifierContextMethod.OnReforge:
-					return CanApplyReforge(ctx);
+					return _CanRollReforge(rollableModifiers, ctx);
 				default:
 					return true;
 			}
 		}
 
-		public virtual bool CanRoll(ModifierContext ctx) => Modifiers.Length > 0 && Modifiers.Any(x => x.CanRoll(ctx));
-		public virtual bool CanApplyCraft(ModifierContext ctx) => Modifiers.Any(x => x.CanApplyCraft(ctx));
-		public virtual bool CanApplyPickup(ModifierContext ctx) => Modifiers.Any(x => x.CanApplyPickup(ctx));
-		public virtual bool CanApplyReforge(ModifierContext ctx) => Modifiers.Any(x => x.CanApplyReforge(ctx));
+		/* Modder defined */
+		public virtual bool CanRollCraft(IEnumerable<Modifier> modifiers, ModifierContext ctx) => true;
+		public virtual bool CanRollPickup(IEnumerable<Modifier> modifiers, ModifierContext ctx) => true;
+		public virtual bool CanRollReforge(IEnumerable<Modifier> modifiers, ModifierContext ctx) => true;
+
+		/* Global */
+		protected internal bool _CanRoll(IEnumerable<Modifier> modifiers, ModifierContext ctx) => Modifiers.Length > 0 && modifiers.Count() >= 0;
+		protected internal bool _CanRollCraft(IEnumerable<Modifier> modifiers, ModifierContext ctx) => modifiers.Any(x => x.CanRollCraft(ctx)) && CanRollCraft(modifiers, ctx);
+		protected internal bool _CanRollPickup(IEnumerable<Modifier> modifiers, ModifierContext ctx) => modifiers.Any(x => x.CanRollPickup(ctx)) && CanRollPickup(modifiers, ctx);
+		protected internal bool _CanRollReforge(IEnumerable<Modifier> modifiers, ModifierContext ctx) => modifiers.Any(x => x.CanRollReforge(ctx)) && CanRollReforge(modifiers, ctx);
 
 		public virtual bool MatchesRarity(ModifierRarity rarity)
 			=> TotalRarityLevel >= rarity.RequiredRarityLevel;

@@ -51,13 +51,7 @@ namespace Loot
 			if (!ModifierPool.RollModifiers(ctx))
 				ModifierPool = null; // reset (didn't roll anything)
 			else
-			{
-				// If we have rolled modifiers, roll its power by magnitude, then update the rarity
-				foreach (var e in ModifierPool.ActiveModifiers)
-					e.Properties.RollMagnitudeAndPower();
-
 				ModifierPool.UpdateRarity();
-			}
 
 			return ModifierPool;
 		}

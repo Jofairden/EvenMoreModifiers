@@ -132,7 +132,6 @@
     <Compile Include="ModifierPlayer.cs" />
     <Compile Include="Modifiers\WeaponModifier.cs" />
     <Compile Include="System\AllModifiersPool.cs" />
-    <Compile Include="System\IRollable.cs" />
     <Compile Include="System\ModifierPool.cs" />
     <Compile Include="System\Modifier.cs" />
     <Compile Include="EMMLoader.cs" />

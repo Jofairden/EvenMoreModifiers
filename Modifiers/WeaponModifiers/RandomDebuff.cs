@@ -63,6 +63,9 @@ namespace Loot.Modifiers.WeaponModifiers
 			return base.GetModifierProperties(item).Set(rollChance: _len);
 		}
 
+		//public override bool UniqueRoll(ModifierContext ctx)
+		//	=> false;
+
 		// TODO we need ModPlayer hooks here
 
 		//public override void OnHitNPC(Item item, Player player, NPC target, int damage, float knockBack, bool crit)
