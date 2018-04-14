@@ -18,7 +18,7 @@ namespace Loot.Modifiers.EquipModifiers
 
 		public override void UpdateEquip(Item item, Player player)
 		{
-			player.thorns += (int)(Properties.RoundedPower / 100);
+			player.thorns += Properties.Power / 100f;
 		}
 	}
 }
