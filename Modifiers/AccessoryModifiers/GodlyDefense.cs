@@ -6,7 +6,7 @@ namespace Loot.Modifiers.AccessoryModifiers
 {
 	public class GodlyDefense : AccessoryModifier
 	{
-		public override ModifierTooltipLine[] Description => new[]
+		public override ModifierTooltipLine[] TooltipLines => new[]
 		{
 			new ModifierTooltipLine { Text = "Player has godly defense", Color =  Color.SlateGray},
 		};

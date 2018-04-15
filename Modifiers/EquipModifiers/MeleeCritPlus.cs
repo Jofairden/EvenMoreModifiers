@@ -6,7 +6,7 @@ namespace Loot.Modifiers.EquipModifiers
 {
 	public class MeleeCritPlus : EquipModifier
 	{
-		public override ModifierTooltipLine[] Description => new[]
+		public override ModifierTooltipLine[] TooltipLines => new[]
 		{
 			new ModifierTooltipLine { Text = $"+{Properties.RoundedPower}% melee crit chance", Color =  Color.LimeGreen},
 		};

@@ -7,7 +7,7 @@ namespace Loot.Modifiers.WeaponModifiers
 {
 	public class ManaReduce : WeaponModifier
 	{
-		public override ModifierTooltipLine[] Description => new[]
+		public override ModifierTooltipLine[] TooltipLines => new[]
 			{
 				new ModifierTooltipLine { Text = $"-{Properties.RoundedPower}% mana cost", Color = Color.Lime}
 			};

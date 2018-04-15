@@ -10,14 +10,64 @@ using Terraria.Utilities;
 
 namespace Loot.System
 {
+	/// <summary>
+	/// Defines a method for a context in which a Modifier might be rolled
+	/// Used in <see cref="ModifierContext"/>
+	/// </summary>
 	public enum ModifierContextMethod
 	{
 		OnReforge,
 		OnCraft,
-		OnPickup,
-		WorldGeneration
+		SetupStartInventory,
+		WorldGeneration,
+		FirstLoad
 	}
 
+	/// <summary>
+	/// Defines a context in which a Modifier might be rolled
+	/// Which fields are available (not null) depends on the method
+	/// <list type="table">
+	/// 
+	/// <listheader>
+	///	<term>Method</term>
+	/// <term>Available fields</term>
+	/// </listheader>
+	/// 
+	/// <item>
+	/// <term><see cref="ModifierContextMethod.OnReforge"/> and <see cref="ModifierContextMethod.SetupStartInventory"/></term>
+	/// <term>
+	/// <list type="number">
+	/// <term><see cref="Method"/></term>
+	/// <term><see cref="Item"/></term>
+	/// <term><see cref="Player"/></term>
+	/// </list>
+	/// </term>
+	/// </item>
+	/// 
+	/// <item>
+	/// <term><see cref="ModifierContextMethod.OnCraft"/></term>
+	/// <term>
+	/// <list type="number">
+	/// <term><see cref="Method"/></term>
+	/// <term><see cref="Item"/></term>
+	/// <term><see cref="Player"/></term>
+	/// <term><see cref="Recipe"/></term>
+	/// </list>
+	/// </term>
+	/// </item>
+	/// 
+	/// <item>
+	/// <term><see cref="ModifierContextMethod.WorldGeneration"/>, <see cref="ModifierContextMethod.FirstLoad"/></term>
+	/// <term>
+	/// <list type="number">
+	/// <term><see cref="Method"/></term>
+	/// <term><see cref="Item"/></term>
+	/// <term><see cref="CustomData"/> - The data available is "chestData" which holds a tuple of chest.x and chest.y position</term>
+	/// </list>
+	/// </term>
+	/// </item>
+	/// </list>
+	/// </summary>
 	public struct ModifierContext
 	{
 		public IDictionary<string, object> CustomData;
@@ -35,20 +85,31 @@ namespace Loot.System
 	/// </summary>
 	public abstract class ModifierPool : ICloneable
 	{
-		public uint Type { get; internal set; }
-		public Mod Mod { get; internal set; }
-		public ModifierRarity Rarity { get; internal set; }
+		public uint Type { get; protected internal set; }
+		public Mod Mod { get; protected internal set; }
+		public ModifierRarity Rarity { get; protected internal set; }
 		protected internal Modifier[] Modifiers;
-		public Modifier[] ActiveModifiers { get; internal set; }
+		public Modifier[] ActiveModifiers { get; protected internal set; }
 
-		protected internal IEnumerable<Modifier> RollableModifiers(ModifierContext ctx) =>
-			Modifiers.Where(x => x._CanRoll(ctx));
+		/// <summary>
+		/// Returns an enumerable of the rollable modifiers in the given context
+		/// </summary>
+		/// <param name="ctx"></param>
+		/// <returns></returns>
+		protected internal IEnumerable<Modifier> RollableModifiers(ModifierContext ctx)
+			=> Modifiers.Where(x => x._CanRoll(ctx));
 
-		public float TotalRarityLevel =>
-			ActiveModifiers.Select(m => m.Properties.RarityLevel).DefaultIfEmpty(0).Sum();
+		/// <summary>
+		/// Returns the sum of the rarity levels of the active modifiers
+		/// </summary>
+		public float TotalRarityLevel
+			=> ActiveModifiers.Select(m => m.Properties.RarityLevel).DefaultIfEmpty(0).Sum();
 
-		public IEnumerable<ModifierTooltipLine[]> Description =>
-			ActiveModifiers.Select(m => m.Description);
+		/// <summary>
+		/// Returns an enumerable of the tooltiplines of the active modifiers
+		/// </summary>
+		public IEnumerable<ModifierTooltipLine[]> Description
+			=> ActiveModifiers.Select(m => m.TooltipLines);
 
 		public virtual string Name => GetType().Name;
 		public virtual float RollChance => 1f;
@@ -84,22 +145,20 @@ namespace Loot.System
 				if (wr.elements.Count <= 0 || i > 0 && Main.rand.NextFloat() > ModifierRollChance(i))
 					break;
 
-				// TODO configurable if duplicates can be rolled?
 				Modifier e = wr.Get();
-				//if (e.UniqueRoll(ctx))
-				//	wr.elements.Remove(new Tuple<Modifier, double>(e, e.Properties.RollChance));
-				//	wr.needsRefresh = true;
+				Modifier eClone = (Modifier)e.Clone();
+				eClone.Properties = eClone.GetModifierProperties(ctx.Item).RollMagnitudeAndPower();
+				eClone.Roll(ctx);
 
-				e = (Modifier)e.Clone();
-				e.Properties = e.GetModifierProperties(ctx.Item).RollMagnitudeAndPower();
-				e.Roll(ctx.Item);
-				list.Add(e);
-
-				//Modifier eClone = (Modifier)e.Clone();
-				//eClone.Roll(ctx.Item);
-				//list.Add(eClone);
-				//wr.elements.Remove(new Tuple<Modifier, double>(e, e.Properties.RollChance));
-				//wr.needsRefresh = true;
+				if (eClone.PostRoll(ctx))
+				{
+					list.Add(eClone);
+					if (eClone.Properties.UniqueRoll)
+					{
+						wr.elements.Remove(new Tuple<Modifier, double>(eClone, eClone.Properties.RollChance));
+						wr.needsRefresh = true;
+					}
+				}
 			}
 
 			ActiveModifiers = list.ToArray();
@@ -109,46 +168,29 @@ namespace Loot.System
 		//internal float ModifierRollChance(int len) => 0.5f / (float)Math.Pow(2, len);
 		internal float ModifierRollChance(int len) => 0.5f;
 
-		/* Modder defined */
-		public virtual bool CanApply(IEnumerable<Modifier> rollableModifiers, ModifierContext ctx) => true;
+		/// <summary>
+		/// Returns if this pool can roll in the given context. 
+		/// By default returns if any modifier's <see cref="Modifier._CanRoll"/> returns true, and this pool's <see cref="CanRoll"/> returns true
+		/// </summary>
+		protected internal bool _CanRoll(ModifierContext ctx)
+			=> Modifiers.Any(x => x._CanRoll(ctx)) && CanRoll(ctx);
 
-		/* Global */
-		protected internal bool _CanApply(ModifierContext ctx)
-		{
-			var rollableModifiers = RollableModifiers(ctx);
+		/// <summary>
+		/// Returns if this pool can roll in the given context
+		/// Returns true by default
+		/// </summary>
+		public virtual bool CanRoll(ModifierContext ctx)
+			=> true;
 
-			if (Modifiers.Length <= 0
-				|| !_CanRoll(rollableModifiers, ctx)
-				|| !CanApply(rollableModifiers, ctx))
-				return false;
+		/// <summary>
+		/// By default returns if this pool matches the given <see cref="ModifierRarity"/>'s <see cref="ModifierRarity.RequiredRarityLevel"/>
+		/// </summary>
+		public virtual bool MatchesRarity(ModifierRarity rarity) => TotalRarityLevel >= rarity.RequiredRarityLevel;
 
-			switch (ctx.Method)
-			{
-				case ModifierContextMethod.OnCraft:
-					return _CanRollCraft(rollableModifiers, ctx);
-				case ModifierContextMethod.OnPickup:
-					return _CanRollPickup(rollableModifiers, ctx);
-				case ModifierContextMethod.OnReforge:
-					return _CanRollReforge(rollableModifiers, ctx);
-				default:
-					return true;
-			}
-		}
-
-		/* Modder defined */
-		public virtual bool CanRollCraft(IEnumerable<Modifier> modifiers, ModifierContext ctx) => true;
-		public virtual bool CanRollPickup(IEnumerable<Modifier> modifiers, ModifierContext ctx) => true;
-		public virtual bool CanRollReforge(IEnumerable<Modifier> modifiers, ModifierContext ctx) => true;
-
-		/* Global */
-		protected internal bool _CanRoll(IEnumerable<Modifier> modifiers, ModifierContext ctx) => Modifiers.Length > 0 && modifiers.Count() >= 0;
-		protected internal bool _CanRollCraft(IEnumerable<Modifier> modifiers, ModifierContext ctx) => modifiers.Any(x => x.CanRollCraft(ctx)) && CanRollCraft(modifiers, ctx);
-		protected internal bool _CanRollPickup(IEnumerable<Modifier> modifiers, ModifierContext ctx) => modifiers.Any(x => x.CanRollPickup(ctx)) && CanRollPickup(modifiers, ctx);
-		protected internal bool _CanRollReforge(IEnumerable<Modifier> modifiers, ModifierContext ctx) => modifiers.Any(x => x.CanRollReforge(ctx)) && CanRollReforge(modifiers, ctx);
-
-		public virtual bool MatchesRarity(ModifierRarity rarity)
-			=> TotalRarityLevel >= rarity.RequiredRarityLevel;
-
+		/// <summary>
+		/// Will run <see cref="Modifier.Apply"/> for all modifiers in <see cref="ActiveModifiers"/>
+		/// </summary>
+		/// <param name="item">The item to apply to, which is passed to <see cref="Modifier.Apply"/></param>
 		internal void ApplyModifiers(Item item)
 		{
 			foreach (Modifier m in ActiveModifiers)

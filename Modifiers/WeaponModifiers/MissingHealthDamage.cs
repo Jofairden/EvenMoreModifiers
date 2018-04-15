@@ -6,7 +6,7 @@ namespace Loot.Modifiers.WeaponModifiers
 {
 	public class MissingHealthDamage : WeaponModifier
 	{
-		public override ModifierTooltipLine[] Description => new[]
+		public override ModifierTooltipLine[] TooltipLines => new[]
 			{
 				new ModifierTooltipLine { Text = $"Up to +{Properties.RoundedPower}% damage based on missing health", Color = Color.Lime}
 			};

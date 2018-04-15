@@ -67,6 +67,7 @@ namespace Loot
 		{
 			if (tag.ContainsKey("Type"))
 				ModifierPool = ModifierPool._Load(item, tag);
+
 			HasRolled = tag.GetBool("HasRolled");
 
 			ModifierPool?.ApplyModifiers(item);
@@ -108,7 +109,13 @@ namespace Loot
 
 		public override void OnCraft(Item item, Recipe recipe)
 		{
-			ModifierContext ctx = new ModifierContext { Method = ModifierContextMethod.OnCraft, Item = item, Player = Main.LocalPlayer, Recipe = recipe };
+			ModifierContext ctx = new ModifierContext
+			{
+				Method = ModifierContextMethod.OnCraft,
+				Item = item,
+				Player = Main.LocalPlayer,
+				Recipe = recipe
+			};
 
 			ModifierPool pool = GetItemInfo(item).ModifierPool;
 			if (!HasRolled && pool == null)
@@ -120,23 +127,14 @@ namespace Loot
 			base.OnCraft(item, recipe);
 		}
 
-		public override bool OnPickup(Item item, Player player)
-		{
-			ModifierContext ctx = new ModifierContext { Method = ModifierContextMethod.OnPickup, Item = item, Player = player };
-
-			ModifierPool pool = GetItemInfo(item).ModifierPool;
-			if (!HasRolled && pool == null)
-			{
-				pool = RollNewPool(ctx);
-				pool?.ApplyModifiers(item);
-			}
-
-			return base.OnPickup(item, player);
-		}
-
 		public override void PostReforge(Item item)
 		{
-			ModifierContext ctx = new ModifierContext { Method = ModifierContextMethod.OnReforge, Item = item, Player = Main.LocalPlayer };
+			ModifierContext ctx = new ModifierContext
+			{
+				Method = ModifierContextMethod.OnReforge,
+				Item = item,
+				Player = Main.LocalPlayer
+			};
 
 			ModifierPool pool = RollNewPool(ctx);
 			pool?.ApplyModifiers(item);

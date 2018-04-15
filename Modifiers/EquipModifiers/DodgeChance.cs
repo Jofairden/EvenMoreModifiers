@@ -6,7 +6,7 @@ namespace Loot.Modifiers.EquipModifiers
 {
 	public class DodgeChance : EquipModifier
 	{
-		public override ModifierTooltipLine[] Description => new[]
+		public override ModifierTooltipLine[] TooltipLines => new[]
 		{
 			new ModifierTooltipLine { Text = $"+{Properties.RoundedPower}% dodge chance", Color =  Color.LimeGreen},
 		};

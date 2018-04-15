@@ -9,7 +9,7 @@ namespace Loot.Modifiers.WeaponModifiers
 {
 	public class DamagePlusDaytime : WeaponModifier
 	{
-		public override ModifierTooltipLine[] Description => new[]
+		public override ModifierTooltipLine[] TooltipLines => new[]
 			{
 				new ModifierTooltipLine { Text = $"+{Properties.RoundedPower}% damage during the {(_duringDay ? "day" : "night")}", Color = Color.Lime}
 			};
@@ -21,9 +21,9 @@ namespace Loot.Modifiers.WeaponModifiers
 
 		private bool _duringDay;
 
-		public override void Roll(Item item)
+		public override void Roll(ModifierContext ctx)
 		{
-			base.Roll(item);
+			base.Roll(ctx);
 			_duringDay = Main.rand.NextBool();
 		}
 

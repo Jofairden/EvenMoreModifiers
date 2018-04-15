@@ -142,7 +142,7 @@ namespace Loot
 		internal static ModifierPool GetWeightedPool(ModifierContext ctx)
 		{
 			var wr = new WeightedRandom<ModifierPool>();
-			foreach (var m in Pools.Where(x => x.Value._CanApply(ctx)))
+			foreach (var m in Pools.Where(x => x.Value._CanRoll(ctx)))
 				wr.Add(m.Value, m.Value.RollChance);
 			var mod = wr.Get();
 			return (ModifierPool)mod?.Clone();

@@ -7,14 +7,14 @@ namespace Loot.Modifiers.WeaponModifiers
 {
 	public class CursedDamage : WeaponModifier
 	{
-		public override ModifierTooltipLine[] Description => new[]
+		public override ModifierTooltipLine[] TooltipLines => new[]
 			{
 				new ModifierTooltipLine { Text = $"+{Properties.RoundedPower}% damage, but you are cursed", Color = Color.Lime}
 			};
 
 		public override ModifierProperties GetModifierProperties(Item item)
 		{
-			return base.GetModifierProperties(item).Set(minMagnitude: 16f, maxMagnitude: 30f);
+			return base.GetModifierProperties(item).Set(minMagnitude: 16f, maxMagnitude: 30f, uniqueRoll: true);
 		}
 
 		public override void GetWeaponDamage(Item item, Player player, ref int damage)

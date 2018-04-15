@@ -69,7 +69,7 @@ namespace Loot
 			f.SetValue(mod, false);
 
 			Console.Write(string.Join("\n", EMMLoader.RequestModifierRarities().Select(x => x.Name)));
-			Console.Write(string.Join("\n", EMMLoader.RequestModifiers().Select(x => x.Description)));
+			Console.Write(string.Join("\n", EMMLoader.RequestModifiers().Select(x => x.TooltipLines)));
 		}
 	}
 }

@@ -6,7 +6,7 @@ namespace Loot.Modifiers.WeaponModifiers
 {
 	public class VelocityPlus : WeaponModifier
 	{
-		public override ModifierTooltipLine[] Description => new[]
+		public override ModifierTooltipLine[] TooltipLines => new[]
 			{
 				new ModifierTooltipLine { Text = $"+{Properties.RoundedPower}% velocity", Color = Color.Lime}
 			};

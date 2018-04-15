@@ -13,7 +13,7 @@ namespace Loot.Modifiers
 	/// </summary>
 	public abstract class WeaponDebuffModifier : WeaponModifier
 	{
-		public override ModifierTooltipLine[] Description => new[]
+		public override ModifierTooltipLine[] TooltipLines => new[]
 		{
 			new ModifierTooltipLine { Text = $"+{Properties.RoundedPower}% chance to inflict {GetBuffName()} for {BuffTime/60f}s", Color = Color.Lime }
 		};

@@ -6,7 +6,7 @@ namespace Loot.Modifiers.WeaponModifiers
 {
 	public class AmmoReduce : WeaponModifier
 	{
-		public override ModifierTooltipLine[] Description => new[]
+		public override ModifierTooltipLine[] TooltipLines => new[]
 			{
 				new ModifierTooltipLine { Text = $"{Properties.RoundedPower}% chance to not consume ammo", Color = Color.Lime}
 			};

@@ -7,14 +7,14 @@ namespace Loot.Modifiers.EquipModifiers
 {
 	public class KnockbackImmunity : EquipModifier
 	{
-		public override ModifierTooltipLine[] Description => new[]
+		public override ModifierTooltipLine[] TooltipLines => new[]
 		{
 			new ModifierTooltipLine {Text = $"Knockback immunity", Color = Color.LimeGreen},
 		};
 
 		public override ModifierProperties GetModifierProperties(Item item)
 		{
-			return base.GetModifierProperties(item).Set(rollChance: .333f, rarityLevel: 3f);
+			return base.GetModifierProperties(item).Set(rollChance: .333f, rarityLevel: 3f, uniqueRoll: true);
 		}
 
 		public override bool CanRoll(ModifierContext ctx)
@@ -35,5 +35,6 @@ namespace Loot.Modifiers.EquipModifiers
 		{
 			player.noKnockback = true;
 		}
+		
 	}
 }

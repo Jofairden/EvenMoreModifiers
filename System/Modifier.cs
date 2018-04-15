@@ -8,12 +8,19 @@ using Terraria.ModLoader.IO;
 
 namespace Loot.System
 {
+	/// <summary>
+	/// Defines a tooltip line of a modifier
+	/// A modifier can have multiple lines
+	/// </summary>
 	public struct ModifierTooltipLine
 	{
 		public string Text;
 		public Color? Color;
 	}
 
+	/// <summary>
+	/// Defines the properties of a modifier
+	/// </summary>
 	public class ModifierProperties
 	{
 		public float MinMagnitude { get; private set; }
@@ -39,13 +46,15 @@ namespace Loot.System
 			get;
 			private set;
 		}
+		public bool UniqueRoll { get; private set; }
+		public bool MergeTooltips { get; private set; }
 
-		public ModifierProperties(float minMagnitude = 1f, float maxMagnitude = 1f, float magnitudeStrength = 1f, float basePower = 1f, float rarityLevel = 1f, float rollChance = 1f, int roundPrecision = 0)
+		public ModifierProperties(float minMagnitude = 1f, float maxMagnitude = 1f, float magnitudeStrength = 1f, float basePower = 1f, float rarityLevel = 1f, float rollChance = 1f, int roundPrecision = 0, bool uniqueRoll = false, bool mergeTooltips = false)
 		{
 			Set(minMagnitude, maxMagnitude, magnitudeStrength, basePower, rarityLevel, rollChance, roundPrecision);
 		}
 
-		public ModifierProperties Set(float? minMagnitude = null, float? maxMagnitude = null, float? magnitudeStrength = null, float? basePower = null, float? rarityLevel = null, float? rollChance = null, int? roundPrecision = null)
+		public ModifierProperties Set(float? minMagnitude = null, float? maxMagnitude = null, float? magnitudeStrength = null, float? basePower = null, float? rarityLevel = null, float? rollChance = null, int? roundPrecision = null, bool? uniqueRoll = null, bool? mergeTooltips = null)
 		{
 			MinMagnitude = minMagnitude ?? MinMagnitude;
 			MaxMagnitude = maxMagnitude ?? MaxMagnitude;
@@ -54,6 +63,8 @@ namespace Loot.System
 			RarityLevel = rarityLevel ?? RarityLevel;
 			RollChance = rollChance ?? RollChance;
 			RoundPrecision = roundPrecision ?? RoundPrecision;
+			UniqueRoll = uniqueRoll ?? UniqueRoll;
+			MergeTooltips = mergeTooltips ?? MergeTooltips;
 			return this;
 		}
 
@@ -114,7 +125,7 @@ namespace Loot.System
 		public ModifierProperties Properties { get; internal set; }
 
 		// Must be getter due to various fields that can change interactively
-		public virtual ModifierTooltipLine[] Description { get; }
+		public virtual ModifierTooltipLine[] TooltipLines { get; }
 
 		/// <summary>
 		/// Returns the Modifier specified by type, null if not present
@@ -130,59 +141,31 @@ namespace Loot.System
 
 		/* Global
 			For now:
-			We cannot roll on items that can stack
-			We cannot roll on coins
+			We cannot roll on items that can stack (stacking is undefined behavior)
 		*/
 		protected internal bool _CanRoll(ModifierContext ctx)
 		{
 			Properties = GetModifierProperties(ctx.Item);
-			return ctx.Item.maxStack == 1 && CanRoll(ctx);
+			return ctx.Item.maxStack <= 1 && CanRoll(ctx);
 		}
 
 		/// <summary>
-		/// If this Modifier can roll in the given context
+		/// If this Modifier can roll at all in the given context
+		/// Properties are available here, apart from magnitude and power
 		/// </summary>
-		public virtual bool CanRoll(ModifierContext ctx)
-			=> true;
+		public virtual bool CanRoll(ModifierContext ctx) => true;
 
 		/// <summary>
-		/// Returns if this modifier can apply in the given context by craft
+		/// Allows modders to do something when the modifier is rolled in the given context
 		/// </summary>
-		public virtual bool CanRollCraft(ModifierContext ctx)
-			=> true;
-
-		/// <summary>
-		/// Returns if this modifier can apply in the given context by pickup
-		/// </summary>
-		public virtual bool CanRollPickup(ModifierContext ctx)
-			=> true;
-
-		/// <summary>
-		/// Returns if this modifier can apply in the given context by reforge
-		/// </summary>
-		public virtual bool CanRollReforge(ModifierContext ctx)
-			=> true;
-
-		/// <summary>
-		/// If the modifier is uniquely rolled in the given context
-		/// If true, the modifier cannot be rolled more than once on a given item
-		/// </summary>
-		public virtual bool UniqueRoll(ModifierContext ctx)
-			=> true;
-
-		public sealed override void SetDefaults(Item item)
-		{
-			base.SetDefaults(item);
-			Apply(item);
-		}
-
-		/// <summary>
-		/// Allows modders to do something when the modifier is rolled on <param name="item">the given item</param>
-		/// </summary>
-		/// <param name="item">Item this modifier is rolled on</param>
-		public virtual void Roll(Item item)
+		public virtual void Roll(ModifierContext ctx)
 		{
 		}
+
+		/// <summary>
+		/// Returns if the modifier can actually be rolled, after <see cref="Roll"/> is called
+		/// </summary>
+		public virtual bool PostRoll(ModifierContext ctx) => true;
 
 		/// <summary>
 		/// Allows modders to do something when this modifier is applied
@@ -304,6 +287,11 @@ namespace Loot.System
 		public sealed override bool Autoload(ref string name) => false;
 		public sealed override bool InstancePerEntity => true;
 		public sealed override bool CloneNewInstances => true;
+		public sealed override void SetDefaults(Item item)
+		{
+			base.SetDefaults(item);
+			Apply(item);
+		}
 
 		// The following hooks aren't applicable in instanced context, so we seal them here so they can't be used	
 		public sealed override GlobalItem Clone(Item item, Item itemClone) => base.Clone(item, itemClone);

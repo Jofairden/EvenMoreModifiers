@@ -6,7 +6,7 @@ namespace Loot.Modifiers.WeaponModifiers
 {
 	public class CritPlus : WeaponModifier
 	{
-		public override ModifierTooltipLine[] Description => new[]
+		public override ModifierTooltipLine[] TooltipLines => new[]
 			{
 				new ModifierTooltipLine { Text = $"+{Properties.RoundedPower}% crit chance", Color = Color.Lime}
 			};

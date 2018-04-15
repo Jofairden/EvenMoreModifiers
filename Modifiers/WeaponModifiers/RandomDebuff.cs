@@ -1,4 +1,5 @@
 ﻿using System.IO;
+using System.Linq;
 using Loot.System;
 using Terraria;
 using Terraria.ID;
@@ -49,10 +50,15 @@ namespace Loot.Modifiers.WeaponModifiers
 			_index = tag.GetAsInt("_index");
 		}
 
-		public override void Roll(Item item)
+		public override void Roll(ModifierContext ctx)
 		{
-			base.Roll(item);
+			base.Roll(ctx);
 			_index = Main.rand.Next(_len);
+		}
+
+		public override bool PostRoll(ModifierContext ctx)
+		{
+			return !ModifierPlayer.PlayerInfo(ctx.Player).DebuffChances.Select(x => x.Item2).Contains(_index);
 		}
 
 		public override int BuffType => BuffPairs[_index, 0];

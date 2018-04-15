@@ -7,7 +7,7 @@ namespace Loot.Modifiers.WeaponModifiers
 {
 	public class DamagePlus : WeaponModifier
 	{
-		public override ModifierTooltipLine[] Description => new[]
+		public override ModifierTooltipLine[] TooltipLines => new[]
 			{
 				new ModifierTooltipLine { Text = $"+{Properties.RoundedPower}% damage", Color = Color.Lime}
 			};

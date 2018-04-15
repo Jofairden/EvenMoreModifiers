@@ -7,7 +7,7 @@ namespace Loot.Modifiers.WeaponModifiers
 {
 	public class DamageWithManaCost : WeaponModifier
 	{
-		public override ModifierTooltipLine[] Description => new[]
+		public override ModifierTooltipLine[] TooltipLines => new[]
 			{
 				new ModifierTooltipLine { Text = $"+{Properties.RoundedPower}% damage, but added mana cost", Color = Color.Lime}
 			};

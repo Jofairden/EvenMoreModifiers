@@ -6,12 +6,51 @@ using System.Threading.Tasks;
 using Loot.System;
 using Terraria;
 using Terraria.ModLoader;
+using Terraria.ModLoader.IO;
 using Terraria.World.Generation;
 
 namespace Loot
 {
 	public class EMMWorld : ModWorld
 	{
+		// The world has not initialized yet, when it is first updated
+		public static bool Initialized { get; internal set; }
+
+		public override void Initialize()
+		{
+			Initialized = false;
+		}
+
+		public override TagCompound Save()
+		{
+			return new TagCompound
+			{
+				{"initialized", Initialized}
+			};
+		}
+
+		public override void Load(TagCompound tag)
+		{
+			try
+			{
+				Initialized = tag.GetBool("initialized");
+			}
+			catch (Exception e)
+			{
+				ErrorLogger.Log($"Error on EMMWorld:Load: {e}");
+			}
+		}
+
+		public override void PostUpdate()
+		{
+			if (!Initialized)
+			{
+				Initialized = true;
+				foreach (var chest in Main.chest.Where(chest => chest != null && chest.x > 0 && chest.y > 0))
+					WorldGenModifiersPass.GenerateModifiers(null, ModifierContextMethod.FirstLoad, chest.item.Where(x => !x.IsAir), chest);
+			}
+		}
+
 		// TODO hardmode task, generate better modifiers in new biomes etc.
 
 		public override void ModifyWorldGenTasks(List<GenPass> tasks, ref float totalWeight)
@@ -19,44 +58,54 @@ namespace Loot
 			tasks.Add(new WorldGenModifiersPass("EvenMoreModifiers:WorldGenModifiersPass", 1));
 		}
 
-		private sealed class WorldGenModifiersPass : GenPass
+		internal sealed class WorldGenModifiersPass : GenPass
 		{
 			public WorldGenModifiersPass(string name, float loadWeight) : base(name, loadWeight)
 			{
 			}
 
-			public override void Apply(GenerationProgress progress)
+			// Attempt rolling modifiers on items
+			internal static void GenerateModifiers(GenerationProgress progress, ModifierContextMethod method, IEnumerable<Item> items, object obj = null)
 			{
-				progress.Message = "Generating modifiers on generated items...";
+				if (progress != null)
+					progress.Message = "Generating modifiers on generated items...";
 
-				foreach (Chest chest in Main.chest)
+				foreach (var item in items)
 				{
-					if (chest == null || chest.x <= 0 || chest.y <= 0)
-						continue;
-
-					foreach (Item item in chest.item)
+					EMMItem itemInfo = EMMItem.GetItemInfo(item);
+					ModifierPool pool = itemInfo.ModifierPool;
+					if (pool == null && WorldGen._genRand.NextBool())
 					{
-						if (!item.IsAir)
+						ModifierContext ctx = new ModifierContext
 						{
-							EMMItem ItemInfo = EMMItem.GetItemInfo(item);
-							ModifierPool pool = ItemInfo.ModifierPool;
-							if (!ItemInfo.HasRolled && pool == null && WorldGen._genRand.NextBool())
+							Method = method,
+							Item = item
+						};
+
+						if (obj is Chest)
+						{
+							ctx.CustomData = new Dictionary<string, object>
 							{
-								ModifierContext ctx = new ModifierContext
-								{
-									Method = ModifierContextMethod.WorldGeneration,
-									Item = item,
-									CustomData = new Dictionary<string, object>
-									{
-										{"chestData", new Tuple<int, int>(chest.x, chest.y) }
-									}
-								};
-								pool = ItemInfo.RollNewPool(ctx);
-								pool?.ApplyModifiers(item);
-							}
+								{"chestData", new Tuple<int, int>(((Chest)obj).x, ((Chest)obj).y)}
+							};
 						}
+						else if (obj is Player)
+						{
+							ctx.Player = (Player)obj;
+						}
+
+						itemInfo.HasRolled = true;
+						pool = itemInfo.RollNewPool(ctx);
+						pool?.ApplyModifiers(item);
 					}
 				}
+			}
+
+			public override void Apply(GenerationProgress progress)
+			{
+				Initialized = true;
+				foreach (var chest in Main.chest.Where(chest => chest != null && chest.x > 0 && chest.y > 0))
+					GenerateModifiers(progress, ModifierContextMethod.WorldGeneration, chest.item.Where(x => !x.IsAir), chest);
 			}
 		}
 	}
