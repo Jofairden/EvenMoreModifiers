@@ -40,7 +40,7 @@ namespace Loot
 						{
 							EMMItem ItemInfo = EMMItem.GetItemInfo(item);
 							ModifierPool pool = ItemInfo.ModifierPool;
-							if (!ItemInfo.HasRolled && pool == null)
+							if (!ItemInfo.HasRolled && pool == null && WorldGen._genRand.NextBool())
 							{
 								ModifierContext ctx = new ModifierContext
 								{
