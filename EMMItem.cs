@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using Loot.System;
 using Microsoft.Xna.Framework;
 using Terraria;
@@ -15,7 +16,7 @@ namespace Loot
 	{
 		// Helpers
 		public static EMMItem GetItemInfo(Item item) => item.GetGlobalItem<EMMItem>();
-		public static ModifierPool GetPool(Item item) => GetItemInfo(item)?.ModifierPool;
+		public static IEnumerable<Modifier> GetActivePool(Item item) => GetItemInfo(item)?.ModifierPool?.ActiveModifiers ?? Enumerable.Empty<Modifier>();
 
 		public override bool InstancePerEntity => true;
 		public override bool CloneNewInstances => true;
@@ -109,7 +110,7 @@ namespace Loot
 		{
 			ModifierContext ctx = new ModifierContext { Method = ModifierContextMethod.OnCraft, Item = item, Player = Main.LocalPlayer, Recipe = recipe };
 
-			ModifierPool pool = GetPool(item);
+			ModifierPool pool = GetItemInfo(item).ModifierPool;
 			if (!HasRolled && pool == null)
 			{
 				pool = RollNewPool(ctx);
@@ -123,7 +124,7 @@ namespace Loot
 		{
 			ModifierContext ctx = new ModifierContext { Method = ModifierContextMethod.OnPickup, Item = item, Player = player };
 
-			ModifierPool pool = GetPool(item);
+			ModifierPool pool = GetItemInfo(item).ModifierPool;
 			if (!HasRolled && pool == null)
 			{
 				pool = RollNewPool(ctx);
@@ -146,7 +147,7 @@ namespace Loot
 		/// </summary>
 		public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
 		{
-			var pool = GetPool(item);
+			var pool = GetItemInfo(item).ModifierPool; ;
 			if (pool != null && pool.ActiveModifiers.Length > 0)
 			{
 				int i = tooltips.FindIndex(x => x.mod == "Terraria" && x.Name == "ItemName");

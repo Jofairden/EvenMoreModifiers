@@ -20,10 +20,8 @@ namespace Loot
 		{
 			bool b = base.AltFunctionUse(item, player);
 
-			ModifierPool pool = EMMItem.GetPool(item);
-			if (pool != null)
-				foreach (Modifier m in pool.ActiveModifiers)
-					b &= m.AltFunctionUse(item, player);
+			foreach (Modifier m in EMMItem.GetActivePool(item))
+				b &= m.AltFunctionUse(item, player);
 
 			return b;
 		}
@@ -32,10 +30,8 @@ namespace Loot
 		{
 			bool b = base.CanEquipAccessory(item, player, slot);
 
-			ModifierPool pool = EMMItem.GetPool(item);
-			if (pool != null)
-				foreach (Modifier m in pool.ActiveModifiers)
-					b &= m.CanEquipAccessory(item, player, slot);
+			foreach (Modifier m in EMMItem.GetActivePool(item))
+				b &= m.CanEquipAccessory(item, player, slot);
 
 			return b;
 		}
@@ -44,10 +40,8 @@ namespace Loot
 		{
 			bool? b = base.CanHitNPC(item, player, target);
 
-			ModifierPool pool = EMMItem.GetPool(item);
-			if (pool != null)
-				foreach (Modifier m in pool.ActiveModifiers)
-					b &= m.CanHitNPC(item, player, target);
+			foreach (Modifier m in EMMItem.GetActivePool(item))
+				b &= m.CanHitNPC(item, player, target);
 
 			return b;
 		}
@@ -56,10 +50,8 @@ namespace Loot
 		{
 			bool b = base.CanHitPvp(item, player, target);
 
-			ModifierPool pool = EMMItem.GetPool(item);
-			if (pool != null)
-				foreach (Modifier m in pool.ActiveModifiers)
-					b &= m.CanHitPvp(item, player, target);
+			foreach (Modifier m in EMMItem.GetActivePool(item))
+				b &= m.CanHitPvp(item, player, target);
 
 			return b;
 		}
@@ -68,10 +60,8 @@ namespace Loot
 		{
 			bool b = base.CanPickup(item, player);
 
-			ModifierPool pool = EMMItem.GetPool(item);
-			if (pool != null)
-				foreach (Modifier m in pool.ActiveModifiers)
-					b &= m.CanPickup(item, player);
+			foreach (Modifier m in EMMItem.GetActivePool(item))
+				b &= m.CanPickup(item, player);
 
 			return b;
 		}
@@ -80,10 +70,8 @@ namespace Loot
 		{
 			bool b = base.CanRightClick(item);
 
-			ModifierPool pool = EMMItem.GetPool(item);
-			if (pool != null)
-				foreach (Modifier m in pool.ActiveModifiers)
-					b &= m.CanRightClick(item);
+			foreach (Modifier m in EMMItem.GetActivePool(item))
+				b &= m.CanRightClick(item);
 
 			return b;
 		}
@@ -92,10 +80,8 @@ namespace Loot
 		{
 			bool b = base.CanUseItem(item, player);
 
-			ModifierPool pool = EMMItem.GetPool(item);
-			if (pool != null)
-				foreach (Modifier m in pool.ActiveModifiers)
-					b &= m.CanUseItem(item, player);
+			foreach (Modifier m in EMMItem.GetActivePool(item))
+				b &= m.CanUseItem(item, player);
 
 			return b;
 		}
@@ -106,15 +92,13 @@ namespace Loot
 			if (p != -1)
 				return p;
 
-			ModifierPool pool = EMMItem.GetPool(item);
-			if (pool != null)
-				foreach (Modifier m in pool.ActiveModifiers)
-				{
-					p = m.ChoosePrefix(item, rand);
-					// TODO which modifier takes precedence ?
-					if (p != -1)
-						return p;
-				}
+			foreach (Modifier m in EMMItem.GetActivePool(item))
+			{
+				p = m.ChoosePrefix(item, rand);
+				// TODO which modifier takes precedence ?
+				if (p != -1)
+					return p;
+			}
 
 			return -1;
 		}
@@ -123,10 +107,8 @@ namespace Loot
 		{
 			bool b = base.ConsumeAmmo(item, player);
 
-			ModifierPool pool = EMMItem.GetPool(item);
-			if (pool != null)
-				foreach (Modifier m in pool.ActiveModifiers)
-					b &= m.ConsumeAmmo(item, player);
+			foreach (Modifier m in EMMItem.GetActivePool(item))
+				b &= m.ConsumeAmmo(item, player);
 
 			return b;
 		}
@@ -135,10 +117,8 @@ namespace Loot
 		{
 			bool b = base.ConsumeItem(item, player);
 
-			ModifierPool pool = EMMItem.GetPool(item);
-			if (pool != null)
-				foreach (Modifier m in pool.ActiveModifiers)
-					b &= m.ConsumeItem(item, player);
+			foreach (Modifier m in EMMItem.GetActivePool(item))
+				b &= m.ConsumeItem(item, player);
 
 			return b;
 		}
@@ -149,15 +129,13 @@ namespace Loot
 			if (a.HasValue)
 				return a;
 
-			ModifierPool pool = EMMItem.GetPool(item);
-			if (pool != null)
-				foreach (Modifier m in pool.ActiveModifiers)
-				{
-					a = m.GetAlpha(item, lightColor);
-					// TODO which modifier takes precedence ?
-					if (a.HasValue)
-						return a;
-				}
+			foreach (Modifier m in EMMItem.GetActivePool(item))
+			{
+				a = m.GetAlpha(item, lightColor);
+				// TODO which modifier takes precedence ?
+				if (a.HasValue)
+					return a;
+			}
 
 			return null;
 		}
@@ -166,50 +144,40 @@ namespace Loot
 		{
 			base.GetWeaponCrit(item, player, ref crit);
 
-			ModifierPool pool = EMMItem.GetPool(item);
-			if (pool != null)
-				foreach (Modifier m in pool.ActiveModifiers)
-					m.GetWeaponCrit(item, player, ref crit);
+			foreach (Modifier m in EMMItem.GetActivePool(item))
+				m.GetWeaponCrit(item, player, ref crit);
 		}
 
 		public override void GetWeaponDamage(Item item, Player player, ref int damage)
 		{
 			base.GetWeaponDamage(item, player, ref damage);
 
-			ModifierPool pool = EMMItem.GetPool(item);
-			if (pool != null)
-				foreach (Modifier m in pool.ActiveModifiers)
-					m.GetWeaponDamage(item, player, ref damage);
+			foreach (Modifier m in EMMItem.GetActivePool(item))
+				m.GetWeaponDamage(item, player, ref damage);
 		}
 
 		public override void GetWeaponKnockback(Item item, Player player, ref float knockback)
 		{
 			base.GetWeaponKnockback(item, player, ref knockback);
 
-			ModifierPool pool = EMMItem.GetPool(item);
-			if (pool != null)
-				foreach (Modifier m in pool.ActiveModifiers)
-					m.GetWeaponKnockback(item, player, ref knockback);
+			foreach (Modifier m in EMMItem.GetActivePool(item))
+				m.GetWeaponKnockback(item, player, ref knockback);
 		}
 
 		public override void GrabRange(Item item, Player player, ref int grabRange)
 		{
 			base.GrabRange(item, player, ref grabRange);
 
-			ModifierPool pool = EMMItem.GetPool(item);
-			if (pool != null)
-				foreach (Modifier m in pool.ActiveModifiers)
-					m.GrabRange(item, player, ref grabRange);
+			foreach (Modifier m in EMMItem.GetActivePool(item))
+				m.GrabRange(item, player, ref grabRange);
 		}
 
 		public override bool GrabStyle(Item item, Player player)
 		{
 			bool b = base.GrabStyle(item, player);
 
-			ModifierPool pool = EMMItem.GetPool(item);
-			if (pool != null)
-				foreach (Modifier m in pool.ActiveModifiers)
-					b &= m.GrabStyle(item, player);
+			foreach (Modifier m in EMMItem.GetActivePool(item))
+				b &= m.GrabStyle(item, player);
 
 			return b;
 		}
@@ -218,20 +186,16 @@ namespace Loot
 		{
 			base.HoldItem(item, player);
 
-			ModifierPool pool = EMMItem.GetPool(item);
-			if (pool != null)
-				foreach (Modifier m in pool.ActiveModifiers)
-					m.HoldItem(item, player);
+			foreach (Modifier m in EMMItem.GetActivePool(item))
+				m.HoldItem(item, player);
 		}
 
 		public override bool HoldItemFrame(Item item, Player player)
 		{
 			bool b = base.HoldItemFrame(item, player);
 
-			ModifierPool pool = EMMItem.GetPool(item);
-			if (pool != null)
-				foreach (Modifier m in pool.ActiveModifiers)
-					b &= m.HoldItemFrame(item, player);
+			foreach (Modifier m in EMMItem.GetActivePool(item))
+				b &= m.HoldItemFrame(item, player);
 
 			return b;
 		}
@@ -240,30 +204,24 @@ namespace Loot
 		{
 			base.HoldStyle(item, player);
 
-			ModifierPool pool = EMMItem.GetPool(item);
-			if (pool != null)
-				foreach (Modifier m in pool.ActiveModifiers)
-					m.HoldStyle(item, player);
+			foreach (Modifier m in EMMItem.GetActivePool(item))
+				m.HoldStyle(item, player);
 		}
 
 		public override void HorizontalWingSpeeds(Item item, Player player, ref float speed, ref float acceleration)
 		{
 			base.HorizontalWingSpeeds(item, player, ref speed, ref acceleration);
 
-			ModifierPool pool = EMMItem.GetPool(item);
-			if (pool != null)
-				foreach (Modifier m in pool.ActiveModifiers)
-					m.HorizontalWingSpeeds(item, player, ref speed, ref acceleration);
+			foreach (Modifier m in EMMItem.GetActivePool(item))
+				m.HorizontalWingSpeeds(item, player, ref speed, ref acceleration);
 		}
 
 		public override bool ItemSpace(Item item, Player player)
 		{
 			bool b = base.ItemSpace(item, player);
 
-			ModifierPool pool = EMMItem.GetPool(item);
-			if (pool != null)
-				foreach (Modifier m in pool.ActiveModifiers)
-					b &= m.ItemSpace(item, player);
+			foreach (Modifier m in EMMItem.GetActivePool(item))
+				b &= m.ItemSpace(item, player);
 
 			return b;
 		}
@@ -272,10 +230,8 @@ namespace Loot
 		{
 			base.MeleeEffects(item, player, hitbox);
 
-			ModifierPool pool = EMMItem.GetPool(item);
-			if (pool != null)
-				foreach (Modifier m in pool.ActiveModifiers)
-					m.MeleeEffects(item, player, hitbox);
+			foreach (Modifier m in EMMItem.GetActivePool(item))
+				m.MeleeEffects(item, player, hitbox);
 		}
 
 		public override float MeleeSpeedMultiplier(Item item, Player player)
@@ -284,15 +240,13 @@ namespace Loot
 			if (mult != 1f)
 				return mult;
 
-			ModifierPool pool = EMMItem.GetPool(item);
-			if (pool != null)
-				foreach (Modifier m in pool.ActiveModifiers)
-				{
-					mult = m.MeleeSpeedMultiplier(item, player);
-					// TODO which modifier takes precedence ?
-					if (mult != 1f)
-						return mult;
-				}
+			foreach (Modifier m in EMMItem.GetActivePool(item))
+			{
+				mult = m.MeleeSpeedMultiplier(item, player);
+				// TODO which modifier takes precedence ?
+				if (mult != 1f)
+					return mult;
+			}
 
 			return 1f;
 		}
@@ -301,20 +255,16 @@ namespace Loot
 		{
 			base.ModifyHitNPC(item, player, target, ref damage, ref knockBack, ref crit);
 
-			ModifierPool pool = EMMItem.GetPool(item);
-			if (pool != null)
-				foreach (Modifier m in pool.ActiveModifiers)
-					m.ModifyHitNPC(item, player, target, ref damage, ref knockBack, ref crit);
+			foreach (Modifier m in EMMItem.GetActivePool(item))
+				m.ModifyHitNPC(item, player, target, ref damage, ref knockBack, ref crit);
 		}
 
 		public override void ModifyHitPvp(Item item, Player player, Player target, ref int damage, ref bool crit)
 		{
 			base.ModifyHitPvp(item, player, target, ref damage, ref crit);
 
-			ModifierPool pool = EMMItem.GetPool(item);
-			if (pool != null)
-				foreach (Modifier m in pool.ActiveModifiers)
-					m.ModifyHitPvp(item, player, target, ref damage, ref crit);
+			foreach (Modifier m in EMMItem.GetActivePool(item))
+				m.ModifyHitPvp(item, player, target, ref damage, ref crit);
 		}
 
 		// These are handled by EMMItem
@@ -353,10 +303,8 @@ namespace Loot
 		{
 			bool b = base.NewPreReforge(item);
 
-			ModifierPool pool = EMMItem.GetPool(item);
-			if (pool != null)
-				foreach (Modifier m in pool.ActiveModifiers)
-					b &= m.NewPreReforge(item);
+			foreach (Modifier m in EMMItem.GetActivePool(item))
+				b &= m.NewPreReforge(item);
 
 			return b;
 		}
@@ -365,40 +313,32 @@ namespace Loot
 		{
 			base.OnCraft(item, recipe);
 
-			ModifierPool pool = EMMItem.GetPool(item);
-			if (pool != null)
-				foreach (Modifier m in pool.ActiveModifiers)
-					m.OnCraft(item, recipe);
+			foreach (Modifier m in EMMItem.GetActivePool(item))
+				m.OnCraft(item, recipe);
 		}
 
 		public override void OnHitNPC(Item item, Player player, NPC target, int damage, float knockBack, bool crit)
 		{
 			base.OnHitNPC(item, player, target, damage, knockBack, crit);
 
-			ModifierPool pool = EMMItem.GetPool(item);
-			if (pool != null)
-				foreach (Modifier m in pool.ActiveModifiers)
-					m.OnHitNPC(item, player, target, damage, knockBack, crit);
+			foreach (Modifier m in EMMItem.GetActivePool(item))
+				m.OnHitNPC(item, player, target, damage, knockBack, crit);
 		}
 
 		public override void OnHitPvp(Item item, Player player, Player target, int damage, bool crit)
 		{
 			base.OnHitPvp(item, player, target, damage, crit);
 
-			ModifierPool pool = EMMItem.GetPool(item);
-			if (pool != null)
-				foreach (Modifier m in pool.ActiveModifiers)
-					m.OnHitPvp(item, player, target, damage, crit);
+			foreach (Modifier m in EMMItem.GetActivePool(item))
+				m.OnHitPvp(item, player, target, damage, crit);
 		}
 
 		public override bool OnPickup(Item item, Player player)
 		{
 			bool b = base.OnPickup(item, player);
 
-			ModifierPool pool = EMMItem.GetPool(item);
-			if (pool != null)
-				foreach (Modifier m in pool.ActiveModifiers)
-					b &= m.OnPickup(item, player);
+			foreach (Modifier m in EMMItem.GetActivePool(item))
+				b &= m.OnPickup(item, player);
 
 			return b;
 		}
@@ -407,80 +347,64 @@ namespace Loot
 		{
 			base.PickAmmo(item, player, ref type, ref speed, ref damage, ref knockback);
 
-			ModifierPool pool = EMMItem.GetPool(item);
-			if (pool != null)
-				foreach (Modifier m in pool.ActiveModifiers)
-					m.PickAmmo(item, player, ref type, ref speed, ref damage, ref knockback);
+			foreach (Modifier m in EMMItem.GetActivePool(item))
+				m.PickAmmo(item, player, ref type, ref speed, ref damage, ref knockback);
 		}
 
 		public override void PostDrawInInventory(Item item, SpriteBatch spriteBatch, Vector2 position, Rectangle frame, Color drawColor, Color itemColor, Vector2 origin, float scale)
 		{
 			base.PostDrawInInventory(item, spriteBatch, position, frame, drawColor, itemColor, origin, scale);
 
-			ModifierPool pool = EMMItem.GetPool(item);
-			if (pool != null)
-				foreach (Modifier m in pool.ActiveModifiers)
-					m.PostDrawInInventory(item, spriteBatch, position, frame, drawColor, itemColor, origin, scale);
+			foreach (Modifier m in EMMItem.GetActivePool(item))
+				m.PostDrawInInventory(item, spriteBatch, position, frame, drawColor, itemColor, origin, scale);
 		}
 
 		public override void PostDrawInWorld(Item item, SpriteBatch spriteBatch, Color lightColor, Color alphaColor, float rotation, float scale, int whoAmI)
 		{
 			base.PostDrawInWorld(item, spriteBatch, lightColor, alphaColor, rotation, scale, whoAmI);
 
-			ModifierPool pool = EMMItem.GetPool(item);
-			if (pool != null)
-				foreach (Modifier m in pool.ActiveModifiers)
-					m.PostDrawInWorld(item, spriteBatch, lightColor, alphaColor, rotation, scale, whoAmI);
+			foreach (Modifier m in EMMItem.GetActivePool(item))
+				m.PostDrawInWorld(item, spriteBatch, lightColor, alphaColor, rotation, scale, whoAmI);
 		}
 
 		public override void PostDrawTooltip(Item item, ReadOnlyCollection<DrawableTooltipLine> lines)
 		{
 			base.PostDrawTooltip(item, lines);
 
-			ModifierPool pool = EMMItem.GetPool(item);
-			if (pool != null)
-				foreach (Modifier m in pool.ActiveModifiers)
-					m.PostDrawTooltip(item, lines);
+			foreach (Modifier m in EMMItem.GetActivePool(item))
+				m.PostDrawTooltip(item, lines);
 		}
 
 		public override void PostDrawTooltipLine(Item item, DrawableTooltipLine line)
 		{
 			base.PostDrawTooltipLine(item, line);
 
-			ModifierPool pool = EMMItem.GetPool(item);
-			if (pool != null)
-				foreach (Modifier m in pool.ActiveModifiers)
-					m.PostDrawTooltipLine(item, line);
+			foreach (Modifier m in EMMItem.GetActivePool(item))
+				m.PostDrawTooltipLine(item, line);
 		}
 
 		public override void PostReforge(Item item)
 		{
 			base.PostReforge(item);
 
-			ModifierPool pool = EMMItem.GetPool(item);
-			if (pool != null)
-				foreach (Modifier m in pool.ActiveModifiers)
-					m.PostReforge(item);
+			foreach (Modifier m in EMMItem.GetActivePool(item))
+				m.PostReforge(item);
 		}
 
 		public override void PostUpdate(Item item)
 		{
 			base.PostUpdate(item);
 
-			ModifierPool pool = EMMItem.GetPool(item);
-			if (pool != null)
-				foreach (Modifier m in pool.ActiveModifiers)
-					m.PostUpdate(item);
+			foreach (Modifier m in EMMItem.GetActivePool(item))
+				m.PostUpdate(item);
 		}
 
 		public override bool PreDrawInInventory(Item item, SpriteBatch spriteBatch, Vector2 position, Rectangle frame, Color drawColor, Color itemColor, Vector2 origin, float scale)
 		{
 			bool b = base.PreDrawInInventory(item, spriteBatch, position, frame, drawColor, itemColor, origin, scale);
 
-			ModifierPool pool = EMMItem.GetPool(item);
-			if (pool != null)
-				foreach (Modifier m in pool.ActiveModifiers)
-					b &= m.PreDrawInInventory(item, spriteBatch, position, frame, drawColor, itemColor, origin, scale);
+			foreach (Modifier m in EMMItem.GetActivePool(item))
+				b &= m.PreDrawInInventory(item, spriteBatch, position, frame, drawColor, itemColor, origin, scale);
 
 			return b;
 		}
@@ -489,10 +413,8 @@ namespace Loot
 		{
 			bool b = base.PreDrawInWorld(item, spriteBatch, lightColor, alphaColor, ref rotation, ref scale, whoAmI);
 
-			ModifierPool pool = EMMItem.GetPool(item);
-			if (pool != null)
-				foreach (Modifier m in pool.ActiveModifiers)
-					b &= m.PreDrawInWorld(item, spriteBatch, lightColor, alphaColor, ref rotation, ref scale, whoAmI);
+			foreach (Modifier m in EMMItem.GetActivePool(item))
+				b &= m.PreDrawInWorld(item, spriteBatch, lightColor, alphaColor, ref rotation, ref scale, whoAmI);
 
 			return b;
 		}
@@ -501,10 +423,8 @@ namespace Loot
 		{
 			bool b = base.PreDrawTooltip(item, lines, ref x, ref y);
 
-			ModifierPool pool = EMMItem.GetPool(item);
-			if (pool != null)
-				foreach (Modifier m in pool.ActiveModifiers)
-					b &= m.PreDrawTooltip(item, lines, ref x, ref y);
+			foreach (Modifier m in EMMItem.GetActivePool(item))
+				b &= m.PreDrawTooltip(item, lines, ref x, ref y);
 
 			return b;
 		}
@@ -513,10 +433,8 @@ namespace Loot
 		{
 			bool b = base.PreDrawTooltipLine(item, line, ref yOffset);
 
-			ModifierPool pool = EMMItem.GetPool(item);
-			if (pool != null)
-				foreach (Modifier m in pool.ActiveModifiers)
-					b &= m.PreDrawTooltipLine(item, line, ref yOffset);
+			foreach (Modifier m in EMMItem.GetActivePool(item))
+				b &= m.PreDrawTooltipLine(item, line, ref yOffset);
 
 			return b;
 		}
@@ -525,10 +443,8 @@ namespace Loot
 		{
 			bool b = base.ReforgePrice(item, ref reforgePrice, ref canApplyDiscount);
 
-			ModifierPool pool = EMMItem.GetPool(item);
-			if (pool != null)
-				foreach (Modifier m in pool.ActiveModifiers)
-					b &= m.ReforgePrice(item, ref reforgePrice, ref canApplyDiscount);
+			foreach (Modifier m in EMMItem.GetActivePool(item))
+				b &= m.ReforgePrice(item, ref reforgePrice, ref canApplyDiscount);
 
 			return b;
 		}
@@ -537,30 +453,24 @@ namespace Loot
 		{
 			base.RightClick(item, player);
 
-			ModifierPool pool = EMMItem.GetPool(item);
-			if (pool != null)
-				foreach (Modifier m in pool.ActiveModifiers)
-					m.RightClick(item, player);
+			foreach (Modifier m in EMMItem.GetActivePool(item))
+				m.RightClick(item, player);
 		}
 
 		public override void SetDefaults(Item item)
 		{
 			base.SetDefaults(item);
 
-			ModifierPool pool = EMMItem.GetPool(item);
-			if (pool != null)
-				foreach (Modifier m in pool.ActiveModifiers)
-					m.SetDefaults(item);
+			foreach (Modifier m in EMMItem.GetActivePool(item))
+				m.SetDefaults(item);
 		}
 
 		public override bool Shoot(Item item, Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)
 		{
 			bool b = base.Shoot(item, player, ref position, ref speedX, ref speedY, ref type, ref damage, ref knockBack);
 
-			ModifierPool pool = EMMItem.GetPool(item);
-			if (pool != null)
-				foreach (Modifier m in pool.ActiveModifiers)
-					b &= m.Shoot(item, player, ref position, ref speedX, ref speedY, ref type, ref damage, ref knockBack);
+			foreach (Modifier m in EMMItem.GetActivePool(item))
+				b &= m.Shoot(item, player, ref position, ref speedX, ref speedY, ref type, ref damage, ref knockBack);
 
 			return b;
 		}
@@ -569,50 +479,40 @@ namespace Loot
 		{
 			base.Update(item, ref gravity, ref maxFallSpeed);
 
-			ModifierPool pool = EMMItem.GetPool(item);
-			if (pool != null)
-				foreach (Modifier m in pool.ActiveModifiers)
-					m.Update(item, ref gravity, ref maxFallSpeed);
+			foreach (Modifier m in EMMItem.GetActivePool(item))
+				m.Update(item, ref gravity, ref maxFallSpeed);
 		}
 
 		public override void UpdateAccessory(Item item, Player player, bool hideVisual)
 		{
 			base.UpdateAccessory(item, player, hideVisual);
 
-			ModifierPool pool = EMMItem.GetPool(item);
-			if (pool != null)
-				foreach (Modifier m in pool.ActiveModifiers)
-					m.UpdateAccessory(item, player, hideVisual);
+			foreach (Modifier m in EMMItem.GetActivePool(item))
+				m.UpdateAccessory(item, player, hideVisual);
 		}
 
 		public override void UpdateEquip(Item item, Player player)
 		{
 			base.UpdateEquip(item, player);
 
-			ModifierPool pool = EMMItem.GetPool(item);
-			if (pool != null)
-				foreach (Modifier m in pool.ActiveModifiers)
-					m.UpdateEquip(item, player);
+			foreach (Modifier m in EMMItem.GetActivePool(item))
+				m.UpdateEquip(item, player);
 		}
 
 		public override void UpdateInventory(Item item, Player player)
 		{
 			base.UpdateInventory(item, player);
 
-			ModifierPool pool = EMMItem.GetPool(item);
-			if (pool != null)
-				foreach (Modifier m in pool.ActiveModifiers)
-					m.UpdateInventory(item, player);
+			foreach (Modifier m in EMMItem.GetActivePool(item))
+				m.UpdateInventory(item, player);
 		}
 
 		public override bool UseItem(Item item, Player player)
 		{
 			bool b = base.UseItem(item, player);
 
-			ModifierPool pool = EMMItem.GetPool(item);
-			if (pool != null)
-				foreach (Modifier m in pool.ActiveModifiers)
-					b &= m.UseItem(item, player);
+			foreach (Modifier m in EMMItem.GetActivePool(item))
+				b &= m.UseItem(item, player);
 
 			return b;
 		}
@@ -621,10 +521,8 @@ namespace Loot
 		{
 			bool b = base.UseItemFrame(item, player);
 
-			ModifierPool pool = EMMItem.GetPool(item);
-			if (pool != null)
-				foreach (Modifier m in pool.ActiveModifiers)
-					b &= m.UseItemFrame(item, player);
+			foreach (Modifier m in EMMItem.GetActivePool(item))
+				b &= m.UseItemFrame(item, player);
 
 			return b;
 		}
@@ -633,20 +531,16 @@ namespace Loot
 		{
 			base.UseItemHitbox(item, player, ref hitbox, ref noHitbox);
 
-			ModifierPool pool = EMMItem.GetPool(item);
-			if (pool != null)
-				foreach (Modifier m in pool.ActiveModifiers)
-					m.UseItemHitbox(item, player, ref hitbox, ref noHitbox);
+			foreach (Modifier m in EMMItem.GetActivePool(item))
+				m.UseItemHitbox(item, player, ref hitbox, ref noHitbox);
 		}
 
 		public override void UseStyle(Item item, Player player)
 		{
 			base.UseStyle(item, player);
 
-			ModifierPool pool = EMMItem.GetPool(item);
-			if (pool != null)
-				foreach (Modifier m in pool.ActiveModifiers)
-					m.UseStyle(item, player);
+			foreach (Modifier m in EMMItem.GetActivePool(item))
+				m.UseStyle(item, player);
 		}
 
 		public override float UseTimeMultiplier(Item item, Player player)
@@ -655,15 +549,13 @@ namespace Loot
 			if (f != 1f)
 				return f;
 
-			ModifierPool pool = EMMItem.GetPool(item);
-			if (pool != null)
-				foreach (Modifier m in pool.ActiveModifiers)
-				{
-					f = m.UseTimeMultiplier(item, player);
-					// TODO which modifier takes precedence ?
-					if (f != 1f)
-						return f;
-				}
+			foreach (Modifier m in EMMItem.GetActivePool(item))
+			{
+				f = m.UseTimeMultiplier(item, player);
+				// TODO which modifier takes precedence ?
+				if (f != 1f)
+					return f;
+			}
 
 			return f;
 		}
@@ -672,10 +564,8 @@ namespace Loot
 		{
 			base.VerticalWingSpeeds(item, player, ref ascentWhenFalling, ref ascentWhenRising, ref maxCanAscendMultiplier, ref maxAscentMultiplier, ref constantAscend);
 
-			ModifierPool pool = EMMItem.GetPool(item);
-			if (pool != null)
-				foreach (Modifier m in pool.ActiveModifiers)
-					m.VerticalWingSpeeds(item, player, ref ascentWhenFalling, ref ascentWhenRising, ref maxCanAscendMultiplier, ref maxAscentMultiplier, ref constantAscend);
+			foreach (Modifier m in EMMItem.GetActivePool(item))
+				m.VerticalWingSpeeds(item, player, ref ascentWhenFalling, ref ascentWhenRising, ref maxCanAscendMultiplier, ref maxAscentMultiplier, ref constantAscend);
 		}
 	}
 
