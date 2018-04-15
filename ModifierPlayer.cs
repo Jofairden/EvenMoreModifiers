@@ -565,14 +565,14 @@ namespace Loot
 
 			// If we have a mana shield (% damage redirected to mana)
 			// Then try to redirect the damage
-			int manaBlock = (int)Math.Ceiling(damage * ManaShield);
+			int manaBlock = (int) Math.Ceiling(damage * ManaShield) * 2;
 			if (manaBlock > 0 && player.statMana > 0)
 			{
 				// We cannot block more than how much mana we have
 				if (manaBlock > player.statMana)
 					manaBlock = player.statMana;
 
-				damage -= manaBlock;
+				damage -= manaBlock / 2;
 				player.statMana -= manaBlock;
 				player.manaRegenDelay = Math.Max(player.manaRegenDelay, 120);
 			}
