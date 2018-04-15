@@ -8,7 +8,7 @@ namespace Loot.Modifiers.EquipModifiers
 	{
 		public override ModifierTooltipLine[] Description => new[]
 		{
-			new ModifierTooltipLine { Text = $"+{Properties.RoundedPower}% damage redirected to mana", Color =  Color.LimeGreen},
+			new ModifierTooltipLine { Text = $"+{Properties.RoundedPower}% of damage taken is redirected to mana", Color =  Color.LimeGreen},
 		};
 
 		public override ModifierProperties GetModifierProperties(Item item)
