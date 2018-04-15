@@ -1,4 +1,5 @@
-﻿using System.IO;
+﻿using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using Loot.System;
 using Terraria;
@@ -24,6 +25,8 @@ namespace Loot.Modifiers.WeaponModifiers
 		};
 
 		private readonly int _len = BuffPairs.GetLength(0);
+
+		public int GetRolledIndex() => _index;
 		private int _index = -1;
 
 		public override void NetReceive(Item item, BinaryReader reader)
@@ -56,9 +59,11 @@ namespace Loot.Modifiers.WeaponModifiers
 			_index = Main.rand.Next(_len);
 		}
 
-		public override bool PostRoll(ModifierContext ctx)
+		public override bool PostRoll(ModifierContext ctx, IEnumerable<Modifier> rolledModifiers)
 		{
-			return !ModifierPlayer.PlayerInfo(ctx.Player).DebuffChances.Select(x => x.Item2).Contains(_index);
+			return rolledModifiers
+				.Select(x => x as RandomDebuff)
+				.All(x => x?.GetRolledIndex() != _index);
 		}
 
 		public override int BuffType => BuffPairs[_index, 0];

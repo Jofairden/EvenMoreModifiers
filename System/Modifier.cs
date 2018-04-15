@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Reflection;
 using Microsoft.Xna.Framework;
@@ -165,7 +166,7 @@ namespace Loot.System
 		/// <summary>
 		/// Returns if the modifier can actually be rolled, after <see cref="Roll"/> is called
 		/// </summary>
-		public virtual bool PostRoll(ModifierContext ctx) => true;
+		public virtual bool PostRoll(ModifierContext ctx, IEnumerable<Modifier> rolledMofiers) => true;
 
 		/// <summary>
 		/// Allows modders to do something when this modifier is applied

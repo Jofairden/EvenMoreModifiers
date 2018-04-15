@@ -7,6 +7,7 @@ using Loot.System;
 using Terraria;
 using Terraria.ModLoader;
 using Terraria.ModLoader.IO;
+using Terraria.Utilities;
 using Terraria.World.Generation;
 
 namespace Loot
@@ -74,8 +75,14 @@ namespace Loot
 				{
 					EMMItem itemInfo = EMMItem.GetItemInfo(item);
 					ModifierPool pool = itemInfo.ModifierPool;
-					if (pool == null && WorldGen._genRand.NextBool())
+					UnifiedRandom rand = Main.rand != null ? Main.rand : WorldGen.genRand != null ? WorldGen.genRand : null;
+					if (pool == null)
 					{
+						itemInfo.HasRolled = true;
+
+						if (rand != null && rand.NextBool())
+							continue;
+
 						ModifierContext ctx = new ModifierContext
 						{
 							Method = method,
@@ -94,7 +101,7 @@ namespace Loot
 							ctx.Player = (Player)obj;
 						}
 
-						itemInfo.HasRolled = true;
+						
 						pool = itemInfo.RollNewPool(ctx);
 						pool?.ApplyModifiers(item);
 					}

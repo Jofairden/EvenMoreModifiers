@@ -150,7 +150,7 @@ namespace Loot.System
 				eClone.Properties = eClone.GetModifierProperties(ctx.Item).RollMagnitudeAndPower();
 				eClone.Roll(ctx);
 
-				if (eClone.PostRoll(ctx))
+				if (eClone.PostRoll(ctx, list))
 				{
 					list.Add(eClone);
 					if (eClone.Properties.UniqueRoll)
