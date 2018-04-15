@@ -105,7 +105,7 @@ namespace Loot.System
 	/// The various hooks are called by our own GlobalItem
 	/// In your Modifier, it is safe to assume when one of the hooks is called, that item currently is modified by this modifier
 	/// </summary>
-	public abstract class Modifier : GlobalItem, ICloneable, IModifier
+	public abstract class Modifier : GlobalItem, ICloneable
 	{
 		public Mod Mod { get; internal set; }
 		public uint Type { get; internal set; }

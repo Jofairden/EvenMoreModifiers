@@ -7,22 +7,17 @@ using Terraria.ModLoader.IO;
 
 namespace Loot.System
 {
-	public abstract class GlobalModifier : IModifier
+	// TODO event based?
+	public abstract class GlobalModifier
 	{
 		internal static class Handler
 		{
-			private static IEnumerable<GlobalModifier> GlobalModifiers(Modifier modifier)
-			{
-				var gms = EMMLoader.GlobalModifiers.Select(x => x.Value);
-				foreach (var gm in gms)
-					gm.Modifier = modifier;
-				return gms;
-			}
+			private static IEnumerable<GlobalModifier> GlobalModifiers => EMMLoader.GlobalModifiers.Select(x => x.Value);
 
 			internal static ModifierProperties GetModifierProperties(Modifier modifier, Item item)
 			{
 				ModifierProperties p = null;
-				foreach (var gm in GlobalModifiers(modifier))
+				foreach (var gm in GlobalModifiers)
 				{
 					var get = gm.GetModifierProperties(item);
 					if (get != null)
@@ -43,57 +38,57 @@ namespace Loot.System
 
 			internal static bool CanRoll(Modifier modifier, ModifierContext ctx)
 			{
-				return GlobalModifiers(modifier).All(x => x.CanRoll(ctx));
+				return GlobalModifiers.All(x => x.CanRoll(modifier, ctx));
 			}
 
 			internal static bool CanRollCraft(Modifier modifier, ModifierContext ctx)
 			{
-				return GlobalModifiers(modifier).All(x => x.CanRollCraft(ctx));
+				return GlobalModifiers.All(x => x.CanRollCraft(modifier, ctx));
 			}
 
 			internal static bool CanRollPickup(Modifier modifier, ModifierContext ctx)
 			{
-				return GlobalModifiers(modifier).All(x => x.CanRollPickup(ctx));
+				return GlobalModifiers.All(x => x.CanRollPickup(modifier, ctx));
 			}
 
 			internal static bool CanRollReforge(Modifier modifier, ModifierContext ctx)
 			{
-				return GlobalModifiers(modifier).All(x => x.CanRollReforge(ctx));
+				return GlobalModifiers.All(x => x.CanRollReforge(modifier, ctx));
 			}
 
 			internal static bool UniqueRoll(Modifier modifier, ModifierContext ctx)
 			{
-				return GlobalModifiers(modifier).All(x => x.UniqueRoll(ctx));
+				return GlobalModifiers.All(x => x.UniqueRoll(modifier, ctx));
 			}
 
 			internal static void Roll(Modifier modifier, Item item)
 			{
-				foreach (var gm in GlobalModifiers(modifier))
-					gm.Roll(item);
+				foreach (var gm in GlobalModifiers)
+					gm.Roll(modifier, item);
 			}
 
 			internal static void Apply(Modifier modifier, Item item)
 			{
-				foreach (var gm in GlobalModifiers(modifier))
-					gm.Apply(item);
+				foreach (var gm in GlobalModifiers)
+					gm.Apply(modifier, item);
 			}
 
 			internal static void Clone(Modifier modifier, ref Modifier clone)
 			{
-				foreach (var gm in GlobalModifiers(modifier))
-					gm.Clone(ref clone);
+				foreach (var gm in GlobalModifiers)
+					gm.Clone(modifier, ref clone);
 			}
 
 			internal static void Load(Modifier modifier, TagCompound tag)
 			{
-				foreach (var gm in GlobalModifiers(modifier))
-					gm.Load(tag);
+				foreach (var gm in GlobalModifiers)
+					gm.Load(modifier, tag);
 			}
 
 			internal static void Save(Modifier modifier, TagCompound tag)
 			{
-				foreach (var gm in GlobalModifiers(modifier))
-					gm.Save(tag);
+				foreach (var gm in GlobalModifiers)
+					gm.Save(modifier, tag);
 			}
 		}
 
@@ -121,48 +116,48 @@ namespace Loot.System
 			return null;
 		}
 
-		public virtual bool CanRoll(ModifierContext ctx)
+		public virtual bool CanRoll(Modifier modifier, ModifierContext ctx)
 		{
 			return true;
 		}
 
-		public virtual bool CanRollCraft(ModifierContext ctx)
+		public virtual bool CanRollCraft(Modifier modifier, ModifierContext ctx)
 		{
 			return true;
 		}
 
-		public virtual bool CanRollPickup(ModifierContext ctx)
+		public virtual bool CanRollPickup(Modifier modifier, ModifierContext ctx)
 		{
 			return true;
 		}
 
-		public virtual bool CanRollReforge(ModifierContext ctx)
+		public virtual bool CanRollReforge(Modifier modifier, ModifierContext ctx)
 		{
 			return true;
 		}
 
-		public virtual bool UniqueRoll(ModifierContext ctx)
+		public virtual bool UniqueRoll(Modifier modifier, ModifierContext ctx)
 		{
 			return true;
 		}
 
-		public virtual void Roll(Item item)
+		public virtual void Roll(Modifier modifier, Item item)
 		{
 		}
 
-		public virtual void Apply(Item item)
+		public virtual void Apply(Modifier modifier, Item item)
 		{
 		}
 
-		public virtual void Clone(ref Modifier clone)
+		public virtual void Clone(Modifier modifier, ref Modifier clone)
 		{
 		}
 
-		public virtual void Load(TagCompound tag)
+		public virtual void Load(Modifier modifier, TagCompound tag)
 		{
 		}
 
-		public virtual void Save(TagCompound tag)
+		public virtual void Save(Modifier modifier, TagCompound tag)
 		{
 		}
 
