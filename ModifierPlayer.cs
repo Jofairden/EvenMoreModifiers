@@ -19,6 +19,11 @@ namespace Loot
 			EMMWorld.WorldGenModifiersPass.GenerateModifiers(null, ModifierContextMethod.SetupStartInventory, items.Where(x => !x.IsAir), player);
 		}
 
+		public override void OnEnterWorld(Player player)
+		{
+			EMMWorld.WorldGenModifiersPass.GenerateModifiers(null, ModifierContextMethod.FirstLoad, player.inventory.Where(x => !x.IsAir).Concat(player.armor.Where(x => !x.IsAir && !x.vanity)), player);
+		}
+
 		public static ModifierPlayer PlayerInfo(Player player) => player.GetModPlayer<ModifierPlayer>();
 
 		// Globals for modifiers

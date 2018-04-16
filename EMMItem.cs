@@ -6,6 +6,7 @@ using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.ModLoader;
 using Terraria.ModLoader.IO;
+using Terraria.UI;
 
 namespace Loot
 {
@@ -127,6 +128,25 @@ namespace Loot
 			base.OnCraft(item, recipe);
 		}
 
+		public override bool OnPickup(Item item, Player player)
+		{
+			ModifierContext ctx = new ModifierContext
+			{
+				Method = ModifierContextMethod.OnPickup,
+				Item = item,
+				Player = player
+			};
+
+			ModifierPool pool = GetItemInfo(item).ModifierPool;
+			if (!HasRolled && pool == null)
+			{
+				pool = RollNewPool(ctx);
+				pool?.ApplyModifiers(item);
+			}
+
+			return base.OnPickup(item, player);
+		}
+
 		public override void PostReforge(Item item)
 		{
 			ModifierContext ctx = new ModifierContext
@@ -162,11 +182,11 @@ namespace Loot
 				}
 
 				i = tooltips.Count;
-				tooltips.Insert(i, new TooltipLine(mod, "Modifier:Name", $"[{pool.Rarity.Name}]") { overrideColor = pool.Rarity.Color });
+				tooltips.Insert(i, new TooltipLine(mod, "Modifier:Name", $"[{pool.Rarity.Name}]") { overrideColor = pool.Rarity.Color * Main.inventoryScale });
 
 				foreach (var ttcol in pool.Description)
 					foreach (var tt in ttcol)
-						tooltips.Insert(++i, new TooltipLine(mod, $"Modifier:Description:{i}", tt.Text) { overrideColor = tt.Color ?? Color.White });
+						tooltips.Insert(++i, new TooltipLine(mod, $"Modifier:Description:{i}", tt.Text) { overrideColor = (tt.Color ?? Color.White) * Main.inventoryScale });
 
 				foreach (var e in pool.ActiveModifiers)
 					e.ModifyTooltips(item, tooltips);

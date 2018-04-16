@@ -20,7 +20,8 @@ namespace Loot.System
 		OnCraft,
 		SetupStartInventory,
 		WorldGeneration,
-		FirstLoad
+		FirstLoad,
+		OnPickup
 	}
 
 	/// <summary>
