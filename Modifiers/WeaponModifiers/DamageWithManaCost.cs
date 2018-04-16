@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using Loot.System;
 using Microsoft.Xna.Framework;
 using Terraria;
@@ -24,6 +25,11 @@ namespace Loot.Modifiers.WeaponModifiers
 		{
 			base.GetWeaponDamage(item, player, ref damage);
 			damage = (int)Math.Ceiling(damage * (1 + Properties.RoundedPower / 100f));
+		}
+
+		public override bool CanUseItem(Item item, Player player)
+		{
+			return player.statMana >= item.mana && (item.useAmmo == 0 || player.inventory.Any(x => x.ammo == item.useAmmo));
 		}
 
 		public override void Apply(Item item)

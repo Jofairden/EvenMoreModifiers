@@ -165,7 +165,7 @@ namespace Loot
 		/// </summary>
 		public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
 		{
-			var pool = GetItemInfo(item).ModifierPool; ;
+			var pool = GetItemInfo(item).ModifierPool;
 			if (pool != null && pool.ActiveModifiers.Length > 0)
 			{
 				int i = tooltips.FindIndex(x => x.mod == "Terraria" && x.Name == "ItemName");
