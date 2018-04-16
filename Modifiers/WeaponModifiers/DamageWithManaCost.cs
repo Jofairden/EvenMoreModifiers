@@ -19,7 +19,8 @@ namespace Loot.Modifiers.WeaponModifiers
 		}
 
 		public override bool CanRoll(ModifierContext ctx)
-			=> base.CanRoll(ctx) && ctx.Item.mana == 0;
+			=> base.CanRoll(ctx) 
+			   && ctx.Item.mana == 0;
 
 		public override void GetWeaponDamage(Item item, Player player, ref int damage)
 		{
@@ -29,7 +30,9 @@ namespace Loot.Modifiers.WeaponModifiers
 
 		public override bool CanUseItem(Item item, Player player)
 		{
-			return player.statMana >= item.mana && (item.useAmmo == 0 || player.inventory.Any(x => x.ammo == item.useAmmo));
+			return base.CanUseItem(item, player)
+				   && player.statMana >= item.mana
+				   && (item.useAmmo == 0 || player.inventory.Any(x => x.ammo == item.useAmmo));
 		}
 
 		public override void Apply(Item item)
