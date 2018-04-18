@@ -15,11 +15,11 @@ namespace Loot.Modifiers.WeaponModifiers
 
 		public override ModifierProperties GetModifierProperties(Item item)
 		{
-			return base.GetModifierProperties(item).Set(minMagnitude: 16f, maxMagnitude: 30f);
+			return base.GetModifierProperties(item).Set(minMagnitude: 15f + 5f * (item.rare + 1), maxMagnitude: 30f + 20f * (item.rare + 1));
 		}
 
 		public override bool CanRoll(ModifierContext ctx)
-			=> base.CanRoll(ctx) 
+			=> base.CanRoll(ctx)
 			   && ctx.Item.mana == 0;
 
 		public override void GetWeaponDamage(Item item, Player player, ref int damage)

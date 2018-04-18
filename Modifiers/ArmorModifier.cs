@@ -1,4 +1,5 @@
 ﻿using Loot.System;
+using Terraria;
 
 namespace Loot.Modifiers
 {
@@ -8,7 +9,11 @@ namespace Loot.Modifiers
 	/// </summary>
 	public abstract class ArmorModifier : Modifier
 	{
+		// TODO put useful fields on item itself
+		public static bool IsArmor(Item item)
+			=> (item.headSlot != -1 || item.bodySlot != -1 || item.legSlot != -1) && !item.vanity;
+
 		public override bool CanRoll(ModifierContext ctx)
-			=> ctx.Item.defense > 0 && (ctx.Item.headSlot > 0 || ctx.Item.legSlot > 0 || ctx.Item.bodySlot > 0);
+			=> IsArmor(ctx.Item);
 	}
 }

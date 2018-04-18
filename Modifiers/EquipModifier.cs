@@ -16,6 +16,6 @@ namespace Loot.Modifiers
 		}
 
 		public override bool CanRoll(ModifierContext ctx)
-			=> ctx.Item.accessory || (ctx.Item.headSlot > 0 || ctx.Item.legSlot > 0 || ctx.Item.bodySlot > 0) && !ctx.Item.vanity;
+			=> ctx.Item.accessory || ArmorModifier.IsArmor(ctx.Item);
 	}
 }

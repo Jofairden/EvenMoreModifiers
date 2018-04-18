@@ -8,12 +8,12 @@ namespace Loot.Modifiers.WeaponModifiers
 	{
 		public override ModifierTooltipLine[] TooltipLines => new[]
 			{
-				new ModifierTooltipLine { Text = $"+{Properties.RoundedPower}% speed", Color = Color.Lime}
+				new ModifierTooltipLine { Text = $"+{Properties.RoundedPower}% use speed", Color = Color.Lime}
 			};
 
 		public override ModifierProperties GetModifierProperties(Item item)
 		{
-			return base.GetModifierProperties(item).Set(maxMagnitude: 10f);
+			return base.GetModifierProperties(item).Set(minMagnitude: 1f + 1f * (item.rare + 1), maxMagnitude: 10f + 2f * (item.rare + 1));
 		}
 
 		public override void Apply(Item item)

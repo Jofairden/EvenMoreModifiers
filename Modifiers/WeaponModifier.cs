@@ -1,4 +1,5 @@
 ﻿using Loot.System;
+using Terraria;
 
 namespace Loot.Modifiers
 {
@@ -8,6 +9,9 @@ namespace Loot.Modifiers
 	/// </summary>
 	public abstract class WeaponModifier : Modifier
 	{
+		public static bool HasVanillaDamage(Item item)
+			=> item.magic || item.melee || item.ranged || item.summon || item.thrown;
+
 		public override bool CanRoll(ModifierContext ctx)
 			=> ctx.Item.damage > 0;
 	}

@@ -5,6 +5,7 @@ using System.Linq;
 using System.Reflection;
 using System.Runtime.Serialization.Formatters.Binary;
 using Loot.System;
+using Terraria;
 using Terraria.ModLoader;
 
 using RarityMap = System.Collections.Generic.KeyValuePair<string, Loot.System.ModifierRarity>;

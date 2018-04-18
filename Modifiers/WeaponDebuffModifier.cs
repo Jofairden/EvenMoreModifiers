@@ -25,6 +25,7 @@ namespace Loot.Modifiers
 
 		public abstract int BuffType { get; }
 		public abstract int BuffTime { get; }
+		public abstract float BuffInflictionChance { get; }
 
 		private string GetBuffName()
 		{
@@ -37,7 +38,7 @@ namespace Loot.Modifiers
 		public override void HoldItem(Item item, Player player)
 		{
 			//ModifierPlayer.PlayerInfo(player).DebuffChances.Add((chance: Power / 100, type: BuffType, time: BuffTime));
-			ModifierPlayer.PlayerInfo(player).DebuffChances.Add(new Tuple<float, int, int>(Properties.RoundedPower / 100, BuffType, BuffTime));
+			ModifierPlayer.PlayerInfo(player).DebuffChances.Add(new Tuple<float, int, int>(Properties.RoundedPower / 100 * BuffInflictionChance, BuffType, BuffTime));
 		}
 	}
 }

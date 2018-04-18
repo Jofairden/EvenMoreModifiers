@@ -8,20 +8,37 @@ using Terraria.ModLoader.IO;
 
 namespace Loot.Modifiers.WeaponModifiers
 {
+	internal struct DebuffTrigger
+	{
+		public int BuffType;
+		public int BuffTime;
+		public float InflictionChance;
+	}
+
 	/// <summary>
 	/// Rolls a random debuff
 	/// </summary>
 	public sealed class RandomDebuff : WeaponDebuffModifier
 	{
 		// TODO , this could should be added to to include min/max magnitude rolls, that influence the time and chance to apply 
-		internal static int[,] BuffPairs =
+		//internal static int[,] BuffPairs =
+		//{
+		//	{ BuffID.Confused, 120 },
+		//	{ BuffID.CursedInferno, 180 },
+		//	{ BuffID.Frostburn, 240 },
+		//	{ BuffID.OnFire, 300 },
+		//	{ BuffID.Poisoned, 480 },
+		//	{ BuffID.Ichor, 180 },
+		//};
+
+		internal static DebuffTrigger[] BuffPairs =
 		{
-			{ BuffID.Confused, 120 },
-			{ BuffID.CursedInferno, 180 },
-			{ BuffID.Frostburn, 240 },
-			{ BuffID.OnFire, 300 },
-			{ BuffID.Poisoned, 480 },
-			{ BuffID.Ichor, 180 },
+			new DebuffTrigger {BuffType = BuffID.Confused, BuffTime = 120, InflictionChance = 1f},
+			new DebuffTrigger {BuffType = BuffID.CursedInferno, BuffTime = 180, InflictionChance = 1f},
+			new DebuffTrigger {BuffType = BuffID.Frostburn, BuffTime = 240, InflictionChance = 1f},
+			new DebuffTrigger {BuffType = BuffID.OnFire, BuffTime = 300, InflictionChance = 1f},
+			new DebuffTrigger {BuffType = BuffID.Poisoned, BuffTime = 480, InflictionChance = 1f},
+			new DebuffTrigger {BuffType = BuffID.Ichor, BuffTime = 180, InflictionChance = 1f}
 		};
 
 		private readonly int _len = BuffPairs.GetLength(0);
@@ -66,8 +83,9 @@ namespace Loot.Modifiers.WeaponModifiers
 				.All(x => x?.GetRolledIndex() != _index);
 		}
 
-		public override int BuffType => BuffPairs[_index, 0];
-		public override int BuffTime => BuffPairs[_index, 1];
+		public override int BuffType => BuffPairs[_index].BuffType;
+		public override int BuffTime => BuffPairs[_index].BuffTime;
+		public override float BuffInflictionChance => BuffPairs[_index].InflictionChance;
 
 		public override ModifierProperties GetModifierProperties(Item item)
 		{

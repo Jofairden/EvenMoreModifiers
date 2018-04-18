@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Loot.Modifiers;
 using Terraria;
 using Terraria.ModLoader;
 
@@ -14,12 +15,11 @@ namespace Loot
 	/// </summary>
 	class ArmorItemHack : GlobalItem
 	{
-		private bool IsArmor(Item item) => (item.headSlot != -1 || item.bodySlot != -1 || item.legSlot != -1) && !item.vanity;
-		public override bool CanEquipAccessory(Item item, Player player, int slot) => !item.IsAir && !IsArmor(item);
+		public override bool CanEquipAccessory(Item item, Player player, int slot) => !item.IsAir && !ArmorModifier.IsArmor(item);
 
 		public override void UpdateInventory(Item item, Player player)
 		{
-			if (!item.IsAir && IsArmor(item))
+			if (!item.IsAir && ArmorModifier.IsArmor(item))
 			{
 				item.accessory = true;
 			}
@@ -27,7 +27,7 @@ namespace Loot
 
 		public override void PostReforge(Item item)
 		{
-			if (IsArmor(item))
+			if (ArmorModifier.IsArmor(item))
 			{
 				Item iRef = new Item();
 				iRef.netDefaults(item.netID);
