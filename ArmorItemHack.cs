@@ -34,7 +34,5 @@ namespace Loot
 				item = iRef.CloneWithModdedDataFrom(item);
 			}
 		}
-
-
 	}
 }
