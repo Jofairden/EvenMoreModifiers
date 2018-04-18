@@ -342,6 +342,7 @@ namespace Loot.System
 				if (rarityUnloaded)
 					m.Rarity = EMMLoader.GetPoolRarity(m);
 
+				m.Modifiers = null;
 				return m;
 			}
 			throw new Exception($"Modifier load error for {modname}");
