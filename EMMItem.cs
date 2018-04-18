@@ -60,7 +60,8 @@ namespace Loot
 		{
 			EMMItem clone = (EMMItem)base.Clone(item, itemClone);
 			clone.ModifierPool = (ModifierPool)ModifierPool?.Clone();
-			clone.ModifierPool?.ApplyModifiers(itemClone);
+			// there is no need to apply here, we already cloned the item which stats are already modified by its pool
+			//clone.ModifierPool?.ApplyModifiers(itemClone);
 			return clone;
 		}
 
