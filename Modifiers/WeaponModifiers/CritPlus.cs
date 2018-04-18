@@ -1,4 +1,5 @@
-﻿using Loot.System;
+﻿using System;
+using Loot.System;
 using Microsoft.Xna.Framework;
 using Terraria;
 
@@ -13,12 +14,12 @@ namespace Loot.Modifiers.WeaponModifiers
 
 		public override ModifierProperties GetModifierProperties(Item item)
 		{
-			return base.GetModifierProperties(item).Set(maxMagnitude: 10f + 10f * (item.rare + 1));
+			return base.GetModifierProperties(item).Set(maxMagnitude: 10f + 5 * (item.rare + 1));
 		}
 
 		public override void GetWeaponCrit(Item item, Player player, ref int crit)
 		{
-			crit += (int)Properties.RoundedPower;
+			crit = (int)Math.Min(100, crit + Properties.RoundedPower);
 		}
 	}
 }
