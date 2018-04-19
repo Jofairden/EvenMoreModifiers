@@ -77,37 +77,62 @@ namespace Loot.System
 			return this;
 		}
 
-		internal static ModifierProperties _NetReceive(Item item, BinaryReader reader)
+		public virtual void NetReceive(Item item, BinaryReader reader)
 		{
-			return new ModifierProperties().RollMagnitudeAndPower(reader.ReadSingle(), reader.ReadSingle());
 		}
 
-		internal static void _NetSend(ModifierProperties properties, Item item, BinaryWriter writer)
+		internal static ModifierProperties _NetReceive(Item item, BinaryReader reader)
+		{
+			var p = new ModifierProperties().RollMagnitudeAndPower(reader.ReadSingle(), reader.ReadSingle());
+			p.NetReceive(item, reader);
+			return p;
+		}
+
+		public virtual void NetSend(Item item, BinaryWriter writer)
+		{
+		}
+
+		internal static void _NetSend(Item item, ModifierProperties properties, BinaryWriter writer)
 		{
 			writer.Write(properties.Magnitude);
 			writer.Write(properties.Power);
+			properties.NetSend(item, writer);
 		}
 
-		public TagCompound Save()
+		public virtual void Save(Item item, TagCompound tag)
 		{
-			return new TagCompound
+		}
+
+		internal static TagCompound _Save(Item item, ModifierProperties properties)
+		{
+			var tc = new TagCompound
 			{
-				{"Magnitude", Magnitude},
-				{"Power", Power}
+				{"Magnitude", properties.Magnitude},
+				{"Power", properties.Power},
+				{"ModifierPropertiesSaveVersion", 1 }
 			};
+			properties.Save(item, tc);
+			return tc;
 		}
 
-		public static ModifierProperties Load(TagCompound tag)
+		public virtual void Load(Item item, TagCompound tag)
 		{
+		}
+
+		internal static ModifierProperties _Load(Item item, TagCompound tag)
+		{
+			ModifierProperties prop;
 			try
 			{
-				return new ModifierProperties().RollMagnitudeAndPower(tag.GetFloat("Magnitude"), tag.GetFloat("Power"));
+				prop = new ModifierProperties().RollMagnitudeAndPower(tag.GetFloat("Magnitude"), tag.GetFloat("Power"));
 			}
 			catch (Exception)
 			{
 				// Something was wrong with the TC, roll new values
-				return new ModifierProperties().RollMagnitudeAndPower();
+				prop = new ModifierProperties().RollMagnitudeAndPower();
 			}
+			prop.Load(item, tag);
+			return prop;
 		}
 	}
 
@@ -221,17 +246,16 @@ namespace Loot.System
 			writer.Write(modifier.GetType().FullName);
 			writer.Write(modifier.Type);
 			writer.Write(modifier.Mod.Name);
-			ModifierProperties._NetSend(modifier.Properties, item, writer);
-
+			ModifierProperties._NetSend(item, modifier.Properties, writer);
 			modifier.NetSend(item, writer);
 		}
 
 		/// <summary>
 		/// Allows modder to do custom loading here
-		/// Use the given TC to pull data you saved using <see cref="Save(TagCompound)"/>
+		/// Use the given TC to pull data you saved using <see cref="Save(Item,TagCompound)"/>
 		/// </summary>
 		/// <param name="tag"></param>
-		public virtual void Load(Item item, TagCompound tag)
+		public new virtual void Load(Item item, TagCompound tag)
 		{
 		}
 
@@ -254,7 +278,7 @@ namespace Loot.System
 
 				m.Type = tag.Get<uint>("ModifierType");
 				m.Mod = ModLoader.GetMod(modname);
-				var p = ModifierProperties.Load(tag.GetCompound("ModifierProperties"));
+				var p = ModifierProperties._Load(item, tag.GetCompound("ModifierProperties"));
 				m.Properties = m.GetModifierProperties(item).RollMagnitudeAndPower(p.Magnitude, p.Power);
 				m.Load(item, tag);
 				return m;
@@ -264,7 +288,7 @@ namespace Loot.System
 
 		/// <summary>
 		/// Allows modder to do custom saving here
-		/// Use the given TC to put data you want to save, which can be loaded using <see cref="Load(TagCompound)"/>
+		/// Use the given TC to put data you want to save, which can be loaded using <see cref="Load(Item,TagCompound)"/>
 		/// </summary>
 		public virtual void Save(Item item, TagCompound tag)
 		{
@@ -277,7 +301,8 @@ namespace Loot.System
 				{ "Type", modifier.GetType().FullName },
 				{ "ModifierType", modifier.Type },
 				{ "ModName", modifier.Mod.Name },
-				{ "ModifierProperties", modifier.Properties.Save() }
+				{ "ModifierProperties", ModifierProperties._Save(item, modifier.Properties) },
+				{ "ModifierSaveVersion", 1 }
 			};
 			modifier.Save(item, tag);
 			return tag;

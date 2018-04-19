@@ -102,7 +102,6 @@ namespace Loot.System
 		/// </summary>
 		public virtual void Load(Item item, TagCompound tag)
 		{
-
 		}
 
 		protected internal static ModifierRarity _Load(Item item, TagCompound tag)
@@ -136,16 +135,16 @@ namespace Loot.System
 		/// </summary>
 		public virtual void Save(Item item, TagCompound tag)
 		{
-
 		}
 
 		protected internal static TagCompound Save(Item item, ModifierRarity rarity)
 		{
 			var tag = new TagCompound
 			{
-				{"Type", rarity.GetType().FullName },
-				{"RarityType", rarity.Type },
-				{"ModName", rarity.Mod.Name },
+				{ "Type", rarity.GetType().FullName },
+				{ "RarityType", rarity.Type },
+				{ "ModName", rarity.Mod.Name },
+				{ "ModifierRaritySaveVersion", 1 }
 			};
 			rarity.Save(item, tag);
 			return tag;

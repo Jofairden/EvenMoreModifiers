@@ -230,8 +230,6 @@ namespace Loot.System
 		/// <summary>
 		/// Allows the modder to do custom NetReceive
 		/// </summary>
-		/// <param name="item"></param>
-		/// <param name="reader"></param>
 		public virtual void NetReceive(Item item, BinaryReader reader)
 		{
 		}
@@ -265,8 +263,6 @@ namespace Loot.System
 		/// <summary>
 		/// Allows modder to do custom NetSend here
 		/// </summary>
-		/// <param name="item"></param>
-		/// <param name="writer"></param>
 		public virtual void NetSend(Item item, BinaryWriter writer)
 		{
 		}
@@ -288,12 +284,10 @@ namespace Loot.System
 
 		/// <summary>
 		/// Allows modder to do custom loading here
-		/// Use the given TC to pull data you saved using <see cref="Save(TagCompound)"/>
+		/// Use the given TC to pull data you saved using <see cref="Save(Item,TagCompound)"/>
 		/// </summary>
-		/// <param name="tag"></param>
-		public virtual void Load(TagCompound tag)
+		public virtual void Load(Item item, TagCompound tag)
 		{
-
 		}
 
 		protected internal static ModifierPool _Load(Item item, TagCompound tag)
@@ -336,7 +330,7 @@ namespace Loot.System
 					}
 					m.ActiveModifiers = list.ToArray();
 				}
-				m.Load(tag);
+				m.Load(item, tag);
 
 				// If our rarity was unloaded, attempt rolling a new one that is applicable
 				if (rarityUnloaded)
@@ -353,9 +347,8 @@ namespace Loot.System
 		/// Use the given TC to put data you want to save, which can be loaded using <see cref="Load(TagCompound)"/>
 		/// </summary>
 		/// <param name="tag"></param>
-		public virtual void Save(TagCompound tag)
+		public virtual void Save(Item item, TagCompound tag)
 		{
-
 		}
 
 		protected internal static TagCompound Save(Item item, ModifierPool modifierPool)
@@ -365,17 +358,18 @@ namespace Loot.System
 
 			var tag = new TagCompound
 			{
-				{"Type", modifierPool.GetType().FullName },
-				{"ModifierType", modifierPool.Type },
-				{"ModName", modifierPool.Mod.Name },
-				{"Rarity", ModifierRarity.Save(item, modifierPool.Rarity) },
+				{ "Type", modifierPool.GetType().FullName },
+				{ "ModifierType", modifierPool.Type },
+				{ "ModName", modifierPool.Mod.Name },
+				{ "Rarity", ModifierRarity.Save(item, modifierPool.Rarity) },
+				{ "ModifierPoolSaveVersion", 1 }
 			};
 			tag.Add("ActiveModifiers", modifierPool.ActiveModifiers.Length);
 			for (int i = 0; i < modifierPool.ActiveModifiers.Length; ++i)
 			{
 				tag.Add($"ActiveModifier{i}", Modifier.Save(item, modifierPool.ActiveModifiers[i]));
 			}
-			modifierPool.Save(tag);
+			modifierPool.Save(item, tag);
 			return tag;
 		}
 
