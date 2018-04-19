@@ -85,7 +85,7 @@ namespace Loot
 		public override TagCompound Save(Item item)
 		{
 			TagCompound tag = ModifierPool != null
-				? ModifierPool.Save(ModifierPool)
+				? ModifierPool.Save(item, ModifierPool)
 				: new TagCompound();
 
 			tag.Add("HasRolled", HasRolled);
@@ -264,7 +264,8 @@ namespace Loot
 						}
 						else if (vttl.Name.Equals("PrefixUseMana") && chkUseMana)
 						{
-							newTT = GetPrefixNormString(poolItem.mana, item.mana, ref outNumber, ref newC);
+							if (baseItem.mana != 0)
+								newTT = GetPrefixNormString(poolItem.mana, item.mana, ref outNumber, ref newC);
 						}
 						else if (vttl.Name.Equals("PrefixSize") && chkSize)
 						{

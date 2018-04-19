@@ -58,15 +58,15 @@ namespace Loot.Modifiers.WeaponModifiers
 			writer.Write(_index);
 		}
 
-		public override void Save(TagCompound tag)
+		public override void Save(Item item, TagCompound tag)
 		{
-			base.Save(tag);
+			base.Save(item, tag);
 			tag.Add("_index", _index);
 		}
 
-		public override void Load(TagCompound tag)
+		public override void Load(Item item, TagCompound tag)
 		{
-			base.Load(tag);
+			base.Load(item, tag);
 			_index = tag.GetAsInt("_index");
 		}
 

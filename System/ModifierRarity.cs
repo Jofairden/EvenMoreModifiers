@@ -98,15 +98,14 @@ namespace Loot.System
 
 		/// <summary>
 		/// Allows modder to do custom loading here
-		/// Use the given TC to pull data you saved using <see cref="Save(TagCompound)"/>
+		/// Use the given TC to pull data you saved using <see cref="Save(Item,TagCompound)"/>
 		/// </summary>
-		/// <param name="tag"></param>
-		public virtual void Load(TagCompound tag)
+		public virtual void Load(Item item, TagCompound tag)
 		{
 
 		}
 
-		protected internal static ModifierRarity _Load(TagCompound tag)
+		protected internal static ModifierRarity _Load(Item item, TagCompound tag)
 		{
 			string modname = tag.GetString("ModName");
 			Assembly assembly;
@@ -125,7 +124,7 @@ namespace Loot.System
 
 				r.Type = tag.Get<uint>("RarityType");
 				r.Mod = ModLoader.GetMod(modname);
-				r.Load(tag);
+				r.Load(item, tag);
 				return r;
 			}
 			throw new Exception($"ModifierRarity load error for {modname}");
@@ -133,15 +132,14 @@ namespace Loot.System
 
 		/// <summary>
 		/// Allows modder to do custom saving here
-		/// Use the given TC to put data you want to save, which can be loaded using <see cref="Load(TagCompound)"/>
+		/// Use the given TC to put data you want to save, which can be loaded using <see cref="Load(Item,TagCompound)"/>
 		/// </summary>
-		/// <param name="tag"></param>
-		public virtual void Save(TagCompound tag)
+		public virtual void Save(Item item, TagCompound tag)
 		{
 
 		}
 
-		protected internal static TagCompound Save(ModifierRarity rarity)
+		protected internal static TagCompound Save(Item item, ModifierRarity rarity)
 		{
 			var tag = new TagCompound
 			{
@@ -149,7 +147,7 @@ namespace Loot.System
 				{"RarityType", rarity.Type },
 				{"ModName", rarity.Mod.Name },
 			};
-			rarity.Save(tag);
+			rarity.Save(item, tag);
 			return tag;
 		}
 	}

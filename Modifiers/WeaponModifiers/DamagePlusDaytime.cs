@@ -43,15 +43,15 @@ namespace Loot.Modifiers.WeaponModifiers
 
 		// Here we showcase custom loading and saving for a modifier
 
-		public override void Load(TagCompound tag)
+		public override void Load(Item item, TagCompound tag)
 		{
-			base.Load(tag);
+			base.Load(item, tag);
 			_duringDay = tag.GetBool("duringDay");
 		}
 
-		public override void Save(TagCompound tag)
+		public override void Save(Item item, TagCompound tag)
 		{
-			base.Save(tag);
+			base.Save(item, tag);
 			tag.Add("duringDay", _duringDay);
 		}
 

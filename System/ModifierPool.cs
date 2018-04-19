@@ -319,7 +319,7 @@ namespace Loot.System
 				m.Type = tag.Get<uint>("ModifierType");
 				m.Mod = ModLoader.GetMod(modname);
 				// preload rarity
-				ModifierRarity preloadRarity = ModifierRarity._Load(tag.Get<TagCompound>("Rarity"));
+				ModifierRarity preloadRarity = ModifierRarity._Load(item, tag.Get<TagCompound>("Rarity"));
 				bool rarityUnloaded = preloadRarity == null;
 				if (!rarityUnloaded)
 					m.Rarity = preloadRarity;
@@ -358,7 +358,7 @@ namespace Loot.System
 
 		}
 
-		protected internal static TagCompound Save(ModifierPool modifierPool)
+		protected internal static TagCompound Save(Item item, ModifierPool modifierPool)
 		{
 			if (modifierPool == null)
 				return new TagCompound { { "EMMErr:PoolNullErr", "ModifierPool was null err" } };
@@ -368,12 +368,12 @@ namespace Loot.System
 				{"Type", modifierPool.GetType().FullName },
 				{"ModifierType", modifierPool.Type },
 				{"ModName", modifierPool.Mod.Name },
-				{"Rarity", ModifierRarity.Save(modifierPool.Rarity) },
+				{"Rarity", ModifierRarity.Save(item, modifierPool.Rarity) },
 			};
 			tag.Add("ActiveModifiers", modifierPool.ActiveModifiers.Length);
 			for (int i = 0; i < modifierPool.ActiveModifiers.Length; ++i)
 			{
-				tag.Add($"ActiveModifier{i}", Modifier.Save(modifierPool.ActiveModifiers[i]));
+				tag.Add($"ActiveModifier{i}", Modifier.Save(item, modifierPool.ActiveModifiers[i]));
 			}
 			modifierPool.Save(tag);
 			return tag;

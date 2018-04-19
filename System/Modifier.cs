@@ -231,7 +231,7 @@ namespace Loot.System
 		/// Use the given TC to pull data you saved using <see cref="Save(TagCompound)"/>
 		/// </summary>
 		/// <param name="tag"></param>
-		public virtual void Load(TagCompound tag)
+		public virtual void Load(Item item, TagCompound tag)
 		{
 		}
 
@@ -256,7 +256,7 @@ namespace Loot.System
 				m.Mod = ModLoader.GetMod(modname);
 				var p = ModifierProperties.Load(tag.GetCompound("ModifierProperties"));
 				m.Properties = m.GetModifierProperties(item).RollMagnitudeAndPower(p.Magnitude, p.Power);
-				m.Load(tag);
+				m.Load(item, tag);
 				return m;
 			}
 			throw new Exception($"Modifier load error for {modname}");
@@ -266,12 +266,11 @@ namespace Loot.System
 		/// Allows modder to do custom saving here
 		/// Use the given TC to put data you want to save, which can be loaded using <see cref="Load(TagCompound)"/>
 		/// </summary>
-		/// <param name="tag"></param>
-		public virtual void Save(TagCompound tag)
+		public virtual void Save(Item item, TagCompound tag)
 		{
 		}
 
-		protected internal static TagCompound Save(Modifier modifier)
+		protected internal static TagCompound Save(Item item, Modifier modifier)
 		{
 			var tag = new TagCompound
 			{
@@ -280,7 +279,7 @@ namespace Loot.System
 				{ "ModName", modifier.Mod.Name },
 				{ "ModifierProperties", modifier.Properties.Save() }
 			};
-			modifier.Save(tag);
+			modifier.Save(item, tag);
 			return tag;
 		}
 
@@ -329,9 +328,9 @@ namespace Loot.System
 		public sealed override string IsArmorSet(Item head, Item body, Item legs) => base.IsArmorSet(head, body, legs);
 		public sealed override string IsVanitySet(int head, int body, int legs) => base.IsVanitySet(head, body, legs);
 		// If modders wish to save/load data, they should use our custom save and load hooks
-		public sealed override void Load(Item item, TagCompound tag)
-		{
-		}
+		//public sealed override void Load(Item item, TagCompound tag)
+		//{
+		//}
 		public sealed override void LoadLegacy(Item item, BinaryReader reader)
 		{
 		}
