@@ -33,21 +33,28 @@ namespace Loot
 		/// </summary>
 		internal ModifierPool RollNewPool(ModifierContext ctx)
 		{
+			// Now we have actually rolled
+			HasRolled = true;
+
 			// Try getting a weighted pool, or roll all modifiers at random
 			bool rollPredefinedPool = Main.rand.NextFloat() <= 0.25f;
 			bool canRollRandom = !rollPredefinedPool;
+
 			if (rollPredefinedPool)
 			{
 				ModifierPool = EMMLoader.GetWeightedPool(ctx);
-				if (ModifierPool == null)
-					canRollRandom = true;
+				canRollRandom = ModifierPool == null;
 			}
 
 			if (canRollRandom)
+			{
 				ModifierPool = Loot.Instance.GetModifierPool<AllModifiersPool>();
-
-			// Now we have actually rolled
-			HasRolled = true;
+				if (!ModifierPool._CanRoll(ctx))
+				{
+					ModifierPool = null;
+					return null;
+				}
+			}
 
 			// Attempt rolling modifiers
 			if (!ModifierPool.RollModifiers(ctx))
@@ -68,14 +75,24 @@ namespace Loot
 			EMMItem clone = (EMMItem)base.Clone(item, itemClone);
 			clone.ModifierPool = (ModifierPool)ModifierPool?.Clone();
 			// there is no need to apply here, we already cloned the item which stats are already modified by its pool
-			//clone.ModifierPool?.ApplyModifiers(itemClone);
 			return clone;
 		}
 
 		public override void Load(Item item, TagCompound tag)
 		{
-			if (tag.ContainsKey("Type"))
+			// enforce illegitimate rolls to go away
+			if (!ModifierPool.IsValidFor(item))
+			{
+				ModifierPool = null;
+			}
+			else if (tag.ContainsKey("Type"))
+			{
 				ModifierPool = ModifierPool._Load(item, tag);
+
+				// enforce illegitimate rolls to go away
+				if (ModifierPool.ActiveModifiers == null || ModifierPool.ActiveModifiers.Length <= 0)
+					ModifierPool = null;
+			}
 
 			HasRolled = tag.GetBool("HasRolled");
 

@@ -76,7 +76,7 @@ namespace Loot
 					EMMItem itemInfo = EMMItem.GetItemInfo(item);
 					ModifierPool pool = itemInfo.ModifierPool;
 					UnifiedRandom rand = Main.rand != null ? Main.rand : WorldGen.genRand != null ? WorldGen.genRand : null;
-					if (pool == null)
+					if (!itemInfo.HasRolled && pool == null)
 					{
 						itemInfo.HasRolled = true;
 
@@ -101,7 +101,6 @@ namespace Loot
 							ctx.Player = (Player)obj;
 						}
 
-						
 						pool = itemInfo.RollNewPool(ctx);
 						pool?.ApplyModifiers(item);
 					}

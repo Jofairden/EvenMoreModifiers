@@ -10,5 +10,10 @@ namespace Loot.System
 		{
 			Modifiers = EMMLoader.Modifiers.Select(x => x.Value).ToArray();
 		}
+
+		public override bool CanRoll(ModifierContext ctx)
+		{
+			return IsValidFor(ctx.Item);
+		}
 	}
 }

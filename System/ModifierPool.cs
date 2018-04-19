@@ -169,12 +169,15 @@ namespace Loot.System
 		//internal float ModifierRollChance(int len) => 0.5f / (float)Math.Pow(2, len);
 		internal float ModifierRollChance(int len) => 0.5f;
 
+		internal static bool IsValidFor(Item item)
+			=> !item.vanity && item.maxStack == 1;
+
 		/// <summary>
 		/// Returns if this pool can roll in the given context. 
 		/// By default returns if any modifier's <see cref="Modifier._CanRoll"/> returns true, and this pool's <see cref="CanRoll"/> returns true
 		/// </summary>
 		protected internal bool _CanRoll(ModifierContext ctx)
-			=> Modifiers.Any(x => x._CanRoll(ctx)) && CanRoll(ctx);
+			=> CanRoll(ctx);
 
 		/// <summary>
 		/// Returns if this pool can roll in the given context
