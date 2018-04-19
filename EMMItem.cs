@@ -1,4 +1,6 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
+using System.Globalization;
 using System.IO;
 using System.Linq;
 using Loot.System;
@@ -166,6 +168,49 @@ namespace Loot
 			pool?.ApplyModifiers(item);
 		}
 
+		private string GetPrefixNormString(float cpStat, float rStat, ref double num, ref Color? color)
+		{
+			//float num19 = (float)Main.mouseTextColor / 255f;
+			//patch file: num20
+			float num20 = (float)Main.mouseTextColor / 255f;
+			int a = (int)Main.mouseTextColor;
+
+			if (cpStat == 0f && rStat != 0f)
+			{
+				num = 1;
+				if (rStat > 0f)
+				{
+					color = new Color((int)((byte)(120f * num20)), (int)((byte)(190f * num20)), (int)((byte)(120f * num20)), a);
+					return "+" + rStat.ToString(CultureInfo.InvariantCulture); /* + Lang.tip[39].Value;*/
+				}
+				else
+				{
+					color = new Color((int)((byte)(190f * num20)), (int)((byte)(120f * num20)), (int)((byte)(120f * num20)), a);
+					return rStat.ToString(CultureInfo.InvariantCulture); /* + Lang.tip[39].Value;*/
+				}
+			}
+
+			double num12 = (double)((float)rStat - (float)cpStat);
+			num12 = num12 / (double)((float)cpStat) * 100.0;
+			num12 = Math.Round(num12);
+			num = num12;
+
+			if (num12 > 0.0)
+			{
+				color = new Color((int)((byte)(120f * num20)), (int)((byte)(190f * num20)), (int)((byte)(120f * num20)), a);
+				return "+" + num12.ToString(CultureInfo.InvariantCulture); /* + Lang.tip[39].Value;*/
+			}
+			else
+			{
+				color = new Color((int)((byte)(190f * num20)), (int)((byte)(120f * num20)), (int)((byte)(120f * num20)), a);
+				return num12.ToString(CultureInfo.InvariantCulture); /* + Lang.tip[39].Value;*/
+			}
+			//if (num12 < 0.0)
+			//{
+			//	array3[num4] = true;
+			//}
+		}
+
 		/// <summary>
 		/// Will modify vanilla tooltips to add additional information for the affected item's modifiers
 		/// </summary>
@@ -174,6 +219,90 @@ namespace Loot
 			var pool = GetItemInfo(item).ModifierPool;
 			if (pool != null && pool.ActiveModifiers.Length > 0)
 			{
+				var vanillaTooltips = tooltips.Where(x => x.mod.Equals("Terraria")).ToArray();
+				var baseItem = new Item();
+				baseItem.netDefaults(item.netID);
+
+				var poolItem = baseItem.CloneWithModdedDataFrom(item);
+				GetItemInfo(poolItem)?.ModifierPool.ApplyModifiers(poolItem);
+
+				bool chkDamage = poolItem.damage != baseItem.damage;
+				bool chkSpeed = poolItem.useAnimation != baseItem.useAnimation;
+				bool chkCritChance = poolItem.crit != baseItem.crit;
+				bool chkUseMana = poolItem.mana != baseItem.mana;
+				bool chkSize = poolItem.scale != baseItem.scale;
+				bool chkShootSpeed = poolItem.shootSpeed != baseItem.shootSpeed;
+				bool chkKnockback = poolItem.knockBack != baseItem.knockBack;
+
+				try
+				{
+					foreach (var vttl in vanillaTooltips)
+					{
+						//int number = Int32.Parse(new string(vttl.text.Where(char.IsNumber).ToArray()));
+						double outNumber = 0d;
+						string newTT = vttl.text;
+						Color? newC = vttl.overrideColor;
+						string TTend = new string(vttl.text.Reverse().ToArray().TakeWhile(x => !Char.IsDigit(x)).Reverse().ToArray());
+
+						//private string[] _prefixTooltipLines = {
+						//		"PrefixDamage", "PrefixSpeed", "PrefixCritChance", "PrefixUseMana", "PrefixSize",
+						//		"PrefixShootSpeed", "PrefixKnockback", "PrefixAccDefense", "PrefixAccMaxMana",
+						//		"PrefixAccCritChance", "PrefixAccDamage", "PrefixAccMoveSpeed", "PrefixAccMeleeSpeed"
+						//	};
+
+						if (vttl.Name.Equals("PrefixDamage") && chkDamage)
+						{
+							newTT = GetPrefixNormString(poolItem.damage, item.damage, ref outNumber, ref newC);
+						}
+						else if (vttl.Name.Equals("PrefixSpeed") && chkSpeed)
+						{
+							newTT = GetPrefixNormString(item.useAnimation, poolItem.useAnimation, ref outNumber, ref newC);
+						}
+						else if (vttl.Name.Equals("PrefixCritChance") && chkCritChance)
+						{
+							newTT = GetPrefixNormString(poolItem.crit, item.crit, ref outNumber, ref newC);
+						}
+						else if (vttl.Name.Equals("PrefixUseMana") && chkUseMana)
+						{
+							newTT = GetPrefixNormString(poolItem.mana, item.mana, ref outNumber, ref newC);
+						}
+						else if (vttl.Name.Equals("PrefixSize") && chkSize)
+						{
+							newTT = GetPrefixNormString(poolItem.scale, item.scale, ref outNumber, ref newC);
+						}
+						else if (vttl.Name.Equals("PrefixShootSpeed") && chkShootSpeed)
+						{
+							newTT = GetPrefixNormString(poolItem.shootSpeed, item.shootSpeed, ref outNumber, ref newC);
+						}
+						else if (vttl.Name.Equals("PrefixKnockback") && chkKnockback)
+						{
+							newTT = GetPrefixNormString(poolItem.knockBack, item.knockBack, ref outNumber, ref newC);
+						}
+						else
+						{
+							continue;
+						}
+
+						int ttlI = tooltips.FindIndex(x => x.mod.Equals(vttl.mod) && x.Name.Equals(vttl.Name));
+						if (ttlI != -1)
+						{
+							if (outNumber == 0d)
+							{
+								tooltips.RemoveAt(ttlI);
+							}
+							else
+							{
+								tooltips[ttlI].text = $"{newTT}{TTend}";
+								tooltips[ttlI].overrideColor = newC;
+							}
+						}
+					}
+				}
+				catch (Exception e)
+				{
+					Main.NewTextMultiline(e.ToString());
+				}
+
 				int i = tooltips.FindIndex(x => x.mod == "Terraria" && x.Name == "ItemName");
 				if (i != -1)
 				{
