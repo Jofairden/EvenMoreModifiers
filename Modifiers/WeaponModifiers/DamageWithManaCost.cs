@@ -3,6 +3,7 @@ using System.Linq;
 using Loot.System;
 using Microsoft.Xna.Framework;
 using Terraria;
+using Terraria.ModLoader.IO;
 
 namespace Loot.Modifiers.WeaponModifiers
 {
@@ -10,7 +11,7 @@ namespace Loot.Modifiers.WeaponModifiers
 	{
 		public override ModifierTooltipLine[] TooltipLines => new[]
 			{
-				new ModifierTooltipLine { Text = $"+{Properties.RoundedPower}% damage, but added mana cost", Color = Color.Lime}
+				new ModifierTooltipLine { Text = $"+{Properties.RoundedPower}% damage, but adds +{_manaCost} mana cost", Color = Color.Lime}
 			};
 
 		public override ModifierProperties GetModifierProperties(Item item)
@@ -35,10 +36,13 @@ namespace Loot.Modifiers.WeaponModifiers
 				   && (item.useAmmo == 0 || player.inventory.Any(x => x.ammo == item.useAmmo));
 		}
 
+		private int _manaCost;
+
 		public override void Apply(Item item)
 		{
 			base.Apply(item);
-			item.mana = Math.Max((int)(25 * (item.useTime / 60.0)), 1);
+			_manaCost = Math.Max((int)(25 * (item.useTime / 60.0)), 1);
+			item.mana += _manaCost;
 		}
 	}
 }

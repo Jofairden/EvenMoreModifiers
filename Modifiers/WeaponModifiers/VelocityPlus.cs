@@ -9,7 +9,7 @@ namespace Loot.Modifiers.WeaponModifiers
 	{
 		public override ModifierTooltipLine[] TooltipLines => new[]
 			{
-				new ModifierTooltipLine { Text = $"+{Properties.RoundedPower}% velocity", Color = Color.Lime}
+				new ModifierTooltipLine { Text = $"+{Properties.RoundedPower}% projectile velocity", Color = Color.Lime}
 			};
 
 		public override ModifierProperties GetModifierProperties(Item item)
