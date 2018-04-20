@@ -8,18 +8,19 @@ using Terraria.ModLoader.IO;
 
 namespace Loot.Modifiers.WeaponModifiers
 {
-	internal struct DebuffTrigger
-	{
-		public int BuffType;
-		public int BuffTime;
-		public float InflictionChance;
-	}
+
 
 	/// <summary>
 	/// Rolls a random debuff
 	/// </summary>
 	public sealed class RandomDebuff : WeaponDebuffModifier
 	{
+		internal struct DebuffTrigger
+		{
+			public int BuffType;
+			public int BuffTime;
+			public float InflictionChance;
+		}
 		// TODO , this could should be added to to include min/max magnitude rolls, that influence the time and chance to apply 
 		//internal static int[,] BuffPairs =
 		//{

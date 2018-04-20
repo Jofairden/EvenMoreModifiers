@@ -13,7 +13,7 @@ namespace Loot.Modifiers.WeaponModifiers
 
 		public override ModifierProperties GetModifierProperties(Item item)
 		{
-			return base.GetModifierProperties(item).Set(minMagnitude: 6f + 2f * (item.rare + 1), maxMagnitude: 30f + 5f * (item.rare + 1));
+			return base.GetModifierProperties(item).Set(minMagnitude: 6f, maxMagnitude: 30f);
 		}
 
 		public override void GetWeaponDamage(Item item, Player player, ref int damage)

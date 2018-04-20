@@ -3,7 +3,6 @@ using System.Linq;
 using System.Reflection;
 using Loot.System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Terraria.ModLoader;
 using Terraria.ModLoader.IO;
 
 namespace Loot
