@@ -20,6 +20,14 @@ namespace Loot
 			}
 		}
 
+		public override void UpdateEquip(Item item, Player player)
+		{
+			if (!item.IsAir && ArmorModifier.IsArmor(item))
+			{
+				item.accessory = true;
+			}
+		}
+
 		public override void PostReforge(Item item)
 		{
 			if (ArmorModifier.IsArmor(item))
