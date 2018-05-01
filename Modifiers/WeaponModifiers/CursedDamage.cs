@@ -17,6 +17,11 @@ namespace Loot.Modifiers.WeaponModifiers
 			return base.GetModifierProperties(item).Set(minMagnitude: 16f, maxMagnitude: 30f, uniqueRoll: true);
 		}
 
+		public override bool CanRoll(ModifierContext ctx)
+		{
+			return base.CanRoll(ctx) && ctx.Method != ModifierContextMethod.SetupStartInventory;
+		}
+
 		public override void GetWeaponDamage(Item item, Player player, ref int damage)
 		{
 			base.GetWeaponDamage(item, player, ref damage);

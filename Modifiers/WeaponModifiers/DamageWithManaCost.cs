@@ -19,8 +19,11 @@ namespace Loot.Modifiers.WeaponModifiers
 		}
 
 		public override bool CanRoll(ModifierContext ctx)
-			=> base.CanRoll(ctx)
-			   && ctx.Item.mana == 0;
+		{
+			return base.CanRoll(ctx)
+				   && ctx.Method != ModifierContextMethod.SetupStartInventory
+				   && ctx.Item.mana == 0;
+		}
 
 		public override void GetWeaponDamage(Item item, Player player, ref int damage)
 		{
