@@ -21,7 +21,8 @@ namespace Loot.System
 		SetupStartInventory,
 		WorldGeneration,
 		FirstLoad,
-		OnPickup
+		OnPickup,
+		Custom
 	}
 
 	/// <summary>
