@@ -2,6 +2,7 @@
 using Loot.System;
 using Microsoft.Xna.Framework;
 using Terraria;
+using Terraria.ID;
 
 namespace Loot.Modifiers.WeaponModifiers
 {
@@ -31,7 +32,9 @@ namespace Loot.Modifiers.WeaponModifiers
 		public override void HoldItem(Item item, Player player)
 		{
 			base.HoldItem(item, player);
-			ModifierPlayer.PlayerInfo(player).HoldingCursed = true;
+
+			if (!player.buffImmune[BuffID.Cursed])
+				ModifierPlayer.PlayerInfo(player).HoldingCursed = true;
 		}
 	}
 }
