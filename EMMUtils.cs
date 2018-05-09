@@ -76,6 +76,8 @@ namespace Loot
 		public static uint GlobalModifierType<T>(this Mod mod, string name) where T : GlobalModifier => GlobalModifierType(mod, typeof(T).Name);
 		public static uint GlobalModifierType(this Mod mod, string name) => GetGlobalModifier(mod, name)?.Type ?? 0;
 
+		public static bool Between(this int v, int min, int max) => v >= min && v <= max;
+
 		public static byte[] ToByteArray<T>(this T obj)
 		{
 			if (obj == null)

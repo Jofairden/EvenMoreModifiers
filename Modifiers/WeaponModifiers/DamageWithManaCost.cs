@@ -43,8 +43,20 @@ namespace Loot.Modifiers.WeaponModifiers
 		public override void Apply(Item item)
 		{
 			base.Apply(item);
-			_manaCost = Math.Max((int)(25 * (item.useTime / 60.0)), 1);
+			_manaCost = Math.Max((int)((float)item.useTime * (float)item.useTime / (float)GetMaxUseTime(item) / 10f), 1);
 			item.mana += _manaCost;
+		}
+
+		private int GetMaxUseTime(Item item)
+		{
+			if (item.useTime <= 8) return 15;
+			if (item.useTime.Between(9, 20)) return 20;
+			if (item.useTime.Between(21, 25)) return 25;
+			if (item.useTime.Between(26, 30)) return 30;
+			if (item.useTime.Between(31, 35)) return 35;
+			if (item.useTime.Between(36, 45)) return 45;
+			if (item.useTime.Between(46, 55)) return 55;
+			return 56;
 		}
 	}
 }
