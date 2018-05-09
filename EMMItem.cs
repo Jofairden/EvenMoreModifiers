@@ -258,7 +258,7 @@ namespace Loot
 						double outNumber = 0d;
 						string newTT = vttl.text;
 						Color? newC = vttl.overrideColor;
-						string TTend = new string(vttl.text.Reverse().ToArray().TakeWhile(x => !Char.IsDigit(x)).Reverse().ToArray());
+						string TTend = new string(vttl.text.Reverse().ToArray().TakeWhile(x => !char.IsDigit(x)).Reverse().ToArray());
 
 						//private string[] _prefixTooltipLines = {
 						//		"PrefixDamage", "PrefixSpeed", "PrefixCritChance", "PrefixUseMana", "PrefixSize",
@@ -318,6 +318,17 @@ namespace Loot
 				catch (Exception e)
 				{
 					Main.NewTextMultiline(e.ToString());
+				}
+
+				var useManaTT = vanillaTooltips.FirstOrDefault(x => x.mod.Equals("Terraria") && x.Name.Equals("UseMana"));
+				if (useManaTT != null)
+				{
+					if (poolItem.mana > baseItem.mana)
+					{
+						string foundMana = new string(useManaTT.text.Where(char.IsDigit).ToArray());
+						if (foundMana != string.Empty)
+								useManaTT.text = useManaTT.text.Replace(foundMana, poolItem.mana.ToString());
+					}
 				}
 
 				int i = tooltips.FindIndex(x => x.mod == "Terraria" && x.Name == "ItemName");

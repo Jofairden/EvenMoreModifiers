@@ -35,6 +35,6 @@ namespace Loot.Modifiers.EquipModifiers
 		{
 			player.noKnockback = true;
 		}
-		
+
 	}
 }
