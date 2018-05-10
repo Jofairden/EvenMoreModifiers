@@ -137,11 +137,11 @@
     <Compile Include="ModifierItem.cs" />
     <Compile Include="ModifierPlayer.cs" />
     <Compile Include="Modifiers\WeaponModifier.cs" />
-    <Compile Include="System\AllModifiersPool.cs" />
-    <Compile Include="System\ModifierPool.cs" />
-    <Compile Include="System\Modifier.cs" />
+    <Compile Include="Core\AllModifiersPool.cs" />
+    <Compile Include="Core\ModifierPool.cs" />
+    <Compile Include="Core\Modifier.cs" />
     <Compile Include="EMMLoader.cs" />
-    <Compile Include="System\ModifierRarity.cs" />
+    <Compile Include="Core\ModifierRarity.cs" />
     <Compile Include="Pools\AccessoryModifierPool.cs" />
     <Compile Include="Pools\WeaponModifierPool.cs" />
     <Compile Include="Rarities\CommonRarity.cs" />
@@ -161,7 +161,7 @@
   <ItemGroup>
     <None Include=".editorconfig" />
     <None Include="packages.config" />
-    <Compile Include="System\GlobalModifier.cs" />
+    <Compile Include="Core\GlobalModifier.cs" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Linq;
 using System.Reflection;
-using Loot.System;
+using Loot.Core;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Terraria.ModLoader.IO;
 

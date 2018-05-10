@@ -5,7 +5,7 @@ using Terraria;
 using Terraria.ModLoader;
 using Terraria.ModLoader.IO;
 
-namespace Loot.System
+namespace Loot.Core
 {
 	// TODO event based?
 	public abstract class GlobalModifier

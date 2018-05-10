@@ -3,14 +3,14 @@ using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
-using Loot.System;
+using Loot.Core;
 using Terraria.ModLoader;
 using Terraria.Utilities;
 
-using RarityMap = System.Collections.Generic.KeyValuePair<string, Loot.System.ModifierRarity>;
-using ModifierMap = System.Collections.Generic.KeyValuePair<string, Loot.System.Modifier>;
-using PoolMap = System.Collections.Generic.KeyValuePair<string, Loot.System.ModifierPool>;
-using GlobalModifierMap = System.Collections.Generic.KeyValuePair<string, Loot.System.GlobalModifier>;
+using RarityMap = System.Collections.Generic.KeyValuePair<string, Loot.Core.ModifierRarity>;
+using ModifierMap = System.Collections.Generic.KeyValuePair<string, Loot.Core.Modifier>;
+using PoolMap = System.Collections.Generic.KeyValuePair<string, Loot.Core.ModifierPool>;
+using GlobalModifierMap = System.Collections.Generic.KeyValuePair<string, Loot.Core.GlobalModifier>;
 
 namespace Loot
 {

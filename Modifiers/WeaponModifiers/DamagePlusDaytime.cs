@@ -1,6 +1,6 @@
 ﻿using System;
 using System.IO;
-using Loot.System;
+using Loot.Core;
 using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.ModLoader.IO;

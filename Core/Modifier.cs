@@ -7,7 +7,7 @@ using Terraria;
 using Terraria.ModLoader;
 using Terraria.ModLoader.IO;
 
-namespace Loot.System
+namespace Loot.Core
 {
 	/// <summary>
 	/// Defines a tooltip line of a modifier

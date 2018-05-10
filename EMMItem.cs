@@ -4,7 +4,7 @@ using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices;
-using Loot.System;
+using Loot.Core;
 using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.ModLoader;
@@ -35,9 +35,9 @@ namespace Loot
 		public override bool InstancePerEntity => true;
 		public override bool CloneNewInstances => true;
 
-		public ModifierPool ModifierPool;
-		public bool HasRolled;
-		public bool JustTinkerModified;
+		public ModifierPool ModifierPool; // the current pool of mods. null if none.
+		public bool HasRolled; // has rolled a pool
+		public bool JustTinkerModified; // is just tinker modified: e.g. armor hacked
 		//public CustomReforgeMode CustomReforgeMode = CustomReforgeMode.ForceWeapon;
 
 		/// <summary>
@@ -250,6 +250,10 @@ namespace Loot
 			var pool = GetItemInfo(item).ModifierPool;
 			if (pool != null && pool.ActiveModifiers.Length > 0)
 			{
+				// the following part, recalculate the vanilla prefix tooltips
+				// this is because our mods modify the stats, which was never intended by vanilla, causing the differences to be innacurate and bugged
+
+				// RECALC START
 				var vanillaTooltips = tooltips.Where(x => x.mod.Equals("Terraria")).ToArray();
 				var baseItem = new Item();
 				baseItem.netDefaults(item.netID);
@@ -345,7 +349,9 @@ namespace Loot
 				{
 					Main.NewTextMultiline(e.ToString());
 				}
+				// RECALC END
 
+				// Modifies the "Uses X Mana" line to match our mods
 				var useManaTT = vanillaTooltips.FirstOrDefault(x => x.mod.Equals("Terraria") && x.Name.Equals("UseMana"));
 				if (useManaTT != null)
 				{
@@ -357,6 +363,7 @@ namespace Loot
 					}
 				}
 
+				// Modifies the tooltips, to insert generic mods data
 				int i = tooltips.FindIndex(x => x.mod == "Terraria" && x.Name == "ItemName");
 				if (i != -1)
 				{

@@ -8,7 +8,7 @@ using Terraria.ModLoader;
 using Terraria.ModLoader.IO;
 using Terraria.Utilities;
 
-namespace Loot.System
+namespace Loot.Core
 {
 	/// <summary>
 	/// Defines a method for a context in which a Modifier might be rolled

@@ -81,6 +81,10 @@ namespace Loot
 					if (!projectile.minion) // minions do not crit
 						mproj.SNAPSHOT_CritMulti = mplr.CritMulti;
 				}
+				else if (projectile.owner == 255)
+				{
+					// TODO snapshot npc values. possible?
+				}
 			}
 			if (NeedsClear)
 			{
@@ -100,6 +104,7 @@ namespace Loot
 			base.ModifyHitNPC(projectile, target, ref damage, ref knockback, ref crit, ref hitDirection);
 		}
 
+		// shouldn't run
 		public override void ModifyHitPlayer(Projectile projectile, Player target, ref int damage, ref bool crit)
 		{
 			HealthyBonus(projectile, ref damage, target);

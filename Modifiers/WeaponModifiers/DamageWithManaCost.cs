@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Linq;
-using Loot.System;
+using Loot.Core;
 using Microsoft.Xna.Framework;
 using Terraria;
 

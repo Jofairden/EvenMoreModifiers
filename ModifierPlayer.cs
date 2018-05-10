@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using Loot.Core;
 using Loot.Modifiers.WeaponModifiers;
-using Loot.System;
 using Terraria;
 using Terraria.DataStructures;
 using Terraria.ModLoader;

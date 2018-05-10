@@ -1,5 +1,5 @@
 ﻿using System;
-using Loot.System;
+using Loot.Core;
 using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.ID;

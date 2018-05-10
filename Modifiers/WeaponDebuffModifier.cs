@@ -1,6 +1,6 @@
 ﻿using System;
+using Loot.Core;
 using Loot.Modifiers.WeaponModifiers;
-using Loot.System;
 using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.ID;

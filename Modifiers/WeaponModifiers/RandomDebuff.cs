@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using Loot.System;
+using Loot.Core;
 using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.ID;
@@ -10,14 +10,13 @@ using Terraria.ModLoader.IO;
 
 namespace Loot.Modifiers.WeaponModifiers
 {
-
-
 	/// <summary>
 	/// Rolls a random debuff
 	/// </summary>
 	public sealed class RandomDebuff : WeaponDebuffModifier
 	{
 		// TODO , this could should be added to to include min/max magnitude rolls, that influence the time and chance to apply 
+		// TODO refactor, to reduce copy pasta
 		public struct DebuffTrigger
 		{
 			public int BuffType;

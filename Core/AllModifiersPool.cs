@@ -1,6 +1,6 @@
 ﻿using System.Linq;
 
-namespace Loot.System
+namespace Loot.Core
 {
 	public sealed class AllModifiersPool : ModifierPool
 	{
