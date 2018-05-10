@@ -10,7 +10,7 @@ namespace Loot.Modifiers.WeaponModifiers
 	{
 		public override ModifierTooltipLine[] TooltipLines => new[]
 			{
-				new ModifierTooltipLine { Text = $"+{Properties.RoundedPower}% damage, but you are cursed", Color = Color.Lime}
+				new ModifierTooltipLine { Text = $"+{Properties.RoundedPower}% damage, but you are cursed while holding this item", Color = Color.Lime}
 			};
 
 		public override ModifierProperties GetModifierProperties(Item item)
