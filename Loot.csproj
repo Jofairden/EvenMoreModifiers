@@ -77,7 +77,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ArmorItemHack.cs" />
+    <Compile Include="EMMPlayer.cs" />
     <Compile Include="EMMWorld.cs" />
+    <Compile Include="ItemHack.cs" />
+    <Compile Include="ItemHackPrefixes.cs" />
     <Compile Include="Modifiers\AccessoryModifier.cs" />
     <Compile Include="Modifiers\AccessoryModifiers\GodlyDefense.cs" />
     <Compile Include="Modifiers\AccessoryModifiers\Inferno.cs" />

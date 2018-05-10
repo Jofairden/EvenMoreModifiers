@@ -8,7 +8,7 @@ namespace Loot
 	/// The following code is a giant hack and should not be attempted
 	/// A new hook is TML is awaited, to allow for such behaviour without hacks
 	/// </summary>
-	class ArmorItemHack : GlobalItem
+	public class ArmorItemHack : GlobalItem
 	{
 		public override bool CanEquipAccessory(Item item, Player player, int slot) => !item.IsAir && !ArmorModifier.IsArmor(item);
 

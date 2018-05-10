@@ -189,7 +189,8 @@ namespace Loot.System
 		}
 
 		/// <summary>
-		/// Returns if the modifier can actually be rolled, after <see cref="Roll"/> is called
+		/// Returns if the modifier will actually be added after it is rolled.
+		/// This is called after <see cref="Roll"/> is called
 		/// </summary>
 		public virtual bool PostRoll(ModifierContext ctx, IEnumerable<Modifier> rolledMofiers) => true;
 

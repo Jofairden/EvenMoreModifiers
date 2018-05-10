@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Globalization;
 using System.IO;
 using System.Linq;
+using System.Runtime.InteropServices;
 using Loot.System;
 using Microsoft.Xna.Framework;
 using Terraria;
@@ -11,6 +12,17 @@ using Terraria.ModLoader.IO;
 
 namespace Loot
 {
+	//[ComVisible(true)]
+	//[Flags]
+	//public enum CustomReforgeMode : byte
+	//{
+	//	Vanilla = 1,
+	//	ForceWeapon = 2,
+	//	ForceAccessory = 4,
+	//	ForceSimulate = 8,
+	//	Custom = 16
+	//}
+
 	/// <summary>
 	/// Defines an item that may be modified by modifiers from mods
 	/// </summary>
@@ -25,6 +37,7 @@ namespace Loot
 
 		public ModifierPool ModifierPool;
 		public bool HasRolled;
+		//public CustomReforgeMode CustomReforgeMode = CustomReforgeMode.ForceWeapon;
 
 		/// <summary>
 		/// Attempts to roll new modifiers
@@ -241,8 +254,19 @@ namespace Loot
 
 				var poolItem = baseItem.CloneWithModdedDataFrom(item);
 				GetItemInfo(poolItem)?.ModifierPool.ApplyModifiers(poolItem);
+				//var info = GetItemInfo(poolItem);
+				//if (!info.CustomReforgeMode.HasFlag(CustomReforgeMode.Vanilla))
+				//{
+				//	ItemHack.ModifyItemCustomReforce(GetItemInfo(baseItem), baseItem);
+				//	ItemHack.ModifyItemCustomReforce(info, poolItem);
+				//	if (poolItem.modItem != null && info.CustomReforgeMode.HasFlag(CustomReforgeMode.Custom))
+				//	{
+				//		var EMMCustomReforge = poolItem.modItem.GetType().GetMethod("EMMCustomReforge");
+				//		EMMCustomReforge?.Invoke(poolItem.modItem, null);
+				//	}
+				//}
 
-				bool chkDamage = poolItem.damage != baseItem.damage;
+				bool chkDamage = poolItem.damage != item.damage;
 				bool chkSpeed = poolItem.useAnimation != baseItem.useAnimation;
 				bool chkCritChance = poolItem.crit != baseItem.crit;
 				bool chkUseMana = poolItem.mana != baseItem.mana;
@@ -327,7 +351,7 @@ namespace Loot
 					{
 						string foundMana = new string(useManaTT.text.Where(char.IsDigit).ToArray());
 						if (foundMana != string.Empty)
-								useManaTT.text = useManaTT.text.Replace(foundMana, poolItem.mana.ToString());
+							useManaTT.text = useManaTT.text.Replace(foundMana, poolItem.mana.ToString());
 					}
 				}
 
