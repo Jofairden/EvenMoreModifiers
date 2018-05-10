@@ -1,4 +1,5 @@
-﻿using Microsoft.Xna.Framework;
+﻿using Loot.Modifiers;
+using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.ModLoader;
 
@@ -24,14 +25,14 @@ namespace Loot
 				if (isInTinkerSlot)
 				{
 					// just put in reforge slot
-					if (Main.reforgeItem.IsAir && !Main.mouseItem.IsAir)
+					if (Main.reforgeItem.IsAir && !Main.mouseItem.IsAir && ArmorModifier.IsArmor(Main.mouseItem))
 					{
 						var info = EMMItem.GetItemInfo(Main.mouseItem);
 						Main.mouseItem.accessory = true;
 						info.JustTinkerModified = true;
 					}
 					// take out of reforge slot
-					else if (!Main.reforgeItem.IsAir && Main.mouseItem.IsAir)
+					else if (!Main.reforgeItem.IsAir && Main.mouseItem.IsAir && ArmorModifier.IsArmor(Main.reforgeItem))
 					{
 						var info = EMMItem.GetItemInfo(Main.reforgeItem);
 						Main.reforgeItem.accessory = false;
