@@ -1,41 +1,19 @@
 ﻿using Loot.Modifiers;
 using Terraria;
 using Terraria.ModLoader;
+using Terraria.Utilities;
 
 namespace Loot
 {
-	/// <summary>
-	/// The following code is a giant hack and should not be attempted
-	/// A new hook is TML is awaited, to allow for such behaviour without hacks
-	/// </summary>
 	public class ArmorItemHack : GlobalItem
 	{
-		public override bool CanEquipAccessory(Item item, Player player, int slot) => !item.IsAir && !ArmorModifier.IsArmor(item);
-
-		public override void UpdateInventory(Item item, Player player)
+		// Forces an accessory tinker
+		public override int ChoosePrefix(Item item, UnifiedRandom rand)
 		{
-			if (!item.IsAir && ArmorModifier.IsArmor(item))
-			{
+			var info = EMMItem.GetItemInfo(item);
+			if (info.JustTinkerModified)
 				item.accessory = true;
-			}
-		}
-
-		public override void UpdateEquip(Item item, Player player)
-		{
-			if (!item.IsAir && ArmorModifier.IsArmor(item))
-			{
-				item.accessory = true;
-			}
-		}
-
-		public override void PostReforge(Item item)
-		{
-			if (ArmorModifier.IsArmor(item))
-			{
-				Item iRef = new Item();
-				iRef.netDefaults(item.netID);
-				item = iRef.CloneWithModdedDataFrom(item);
-			}
+			return -1;
 		}
 	}
 }

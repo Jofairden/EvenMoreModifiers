@@ -37,6 +37,7 @@ namespace Loot
 
 		public ModifierPool ModifierPool;
 		public bool HasRolled;
+		public bool JustTinkerModified;
 		//public CustomReforgeMode CustomReforgeMode = CustomReforgeMode.ForceWeapon;
 
 		/// <summary>
@@ -133,6 +134,8 @@ namespace Loot
 			HasRolled = reader.ReadBoolean();
 
 			ModifierPool?.ApplyModifiers(item);
+
+			JustTinkerModified = reader.ReadBoolean();
 		}
 
 		public override void NetSend(Item item, BinaryWriter writer)
@@ -143,6 +146,8 @@ namespace Loot
 				ModifierPool._NetSend(ModifierPool, item, writer);
 
 			writer.Write(HasRolled);
+
+			writer.Write(JustTinkerModified);
 		}
 
 		public override void OnCraft(Item item, Recipe recipe)
@@ -201,39 +206,36 @@ namespace Loot
 		{
 			//float num19 = (float)Main.mouseTextColor / 255f;
 			//patch file: num20
-			float num20 = (float)Main.mouseTextColor / 255f;
-			int a = (int)Main.mouseTextColor;
+			float defColorVal = Main.mouseTextColor / 255f;
+			int alphaColor = Main.mouseTextColor;
 
 			if (cpStat == 0f && rStat != 0f)
 			{
 				num = 1;
 				if (rStat > 0f)
 				{
-					color = new Color((int)((byte)(120f * num20)), (int)((byte)(190f * num20)), (int)((byte)(120f * num20)), a);
+					color = new Color((byte)(120f * defColorVal), (byte)(190f * defColorVal), (byte)(120f * defColorVal), alphaColor);
 					return "+" + rStat.ToString(CultureInfo.InvariantCulture); /* + Lang.tip[39].Value;*/
 				}
-				else
-				{
-					color = new Color((int)((byte)(190f * num20)), (int)((byte)(120f * num20)), (int)((byte)(120f * num20)), a);
-					return rStat.ToString(CultureInfo.InvariantCulture); /* + Lang.tip[39].Value;*/
-				}
+
+				color = new Color((byte)(190f * defColorVal), (byte)(120f * defColorVal), (byte)(120f * defColorVal), alphaColor);
+				return rStat.ToString(CultureInfo.InvariantCulture); /* + Lang.tip[39].Value;*/
 			}
 
-			double num12 = (double)((float)rStat - (float)cpStat);
-			num12 = num12 / (double)((float)cpStat) * 100.0;
-			num12 = Math.Round(num12);
-			num = num12;
+			double diffStat = rStat - cpStat;
+			diffStat = diffStat / cpStat * 100.0;
+			diffStat = Math.Round(diffStat);
+			num = diffStat;
 
-			if (num12 > 0.0)
+			// for some reason - is handled automatically, but + is not
+			if (diffStat > 0.0)
 			{
-				color = new Color((int)((byte)(120f * num20)), (int)((byte)(190f * num20)), (int)((byte)(120f * num20)), a);
-				return "+" + num12.ToString(CultureInfo.InvariantCulture); /* + Lang.tip[39].Value;*/
+				color = new Color((byte)(120f * defColorVal), (byte)(190f * defColorVal), (byte)(120f * defColorVal), alphaColor);
+				return "+" + diffStat.ToString(CultureInfo.InvariantCulture); /* + Lang.tip[39].Value;*/
 			}
-			else
-			{
-				color = new Color((int)((byte)(190f * num20)), (int)((byte)(120f * num20)), (int)((byte)(120f * num20)), a);
-				return num12.ToString(CultureInfo.InvariantCulture); /* + Lang.tip[39].Value;*/
-			}
+
+			color = new Color((byte)(190f * defColorVal), (byte)(120f * defColorVal), (byte)(120f * defColorVal), alphaColor);
+			return diffStat.ToString(CultureInfo.InvariantCulture); /* + Lang.tip[39].Value;*/
 			//if (num12 < 0.0)
 			//{
 			//	array3[num4] = true;

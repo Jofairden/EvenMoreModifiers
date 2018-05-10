@@ -1,16 +1,48 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net.Configuration;
-using System.Reflection;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Microsoft.Xna.Framework;
 using Terraria;
-using Terraria.GameInput;
 using Terraria.ModLoader;
 
 namespace Loot
 {
+	/// <summary>
+	/// Currently handles armor hack to make armors reforge as accessories
+	/// </summary>
+	public class EMMPlayer : ModPlayer
+	{
+		public override void PostUpdate()
+		{
+			// The current method of checking if we click inside the tinker slot is fairly ugly
+			// But after 2-3 hours of trying things, it seems to be the only way
+			// Main.mouseReforge IS NOT available
+			// UILinkPointNavigator.Points[304].Position is ZERO
+			// vanilla check (flag8) doesn't work either for some reason
+			if (Main.mouseLeft && Main.mouseLeftRelease && Main.InReforgeMenu)
+			{
+				var tinkerPos = new Rectangle(49, 291, 44, 44);
+				var mouse = Main.MouseScreen;
+				bool isInTinkerSlot = tinkerPos.Intersects(new Rectangle((int)mouse.X, (int)mouse.Y, 20, 20));
+				if (isInTinkerSlot)
+				{
+					// just put in reforge slot
+					if (Main.reforgeItem.IsAir && !Main.mouseItem.IsAir)
+					{
+						var info = EMMItem.GetItemInfo(Main.mouseItem);
+						Main.mouseItem.accessory = true;
+						info.JustTinkerModified = true;
+					}
+					// take out of reforge slot
+					else if (!Main.reforgeItem.IsAir && Main.mouseItem.IsAir)
+					{
+						var info = EMMItem.GetItemInfo(Main.reforgeItem);
+						Main.reforgeItem.accessory = false;
+						info.JustTinkerModified = false;
+					}
+				}
+			}
+		}
+	}
+
+	// tinker slot hack
 	//public class EMMPlayer : ModPlayer
 	//{
 	//	internal bool JustMenusClicked;
@@ -77,7 +109,7 @@ namespace Loot
 	//		if ((info.CustomReforgeMode & CustomReforgeMode.ForceAccessory) == CustomReforgeMode.ForceAccessory
 	//			&& item.prefix != mod.PrefixType<ItemHackForceAccessory>())
 	//		{
-				
+
 	//			item.Prefix(-3);
 	//			IsYetForced = true;
 	//		}
@@ -85,7 +117,7 @@ namespace Loot
 	//		if ((info.CustomReforgeMode & CustomReforgeMode.ForceWeapon) == CustomReforgeMode.ForceWeapon
 	//			&& item.prefix != mod.PrefixType<ItemHackForceWeapon>())
 	//		{
-				
+
 	//			item.Prefix(-3);
 	//			IsYetForced = true;
 	//		}
@@ -94,7 +126,7 @@ namespace Loot
 	//			|| (info.CustomReforgeMode & CustomReforgeMode.Custom) == CustomReforgeMode.Custom
 	//			&& item.prefix != mod.PrefixType<ItemHackForceSimulate>())
 	//		{
-				
+
 	//			item.Prefix(-3);
 	//			IsYetForced = true;
 	//		}
