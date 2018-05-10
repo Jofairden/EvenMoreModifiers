@@ -304,44 +304,60 @@ namespace Loot.Core
 			if (EMMLoader.Mods.TryGetValue(modname, out assembly))
 			{
 				// If we manage to load null here, that means some pool got unloaded
-				ModifierPool m;
-				try
+				ModifierPool m = null;
+				var saveVersion = tag.ContainsKey("ModifierPoolSaveVersion") ? tag.GetInt("ModifierPoolSaveVersion") : 1;
+
+				string poolTypeName = tag.GetString("Type");
+
+				// adapt by save version
+				if (saveVersion == 1)
 				{
-					m = (ModifierPool)Activator.CreateInstance(assembly.GetType(tag.GetString("Type")));
+					// in first save version, modifiers were saved by full assembly namespace
+					//m = (ModifierPool)Activator.CreateInstance(assembly.GetType(tag.GetString("Type")));// we modified saving
+					poolTypeName = poolTypeName.Substring(poolTypeName.LastIndexOf('.') + 1);
+					m = EMMLoader.GetLoadPreparedModifierPool(modname, poolTypeName);
 				}
-				catch (Exception)
+				else if (saveVersion == 2)
 				{
-					return null;
+					// from saveVersion 2 and onwards, they are saved by assembly (mod) and type name
+					m = EMMLoader.GetLoadPreparedModifierPool(modname, poolTypeName);
 				}
 
-				m.Type = tag.Get<uint>("ModifierType");
-				m.Mod = ModLoader.GetMod(modname);
-				// preload rarity
-				ModifierRarity preloadRarity = ModifierRarity._Load(item, tag.Get<TagCompound>("Rarity"));
-				bool rarityUnloaded = preloadRarity == null;
-				if (!rarityUnloaded)
-					m.Rarity = preloadRarity;
-				int activeModifiers = tag.GetAsInt("ActiveModifiers");
-				if (activeModifiers > 0)
+				// if we have a pool
+				if (m != null)
 				{
-					var list = new List<Modifier>();
-					for (int i = 0; i < activeModifiers; ++i)
+					// saveVersion 1, no longer needed. Type and Mod is already created by new instance
+					//m.Type = tag.Get<uint>("ModifierType");
+					// m.Mod = ModLoader.GetMod(modname);
+					// preload rarity
+					ModifierRarity preloadRarity = ModifierRarity._Load(item, tag.Get<TagCompound>("Rarity"));
+					bool rarityUnloaded = preloadRarity == null;
+					if (!rarityUnloaded)
+						m.Rarity = preloadRarity;
+					int activeModifiers = tag.GetAsInt("ActiveModifiers");
+					if (activeModifiers > 0)
 					{
-						// preload to take unloaded modifiers into account
-						var loaded = Modifier._Load(item, tag.Get<TagCompound>($"ActiveModifier{i}"));
-						if (loaded != null)
-							list.Add(loaded);
+						var list = new List<Modifier>();
+						for (int i = 0; i < activeModifiers; ++i)
+						{
+							// preload to take unloaded modifiers into account
+							var loaded = Modifier._Load(item, tag.Get<TagCompound>($"ActiveModifier{i}"));
+							if (loaded != null)
+								list.Add(loaded);
+						}
+						m.ActiveModifiers = list.ToArray();
 					}
-					m.ActiveModifiers = list.ToArray();
+					m.Load(item, tag);
+
+					// If our rarity was unloaded, attempt rolling a new one that is applicable
+					if (rarityUnloaded)
+						m.Rarity = EMMLoader.GetPoolRarity(m);
+
+					m.Modifiers = null;
+					return m;
 				}
-				m.Load(item, tag);
 
-				// If our rarity was unloaded, attempt rolling a new one that is applicable
-				if (rarityUnloaded)
-					m.Rarity = EMMLoader.GetPoolRarity(m);
-
-				m.Modifiers = null;
-				return m;
+				return null;
 			}
 			throw new Exception($"Modifier load error for {modname}");
 		}
@@ -362,11 +378,11 @@ namespace Loot.Core
 
 			var tag = new TagCompound
 			{
-				{ "Type", modifierPool.GetType().FullName },
-				{ "ModifierType", modifierPool.Type },
+				{ "Type", modifierPool.GetType().Name },
+				//{ "ModifierType", modifierPool.Type }, //Used to be saved in saveVersion 1
 				{ "ModName", modifierPool.Mod.Name },
 				{ "Rarity", ModifierRarity.Save(item, modifierPool.Rarity) },
-				{ "ModifierPoolSaveVersion", 1 }
+				{ "ModifierPoolSaveVersion", 2 } // increments each time save is changed
 			};
 			tag.Add("ActiveModifiers", modifierPool.ActiveModifiers.Length);
 			for (int i = 0; i < modifierPool.ActiveModifiers.Length; ++i)

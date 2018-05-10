@@ -267,22 +267,38 @@ namespace Loot.Core
 			if (EMMLoader.Mods.TryGetValue(modname, out assembly))
 			{
 				// If we load a null here, it means a modifier is unloaded
-				Modifier m;
-				try
+				Modifier m = null;
+
+				var saveVersion = tag.ContainsKey("ModifierSaveVersion") ? tag.GetInt("ModifierSaveVersion") : 1;
+
+				string modifierTypeName = tag.GetString("Type");
+
+				// adapt by save version
+				if (saveVersion == 1)
 				{
-					m = (Modifier)Activator.CreateInstance(assembly.GetType(tag.GetString("Type")));
+					// in first save version, modifiers were saved by full assembly namespace
+					//m = (ModifierPool)Activator.CreateInstance(assembly.GetType(tag.GetString("Type")));// we modified saving
+					modifierTypeName = modifierTypeName.Substring(modifierTypeName.LastIndexOf('.') + 1);
+					m = EMMLoader.GetLoadPreparedModifier(modname, modifierTypeName);
 				}
-				catch (Exception)
+				else if (saveVersion == 2)
 				{
-					return null;
+					// from saveVersion 2 and onwards, they are saved by assembly (mod) and type name
+					m = EMMLoader.GetLoadPreparedModifier(modname, modifierTypeName);
 				}
 
-				m.Type = tag.Get<uint>("ModifierType");
-				m.Mod = ModLoader.GetMod(modname);
-				var p = ModifierProperties._Load(item, tag.GetCompound("ModifierProperties"));
-				m.Properties = m.GetModifierProperties(item).RollMagnitudeAndPower(p.Magnitude, p.Power);
-				m.Load(item, tag);
-				return m;
+				if (m != null)
+				{
+					// saveVersion 1, no longer needed. Type and Mod is already created by new instance
+					//m.Type = tag.Get<uint>("ModifierType");
+					//m.Mod = ModLoader.GetMod(modname);
+					var p = ModifierProperties._Load(item, tag.GetCompound("ModifierProperties"));
+					m.Properties = m.GetModifierProperties(item).RollMagnitudeAndPower(p.Magnitude, p.Power);
+					m.Load(item, tag);
+					return m;
+				}
+
+				return null;
 			}
 			throw new Exception($"Modifier load error for {modname}");
 		}
@@ -299,11 +315,11 @@ namespace Loot.Core
 		{
 			var tag = new TagCompound
 			{
-				{ "Type", modifier.GetType().FullName },
-				{ "ModifierType", modifier.Type },
+				{ "Type", modifier.GetType().Name },
+				//{ "ModifierType", modifier.Type }, //Used to be saved in saveVersion 1
 				{ "ModName", modifier.Mod.Name },
 				{ "ModifierProperties", ModifierProperties._Save(item, modifier.Properties) },
-				{ "ModifierSaveVersion", 1 }
+				{ "ModifierSaveVersion", 2 }
 			};
 			modifier.Save(item, tag);
 			return tag;

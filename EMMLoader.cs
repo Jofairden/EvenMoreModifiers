@@ -389,6 +389,60 @@ namespace Loot
 		internal static Exception ThrowException(string message)
 			=> new Exception($"{Loot.Instance.DisplayName ?? "EvenMoreModifiers"}: {message}");
 
+		public static ModifierPool GetLoadPreparedModifierPool(string modname, string poolTypeName)
+		{
+			var pool = GetModifierPoolByMod(modname, poolTypeName);
+			var instance = pool;
+			if (pool != null)
+			{
+				instance = (ModifierPool)Activator.CreateInstance(pool.GetType());
+				instance.Type = pool.Type;
+				instance.Mod = pool.Mod;
+			}
+			return instance;
+		}
+
+		public static Modifier GetLoadPreparedModifier(string modname, string poolTypeName)
+		{
+			var modifier = GetModifierByMod(modname, poolTypeName);
+			var instance = modifier;
+			if (modifier != null)
+			{
+				instance = (Modifier)Activator.CreateInstance(modifier.GetType());
+				instance.Type = modifier.Type;
+				instance.Mod = modifier.Mod;
+			}
+			return instance;
+		}
+
+		public static ModifierRarity GetLoadPreparedModifierRarity(string modname, string rarityTypeName)
+		{
+			var rarity = GetModifierRarityByMod(modname, rarityTypeName);
+			var instance = rarity;
+			if (rarity != null)
+			{
+				instance = (ModifierRarity)Activator.CreateInstance(rarity.GetType());
+				instance.Type = rarity.Type;
+				instance.Mod = rarity.Mod;
+			}
+			return instance;
+		}
+
+		public static ModifierPool GetModifierPoolByMod(string modname, string poolTypeName)
+		{
+			return PoolsMap[modname].FirstOrDefault(x => x.Key.Equals(poolTypeName)).Value;
+		}
+
+		public static Modifier GetModifierByMod(string modname, string modifierTypeName)
+		{
+			return ModifiersMap[modname].FirstOrDefault(x => x.Key.Equals(modifierTypeName)).Value;
+		}
+
+		public static ModifierRarity GetModifierRarityByMod(string modname, string rarityTypeName)
+		{
+			return RaritiesMap[modname].FirstOrDefault(x => x.Key.Equals(rarityTypeName)).Value;
+		}
+
 		/// <summary>
 		/// Requests all Modifiers, and returns them as a readonly collection
 		/// </summary>

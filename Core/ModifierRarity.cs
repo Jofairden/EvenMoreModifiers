@@ -111,20 +111,36 @@ namespace Loot.Core
 			if (EMMLoader.Mods.TryGetValue(modname, out assembly))
 			{
 				// If we load a null here, it means a rarity is unloaded
-				ModifierRarity r;
-				try
+				ModifierRarity r = null;
+
+				var saveVersion = tag.ContainsKey("ModifierRaritySaveVersion") ? tag.GetInt("ModifierRaritySaveVersion") : 1;
+
+				string rarityTypeName = tag.GetString("Type");
+
+				// adapt by save version
+				if (saveVersion == 1)
 				{
-					r = (ModifierRarity)Activator.CreateInstance(assembly.GetType(tag.GetString("Type")));
+					// in first save version, modifiers were saved by full assembly namespace
+					//m = (ModifierPool)Activator.CreateInstance(assembly.GetType(tag.GetString("Type")));// we modified saving
+					rarityTypeName = rarityTypeName.Substring(rarityTypeName.LastIndexOf('.') + 1);
+					r = EMMLoader.GetLoadPreparedModifierRarity(modname, rarityTypeName);
 				}
-				catch (Exception)
+				else if (saveVersion == 2)
 				{
-					return null;
+					// from saveVersion 2 and onwards, they are saved by assembly (mod) and type name
+					r = EMMLoader.GetLoadPreparedModifierRarity(modname, rarityTypeName);
 				}
 
-				r.Type = tag.Get<uint>("RarityType");
-				r.Mod = ModLoader.GetMod(modname);
-				r.Load(item, tag);
-				return r;
+				if (r != null)
+				{
+					//saveVersion 1, no longer needed.Type and Mod is already created by new instance
+					//r.Type = tag.Get<uint>("RarityType");
+					//r.Mod = ModLoader.GetMod(modname);
+					r.Load(item, tag);
+					return r;
+				}
+
+				return null;
 			}
 			throw new Exception($"ModifierRarity load error for {modname}");
 		}
@@ -141,10 +157,10 @@ namespace Loot.Core
 		{
 			var tag = new TagCompound
 			{
-				{ "Type", rarity.GetType().FullName },
-				{ "RarityType", rarity.Type },
+				{ "Type", rarity.GetType().Name },
+				//{ "RarityType", rarity.Type },//Used to be saved in saveVersion 1
 				{ "ModName", rarity.Mod.Name },
-				{ "ModifierRaritySaveVersion", 1 }
+				{ "ModifierRaritySaveVersion", 2 }
 			};
 			rarity.Save(item, tag);
 			return tag;
