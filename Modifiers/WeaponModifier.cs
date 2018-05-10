@@ -14,5 +14,31 @@ namespace Loot.Modifiers
 
 		public override bool CanRoll(ModifierContext ctx)
 			=> ctx.Item.damage > 0;
+
+		public void UpdateShootSpeed(Item item, Player player, float speedXBefore, float speedYBefore, ref float speedX, ref float speedY, float percentModifier)
+		{
+			float tempXSpeed = speedX;
+			float tempYSpeed = speedY;
+			float diffX = tempXSpeed * percentModifier - speedXBefore;
+			float diffY = tempYSpeed * percentModifier - speedYBefore;
+			speedX += diffX;
+			speedY += diffY;
+		}
+
+		public void UpdateUseKnockback(Item item, Player player, float knockbackBefore, ref float knockback)
+		{
+			float tempKnockback = knockback;
+			GetWeaponKnockback(item, player, ref tempKnockback);
+			float diff = tempKnockback - knockbackBefore;
+			knockback += diff;
+		}
+
+		public void UpdateUseDamage(Item item, Player player, int damageBefore, ref int damage)
+		{
+			int tempDamage = damage;
+			GetWeaponDamage(item, player, ref tempDamage);
+			int diff = tempDamage - damageBefore;
+			damage += diff;
+		}
 	}
 }

@@ -22,7 +22,7 @@ namespace Loot.Modifiers.WeaponModifiers
 		public override void Apply(Item item)
 		{
 			base.Apply(item);
-			item.shootSpeed *= Properties.RoundedPower / 100 + 1;
+			item.shootSpeed *= Properties.RoundedPower / 100f + 1f;
 		}
 	}
 }

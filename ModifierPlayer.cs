@@ -154,8 +154,11 @@ namespace Loot
 
 		public override void ModifyHitNPCWithProj(Projectile proj, NPC target, ref int damage, ref float knockback, ref bool crit, ref int hitDirection)
 		{
-			CritBonus(ref damage, crit);
-			HealthyBonus(ref damage, target);
+			if (!proj.minion)
+			{
+				CritBonus(ref damage, crit);
+				HealthyBonus(ref damage, target);
+			}
 		}
 
 		public override void ModifyHitPvp(Item item, Player target, ref int damage, ref bool crit)
@@ -165,7 +168,8 @@ namespace Loot
 
 		public override void ModifyHitPvpWithProj(Projectile proj, Player target, ref int damage, ref bool crit)
 		{
-			CritBonus(ref damage, crit);
+			if (!proj.minion)
+				CritBonus(ref damage, crit);
 		}
 
 		public override void OnHitNPC(Item item, NPC target, int damage, float knockback, bool crit)
@@ -175,7 +179,8 @@ namespace Loot
 
 		public override void OnHitNPCWithProj(Projectile proj, NPC target, int damage, float knockback, bool crit)
 		{
-			AttemptDebuff(target);
+			if (!proj.minion)
+				AttemptDebuff(target);
 		}
 
 		public override bool PreKill(double damage, int hitDirection, bool pvp, ref bool playSound, ref bool genGore, ref PlayerDeathReason damageSource)
