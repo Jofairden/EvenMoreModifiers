@@ -17,6 +17,11 @@ namespace Loot.Modifiers.WeaponModifiers
 			return base.GetModifierProperties(item).Set(maxMagnitude: 10f + 5 * (item.rare + 1));
 		}
 
+		public override bool CanRoll(ModifierContext ctx)
+		{
+			return !ctx.Item.summon;
+		}
+
 		public override void GetWeaponCrit(Item item, Player player, ref int crit)
 		{
 			crit = (int)Math.Min(100, crit + Properties.RoundedPower);
