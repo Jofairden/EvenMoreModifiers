@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using Loot.Modifiers.WeaponModifiers;
 using Loot.System;
 using Terraria;
 using Terraria.DataStructures;
@@ -42,11 +43,11 @@ namespace Loot
 		// List of current debuff chances. Tuple format is [chance, buffType, buffTime]
 		// TODO with c#7 we should favor a named tuple (waiting for TML support)
 		//public IList<(float chance, int type, int time)> DebuffChances;
-		public IList<Tuple<float, int, int>> DebuffChances = new List<Tuple<float, int, int>>();
+		public IList<RandomDebuff.DebuffTrigger> DebuffChances = new List<RandomDebuff.DebuffTrigger>();
 
 		public override void Initialize()
 		{
-			DebuffChances = new List<Tuple<float, int, int>>();
+			DebuffChances = new List<RandomDebuff.DebuffTrigger>();
 		}
 
 		public override void ResetEffects()
@@ -85,15 +86,19 @@ namespace Loot
 
 		private void AttemptDebuff(NPC target)
 		{
-			//foreach (var debuff in DebuffChances)
-			//{
-			//	if (Main.rand.NextFloat() < debuff.chance)
-			//		target.AddBuff(debuff.type, debuff.time);
-			//}
 			foreach (var x in DebuffChances)
 			{
-				if (Main.rand.NextFloat() < x.Item1)
-					target.AddBuff(x.Item2, x.Item3);
+				if (Main.rand.NextFloat() < x.InflictionChance)
+					target.AddBuff(x.BuffType, x.BuffTime);
+			}
+		}
+
+		private void AttemptDebuff(Player target)
+		{
+			foreach (var x in DebuffChances)
+			{
+				if (Main.rand.NextFloat() < x.InflictionChance)
+					target.AddBuff(x.BuffType, x.BuffTime);
 			}
 		}
 
@@ -110,9 +115,14 @@ namespace Loot
 			if (crit) damage = (int)Math.Ceiling(damage * CritMulti);
 		}
 
-		private void HealthyBonus(ref int damage, NPC npc)
+		private void HealthyBonus(ref int damage, NPC target)
 		{
-			if (npc.life == npc.lifeMax) damage = (int)(Math.Ceiling(damage * HealthyFoesMulti));
+			if (target.life == target.lifeMax) damage = (int)(Math.Ceiling(damage * HealthyFoesMulti));
+		}
+
+		private void HealthyBonus(ref int damage, Player target)
+		{
+			if (target.statLife == target.statLifeMax2) damage = (int)(Math.Ceiling(damage * HealthyFoesMulti));
 		}
 
 		public override bool PreHurt(bool pvp, bool quiet, ref int damage, ref int hitDirection, ref bool crit, ref bool customDamage, ref bool playSound, ref bool genGore, ref PlayerDeathReason damageSource)
@@ -148,28 +158,14 @@ namespace Loot
 
 		public override void ModifyHitNPC(Item item, NPC target, ref int damage, ref float knockback, ref bool crit)
 		{
-			CritBonus(ref damage, crit);
 			HealthyBonus(ref damage, target);
-		}
-
-		public override void ModifyHitNPCWithProj(Projectile proj, NPC target, ref int damage, ref float knockback, ref bool crit, ref int hitDirection)
-		{
-			if (!proj.minion)
-			{
-				CritBonus(ref damage, crit);
-				HealthyBonus(ref damage, target);
-			}
+			CritBonus(ref damage, crit);
 		}
 
 		public override void ModifyHitPvp(Item item, Player target, ref int damage, ref bool crit)
 		{
+			HealthyBonus(ref damage, target);
 			CritBonus(ref damage, crit);
-		}
-
-		public override void ModifyHitPvpWithProj(Projectile proj, Player target, ref int damage, ref bool crit)
-		{
-			if (!proj.minion)
-				CritBonus(ref damage, crit);
 		}
 
 		public override void OnHitNPC(Item item, NPC target, int damage, float knockback, bool crit)
@@ -177,10 +173,9 @@ namespace Loot
 			AttemptDebuff(target);
 		}
 
-		public override void OnHitNPCWithProj(Projectile proj, NPC target, int damage, float knockback, bool crit)
+		public override void OnHitPvp(Item item, Player target, int damage, bool crit)
 		{
-			if (!proj.minion)
-				AttemptDebuff(target);
+			AttemptDebuff(target);
 		}
 
 		public override bool PreKill(double damage, int hitDirection, bool pvp, ref bool playSound, ref bool genGore, ref PlayerDeathReason damageSource)

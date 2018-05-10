@@ -1,4 +1,5 @@
 ﻿using System;
+using Loot.Modifiers.WeaponModifiers;
 using Loot.System;
 using Microsoft.Xna.Framework;
 using Terraria;
@@ -37,8 +38,7 @@ namespace Loot.Modifiers
 
 		public override void HoldItem(Item item, Player player)
 		{
-			//ModifierPlayer.PlayerInfo(player).DebuffChances.Add((chance: Power / 100, type: BuffType, time: BuffTime));
-			ModifierPlayer.PlayerInfo(player).DebuffChances.Add(new Tuple<float, int, int>(Properties.RoundedPower / 100 * BuffInflictionChance, BuffType, BuffTime));
+			ModifierPlayer.PlayerInfo(player).DebuffChances.Add(new RandomDebuff.DebuffTrigger(BuffType, BuffTime, Properties.RoundedPower / 100f * BuffInflictionChance));
 		}
 	}
 }

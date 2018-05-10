@@ -13,7 +13,7 @@ namespace Loot.Modifiers.WeaponModifiers
 
 		public override ModifierProperties GetModifierProperties(Item item)
 		{
-			return base.GetModifierProperties(item).Set(maxMagnitude: 20f);
+			return base.GetModifierProperties(item).Set(minMagnitude:50f, maxMagnitude: 100f);
 		}
 
 		public override bool CanRoll(ModifierContext ctx)
@@ -22,6 +22,7 @@ namespace Loot.Modifiers.WeaponModifiers
 		public override void Apply(Item item)
 		{
 			base.Apply(item);
+			// TODO needs better way
 			item.shootSpeed *= Properties.RoundedPower / 100f + 1f;
 		}
 	}

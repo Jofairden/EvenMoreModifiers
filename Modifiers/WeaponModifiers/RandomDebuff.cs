@@ -1,7 +1,9 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using Loot.System;
+using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader.IO;
@@ -15,22 +17,20 @@ namespace Loot.Modifiers.WeaponModifiers
 	/// </summary>
 	public sealed class RandomDebuff : WeaponDebuffModifier
 	{
-		internal struct DebuffTrigger
+		// TODO , this could should be added to to include min/max magnitude rolls, that influence the time and chance to apply 
+		public struct DebuffTrigger
 		{
 			public int BuffType;
 			public int BuffTime;
 			public float InflictionChance;
+
+			public DebuffTrigger(int buffType, int buffTime, float inflictionChance)
+			{
+				BuffType = buffType;
+				BuffTime = buffTime;
+				InflictionChance = inflictionChance;
+			}
 		}
-		// TODO , this could should be added to to include min/max magnitude rolls, that influence the time and chance to apply 
-		//internal static int[,] BuffPairs =
-		//{
-		//	{ BuffID.Confused, 120 },
-		//	{ BuffID.CursedInferno, 180 },
-		//	{ BuffID.Frostburn, 240 },
-		//	{ BuffID.OnFire, 300 },
-		//	{ BuffID.Poisoned, 480 },
-		//	{ BuffID.Ichor, 180 },
-		//};
 
 		internal static DebuffTrigger[] BuffPairs =
 		{
@@ -79,7 +79,8 @@ namespace Loot.Modifiers.WeaponModifiers
 
 		public override bool PostRoll(ModifierContext ctx, IEnumerable<Modifier> rolledModifiers)
 		{
-			return rolledModifiers
+			return base.PostRoll(ctx, rolledModifiers)
+				&& rolledModifiers
 				.Select(x => x as RandomDebuff)
 				.All(x => x?.GetRolledIndex() != _index);
 		}
