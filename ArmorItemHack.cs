@@ -15,5 +15,13 @@ namespace Loot
 				item.accessory = true;
 			return -1;
 		}
+
+		// Reset accessory state after reforge
+		public override void PostReforge(Item item)
+		{
+			var info = EMMItem.GetItemInfo(item);
+			if (info.JustTinkerModified)
+				item.accessory = false;
+		}
 	}
 }
