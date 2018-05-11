@@ -19,7 +19,7 @@ namespace Loot.Modifiers.WeaponModifiers
 
 		public override bool CanRoll(ModifierContext ctx)
 		{
-			return !ctx.Item.summon;
+			return base.CanRoll(ctx) && !ctx.Item.summon;
 		}
 
 		public override void GetWeaponCrit(Item item, Player player, ref int crit)
