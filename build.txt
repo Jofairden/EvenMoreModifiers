@@ -7,4 +7,4 @@ hideResources = false
 includeSource = true
 languageVersion = 6
 buildIgnore = *.csproj, *.user, *.config, tmp.txt, packages\*, UnitTests.cs, TestResults\*
-includePdb = true
+includePDB = true
