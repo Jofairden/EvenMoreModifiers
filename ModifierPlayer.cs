@@ -40,6 +40,8 @@ namespace Loot
 		public float PercentDefBoost; // % defense bonus
 		public float HealthyFoesMulti = 1f; // Damage multiplier vs max life foes
 
+		public static readonly float MAX_SURVIVAL_CHANCE = 0.5f;
+
 		// List of current debuff chances. Tuple format is [chance, buffType, buffTime]
 		// TODO with c#7 we should favor a named tuple (waiting for TML support)
 		//public IList<(float chance, int type, int time)> DebuffChances;
@@ -180,7 +182,7 @@ namespace Loot
 
 		public override bool PreKill(double damage, int hitDirection, bool pvp, ref bool playSound, ref bool genGore, ref PlayerDeathReason damageSource)
 		{
-			if (Main.rand.NextFloat() < Math.Min(SurvivalChance, 0.8f))
+			if (Main.rand.NextFloat() < Math.Min(SurvivalChance, MAX_SURVIVAL_CHANCE))
 			{
 				player.statLife = 1;
 				return false;
