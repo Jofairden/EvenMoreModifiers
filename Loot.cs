@@ -31,6 +31,8 @@ namespace Loot
 		{
 			Instance = this;
 
+			//(string Name, string test) variable = ("Compiled with", "C#7");
+
 			EMMLoader.Initialize();
 			EMMLoader.Load();
 
