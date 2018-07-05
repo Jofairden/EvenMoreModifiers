@@ -18,7 +18,21 @@ namespace Loot.Modifiers.EquipModifiers
 
 		public override void UpdateEquip(Item item, Player player)
 		{
-			ModifierPlayer.PlayerInfo(player).LightStrength += (int)Properties.RoundedPower;
+			ModifierPlayer.Player(player).LightStrength += (int)Properties.RoundedPower;
+		}
+		
+		[AutoDelegation("OnResetEffects")]
+		private void ResetEffects(Player player)
+		{
+			ModifierPlayer.Player(player).LightStrength -= (int)Properties.RoundedPower;
+		}
+
+		[AutoDelegation("OnPostUpdateEquips")]
+		private void Light(Player player)
+		{
+			float str = ModifierPlayer.Player(player).LightStrength;
+			if (str > 0)
+				Lighting.AddLight(player.Center, .15f * str, .15f * str, .15f * str);
 		}
 	}
 }

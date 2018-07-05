@@ -85,6 +85,7 @@
     <Compile Include="Modifiers\AccessoryModifiers\Inferno.cs" />
     <Compile Include="Modifiers\AccessoryModifiers\MoreDamage.cs" />
     <Compile Include="Modifiers\ArmorModifier.cs" />
+    <Compile Include="Modifiers\AutoDelegationAttribute.cs" />
     <Compile Include="Modifiers\EquipModifier.cs" />
     <Compile Include="Modifiers\EquipModifiers\CritDamagePlus.cs" />
     <Compile Include="Modifiers\EquipModifiers\DodgeChance.cs" />
@@ -113,6 +114,7 @@
     <Compile Include="Modifiers\EquipModifiers\ThrownCritPlus.cs" />
     <Compile Include="Modifiers\EquipModifiers\ThrownDamagePlus.cs" />
     <Compile Include="Modifiers\EquipModifiers\WingTimePlus.cs" />
+    <Compile Include="Modifiers\ModifierCachePlayer.cs" />
     <Compile Include="Modifiers\WeaponModifiers\AmmoReduce.cs" />
     <Compile Include="Modifiers\WeaponModifiers\CritPlus.cs" />
     <Compile Include="Modifiers\WeaponModifiers\CursedDamage.cs" />

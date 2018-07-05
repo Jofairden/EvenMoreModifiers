@@ -18,7 +18,13 @@ namespace Loot.Modifiers.EquipModifiers
 
 		public override void UpdateEquip(Item item, Player player)
 		{
-			ModifierPlayer.PlayerInfo(player).Luck += (int)Properties.RoundedPower;
+			ModifierPlayer.Player(player).Luck += (int)Properties.RoundedPower;
+		}
+		
+		[AutoDelegation("OnResetEffects")]
+		private void ResetEffects(Player player)
+		{
+			ModifierPlayer.Player(player).Luck -= (int)Properties.RoundedPower;
 		}
 	}
 }

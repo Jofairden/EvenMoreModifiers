@@ -16,9 +16,16 @@ namespace Loot.Modifiers.EquipModifiers
 			return base.GetModifierProperties(item).Set(maxMagnitude: 45f);
 		}
 
+		[AutoDelegation("OnUpdateLifeRegen")]
+		private void LifeRegenHandler(Player player)
+		{
+			player.lifeRegen += ModifierPlayer.Player(player).LifeRegen / 30;
+			ModifierPlayer.Player(player).LifeRegen %= 30;
+		}
+
 		public override void UpdateEquip(Item item, Player player)
 		{
-			ModifierPlayer.PlayerInfo(player).LifeRegen += (int)Properties.RoundedPower;
+			ModifierPlayer.Player(player).LifeRegen += (int)Properties.RoundedPower;
 		}
 	}
 }

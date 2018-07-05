@@ -22,13 +22,13 @@ namespace Loot.Modifiers.EquipModifiers
 			// Don't roll on items that already provide knockback immunity
 			switch (ctx.Item.type)
 			{
+				default:
+					return base.CanRoll(ctx);
 				case (ItemID.CobaltShield):
 				case (ItemID.ObsidianShield):
 				case (ItemID.AnkhShield):
 					return false;
 			}
-
-			return base.CanRoll(ctx);
 		}
 
 		public override void UpdateEquip(Item item, Player player)

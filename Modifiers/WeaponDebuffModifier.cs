@@ -16,7 +16,7 @@ namespace Loot.Modifiers
 	{
 		public override ModifierTooltipLine[] TooltipLines => new[]
 		{
-			new ModifierTooltipLine { Text = $"+{Properties.RoundedPower}% chance to inflict {GetBuffName()} for {BuffTime/60f}s", Color = Color.Lime }
+			new ModifierTooltipLine {Text = $"+{Properties.RoundedPower}% chance to inflict {GetBuffName()} for {BuffTime / 60f}s", Color = Color.Lime}
 		};
 
 		public override ModifierProperties GetModifierProperties(Item item)
@@ -36,9 +36,22 @@ namespace Loot.Modifiers
 			return Lang.GetBuffName(BuffType);
 		}
 
+		public override void OnHitNPC(Item item, Player player, NPC target, int damage, float knockBack, bool crit)
+		{
+			if (Main.rand.NextFloat() < Properties.RoundedPower / 100f * BuffInflictionChance)
+				target.AddBuff(BuffType, BuffTime);
+		}
+
+		public override void OnHitPvp(Item item, Player player, Player target, int damage, bool crit)
+		{
+			if (Main.rand.NextFloat() < Properties.RoundedPower / 100f * BuffInflictionChance)
+				target.AddBuff(BuffType, BuffTime);
+		}
+
+		// Required for minion/proj snapshotting
 		public override void HoldItem(Item item, Player player)
 		{
-			ModifierPlayer.PlayerInfo(player).DebuffChances.Add(new RandomDebuff.DebuffTrigger(BuffType, BuffTime, Properties.RoundedPower / 100f * BuffInflictionChance));
+			ModifierPlayer.Player(player).DebuffChances.Add(new RandomDebuff.DebuffTrigger(BuffType, BuffTime, Properties.RoundedPower / 100f * BuffInflictionChance));
 		}
 	}
 }

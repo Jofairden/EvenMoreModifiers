@@ -221,6 +221,26 @@ namespace Loot.Core
 			return clone;
 		}
 
+		/// <summary>
+		/// Allows modders to perform various delegations when this modifier is detected to become active
+		/// This method will be invoked one time when the modifier becomes 'active'
+		/// Alternatively automatic delegation can be used, using the AutoDelegation attribute
+		/// </summary>
+		/// <param name="item"></param>
+		/// <param name="player"></param>
+		public virtual void AttachDelegations(Item item, ModifierPlayer player)
+		{
+		}
+
+		/// <summary>
+		/// Allows modders to undo their performed delegations in <see cref="AttachDelegations"/>
+		/// </summary>
+		/// <param name="item"></param>
+		/// <param name="player"></param>
+		public virtual void DetachDelegations(Item item, ModifierPlayer player)
+		{
+		}
+
 		protected internal static Modifier _NetReceive(Item item, BinaryReader reader)
 		{
 			string Type = reader.ReadString();

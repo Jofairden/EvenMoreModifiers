@@ -29,12 +29,27 @@ namespace Loot.Modifiers.WeaponModifiers
 			damage = (int)Math.Ceiling(damage * (1 + Properties.RoundedPower / 100f));
 		}
 
-		public override void HoldItem(Item item, Player player)
+		public override void AttachDelegations(Item item, ModifierPlayer player)
 		{
-			base.HoldItem(item, player);
+			player.OnUpdateBadLifeRegen += Curse;
+		}
 
+		public override void DetachDelegations(Item item, ModifierPlayer player)
+		{
+			player.OnUpdateBadLifeRegen -= Curse;
+		}
+
+		private void Curse(Player player)
+		{
 			if (!player.buffImmune[BuffID.Cursed])
-				ModifierPlayer.PlayerInfo(player).HoldingCursed = true;
+			{
+				if (player.lifeRegen > 0)
+				{
+					player.lifeRegen = 0;
+				}
+				player.lifeRegen -= 2;
+				player.lifeRegenTime = 0;
+			}
 		}
 	}
 }

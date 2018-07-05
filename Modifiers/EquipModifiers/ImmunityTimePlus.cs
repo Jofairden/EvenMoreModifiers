@@ -18,7 +18,22 @@ namespace Loot.Modifiers.EquipModifiers
 
 		public override void UpdateEquip(Item item, Player player)
 		{
-			ModifierPlayer.PlayerInfo(player).BonusImmunityTime += (int)Properties.RoundedPower;
+			ModifierPlayer.Player(player).BonusImmunityTime += (int)Properties.RoundedPower;
+		}
+		
+		[AutoDelegation("OnResetEffects")]
+		private void ResetEffects(Player player)
+		{
+			ModifierPlayer.Player(player).BonusImmunityTime -= (int)Properties.RoundedPower;
+		}
+
+		[AutoDelegation("OnPostHurt")]
+		private void Immunity(Player player, bool pvp, bool quiet, double damage, int hitDirection, bool crit)
+		{
+			int frames = damage <= 1 
+				? ModifierPlayer.Player(player).BonusImmunityTime / 2 
+				: ModifierPlayer.Player(player).BonusImmunityTime;
+			if (player.immuneTime > 0) player.immuneTime += frames;
 		}
 	}
 }

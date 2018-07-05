@@ -1,6 +1,8 @@
-﻿using Loot.Core;
+﻿using System;
+using Loot.Core;
 using Microsoft.Xna.Framework;
 using Terraria;
+using Terraria.DataStructures;
 
 namespace Loot.Modifiers.EquipModifiers
 {
@@ -22,7 +24,25 @@ namespace Loot.Modifiers.EquipModifiers
 
 		public override void UpdateEquip(Item item, Player player)
 		{
-			ModifierPlayer.PlayerInfo(player).SurvivalChance += Properties.RoundedPower / 100;
+			ModifierPlayer.Player(player).SurvivalChance += Properties.RoundedPower / 100f;
+		}
+		
+		[AutoDelegation("OnResetEffects")]
+		private void ResetEffects(Player player)
+		{
+			ModifierPlayer.Player(player).SurvivalChance -= Properties.RoundedPower / 100f;
+		}
+
+		[AutoDelegation("OnPreKill")]
+		private bool SurviveEvent(Player player, double damage, int hitDirection, bool pvp, ref bool playSound, ref bool genGore, ref PlayerDeathReason damageSource)
+		{
+			if (Main.rand.NextFloat() < Math.Min(ModifierPlayer.Player(player).SurvivalChance, ModifierPlayer.MAX_SURVIVAL_CHANCE))
+			{
+				player.statLife = 1;
+				return false;
+			}
+
+			return true;
 		}
 	}
 }

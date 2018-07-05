@@ -79,7 +79,7 @@ namespace Loot
 					mproj.SNAPSHOT_DebuffChances = new List<RandomDebuff.DebuffTrigger>(mplr.DebuffChances);
 					mproj.SNAPSHOT_HealthyFoesMulti = mplr.HealthyFoesMulti;
 					if (!projectile.minion) // minions do not crit
-						mproj.SNAPSHOT_CritMulti = mplr.CritMulti;
+						mproj.SNAPSHOT_CritMulti = mplr.CritMultiplier;
 				}
 				else if (projectile.owner == 255)
 				{
