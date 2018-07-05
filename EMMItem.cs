@@ -258,8 +258,15 @@ namespace Loot
 				var baseItem = new Item();
 				baseItem.netDefaults(item.netID);
 
-				var poolItem = baseItem.CloneWithModdedDataFrom(item);
-				GetItemInfo(poolItem)?.ModifierPool.ApplyModifiers(poolItem);
+				// the item with just the modifiers applied
+//				var poolItem = baseItem.CloneWithModdedDataFrom(item);
+//				GetItemInfo(poolItem)?.ModifierPool.ApplyModifiers(poolItem);
+				
+				// the item with just the prefix applied
+				var prefixItem = baseItem.Clone();
+				prefixItem.Prefix(item.prefix);
+				
+				
 				//var info = GetItemInfo(poolItem);
 				//if (!info.CustomReforgeMode.HasFlag(CustomReforgeMode.Vanilla))
 				//{
@@ -271,15 +278,7 @@ namespace Loot
 				//		EMMCustomReforge?.Invoke(poolItem.modItem, null);
 				//	}
 				//}
-
-				bool chkDamage = poolItem.damage != item.damage;
-				bool chkSpeed = poolItem.useAnimation != baseItem.useAnimation;
-				bool chkCritChance = poolItem.crit != baseItem.crit;
-				bool chkUseMana = poolItem.mana != baseItem.mana;
-				bool chkSize = poolItem.scale != baseItem.scale;
-				bool chkShootSpeed = poolItem.shootSpeed != baseItem.shootSpeed;
-				bool chkKnockback = poolItem.knockBack != baseItem.knockBack;
-
+				
 				try
 				{
 					foreach (var vttl in vanillaTooltips)
@@ -296,34 +295,60 @@ namespace Loot
 						//		"PrefixAccCritChance", "PrefixAccDamage", "PrefixAccMoveSpeed", "PrefixAccMeleeSpeed"
 						//	};
 
-						if (vttl.Name.Equals("PrefixDamage") && chkDamage)
+						if (vttl.Name.Equals("PrefixDamage") )
 						{
-							newTT = GetPrefixNormString(poolItem.damage, item.damage, ref outNumber, ref newC);
+							if (baseItem.damage > 0)
+								newTT = GetPrefixNormString(baseItem.damage, prefixItem.damage, ref outNumber, ref newC);
+							else
+								newTT = GetPrefixNormString(prefixItem.damage, baseItem.damage, ref outNumber, ref newC);
 						}
-						else if (vttl.Name.Equals("PrefixSpeed") && chkSpeed)
+						else if (vttl.Name.Equals("PrefixSpeed"))
 						{
-							newTT = GetPrefixNormString(item.useAnimation, poolItem.useAnimation, ref outNumber, ref newC);
+							if (baseItem.useAnimation <=  0)
+								newTT = GetPrefixNormString(baseItem.useAnimation, prefixItem.useAnimation, ref outNumber, ref newC);
+							else
+								newTT = GetPrefixNormString(prefixItem.useAnimation, baseItem.useAnimation, ref outNumber, ref newC);
 						}
-						else if (vttl.Name.Equals("PrefixCritChance") && chkCritChance)
+						else if (vttl.Name.Equals("PrefixCritChance") )
 						{
-							newTT = GetPrefixNormString(poolItem.crit, item.crit, ref outNumber, ref newC);
+							if (baseItem.crit <= 0)
+								newTT = GetPrefixNormString(baseItem.crit, prefixItem.crit, ref outNumber, ref newC);
+							else
+								newTT = GetPrefixNormString(prefixItem.crit, baseItem.crit, ref outNumber, ref newC);
 						}
-						else if (vttl.Name.Equals("PrefixUseMana") && chkUseMana)
+						else if (vttl.Name.Equals("PrefixUseMana"))
 						{
 							if (baseItem.mana != 0)
-								newTT = GetPrefixNormString(poolItem.mana, item.mana, ref outNumber, ref newC);
+							{
+								float defColorVal = Main.mouseTextColor / 255f;
+								int alphaColor = Main.mouseTextColor;
+								newTT = GetPrefixNormString(baseItem.mana, prefixItem.mana, ref outNumber, ref newC);
+								if (prefixItem.mana < baseItem.mana)
+									newC = new Color((byte)(120f * defColorVal), (byte)(190f * defColorVal), (byte)(120f * defColorVal), alphaColor);
+								else
+									newC = new Color((byte)(190f * defColorVal), (byte)(120f * defColorVal), (byte)(120f * defColorVal), alphaColor);
+							}
 						}
-						else if (vttl.Name.Equals("PrefixSize") && chkSize)
+						else if (vttl.Name.Equals("PrefixSize"))
 						{
-							newTT = GetPrefixNormString(poolItem.scale, item.scale, ref outNumber, ref newC);
+							if (baseItem.scale > 0)
+								newTT = GetPrefixNormString(baseItem.scale, prefixItem.scale, ref outNumber, ref newC);
+							else
+								newTT = GetPrefixNormString(prefixItem.scale, baseItem.scale, ref outNumber, ref newC);
 						}
-						else if (vttl.Name.Equals("PrefixShootSpeed") && chkShootSpeed)
+						else if (vttl.Name.Equals("PrefixShootSpeed"))
 						{
-							newTT = GetPrefixNormString(poolItem.shootSpeed, item.shootSpeed, ref outNumber, ref newC);
+							if (baseItem.shootSpeed > 0)
+								newTT = GetPrefixNormString(baseItem.shootSpeed, prefixItem.shootSpeed, ref outNumber, ref newC);
+							else
+								newTT = GetPrefixNormString(prefixItem.shootSpeed, baseItem.shootSpeed, ref outNumber, ref newC);
 						}
-						else if (vttl.Name.Equals("PrefixKnockback") && chkKnockback)
+						else if (vttl.Name.Equals("PrefixKnockback"))
 						{
-							newTT = GetPrefixNormString(poolItem.knockBack, item.knockBack, ref outNumber, ref newC);
+							if (baseItem.knockBack > 0)
+								newTT = GetPrefixNormString(baseItem.knockBack, prefixItem.knockBack, ref outNumber, ref newC);
+							else
+								newTT = GetPrefixNormString(prefixItem.knockBack, baseItem.knockBack, ref outNumber, ref newC);
 						}
 						else
 						{
@@ -352,16 +377,16 @@ namespace Loot
 				// RECALC END
 
 				// Modifies the "Uses X Mana" line to match our mods
-				var useManaTT = vanillaTooltips.FirstOrDefault(x => x.mod.Equals("Terraria") && x.Name.Equals("UseMana"));
-				if (useManaTT != null)
-				{
-					if (poolItem.mana > baseItem.mana)
-					{
-						string foundMana = new string(useManaTT.text.Where(char.IsDigit).ToArray());
-						if (foundMana != string.Empty)
-							useManaTT.text = useManaTT.text.Replace(foundMana, poolItem.mana.ToString());
-					}
-				}
+//				var useManaTT = vanillaTooltips.FirstOrDefault(x => x.mod.Equals("Terraria") && x.Name.Equals("UseMana"));
+//				if (useManaTT != null)
+//				{
+//					if (poolItem.mana > baseItem.mana)
+//					{
+//						string foundMana = new string(useManaTT.text.Where(char.IsDigit).ToArray());
+//						if (foundMana != string.Empty)
+//							useManaTT.text = useManaTT.text.Replace(foundMana, poolItem.mana.ToString());
+//					}
+//				}
 
 				// Modifies the tooltips, to insert generic mods data
 				int i = tooltips.FindIndex(x => x.mod == "Terraria" && x.Name == "ItemName");
