@@ -109,7 +109,7 @@ namespace Loot
 			{
 				Initialized = true;
 				foreach (var chest in Main.chest.Where(chest => chest != null && chest.x > 0 && chest.y > 0))
-					GenerateModifiers(progress, ModifierContextMethod.WorldGeneration, chest.item.Where(x => !x.IsAir), chest);
+					GenerateModifiers(progress, ModifierContextMethod.WorldGeneration, chest.item.Where(x => !x.IsAir && x.IsModifierRollableItem()), chest);
 			}
 		}
 	}

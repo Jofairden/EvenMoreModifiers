@@ -17,12 +17,12 @@ namespace Loot
 		// Attempt rolling modifiers on first load
 		public override void SetupStartInventory(IList<Item> items)
 		{
-			EMMWorld.WorldGenModifiersPass.GenerateModifiers(null, ModifierContextMethod.SetupStartInventory, items.Where(x => !x.IsAir), player);
+			EMMWorld.WorldGenModifiersPass.GenerateModifiers(null, ModifierContextMethod.SetupStartInventory, items.Where(x => !x.IsAir && x.IsModifierRollableItem()), player);
 		}
 		
 		public override void OnEnterWorld(Player player)
 		{
-			EMMWorld.WorldGenModifiersPass.GenerateModifiers(null, ModifierContextMethod.FirstLoad, player.inventory.Where(x => !x.IsAir).Concat(player.armor.Where(x => !x.IsAir && !x.vanity)), player);
+			EMMWorld.WorldGenModifiersPass.GenerateModifiers(null, ModifierContextMethod.FirstLoad, player.inventory.Where(x => !x.IsAir && x.IsModifierRollableItem()).Concat(player.armor.Where(x => !x.IsAir && !x.IsModifierRollableItem())), player);
 		}
 
 		public static ModifierPlayer Player(Player player) => player.GetModPlayer<ModifierPlayer>();

@@ -9,6 +9,6 @@ namespace Loot.Modifiers
 	public abstract class AccessoryModifier : Modifier
 	{
 		public override bool CanRoll(ModifierContext ctx)
-			=> ctx.Item.accessory && !ctx.Item.vanity;
+			=> ctx.Item.IsAccessory();
 	}
 }
