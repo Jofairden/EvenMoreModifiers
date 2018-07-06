@@ -1,10 +1,7 @@
 using System;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.Reflection;
-using System.Reflection.Emit;
 using Loot.Core;
-using Terraria;
 
 namespace Loot.Modifiers
 {

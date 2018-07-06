@@ -1,4 +1,3 @@
-using System.Linq;
 using Loot.Core.Cubes;
 using Microsoft.Xna.Framework.Graphics;
 using Terraria;

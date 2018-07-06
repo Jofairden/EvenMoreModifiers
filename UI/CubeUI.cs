@@ -1,5 +1,4 @@
 using System.Linq;
-using System.Security.Cryptography.X509Certificates;
 using Loot.Core;
 using Loot.Sounds;
 using Microsoft.Xna.Framework;

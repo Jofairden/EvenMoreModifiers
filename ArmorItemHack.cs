@@ -1,5 +1,4 @@
-﻿using Loot.Modifiers;
-using Terraria;
+﻿using Terraria;
 using Terraria.ModLoader;
 using Terraria.Utilities;
 

@@ -1,4 +1,3 @@
-using Loot.Core;
 using Microsoft.Xna.Framework.Graphics;
 using Terraria;
 using Terraria.GameContent.UI.Elements;
