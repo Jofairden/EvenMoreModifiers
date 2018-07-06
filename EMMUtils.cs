@@ -1,12 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics.Eventing.Reader;
 using System.IO;
 using System.Linq;
 using System.Reflection;
 using System.Runtime.Serialization.Formatters.Binary;
 using Loot.Core;
+using ReLogic.Utilities;
+using Terraria;
 using Terraria.ModLoader;
-
 using RarityMap = System.Collections.Generic.KeyValuePair<string, Loot.Core.ModifierRarity>;
 using ModifierMap = System.Collections.Generic.KeyValuePair<string, Loot.Core.Modifier>;
 using PoolMap = System.Collections.Generic.KeyValuePair<string, Loot.Core.ModifierPool>;
@@ -16,52 +18,59 @@ namespace Loot
 {
 	internal static class EMMUtils
 	{
-		public static T GetModifierRarity<T>(this Mod mod) where T : ModifierRarity => (T)GetModifierRarity(mod, typeof(T).Name);
+		public static T GetModifierRarity<T>(this Mod mod) where T : ModifierRarity => (T) GetModifierRarity(mod, typeof(T).Name);
+
 		public static ModifierRarity GetModifierRarity(this Mod mod, string name)
 		{
 			List<RarityMap> v;
 			if (EMMLoader.RaritiesMap.TryGetValue(mod.Name, out v))
 			{
 				var fod = v.FirstOrDefault(x => x.Value.Name.Equals(name));
-				return (ModifierRarity)fod.Value.Clone();
+				return (ModifierRarity) fod.Value.Clone();
 			}
+
 			return null;
 		}
 
 		public static uint ModifierRarityType<T>(this Mod mod) where T : ModifierRarity => ModifierRarityType(mod, typeof(T).Name);
 		public static uint ModifierRarityType(this Mod mod, string name) => GetModifierRarity(mod, name)?.Type ?? 0;
 
-		public static T GetModifier<T>(this Mod mod) where T : Modifier => (T)GetModifier(mod, typeof(T).Name);
+		public static T GetModifier<T>(this Mod mod) where T : Modifier => (T) GetModifier(mod, typeof(T).Name);
+
 		public static Modifier GetModifier(this Mod mod, string name)
 		{
 			List<ModifierMap> v;
 			if (EMMLoader.ModifiersMap.TryGetValue(mod.Name, out v))
 			{
 				var fod = v.FirstOrDefault(x => x.Value.Name.Equals(name));
-				return (Modifier)fod.Value.Clone();
+				return (Modifier) fod.Value.Clone();
 			}
+
 			return null;
 		}
 
 		public static uint ModifierType<T>(this Mod mod) where T : Modifier => ModifierType(mod, typeof(T).Name);
 		public static uint ModifierType(this Mod mod, string name) => GetModifier(mod, name)?.Type ?? 0;
 
-		public static T GetModifierPool<T>(this Mod mod) where T : ModifierPool => (T)GetModifierPool(mod, typeof(T).Name);
+		public static T GetModifierPool<T>(this Mod mod) where T : ModifierPool => (T) GetModifierPool(mod, typeof(T).Name);
+
 		public static ModifierPool GetModifierPool(this Mod mod, string name)
 		{
 			List<PoolMap> v;
 			if (EMMLoader.PoolsMap.TryGetValue(mod.Name, out v))
 			{
 				var fod = v.FirstOrDefault(x => x.Value.Name.Equals(name));
-				return (ModifierPool)fod.Value.Clone();
+				return (ModifierPool) fod.Value.Clone();
 			}
+
 			return null;
 		}
 
 		public static uint ModifierPoolType<T>(this Mod mod, string name) where T : ModifierPool => ModifierPoolType(mod, typeof(T).Name);
 		public static uint ModifierPoolType(this Mod mod, string name) => GetModifierPool(mod, name)?.Type ?? 0;
 
-		public static T GetGlobalModifier<T>(this Mod mod) where T : GlobalModifier => (T)GetGlobalModifier(mod, typeof(T).Name);
+		public static T GetGlobalModifier<T>(this Mod mod) where T : GlobalModifier => (T) GetGlobalModifier(mod, typeof(T).Name);
+
 		public static GlobalModifier GetGlobalModifier(this Mod mod, string name)
 		{
 			List<GlobalModifierMap> v;
@@ -70,6 +79,7 @@ namespace Loot
 				var fod = v.FirstOrDefault(x => x.Value.Name.Equals(name));
 				return fod.Value.AsNewInstance();
 			}
+
 			return null;
 		}
 
@@ -77,6 +87,11 @@ namespace Loot
 		public static uint GlobalModifierType(this Mod mod, string name) => GetGlobalModifier(mod, name)?.Type ?? 0;
 
 		public static bool Between(this int v, int min, int max) => v >= min && v <= max;
+		public static bool IsModifierRollableItem(this Item item) => item.maxStack == 1 && item.IsWeapon() || item.IsAccessory() || item.IsArmor();
+		public static bool IsWeapon(this Item item) => item.damage > 0;
+		public static bool IsAccessory(this Item item) => item.accessory && !item.vanity;
+		public static bool IsArmor(this Item item) => (item.headSlot >= 0 || item.bodySlot >= 0 || item.legSlot >= 0) && !item.vanity;
+
 
 		public static byte[] ToByteArray<T>(this T obj)
 		{
@@ -98,7 +113,7 @@ namespace Loot
 			using (MemoryStream ms = new MemoryStream(data))
 			{
 				object obj = bf.Deserialize(ms);
-				return (T)obj;
+				return (T) obj;
 			}
 		}
 
@@ -114,11 +129,13 @@ namespace Loot
 			{
 				t += $"{info}\n{{{info.GetValue(instance)}}}\n";
 			}
+
 			t += "\n===METHODS==\n";
 			foreach (var info in methods)
 			{
 				t += $"{info}\n{{{info.MetadataToken}}}\n";
 			}
+
 			return t.Trim();
 		}
 	}

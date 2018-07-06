@@ -12,10 +12,10 @@ namespace Loot.Modifiers
 	{
 		public override ModifierProperties GetModifierProperties(Item item)
 		{
-			return new ModifierProperties(magnitudeStrength: item.accessory ? .6f : 1f);
+			return new ModifierProperties(magnitudeStrength: item.IsAccessory() ? .6f : 1f);
 		}
 
 		public override bool CanRoll(ModifierContext ctx)
-			=> ctx.Item.accessory || ArmorModifier.IsArmor(ctx.Item);
+			=> ctx.Item.IsAccessory() || ctx.Item.IsArmor();
 	}
 }

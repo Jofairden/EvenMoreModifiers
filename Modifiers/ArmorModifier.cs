@@ -9,11 +9,7 @@ namespace Loot.Modifiers
 	/// </summary>
 	public abstract class ArmorModifier : Modifier
 	{
-		// TODO put useful fields on item itself
-		public static bool IsArmor(Item item)
-			=> (item.headSlot != -1 || item.bodySlot != -1 || item.legSlot != -1) && !item.vanity;
-
 		public override bool CanRoll(ModifierContext ctx)
-			=> IsArmor(ctx.Item);
+			=> ctx.Item.IsArmor();
 	}
 }

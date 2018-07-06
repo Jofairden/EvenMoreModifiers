@@ -22,7 +22,8 @@ namespace Loot.Core
 		WorldGeneration,
 		FirstLoad,
 		OnPickup,
-		Custom
+		Custom,
+		OnCubeReroll
 	}
 
 	/// <summary>
@@ -123,7 +124,7 @@ namespace Loot.Core
 			=> EMMLoader.GetModifierPool(type);
 
 		public ModifierPool AsNewInstance()
-			=> (ModifierPool)Activator.CreateInstance(GetType());
+			=> (ModifierPool) Activator.CreateInstance(GetType());
 
 		internal ModifierRarity UpdateRarity()
 		{
@@ -148,7 +149,7 @@ namespace Loot.Core
 					break;
 
 				Modifier e = wr.Get();
-				Modifier eClone = (Modifier)e.Clone();
+				Modifier eClone = (Modifier) e.Clone();
 				eClone.Properties = eClone.GetModifierProperties(ctx.Item).RollMagnitudeAndPower();
 				eClone.Roll(ctx);
 
@@ -170,8 +171,7 @@ namespace Loot.Core
 		//internal float ModifierRollChance(int len) => 0.5f / (float)Math.Pow(2, len);
 		internal float ModifierRollChance(int len) => 0.5f;
 
-		internal static bool IsValidFor(Item item)
-			=> !item.vanity && item.maxStack == 1;
+		internal static bool IsValidFor(Item item) => item.IsModifierRollableItem();
 
 		/// <summary>
 		/// Returns if this pool can roll in the given context. 
@@ -208,15 +208,14 @@ namespace Loot.Core
 		/// </summary>
 		public virtual void Clone(ref ModifierPool clone)
 		{
-
 		}
 
 		public object Clone()
 		{
-			ModifierPool clone = (ModifierPool)MemberwiseClone();
+			ModifierPool clone = (ModifierPool) MemberwiseClone();
 			clone.Type = Type;
 			clone.Mod = Mod;
-			clone.Rarity = (ModifierRarity)Rarity?.Clone();
+			clone.Rarity = (ModifierRarity) Rarity?.Clone();
 			clone.Modifiers =
 				Modifiers?
 					.Select(x => x?.Clone())
@@ -252,7 +251,7 @@ namespace Loot.Core
 			Assembly assembly;
 			if (EMMLoader.Mods.TryGetValue(ModName, out assembly))
 			{
-				ModifierPool m = (ModifierPool)Activator.CreateInstance(assembly.GetType(Type));
+				ModifierPool m = (ModifierPool) Activator.CreateInstance(assembly.GetType(Type));
 				m.Type = ModifierType;
 				m.Mod = ModLoader.GetMod(ModName);
 				m.Rarity = ModifierRarity;
@@ -345,8 +344,10 @@ namespace Loot.Core
 							if (loaded != null)
 								list.Add(loaded);
 						}
+
 						m.ActiveModifiers = list.ToArray();
 					}
+
 					m.Load(item, tag);
 
 					// If our rarity was unloaded, attempt rolling a new one that is applicable
@@ -359,6 +360,7 @@ namespace Loot.Core
 
 				return null;
 			}
+
 			throw new Exception($"Modifier load error for {modname}");
 		}
 
@@ -374,21 +376,22 @@ namespace Loot.Core
 		protected internal static TagCompound Save(Item item, ModifierPool modifierPool)
 		{
 			if (modifierPool == null)
-				return new TagCompound { { "EMMErr:PoolNullErr", "ModifierPool was null err" } };
+				return new TagCompound {{"EMMErr:PoolNullErr", "ModifierPool was null err"}};
 
 			var tag = new TagCompound
 			{
-				{ "Type", modifierPool.GetType().Name },
+				{"Type", modifierPool.GetType().Name},
 				//{ "ModifierType", modifierPool.Type }, //Used to be saved in saveVersion 1
-				{ "ModName", modifierPool.Mod.Name },
-				{ "Rarity", ModifierRarity.Save(item, modifierPool.Rarity) },
-				{ "ModifierPoolSaveVersion", 2 } // increments each time save is changed
+				{"ModName", modifierPool.Mod.Name},
+				{"Rarity", ModifierRarity.Save(item, modifierPool.Rarity)},
+				{"ModifierPoolSaveVersion", 2} // increments each time save is changed
 			};
 			tag.Add("ActiveModifiers", modifierPool.ActiveModifiers.Length);
 			for (int i = 0; i < modifierPool.ActiveModifiers.Length; ++i)
 			{
 				tag.Add($"ActiveModifier{i}", Modifier.Save(item, modifierPool.ActiveModifiers[i]));
 			}
+
 			modifierPool.Save(item, tag);
 			return tag;
 		}

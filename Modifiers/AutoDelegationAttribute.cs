@@ -24,7 +24,7 @@ namespace Loot.Modifiers
 			_delegationTypes = new List<string>(types);
 		}
 
-		public void Attach(ModifierPlayer player, MethodInfo method,Modifier modifier)
+		public void Attach(ModifierPlayer player, MethodInfo method, Modifier modifier)
 		{
 			foreach (string type in _delegationTypes)
 			{
