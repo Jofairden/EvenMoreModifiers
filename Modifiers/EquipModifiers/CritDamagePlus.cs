@@ -11,7 +11,7 @@ namespace Loot.Modifiers.EquipModifiers
 	{
 		public override ModifierTooltipLine[] TooltipLines => new[]
 		{
-			new ModifierTooltipLine {Text = $"+{Properties.RoundedPower}% crit damage", Color = Color.LimeGreen},
+			new ModifierTooltipLine {Text = $"+{Properties.RoundedPower}% crit multiplier", Color = Color.LimeGreen},
 		};
 
 		public override ModifierProperties GetModifierProperties(Item item)

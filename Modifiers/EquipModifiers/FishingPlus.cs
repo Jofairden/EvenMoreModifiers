@@ -8,7 +8,7 @@ namespace Loot.Modifiers.EquipModifiers
 	{
 		public override ModifierTooltipLine[] TooltipLines => new[]
 		{
-			new ModifierTooltipLine { Text = $"+{Properties.RoundedPower} fishing skill", Color =  Color.LimeGreen},
+			new ModifierTooltipLine { Text = $"+{Properties.RoundedPower} fishing skill [WIP]", Color =  Color.LimeGreen},
 		};
 
 		public override ModifierProperties GetModifierProperties(Item item)
