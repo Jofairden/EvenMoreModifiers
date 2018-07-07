@@ -10,7 +10,7 @@ namespace Loot.UI
 	{
 		protected bool RightClickFunctionalityEnabled = true;
 		protected bool TakeUserItemOnClick = true;
-		
+
 
 		public UIInteractableItemPanel(int netID = 0, int stack = 0, Texture2D hintTexture = null, string hintText = null)
 			: base(netID, stack, hintTexture, hintText)
@@ -87,12 +87,18 @@ namespace Loot.UI
 		{
 		}
 
+		public virtual void PreOnClick(UIMouseEvent evt, UIElement e)
+		{
+		}
+
 		public virtual void PostOnClick(UIMouseEvent evt, UIElement e)
 		{
 		}
 
 		private void UIInteractableItemPanel_OnClick(UIMouseEvent evt, UIElement e)
 		{
+			PreOnClick(evt, e);
+
 			// Slot has an item
 			if (!item.IsAir)
 			{

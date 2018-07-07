@@ -5,14 +5,16 @@ namespace Loot.Sounds
 {
 	internal static class SoundHelper
 	{
-		internal static string[] Sounds =
+		private static string[] Sounds =
 		{
 			"CloseUI",
 			"Decline",
 			"Notif",
 			"OpenUI",
 			"Receive",
-			"Redeem"
+			"Redeem",
+			"GainSeal",
+			"LoseSeal"
 		};
 
 		internal enum SoundType
@@ -22,7 +24,9 @@ namespace Loot.Sounds
 			Notif,
 			OpenUI,
 			Receive,
-			Redeem
+			Redeem,
+			GainSeal,
+			LoseSeal
 		}
 
 		internal static void PlayCustomSound(SoundType type)

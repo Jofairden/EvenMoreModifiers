@@ -2,9 +2,10 @@ using Terraria;
 
 namespace Loot.Core.Cubes
 {
-	public class BasicCube : MagicalCube
+	public class PoorCube : MagicalCube
 	{
-		protected override string CubeName => "Basic Cube";
+		protected override string CubeName => "Poor Cube";
+		protected override bool DisplayTier => false;
 
 		protected override void SafeDefaults()
 		{

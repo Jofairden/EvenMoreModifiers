@@ -14,7 +14,7 @@ namespace Loot.UI
 	/// <summary>
 	/// A UIState that provides the ability to reroll an item's modifier
 	/// </summary>
-	public sealed class CubeRerollUI : DraggableUIState
+	public sealed class CubeRerollUI : CubeUI
 	{
 		private UIPanel _backPanel;
 		internal UICubeItemPanel _cubePanel;
@@ -63,12 +63,12 @@ namespace Loot.UI
 			AssignDragPanel(_backPanel);
 			base.OnInitialize();
 
-			Texture2D buttonDeleteTexture = ModLoader.GetTexture("Terraria/UI/Camera_5");
-			UIImageButton closeButton = new UIImageButton(buttonDeleteTexture);
-			closeButton.Left.Set(_backPanel.Width.Pixels - buttonDeleteTexture.Width - 20f, 0f);
+			Texture2D btnCloseTexture = ModLoader.GetTexture("Terraria/UI/InfoIcon_8");
+			UIImageButton closeButton = new UIImageButton(btnCloseTexture);
+			closeButton.Left.Set(_backPanel.Width.Pixels - btnCloseTexture.Width * 2f - padding, 0f);
 			closeButton.Top.Set(0f, 0f);
-			closeButton.Width.Set(buttonDeleteTexture.Width, 0f);
-			closeButton.Height.Set(buttonDeleteTexture.Height, 0f);
+			closeButton.Width.Set(btnCloseTexture.Width, 0f);
+			closeButton.Height.Set(btnCloseTexture.Height, 0f);
 			closeButton.OnClick += (evt, element) => { ToggleUI(Loot.Instance.CubeInterface, Loot.Instance.CubeRerollUI); };
 			_backPanel.Append(closeButton);
 
@@ -76,7 +76,7 @@ namespace Loot.UI
 			_cubePanel.Top.Set(0f, 0f);
 			_backPanel.Append(_cubePanel);
 
-			_rerollItemPanel = new UIRerollItemPanel(hintTexture: ModLoader.GetTexture("Terraria/Item_3827"), hintText: "Place an item to reroll here");
+			_rerollItemPanel = new UIRerollItemPanel(hintTexture: ModLoader.GetTexture("Terraria/Item_24"), hintText: "Place an item to reroll here");
 			_rerollItemPanel.Top.Set(_cubePanel.Top.Pixels + _rerollItemPanel.Height.Pixels + padding, 0f);
 			_backPanel.Append(_rerollItemPanel);
 
@@ -89,7 +89,7 @@ namespace Loot.UI
 				panel.Left.Set(padding + _cubePanel.Left.Pixels + _cubePanel.Width.Pixels, 0f);
 				panel.Height.Set(40, 0f);
 				panel.Top.Set(i * padding + panel.Height.Pixels * i, 0f);
-				panel.Width.Set(_backPanel.Width.Pixels - closeButton.Width.Pixels * 1.5f - panel.Left.Pixels - padding, 0f);
+				panel.Width.Set(_backPanel.Width.Pixels - closeButton.Width.Pixels * 2f - panel.Left.Pixels - padding * 2f, 0f);
 				panel.BackgroundColor = new Color(73, 94, 171);
 				_backPanel.Append(panel);
 			}
@@ -109,7 +109,8 @@ namespace Loot.UI
 			    && _cubePanel != null
 			    && !_rerollItemPanel.item.IsAir && !_cubePanel.item.IsAir
 			    && _rerollItemPanel.CanTakeItem(_rerollItemPanel.item)
-			    && _cubePanel.CanTakeItem(_cubePanel.item))
+			    && _cubePanel.CanTakeItem(_cubePanel.item)
+			    && !EMMItem.GetItemInfo(_rerollItemPanel.item).SealedModifiers)
 			{
 				_cubePanel.RecalculateStack();
 

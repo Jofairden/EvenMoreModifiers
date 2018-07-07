@@ -27,6 +27,7 @@ namespace Loot.UI
 
 		internal void RecalculateStack()
 		{
+			// @todo track cube tier as well
 			// after cube is slotted, count total number
 
 			int stack = 0;

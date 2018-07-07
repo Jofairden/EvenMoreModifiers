@@ -36,8 +36,12 @@ namespace Loot
 
 		public ModifierPool ModifierPool; // the current pool of mods. null if none.
 		public bool HasRolled; // has rolled a pool
-		public bool JustTinkerModified; // is just tinker modified: e.g. armor hacked
 		public bool SealedModifiers; // are modifiers unchangeable
+		
+		// Non saved
+		public bool JustTinkerModified; // is just tinker modified: e.g. armor hacked
+		public bool SlottedInCubeUI; // is currently in cube UI slot
+		
 
 		public const int SaveVersion = 2;
 		//public CustomReforgeMode CustomReforgeMode = CustomReforgeMode.ForceWeapon;

@@ -15,8 +15,14 @@ namespace Loot.UI
 
 		public override bool CanTakeItem(Item item) => base.CanTakeItem(item) && item.IsModifierRollableItem() && !EMMItem.GetItemInfo(item).SealedModifiers;
 
+		public override void PreOnClick(UIMouseEvent evt, UIElement e)
+		{
+			if (!item.IsAir) EMMItem.GetItemInfo(item).SlottedInCubeUI = false;
+		}
+
 		public override void PostOnClick(UIMouseEvent evt, UIElement e)
 		{
+			if (!item.IsAir) EMMItem.GetItemInfo(item).SlottedInCubeUI = true;
 			Loot.Instance.CubeRerollUI.UpdateModifierLines();
 		}
 	}

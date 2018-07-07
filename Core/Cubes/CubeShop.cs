@@ -10,7 +10,7 @@ namespace Loot.Core.Cubes
 		{
 			if (type == NPCID.Wizard)
 			{
-				shop.item[nextSlot++].SetDefaults(Loot.Instance.ItemType<BasicCube>());
+				shop.item[nextSlot++].SetDefaults(Loot.Instance.ItemType<PoorCube>());
 				shop.item[nextSlot++].SetDefaults(Loot.Instance.ItemType<CubeOfSealing>());
 			}
 		}

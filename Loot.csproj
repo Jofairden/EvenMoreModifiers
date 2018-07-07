@@ -75,7 +75,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ArmorItemHack.cs" />
-    <Compile Include="Core\Cubes\BasicCube.cs" />
+    <Compile Include="Core\Cubes\PoorCube.cs" />
     <Compile Include="Core\Cubes\CubeOfSealing.cs" />
     <Compile Include="Core\Cubes\CubeShop.cs" />
     <Compile Include="Core\Cubes\CubeUIExtensions.cs" />
@@ -158,6 +158,7 @@
     <Compile Include="Sounds\SoundHelper.cs" />
     <Compile Include="UI\CubeRerollUI.cs" />
     <Compile Include="UI\CubeSealUI.cs" />
+    <Compile Include="UI\CubeUI.cs" />
     <Compile Include="UI\DraggableUIState.cs" />
     <Compile Include="UI\UICubeItemPanel.cs" />
     <Compile Include="UI\UIInteractableItemPanel.cs" />
