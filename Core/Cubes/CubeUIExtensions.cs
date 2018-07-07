@@ -10,17 +10,17 @@ namespace Loot.Core.Cubes
 	public class CubeUIExtensions : GlobalItem
 	{
 		public override bool CanRightClick(Item item) =>
-			CubeUI.Visible
+			Loot.Instance.CubeRerollUI.Visible
 			&& !PlayerInput.WritingText
 			&& Main.hasFocus
 			&& Main.keyState.IsKeyDown(Keys.LeftControl)
-			&& Loot.Instance.cubeUI._rerollItemPanel.CanTakeItem(item);
+			&& Loot.Instance.CubeRerollUI._rerollItemPanel.CanTakeItem(item);
 
 		public override void RightClick(Item item, Player player)
 		{
-			if (CubeUI.Visible && item.IsModifierRollableItem())
+			if (Loot.Instance.CubeRerollUI.Visible && item.IsModifierRollableItem())
 			{
-				var ui = Loot.Instance.cubeUI;
+				var ui = Loot.Instance.CubeRerollUI;
 
 				// If there is an item slotted
 				if (ui._rerollItemPanel != null

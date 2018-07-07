@@ -11,28 +11,29 @@ using Terraria.UI;
 
 namespace Loot.UI
 {
-	public class CubeUI : UIState
+	/// <summary>
+	/// A UIState that provides the ability to reroll an item's modifier
+	/// </summary>
+	public sealed class CubeRerollUI : DraggableUIState
 	{
 		private UIPanel _backPanel;
 		internal UICubeItemPanel _cubePanel;
 		internal UIRerollItemPanel _rerollItemPanel;
-		internal UIModifierPanel[] _modifierPanels;
-		internal UIImageButton _rerollButton;
+		private UIModifierPanel[] _modifierPanels;
+		private UIImageButton _rerollButton;
 		private const float padding = 5f;
 
-		public static bool Visible = false;
-
-		internal static void ToggleUI()
+		public override void ToggleUI(UserInterface theInterface, UIState uiStateInstance)
 		{
-			Main.PlaySound(SoundID.MenuOpen);
-			Visible = !Visible;
-			var ui = Loot.Instance.cubeUI;
+			base.ToggleUI(theInterface, uiStateInstance);
+
+			var ui = Loot.Instance.CubeRerollUI;
 
 			// If ui closed, we need to retrieve the slotted items
 			if (!Visible)
 			{
 				SoundHelper.PlayCustomSound(SoundHelper.SoundType.CloseUI);
-				
+
 				// Clear of the slotted cube type
 				ui._cubePanel?.item.TurnToAir();
 
@@ -51,20 +52,16 @@ namespace Loot.UI
 
 		public override void OnInitialize()
 		{
-			base.OnInitialize();
+			// Makes back panel, and assigns it as the drag panel
 			_backPanel = new UIPanel();
 			_backPanel.Width.Set(600f, 0f);
 			_backPanel.Height.Set(200f, 0f);
-
 			_backPanel.Left.Set(Main.screenWidth / 2f - _backPanel.Width.Pixels / 2f, 0f);
 			_backPanel.Top.Set(Main.screenHeight / 2f - _backPanel.Height.Pixels / 2f, 0f);
-
 			_backPanel.BackgroundColor = new Color(73, 94, 171);
-
-			_backPanel.OnMouseDown += DragStart;
-			_backPanel.OnMouseUp += DragEnd;
-
 			base.Append(_backPanel);
+			AssignDragPanel(_backPanel);
+			base.OnInitialize();
 
 			Texture2D buttonDeleteTexture = ModLoader.GetTexture("Terraria/UI/Camera_5");
 			UIImageButton closeButton = new UIImageButton(buttonDeleteTexture);
@@ -72,14 +69,14 @@ namespace Loot.UI
 			closeButton.Top.Set(0f, 0f);
 			closeButton.Width.Set(buttonDeleteTexture.Width, 0f);
 			closeButton.Height.Set(buttonDeleteTexture.Height, 0f);
-			closeButton.OnClick += (evt, element) => { ToggleUI(); };
+			closeButton.OnClick += (evt, element) => { ToggleUI(Loot.Instance.CubeInterface, Loot.Instance.CubeRerollUI); };
 			_backPanel.Append(closeButton);
 
-			_cubePanel = new UICubeItemPanel(0, 0, Loot.Instance.GetTexture("Core/Cubes/MagicalCube"), "Place a cube here");
+			_cubePanel = new UICubeItemPanel(hintTexture: Loot.Instance.GetTexture("Core/Cubes/MagicalCube"), hintText: "Place a cube here");
 			_cubePanel.Top.Set(0f, 0f);
 			_backPanel.Append(_cubePanel);
 
-			_rerollItemPanel = new UIRerollItemPanel(0, 0, ModLoader.GetTexture("Terraria/Item_3827"), "Place an item to reroll here");
+			_rerollItemPanel = new UIRerollItemPanel(hintTexture: ModLoader.GetTexture("Terraria/Item_3827"), hintText: "Place an item to reroll here");
 			_rerollItemPanel.Top.Set(_cubePanel.Top.Pixels + _rerollItemPanel.Height.Pixels + padding, 0f);
 			_backPanel.Append(_rerollItemPanel);
 
@@ -169,42 +166,6 @@ namespace Loot.UI
 			}
 		}
 
-		private Vector2 _offset;
-		private bool _dragging = false;
-
-		private void DragEnd(UIMouseEvent evt, UIElement listeningelement)
-		{
-			Vector2 end = evt.MousePosition;
-			_dragging = false;
-
-			_backPanel.Left.Set(end.X - _offset.X, 0f);
-			_backPanel.Top.Set(end.Y - _offset.Y, 0f);
-
-			Recalculate();
-		}
-
-		private void DragStart(UIMouseEvent evt, UIElement listeningelement)
-		{
-			_offset = new Vector2(evt.MousePosition.X - _backPanel.Left.Pixels, evt.MousePosition.Y - _backPanel.Top.Pixels);
-			_dragging = true;
-		}
-
-		protected override void DrawSelf(SpriteBatch spriteBatch)
-		{
-			Vector2 mousePosition = new Vector2((float) Main.mouseX, (float) Main.mouseY);
-			if (_backPanel.ContainsPoint(mousePosition))
-			{
-				Main.LocalPlayer.mouseInterface = true;
-			}
-
-			if (_dragging)
-			{
-				_backPanel.Left.Set(mousePosition.X - _offset.X, 0f);
-				_backPanel.Top.Set(mousePosition.Y - _offset.Y, 0f);
-				Recalculate();
-			}
-		}
-
 		public void UpdateModifierLines()
 		{
 			foreach (var panel in _modifierPanels)
@@ -227,7 +188,7 @@ namespace Loot.UI
 					_modifierPanels[i].UpdateText(line);
 					i++;
 				}
-				
+
 				Recalculate();
 			}
 		}

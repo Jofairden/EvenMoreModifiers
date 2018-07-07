@@ -37,6 +37,9 @@ namespace Loot
 		public ModifierPool ModifierPool; // the current pool of mods. null if none.
 		public bool HasRolled; // has rolled a pool
 		public bool JustTinkerModified; // is just tinker modified: e.g. armor hacked
+		public bool SealedModifiers; // are modifiers unchangeable
+
+		public const int SaveVersion = 2;
 		//public CustomReforgeMode CustomReforgeMode = CustomReforgeMode.ForceWeapon;
 
 		/// <summary>
@@ -84,8 +87,8 @@ namespace Loot
 
 		public override GlobalItem Clone(Item item, Item itemClone)
 		{
-			EMMItem clone = (EMMItem)base.Clone(item, itemClone);
-			clone.ModifierPool = (ModifierPool)ModifierPool?.Clone();
+			EMMItem clone = (EMMItem) base.Clone(item, itemClone);
+			clone.ModifierPool = (ModifierPool) ModifierPool?.Clone();
 			// there is no need to apply here, we already cloned the item which stats are already modified by its pool
 			return clone;
 		}
@@ -106,7 +109,16 @@ namespace Loot
 					ModifierPool = null;
 			}
 
-			HasRolled = tag.GetBool("HasRolled");
+			// SaveVersion >= 2
+			if (tag.ContainsKey("SaveVersion"))
+			{
+				HasRolled = tag.GetBool("HasRolled");
+				SealedModifiers = tag.GetBool("SealedModifiers");
+			}
+			else // SaveVersion 1
+			{
+				HasRolled = tag.GetBool("HasRolled");
+			}
 
 			ModifierPool?.ApplyModifiers(item);
 		}
@@ -118,6 +130,10 @@ namespace Loot
 				: new TagCompound();
 
 			tag.Add("HasRolled", HasRolled);
+
+			// SaveVersion saved since SaveVersion 2, version 1 not present
+			tag.Add("SaveVersion", SaveVersion);
+			tag.Add("SealedModifiers", SealedModifiers);
 
 			return tag;
 		}
@@ -131,6 +147,7 @@ namespace Loot
 				ModifierPool = ModifierPool._NetReceive(item, reader);
 
 			HasRolled = reader.ReadBoolean();
+			SealedModifiers = reader.ReadBoolean(); // Since SaveVersion 2
 
 			ModifierPool?.ApplyModifiers(item);
 
@@ -145,23 +162,24 @@ namespace Loot
 				ModifierPool._NetSend(ModifierPool, item, writer);
 
 			writer.Write(HasRolled);
+			writer.Write(SealedModifiers); // Since SaveVersion 2
 
 			writer.Write(JustTinkerModified);
 		}
 
 		public override void OnCraft(Item item, Recipe recipe)
 		{
-			ModifierContext ctx = new ModifierContext
-			{
-				Method = ModifierContextMethod.OnCraft,
-				Item = item,
-				Player = Main.LocalPlayer,
-				Recipe = recipe
-			};
-
 			ModifierPool pool = GetItemInfo(item).ModifierPool;
 			if (!HasRolled && pool == null)
 			{
+				ModifierContext ctx = new ModifierContext
+				{
+					Method = ModifierContextMethod.OnCraft,
+					Item = item,
+					Player = Main.LocalPlayer,
+					Recipe = recipe
+				};
+				
 				pool = RollNewPool(ctx);
 				pool?.ApplyModifiers(item);
 			}
@@ -171,16 +189,16 @@ namespace Loot
 
 		public override bool OnPickup(Item item, Player player)
 		{
-			ModifierContext ctx = new ModifierContext
-			{
-				Method = ModifierContextMethod.OnPickup,
-				Item = item,
-				Player = player
-			};
-
 			ModifierPool pool = GetItemInfo(item).ModifierPool;
 			if (!HasRolled && pool == null)
 			{
+				ModifierContext ctx = new ModifierContext
+				{
+					Method = ModifierContextMethod.OnPickup,
+					Item = item,
+					Player = player
+				};
+				
 				pool = RollNewPool(ctx);
 				pool?.ApplyModifiers(item);
 			}
@@ -190,15 +208,18 @@ namespace Loot
 
 		public override void PostReforge(Item item)
 		{
-			ModifierContext ctx = new ModifierContext
+			if (!SealedModifiers)
 			{
-				Method = ModifierContextMethod.OnReforge,
-				Item = item,
-				Player = Main.LocalPlayer
-			};
+				ModifierContext ctx = new ModifierContext
+				{
+					Method = ModifierContextMethod.OnReforge,
+					Item = item,
+					Player = Main.LocalPlayer
+				};
 
-			ModifierPool pool = RollNewPool(ctx);
-			pool?.ApplyModifiers(item);
+				ModifierPool pool = RollNewPool(ctx);
+				pool?.ApplyModifiers(item);
+			}
 		}
 
 		private string GetPrefixNormString(float cpStat, float rStat, ref double num, ref Color? color)
@@ -213,11 +234,11 @@ namespace Loot
 				num = 1;
 				if (rStat > 0f)
 				{
-					color = new Color((byte)(120f * defColorVal), (byte)(190f * defColorVal), (byte)(120f * defColorVal), alphaColor);
+					color = new Color((byte) (120f * defColorVal), (byte) (190f * defColorVal), (byte) (120f * defColorVal), alphaColor);
 					return "+" + rStat.ToString(CultureInfo.InvariantCulture); /* + Lang.tip[39].Value;*/
 				}
 
-				color = new Color((byte)(190f * defColorVal), (byte)(120f * defColorVal), (byte)(120f * defColorVal), alphaColor);
+				color = new Color((byte) (190f * defColorVal), (byte) (120f * defColorVal), (byte) (120f * defColorVal), alphaColor);
 				return rStat.ToString(CultureInfo.InvariantCulture); /* + Lang.tip[39].Value;*/
 			}
 
@@ -229,11 +250,11 @@ namespace Loot
 			// for some reason - is handled automatically, but + is not
 			if (diffStat > 0.0)
 			{
-				color = new Color((byte)(120f * defColorVal), (byte)(190f * defColorVal), (byte)(120f * defColorVal), alphaColor);
+				color = new Color((byte) (120f * defColorVal), (byte) (190f * defColorVal), (byte) (120f * defColorVal), alphaColor);
 				return "+" + diffStat.ToString(CultureInfo.InvariantCulture); /* + Lang.tip[39].Value;*/
 			}
 
-			color = new Color((byte)(190f * defColorVal), (byte)(120f * defColorVal), (byte)(120f * defColorVal), alphaColor);
+			color = new Color((byte) (190f * defColorVal), (byte) (120f * defColorVal), (byte) (120f * defColorVal), alphaColor);
 			return diffStat.ToString(CultureInfo.InvariantCulture); /* + Lang.tip[39].Value;*/
 			//if (num12 < 0.0)
 			//{
@@ -260,12 +281,12 @@ namespace Loot
 				// the item with just the modifiers applied
 //				var poolItem = baseItem.CloneWithModdedDataFrom(item);
 //				GetItemInfo(poolItem)?.ModifierPool.ApplyModifiers(poolItem);
-				
+
 				// the item with just the prefix applied
 				var prefixItem = baseItem.Clone();
 				prefixItem.Prefix(item.prefix);
-				
-				
+
+
 				//var info = GetItemInfo(poolItem);
 				//if (!info.CustomReforgeMode.HasFlag(CustomReforgeMode.Vanilla))
 				//{
@@ -277,7 +298,7 @@ namespace Loot
 				//		EMMCustomReforge?.Invoke(poolItem.modItem, null);
 				//	}
 				//}
-				
+
 				try
 				{
 					foreach (var vttl in vanillaTooltips)
@@ -294,7 +315,7 @@ namespace Loot
 						//		"PrefixAccCritChance", "PrefixAccDamage", "PrefixAccMoveSpeed", "PrefixAccMeleeSpeed"
 						//	};
 
-						if (vttl.Name.Equals("PrefixDamage") )
+						if (vttl.Name.Equals("PrefixDamage"))
 						{
 							if (baseItem.damage > 0)
 								newTT = GetPrefixNormString(baseItem.damage, prefixItem.damage, ref outNumber, ref newC);
@@ -303,12 +324,12 @@ namespace Loot
 						}
 						else if (vttl.Name.Equals("PrefixSpeed"))
 						{
-							if (baseItem.useAnimation <=  0)
+							if (baseItem.useAnimation <= 0)
 								newTT = GetPrefixNormString(baseItem.useAnimation, prefixItem.useAnimation, ref outNumber, ref newC);
 							else
 								newTT = GetPrefixNormString(prefixItem.useAnimation, baseItem.useAnimation, ref outNumber, ref newC);
 						}
-						else if (vttl.Name.Equals("PrefixCritChance") )
+						else if (vttl.Name.Equals("PrefixCritChance"))
 						{
 							if (baseItem.crit <= 0)
 								newTT = GetPrefixNormString(baseItem.crit, prefixItem.crit, ref outNumber, ref newC);
@@ -323,9 +344,9 @@ namespace Loot
 								int alphaColor = Main.mouseTextColor;
 								newTT = GetPrefixNormString(baseItem.mana, prefixItem.mana, ref outNumber, ref newC);
 								if (prefixItem.mana < baseItem.mana)
-									newC = new Color((byte)(120f * defColorVal), (byte)(190f * defColorVal), (byte)(120f * defColorVal), alphaColor);
+									newC = new Color((byte) (120f * defColorVal), (byte) (190f * defColorVal), (byte) (120f * defColorVal), alphaColor);
 								else
-									newC = new Color((byte)(190f * defColorVal), (byte)(120f * defColorVal), (byte)(120f * defColorVal), alphaColor);
+									newC = new Color((byte) (190f * defColorVal), (byte) (120f * defColorVal), (byte) (120f * defColorVal), alphaColor);
 							}
 						}
 						else if (vttl.Name.Equals("PrefixSize"))
@@ -371,6 +392,7 @@ namespace Loot
 				}
 				catch (Exception e)
 				{
+					// Hopefully never happens
 					Main.NewTextMultiline(e.ToString());
 				}
 				// RECALC END
@@ -401,17 +423,30 @@ namespace Loot
 					tooltips[i] = namelayer;
 				}
 
+				// Insert modifier rarity
 				i = tooltips.Count;
-				tooltips.Insert(i, new TooltipLine(mod, "Modifier:Name", $"[{pool.Rarity.Name}]") { overrideColor = pool.Rarity.Color * Main.inventoryScale });
+				tooltips.Insert(i, new TooltipLine(mod, "Loot: Modifier:Rarity", $"[{pool.Rarity.Name}]") {overrideColor = pool.Rarity.Color * Main.inventoryScale});
 
+				// Insert lines
 				foreach (var ttcol in pool.Description)
-					foreach (var tt in ttcol)
-						tooltips.Insert(++i, new TooltipLine(mod, $"Modifier:Description:{i}", tt.Text) { overrideColor = (tt.Color ?? Color.White) * Main.inventoryScale });
+				foreach (var tt in ttcol)
+				{
+					tooltips.Insert(++i, new TooltipLine(mod, $"Loot: Modifier:Line:{i}", tt.Text) {overrideColor = (tt.Color ?? Color.White) * Main.inventoryScale});
+				}
 
-				foreach (var e in pool.ActiveModifiers)
-					e.ModifyTooltips(item, tooltips);
+				// Insert sealed notation
+				if (SealedModifiers)
+				{
+					var ttl = new TooltipLine(mod, "Loot: Modifier:Sealed", "Modifiers cannot be changed")
+					{
+						overrideColor = Color.Cyan
+					};
+					tooltips.Insert(++i, ttl);
+				}
+
+				// Call modify tooltips
+				foreach (var e in pool.ActiveModifiers) e.ModifyTooltips(item, tooltips);
 			}
 		}
 	}
-
 }

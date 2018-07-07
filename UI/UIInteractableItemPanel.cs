@@ -81,7 +81,7 @@ namespace Loot.UI
 			}
 		}
 
-		public virtual bool CanTakeItem(Item item) => true;
+		public virtual bool CanTakeItem(Item item) => !item.IsAir;
 
 		public virtual void PostOnRightClick()
 		{

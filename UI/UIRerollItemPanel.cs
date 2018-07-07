@@ -13,11 +13,11 @@ namespace Loot.UI
 			this.HintOnHover = " (click to take take item)";
 		}
 
-		public override bool CanTakeItem(Item item) => item.IsModifierRollableItem();
+		public override bool CanTakeItem(Item item) => base.CanTakeItem(item) && item.IsModifierRollableItem() && !EMMItem.GetItemInfo(item).SealedModifiers;
 
 		public override void PostOnClick(UIMouseEvent evt, UIElement e)
 		{
-			Loot.Instance.cubeUI.UpdateModifierLines();
+			Loot.Instance.CubeRerollUI.UpdateModifierLines();
 		}
 	}
 }

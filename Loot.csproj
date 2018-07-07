@@ -76,6 +76,7 @@
   <ItemGroup>
     <Compile Include="ArmorItemHack.cs" />
     <Compile Include="Core\Cubes\BasicCube.cs" />
+    <Compile Include="Core\Cubes\CubeOfSealing.cs" />
     <Compile Include="Core\Cubes\CubeShop.cs" />
     <Compile Include="Core\Cubes\CubeUIExtensions.cs" />
     <Compile Include="Core\Cubes\MagicalCube.cs" />
@@ -155,12 +156,16 @@
     <Compile Include="Rarities\UncommonRarity.cs" />
     <Compile Include="Sounds\Custom\UISounds.cs" />
     <Compile Include="Sounds\SoundHelper.cs" />
-    <Compile Include="UI\CubeUI.cs" />
+    <Compile Include="UI\CubeRerollUI.cs" />
+    <Compile Include="UI\CubeSealUI.cs" />
+    <Compile Include="UI\DraggableUIState.cs" />
     <Compile Include="UI\UICubeItemPanel.cs" />
     <Compile Include="UI\UIInteractableItemPanel.cs" />
     <Compile Include="UI\UIItemPanel.cs" />
     <Compile Include="UI\UIModifierPanel.cs" />
     <Compile Include="UI\UIRerollItemPanel.cs" />
+    <Compile Include="UI\UISealItemPanel.cs" />
+    <Compile Include="UI\VisibilityUI.cs" />
     <Compile Include="UnitTests.cs" />
   </ItemGroup>
   <ItemGroup>

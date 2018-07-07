@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Diagnostics.CodeAnalysis;
 using System.IO;
 using Loot.UI;
 using Microsoft.Xna.Framework;
@@ -16,7 +17,9 @@ using Terraria.UI;
 
 namespace Loot
 {
-	public class Loot : Mod
+	[SuppressMessage("ReSharper", "InconsistentNaming")]
+	[SuppressMessage("ReSharper", "IdentifierTypo")]
+	public sealed class Loot : Mod
 	{
 		internal static Loot Instance;
 
@@ -24,8 +27,10 @@ namespace Loot
 		public override string Name => "Loot";
 #endif
 
-		private UserInterface cubeInterface;
-		internal CubeUI cubeUI;
+		// 2 interfaces or 1?
+		internal UserInterface CubeInterface;
+		internal CubeRerollUI CubeRerollUI;
+		internal CubeSealUI CubeSealUI;
 
 		public Loot()
 		{
@@ -51,10 +56,13 @@ namespace Loot
 
 			if (!Main.dedServ)
 			{
-				cubeUI = new CubeUI();
-				cubeUI.Activate();
-				cubeInterface = new UserInterface();
-				cubeInterface.SetState(cubeUI);
+				CubeRerollUI = new CubeRerollUI();
+				CubeRerollUI.Activate();
+
+				CubeSealUI = new CubeSealUI();
+				CubeSealUI.Activate();
+
+				CubeInterface = new UserInterface();
 			}
 		}
 
@@ -81,12 +89,11 @@ namespace Loot
 			//}
 		}
 
+		private GameTime _lastUpdateUIGameTime;
 		public override void UpdateUI(GameTime gameTime)
 		{
-			if (cubeInterface != null && CubeUI.Visible)
-			{
-				cubeInterface.Update(gameTime);
-			}
+			_lastUpdateUIGameTime = gameTime;
+			if (CubeInterface?.CurrentState != null) CubeInterface.Update(gameTime);
 		}
 
 		public override void ModifyInterfaceLayers(List<GameInterfaceLayer> layers)
@@ -98,10 +105,13 @@ namespace Loot
 					"Loot: CubeUI",
 					delegate
 					{
-						if (CubeUI.Visible)
+						if (CubeInterface?.CurrentState is VisibilityUI 
+						    && (CubeInterface.CurrentState as VisibilityUI).Visible 
+						    && _lastUpdateUIGameTime != null)
 						{
-							cubeUI.Draw(Main.spriteBatch);
+							CubeInterface.Draw(Main.spriteBatch, _lastUpdateUIGameTime);
 						}
+
 						return true;
 					},
 					InterfaceScaleType.UI));

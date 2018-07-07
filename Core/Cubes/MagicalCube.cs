@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using Loot.UI;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Input;
@@ -9,13 +10,30 @@ namespace Loot.Core.Cubes
 {
 	public enum CubeTier
 	{
-		Basic
+		TierI,
+		TierII,
+		TierIII
 	}
 
 	public abstract class MagicalCube : ModItem
 	{
 		protected abstract string CubeName { get; }
-		protected abstract CubeTier Tier { get; }
+		protected CubeTier Tier = CubeTier.TierIII;
+		protected virtual bool DisplayTier => true;
+
+		public static string GetTierText(CubeTier tier)
+		{
+			switch (tier)
+			{
+				default:
+				case CubeTier.TierIII:
+					return "Tier III";
+				case CubeTier.TierII:
+					return "Tier II";
+				case CubeTier.TierI:
+					return "Tier I";
+			}
+		}
 
 //		public override string Texture => (GetType().Namespace + ".MagicalCube").Replace('.', '/');
 
@@ -39,7 +57,7 @@ namespace Loot.Core.Cubes
 		protected virtual void SafeStaticDefaults()
 		{
 		}
-		
+
 		protected virtual void SafeDefaults()
 		{
 		}
@@ -48,16 +66,28 @@ namespace Loot.Core.Cubes
 
 		public override void RightClick(Player player)
 		{
-			if (!CubeUI.Visible || CubeUI.Visible && Loot.Instance.cubeUI._rerollItemPanel.item.IsAir)
+			Loot.Instance.CubeRerollUI._cubePanel.item.SetDefaults(item.type);
+			Loot.Instance.CubeRerollUI._cubePanel.RecalculateStack();
+
+			if (!Loot.Instance.CubeRerollUI.Visible || Loot.Instance.CubeRerollUI.Visible && Loot.Instance.CubeRerollUI._rerollItemPanel.item.IsAir)
 			{
-				CubeUI.ToggleUI();
+				Loot.Instance.CubeRerollUI.ToggleUI(Loot.Instance.CubeInterface, Loot.Instance.CubeRerollUI);
 			}
-			
-			Loot.Instance.cubeUI._cubePanel.item.SetDefaults(item.type);
-			Loot.Instance.cubeUI._cubePanel.RecalculateStack();
-			
+
 			// Must be after recalc, otherwise it affects the calculated stack
 			item.stack++;
+		}
+
+		public override void ModifyTooltips(List<TooltipLine> tooltips)
+		{
+			if (DisplayTier)
+			{
+				TooltipLine ttl = new TooltipLine(mod, "Loot: CubeTier", $"{GetTierText(Tier)}")
+				{
+					overrideColor = Color.Cyan
+				};
+				tooltips.Add(ttl);
+			}
 		}
 	}
 }
