@@ -20,6 +20,18 @@ namespace Loot.UI
 		internal UIInteractableItemPanel _itemPanel;
 		private const float padding = 5f;
 
+		public override bool IsItemValidForUISlot(Item item)
+		{
+			return _itemPanel != null && _itemPanel.CanTakeItem(item);
+		}
+		
+		public override bool IsSlottedItemInCubeUI()
+		{
+			return _itemPanel != null && !_itemPanel.item.IsAir && EMMItem.GetItemInfo(_itemPanel.item).SlottedInCubeUI;
+		}
+
+		public override Item SlottedItem => _itemPanel.item;
+
 		internal void RecalculateCubeCount()
 		{
 			_cubeCount = Main.LocalPlayer.inventory.Where(x => x.modItem is CubeOfSealing).Sum(x => x.stack);

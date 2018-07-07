@@ -49,6 +49,18 @@ namespace Loot.UI
 				ui.UpdateModifierLines();
 			}
 		}
+		
+		public override bool IsItemValidForUISlot(Item item)
+		{
+			return _rerollItemPanel != null && _rerollItemPanel.CanTakeItem(item);
+		}
+
+		public override bool IsSlottedItemInCubeUI()
+		{
+			return _rerollItemPanel != null && !_rerollItemPanel.item.IsAir &&  EMMItem.GetItemInfo(_rerollItemPanel.item).SlottedInCubeUI;
+		}
+		
+		public override Item SlottedItem => _rerollItemPanel.item;
 
 		public override void OnInitialize()
 		{

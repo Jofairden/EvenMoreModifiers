@@ -11,14 +11,19 @@ namespace Loot.Core.Cubes
 {
 	public class CubeUIExtensions : GlobalItem
 	{
-		public override bool CanRightClick(Item item) =>
-			!PlayerInput.WritingText
-			&& Main.hasFocus
-			&& Main.keyState.IsKeyDown(Keys.LeftControl)
-			&& Loot.Instance.CubeInterface.CurrentState != null
-			&& ((Loot.Instance.CubeInterface.CurrentState as VisibilityUI)?.Visible ?? false)
-			&& Loot.Instance.CubeInterface.CurrentState is CubeUI;
+		public override bool CanRightClick(Item item)
+		{
+			if (PlayerInput.WritingText
+			    || !Main.hasFocus
+			    || !Main.keyState.IsKeyDown(Keys.LeftControl)
+			    || Loot.Instance.CubeInterface.CurrentState == null) 
+				return false;
 
+			var ui = Loot.Instance.CubeInterface.CurrentState as CubeUI;
+			if (ui == null) return false;
+
+			return ui.Visible && ui.IsItemValidForUISlot(item);
+		}
 
 		// Auto slot item in UI if possible
 		public override void RightClick(Item item, Player player)
@@ -73,30 +78,17 @@ namespace Loot.Core.Cubes
 		{
 			var ui = Loot.Instance.CubeInterface;
 
-			if (ui?.CurrentState != null)
+			var cubeUI = ui?.CurrentState as CubeUI;
+			if (cubeUI != null)
 			{
-				if (ui.CurrentState is CubeSealUI || ui.CurrentState is CubeRerollUI)
-				{
-					if (ui.CurrentState is CubeSealUI)
-					{
-						var state = (CubeSealUI) ui.CurrentState;
-						if (!state._itemPanel.CanTakeItem(item)
-						    || !state._itemPanel.item.IsAir && EMMItem.GetItemInfo(state._itemPanel.item).SlottedInCubeUI)
-							return;
-					}
-					else if (ui.CurrentState is CubeRerollUI)
-					{
-						var state = (CubeRerollUI) ui.CurrentState;
-						if (!state._rerollItemPanel.CanTakeItem(item)
-						    || !state._rerollItemPanel.item.IsAir && EMMItem.GetItemInfo(state._rerollItemPanel.item).SlottedInCubeUI)
-							return;
-					}
+				if (!cubeUI.IsItemValidForUISlot(item)
+				    || cubeUI.IsSlottedItemInCubeUI()) 
+					return;
 
-					var i = tooltips.FindIndex(x => x.mod.Equals("Terraria") && x.Name.Equals("ItemName"));
-					if (i != -1)
-					{
-						tooltips[i].text += " (control right click to slot into UI)";
-					}
+				var i = tooltips.FindIndex(x => x.mod.Equals("Terraria") && x.Name.Equals("ItemName"));
+				if (i != -1)
+				{
+					tooltips[i].text += " (control right click to slot into UI)";
 				}
 			}
 		}

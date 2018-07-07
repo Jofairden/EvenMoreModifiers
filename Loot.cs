@@ -105,8 +105,7 @@ namespace Loot
 					"Loot: CubeUI",
 					delegate
 					{
-						if (CubeInterface?.CurrentState is VisibilityUI 
-						    && (CubeInterface.CurrentState as VisibilityUI).Visible 
+						if (((CubeInterface.CurrentState as CubeUI)?.Visible ?? false)
 						    && _lastUpdateUIGameTime != null)
 						{
 							CubeInterface.Draw(Main.spriteBatch, _lastUpdateUIGameTime);
