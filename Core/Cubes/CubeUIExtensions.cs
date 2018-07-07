@@ -95,7 +95,7 @@ namespace Loot.Core.Cubes
 					var i = tooltips.FindIndex(x => x.mod.Equals("Terraria") && x.Name.Equals("ItemName"));
 					if (i != -1)
 					{
-						tooltips[i].text += " (control click to slot into UI)";
+						tooltips[i].text += " (control right click to slot into UI)";
 					}
 				}
 			}
