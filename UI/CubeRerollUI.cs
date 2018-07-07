@@ -125,6 +125,11 @@ namespace Loot.UI
 				// Refresh item
 				Item newItem = new Item();
 				newItem.netDefaults(_rerollItemPanel.item.type);
+				// Clone to preserve modded data
+				newItem = newItem.CloneWithModdedDataFrom(_rerollItemPanel.item);
+				EMMItem.GetItemInfo(newItem).ModifierPool = null; // unload previous pool
+				
+				// Restore prefix
 				if (_rerollItemPanel.item.prefix > 0)
 					newItem.Prefix(_rerollItemPanel.item.prefix);
 
