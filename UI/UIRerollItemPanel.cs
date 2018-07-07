@@ -10,7 +10,7 @@ namespace Loot.UI
 			base(netID, stack, hintTexture, hintText)
 		{
 			this.RightClickFunctionalityEnabled = false;
-			this.HintOnHover = " (click to take take item)";
+			this.HintOnHover = " (click to take item)";
 		}
 
 		public override bool CanTakeItem(Item item) => base.CanTakeItem(item) && item.IsModifierRollableItem() && !EMMItem.GetItemInfo(item).SealedModifiers;
