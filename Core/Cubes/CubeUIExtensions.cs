@@ -16,28 +16,21 @@ namespace Loot.Core.Cubes
 			if (PlayerInput.WritingText
 			    || !Main.hasFocus
 			    || !Main.keyState.IsKeyDown(Keys.LeftControl)
-			    || Loot.Instance.CubeInterface.CurrentState == null) 
+			    || Loot.Instance.CubeInterface.CurrentState == null)
 				return false;
 
 			var ui = Loot.Instance.CubeInterface.CurrentState as CubeUI;
 			if (ui == null) return false;
 
-			return ui.Visible && ui.IsItemValidForUISlot(item);
-		}
-
-		// Auto slot item in UI if possible
-		public override void RightClick(Item item, Player player)
-		{
-			if (!(item.modItem is MagicalCube))
+			if (ui.Visible && ui.IsItemValidForUISlot(item) && !(item.modItem is MagicalCube))
 			{
-				var ui = Loot.Instance.CubeInterface;
-
 				// ReSharper disable once ConvertIfStatementToSwitchStatement
 				// ^ needs C#7
-				if (ui.CurrentState is CubeRerollUI) RerollUITakeItem(ui.CurrentState as CubeRerollUI, item);
-				else if (ui.CurrentState is CubeSealUI) SealUITakeItem(ui.CurrentState as CubeSealUI, item);
-				else item.stack++;
+				if (ui is CubeRerollUI) RerollUITakeItem(ui as CubeRerollUI, item);
+				else if (ui is CubeSealUI) SealUITakeItem(ui as CubeSealUI, item);
 			}
+
+			return false;
 		}
 
 		private void RerollUITakeItem(CubeRerollUI ui, Item item)
@@ -64,12 +57,10 @@ namespace Loot.Core.Cubes
 				Main.PlaySound(SoundID.Grab);
 				itemPanel.item = item.Clone();
 				EMMItem.GetItemInfo(itemPanel.item).SlottedInCubeUI = true;
+				// TurnToAir causes errors later in the chain
+				item.stack = 0;
 
 				extraAction?.Invoke();
-			}
-			else
-			{
-				item.stack++;
 			}
 		}
 
@@ -82,7 +73,7 @@ namespace Loot.Core.Cubes
 			if (cubeUI != null)
 			{
 				if (!cubeUI.IsItemValidForUISlot(item)
-				    || cubeUI.IsSlottedItemInCubeUI()) 
+				    || cubeUI.IsSlottedItemInCubeUI())
 					return;
 
 				var i = tooltips.FindIndex(x => x.mod.Equals("Terraria") && x.Name.Equals("ItemName"));
