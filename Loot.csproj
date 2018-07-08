@@ -80,6 +80,9 @@
     <Compile Include="Core\Cubes\CubeShop.cs" />
     <Compile Include="Core\Cubes\CubeUIExtensions.cs" />
     <Compile Include="Core\Cubes\MagicalCube.cs" />
+    <Compile Include="Core\ModifierContext.cs" />
+    <Compile Include="Core\ModifierProperties.cs" />
+    <Compile Include="Core\ModifierTooltipLine.cs" />
     <Compile Include="EMMPlayer.cs" />
     <Compile Include="EMMWorld.cs" />
     <Compile Include="ItemHack.cs" />

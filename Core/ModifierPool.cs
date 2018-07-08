@@ -11,77 +11,6 @@ using Terraria.Utilities;
 namespace Loot.Core
 {
 	/// <summary>
-	/// Defines a method for a context in which a Modifier might be rolled
-	/// Used in <see cref="ModifierContext"/>
-	/// </summary>
-	public enum ModifierContextMethod
-	{
-		OnReforge,
-		OnCraft,
-		SetupStartInventory,
-		WorldGeneration,
-		FirstLoad,
-		OnPickup,
-		Custom,
-		OnCubeReroll
-	}
-
-	/// <summary>
-	/// Defines a context in which a Modifier might be rolled
-	/// Which fields are available (not null) depends on the method
-	/// <list type="table">
-	/// 
-	/// <listheader>
-	///	<term>Method</term>
-	/// <term>Available fields</term>
-	/// </listheader>
-	/// 
-	/// <item>
-	/// <term><see cref="ModifierContextMethod.OnReforge"/> and <see cref="ModifierContextMethod.SetupStartInventory"/></term>
-	/// <term>
-	/// <list type="number">
-	/// <term><see cref="Method"/></term>
-	/// <term><see cref="Item"/></term>
-	/// <term><see cref="Player"/></term>
-	/// </list>
-	/// </term>
-	/// </item>
-	/// 
-	/// <item>
-	/// <term><see cref="ModifierContextMethod.OnCraft"/></term>
-	/// <term>
-	/// <list type="number">
-	/// <term><see cref="Method"/></term>
-	/// <term><see cref="Item"/></term>
-	/// <term><see cref="Player"/></term>
-	/// <term><see cref="Recipe"/></term>
-	/// </list>
-	/// </term>
-	/// </item>
-	/// 
-	/// <item>
-	/// <term><see cref="ModifierContextMethod.WorldGeneration"/>, <see cref="ModifierContextMethod.FirstLoad"/></term>
-	/// <term>
-	/// <list type="number">
-	/// <term><see cref="Method"/></term>
-	/// <term><see cref="Item"/></term>
-	/// <term><see cref="CustomData"/> - The data available is "chestData" which holds a tuple of chest.x and chest.y position</term>
-	/// </list>
-	/// </term>
-	/// </item>
-	/// </list>
-	/// </summary>
-	public struct ModifierContext
-	{
-		public IDictionary<string, object> CustomData;
-		public ModifierContextMethod Method;
-		public Player Player;
-		public NPC NPC;
-		public Item Item;
-		public Recipe Recipe;
-	}
-
-	/// <summary>
 	/// Defines a modifier pool. A modifier pool holds a certain amount of effects in an array
 	/// It allows to roll a 'themed' item if it hits an already defined pool
 	/// Up to 4 effects are drawn from the pool, and activated
@@ -126,41 +55,68 @@ namespace Loot.Core
 		public ModifierPool AsNewInstance()
 			=> (ModifierPool) Activator.CreateInstance(GetType());
 
+		/// <summary>
+		/// Gets the next appropriate rarit for this pool and applies it and returns it.
+		/// </summary>
+		/// <returns></returns>
 		internal ModifierRarity UpdateRarity()
 		{
 			Rarity = EMMLoader.GetPoolRarity(this);
 			return Rarity;
 		}
 
+		// Forces the next roll to succeed
+		private bool _forceNextRoll;
+
 		/// <summary>
 		/// Roll active modifiers, can roll up to 4 maximum effects
 		/// Returns if any modifiers were activated
 		/// </summary>
-		internal bool RollModifiers(ModifierContext ctx)
+		internal bool RollModifiers(ModifierContext ctx, int maxRollableLines = 4)
 		{
+			if (maxRollableLines <= 0) maxRollableLines = 1;
+			else if (maxRollableLines > 4) maxRollableLines = 4;
+			
+			// Firstly, prepare a WeightedRandom list with modifiers
+			// that are rollable in this context
 			WeightedRandom<Modifier> wr = new WeightedRandom<Modifier>();
 			List<Modifier> list = new List<Modifier>();
 			foreach (var e in RollableModifiers(ctx))
 				wr.Add(e, e.Properties.RollChance);
 
-			for (int i = 0; i < 4; ++i)
+			// Up to 4 times, try rolling a mod
+			for (int i = 0; i < maxRollableLines; ++i)
 			{
-				if (wr.elements.Count <= 0 || i > 0 && Main.rand.NextFloat() > ModifierRollChance(i))
+				// If there are no mods left, or we fail the roll, break.
+				if (wr.elements.Count <= 0 || !_forceNextRoll && i > 0 && Main.rand.NextFloat() > ModifierRollChance(i))
 					break;
 
+				_forceNextRoll = false;
+				
+				// Get a next weighted random mod
+				// Clone the mod (new instance) and roll it's properties, then roll it
 				Modifier e = wr.Get();
 				Modifier eClone = (Modifier) e.Clone();
 				eClone.Properties = eClone.GetModifierProperties(ctx.Item).RollMagnitudeAndPower();
-				eClone.Roll(ctx);
-
-				if (eClone.PostRoll(ctx, list))
+				eClone.Roll(ctx, list);
+				
+				// If the mod deemed to be unable to be added,
+				// Force that the next roll is successful
+				// (no RNG on top of RNG)
+				if (!eClone.PostRoll(ctx, list))
 				{
-					list.Add(eClone);
-					if (eClone.Properties.UniqueRoll)
-					{
-						wr.elements.Remove(new Tuple<Modifier, double>(eClone, eClone.Properties.RollChance));
-						wr.needsRefresh = true;
-					}
+					_forceNextRoll = true;
+					continue;
+				}
+
+				// The mod can be added
+				list.Add(eClone);
+				
+				// If it is a unique modifier, remove it from the list to be rolled
+				if (eClone.Properties.UniqueModifier)
+				{
+					wr.elements.Remove(new Tuple<Modifier, double>(eClone, eClone.Properties.RollChance));
+					wr.needsRefresh = true;
 				}
 			}
 
@@ -169,9 +125,13 @@ namespace Loot.Core
 		}
 
 		//internal float ModifierRollChance(int len) => 0.5f / (float)Math.Pow(2, len);
-		internal float ModifierRollChance(int len) => 0.5f;
+		
+		// @TODO must be adjustable by mechanic
+		internal float ModifierRollChance(int len) 
+			=> 0.5f;
 
-		internal static bool IsValidFor(Item item) => item.IsModifierRollableItem();
+		internal static bool IsValidFor(Item item) 
+			=> item.IsModifierRollableItem();
 
 		/// <summary>
 		/// Returns if this pool can roll in the given context. 
@@ -190,7 +150,8 @@ namespace Loot.Core
 		/// <summary>
 		/// By default returns if this pool matches the given <see cref="ModifierRarity"/>'s <see cref="ModifierRarity.RequiredRarityLevel"/>
 		/// </summary>
-		public virtual bool MatchesRarity(ModifierRarity rarity) => TotalRarityLevel >= rarity.RequiredRarityLevel;
+		public virtual bool MatchesRarity(ModifierRarity rarity) 
+			=> TotalRarityLevel >= rarity.RequiredRarityLevel;
 
 		/// <summary>
 		/// Will run <see cref="Modifier.Apply"/> for all modifiers in <see cref="ActiveModifiers"/>

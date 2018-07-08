@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.IO;
 using Loot.Core;
 using Microsoft.Xna.Framework;
@@ -21,9 +22,9 @@ namespace Loot.Modifiers.WeaponModifiers
 
 		private bool _duringDay;
 
-		public override void Roll(ModifierContext ctx)
+		public override void Roll(ModifierContext ctx, IEnumerable<Modifier> rolledModifiers)
 		{
-			base.Roll(ctx);
+			base.Roll(ctx, rolledModifiers);
 			_duringDay = Main.rand.NextBool();
 		}
 

@@ -41,8 +41,7 @@ namespace Loot
 		// Non saved
 		public bool JustTinkerModified; // is just tinker modified: e.g. armor hacked
 		public bool SlottedInCubeUI; // is currently in cube UI slot
-
-
+		
 		public const int SaveVersion = 2;
 		//public CustomReforgeMode CustomReforgeMode = CustomReforgeMode.ForceWeapon;
 
@@ -55,6 +54,7 @@ namespace Loot
 			// Now we have actually rolled
 			HasRolled = true;
 
+			// @TODO roll mechanics
 			// Try getting a weighted pool, or roll all modifiers at random
 			bool rollPredefinedPool = Main.rand.NextFloat() <= 0.25f;
 			bool canRollRandom = !rollPredefinedPool;
@@ -82,6 +82,7 @@ namespace Loot
 			}
 			else
 			{
+				// The possible modifiers are unloaded to save memory
 				ModifierPool.Modifiers = null;
 				ModifierPool.UpdateRarity();
 			}

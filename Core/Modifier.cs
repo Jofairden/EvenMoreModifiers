@@ -10,133 +10,6 @@ using Terraria.ModLoader.IO;
 namespace Loot.Core
 {
 	/// <summary>
-	/// Defines a tooltip line of a modifier
-	/// A modifier can have multiple lines
-	/// </summary>
-	public struct ModifierTooltipLine
-	{
-		public string Text;
-		public Color? Color;
-	}
-
-	/// <summary>
-	/// Defines the properties of a modifier
-	/// </summary>
-	public class ModifierProperties
-	{
-		public float MinMagnitude { get; private set; }
-		public float MaxMagnitude { get; private set; }
-		public float MagnitudeStrength { get; private set; }
-		public float BasePower { get; private set; }
-		public float RarityLevel { get; private set; }
-		public float RollChance { get; private set; }
-		public int RoundPrecision { get; private set; }
-		public float Magnitude { get; private set; }
-		private float _power;
-		public float Power
-		{
-			get { return _power; }
-			private set
-			{
-				_power = value;
-				RoundedPower = (float)Math.Round(value, RoundPrecision);
-			}
-		}
-		public float RoundedPower
-		{
-			get;
-			private set;
-		}
-		public bool UniqueRoll { get; private set; }
-		public bool MergeTooltips { get; private set; }
-
-		public ModifierProperties(float minMagnitude = 1f, float maxMagnitude = 1f, float magnitudeStrength = 1f, float basePower = 1f, float rarityLevel = 1f, float rollChance = 1f, int roundPrecision = 0, bool uniqueRoll = false, bool mergeTooltips = false)
-		{
-			Set(minMagnitude, maxMagnitude, magnitudeStrength, basePower, rarityLevel, rollChance, roundPrecision);
-		}
-
-		public ModifierProperties Set(float? minMagnitude = null, float? maxMagnitude = null, float? magnitudeStrength = null, float? basePower = null, float? rarityLevel = null, float? rollChance = null, int? roundPrecision = null, bool? uniqueRoll = null, bool? mergeTooltips = null)
-		{
-			MinMagnitude = minMagnitude ?? MinMagnitude;
-			MaxMagnitude = maxMagnitude ?? MaxMagnitude;
-			MagnitudeStrength = magnitudeStrength ?? MagnitudeStrength;
-			BasePower = basePower ?? BasePower;
-			RarityLevel = rarityLevel ?? RarityLevel;
-			RollChance = rollChance ?? RollChance;
-			RoundPrecision = roundPrecision ?? RoundPrecision;
-			UniqueRoll = uniqueRoll ?? UniqueRoll;
-			MergeTooltips = mergeTooltips ?? MergeTooltips;
-			return this;
-		}
-
-		public ModifierProperties RollMagnitudeAndPower(float? magnitude = null, float? power = null)
-		{
-			/* Roll power TODO support /luck/ stat */
-			Magnitude = magnitude ?? (MinMagnitude + Main.rand.NextFloat() * (MaxMagnitude - MinMagnitude)) * MagnitudeStrength;
-			Power = power ?? BasePower * Magnitude;
-			return this;
-		}
-
-		public virtual void NetReceive(Item item, BinaryReader reader)
-		{
-		}
-
-		internal static ModifierProperties _NetReceive(Item item, BinaryReader reader)
-		{
-			var p = new ModifierProperties().RollMagnitudeAndPower(reader.ReadSingle(), reader.ReadSingle());
-			p.NetReceive(item, reader);
-			return p;
-		}
-
-		public virtual void NetSend(Item item, BinaryWriter writer)
-		{
-		}
-
-		internal static void _NetSend(Item item, ModifierProperties properties, BinaryWriter writer)
-		{
-			writer.Write(properties.Magnitude);
-			writer.Write(properties.Power);
-			properties.NetSend(item, writer);
-		}
-
-		public virtual void Save(Item item, TagCompound tag)
-		{
-		}
-
-		internal static TagCompound _Save(Item item, ModifierProperties properties)
-		{
-			var tc = new TagCompound
-			{
-				{"Magnitude", properties.Magnitude},
-				{"Power", properties.Power},
-				{"ModifierPropertiesSaveVersion", 1 }
-			};
-			properties.Save(item, tc);
-			return tc;
-		}
-
-		public virtual void Load(Item item, TagCompound tag)
-		{
-		}
-
-		internal static ModifierProperties _Load(Item item, TagCompound tag)
-		{
-			ModifierProperties prop;
-			try
-			{
-				prop = new ModifierProperties().RollMagnitudeAndPower(tag.GetFloat("Magnitude"), tag.GetFloat("Power"));
-			}
-			catch (Exception)
-			{
-				// Something was wrong with the TC, roll new values
-				prop = new ModifierProperties().RollMagnitudeAndPower();
-			}
-			prop.Load(item, tag);
-			return prop;
-		}
-	}
-
-	/// <summary>
 	/// Defines a modifier, which is an unloaded GlobalItem
 	/// Making it a GlobalItem gives easy access to all hooks
 	/// The various hooks are called by our own GlobalItem
@@ -160,7 +33,7 @@ namespace Loot.Core
 			=> EMMLoader.GetModifier(type);
 
 		public Modifier AsNewInstance()
-			=> (Modifier)Activator.CreateInstance(GetType());
+			=> (Modifier) Activator.CreateInstance(GetType());
 
 		public virtual ModifierProperties GetModifierProperties(Item item)
 			=> new ModifierProperties();
@@ -171,6 +44,7 @@ namespace Loot.Core
 		*/
 		protected internal bool _CanRoll(ModifierContext ctx)
 		{
+			// Properties are pre-loaded before CanRoll as they may be needed for checks
 			Properties = GetModifierProperties(ctx.Item);
 			return ctx.Item.maxStack <= 1 && CanRoll(ctx);
 		}
@@ -183,16 +57,19 @@ namespace Loot.Core
 
 		/// <summary>
 		/// Allows modders to do something when the modifier is rolled in the given context
+		/// The passed rolledModifiers are already rolled modifiers on the item
 		/// </summary>
-		public virtual void Roll(ModifierContext ctx)
+		public virtual void Roll(ModifierContext ctx, IEnumerable<Modifier> rolledModifiers)
 		{
 		}
 
 		/// <summary>
 		/// Returns if the modifier will actually be added after it is rolled.
 		/// This is called after <see cref="Roll"/> is called
+		/// This is used to be able to stop a modifier from being added after it has rolled
+		/// If the roll is deemed illicit, the next roll is forced to succeed
 		/// </summary>
-		public virtual bool PostRoll(ModifierContext ctx, IEnumerable<Modifier> rolledMofiers) => true;
+		public virtual bool PostRoll(ModifierContext ctx, IEnumerable<Modifier> rolledModifiers) => true;
 
 		/// <summary>
 		/// Allows modders to do something when this modifier is applied
@@ -213,7 +90,7 @@ namespace Loot.Core
 
 		public new object Clone()
 		{
-			Modifier clone = (Modifier)MemberwiseClone();
+			Modifier clone = (Modifier) MemberwiseClone();
 			clone.Mod = Mod;
 			clone.Type = Type;
 			clone.Properties = Properties;
@@ -251,7 +128,7 @@ namespace Loot.Core
 			Assembly assembly;
 			if (EMMLoader.Mods.TryGetValue(ModName, out assembly))
 			{
-				Modifier m = (Modifier)Activator.CreateInstance(assembly.GetType(Type));
+				Modifier m = (Modifier) Activator.CreateInstance(assembly.GetType(Type));
 				m.Type = ModifierType;
 				m.Mod = ModLoader.GetMod(ModName);
 				m.Properties = m.GetModifierProperties(item).RollMagnitudeAndPower(Properties.Magnitude, Properties.Power);
@@ -320,6 +197,7 @@ namespace Loot.Core
 
 				return null;
 			}
+
 			throw new Exception($"Modifier load error for {modname}");
 		}
 
@@ -335,11 +213,11 @@ namespace Loot.Core
 		{
 			var tag = new TagCompound
 			{
-				{ "Type", modifier.GetType().Name },
+				{"Type", modifier.GetType().Name},
 				//{ "ModifierType", modifier.Type }, //Used to be saved in saveVersion 1
-				{ "ModName", modifier.Mod.Name },
-				{ "ModifierProperties", ModifierProperties._Save(item, modifier.Properties) },
-				{ "ModifierSaveVersion", 2 }
+				{"ModName", modifier.Mod.Name},
+				{"ModifierProperties", ModifierProperties._Save(item, modifier.Properties)},
+				{"ModifierSaveVersion", 2}
 			};
 			modifier.Save(item, tag);
 			return tag;
@@ -349,6 +227,7 @@ namespace Loot.Core
 		public sealed override bool Autoload(ref string name) => false;
 		public sealed override bool InstancePerEntity => true;
 		public sealed override bool CloneNewInstances => true;
+
 		public sealed override void SetDefaults(Item item)
 		{
 			base.SetDefaults(item);
@@ -357,38 +236,50 @@ namespace Loot.Core
 
 		// The following hooks aren't applicable in instanced context, so we seal them here so they can't be used	
 		public sealed override GlobalItem Clone(Item item, Item itemClone) => base.Clone(item, itemClone);
+
 		public sealed override void ExtractinatorUse(int extractType, ref int resultType, ref int resultStack)
 		{
 		}
+
 		public sealed override void CaughtFishStack(int type, ref int stack)
 		{
 		}
+
 		public sealed override void AnglerChat(int type, ref string chat, ref string catchLocation)
 		{
 		}
+
 		public sealed override void ArmorSetShadows(Player player, string set)
 		{
 		}
+
 		public sealed override void ArmorArmGlowMask(int slot, Player drawPlayer, float shadow, ref int glowMask, ref Color color)
 		{
 		}
+
 		public sealed override void DrawArmorColor(EquipType type, int slot, Player drawPlayer, float shadow, ref Color color, ref int glowMask, ref Color glowMaskColor)
 		{
 		}
+
 		public sealed override bool DrawBody(int body) => base.DrawBody(body);
+
 		public sealed override void DrawHair(int head, ref bool drawHair, ref bool drawAltHair)
 		{
 		}
+
 		public sealed override void DrawHands(int body, ref bool drawHands, ref bool drawArms)
 		{
 		}
+
 		public sealed override bool DrawHead(int head) => base.DrawHead(head);
 		public sealed override bool DrawLegs(int legs, int shoes) => base.DrawLegs(legs, shoes);
 		public sealed override Vector2? HoldoutOffset(int type) => base.HoldoutOffset(type);
 		public sealed override Vector2? HoldoutOrigin(int type) => base.HoldoutOrigin(type);
 		public sealed override bool IsAnglerQuestAvailable(int type) => base.IsAnglerQuestAvailable(type);
 		public sealed override string IsArmorSet(Item head, Item body, Item legs) => base.IsArmorSet(head, body, legs);
+
 		public sealed override string IsVanitySet(int head, int body, int legs) => base.IsVanitySet(head, body, legs);
+
 		// If modders wish to save/load data, they should use our custom save and load hooks
 		//public sealed override void Load(Item item, TagCompound tag)
 		//{
@@ -396,26 +287,35 @@ namespace Loot.Core
 		public sealed override void LoadLegacy(Item item, BinaryReader reader)
 		{
 		}
+
 		public sealed override bool NeedsSaving(Item item) => base.NeedsSaving(item);
 		public sealed override GlobalItem NewInstance(Item item) => base.NewInstance(item);
+
 		public sealed override void OpenVanillaBag(string context, Player player, int arg)
 		{
 		}
+
 		public sealed override bool PreOpenVanillaBag(string context, Player player, int arg) => base.PreOpenVanillaBag(context, player, arg);
+
 		public sealed override void PreUpdateVanitySet(Player player, string set)
 		{
 		}
+
 		// If modders wish to save/load data, they should use our custom save and load hooks
 		public sealed override TagCompound Save(Item item) => base.Save(item);
+
 		public sealed override void SetMatch(int armorSlot, int type, bool male, ref int equipSlot, ref bool robes)
 		{
 		}
+
 		public sealed override void UpdateArmorSet(Player player, string set)
 		{
 		}
+
 		public sealed override void UpdateVanitySet(Player player, string set)
 		{
 		}
+
 		public sealed override bool WingUpdate(int wings, Player player, bool inUse) => base.WingUpdate(wings, player, inUse);
 	}
 }

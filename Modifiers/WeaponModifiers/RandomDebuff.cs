@@ -68,18 +68,26 @@ namespace Loot.Modifiers.WeaponModifiers
 			_index = tag.GetAsInt("_index");
 		}
 
-		public override void Roll(ModifierContext ctx)
+		public override void Roll(ModifierContext ctx, IEnumerable<Modifier> rolledModifiers)
 		{
-			base.Roll(ctx);
-			_index = Main.rand.Next(_len);
+			base.Roll(ctx, rolledModifiers);
+
+			// Exclude already rolled random debuffs from the list
+			// Try rolling a new random one
+			var similarModsBuffTypes = rolledModifiers.Where(x => x is RandomDebuff).Cast<RandomDebuff>().Select(x => x.BuffType);
+			var rollableBuffTypes = BuffPairs.Select(x => x.BuffType).Except(similarModsBuffTypes);
+			int randBuffIndex = Main.rand.Next(rollableBuffTypes.Count());
+			_index = BuffPairs.ToList().FindIndex(x => x.BuffType == rollableBuffTypes.ElementAt(randBuffIndex));
 		}
 
 		public override bool PostRoll(ModifierContext ctx, IEnumerable<Modifier> rolledModifiers)
 		{
+			// The roll is only valid, if none other rolled random debuff has the same index
 			return base.PostRoll(ctx, rolledModifiers)
-				&& rolledModifiers
-				.Select(x => x as RandomDebuff)
-				.All(x => x?.GetRolledIndex() != _index);
+			       && _index != -1
+			       && rolledModifiers
+				       .Select(x => x as RandomDebuff)
+				       .All(x => x?.GetRolledIndex() != _index);
 		}
 
 		public override int BuffType => BuffPairs[_index].BuffType;
