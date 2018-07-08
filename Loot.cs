@@ -27,7 +27,6 @@ namespace Loot
 		public override string Name => "Loot";
 #endif
 
-		// 2 interfaces or 1?
 		internal UserInterface CubeInterface;
 		internal CubeRerollUI CubeRerollUI;
 		internal CubeSealUI CubeSealUI;

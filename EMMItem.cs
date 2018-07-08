@@ -37,11 +37,11 @@ namespace Loot
 		public ModifierPool ModifierPool; // the current pool of mods. null if none.
 		public bool HasRolled; // has rolled a pool
 		public bool SealedModifiers; // are modifiers unchangeable
-		
+
 		// Non saved
 		public bool JustTinkerModified; // is just tinker modified: e.g. armor hacked
 		public bool SlottedInCubeUI; // is currently in cube UI slot
-		
+
 
 		public const int SaveVersion = 2;
 		//public CustomReforgeMode CustomReforgeMode = CustomReforgeMode.ForceWeapon;
@@ -183,7 +183,7 @@ namespace Loot
 					Player = Main.LocalPlayer,
 					Recipe = recipe
 				};
-				
+
 				pool = RollNewPool(ctx);
 				pool?.ApplyModifiers(item);
 			}
@@ -202,7 +202,7 @@ namespace Loot
 					Item = item,
 					Player = player
 				};
-				
+
 				pool = RollNewPool(ctx);
 				pool?.ApplyModifiers(item);
 			}
@@ -335,10 +335,21 @@ namespace Loot
 						}
 						else if (vttl.Name.Equals("PrefixCritChance"))
 						{
-							if (baseItem.crit <= 0)
-								newTT = GetPrefixNormString(baseItem.crit, prefixItem.crit, ref outNumber, ref newC);
+							outNumber = prefixItem.crit - baseItem.crit;
+							float defColorVal = Main.mouseTextColor / 255f;
+							int alphaColor = Main.mouseTextColor;
+							newTT = "";
+							if (outNumber >= 0)
+							{
+								newTT += "+";
+								newC = new Color((byte) (120f * defColorVal), (byte) (190f * defColorVal), (byte) (120f * defColorVal), alphaColor);
+							}
 							else
-								newTT = GetPrefixNormString(prefixItem.crit, baseItem.crit, ref outNumber, ref newC);
+							{
+								newC = new Color((byte) (190f * defColorVal), (byte) (120f * defColorVal), (byte) (120f * defColorVal), alphaColor);
+							}
+
+							newTT += outNumber.ToString(CultureInfo.InvariantCulture);
 						}
 						else if (vttl.Name.Equals("PrefixUseMana"))
 						{

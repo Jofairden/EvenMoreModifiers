@@ -17,7 +17,7 @@ namespace Loot.UI
 		private UIPanel _backPanel;
 		private int _cubeCount;
 		private UIImageButton _cubePanel;
-		internal UIInteractableItemPanel _itemPanel;
+		internal UISealItemPanel _itemPanel;
 		private const float padding = 5f;
 
 		public override bool IsItemValidForUISlot(Item item)
