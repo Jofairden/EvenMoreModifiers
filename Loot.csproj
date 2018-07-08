@@ -141,7 +141,6 @@
     <Compile Include="Loot.cs" />
     <Compile Include="LootGlobalNPC.cs" />
     <Compile Include="EMMUtils.cs" />
-    <Compile Include="MagicDice.cs" />
     <Compile Include="ModifierItem.cs" />
     <Compile Include="ModifierPlayer.cs" />
     <Compile Include="Modifiers\WeaponModifier.cs" />
