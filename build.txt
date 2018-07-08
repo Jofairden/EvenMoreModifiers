@@ -6,5 +6,5 @@ hideCode = false
 hideResources = false
 includeSource = true
 languageVersion = 6
-buildIgnore = *.csproj, *.user, *.config, tmp.txt, packages\*, UnitTests.cs, TestResults\*
+buildIgnore = *.csproj, *.user, *.config, tmp.txt, packages\*, UnitTests.cs, TestResults\*, LootTests\*
 includePDB = false

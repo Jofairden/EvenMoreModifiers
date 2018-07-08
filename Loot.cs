@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
 using System.IO;
+using System.Runtime.CompilerServices;
 using Loot.UI;
 using Microsoft.Xna.Framework;
 using Terraria;
@@ -15,6 +16,7 @@ using Terraria.UI;
  * (c) Jofairden 2018
  */
 
+[assembly: InternalsVisibleTo("LootTests")]
 namespace Loot
 {
 	[SuppressMessage("ReSharper", "InconsistentNaming")]

@@ -169,7 +169,6 @@
     <Compile Include="UI\UIRerollItemPanel.cs" />
     <Compile Include="UI\UISealItemPanel.cs" />
     <Compile Include="UI\VisibilityUI.cs" />
-    <Compile Include="UnitTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="build.txt" />

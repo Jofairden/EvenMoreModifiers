@@ -1,24 +1,28 @@
 ﻿using System;
 using System.Linq;
 using System.Reflection;
+using Loot;
 using Loot.Core;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using NUnit.Framework;
+using Terraria;
+using Terraria.ModLoader;
 using Terraria.ModLoader.IO;
+using Assert = NUnit.Framework.Assert;
 
-namespace Loot
+namespace LootTests
 {
-	// @ TODO problem (bug), cannot compile from VS, does not care about buildIgnore
-	//public class EmptyModLoadShell : Mod
-	//{
+	public sealed class EmptyModLoadShell : Mod
+	{
+		public override string Name => "EmptyModShell";
+	}
 
-	//}
-
-	[TestClass]
+	[TestFixture]
 	public class UnitTest
 	{
-		//private EmptyModLoadShell modShell;
+		private EmptyModLoadShell _modShell;
 
-		[TestMethod]
+		[Test]
 		public void TestModifierProperties()
 		{
 			//Assert.AreEqual(new ModifierProperties(), new ModifierProperties());
@@ -39,7 +43,7 @@ namespace Loot
 
 			p = p.RollMagnitudeAndPower(10f, 100f);
 			var tc = ModifierProperties._Save(null, p);
-			Assert.IsInstanceOfType(tc, typeof(TagCompound));
+			Assert.IsInstanceOf<TagCompound>(tc);
 			Assert.IsTrue(tc.ContainsKey("Magnitude"));
 			Assert.IsTrue(tc.ContainsKey("Power"));
 			Assert.IsTrue(tc.ContainsKey("ModifierPropertiesSaveVersion"));
@@ -48,17 +52,17 @@ namespace Loot
 			Assert.IsTrue(tc.Get<int>("ModifierPropertiesSaveVersion") > 0);
 
 			p = ModifierProperties._Load(null, tc);
-			Assert.IsInstanceOfType(p, typeof(ModifierProperties));
+			Assert.IsInstanceOf<ModifierProperties>(p);
 			Assert.AreEqual(p.Magnitude, 10f);
 			Assert.AreEqual(p.Magnitude, tc.Get<float>("Magnitude"));
 			Assert.AreEqual(p.Power, 100f);
 			Assert.AreEqual(p.Power, tc.Get<float>("Power"));
 		}
 
-		[TestMethod]
+		[Test]
 		public void TestEMMLoader()
 		{
-			//modShell = new EmptyModLoadShell();
+			_modShell = new EmptyModLoadShell();
 
 			EMMLoader.Initialize();
 			EMMLoader.Load();
@@ -77,30 +81,33 @@ namespace Loot
 			Assert.IsTrue(EMMLoader.GlobalModifiers.Count == 0);
 			Assert.IsTrue(EMMLoader.Mods.Count == 0);
 
-			//Assert.ThrowsException<Exception>(() => EMMLoader.RegisterMod(modShell));
+			Assert.Throws<Exception>(() => EMMLoader.RegisterMod(_modShell));
 
-			//var f = modShell.GetType().GetField("loading", BindingFlags.Instance | BindingFlags.NonPublic);
-			//f.SetValue(modShell, true);
+			var f = _modShell.GetType().GetField("loading", BindingFlags.Instance | BindingFlags.NonPublic);
+			f.SetValue(_modShell, true);
 
-			//EMMLoader.RegisterMod(modShell);
+			EMMLoader.RegisterMod(_modShell);
 
-			//Assert.ThrowsException<Exception>(() => EMMLoader.RegisterMod(modShell));
+			Assert.Throws<Exception>(() => EMMLoader.RegisterMod(_modShell));
 
-			//Assert.IsTrue(EMMLoader.Mods.Count == 1);
-			//Assert.IsTrue(EMMLoader.RaritiesMap.Count == 1);
-			//Assert.IsTrue(EMMLoader.ModifiersMap.Count == 1);
-			//Assert.IsTrue(EMMLoader.PoolsMap.Count == 1);
-			//Assert.IsTrue(EMMLoader.GlobalModifiersMap.Count == 1);
+			Assert.IsTrue(EMMLoader.Mods.Count == 1);
+			Assert.IsTrue(EMMLoader.RaritiesMap.Count == 1);
+			Assert.IsTrue(EMMLoader.ModifiersMap.Count == 1);
+			Assert.IsTrue(EMMLoader.PoolsMap.Count == 1);
+			Assert.IsTrue(EMMLoader.GlobalModifiersMap.Count == 1);
 		}
 
-		[TestMethod]
+		[Test]
+		// System.IO.FileNotFoundException : Could not load file or assembly 'Newtonsoft.Json,
 		public void LogModifiers()
 		{
-			var mod = new Loot();
+			var mod = new Loot.Loot();
 
 			var f = mod.GetType().GetField("loading", BindingFlags.Instance | BindingFlags.NonPublic);
 			f.SetValue(mod, true);
 
+//			Terraria.Main.instance = new Main();
+//			Terraria.Main.dedServ = false;
 			mod.Load();
 
 			f.SetValue(mod, false);
