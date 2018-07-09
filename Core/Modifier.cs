@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using System.Reflection;
+using Loot.Modifiers;
 using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.ModLoader;
@@ -109,6 +111,29 @@ namespace Loot.Core
 		{
 		}
 
+		internal void _DetachDelegations(Item item, ModifierPlayer player)
+		{
+			// Look for ResetEffects
+	
+			var resetEffects = GetType()
+				.GetMethods(BindingFlags.NonPublic | BindingFlags.Instance)
+				.Where(x => x.GetCustomAttributes().OfType<AutoDelegation>().Any())
+				.ToDictionary(x => x, y => y.GetCustomAttribute<AutoDelegation>());
+			
+			foreach (var kvp in resetEffects.Where(x => x.Value.DelegationTypes.Contains("OnResetEffects")))
+			{
+				try
+				{
+					kvp.Key.Invoke(this, new object[]{player.player});
+				}
+				catch (Exception e)
+				{
+				}
+			}		
+			
+			DetachDelegations(item, player);
+		}
+		
 		/// <summary>
 		/// Allows modders to undo their performed delegations in <see cref="AttachDelegations"/>
 		/// </summary>

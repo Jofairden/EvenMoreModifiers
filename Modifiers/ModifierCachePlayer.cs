@@ -73,7 +73,7 @@ namespace Loot.Modifiers
 						foreach (Modifier m in EMMItem.GetActivePool(_oldHeldItem))
 						{
 							AutoDetachDelegations(player, m);
-							m.DetachDelegations(_oldHeldItem, ModifierPlayer.Player(player));
+							m._DetachDelegations(_oldHeldItem, ModifierPlayer.Player(player));
 						}
 					}
 
@@ -121,7 +121,7 @@ namespace Loot.Modifiers
 							foreach (Modifier m in EMMItem.GetActivePool(oldEquip))
 							{
 								AutoDetachDelegations(player, m);
-								m.DetachDelegations(oldEquip, ModifierPlayer.Player(player));
+								m._DetachDelegations(oldEquip, ModifierPlayer.Player(player));
 							}
 						}
 

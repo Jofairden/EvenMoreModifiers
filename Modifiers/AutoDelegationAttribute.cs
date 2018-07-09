@@ -16,6 +16,8 @@ namespace Loot.Modifiers
 	{
 		private readonly IEnumerable<string> _delegationTypes;
 
+		public IEnumerable<string> DelegationTypes => new List<string>(_delegationTypes);
+
 		public AutoDelegation(params string[] types)
 		{
 			_delegationTypes = new List<string>(types);
