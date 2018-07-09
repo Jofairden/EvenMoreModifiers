@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using Loot.Core;
 using Loot.Modifiers;
@@ -76,6 +77,14 @@ namespace Loot
 		public override void UpdateLifeRegen()
 		{
 			OnUpdateLifeRegen?.Invoke(player);
+
+			LifeRegenHandler(player);
+		}
+		
+		private void LifeRegenHandler(Player player)
+		{
+			player.lifeRegen += LifeRegen / 30;
+			Player(player).LifeRegen %= 30;
 		}
 
 		public event VoidEventRaiser OnUpdateBadLifeRegen;
@@ -88,6 +97,14 @@ namespace Loot
 		public override void PostUpdateEquips()
 		{
 			OnPostUpdateEquips?.Invoke(player);
+			
+			Light(player);
+		}
+		
+		private void Light(Player player)
+		{
+			float str = LightStrength;
+			if (str > 0) Lighting.AddLight(player.Center, .15f * str, .15f * str, .15f * str);
 		}
 
 		public delegate bool PreHurtEventRaiser(Player player, bool pvp, bool quiet, ref int damage, ref int hitDirection, ref bool crit, ref bool customDamage, ref bool playSound, ref bool genGore, ref PlayerDeathReason damageSource);
@@ -97,7 +114,40 @@ namespace Loot
 			bool b=  base.PreHurt(pvp, quiet, ref damage, ref hitDirection, ref crit, ref customDamage, ref playSound, ref genGore, ref damageSource);
 			if (OnPreHurt != null)
 				b &= OnPreHurt.Invoke(player, pvp, quiet, ref damage, ref hitDirection, ref crit, ref customDamage, ref playSound, ref genGore, ref damageSource);
+
+			b &= TryDodge();
+			if (b) b &= ManaBlock(player, ref damage);
 			return b;
+		}
+		
+		private bool TryDodge()
+		{
+			if (Main.rand.NextFloat() < DodgeChance)
+			{
+				player.NinjaDodge();
+				return false;
+			}
+
+			return true;
+		}
+		
+		private bool ManaBlock(Player player, ref int damage)
+		{
+			// If we have a mana shield (% damage redirected to mana)
+			// Then try to redirect the damage
+			int manaBlock = (int)Math.Ceiling(damage * ManaShield) * 2;
+			if (manaBlock > 0 && player.statMana > 0)
+			{
+				// We cannot block more than how much mana we have
+				if (manaBlock > player.statMana)
+					manaBlock = player.statMana;
+
+				damage -= manaBlock / 2;
+				player.statMana -= manaBlock;
+				player.manaRegenDelay = Math.Max(player.manaRegenDelay, 120);
+			}
+
+			return true;
 		}
 
 		public delegate void PostHurtEventRaiser(Player player, bool pvp, bool quiet, double damage, int hitDirection, bool crit);
@@ -105,6 +155,16 @@ namespace Loot
 		public override void PostHurt(bool pvp, bool quiet, double damage, int hitDirection, bool crit)
 		{
 			OnPostHurt?.Invoke(player, pvp, quiet, damage, hitDirection, crit);
+			
+			Immunity(player, damage);
+		}
+				
+		private void Immunity(Player player, double damage)
+		{
+			int frames = damage <= 1 
+				? BonusImmunityTime / 2 
+				: BonusImmunityTime;
+			if (player.immuneTime > 0) player.immuneTime += frames;
 		}
 
 		public delegate void ModifyHitNPCEventRaiser(Player player, Item item, NPC target, ref int damage, ref float knockback, ref bool crit);
@@ -112,6 +172,9 @@ namespace Loot
 		public override void ModifyHitNPC(Item item, NPC target, ref int damage, ref float knockback, ref bool crit)
 		{
 			OnModifyHitNPC?.Invoke(player, item, target, ref damage, ref knockback, ref crit);
+			
+			if (target.life == target.lifeMax) HealthyFoes(ref damage);
+			CritBonus(player, ref damage, crit);
 		}
 
 		public delegate void ModifyHitPvpEventRaiser(Player player, Item item, Player target, ref int damage, ref bool crit);
@@ -119,6 +182,19 @@ namespace Loot
 		public override void ModifyHitPvp(Item item, Player target, ref int damage, ref bool crit)
 		{
 			OnModifyHitPvp?.Invoke(player, item, target, ref damage, ref crit);
+			
+			if (target.statLife == target.statLifeMax2) HealthyFoes(ref damage);
+			CritBonus(player, ref damage, crit);
+		}
+
+		private void HealthyFoes(ref int damage)
+		{
+			damage = (int) (Math.Ceiling(damage * HealthyFoesMulti));
+		}
+		
+		private void CritBonus(Player player, ref int damage, bool crit)
+		{
+			if (crit) damage = (int) Math.Ceiling(damage * CritMultiplier);
 		}
 
 		public delegate void OnHitNPCEventRaiser(Player player, Item item, NPC target, int damage, float knockback, bool crit);
@@ -142,7 +218,22 @@ namespace Loot
 			bool b = base.PreKill(damage, hitDirection, pvp, ref playSound, ref genGore, ref damageSource);
 			if (OnPreKill != null)
 				b &= OnPreKill.Invoke(player, damage, hitDirection, pvp, ref playSound, ref genGore, ref damageSource);
+
+			b &= SurviveEvent(player);
 			return b;
 		}
+		
+		private bool SurviveEvent(Player player)
+		{
+			if (Main.rand.NextFloat() < Math.Min(SurvivalChance, MAX_SURVIVAL_CHANCE))
+			{
+				player.statLife = 1;
+				return false;
+			}
+
+			return true;
+		}
+		
+		
 	}
 }

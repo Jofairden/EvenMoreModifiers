@@ -17,29 +17,19 @@ namespace Loot.Modifiers.EquipModifiers
 			return base.GetModifierProperties(item).Set(maxMagnitude: 20f);
 		}
 
+		private bool _justModified;
+		
 		public override void UpdateEquip(Item item, Player player)
 		{
 			ModifierPlayer.Player(player).HealthyFoesMulti += Properties.RoundedPower / 100f;
+			_justModified = true;
 		}
 
 		[AutoDelegation("OnResetEffects")]
 		private void ResetEffects(Player player)
 		{
-			ModifierPlayer.Player(player).HealthyFoesMulti -= Properties.RoundedPower / 100f;
-		}
-
-		[AutoDelegation("OnModifyHitNPC")]
-		private void HealthyBonusNPC(Player player, Item item, NPC target, ref int damage, ref float knockback, ref bool crit)
-		{
-			if (target.life == target.lifeMax)
-				damage = (int) (Math.Ceiling(damage * ModifierPlayer.Player(player).HealthyFoesMulti));
-		}
-
-		[AutoDelegation("OnModifyHitPvp")]
-		private void HealthyBonusPvp(Player player, Item item, Player target, ref int damage, ref bool crit)
-		{
-			if (target.statLife == target.statLifeMax2)
-				damage = (int) (Math.Ceiling(damage * ModifierPlayer.Player(player).HealthyFoesMulti));
+			if (_justModified) ModifierPlayer.Player(player).HealthyFoesMulti -= Properties.RoundedPower / 100f;
+			_justModified = false;
 		}
 	}
 }

@@ -568,5 +568,4 @@ namespace Loot
 				m.VerticalWingSpeeds(item, player, ref ascentWhenFalling, ref ascentWhenRising, ref maxCanAscendMultiplier, ref maxAscentMultiplier, ref constantAscend);
 		}
 	}
-
 }

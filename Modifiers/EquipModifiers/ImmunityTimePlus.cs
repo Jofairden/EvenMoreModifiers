@@ -15,25 +15,21 @@ namespace Loot.Modifiers.EquipModifiers
 		{
 			return base.GetModifierProperties(item).Set(maxMagnitude: 20f);
 		}
+		
+		private bool _justModified;
 
 		public override void UpdateEquip(Item item, Player player)
 		{
 			ModifierPlayer.Player(player).BonusImmunityTime += (int)Properties.RoundedPower;
+			_justModified = true;
 		}
 		
 		[AutoDelegation("OnResetEffects")]
 		private void ResetEffects(Player player)
 		{
-			ModifierPlayer.Player(player).BonusImmunityTime -= (int)Properties.RoundedPower;
+			if (_justModified) ModifierPlayer.Player(player).BonusImmunityTime -= (int)Properties.RoundedPower;
+			_justModified = false;
 		}
 
-		[AutoDelegation("OnPostHurt")]
-		private void Immunity(Player player, bool pvp, bool quiet, double damage, int hitDirection, bool crit)
-		{
-			int frames = damage <= 1 
-				? ModifierPlayer.Player(player).BonusImmunityTime / 2 
-				: ModifierPlayer.Player(player).BonusImmunityTime;
-			if (player.immuneTime > 0) player.immuneTime += frames;
-		}
 	}
 }

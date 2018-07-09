@@ -17,15 +17,19 @@ namespace Loot.Modifiers.EquipModifiers
 			return base.GetModifierProperties(item).Set(maxMagnitude: 8f);
 		}
 
+		private bool _justModified;
+
 		public override void UpdateEquip(Item item, Player player)
 		{
 			ModifierPlayer.Player(player).PercentDefBoost += Properties.RoundedPower / 100f;
+			_justModified = true;
 		}
 
 		[AutoDelegation("OnResetEffects")]
 		private void ResetEffects(Player player)
 		{
-			ModifierPlayer.Player(player).PercentDefBoost -= Properties.RoundedPower / 100f;
+			if (_justModified) ModifierPlayer.Player(player).PercentDefBoost -= Properties.RoundedPower / 100f;
+			_justModified = false;
 		}
 
 		[AutoDelegation("OnPostUpdateEquips")]

@@ -21,28 +21,20 @@ namespace Loot.Modifiers.EquipModifiers
 		{
 			return base.GetModifierProperties(item).Set(maxMagnitude: 15f);
 		}
+		
+		private bool _justModified;
 
 		public override void UpdateEquip(Item item, Player player)
 		{
 			ModifierPlayer.Player(player).SurvivalChance += Properties.RoundedPower / 100f;
+			_justModified = true;
 		}
 		
 		[AutoDelegation("OnResetEffects")]
 		private void ResetEffects(Player player)
 		{
-			ModifierPlayer.Player(player).SurvivalChance -= Properties.RoundedPower / 100f;
-		}
-
-		[AutoDelegation("OnPreKill")]
-		private bool SurviveEvent(Player player, double damage, int hitDirection, bool pvp, ref bool playSound, ref bool genGore, ref PlayerDeathReason damageSource)
-		{
-			if (Main.rand.NextFloat() < Math.Min(ModifierPlayer.Player(player).SurvivalChance, ModifierPlayer.MAX_SURVIVAL_CHANCE))
-			{
-				player.statLife = 1;
-				return false;
-			}
-
-			return true;
+			if (_justModified) ModifierPlayer.Player(player).SurvivalChance -= Properties.RoundedPower / 100f;
+			_justModified = false;
 		}
 	}
 }

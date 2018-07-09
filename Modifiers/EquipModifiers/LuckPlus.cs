@@ -16,15 +16,19 @@ namespace Loot.Modifiers.EquipModifiers
 			return base.GetModifierProperties(item).Set(maxMagnitude: 10f);
 		}
 
+		private bool _justModified;
+		
 		public override void UpdateEquip(Item item, Player player)
 		{
 			ModifierPlayer.Player(player).Luck += (int)Properties.RoundedPower;
+			_justModified = true;
 		}
 		
 		[AutoDelegation("OnResetEffects")]
 		private void ResetEffects(Player player)
 		{
-			ModifierPlayer.Player(player).Luck -= (int)Properties.RoundedPower;
+			if (_justModified) ModifierPlayer.Player(player).Luck -= (int)Properties.RoundedPower;
+			_justModified = false;
 		}
 	}
 }

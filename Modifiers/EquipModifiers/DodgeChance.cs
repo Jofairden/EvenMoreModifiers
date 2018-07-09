@@ -17,27 +17,19 @@ namespace Loot.Modifiers.EquipModifiers
 			return base.GetModifierProperties(item).Set(maxMagnitude: 5f);
 		}
 
+		private bool _justModified;
+		
 		public override void UpdateEquip(Item item, Player player)
 		{
 			ModifierPlayer.Player(player).DodgeChance += Properties.RoundedPower / 100f;
+			_justModified = true;
 		}
 		
 		[AutoDelegation("OnResetEffects")]
 		private void ResetEffects(Player player)
 		{
-			ModifierPlayer.Player(player).DodgeChance -= Properties.RoundedPower / 100f;
-		}
-
-		[AutoDelegation("OnPreHurt")]
-		private bool PreHurt(Player player, bool pvp, bool quiet, ref int damage, ref int hitDirection, ref bool crit, ref bool customDamage, ref bool playSound, ref bool genGore, ref PlayerDeathReason damageSource)
-		{
-			if (Main.rand.NextFloat() < ModifierPlayer.Player(player).DodgeChance)
-			{
-				player.NinjaDodge();
-				return false;
-			}
-
-			return true;
+			if(_justModified) ModifierPlayer.Player(player).DodgeChance -= Properties.RoundedPower / 100f;
+			_justModified = false;
 		}
 	}
 }
