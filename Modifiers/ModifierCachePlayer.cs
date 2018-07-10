@@ -79,6 +79,7 @@ namespace Loot.Modifiers
 			{
 				if (effect.IsBeingDelegated)
 				{
+					modplr.OnResetEffects -= effect.ResetEffects;
 					foreach (MethodInfo method in methods)
 					{
 						var attr = method.GetCustomAttribute<AutoDelegation>();
@@ -97,6 +98,7 @@ namespace Loot.Modifiers
 			{
 				if (!effect.IsBeingDelegated)
 				{
+					modplr.OnResetEffects += effect.ResetEffects;
 					foreach (MethodInfo method in methods)
 					{
 						var attr = method.GetCustomAttribute<AutoDelegation>();

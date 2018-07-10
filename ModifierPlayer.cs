@@ -80,11 +80,6 @@ namespace Loot
 		{	
 			if (player.GetModPlayer<ModifierCachePlayer>().Ready)
 			{
-				// todo move inside the event
-				foreach (var effect in _modifierEffects)
-				{
-					effect.ResetEffects(this);
-				}
 				OnResetEffects?.Invoke(this);
 			}
 		}
