@@ -46,7 +46,7 @@ namespace Loot.Modifiers
 		// those effects' methods having the AutoDelegation attribute are
 		// searched. For those methods the action is invoked, which will either
 		// attach or detach that particular delegation.
-		private void AutoBindDelegations(Player player, Modifier modifier, Action<ModifierPlayer, AutoDelegation, MethodInfo, ModifierEffect> action)
+		private void AutoBindDelegations(Player player, Modifier modifier, Action<ModifierPlayer, MethodInfo[], ModifierEffect> action)
 		{
 			var effectsAttribute =
 				modifier
@@ -66,12 +66,8 @@ namespace Loot.Modifiers
 							.GetMethods(BindingFlags.NonPublic | BindingFlags.Public | BindingFlags.Instance)
 							.Where(x => x.GetCustomAttributes(typeof(AutoDelegation), false).Length > 0)
 							.ToArray();
-						
-						foreach (MethodInfo method in methods)
-						{
-							var attr = method.GetCustomAttribute<AutoDelegation>();
-							action.Invoke(modPlayer, attr, method, modEffect);
-						}
+
+						action.Invoke(modPlayer, methods, modEffect);
 					}
 				}
 			}
@@ -79,27 +75,37 @@ namespace Loot.Modifiers
 
 		private void AutoDetach(Item item, Player player, Modifier modifier)
 		{
-			AutoBindDelegations(player, modifier, (modplr, attr, method, effect) =>
+			AutoBindDelegations(player, modifier, (modplr, methods, effect) =>
 			{
 				if (effect.IsBeingDelegated)
 				{
-					attr.Detach(modplr, method, effect);
+					foreach (MethodInfo method in methods)
+					{
+						var attr = method.GetCustomAttribute<AutoDelegation>();
+						attr.Detach(modplr, method, effect);
+					}
 					effect._DetachDelegations(item, modplr);
-					ActivatedModifierItem.Item(item).IsActivated = false;
+					effect.IsBeingDelegated = false;
 				}
+				ActivatedModifierItem.Item(item).IsActivated = false;
 			});
 		}
 		
 		private void AutoAttach(Item item, Player player, Modifier modifier)
 		{
-			AutoBindDelegations(player, modifier, (modplr, attr, method, effect) =>
+			AutoBindDelegations(player, modifier, (modplr, methods, effect) =>
 			{
 				if (!effect.IsBeingDelegated)
 				{
-					attr.Attach(modplr, method, effect);
+					foreach (MethodInfo method in methods)
+					{
+						var attr = method.GetCustomAttribute<AutoDelegation>();
+						attr.Attach(modplr, method, effect);
+					}
 					effect.AttachDelegations(item, modplr);
-					ActivatedModifierItem.Item(item).IsActivated = true;
+					effect.IsBeingDelegated = true;
 				}
+				ActivatedModifierItem.Item(item).IsActivated = true;
 			});
 		}
 

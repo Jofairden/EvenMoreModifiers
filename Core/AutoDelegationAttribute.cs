@@ -32,7 +32,6 @@ namespace Loot.Modifiers
 				{				
 					Delegate handler = Delegate.CreateDelegate(evt.EventHandlerType, effect, method);
 					evt.AddEventHandler(player, handler);
-					effect.IsBeingDelegated = true;
 				}
 			}
 		}
@@ -46,7 +45,6 @@ namespace Loot.Modifiers
 				{				
 					Delegate handler = Delegate.CreateDelegate(evt.EventHandlerType, effect, method);
 					evt.RemoveEventHandler(player, handler);
-					effect.IsBeingDelegated = false;
 				}
 			}
 		}
