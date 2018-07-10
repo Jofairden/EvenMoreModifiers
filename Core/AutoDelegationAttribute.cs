@@ -23,28 +23,30 @@ namespace Loot.Modifiers
 			_delegationTypes = new List<string>(types);
 		}
 
-		public void Attach(ModifierPlayer player, MethodInfo method, Modifier modifier)
+		public void Attach(ModifierPlayer player, MethodInfo method, ModifierEffect effect)
 		{
 			foreach (string type in _delegationTypes)
 			{
 				EventInfo evt = player.GetType().GetEvent(type, BindingFlags.Instance | BindingFlags.Public);
 				if (evt != null)
 				{				
-					Delegate handler = Delegate.CreateDelegate(evt.EventHandlerType, modifier, method);
+					Delegate handler = Delegate.CreateDelegate(evt.EventHandlerType, effect, method);
 					evt.AddEventHandler(player, handler);
+					effect.IsBeingDelegated = true;
 				}
 			}
 		}
-
-		public void Detach(ModifierPlayer player, MethodInfo method, Modifier modifier)
+		
+		public void Detach(ModifierPlayer player, MethodInfo method, ModifierEffect effect)
 		{
 			foreach (string type in _delegationTypes)
 			{
 				EventInfo evt = player.GetType().GetEvent(type, BindingFlags.Instance | BindingFlags.Public);
 				if (evt != null)
 				{				
-					Delegate handler = Delegate.CreateDelegate(evt.EventHandlerType, modifier, method);
+					Delegate handler = Delegate.CreateDelegate(evt.EventHandlerType, effect, method);
 					evt.RemoveEventHandler(player, handler);
+					effect.IsBeingDelegated = false;
 				}
 			}
 		}

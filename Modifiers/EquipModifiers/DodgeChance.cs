@@ -5,11 +5,34 @@ using Terraria.DataStructures;
 
 namespace Loot.Modifiers.EquipModifiers
 {
+	public class DodgeEffect : ModifierEffect
+	{
+		public float DodgeChance; // Dodge chance
+
+		public override void ResetEffects(ModifierPlayer player)
+		{
+			DodgeChance = 0f;
+		}
+
+		[AutoDelegation("OnPreHurt")]
+		private bool TryDodge(ModifierPlayer player, bool pvp, bool quiet, ref int damage, ref int hitDirection, ref bool crit, ref bool customDamage, ref bool playSound, ref bool genGore, ref PlayerDeathReason damageSource)
+		{
+			if (Main.rand.NextFloat() < DodgeChance)
+			{
+				player.player.NinjaDodge();
+				return false;
+			}
+
+			return true;
+		}
+	}
+
+	[UsesEffect(typeof(DodgeEffect))]
 	public class DodgeChance : EquipModifier
 	{
 		public override ModifierTooltipLine[] TooltipLines => new[]
 		{
-			new ModifierTooltipLine { Text = $"+{Properties.RoundedPower}% dodge chance", Color =  Color.LimeGreen},
+			new ModifierTooltipLine {Text = $"+{Properties.RoundedPower}% dodge chance", Color = Color.LimeGreen},
 		};
 
 		public override ModifierProperties GetModifierProperties(Item item)
@@ -17,19 +40,9 @@ namespace Loot.Modifiers.EquipModifiers
 			return base.GetModifierProperties(item).Set(maxMagnitude: 5f);
 		}
 
-		private bool _justModified;
-		
 		public override void UpdateEquip(Item item, Player player)
 		{
-			ModifierPlayer.Player(player).DodgeChance += Properties.RoundedPower / 100f;
-			_justModified = true;
-		}
-		
-		[AutoDelegation("OnResetEffects")]
-		private void ResetEffects(Player player)
-		{
-			if(_justModified) ModifierPlayer.Player(player).DodgeChance -= Properties.RoundedPower / 100f;
-			_justModified = false;
+			ModifierPlayer.Player(player).GetEffect<DodgeEffect>().DodgeChance += Properties.RoundedPower / 100f;
 		}
 	}
 }

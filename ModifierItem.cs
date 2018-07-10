@@ -8,6 +8,20 @@ using Terraria.Utilities;
 
 namespace Loot
 {
+	public sealed class ActivatedModifierItem : GlobalItem
+	{
+		public override bool InstancePerEntity => true;
+		public override bool CloneNewInstances => true;
+		
+		/// <summary>
+		/// Keeps track of if the particular item was activated ('delegated')
+		/// Specific usecase see CursedEffect and modifier
+		/// </summary>
+		public bool IsActivated { get; internal set; }
+
+		public static ActivatedModifierItem Item(Item item) => item.GetGlobalItem<ActivatedModifierItem>();
+	}
+	
 	/// <summary>
 	/// Calls GlobalItem hooks on modifiers
 	/// </summary>
@@ -15,11 +29,11 @@ namespace Loot
 	{
 		public override bool InstancePerEntity => false;
 		public override bool CloneNewInstances => false;
-
+		
 		public override bool AltFunctionUse(Item item, Player player)
 		{
 			bool b = base.AltFunctionUse(item, player);
-
+			
 			foreach (Modifier m in EMMItem.GetActivePool(item))
 				b &= m.AltFunctionUse(item, player);
 

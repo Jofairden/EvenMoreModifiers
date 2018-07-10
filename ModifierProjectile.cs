@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using Loot.Modifiers;
+using Loot.Modifiers.EquipModifiers;
 using Loot.Modifiers.WeaponModifiers;
 using Terraria;
 using Terraria.ModLoader;
@@ -14,7 +16,7 @@ namespace Loot
 		public override GlobalProjectile Clone()
 		{
 			var clone = (ModifierProjectile)base.MemberwiseClone();
-			clone.SNAPSHOT_DebuffChances = new List<RandomDebuff.DebuffTrigger>(SNAPSHOT_DebuffChances);
+			clone.SNAPSHOT_DebuffChances = new List<DebuffTrigger>(SNAPSHOT_DebuffChances);
 			return clone;
 		}
 
@@ -27,7 +29,7 @@ namespace Loot
 		public bool FirstTick;
 		public float SNAPSHOT_HealthyFoesMulti = 1f;
 		public float SNAPSHOT_CritMulti = 1f;
-		public IList<RandomDebuff.DebuffTrigger> SNAPSHOT_DebuffChances = new List<RandomDebuff.DebuffTrigger>();
+		public IList<DebuffTrigger> SNAPSHOT_DebuffChances = new List<DebuffTrigger>();
 
 		private void AttemptDebuff(Projectile projectile, Player target)
 		{
@@ -73,10 +75,10 @@ namespace Loot
 				if (projectile.owner != 255 && projectile.friendly && projectile.owner == Main.myPlayer)
 				{
 					var mplr = Main.LocalPlayer.GetModPlayer<ModifierPlayer>();
-					mproj.SNAPSHOT_DebuffChances = new List<RandomDebuff.DebuffTrigger>(mplr.DebuffChances);
-					mproj.SNAPSHOT_HealthyFoesMulti = mplr.HealthyFoesMulti;
+					mproj.SNAPSHOT_DebuffChances = new List<DebuffTrigger>(mplr.GetEffect<WeaponDebuffEffect>().DebuffChances);
+					mproj.SNAPSHOT_HealthyFoesMulti = mplr.GetEffect<HealthyFoesEffect>().Multiplier;
 					if (!projectile.minion) // minions do not crit
-						mproj.SNAPSHOT_CritMulti = mplr.CritMultiplier;
+						mproj.SNAPSHOT_CritMulti = mplr.GetEffect<CritDamagePlusEffect>().Multiplier;
 				}
 				else if (projectile.owner == 255)
 				{

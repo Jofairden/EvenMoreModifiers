@@ -10,12 +10,15 @@ using Terraria.ModLoader;
 using RarityMap = System.Collections.Generic.KeyValuePair<string, Loot.Core.ModifierRarity>;
 using ModifierMap = System.Collections.Generic.KeyValuePair<string, Loot.Core.Modifier>;
 using PoolMap = System.Collections.Generic.KeyValuePair<string, Loot.Core.ModifierPool>;
-using GlobalModifierMap = System.Collections.Generic.KeyValuePair<string, Loot.Core.GlobalModifier>;
+using EffectMap = System.Collections.Generic.KeyValuePair<string, Loot.Core.ModifierEffect>;
+//using GlobalModifierMap = System.Collections.Generic.KeyValuePair<string, Loot.Core.GlobalModifier>;
 
 namespace Loot
 {
 	internal static class EMMUtils
 	{
+		// todo possible refactor
+		
 		public static T GetModifierRarity<T>(this Mod mod) where T : ModifierRarity => (T) GetModifierRarity(mod, typeof(T).Name);
 
 		public static ModifierRarity GetModifierRarity(this Mod mod, string name)
@@ -66,23 +69,40 @@ namespace Loot
 
 		public static uint ModifierPoolType<T>(this Mod mod, string name) where T : ModifierPool => ModifierPoolType(mod, typeof(T).Name);
 		public static uint ModifierPoolType(this Mod mod, string name) => GetModifierPool(mod, name)?.Type ?? 0;
+		
+		public static T GetModifierEffect<T>(this Mod mod) where T : ModifierEffect => (T) GetModifierEffect(mod, typeof(T).Name);
 
-		public static T GetGlobalModifier<T>(this Mod mod) where T : GlobalModifier => (T) GetGlobalModifier(mod, typeof(T).Name);
-
-		public static GlobalModifier GetGlobalModifier(this Mod mod, string name)
+		public static ModifierEffect GetModifierEffect(this Mod mod, string name)
 		{
-			List<GlobalModifierMap> v;
-			if (EMMLoader.GlobalModifiersMap.TryGetValue(mod.Name, out v))
+			List<EffectMap> v;
+			if (EMMLoader.EffectsMap.TryGetValue(mod.Name, out v))
 			{
 				var fod = v.FirstOrDefault(x => x.Value.Name.Equals(name));
-				return fod.Value.AsNewInstance();
+				return (ModifierEffect) fod.Value.Clone();
 			}
 
 			return null;
 		}
 
-		public static uint GlobalModifierType<T>(this Mod mod, string name) where T : GlobalModifier => GlobalModifierType(mod, typeof(T).Name);
-		public static uint GlobalModifierType(this Mod mod, string name) => GetGlobalModifier(mod, name)?.Type ?? 0;
+		public static uint ModifierEffectType<T>(this Mod mod, string name) where T : ModifierEffect => ModifierEffectType(mod, typeof(T).Name);
+		public static uint ModifierEffectType(this Mod mod, string name) => GetModifierEffect(mod, name)?.Type ?? 0;
+
+//		public static T GetGlobalModifier<T>(this Mod mod) where T : GlobalModifier => (T) GetGlobalModifier(mod, typeof(T).Name);
+//
+//		public static GlobalModifier GetGlobalModifier(this Mod mod, string name)
+//		{
+//			List<GlobalModifierMap> v;
+//			if (EMMLoader.GlobalModifiersMap.TryGetValue(mod.Name, out v))
+//			{
+//				var fod = v.FirstOrDefault(x => x.Value.Name.Equals(name));
+//				return fod.Value.AsNewInstance();
+//			}
+//
+//			return null;
+//		}
+//
+//		public static uint GlobalModifierType<T>(this Mod mod, string name) where T : GlobalModifier => GlobalModifierType(mod, typeof(T).Name);
+//		public static uint GlobalModifierType(this Mod mod, string name) => GetGlobalModifier(mod, name)?.Type ?? 0;
 
 		public static bool Between(this int v, int min, int max) => v >= min && v <= max;
 		public static bool IsModifierRollableItem(this Item item) => item.maxStack == 1 && item.IsWeapon() || item.IsAccessory() || item.IsArmor();

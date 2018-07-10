@@ -100,49 +100,6 @@ namespace Loot.Core
 			return clone;
 		}
 
-		/// <summary>
-		/// Allows modders to perform various delegations when this modifier is detected to become active
-		/// This method will be invoked one time when the modifier becomes 'active'
-		/// Alternatively automatic delegation can be used, using the AutoDelegation attribute
-		/// </summary>
-		/// <param name="item"></param>
-		/// <param name="player"></param>
-		public virtual void AttachDelegations(Item item, ModifierPlayer player)
-		{
-		}
-
-		internal void _DetachDelegations(Item item, ModifierPlayer player)
-		{
-			// Look for ResetEffects
-	
-			var resetEffects = GetType()
-				.GetMethods(BindingFlags.NonPublic | BindingFlags.Instance)
-				.Where(x => x.GetCustomAttributes().OfType<AutoDelegation>().Any())
-				.ToDictionary(x => x, y => y.GetCustomAttribute<AutoDelegation>());
-			
-			foreach (var kvp in resetEffects.Where(x => x.Value.DelegationTypes.Contains("OnResetEffects")))
-			{
-				try
-				{
-					kvp.Key.Invoke(this, new object[]{player.player});
-				}
-				catch (Exception e)
-				{
-				}
-			}		
-			
-			DetachDelegations(item, player);
-		}
-		
-		/// <summary>
-		/// Allows modders to undo their performed delegations in <see cref="AttachDelegations"/>
-		/// </summary>
-		/// <param name="item"></param>
-		/// <param name="player"></param>
-		public virtual void DetachDelegations(Item item, ModifierPlayer player)
-		{
-		}
-
 		protected internal static Modifier _NetReceive(Item item, BinaryReader reader)
 		{
 			string Type = reader.ReadString();

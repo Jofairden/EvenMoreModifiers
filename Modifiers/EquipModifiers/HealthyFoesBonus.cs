@@ -1,10 +1,46 @@
 ﻿using System;
+using System.Security.Cryptography;
 using Loot.Core;
 using Microsoft.Xna.Framework;
 using Terraria;
 
 namespace Loot.Modifiers.EquipModifiers
 {
+	public class HealthyFoesEffect : ModifierEffect
+	{
+		public float Multiplier;
+
+		public override void OnInitialize(ModifierPlayer player)
+		{
+			Multiplier = 1f;
+		}
+
+		public override void ResetEffects(ModifierPlayer player)
+		{
+			Multiplier = 1f;
+		}
+
+		// @todo must be prioritized before crit
+
+		[AutoDelegation("OnModifyHitNPC")]
+		public void ModifyHitNPC(ModifierPlayer player, Item item, NPC target, ref int damage, ref float knockback, ref bool crit)
+		{
+			if (target.life == target.lifeMax) HealthyFoes(ref damage);
+		}
+
+		[AutoDelegation("OnModifyHitPvp")]
+		private void ModifyHitPvp(ModifierPlayer player, Item item, Player target, ref int damage, ref bool crit)
+		{
+			if (target.statLife == target.statLifeMax2) HealthyFoes(ref damage);
+		}
+
+		private void HealthyFoes(ref int damage)
+		{
+			damage = (int) (Math.Ceiling(damage * Multiplier));
+		}
+	}
+
+	[UsesEffect(typeof(HealthyFoesEffect))]
 	public class HealthyFoesBonus : EquipModifier
 	{
 		public override ModifierTooltipLine[] TooltipLines => new[]
@@ -17,19 +53,9 @@ namespace Loot.Modifiers.EquipModifiers
 			return base.GetModifierProperties(item).Set(maxMagnitude: 20f);
 		}
 
-		private bool _justModified;
-		
 		public override void UpdateEquip(Item item, Player player)
 		{
-			ModifierPlayer.Player(player).HealthyFoesMulti += Properties.RoundedPower / 100f;
-			_justModified = true;
-		}
-
-		[AutoDelegation("OnResetEffects")]
-		private void ResetEffects(Player player)
-		{
-			if (_justModified) ModifierPlayer.Player(player).HealthyFoesMulti -= Properties.RoundedPower / 100f;
-			_justModified = false;
+			ModifierPlayer.Player(player).GetEffect<HealthyFoesEffect>().Multiplier += Properties.RoundedPower / 100f;
 		}
 	}
 }

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using Loot.Core;
 using Loot.Modifiers.WeaponModifiers;
 using Microsoft.Xna.Framework;
@@ -9,9 +10,43 @@ using Terraria.ModLoader;
 
 namespace Loot.Modifiers
 {
+	// TODO , this could should be added to to include min/max magnitude rolls, that influence the time and chance to apply 
+	public struct DebuffTrigger
+	{
+		public int BuffType;
+		public int BuffTime;
+		public float InflictionChance;
+
+		public DebuffTrigger(int buffType, int buffTime, float inflictionChance)
+		{
+			BuffType = buffType;
+			BuffTime = buffTime;
+			InflictionChance = inflictionChance;
+		}
+	}
+	
+	public class WeaponDebuffEffect : ModifierEffect
+	{
+		// List of current debuff chances. Tuple format is [chance, buffType, buffTime]
+		// TODO with c#7 we should favor a named tuple (waiting for TML support)
+		//public IList<(float chance, int type, int time)> DebuffChances;
+		public IList<DebuffTrigger> DebuffChances = new List<DebuffTrigger>();
+
+		public override void OnInitialize(ModifierPlayer player)
+		{
+			DebuffChances = new List<DebuffTrigger>();
+		}
+
+		public override void ResetEffects(ModifierPlayer player)
+		{
+			DebuffChances?.Clear();
+		}
+	}
+	
 	/// <summary>
 	/// Defines a modifier that can inflict a debuff, applicable for weapons
 	/// </summary>
+	[UsesEffect(typeof(WeaponDebuffEffect))] // The attribute is inherited, which is nice
 	public abstract class WeaponDebuffModifier : WeaponModifier
 	{
 		public override ModifierTooltipLine[] TooltipLines => new[]
@@ -51,7 +86,9 @@ namespace Loot.Modifiers
 		// Required for minion/proj snapshotting
 		public override void HoldItem(Item item, Player player)
 		{
-			ModifierPlayer.Player(player).DebuffChances.Add(new RandomDebuff.DebuffTrigger(BuffType, BuffTime, Properties.RoundedPower / 100f * BuffInflictionChance));
+			ModifierPlayer.Player(player).GetEffect<WeaponDebuffEffect>()
+				.DebuffChances
+				.Add(new DebuffTrigger(BuffType, BuffTime, Properties.RoundedPower / 100f * BuffInflictionChance));
 		}
 	}
 }

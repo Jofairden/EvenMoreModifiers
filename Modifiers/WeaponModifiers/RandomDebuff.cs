@@ -13,22 +13,6 @@ namespace Loot.Modifiers.WeaponModifiers
 	/// </summary>
 	public sealed class RandomDebuff : WeaponDebuffModifier
 	{
-		// TODO , this could should be added to to include min/max magnitude rolls, that influence the time and chance to apply 
-		// TODO refactor, to reduce copy pasta
-		public struct DebuffTrigger
-		{
-			public int BuffType;
-			public int BuffTime;
-			public float InflictionChance;
-
-			public DebuffTrigger(int buffType, int buffTime, float inflictionChance)
-			{
-				BuffType = buffType;
-				BuffTime = buffTime;
-				InflictionChance = inflictionChance;
-			}
-		}
-
 		internal static DebuffTrigger[] BuffPairs =
 		{
 			new DebuffTrigger {BuffType = BuffID.Confused, BuffTime = 120, InflictionChance = 1f},
@@ -98,26 +82,5 @@ namespace Loot.Modifiers.WeaponModifiers
 		{
 			return base.GetModifierProperties(item).Set(rollChance: _len);
 		}
-
-		//public override bool UniqueRoll(ModifierContext ctx)
-		//	=> false;
-
-		// TODO we need ModPlayer hooks here
-
-		//public override void OnHitNPC(Item item, Player player, NPC target, int damage, float knockBack, bool crit)
-		//{
-		//	base.OnHitNPC(item, player, target, damage, knockBack, crit);
-
-		//	if (Main.rand.NextFloat() <= Power)
-		//		target.AddBuff(BuffType, BuffTime);
-		//}
-
-		//public override void OnHitPvp(Item item, Player player, Player target, int damage, bool crit)
-		//{
-		//	base.OnHitPvp(item, player, target, damage, crit);
-
-		//	if (Main.rand.NextFloat() <= Power)
-		//		target.AddBuff(BuffType, BuffTime);
-		//}
 	}
 }

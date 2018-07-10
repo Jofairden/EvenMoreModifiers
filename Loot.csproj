@@ -75,12 +75,15 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ArmorItemHack.cs" />
+    <Compile Include="Core\AutoDelegationAttribute.cs" />
     <Compile Include="Core\Cubes\PoorCube.cs" />
     <Compile Include="Core\Cubes\CubeOfSealing.cs" />
     <Compile Include="Core\Cubes\CubeShop.cs" />
     <Compile Include="Core\Cubes\CubeUIExtensions.cs" />
     <Compile Include="Core\Cubes\MagicalCube.cs" />
+    <Compile Include="Core\UsesEffectAttribute.cs" />
     <Compile Include="Core\ModifierContext.cs" />
+    <Compile Include="Core\ModifierEffect.cs" />
     <Compile Include="Core\ModifierProperties.cs" />
     <Compile Include="Core\ModifierTooltipLine.cs" />
     <Compile Include="EMMPlayer.cs" />
@@ -89,11 +92,7 @@
     <Compile Include="ItemHackPrefixes.cs" />
     <Compile Include="ModifierProjectile.cs" />
     <Compile Include="Modifiers\AccessoryModifier.cs" />
-    <Compile Include="Modifiers\AccessoryModifiers\GodlyDefense.cs" />
-    <Compile Include="Modifiers\AccessoryModifiers\Inferno.cs" />
-    <Compile Include="Modifiers\AccessoryModifiers\MoreDamage.cs" />
     <Compile Include="Modifiers\ArmorModifier.cs" />
-    <Compile Include="Modifiers\AutoDelegationAttribute.cs" />
     <Compile Include="Modifiers\EquipModifier.cs" />
     <Compile Include="Modifiers\EquipModifiers\CritDamagePlus.cs" />
     <Compile Include="Modifiers\EquipModifiers\DodgeChance.cs" />
@@ -139,7 +138,6 @@
     <Compile Include="Modifiers\WeaponModifiers\VelocityPlus.cs" />
     <Compile Include="EMMItem.cs" />
     <Compile Include="Loot.cs" />
-    <Compile Include="LootGlobalNPC.cs" />
     <Compile Include="EMMUtils.cs" />
     <Compile Include="ModifierItem.cs" />
     <Compile Include="ModifierPlayer.cs" />

@@ -1,35 +1,45 @@
 ﻿using Loot.Core;
 using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Design;
 using Terraria;
 
 namespace Loot.Modifiers.EquipModifiers
 {
+	public class ImmunityEffect : ModifierEffect
+	{
+		public int BonusImmunityTime; // Extra immunity frames
+
+		public override void ResetEffects(ModifierPlayer player)
+		{
+			BonusImmunityTime = 0;
+		}
+
+		[AutoDelegation("OnPostHurt")]
+		private void Immunity(ModifierPlayer player, double damage)
+		{
+			int frames = damage <= 1
+				? BonusImmunityTime / 2
+				: BonusImmunityTime;
+			if (player.player.immuneTime > 0) player.player.immuneTime += frames;
+		}
+	}
+
+	[UsesEffect(typeof(ImmunityEffect))]
 	public class ImmunityTimePlus : EquipModifier
 	{
 		public override ModifierTooltipLine[] TooltipLines => new[]
 		{
-			new ModifierTooltipLine { Text = $"+{Properties.RoundedPower} immunity frames", Color =  Color.LimeGreen},
+			new ModifierTooltipLine {Text = $"+{Properties.RoundedPower} immunity frames", Color = Color.LimeGreen},
 		};
 
 		public override ModifierProperties GetModifierProperties(Item item)
 		{
 			return base.GetModifierProperties(item).Set(maxMagnitude: 20f);
 		}
-		
-		private bool _justModified;
 
 		public override void UpdateEquip(Item item, Player player)
 		{
-			ModifierPlayer.Player(player).BonusImmunityTime += (int)Properties.RoundedPower;
-			_justModified = true;
+			ModifierPlayer.Player(player).GetEffect<ImmunityEffect>().BonusImmunityTime += (int) Properties.RoundedPower;
 		}
-		
-		[AutoDelegation("OnResetEffects")]
-		private void ResetEffects(Player player)
-		{
-			if (_justModified) ModifierPlayer.Player(player).BonusImmunityTime -= (int)Properties.RoundedPower;
-			_justModified = false;
-		}
-
 	}
 }

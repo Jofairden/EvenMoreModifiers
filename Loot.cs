@@ -16,7 +16,7 @@ using Terraria.UI;
  * (c) Jofairden 2018
  */
 
-[assembly: InternalsVisibleTo("LootTests")]
+[assembly: InternalsVisibleTo("LootTests")] // Allow doing unit tests
 namespace Loot
 {
 	[SuppressMessage("ReSharper", "InconsistentNaming")]

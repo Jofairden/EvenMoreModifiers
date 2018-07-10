@@ -4,6 +4,55 @@ using Terraria;
 
 namespace Loot.Modifiers.EquipModifiers
 {
+	// Light effect, spawns a light on the player
+	// This is one of the most basic modifiers with effect examples
+	public class LightEffect : ModifierEffect
+	{
+		// Public variables that are adjustable
+		public float Strength;
+		public Color Color;
+
+		// OnInitialize can initialize an effect's values
+		// It is called when a player initializes its effects
+		public override void OnInitialize(ModifierPlayer player)
+		{
+			// Setting Strength is not really needed, as the default
+			// value for floats is already 0f. Just for clarity's sake.
+			Strength = 0f;
+			Color = Color.White;
+		}
+
+		// ResetEffects is called automatically if the effect is being delegated
+		// This is used to reset variables like you are used to in ModPlayer
+		public override void ResetEffects(ModifierPlayer player)
+		{
+			Strength = 0f;
+			Color = Color.White;
+		}
+
+		public override void Clone(ref ModifierEffect clone)
+		{
+			// For clarity, additional cloning is possible like this
+			((LightEffect) clone).Strength = Strength;
+			((LightEffect) clone).Color = Color;
+		}
+
+		// This method will be delegated to PostUpdate
+		// Meaning that this code is automatically called
+		// on ModifierPlayer's PostUpdate hook if this effect
+		// is being delegated
+		[AutoDelegation("OnPostUpdate")]
+		private void Light(ModifierPlayer player)
+		{
+			Lighting.AddLight(player.player.Center, Color.ToVector3() * .15f * Strength);
+		}
+	}
+	
+	// The UsesEffect attribute is linking this Modifier
+	// to the LightEffect effect.
+	// This will make the LightEffect become activated
+	// if we have an item with this modifier.
+	[UsesEffect(typeof(LightEffect))]
 	public class LightPlus : EquipModifier
 	{
 		public override ModifierTooltipLine[] TooltipLines => new[]
@@ -15,20 +64,11 @@ namespace Loot.Modifiers.EquipModifiers
 		{
 			return base.GetModifierProperties(item).Set(maxMagnitude: 5f);
 		}
-
-		private bool _justModified;
 		
+		// todo Just pass ModifierPlayer here?
 		public override void UpdateEquip(Item item, Player player)
 		{
-			ModifierPlayer.Player(player).LightStrength += (int)Properties.RoundedPower;
-			_justModified = true;
-		}
-
-		[AutoDelegation("OnResetEffects")]
-		private void ResetEffects(Player player)
-		{
-			if (_justModified) ModifierPlayer.Player(player).LightStrength -= (int) Properties.RoundedPower;
-			_justModified = false;
+			ModifierPlayer.Player(player).GetEffect<LightEffect>().Strength += (int) Properties.RoundedPower;
 		}
 	}
 }
