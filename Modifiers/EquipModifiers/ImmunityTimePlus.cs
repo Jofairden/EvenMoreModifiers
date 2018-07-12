@@ -15,7 +15,7 @@ namespace Loot.Modifiers.EquipModifiers
 		}
 
 		[AutoDelegation("OnPostHurt")]
-		private void Immunity(ModifierPlayer player, double damage)
+		private void Immunity(ModifierPlayer player, bool pvp, bool quiet, double damage, int hitDirection, bool crit)
 		{
 			int frames = damage <= 1
 				? BonusImmunityTime / 2
