@@ -9,8 +9,8 @@ namespace Loot.Modifiers.EquipModifiers
 	public class LightEffect : ModifierEffect
 	{
 		// Public variables that are adjustable
-		public float Strength;
-		public Color Color;
+		public float LightStrength;
+		public Color LightColor;
 
 		// OnInitialize can initialize an effect's values
 		// It is called when a player initializes its effects
@@ -18,23 +18,23 @@ namespace Loot.Modifiers.EquipModifiers
 		{
 			// Setting Strength is not really needed, as the default
 			// value for floats is already 0f. Just for clarity's sake.
-			Strength = 0f;
-			Color = Color.White;
+			LightStrength = 0f;
+			LightColor = Color.White;
 		}
 
 		// ResetEffects is called automatically if the effect is being delegated
 		// This is used to reset variables like you are used to in ModPlayer
 		public override void ResetEffects(ModifierPlayer player)
 		{
-			Strength = 0f;
-			Color = Color.White;
+			LightStrength = 0f;
+			LightColor = Color.White;
 		}
 
 		public override void Clone(ref ModifierEffect clone)
 		{
 			// For clarity, additional cloning is possible like this
-			((LightEffect) clone).Strength = Strength;
-			((LightEffect) clone).Color = Color;
+			((LightEffect) clone).LightStrength = LightStrength;
+			((LightEffect) clone).LightColor = LightColor;
 		}
 
 		// This method will be delegated to PostUpdate
@@ -44,7 +44,7 @@ namespace Loot.Modifiers.EquipModifiers
 		[AutoDelegation("OnPostUpdate")]
 		private void Light(ModifierPlayer player)
 		{
-			Lighting.AddLight(player.player.Center, Color.ToVector3() * .15f * Strength);
+			Lighting.AddLight(player.player.Center, LightColor.ToVector3() * .15f * LightStrength);
 		}
 	}
 	
@@ -68,7 +68,7 @@ namespace Loot.Modifiers.EquipModifiers
 		// todo Just pass ModifierPlayer here?
 		public override void UpdateEquip(Item item, Player player)
 		{
-			ModifierPlayer.Player(player).GetEffect<LightEffect>().Strength += (int) Properties.RoundedPower;
+			ModifierPlayer.Player(player).GetEffect<LightEffect>().LightStrength += (int) Properties.RoundedPower;
 		}
 	}
 }
