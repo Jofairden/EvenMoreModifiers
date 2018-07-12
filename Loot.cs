@@ -1,6 +1,8 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
 using System.IO;
+using System.Linq;
 using System.Runtime.CompilerServices;
 using Loot.UI;
 using Microsoft.Xna.Framework;
@@ -24,6 +26,7 @@ namespace Loot
 	public sealed class Loot : Mod
 	{
 		internal static Loot Instance;
+		public static bool CheatSheetLoaded;
 
 #if DEBUG
 		public override string Name => "Loot";
@@ -46,6 +49,10 @@ namespace Loot
 		public override void Load()
 		{
 			Instance = this;
+			
+			// Ensure cheat sheet loaded and required version
+			var cheatSheetMod = ModLoader.GetMod("CheatSheet");
+			CheatSheetLoaded = cheatSheetMod != null && cheatSheetMod.Version >= new Version(0, 4, 3, 1);
 
 			//(string Name, string test) variable = ("Compiled with", "C#7");
 

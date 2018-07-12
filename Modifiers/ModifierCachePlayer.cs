@@ -1,6 +1,7 @@
 using System;
 using System.Linq;
 using System.Reflection;
+using CheatSheet;
 using Loot.Core;
 using Terraria;
 using Terraria.ModLoader;
@@ -28,6 +29,7 @@ namespace Loot.Modifiers
 		private Item _oldHeldItem;
 		private Item[] _oldEquips;
 		private bool _forceEquipUpdate;
+		private Item[] _oldCheatSheetEquips;
 		internal bool Ready;
 
 		public override void Initialize()
@@ -35,6 +37,7 @@ namespace Loot.Modifiers
 			_oldHeldItem = null;
 			_oldEquips = new Item[8];
 			_forceEquipUpdate = false;
+			_oldCheatSheetEquips = new Item[6]; // MaxExtraAccessories = 6
 			Ready = false;
 		}
 		
@@ -117,7 +120,7 @@ namespace Loot.Modifiers
 			if (_oldHeldItem == null || _oldHeldItem.IsNotTheSameAs(player.HeldItem))
 			{
 				Ready = false;
-
+				
 				// detach old held item
 				if (_oldHeldItem != null && !_oldHeldItem.IsAir && IsMouseUsable(_oldHeldItem)) 
 				{
@@ -127,9 +130,9 @@ namespace Loot.Modifiers
 					}
 				}
 
+				// attach new held item
 				if (player.HeldItem != null && !player.HeldItem.IsAir && IsMouseUsable(player.HeldItem))
 				{
-					// attach new held item
 					foreach (Modifier m in EMMItem.GetActivePool(player.HeldItem))
 					{
 						AutoAttach(player.HeldItem, player, m);
@@ -166,9 +169,10 @@ namespace Loot.Modifiers
 						}
 					}
 
+					// attach new
 					if (newEquip != null && !newEquip.IsAir)
 					{
-						// attach new
+						
 						foreach (Modifier m in EMMItem.GetActivePool(newEquip))
 						{
 							AutoAttach(newEquip, player, m);
@@ -176,6 +180,61 @@ namespace Loot.Modifiers
 					}
 
 					_oldEquips[i] = newEquip;
+				}
+			}
+
+			if (Loot.CheatSheetLoaded)
+			{
+				// get cheat sheet slots
+				var curEquips = CheatSheetInterface.GetEnabledExtraAccessories(player).Take(_oldCheatSheetEquips.Length).ToArray();
+
+				// go over enabled slots
+				for (int i = 0; i < curEquips.Length; i++)
+				{
+					var oldEquip = _oldCheatSheetEquips[i];
+					var newEquip = curEquips[i];
+
+					// update delegations
+					if (oldEquip == null || newEquip.IsNotTheSameAs(oldEquip))
+					{
+						Ready = false;
+						
+						// detach old first
+						if (oldEquip != null && !oldEquip.IsAir)
+						{
+							foreach (Modifier m in EMMItem.GetActivePool(oldEquip))
+							{
+								AutoDetach(oldEquip, player, m);
+							}
+						}
+						
+						// attach new
+						if (newEquip != null && !newEquip.IsAir)
+						{
+							foreach (Modifier m in EMMItem.GetActivePool(newEquip))
+							{
+								AutoAttach(newEquip, player, m);
+							}
+						}
+
+						_oldCheatSheetEquips[i] = newEquip;
+					}
+				}
+
+				// current enabled is smaller than total
+				if (curEquips.Length < _oldCheatSheetEquips.Length)
+				{
+					var outOfDateEquips = _oldCheatSheetEquips.Skip(curEquips.Length);
+					if (outOfDateEquips.Any()) Ready = false;
+					
+					// for all disabled slots but still had a registered item, detach it
+					foreach (var item in outOfDateEquips.Where(x => x!= null && !x.IsAir))
+					{
+						foreach (Modifier m in EMMItem.GetActivePool(item))
+						{
+							AutoDetach(item, player, m);
+						}
+					}
 				}
 			}
 
