@@ -43,14 +43,6 @@ namespace Loot
 
 		public static ModifierPlayer Player(Player player) => player.GetModPlayer<ModifierPlayer>();
 
-		// Globals for modifiers
-		public int Luck;              		// Luck (TODO: Implement this)
-
-
-		public float PercentDefBoost; 		// % defense bonus
-
-		
-
 		public delegate void VoidEventRaiser(ModifierPlayer player);
 		
 		public event VoidEventRaiser OnInitialize;

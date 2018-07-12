@@ -4,6 +4,18 @@ using Terraria;
 
 namespace Loot.Modifiers.EquipModifiers
 {
+	// todo Be in effect
+	public class LuckEffect : ModifierEffect
+	{
+		public float Luck;
+
+		public override void ResetEffects(ModifierPlayer player)
+		{
+			Luck = 0f;
+		}
+	}
+	
+	[UsesEffect(typeof(LuckEffect))]
 	public class LuckPlus : EquipModifier
 	{
 		public override ModifierTooltipLine[] TooltipLines => new[]
@@ -15,20 +27,10 @@ namespace Loot.Modifiers.EquipModifiers
 		{
 			return base.GetModifierProperties(item).Set(maxMagnitude: 10f);
 		}
-
-		private bool _justModified;
 		
 		public override void UpdateEquip(Item item, Player player)
 		{
-			ModifierPlayer.Player(player).Luck += (int)Properties.RoundedPower;
-			_justModified = true;
-		}
-		
-		[AutoDelegation("OnResetEffects")]
-		private void ResetEffects(Player player)
-		{
-			if (_justModified) ModifierPlayer.Player(player).Luck -= (int)Properties.RoundedPower;
-			_justModified = false;
+			ModifierPlayer.Player(player).GetEffect<LuckEffect>().Luck += (int)Properties.RoundedPower;
 		}
 	}
 }
