@@ -34,7 +34,7 @@ namespace Loot.Core
 		/// <summary>
 		/// Returns the sum of the rarity levels of the active modifiers
 		/// </summary>
-		public float TotalRarityLevel
+		public float TotalRarityLevel 
 			=> ActiveModifiers.Select(m => m.Properties.RarityLevel).DefaultIfEmpty(0).Sum();
 
 		/// <summary>
@@ -76,7 +76,7 @@ namespace Loot.Core
 		{
 			if (maxRollableLines <= 0) maxRollableLines = 1;
 			else if (maxRollableLines > 4) maxRollableLines = 4;
-			
+
 			// Firstly, prepare a WeightedRandom list with modifiers
 			// that are rollable in this context
 			WeightedRandom<Modifier> wr = new WeightedRandom<Modifier>();
@@ -92,14 +92,14 @@ namespace Loot.Core
 					break;
 
 				_forceNextRoll = false;
-				
+
 				// Get a next weighted random mod
 				// Clone the mod (new instance) and roll it's properties, then roll it
 				Modifier e = wr.Get();
 				Modifier eClone = (Modifier) e.Clone();
 				eClone.Properties = eClone.GetModifierProperties(ctx.Item).RollMagnitudeAndPower();
 				eClone.Roll(ctx, list);
-				
+
 				// If the mod deemed to be unable to be added,
 				// Force that the next roll is successful
 				// (no RNG on top of RNG)
@@ -111,7 +111,7 @@ namespace Loot.Core
 
 				// The mod can be added
 				list.Add(eClone);
-				
+
 				// If it is a unique modifier, remove it from the list to be rolled
 				if (eClone.Properties.UniqueModifier)
 				{
@@ -125,12 +125,12 @@ namespace Loot.Core
 		}
 
 		//internal float ModifierRollChance(int len) => 0.5f / (float)Math.Pow(2, len);
-		
+
 		// @TODO must be adjustable by mechanic
-		internal float ModifierRollChance(int len) 
+		internal float ModifierRollChance(int len)
 			=> 0.5f;
 
-		internal static bool IsValidFor(Item item) 
+		internal static bool IsValidFor(Item item)
 			=> item.IsModifierRollableItem();
 
 		/// <summary>
@@ -150,7 +150,7 @@ namespace Loot.Core
 		/// <summary>
 		/// By default returns if this pool matches the given <see cref="ModifierRarity"/>'s <see cref="ModifierRarity.RequiredRarityLevel"/>
 		/// </summary>
-		public virtual bool MatchesRarity(ModifierRarity rarity) 
+		public virtual bool MatchesRarity(ModifierRarity rarity)
 			=> TotalRarityLevel >= rarity.RequiredRarityLevel;
 
 		/// <summary>
@@ -312,7 +312,7 @@ namespace Loot.Core
 					m.Load(item, tag);
 
 					// If our rarity was unloaded, attempt rolling a new one that is applicable
-					if (rarityUnloaded)
+					if (rarityUnloaded && m.ActiveModifiers != null && m.ActiveModifiers.Length > 0)
 						m.Rarity = EMMLoader.GetPoolRarity(m);
 
 					m.Modifiers = null;
