@@ -130,7 +130,7 @@ namespace Loot.Modifiers
 				.Any(x => _oldEquips[x.Index] != null && x.Value.IsNotTheSameAs(_oldEquips[x.Index]));
 
 			// Only recache if needed, so check if there are changes
-			if ((_oldHeldItem != null && _oldHeldItem.IsNotTheSameAs(player.HeldItem))
+			if (_forceEquipUpdate || (_oldHeldItem != null && _oldHeldItem.IsNotTheSameAs(player.HeldItem))
 			    || anyDifferentEquip)
 			{
 				_modifierEffects.Clear();
@@ -170,6 +170,14 @@ namespace Loot.Modifiers
 
 		public override void PreUpdate()
 		{
+			// If our equips cache is not the right size we resize it and force an update
+			if (_oldEquips.Length != 8 + player.extraAccessorySlots)
+			{
+				Ready = false;
+				_forceEquipUpdate = true;
+				Array.Resize(ref _oldEquips, 8 + player.extraAccessorySlots);
+			}
+			
 			CacheModifierEffects(player);
 
 			// If held item needs an update
@@ -196,14 +204,6 @@ namespace Loot.Modifiers
 				}
 
 				_oldHeldItem = player.HeldItem;
-			}
-
-			// If our equips cache is not the right size we resize it and force an update
-			if (_oldEquips.Length != 8 + player.extraAccessorySlots)
-			{
-				Ready = false;
-				_forceEquipUpdate = true;
-				Array.Resize(ref _oldEquips, 8 + player.extraAccessorySlots);
 			}
 
 			for (int i = 0; i < 8 + player.extraAccessorySlots; i++)

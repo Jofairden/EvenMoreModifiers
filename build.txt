@@ -1,5 +1,5 @@
 author = Jofairden
-version = 0.1.0.7
+version = 0.1.0.8
 displayName = Even More Modifiers
 homepage = https://forums.terraria.org/index.php?threads/even-more-modifiers-relaunch-beta.68438/
 hideCode = false
