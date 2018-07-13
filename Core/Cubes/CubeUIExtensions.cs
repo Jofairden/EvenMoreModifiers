@@ -14,16 +14,21 @@ namespace Loot.Core.Cubes
 		// Needed to enable right click for possible items
 		public override bool CanRightClick(Item item)
 		{
-			if (PlayerInput.WritingText
-			    || !Main.hasFocus
-			    || !Main.keyState.IsKeyDown(Keys.LeftControl)
-			    || Loot.Instance.CubeInterface.CurrentState == null) 
+			if (!RightClickFunctionalityRequirements()) 
 				return false;
 
 			var ui = Loot.Instance.CubeInterface.CurrentState as CubeUI;
 			if (ui == null) return false;
 
 			return ui.Visible && ui.IsItemValidForUISlot(item);
+		}
+
+		private bool RightClickFunctionalityRequirements()
+		{
+			return !PlayerInput.WritingText
+			       && Main.hasFocus
+			       && Main.keyState.IsKeyDown(Keys.LeftControl)
+			       && Loot.Instance.CubeInterface.CurrentState != null;
 		}
 
 		// Auto slot item in UI if possible
@@ -37,7 +42,7 @@ namespace Loot.Core.Cubes
 			var ui = Loot.Instance.CubeInterface.CurrentState as CubeUI;
 			if (ui == null) return;
 			
-			if (!(item.modItem is MagicalCube) && ui.Visible && ui.IsItemValidForUISlot(item))
+			if (RightClickFunctionalityRequirements() && !(item.modItem is MagicalCube) && ui.Visible && ui.IsItemValidForUISlot(item))
 			{
 				// ReSharper disable once ConvertIfStatementToSwitchStatement
 				// ^ needs C#7
