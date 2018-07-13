@@ -18,7 +18,7 @@ namespace Loot.Modifiers.EquipModifiers
 		}
 
 		[AutoDelegation("OnPreKill")]
-		private bool SurviveEvent(ModifierPlayer player)
+		private bool SurviveEvent(ModifierPlayer player, double damage, int hitDirection, bool pvp, ref bool playSound, ref bool genGore, ref PlayerDeathReason damageSource)
 		{
 			if (Main.rand.NextFloat() < Math.Min(SurvivalChance, MAX_SURVIVAL_CHANCE))
 			{
@@ -30,6 +30,7 @@ namespace Loot.Modifiers.EquipModifiers
 		}
 	}
 
+	[UsesEffect(typeof(SurvivalEffect))]
 	public class SurvivalChance : EquipModifier
 	{
 		// TODO easier tooltip templating
