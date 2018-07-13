@@ -14,7 +14,7 @@ namespace Loot.Core.Cubes
 		// Needed to enable right click for possible items
 		public override bool CanRightClick(Item item)
 		{
-			if (!RightClickFunctionalityRequirements()) 
+			if (!RightClickFunctionalityRequirements(item))
 				return false;
 
 			var ui = Loot.Instance.CubeInterface.CurrentState as CubeUI;
@@ -23,9 +23,10 @@ namespace Loot.Core.Cubes
 			return ui.Visible && ui.IsItemValidForUISlot(item);
 		}
 
-		private bool RightClickFunctionalityRequirements()
+		private bool RightClickFunctionalityRequirements(Item item)
 		{
-			return !PlayerInput.WritingText
+			return (!Loot.WingSlotLoaded || item.wingSlot <= 0) // temp fix for wingslot mod
+			       && !PlayerInput.WritingText
 			       && Main.hasFocus
 			       && Main.keyState.IsKeyDown(Keys.LeftControl)
 			       && Loot.Instance.CubeInterface.CurrentState != null;
@@ -41,8 +42,8 @@ namespace Loot.Core.Cubes
 			// by which we need to assume any possible item can be passed into this hook
 			var ui = Loot.Instance.CubeInterface.CurrentState as CubeUI;
 			if (ui == null) return;
-			
-			if (RightClickFunctionalityRequirements() && !(item.modItem is MagicalCube) && ui.Visible && ui.IsItemValidForUISlot(item))
+
+			if (RightClickFunctionalityRequirements(item) && !(item.modItem is MagicalCube) && ui.Visible && ui.IsItemValidForUISlot(item))
 			{
 				// ReSharper disable once ConvertIfStatementToSwitchStatement
 				// ^ needs C#7
@@ -93,8 +94,9 @@ namespace Loot.Core.Cubes
 			var cubeUI = ui?.CurrentState as CubeUI;
 			if (cubeUI != null)
 			{
-				if (!cubeUI.IsItemValidForUISlot(item)
-				    || cubeUI.IsSlottedItemInCubeUI()) 
+				if ((Loot.WingSlotLoaded && item.wingSlot > 0) // temp fix for wingslot mod
+					|| !cubeUI.IsItemValidForUISlot(item)
+				    || cubeUI.IsSlottedItemInCubeUI())
 					return;
 
 				var i = tooltips.FindIndex(x => x.mod.Equals("Terraria") && x.Name.Equals("ItemName"));

@@ -27,6 +27,7 @@ namespace Loot
 	{
 		internal static Loot Instance;
 		public static bool CheatSheetLoaded;
+		public static bool WingSlotLoaded;
 
 #if DEBUG
 		public override string Name => "Loot";
@@ -53,6 +54,7 @@ namespace Loot
 			// Ensure cheat sheet loaded and required version
 			var cheatSheetMod = ModLoader.GetMod("CheatSheet");
 			CheatSheetLoaded = cheatSheetMod != null && cheatSheetMod.Version >= new Version(0, 4, 3, 1);
+			WingSlotLoaded = ModLoader.GetLoadedMods().Contains("WingSlot");
 
 			//(string Name, string test) variable = ("Compiled with", "C#7");
 
