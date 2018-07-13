@@ -10,6 +10,11 @@ namespace Loot.Modifiers.EquipModifiers
 	{
 		public float ManaShield; // % of damage redirected to mana
 
+		public override void ResetEffects(ModifierPlayer player)
+		{
+			ManaShield = 0f;
+		}
+
 		// todo needs to go after ninja dodge, but only if it fails
 		
 		[AutoDelegation("OnPreHurt")]
