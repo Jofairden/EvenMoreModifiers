@@ -2,6 +2,8 @@ using System;
 using System.Collections.Generic;
 using System.Reflection;
 using Loot.Core;
+using Terraria;
+using Terraria.ModLoader;
 
 namespace Loot.Modifiers
 {
@@ -29,9 +31,18 @@ namespace Loot.Modifiers
 			{
 				EventInfo evt = player.GetType().GetEvent(type, BindingFlags.Instance | BindingFlags.Public);
 				if (evt != null)
-				{				
-					Delegate handler = Delegate.CreateDelegate(evt.EventHandlerType, effect, method);
-					evt.AddEventHandler(player, handler);
+				{
+					try
+					{
+						Delegate handler = Delegate.CreateDelegate(evt.EventHandlerType, effect, method);
+						evt.AddEventHandler(player, handler);
+					}
+					catch (Exception e)
+					{
+						ErrorLogger.Log(e.ToString());
+						Main.NewTextMultiline(e.ToString());
+						Main.NewText("An error just occurred. Please let the mod author know on the forums and show a screenshot of it", 255, 0, 0);
+					}
 				}
 			}
 		}
@@ -40,11 +51,21 @@ namespace Loot.Modifiers
 		{
 			foreach (string type in _delegationTypes)
 			{
+
 				EventInfo evt = player.GetType().GetEvent(type, BindingFlags.Instance | BindingFlags.Public);
 				if (evt != null)
-				{				
-					Delegate handler = Delegate.CreateDelegate(evt.EventHandlerType, effect, method);
-					evt.RemoveEventHandler(player, handler);
+				{
+					try
+					{
+						Delegate handler = Delegate.CreateDelegate(evt.EventHandlerType, effect, method);
+						evt.RemoveEventHandler(player, handler);
+					}
+					catch (Exception e)
+					{
+						ErrorLogger.Log(e.ToString());
+						Main.NewTextMultiline(e.ToString());
+						Main.NewText("An error just occurred. Please let the mod author know on the forums and show a screenshot of it.", 255, 0, 0);
+					}
 				}
 			}
 		}
