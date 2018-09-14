@@ -5,7 +5,7 @@ namespace Loot.Core.Cubes
 {
 	public class CubeOfSealing : MagicalCube
 	{
-		protected override string CubeName => "Cube of Sealing";
+		protected override string CubeName => "Sealing Cube";
 		protected override bool DisplayTier => false; // Tier is not of importance for this cube
 
 		protected override void SafeStaticDefaults()

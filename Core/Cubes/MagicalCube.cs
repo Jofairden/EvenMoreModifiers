@@ -15,6 +15,9 @@ namespace Loot.Core.Cubes
 		TierIII
 	}
 
+	// todo allow extra tooltips
+	// todo tooltips locales (translations)
+	
 	public abstract class MagicalCube : ModItem
 	{
 		protected abstract string CubeName { get; }

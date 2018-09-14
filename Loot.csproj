@@ -10,7 +10,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Loot</RootNamespace>
     <AssemblyName>Loot</AssemblyName>
-    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <TargetFrameworkProfile />
@@ -79,6 +79,7 @@
   <ItemGroup>
     <Compile Include="ArmorItemHack.cs" />
     <Compile Include="Core\AutoDelegationAttribute.cs" />
+    <Compile Include="Core\Cubes\BlackCube.cs" />
     <Compile Include="Core\Cubes\PoorCube.cs" />
     <Compile Include="Core\Cubes\CubeOfSealing.cs" />
     <Compile Include="Core\Cubes\CubeShop.cs" />
