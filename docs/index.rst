@@ -1,17 +1,32 @@
-.. EvenMoreModifiers documentation master file, created by
-   sphinx-quickstart on Fri Sep 14 23:17:45 2018.
-   You can adapt this file completely to your liking, but it should at least
-   contain the root `toctree` directive.
+*********************************
+EvenMoreModifiers's documentation
+*********************************
 
-Welcome to EvenMoreModifiers's documentation!
-=============================================
+Introductory
+============
+Welcome to the official documentation of Even More Modifiers!
+Please refer to the sidebar menu to navigate this documentation site.
+
+This documentation is generously hosted by `readthedocs.io <readthedocs.io>`_
+Docs are written in rst (reStructuredText) and is processed with `Sphinx python <http://www.sphinx-doc.org/en/master/>`_.
+(Markdown docs supported using `MkDocs <https://www.mkdocs.org/>`_)
+You can view the docs `on Github here <https://github.com/Jofairden/EvenMoreModifiers/tree/rework/docs>`_
+Syntax highlighting is done by `Pygments <pygments.org>`_ which internally uses 'lexers' to generate highlighting.
+
+Guides
+^^^^^^
 
 .. toctree::
-   :maxdepth: 2
-   :caption: Contents:
+   :maxdepth: 1
+   
+   gettingstarted
+   modifier
+   modifierrarity
+   modifierpool
+   utilities
+   advancedcontentcreation
 
-
-
+   
 Indices and tables
 ==================
 
