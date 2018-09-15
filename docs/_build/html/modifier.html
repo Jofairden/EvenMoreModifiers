@@ -1,0 +1,352 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Making a modifier &mdash; EvenMoreModifiers  documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Making a rarity" href="modifierrarity.html" />
+    <link rel="prev" title="Getting started" href="gettingstarted.html" /> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> EvenMoreModifiers
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="gettingstarted.html">Getting started</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Making a modifier</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#properties">Properties</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#brief-properties-explanation">Brief properties explanation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#properties-explanation-in-context">Properties explanation in context</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#modifying-properties">Modifying properties</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#saving-and-loading-data-per-modifier">Saving and loading data per modifier</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#saving-data">Saving data</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#loading-data">Loading data</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#tooltips">Tooltips</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="modifierrarity.html">Making a rarity</a></li>
+<li class="toctree-l1"><a class="reference internal" href="modifierpool.html">Making a pool</a></li>
+<li class="toctree-l1"><a class="reference internal" href="utilities.html">Utilities</a></li>
+<li class="toctree-l1"><a class="reference internal" href="advancedcontentcreation.html">Advanced content creation</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">EvenMoreModifiers</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>Making a modifier</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/modifier.md.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="making-a-modifier">
+<span id="making-a-modifier"></span><h1>Making a modifier<a class="headerlink" href="#making-a-modifier" title="Permalink to this headline">¶</a></h1>
+<hr class="docutils" />
+<p>To make a new Modifier, simply make a new class that inherits the class <code class="docutils literal notranslate"><span class="pre">Modifier</span></code> in the <code class="docutils literal notranslate"><span class="pre">Loot.System</span></code> namespace.</p>
+<div class="section" id="properties">
+<span id="properties"></span><h2>Properties<a class="headerlink" href="#properties" title="Permalink to this headline">¶</a></h2>
+<hr class="docutils" />
+<div class="section" id="brief-properties-explanation">
+<span id="brief-properties-explanation"></span><h3>Brief properties explanation<a class="headerlink" href="#brief-properties-explanation" title="Permalink to this headline">¶</a></h3>
+<p>Modifiers have the following features:</p>
+<p><strong>Power rolls</strong>: modifiers can roll its power by ‘magnitudes’. This happens when the modifier is rolled on the item, and these values are saved.</p>
+<p><strong>Weighted roll chances</strong>: modifiers can have different chances of being rolling (weighted rolling). The default weight is 1f. If you increase this number, your modifier will show up more often. Putting it to 2f will make it show up twice as often. Something like 10f is a really high roll chance. For very powerful modifiers, you want the roll chance to be low.</p>
+<p><strong>Rarity levels</strong>: the total rarity is decided by the sum of the rarity level of all modifiers on the item. The default is 1f. If you have more powerful modifiers, you will want to increase this number to signify the power of it.</p>
+<p><strong>Modifiers function like GlobalItems</strong>. This means you have access to pretty much all hooks available in GlobalItem (a few <a class="reference external" href="https://github.com/Jofairden/EvenMoreModifiers/blob/rework/System/Modifier.cs#L297">exceptions</a>). You can assume the item in the context of a hook (the item parameter) is an item being influenced by that modifier. This is handled by EMM and out of your way, mostly consisting of <a class="reference external" href="https://github.com/Jofairden/EvenMoreModifiers/blob/rework/ModifierItem.cs">boilerplate code</a>.</p>
+<p>Below I will detail all the properties of <a class="reference external" href="https://github.com/Jofairden/EvenMoreModifiers/blob/rework/System/Modifier.cs#L22-L112">ModifierProperties</a></p>
+<div class="highlight-csharp notranslate"><div class="highlight"><pre><span></span><span class="k">public</span> <span class="kt">float</span> <span class="n">MinMagnitude</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="k">private</span> <span class="k">set</span><span class="p">;</span> <span class="p">}</span>
+<span class="k">public</span> <span class="kt">float</span> <span class="n">MaxMagnitude</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="k">private</span> <span class="k">set</span><span class="p">;</span> <span class="p">}</span>
+<span class="k">public</span> <span class="kt">float</span> <span class="n">MagnitudeStrength</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="k">private</span> <span class="k">set</span><span class="p">;</span> <span class="p">}</span>
+<span class="k">public</span> <span class="kt">float</span> <span class="n">BasePower</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="k">private</span> <span class="k">set</span><span class="p">;</span> <span class="p">}</span>
+<span class="k">public</span> <span class="kt">float</span> <span class="n">RarityLevel</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="k">private</span> <span class="k">set</span><span class="p">;</span> <span class="p">}</span>
+<span class="k">public</span> <span class="kt">float</span> <span class="n">RollChance</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="k">private</span> <span class="k">set</span><span class="p">;</span> <span class="p">}</span>
+<span class="k">public</span> <span class="kt">int</span> <span class="n">RoundPrecision</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="k">private</span> <span class="k">set</span><span class="p">;</span> <span class="p">}</span>
+<span class="k">public</span> <span class="kt">float</span> <span class="n">Magnitude</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="k">private</span> <span class="k">set</span><span class="p">;</span> <span class="p">}</span>
+<span class="k">private</span> <span class="kt">float</span> <span class="n">_power</span><span class="p">;</span>
+<span class="k">public</span> <span class="kt">float</span> <span class="n">Power</span>
+<span class="p">{</span>
+    <span class="k">get</span> <span class="p">{</span> <span class="k">return</span> <span class="n">_power</span><span class="p">;</span> <span class="p">}</span>
+    <span class="k">private</span> <span class="k">set</span>
+    <span class="p">{</span>
+        <span class="n">_power</span> <span class="p">=</span> <span class="k">value</span><span class="p">;</span>
+        <span class="n">RoundedPower</span> <span class="p">=</span> <span class="p">(</span><span class="kt">float</span><span class="p">)</span><span class="n">Math</span><span class="p">.</span><span class="n">Round</span><span class="p">(</span><span class="k">value</span><span class="p">,</span> <span class="n">RoundPrecision</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+<span class="k">public</span> <span class="kt">float</span> <span class="n">RoundedPower</span>
+<span class="p">{</span>
+    <span class="k">get</span><span class="p">;</span>
+    <span class="k">private</span> <span class="k">set</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="properties-explanation-in-context">
+<span id="properties-explanation-in-context"></span><h3>Properties explanation in context<a class="headerlink" href="#properties-explanation-in-context" title="Permalink to this headline">¶</a></h3>
+<p><strong>MinMagnitude</strong> and <strong>MaxMagnitude</strong> define the range that <strong>Magnitude</strong> will roll in. For example 10f - 15f will make <strong>Magnitude</strong> roll between 10f and 15f. <strong>MagnitudeStrength</strong> influences the final result of that roll as a multiplier. For example setting this to 2 and rolling the upper bound of the previous example (15f) would result in a Magnitude of 30. <strong>Power</strong> is then calculated by <strong>BasePower</strong>*<strong>Magnitude</strong>, so a BasePower of 10 in the previous context would result in a Power of 300. When Power is set, it automatically sets <strong>RoundedPower</strong> as well. This property is primarily useful for tooltips, where you’ll likely want to display 230% instead of something like 230.568893%. The precision of the rounding can be adjusted with <strong>RoundPrecision</strong>, which defaults to 0. So by default it will prune all decimals. If you set it to 1, it will leave 1 decimal, at 2 it will leave 2, and so forth…</p>
+<p>These Properties (and all other hooks) support inheritance.  A good example of that can be found <a class="reference external" href="https://github.com/Jofairden/EvenMoreModifiers/blob/rework/Modifiers/EquipModifiers/KnockbackImmunity.cs#L20-L31">here</a> and <a class="reference external" href="https://github.com/Jofairden/EvenMoreModifiers/blob/rework/Modifiers/WeaponDebuffModifier.cs#L57-L60">here</a>.</p>
+</div>
+<div class="section" id="modifying-properties">
+<span id="modifying-properties"></span><h3>Modifying properties<a class="headerlink" href="#modifying-properties" title="Permalink to this headline">¶</a></h3>
+<p>To modify the Properties, you override the <a class="reference external" href="https://github.com/Jofairden/EvenMoreModifiers/blob/rework/System/Modifier.cs#L134-L137">GetModifierProperties</a> method and return a new object. All properties have a default value, to set specific ones you can specify the parameter names like so:</p>
+<div class="highlight-csharp notranslate"><div class="highlight"><pre><span></span><span class="k">public</span> <span class="k">virtual</span> <span class="n">ModifierProperties</span> <span class="nf">GetModifierProperties</span><span class="p">(</span><span class="n">Item</span> <span class="n">item</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="k">return</span> <span class="k">new</span> <span class="nf">ModifierProperties</span><span class="p">(</span><span class="n">roundPrecision</span><span class="p">:</span> <span class="m">1</span><span class="p">,</span> <span class="n">minMagnitude</span><span class="p">:</span> <span class="m">15f</span><span class="p">,</span> <span class="n">maxMagnitude</span><span class="p">:</span> <span class="m">30f</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Please note that you need to be careful when using inheritance! Always call base first and then modify whatever properties it returns:</p>
+<p>A base class:</p>
+<div class="highlight-csharp notranslate"><div class="highlight"><pre><span></span><span class="k">public</span> <span class="k">abstract</span> <span class="k">class</span> <span class="nc">EquipModifier</span> <span class="p">:</span> <span class="n">Modifier</span>
+<span class="p">{</span>
+    <span class="k">public</span> <span class="k">override</span> <span class="n">ModifierProperties</span> <span class="nf">GetModifierProperties</span><span class="p">(</span><span class="n">Item</span> <span class="n">item</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="k">return</span> <span class="k">new</span> <span class="nf">ModifierProperties</span><span class="p">(</span><span class="n">magnitudeStrength</span><span class="p">:</span> <span class="n">item</span><span class="p">.</span><span class="n">IsAccessory</span><span class="p">()</span> <span class="p">?</span> <span class="p">.</span><span class="m">6f</span> <span class="p">:</span> <span class="m">1f</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>If a class inherits from this base class, the properties should be handled like so:</p>
+<div class="highlight-csharp notranslate"><div class="highlight"><pre><span></span><span class="k">public</span> <span class="k">override</span> <span class="n">ModifierProperties</span> <span class="nf">GetModifierProperties</span><span class="p">(</span><span class="n">Item</span> <span class="n">item</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="k">return</span> <span class="k">base</span><span class="p">.</span><span class="n">GetModifierProperties</span><span class="p">(</span><span class="n">item</span><span class="p">).</span><span class="n">Set</span><span class="p">(</span><span class="n">maxMagnitude</span><span class="p">:</span> <span class="m">15f</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="saving-and-loading-data-per-modifier">
+<span id="saving-and-loading-data-per-modifier"></span><h2>Saving and loading data per modifier<a class="headerlink" href="#saving-and-loading-data-per-modifier" title="Permalink to this headline">¶</a></h2>
+<hr class="docutils" />
+<p>You can save and load your own data per modifier, an example can be seen <a class="reference external" href="https://github.com/Jofairden/EvenMoreModifiers/blob/rework/Modifiers/WeaponModifiers/RandomDebuff.cs#L43-L53">here</a>.
+Essentially, saving and loading works exactly the same as you are used to. The handling of it is managed by EMM itself and out of your way.</p>
+<div class="section" id="saving-data">
+<span id="saving-data"></span><h3>Saving data<a class="headerlink" href="#saving-data" title="Permalink to this headline">¶</a></h3>
+<p>Please note that, inside the Save method the TagCompound already contains necessary save data for the modifier (which is automatically handled by EMM).
+Make sure that you don’t clear the TC or make a new instance!</p>
+<div class="highlight-csharp notranslate"><div class="highlight"><pre><span></span><span class="k">public</span> <span class="k">override</span> <span class="k">void</span> <span class="nf">Save</span><span class="p">(</span><span class="n">Item</span> <span class="n">item</span><span class="p">,</span> <span class="n">TagCompound</span> <span class="n">tag</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="c1">// If you use inheritance, always call base first</span>
+    <span class="k">base</span><span class="p">.</span><span class="n">Save</span><span class="p">(</span><span class="n">item</span><span class="p">,</span> <span class="n">tag</span><span class="p">);</span>
+    
+    <span class="c1">// Any saving here!</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="loading-data">
+<span id="loading-data"></span><h3>Loading data<a class="headerlink" href="#loading-data" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-csharp notranslate"><div class="highlight"><pre><span></span><span class="k">public</span> <span class="k">override</span> <span class="k">void</span> <span class="nf">Load</span><span class="p">(</span><span class="n">Item</span> <span class="n">item</span><span class="p">,</span> <span class="n">TagCompound</span> <span class="n">tag</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="c1">// If you use inheritance, always call base first</span>
+    <span class="k">base</span><span class="p">.</span><span class="n">Load</span><span class="p">(</span><span class="n">item</span><span class="p">,</span> <span class="n">tag</span><span class="p">);</span>
+    
+    <span class="c1">// Any loading here!</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="tooltips">
+<span id="tooltips"></span><h2>Tooltips<a class="headerlink" href="#tooltips" title="Permalink to this headline">¶</a></h2>
+<hr class="docutils" />
+<p>Tooltips by modifiers are automatically managed by EMM, and it does the following:</p>
+<ul class="simple">
+<li>Item name automatically modified if rarity overrides color and/or adds prefix/suffix</li>
+<li>Adds a rarity tag by name [Modifier:Name]</li>
+<li>Adds a modifier line (description) per line by name [Modifier:Description:i]</li>
+</ul>
+<p>However, you can still modify the tooltips per modifier if you want to. The ModifyTooltips method is called after this automatic behaviour.</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="modifierrarity.html" class="btn btn-neutral float-right" title="Making a rarity" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="gettingstarted.html" class="btn btn-neutral" title="Getting started" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018, Jofairden.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'',
+            LANGUAGE:'None',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  <script type="text/javascript" src="_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

@@ -1,6 +1,5 @@
 
 
-
 <!DOCTYPE html>
 <!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
@@ -9,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Index &mdash; EvenMoreModifiers  documentation</title>
+  <title>Making a pool &mdash; EvenMoreModifiers  documentation</title>
   
 
   
@@ -27,8 +26,10 @@
 
   <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    <link rel="index" title="Index" href="#" />
-    <link rel="search" title="Search" href="search.html" /> 
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Utilities" href="utilities.html" />
+    <link rel="prev" title="Making a rarity" href="modifierrarity.html" /> 
 
   
   <script src="_static/js/modernizr.min.js"></script>
@@ -77,11 +78,15 @@
               
             
             
-              <ul>
+              <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="gettingstarted.html">Getting started</a></li>
 <li class="toctree-l1"><a class="reference internal" href="modifier.html">Making a modifier</a></li>
 <li class="toctree-l1"><a class="reference internal" href="modifierrarity.html">Making a rarity</a></li>
-<li class="toctree-l1"><a class="reference internal" href="modifierpool.html">Making a pool</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Making a pool</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#concept">Concept</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#primary-use">Primary use</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="utilities.html">Utilities</a></li>
 <li class="toctree-l1"><a class="reference internal" href="advancedcontentcreation.html">Advanced content creation</a></li>
 </ul>
@@ -129,12 +134,14 @@
     
       <li><a href="index.html">Docs</a> &raquo;</li>
         
-      <li>Index</li>
+      <li>Making a pool</li>
     
     
       <li class="wy-breadcrumbs-aside">
         
             
+            <a href="_sources/modifierpool.md.txt" rel="nofollow"> View page source</a>
+          
         
       </li>
     
@@ -146,11 +153,22 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-
-<h1 id="index">Index</h1>
-
-<div class="genindex-jumpbox">
- 
+  <div class="section" id="making-a-pool">
+<span id="making-a-pool"></span><h1>Making a pool<a class="headerlink" href="#making-a-pool" title="Permalink to this headline">¶</a></h1>
+<hr class="docutils" />
+<p>To make a new ModifierPool, simply make a new class that inherits the class <code class="docutils literal notranslate"><span class="pre">ModifierPool</span></code> in the <code class="docutils literal notranslate"><span class="pre">Loot.System</span></code> namespace.</p>
+<div class="section" id="concept">
+<span id="concept"></span><h2>Concept<a class="headerlink" href="#concept" title="Permalink to this headline">¶</a></h2>
+<hr class="docutils" />
+<p>The idea of a pool is that it consists of a ‘pool’ of modifiers of which up to 4 can be rolled on an item. EMM itself uses a <a class="reference external" href="https://github.com/Jofairden/EvenMoreModifiers/blob/a5c1629c4a382eceb7f490ae1487e0dc6c94385f/System/AllModifiersPool.cs#L11">single pool that consists of all modifiers in the system</a>.</p>
+<p>Also note that, the modifiers on an item are actually saved as a ModifierPool: the Modifiers are inside this ModifierPool.</p>
+</div>
+<div class="section" id="primary-use">
+<span id="primary-use"></span><h2>Primary use<a class="headerlink" href="#primary-use" title="Permalink to this headline">¶</a></h2>
+<hr class="docutils" />
+<p>The primary use of a pool should be to roll a ‘themed’ item. You could also make pools that are rare that consist only of modifiers that work well together, making it more likely the item becomes very potent with the rolled modifiers.</p>
+<p>You’ll want to populate the <code class="docutils literal notranslate"><span class="pre">Modifiers</span></code> array in your contructor. An example can be seen <a class="reference external" href="https://github.com/Jofairden/EvenMoreModifiers/blob/a5c1629c4a382eceb7f490ae1487e0dc6c94385f/Pools/WeaponModifierPool.cs#L10-L26">here</a></p>
+</div>
 </div>
 
 
@@ -158,6 +176,15 @@
            
           </div>
           <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="utilities.html" class="btn btn-neutral float-right" title="Utilities" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="modifierrarity.html" class="btn btn-neutral" title="Making a rarity" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
   
 
   <hr/>

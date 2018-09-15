@@ -1,0 +1,258 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Making a rarity &mdash; EvenMoreModifiers  documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Making a pool" href="modifierpool.html" />
+    <link rel="prev" title="Making a modifier" href="modifier.html" /> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> EvenMoreModifiers
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="gettingstarted.html">Getting started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="modifier.html">Making a modifier</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Making a rarity</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#primary-functions">Primary functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#extra-functions">Extra functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#saving-and-loading-data">Saving and loading data</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="modifierpool.html">Making a pool</a></li>
+<li class="toctree-l1"><a class="reference internal" href="utilities.html">Utilities</a></li>
+<li class="toctree-l1"><a class="reference internal" href="advancedcontentcreation.html">Advanced content creation</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">EvenMoreModifiers</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>Making a rarity</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/modifierrarity.md.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="making-a-rarity">
+<span id="making-a-rarity"></span><h1>Making a rarity<a class="headerlink" href="#making-a-rarity" title="Permalink to this headline">¶</a></h1>
+<hr class="docutils" />
+<p>To make a new ModifierRarity, simply make a new class that inherits the class <code class="docutils literal notranslate"><span class="pre">ModifierRarity</span></code> in the <code class="docutils literal notranslate"><span class="pre">Loot.System</span></code> namespace.</p>
+<div class="section" id="primary-functions">
+<span id="primary-functions"></span><h2>Primary functions<a class="headerlink" href="#primary-functions" title="Permalink to this headline">¶</a></h2>
+<hr class="docutils" />
+<p>The primary use of a rarity is to provide some representation of how strong a rolled item’s modifiers are. For most rarities, you’ll just want to be overriding these properties: (example is Common Rarity)</p>
+<div class="highlight-csharp notranslate"><div class="highlight"><pre><span></span><span class="k">public</span> <span class="k">class</span> <span class="nc">CommonRarity</span> <span class="p">:</span> <span class="n">ModifierRarity</span>
+<span class="p">{</span>
+    <span class="k">public</span> <span class="k">override</span> <span class="kt">string</span> <span class="n">Name</span> <span class="p">=&gt;</span> <span class="s">&quot;Common&quot;</span><span class="p">;</span>
+    <span class="k">public</span> <span class="k">override</span> <span class="n">Color</span> <span class="n">Color</span> <span class="p">=&gt;</span> <span class="n">Color</span><span class="p">.</span><span class="n">White</span><span class="p">;</span>
+    <span class="k">public</span> <span class="k">override</span> <span class="kt">float</span> <span class="n">RequiredRarityLevel</span> <span class="p">=&gt;</span> <span class="m">0f</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>A rarity is always rolled by its RequiredRarityLevel, and the highest matching rarity is always selected. A higher required level indicates a more powerful item, so the rarity should signify that.</p>
+</div>
+<div class="section" id="extra-functions">
+<span id="extra-functions"></span><h2>Extra functions<a class="headerlink" href="#extra-functions" title="Permalink to this headline">¶</a></h2>
+<hr class="docutils" />
+<p>A rarity can add a prefix and suffix to an item name, as well as change the color of it in the tooltip.</p>
+<div class="highlight-csharp notranslate"><div class="highlight"><pre><span></span>    <span class="k">public</span> <span class="k">virtual</span> <span class="n">Color</span><span class="p">?</span> <span class="n">OverrideNameColor</span> <span class="p">=&gt;</span> <span class="k">null</span><span class="p">;</span>
+    <span class="k">public</span> <span class="k">virtual</span> <span class="kt">string</span> <span class="n">ItemPrefix</span> <span class="p">=&gt;</span> <span class="k">null</span><span class="p">;</span>
+    <span class="k">public</span> <span class="k">virtual</span> <span class="kt">string</span> <span class="n">ItemSuffix</span> <span class="p">=&gt;</span> <span class="k">null</span><span class="p">;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="saving-and-loading-data">
+<span id="saving-and-loading-data"></span><h2>Saving and loading data<a class="headerlink" href="#saving-and-loading-data" title="Permalink to this headline">¶</a></h2>
+<hr class="docutils" />
+<p>You can save and load data exactly like how you can do it for a Modifier (see above)</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="modifierpool.html" class="btn btn-neutral float-right" title="Making a pool" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="modifier.html" class="btn btn-neutral" title="Making a modifier" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018, Jofairden.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'',
+            LANGUAGE:'None',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  <script type="text/javascript" src="_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

@@ -1,6 +1,5 @@
 
 
-
 <!DOCTYPE html>
 <!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
@@ -9,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Index &mdash; EvenMoreModifiers  documentation</title>
+  <title>Getting started &mdash; EvenMoreModifiers  documentation</title>
   
 
   
@@ -27,8 +26,10 @@
 
   <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    <link rel="index" title="Index" href="#" />
-    <link rel="search" title="Search" href="search.html" /> 
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Making a modifier" href="modifier.html" />
+    <link rel="prev" title="EvenMoreModifiers’s documentation" href="index.html" /> 
 
   
   <script src="_static/js/modernizr.min.js"></script>
@@ -77,8 +78,12 @@
               
             
             
-              <ul>
-<li class="toctree-l1"><a class="reference internal" href="gettingstarted.html">Getting started</a></li>
+              <ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Getting started</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#registering-your-mod">Registering your mod</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#autoloading-your-content">Autoloading your content</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="modifier.html">Making a modifier</a></li>
 <li class="toctree-l1"><a class="reference internal" href="modifierrarity.html">Making a rarity</a></li>
 <li class="toctree-l1"><a class="reference internal" href="modifierpool.html">Making a pool</a></li>
@@ -129,12 +134,14 @@
     
       <li><a href="index.html">Docs</a> &raquo;</li>
         
-      <li>Index</li>
+      <li>Getting started</li>
     
     
       <li class="wy-breadcrumbs-aside">
         
             
+            <a href="_sources/gettingstarted.md.txt" rel="nofollow"> View page source</a>
+          
         
       </li>
     
@@ -146,11 +153,28 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-
-<h1 id="index">Index</h1>
-
-<div class="genindex-jumpbox">
- 
+  <div class="section" id="getting-started">
+<span id="getting-started"></span><h1>Getting started<a class="headerlink" href="#getting-started" title="Permalink to this headline">¶</a></h1>
+<hr class="docutils" />
+<p>Learn how to setup your mod to be able to add your content to EMM.</p>
+<div class="section" id="registering-your-mod">
+<span id="registering-your-mod"></span><h2>Registering your mod<a class="headerlink" href="#registering-your-mod" title="Permalink to this headline">¶</a></h2>
+<hr class="docutils" />
+<p>First, you need to register your mod into EMM. Autoloading your creations is the easiest way. To register your mod, call this in your Load() override:</p>
+<div class="highlight-csharp notranslate"><div class="highlight"><pre><span></span><span class="n">Loot</span><span class="p">.</span><span class="n">EMMLoader</span><span class="p">.</span><span class="n">RegisterMod</span><span class="p">(</span><span class="k">this</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>This will let EMM know you want your mod to contribute.</p>
+</div>
+<div class="section" id="autoloading-your-content">
+<span id="autoloading-your-content"></span><h2>Autoloading your content<a class="headerlink" href="#autoloading-your-content" title="Permalink to this headline">¶</a></h2>
+<hr class="docutils" />
+<p>Next up, you will let EMM know to setup content for you, i.e. it actually adds everything you made to the system:</p>
+<div class="highlight-csharp notranslate"><div class="highlight"><pre><span></span><span class="n">Loot</span><span class="p">.</span><span class="n">EMMLoader</span><span class="p">.</span><span class="n">SetupContent</span><span class="p">(</span><span class="k">this</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>This also needs to be called in your Load() override.</p>
+</div>
 </div>
 
 
@@ -158,6 +182,15 @@
            
           </div>
           <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="modifier.html" class="btn btn-neutral float-right" title="Making a modifier" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="index.html" class="btn btn-neutral" title="EvenMoreModifiers’s documentation" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
   
 
   <hr/>

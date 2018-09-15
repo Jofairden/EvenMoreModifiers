@@ -1,6 +1,5 @@
 
 
-
 <!DOCTYPE html>
 <!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
@@ -9,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Index &mdash; EvenMoreModifiers  documentation</title>
+  <title>Utilities &mdash; EvenMoreModifiers  documentation</title>
   
 
   
@@ -27,8 +26,10 @@
 
   <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    <link rel="index" title="Index" href="#" />
-    <link rel="search" title="Search" href="search.html" /> 
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Advanced content creation" href="advancedcontentcreation.html" />
+    <link rel="prev" title="Making a pool" href="modifierpool.html" /> 
 
   
   <script src="_static/js/modernizr.min.js"></script>
@@ -77,12 +78,12 @@
               
             
             
-              <ul>
+              <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="gettingstarted.html">Getting started</a></li>
 <li class="toctree-l1"><a class="reference internal" href="modifier.html">Making a modifier</a></li>
 <li class="toctree-l1"><a class="reference internal" href="modifierrarity.html">Making a rarity</a></li>
 <li class="toctree-l1"><a class="reference internal" href="modifierpool.html">Making a pool</a></li>
-<li class="toctree-l1"><a class="reference internal" href="utilities.html">Utilities</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Utilities</a></li>
 <li class="toctree-l1"><a class="reference internal" href="advancedcontentcreation.html">Advanced content creation</a></li>
 </ul>
 
@@ -129,12 +130,14 @@
     
       <li><a href="index.html">Docs</a> &raquo;</li>
         
-      <li>Index</li>
+      <li>Utilities</li>
     
     
       <li class="wy-breadcrumbs-aside">
         
             
+            <a href="_sources/utilities.md.txt" rel="nofollow"> View page source</a>
+          
         
       </li>
     
@@ -146,11 +149,14 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-
-<h1 id="index">Index</h1>
-
-<div class="genindex-jumpbox">
- 
+  <div class="section" id="utilities">
+<span id="utilities"></span><h1>Utilities<a class="headerlink" href="#utilities" title="Permalink to this headline">¶</a></h1>
+<p>EMM provides necessary utility functions for modifiers, rarities and pools. These can be called on a mod instance. The utils can be found in <a class="reference external" href="https://github.com/Jofairden/EvenMoreModifiers/blob/a5c1629c4a382eceb7f490ae1487e0dc6c94385f/EMMUtils.cs#L18-L61">EMMUtils</a>.
+The utils work primarily the same as the ones in tML.
+An example call to get one of your modifiers:</p>
+<div class="highlight-c# notranslate"><div class="highlight"><pre><span></span><span class="n">myMod</span><span class="p">.</span><span class="n">GetModifier</span><span class="p">&lt;</span><span class="n">MyModifier</span><span class="p">&gt;();</span>
+</pre></div>
+</div>
 </div>
 
 
@@ -158,6 +164,15 @@
            
           </div>
           <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="advancedcontentcreation.html" class="btn btn-neutral float-right" title="Advanced content creation" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="modifierpool.html" class="btn btn-neutral" title="Making a pool" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
   
 
   <hr/>
