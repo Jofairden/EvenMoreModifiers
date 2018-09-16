@@ -3,30 +3,37 @@ using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Terraria;
 using Terraria.ModLoader;
+using Terraria.UI;
 
 namespace Loot.Core.Cubes
 {
 	public class BlackCube : MagicalCube
 	{
 		protected override string CubeName => "Black Cube";
-		protected override bool DisplayTier => true;
+		protected override Color? OverrideNameColor => Color.LightSlateGray;
+		protected override TooltipLine ExtraTooltip => new TooltipLine(mod, "BlackCube::Description::Add_Box",
+			"Always rolls 4 lines" +
+			"\nRolls 25% stronger modifiers")
+		{
+			overrideColor = OverrideNameColor
+		};
 
 		protected override void SafeDefaults()
 		{
-			item.value = Item.buyPrice(gold:2);
+			item.value = Item.buyPrice(gold: 2);
 		}
 
 		protected override void SafeStaticDefaults()
 		{
 		}
 
-		public override void RightClick(Player player)
+		public override void SetRollLogic(ItemRollProperties properties)
 		{
-			base.RightClick(player); // base
-			
+			base.SetRollLogic(properties);
 			// set forced rolls to always roll 4 lines
 			// set forced strength minimum 25%
-			
+			properties.MinModifierRolls = 4;
+			properties.MinStrength = 1.25f;
 		}
 	}
 }

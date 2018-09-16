@@ -1,4 +1,6 @@
+using System.Linq;
 using Loot.Core.Cubes;
+using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Terraria;
 using Terraria.UI;
@@ -25,21 +27,22 @@ namespace Loot.UI
 			}
 		}
 
+		public void InteractionLogic(ItemRollProperties itemRollProperties)
+		{
+			(item.modItem as MagicalCube)?.SetRollLogic(itemRollProperties);
+		}
+
 		internal void RecalculateStack()
 		{
 			// @todo track cube tier as well
 			// after cube is slotted, count total number
 
-			int stack = 0;
+			int stack = Main.LocalPlayer.inventory
+				.Where(x => x.type == item.type)
+				.Select(x => x.stack)
+				.Sum();
 
-			foreach (Item item in Main.LocalPlayer.inventory)
-			{
-				if (item.type == this.item.type)
-					stack += item.stack;
-			}
-
-			if (stack > 999)
-				stack = 999;
+			stack = (int)MathHelper.Clamp(stack, 0f, 999f);
 
 			this.item.stack = stack;
 		}

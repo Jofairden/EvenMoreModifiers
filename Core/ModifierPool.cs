@@ -65,70 +65,7 @@ namespace Loot.Core
 			return Rarity;
 		}
 
-		// Forces the next roll to succeed
-		private bool _forceNextRoll;
-
-		/// <summary>
-		/// Roll active modifiers, can roll up to 4 maximum effects
-		/// Returns if any modifiers were activated
-		/// </summary>
-		internal bool RollModifiers(ModifierContext ctx, int maxRollableLines = 4)
-		{
-			if (maxRollableLines <= 0) maxRollableLines = 1;
-			else if (maxRollableLines > 4) maxRollableLines = 4;
-
-			// Firstly, prepare a WeightedRandom list with modifiers
-			// that are rollable in this context
-			WeightedRandom<Modifier> wr = new WeightedRandom<Modifier>();
-			List<Modifier> list = new List<Modifier>();
-			foreach (var e in RollableModifiers(ctx))
-				wr.Add(e, e.Properties.RollChance);
-
-			// Up to 4 times, try rolling a mod
-			for (int i = 0; i < maxRollableLines; ++i)
-			{
-				// If there are no mods left, or we fail the roll, break.
-				if (wr.elements.Count <= 0 || !_forceNextRoll && i > 0 && Main.rand.NextFloat() > ModifierRollChance(i))
-					break;
-
-				_forceNextRoll = false;
-
-				// Get a next weighted random mod
-				// Clone the mod (new instance) and roll it's properties, then roll it
-				Modifier e = wr.Get();
-				Modifier eClone = (Modifier) e.Clone();
-				eClone.Properties = eClone.GetModifierProperties(ctx.Item).RollMagnitudeAndPower();
-				eClone.Roll(ctx, list);
-
-				// If the mod deemed to be unable to be added,
-				// Force that the next roll is successful
-				// (no RNG on top of RNG)
-				if (!eClone.PostRoll(ctx, list))
-				{
-					_forceNextRoll = true;
-					continue;
-				}
-
-				// The mod can be added
-				list.Add(eClone);
-
-				// If it is a unique modifier, remove it from the list to be rolled
-				if (eClone.Properties.UniqueModifier)
-				{
-					wr.elements.Remove(new Tuple<Modifier, double>(eClone, eClone.Properties.RollChance));
-					wr.needsRefresh = true;
-				}
-			}
-
-			ActiveModifiers = list.ToArray();
-			return ActiveModifiers.Length > 0;
-		}
-
 		//internal float ModifierRollChance(int len) => 0.5f / (float)Math.Pow(2, len);
-
-		// @TODO must be adjustable by mechanic
-		internal float ModifierRollChance(int len)
-			=> 0.5f;
 
 		internal static bool IsValidFor(Item item)
 			=> item.IsModifierRollableItem();

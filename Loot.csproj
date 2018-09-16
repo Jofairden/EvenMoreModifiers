@@ -80,6 +80,7 @@
     <Compile Include="ArmorItemHack.cs" />
     <Compile Include="Core\AutoDelegationAttribute.cs" />
     <Compile Include="Core\Cubes\BlackCube.cs" />
+    <Compile Include="Core\Cubes\ItemRollProperties.cs" />
     <Compile Include="Core\Cubes\PoorCube.cs" />
     <Compile Include="Core\Cubes\CubeOfSealing.cs" />
     <Compile Include="Core\Cubes\CubeShop.cs" />

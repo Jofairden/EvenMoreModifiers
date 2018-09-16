@@ -4,10 +4,13 @@ using System.Globalization;
 using System.IO;
 using System.Linq;
 using Loot.Core;
+using Loot.Core.Cubes;
+using Loot.UI;
 using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.ModLoader;
 using Terraria.ModLoader.IO;
+using Terraria.Utilities;
 
 namespace Loot
 {
@@ -41,7 +44,7 @@ namespace Loot
 		// Non saved
 		public bool JustTinkerModified; // is just tinker modified: e.g. armor hacked
 		public bool SlottedInCubeUI; // is currently in cube UI slot
-		
+
 		public const int SaveVersion = 2;
 		//public CustomReforgeMode CustomReforgeMode = CustomReforgeMode.ForceWeapon;
 
@@ -49,34 +52,66 @@ namespace Loot
 		/// Attempts to roll new modifiers
 		/// Has a set chance to hit a predefined pool of modifiers
 		/// </summary>
-		internal ModifierPool RollNewPool(ModifierContext ctx)
+		internal ModifierPool RollNewPool(ModifierContext ctx, ItemRollProperties itemRollProperties = null)
 		{
+			// Default to normal
+			if (itemRollProperties == null)
+			{
+				itemRollProperties = new ItemRollProperties();
+			}
+
 			// Now we have actually rolled
 			HasRolled = true;
 
-			// @TODO roll mechanics
-			// Try getting a weighted pool, or roll all modifiers at random
-			bool rollPredefinedPool = Main.rand.NextFloat() <= 0.25f;
-			bool canRollRandom = !rollPredefinedPool;
+			// Rolling logic
+			bool noForce = true;
 
-			if (rollPredefinedPool)
+			// Custom roll behavior provided
+			if (itemRollProperties.OverrideRollModifierPool != null)
 			{
-				ModifierPool = EMMLoader.GetWeightedPool(ctx);
-				canRollRandom = ModifierPool == null;
+				ModifierPool = itemRollProperties.OverrideRollModifierPool.Invoke();
+				noForce = !ModifierPool?._CanRoll(ctx) ?? true;
 			}
 
-			if (canRollRandom)
+			// No behavior provided
+			if (noForce)
 			{
-				ModifierPool = Loot.Instance.GetModifierPool<AllModifiersPool>();
-				if (!ModifierPool._CanRoll(ctx))
+				// A pool is forced to roll
+				if (itemRollProperties.ForceModifierPool != null)
 				{
-					ModifierPool = null;
-					return null;
+					ModifierPool = Loot.Instance.GetModifierPool(itemRollProperties.ForceModifierPool.Name);
+					noForce = !ModifierPool?._CanRoll(ctx) ?? true;
+				}
+
+				// No pool forced to roll or it's not valid
+				if (noForce)
+				{
+					// Try rolling a predefined (weighted) pool
+					bool rollPredefinedPool = Main.rand.NextFloat() <= itemRollProperties.RollPredefinedPoolChance;
+					noForce = !rollPredefinedPool;
+
+					if (rollPredefinedPool)
+					{
+						// GetWeightedPool already checks _CanRoll
+						ModifierPool = EMMLoader.GetWeightedPool(ctx);
+						noForce = ModifierPool == null;
+					}
+
+					// Roll from all modifiers
+					if (noForce)
+					{
+						ModifierPool = Loot.Instance.GetModifierPool<AllModifiersPool>();
+						if (!ModifierPool._CanRoll(ctx))
+						{
+							ModifierPool = null;
+							return null;
+						}
+					}
 				}
 			}
 
 			// Attempt rolling modifiers
-			if (!ModifierPool.RollModifiers(ctx))
+			if (!RollNewModifiers(ctx, itemRollProperties))
 			{
 				ModifierPool = null; // reset (didn't roll anything)
 			}
@@ -90,10 +125,70 @@ namespace Loot
 			return ModifierPool;
 		}
 
+		// Forces the next roll to succeed
+		private bool _forceNextRoll;
+
+		/// <summary>
+		/// Roll active modifiers, can roll up to n maximum effects
+		/// Returns if any modifiers were activated
+		/// </summary>
+		internal bool RollNewModifiers(ModifierContext ctx, ItemRollProperties itemRollProperties)
+		{
+			// Firstly, prepare a WeightedRandom list with modifiers
+			// that are rollable in this context
+			WeightedRandom<Modifier> wr = new WeightedRandom<Modifier>();
+			List<Modifier> list = new List<Modifier>();
+			foreach (var e in ModifierPool.RollableModifiers(ctx))
+				wr.Add(e, e.Properties.RollChance);
+
+			// Up to n times, try rolling a mod
+			for (int i = 0; i < itemRollProperties.MaxRollableLines; ++i)
+			{
+				// If there are no mods left, or we fail the roll, break.
+				if (wr.elements.Count <= 0
+					|| !_forceNextRoll
+					&& i > 0
+					&& list.Count >= itemRollProperties.MinModifierRolls
+					&& Main.rand.NextFloat() > itemRollProperties.RollNextChance)
+					break;
+
+				_forceNextRoll = false;
+
+				// Get a next weighted random mod
+				// Clone the mod (new instance) and roll it's properties, then roll it
+				Modifier e = wr.Get();
+				Modifier eClone = (Modifier)e.Clone();
+				eClone.Properties = eClone.GetModifierProperties(ctx.Item).RollMagnitudeAndPower();
+				eClone.Roll(ctx, list);
+
+				// If the mod deemed to be unable to be added,
+				// Force that the next roll is successful
+				// (no RNG on top of RNG)
+				if (!eClone.PostRoll(ctx, list))
+				{
+					_forceNextRoll = true;
+					continue;
+				}
+
+				// The mod can be added
+				list.Add(eClone);
+
+				// If it is a unique modifier, remove it from the list to be rolled
+				if (eClone.Properties.UniqueModifier)
+				{
+					wr.elements.Remove(new Tuple<Modifier, double>(eClone, eClone.Properties.RollChance));
+					wr.needsRefresh = true;
+				}
+			}
+
+			ModifierPool.ActiveModifiers = list.ToArray();
+			return list.Any();
+		}
+
 		public override GlobalItem Clone(Item item, Item itemClone)
 		{
-			EMMItem clone = (EMMItem) base.Clone(item, itemClone);
-			clone.ModifierPool = (ModifierPool) ModifierPool?.Clone();
+			EMMItem clone = (EMMItem)base.Clone(item, itemClone);
+			clone.ModifierPool = (ModifierPool)ModifierPool?.Clone();
 			// there is no need to apply here, we already cloned the item which stats are already modified by its pool
 			return clone;
 		}
@@ -239,11 +334,11 @@ namespace Loot
 				num = 1;
 				if (rStat > 0f)
 				{
-					color = new Color((byte) (120f * defColorVal), (byte) (190f * defColorVal), (byte) (120f * defColorVal), alphaColor);
+					color = new Color((byte)(120f * defColorVal), (byte)(190f * defColorVal), (byte)(120f * defColorVal), alphaColor);
 					return "+" + rStat.ToString(CultureInfo.InvariantCulture); /* + Lang.tip[39].Value;*/
 				}
 
-				color = new Color((byte) (190f * defColorVal), (byte) (120f * defColorVal), (byte) (120f * defColorVal), alphaColor);
+				color = new Color((byte)(190f * defColorVal), (byte)(120f * defColorVal), (byte)(120f * defColorVal), alphaColor);
 				return rStat.ToString(CultureInfo.InvariantCulture); /* + Lang.tip[39].Value;*/
 			}
 
@@ -255,16 +350,16 @@ namespace Loot
 			// for some reason - is handled automatically, but + is not
 			if (diffStat > 0.0)
 			{
-				color = new Color((byte) (120f * defColorVal), (byte) (190f * defColorVal), (byte) (120f * defColorVal), alphaColor);
+				color = new Color((byte)(120f * defColorVal), (byte)(190f * defColorVal), (byte)(120f * defColorVal), alphaColor);
 				return "+" + diffStat.ToString(CultureInfo.InvariantCulture); /* + Lang.tip[39].Value;*/
 			}
 
-			color = new Color((byte) (190f * defColorVal), (byte) (120f * defColorVal), (byte) (120f * defColorVal), alphaColor);
+			color = new Color((byte)(190f * defColorVal), (byte)(120f * defColorVal), (byte)(120f * defColorVal), alphaColor);
 			return diffStat.ToString(CultureInfo.InvariantCulture); /* + Lang.tip[39].Value;*/
-			//if (num12 < 0.0)
-			//{
-			//	array3[num4] = true;
-			//}
+																	//if (num12 < 0.0)
+																	//{
+																	//	array3[num4] = true;
+																	//}
 		}
 
 		/// <summary>
@@ -284,8 +379,8 @@ namespace Loot
 				baseItem.netDefaults(item.netID);
 
 				// the item with just the modifiers applied
-//				var poolItem = baseItem.CloneWithModdedDataFrom(item);
-//				GetItemInfo(poolItem)?.ModifierPool.ApplyModifiers(poolItem);
+				//				var poolItem = baseItem.CloneWithModdedDataFrom(item);
+				//				GetItemInfo(poolItem)?.ModifierPool.ApplyModifiers(poolItem);
 
 				// the item with just the prefix applied
 				var prefixItem = baseItem.Clone();
@@ -343,11 +438,11 @@ namespace Loot
 							if (outNumber >= 0)
 							{
 								newTT += "+";
-								newC = new Color((byte) (120f * defColorVal), (byte) (190f * defColorVal), (byte) (120f * defColorVal), alphaColor);
+								newC = new Color((byte)(120f * defColorVal), (byte)(190f * defColorVal), (byte)(120f * defColorVal), alphaColor);
 							}
 							else
 							{
-								newC = new Color((byte) (190f * defColorVal), (byte) (120f * defColorVal), (byte) (120f * defColorVal), alphaColor);
+								newC = new Color((byte)(190f * defColorVal), (byte)(120f * defColorVal), (byte)(120f * defColorVal), alphaColor);
 							}
 
 							newTT += outNumber.ToString(CultureInfo.InvariantCulture);
@@ -360,9 +455,9 @@ namespace Loot
 								int alphaColor = Main.mouseTextColor;
 								newTT = GetPrefixNormString(baseItem.mana, prefixItem.mana, ref outNumber, ref newC);
 								if (prefixItem.mana < baseItem.mana)
-									newC = new Color((byte) (120f * defColorVal), (byte) (190f * defColorVal), (byte) (120f * defColorVal), alphaColor);
+									newC = new Color((byte)(120f * defColorVal), (byte)(190f * defColorVal), (byte)(120f * defColorVal), alphaColor);
 								else
-									newC = new Color((byte) (190f * defColorVal), (byte) (120f * defColorVal), (byte) (120f * defColorVal), alphaColor);
+									newC = new Color((byte)(190f * defColorVal), (byte)(120f * defColorVal), (byte)(120f * defColorVal), alphaColor);
 							}
 						}
 						else if (vttl.Name.Equals("PrefixSize"))
@@ -414,16 +509,16 @@ namespace Loot
 				// RECALC END
 
 				// Modifies the "Uses X Mana" line to match our mods
-//				var useManaTT = vanillaTooltips.FirstOrDefault(x => x.mod.Equals("Terraria") && x.Name.Equals("UseMana"));
-//				if (useManaTT != null)
-//				{
-//					if (poolItem.mana > baseItem.mana)
-//					{
-//						string foundMana = new string(useManaTT.text.Where(char.IsDigit).ToArray());
-//						if (foundMana != string.Empty)
-//							useManaTT.text = useManaTT.text.Replace(foundMana, poolItem.mana.ToString());
-//					}
-//				}
+				//				var useManaTT = vanillaTooltips.FirstOrDefault(x => x.mod.Equals("Terraria") && x.Name.Equals("UseMana"));
+				//				if (useManaTT != null)
+				//				{
+				//					if (poolItem.mana > baseItem.mana)
+				//					{
+				//						string foundMana = new string(useManaTT.text.Where(char.IsDigit).ToArray());
+				//						if (foundMana != string.Empty)
+				//							useManaTT.text = useManaTT.text.Replace(foundMana, poolItem.mana.ToString());
+				//					}
+				//				}
 
 				// Modifies the tooltips, to insert generic mods data
 				int i = tooltips.FindIndex(x => x.mod == "Terraria" && x.Name == "ItemName");
@@ -441,14 +536,14 @@ namespace Loot
 
 				// Insert modifier rarity
 				i = tooltips.Count;
-				tooltips.Insert(i, new TooltipLine(mod, "Loot: Modifier:Rarity", $"[{pool.Rarity.Name}]") {overrideColor = pool.Rarity.Color * Main.inventoryScale});
+				tooltips.Insert(i, new TooltipLine(mod, "Loot: Modifier:Rarity", $"[{pool.Rarity.Name}]") { overrideColor = pool.Rarity.Color * Main.inventoryScale });
 
 				// Insert lines
 				foreach (var ttcol in pool.Description)
-				foreach (var tt in ttcol)
-				{
-					tooltips.Insert(++i, new TooltipLine(mod, $"Loot: Modifier:Line:{i}", tt.Text) {overrideColor = (tt.Color ?? Color.White) * Main.inventoryScale});
-				}
+					foreach (var tt in ttcol)
+					{
+						tooltips.Insert(++i, new TooltipLine(mod, $"Loot: Modifier:Line:{i}", tt.Text) { overrideColor = (tt.Color ?? Color.White) * Main.inventoryScale });
+					}
 
 				// Insert sealed notation
 				if (SealedModifiers)

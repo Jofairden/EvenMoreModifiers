@@ -1,5 +1,7 @@
+using System.Collections.Generic;
 using System.Linq;
 using Loot.Core;
+using Loot.Core.Cubes;
 using Loot.Sounds;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
@@ -19,6 +21,7 @@ namespace Loot.UI
 		private UIPanel _backPanel;
 		internal UICubeItemPanel _cubePanel;
 		internal UIRerollItemPanel _rerollItemPanel;
+		internal ItemRollProperties _itemRollProperties;
 		private UIModifierPanel[] _modifierPanels;
 		private UIImageButton _rerollButton;
 		private const float padding = 5f;
@@ -27,11 +30,11 @@ namespace Loot.UI
 		{
 			base.ToggleUI(theInterface, uiStateInstance);
 
-			var ui = Loot.Instance.CubeRerollUI;
-
 			// If ui closed, we need to retrieve the slotted items
 			if (!Visible)
 			{
+				var ui = Loot.Instance.CubeRerollUI;
+
 				SoundHelper.PlayCustomSound(SoundHelper.SoundType.CloseUI);
 
 				// Clear of the slotted cube type
@@ -39,7 +42,7 @@ namespace Loot.UI
 
 				// If there is an item slotted
 				if (ui._rerollItemPanel != null
-				    && !ui._rerollItemPanel.item.IsAir)
+					&& !ui._rerollItemPanel.item.IsAir)
 				{
 					Main.LocalPlayer.QuickSpawnClonedItem(ui._rerollItemPanel.item, ui._rerollItemPanel.item.stack);
 					ui._rerollItemPanel.item.TurnToAir();
@@ -49,7 +52,7 @@ namespace Loot.UI
 				ui.UpdateModifierLines();
 			}
 		}
-		
+
 		public override bool IsItemValidForUISlot(Item item)
 		{
 			return _rerollItemPanel != null && _rerollItemPanel.CanTakeItem(item);
@@ -57,13 +60,15 @@ namespace Loot.UI
 
 		public override bool IsSlottedItemInCubeUI()
 		{
-			return _rerollItemPanel != null && !_rerollItemPanel.item.IsAir &&  EMMItem.GetItemInfo(_rerollItemPanel.item).SlottedInCubeUI;
+			return _rerollItemPanel != null && !_rerollItemPanel.item.IsAir && EMMItem.GetItemInfo(_rerollItemPanel.item).SlottedInCubeUI;
 		}
-		
+
 		public override Item SlottedItem => _rerollItemPanel.item;
 
 		public override void OnInitialize()
 		{
+			_itemRollProperties = new ItemRollProperties();
+
 			// Makes back panel, and assigns it as the drag panel
 			_backPanel = new UIPanel();
 			_backPanel.Width.Set(600f, 0f);
@@ -115,15 +120,42 @@ namespace Loot.UI
 			_backPanel.Append(_rerollButton);
 		}
 
+		private bool MatchesRerollRequirements()
+		{
+			return _rerollItemPanel != null
+				   && _cubePanel != null
+				   && !_rerollItemPanel.item.IsAir && !_cubePanel.item.IsAir
+				   && _rerollItemPanel.CanTakeItem(_rerollItemPanel.item)
+				   && _cubePanel.CanTakeItem(_cubePanel.item)
+				   && !EMMItem.GetItemInfo(_rerollItemPanel.item).SealedModifiers;
+		}
+
+		private void RerollModifierPool(Item newItem)
+		{
+			// Roll new pool
+			// @todo different rolling options
+			ModifierContext ctx = new ModifierContext
+			{
+				Method = ModifierContextMethod.OnCubeReroll,
+				Item = newItem,
+				Player = Main.LocalPlayer,
+				CustomData = new Dictionary<string, object>
+				{
+					{"Source", "CubeRerollUI"}
+				}
+			};
+
+			var pool = EMMItem.GetItemInfo(newItem).RollNewPool(ctx, _itemRollProperties);
+			pool?.ApplyModifiers(newItem);
+			_rerollItemPanel.item = newItem.Clone();
+		}
+
 		private void OnRerollClick(UIMouseEvent evt, UIElement listeningelement)
 		{
-			if (_rerollItemPanel != null
-			    && _cubePanel != null
-			    && !_rerollItemPanel.item.IsAir && !_cubePanel.item.IsAir
-			    && _rerollItemPanel.CanTakeItem(_rerollItemPanel.item)
-			    && _cubePanel.CanTakeItem(_cubePanel.item)
-			    && !EMMItem.GetItemInfo(_rerollItemPanel.item).SealedModifiers)
+			if (MatchesRerollRequirements())
 			{
+				_itemRollProperties = new ItemRollProperties();
+				_cubePanel.InteractionLogic(_itemRollProperties);
 				_cubePanel.RecalculateStack();
 
 				// No slotted cubes available
@@ -140,27 +172,18 @@ namespace Loot.UI
 				// Clone to preserve modded data
 				newItem = newItem.CloneWithModdedDataFrom(_rerollItemPanel.item);
 				EMMItem.GetItemInfo(newItem).ModifierPool = null; // unload previous pool
-				
+
 				// Restore prefix
 				if (_rerollItemPanel.item.prefix > 0)
-					newItem.Prefix(_rerollItemPanel.item.prefix);
-
-				// Roll new pool
-				// @todo different rolling options
-				ModifierContext ctx = new ModifierContext
 				{
-					Method = ModifierContextMethod.OnCubeReroll,
-					Item = newItem,
-					Player = Main.LocalPlayer
-				};
+					newItem.Prefix(_rerollItemPanel.item.prefix);
+				}
 
-				var pool = EMMItem.GetItemInfo(newItem).RollNewPool(ctx);
-				pool?.ApplyModifiers(newItem);
-				_rerollItemPanel.item = newItem.Clone();
+				RerollModifierPool(newItem);
 				UpdateModifierLines();
 				Main.PlaySound(SoundID.Item37, -1, -1);
 
-				// Update slotted cube stacks
+				// Remove stack from player's inventory
 				foreach (Item item in Main.LocalPlayer.inventory)
 				{
 					if (item.type == _cubePanel.item.type)
@@ -192,15 +215,12 @@ namespace Loot.UI
 			}
 
 			if (_rerollItemPanel != null
-			    && !_rerollItemPanel.item.IsAir
-			    && _modifierPanels != null)
+				&& !_rerollItemPanel.item.IsAir
+				&& _modifierPanels != null)
 			{
 				int i = 0;
-				foreach (var lines in EMMItem.GetActivePool(_rerollItemPanel.item).Select(x => x.TooltipLines))
+				foreach (var lines in EMMItem.GetActivePool(_rerollItemPanel.item).Select(x => x.TooltipLines).Take(4))
 				{
-					if (i > 4)
-						break;
-
 					string line = lines.Aggregate("", (current, tooltipLine) => current + $"{tooltipLine.Text} ");
 					line = line.TrimEnd();
 					_modifierPanels[i].UpdateText(line);
