@@ -17,6 +17,7 @@ namespace Loot.Core.Cubes
 			if (!RightClickFunctionalityRequirements(item))
 				return false;
 
+			// ReSharper disable once UsePatternMatching
 			var ui = Loot.Instance.CubeInterface.CurrentState as CubeUI;
 			if (ui == null) return false;
 
@@ -25,11 +26,16 @@ namespace Loot.Core.Cubes
 
 		private bool RightClickFunctionalityRequirements(Item item)
 		{
-			return (!Loot.WingSlotLoaded || item.wingSlot <= 0) // temp fix for wingslot mod
-			       && !PlayerInput.WritingText
-			       && Main.hasFocus
-			       && Main.keyState.IsKeyDown(Keys.LeftControl)
-			       && Loot.Instance.CubeInterface.CurrentState != null;
+			//todo replace with Loot.WingSlotVersionInvalid when it works
+			if (Loot.WingSlotLoaded && item.wingSlot > 0)
+			{
+				return false;
+			}
+
+			return !PlayerInput.WritingText
+				   && Main.hasFocus
+				   && Main.keyState.IsKeyDown(Keys.LeftControl)
+				   && Loot.Instance.CubeInterface.CurrentState != null;
 		}
 
 		// Auto slot item in UI if possible
@@ -40,6 +46,7 @@ namespace Loot.Core.Cubes
 			// meaning that items such as goodie bags will end up in this hook
 			// regardless of our forced right click functionality in CanRightClick
 			// by which we need to assume any possible item can be passed into this hook
+			// ReSharper disable once UsePatternMatching
 			var ui = Loot.Instance.CubeInterface.CurrentState as CubeUI;
 			if (ui == null) return;
 
@@ -91,12 +98,14 @@ namespace Loot.Core.Cubes
 		{
 			var ui = Loot.Instance.CubeInterface;
 
+			// ReSharper disable once UsePatternMatching
 			var cubeUI = ui?.CurrentState as CubeUI;
 			if (cubeUI != null)
 			{
-				if ((Loot.WingSlotLoaded && item.wingSlot > 0) // temp fix for wingslot mod
+				//todo replace with Loot.WingSlotVersionInvalid when it works
+				if ((Loot.WingSlotLoaded && item.wingSlot > 0) // block wings if low version if wingslot
 					|| !cubeUI.IsItemValidForUISlot(item)
-				    || cubeUI.IsSlottedItemInCubeUI())
+					|| cubeUI.IsSlottedItemInCubeUI())
 					return;
 
 				var i = tooltips.FindIndex(x => x.mod.Equals("Terraria") && x.Name.Equals("ItemName"));

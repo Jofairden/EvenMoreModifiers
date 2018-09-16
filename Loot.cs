@@ -28,6 +28,7 @@ namespace Loot
 		internal static Loot Instance;
 		public static bool CheatSheetLoaded;
 		public static bool WingSlotLoaded;
+		public static bool WingSlotVersionInvalid;
 
 #if DEBUG
 		public override string Name => "Loot";
@@ -54,7 +55,9 @@ namespace Loot
 			// Ensure cheat sheet loaded and required version
 			var cheatSheetMod = ModLoader.GetMod("CheatSheet");
 			CheatSheetLoaded = cheatSheetMod != null && cheatSheetMod.Version >= new Version(0, 4, 3, 1);
-			WingSlotLoaded = ModLoader.GetLoadedMods().Contains("WingSlot");
+			var wingSlotMod = ModLoader.GetMod("WingSlot");
+			WingSlotLoaded = wingSlotMod != null;
+			WingSlotVersionInvalid = WingSlotLoaded && wingSlotMod.Version < new Version(1, 6, 1);
 
 			//(string Name, string test) variable = ("Compiled with", "C#7");
 
@@ -73,6 +76,18 @@ namespace Loot
 				CubeSealUI.Activate();
 
 				CubeInterface = new UserInterface();
+
+				if (WingSlotLoaded)
+				{
+					// Currently irrelevant: only controls the slot manually and not right click
+					//wingSlotMod.Call("add", (Func<bool>)(
+					//	() =>
+					//	{
+					//		if (CubeInterface.CurrentState == null) return true;
+					//		// ReSharper disable once PossibleNullReferenceException
+					//		return !(CubeInterface.CurrentState as CubeUI)?.Visible ?? true;
+					//	}));
+				}
 			}
 		}
 

@@ -29,37 +29,5 @@ namespace Loot.Core.Cubes
 			
 		}
 	}
-
-	public class NPCTest : ModNPC
-	{
-		public override void SetDefaults()
-		{
-		}
-
-		public override bool PreDraw(SpriteBatch spriteBatch, Color drawColor)
-		{
-			Vector2 frameSize = new Vector2(318f, 298f);
-			Texture2D texture = mod.GetTexture(this.Texture);
-			
-			spriteBatch.Draw
-			(
-				texture,
-				npc.Center - Main.screenPosition,
-				new Rectangle(npc.frame.X, npc.frame.Y, (int)frameSize.X, (int)frameSize.Y),
-				drawColor,
-				npc.rotation,
-				frameSize * 0.5f,
-				npc.scale, 
-				SpriteEffects.None, 
-				0f
-			);
-			return false;
-		}
-
-		public override void PostDraw(SpriteBatch spriteBatch, Color drawColor)
-		{
-			base.PostDraw(spriteBatch, drawColor);
-		}
-	}
 }
 
