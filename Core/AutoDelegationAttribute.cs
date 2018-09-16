@@ -7,6 +7,7 @@ using Terraria.ModLoader;
 
 namespace Loot.Modifiers
 {
+	/// <inheritdoc />
 	/// <summary>
 	/// This attribute may be used to skip usage of AttachDelegations and DetachDelegations
 	/// Which is a cumbersome side effect of using events
@@ -51,7 +52,6 @@ namespace Loot.Modifiers
 		{
 			foreach (string type in _delegationTypes)
 			{
-
 				EventInfo evt = player.GetType().GetEvent(type, BindingFlags.Instance | BindingFlags.Public);
 				if (evt != null)
 				{

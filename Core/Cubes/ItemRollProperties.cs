@@ -32,7 +32,7 @@ namespace Loot.Core.Cubes
 		/// <summary>
 		/// The minimum strength of them to roll
 		/// </summary>
-		public float MinStrength { get; set; } = 1f;
+		public float MagnitudePower { get; set; } = 1f;
 
 		/// <summary>
 		/// Force a specific pool to roll

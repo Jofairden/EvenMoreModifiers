@@ -53,18 +53,18 @@ namespace Loot.Core
 			return this;
 		}
 
-		public ModifierProperties RollMagnitudeAndPower(float? magnitude = null, float? power = null)
+		public ModifierProperties RollMagnitudeAndPower(float? magnitude = null, float? power = null, float magnitudePower = 1f)
 		{
 			/* Roll power TODO support /luck/ stat */
-			Magnitude = magnitude ?? RollMagnitude();
+			Magnitude = magnitude ?? RollMagnitude(magnitudePower);
 			Power = power ?? RollPower();
 			return this;
 		}
 
-		private float RollMagnitude()
+		private float RollMagnitude(float magnitudePower)
 		{
 			float randomMag = (MinMagnitude + Main.rand.NextFloat() * (MaxMagnitude - MinMagnitude));
-			return randomMag * MagnitudeStrength;
+			return randomMag * MagnitudeStrength * magnitudePower;
 		}
 
 		private float RollPower()

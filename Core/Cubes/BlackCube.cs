@@ -30,7 +30,7 @@ namespace Loot.Core.Cubes
 			// set forced rolls to always roll 4 lines
 			// set forced strength minimum 25%
 			properties.MinModifierRolls = 4;
-			properties.MinStrength = 1.25f;
+			properties.MagnitudePower = 1.25f;
 		}
 	}
 }
