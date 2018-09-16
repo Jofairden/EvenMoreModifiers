@@ -1,4 +1,4 @@
-﻿using Loot.Core;
+using Loot.Core;
 using Terraria;
 
 namespace Loot.Modifiers
