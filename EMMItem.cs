@@ -94,7 +94,7 @@ namespace Loot
 					{
 						// GetWeightedPool already checks _CanRoll
 						ModifierPool = EMMLoader.GetWeightedPool(ctx);
-						noForce = ModifierPool == null;
+						noForce = ModifierPool == null || !ModifierPool._CanRoll(ctx);
 					}
 
 					// Roll from all modifiers
@@ -138,6 +138,7 @@ namespace Loot
 			// that are rollable in this context
 			WeightedRandom<Modifier> wr = new WeightedRandom<Modifier>();
 			List<Modifier> list = new List<Modifier>();
+
 			foreach (var e in ModifierPool.RollableModifiers(ctx))
 			{
 				wr.Add(e, e.Properties.RollChance);

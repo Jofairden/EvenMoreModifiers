@@ -13,7 +13,7 @@ namespace Loot.Modifiers
 			=> item.magic || item.melee || item.ranged || item.summon || item.thrown;
 
 		public override bool CanRoll(ModifierContext ctx)
-			=> ctx.Item.damage > 0;
+			=> ctx.Item.IsWeapon();
 
 		public void UpdateShootSpeed(Item item, Player player, float speedXBefore, float speedYBefore, ref float speedX, ref float speedY, float percentModifier)
 		{
