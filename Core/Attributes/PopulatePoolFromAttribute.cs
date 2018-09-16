@@ -33,7 +33,7 @@ namespace Loot.Core.Attributes
 				}
 
 				// ReSharper disable once SimplifyLinqExpression
-				if (!useAssembly.GetTypes().Any(x => x.Namespace == ns))
+				if (!useAssembly.GetTypes().Any(x => x.Namespace != null && x.Namespace.StartsWith(ns)))
 				{
 					throw new ArgumentException($"Namespace not found", nameof(ns));
 				}
@@ -73,7 +73,7 @@ namespace Loot.Core.Attributes
 				.Where(type =>
 					type.IsClass
 					&& type.IsSubclassOf(typeof(Modifier))
-					&& type.Namespace == ns);
+					&& type.Namespace != null && type.Namespace.StartsWith(ns));
 		}
 	}
 }
