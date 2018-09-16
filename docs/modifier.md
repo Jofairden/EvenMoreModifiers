@@ -1,4 +1,4 @@
-Making a modifier
+Modifier
 ===
 ___
 To make a new Modifier, simply make a new class that inherits the class `Modifier` in the `Loot.System` namespace.

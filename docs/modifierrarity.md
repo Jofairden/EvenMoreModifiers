@@ -1,4 +1,4 @@
-Making a rarity
+ModifierRarity
 ===
 ___
 To make a new ModifierRarity, simply make a new class that inherits the class `ModifierRarity` in the `Loot.System` namespace.

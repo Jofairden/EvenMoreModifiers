@@ -23,6 +23,7 @@ Guides
    modifier
    modifierrarity
    modifierpool
+   modifiereffect
    utilities
    advancedcontentcreation
 

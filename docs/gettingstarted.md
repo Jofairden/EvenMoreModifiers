@@ -1,6 +1,6 @@
 Getting started
 ===
-____
+___
 Learn how to setup your mod to be able to add your content to EMM.
 
 #### Registering your mod

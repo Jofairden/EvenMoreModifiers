@@ -1,4 +1,4 @@
-Making a pool
+ModifierPool
 ===
 ___
 To make a new ModifierPool, simply make a new class that inherits the class `ModifierPool` in the `Loot.System` namespace.

@@ -1,5 +1,6 @@
 Advanced content creation
 ===
+___
 In the following section we will go over advanced content creation, which includes an explanation of the more complex systems that are in place that make this possible.
 
 ## Automated event-based delegation
