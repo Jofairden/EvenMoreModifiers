@@ -5,6 +5,7 @@ namespace Loot.Core.Cubes
 {
 	/// <summary>
 	/// Defines properties that will be used when an item is being rolled
+	/// These can interact with the rolling behavior, and even override certain things
 	/// </summary>
 	public sealed class ItemRollProperties
 	{

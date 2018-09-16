@@ -8,7 +8,7 @@ namespace Loot.Core
 {
 	/// <summary>
 	/// A ModifierEffect signifies the effect of a modifier on a player
-	/// It should house the implementation, and delegation of such effect
+	/// It should house the implementation, and delegation of such an effect
 	/// Methods on effects can be delegated from ModPlayer
 	/// </summary>
 	public abstract class ModifierEffect : ICloneable
@@ -79,6 +79,7 @@ namespace Loot.Core
 				}
 				catch (Exception e)
 				{
+					// @todo notify
 				}
 			}
 

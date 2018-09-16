@@ -27,9 +27,6 @@ namespace Loot.Core
 		public virtual bool MatchesRequirements(ModifierPool modifierPool)
 			=> modifierPool.MatchesRarity(this);
 
-		public override string ToString()
-			=> EMMUtils.JSLog(typeof(ModifierRarity), this);
-
 		/// <summary>
 		/// Returns the ModifierRarity specified by type, null if not present
 		/// </summary>

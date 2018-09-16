@@ -23,6 +23,9 @@ namespace Loot.Core
 		protected internal Modifier[] Modifiers;
 		public Modifier[] ActiveModifiers { get; protected internal set; }
 
+		// The default constructor will try to
+		// populate the array dynamically using the
+		// populate attribute
 		protected ModifierPool()
 		{
 			var attr = GetType().GetCustomAttribute<PopulatePoolFromAttribute>(true);
@@ -77,7 +80,7 @@ namespace Loot.Core
 			=> (ModifierPool)Activator.CreateInstance(GetType());
 
 		/// <summary>
-		/// Gets the next appropriate rarit for this pool and applies it and returns it.
+		/// Gets the next appropriate rarity for this pool and applies it and returns it.
 		/// </summary>
 		/// <returns></returns>
 		internal ModifierRarity UpdateRarity()
@@ -331,8 +334,5 @@ namespace Loot.Core
 			modifierPool.Save(item, tag);
 			return tag;
 		}
-
-		public override string ToString()
-			=> EMMUtils.JSLog(typeof(ModifierPool), this);
 	}
 }

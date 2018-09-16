@@ -1,4 +1,4 @@
-﻿using Loot.Core;
+using Loot.Core;
 using Microsoft.Xna.Framework;
 using System;
 using Terraria;
@@ -20,7 +20,6 @@ namespace Loot.Modifiers.WeaponModifiers
 		public override void GetWeaponDamage(Item item, Player player, ref int damage)
 		{
 			base.GetWeaponDamage(item, player, ref damage);
-			// Formula ported from old mod
 			float magnitude = Properties.RoundedPower * player.velocity.Length() / 4;
 			damage = (int)(damage * (1 + magnitude / 100));
 		}

@@ -144,6 +144,7 @@ namespace Loot
 			}
 
 			// Up to n times, try rolling a mod
+			// @ todo since we can increase lines rolled, make it so that MaxRollableLines influences the number of rows drawn in the UI
 			for (int i = 0; i < itemRollProperties.MaxRollableLines; ++i)
 			{
 				// If there are no mods left, or we fail the roll, break.
@@ -184,7 +185,7 @@ namespace Loot
 				// If it is a unique modifier, remove it from the list to be rolled
 				if (eClone.Properties.UniqueModifier)
 				{
-					wr.elements.Remove(new Tuple<Modifier, double>(eClone, eClone.Properties.RollChance));
+					wr.elements.RemoveAll(x => x.Item1.Type == eClone.Type);
 					wr.needsRefresh = true;
 				}
 			}

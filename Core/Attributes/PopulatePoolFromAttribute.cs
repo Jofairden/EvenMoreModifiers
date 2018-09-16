@@ -29,7 +29,7 @@ namespace Loot.Core.Attributes
 				var mod = ModLoader.GetMod(root);
 				if (mod != null)
 				{
-					asm = mod.Code;
+					useAssembly = mod.Code;
 				}
 
 				// ReSharper disable once SimplifyLinqExpression
@@ -51,15 +51,29 @@ namespace Loot.Core.Attributes
 			return dict;
 		}
 
-		private IEnumerable<Type> GetModifierClasses(string nameSpace)
+		private IEnumerable<Type> GetModifierClasses(string ns)
 		{
 			Assembly asm = Assembly.GetExecutingAssembly();
+			Assembly useAssembly = asm;
+			string root = ns;
+			int index = ns.IndexOf('.');
+			if (index > 0)
+			{
+				root = ns.Substring(0, index);
+			}
 
-			return asm.GetTypes()
+			var mod = ModLoader.GetMod(root);
+			if (mod != null)
+			{
+				useAssembly = mod.Code;
+			}
+
+			return useAssembly
+				.GetTypes()
 				.Where(type =>
 					type.IsClass
 					&& type.IsSubclassOf(typeof(Modifier))
-					&& type.Namespace == nameSpace);
+					&& type.Namespace == ns);
 		}
 	}
 }

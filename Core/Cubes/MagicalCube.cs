@@ -11,6 +11,10 @@ namespace Loot.Core.Cubes
 {
 	// todo tooltips locales (translations)
 
+	/// <summary>
+	/// Defines a magical cube
+	/// A magical cube is used to change modifiers on an item
+	/// </summary>
 	public abstract class MagicalCube : ModItem
 	{
 		protected abstract string CubeName { get; }

@@ -2,6 +2,9 @@ using System.Linq;
 
 namespace Loot.Core
 {
+	/// <summary>
+	/// A modifier pool that always consists of all modifiers
+	/// </summary>
 	public sealed class AllModifiersPool : ModifierPool
 	{
 		public override float RollChance => 0f;

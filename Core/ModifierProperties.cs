@@ -5,6 +5,8 @@ using Terraria.ModLoader.IO;
 
 namespace Loot.Core
 {
+	// @todo maybe builder like pattern instead of Set?
+
 	/// <summary>
 	/// Defines the properties of a modifier
 	/// </summary>

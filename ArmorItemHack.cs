@@ -4,6 +4,10 @@ using Terraria.Utilities;
 
 namespace Loot
 {
+	/// <summary>
+	/// This class forces armor equips to be able to be reforged as accessories
+	/// The actual activation to allow them to be slotted is in <see cref="EMMPlayer"/>
+	/// </summary>
 	public class ArmorItemHack : GlobalItem
 	{
 		// Forces an accessory tinker

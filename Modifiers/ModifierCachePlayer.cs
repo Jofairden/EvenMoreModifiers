@@ -67,6 +67,9 @@ namespace Loot.Modifiers
 			Ready = false;
 		}
 
+		/// <summary>
+		/// This method will return a list of <see cref="ModifierEffect"/>s based on <see cref="Modifier"/>s passed to it 
+		/// </summary>
 		private List<ModifierEffect> GetModifierEffectsForDelegations(List<AutoDelegationEntry> list, ModifierPlayer modPlayer, Func<ModifierEffect, bool> conditionFunc)
 		{
 			var tempList = new List<ModifierEffect>();
@@ -93,6 +96,16 @@ namespace Loot.Modifiers
 			return tempList;
 		}
 
+		/// <summary>
+		/// This method handles updating all delegations
+		/// First, it will perform 'manual' detachments calling <see cref="ModifierEffect.DetachDelegations(ModifierPlayer)"/>
+		/// then it will perform 'manual' attachments calling <see cref="ModifierEffect.AttachDelegations(ModifierPlayer)"/>
+		/// These will unbind/bind <see cref="ModifierEffect.ResetEffects"/> to <see cref="ModifierPlayer.OnResetEffects"/>
+		/// and set <see cref="ModifierEffect.IsBeingDelegated"/> to false or true.
+		/// 
+		/// After this, the automatic detachments/attachments are done which will bind any methods
+		/// to whichever method noted in their <see cref="AutoDelegation"/> attribute.
+		/// </summary>
 		private void UpdateAttachments()
 		{
 			ModifierPlayer modplr = ModifierPlayer.Player(player);
@@ -144,6 +157,11 @@ namespace Loot.Modifiers
 			}
 		}
 
+		/// <summary>
+		/// This method orders a list of <see cref="AutoDelegationEntry"/> into a list of <see cref="OrderedDelegationEntry"/>
+		/// following the rules of <see cref="DelegationPrioritizationAttribute"/> which orders by Early/Late prioritization
+		/// and a level ranging from 0-999 which indicates how much that prioritization should be enforced.
+		/// </summary>
 		private List<OrderedDelegationEntry> OrderDelegationList(List<AutoDelegationEntry> list, ModifierPlayer modPlayer)
 		{
 			var tempList = new List<OrderedDelegationEntry>();

@@ -2,6 +2,9 @@ using Terraria;
 
 namespace Loot.Core.Cubes
 {
+	/// <summary>
+	/// A cube of sealing is used to lock modifiers in place on an item
+	/// </summary>
 	public class CubeOfSealing : MagicalCube
 	{
 		protected override string CubeName => "Sealing Cube";
