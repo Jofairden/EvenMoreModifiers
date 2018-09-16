@@ -1,6 +1,6 @@
-﻿using System;
 using Loot.Core;
 using Microsoft.Xna.Framework;
+using System;
 using Terraria;
 using Terraria.DataStructures;
 
@@ -28,7 +28,9 @@ namespace Loot.Modifiers.EquipModifiers
 			{
 				// We cannot block more than how much mana we have
 				if (manaBlock > player.player.statMana)
+				{
 					manaBlock = player.player.statMana;
+				}
 
 				damage -= manaBlock / 2;
 				player.player.statMana -= manaBlock;

@@ -1,6 +1,6 @@
-﻿using System;
 using Loot.Core;
 using Microsoft.Xna.Framework;
+using System;
 using Terraria;
 using Terraria.DataStructures;
 

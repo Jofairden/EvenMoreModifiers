@@ -1,12 +1,12 @@
-﻿using System;
+﻿using Loot.Core;
+using Loot.Core.Cubes;
+using Loot.Modifiers.EquipModifiers;
+using Microsoft.Xna.Framework;
+using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.IO;
 using System.Linq;
-using Loot.Core;
-using Loot.Core.Cubes;
-using Loot.Modifiers.EquipModifiers;
-using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.ModLoader;
 using Terraria.ModLoader.IO;
@@ -139,7 +139,9 @@ namespace Loot
 			WeightedRandom<Modifier> wr = new WeightedRandom<Modifier>();
 			List<Modifier> list = new List<Modifier>();
 			foreach (var e in ModifierPool.RollableModifiers(ctx))
+			{
 				wr.Add(e, e.Properties.RollChance);
+			}
 
 			// Up to n times, try rolling a mod
 			for (int i = 0; i < itemRollProperties.MaxRollableLines; ++i)
@@ -150,7 +152,9 @@ namespace Loot
 					&& i > 0
 					&& list.Count >= itemRollProperties.MinModifierRolls
 					&& Main.rand.NextFloat() > itemRollProperties.RollNextChance)
+				{
 					break;
+				}
 
 				_forceNextRoll = false;
 
@@ -210,7 +214,9 @@ namespace Loot
 
 				// enforce illegitimate rolls to go away
 				if (ModifierPool.ActiveModifiers == null || ModifierPool.ActiveModifiers.Length <= 0)
+				{
 					ModifierPool = null;
+				}
 			}
 
 			// SaveVersion >= 2
@@ -248,7 +254,9 @@ namespace Loot
 		public override void NetReceive(Item item, BinaryReader reader)
 		{
 			if (reader.ReadBoolean())
+			{
 				ModifierPool = ModifierPool._NetReceive(item, reader);
+			}
 
 			HasRolled = reader.ReadBoolean();
 			SealedModifiers = reader.ReadBoolean(); // Since SaveVersion 2
@@ -263,7 +271,9 @@ namespace Loot
 			bool hasPool = ModifierPool != null;
 			writer.Write(hasPool);
 			if (hasPool)
+			{
 				ModifierPool._NetSend(ModifierPool, item, writer);
+			}
 
 			writer.Write(HasRolled);
 			writer.Write(SealedModifiers); // Since SaveVersion 2
@@ -422,16 +432,24 @@ namespace Loot
 						if (vttl.Name.Equals("PrefixDamage"))
 						{
 							if (baseItem.damage > 0)
+							{
 								newTT = GetPrefixNormString(baseItem.damage, prefixItem.damage, ref outNumber, ref newC);
+							}
 							else
+							{
 								newTT = GetPrefixNormString(prefixItem.damage, baseItem.damage, ref outNumber, ref newC);
+							}
 						}
 						else if (vttl.Name.Equals("PrefixSpeed"))
 						{
 							if (baseItem.useAnimation <= 0)
+							{
 								newTT = GetPrefixNormString(baseItem.useAnimation, prefixItem.useAnimation, ref outNumber, ref newC);
+							}
 							else
+							{
 								newTT = GetPrefixNormString(prefixItem.useAnimation, baseItem.useAnimation, ref outNumber, ref newC);
+							}
 						}
 						else if (vttl.Name.Equals("PrefixCritChance"))
 						{
@@ -459,31 +477,47 @@ namespace Loot
 								int alphaColor = Main.mouseTextColor;
 								newTT = GetPrefixNormString(baseItem.mana, prefixItem.mana, ref outNumber, ref newC);
 								if (prefixItem.mana < baseItem.mana)
+								{
 									newC = new Color((byte)(120f * defColorVal), (byte)(190f * defColorVal), (byte)(120f * defColorVal), alphaColor);
+								}
 								else
+								{
 									newC = new Color((byte)(190f * defColorVal), (byte)(120f * defColorVal), (byte)(120f * defColorVal), alphaColor);
+								}
 							}
 						}
 						else if (vttl.Name.Equals("PrefixSize"))
 						{
 							if (baseItem.scale > 0)
+							{
 								newTT = GetPrefixNormString(baseItem.scale, prefixItem.scale, ref outNumber, ref newC);
+							}
 							else
+							{
 								newTT = GetPrefixNormString(prefixItem.scale, baseItem.scale, ref outNumber, ref newC);
+							}
 						}
 						else if (vttl.Name.Equals("PrefixShootSpeed"))
 						{
 							if (baseItem.shootSpeed > 0)
+							{
 								newTT = GetPrefixNormString(baseItem.shootSpeed, prefixItem.shootSpeed, ref outNumber, ref newC);
+							}
 							else
+							{
 								newTT = GetPrefixNormString(prefixItem.shootSpeed, baseItem.shootSpeed, ref outNumber, ref newC);
+							}
 						}
 						else if (vttl.Name.Equals("PrefixKnockback"))
 						{
 							if (baseItem.knockBack > 0)
+							{
 								newTT = GetPrefixNormString(baseItem.knockBack, prefixItem.knockBack, ref outNumber, ref newC);
+							}
 							else
+							{
 								newTT = GetPrefixNormString(prefixItem.knockBack, baseItem.knockBack, ref outNumber, ref newC);
+							}
 						}
 						else
 						{
@@ -530,11 +564,20 @@ namespace Loot
 				{
 					var namelayer = tooltips[i];
 					if (pool.Rarity.ItemPrefix != null)
+					{
 						namelayer.text = $"{pool.Rarity.ItemPrefix} {namelayer.text}";
+					}
+
 					if (pool.Rarity.ItemSuffix != null)
+					{
 						namelayer.text += $" {pool.Rarity.ItemSuffix}";
+					}
+
 					if (pool.Rarity.OverrideNameColor != null)
+					{
 						namelayer.overrideColor = pool.Rarity.OverrideNameColor;
+					}
+
 					tooltips[i] = namelayer;
 				}
 
@@ -544,10 +587,12 @@ namespace Loot
 
 				// Insert lines
 				foreach (var ttcol in pool.Description)
+				{
 					foreach (var tt in ttcol)
 					{
 						tooltips.Insert(++i, new TooltipLine(mod, $"Loot: Modifier:Line:{i}", tt.Text) { overrideColor = (tt.Color ?? Color.White) * Main.inventoryScale });
 					}
+				}
 
 				// Insert sealed notation
 				if (SealedModifiers)
@@ -560,7 +605,10 @@ namespace Loot
 				}
 
 				// Call modify tooltips
-				foreach (var e in pool.ActiveModifiers) e.ModifyTooltips(item, tooltips);
+				foreach (var e in pool.ActiveModifiers)
+				{
+					e.ModifyTooltips(item, tooltips);
+				}
 			}
 		}
 	}

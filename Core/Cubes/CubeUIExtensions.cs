@@ -1,7 +1,7 @@
-using System;
-using System.Collections.Generic;
 using Loot.UI;
 using Microsoft.Xna.Framework.Input;
+using System;
+using System.Collections.Generic;
 using Terraria;
 using Terraria.GameInput;
 using Terraria.ID;
@@ -15,11 +15,16 @@ namespace Loot.Core.Cubes
 		public override bool CanRightClick(Item item)
 		{
 			if (!RightClickFunctionalityRequirements(item))
+			{
 				return false;
+			}
 
 			// ReSharper disable once UsePatternMatching
 			var ui = Loot.Instance.CubeInterface.CurrentState as CubeUI;
-			if (ui == null) return false;
+			if (ui == null)
+			{
+				return false;
+			}
 
 			return ui.Visible && ui.IsItemValidForUISlot(item);
 		}
@@ -48,14 +53,23 @@ namespace Loot.Core.Cubes
 			// by which we need to assume any possible item can be passed into this hook
 			// ReSharper disable once UsePatternMatching
 			var ui = Loot.Instance.CubeInterface.CurrentState as CubeUI;
-			if (ui == null) return;
+			if (ui == null)
+			{
+				return;
+			}
 
 			if (RightClickFunctionalityRequirements(item) && !(item.modItem is MagicalCube) && ui.Visible && ui.IsItemValidForUISlot(item))
 			{
 				// ReSharper disable once ConvertIfStatementToSwitchStatement
 				// ^ needs C#7
-				if (ui is CubeRerollUI) RerollUITakeItem(ui as CubeRerollUI, item);
-				else if (ui is CubeSealUI) SealUITakeItem(ui as CubeSealUI, item);
+				if (ui is CubeRerollUI)
+				{
+					RerollUITakeItem(ui as CubeRerollUI, item);
+				}
+				else if (ui is CubeSealUI)
+				{
+					SealUITakeItem(ui as CubeSealUI, item);
+				}
 				// else // item has innate right click or mod allows it, do nothing
 			}
 		}
@@ -106,7 +120,9 @@ namespace Loot.Core.Cubes
 				if ((Loot.WingSlotLoaded && item.wingSlot > 0) // block wings if low version if wingslot
 					|| !cubeUI.IsItemValidForUISlot(item)
 					|| cubeUI.IsSlottedItemInCubeUI())
+				{
 					return;
+				}
 
 				var i = tooltips.FindIndex(x => x.mod.Equals("Terraria") && x.Name.Equals("ItemName"));
 				if (i != -1)

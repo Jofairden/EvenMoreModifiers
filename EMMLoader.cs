@@ -1,16 +1,15 @@
-﻿using System;
+using Loot.Core;
+using System;
 using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
-using Loot.Core;
 using Terraria.ModLoader;
 using Terraria.Utilities;
-
-using RarityMap = System.Collections.Generic.KeyValuePair<string, Loot.Core.ModifierRarity>;
+using EffectMap = System.Collections.Generic.KeyValuePair<string, Loot.Core.ModifierEffect>;
 using ModifierMap = System.Collections.Generic.KeyValuePair<string, Loot.Core.Modifier>;
 using PoolMap = System.Collections.Generic.KeyValuePair<string, Loot.Core.ModifierPool>;
-using EffectMap = System.Collections.Generic.KeyValuePair<string, Loot.Core.ModifierEffect>;
+using RarityMap = System.Collections.Generic.KeyValuePair<string, Loot.Core.ModifierRarity>;
 //using GlobalModifierMap = System.Collections.Generic.KeyValuePair<string, Loot.Core.GlobalModifier>;
 
 namespace Loot
@@ -168,7 +167,10 @@ namespace Loot
 		{
 			var wr = new WeightedRandom<ModifierPool>();
 			foreach (var m in Pools.Where(x => x.Value._CanRoll(ctx)))
+			{
 				wr.Add(m.Value, m.Value.RollChance);
+			}
+
 			var mod = wr.Get();
 			return (ModifierPool)mod?.Clone();
 		}
@@ -434,7 +436,7 @@ namespace Loot
 				// ReSharper disable once ReturnValueOfPureMethodIsNotUsed
 				.Select(x => x.GetCustomAttributes(false).OfType<DelegationPrioritizationAttribute>());
 
-			foreach (var attribute in attributes.SelectMany(x=>x))
+			foreach (var attribute in attributes.SelectMany(x => x))
 			{
 				Activator.CreateInstance(attribute.GetType(), attribute.DelegationPrioritization, attribute.DelegationLevel);
 			}

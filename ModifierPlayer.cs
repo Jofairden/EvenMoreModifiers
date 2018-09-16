@@ -1,8 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using Loot.Core;
 using Loot.Modifiers;
+using System;
+using System.Collections.Generic;
+using System.Linq;
 using Terraria;
 using Terraria.DataStructures;
 using Terraria.ModLoader;
@@ -105,7 +105,9 @@ namespace Loot
 		{
 			bool b = base.PreHurt(pvp, quiet, ref damage, ref hitDirection, ref crit, ref customDamage, ref playSound, ref genGore, ref damageSource);
 			if (OnPreHurt != null)
+			{
 				b &= OnPreHurt.Invoke(this, pvp, quiet, ref damage, ref hitDirection, ref crit, ref customDamage, ref playSound, ref genGore, ref damageSource);
+			}
 
 			return b;
 		}
@@ -151,7 +153,10 @@ namespace Loot
 		{
 			bool b = base.PreKill(damage, hitDirection, pvp, ref playSound, ref genGore, ref damageSource);
 			if (OnPreKill != null)
+			{
 				b &= OnPreKill.Invoke(this, damage, hitDirection, pvp, ref playSound, ref genGore, ref damageSource);
+			}
+
 			return b;
 		}
 	}

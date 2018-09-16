@@ -1,6 +1,6 @@
-﻿using System;
 using Loot.Core;
 using Microsoft.Xna.Framework;
+using System;
 using Terraria;
 
 namespace Loot.Modifiers.EquipModifiers
@@ -25,14 +25,20 @@ namespace Loot.Modifiers.EquipModifiers
 		[DelegationPrioritization(DelegationPrioritization.Late, 999)]
 		public void ModifyHitNPC(ModifierPlayer player, Item item, NPC target, ref int damage, ref float knockback, ref bool crit)
 		{
-			if (crit) CritBonus(ref damage);
+			if (crit)
+			{
+				CritBonus(ref damage);
+			}
 		}
 
 		[AutoDelegation("OnModifyHitPvp")]
 		[DelegationPrioritization(DelegationPrioritization.Late, 999)]
 		private void ModifyHitPvp(ModifierPlayer player, Item item, Player target, ref int damage, ref bool crit)
 		{
-			if (crit) CritBonus(ref damage);
+			if (crit)
+			{
+				CritBonus(ref damage);
+			}
 		}
 
 		private void CritBonus(ref int damage)

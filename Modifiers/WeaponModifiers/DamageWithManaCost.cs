@@ -1,7 +1,7 @@
-﻿using System;
-using System.Linq;
 using Loot.Core;
 using Microsoft.Xna.Framework;
+using System;
+using System.Linq;
 using Terraria;
 
 namespace Loot.Modifiers.WeaponModifiers
@@ -49,13 +49,23 @@ namespace Loot.Modifiers.WeaponModifiers
 
 		private int GetMaxUseTime(Item item)
 		{
-			if (item.useTime <= 8) return 15;
-			if (item.useTime.Between(9, 20)) return 20;
-			if (item.useTime.Between(21, 25)) return 25;
-			if (item.useTime.Between(26, 30)) return 30;
-			if (item.useTime.Between(31, 35)) return 35;
-			if (item.useTime.Between(36, 45)) return 45;
-			if (item.useTime.Between(46, 55)) return 55;
+			int number = 15;
+
+			if (item.useTime <= 8)
+			{
+				return number;
+			}
+
+			while (number <= 55)
+			{
+				if (item.useTime <= number)
+				{
+					return number;
+				}
+
+				number += 5;
+			}
+
 			return 56;
 		}
 	}

@@ -24,8 +24,15 @@ namespace Loot.Modifiers.WeaponModifiers
 			item.useAnimation = (int)(item.useAnimation * (1 - Properties.RoundedPower / 100f));
 
 			// Don't go below the minimum
-			if (item.useTime < 2) item.useTime = 2;
-			if (item.useAnimation < 2) item.useAnimation = 2;
+			if (item.useTime < 2)
+			{
+				item.useTime = 2;
+			}
+
+			if (item.useAnimation < 2)
+			{
+				item.useAnimation = 2;
+			}
 		}
 
 		/*public override float UseTimeMultiplier(Item item, Player player)

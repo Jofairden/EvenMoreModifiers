@@ -11,7 +11,10 @@ namespace Loot
 		{
 			var info = EMMItem.GetItemInfo(item);
 			if (info.JustTinkerModified)
+			{
 				item.accessory = true;
+			}
+
 			return -1;
 		}
 
@@ -20,7 +23,9 @@ namespace Loot
 		{
 			var info = EMMItem.GetItemInfo(item);
 			if (info.JustTinkerModified)
+			{
 				item.accessory = false;
+			}
 		}
 	}
 }

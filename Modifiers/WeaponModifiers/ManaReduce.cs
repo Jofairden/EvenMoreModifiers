@@ -1,6 +1,6 @@
-﻿using System;
-using Loot.Core;
+﻿using Loot.Core;
 using Microsoft.Xna.Framework;
+using System;
 using Terraria;
 
 namespace Loot.Modifiers.WeaponModifiers
@@ -28,7 +28,9 @@ namespace Loot.Modifiers.WeaponModifiers
 
 			// Don't go below 1 mana cost! 0 cost is too OP :P
 			if (item.mana < 1)
+			{
 				item.mana = 1;
+			}
 		}
 	}
 }

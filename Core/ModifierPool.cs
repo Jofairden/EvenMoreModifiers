@@ -96,7 +96,9 @@ namespace Loot.Core
 		internal void ApplyModifiers(Item item)
 		{
 			foreach (Modifier m in ActiveModifiers)
+			{
 				m.Apply(item);
+			}
 		}
 
 		/// <summary>
@@ -143,7 +145,9 @@ namespace Loot.Core
 			int ActiveModifiersSize = reader.ReadInt32();
 			var list = new List<Modifier>();
 			for (int i = 0; i < ActiveModifiersSize; ++i)
+			{
 				list.Add(Modifier._NetReceive(item, reader));
+			}
 
 			Assembly assembly;
 			if (EMMLoader.Mods.TryGetValue(ModName, out assembly))
@@ -177,7 +181,9 @@ namespace Loot.Core
 
 			writer.Write(modifierPool.ActiveModifiers.Length);
 			for (int i = 0; i < modifierPool.ActiveModifiers.Length; ++i)
+			{
 				Modifier._NetSend(modifierPool.ActiveModifiers[i], item, writer);
+			}
 
 			modifierPool.NetSend(item, writer);
 		}
@@ -193,7 +199,9 @@ namespace Loot.Core
 		protected internal static ModifierPool _Load(Item item, TagCompound tag)
 		{
 			if (tag == null || tag.ContainsKey("EMMErr:PoolNullErr"))
+			{
 				return null;
+			}
 
 			string modname = tag.GetString("ModName");
 			Assembly assembly;
@@ -229,7 +237,10 @@ namespace Loot.Core
 					ModifierRarity preloadRarity = ModifierRarity._Load(item, tag.Get<TagCompound>("Rarity"));
 					bool rarityUnloaded = preloadRarity == null;
 					if (!rarityUnloaded)
+					{
 						m.Rarity = preloadRarity;
+					}
+
 					int activeModifiers = tag.GetAsInt("ActiveModifiers");
 					if (activeModifiers > 0)
 					{
@@ -239,7 +250,9 @@ namespace Loot.Core
 							// preload to take unloaded modifiers into account
 							var loaded = Modifier._Load(item, tag.Get<TagCompound>($"ActiveModifier{i}"));
 							if (loaded != null)
+							{
 								list.Add(loaded);
+							}
 						}
 
 						m.ActiveModifiers = list.ToArray();
@@ -249,7 +262,9 @@ namespace Loot.Core
 
 					// If our rarity was unloaded, attempt rolling a new one that is applicable
 					if (rarityUnloaded && m.ActiveModifiers != null && m.ActiveModifiers.Length > 0)
+					{
 						m.Rarity = EMMLoader.GetPoolRarity(m);
+					}
 
 					m.Modifiers = null;
 					return m;
@@ -273,7 +288,9 @@ namespace Loot.Core
 		protected internal static TagCompound Save(Item item, ModifierPool modifierPool)
 		{
 			if (modifierPool == null)
+			{
 				return new TagCompound { { "EMMErr:PoolNullErr", "ModifierPool was null err" } };
+			}
 
 			var tag = new TagCompound
 			{

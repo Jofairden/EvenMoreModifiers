@@ -63,7 +63,10 @@ namespace Loot.Core
 			for (int i = 0; i < iterations; i++)
 			{
 				float rolledMagnitude = RollMagnitude(magnitudePower, lukStat);
-				if (rolledMagnitude > Magnitude) Magnitude = rolledMagnitude;
+				if (rolledMagnitude > Magnitude)
+				{
+					Magnitude = rolledMagnitude;
+				}
 			}
 
 			Power = RollPower();

@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 
 namespace Loot.Core
 {
@@ -17,7 +17,9 @@ namespace Loot.Core
 		public DelegationPrioritizationAttribute(DelegationPrioritization delegationPrioritization, int delegationLevel = 0)
 		{
 			if (delegationLevel < 0 || delegationLevel > 999)
+			{
 				throw new ArgumentOutOfRangeException(nameof(delegationLevel), delegationLevel, "delegationLevel must be within 0-999");
+			}
 
 			DelegationPrioritization = delegationPrioritization;
 			DelegationLevel = delegationLevel;

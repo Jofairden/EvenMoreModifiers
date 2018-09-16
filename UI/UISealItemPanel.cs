@@ -17,12 +17,18 @@ namespace Loot.UI
 
 		public override void PreOnClick(UIMouseEvent evt, UIElement e)
 		{
-			if (!item.IsAir) EMMItem.GetItemInfo(item).SlottedInCubeUI = false;
+			if (!item.IsAir)
+			{
+				EMMItem.GetItemInfo(item).SlottedInCubeUI = false;
+			}
 		}
 
 		public override void PostOnClick(UIMouseEvent evt, UIElement e)
 		{
-			if (!item.IsAir) EMMItem.GetItemInfo(item).SlottedInCubeUI = true;
+			if (!item.IsAir)
+			{
+				EMMItem.GetItemInfo(item).SlottedInCubeUI = true;
+			}
 		}
 	}
 }

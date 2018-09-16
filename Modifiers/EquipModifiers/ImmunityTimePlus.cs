@@ -20,7 +20,10 @@ namespace Loot.Modifiers.EquipModifiers
 			int frames = damage <= 1
 				? BonusImmunityTime / 2
 				: BonusImmunityTime;
-			if (player.player.immuneTime > 0) player.player.immuneTime += frames;
+			if (player.player.immuneTime > 0)
+			{
+				player.player.immuneTime += frames;
+			}
 		}
 	}
 

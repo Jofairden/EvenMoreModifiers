@@ -1,16 +1,16 @@
-﻿using System;
+﻿using Loot.Core;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Reflection;
 using System.Runtime.Serialization.Formatters.Binary;
-using Loot.Core;
 using Terraria;
 using Terraria.ModLoader;
-using RarityMap = System.Collections.Generic.KeyValuePair<string, Loot.Core.ModifierRarity>;
+using EffectMap = System.Collections.Generic.KeyValuePair<string, Loot.Core.ModifierEffect>;
 using ModifierMap = System.Collections.Generic.KeyValuePair<string, Loot.Core.Modifier>;
 using PoolMap = System.Collections.Generic.KeyValuePair<string, Loot.Core.ModifierPool>;
-using EffectMap = System.Collections.Generic.KeyValuePair<string, Loot.Core.ModifierEffect>;
+using RarityMap = System.Collections.Generic.KeyValuePair<string, Loot.Core.ModifierRarity>;
 //using GlobalModifierMap = System.Collections.Generic.KeyValuePair<string, Loot.Core.GlobalModifier>;
 
 namespace Loot
@@ -114,7 +114,10 @@ namespace Loot
 		public static byte[] ToByteArray<T>(this T obj)
 		{
 			if (obj == null)
+			{
 				return null;
+			}
+
 			BinaryFormatter bf = new BinaryFormatter();
 			using (MemoryStream ms = new MemoryStream())
 			{
@@ -126,7 +129,10 @@ namespace Loot
 		public static T FromByteArray<T>(this byte[] data)
 		{
 			if (data == null)
+			{
 				return default(T);
+			}
+
 			BinaryFormatter bf = new BinaryFormatter();
 			using (MemoryStream ms = new MemoryStream(data))
 			{

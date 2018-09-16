@@ -1,6 +1,6 @@
-﻿using System;
-using Loot.Core;
+﻿using Loot.Core;
 using Microsoft.Xna.Framework;
+using System;
 using Terraria;
 using Terraria.ID;
 
@@ -52,7 +52,9 @@ namespace Loot.Modifiers.WeaponModifiers
 		{
 			// todo Is this good? Or do we want to change ModifierItem?
 			if (ActivatedModifierItem.Item(item).IsActivated)
+			{
 				ModifierPlayer.Player(player).GetEffect<CursedEffect>().CurseCount++;
+			}
 		}
 
 		public override void GetWeaponDamage(Item item, Player player, ref int damage)

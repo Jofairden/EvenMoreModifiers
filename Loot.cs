@@ -1,10 +1,10 @@
-﻿using System;
+﻿using Loot.UI;
+using Microsoft.Xna.Framework;
+using System;
 using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
 using System.IO;
 using System.Runtime.CompilerServices;
-using Loot.UI;
-using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.ModLoader;
 using Terraria.UI;
@@ -117,7 +117,10 @@ namespace Loot
 		public override void UpdateUI(GameTime gameTime)
 		{
 			_lastUpdateUIGameTime = gameTime;
-			if (CubeInterface?.CurrentState != null) CubeInterface.Update(gameTime);
+			if (CubeInterface?.CurrentState != null)
+			{
+				CubeInterface.Update(gameTime);
+			}
 		}
 
 		public override void ModifyInterfaceLayers(List<GameInterfaceLayer> layers)

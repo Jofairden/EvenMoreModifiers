@@ -1,7 +1,7 @@
-﻿using System;
+﻿using Loot.Core;
+using System;
 using System.Collections.Generic;
 using System.Linq;
-using Loot.Core;
 using Terraria;
 using Terraria.ModLoader;
 using Terraria.ModLoader.IO;
@@ -46,7 +46,9 @@ namespace Loot
 			{
 				Initialized = true;
 				foreach (var chest in Main.chest.Where(chest => chest != null && chest.x > 0 && chest.y > 0))
+				{
 					WorldGenModifiersPass.GenerateModifiers(null, ModifierContextMethod.FirstLoad, chest.item.Where(x => !x.IsAir), chest);
+				}
 			}
 		}
 
@@ -67,7 +69,9 @@ namespace Loot
 			internal static void GenerateModifiers(GenerationProgress progress, ModifierContextMethod method, IEnumerable<Item> items, object obj = null)
 			{
 				if (progress != null)
+				{
 					progress.Message = "Generating modifiers on generated items...";
+				}
 
 				foreach (var item in items)
 				{
@@ -79,7 +83,9 @@ namespace Loot
 						itemInfo.HasRolled = true;
 
 						if (rand != null && rand.NextBool())
+						{
 							continue;
+						}
 
 						ModifierContext ctx = new ModifierContext
 						{
@@ -109,7 +115,9 @@ namespace Loot
 			{
 				Initialized = true;
 				foreach (var chest in Main.chest.Where(chest => chest != null && chest.x > 0 && chest.y > 0))
+				{
 					GenerateModifiers(progress, ModifierContextMethod.WorldGeneration, chest.item.Where(x => !x.IsAir && x.IsModifierRollableItem()), chest);
+				}
 			}
 		}
 	}

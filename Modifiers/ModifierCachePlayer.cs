@@ -1,9 +1,9 @@
+using CheatSheet;
+using Loot.Core;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
-using CheatSheet;
-using Loot.Core;
 using Terraria;
 using Terraria.ModLoader;
 
@@ -163,7 +163,11 @@ namespace Loot.Modifiers
 				tempEarlyMethods.AddRange(delegatedMethods.Where(x =>
 				{
 					var attr = x.GetCustomAttribute(typeof(DelegationPrioritizationAttribute));
-					if (attr != null && (attr as DelegationPrioritizationAttribute).DelegationPrioritization == DelegationPrioritization.Early) return true;
+					if (attr != null && (attr as DelegationPrioritizationAttribute).DelegationPrioritization == DelegationPrioritization.Early)
+					{
+						return true;
+					}
+
 					return false;
 				}).Select(x => new OrderedDelegationEntry
 				{
@@ -184,7 +188,11 @@ namespace Loot.Modifiers
 				tempLateMethods.AddRange(delegatedMethods.Where(x =>
 				{
 					var attr = x.GetCustomAttribute(typeof(DelegationPrioritizationAttribute));
-					if (attr != null && (attr as DelegationPrioritizationAttribute).DelegationPrioritization == DelegationPrioritization.Late) return true;
+					if (attr != null && (attr as DelegationPrioritizationAttribute).DelegationPrioritization == DelegationPrioritization.Late)
+					{
+						return true;
+					}
+
 					return false;
 				}).Select(x => new OrderedDelegationEntry
 				{
@@ -358,7 +366,10 @@ namespace Loot.Modifiers
 			if (curEquips.Length < _oldCheatSheetEquips.Length)
 			{
 				var outOfDateEquips = _oldCheatSheetEquips.Skip(curEquips.Length);
-				if (outOfDateEquips.Any()) Ready = false;
+				if (outOfDateEquips.Any())
+				{
+					Ready = false;
+				}
 
 				// for all disabled slots but still had a registered item, detach it
 				foreach (var item in outOfDateEquips.Where(x => x != null && !x.IsAir))
@@ -387,11 +398,15 @@ namespace Loot.Modifiers
 				{
 					var equip = player.armor[i];
 					if (equip != null && !equip.IsAir)
+					{
 						CacheItemModifierEffects(equip);
+					}
 				}
 
 				if (player.HeldItem != null && !player.HeldItem.IsAir)
+				{
 					CacheItemModifierEffects(player.HeldItem);
+				}
 			}
 		}
 

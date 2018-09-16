@@ -1,8 +1,8 @@
-using System.Linq;
 using Loot.Core.Cubes;
 using Loot.Sounds;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
+using System.Linq;
 using Terraria;
 using Terraria.GameContent.UI.Elements;
 using Terraria.ModLoader;
@@ -33,7 +33,10 @@ namespace Loot.UI
 		internal void RecalculateCubeCount()
 		{
 			_cubeCount = Main.LocalPlayer.inventory.Where(x => x.modItem is CubeOfSealing).Sum(x => x.stack);
-			if (_cubeCount > 999) _cubeCount = 999;
+			if (_cubeCount > 999)
+			{
+				_cubeCount = 999;
+			}
 		}
 
 		public override void ToggleUI(UserInterface theInterface, UIState uiStateInstance)
@@ -137,7 +140,11 @@ namespace Loot.UI
 			if (cube != null)
 			{
 				cube.stack--;
-				if (cube.stack <= 0) cube.TurnToAir();
+				if (cube.stack <= 0)
+				{
+					cube.TurnToAir();
+				}
+
 				RecalculateCubeCount();
 
 				var info = EMMItem.GetItemInfo(_itemPanel.item);

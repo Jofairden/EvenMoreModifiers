@@ -1,7 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
 using Loot.Modifiers;
 using Loot.Modifiers.EquipModifiers;
+using System;
+using System.Collections.Generic;
 using Terraria;
 using Terraria.ModLoader;
 
@@ -35,7 +35,9 @@ namespace Loot
 			foreach (var x in Info(projectile).SNAPSHOT_DebuffChances)
 			{
 				if (Main.rand.NextFloat() < x.InflictionChance)
+				{
 					target.AddBuff(x.BuffType, x.BuffTime);
+				}
 			}
 		}
 
@@ -44,23 +46,34 @@ namespace Loot
 			foreach (var x in Info(projectile).SNAPSHOT_DebuffChances)
 			{
 				if (Main.rand.NextFloat() < x.InflictionChance)
+				{
 					target.AddBuff(x.BuffType, x.BuffTime);
+				}
 			}
 		}
 
 		private void HealthyBonus(Projectile projectile, ref int damage, NPC target)
 		{
-			if (target.life == target.lifeMax) damage = (int)Math.Ceiling(damage * Info(projectile).SNAPSHOT_HealthyFoesMulti);
+			if (target.life == target.lifeMax)
+			{
+				damage = (int)Math.Ceiling(damage * Info(projectile).SNAPSHOT_HealthyFoesMulti);
+			}
 		}
 
 		private void HealthyBonus(Projectile projectile, ref int damage, Player target)
 		{
-			if (target.statLife == target.statLifeMax2) damage = (int)Math.Ceiling(damage * Info(projectile).SNAPSHOT_HealthyFoesMulti);
+			if (target.statLife == target.statLifeMax2)
+			{
+				damage = (int)Math.Ceiling(damage * Info(projectile).SNAPSHOT_HealthyFoesMulti);
+			}
 		}
 
 		private void CritBonus(Projectile projectile, ref int damage, bool crit)
 		{
-			if (crit) damage = (int)Math.Ceiling(damage * Info(projectile).SNAPSHOT_CritMulti);
+			if (crit)
+			{
+				damage = (int)Math.Ceiling(damage * Info(projectile).SNAPSHOT_CritMulti);
+			}
 		}
 
 		public override bool PreAI(Projectile projectile)
@@ -77,7 +90,9 @@ namespace Loot
 					mproj.SNAPSHOT_DebuffChances = new List<DebuffTrigger>(mplr.GetEffect<WeaponDebuffEffect>().DebuffChances);
 					mproj.SNAPSHOT_HealthyFoesMulti = mplr.GetEffect<HealthyFoesEffect>().Multiplier;
 					if (!projectile.minion) // minions do not crit
+					{
 						mproj.SNAPSHOT_CritMulti = mplr.GetEffect<CritDamagePlusEffect>().Multiplier;
+					}
 				}
 				else if (projectile.owner == 255)
 				{

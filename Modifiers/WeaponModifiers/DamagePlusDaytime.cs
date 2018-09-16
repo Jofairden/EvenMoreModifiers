@@ -1,8 +1,8 @@
-﻿using System;
+﻿using Loot.Core;
+using Microsoft.Xna.Framework;
+using System;
 using System.Collections.Generic;
 using System.IO;
-using Loot.Core;
-using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.ModLoader.IO;
 
@@ -60,7 +60,9 @@ namespace Loot.Modifiers.WeaponModifiers
 		{
 			base.GetWeaponDamage(item, player, ref damage);
 			if (_duringDay && Main.dayTime || !_duringDay && !Main.dayTime)
+			{
 				damage = (int)Math.Ceiling(damage * (1 + Properties.RoundedPower / 100));
+			}
 		}
 	}
 }

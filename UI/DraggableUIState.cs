@@ -1,6 +1,6 @@
-using System;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
+using System;
 using Terraria;
 using Terraria.GameContent.UI.Elements;
 using Terraria.UI;
@@ -21,12 +21,19 @@ namespace Loot.UI
 
 		protected void AssignDragPanel(UIPanel panel)
 		{
-			if (!_initialized) _dragPanel = panel;
+			if (!_initialized)
+			{
+				_dragPanel = panel;
+			}
 		}
 
 		public override void OnInitialize()
 		{
-			if (_dragPanel == null) throw new Exception("dragPanel for DraggableUIState is not set");
+			if (_dragPanel == null)
+			{
+				throw new Exception("dragPanel for DraggableUIState is not set");
+			}
+
 			_dragPanel.OnMouseDown += DragStart;
 			_dragPanel.OnMouseUp += DragEnd;
 			_initialized = true;

@@ -1,7 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using Loot.Core;
+﻿using Loot.Core;
 using Microsoft.Xna.Framework;
+using System;
+using System.Collections.Generic;
 using Terraria;
 using Terraria.ID;
 using Terraria.Localization;
@@ -65,7 +65,9 @@ namespace Loot.Modifiers
 		private string GetBuffName()
 		{
 			if (BuffType >= BuffID.Count)
+			{
 				return BuffLoader.GetBuff(BuffType)?.DisplayName.GetTranslation(LanguageManager.Instance.ActiveCulture) ?? "null";
+			}
 
 			return Lang.GetBuffName(BuffType);
 		}
@@ -73,13 +75,17 @@ namespace Loot.Modifiers
 		public override void OnHitNPC(Item item, Player player, NPC target, int damage, float knockBack, bool crit)
 		{
 			if (Main.rand.NextFloat() < Properties.RoundedPower / 100f * BuffInflictionChance)
+			{
 				target.AddBuff(BuffType, BuffTime);
+			}
 		}
 
 		public override void OnHitPvp(Item item, Player player, Player target, int damage, bool crit)
 		{
 			if (Main.rand.NextFloat() < Properties.RoundedPower / 100f * BuffInflictionChance)
+			{
 				target.AddBuff(BuffType, BuffTime);
+			}
 		}
 
 		// Required for minion/proj snapshotting

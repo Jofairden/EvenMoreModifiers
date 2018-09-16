@@ -107,7 +107,11 @@ namespace Loot.UI
 				{
 					Main.PlaySound(SoundID.Grab);
 					Main.playerInventory = true;
-					if (TakeUserItemOnClick) Main.mouseItem = item.Clone();
+					if (TakeUserItemOnClick)
+					{
+						Main.mouseItem = item.Clone();
+					}
+
 					item.TurnToAir();
 				}
 				// Mouse has an item
@@ -125,14 +129,20 @@ namespace Loot.UI
 						if (item.maxStack >= newStack)
 						{
 							item.stack = newStack;
-							if (TakeUserItemOnClick) Main.mouseItem.TurnToAir();
+							if (TakeUserItemOnClick)
+							{
+								Main.mouseItem.TurnToAir();
+							}
 						}
 						// Doesn't fit, set item to maxstack, set mouse item stack to difference
 						else
 						{
 							var stackDiff = newStack - item.maxStack;
 							item.stack = item.maxStack;
-							if (TakeUserItemOnClick) Main.mouseItem.stack = stackDiff;
+							if (TakeUserItemOnClick)
+							{
+								Main.mouseItem.stack = stackDiff;
+							}
 						}
 					}
 					// Items are not the same type
@@ -141,7 +151,11 @@ namespace Loot.UI
 						// Swap mouse item and slot item
 						var tmp = item.Clone();
 						var tmp2 = Main.mouseItem.Clone();
-						if (TakeUserItemOnClick) Main.mouseItem = tmp;
+						if (TakeUserItemOnClick)
+						{
+							Main.mouseItem = tmp;
+						}
+
 						item = tmp2;
 					}
 				}
@@ -153,7 +167,10 @@ namespace Loot.UI
 				Main.PlaySound(SoundID.Grab);
 				Main.playerInventory = true;
 				item = Main.mouseItem.Clone();
-				if (TakeUserItemOnClick) Main.mouseItem.TurnToAir();
+				if (TakeUserItemOnClick)
+				{
+					Main.mouseItem.TurnToAir();
+				}
 			}
 
 			// PostClick

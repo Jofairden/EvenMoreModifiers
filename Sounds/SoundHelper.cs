@@ -5,7 +5,7 @@ namespace Loot.Sounds
 {
 	internal static class SoundHelper
 	{
-		private static string[] Sounds =
+		private static readonly string[] Sounds =
 		{
 			"CloseUI",
 			"Decline",
