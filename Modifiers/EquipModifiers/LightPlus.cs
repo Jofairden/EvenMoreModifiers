@@ -33,8 +33,8 @@ namespace Loot.Modifiers.EquipModifiers
 		public override void Clone(ref ModifierEffect clone)
 		{
 			// For clarity, additional cloning is possible like this
-			((LightEffect) clone).LightStrength = LightStrength;
-			((LightEffect) clone).LightColor = LightColor;
+			((LightEffect)clone).LightStrength = LightStrength;
+			((LightEffect)clone).LightColor = LightColor;
 		}
 
 		// This method will be delegated to PostUpdate
@@ -47,7 +47,7 @@ namespace Loot.Modifiers.EquipModifiers
 			Lighting.AddLight(player.player.Center, LightColor.ToVector3() * .15f * LightStrength);
 		}
 	}
-	
+
 	// The UsesEffect attribute is linking this Modifier
 	// to the LightEffect effect.
 	// This will make the LightEffect become activated
@@ -64,11 +64,11 @@ namespace Loot.Modifiers.EquipModifiers
 		{
 			return base.GetModifierProperties(item).Set(maxMagnitude: 5f);
 		}
-		
+
 		// todo Just pass ModifierPlayer here?
 		public override void UpdateEquip(Item item, Player player)
 		{
-			ModifierPlayer.Player(player).GetEffect<LightEffect>().LightStrength += (int) Properties.RoundedPower;
+			ModifierPlayer.Player(player).GetEffect<LightEffect>().LightStrength += (int)Properties.RoundedPower;
 		}
 	}
 }

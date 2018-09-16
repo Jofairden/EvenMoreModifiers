@@ -18,7 +18,7 @@ namespace Loot.Modifiers.EquipModifiers
 		[DelegationPrioritization(DelegationPrioritization.Late, 999)]
 		private void DefBoost(ModifierPlayer player)
 		{
-			player.player.statDefense = (int) Math.Ceiling(player.player.statDefense * (1 + PercentDefBoost));
+			player.player.statDefense = (int)Math.Ceiling(player.player.statDefense * (1 + PercentDefBoost));
 		}
 	}
 

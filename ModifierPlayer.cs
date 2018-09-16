@@ -17,7 +17,7 @@ namespace Loot
 		private IList<ModifierEffect> _modifierEffects;
 
 		public bool HasEffect(Type type) => _modifierEffects.Any(x => x.GetType() == type);
-		public bool HasEffect<T>() where T : ModifierEffect =>  _modifierEffects.Any(x => x.GetType() == typeof(T));
+		public bool HasEffect<T>() where T : ModifierEffect => _modifierEffects.Any(x => x.GetType() == typeof(T));
 
 		public ModifierEffect GetEffect(Type type)
 		{
@@ -28,13 +28,13 @@ namespace Loot
 		{
 			return (T)_modifierEffects.FirstOrDefault(x => x.GetType() == typeof(T));
 		}
-		
+
 		// Attempt rolling modifiers on first load
 		public override void SetupStartInventory(IList<Item> items)
 		{
 			EMMWorld.WorldGenModifiersPass.GenerateModifiers(null, ModifierContextMethod.SetupStartInventory, items.Where(x => !x.IsAir && x.IsModifierRollableItem()), player);
 		}
-		
+
 		public override void OnEnterWorld(Player player)
 		{
 			EMMWorld.WorldGenModifiersPass.GenerateModifiers(null, ModifierContextMethod.FirstLoad, player.inventory.Where(x => !x.IsAir && x.IsModifierRollableItem()).Concat(player.armor.Where(x => !x.IsAir && !x.IsModifierRollableItem())), player);
@@ -43,20 +43,20 @@ namespace Loot
 		public static ModifierPlayer Player(Player player) => player.GetModPlayer<ModifierPlayer>();
 
 		public delegate void VoidEventRaiser(ModifierPlayer player);
-		
+
 		public event VoidEventRaiser OnInitialize;
 		public override void Initialize()
 		{
 			// Initialize the effects list for this player
 			_modifierEffects = new List<ModifierEffect>();
 			// Need to initialize with a fresh set of new effect instances
-			foreach (var effect in EMMLoader.Effects.Select(x=>x.Value))
+			foreach (var effect in EMMLoader.Effects.Select(x => x.Value))
 			{
-				var clone = (ModifierEffect) effect.Clone();
+				var clone = (ModifierEffect)effect.Clone();
 				clone.OnInitialize(this);
 				_modifierEffects.Add(clone);
 			}
-			
+
 			OnInitialize?.Invoke(this);
 		}
 
@@ -68,7 +68,7 @@ namespace Loot
 
 		public event VoidEventRaiser OnResetEffects;
 		public override void ResetEffects()
-		{	
+		{
 			if (player.GetModPlayer<ModifierCachePlayer>().Ready)
 			{
 				OnResetEffects?.Invoke(this);
@@ -98,20 +98,20 @@ namespace Loot
 		{
 			OnPostUpdate?.Invoke(this);
 		}
-		
+
 		public delegate bool PreHurtEventRaiser(ModifierPlayer player, bool pvp, bool quiet, ref int damage, ref int hitDirection, ref bool crit, ref bool customDamage, ref bool playSound, ref bool genGore, ref PlayerDeathReason damageSource);
-		public event PreHurtEventRaiser OnPreHurt;	
+		public event PreHurtEventRaiser OnPreHurt;
 		public override bool PreHurt(bool pvp, bool quiet, ref int damage, ref int hitDirection, ref bool crit, ref bool customDamage, ref bool playSound, ref bool genGore, ref PlayerDeathReason damageSource)
 		{
-			bool b=  base.PreHurt(pvp, quiet, ref damage, ref hitDirection, ref crit, ref customDamage, ref playSound, ref genGore, ref damageSource);
+			bool b = base.PreHurt(pvp, quiet, ref damage, ref hitDirection, ref crit, ref customDamage, ref playSound, ref genGore, ref damageSource);
 			if (OnPreHurt != null)
 				b &= OnPreHurt.Invoke(this, pvp, quiet, ref damage, ref hitDirection, ref crit, ref customDamage, ref playSound, ref genGore, ref damageSource);
-			
+
 			return b;
 		}
 
 		public delegate void PostHurtEventRaiser(ModifierPlayer player, bool pvp, bool quiet, double damage, int hitDirection, bool crit);
-		public event PostHurtEventRaiser OnPostHurt;	
+		public event PostHurtEventRaiser OnPostHurt;
 		public override void PostHurt(bool pvp, bool quiet, double damage, int hitDirection, bool crit)
 		{
 			OnPostHurt?.Invoke(this, pvp, quiet, damage, hitDirection, crit);
@@ -139,7 +139,7 @@ namespace Loot
 		}
 
 		public delegate void OnHitPvpEventRaiser(ModifierPlayer player, Item item, Player target, int damage, bool crit);
-		public event OnHitPvpEventRaiser OnOnHitPvp;	
+		public event OnHitPvpEventRaiser OnOnHitPvp;
 		public override void OnHitPvp(Item item, Player target, int damage, bool crit)
 		{
 			OnOnHitPvp?.Invoke(this, item, target, damage, crit);
@@ -148,7 +148,7 @@ namespace Loot
 		public delegate bool PreKillEventRaiser(ModifierPlayer player, double damage, int hitDirection, bool pvp, ref bool playSound, ref bool genGore, ref PlayerDeathReason damageSource);
 		public event PreKillEventRaiser OnPreKill;
 		public override bool PreKill(double damage, int hitDirection, bool pvp, ref bool playSound, ref bool genGore, ref PlayerDeathReason damageSource)
-		{			
+		{
 			bool b = base.PreKill(damage, hitDirection, pvp, ref playSound, ref genGore, ref damageSource);
 			if (OnPreKill != null)
 				b &= OnPreKill.Invoke(this, damage, hitDirection, pvp, ref playSound, ref genGore, ref damageSource);

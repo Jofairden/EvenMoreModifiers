@@ -50,7 +50,7 @@ namespace Loot
 		public override void Load()
 		{
 			Instance = this;
-			
+
 			// Ensure cheat sheet loaded and required version
 			var cheatSheetMod = ModLoader.GetMod("CheatSheet");
 			CheatSheetLoaded = cheatSheetMod != null && cheatSheetMod.Version >= new Version(0, 4, 3, 1);
@@ -130,7 +130,7 @@ namespace Loot
 					delegate
 					{
 						if (((CubeInterface.CurrentState as CubeUI)?.Visible ?? false)
-						    && _lastUpdateUIGameTime != null)
+							&& _lastUpdateUIGameTime != null)
 						{
 							CubeInterface.Draw(Main.spriteBatch, _lastUpdateUIGameTime);
 						}

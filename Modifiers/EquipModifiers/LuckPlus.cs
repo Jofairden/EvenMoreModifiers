@@ -15,7 +15,7 @@ namespace Loot.Modifiers.EquipModifiers
 			Luck = 0f;
 		}
 	}
-	
+
 	[UsesEffect(typeof(LuckEffect))]
 	public class LuckPlus : EquipModifier
 	{
@@ -28,7 +28,7 @@ namespace Loot.Modifiers.EquipModifiers
 		{
 			return base.GetModifierProperties(item).Set(maxMagnitude: 10f);
 		}
-		
+
 		public override void UpdateEquip(Item item, Player player)
 		{
 			ModifierPlayer.Player(player).GetEffect<LuckEffect>().Luck += (int)Properties.RoundedPower;

@@ -9,9 +9,9 @@ namespace Loot.Core.Cubes
 		protected override void SafeStaticDefaults()
 		{
 			Tooltip.SetDefault("Press left control and right click to open cube UI" +
-			                   "\nAllows sealing an item's modifiers" +
-			                   "\nSealing modifiers means they cannot be changed" +
-			                   "\nCube is consumed upon use");
+							   "\nAllows sealing an item's modifiers" +
+							   "\nSealing modifiers means they cannot be changed" +
+							   "\nCube is consumed upon use");
 		}
 
 		protected override void SafeDefaults()

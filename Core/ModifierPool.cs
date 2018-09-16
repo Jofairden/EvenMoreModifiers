@@ -33,7 +33,7 @@ namespace Loot.Core
 		/// <summary>
 		/// Returns the sum of the rarity levels of the active modifiers
 		/// </summary>
-		public float TotalRarityLevel 
+		public float TotalRarityLevel
 			=> ActiveModifiers.Select(m => m.Properties.RarityLevel).DefaultIfEmpty(0).Sum();
 
 		/// <summary>
@@ -52,7 +52,7 @@ namespace Loot.Core
 			=> EMMLoader.GetModifierPool(type);
 
 		public ModifierPool AsNewInstance()
-			=> (ModifierPool) Activator.CreateInstance(GetType());
+			=> (ModifierPool)Activator.CreateInstance(GetType());
 
 		/// <summary>
 		/// Gets the next appropriate rarit for this pool and applies it and returns it.
@@ -109,10 +109,10 @@ namespace Loot.Core
 
 		public object Clone()
 		{
-			ModifierPool clone = (ModifierPool) MemberwiseClone();
+			ModifierPool clone = (ModifierPool)MemberwiseClone();
 			clone.Type = Type;
 			clone.Mod = Mod;
-			clone.Rarity = (ModifierRarity) Rarity?.Clone();
+			clone.Rarity = (ModifierRarity)Rarity?.Clone();
 			clone.Modifiers =
 				Modifiers?
 					.Select(x => x?.Clone())
@@ -148,7 +148,7 @@ namespace Loot.Core
 			Assembly assembly;
 			if (EMMLoader.Mods.TryGetValue(ModName, out assembly))
 			{
-				ModifierPool m = (ModifierPool) Activator.CreateInstance(assembly.GetType(Type));
+				ModifierPool m = (ModifierPool)Activator.CreateInstance(assembly.GetType(Type));
 				m.Type = ModifierType;
 				m.Mod = ModLoader.GetMod(ModName);
 				m.Rarity = ModifierRarity;
@@ -273,7 +273,7 @@ namespace Loot.Core
 		protected internal static TagCompound Save(Item item, ModifierPool modifierPool)
 		{
 			if (modifierPool == null)
-				return new TagCompound {{"EMMErr:PoolNullErr", "ModifierPool was null err"}};
+				return new TagCompound { { "EMMErr:PoolNullErr", "ModifierPool was null err" } };
 
 			var tag = new TagCompound
 			{

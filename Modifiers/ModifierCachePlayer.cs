@@ -4,7 +4,6 @@ using System.Linq;
 using System.Reflection;
 using CheatSheet;
 using Loot.Core;
-using Microsoft.Xna.Framework.Graphics;
 using Terraria;
 using Terraria.ModLoader;
 

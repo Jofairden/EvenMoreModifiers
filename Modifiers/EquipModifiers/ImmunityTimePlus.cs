@@ -39,7 +39,7 @@ namespace Loot.Modifiers.EquipModifiers
 
 		public override void UpdateEquip(Item item, Player player)
 		{
-			ModifierPlayer.Player(player).GetEffect<ImmunityEffect>().BonusImmunityTime += (int) Properties.RoundedPower;
+			ModifierPlayer.Player(player).GetEffect<ImmunityEffect>().BonusImmunityTime += (int)Properties.RoundedPower;
 		}
 	}
 }

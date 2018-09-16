@@ -15,16 +15,16 @@ namespace Loot.UI
 		{
 			// If new state toggled but old visibility state present, that one needs to be toggled first
 			if (theInterface.CurrentState is VisibilityUI
-			    && theInterface.CurrentState != uiStateInstance)
+				&& theInterface.CurrentState != uiStateInstance)
 			{
 				(theInterface.CurrentState as VisibilityUI).ToggleUI(theInterface, theInterface.CurrentState);
 			}
-			
+
 			// Toggle the state
 			Visible = !Visible;
 			theInterface.ResetLasts();
 			theInterface.SetState(Visible ? uiStateInstance : null);
-			
+
 			Main.PlaySound(SoundID.MenuOpen);
 		}
 	}

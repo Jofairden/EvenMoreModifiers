@@ -7,7 +7,7 @@ namespace Loot.Modifiers.EquipModifiers
 	public class LifeRegenEffect : ModifierEffect
 	{
 		public int LifeRegen;
-		
+
 		public override void ResetEffects(ModifierPlayer player)
 		{
 			LifeRegen = 0;
@@ -20,7 +20,7 @@ namespace Loot.Modifiers.EquipModifiers
 			LifeRegen %= 30;
 		}
 	}
-	
+
 	[UsesEffect(typeof(LifeRegenEffect))]
 	public class LifeRegen : EquipModifier
 	{

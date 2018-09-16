@@ -20,7 +20,7 @@ namespace Loot.UI
 		public Texture2D HintTexture { get; set; }
 		public Item item;
 		protected string HintOnHover { get; set; }
-		
+
 		public UIItemPanel(int netID = 0, int stack = 0, Texture2D hintTexture = null, string hintText = null, string hintOnHover = null)
 		{
 			base.Width.Set(panelwidth, 0f);
@@ -69,7 +69,7 @@ namespace Loot.UI
 					//Main.HoverItem.GetGlobalItem<DeconGlobalItem>(TheDeconstructor.instance).addValueTooltip = true;
 					//ItemValue value = new ItemValue().SetFromCopperValue(item.value*item.stack);
 					Main.HoverItem.SetNameOverride(
-						$"{Main.HoverItem.Name}{Main.HoverItem.modItem?.mod.Name.Insert((int) Main.HoverItem.modItem?.mod.Name.Length, "]").Insert(0, " [")}{(HintOnHover ?? "")}");
+						$"{Main.HoverItem.Name}{Main.HoverItem.modItem?.mod.Name.Insert((int)Main.HoverItem.modItem?.mod.Name.Length, "]").Insert(0, " [")}{(HintOnHover ?? "")}");
 				}
 			}
 

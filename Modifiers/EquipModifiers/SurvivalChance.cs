@@ -39,7 +39,7 @@ namespace Loot.Modifiers.EquipModifiers
 			new ModifierTooltipLine
 			{
 				Text = $"+{Properties.RoundedPower}% chance to survive lethal blows" +
-				       $"{(Main.LocalPlayer.GetModPlayer<ModifierPlayer>().GetEffect<SurvivalEffect>().SurvivalChance >= SurvivalEffect.MAX_SURVIVAL_CHANCE ? $" (cap reached: {SurvivalEffect.MAX_SURVIVAL_CHANCE * 100f}%)" : "")}",
+					   $"{(Main.LocalPlayer.GetModPlayer<ModifierPlayer>().GetEffect<SurvivalEffect>().SurvivalChance >= SurvivalEffect.MAX_SURVIVAL_CHANCE ? $" (cap reached: {SurvivalEffect.MAX_SURVIVAL_CHANCE * 100f}%)" : "")}",
 				Color = Color.LimeGreen
 			},
 		};

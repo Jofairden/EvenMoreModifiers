@@ -68,10 +68,10 @@ namespace Loot.Modifiers.WeaponModifiers
 		{
 			// The roll is only valid, if none other rolled random debuff has the same index
 			return base.PostRoll(ctx, rolledModifiers)
-			       && _index != -1
-			       && rolledModifiers
-				       .Select(x => x as RandomDebuff)
-				       .All(x => x?.GetRolledIndex() != _index);
+				   && _index != -1
+				   && rolledModifiers
+					   .Select(x => x as RandomDebuff)
+					   .All(x => x?.GetRolledIndex() != _index);
 		}
 
 		public override int BuffType => BuffPairs[_index].BuffType;

@@ -37,7 +37,7 @@ namespace Loot.Modifiers.EquipModifiers
 
 		private void CritBonus(ref int damage)
 		{
-			damage = (int) Math.Ceiling(damage * Multiplier);
+			damage = (int)Math.Ceiling(damage * Multiplier);
 		}
 	}
 

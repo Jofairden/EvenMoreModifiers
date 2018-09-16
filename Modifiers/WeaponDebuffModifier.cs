@@ -23,7 +23,7 @@ namespace Loot.Modifiers
 			InflictionChance = inflictionChance;
 		}
 	}
-	
+
 	public class WeaponDebuffEffect : ModifierEffect
 	{
 		// List of current debuff chances. Tuple format is [chance, buffType, buffTime]
@@ -41,7 +41,7 @@ namespace Loot.Modifiers
 			DebuffChances?.Clear();
 		}
 	}
-	
+
 	/// <summary>
 	/// Defines a modifier that can inflict a debuff, applicable for weapons
 	/// </summary>

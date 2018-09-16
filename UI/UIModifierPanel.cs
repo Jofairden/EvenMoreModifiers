@@ -8,7 +8,7 @@ namespace Loot.UI
 	public class UIModifierPanel : UIPanel
 	{
 		//private Modifier rolledModifier;
-		
+
 		private readonly UIText _text;
 		private readonly string defaultText = "...";
 

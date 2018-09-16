@@ -52,7 +52,7 @@ namespace Loot.UI
 
 		protected override void DrawSelf(SpriteBatch spriteBatch)
 		{
-			Vector2 mousePosition = new Vector2((float) Main.mouseX, (float) Main.mouseY);
+			Vector2 mousePosition = new Vector2((float)Main.mouseX, (float)Main.mouseY);
 			if (_dragPanel.ContainsPoint(mousePosition))
 			{
 				Main.LocalPlayer.mouseInterface = true;

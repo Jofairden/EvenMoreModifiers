@@ -46,7 +46,7 @@ namespace Loot.Core
 				}
 			}
 		}
-		
+
 		public void Detach(ModifierPlayer player, MethodInfo method, ModifierEffect effect)
 		{
 			foreach (string type in _delegationTypes)

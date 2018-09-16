@@ -9,7 +9,7 @@ namespace Loot.Modifiers.WeaponModifiers
 	public class CursedEffect : ModifierEffect
 	{
 		public int CurseCount;
-		
+
 		public override void ResetEffects(ModifierPlayer player)
 		{
 			CurseCount = 0;
@@ -29,7 +29,7 @@ namespace Loot.Modifiers.WeaponModifiers
 			}
 		}
 	}
-	
+
 	[UsesEffect(typeof(CursedEffect))]
 	public class CursedDamage : WeaponModifier
 	{

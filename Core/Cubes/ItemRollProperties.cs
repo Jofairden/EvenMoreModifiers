@@ -21,7 +21,7 @@ namespace Loot.Core.Cubes
 		public int MaxRollableLines
 		{
 			get { return _maxRollableLines; }
-			set { _maxRollableLines = (int) MathHelper.Clamp(value, 1f, 4f); }
+			set { _maxRollableLines = (int)MathHelper.Clamp(value, 1f, 4f); }
 		}
 
 		/// <summary>
