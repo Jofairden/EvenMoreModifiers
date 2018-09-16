@@ -10,7 +10,8 @@ namespace Loot.Core.Cubes
 		protected override Color? OverrideNameColor => Color.LightSlateGray;
 		protected override TooltipLine ExtraTooltip => new TooltipLine(mod, "BlackCube::Description::Add_Box",
 			"Always rolls 4 lines" +
-			"\nRolls 25% stronger modifiers")
+			"\nCan roll 25% stronger modifiers" +
+			"\n+4 luck with this cube")
 		{
 			overrideColor = OverrideNameColor
 		};
@@ -31,6 +32,7 @@ namespace Loot.Core.Cubes
 			// set forced strength minimum 25%
 			properties.MinModifierRolls = 4;
 			properties.MagnitudePower = 1.25f;
+			properties.ExtraLuck = 4;
 		}
 	}
 }

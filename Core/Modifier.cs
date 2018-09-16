@@ -33,7 +33,7 @@ namespace Loot.Core
 			=> EMMLoader.GetModifier(type);
 
 		public Modifier AsNewInstance()
-			=> (Modifier) Activator.CreateInstance(GetType());
+			=> (Modifier)Activator.CreateInstance(GetType());
 
 		public virtual ModifierProperties GetModifierProperties(Item item)
 			=> new ModifierProperties();
@@ -90,7 +90,7 @@ namespace Loot.Core
 
 		public new object Clone()
 		{
-			Modifier clone = (Modifier) MemberwiseClone();
+			Modifier clone = (Modifier)MemberwiseClone();
 			clone.Mod = Mod;
 			clone.Type = Type;
 			clone.Properties = Properties;
@@ -108,10 +108,12 @@ namespace Loot.Core
 			Assembly assembly;
 			if (EMMLoader.Mods.TryGetValue(ModName, out assembly))
 			{
-				Modifier m = (Modifier) Activator.CreateInstance(assembly.GetType(Type));
+				Modifier m = (Modifier)Activator.CreateInstance(assembly.GetType(Type));
 				m.Type = ModifierType;
 				m.Mod = ModLoader.GetMod(ModName);
-				m.Properties = m.GetModifierProperties(item).RollMagnitudeAndPower(Properties.Magnitude, Properties.Power);
+				m.Properties = m.GetModifierProperties(item);
+				m.Properties.Magnitude = Properties.Magnitude;
+				m.Properties.Power = Properties.Power;
 				m.NetReceive(item, reader);
 				return m;
 			}
@@ -170,7 +172,9 @@ namespace Loot.Core
 					//m.Type = tag.Get<uint>("ModifierType");
 					//m.Mod = ModLoader.GetMod(modname);
 					var p = ModifierProperties._Load(item, tag.GetCompound("ModifierProperties"));
-					m.Properties = m.GetModifierProperties(item).RollMagnitudeAndPower(p.Magnitude, p.Power);
+					m.Properties = m.GetModifierProperties(item);
+					m.Properties.Magnitude = p.Magnitude;
+					m.Properties.Power = p.Power;
 					m.Load(item, tag);
 					return m;
 				}

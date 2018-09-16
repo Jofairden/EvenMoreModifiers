@@ -49,5 +49,10 @@ namespace Loot.Core.Cubes
 		/// Apply a custom behavior for rolling a pool
 		/// </summary>
 		public Func<ModifierPool> OverrideRollModifierPool { get; set; } = null;
+
+		/// <summary>
+		/// Gives extra luck when rolling modifiers
+		/// </summary>
+		public float ExtraLuck { get; set; } = 0f;
 	}
 }

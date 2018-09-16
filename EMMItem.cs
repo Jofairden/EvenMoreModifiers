@@ -5,6 +5,7 @@ using System.IO;
 using System.Linq;
 using Loot.Core;
 using Loot.Core.Cubes;
+using Loot.Modifiers.EquipModifiers;
 using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.ModLoader;
@@ -157,7 +158,11 @@ namespace Loot
 				// Clone the mod (new instance) and roll it's properties, then roll it
 				Modifier e = wr.Get();
 				Modifier eClone = (Modifier)e.Clone();
-				eClone.Properties = eClone.GetModifierProperties(ctx.Item).RollMagnitudeAndPower(magnitudePower: itemRollProperties.MagnitudePower);
+				eClone.Properties =
+					eClone.GetModifierProperties(ctx.Item)
+					.RollMagnitudeAndPower(
+							magnitudePower: itemRollProperties.MagnitudePower,
+							lukStat: ModifierPlayer.Player(ctx.Player).GetEffect<LuckEffect>().Luck + itemRollProperties.ExtraLuck);
 				eClone.Roll(ctx, list);
 
 				// If the mod deemed to be unable to be added,

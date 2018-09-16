@@ -17,12 +17,12 @@ namespace Loot.Core
 		public float RarityLevel { get; private set; }
 		public float RollChance { get; private set; }
 		public int RoundPrecision { get; private set; }
-		public float Magnitude { get; private set; }
+		public float Magnitude { get; internal set; }
 		private float _power;
 		public float Power
 		{
 			get { return _power; }
-			private set
+			internal set
 			{
 				_power = value;
 				RoundedPower = (float)Math.Round(value, RoundPrecision);
@@ -53,18 +53,30 @@ namespace Loot.Core
 			return this;
 		}
 
-		public ModifierProperties RollMagnitudeAndPower(float? magnitude = null, float? power = null, float magnitudePower = 1f)
+		public ModifierProperties RollMagnitudeAndPower(float magnitudePower = 1f, float lukStat = 0f)
 		{
-			/* Roll power TODO support /luck/ stat */
-			Magnitude = magnitude ?? RollMagnitude(magnitudePower);
-			Power = power ?? RollPower();
+			Magnitude = RollMagnitude(magnitudePower, lukStat);
+
+			int iterations = (int)Math.Ceiling(lukStat) / 2;
+
+			// makes you more lucky rolling better magnitudes
+			for (int i = 0; i < iterations; i++)
+			{
+				float rolledMagnitude = RollMagnitude(magnitudePower, lukStat);
+				if (rolledMagnitude > Magnitude) Magnitude = rolledMagnitude;
+			}
+
+			Power = RollPower();
+
 			return this;
 		}
 
-		private float RollMagnitude(float magnitudePower)
+		private float RollMagnitude(float magnitudePower, float lukStat)
 		{
-			float randomMag = (MinMagnitude + Main.rand.NextFloat() * (MaxMagnitude - MinMagnitude));
-			return randomMag * MagnitudeStrength * magnitudePower;
+			float useMin = MinMagnitude * (0.01f * lukStat);
+			float useMax = MaxMagnitude * magnitudePower;
+			float randomMag = (useMin + Main.rand.NextFloat() * (useMax - useMin));
+			return randomMag * MagnitudeStrength;
 		}
 
 		private float RollPower()
@@ -78,7 +90,11 @@ namespace Loot.Core
 
 		internal static ModifierProperties _NetReceive(Item item, BinaryReader reader)
 		{
-			var p = new ModifierProperties().RollMagnitudeAndPower(reader.ReadSingle(), reader.ReadSingle());
+			var p = new ModifierProperties
+			{
+				Magnitude = reader.ReadSingle(),
+				Power = reader.ReadSingle()
+			};
 			p.NetReceive(item, reader);
 			return p;
 		}
@@ -119,7 +135,11 @@ namespace Loot.Core
 			ModifierProperties prop;
 			try
 			{
-				prop = new ModifierProperties().RollMagnitudeAndPower(tag.GetFloat("Magnitude"), tag.GetFloat("Power"));
+				prop = new ModifierProperties
+				{
+					Magnitude = tag.GetFloat("Magnitude"),
+					Power = tag.GetFloat("Power")
+				};
 			}
 			catch (Exception)
 			{
