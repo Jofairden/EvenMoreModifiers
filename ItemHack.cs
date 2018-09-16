@@ -1,4 +1,4 @@
-﻿namespace Loot
+namespace Loot
 {
 	//public class ItemHack : GlobalItem
 	//{

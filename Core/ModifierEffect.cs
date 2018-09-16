@@ -1,3 +1,4 @@
+using Loot.Core.Attributes;
 using System;
 using System.Linq;
 using System.Reflection;

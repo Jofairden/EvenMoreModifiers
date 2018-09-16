@@ -1,4 +1,5 @@
 using Loot.Core;
+using Loot.Core.Attributes;
 using System;
 using System.Collections.Concurrent;
 using System.Collections.Generic;
@@ -491,9 +492,8 @@ namespace Loot
 		internal static Exception ThrowException(string message)
 			=> new Exception($"{Loot.Instance.DisplayName ?? "EvenMoreModifiers"}: {message}");
 
-		public static ModifierPool GetLoadPreparedModifierPool(string modname, string poolTypeName)
+		private static ModifierPool GetNewPoolInstance(ModifierPool pool)
 		{
-			var pool = GetModifierPoolByMod(modname, poolTypeName);
 			var instance = pool;
 			if (pool != null)
 			{
@@ -504,9 +504,20 @@ namespace Loot
 			return instance;
 		}
 
-		public static Modifier GetLoadPreparedModifier(string modname, string poolTypeName)
+		public static ModifierPool GetModifierPool(string modname, string poolTypeName)
 		{
-			var modifier = GetModifierByMod(modname, poolTypeName);
+			var pool = _GetModifierPool(modname, poolTypeName);
+			return GetNewPoolInstance(pool);
+		}
+
+		public static ModifierPool GetModifierPool(Type type)
+		{
+			var pool = Pools.Values.FirstOrDefault(x => x.GetType().FullName == type.FullName);
+			return GetNewPoolInstance(pool);
+		}
+
+		private static Modifier GetNewModifierInstance(Modifier modifier)
+		{
 			var instance = modifier;
 			if (modifier != null)
 			{
@@ -517,9 +528,20 @@ namespace Loot
 			return instance;
 		}
 
-		public static ModifierRarity GetLoadPreparedModifierRarity(string modname, string rarityTypeName)
+		public static Modifier GetModifier(string modname, string poolTypeName)
 		{
-			var rarity = GetModifierRarityByMod(modname, rarityTypeName);
+			var modifier = _GetModifier(modname, poolTypeName);
+			return GetNewModifierInstance(modifier);
+		}
+
+		public static Modifier GetModifier(Type type)
+		{
+			var pool = Modifiers.Values.FirstOrDefault(x => x.GetType().FullName == type.FullName);
+			return GetNewModifierInstance(pool);
+		}
+
+		private static ModifierRarity GetNewRarityInstance(ModifierRarity rarity)
+		{
 			var instance = rarity;
 			if (rarity != null)
 			{
@@ -530,9 +552,21 @@ namespace Loot
 			return instance;
 		}
 
-		public static ModifierEffect GetLoadPreparedModifierEffect(string modname, string effectTypeName)
+
+		public static ModifierRarity GetModifierRarity(string modname, string rarityTypeName)
 		{
-			var effect = GetModifierEffectByMod(modname, effectTypeName);
+			var rarity = _GetModifierRarity(modname, rarityTypeName);
+			return GetNewRarityInstance(rarity);
+		}
+
+		public static ModifierRarity GetModifierRarity(Type type)
+		{
+			var rarity = Rarities.Values.FirstOrDefault(x => x.GetType().FullName == type.FullName);
+			return GetNewRarityInstance(rarity);
+		}
+
+		private static ModifierEffect GetNewEffectInstance(ModifierEffect effect)
+		{
 			var instance = effect;
 			if (effect != null)
 			{
@@ -543,22 +577,34 @@ namespace Loot
 			return instance;
 		}
 
-		public static ModifierPool GetModifierPoolByMod(string modname, string poolTypeName)
+		public static ModifierEffect GetModifierEffect(string modname, string effectTypeName)
+		{
+			var effect = _GetModifierEffect(modname, effectTypeName);
+			return GetNewEffectInstance(effect);
+		}
+
+		public static ModifierEffect GetModifierEffect(Type type)
+		{
+			var effect = Effects.Values.FirstOrDefault(x => x.GetType().FullName == type.FullName);
+			return GetNewEffectInstance(effect);
+		}
+
+		private static ModifierPool _GetModifierPool(string modname, string poolTypeName)
 		{
 			return PoolsMap[modname].FirstOrDefault(x => x.Key.Equals(poolTypeName)).Value;
 		}
 
-		public static Modifier GetModifierByMod(string modname, string modifierTypeName)
+		private static Modifier _GetModifier(string modname, string modifierTypeName)
 		{
 			return ModifiersMap[modname].FirstOrDefault(x => x.Key.Equals(modifierTypeName)).Value;
 		}
 
-		public static ModifierRarity GetModifierRarityByMod(string modname, string rarityTypeName)
+		private static ModifierRarity _GetModifierRarity(string modname, string rarityTypeName)
 		{
 			return RaritiesMap[modname].FirstOrDefault(x => x.Key.Equals(rarityTypeName)).Value;
 		}
 
-		public static ModifierEffect GetModifierEffectByMod(string modname, string effectTypeName)
+		private static ModifierEffect _GetModifierEffect(string modname, string effectTypeName)
 		{
 			return EffectsMap[modname].FirstOrDefault(x => x.Key.Equals(effectTypeName)).Value;
 		}
@@ -590,12 +636,5 @@ namespace Loot
 		/// <returns></returns>
 		public static IReadOnlyCollection<ModifierEffect> RequestModifierEffects()
 			=> Effects.Select(e => (ModifierEffect)e.Value?.Clone()).ToList().AsReadOnly();
-
-		/// <summary>
-		/// Requests all GlobalModifiers, and returns them as a readonly collection
-		/// </summary>
-		/// <returns></returns>
-		//		public static IReadOnlyCollection<GlobalModifier> RequestGlobalModifiers()
-		//			=> GlobalModifiers.Select(m => m.Value.AsNewInstance()).ToList().AsReadOnly();
 	}
 }

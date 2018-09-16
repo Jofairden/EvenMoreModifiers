@@ -1,4 +1,4 @@
-﻿using Loot.UI;
+using Loot.UI;
 using Microsoft.Xna.Framework;
 using System;
 using System.Collections.Generic;

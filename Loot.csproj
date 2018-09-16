@@ -78,7 +78,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ArmorItemHack.cs" />
-    <Compile Include="Core\AutoDelegationAttribute.cs" />
+    <Compile Include="Core\Attributes\AutoDelegationAttribute.cs" />
     <Compile Include="Core\Cubes\BlackCube.cs" />
     <Compile Include="Core\Cubes\ItemRollProperties.cs" />
     <Compile Include="Core\Cubes\PoorCube.cs" />
@@ -86,9 +86,8 @@
     <Compile Include="Core\Cubes\CubeShop.cs" />
     <Compile Include="Core\Cubes\CubeUIExtensions.cs" />
     <Compile Include="Core\Cubes\MagicalCube.cs" />
-    <Compile Include="Core\DelegationPrioritizationAttribute.cs" />
-    <Compile Include="Core\PopulateModifiersFromAttribute.cs" />
-    <Compile Include="Core\UsesEffectAttribute.cs" />
+    <Compile Include="Core\Attributes\DelegationPrioritizationAttribute.cs" />
+    <Compile Include="Core\Attributes\UsesEffectAttribute.cs" />
     <Compile Include="Core\ModifierContext.cs" />
     <Compile Include="Core\ModifierEffect.cs" />
     <Compile Include="Core\ModifierProperties.cs" />
@@ -101,33 +100,33 @@
     <Compile Include="Modifiers\AccessoryModifier.cs" />
     <Compile Include="Modifiers\ArmorModifier.cs" />
     <Compile Include="Modifiers\EquipModifier.cs" />
-    <Compile Include="Modifiers\EquipModifiers\CritDamagePlus.cs" />
-    <Compile Include="Modifiers\EquipModifiers\DodgeChance.cs" />
-    <Compile Include="Modifiers\EquipModifiers\FishingPlus.cs" />
-    <Compile Include="Modifiers\EquipModifiers\HealthPlus.cs" />
-    <Compile Include="Modifiers\EquipModifiers\HealthyFoesBonus.cs" />
-    <Compile Include="Modifiers\EquipModifiers\ImmunityTimePlus.cs" />
-    <Compile Include="Modifiers\EquipModifiers\KnockbackImmunity.cs" />
-    <Compile Include="Modifiers\EquipModifiers\LifeRegen.cs" />
-    <Compile Include="Modifiers\EquipModifiers\LightPlus.cs" />
-    <Compile Include="Modifiers\EquipModifiers\LuckPlus.cs" />
-    <Compile Include="Modifiers\EquipModifiers\MagicCritPlus.cs" />
-    <Compile Include="Modifiers\EquipModifiers\MagicDamagePlus.cs" />
-    <Compile Include="Modifiers\EquipModifiers\ManaPlus.cs" />
-    <Compile Include="Modifiers\EquipModifiers\ManaShield.cs" />
-    <Compile Include="Modifiers\EquipModifiers\MeleeCritPlus.cs" />
-    <Compile Include="Modifiers\EquipModifiers\MeleeDamagePlus.cs" />
-    <Compile Include="Modifiers\EquipModifiers\MiningSpeedPlus.cs" />
-    <Compile Include="Modifiers\EquipModifiers\MinionDamagePlus.cs" />
-    <Compile Include="Modifiers\EquipModifiers\MoveSpeedPlus.cs" />
-    <Compile Include="Modifiers\EquipModifiers\PercentDefenseBonus.cs" />
-    <Compile Include="Modifiers\EquipModifiers\RangedCritPlus.cs" />
-    <Compile Include="Modifiers\EquipModifiers\RangedDamagePlus.cs" />
-    <Compile Include="Modifiers\EquipModifiers\SurvivalChance.cs" />
-    <Compile Include="Modifiers\EquipModifiers\Thorns.cs" />
-    <Compile Include="Modifiers\EquipModifiers\ThrownCritPlus.cs" />
-    <Compile Include="Modifiers\EquipModifiers\ThrownDamagePlus.cs" />
-    <Compile Include="Modifiers\EquipModifiers\WingTimePlus.cs" />
+    <Compile Include="Modifiers\EquipModifiers\Offensive\CritDamagePlus.cs" />
+    <Compile Include="Modifiers\EquipModifiers\Defensive\DodgeChance.cs" />
+    <Compile Include="Modifiers\EquipModifiers\Utility\FishingPlus.cs" />
+    <Compile Include="Modifiers\EquipModifiers\Defensive\HealthPlus.cs" />
+    <Compile Include="Modifiers\EquipModifiers\Offensive\HealthyFoesBonus.cs" />
+    <Compile Include="Modifiers\EquipModifiers\Defensive\ImmunityTimePlus.cs" />
+    <Compile Include="Modifiers\EquipModifiers\Defensive\KnockbackImmunity.cs" />
+    <Compile Include="Modifiers\EquipModifiers\Defensive\LifeRegen.cs" />
+    <Compile Include="Modifiers\EquipModifiers\Utility\LightPlus.cs" />
+    <Compile Include="Modifiers\EquipModifiers\Utility\LuckPlus.cs" />
+    <Compile Include="Modifiers\EquipModifiers\Offensive\MagicCritPlus.cs" />
+    <Compile Include="Modifiers\EquipModifiers\Offensive\MagicDamagePlus.cs" />
+    <Compile Include="Modifiers\EquipModifiers\Defensive\ManaPlus.cs" />
+    <Compile Include="Modifiers\EquipModifiers\Defensive\ManaShield.cs" />
+    <Compile Include="Modifiers\EquipModifiers\Offensive\MeleeCritPlus.cs" />
+    <Compile Include="Modifiers\EquipModifiers\Offensive\MeleeDamagePlus.cs" />
+    <Compile Include="Modifiers\EquipModifiers\Utility\MiningSpeedPlus.cs" />
+    <Compile Include="Modifiers\EquipModifiers\Offensive\MinionDamagePlus.cs" />
+    <Compile Include="Modifiers\EquipModifiers\Utility\MoveSpeedPlus.cs" />
+    <Compile Include="Modifiers\EquipModifiers\Defensive\PercentDefenseBonus.cs" />
+    <Compile Include="Modifiers\EquipModifiers\Offensive\RangedCritPlus.cs" />
+    <Compile Include="Modifiers\EquipModifiers\Offensive\RangedDamagePlus.cs" />
+    <Compile Include="Modifiers\EquipModifiers\Defensive\SurvivalChance.cs" />
+    <Compile Include="Modifiers\EquipModifiers\Defensive\Thorns.cs" />
+    <Compile Include="Modifiers\EquipModifiers\Offensive\ThrownCritPlus.cs" />
+    <Compile Include="Modifiers\EquipModifiers\Offensive\ThrownDamagePlus.cs" />
+    <Compile Include="Modifiers\EquipModifiers\Utility\WingTimePlus.cs" />
     <Compile Include="Modifiers\ModifierCachePlayer.cs" />
     <Compile Include="Modifiers\WeaponModifiers\AmmoReduce.cs" />
     <Compile Include="Modifiers\WeaponModifiers\CritPlus.cs" />
@@ -156,6 +155,7 @@
     <Compile Include="Core\ModifierRarity.cs" />
     <Compile Include="Pools\AccessoryModifierPool.cs" />
     <Compile Include="Pools\WeaponModifierPool.cs" />
+    <Compile Include="Core\Attributes\PopulatePoolFromAttribute.cs" />
     <Compile Include="Rarities\CommonRarity.cs" />
     <Compile Include="Rarities\LegendaryRarity.cs" />
     <Compile Include="Rarities\RareRarity.cs" />
@@ -187,6 +187,7 @@
     <None Include="packages.config" />
     <Compile Include="Core\GlobalModifier.cs" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- visual studio setting -->
   <PropertyGroup>

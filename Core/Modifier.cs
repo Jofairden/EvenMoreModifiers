@@ -1,4 +1,4 @@
-﻿using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -158,12 +158,12 @@ namespace Loot.Core
 					// in first save version, modifiers were saved by full assembly namespace
 					//m = (ModifierPool)Activator.CreateInstance(assembly.GetType(tag.GetString("Type")));// we modified saving
 					modifierTypeName = modifierTypeName.Substring(modifierTypeName.LastIndexOf('.') + 1);
-					m = EMMLoader.GetLoadPreparedModifier(modname, modifierTypeName);
+					m = EMMLoader.GetModifier(modname, modifierTypeName);
 				}
 				else if (saveVersion == 2)
 				{
 					// from saveVersion 2 and onwards, they are saved by assembly (mod) and type name
-					m = EMMLoader.GetLoadPreparedModifier(modname, modifierTypeName);
+					m = EMMLoader.GetModifier(modname, modifierTypeName);
 				}
 
 				if (m != null)

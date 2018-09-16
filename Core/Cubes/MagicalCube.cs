@@ -9,7 +9,6 @@ using Terraria.UI.Chat;
 
 namespace Loot.Core.Cubes
 {
-	// todo allow extra tooltips
 	// todo tooltips locales (translations)
 
 	public abstract class MagicalCube : ModItem

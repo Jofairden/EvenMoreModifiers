@@ -1,6 +1,6 @@
-﻿using Loot.Core;
+using Loot.Core;
 using Loot.Core.Cubes;
-using Loot.Modifiers.EquipModifiers;
+using Loot.Modifiers.EquipModifiers.Utility;
 using Microsoft.Xna.Framework;
 using System;
 using System.Collections.Generic;
@@ -79,7 +79,7 @@ namespace Loot
 				// A pool is forced to roll
 				if (itemRollProperties.ForceModifierPool != null)
 				{
-					ModifierPool = Loot.Instance.GetModifierPool(itemRollProperties.ForceModifierPool.Name);
+					ModifierPool = EMMLoader.GetModifierPool(itemRollProperties.ForceModifierPool.GetType());
 					noForce = !ModifierPool?._CanRoll(ctx) ?? true;
 				}
 

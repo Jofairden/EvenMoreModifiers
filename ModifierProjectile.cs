@@ -1,5 +1,5 @@
 using Loot.Modifiers;
-using Loot.Modifiers.EquipModifiers;
+using Loot.Modifiers.EquipModifiers.Offensive;
 using System;
 using System.Collections.Generic;
 using Terraria;

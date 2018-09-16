@@ -1,4 +1,4 @@
-﻿using Loot.Core;
+using Loot.Core;
 using System;
 using System.Collections.Generic;
 using System.IO;

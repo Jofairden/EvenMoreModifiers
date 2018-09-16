@@ -1,3 +1,4 @@
+using Loot.Core.Attributes;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -21,6 +22,27 @@ namespace Loot.Core
 		public ModifierRarity Rarity { get; protected internal set; }
 		protected internal Modifier[] Modifiers;
 		public Modifier[] ActiveModifiers { get; protected internal set; }
+
+		protected ModifierPool()
+		{
+			var attr = GetType().GetCustomAttribute<PopulatePoolFromAttribute>(true);
+			if (attr != null)
+			{
+				var classes = attr.GetClasses().SelectMany(x => x.Value).ToList();
+				var list = new List<Modifier>();
+
+				foreach (var @class in classes)
+				{
+					var mod = EMMLoader.GetModifier(@class);
+					if (mod != null)
+					{
+						list.Add(mod);
+					}
+				}
+
+				Modifiers = list.ToArray();
+			}
+		}
 
 		/// <summary>
 		/// Returns an enumerable of the rollable modifiers in the given context
@@ -219,12 +241,12 @@ namespace Loot.Core
 					// in first save version, modifiers were saved by full assembly namespace
 					//m = (ModifierPool)Activator.CreateInstance(assembly.GetType(tag.GetString("Type")));// we modified saving
 					poolTypeName = poolTypeName.Substring(poolTypeName.LastIndexOf('.') + 1);
-					m = EMMLoader.GetLoadPreparedModifierPool(modname, poolTypeName);
+					m = EMMLoader.GetModifierPool(modname, poolTypeName);
 				}
 				else if (saveVersion == 2)
 				{
 					// from saveVersion 2 and onwards, they are saved by assembly (mod) and type name
-					m = EMMLoader.GetLoadPreparedModifierPool(modname, poolTypeName);
+					m = EMMLoader.GetModifierPool(modname, poolTypeName);
 				}
 
 				// if we have a pool
