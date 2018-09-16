@@ -24,19 +24,19 @@ namespace Loot
 		private static uint modifierNextID;
 		private static uint poolNextID;
 		private static uint effectNextID;
-//		private static uint globalModifierNextID;
+		//		private static uint globalModifierNextID;
 
 		internal static IDictionary<string, List<RarityMap>> RaritiesMap;
 		internal static IDictionary<string, List<ModifierMap>> ModifiersMap;
 		internal static IDictionary<string, List<PoolMap>> PoolsMap;
 		internal static IDictionary<string, List<EffectMap>> EffectsMap;
-//		internal static IDictionary<string, List<GlobalModifierMap>> GlobalModifiersMap;
+		//		internal static IDictionary<string, List<GlobalModifierMap>> GlobalModifiersMap;
 
 		internal static IDictionary<uint, ModifierRarity> Rarities;
 		internal static IDictionary<uint, Modifier> Modifiers;
 		internal static IDictionary<uint, ModifierPool> Pools;
 		internal static IDictionary<uint, ModifierEffect> Effects;
-//		internal static IDictionary<uint, GlobalModifier> GlobalModifiers;
+		//		internal static IDictionary<uint, GlobalModifier> GlobalModifiers;
 
 		internal static IDictionary<string, Assembly> Mods;
 
@@ -46,20 +46,20 @@ namespace Loot
 			modifierNextID = 0;
 			poolNextID = 0;
 			effectNextID = 0;
-//			globalModifierNextID = 0;
+			//			globalModifierNextID = 0;
 
 			RaritiesMap = new Dictionary<string, List<RarityMap>>();
 			ModifiersMap = new Dictionary<string, List<ModifierMap>>();
 			PoolsMap = new Dictionary<string, List<PoolMap>>();
 			EffectsMap = new Dictionary<string, List<EffectMap>>();
-			
-//			GlobalModifiersMap = new Dictionary<string, List<GlobalModifierMap>>();
+
+			//			GlobalModifiersMap = new Dictionary<string, List<GlobalModifierMap>>();
 
 			Rarities = new Dictionary<uint, ModifierRarity>();
 			Modifiers = new Dictionary<uint, Modifier>();
 			Pools = new Dictionary<uint, ModifierPool>();
 			Effects = new Dictionary<uint, ModifierEffect>();
-//			GlobalModifiers = new Dictionary<uint, GlobalModifier>();
+			//			GlobalModifiers = new Dictionary<uint, GlobalModifier>();
 
 			// todo why did I make this concurrent
 			Mods = new ConcurrentDictionary<string, Assembly>();
@@ -76,20 +76,20 @@ namespace Loot
 			modifierNextID = 0;
 			poolNextID = 0;
 			effectNextID = 0;
-//			globalModifierNextID = 0;
+			//			globalModifierNextID = 0;
 
 			RaritiesMap = null;
 			ModifiersMap = null;
 			PoolsMap = null;
 			EffectsMap = null;
-//			GlobalModifiersMap = null;
+			//			GlobalModifiersMap = null;
 
 			Rarities = null;
 			Modifiers = null;
 			Pools = null;
 			Mods = null;
 			Effects = null;
-//			GlobalModifiers = null;
+			//			GlobalModifiers = null;
 		}
 
 		/// <summary>
@@ -120,7 +120,7 @@ namespace Loot
 			ModifiersMap.Add(new KeyValuePair<string, List<ModifierMap>>(mod.Name, new List<ModifierMap>()));
 			PoolsMap.Add(new KeyValuePair<string, List<PoolMap>>(mod.Name, new List<PoolMap>()));
 			EffectsMap.Add(new KeyValuePair<string, List<EffectMap>>(mod.Name, new List<EffectMap>()));
-//			GlobalModifiersMap.Add(new KeyValuePair<string, List<GlobalModifierMap>>(mod.Name, new List<GlobalModifierMap>()));
+			//			GlobalModifiersMap.Add(new KeyValuePair<string, List<GlobalModifierMap>>(mod.Name, new List<GlobalModifierMap>()));
 		}
 
 		// todo refactor to ReserveID
@@ -144,7 +144,7 @@ namespace Loot
 			poolNextID++;
 			return reserved;
 		}
-		
+
 		internal static uint ReserveEffectID()
 		{
 			uint reserved = effectNextID;
@@ -152,12 +152,12 @@ namespace Loot
 			return reserved;
 		}
 
-//		internal static uint ReserveGlobalModifierID()
-//		{
-//			uint reserved = globalModifierNextID;
-//			globalModifierNextID++;
-//			return reserved;
-//		}
+		//		internal static uint ReserveGlobalModifierID()
+		//		{
+		//			uint reserved = globalModifierNextID;
+		//			globalModifierNextID++;
+		//			return reserved;
+		//		}
 
 		/// <summary>
 		/// Returns a random weighted pool from all available pools that can apply
@@ -217,7 +217,7 @@ namespace Loot
 		/// </summary>
 		public static ModifierEffect GetModifierEffect(uint type)
 		{
-			return type < effectNextID ? (ModifierEffect) Effects[type].Clone() : null;
+			return type < effectNextID ? (ModifierEffect)Effects[type].Clone() : null;
 		}
 
 		/// <summary>
@@ -246,7 +246,7 @@ namespace Loot
 			var modifiers = ordered.Where(x => x.IsSubclassOf(typeof(Modifier)));
 			var pools = ordered.Where(x => x.IsSubclassOf(typeof(ModifierPool)));
 			var effects = ordered.Where(x => x.IsSubclassOf(typeof(ModifierEffect)));
-//			var globalModifiers = ordered.Where(x => x.IsSubclassOf(typeof(GlobalModifier)));
+			//			var globalModifiers = ordered.Where(x => x.IsSubclassOf(typeof(GlobalModifier)));
 
 			// important: load things in order. (modifiers relies on all.. etc.)
 			foreach (Type type in rarities)
@@ -268,11 +268,11 @@ namespace Loot
 			{
 				AutoloadModifierEffect(effect, mod);
 			}
-			
-//			foreach (Type type in globalModifiers)
-//			{
-//				AutoloadGlobalModifier(type, mod);
-//			}
+
+			//			foreach (Type type in globalModifiers)
+			//			{
+			//				AutoloadGlobalModifier(type, mod);
+			//			}
 		}
 
 		/// <summary>
@@ -399,7 +399,7 @@ namespace Loot
 		/// </summary>
 		private static void AutoloadModifierEffect(Type type, Mod mod)
 		{
-			ModifierEffect effect = (ModifierEffect) Activator.CreateInstance(type);
+			ModifierEffect effect = (ModifierEffect)Activator.CreateInstance(type);
 			AddModifierEffect(effect, mod);
 		}
 
@@ -413,7 +413,7 @@ namespace Loot
 			{
 				throw new Exception("AddModifierEffect can only be called from Mod.Load or Mod.Autoload");
 			}
-			
+
 			List<EffectMap> lem;
 			if (!EffectsMap.TryGetValue(mod.Name, out lem))
 			{
@@ -425,52 +425,66 @@ namespace Loot
 				throw new Exception($"You have already added a modifier with the name {effect.Name}");
 			}
 
+			//verbose GetCustomAttributes call
+			//because we call the constructor, it will throw our
+			//validation exceptions on load instead on entering world
+			var attributes = effect
+				.GetType()
+				.GetMethods(BindingFlags.NonPublic | BindingFlags.Public | BindingFlags.Instance)
+				// ReSharper disable once ReturnValueOfPureMethodIsNotUsed
+				.Select(x => x.GetCustomAttributes(false).OfType<DelegationPrioritizationAttribute>());
+
+			foreach (var attribute in attributes.SelectMany(x=>x))
+			{
+				Activator.CreateInstance(attribute.GetType(), attribute.DelegationPrioritization, attribute.DelegationLevel);
+			}
+
 			effect.Mod = mod;
 			effect.Type = ReserveEffectID();
 			Effects[effect.Type] = effect;
 			EffectsMap[mod.Name].Add(new EffectMap(effect.Name, effect));
 		}
-		
+
 		/// <summary>
 		/// Autoloads a GlobalModifier
 		/// </summary>
 		/// <param name="type"></param>
 		/// <param name="mod"></param>
-//		private static void AutoloadGlobalModifier(Type type, Mod mod)
-//		{
-//			GlobalModifier globalModifier = (GlobalModifier)Activator.CreateInstance(type);
-//			AddGlobalModifier(globalModifier, mod);
-//		}
+		//		private static void AutoloadGlobalModifier(Type type, Mod mod)
+		//		{
+		//			GlobalModifier globalModifier = (GlobalModifier)Activator.CreateInstance(type);
+		//			AddGlobalModifier(globalModifier, mod);
+		//		}
 
 		/// <summary>
 		/// Adds a GlobalModifier
 		/// </summary>
 		/// <param name="modifier"></param>
 		/// <param name="mod"></param>
-//		public static void AddGlobalModifier(GlobalModifier globalModifier, Mod mod)
-//		{
-//			bool? b = mod.GetType().GetField("loading", BindingFlags.Instance | BindingFlags.NonPublic)?.GetValue(mod) as bool?;
-//			if (b != null && !b.Value)
-//			{
-//				throw new Exception("AddGlobalModifier can only be called from Mod.Load or Mod.Autoload");
-//			}
-//
-//			List<GlobalModifierMap> lem;
-//			if (!GlobalModifiersMap.TryGetValue(mod.Name, out lem))
-//			{
-//				throw new Exception($"GlobalModifiersMap for {mod.Name} not found");
-//			}
-//
-//			if (lem.Exists(x => x.Value.Name.Equals(globalModifier.Name)))
-//			{
-//				throw new Exception($"You have already added a modifier with the name {globalModifier.Name}");
-//			}
-//
-//			globalModifier.Mod = mod;
-//			globalModifier.Type = ReserveGlobalModifierID();
-//			GlobalModifiers[globalModifier.Type] = globalModifier;
-//			GlobalModifiersMap[mod.Name].Add(new GlobalModifierMap(globalModifier.Name, globalModifier));
-//		}
+		//		public static void AddGlobalModifier(GlobalModifier globalModifier, Mod mod)
+		//		{
+		//			bool? b = mod.GetType().GetField("loading", BindingFlags.Instance | BindingFlags.NonPublic)?.GetValue(mod) as bool?;
+		//			if (b != null && !b.Value)
+		//			{
+		//				throw new Exception("AddGlobalModifier can only be called from Mod.Load or Mod.Autoload");
+		//			}
+		//
+		//			List<GlobalModifierMap> lem;
+		//			if (!GlobalModifiersMap.TryGetValue(mod.Name, out lem))
+		//			{
+		//				throw new Exception($"GlobalModifiersMap for {mod.Name} not found");
+		//			}
+		//
+		//			if (lem.Exists(x => x.Value.Name.Equals(globalModifier.Name)))
+		//			{
+		//				throw new Exception($"You have already added a modifier with the name {globalModifier.Name}");
+		//			}
+		//
+		//			globalModifier.Mod = mod;
+		//			globalModifier.Type = ReserveGlobalModifierID();
+		//			GlobalModifiers[globalModifier.Type] = globalModifier;
+		//			GlobalModifiersMap[mod.Name].Add(new GlobalModifierMap(globalModifier.Name, globalModifier));
+		//		}
 
 		internal static Exception ThrowException(string message)
 			=> new Exception($"{Loot.Instance.DisplayName ?? "EvenMoreModifiers"}: {message}");
@@ -513,7 +527,7 @@ namespace Loot
 			}
 			return instance;
 		}
-		
+
 		public static ModifierEffect GetLoadPreparedModifierEffect(string modname, string effectTypeName)
 		{
 			var effect = GetModifierEffectByMod(modname, effectTypeName);
@@ -573,13 +587,13 @@ namespace Loot
 		/// </summary>
 		/// <returns></returns>
 		public static IReadOnlyCollection<ModifierEffect> RequestModifierEffects()
-			=> Effects.Select(e => (ModifierEffect) e.Value?.Clone()).ToList().AsReadOnly();
+			=> Effects.Select(e => (ModifierEffect)e.Value?.Clone()).ToList().AsReadOnly();
 
 		/// <summary>
 		/// Requests all GlobalModifiers, and returns them as a readonly collection
 		/// </summary>
 		/// <returns></returns>
-//		public static IReadOnlyCollection<GlobalModifier> RequestGlobalModifiers()
-//			=> GlobalModifiers.Select(m => m.Value.AsNewInstance()).ToList().AsReadOnly();
+		//		public static IReadOnlyCollection<GlobalModifier> RequestGlobalModifiers()
+		//			=> GlobalModifiers.Select(m => m.Value.AsNewInstance()).ToList().AsReadOnly();
 	}
 }
