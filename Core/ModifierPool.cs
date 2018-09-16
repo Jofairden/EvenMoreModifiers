@@ -6,7 +6,6 @@ using System.Reflection;
 using Terraria;
 using Terraria.ModLoader;
 using Terraria.ModLoader.IO;
-using Terraria.Utilities;
 
 namespace Loot.Core
 {

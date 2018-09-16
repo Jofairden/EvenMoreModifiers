@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using Loot.Modifiers;
 using Loot.Modifiers.EquipModifiers;
-using Loot.Modifiers.WeaponModifiers;
 using Terraria;
 using Terraria.ModLoader;
 

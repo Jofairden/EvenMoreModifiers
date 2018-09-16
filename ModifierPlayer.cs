@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using Loot.Core;
 using Loot.Modifiers;
-using Loot.Modifiers.WeaponModifiers;
 using Terraria;
 using Terraria.DataStructures;
 using Terraria.ModLoader;

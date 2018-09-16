@@ -1,7 +1,6 @@
 ﻿using System;
 using Loot.Core;
 using Microsoft.Xna.Framework;
-using ReLogic.Utilities;
 using Terraria;
 
 namespace Loot.Modifiers.EquipModifiers

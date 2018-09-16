@@ -1,9 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using System.Reflection;
-using Loot.Modifiers;
 using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.ModLoader;

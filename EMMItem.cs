@@ -5,7 +5,6 @@ using System.IO;
 using System.Linq;
 using Loot.Core;
 using Loot.Core.Cubes;
-using Loot.UI;
 using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.ModLoader;

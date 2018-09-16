@@ -1,13 +1,10 @@
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.Linq;
-using Loot.UI;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Input;
 using Terraria;
 using Terraria.GameInput;
 using Terraria.ModLoader;
-using Terraria.UI;
 using Terraria.UI.Chat;
 
 namespace Loot.Core.Cubes

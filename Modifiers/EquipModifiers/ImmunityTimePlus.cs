@@ -1,6 +1,5 @@
 ﻿using Loot.Core;
 using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Design;
 using Terraria;
 
 namespace Loot.Modifiers.EquipModifiers

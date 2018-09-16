@@ -1,4 +1,3 @@
-using Loot.UI;
 using Terraria;
 
 namespace Loot.Core.Cubes

@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Security.Cryptography;
 using Loot.Core;
 using Microsoft.Xna.Framework;
 using Terraria;
