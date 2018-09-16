@@ -18,6 +18,7 @@ namespace Loot.Modifiers.EquipModifiers
 		// todo needs to go after ninja dodge, but only if it fails
 		
 		[AutoDelegation("OnPreHurt")]
+		[DelegationPrioritization(DelegationPrioritization.Late, 100)]
 		private bool ManaBlock(ModifierPlayer player, bool pvp, bool quiet, ref int damage, ref int hitDirection, ref bool crit, ref bool customDamage, ref bool playSound, ref bool genGore, ref PlayerDeathReason damageSource)
 		{
 			// If we have a mana shield (% damage redirected to mana)

@@ -4,11 +4,30 @@ using System.Linq;
 using System.Reflection;
 using CheatSheet;
 using Loot.Core;
+using Microsoft.Xna.Framework.Graphics;
 using Terraria;
 using Terraria.ModLoader;
 
 namespace Loot.Modifiers
 {
+	public class AutoDelegationEntry
+	{
+		public Item Item { get; set; }
+		public Modifier Modifier { get; set; }
+
+		public AutoDelegationEntry(Item item, Modifier modifier)
+		{
+			Item = item;
+			Modifier = modifier;
+		}
+	}
+
+	public class OrderedDelegationEntry
+	{
+		public MethodInfo MethodInfo { get; set; }
+		public ModifierEffect Effect { get; set; }
+	}
+
 	/*
 	 * Do note that this class is very important
 	 * And without this class, any of the delegations will not work at all
@@ -33,6 +52,8 @@ namespace Loot.Modifiers
 		private Item[] _oldCheatSheetEquips;
 		internal bool Ready;
 		private List<Type> _modifierEffects;
+		private List<AutoDelegationEntry> _detachList;
+		private List<AutoDelegationEntry> _attachList;
 
 		public override void Initialize()
 		{
@@ -41,131 +62,154 @@ namespace Loot.Modifiers
 			_forceEquipUpdate = false;
 			_oldCheatSheetEquips = new Item[6]; // MaxExtraAccessories = 6
 			_modifierEffects = new List<Type>();
+			_detachList = new List<AutoDelegationEntry>();
+			_attachList = new List<AutoDelegationEntry>();
 			Ready = false;
 		}
 
-		// Automatically binds the delegations for a player and given modifier
-		// Will look for the UsesEffect attribute on the Modifier, which links
-		// that modifier to any effects. If there are effects in present,
-		// they will be iterated and an attempt to get those effects
-		// off the ModifierPlayer will be attempted. If that succeeds,
-		// those effects' methods having the AutoDelegation attribute are
-		// searched. For those methods the action is invoked, which will either
-		// attach or detach that particular delegation.
-		private void AutoBindDelegations(Player player, Modifier modifier, Action<ModifierPlayer, MethodInfo[], ModifierEffect> action)
+		private List<ModifierEffect> GetModifierEffectsForDelegations(List<AutoDelegationEntry> list, ModifierPlayer modPlayer, Func<ModifierEffect, bool> conditionFunc)
 		{
-			var effectsAttribute =
-				modifier
-					.GetType()
-					.GetCustomAttribute<UsesEffect>();
-
-			if (effectsAttribute != null)
+			var tempList = new List<ModifierEffect>();
+			foreach (var delegationTuple in list)
 			{
-				ModifierPlayer modPlayer = ModifierPlayer.Player(player);
-				foreach (Type effect in effectsAttribute.Effects)
-				{
-					var modEffect = modPlayer.GetEffect(effect);
-					if (modEffect != null)
-					{
-						var methods = modEffect
-							.GetType()
-							.GetMethods(BindingFlags.NonPublic | BindingFlags.Public | BindingFlags.Instance)
-							.Where(x => x.GetCustomAttributes(typeof(AutoDelegation), false).Length > 0)
-							.ToArray();
-
-						action.Invoke(modPlayer, methods, modEffect);
-					}
-				}
-			}
-		}
-
-		private void AutoDetach(Item item, Player player, Modifier modifier)
-		{
-			AutoBindDelegations(player, modifier, (modplr, methods, effect) =>
-			{
-				// type checks make sure we dont unbind any effects that are used by 
-				// other items being equipped right now
-				if (effect.IsBeingDelegated && !_modifierEffects.Contains(effect.GetType()))
-				{
-					modplr.OnResetEffects -= effect.ResetEffects;
-					foreach (MethodInfo method in methods)
-					{
-						var attr = method.GetCustomAttribute<AutoDelegation>();
-						attr.Detach(modplr, method, effect);
-					}
-
-					effect._DetachDelegations(item, modplr);
-					effect.IsBeingDelegated = false;
-				}
-
-				ActivatedModifierItem.Item(item).IsActivated = false;
-			});
-		}
-
-		private void AutoAttach(Item item, Player player, Modifier modifier)
-		{
-			AutoBindDelegations(player, modifier, (modplr, methods, effect) =>
-			{
-				if (!effect.IsBeingDelegated)
-				{
-					modplr.OnResetEffects += effect.ResetEffects;
-					foreach (MethodInfo method in methods)
-					{
-						var attr = method.GetCustomAttribute<AutoDelegation>();
-						attr.Attach(modplr, method, effect);
-					}
-
-					effect.AttachDelegations(item, modplr);
-					effect.IsBeingDelegated = true;
-				}
-
-				ActivatedModifierItem.Item(item).IsActivated = true;
-			});
-		}
-
-		private void CacheModifierEffects(Player player)
-		{
-			bool anyDifferentEquip = player.armor.Take(8 + player.extraAccessorySlots)
-				.Select((x, i) => new {Value = x, Index = i})
-				.Any(x => _oldEquips[x.Index] != null && x.Value.IsNotTheSameAs(_oldEquips[x.Index]));
-
-			// Only recache if needed, so check if there are changes
-			if (_forceEquipUpdate || (_oldHeldItem != null && _oldHeldItem.IsNotTheSameAs(player.HeldItem))
-			    || anyDifferentEquip)
-			{
-				_modifierEffects.Clear();
-
-				for (int i = 0; i < 8 + player.extraAccessorySlots; i++)
-				{
-					var equip = player.armor[i];
-					if (equip != null && !equip.IsAir)
-						CacheItemModifierEffects(equip);
-				}
-
-				if (player.HeldItem != null && !player.HeldItem.IsAir)
-					CacheItemModifierEffects(player.HeldItem);
-			}
-		}
-
-		private void CacheItemModifierEffects(Item item)
-		{
-			var mods = EMMItem.GetActivePool(item);
-			foreach (var modifier in mods)
-			{
-				var effectsAttribute = modifier
-					.GetType()
-					.GetCustomAttribute<UsesEffect>();
+				var effectsAttribute =
+					delegationTuple.Modifier
+						.GetType()
+						.GetCustomAttribute<UsesEffectAttribute>();
 
 				if (effectsAttribute != null)
 				{
-					ModifierPlayer modPlayer = ModifierPlayer.Player(player);
 					foreach (Type effect in effectsAttribute.Effects)
 					{
 						var modEffect = modPlayer.GetEffect(effect);
-						if (modEffect != null) _modifierEffects.Add(modEffect.GetType());
+						if (modEffect != null && conditionFunc.Invoke(modEffect))
+						{
+							tempList.Add(modEffect);
+						}
 					}
 				}
 			}
+
+			return tempList;
+		}
+
+		private void UpdateAttachments()
+		{
+			ModifierPlayer modplr = ModifierPlayer.Player(player);
+
+			// Manual detach
+			var detachEffects = GetModifierEffectsForDelegations(_detachList, modplr, (e) => e.IsBeingDelegated && !_modifierEffects.Contains(e.GetType()));
+			var attachEffects = GetModifierEffectsForDelegations(_attachList, modplr, (e) => !e.IsBeingDelegated);
+			// Automatic delegation lists
+			var orderedDetachList = OrderDelegationList(_detachList, modplr)
+				.Where(x => x.Effect.IsBeingDelegated && !_modifierEffects.Contains(x.Effect.GetType()))
+				.GroupBy(x => x.MethodInfo)
+				.Select(x => x.First())
+				.ToList();
+
+			var orderedAttachList = OrderDelegationList(_attachList, modplr)
+				.Where(x => !x.Effect.IsBeingDelegated)
+				.GroupBy(x => x.MethodInfo)
+				.Select(x => x.First())
+				.ToList();
+
+			// Manual detach
+			foreach (var effect in detachEffects.Distinct())
+			{
+				modplr.OnResetEffects -= effect.ResetEffects;
+				effect._DetachDelegations(modplr);
+				effect.IsBeingDelegated = false;
+			}
+
+			// Manual attach
+			foreach (var effect in attachEffects.Distinct())
+			{
+				modplr.OnResetEffects += effect.ResetEffects;
+				effect.AttachDelegations(modplr);
+				effect.IsBeingDelegated = true;
+			}
+
+			// Auto delegation detach
+			foreach (var info in orderedDetachList)
+			{
+				var attr = info.MethodInfo.GetCustomAttribute<AutoDelegation>();
+				attr.Detach(modplr, info.MethodInfo, info.Effect);
+			}
+
+			// Auto delegation attach
+			foreach (var info in orderedAttachList)
+			{
+				var attr = info.MethodInfo.GetCustomAttribute<AutoDelegation>();
+				attr.Attach(modplr, info.MethodInfo, info.Effect);
+			}
+		}
+
+		private List<OrderedDelegationEntry> OrderDelegationList(List<AutoDelegationEntry> list, ModifierPlayer modPlayer)
+		{
+			var tempList = new List<OrderedDelegationEntry>();
+			var tempEarlyMethods = new List<OrderedDelegationEntry>();
+			var tempMiddleMethods = new List<OrderedDelegationEntry>();
+			var tempLateMethods = new List<OrderedDelegationEntry>();
+
+			var effects = GetModifierEffectsForDelegations(list, modPlayer, (e) => true);
+
+			foreach (var modEffect in effects)
+			{
+				var delegatedMethods = modEffect
+					.GetType()
+					.GetMethods(BindingFlags.NonPublic | BindingFlags.Public | BindingFlags.Instance)
+					.Where(x => x.GetCustomAttributes(typeof(AutoDelegation), false).Length > 0)
+					.ToArray();
+
+				tempEarlyMethods.AddRange(delegatedMethods.Where(x =>
+				{
+					var attr = x.GetCustomAttribute(typeof(DelegationPrioritizationAttribute));
+					if (attr != null && (attr as DelegationPrioritizationAttribute).DelegationPrioritization == DelegationPrioritization.Early) return true;
+					return false;
+				}).Select(x => new OrderedDelegationEntry
+				{
+					MethodInfo = x,
+					Effect = modEffect
+				}));
+
+				tempMiddleMethods.AddRange(delegatedMethods.Where(x =>
+				{
+					var attr = x.GetCustomAttribute(typeof(DelegationPrioritizationAttribute));
+					return attr == null;
+				}).Select(x => new OrderedDelegationEntry
+				{
+					MethodInfo = x,
+					Effect = modEffect
+				}));
+
+				tempLateMethods.AddRange(delegatedMethods.Where(x =>
+				{
+					var attr = x.GetCustomAttribute(typeof(DelegationPrioritizationAttribute));
+					if (attr != null && (attr as DelegationPrioritizationAttribute).DelegationPrioritization == DelegationPrioritization.Late) return true;
+					return false;
+				}).Select(x => new OrderedDelegationEntry
+				{
+					MethodInfo = x,
+					Effect = modEffect
+				}));
+			}
+
+			tempEarlyMethods = tempEarlyMethods.OrderByDescending(x =>
+			{
+				var attr = x.MethodInfo.GetCustomAttribute(typeof(DelegationPrioritizationAttribute));
+				return ((DelegationPrioritizationAttribute)attr).DelegationLevel;
+			}).ToList();
+
+			tempLateMethods = tempLateMethods.OrderByDescending(x =>
+			{
+				var attr = x.MethodInfo.GetCustomAttribute(typeof(DelegationPrioritizationAttribute));
+				return ((DelegationPrioritizationAttribute)attr).DelegationLevel;
+			}).ToList();
+
+			tempList.AddRange(tempEarlyMethods);
+			tempList.AddRange(tempMiddleMethods);
+			tempList.AddRange(tempLateMethods);
+			return tempList;
 		}
 
 		public override void PreUpdate()
@@ -177,9 +221,38 @@ namespace Loot.Modifiers
 				_forceEquipUpdate = true;
 				Array.Resize(ref _oldEquips, 8 + player.extraAccessorySlots);
 			}
-			
-			CacheModifierEffects(player);
 
+			_detachList.Clear();
+			_attachList.Clear();
+
+			CacheModifierEffects(player);
+			UpdateHeldItemCache();
+			UpdateEquipsCache();
+			if (Loot.CheatSheetLoaded)
+			{
+				UpdateCheatSheetCache();
+			}
+
+			UpdateAttachments();
+
+			_forceEquipUpdate = false;
+			Ready = true;
+		}
+
+		private void AddDetachItem(Item item, Modifier modifier)
+		{
+			ActivatedModifierItem.Item(item).IsActivated = false;
+			_detachList.Add(new AutoDelegationEntry(item, modifier));
+		}
+
+		private void AddAttachItem(Item item, Modifier modifier)
+		{
+			ActivatedModifierItem.Item(item).IsActivated = true;
+			_attachList.Add(new AutoDelegationEntry(item, modifier));
+		}
+
+		private void UpdateHeldItemCache()
+		{
 			// If held item needs an update
 			if (_oldHeldItem == null || _oldHeldItem.IsNotTheSameAs(player.HeldItem))
 			{
@@ -190,7 +263,7 @@ namespace Loot.Modifiers
 				{
 					foreach (Modifier m in EMMItem.GetActivePool(_oldHeldItem))
 					{
-						AutoDetach(_oldHeldItem, player, m);
+						AddDetachItem(_oldHeldItem, m);
 					}
 				}
 
@@ -199,13 +272,16 @@ namespace Loot.Modifiers
 				{
 					foreach (Modifier m in EMMItem.GetActivePool(player.HeldItem))
 					{
-						AutoAttach(player.HeldItem, player, m);
+						AddAttachItem(player.HeldItem, m);
 					}
 				}
 
 				_oldHeldItem = player.HeldItem;
 			}
+		}
 
+		private void UpdateEquipsCache()
+		{
 			for (int i = 0; i < 8 + player.extraAccessorySlots; i++)
 			{
 				var oldEquip = _oldEquips[i];
@@ -221,7 +297,7 @@ namespace Loot.Modifiers
 					{
 						foreach (Modifier m in EMMItem.GetActivePool(oldEquip))
 						{
-							AutoDetach(oldEquip, player, m);
+							AddDetachItem(oldEquip, m);
 						}
 					}
 
@@ -230,21 +306,13 @@ namespace Loot.Modifiers
 					{
 						foreach (Modifier m in EMMItem.GetActivePool(newEquip))
 						{
-							AutoAttach(newEquip, player, m);
+							AddAttachItem(newEquip, m);
 						}
 					}
 
 					_oldEquips[i] = newEquip;
 				}
 			}
-
-			if (Loot.CheatSheetLoaded)
-			{
-				UpdateCheatSheetCache();
-			}
-
-			_forceEquipUpdate = false;
-			Ready = true;
 		}
 
 		// This needs to be separate because of CheatSheetInterface static reference
@@ -270,7 +338,7 @@ namespace Loot.Modifiers
 					{
 						foreach (Modifier m in EMMItem.GetActivePool(oldEquip))
 						{
-							AutoDetach(oldEquip, player, m);
+							AddDetachItem(oldEquip, m);
 						}
 					}
 
@@ -279,7 +347,7 @@ namespace Loot.Modifiers
 					{
 						foreach (Modifier m in EMMItem.GetActivePool(newEquip))
 						{
-							AutoAttach(newEquip, player, m);
+							AddAttachItem(newEquip, m);
 						}
 					}
 
@@ -298,7 +366,55 @@ namespace Loot.Modifiers
 				{
 					foreach (Modifier m in EMMItem.GetActivePool(item))
 					{
-						AutoDetach(item, player, m);
+						AddDetachItem(item, m);
+					}
+				}
+			}
+		}
+
+		private void CacheModifierEffects(Player player)
+		{
+			bool anyDifferentEquip = player.armor.Take(8 + player.extraAccessorySlots)
+				.Select((x, i) => new { Value = x, Index = i })
+				.Any(x => _oldEquips[x.Index] != null && x.Value.IsNotTheSameAs(_oldEquips[x.Index]));
+
+			// Only recache if needed, so check if there are changes
+			if (_forceEquipUpdate || (_oldHeldItem != null && _oldHeldItem.IsNotTheSameAs(player.HeldItem))
+								  || anyDifferentEquip)
+			{
+				_modifierEffects.Clear();
+
+				for (int i = 0; i < 8 + player.extraAccessorySlots; i++)
+				{
+					var equip = player.armor[i];
+					if (equip != null && !equip.IsAir)
+						CacheItemModifierEffects(equip);
+				}
+
+				if (player.HeldItem != null && !player.HeldItem.IsAir)
+					CacheItemModifierEffects(player.HeldItem);
+			}
+		}
+
+		private void CacheItemModifierEffects(Item item)
+		{
+			var mods = EMMItem.GetActivePool(item);
+			foreach (var modifier in mods)
+			{
+				var effectsAttribute = modifier
+					.GetType()
+					.GetCustomAttribute<UsesEffectAttribute>();
+
+				if (effectsAttribute != null)
+				{
+					ModifierPlayer modPlayer = ModifierPlayer.Player(player);
+					foreach (Type effect in effectsAttribute.Effects)
+					{
+						var modEffect = modPlayer.GetEffect(effect);
+						if (modEffect != null && !_modifierEffects.Contains(modEffect.GetType()))
+						{
+							_modifierEffects.Add(modEffect.GetType());
+						}
 					}
 				}
 			}

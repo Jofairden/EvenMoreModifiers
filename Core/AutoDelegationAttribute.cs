@@ -1,11 +1,10 @@
 using System;
 using System.Collections.Generic;
 using System.Reflection;
-using Loot.Core;
 using Terraria;
 using Terraria.ModLoader;
 
-namespace Loot.Modifiers
+namespace Loot.Core
 {
 	/// <inheritdoc />
 	/// <summary>

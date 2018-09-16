@@ -17,6 +17,7 @@ namespace Loot.Modifiers.EquipModifiers
 		}
 
 		[AutoDelegation("OnPreKill")]
+		[DelegationPrioritization(DelegationPrioritization.Late, 900)]
 		private bool SurviveEvent(ModifierPlayer player, double damage, int hitDirection, bool pvp, ref bool playSound, ref bool genGore, ref PlayerDeathReason damageSource)
 		{
 			if (Main.rand.NextFloat() < Math.Min(SurvivalChance, MAX_SURVIVAL_CHANCE))

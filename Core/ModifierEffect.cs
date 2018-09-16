@@ -47,11 +47,11 @@ namespace Loot.Core
 		/// This method will be invoked one time when the modifier becomes 'active'
 		/// Alternatively automatic delegation can be used, using the AutoDelegation attribute
 		/// </summary>
-		public virtual void AttachDelegations(Item item, ModifierPlayer player)
+		public virtual void AttachDelegations(ModifierPlayer player)
 		{
 		}
 
-		internal void _DetachDelegations(Item item, ModifierPlayer player)
+		internal void _DetachDelegations(ModifierPlayer player)
 		{
 			// We need to reset effects first, as they will no longer run
 			// after the effect is detached
@@ -84,13 +84,13 @@ namespace Loot.Core
 			}		
 			
 			// Now detach
-			DetachDelegations(item, player);
+			DetachDelegations(player);
 		}
 		
 		/// <summary>
 		/// Allows modders to undo their performed delegations in <see cref="AttachDelegations"/>
 		/// </summary>
-		public virtual void DetachDelegations(Item item, ModifierPlayer player)
+		public virtual void DetachDelegations(ModifierPlayer player)
 		{
 		}
 		

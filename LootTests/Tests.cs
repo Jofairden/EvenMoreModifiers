@@ -84,11 +84,9 @@ namespace LootTests
 			Assert.IsTrue(EMMLoader.RaritiesMap.Count == 0);
 			Assert.IsTrue(EMMLoader.ModifiersMap.Count == 0);
 			Assert.IsTrue(EMMLoader.PoolsMap.Count == 0);
-			Assert.IsTrue(EMMLoader.GlobalModifiersMap.Count == 0);
 			Assert.IsTrue(EMMLoader.Rarities.Count == 0);
 			Assert.IsTrue(EMMLoader.Modifiers.Count == 0);
 			Assert.IsTrue(EMMLoader.Pools.Count == 0);
-			Assert.IsTrue(EMMLoader.GlobalModifiers.Count == 0);
 			Assert.IsTrue(EMMLoader.Mods.Count == 0);
 
 			Assert.Throws<Exception>(() => EMMLoader.RegisterMod(_modShell));
@@ -104,7 +102,6 @@ namespace LootTests
 			Assert.IsTrue(EMMLoader.RaritiesMap.Count == 1);
 			Assert.IsTrue(EMMLoader.ModifiersMap.Count == 1);
 			Assert.IsTrue(EMMLoader.PoolsMap.Count == 1);
-			Assert.IsTrue(EMMLoader.GlobalModifiersMap.Count == 1);
 			
 			EMMLoader.SetupContent(_modShell);
 			

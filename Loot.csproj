@@ -86,6 +86,7 @@
     <Compile Include="Core\Cubes\CubeShop.cs" />
     <Compile Include="Core\Cubes\CubeUIExtensions.cs" />
     <Compile Include="Core\Cubes\MagicalCube.cs" />
+    <Compile Include="Core\CustomDelegationPrioritizationAttribute.cs" />
     <Compile Include="Core\UsesEffectAttribute.cs" />
     <Compile Include="Core\ModifierContext.cs" />
     <Compile Include="Core\ModifierEffect.cs" />

@@ -22,12 +22,14 @@ namespace Loot.Modifiers.EquipModifiers
 		// @todo must be prioritized after healthy foes
 
 		[AutoDelegation("OnModifyHitNPC")]
+		[DelegationPrioritization(DelegationPrioritization.Late, 999)]
 		public void ModifyHitNPC(ModifierPlayer player, Item item, NPC target, ref int damage, ref float knockback, ref bool crit)
 		{
 			if (crit) CritBonus(ref damage);
 		}
 
 		[AutoDelegation("OnModifyHitPvp")]
+		[DelegationPrioritization(DelegationPrioritization.Late, 999)]
 		private void ModifyHitPvp(ModifierPlayer player, Item item, Player target, ref int damage, ref bool crit)
 		{
 			if (crit) CritBonus(ref damage);

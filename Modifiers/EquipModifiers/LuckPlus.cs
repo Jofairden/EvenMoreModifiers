@@ -4,7 +4,8 @@ using Terraria;
 
 namespace Loot.Modifiers.EquipModifiers
 {
-	// todo Be in effect
+	// Here, LuckEffect is only used as a container to store Luck per player instance
+	// This is an example of an Effect with no functionality by itself
 	public class LuckEffect : ModifierEffect
 	{
 		public float Luck;
@@ -20,7 +21,7 @@ namespace Loot.Modifiers.EquipModifiers
 	{
 		public override ModifierTooltipLine[] TooltipLines => new[]
 		{
-			new ModifierTooltipLine { Text = $"+{Properties.RoundedPower} luck [WIP]", Color =  Color.LimeGreen},
+			new ModifierTooltipLine { Text = $"+{Properties.RoundedPower} luck", Color =  Color.LimeGreen},
 		};
 
 		public override ModifierProperties GetModifierProperties(Item item)
