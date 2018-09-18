@@ -164,11 +164,16 @@ namespace Loot
 				// Clone the mod (new instance) and roll it's properties, then roll it
 				Modifier e = wr.Get();
 				Modifier eClone = (Modifier)e.Clone();
+				float luck = itemRollProperties.ExtraLuck;
+				if (ctx.Player != null)
+				{
+					luck += ModifierPlayer.Player(ctx.Player).GetEffect<LuckEffect>().Luck;
+				}
 				eClone.Properties =
 					eClone.GetModifierProperties(ctx.Item)
 					.RollMagnitudeAndPower(
 							magnitudePower: itemRollProperties.MagnitudePower,
-							lukStat: ModifierPlayer.Player(ctx.Player).GetEffect<LuckEffect>().Luck + itemRollProperties.ExtraLuck);
+							lukStat: luck);
 				eClone.Roll(ctx, list);
 
 				// If the mod deemed to be unable to be added,
