@@ -88,6 +88,10 @@
     <Compile Include="Core\Cubes\MagicalCube.cs" />
     <Compile Include="Core\Attributes\DelegationPrioritizationAttribute.cs" />
     <Compile Include="Core\Attributes\UsesEffectAttribute.cs" />
+    <Compile Include="Core\ModContent\AutoloadModContent.cs" />
+    <Compile Include="Core\ModContent\ContentManager.cs" />
+    <Compile Include="Core\ModContent\ModContent.cs" />
+    <Compile Include="Core\ModContent\ModGraphicsContent.cs" />
     <Compile Include="Core\ModifierContext.cs" />
     <Compile Include="Core\ModifierEffect.cs" />
     <Compile Include="Core\ModifierProperties.cs" />

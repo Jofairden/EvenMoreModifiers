@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
 using System.IO;
 using System.Runtime.CompilerServices;
+using Loot.Core.ModContent;
 using Terraria;
 using Terraria.ModLoader;
 using Terraria.UI;
@@ -37,6 +38,8 @@ namespace Loot
 		internal CubeRerollUI CubeRerollUI;
 		internal CubeSealUI CubeSealUI;
 
+		internal static ContentManager ContentManager;
+
 		public Loot()
 		{
 			Properties = new ModProperties
@@ -68,13 +71,8 @@ namespace Loot
 
 			if (!Main.dedServ)
 			{
-				CubeRerollUI = new CubeRerollUI();
-				CubeRerollUI.Activate();
-
-				CubeSealUI = new CubeSealUI();
-				CubeSealUI.Activate();
-
-				CubeInterface = new UserInterface();
+				SetupContentMgr();
+				SetupUIs();
 
 				if (WingSlotLoaded)
 				{
@@ -90,10 +88,31 @@ namespace Loot
 			}
 		}
 
+		private void SetupContentMgr()
+		{
+			ContentManager = new ContentManager();
+			ContentManager.Initialize();
+			ContentManager.Load();
+		}
+
+		private void SetupUIs()
+		{
+			CubeRerollUI = new CubeRerollUI();
+			CubeRerollUI.Activate();
+
+			CubeSealUI = new CubeSealUI();
+			CubeSealUI.Activate();
+
+			CubeInterface = new UserInterface();
+		}
+
 		public override void Unload()
 		{
 			Instance = null;
 			EMMLoader.Unload();
+
+			ContentManager?.Unload();
+			ContentManager = null;
 
 			// TODO causes trouble in unload?
 			// @todo this is not a feature of tml
