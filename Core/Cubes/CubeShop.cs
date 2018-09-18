@@ -12,6 +12,7 @@ namespace Loot.Core.Cubes
 			{
 				shop.item[nextSlot++].SetDefaults(Loot.Instance.ItemType<PoorCube>());
 				shop.item[nextSlot++].SetDefaults(Loot.Instance.ItemType<CubeOfSealing>());
+				shop.item[nextSlot++].SetDefaults(Loot.Instance.ItemType<BlackCube>());
 			}
 		}
 	}
