@@ -1,0 +1,45 @@
+# This will not run on Travis' 'new' container-based infrastructure
+sudo: required
+
+language: csharp
+
+notifications:
+  email: false
+
+# Blacklist
+branches:
+  only:
+    - rework
+
+# Environment variables
+env:
+  global:
+    - GH_REPO_NAME: EvenMoreModifiers
+    - DOXYFILE: $TRAVIS_BUILD_DIR/travis/documentation/Doxyfile
+    - GH_REPO_REF: github.com/Jofairden/EvenMoreModifiers.git
+
+# Install dependencies
+addons:
+  apt:
+    packages:
+      - doxygen
+      - doxygen-doc
+      - graphviz
+
+before_install:
+    - sudo apt-add-repository -y ppa:mikepurvis/docs
+    - sudo apt-get update
+    - sudo apt-get install doxygen
+      
+# Build your code e.g. by calling make
+script:
+  - pwd
+  - doxygen -v
+  - ls
+
+# Generate and deploy documentation
+after_success:
+  # Generate the docs only if master, the travis_build_docs is true and we can use secure variables
+  - cd $TRAVIS_BUILD_DIR
+  - chmod +x travis/documentation/generateAndPublishDocumentation.sh
+  - ./travis/documentation/generateAndPublishDocumentation.sh
