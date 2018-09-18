@@ -1,8 +1,0 @@
-Rerolling ARMOR items at the tinkerer is now possible
-Fixed LOAD errors for characters (would often display a different mod, this mod was the culprit)
-Fixed broken tooltips (such as +infinite mana)
-Tooltips are now split from modifiers. This means the regular tooltip is showing only the bonuses received by the prefix of the item.
-Fixed modifiers giving bonus crit and velocity
-Illegitimate rolls are now automatically removed, this is mostly to fix load errors for players
-Clarified DamageWithManaCost modifier tooltip "but added mana cost" => "but adds +{_manaCost} mana cost"
-Clarified VelocityPlus modifier tooltip "velocity" => "projectile velocity"
