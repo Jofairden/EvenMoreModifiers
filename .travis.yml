@@ -2,6 +2,11 @@
 sudo: required
 
 language: csharp
+python:
+    - 2.6
+    - 2.7
+    - 3.3
+    - 3.4
 
 notifications:
   email: false
@@ -15,7 +20,7 @@ branches:
 env:
   global:
     - GH_REPO_NAME: EvenMoreModifiers
-    - DOXYFILE: $TRAVIS_BUILD_DIR/travis/documentation/Doxyfile
+    - DOXYFILE: $TRAVIS_BUILD_DIR/travis/documentation/Doxyfile-mcss
     - GH_REPO_REF: github.com/Jofairden/EvenMoreModifiers.git
 
 # Install dependencies
@@ -30,9 +35,11 @@ before_install:
     - sudo apt-add-repository -y ppa:mikepurvis/docs
     - sudo apt-get update
     - sudo apt-get install doxygen
+    - sudo apt-get install texlive-base texlive-latex-extra texlive-fonts-extra
       
 # Build your code e.g. by calling make
 script:
+  - pip3 install jinja2 Pygments
   - pwd
   - doxygen -v
   - ls
