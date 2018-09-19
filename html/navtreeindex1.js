@@ -1,5 +1,9 @@
 var NAVTREEINDEX1 =
 {
+"class_loot_1_1_activated_modifier_item.html#a91d1ab4b72c3d8ff249c3d09cb67bd65":[9,0,0,5,1],
+"class_loot_1_1_armor_item_hack.html":[9,0,0,6],
+"class_loot_1_1_armor_item_hack.html#a1b688fdd54881817c903d87317829c98":[9,0,0,6,1],
+"class_loot_1_1_armor_item_hack.html#ae7f42b233b02f3ef8f35a12a4791d078":[9,0,0,6,0],
 "class_loot_1_1_core_1_1_all_modifiers_pool.html":[9,0,0,0,3],
 "class_loot_1_1_core_1_1_all_modifiers_pool.html#a18d902657bf9f4bcf212737037c1fe3d":[9,0,0,0,3,0],
 "class_loot_1_1_core_1_1_all_modifiers_pool.html#a62999e4adecf6ab70e2a4c114ea9896f":[9,0,0,0,3,1],
@@ -245,9 +249,5 @@ var NAVTREEINDEX1 =
 "class_loot_1_1_e_m_m_item.html#a1819ece591debe2c1ff47f6eecb9cd08":[9,0,0,7,21],
 "class_loot_1_1_e_m_m_item.html#a26adbebd59ab872c21d077b0b42904aa":[9,0,0,7,5],
 "class_loot_1_1_e_m_m_item.html#a3b707b45eb50ce917bbb0052cfa81855":[9,0,0,7,11],
-"class_loot_1_1_e_m_m_item.html#a3ee48381fb9805c3479aed978e54d57d":[9,0,0,7,7],
-"class_loot_1_1_e_m_m_item.html#a40d02fc083c67022b5c8603d7dd9faee":[9,0,0,7,9],
-"class_loot_1_1_e_m_m_item.html#a51f2704f9654af48ab0ee1abbfc07b86":[9,0,0,7,12],
-"class_loot_1_1_e_m_m_item.html#a5367a0f6cb29085872d2799fd6b65e47":[9,0,0,7,14],
-"class_loot_1_1_e_m_m_item.html#a6672ede9c3208712a10ce4b266d95a15":[9,0,0,7,16]
+"class_loot_1_1_e_m_m_item.html#a3ee48381fb9805c3479aed978e54d57d":[9,0,0,7,7]
 };

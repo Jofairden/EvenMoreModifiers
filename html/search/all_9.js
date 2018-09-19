@@ -1,6 +1,8 @@
 var searchData=
 [
   ['icloneable',['ICloneable',['../class_i_cloneable.html',1,'']]],
+  ['ifakemod',['IFakeMod',['../interface_loot_tests_1_1_i_fake_mod.html',1,'LootTests']]],
+  ['ifakeproperties',['IFakeProperties',['../interface_loot_tests_1_1_modifier_properties_tests_1_1_i_fake_properties.html',1,'LootTests::ModifierPropertiesTests']]],
   ['immunity',['Immunity',['../class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_defensive_1_1_immunity_effect.html#aafd522ee7bcc6710cede2c86c606ab77',1,'Loot::Modifiers::EquipModifiers::Defensive::ImmunityEffect']]],
   ['immunityeffect',['ImmunityEffect',['../class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_defensive_1_1_immunity_effect.html',1,'Loot::Modifiers::EquipModifiers::Defensive']]],
   ['immunitytimeplus',['ImmunityTimePlus',['../class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_defensive_1_1_immunity_time_plus.html',1,'Loot::Modifiers::EquipModifiers::Defensive']]],
@@ -20,7 +22,7 @@ var searchData=
   ['ismouseusable',['IsMouseUsable',['../class_loot_1_1_modifiers_1_1_modifier_cache_player.html#a8a2959798f3d8299e6715b23480535ce',1,'Loot::Modifiers::ModifierCachePlayer']]],
   ['isslotteditemincubeui',['IsSlottedItemInCubeUI',['../class_loot_1_1_u_i_1_1_cube_reroll_u_i.html#afbd582dd23c52adf07d7267c89951343',1,'Loot.UI.CubeRerollUI.IsSlottedItemInCubeUI()'],['../class_loot_1_1_u_i_1_1_cube_seal_u_i.html#a41ab054418546b786c8855df97d9cb16',1,'Loot.UI.CubeSealUI.IsSlottedItemInCubeUI()'],['../class_loot_1_1_u_i_1_1_cube_u_i.html#a95ee1e12a3728844f6d4d5287d2d695c',1,'Loot.UI.CubeUI.IsSlottedItemInCubeUI()']]],
   ['isvanityset',['IsVanitySet',['../class_loot_1_1_core_1_1_modifier.html#a305f9f5f9f14555110733f5b51a386d3',1,'Loot::Core::Modifier']]],
-  ['item',['Item',['../struct_loot_1_1_core_1_1_modifier_context.html#a599dda9f8de7cb90b774f4bba824c55c',1,'Loot.Core.ModifierContext.Item()'],['../class_loot_1_1_modifiers_1_1_auto_delegation_entry.html#abcfc2a1b6a8bbc904199f41750691fdb',1,'Loot.Modifiers.AutoDelegationEntry.Item()'],['../class_loot_1_1_activated_modifier_item.html#a6bb0485006eaaa1ab477c420abb67f15',1,'Loot.ActivatedModifierItem.Item()'],['../class_loot_1_1_u_i_1_1_u_i_item_panel.html#a786ecd855ff23034c600350ff6bfc258',1,'Loot.UI.UIItemPanel.item()']]],
+  ['item',['item',['../class_loot_1_1_u_i_1_1_u_i_item_panel.html#a786ecd855ff23034c600350ff6bfc258',1,'Loot.UI.UIItemPanel.item()'],['../struct_loot_1_1_core_1_1_modifier_context.html#a599dda9f8de7cb90b774f4bba824c55c',1,'Loot.Core.ModifierContext.Item()'],['../class_loot_1_1_modifiers_1_1_auto_delegation_entry.html#abcfc2a1b6a8bbc904199f41750691fdb',1,'Loot.Modifiers.AutoDelegationEntry.Item()'],['../class_loot_1_1_activated_modifier_item.html#a6bb0485006eaaa1ab477c420abb67f15',1,'Loot.ActivatedModifierItem.Item()']]],
   ['itemhack_2ecs',['ItemHack.cs',['../_item_hack_8cs.html',1,'']]],
   ['itemhackprefixes_2ecs',['ItemHackPrefixes.cs',['../_item_hack_prefixes_8cs.html',1,'']]],
   ['itemprefix',['ItemPrefix',['../class_loot_1_1_core_1_1_modifier_rarity.html#ae7d8df1c8c795d702da99fb5aadbf8d7',1,'Loot::Core::ModifierRarity']]],

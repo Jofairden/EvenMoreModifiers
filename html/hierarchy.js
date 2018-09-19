@@ -105,16 +105,24 @@ var hierarchy =
         [ "LootTests.TestRarities.TestRarity", "class_loot_tests_1_1_test_rarities_1_1_test_rarity.html", null ]
       ] ]
     ] ],
+    [ "LootTests.IFakeMod", "interface_loot_tests_1_1_i_fake_mod.html", [
+      [ "LootTests.FakeMod", "class_loot_tests_1_1_fake_mod.html", null ]
+    ] ],
+    [ "LootTests.ModifierPropertiesTests.IFakeProperties", "interface_loot_tests_1_1_modifier_properties_tests_1_1_i_fake_properties.html", [
+      [ "LootTests.ModifierPropertiesTests.FakeProperties", "class_loot_tests_1_1_modifier_properties_tests_1_1_fake_properties.html", null ]
+    ] ],
     [ "Loot.Core.Cubes.ItemRollProperties", "class_loot_1_1_core_1_1_cubes_1_1_item_roll_properties.html", null ],
     [ "Mod", "class_mod.html", [
       [ "Loot.Loot", "class_loot_1_1_loot.html", null ],
-      [ "LootTests.EmptyModLoadShell", "class_loot_tests_1_1_empty_mod_load_shell.html", null ]
+      [ "LootTests.EmptyModLoadShell", "class_loot_tests_1_1_empty_mod_load_shell.html", null ],
+      [ "LootTests.FakeMod", "class_loot_tests_1_1_fake_mod.html", null ]
     ] ],
     [ "Loot.Core.ModContent.ModContent", "class_loot_1_1_core_1_1_mod_content_1_1_mod_content.html", [
       [ "Loot.Core.ModContent.ModGraphicsContent", "class_loot_1_1_core_1_1_mod_content_1_1_mod_graphics_content.html", null ]
     ] ],
     [ "Loot.Core.ModifierContext", "struct_loot_1_1_core_1_1_modifier_context.html", null ],
     [ "Loot.Core.ModifierProperties", "class_loot_1_1_core_1_1_modifier_properties.html", null ],
+    [ "LootTests.ModifierPropertiesTests", "class_loot_tests_1_1_modifier_properties_tests.html", null ],
     [ "Loot.Core.ModifierTooltipLine", "struct_loot_1_1_core_1_1_modifier_tooltip_line.html", null ],
     [ "ModItem", "class_mod_item.html", [
       [ "Loot.Core.Cubes.MagicalCube", "class_loot_1_1_core_1_1_cubes_1_1_magical_cube.html", [

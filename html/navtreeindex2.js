@@ -1,5 +1,9 @@
 var NAVTREEINDEX2 =
 {
+"class_loot_1_1_e_m_m_item.html#a40d02fc083c67022b5c8603d7dd9faee":[9,0,0,7,9],
+"class_loot_1_1_e_m_m_item.html#a51f2704f9654af48ab0ee1abbfc07b86":[9,0,0,7,12],
+"class_loot_1_1_e_m_m_item.html#a5367a0f6cb29085872d2799fd6b65e47":[9,0,0,7,14],
+"class_loot_1_1_e_m_m_item.html#a6672ede9c3208712a10ce4b266d95a15":[9,0,0,7,16],
 "class_loot_1_1_e_m_m_item.html#a7788b69f28ba9809f56f6ebc6c7a7b7f":[9,0,0,7,2],
 "class_loot_1_1_e_m_m_item.html#a8ce5218d600c0b68fc6da07bab1fe9d7":[9,0,0,7,19],
 "class_loot_1_1_e_m_m_item.html#a8db5514ead52457b0ae97cb3ea291484":[9,0,0,7,18],
@@ -245,9 +249,5 @@ var NAVTREEINDEX2 =
 "class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_defensive_1_1_mana_plus.html#a52443703335116aec0e2082389895b50":[9,0,0,1,0,0,8,0],
 "class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_defensive_1_1_mana_plus.html#a9a0a34395810cb95311037f65ae16122":[9,0,0,1,0,0,8,2],
 "class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_defensive_1_1_mana_shield.html":[9,0,0,1,0,0,9],
-"class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_defensive_1_1_mana_shield.html#ab71ae6f50410117a21c4d78bdc83d9aa":[9,0,0,1,0,0,9,2],
-"class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_defensive_1_1_mana_shield.html#acd756f8e8d1c57dde496467987e9212b":[9,0,0,1,0,0,9,0],
-"class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_defensive_1_1_mana_shield.html#ad29f7dbdd1408e4f6f8946a89d04ba90":[9,0,0,1,0,0,9,1],
-"class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_defensive_1_1_mana_shield_effect.html":[9,0,0,1,0,0,10],
-"class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_defensive_1_1_mana_shield_effect.html#a610e0ddc09e723990f9b6df76445faf5":[9,0,0,1,0,0,10,2]
+"class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_defensive_1_1_mana_shield.html#ab71ae6f50410117a21c4d78bdc83d9aa":[9,0,0,1,0,0,9,2]
 };

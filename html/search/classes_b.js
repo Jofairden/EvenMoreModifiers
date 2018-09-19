@@ -24,6 +24,7 @@ var searchData=
   ['modifierpool',['ModifierPool',['../class_loot_1_1_core_1_1_modifier_pool.html',1,'Loot::Core']]],
   ['modifierprojectile',['ModifierProjectile',['../class_loot_1_1_modifier_projectile.html',1,'Loot']]],
   ['modifierproperties',['ModifierProperties',['../class_loot_1_1_core_1_1_modifier_properties.html',1,'Loot::Core']]],
+  ['modifierpropertiestests',['ModifierPropertiesTests',['../class_loot_tests_1_1_modifier_properties_tests.html',1,'LootTests']]],
   ['modifierrarity',['ModifierRarity',['../class_loot_1_1_core_1_1_modifier_rarity.html',1,'Loot::Core']]],
   ['modifiertooltipline',['ModifierTooltipLine',['../struct_loot_1_1_core_1_1_modifier_tooltip_line.html',1,'Loot::Core']]],
   ['moditem',['ModItem',['../class_mod_item.html',1,'']]],

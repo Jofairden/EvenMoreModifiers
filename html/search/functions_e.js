@@ -9,6 +9,7 @@ var searchData=
   ['setmatch',['SetMatch',['../class_loot_1_1_core_1_1_modifier.html#a8586fa61260bc0884b19787fde6e1e60',1,'Loot::Core::Modifier']]],
   ['setrolllogic',['SetRollLogic',['../class_loot_1_1_core_1_1_cubes_1_1_black_cube.html#a68fbb9ce92f44d4520c0d6a8eee6c95b',1,'Loot.Core.Cubes.BlackCube.SetRollLogic()'],['../class_loot_1_1_core_1_1_cubes_1_1_magical_cube.html#af46c273ab2c36c2ba4acbf47bbdf4946',1,'Loot.Core.Cubes.MagicalCube.SetRollLogic()'],['../class_loot_1_1_core_1_1_cubes_1_1_poor_cube.html#a1d25f0ed5c94f8b5ee7943ebb78499b6',1,'Loot.Core.Cubes.PoorCube.SetRollLogic()']]],
   ['setstaticdefaults',['SetStaticDefaults',['../class_loot_1_1_core_1_1_cubes_1_1_magical_cube.html#a70d5fb38182e07a4c31daee5be840712',1,'Loot::Core::Cubes::MagicalCube']]],
+  ['setup',['Setup',['../class_loot_tests_1_1_modifier_properties_tests.html#ab1e7cdfb8137e42398aa342056397084',1,'LootTests.ModifierPropertiesTests.Setup()'],['../class_loot_tests_1_1_unit_tests.html#a853eab844d4a461588ea50a00c4c6966',1,'LootTests.UnitTests.Setup()']]],
   ['setupcontentmgr',['SetupContentMgr',['../class_loot_1_1_loot.html#ae299d7dbf57369a837cb558aa582f939',1,'Loot::Loot']]],
   ['setupshop',['SetupShop',['../class_loot_1_1_core_1_1_cubes_1_1_cube_shop.html#a7cbf458f03f04a9cf26b4005afbc748a',1,'Loot::Core::Cubes::CubeShop']]],
   ['setupstartinventory',['SetupStartInventory',['../class_loot_1_1_modifier_player.html#a2ee5edbc75df5b0ab66ac8250c129586',1,'Loot::ModifierPlayer']]],

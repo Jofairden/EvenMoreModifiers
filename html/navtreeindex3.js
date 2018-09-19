@@ -1,5 +1,9 @@
 var NAVTREEINDEX3 =
 {
+"class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_defensive_1_1_mana_shield.html#acd756f8e8d1c57dde496467987e9212b":[9,0,0,1,0,0,9,0],
+"class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_defensive_1_1_mana_shield.html#ad29f7dbdd1408e4f6f8946a89d04ba90":[9,0,0,1,0,0,9,1],
+"class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_defensive_1_1_mana_shield_effect.html":[9,0,0,1,0,0,10],
+"class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_defensive_1_1_mana_shield_effect.html#a610e0ddc09e723990f9b6df76445faf5":[9,0,0,1,0,0,10,2],
 "class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_defensive_1_1_mana_shield_effect.html#aca9180cd465d511179dd41620c48c855":[9,0,0,1,0,0,10,1],
 "class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_defensive_1_1_mana_shield_effect.html#ae872e672cbeb246a0fdc84baec014203":[9,0,0,1,0,0,10,0],
 "class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_defensive_1_1_percent_def_boost_effect.html":[9,0,0,1,0,0,11],
@@ -245,9 +249,5 @@ var NAVTREEINDEX3 =
 "class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_velocity_plus.html#ad09ee5d97e2f8ec54474afe08cdc8b45":[9,0,0,1,1,13,1],
 "class_loot_1_1_rarities_1_1_common_rarity.html":[9,0,0,2,0],
 "class_loot_1_1_rarities_1_1_common_rarity.html#a6ad34d42c12111929bcd78ee7515c7f5":[9,0,0,2,0,1],
-"class_loot_1_1_rarities_1_1_common_rarity.html#a6d7d506a85f9f4b64dcd984d9c86f865":[9,0,0,2,0,0],
-"class_loot_1_1_rarities_1_1_common_rarity.html#ad866d206e0de72d67356071a79cbc239":[9,0,0,2,0,2],
-"class_loot_1_1_rarities_1_1_legendary_rarity.html":[9,0,0,2,1],
-"class_loot_1_1_rarities_1_1_legendary_rarity.html#a434d9affd16c8ab41c42bcab9710ea91":[9,0,0,2,1,2],
-"class_loot_1_1_rarities_1_1_legendary_rarity.html#a9dc9e0604a769b5d37de8a8e925f70e7":[9,0,0,2,1,0]
+"class_loot_1_1_rarities_1_1_common_rarity.html#a6d7d506a85f9f4b64dcd984d9c86f865":[9,0,0,2,0,0]
 };
