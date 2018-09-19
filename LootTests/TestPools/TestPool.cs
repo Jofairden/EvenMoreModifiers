@@ -1,4 +1,3 @@
-using System.Security.Cryptography;
 using Loot;
 using Loot.Core;
 using LootTests.TestModifiers;
