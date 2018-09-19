@@ -1,0 +1,5 @@
+<map id="Loot.EMMLoader.AddModifierPool" name="Loot.EMMLoader.AddModifierPool">
+<area shape="rect" id="node2" href="$class_loot_1_1_e_m_m_loader.html#a96fd118b85c32da5a676ccf2cc85199c" title="Autoloads a ModifierPool " alt="" coords="275,12,523,39"/>
+<area shape="rect" id="node3" href="$class_loot_1_1_e_m_m_loader.html#a3c5412f1d3008556acda094772af6c25" title="Returns the ModifierEffect specified by type, null if not present " alt="" coords="571,5,763,46"/>
+<area shape="rect" id="node4" href="$class_loot_1_1_core_1_1_modifier_effect.html#a7e8f94da423bc7b55fb9ba27bb25409d" title="Loot.Core.ModifierEffect.\lClone" alt="" coords="811,5,979,46"/>
+</map>

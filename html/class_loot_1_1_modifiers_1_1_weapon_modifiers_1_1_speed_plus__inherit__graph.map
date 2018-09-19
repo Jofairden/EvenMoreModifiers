@@ -1,0 +1,6 @@
+<map id="Loot.Modifiers.WeaponModifiers.SpeedPlus" name="Loot.Modifiers.WeaponModifiers.SpeedPlus">
+<area shape="rect" id="node2" href="$class_loot_1_1_modifiers_1_1_weapon_modifier.html" title="Defines a modifier that can roll on a weapon item You can use this class and add to CanRoll by callin..." alt="" coords="54,155,169,181"/>
+<area shape="rect" id="node3" href="$class_loot_1_1_core_1_1_modifier.html" title="Defines a modifier, which is an unloaded GlobalItem Making it a GlobalItem gives easy access to all h..." alt="" coords="78,80,145,107"/>
+<area shape="rect" id="node4" href="$class_global_item.html" title="GlobalItem" alt="" coords="15,5,100,32"/>
+<area shape="rect" id="node5" href="$class_i_cloneable.html" title="ICloneable" alt="" coords="125,5,208,32"/>
+</map>

@@ -1,0 +1,6 @@
+<map id="Loot.UI.UIInteractableItemPanel" name="Loot.UI.UIInteractableItemPanel">
+<area shape="rect" id="node4" href="$class_loot_1_1_u_i_1_1_u_i_cube_item_panel.html" title="Loot.UI.UICubeItemPanel" alt="" coords="5,245,179,272"/>
+<area shape="rect" id="node5" href="$class_loot_1_1_u_i_1_1_u_i_reroll_item_panel.html" title="Loot.UI.UIRerollItemPanel" alt="" coords="203,245,379,272"/>
+<area shape="rect" id="node6" href="$class_loot_1_1_u_i_1_1_u_i_seal_item_panel.html" title="Loot.UI.UISealItemPanel" alt="" coords="403,245,571,272"/>
+<area shape="rect" id="node2" href="$class_loot_1_1_u_i_1_1_u_i_item_panel.html" title="UIItemPanel" alt="" coords="243,80,337,107"/>
+</map>

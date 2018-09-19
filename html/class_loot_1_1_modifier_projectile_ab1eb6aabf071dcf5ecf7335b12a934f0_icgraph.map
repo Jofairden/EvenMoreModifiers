@@ -1,0 +1,5 @@
+<map id="Loot.ModifierProjectile.AttemptDebuff" name="Loot.ModifierProjectile.AttemptDebuff">
+<area shape="rect" id="node2" href="$class_loot_1_1_modifier_projectile.html#a5a61b024b5a9bc10b9dd6cea76c1d536" title="Loot.ModifierProjectile.\lOnHitNPC" alt="" coords="208,5,363,46"/>
+<area shape="rect" id="node3" href="$class_loot_1_1_modifier_projectile.html#ab9a935eff7bc183f982cc8c37ce72ac3" title="Loot.ModifierProjectile.\lOnHitPlayer" alt="" coords="208,70,363,111"/>
+<area shape="rect" id="node4" href="$class_loot_1_1_modifier_projectile.html#a512c89a3dd584a2a500c098715783aa3" title="Loot.ModifierProjectile.\lOnHitPvp" alt="" coords="208,135,363,177"/>
+</map>

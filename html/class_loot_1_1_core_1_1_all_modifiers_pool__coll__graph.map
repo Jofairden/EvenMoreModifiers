@@ -1,0 +1,6 @@
+<map id="Loot.Core.AllModifiersPool" name="Loot.Core.AllModifiersPool">
+<area shape="rect" id="node2" href="$class_loot_1_1_core_1_1_modifier_pool.html" title="Defines a modifier pool. A modifier pool holds a certain amount of effects in an array It allows to r..." alt="" coords="409,229,503,256"/>
+<area shape="rect" id="node3" href="$class_i_cloneable.html" title="ICloneable" alt="" coords="373,5,456,32"/>
+<area shape="rect" id="node7" href="$class_loot_1_1_core_1_1_modifier.html" title="Defines a modifier, which is an unloaded GlobalItem Making it a GlobalItem gives easy access to all h..." alt="" coords="169,117,297,144"/>
+<area shape="rect" id="node8" href="$class_global_item.html" title="GlobalItem" alt="" coords="5,5,91,32"/>
+</map>

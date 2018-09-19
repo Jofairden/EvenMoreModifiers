@@ -1,0 +1,8 @@
+<map id="Loot.EMMLoader.GetModifierEffect" name="Loot.EMMLoader.GetModifierEffect">
+<area shape="rect" id="node2" href="$class_loot_1_1_e_m_m_loader.html#ab5c0f407a898fa43be9b08477d0ba78b" title="Loot.EMMLoader._GetModifier\lEffect" alt="" coords="250,103,449,145"/>
+<area shape="rect" id="node7" href="$class_loot_1_1_e_m_m_loader.html#aab5f1125d8357b3fd488e5ed1983a5ea" title="Loot.EMMLoader.GetNewEffect\lInstance" alt="" coords="245,169,453,210"/>
+<area shape="rect" id="node3" href="$class_loot_1_1_e_m_m_loader.html#a4c75c0215b1690d65f9a4745b8e3dd69" title="Requests all ModifierEffects, and returns them as a readonly collection " alt="" coords="505,5,725,46"/>
+<area shape="rect" id="node4" href="$class_loot_1_1_e_m_m_loader.html#abea328c9556511ac57ec4e628b4b7831" title="Requests all ModifierPools, and returns them as a readonly collection " alt="" coords="505,70,725,111"/>
+<area shape="rect" id="node5" href="$class_loot_1_1_e_m_m_loader.html#a6de2ca346bb74dd008921652925b73fe" title="Requests all ModifierRarities, and returns them as a readonly collection " alt="" coords="505,135,725,177"/>
+<area shape="rect" id="node6" href="$class_loot_1_1_e_m_m_loader.html#a67f922e6f493468abc1df2edbe7b2c15" title="Requests all Modifiers, and returns them as a readonly collection " alt="" coords="501,201,728,228"/>
+</map>

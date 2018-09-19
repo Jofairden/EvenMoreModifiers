@@ -1,0 +1,5 @@
+<map id="Loot.Modifiers.AccessoryModifier" name="Loot.Modifiers.AccessoryModifier">
+<area shape="rect" id="node2" href="$class_loot_1_1_core_1_1_modifier.html" title="Defines a modifier, which is an unloaded GlobalItem Making it a GlobalItem gives easy access to all h..." alt="" coords="147,109,215,136"/>
+<area shape="rect" id="node3" href="$class_global_item.html" title="GlobalItem" alt="" coords="5,5,91,32"/>
+<area shape="rect" id="node4" href="$class_i_cloneable.html" title="ICloneable" alt="" coords="115,5,199,32"/>
+</map>

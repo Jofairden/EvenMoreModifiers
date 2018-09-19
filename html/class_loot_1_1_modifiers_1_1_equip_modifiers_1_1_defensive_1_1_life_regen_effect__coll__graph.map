@@ -1,0 +1,4 @@
+<map id="Loot.Modifiers.EquipModifiers.Defensive.LifeRegenEffect" name="Loot.Modifiers.EquipModifiers.Defensive.LifeRegenEffect">
+<area shape="rect" id="node2" href="$class_loot_1_1_core_1_1_modifier_effect.html" title="A ModifierEffect signifies the effect of a modifier on a player It should house the implementation..." alt="" coords="51,96,153,123"/>
+<area shape="rect" id="node3" href="$class_i_cloneable.html" title="ICloneable" alt="" coords="5,5,88,32"/>
+</map>

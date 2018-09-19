@@ -1,0 +1,5 @@
+<map id="Loot.Modifiers.WeaponModifiers.CursedDamage.UpdateInventory" name="Loot.Modifiers.WeaponModifiers.CursedDamage.UpdateInventory">
+<area shape="rect" id="node2" href="$class_loot_1_1_modifier_player.html#a3e4b8a428276fb0205e9c0f166435bf0" title="Loot.ModifierPlayer.GetEffect" alt="" coords="273,5,468,32"/>
+<area shape="rect" id="node3" href="$class_loot_1_1_activated_modifier_item.html#a6bb0485006eaaa1ab477c420abb67f15" title="Loot.ActivatedModifierItem.Item" alt="" coords="267,56,475,83"/>
+<area shape="rect" id="node4" href="$class_loot_1_1_modifier_player.html#aae3e56a930507049c3b282b29fece4f1" title="Loot.ModifierPlayer.Player" alt="" coords="283,107,458,133"/>
+</map>

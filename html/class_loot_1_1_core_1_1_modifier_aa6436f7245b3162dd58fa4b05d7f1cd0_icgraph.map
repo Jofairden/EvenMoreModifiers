@@ -1,0 +1,4 @@
+<map id="Loot.Core.Modifier.GetModifierProperties" name="Loot.Core.Modifier.GetModifierProperties">
+<area shape="rect" id="node2" href="$class_loot_1_1_core_1_1_modifier.html#a141d9a8dd7427ce08bd682d070dd77d0" title="Loot.Core.Modifier.Clone" alt="" coords="254,5,421,32"/>
+<area shape="rect" id="node3" href="$class_loot_1_1_core_1_1_modifier.html#ad4f545d050f5ed2bbb123134c50470f3" title="Allows modder to do custom loading here Use the given TC to pull data you saved using Save(Item..." alt="" coords="257,80,418,107"/>
+</map>

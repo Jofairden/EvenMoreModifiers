@@ -1,0 +1,7 @@
+<map id="LootTests.UnitTests.LogEMMLoaderEntries" name="LootTests.UnitTests.LogEMMLoaderEntries">
+<area shape="rect" id="node2" href="$class_loot_1_1_e_m_m_loader.html#a31bf6b74bad44144e6dc7c312f6d0a30" title="Registers specified mod, enabling autoloading for that mod " alt="" coords="305,5,503,32"/>
+<area shape="rect" id="node4" href="$class_loot_1_1_e_m_m_loader.html#abea328c9556511ac57ec4e628b4b7831" title="Requests all ModifierPools, and returns them as a readonly collection " alt="" coords="294,57,514,98"/>
+<area shape="rect" id="node5" href="$class_loot_1_1_e_m_m_loader.html#a6de2ca346bb74dd008921652925b73fe" title="Requests all ModifierRarities, and returns them as a readonly collection " alt="" coords="294,122,514,163"/>
+<area shape="rect" id="node6" href="$class_loot_1_1_e_m_m_loader.html#a67f922e6f493468abc1df2edbe7b2c15" title="Requests all Modifiers, and returns them as a readonly collection " alt="" coords="291,188,517,215"/>
+<area shape="rect" id="node3" href="$class_loot_1_1_core_1_1_modifier_pool.html#a05a9f5490a1bde6705e765a34655a698" title="Allows modders to do custom cloning Happens after default cloning " alt="" coords="566,5,759,32"/>
+</map>

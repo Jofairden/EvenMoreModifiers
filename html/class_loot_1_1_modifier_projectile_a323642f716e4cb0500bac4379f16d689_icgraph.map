@@ -1,0 +1,13 @@
+<map id="Loot.ModifierProjectile.Info" name="Loot.ModifierProjectile.Info">
+<area shape="rect" id="node2" href="$class_loot_1_1_modifier_projectile.html#ab1eb6aabf071dcf5ecf7335b12a934f0" title="Loot.ModifierProjectile.\lAttemptDebuff" alt="" coords="232,70,387,111"/>
+<area shape="rect" id="node6" href="$class_loot_1_1_modifier_projectile.html#affada70a526f3834538aa64724de09b0" title="Loot.ModifierProjectile.\lClone" alt="" coords="232,135,387,177"/>
+<area shape="rect" id="node7" href="$class_loot_1_1_modifier_projectile.html#a88bbc92630f212d5b2430cf54b4e82f2" title="Loot.ModifierProjectile.\lCritBonus" alt="" coords="232,266,387,307"/>
+<area shape="rect" id="node11" href="$class_loot_1_1_modifier_projectile.html#ab26593147c3a40e7c189323c09573efa" title="Loot.ModifierProjectile.\lHealthyBonus" alt="" coords="232,201,387,242"/>
+<area shape="rect" id="node12" href="$class_loot_1_1_modifier_projectile.html#af1536b4495b4729fa2a936fcf0be0d84" title="Loot.ModifierProjectile.\lPreAI" alt="" coords="232,331,387,373"/>
+<area shape="rect" id="node3" href="$class_loot_1_1_modifier_projectile.html#a5a61b024b5a9bc10b9dd6cea76c1d536" title="Loot.ModifierProjectile.\lOnHitNPC" alt="" coords="435,5,589,46"/>
+<area shape="rect" id="node4" href="$class_loot_1_1_modifier_projectile.html#ab9a935eff7bc183f982cc8c37ce72ac3" title="Loot.ModifierProjectile.\lOnHitPlayer" alt="" coords="435,70,589,111"/>
+<area shape="rect" id="node5" href="$class_loot_1_1_modifier_projectile.html#a512c89a3dd584a2a500c098715783aa3" title="Loot.ModifierProjectile.\lOnHitPvp" alt="" coords="435,135,589,177"/>
+<area shape="rect" id="node8" href="$class_loot_1_1_modifier_projectile.html#a4ba8e2eb4213b5136bb56c24d17a3dc4" title="Loot.ModifierProjectile.\lModifyHitNPC" alt="" coords="435,201,589,242"/>
+<area shape="rect" id="node9" href="$class_loot_1_1_modifier_projectile.html#a1672e51591f2ae82246c49b58473efe0" title="Loot.ModifierProjectile.\lModifyHitPlayer" alt="" coords="435,266,589,307"/>
+<area shape="rect" id="node10" href="$class_loot_1_1_modifier_projectile.html#a6b30a3083556ccba59fb584d188c9476" title="Loot.ModifierProjectile.\lModifyHitPvp" alt="" coords="435,331,589,373"/>
+</map>

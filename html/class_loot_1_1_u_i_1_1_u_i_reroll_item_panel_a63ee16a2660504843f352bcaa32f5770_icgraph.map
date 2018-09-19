@@ -1,0 +1,4 @@
+<map id="Loot.UI.UIRerollItemPanel.CanTakeItem" name="Loot.UI.UIRerollItemPanel.CanTakeItem">
+<area shape="rect" id="node2" href="$class_loot_1_1_u_i_1_1_cube_reroll_u_i.html#a10c5a1c4b4bdb18524ee7277becc1398" title="Loot.UI.CubeRerollUI.IsItem\lValidForUISlot" alt="" coords="241,5,431,46"/>
+<area shape="rect" id="node3" href="$class_loot_1_1_u_i_1_1_cube_reroll_u_i.html#a7e8d99e5a7ffa233e446cc65828413af" title="Loot.UI.CubeRerollUI.Matches\lRerollRequirements" alt="" coords="235,70,437,111"/>
+</map>
