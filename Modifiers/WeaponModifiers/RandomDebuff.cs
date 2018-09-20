@@ -1,3 +1,4 @@
+using System;
 using Loot.Core;
 using System.Collections.Generic;
 using System.IO;
@@ -15,12 +16,12 @@ namespace Loot.Modifiers.WeaponModifiers
 	{
 		internal static DebuffTrigger[] BuffPairs =
 		{
-			new DebuffTrigger {BuffType = BuffID.Confused, BuffTime = 120, InflictionChance = 1f},
-			new DebuffTrigger {BuffType = BuffID.CursedInferno, BuffTime = 180, InflictionChance = 1f},
-			new DebuffTrigger {BuffType = BuffID.Frostburn, BuffTime = 240, InflictionChance = 1f},
-			new DebuffTrigger {BuffType = BuffID.OnFire, BuffTime = 300, InflictionChance = 1f},
-			new DebuffTrigger {BuffType = BuffID.Poisoned, BuffTime = 480, InflictionChance = 1f},
-			new DebuffTrigger {BuffType = BuffID.Ichor, BuffTime = 180, InflictionChance = 1f}
+			new DebuffTrigger {BuffType = BuffID.Confused, BuffTime = 100, InflictionChance = 1f},
+			new DebuffTrigger {BuffType = BuffID.CursedInferno, BuffTime = 100, InflictionChance = 1f},
+			new DebuffTrigger {BuffType = BuffID.Frostburn, BuffTime = 100, InflictionChance = 1f},
+			new DebuffTrigger {BuffType = BuffID.OnFire, BuffTime = 100, InflictionChance = 1f},
+			new DebuffTrigger {BuffType = BuffID.Poisoned, BuffTime = 100, InflictionChance = 1f},
+			new DebuffTrigger {BuffType = BuffID.Ichor, BuffTime = 100, InflictionChance = 1f}
 		};
 
 		private readonly int _len = BuffPairs.GetLength(0);
@@ -32,24 +33,42 @@ namespace Loot.Modifiers.WeaponModifiers
 		{
 			base.NetReceive(item, reader);
 			_index = reader.ReadInt32();
+			_timeScaleFactor = reader.ReadSingle();
 		}
 
 		public override void NetSend(Item item, BinaryWriter writer)
 		{
 			base.NetSend(item, writer);
 			writer.Write(_index);
+			writer.Write(_timeScaleFactor);
 		}
 
 		public override void Save(Item item, TagCompound tag)
 		{
 			base.Save(item, tag);
 			tag.Add("_index", _index);
+			tag.Add("_timeScaleFactor", _timeScaleFactor);
 		}
 
 		public override void Load(Item item, TagCompound tag)
 		{
 			base.Load(item, tag);
 			_index = tag.GetAsInt("_index");
+			// Showcase rolling a stat properly that previously wasn't present
+			if (tag.ContainsKey("_timeScaleFactor"))
+			{
+				_timeScaleFactor = tag.GetAsShort("timeScaleFactor");
+				if (_timeScaleFactor <= 0f) RollTimeScaleFactor();
+			}
+			else
+			{
+				RollTimeScaleFactor();
+			}
+		}
+
+		private void RollTimeScaleFactor()
+		{
+			_timeScaleFactor = (0.5f + Main.rand.NextFloat() * (0.25f)) + Properties.Power / 100f;
 		}
 
 		public override void Roll(ModifierContext ctx, IEnumerable<Modifier> rolledModifiers)
@@ -62,6 +81,7 @@ namespace Loot.Modifiers.WeaponModifiers
 			var rollableBuffTypes = BuffPairs.Select(x => x.BuffType).Except(similarModsBuffTypes);
 			int randBuffIndex = Main.rand.Next(rollableBuffTypes.Count());
 			_index = BuffPairs.ToList().FindIndex(x => x.BuffType == rollableBuffTypes.ElementAt(randBuffIndex));
+			RollTimeScaleFactor();
 		}
 
 		public override bool PostRoll(ModifierContext ctx, IEnumerable<Modifier> rolledModifiers)
@@ -74,8 +94,9 @@ namespace Loot.Modifiers.WeaponModifiers
 					   .All(x => x?.GetRolledIndex() != _index);
 		}
 
+		private float _timeScaleFactor = 1f;
 		public override int BuffType => BuffPairs[_index].BuffType;
-		public override int BuffTime => BuffPairs[_index].BuffTime;
+		public override int BuffTime => (int)(BuffPairs[_index].BuffTime * _timeScaleFactor);
 		public override float BuffInflictionChance => BuffPairs[_index].InflictionChance;
 	}
 }

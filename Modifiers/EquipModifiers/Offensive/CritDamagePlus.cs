@@ -58,7 +58,7 @@ namespace Loot.Modifiers.EquipModifiers.Offensive
 
 		public override ModifierProperties GetModifierProperties(Item item)
 		{
-			return base.GetModifierProperties(item).Set(maxMagnitude: 15f);
+			return base.GetModifierProperties(item).Set(minMagnitude: 5f, maxMagnitude: 15f);
 		}
 
 		public override void UpdateEquip(Item item, Player player)

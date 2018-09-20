@@ -51,12 +51,17 @@ namespace Loot.Modifiers
 	{
 		public override ModifierTooltipLine[] TooltipLines => new[]
 		{
-			new ModifierTooltipLine {Text = $"+{Properties.RoundedPower}% chance to inflict {GetBuffName()} for {BuffTime / 60f}s", Color = Color.Lime}
+			new ModifierTooltipLine {Text = $"+{Properties.RoundedPower}% chance to inflict {GetBuffName()} for {RoundedBuffTime()}s", Color = Color.Lime}
 		};
 
 		public override ModifierProperties GetModifierProperties(Item item)
 		{
-			return base.GetModifierProperties(item).Set(minMagnitude: 5f, maxMagnitude: 12.5f, roundPrecision: 1);
+			return base.GetModifierProperties(item).Set(minMagnitude: 5f, maxMagnitude: 10f, roundPrecision: 1);
+		}
+
+		private float RoundedBuffTime()
+		{
+			return (float)Math.Round((double)BuffTime / 60f, Properties.RoundPrecision);
 		}
 
 		public abstract int BuffType { get; }

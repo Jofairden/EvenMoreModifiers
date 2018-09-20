@@ -17,7 +17,7 @@ namespace Loot.Modifiers.WeaponModifiers
 
 		public override ModifierProperties GetModifierProperties(Item item)
 		{
-			return base.GetModifierProperties(item).Set(basePower: 1/5f, minMagnitude: 10f, maxMagnitude: 50f, rollChance: 50f);
+			return base.GetModifierProperties(item).Set(minMagnitude: 5f, maxMagnitude: 15f, rollChance: 2f);
 		}
 
 		private bool _duringDay;

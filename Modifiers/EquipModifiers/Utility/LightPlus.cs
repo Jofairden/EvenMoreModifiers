@@ -63,7 +63,7 @@ namespace Loot.Modifiers.EquipModifiers.Utility
 
 		public override ModifierProperties GetModifierProperties(Item item)
 		{
-			return base.GetModifierProperties(item).Set(maxMagnitude: 5f);
+			return base.GetModifierProperties(item).Set(maxMagnitude: 2f);
 		}
 
 		// todo Just pass ModifierPlayer here?

@@ -9,7 +9,7 @@ namespace Loot.Modifiers.EquipModifiers.Utility
 	{
 		public override ModifierTooltipLine[] TooltipLines => new[]
 		{
-			new ModifierTooltipLine { Text = $"+{Math.Round(Properties.RoundedPower/60, 2)}s flight time", Color =  Color.LimeGreen},
+			new ModifierTooltipLine { Text = $"+{Math.Round(Properties.RoundedPower/60f, 2)}s flight time", Color =  Color.LimeGreen},
 		};
 
 		public override ModifierProperties GetModifierProperties(Item item)

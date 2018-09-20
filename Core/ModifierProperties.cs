@@ -78,7 +78,7 @@ namespace Loot.Core
 
 		private float RollMagnitude(float magnitudePower, float lukStat)
 		{
-			float useMin = MinMagnitude * (1f + 0.01f * lukStat);
+			float useMin = MinMagnitude * (1f + magnitudePower / 10f);
 			float useMax = MaxMagnitude * magnitudePower;
 			float randomMag = (useMin + Main.rand.NextFloat() * (useMax - useMin));
 			return randomMag * MagnitudeStrength;
