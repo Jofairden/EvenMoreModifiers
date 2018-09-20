@@ -37,10 +37,16 @@ namespace Loot.UI
 			// @todo track cube tier as well
 			// after cube is slotted, count total number
 
-			int stack = Main.LocalPlayer.inventory
+			// .Take 58 because 59th slot is MouseItem for some reason.
+			int stack = Main.LocalPlayer.inventory.Take(58)
 				.Where(x => x.type == item.type)
 				.Select(x => x.stack)
 				.Sum();
+
+			if (Main.mouseItem?.type == item.type)
+			{
+				stack += Main.mouseItem.stack;
+			}
 
 			stack = (int)MathHelper.Clamp(stack, 0f, 999f);
 

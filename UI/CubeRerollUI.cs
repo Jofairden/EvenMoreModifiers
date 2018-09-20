@@ -124,18 +124,21 @@ namespace Loot.UI
 
 		private bool MatchesRerollRequirements()
 		{
-			return _rerollItemPanel != null
+			bool match = _rerollItemPanel != null
 				   && _cubePanel != null
 				   && !_rerollItemPanel.item.IsAir && !_cubePanel.item.IsAir
 				   && _rerollItemPanel.CanTakeItem(_rerollItemPanel.item)
 				   && _cubePanel.CanTakeItem(_cubePanel.item)
 				   && !EMMItem.GetItemInfo(_rerollItemPanel.item).SealedModifiers;
+
+			bool hasItem = Main.LocalPlayer.inventory.Any(x => x.type == _cubePanel.item.type)
+			               || (Main.mouseItem?.type == _cubePanel?.item?.type);
+
+			return match && hasItem;
 		}
 
 		private void RerollModifierPool(Item newItem)
 		{
-			// Roll new pool
-			// @todo different rolling options
 			ModifierContext ctx = new ModifierContext
 			{
 				Method = ModifierContextMethod.OnCubeReroll,
@@ -185,13 +188,27 @@ namespace Loot.UI
 				UpdateModifierLines();
 				Main.PlaySound(SoundID.Item37, -1, -1);
 
+				bool checkMouse = true;
 				// Remove stack from player's inventory
-				foreach (Item item in Main.LocalPlayer.inventory)
+				// .Take 58 because 59th slot is MouseItem for some reason.
+				foreach (Item item in Main.LocalPlayer.inventory.Take(58))
 				{
 					if (item.type == _cubePanel.item.type)
 					{
+						checkMouse = false;
 						item.stack--;
 						break;
+					}
+				}
+
+				if (checkMouse)
+				{
+					// This check should be redundant; otherwise we should never have reached this point
+					//if (Main.mouseItem?.type == _cubePanel.item.type)
+					Main.mouseItem.stack--;
+					if (Main.mouseItem.stack <= 0)
+					{
+						Main.mouseItem.TurnToAir();
 					}
 				}
 
