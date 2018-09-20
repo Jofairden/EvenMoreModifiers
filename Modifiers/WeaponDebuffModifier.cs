@@ -56,7 +56,7 @@ namespace Loot.Modifiers
 
 		public override ModifierProperties GetModifierProperties(Item item)
 		{
-			return base.GetModifierProperties(item).Set(minMagnitude: Math.Max(5, Math.Min(20, item.damage)), maxMagnitude: item.damage > 800 ? 100f : 50f);
+			return base.GetModifierProperties(item).Set(minMagnitude: 5f, maxMagnitude: 12.5f, roundPrecision: 1);
 		}
 
 		public abstract int BuffType { get; }

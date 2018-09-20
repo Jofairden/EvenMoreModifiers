@@ -1,4 +1,4 @@
-﻿using Loot.Core;
+using Loot.Core;
 using Microsoft.Xna.Framework;
 using Terraria;
 
@@ -13,7 +13,7 @@ namespace Loot.Modifiers.WeaponModifiers
 
 		public override ModifierProperties GetModifierProperties(Item item)
 		{
-			return base.GetModifierProperties(item).Set(maxMagnitude: 20f);
+			return base.GetModifierProperties(item).Set(maxMagnitude: 10f);
 		}
 
 		public override bool CanRoll(ModifierContext ctx)

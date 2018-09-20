@@ -1,4 +1,4 @@
-﻿using Loot.Core;
+using Loot.Core;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -77,10 +77,5 @@ namespace Loot.Modifiers.WeaponModifiers
 		public override int BuffType => BuffPairs[_index].BuffType;
 		public override int BuffTime => BuffPairs[_index].BuffTime;
 		public override float BuffInflictionChance => BuffPairs[_index].InflictionChance;
-
-		public override ModifierProperties GetModifierProperties(Item item)
-		{
-			return base.GetModifierProperties(item).Set(rollChance: _len);
-		}
 	}
 }

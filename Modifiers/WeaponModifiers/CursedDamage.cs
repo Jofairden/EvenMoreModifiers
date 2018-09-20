@@ -41,7 +41,7 @@ namespace Loot.Modifiers.WeaponModifiers
 
 		public override ModifierProperties GetModifierProperties(Item item)
 		{
-			return base.GetModifierProperties(item).Set(minMagnitude: 16f, maxMagnitude: 30f, uniqueRoll: true);
+			return base.GetModifierProperties(item).Set(minMagnitude: 5f, maxMagnitude: 15f, uniqueRoll: true);
 		}
 
 		public override bool CanRoll(ModifierContext ctx)
