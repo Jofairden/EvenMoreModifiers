@@ -79,6 +79,14 @@
     <Compile Include="Core\Cubes\MagicalCube.cs" />
     <Compile Include="Core\Attributes\DelegationPrioritizationAttribute.cs" />
     <Compile Include="Core\Attributes\UsesEffectAttribute.cs" />
+    <Compile Include="Core\Graphics\GlowmaskEntity.cs" />
+    <Compile Include="Core\Graphics\GlowmaskGlobalItem.cs" />
+    <Compile Include="Core\Graphics\GraphicsEntity.cs" />
+    <Compile Include="Core\Graphics\GraphicsUtils.cs" />
+    <Compile Include="Core\Graphics\ShaderDrawLayer.cs" />
+    <Compile Include="Core\Graphics\ShaderDrawOffsetStyle.cs" />
+    <Compile Include="Core\Graphics\ShaderEntity.cs" />
+    <Compile Include="Core\Graphics\ShaderGlobalItem.cs" />
     <Compile Include="Core\ModContent\AutoloadModContent.cs" />
     <Compile Include="Core\ModContent\ContentManager.cs" />
     <Compile Include="Core\ModContent\ModContent.cs" />

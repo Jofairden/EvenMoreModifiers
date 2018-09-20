@@ -76,13 +76,12 @@ namespace Loot
 
 				if (WingSlotLoaded)
 				{
-					// Currently irrelevant: only controls the slot manually and not right click
 					//wingSlotMod.Call("add", (Func<bool>)(
 					//	() =>
 					//	{
-					//		if (CubeInterface.CurrentState == null) return true;
+					//		if (CubeInterface.CurrentState == null) return false;
 					//		// ReSharper disable once PossibleNullReferenceException
-					//		return !(CubeInterface.CurrentState as CubeUI)?.Visible ?? true;
+					//		return (CubeInterface.CurrentState as CubeUI)?.Visible ?? false;
 					//	}));
 				}
 			}

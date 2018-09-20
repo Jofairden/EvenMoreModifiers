@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Reflection;
+using Loot.Core.Graphics;
 using Terraria;
 using Terraria.ModLoader;
 using Terraria.ModLoader.IO;
@@ -17,6 +18,9 @@ namespace Loot.Core
 	/// </summary>
 	public abstract class Modifier : GlobalItem, ICloneable
 	{
+		public virtual GlowmaskEntity GetGlowmaskEntity(Item item) => null;
+		public virtual ShaderEntity GetShaderEntity(Item item) => null;
+
 		public Mod Mod { get; internal set; }
 		public uint Type { get; internal set; }
 		public new virtual string Name => GetType().Name;

@@ -1,7 +1,10 @@
-﻿using Loot.Core;
+using Loot.Core;
 using Microsoft.Xna.Framework;
 using System;
+using Loot.Core.Graphics;
 using Terraria;
+using Terraria.Graphics.Shaders;
+using Terraria.ID;
 
 namespace Loot.Modifiers.WeaponModifiers
 {
@@ -26,5 +29,19 @@ namespace Loot.Modifiers.WeaponModifiers
 		{
 			crit = (int)Math.Min(100, crit + Properties.RoundedPower);
 		}
+
+		//public override ShaderEntity GetShaderEntity(Item item)
+		//{
+		//	return new ShaderEntity(item,
+		//		GameShaders.Armor.GetShaderIdFromItemId(ItemID.MirageDye),
+		//		drawLayer: ShaderDrawLayer.Middle,
+		//		drawOffsetStyle: ShaderDrawOffsetStyle.Alternate,
+		//		shaderDrawColor: Color.IndianRed);
+		//}
+
+		//public override GlowmaskEntity GetGlowmaskEntity(Item item)
+		//{
+		//	return new GlowmaskEntity(item);
+		//}
 	}
 }
