@@ -2,6 +2,7 @@ using Loot.Core;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using System.Collections.ObjectModel;
+using System.Linq;
 using Terraria;
 using Terraria.ModLoader;
 using Terraria.Utilities;
@@ -18,6 +19,25 @@ namespace Loot
 		/// Specific usecase see CursedEffect and modifier
 		/// </summary>
 		public bool IsActivated { get; internal set; }
+
+		public bool IsVanityActivated { get; internal set; }
+
+		private bool IsInVanitySot(Item item, Player player)
+		{
+			return player.armor.Skip(13).Any(x => x.IsTheSameAs(item));
+		}
+
+		public override void UpdateAccessory(Item item, Player player, bool hideVisual)
+		{
+			if (IsInVanitySot(item, player))
+				IsVanityActivated = true;
+		}
+
+		public override void UpdateEquip(Item item, Player player)
+		{
+			if (IsInVanitySot(item, player))
+				IsVanityActivated = true;
+		}
 
 		public static ActivatedModifierItem Item(Item item) => item.GetGlobalItem<ActivatedModifierItem>();
 	}

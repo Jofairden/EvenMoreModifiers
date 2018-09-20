@@ -48,6 +48,7 @@ namespace Loot.Modifiers
 
 		private Item _oldHeldItem;
 		private Item[] _oldEquips;
+		private Item[] _oldVanityEquips;
 		private bool _forceEquipUpdate;
 		private Item[] _oldCheatSheetEquips;
 		internal bool Ready;
@@ -59,6 +60,7 @@ namespace Loot.Modifiers
 		{
 			_oldHeldItem = null;
 			_oldEquips = new Item[8];
+			_oldVanityEquips = new Item[8];
 			_forceEquipUpdate = false;
 			_oldCheatSheetEquips = new Item[6]; // MaxExtraAccessories = 6
 			_modifierEffects = new List<Type>();
@@ -238,7 +240,7 @@ namespace Loot.Modifiers
 			return tempList;
 		}
 
-		public override void PreUpdate()
+		public override void PostUpdate()
 		{
 			// If our equips cache is not the right size we resize it and force an update
 			if (_oldEquips.Length != 8 + player.extraAccessorySlots)
@@ -246,6 +248,13 @@ namespace Loot.Modifiers
 				Ready = false;
 				_forceEquipUpdate = true;
 				Array.Resize(ref _oldEquips, 8 + player.extraAccessorySlots);
+			}
+
+			if (_oldVanityEquips.Length != 8 + player.extraAccessorySlots)
+			{
+				Ready = false;
+				_forceEquipUpdate = true;
+				Array.Resize(ref _oldVanityEquips, 8 + player.extraAccessorySlots);
 			}
 
 			_detachList.Clear();
@@ -258,6 +267,7 @@ namespace Loot.Modifiers
 			{
 				UpdateCheatSheetCache();
 			}
+			UpdateVanityCache();
 
 			UpdateAttachments();
 
@@ -275,6 +285,42 @@ namespace Loot.Modifiers
 		{
 			ActivatedModifierItem.Item(item).IsActivated = true;
 			_attachList.Add(new AutoDelegationEntry(item, modifier));
+		}
+
+		private void UpdateVanityCache()
+		{
+			// vanity
+			for (int i = 13; i < 18 + player.extraAccessorySlots; i++)
+			{
+				var oldEquip = _oldVanityEquips[i - 13];
+				var newEquip = player.armor[i];
+
+				// If equip slot needs an update
+				if (_forceEquipUpdate || oldEquip == null || newEquip.IsNotTheSameAs(oldEquip))
+				{
+					Ready = false;
+
+					// detach old first
+					if (oldEquip != null && !oldEquip.IsAir && ActivatedModifierItem.Item(oldEquip).IsVanityActivated)
+					{
+						foreach (Modifier m in EMMItem.GetActivePool(oldEquip))
+						{
+							AddDetachItem(oldEquip, m);
+						}
+					}
+
+					// attach new
+					if (newEquip != null && !newEquip.IsAir && ActivatedModifierItem.Item(newEquip).IsVanityActivated)
+					{
+						foreach (Modifier m in EMMItem.GetActivePool(newEquip))
+						{
+							AddAttachItem(newEquip, m);
+						}
+					}
+
+					_oldVanityEquips[i - 13] = newEquip;
+				}
+			}
 		}
 
 		private void UpdateHeldItemCache()
@@ -407,6 +453,11 @@ namespace Loot.Modifiers
 				.Select((x, i) => new { Value = x, Index = i })
 				.Any(x => _oldEquips[x.Index] != null && x.Value.IsNotTheSameAs(_oldEquips[x.Index]));
 
+			// vanity, processed if hijacked to activate (antisocial)
+			anyDifferentEquip &= player.armor.Skip(13)
+				.Select((x, i) => new { Value = x, Index = i })
+				.Any(x => _oldVanityEquips[x.Index] != null && x.Value.IsNotTheSameAs(_oldVanityEquips[x.Index]));
+
 			// Only recache if needed, so check if there are changes
 			if (_forceEquipUpdate || (_oldHeldItem != null && _oldHeldItem.IsNotTheSameAs(player.HeldItem))
 								  || anyDifferentEquip)
@@ -422,7 +473,19 @@ namespace Loot.Modifiers
 					}
 				}
 
-				if (player.HeldItem != null && !player.HeldItem.IsAir)
+				// vanity
+				for (int k = 13; k < 18 + player.extraAccessorySlots; k++)
+				{
+					var equip = player.armor[k];
+					if (equip != null
+						&& !equip.IsAir
+						&& ActivatedModifierItem.Item(equip).IsVanityActivated)
+					{
+						CacheItemModifierEffects(equip);
+					}
+				}
+
+				if (player.HeldItem != null && !player.HeldItem.IsAir && player.HeldItem.IsWeapon())
 				{
 					CacheItemModifierEffects(player.HeldItem);
 				}
