@@ -1,5 +1,9 @@
 var NAVTREEINDEX2 =
 {
+"class_loot_1_1_core_1_1_modifier_effect.html#a7ce37bf18aef1379287fae1d9a810dc5":[9,0,0,0,7,8],
+"class_loot_1_1_core_1_1_modifier_effect.html#a7e8f94da423bc7b55fb9ba27bb25409d":[9,0,0,0,7,3],
+"class_loot_1_1_core_1_1_modifier_effect.html#abada6e901317f85d3a24fcbb5f228448":[9,0,0,0,7,11],
+"class_loot_1_1_core_1_1_modifier_effect.html#ace04e5ac6607065ced0e4de450e366a1":[9,0,0,0,7,7],
 "class_loot_1_1_core_1_1_modifier_effect.html#ad9ceda95b872c5afa88756ac3e2e88ae":[9,0,0,0,7,5],
 "class_loot_1_1_core_1_1_modifier_effect.html#ae49082963086e70f4e5b96de0eeb3011":[9,0,0,0,7,10],
 "class_loot_1_1_core_1_1_modifier_pool.html":[9,0,0,0,8],
@@ -245,9 +249,5 @@ var NAVTREEINDEX2 =
 "class_loot_1_1_modifier_player.html#ae0a74b968fa28a63cf57f96eb5067534":[9,0,0,13,10],
 "class_loot_1_1_modifier_player.html#ae508e6647350f479c05d39aa6ffc9d6a":[9,0,0,13,30],
 "class_loot_1_1_modifier_player.html#af61a3c0c3d1c1b32d511ba28c561cfd9":[9,0,0,13,41],
-"class_loot_1_1_modifier_player.html#afaaf469b766a16529a1a06aefc3a05ce":[9,0,0,13,2],
-"class_loot_1_1_modifier_player.html#aff931e8f289adca19fe875bffae50349":[9,0,0,13,22],
-"class_loot_1_1_modifier_player.html#affa674cbd4a730bfe5e58639e82bfa5f":[9,0,0,13,39],
-"class_loot_1_1_modifier_projectile.html":[9,0,0,14],
-"class_loot_1_1_modifier_projectile.html#a017f1f3f503ff96548f9ac4ee93c9374":[9,0,0,14,19]
+"class_loot_1_1_modifier_player.html#afaaf469b766a16529a1a06aefc3a05ce":[9,0,0,13,2]
 };

@@ -42,10 +42,10 @@ var NAVTREEINDEX =
 [
 "_accessory_modifier_8cs.html",
 "_velocity_plus_8cs.html",
-"class_loot_1_1_core_1_1_modifier_effect.html#ad9ceda95b872c5afa88756ac3e2e88ae",
-"class_loot_1_1_modifier_projectile.html#a0a2325b6c34a59e0d70e476461ad5a37",
-"class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_cursed_effect.html#a1aba0c690fd70e3f2594312641f779b2",
-"functions_func_g.html"
+"class_loot_1_1_core_1_1_modifier_effect.html#a7ce37bf18aef1379287fae1d9a810dc5",
+"class_loot_1_1_modifier_player.html#aff931e8f289adca19fe875bffae50349",
+"class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_cursed_damage.html",
+"functions_f.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

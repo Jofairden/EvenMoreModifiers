@@ -17,5 +17,7 @@ var searchData=
   ['roll',['Roll',['../class_loot_1_1_core_1_1_modifier.html#a763c03f5557483be406b732f3346bdc3',1,'Loot.Core.Modifier.Roll()'],['../class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_damage_plus_daytime.html#ad64ee24ee84ceb423ed585b459296d49',1,'Loot.Modifiers.WeaponModifiers.DamagePlusDaytime.Roll()'],['../class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_random_debuff.html#ab0e283a0342c8d70069e523f8a6ca82f',1,'Loot.Modifiers.WeaponModifiers.RandomDebuff.Roll()']]],
   ['rollmagnitude',['RollMagnitude',['../class_loot_1_1_core_1_1_modifier_properties.html#a33ef3ef486bed81de1b01d48ec085f12',1,'Loot::Core::ModifierProperties']]],
   ['rollmagnitudeandpower',['RollMagnitudeAndPower',['../class_loot_1_1_core_1_1_modifier_properties.html#adebb5bb9175310e42937c71d3434bcdd',1,'Loot.Core.ModifierProperties.RollMagnitudeAndPower()'],['../class_loot_tests_1_1_modifier_properties_tests_1_1_fake_properties.html#a8d8f3b5c08fe993eea79598ef392d4a9',1,'LootTests.ModifierPropertiesTests.FakeProperties.RollMagnitudeAndPower()']]],
-  ['rollpower',['RollPower',['../class_loot_1_1_core_1_1_modifier_properties.html#af3f62c3b3bf4a16f027c7412c9e77895',1,'Loot::Core::ModifierProperties']]]
+  ['rollpower',['RollPower',['../class_loot_1_1_core_1_1_modifier_properties.html#af3f62c3b3bf4a16f027c7412c9e77895',1,'Loot::Core::ModifierProperties']]],
+  ['rolltimescalefactor',['RollTimeScaleFactor',['../class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_random_debuff.html#ac33528dedb0dc00afb03cf11b97ebe34',1,'Loot::Modifiers::WeaponModifiers::RandomDebuff']]],
+  ['roundedbufftime',['RoundedBuffTime',['../class_loot_1_1_modifiers_1_1_weapon_debuff_modifier.html#a0df39113fe1c2b674da6df63bba9d338',1,'Loot::Modifiers::WeaponDebuffModifier']]]
 ];

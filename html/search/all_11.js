@@ -37,6 +37,8 @@ var searchData=
   ['rollnextchance',['RollNextChance',['../class_loot_1_1_core_1_1_cubes_1_1_item_roll_properties.html#a1f78e78cc145196a4276869d2a78edea',1,'Loot::Core::Cubes::ItemRollProperties']]],
   ['rollpower',['RollPower',['../class_loot_1_1_core_1_1_modifier_properties.html#af3f62c3b3bf4a16f027c7412c9e77895',1,'Loot::Core::ModifierProperties']]],
   ['rollpredefinedpoolchance',['RollPredefinedPoolChance',['../class_loot_1_1_core_1_1_cubes_1_1_item_roll_properties.html#adff74defdf66c4a15bd37bbea2fd0474',1,'Loot::Core::Cubes::ItemRollProperties']]],
+  ['rolltimescalefactor',['RollTimeScaleFactor',['../class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_random_debuff.html#ac33528dedb0dc00afb03cf11b97ebe34',1,'Loot::Modifiers::WeaponModifiers::RandomDebuff']]],
+  ['roundedbufftime',['RoundedBuffTime',['../class_loot_1_1_modifiers_1_1_weapon_debuff_modifier.html#a0df39113fe1c2b674da6df63bba9d338',1,'Loot::Modifiers::WeaponDebuffModifier']]],
   ['roundedpower',['RoundedPower',['../class_loot_1_1_core_1_1_modifier_properties.html#aad1248c4b9d93588c95f938194263d63',1,'Loot::Core::ModifierProperties']]],
   ['roundprecision',['RoundPrecision',['../class_loot_1_1_core_1_1_modifier_properties.html#a85144ad5bbdae2fe2233872b9c823fca',1,'Loot::Core::ModifierProperties']]]
 ];
