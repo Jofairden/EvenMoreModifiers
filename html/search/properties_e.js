@@ -1,5 +1,7 @@
 var searchData=
 [
-  ['tooltiplines',['TooltipLines',['../class_loot_1_1_core_1_1_modifier.html#ae7900d2d4372dd4cad7fa1bc31365c19',1,'Loot::Core::Modifier']]],
-  ['type',['Type',['../class_loot_1_1_core_1_1_modifier.html#a43c8a722d14f06ae5a0fd42a88c6aa5b',1,'Loot.Core.Modifier.Type()'],['../class_loot_1_1_core_1_1_modifier_effect.html#abada6e901317f85d3a24fcbb5f228448',1,'Loot.Core.ModifierEffect.Type()'],['../class_loot_1_1_core_1_1_modifier_pool.html#af88a65f7b71f0847b99e8ce03018f530',1,'Loot.Core.ModifierPool.Type()'],['../class_loot_1_1_core_1_1_modifier_rarity.html#a9bb4e6a9bcbfa674257d725299ad85dc',1,'Loot.Core.ModifierRarity.Type()']]]
+  ['shaderid',['ShaderId',['../class_loot_1_1_core_1_1_graphics_1_1_shader_entity.html#af3178e0c3a9e21d67adbac5784868513',1,'Loot::Core::Graphics::ShaderEntity']]],
+  ['shadertexture',['ShaderTexture',['../class_loot_1_1_core_1_1_graphics_1_1_shader_entity.html#a37f75b16109d2a87be3d539946c4609f',1,'Loot::Core::Graphics::ShaderEntity']]],
+  ['slotteditem',['SlottedItem',['../class_loot_1_1_u_i_1_1_cube_u_i.html#aa94139c7efeeec4ad4608525644b2d66',1,'Loot::UI::CubeUI']]],
+  ['subjecttexture',['SubjectTexture',['../class_loot_1_1_core_1_1_graphics_1_1_shader_entity.html#ae8102468326add7d0821d2b2ed46d041',1,'Loot::Core::Graphics::ShaderEntity']]]
 ];

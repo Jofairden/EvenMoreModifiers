@@ -26,6 +26,8 @@ var searchData=
   ['transcendentrarity',['TranscendentRarity',['../class_loot_1_1_rarities_1_1_transcendent_rarity.html',1,'Loot::Rarities']]],
   ['transcendentrarity_2ecs',['TranscendentRarity.cs',['../_transcendent_rarity_8cs.html',1,'']]],
   ['trydodge',['TryDodge',['../class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_defensive_1_1_dodge_effect.html#a9838f177b670b8f6fb6a90defaaae0b4',1,'Loot::Modifiers::EquipModifiers::Defensive::DodgeEffect']]],
+  ['trygettingdrawdata',['TryGettingDrawData',['../class_loot_1_1_core_1_1_graphics_1_1_shader_entity.html#a9fa7699b4168fc6ce464cc9e360e02c8',1,'Loot::Core::Graphics::ShaderEntity']]],
   ['trysealingslotteditem',['TrySealingSlottedItem',['../class_loot_1_1_u_i_1_1_cube_seal_u_i.html#a9afe71adcd6d100f6986c53ecc85a206',1,'Loot::UI::CubeSealUI']]],
+  ['tryupdatingdrawdata',['TryUpdatingDrawData',['../class_loot_1_1_core_1_1_graphics_1_1_shader_entity.html#a0cd73bf2549a934eda8f256e1eaaded2',1,'Loot::Core::Graphics::ShaderEntity']]],
   ['type',['Type',['../class_loot_1_1_core_1_1_modifier.html#a43c8a722d14f06ae5a0fd42a88c6aa5b',1,'Loot.Core.Modifier.Type()'],['../class_loot_1_1_core_1_1_modifier_effect.html#abada6e901317f85d3a24fcbb5f228448',1,'Loot.Core.ModifierEffect.Type()'],['../class_loot_1_1_core_1_1_modifier_pool.html#af88a65f7b71f0847b99e8ce03018f530',1,'Loot.Core.ModifierPool.Type()'],['../class_loot_1_1_core_1_1_modifier_rarity.html#a9bb4e6a9bcbfa674257d725299ad85dc',1,'Loot.Core.ModifierRarity.Type()']]]
 ];

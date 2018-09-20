@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['late',['Late',['../namespace_loot_1_1_core_1_1_attributes.html#ac51e8c3bfabd3413fe3be5ba253c1b8fad9359722ca1b596c94882e47ad970cb5',1,'Loot::Core::Attributes']]]
+  ['default',['Default',['../namespace_loot_1_1_core_1_1_graphics.html#a4d61ed486cee189a9ed5ea9ba0272c43a7a1920d61156abc05a60135aefe8bc67',1,'Loot::Core::Graphics']]]
 ];

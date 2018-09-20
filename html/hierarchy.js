@@ -16,6 +16,8 @@ var hierarchy =
       [ "Loot.ActivatedModifierItem", "class_loot_1_1_activated_modifier_item.html", null ],
       [ "Loot.ArmorItemHack", "class_loot_1_1_armor_item_hack.html", null ],
       [ "Loot.Core.Cubes.CubeUIExtensions", "class_loot_1_1_core_1_1_cubes_1_1_cube_u_i_extensions.html", null ],
+      [ "Loot.Core.Graphics.GlowmaskGlobalItem", "class_loot_1_1_core_1_1_graphics_1_1_glowmask_global_item.html", null ],
+      [ "Loot.Core.Graphics.ShaderGlobalItem", "class_loot_1_1_core_1_1_graphics_1_1_shader_global_item.html", null ],
       [ "Loot.Core.Modifier", "class_loot_1_1_core_1_1_modifier.html", [
         [ "Loot.Modifiers.AccessoryModifier", "class_loot_1_1_modifiers_1_1_accessory_modifier.html", null ],
         [ "Loot.Modifiers.ArmorModifier", "class_loot_1_1_modifiers_1_1_armor_modifier.html", null ],
@@ -76,6 +78,11 @@ var hierarchy =
     [ "GlobalProjectile", "class_global_projectile.html", [
       [ "Loot.ModifierProjectile", "class_loot_1_1_modifier_projectile.html", null ]
     ] ],
+    [ "Loot.Core.Graphics.GraphicsEntity", "class_loot_1_1_core_1_1_graphics_1_1_graphics_entity.html", [
+      [ "Loot.Core.Graphics.GlowmaskEntity", "class_loot_1_1_core_1_1_graphics_1_1_glowmask_entity.html", null ],
+      [ "Loot.Core.Graphics.ShaderEntity", "class_loot_1_1_core_1_1_graphics_1_1_shader_entity.html", null ]
+    ] ],
+    [ "Loot.Core.Graphics.GraphicsUtils", "class_loot_1_1_core_1_1_graphics_1_1_graphics_utils.html", null ],
     [ "ICloneable", "class_i_cloneable.html", [
       [ "Loot.Core.Modifier", "class_loot_1_1_core_1_1_modifier.html", null ],
       [ "Loot.Core.ModifierEffect", "class_loot_1_1_core_1_1_modifier_effect.html", [

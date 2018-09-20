@@ -92,6 +92,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <ul class="tablist">
       <li><a href="functions_func.html#index__"><span>_</span></a></li>
       <li><a href="functions_func_a.html#index_a"><span>a</span></a></li>
+      <li><a href="functions_func_b.html#index_b"><span>b</span></a></li>
       <li><a href="functions_func_c.html#index_c"><span>c</span></a></li>
       <li><a href="functions_func_d.html#index_d"><span>d</span></a></li>
       <li><a href="functions_func_e.html#index_e"><span>e</span></a></li>
@@ -162,14 +163,23 @@ $(document).ready(function(){initNavTree('functions_func_g.html','');});
 <li>GetContent&lt; T &gt;()
 : <a class="el" href="class_loot_1_1_core_1_1_mod_content_1_1_content_manager.html#a0adfbb21aea6283b0332425be81c821a">Loot.Core.ModContent.ContentManager</a>
 </li>
+<li>GetDrawOffset()
+: <a class="el" href="class_loot_1_1_core_1_1_graphics_1_1_shader_entity.html#a4f34e1aae8ba83cd2bf41edeff5b857a">Loot.Core.Graphics.ShaderEntity</a>
+</li>
 <li>GetEffect()
 : <a class="el" href="class_loot_1_1_modifier_player.html#a3e4b8a428276fb0205e9c0f166435bf0">Loot.ModifierPlayer</a>
 </li>
 <li>GetEffect&lt; T &gt;()
 : <a class="el" href="class_loot_1_1_modifier_player.html#a95637ae457f1b1be2fd2ef9cf9b77cac">Loot.ModifierPlayer</a>
 </li>
+<li>GetFrameRectangle()
+: <a class="el" href="class_loot_1_1_core_1_1_graphics_1_1_glowmask_entity.html#a6d248a7b0ac056dc92fc90b6b1d028ac">Loot.Core.Graphics.GlowmaskEntity</a>
+</li>
 <li>GetFrom()
 : <a class="el" href="class_loot_1_1_core_1_1_mod_content_1_1_mod_content.html#a96bb90e3585c57c4dca4fe03c714bd18">Loot.Core.ModContent.ModContent</a>
+</li>
+<li>GetGlowmaskEntity()
+: <a class="el" href="class_loot_1_1_core_1_1_modifier.html#ab9b9888e5629e1c23a8885d4ec5120f9">Loot.Core.Modifier</a>
 </li>
 <li>GetGlowmaskTexture()
 : <a class="el" href="class_loot_1_1_core_1_1_mod_content_1_1_mod_graphics_content.html#a5d9f8a50d83cb65df56d96247d901baf">Loot.Core.ModContent.ModGraphicsContent</a>
@@ -182,7 +192,7 @@ $(document).ready(function(){initNavTree('functions_func_g.html','');});
 </li>
 <li>GetModifier()
 : <a class="el" href="class_loot_1_1_core_1_1_modifier.html#a928b772a8bb1be63c89ee2c702573e1a">Loot.Core.Modifier</a>
-, <a class="el" href="class_loot_1_1_e_m_m_loader.html#a3dfc6ab4c42b38a1fa332b9da92f5a29">Loot.EMMLoader</a>
+, <a class="el" href="class_loot_1_1_e_m_m_loader.html#aca32952e13350506ed4b155e5ebfe6b9">Loot.EMMLoader</a>
 </li>
 <li>GetModifierClasses()
 : <a class="el" href="class_loot_1_1_core_1_1_attributes_1_1_populate_pool_from_attribute.html#aeb8ec33f1fbfba07b312f8c1798d6c0d">Loot.Core.Attributes.PopulatePoolFromAttribute</a>
@@ -245,7 +255,7 @@ $(document).ready(function(){initNavTree('functions_func_g.html','');});
 </li>
 <li>GetModifierRarity()
 : <a class="el" href="class_loot_1_1_core_1_1_modifier_rarity.html#a332c3a51bfae2590afa413304248064a">Loot.Core.ModifierRarity</a>
-, <a class="el" href="class_loot_1_1_e_m_m_loader.html#adce4ee5e8a7b009cc1442bbbf83bcfbe">Loot.EMMLoader</a>
+, <a class="el" href="class_loot_1_1_e_m_m_loader.html#a0f7e122ccd94a1c02b4788f0cda47479">Loot.EMMLoader</a>
 </li>
 <li>GetNewEffectInstance()
 : <a class="el" href="class_loot_1_1_e_m_m_loader.html#aab5f1125d8357b3fd488e5ed1983a5ea">Loot.EMMLoader</a>
@@ -272,6 +282,9 @@ $(document).ready(function(){initNavTree('functions_func_g.html','');});
 <li>GetRolledIndex()
 : <a class="el" href="class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_random_debuff.html#a397d3a64474f03a8adf50b1f9a96baa4">Loot.Modifiers.WeaponModifiers.RandomDebuff</a>
 </li>
+<li>GetShaderEntity()
+: <a class="el" href="class_loot_1_1_core_1_1_modifier.html#ace5315a06de3c699a0a01b319b069bce">Loot.Core.Modifier</a>
+</li>
 <li>GetShaderTexture()
 : <a class="el" href="class_loot_1_1_core_1_1_mod_content_1_1_mod_graphics_content.html#ab5c5054d405f67b58e28065633742cb0">Loot.Core.ModContent.ModGraphicsContent</a>
 </li>
@@ -295,11 +308,17 @@ $(document).ready(function(){initNavTree('functions_func_g.html','');});
 : <a class="el" href="class_loot_1_1_modifier_item.html#a2f82df446aad3cac24f2fbe246dc4c76">Loot.ModifierItem</a>
 , <a class="el" href="class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_knockback_plus.html#ae48ee8465a88687760f649a0eff292aa">Loot.Modifiers.WeaponModifiers.KnockbackPlus</a>
 </li>
+<li>GlowmaskEntity()
+: <a class="el" href="class_loot_1_1_core_1_1_graphics_1_1_glowmask_entity.html#ad7c3929d405d1d1f3793e13c6b19de8e">Loot.Core.Graphics.GlowmaskEntity</a>
+</li>
 <li>GrabRange()
 : <a class="el" href="class_loot_1_1_modifier_item.html#a9bc53e38540c40a55012e2ce8c722d33">Loot.ModifierItem</a>
 </li>
 <li>GrabStyle()
 : <a class="el" href="class_loot_1_1_modifier_item.html#a10f489224ee2e607320d6041458af91e">Loot.ModifierItem</a>
+</li>
+<li>GraphicsEntity()
+: <a class="el" href="class_loot_1_1_core_1_1_graphics_1_1_graphics_entity.html#ad705cb236ad15fbee542b1dc70ca4d08">Loot.Core.Graphics.GraphicsEntity</a>
 </li>
 </ul>
 </div><!-- contents -->

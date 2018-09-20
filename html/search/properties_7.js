@@ -1,7 +1,6 @@
 var searchData=
 [
-  ['initialized',['Initialized',['../class_loot_1_1_e_m_m_world.html#afa44d6920b7a7c946892d010b63467a2',1,'Loot::EMMWorld']]],
-  ['isactivated',['IsActivated',['../class_loot_1_1_activated_modifier_item.html#a0df38c30d670976ae033ac28631bda9b',1,'Loot::ActivatedModifierItem']]],
-  ['isbeingdelegated',['IsBeingDelegated',['../class_loot_1_1_core_1_1_modifier_effect.html#a378c15ad886d581c25bb12ada1c57886',1,'Loot::Core::ModifierEffect']]],
-  ['item',['Item',['../class_loot_1_1_modifiers_1_1_auto_delegation_entry.html#abcfc2a1b6a8bbc904199f41750691fdb',1,'Loot::Modifiers::AutoDelegationEntry']]]
+  ['hintonhover',['HintOnHover',['../class_loot_1_1_u_i_1_1_u_i_item_panel.html#a6fa2d1d6b2bf3621e5fbaebebb577f21',1,'Loot::UI::UIItemPanel']]],
+  ['hinttext',['HintText',['../class_loot_1_1_u_i_1_1_u_i_item_panel.html#a9e2f6185ca8e8b48f781bcfb8783fef6',1,'Loot::UI::UIItemPanel']]],
+  ['hinttexture',['HintTexture',['../class_loot_1_1_u_i_1_1_u_i_item_panel.html#aee1e275185d71d0f43d6c3637baf5462',1,'Loot::UI::UIItemPanel']]]
 ];

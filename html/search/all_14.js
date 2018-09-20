@@ -45,6 +45,7 @@ var searchData=
   ['updateusedamage',['UpdateUseDamage',['../class_loot_1_1_modifiers_1_1_weapon_modifier.html#a669438a07451c8e82d514ede19fbda22',1,'Loot::Modifiers::WeaponModifier']]],
   ['updateuseknockback',['UpdateUseKnockback',['../class_loot_1_1_modifiers_1_1_weapon_modifier.html#ab0668c8452692232348e87640f26e5f2',1,'Loot::Modifiers::WeaponModifier']]],
   ['updatevanityset',['UpdateVanitySet',['../class_loot_1_1_core_1_1_modifier.html#a7586d6ad32852d75b3c9bcd0ce5e08b9',1,'Loot::Core::Modifier']]],
+  ['usedestinationrectangle',['UseDestinationRectangle',['../class_loot_1_1_core_1_1_graphics_1_1_glowmask_entity.html#af7020a69eb429863b27a4756a8594258',1,'Loot.Core.Graphics.GlowmaskEntity.UseDestinationRectangle()'],['../class_loot_1_1_core_1_1_graphics_1_1_shader_entity.html#a7f6c5ffe180de6c6c9c61dd6e3c8736d',1,'Loot.Core.Graphics.ShaderEntity.UseDestinationRectangle()']]],
   ['useitem',['UseItem',['../class_loot_1_1_modifier_item.html#af65d8ff03bdd3e646f7134776fd1f50a',1,'Loot::ModifierItem']]],
   ['useitemframe',['UseItemFrame',['../class_loot_1_1_modifier_item.html#abfeebb338abc0a01597cd2d1aa8fe922',1,'Loot::ModifierItem']]],
   ['useitemhitbox',['UseItemHitbox',['../class_loot_1_1_modifier_item.html#a89035daaf7dc6517e68117e072af40d3',1,'Loot::ModifierItem']]],

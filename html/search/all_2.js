@@ -1,6 +1,8 @@
 var searchData=
 [
+  ['back',['Back',['../namespace_loot_1_1_core_1_1_graphics.html#ab9bc623e11f3c37b99846ba9daf478d0a0557fa923dcee4d0f86b1409f5c2167f',1,'Loot::Core::Graphics']]],
   ['basepower',['BasePower',['../class_loot_1_1_core_1_1_modifier_properties.html#a603b1a2e292e806f50c4fca241a324ce',1,'Loot.Core.ModifierProperties.BasePower()'],['../interface_loot_tests_1_1_modifier_properties_tests_1_1_i_fake_properties.html#a9642ba6920d2cd36f73b0bd298181571',1,'LootTests.ModifierPropertiesTests.IFakeProperties.BasePower()'],['../class_loot_tests_1_1_modifier_properties_tests_1_1_fake_properties.html#a12173010bee876e88d0b3d6516b6ff1f',1,'LootTests.ModifierPropertiesTests.FakeProperties.BasePower()']]],
+  ['beginshaderbatch',['BeginShaderBatch',['../class_loot_1_1_core_1_1_graphics_1_1_graphics_utils.html#a0d065dd34cf05e1e7a434ca1eb7b61cb',1,'Loot::Core::Graphics::GraphicsUtils']]],
   ['blackcube',['BlackCube',['../class_loot_1_1_core_1_1_cubes_1_1_black_cube.html',1,'Loot::Core::Cubes']]],
   ['blackcube_2ecs',['BlackCube.cs',['../_black_cube_8cs.html',1,'']]],
   ['bonusimmunitytime',['BonusImmunityTime',['../class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_defensive_1_1_immunity_effect.html#a96631e6c6e19cbd3d000f6b54467ce58',1,'Loot::Modifiers::EquipModifiers::Defensive::ImmunityEffect']]],

@@ -1,6 +1,7 @@
 var searchData=
 [
   ['icloneable',['ICloneable',['../class_i_cloneable.html',1,'']]],
+  ['identity',['Identity',['../class_loot_1_1_core_1_1_graphics_1_1_graphics_entity.html#a16e9d23fd60b5720a25452ea1c79e791',1,'Loot::Core::Graphics::GraphicsEntity']]],
   ['ifakemod',['IFakeMod',['../interface_loot_tests_1_1_i_fake_mod.html',1,'LootTests']]],
   ['ifakeproperties',['IFakeProperties',['../interface_loot_tests_1_1_modifier_properties_tests_1_1_i_fake_properties.html',1,'LootTests::ModifierPropertiesTests']]],
   ['immunity',['Immunity',['../class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_defensive_1_1_immunity_effect.html#aafd522ee7bcc6710cede2c86c606ab77',1,'Loot::Modifiers::EquipModifiers::Defensive::ImmunityEffect']]],
