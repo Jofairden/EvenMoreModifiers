@@ -16,7 +16,11 @@ Massive thanks to thegamemaster1234 for migrating a lot of already existing modi
 Thanks chicken-bones for some great insights and help with designing the systems behind-the-scenes for this mod! It truly makes the mod work as well as it does, thanks!
 
 # Changelogs
-To see changelogs: [https://hackmd.io/s/HkYOPaynf](https://hackmd.io/s/HkYOPaynf)
+To see changelogs: [https://headwayapp.co/even-more-modifiers-changelog]()
+
+Documentation: [https://evenmoremodifiers.readthedocs.io/en/latest/]()
+
+Automated Doxygen documentation: [https://jofairden.github.io/EvenMoreModifiers/html/index.html]()
 
 # Download
 Download on browser: [http://javid.ddns.net/tModLoader/download.php?Down=mods/Loot.tmod](http://javid.ddns.net/tModLoader/download.php?Down=mods/Loot.tmod)
