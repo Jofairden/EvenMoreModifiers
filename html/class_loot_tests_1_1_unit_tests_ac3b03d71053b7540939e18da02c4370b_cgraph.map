@@ -1,0 +1,17 @@
+<map id="LootTests.UnitTests.LogEMMLoaderEntries" name="LootTests.UnitTests.LogEMMLoaderEntries">
+<area shape="rect" id="node2" href="$class_loot_1_1_loot.html#a52ae642436e92b43a15d0a0ebbb9b25f" title="Loot.Loot.Load" alt="" coords="350,64,458,91"/>
+<area shape="rect" id="node3" href="$class_loot_1_1_e_m_m_loader.html#a31bf6b74bad44144e6dc7c312f6d0a30" title="Registers specified mod, enabling autoloading for that mod " alt="" coords="569,13,767,40"/>
+<area shape="rect" id="node5" href="$class_loot_1_1_e_m_m_loader.html#a273f95fe314eaa95ee729d8b63933a11" title="Sets up content for the specified mod " alt="" coords="565,115,771,141"/>
+<area shape="rect" id="node14" href="$class_loot_1_1_e_m_m_loader.html#abea328c9556511ac57ec4e628b4b7831" title="Requests all ModifierPools, and returns them as a readonly collection " alt="" coords="294,166,514,207"/>
+<area shape="rect" id="node15" href="$class_loot_1_1_e_m_m_loader.html#a6de2ca346bb74dd008921652925b73fe" title="Requests all ModifierRarities, and returns them as a readonly collection " alt="" coords="294,231,514,273"/>
+<area shape="rect" id="node16" href="$class_loot_1_1_e_m_m_loader.html#a67f922e6f493468abc1df2edbe7b2c15" title="Requests all Modifiers, and returns them as a readonly collection " alt="" coords="291,297,517,324"/>
+<area shape="rect" id="node4" href="$class_loot_1_1_core_1_1_modifier_pool.html#a05a9f5490a1bde6705e765a34655a698" title="Allows modders to do custom cloning Happens after default cloning " alt="" coords="846,5,1039,32"/>
+<area shape="rect" id="node6" href="$class_loot_1_1_e_m_m_loader.html#a1f25a4b5a9a00702918e3729ba331d8f" title="Autoloads a Modifier " alt="" coords="831,56,1054,83"/>
+<area shape="rect" id="node8" href="$class_loot_1_1_e_m_m_loader.html#aa10c2b8bd76a3fc1e011f7f1290d4911" title="Autoloads a ModifierEffect " alt="" coords="831,107,1054,149"/>
+<area shape="rect" id="node10" href="$class_loot_1_1_e_m_m_loader.html#a96fd118b85c32da5a676ccf2cc85199c" title="Autoloads a ModifierPool " alt="" coords="819,173,1067,200"/>
+<area shape="rect" id="node12" href="$class_loot_1_1_e_m_m_loader.html#adc7ec41170ca716e9acf23ebad25c214" title="Autoloads a rarity " alt="" coords="831,225,1054,266"/>
+<area shape="rect" id="node7" href="$class_loot_1_1_e_m_m_loader.html#a2ecc3b528fdd9d9d4b00c15a88a28e9f" title="Adds a Modifier " alt="" coords="1128,56,1323,83"/>
+<area shape="rect" id="node9" href="$class_loot_1_1_e_m_m_loader.html#a68afc15692d739076aefee294d82c988" title="Adds a ModifierEffect " alt="" coords="1128,107,1323,149"/>
+<area shape="rect" id="node11" href="$class_loot_1_1_e_m_m_loader.html#ab808dd8a441727c47528fee4e053e6f3" title="Adds a ModifierPool " alt="" coords="1115,173,1335,200"/>
+<area shape="rect" id="node13" href="$class_loot_1_1_e_m_m_loader.html#aea4024cbe77f724e598b668f93af4d86" title="Adds a rarity " alt="" coords="1128,225,1323,266"/>
+</map>

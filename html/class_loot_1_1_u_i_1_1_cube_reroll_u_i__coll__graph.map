@@ -1,0 +1,12 @@
+<map id="Loot.UI.CubeRerollUI" name="Loot.UI.CubeRerollUI">
+<area shape="rect" id="node2" href="$class_loot_1_1_u_i_1_1_cube_u_i.html" title="CubeUI" alt="" coords="905,145,972,172"/>
+<area shape="rect" id="node3" href="$class_loot_1_1_u_i_1_1_draggable_u_i_state.html" title="A UIState which primarily goal is to provide dragging on click functionality to the main panel The dr..." alt="" coords="543,115,670,141"/>
+<area shape="rect" id="node4" href="$class_loot_1_1_u_i_1_1_visibility_u_i.html" title="A UIState which primarily goal is to provide easy visibility toggling " alt="" coords="296,64,381,91"/>
+<area shape="rect" id="node5" href="$class_u_i_state.html" title="UIState" alt="" coords="29,51,96,77"/>
+<area shape="rect" id="node15" href="$class_loot_1_1_u_i_1_1_u_i_interactable_item_panel.html" title="UIInteractableItemPanel" alt="" coords="525,252,688,279"/>
+<area shape="rect" id="node16" href="$class_loot_1_1_u_i_1_1_u_i_item_panel.html" title="UIItemPanel" alt="" coords="291,356,386,383"/>
+<area shape="rect" id="node18" href="$class_loot_1_1_u_i_1_1_u_i_modifier_panel.html" title="Loot.UI.UIModifierPanel" alt="" coords="257,604,420,631"/>
+<area shape="rect" id="node11" href="$class_loot_1_1_core_1_1_cubes_1_1_item_roll_properties.html" title="Defines properties that will be used when an item is being rolled These can interact with the rolling..." alt="" coords="851,482,1026,523"/>
+<area shape="rect" id="node14" href="$class_loot_1_1_u_i_1_1_u_i_cube_item_panel.html" title="Loot.UI.UICubeItemPanel" alt="" coords="852,224,1025,251"/>
+<area shape="rect" id="node17" href="$class_loot_1_1_u_i_1_1_u_i_reroll_item_panel.html" title="Loot.UI.UIRerollItemPanel" alt="" coords="851,275,1027,301"/>
+</map>

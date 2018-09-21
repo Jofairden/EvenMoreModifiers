@@ -1,0 +1,4 @@
+<map id="Loot.UI.UISealItemPanel" name="Loot.UI.UISealItemPanel">
+<area shape="rect" id="node2" href="$class_loot_1_1_u_i_1_1_u_i_interactable_item_panel.html" title="UIInteractableItemPanel" alt="" coords="8,155,171,181"/>
+<area shape="rect" id="node3" href="$class_loot_1_1_u_i_1_1_u_i_item_panel.html" title="UIItemPanel" alt="" coords="42,80,136,107"/>
+</map>

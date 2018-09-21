@@ -1,0 +1,7 @@
+<map id="Loot.UI.CubeUI" name="Loot.UI.CubeUI">
+<area shape="rect" id="node5" href="$class_loot_1_1_u_i_1_1_cube_reroll_u_i.html" title="A UIState that provides the ability to reroll an item&#39;s modifier " alt="" coords="5,304,152,331"/>
+<area shape="rect" id="node6" href="$class_loot_1_1_u_i_1_1_cube_seal_u_i.html" title="Loot.UI.CubeSealUI" alt="" coords="177,304,316,331"/>
+<area shape="rect" id="node2" href="$class_loot_1_1_u_i_1_1_draggable_u_i_state.html" title="A UIState which primarily goal is to provide dragging on click functionality to the main panel The dr..." alt="" coords="99,155,225,181"/>
+<area shape="rect" id="node3" href="$class_loot_1_1_u_i_1_1_visibility_u_i.html" title="A UIState which primarily goal is to provide easy visibility toggling " alt="" coords="120,80,205,107"/>
+<area shape="rect" id="node4" href="$class_u_i_state.html" title="UIState" alt="" coords="129,5,196,32"/>
+</map>

@@ -1,0 +1,8 @@
+<map id="Loot.ActivatedModifierItem.Item" name="Loot.ActivatedModifierItem.Item">
+<area shape="rect" id="node2" href="$class_loot_1_1_modifiers_1_1_modifier_cache_player.html#a88d35d241149142c0d5d4215802de05a" title="Loot.Modifiers.ModifierCache\lPlayer.AddAttachItem" alt="" coords="272,5,464,46"/>
+<area shape="rect" id="node3" href="$class_loot_1_1_modifiers_1_1_modifier_cache_player.html#a44f084fbd5dc8a5959f76772fc8d4346" title="Loot.Modifiers.ModifierCache\lPlayer.AddDetachItem" alt="" coords="272,70,464,111"/>
+<area shape="rect" id="node4" href="$class_loot_1_1_modifiers_1_1_modifier_cache_player.html#a510c560600f3a4a88cf6a2e0c8610f24" title="Loot.Modifiers.ModifierCache\lPlayer.CacheModifierEffects" alt="" coords="272,135,464,177"/>
+<area shape="rect" id="node5" href="$class_loot_1_1_activated_modifier_item.html#abb2bf22119b44d0f510356c4c978438a" title="Loot.ActivatedModifierItem.\lUpdateEquip" alt="" coords="277,201,459,242"/>
+<area shape="rect" id="node6" href="$class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_cursed_damage.html#a6cf676c3234850fcdabfff5890111d7c" title="Loot.Modifiers.WeaponModifiers.\lCursedDamage.UpdateInventory" alt="" coords="261,266,475,307"/>
+<area shape="rect" id="node7" href="$class_loot_1_1_modifiers_1_1_modifier_cache_player.html#a92d08de2ff17bfee72fae07a64edaa24" title="Loot.Modifiers.ModifierCache\lPlayer.UpdateVanityCache" alt="" coords="272,331,464,373"/>
+</map>

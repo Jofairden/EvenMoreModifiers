@@ -1,0 +1,5 @@
+<map id="Loot.ModifierProjectile.HealthyBonus" name="Loot.ModifierProjectile.HealthyBonus">
+<area shape="rect" id="node2" href="$class_loot_1_1_modifier_projectile.html#a4ba8e2eb4213b5136bb56c24d17a3dc4" title="Loot.ModifierProjectile.\lModifyHitNPC" alt="" coords="208,5,363,46"/>
+<area shape="rect" id="node3" href="$class_loot_1_1_modifier_projectile.html#a1672e51591f2ae82246c49b58473efe0" title="Loot.ModifierProjectile.\lModifyHitPlayer" alt="" coords="208,70,363,111"/>
+<area shape="rect" id="node4" href="$class_loot_1_1_modifier_projectile.html#a6b30a3083556ccba59fb584d188c9476" title="Loot.ModifierProjectile.\lModifyHitPvp" alt="" coords="208,135,363,177"/>
+</map>

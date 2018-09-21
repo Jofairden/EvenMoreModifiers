@@ -1,0 +1,4 @@
+<map id="Loot.Modifiers.EquipModifiers.Defensive.ManaShieldEffect" name="Loot.Modifiers.EquipModifiers.Defensive.ManaShieldEffect">
+<area shape="rect" id="node2" href="$class_loot_1_1_core_1_1_modifier_effect.html" title="A ModifierEffect signifies the effect of a modifier on a player It should house the implementation..." alt="" coords="53,80,155,107"/>
+<area shape="rect" id="node3" href="$class_i_cloneable.html" title="ICloneable" alt="" coords="62,5,145,32"/>
+</map>

@@ -1,0 +1,4 @@
+<map id="Loot.UI.CubeRerollUI.OnRerollClick" name="Loot.UI.CubeRerollUI.OnRerollClick">
+<area shape="rect" id="node2" href="$class_loot_1_1_e_m_m_item.html#a7788b69f28ba9809f56f6ebc6c7a7b7f" title="Loot.EMMItem.GetItemInfo" alt="" coords="256,5,437,32"/>
+<area shape="rect" id="node3" href="$class_loot_1_1_u_i_1_1_u_i_cube_item_panel.html#ae87cca17542e744cae96f592ed211c33" title="Loot.UI.UICubeItemPanel.\lInteractionLogic" alt="" coords="258,57,435,98"/>
+</map>

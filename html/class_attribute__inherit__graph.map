@@ -1,0 +1,7 @@
+<map id="Attribute" name="Attribute">
+<area shape="rect" id="node2" href="$class_loot_1_1_core_1_1_attributes_1_1_auto_delegation.html" title="This attribute may be used to skip usage of AttachDelegations and DetachDelegations Which is a cumber..." alt="" coords="145,5,316,46"/>
+<area shape="rect" id="node3" href="$class_loot_1_1_core_1_1_attributes_1_1_delegation_prioritization_attribute.html" title="This attribute is used to set a custom prioritization for a delegation It allows you to customize at ..." alt="" coords="128,70,333,111"/>
+<area shape="rect" id="node4" href="$class_loot_1_1_core_1_1_attributes_1_1_populate_pool_from_attribute.html" title="Loot.Core.Attributes.Populate\lPoolFromAttribute" alt="" coords="133,135,328,177"/>
+<area shape="rect" id="node5" href="$class_loot_1_1_core_1_1_attributes_1_1_uses_effect_attribute.html" title="This attribute is used to attach a certain Modifier to given ModifierEffects (can be attached to more..." alt="" coords="143,201,318,242"/>
+<area shape="rect" id="node6" href="$class_loot_1_1_core_1_1_mod_content_1_1_autoload_mod_content.html" title="Loot.Core.ModContent.Autoload\lModContent" alt="" coords="126,266,335,307"/>
+</map>

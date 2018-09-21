@@ -1,0 +1,10 @@
+<map id="Loot.EMMLoader.SetupContent" name="Loot.EMMLoader.SetupContent">
+<area shape="rect" id="node2" href="$class_loot_1_1_e_m_m_loader.html#a1f25a4b5a9a00702918e3729ba331d8f" title="Autoloads a Modifier " alt="" coords="271,5,494,32"/>
+<area shape="rect" id="node4" href="$class_loot_1_1_e_m_m_loader.html#aa10c2b8bd76a3fc1e011f7f1290d4911" title="Autoloads a ModifierEffect " alt="" coords="271,57,494,98"/>
+<area shape="rect" id="node6" href="$class_loot_1_1_e_m_m_loader.html#a96fd118b85c32da5a676ccf2cc85199c" title="Autoloads a ModifierPool " alt="" coords="259,123,507,149"/>
+<area shape="rect" id="node8" href="$class_loot_1_1_e_m_m_loader.html#adc7ec41170ca716e9acf23ebad25c214" title="Autoloads a rarity " alt="" coords="271,174,494,215"/>
+<area shape="rect" id="node3" href="$class_loot_1_1_e_m_m_loader.html#a2ecc3b528fdd9d9d4b00c15a88a28e9f" title="Adds a Modifier " alt="" coords="568,5,763,32"/>
+<area shape="rect" id="node5" href="$class_loot_1_1_e_m_m_loader.html#a68afc15692d739076aefee294d82c988" title="Adds a ModifierEffect " alt="" coords="568,57,763,98"/>
+<area shape="rect" id="node7" href="$class_loot_1_1_e_m_m_loader.html#ab808dd8a441727c47528fee4e053e6f3" title="Adds a ModifierPool " alt="" coords="555,123,775,149"/>
+<area shape="rect" id="node9" href="$class_loot_1_1_e_m_m_loader.html#aea4024cbe77f724e598b668f93af4d86" title="Adds a rarity " alt="" coords="568,174,763,215"/>
+</map>
