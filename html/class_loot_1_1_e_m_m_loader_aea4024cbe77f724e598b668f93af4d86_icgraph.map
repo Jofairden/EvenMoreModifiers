@@ -1,5 +1,0 @@
-<map id="Loot.EMMLoader.AddModifierRarity" name="Loot.EMMLoader.AddModifierRarity">
-<area shape="rect" id="node2" href="$class_loot_1_1_e_m_m_loader.html#adc7ec41170ca716e9acf23ebad25c214" title="Autoloads a rarity " alt="" coords="249,5,471,46"/>
-<area shape="rect" id="node3" href="$class_loot_1_1_e_m_m_loader.html#a3c5412f1d3008556acda094772af6c25" title="Returns the ModifierEffect specified by type, null if not present " alt="" coords="520,5,712,46"/>
-<area shape="rect" id="node4" href="$class_loot_1_1_core_1_1_modifier_effect.html#a7e8f94da423bc7b55fb9ba27bb25409d" title="Loot.Core.ModifierEffect.\lClone" alt="" coords="760,5,928,46"/>
-</map>

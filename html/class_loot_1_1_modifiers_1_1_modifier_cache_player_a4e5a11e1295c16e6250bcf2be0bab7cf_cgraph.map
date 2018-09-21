@@ -1,5 +1,0 @@
-<map id="Loot.Modifiers.ModifierCachePlayer.UpdateAttachments" name="Loot.Modifiers.ModifierCachePlayer.UpdateAttachments">
-<area shape="rect" id="node2" href="$class_loot_1_1_core_1_1_attributes_1_1_auto_delegation.html#ab877e4fb083e9213c22844827de2d01c" title="Loot.Core.Attributes.Auto\lDelegation.Attach" alt="" coords="248,5,419,46"/>
-<area shape="rect" id="node3" href="$class_loot_1_1_core_1_1_attributes_1_1_auto_delegation.html#a1221719faf290300b2513ed6b60d8a96" title="Loot.Core.Attributes.Auto\lDelegation.Detach" alt="" coords="248,70,419,111"/>
-<area shape="rect" id="node4" href="$class_loot_1_1_modifier_player.html#aae3e56a930507049c3b282b29fece4f1" title="Loot.ModifierPlayer.Player" alt="" coords="246,136,421,163"/>
-</map>

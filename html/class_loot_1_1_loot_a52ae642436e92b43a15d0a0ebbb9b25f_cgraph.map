@@ -1,4 +1,0 @@
-<map id="Loot.Loot.Load" name="Loot.Loot.Load">
-<area shape="rect" id="node2" href="$class_loot_1_1_e_m_m_loader.html#a31bf6b74bad44144e6dc7c312f6d0a30" title="Registers specified mod, enabling autoloading for that mod " alt="" coords="163,5,362,32"/>
-<area shape="rect" id="node3" href="$class_loot_1_1_core_1_1_modifier_pool.html#a05a9f5490a1bde6705e765a34655a698" title="Allows modders to do custom cloning Happens after default cloning " alt="" coords="411,5,605,32"/>
-</map>

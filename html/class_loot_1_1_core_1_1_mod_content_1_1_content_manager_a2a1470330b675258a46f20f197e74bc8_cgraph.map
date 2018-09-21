@@ -1,5 +1,0 @@
-<map id="Loot.Core.ModContent.ContentManager.AddContent" name="Loot.Core.ModContent.ContentManager.AddContent">
-<area shape="rect" id="node2" href="$class_loot_1_1_core_1_1_mod_content_1_1_mod_content.html#adbc80bdb99ab48a1b0af669ae1ebadd5" title="Loot.Core.ModContent.Mod\lContent._Initialize" alt="" coords="259,5,442,46"/>
-<area shape="rect" id="node3" href="$class_loot_1_1_core_1_1_mod_content_1_1_mod_content.html#a637121c5670c48a031ed2df389e37e5e" title="Loot.Core.ModContent.Mod\lContent._Load" alt="" coords="259,70,442,111"/>
-<area shape="rect" id="node4" href="$class_loot_1_1_core_1_1_mod_content_1_1_mod_content.html#ae1a04169b89dfe72c562837b2ba6bb5d" title="Loot.Core.ModContent.Mod\lContent.GetRegistryKey" alt="" coords="259,135,442,177"/>
-</map>

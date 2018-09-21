@@ -1,5 +1,0 @@
-<map id="Loot.Modifiers.ModifierCachePlayer.CacheItemModifierEffects" name="Loot.Modifiers.ModifierCachePlayer.CacheItemModifierEffects">
-<area shape="rect" id="node2" href="$class_loot_1_1_e_m_m_item.html#a0dc962c1a313ea02e94a891920703963" title="Loot.EMMItem.GetActivePool" alt="" coords="270,5,466,32"/>
-<area shape="rect" id="node3" href="$class_loot_1_1_modifier_player.html#a3e4b8a428276fb0205e9c0f166435bf0" title="Loot.ModifierPlayer.GetEffect" alt="" coords="271,56,465,83"/>
-<area shape="rect" id="node4" href="$class_loot_1_1_modifier_player.html#aae3e56a930507049c3b282b29fece4f1" title="Loot.ModifierPlayer.Player" alt="" coords="281,107,455,133"/>
-</map>

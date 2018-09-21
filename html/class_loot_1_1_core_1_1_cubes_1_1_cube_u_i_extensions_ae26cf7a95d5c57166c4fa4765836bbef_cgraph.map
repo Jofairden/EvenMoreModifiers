@@ -1,4 +1,0 @@
-<map id="Loot.Core.Cubes.CubeUIExtensions.SwapItemSlot" name="Loot.Core.Cubes.CubeUIExtensions.SwapItemSlot">
-<area shape="rect" id="node2" href="$class_loot_1_1_u_i_1_1_u_i_interactable_item_panel.html#aa27f85d9e005f293ba4495c7874cbc4e" title="Loot.UI.UIInteractableItem\lPanel.CanTakeItem" alt="" coords="295,5,473,46"/>
-<area shape="rect" id="node3" href="$class_loot_1_1_e_m_m_item.html#a7788b69f28ba9809f56f6ebc6c7a7b7f" title="Loot.EMMItem.GetItemInfo" alt="" coords="293,71,475,97"/>
-</map>

@@ -1,7 +1,0 @@
-<map id="Loot.Modifiers.EquipModifiers.Offensive.ThrownCritPlus" name="Loot.Modifiers.EquipModifiers.Offensive.ThrownCritPlus">
-<area shape="rect" id="node2" href="$class_loot_1_1_modifiers_1_1_equip_modifier.html" title="Defines a modifier that can roll on an accessory item or an armor item These modifiers will have 60% ..." alt="" coords="140,200,241,227"/>
-<area shape="rect" id="node3" href="$class_loot_1_1_core_1_1_modifier.html" title="Defines a modifier, which is an unloaded GlobalItem Making it a GlobalItem gives easy access to all h..." alt="" coords="157,109,224,136"/>
-<area shape="rect" id="node4" href="$class_global_item.html" title="GlobalItem" alt="" coords="5,5,91,32"/>
-<area shape="rect" id="node5" href="$class_i_cloneable.html" title="ICloneable" alt="" coords="115,5,199,32"/>
-<area shape="rect" id="node8" href="$struct_loot_1_1_core_1_1_modifier_tooltip_line.html" title="Defines a tooltip line of a modifier A modifier can have multiple lines " alt="" coords="265,200,457,227"/>
-</map>

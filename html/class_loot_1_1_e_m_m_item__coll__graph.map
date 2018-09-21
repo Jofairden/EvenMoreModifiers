@@ -1,6 +1,0 @@
-<map id="Loot.EMMItem" name="Loot.EMMItem">
-<area shape="rect" id="node2" href="$class_global_item.html" title="GlobalItem" alt="" coords="24,7,109,33"/>
-<area shape="rect" id="node10" href="$class_loot_1_1_core_1_1_modifier.html" title="Defines a modifier, which is an unloaded GlobalItem Making it a GlobalItem gives easy access to all h..." alt="" coords="339,200,469,227"/>
-<area shape="rect" id="node5" href="$class_loot_1_1_core_1_1_modifier_pool.html" title="Defines a modifier pool. A modifier pool holds a certain amount of effects in an array It allows to r..." alt="" coords="680,204,835,231"/>
-<area shape="rect" id="node6" href="$class_i_cloneable.html" title="ICloneable" alt="" coords="25,276,109,303"/>
-</map>

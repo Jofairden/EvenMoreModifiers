@@ -1,4 +1,0 @@
-<map id="Loot.Core.Cubes.CubeOfSealing" name="Loot.Core.Cubes.CubeOfSealing">
-<area shape="rect" id="node2" href="$class_loot_1_1_core_1_1_cubes_1_1_magical_cube.html" title="Defines a magical cube A magical cube is used to change modifiers on an item " alt="" coords="63,80,161,107"/>
-<area shape="rect" id="node3" href="$class_mod_item.html" title="ModItem" alt="" coords="75,5,148,32"/>
-</map>
