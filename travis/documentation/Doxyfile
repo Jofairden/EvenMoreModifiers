@@ -848,15 +848,15 @@ EXCLUDE_SYMLINKS       = NO
 # Note that the wildcards are matched against the file with absolute path, so to
 # exclude all test directories for example use the pattern */test/*
 
-EXCLUDE_PATTERNS       = */docs/*
-EXCLUDE_PATTERNS       += */.vs/*
-EXCLUDE_PATTERNS       += */.idea/*
-EXCLUDE_PATTERNS       += */.git/*
-EXCLUDE_PATTERNS       += */lib/*
-EXCLUDE_PATTERNS       += */packages/*
-EXCLUDE_PATTERNS       += */obj/*
-EXCLUDE_PATTERNS       += */travis/*
-EXCLUDE_PATTERNS       += */bin/*
+EXCLUDE_PATTERNS       = $(TRAVIS_BUILD_DIR)/docs/*
+EXCLUDE_PATTERNS       += $(TRAVIS_BUILD_DIR)/.vs/*
+EXCLUDE_PATTERNS       += $(TRAVIS_BUILD_DIR)/.idea/*
+EXCLUDE_PATTERNS       += $(TRAVIS_BUILD_DIR)/.git/*
+EXCLUDE_PATTERNS       += $(TRAVIS_BUILD_DIR)/lib/*
+EXCLUDE_PATTERNS       += $(TRAVIS_BUILD_DIR)/packages/*
+EXCLUDE_PATTERNS       += $(TRAVIS_BUILD_DIR)/obj/*
+EXCLUDE_PATTERNS       += $(TRAVIS_BUILD_DIR)/travis/*
+EXCLUDE_PATTERNS       += $(TRAVIS_BUILD_DIR)/bin/*
 
 # The EXCLUDE_SYMBOLS tag can be used to specify one or more symbol names
 # (namespaces, classes, functions, etc.) that should be excluded from the
