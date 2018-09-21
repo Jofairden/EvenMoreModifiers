@@ -57,7 +57,7 @@ namespace Loot.Modifiers.WeaponModifiers
 			// Showcase rolling a stat properly that previously wasn't present
 			if (tag.ContainsKey("_timeScaleFactor"))
 			{
-				_timeScaleFactor = tag.GetAsShort("timeScaleFactor");
+				_timeScaleFactor = tag.GetAsShort("_timeScaleFactor");
 				if (_timeScaleFactor <= 0f) RollTimeScaleFactor();
 			}
 			else

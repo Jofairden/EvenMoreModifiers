@@ -226,7 +226,7 @@ namespace Loot
 		/// <summary>
 		/// Sets up content for the specified mod
 		/// </summary>
-		internal static void SetupContent(Mod mod)
+		public static void SetupContent(Mod mod)
 		{
 			bool? b = mod.GetType().GetField("loading", BindingFlags.Instance | BindingFlags.NonPublic)?.GetValue(mod) as bool?;
 			if (b != null && !b.Value)
