@@ -78,11 +78,12 @@ namespace Loot
 
 		public override bool PreAI(Projectile projectile)
 		{
+			var mproj = Info(projectile);
 			// On first tick, copy over player stats
-			if (!FirstTick)
+			if (!mproj.FirstTick)
 			{
-				FirstTick = true;
-				var mproj = Info(projectile);
+				mproj.FirstTick = true;
+				
 				// Snapshot current player values
 				if (projectile.owner != 255 && projectile.friendly && projectile.owner == Main.myPlayer)
 				{
@@ -101,7 +102,6 @@ namespace Loot
 			}
 			if (NeedsClear)
 			{
-				var mproj = Info(projectile);
 				mproj.SNAPSHOT_HealthyFoesMulti = 1f;
 				mproj.SNAPSHOT_DebuffChances.Clear();
 			}
