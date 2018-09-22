@@ -1,5 +1,6 @@
 var NAVTREEINDEX4 =
 {
+"class_loot_1_1_modifiers_1_1_weapon_debuff_modifier.html#a4e1acfcbd7c8edb0b2bf8effebba7b7b":[2,0,0,1,10,3],
 "class_loot_1_1_modifiers_1_1_weapon_debuff_modifier.html#a6198f7d1193435bb0092b51314b920f5":[2,0,0,1,10,4],
 "class_loot_1_1_modifiers_1_1_weapon_debuff_modifier.html#a7002ee6e0ac3ca10ab191e61084903a0":[2,0,0,1,10,6],
 "class_loot_1_1_modifiers_1_1_weapon_debuff_modifier.html#a8b5bf73e06723ac9caedbea6229f8447":[2,0,0,1,10,7],
@@ -248,6 +249,5 @@ var NAVTREEINDEX4 =
 "dir_2731f67cbd17847a5d7864b3eb75caa3.html":[3,0,1,0],
 "dir_2e7c132c9b84ae8f3fa968598cfe2222.html":[3,0,0,1],
 "dir_39b9972f69123432ab2c3e40729b7fd5.html":[3,0,5],
-"dir_53ff6e473d46d4e442ba5a7ce9f895e3.html":[3,0,6],
-"dir_61da25df73ea9da347533d3c953e4c94.html":[3,0,2,0,2]
+"dir_53ff6e473d46d4e442ba5a7ce9f895e3.html":[3,0,6]
 };

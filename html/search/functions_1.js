@@ -8,6 +8,7 @@ var searchData=
   ['addmodifiereffect',['AddModifierEffect',['../class_loot_1_1_e_m_m_loader.html#a68afc15692d739076aefee294d82c988',1,'Loot::EMMLoader']]],
   ['addmodifierpool',['AddModifierPool',['../class_loot_1_1_e_m_m_loader.html#ab808dd8a441727c47528fee4e053e6f3',1,'Loot::EMMLoader']]],
   ['addmodifierrarity',['AddModifierRarity',['../class_loot_1_1_e_m_m_loader.html#aea4024cbe77f724e598b668f93af4d86',1,'Loot::EMMLoader']]],
+  ['addrecipes',['AddRecipes',['../class_loot_1_1_loot.html#a9afccc75e56292d043923bb41284083c',1,'Loot::Loot']]],
   ['addshadertexture',['AddShaderTexture',['../class_loot_1_1_core_1_1_mod_content_1_1_mod_graphics_content.html#aa6239656fff0287ba6524debb6359372',1,'Loot::Core::ModContent::ModGraphicsContent']]],
   ['addtexture',['AddTexture',['../class_loot_1_1_core_1_1_mod_content_1_1_mod_content.html#a17c2339c12e9009d991b547df7711965',1,'Loot::Core::ModContent::ModContent']]],
   ['addto',['AddTo',['../class_loot_1_1_core_1_1_mod_content_1_1_mod_content.html#adf436e7f369fe3deff72fb8af05417c0',1,'Loot::Core::ModContent::ModContent']]],
