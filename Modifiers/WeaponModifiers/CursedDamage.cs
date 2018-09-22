@@ -2,6 +2,7 @@ using Loot.Core;
 using Loot.Core.Attributes;
 using Microsoft.Xna.Framework;
 using System;
+using System.Linq;
 using Terraria;
 using Terraria.ID;
 
@@ -14,6 +15,22 @@ namespace Loot.Modifiers.WeaponModifiers
 		public override void ResetEffects(ModifierPlayer player)
 		{
 			CurseCount = 0;
+		}
+
+		[AutoDelegation("OnPostUpdateEquips")]
+		private void CurseHolding(ModifierPlayer player)
+		{
+			if (Main.mouseItem != null && !Main.mouseItem.IsAir && Main.mouseItem.IsWeapon())
+			{
+				if (ActivatedModifierItem.Item(Main.mouseItem).IsActivated)
+				{
+					int c = EMMItem.GetActivePool(Main.mouseItem).Count(x => x.GetType() == typeof(CursedDamage));
+					if (c > 0)
+					{
+						ModifierPlayer.Player(player.player).GetEffect<CursedEffect>().CurseCount += c;
+					}
+				}
+			}
 		}
 
 		[AutoDelegation("OnUpdateBadLifeRegen")]

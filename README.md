@@ -4,8 +4,6 @@ This mod adds an additional 'modifier' system for items, allowing them to roll m
 # Community Creation
 With the new system, you can easily create your own new modifiers. I highly suggest you take a look at some of the existing modifiers first, so you can get a feel for how the classes are laid out. You can also create your own rarities and pools. Pools are meant to roll 'themed' items, so for example a pool could only exist of frost- or ice-like effects and only roll on a specific set of themed items (winter event anyone?) My hope is that people come up with their own addition mods, that make full benefit of the new system by adding new pools, rarities and modifiers. Of course, existing mods can add as well, such as big content mods like Calamity or Thorium.
 
-How to make your own content is described in [this document](https://hackmd.io/s/Hy7uWULiG)
-
 # Credits
 Original creator of the mod: Hiccup251
 
@@ -15,12 +13,15 @@ Massive thanks to thegamemaster1234 for migrating a lot of already existing modi
 
 Thanks chicken-bones for some great insights and help with designing the systems behind-the-scenes for this mod! It truly makes the mod work as well as it does, thanks!
 
-# Changelogs
-To see changelogs: [https://headwayapp.co/even-more-modifiers-changelog]()
+# Useful links
 
-Documentation: [https://evenmoremodifiers.readthedocs.io/en/latest/]()
+How to make your own content is described in <https://evenmoremodifiers.readthedocs.io/en/latest/>
 
-Automated Doxygen documentation: [https://jofairden.github.io/EvenMoreModifiers/html/index.html]()
+Doxygen (always latest): <https://jofairden.github.io/EvenMoreModifiers/html/index.html>
+
+Doxygen (always last released version): <https://zond.tech/emm/doxygen/index.html>
+
+Website and changelog: <https://zond.tech/emm/>
 
 # Download
 Download on browser: [http://javid.ddns.net/tModLoader/download.php?Down=mods/Loot.tmod](http://javid.ddns.net/tModLoader/download.php?Down=mods/Loot.tmod)
