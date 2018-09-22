@@ -42,10 +42,6 @@ namespace Loot.Core.ModContent
 
 			modContent._Initialize();
 			_contents.Add(key, modContent);
-			if (Loot.Loaded)
-			{
-				modContent._Load();
-			}
 		}
 
 		internal void Initialize(Mod mod)

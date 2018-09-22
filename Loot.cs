@@ -87,15 +87,12 @@ namespace Loot
 					//	}));
 				}
 			}
-
-			Loaded = true;
 		}
 
 		private void SetupContentMgr()
 		{
 			ContentManager = new ContentManager();
 			ContentManager.Initialize(this);
-			ContentManager.Load();
 		}
 
 		private void SetupUIs()
@@ -107,6 +104,16 @@ namespace Loot
 			CubeSealUI.Activate();
 
 			CubeInterface = new UserInterface();
+		}
+
+		// AddRecipes() here functions as a PostLoad() hook where all mods have loaded
+		public override void AddRecipes()
+		{
+			if (!Main.dedServ)
+			{
+				ContentManager.Load();
+			}
+			Loaded = true;
 		}
 
 		public override void Unload()
