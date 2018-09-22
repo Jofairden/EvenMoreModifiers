@@ -39,6 +39,7 @@ var searchData=
   ['updateinventory',['UpdateInventory',['../class_loot_1_1_modifier_item.html#a7cafc985a7ba72ed4d83d95b427c7857',1,'Loot.ModifierItem.UpdateInventory()'],['../class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_cursed_damage.html#a6cf676c3234850fcdabfff5890111d7c',1,'Loot.Modifiers.WeaponModifiers.CursedDamage.UpdateInventory()']]],
   ['updateliferegen',['UpdateLifeRegen',['../class_loot_1_1_modifier_player.html#a8f9b5f9833c228f90be9c09e61b15372',1,'Loot::ModifierPlayer']]],
   ['updatemodifierlines',['UpdateModifierLines',['../class_loot_1_1_u_i_1_1_cube_reroll_u_i.html#af33b3106799529bb09d5cc2ce520d20c',1,'Loot::UI::CubeRerollUI']]],
+  ['updatemouseitemcache',['UpdateMouseItemCache',['../class_loot_1_1_modifiers_1_1_modifier_cache_player.html#a887f3b1a9829cd82f2cf3f0f4842cab7',1,'Loot::Modifiers::ModifierCachePlayer']]],
   ['updateshootspeed',['UpdateShootSpeed',['../class_loot_1_1_modifiers_1_1_weapon_modifier.html#a28c449ee5e5e712ff711c367a032d935',1,'Loot::Modifiers::WeaponModifier']]],
   ['updatetext',['UpdateText',['../class_loot_1_1_u_i_1_1_u_i_modifier_panel.html#a8c36a177f4c4ec0a1e91d981f10185c6',1,'Loot::UI::UIModifierPanel']]],
   ['updateui',['UpdateUI',['../class_loot_1_1_loot.html#a7f296a7c4a011faca07302cf350881ef',1,'Loot::Loot']]],
@@ -50,8 +51,8 @@ var searchData=
   ['useitem',['UseItem',['../class_loot_1_1_modifier_item.html#af65d8ff03bdd3e646f7134776fd1f50a',1,'Loot::ModifierItem']]],
   ['useitemframe',['UseItemFrame',['../class_loot_1_1_modifier_item.html#abfeebb338abc0a01597cd2d1aa8fe922',1,'Loot::ModifierItem']]],
   ['useitemhitbox',['UseItemHitbox',['../class_loot_1_1_modifier_item.html#a89035daaf7dc6517e68117e072af40d3',1,'Loot::ModifierItem']]],
-  ['useseffectattribute',['UsesEffectAttribute',['../class_loot_1_1_core_1_1_attributes_1_1_uses_effect_attribute.html',1,'Loot::Core::Attributes']]],
   ['useseffectattribute',['UsesEffectAttribute',['../class_loot_1_1_core_1_1_attributes_1_1_uses_effect_attribute.html#abcb21092ec20cf52b0a12857edbf39fb',1,'Loot::Core::Attributes::UsesEffectAttribute']]],
+  ['useseffectattribute',['UsesEffectAttribute',['../class_loot_1_1_core_1_1_attributes_1_1_uses_effect_attribute.html',1,'Loot::Core::Attributes']]],
   ['useseffectattribute_2ecs',['UsesEffectAttribute.cs',['../_uses_effect_attribute_8cs.html',1,'']]],
   ['usestyle',['UseStyle',['../class_loot_1_1_modifier_item.html#a060502b623db934d6c6205cc2119e969',1,'Loot::ModifierItem']]],
   ['usetimemultiplier',['UseTimeMultiplier',['../class_loot_1_1_modifier_item.html#a6a54068a1350356ab57c43aa76856e9c',1,'Loot::ModifierItem']]]

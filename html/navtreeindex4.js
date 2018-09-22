@@ -1,5 +1,9 @@
 var NAVTREEINDEX4 =
 {
+"class_loot_1_1_modifiers_1_1_weapon_debuff_modifier.html#a6198f7d1193435bb0092b51314b920f5":[2,0,0,1,10,4],
+"class_loot_1_1_modifiers_1_1_weapon_debuff_modifier.html#a7002ee6e0ac3ca10ab191e61084903a0":[2,0,0,1,10,6],
+"class_loot_1_1_modifiers_1_1_weapon_debuff_modifier.html#a8b5bf73e06723ac9caedbea6229f8447":[2,0,0,1,10,7],
+"class_loot_1_1_modifiers_1_1_weapon_debuff_modifier.html#a91d84cd30e0023bae36b8c9ae3d81154":[2,0,0,1,10,8],
 "class_loot_1_1_modifiers_1_1_weapon_debuff_modifier.html#aae52ec2ab87344e66049642c6bf3dcc5":[2,0,0,1,10,0],
 "class_loot_1_1_modifiers_1_1_weapon_debuff_modifier.html#ab975dfece367a8c70c11da89cfaeb5f8":[2,0,0,1,10,9],
 "class_loot_1_1_modifiers_1_1_weapon_debuff_modifier.html#ae7fa7c30e052a4e6e112f57b0d4a6441":[2,0,0,1,10,2],
@@ -26,9 +30,10 @@ var NAVTREEINDEX4 =
 "class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_cursed_damage.html#ab2fe88e6aaa820154f9ad9fb3c343a62":[2,0,0,1,1,2,2],
 "class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_cursed_damage.html#ab3d23d6acbfcff4d596e386007d58dae":[2,0,0,1,1,2,4],
 "class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_cursed_effect.html":[2,0,0,1,1,3],
-"class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_cursed_effect.html#a1aba0c690fd70e3f2594312641f779b2":[2,0,0,1,1,3,1],
+"class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_cursed_effect.html#a1aba0c690fd70e3f2594312641f779b2":[2,0,0,1,1,3,2],
 "class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_cursed_effect.html#a37bd163e1641ff85113daca8e82e62f1":[2,0,0,1,1,3,0],
-"class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_cursed_effect.html#a6290d1c8f6b4efb03fdf3ecafa6398b4":[2,0,0,1,1,3,2],
+"class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_cursed_effect.html#a6290d1c8f6b4efb03fdf3ecafa6398b4":[2,0,0,1,1,3,3],
+"class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_cursed_effect.html#a7dbd3c5248a667a59b8a0c49636696cb":[2,0,0,1,1,3,1],
 "class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_damage_plus.html":[2,0,0,1,1,4],
 "class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_damage_plus.html#a08a070f855f8a14a19a9a3f8e0ed3a5e":[2,0,0,1,1,4,2],
 "class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_damage_plus.html#aa6e1d863e0354af1c5eeba075f885018":[2,0,0,1,1,4,1],
@@ -244,10 +249,5 @@ var NAVTREEINDEX4 =
 "dir_2e7c132c9b84ae8f3fa968598cfe2222.html":[3,0,0,1],
 "dir_39b9972f69123432ab2c3e40729b7fd5.html":[3,0,5],
 "dir_53ff6e473d46d4e442ba5a7ce9f895e3.html":[3,0,6],
-"dir_61da25df73ea9da347533d3c953e4c94.html":[3,0,2,0,2],
-"dir_6686406fdcd57045962a74e4dfe2b4df.html":[3,0,1,3],
-"dir_7da2562c6888a2bb9ae6fd4aa28aaf28.html":[3,0,1],
-"dir_814b187b089445078ab778ddd0cecad8.html":[3,0,2,1],
-"dir_8232852bcbd60c76b3eb01f40ee29a4a.html":[3,0,3],
-"dir_8dd8eb461d94109997599ae02be02d05.html":[3,0,0,2]
+"dir_61da25df73ea9da347533d3c953e4c94.html":[3,0,2,0,2]
 };

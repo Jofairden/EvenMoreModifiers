@@ -23,6 +23,7 @@ var class_loot_1_1_modifier_item =
     [ "ItemSpace", "class_loot_1_1_modifier_item.html#ac2dda8804e59e7ae08d615dac53c265b", null ],
     [ "MeleeEffects", "class_loot_1_1_modifier_item.html#af463f4815c6b04b8c0f9ea9426af4b3f", null ],
     [ "MeleeSpeedMultiplier", "class_loot_1_1_modifier_item.html#ae8be3f25df77a1931c5fb1f3e00e53d0", null ],
+    [ "MItem", "class_loot_1_1_modifier_item.html#a585511eee10b561dcc8fddd89eda247e", null ],
     [ "ModifyHitNPC", "class_loot_1_1_modifier_item.html#a52a168ff89ef796f09c43763adeb4c61", null ],
     [ "ModifyHitPvp", "class_loot_1_1_modifier_item.html#a5d6185407cab03bf018c7eab05f323c2", null ],
     [ "NewPreReforge", "class_loot_1_1_modifier_item.html#a1c5b7a32a6569d6cb206290a30a4edab", null ],

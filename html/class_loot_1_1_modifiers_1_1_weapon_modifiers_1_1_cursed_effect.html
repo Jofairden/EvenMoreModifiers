@@ -176,6 +176,8 @@ Public Attributes</h2></td></tr>
 Private Member Functions</h2></td></tr>
 <tr class="memitem:a37bd163e1641ff85113daca8e82e62f1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_cursed_effect.html#a37bd163e1641ff85113daca8e82e62f1">Curse</a> (<a class="el" href="class_loot_1_1_modifier_player.html">ModifierPlayer</a> player)</td></tr>
 <tr class="separator:a37bd163e1641ff85113daca8e82e62f1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7dbd3c5248a667a59b8a0c49636696cb"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_cursed_effect.html#a7dbd3c5248a667a59b8a0c49636696cb">CurseHolding</a> (<a class="el" href="class_loot_1_1_modifier_player.html">ModifierPlayer</a> player)</td></tr>
+<tr class="separator:a7dbd3c5248a667a59b8a0c49636696cb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
@@ -194,7 +196,7 @@ Additional Inherited Members</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock">
-<p>Definition at line <a class="el" href="_cursed_damage_8cs_source.html#l00010">10</a> of file <a class="el" href="_cursed_damage_8cs_source.html">CursedDamage.cs</a>.</p>
+<p>Definition at line <a class="el" href="_cursed_damage_8cs_source.html#l00011">11</a> of file <a class="el" href="_cursed_damage_8cs_source.html">CursedDamage.cs</a>.</p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
 <a class="anchor" id="a37bd163e1641ff85113daca8e82e62f1"></a>
 <div class="memitem">
@@ -218,9 +220,53 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_cursed_damage_8cs_source.html#l00020">20</a> of file <a class="el" href="_cursed_damage_8cs_source.html">CursedDamage.cs</a>.</p>
-<div class="fragment"><div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;        {</div><div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;            <span class="keywordflow">if</span> (<a class="code" href="class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_cursed_effect.html#a6290d1c8f6b4efb03fdf3ecafa6398b4">CurseCount</a> &gt; 0 &amp;&amp; !player.player.buffImmune[BuffID.Cursed])</div><div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;            {</div><div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;                <span class="keywordflow">if</span> (player.player.lifeRegen &gt; 0)</div><div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;                {</div><div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;                    player.player.lifeRegen = 0;</div><div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;                }</div><div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;                player.player.lifeRegen -= 2 * <a class="code" href="class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_cursed_effect.html#a6290d1c8f6b4efb03fdf3ecafa6398b4">CurseCount</a>;</div><div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;                player.player.lifeRegenTime = 0;</div><div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;            }</div><div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        }</div><div class="ttc" id="class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_cursed_effect_html_a6290d1c8f6b4efb03fdf3ecafa6398b4"><div class="ttname"><a href="class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_cursed_effect.html#a6290d1c8f6b4efb03fdf3ecafa6398b4">Loot.Modifiers.WeaponModifiers.CursedEffect.CurseCount</a></div><div class="ttdeci">int CurseCount</div><div class="ttdef"><b>Definition:</b> <a href="_cursed_damage_8cs_source.html#l00012">CursedDamage.cs:12</a></div></div>
+<p>Definition at line <a class="el" href="_cursed_damage_8cs_source.html#l00037">37</a> of file <a class="el" href="_cursed_damage_8cs_source.html">CursedDamage.cs</a>.</p>
+<div class="fragment"><div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        {</div><div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;            <span class="keywordflow">if</span> (<a class="code" href="class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_cursed_effect.html#a6290d1c8f6b4efb03fdf3ecafa6398b4">CurseCount</a> &gt; 0 &amp;&amp; !player.player.buffImmune[BuffID.Cursed])</div><div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;            {</div><div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;                <span class="keywordflow">if</span> (player.player.lifeRegen &gt; 0)</div><div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;                {</div><div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;                    player.player.lifeRegen = 0;</div><div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;                }</div><div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;                player.player.lifeRegen -= 2 * <a class="code" href="class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_cursed_effect.html#a6290d1c8f6b4efb03fdf3ecafa6398b4">CurseCount</a>;</div><div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;                player.player.lifeRegenTime = 0;</div><div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;            }</div><div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        }</div><div class="ttc" id="class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_cursed_effect_html_a6290d1c8f6b4efb03fdf3ecafa6398b4"><div class="ttname"><a href="class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_cursed_effect.html#a6290d1c8f6b4efb03fdf3ecafa6398b4">Loot.Modifiers.WeaponModifiers.CursedEffect.CurseCount</a></div><div class="ttdeci">int CurseCount</div><div class="ttdef"><b>Definition:</b> <a href="_cursed_damage_8cs_source.html#l00013">CursedDamage.cs:13</a></div></div>
 </div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="a7dbd3c5248a667a59b8a0c49636696cb"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Loot.Modifiers.WeaponModifiers.CursedEffect.CurseHolding </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_loot_1_1_modifier_player.html">ModifierPlayer</a>&#160;</td>
+          <td class="paramname"><em>player</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_cursed_damage_8cs_source.html#l00021">21</a> of file <a class="el" href="_cursed_damage_8cs_source.html">CursedDamage.cs</a>.</p>
+
+<p>References <a class="el" href="class_loot_1_1_e_m_m_item.html#a0dc962c1a313ea02e94a891920703963">Loot.EMMItem.GetActivePool()</a>, <a class="el" href="_modifier_player_8cs_source.html#l00022">Loot.ModifierPlayer.GetEffect()</a>, <a class="el" href="_modifier_item_8cs_source.html#l00021">Loot.ActivatedModifierItem.IsActivated</a>, <a class="el" href="class_loot_1_1_activated_modifier_item.html#a6bb0485006eaaa1ab477c420abb67f15">Loot.ActivatedModifierItem.Item()</a>, and <a class="el" href="class_loot_1_1_modifier_player.html#aae3e56a930507049c3b282b29fece4f1">Loot.ModifierPlayer.Player()</a>.</p>
+<div class="fragment"><div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;        {</div><div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;            <span class="keywordflow">if</span> (Main.mouseItem != null &amp;&amp; !Main.mouseItem.IsAir &amp;&amp; Main.mouseItem.IsWeapon())</div><div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;            {</div><div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;                <span class="keywordflow">if</span> (ActivatedModifierItem.Item(Main.mouseItem).IsActivated)</div><div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;                {</div><div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;                    <span class="keywordtype">int</span> c = EMMItem.GetActivePool(Main.mouseItem).Count(x =&gt; x.GetType() == typeof(CursedDamage));</div><div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;                    <span class="keywordflow">if</span> (c &gt; 0)</div><div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;                    {</div><div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;                        ModifierPlayer.Player(player.player).GetEffect&lt;CursedEffect&gt;().<a class="code" href="class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_cursed_effect.html#a6290d1c8f6b4efb03fdf3ecafa6398b4">CurseCount</a> += c;</div><div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;                    }</div><div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;                }</div><div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;            }</div><div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        }</div><div class="ttc" id="class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_cursed_effect_html_a6290d1c8f6b4efb03fdf3ecafa6398b4"><div class="ttname"><a href="class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_cursed_effect.html#a6290d1c8f6b4efb03fdf3ecafa6398b4">Loot.Modifiers.WeaponModifiers.CursedEffect.CurseCount</a></div><div class="ttdeci">int CurseCount</div><div class="ttdef"><b>Definition:</b> <a href="_cursed_damage_8cs_source.html#l00013">CursedDamage.cs:13</a></div></div>
+</div><!-- fragment -->
+<p><div id="dynsection-2" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-2-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-2-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-2-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_cursed_effect_a7dbd3c5248a667a59b8a0c49636696cb_cgraph.png" border="0" usemap="#class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_cursed_effect_a7dbd3c5248a667a59b8a0c49636696cb_cgraph" alt=""/></div>
+<map name="class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_cursed_effect_a7dbd3c5248a667a59b8a0c49636696cb_cgraph" id="class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_cursed_effect_a7dbd3c5248a667a59b8a0c49636696cb_cgraph">
+<area shape="rect" id="node2" href="class_loot_1_1_e_m_m_item.html#a0dc962c1a313ea02e94a891920703963" title="Loot.EMMItem.GetActivePool" alt="" coords="273,5,469,32"/>
+<area shape="rect" id="node3" href="class_loot_1_1_modifier_player.html#a3e4b8a428276fb0205e9c0f166435bf0" title="Loot.ModifierPlayer.GetEffect" alt="" coords="273,56,468,83"/>
+<area shape="rect" id="node4" href="class_loot_1_1_activated_modifier_item.html#a6bb0485006eaaa1ab477c420abb67f15" title="Loot.ActivatedModifierItem.Item" alt="" coords="267,107,475,133"/>
+<area shape="rect" id="node5" href="class_loot_1_1_modifier_player.html#aae3e56a930507049c3b282b29fece4f1" title="Loot.ModifierPlayer.Player" alt="" coords="283,157,458,184"/>
+</map>
+</div>
+</p>
+
 </div>
 </div>
 <a class="anchor" id="a1aba0c690fd70e3f2594312641f779b2"></a>
@@ -249,8 +295,8 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Reimplemented from <a class="el" href="class_loot_1_1_core_1_1_modifier_effect.html#ace04e5ac6607065ced0e4de450e366a1">Loot.Core.ModifierEffect</a>.</p>
 
-<p>Definition at line <a class="el" href="_cursed_damage_8cs_source.html#l00014">14</a> of file <a class="el" href="_cursed_damage_8cs_source.html">CursedDamage.cs</a>.</p>
-<div class="fragment"><div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;        {</div><div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;            <a class="code" href="class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_cursed_effect.html#a6290d1c8f6b4efb03fdf3ecafa6398b4">CurseCount</a> = 0;</div><div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;        }</div><div class="ttc" id="class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_cursed_effect_html_a6290d1c8f6b4efb03fdf3ecafa6398b4"><div class="ttname"><a href="class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_cursed_effect.html#a6290d1c8f6b4efb03fdf3ecafa6398b4">Loot.Modifiers.WeaponModifiers.CursedEffect.CurseCount</a></div><div class="ttdeci">int CurseCount</div><div class="ttdef"><b>Definition:</b> <a href="_cursed_damage_8cs_source.html#l00012">CursedDamage.cs:12</a></div></div>
+<p>Definition at line <a class="el" href="_cursed_damage_8cs_source.html#l00015">15</a> of file <a class="el" href="_cursed_damage_8cs_source.html">CursedDamage.cs</a>.</p>
+<div class="fragment"><div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;        {</div><div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;            <a class="code" href="class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_cursed_effect.html#a6290d1c8f6b4efb03fdf3ecafa6398b4">CurseCount</a> = 0;</div><div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;        }</div><div class="ttc" id="class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_cursed_effect_html_a6290d1c8f6b4efb03fdf3ecafa6398b4"><div class="ttname"><a href="class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_cursed_effect.html#a6290d1c8f6b4efb03fdf3ecafa6398b4">Loot.Modifiers.WeaponModifiers.CursedEffect.CurseCount</a></div><div class="ttdeci">int CurseCount</div><div class="ttdef"><b>Definition:</b> <a href="_cursed_damage_8cs_source.html#l00013">CursedDamage.cs:13</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -265,7 +311,7 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_cursed_damage_8cs_source.html#l00012">12</a> of file <a class="el" href="_cursed_damage_8cs_source.html">CursedDamage.cs</a>.</p>
+<p>Definition at line <a class="el" href="_cursed_damage_8cs_source.html#l00013">13</a> of file <a class="el" href="_cursed_damage_8cs_source.html">CursedDamage.cs</a>.</p>
 
 </div>
 </div>
@@ -275,7 +321,7 @@ Additional Inherited Members</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespace_loot.html">Loot</a></li><li class="navelem"><a class="el" href="namespace_loot_1_1_modifiers.html">Modifiers</a></li><li class="navelem"><a class="el" href="namespace_loot_1_1_modifiers_1_1_weapon_modifiers.html">WeaponModifiers</a></li><li class="navelem"><a class="el" href="class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_cursed_effect.html">CursedEffect</a></li>
-    <li class="footer">Generated on Sat Sep 22 2018 12:38:13 for Even More Modifiers by
+    <li class="footer">Generated on Sat Sep 22 2018 17:29:52 for Even More Modifiers by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.11 </li>
   </ul>

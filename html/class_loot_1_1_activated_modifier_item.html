@@ -166,12 +166,16 @@ Properties</h2></td></tr>
 <tr class="memdesc:a0df38c30d670976ae033ac28631bda9b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Keeps track of if the particular item was activated ('delegated') Specific usecase see CursedEffect and modifier  <a href="#a0df38c30d670976ae033ac28631bda9b">More...</a><br /></td></tr>
 <tr class="separator:a0df38c30d670976ae033ac28631bda9b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a038f3d22c6f192f6bf9e51c99316dfa6"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_loot_1_1_activated_modifier_item.html#a038f3d22c6f192f6bf9e51c99316dfa6">IsVanityActivated</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:a038f3d22c6f192f6bf9e51c99316dfa6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Keeps track of if the item was activated whilst in a vanity slot (by another mod) In this case activated means giving its regular bonuses  <a href="#a038f3d22c6f192f6bf9e51c99316dfa6">More...</a><br /></td></tr>
 <tr class="separator:a038f3d22c6f192f6bf9e51c99316dfa6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
 Private Member Functions</h2></td></tr>
 <tr class="memitem:aedcb371be998be72f5e8d43064e0827f"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_loot_1_1_activated_modifier_item.html#aedcb371be998be72f5e8d43064e0827f">IsInVanitySot</a> (<a class="el" href="class_loot_1_1_activated_modifier_item.html#a6bb0485006eaaa1ab477c420abb67f15">Item</a> item, Player player)</td></tr>
+<tr class="memdesc:aedcb371be998be72f5e8d43064e0827f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns if the item is in a player's vanity slot  <a href="#aedcb371be998be72f5e8d43064e0827f">More...</a><br /></td></tr>
 <tr class="separator:aedcb371be998be72f5e8d43064e0827f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a735629d51b2d3001807c835bf5cab4ff"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_loot_1_1_activated_modifier_item.html#a735629d51b2d3001807c835bf5cab4ff">IsNotEquippedAtAll</a> (<a class="el" href="class_loot_1_1_activated_modifier_item.html#a6bb0485006eaaa1ab477c420abb67f15">Item</a> item, Player player)</td></tr>
+<tr class="separator:a735629d51b2d3001807c835bf5cab4ff"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock">
@@ -209,10 +213,12 @@ Private Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_modifier_item_8cs_source.html#l00025">25</a> of file <a class="el" href="_modifier_item_8cs_source.html">ModifierItem.cs</a>.</p>
+<p>Returns if the item is in a player's vanity slot </p>
 
-<p>Referenced by <a class="el" href="_modifier_item_8cs_source.html#l00030">Loot.ActivatedModifierItem.UpdateAccessory()</a>, and <a class="el" href="_modifier_item_8cs_source.html#l00036">Loot.ActivatedModifierItem.UpdateEquip()</a>.</p>
-<div class="fragment"><div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;        {</div><div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;            <span class="keywordflow">return</span> player.armor.Skip(13).Any(x =&gt; x.IsTheSameAs(item));</div><div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;        }</div></div><!-- fragment -->
+<p>Definition at line <a class="el" href="_modifier_item_8cs_source.html#l00032">32</a> of file <a class="el" href="_modifier_item_8cs_source.html">ModifierItem.cs</a>.</p>
+
+<p>Referenced by <a class="el" href="_modifier_item_8cs_source.html#l00042">Loot.ActivatedModifierItem.UpdateAccessory()</a>, and <a class="el" href="_modifier_item_8cs_source.html#l00054">Loot.ActivatedModifierItem.UpdateEquip()</a>.</p>
+<div class="fragment"><div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;        {</div><div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;            <span class="keywordflow">return</span> player.armor.Skip(13).Any(x =&gt; x.IsTheSameAs(item));</div><div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        }</div></div><!-- fragment -->
 <p><div id="dynsection-2" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-2-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
 <div id="dynsection-2-summary" class="dynsummary" style="display:block;">
@@ -220,6 +226,57 @@ Private Member Functions</h2></td></tr>
 <div id="dynsection-2-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="class_loot_1_1_activated_modifier_item_aedcb371be998be72f5e8d43064e0827f_icgraph.png" border="0" usemap="#class_loot_1_1_activated_modifier_item_aedcb371be998be72f5e8d43064e0827f_icgraph" alt=""/></div>
 <map name="class_loot_1_1_activated_modifier_item_aedcb371be998be72f5e8d43064e0827f_icgraph" id="class_loot_1_1_activated_modifier_item_aedcb371be998be72f5e8d43064e0827f_icgraph">
+<area shape="rect" id="node2" href="class_loot_1_1_activated_modifier_item.html#a5b7691b08a15216ab61dd4e9055662d4" title="Loot.ActivatedModifierItem.\lUpdateAccessory" alt="" coords="238,5,421,46"/>
+<area shape="rect" id="node3" href="class_loot_1_1_activated_modifier_item.html#abb2bf22119b44d0f510356c4c978438a" title="Loot.ActivatedModifierItem.\lUpdateEquip" alt="" coords="238,70,421,111"/>
+</map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a735629d51b2d3001807c835bf5cab4ff"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Loot.ActivatedModifierItem.IsNotEquippedAtAll </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_loot_1_1_activated_modifier_item.html#a6bb0485006eaaa1ab477c420abb67f15">Item</a>&#160;</td>
+          <td class="paramname"><em>item</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Player&#160;</td>
+          <td class="paramname"><em>player</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_modifier_item_8cs_source.html#l00037">37</a> of file <a class="el" href="_modifier_item_8cs_source.html">ModifierItem.cs</a>.</p>
+
+<p>Referenced by <a class="el" href="_modifier_item_8cs_source.html#l00042">Loot.ActivatedModifierItem.UpdateAccessory()</a>, and <a class="el" href="_modifier_item_8cs_source.html#l00054">Loot.ActivatedModifierItem.UpdateEquip()</a>.</p>
+<div class="fragment"><div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        {</div><div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;            <span class="keywordflow">return</span> !player.armor.Any(x =&gt; x.IsTheSameAs(item));</div><div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        }</div></div><!-- fragment -->
+<p><div id="dynsection-3" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-3-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-3-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-3-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="class_loot_1_1_activated_modifier_item_a735629d51b2d3001807c835bf5cab4ff_icgraph.png" border="0" usemap="#class_loot_1_1_activated_modifier_item_a735629d51b2d3001807c835bf5cab4ff_icgraph" alt=""/></div>
+<map name="class_loot_1_1_activated_modifier_item_a735629d51b2d3001807c835bf5cab4ff_icgraph" id="class_loot_1_1_activated_modifier_item_a735629d51b2d3001807c835bf5cab4ff_icgraph">
 <area shape="rect" id="node2" href="class_loot_1_1_activated_modifier_item.html#a5b7691b08a15216ab61dd4e9055662d4" title="Loot.ActivatedModifierItem.\lUpdateAccessory" alt="" coords="238,5,421,46"/>
 <area shape="rect" id="node3" href="class_loot_1_1_activated_modifier_item.html#abb2bf22119b44d0f510356c4c978438a" title="Loot.ActivatedModifierItem.\lUpdateEquip" alt="" coords="238,70,421,111"/>
 </map>
@@ -250,21 +307,23 @@ Private Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Referenced by <a class="el" href="_modifier_cache_player_8cs_source.html#l00284">Loot.Modifiers.ModifierCachePlayer.AddAttachItem()</a>, <a class="el" href="_modifier_cache_player_8cs_source.html#l00278">Loot.Modifiers.ModifierCachePlayer.AddDetachItem()</a>, <a class="el" href="_modifier_cache_player_8cs_source.html#l00450">Loot.Modifiers.ModifierCachePlayer.CacheModifierEffects()</a>, <a class="el" href="_modifier_item_8cs_source.html#l00036">Loot.ActivatedModifierItem.UpdateEquip()</a>, <a class="el" href="_cursed_damage_8cs_source.html#l00052">Loot.Modifiers.WeaponModifiers.CursedDamage.UpdateInventory()</a>, and <a class="el" href="_modifier_cache_player_8cs_source.html#l00290">Loot.Modifiers.ModifierCachePlayer.UpdateVanityCache()</a>.</p>
+<p>Referenced by <a class="el" href="_modifier_cache_player_8cs_source.html#l00288">Loot.Modifiers.ModifierCachePlayer.AddAttachItem()</a>, <a class="el" href="_modifier_cache_player_8cs_source.html#l00282">Loot.Modifiers.ModifierCachePlayer.AddDetachItem()</a>, <a class="el" href="_modifier_cache_player_8cs_source.html#l00495">Loot.Modifiers.ModifierCachePlayer.CacheModifierEffects()</a>, <a class="el" href="_cursed_damage_8cs_source.html#l00021">Loot.Modifiers.WeaponModifiers.CursedEffect.CurseHolding()</a>, <a class="el" href="_e_m_m_item_8cs_source.html#l00392">Loot.EMMItem.ModifyTooltips()</a>, <a class="el" href="_modifier_item_8cs_source.html#l00054">Loot.ActivatedModifierItem.UpdateEquip()</a>, <a class="el" href="_cursed_damage_8cs_source.html#l00069">Loot.Modifiers.WeaponModifiers.CursedDamage.UpdateInventory()</a>, and <a class="el" href="_modifier_cache_player_8cs_source.html#l00294">Loot.Modifiers.ModifierCachePlayer.UpdateVanityCache()</a>.</p>
 
-<p><div id="dynsection-3" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-3-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-3-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-4" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-4-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-4-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-3-content" class="dyncontent" style="display:none;">
+<div id="dynsection-4-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="class_loot_1_1_activated_modifier_item_a6bb0485006eaaa1ab477c420abb67f15_icgraph.png" border="0" usemap="#class_loot_1_1_activated_modifier_item_a6bb0485006eaaa1ab477c420abb67f15_icgraph" alt=""/></div>
 <map name="class_loot_1_1_activated_modifier_item_a6bb0485006eaaa1ab477c420abb67f15_icgraph" id="class_loot_1_1_activated_modifier_item_a6bb0485006eaaa1ab477c420abb67f15_icgraph">
 <area shape="rect" id="node2" href="class_loot_1_1_modifiers_1_1_modifier_cache_player.html#a88d35d241149142c0d5d4215802de05a" title="Loot.Modifiers.ModifierCache\lPlayer.AddAttachItem" alt="" coords="272,5,464,46"/>
 <area shape="rect" id="node3" href="class_loot_1_1_modifiers_1_1_modifier_cache_player.html#a44f084fbd5dc8a5959f76772fc8d4346" title="Loot.Modifiers.ModifierCache\lPlayer.AddDetachItem" alt="" coords="272,70,464,111"/>
 <area shape="rect" id="node4" href="class_loot_1_1_modifiers_1_1_modifier_cache_player.html#a510c560600f3a4a88cf6a2e0c8610f24" title="Loot.Modifiers.ModifierCache\lPlayer.CacheModifierEffects" alt="" coords="272,135,464,177"/>
-<area shape="rect" id="node5" href="class_loot_1_1_activated_modifier_item.html#abb2bf22119b44d0f510356c4c978438a" title="Loot.ActivatedModifierItem.\lUpdateEquip" alt="" coords="277,201,459,242"/>
-<area shape="rect" id="node6" href="class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_cursed_damage.html#a6cf676c3234850fcdabfff5890111d7c" title="Loot.Modifiers.WeaponModifiers.\lCursedDamage.UpdateInventory" alt="" coords="261,266,475,307"/>
-<area shape="rect" id="node7" href="class_loot_1_1_modifiers_1_1_modifier_cache_player.html#a92d08de2ff17bfee72fae07a64edaa24" title="Loot.Modifiers.ModifierCache\lPlayer.UpdateVanityCache" alt="" coords="272,331,464,373"/>
+<area shape="rect" id="node5" href="class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_cursed_effect.html#a7dbd3c5248a667a59b8a0c49636696cb" title="Loot.Modifiers.WeaponModifiers.\lCursedEffect.CurseHolding" alt="" coords="261,201,475,242"/>
+<area shape="rect" id="node6" href="class_loot_1_1_e_m_m_item.html#a26adbebd59ab872c21d077b0b42904aa" title="Will modify vanilla tooltips to add additional information for the affected item&#39;s modifiers ..." alt="" coords="269,267,467,293"/>
+<area shape="rect" id="node7" href="class_loot_1_1_activated_modifier_item.html#abb2bf22119b44d0f510356c4c978438a" title="Loot.ActivatedModifierItem.\lUpdateEquip" alt="" coords="277,318,459,359"/>
+<area shape="rect" id="node8" href="class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_cursed_damage.html#a6cf676c3234850fcdabfff5890111d7c" title="Loot.Modifiers.WeaponModifiers.\lCursedDamage.UpdateInventory" alt="" coords="261,383,475,425"/>
+<area shape="rect" id="node9" href="class_loot_1_1_modifiers_1_1_modifier_cache_player.html#a92d08de2ff17bfee72fae07a64edaa24" title="Loot.Modifiers.ModifierCache\lPlayer.UpdateVanityCache" alt="" coords="272,449,464,490"/>
 </map>
 </div>
 </p>
@@ -301,20 +360,22 @@ Private Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_modifier_item_8cs_source.html#l00030">30</a> of file <a class="el" href="_modifier_item_8cs_source.html">ModifierItem.cs</a>.</p>
+<p>Definition at line <a class="el" href="_modifier_item_8cs_source.html#l00042">42</a> of file <a class="el" href="_modifier_item_8cs_source.html">ModifierItem.cs</a>.</p>
 
-<p>References <a class="el" href="_modifier_item_8cs_source.html#l00025">Loot.ActivatedModifierItem.IsInVanitySot()</a>, and <a class="el" href="_modifier_item_8cs_source.html#l00023">Loot.ActivatedModifierItem.IsVanityActivated</a>.</p>
-<div class="fragment"><div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        {</div><div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;            <span class="keywordflow">if</span> (<a class="code" href="class_loot_1_1_activated_modifier_item.html#aedcb371be998be72f5e8d43064e0827f">IsInVanitySot</a>(item, player))</div><div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;                <a class="code" href="class_loot_1_1_activated_modifier_item.html#a038f3d22c6f192f6bf9e51c99316dfa6">IsVanityActivated</a> = <span class="keyword">true</span>;</div><div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        }</div><div class="ttc" id="class_loot_1_1_activated_modifier_item_html_a038f3d22c6f192f6bf9e51c99316dfa6"><div class="ttname"><a href="class_loot_1_1_activated_modifier_item.html#a038f3d22c6f192f6bf9e51c99316dfa6">Loot.ActivatedModifierItem.IsVanityActivated</a></div><div class="ttdeci">bool IsVanityActivated</div><div class="ttdef"><b>Definition:</b> <a href="_modifier_item_8cs_source.html#l00023">ModifierItem.cs:23</a></div></div>
-<div class="ttc" id="class_loot_1_1_activated_modifier_item_html_aedcb371be998be72f5e8d43064e0827f"><div class="ttname"><a href="class_loot_1_1_activated_modifier_item.html#aedcb371be998be72f5e8d43064e0827f">Loot.ActivatedModifierItem.IsInVanitySot</a></div><div class="ttdeci">bool IsInVanitySot(Item item, Player player)</div><div class="ttdef"><b>Definition:</b> <a href="_modifier_item_8cs_source.html#l00025">ModifierItem.cs:25</a></div></div>
+<p>References <a class="el" href="_modifier_item_8cs_source.html#l00032">Loot.ActivatedModifierItem.IsInVanitySot()</a>, <a class="el" href="_modifier_item_8cs_source.html#l00037">Loot.ActivatedModifierItem.IsNotEquippedAtAll()</a>, and <a class="el" href="_modifier_item_8cs_source.html#l00027">Loot.ActivatedModifierItem.IsVanityActivated</a>.</p>
+<div class="fragment"><div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        {</div><div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;            <span class="keywordflow">if</span> (<a class="code" href="class_loot_1_1_activated_modifier_item.html#aedcb371be998be72f5e8d43064e0827f">IsInVanitySot</a>(item, player) || <a class="code" href="class_loot_1_1_activated_modifier_item.html#a735629d51b2d3001807c835bf5cab4ff">IsNotEquippedAtAll</a>(item, player))</div><div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;            {</div><div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;                <a class="code" href="class_loot_1_1_activated_modifier_item.html#a038f3d22c6f192f6bf9e51c99316dfa6">IsVanityActivated</a> = <span class="keyword">true</span>;</div><div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;            }</div><div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;            <span class="keywordflow">else</span></div><div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;            {</div><div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;                <a class="code" href="class_loot_1_1_activated_modifier_item.html#a038f3d22c6f192f6bf9e51c99316dfa6">IsVanityActivated</a> = <span class="keyword">false</span>;</div><div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;            }</div><div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        }</div><div class="ttc" id="class_loot_1_1_activated_modifier_item_html_a038f3d22c6f192f6bf9e51c99316dfa6"><div class="ttname"><a href="class_loot_1_1_activated_modifier_item.html#a038f3d22c6f192f6bf9e51c99316dfa6">Loot.ActivatedModifierItem.IsVanityActivated</a></div><div class="ttdeci">bool IsVanityActivated</div><div class="ttdoc">Keeps track of if the item was activated whilst in a vanity slot (by another mod) In this case activa...</div><div class="ttdef"><b>Definition:</b> <a href="_modifier_item_8cs_source.html#l00027">ModifierItem.cs:27</a></div></div>
+<div class="ttc" id="class_loot_1_1_activated_modifier_item_html_a735629d51b2d3001807c835bf5cab4ff"><div class="ttname"><a href="class_loot_1_1_activated_modifier_item.html#a735629d51b2d3001807c835bf5cab4ff">Loot.ActivatedModifierItem.IsNotEquippedAtAll</a></div><div class="ttdeci">bool IsNotEquippedAtAll(Item item, Player player)</div><div class="ttdef"><b>Definition:</b> <a href="_modifier_item_8cs_source.html#l00037">ModifierItem.cs:37</a></div></div>
+<div class="ttc" id="class_loot_1_1_activated_modifier_item_html_aedcb371be998be72f5e8d43064e0827f"><div class="ttname"><a href="class_loot_1_1_activated_modifier_item.html#aedcb371be998be72f5e8d43064e0827f">Loot.ActivatedModifierItem.IsInVanitySot</a></div><div class="ttdeci">bool IsInVanitySot(Item item, Player player)</div><div class="ttdoc">Returns if the item is in a player&amp;#39;s vanity slot </div><div class="ttdef"><b>Definition:</b> <a href="_modifier_item_8cs_source.html#l00032">ModifierItem.cs:32</a></div></div>
 </div><!-- fragment -->
-<p><div id="dynsection-4" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-4-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
-<div id="dynsection-4-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-5" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-5-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-5-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-4-content" class="dyncontent" style="display:none;">
+<div id="dynsection-5-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="class_loot_1_1_activated_modifier_item_a5b7691b08a15216ab61dd4e9055662d4_cgraph.png" border="0" usemap="#class_loot_1_1_activated_modifier_item_a5b7691b08a15216ab61dd4e9055662d4_cgraph" alt=""/></div>
 <map name="class_loot_1_1_activated_modifier_item_a5b7691b08a15216ab61dd4e9055662d4_cgraph" id="class_loot_1_1_activated_modifier_item_a5b7691b08a15216ab61dd4e9055662d4_cgraph">
-<area shape="rect" id="node2" href="class_loot_1_1_activated_modifier_item.html#aedcb371be998be72f5e8d43064e0827f" title="Loot.ActivatedModifierItem.\lIsInVanitySot" alt="" coords="238,5,421,46"/>
+<area shape="rect" id="node2" href="class_loot_1_1_activated_modifier_item.html#aedcb371be998be72f5e8d43064e0827f" title="Returns if the item is in a player&#39;s vanity slot " alt="" coords="238,5,421,46"/>
+<area shape="rect" id="node3" href="class_loot_1_1_activated_modifier_item.html#a735629d51b2d3001807c835bf5cab4ff" title="Loot.ActivatedModifierItem.\lIsNotEquippedAtAll" alt="" coords="238,70,421,111"/>
 </map>
 </div>
 </p>
@@ -345,21 +406,23 @@ Private Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_modifier_item_8cs_source.html#l00036">36</a> of file <a class="el" href="_modifier_item_8cs_source.html">ModifierItem.cs</a>.</p>
+<p>Definition at line <a class="el" href="_modifier_item_8cs_source.html#l00054">54</a> of file <a class="el" href="_modifier_item_8cs_source.html">ModifierItem.cs</a>.</p>
 
-<p>References <a class="el" href="_modifier_item_8cs_source.html#l00025">Loot.ActivatedModifierItem.IsInVanitySot()</a>, <a class="el" href="_modifier_item_8cs_source.html#l00023">Loot.ActivatedModifierItem.IsVanityActivated</a>, and <a class="el" href="class_loot_1_1_activated_modifier_item.html#a6bb0485006eaaa1ab477c420abb67f15">Loot.ActivatedModifierItem.Item()</a>.</p>
-<div class="fragment"><div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        {</div><div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;            <span class="keywordflow">if</span> (<a class="code" href="class_loot_1_1_activated_modifier_item.html#aedcb371be998be72f5e8d43064e0827f">IsInVanitySot</a>(item, player))</div><div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;                <a class="code" href="class_loot_1_1_activated_modifier_item.html#a038f3d22c6f192f6bf9e51c99316dfa6">IsVanityActivated</a> = <span class="keyword">true</span>;</div><div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        }</div><div class="ttc" id="class_loot_1_1_activated_modifier_item_html_a038f3d22c6f192f6bf9e51c99316dfa6"><div class="ttname"><a href="class_loot_1_1_activated_modifier_item.html#a038f3d22c6f192f6bf9e51c99316dfa6">Loot.ActivatedModifierItem.IsVanityActivated</a></div><div class="ttdeci">bool IsVanityActivated</div><div class="ttdef"><b>Definition:</b> <a href="_modifier_item_8cs_source.html#l00023">ModifierItem.cs:23</a></div></div>
-<div class="ttc" id="class_loot_1_1_activated_modifier_item_html_aedcb371be998be72f5e8d43064e0827f"><div class="ttname"><a href="class_loot_1_1_activated_modifier_item.html#aedcb371be998be72f5e8d43064e0827f">Loot.ActivatedModifierItem.IsInVanitySot</a></div><div class="ttdeci">bool IsInVanitySot(Item item, Player player)</div><div class="ttdef"><b>Definition:</b> <a href="_modifier_item_8cs_source.html#l00025">ModifierItem.cs:25</a></div></div>
+<p>References <a class="el" href="_modifier_item_8cs_source.html#l00032">Loot.ActivatedModifierItem.IsInVanitySot()</a>, <a class="el" href="_modifier_item_8cs_source.html#l00037">Loot.ActivatedModifierItem.IsNotEquippedAtAll()</a>, <a class="el" href="_modifier_item_8cs_source.html#l00027">Loot.ActivatedModifierItem.IsVanityActivated</a>, and <a class="el" href="class_loot_1_1_activated_modifier_item.html#a6bb0485006eaaa1ab477c420abb67f15">Loot.ActivatedModifierItem.Item()</a>.</p>
+<div class="fragment"><div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        {</div><div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;            <span class="keywordflow">if</span> (<a class="code" href="class_loot_1_1_activated_modifier_item.html#aedcb371be998be72f5e8d43064e0827f">IsInVanitySot</a>(item, player) || <a class="code" href="class_loot_1_1_activated_modifier_item.html#a735629d51b2d3001807c835bf5cab4ff">IsNotEquippedAtAll</a>(item, player))</div><div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;            {</div><div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;                <a class="code" href="class_loot_1_1_activated_modifier_item.html#a038f3d22c6f192f6bf9e51c99316dfa6">IsVanityActivated</a> = <span class="keyword">true</span>;</div><div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;            }</div><div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;            <span class="keywordflow">else</span></div><div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;            {</div><div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;                <a class="code" href="class_loot_1_1_activated_modifier_item.html#a038f3d22c6f192f6bf9e51c99316dfa6">IsVanityActivated</a> = <span class="keyword">false</span>;</div><div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;            }</div><div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;        }</div><div class="ttc" id="class_loot_1_1_activated_modifier_item_html_a038f3d22c6f192f6bf9e51c99316dfa6"><div class="ttname"><a href="class_loot_1_1_activated_modifier_item.html#a038f3d22c6f192f6bf9e51c99316dfa6">Loot.ActivatedModifierItem.IsVanityActivated</a></div><div class="ttdeci">bool IsVanityActivated</div><div class="ttdoc">Keeps track of if the item was activated whilst in a vanity slot (by another mod) In this case activa...</div><div class="ttdef"><b>Definition:</b> <a href="_modifier_item_8cs_source.html#l00027">ModifierItem.cs:27</a></div></div>
+<div class="ttc" id="class_loot_1_1_activated_modifier_item_html_a735629d51b2d3001807c835bf5cab4ff"><div class="ttname"><a href="class_loot_1_1_activated_modifier_item.html#a735629d51b2d3001807c835bf5cab4ff">Loot.ActivatedModifierItem.IsNotEquippedAtAll</a></div><div class="ttdeci">bool IsNotEquippedAtAll(Item item, Player player)</div><div class="ttdef"><b>Definition:</b> <a href="_modifier_item_8cs_source.html#l00037">ModifierItem.cs:37</a></div></div>
+<div class="ttc" id="class_loot_1_1_activated_modifier_item_html_aedcb371be998be72f5e8d43064e0827f"><div class="ttname"><a href="class_loot_1_1_activated_modifier_item.html#aedcb371be998be72f5e8d43064e0827f">Loot.ActivatedModifierItem.IsInVanitySot</a></div><div class="ttdeci">bool IsInVanitySot(Item item, Player player)</div><div class="ttdoc">Returns if the item is in a player&amp;#39;s vanity slot </div><div class="ttdef"><b>Definition:</b> <a href="_modifier_item_8cs_source.html#l00032">ModifierItem.cs:32</a></div></div>
 </div><!-- fragment -->
-<p><div id="dynsection-5" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-5-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
-<div id="dynsection-5-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-6" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-6-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-6-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-5-content" class="dyncontent" style="display:none;">
+<div id="dynsection-6-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="class_loot_1_1_activated_modifier_item_abb2bf22119b44d0f510356c4c978438a_cgraph.png" border="0" usemap="#class_loot_1_1_activated_modifier_item_abb2bf22119b44d0f510356c4c978438a_cgraph" alt=""/></div>
 <map name="class_loot_1_1_activated_modifier_item_abb2bf22119b44d0f510356c4c978438a_cgraph" id="class_loot_1_1_activated_modifier_item_abb2bf22119b44d0f510356c4c978438a_cgraph">
-<area shape="rect" id="node2" href="class_loot_1_1_activated_modifier_item.html#aedcb371be998be72f5e8d43064e0827f" title="Loot.ActivatedModifierItem.\lIsInVanitySot" alt="" coords="250,5,433,46"/>
-<area shape="rect" id="node3" href="class_loot_1_1_activated_modifier_item.html#a6bb0485006eaaa1ab477c420abb67f15" title="Loot.ActivatedModifierItem.Item" alt="" coords="237,71,445,97"/>
+<area shape="rect" id="node2" href="class_loot_1_1_activated_modifier_item.html#aedcb371be998be72f5e8d43064e0827f" title="Returns if the item is in a player&#39;s vanity slot " alt="" coords="250,5,433,46"/>
+<area shape="rect" id="node3" href="class_loot_1_1_activated_modifier_item.html#a735629d51b2d3001807c835bf5cab4ff" title="Loot.ActivatedModifierItem.\lIsNotEquippedAtAll" alt="" coords="250,70,433,111"/>
+<area shape="rect" id="node4" href="class_loot_1_1_activated_modifier_item.html#a6bb0485006eaaa1ab477c420abb67f15" title="Loot.ActivatedModifierItem.Item" alt="" coords="237,136,445,163"/>
 </map>
 </div>
 </p>
@@ -418,7 +481,7 @@ Private Member Functions</h2></td></tr>
 
 <p>Definition at line <a class="el" href="_modifier_item_8cs_source.html#l00021">21</a> of file <a class="el" href="_modifier_item_8cs_source.html">ModifierItem.cs</a>.</p>
 
-<p>Referenced by <a class="el" href="_modifier_cache_player_8cs_source.html#l00284">Loot.Modifiers.ModifierCachePlayer.AddAttachItem()</a>, <a class="el" href="_modifier_cache_player_8cs_source.html#l00278">Loot.Modifiers.ModifierCachePlayer.AddDetachItem()</a>, and <a class="el" href="_cursed_damage_8cs_source.html#l00052">Loot.Modifiers.WeaponModifiers.CursedDamage.UpdateInventory()</a>.</p>
+<p>Referenced by <a class="el" href="_modifier_cache_player_8cs_source.html#l00288">Loot.Modifiers.ModifierCachePlayer.AddAttachItem()</a>, <a class="el" href="_modifier_cache_player_8cs_source.html#l00282">Loot.Modifiers.ModifierCachePlayer.AddDetachItem()</a>, <a class="el" href="_cursed_damage_8cs_source.html#l00021">Loot.Modifiers.WeaponModifiers.CursedEffect.CurseHolding()</a>, and <a class="el" href="_cursed_damage_8cs_source.html#l00069">Loot.Modifiers.WeaponModifiers.CursedDamage.UpdateInventory()</a>.</p>
 
 </div>
 </div>
@@ -440,9 +503,11 @@ Private Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_modifier_item_8cs_source.html#l00023">23</a> of file <a class="el" href="_modifier_item_8cs_source.html">ModifierItem.cs</a>.</p>
+<p>Keeps track of if the item was activated whilst in a vanity slot (by another mod) In this case activated means giving its regular bonuses </p>
 
-<p>Referenced by <a class="el" href="_modifier_cache_player_8cs_source.html#l00450">Loot.Modifiers.ModifierCachePlayer.CacheModifierEffects()</a>, <a class="el" href="_modifier_item_8cs_source.html#l00030">Loot.ActivatedModifierItem.UpdateAccessory()</a>, <a class="el" href="_modifier_item_8cs_source.html#l00036">Loot.ActivatedModifierItem.UpdateEquip()</a>, and <a class="el" href="_modifier_cache_player_8cs_source.html#l00290">Loot.Modifiers.ModifierCachePlayer.UpdateVanityCache()</a>.</p>
+<p>Definition at line <a class="el" href="_modifier_item_8cs_source.html#l00027">27</a> of file <a class="el" href="_modifier_item_8cs_source.html">ModifierItem.cs</a>.</p>
+
+<p>Referenced by <a class="el" href="_modifier_item_8cs_source.html#l00078">Loot.ModifierItem.AltFunctionUse()</a>, <a class="el" href="_modifier_cache_player_8cs_source.html#l00495">Loot.Modifiers.ModifierCachePlayer.CacheModifierEffects()</a>, <a class="el" href="_modifier_item_8cs_source.html#l00095">Loot.ModifierItem.CanEquipAccessory()</a>, <a class="el" href="_modifier_item_8cs_source.html#l00112">Loot.ModifierItem.CanHitNPC()</a>, <a class="el" href="_modifier_item_8cs_source.html#l00129">Loot.ModifierItem.CanHitPvp()</a>, <a class="el" href="_modifier_item_8cs_source.html#l00146">Loot.ModifierItem.CanPickup()</a>, <a class="el" href="_modifier_item_8cs_source.html#l00163">Loot.ModifierItem.CanRightClick()</a>, <a class="el" href="_modifier_item_8cs_source.html#l00180">Loot.ModifierItem.CanUseItem()</a>, <a class="el" href="_modifier_item_8cs_source.html#l00197">Loot.ModifierItem.ChoosePrefix()</a>, <a class="el" href="_modifier_item_8cs_source.html#l00223">Loot.ModifierItem.ConsumeAmmo()</a>, <a class="el" href="_modifier_item_8cs_source.html#l00240">Loot.ModifierItem.ConsumeItem()</a>, <a class="el" href="_modifier_item_8cs_source.html#l00257">Loot.ModifierItem.GetAlpha()</a>, <a class="el" href="_modifier_item_8cs_source.html#l00283">Loot.ModifierItem.GetWeaponCrit()</a>, <a class="el" href="_modifier_item_8cs_source.html#l00298">Loot.ModifierItem.GetWeaponDamage()</a>, <a class="el" href="_modifier_item_8cs_source.html#l00313">Loot.ModifierItem.GetWeaponKnockback()</a>, <a class="el" href="_modifier_item_8cs_source.html#l00328">Loot.ModifierItem.GrabRange()</a>, <a class="el" href="_modifier_item_8cs_source.html#l00343">Loot.ModifierItem.GrabStyle()</a>, <a class="el" href="_modifier_item_8cs_source.html#l00360">Loot.ModifierItem.HoldItem()</a>, <a class="el" href="_modifier_item_8cs_source.html#l00375">Loot.ModifierItem.HoldItemFrame()</a>, <a class="el" href="_modifier_item_8cs_source.html#l00392">Loot.ModifierItem.HoldStyle()</a>, <a class="el" href="_modifier_item_8cs_source.html#l00407">Loot.ModifierItem.HorizontalWingSpeeds()</a>, <a class="el" href="_modifier_item_8cs_source.html#l00422">Loot.ModifierItem.ItemSpace()</a>, <a class="el" href="_modifier_item_8cs_source.html#l00439">Loot.ModifierItem.MeleeEffects()</a>, <a class="el" href="_modifier_item_8cs_source.html#l00454">Loot.ModifierItem.MeleeSpeedMultiplier()</a>, <a class="el" href="_modifier_item_8cs_source.html#l00480">Loot.ModifierItem.ModifyHitNPC()</a>, <a class="el" href="_modifier_item_8cs_source.html#l00495">Loot.ModifierItem.ModifyHitPvp()</a>, <a class="el" href="_e_m_m_item_8cs_source.html#l00392">Loot.EMMItem.ModifyTooltips()</a>, <a class="el" href="_modifier_item_8cs_source.html#l00542">Loot.ModifierItem.NewPreReforge()</a>, <a class="el" href="_modifier_item_8cs_source.html#l00559">Loot.ModifierItem.OnCraft()</a>, <a class="el" href="_modifier_item_8cs_source.html#l00574">Loot.ModifierItem.OnHitNPC()</a>, <a class="el" href="_modifier_item_8cs_source.html#l00589">Loot.ModifierItem.OnHitPvp()</a>, <a class="el" href="_modifier_item_8cs_source.html#l00604">Loot.ModifierItem.OnPickup()</a>, <a class="el" href="_modifier_item_8cs_source.html#l00621">Loot.ModifierItem.PickAmmo()</a>, <a class="el" href="_modifier_item_8cs_source.html#l00636">Loot.ModifierItem.PostDrawInInventory()</a>, <a class="el" href="_modifier_item_8cs_source.html#l00651">Loot.ModifierItem.PostDrawInWorld()</a>, <a class="el" href="_modifier_item_8cs_source.html#l00666">Loot.ModifierItem.PostDrawTooltip()</a>, <a class="el" href="_modifier_item_8cs_source.html#l00681">Loot.ModifierItem.PostDrawTooltipLine()</a>, <a class="el" href="_modifier_item_8cs_source.html#l00696">Loot.ModifierItem.PostReforge()</a>, <a class="el" href="_modifier_item_8cs_source.html#l00711">Loot.ModifierItem.PostUpdate()</a>, <a class="el" href="_modifier_item_8cs_source.html#l00726">Loot.ModifierItem.PreDrawInInventory()</a>, <a class="el" href="_modifier_item_8cs_source.html#l00743">Loot.ModifierItem.PreDrawInWorld()</a>, <a class="el" href="_modifier_item_8cs_source.html#l00760">Loot.ModifierItem.PreDrawTooltip()</a>, <a class="el" href="_modifier_item_8cs_source.html#l00777">Loot.ModifierItem.PreDrawTooltipLine()</a>, <a class="el" href="_modifier_item_8cs_source.html#l00794">Loot.ModifierItem.ReforgePrice()</a>, <a class="el" href="_modifier_item_8cs_source.html#l00811">Loot.ModifierItem.RightClick()</a>, <a class="el" href="_modifier_item_8cs_source.html#l00826">Loot.ModifierItem.SetDefaults()</a>, <a class="el" href="_modifier_item_8cs_source.html#l00841">Loot.ModifierItem.Shoot()</a>, <a class="el" href="_modifier_item_8cs_source.html#l00858">Loot.ModifierItem.Update()</a>, <a class="el" href="_modifier_item_8cs_source.html#l00042">Loot.ActivatedModifierItem.UpdateAccessory()</a>, <a class="el" href="_modifier_item_8cs_source.html#l00873">Loot.ModifierItem.UpdateAccessory()</a>, <a class="el" href="_modifier_item_8cs_source.html#l00054">Loot.ActivatedModifierItem.UpdateEquip()</a>, <a class="el" href="_modifier_item_8cs_source.html#l00888">Loot.ModifierItem.UpdateEquip()</a>, <a class="el" href="_modifier_item_8cs_source.html#l00903">Loot.ModifierItem.UpdateInventory()</a>, <a class="el" href="_modifier_cache_player_8cs_source.html#l00294">Loot.Modifiers.ModifierCachePlayer.UpdateVanityCache()</a>, <a class="el" href="_modifier_item_8cs_source.html#l00918">Loot.ModifierItem.UseItem()</a>, <a class="el" href="_modifier_item_8cs_source.html#l00935">Loot.ModifierItem.UseItemFrame()</a>, <a class="el" href="_modifier_item_8cs_source.html#l00952">Loot.ModifierItem.UseItemHitbox()</a>, <a class="el" href="_modifier_item_8cs_source.html#l00967">Loot.ModifierItem.UseStyle()</a>, <a class="el" href="_modifier_item_8cs_source.html#l00982">Loot.ModifierItem.UseTimeMultiplier()</a>, and <a class="el" href="_modifier_item_8cs_source.html#l01008">Loot.ModifierItem.VerticalWingSpeeds()</a>.</p>
 
 </div>
 </div>
@@ -452,7 +517,7 @@ Private Member Functions</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespace_loot.html">Loot</a></li><li class="navelem"><a class="el" href="class_loot_1_1_activated_modifier_item.html">ActivatedModifierItem</a></li>
-    <li class="footer">Generated on Sat Sep 22 2018 12:38:12 for Even More Modifiers by
+    <li class="footer">Generated on Sat Sep 22 2018 17:29:51 for Even More Modifiers by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.11 </li>
   </ul>

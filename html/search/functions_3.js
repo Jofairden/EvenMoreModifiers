@@ -17,5 +17,6 @@ var searchData=
   ['consumeammo',['ConsumeAmmo',['../class_loot_1_1_modifier_item.html#ada15006a820147fa0054d9fddd6d2415',1,'Loot.ModifierItem.ConsumeAmmo()'],['../class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_ammo_reduce.html#a38b8c3acb0ae2292cae20d7dd416bb06',1,'Loot.Modifiers.WeaponModifiers.AmmoReduce.ConsumeAmmo()']]],
   ['consumeitem',['ConsumeItem',['../class_loot_1_1_modifier_item.html#a0487cb3ec5ee2a0f8a991d3d5e5ce1b2',1,'Loot::ModifierItem']]],
   ['critbonus',['CritBonus',['../class_loot_1_1_modifier_projectile.html#a88bbc92630f212d5b2430cf54b4e82f2',1,'Loot.ModifierProjectile.CritBonus()'],['../class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_offensive_1_1_crit_damage_plus_effect.html#ad26b2b0f85741e7b46b7993f9b312e69',1,'Loot.Modifiers.EquipModifiers.Offensive.CritDamagePlusEffect.CritBonus()']]],
-  ['curse',['Curse',['../class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_cursed_effect.html#a37bd163e1641ff85113daca8e82e62f1',1,'Loot::Modifiers::WeaponModifiers::CursedEffect']]]
+  ['curse',['Curse',['../class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_cursed_effect.html#a37bd163e1641ff85113daca8e82e62f1',1,'Loot::Modifiers::WeaponModifiers::CursedEffect']]],
+  ['curseholding',['CurseHolding',['../class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_cursed_effect.html#a7dbd3c5248a667a59b8a0c49636696cb',1,'Loot::Modifiers::WeaponModifiers::CursedEffect']]]
 ];

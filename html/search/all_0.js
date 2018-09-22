@@ -38,6 +38,7 @@ var searchData=
   ['_5foldcheatsheetequips',['_oldCheatSheetEquips',['../class_loot_1_1_modifiers_1_1_modifier_cache_player.html#abacdfedf324007288e2b1fb032f795e0',1,'Loot::Modifiers::ModifierCachePlayer']]],
   ['_5foldequips',['_oldEquips',['../class_loot_1_1_modifiers_1_1_modifier_cache_player.html#aacbb5694a838190770c41996a6e9cfd1',1,'Loot::Modifiers::ModifierCachePlayer']]],
   ['_5foldhelditem',['_oldHeldItem',['../class_loot_1_1_modifiers_1_1_modifier_cache_player.html#a0a042f5e18ed5fe1a34d79576d9a73d8',1,'Loot::Modifiers::ModifierCachePlayer']]],
+  ['_5foldmouseitem',['_oldMouseItem',['../class_loot_1_1_modifiers_1_1_modifier_cache_player.html#ad2423f72666931d35ebfcc8f87dc6ab9',1,'Loot::Modifiers::ModifierCachePlayer']]],
   ['_5foldvanityequips',['_oldVanityEquips',['../class_loot_1_1_modifiers_1_1_modifier_cache_player.html#a0edfc6765603c4c143bd33cf695a793c',1,'Loot::Modifiers::ModifierCachePlayer']]],
   ['_5fpower',['_power',['../class_loot_1_1_core_1_1_modifier_properties.html#af1d70b1ea196bc584cc1537f2b8bff78',1,'Loot::Core::ModifierProperties']]],
   ['_5frerollbutton',['_rerollButton',['../class_loot_1_1_u_i_1_1_cube_reroll_u_i.html#af89c86b06cdcdb748bf064aeae80a22a',1,'Loot::UI::CubeRerollUI']]],

@@ -48,6 +48,7 @@ var searchData=
   ['curseddamage',['CursedDamage',['../class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_cursed_damage.html',1,'Loot::Modifiers::WeaponModifiers']]],
   ['curseddamage_2ecs',['CursedDamage.cs',['../_cursed_damage_8cs.html',1,'']]],
   ['cursedeffect',['CursedEffect',['../class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_cursed_effect.html',1,'Loot::Modifiers::WeaponModifiers']]],
+  ['curseholding',['CurseHolding',['../class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_cursed_effect.html#a7dbd3c5248a667a59b8a0c49636696cb',1,'Loot::Modifiers::WeaponModifiers::CursedEffect']]],
   ['custom',['Custom',['../namespace_loot_1_1_core.html#aaee86006118cea302753a7826ebf417ca90589c47f06eb971d548591f23c285af',1,'Loot::Core']]],
   ['customdata',['CustomData',['../struct_loot_1_1_core_1_1_modifier_context.html#af8b05a2e31b3d9747e0b395f015d0470',1,'Loot::Core::ModifierContext']]]
 ];

@@ -21,6 +21,7 @@ var searchData=
   ['updateinventory',['UpdateInventory',['../class_loot_1_1_modifier_item.html#a7cafc985a7ba72ed4d83d95b427c7857',1,'Loot.ModifierItem.UpdateInventory()'],['../class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_cursed_damage.html#a6cf676c3234850fcdabfff5890111d7c',1,'Loot.Modifiers.WeaponModifiers.CursedDamage.UpdateInventory()']]],
   ['updateliferegen',['UpdateLifeRegen',['../class_loot_1_1_modifier_player.html#a8f9b5f9833c228f90be9c09e61b15372',1,'Loot::ModifierPlayer']]],
   ['updatemodifierlines',['UpdateModifierLines',['../class_loot_1_1_u_i_1_1_cube_reroll_u_i.html#af33b3106799529bb09d5cc2ce520d20c',1,'Loot::UI::CubeRerollUI']]],
+  ['updatemouseitemcache',['UpdateMouseItemCache',['../class_loot_1_1_modifiers_1_1_modifier_cache_player.html#a887f3b1a9829cd82f2cf3f0f4842cab7',1,'Loot::Modifiers::ModifierCachePlayer']]],
   ['updateshootspeed',['UpdateShootSpeed',['../class_loot_1_1_modifiers_1_1_weapon_modifier.html#a28c449ee5e5e712ff711c367a032d935',1,'Loot::Modifiers::WeaponModifier']]],
   ['updatetext',['UpdateText',['../class_loot_1_1_u_i_1_1_u_i_modifier_panel.html#a8c36a177f4c4ec0a1e91d981f10185c6',1,'Loot::UI::UIModifierPanel']]],
   ['updateui',['UpdateUI',['../class_loot_1_1_loot.html#a7f296a7c4a011faca07302cf350881ef',1,'Loot::Loot']]],
