@@ -358,7 +358,7 @@ namespace Loot.Modifiers
 
 		private bool UpdateMouseItemCache()
 		{
-			bool flag = true;
+			bool flag = (_oldMouseItem?.IsAir ?? true);
 
 			if (_oldMouseItem == null || _oldMouseItem.IsNotTheSameAs(Main.mouseItem))
 			{
@@ -535,12 +535,10 @@ namespace Loot.Modifiers
 			{
 				CacheItemModifierEffects(Main.mouseItem);
 			}
-			else if (player.HeldItem != null && !player.HeldItem.IsAir && player.HeldItem.IsWeapon())
+			else if ((_oldMouseItem?.IsAir ?? true) && player.HeldItem != null && !player.HeldItem.IsAir && player.HeldItem.IsWeapon())
 			{
 				CacheItemModifierEffects(player.HeldItem);
 			}
-
-
 		}
 
 		private void CacheItemModifierEffects(Item item)
