@@ -1,10 +1,7 @@
 using Loot.Core;
 using Microsoft.Xna.Framework;
 using System;
-using Loot.Core.Graphics;
 using Terraria;
-using Terraria.Graphics.Shaders;
-using Terraria.ID;
 
 namespace Loot.Modifiers.WeaponModifiers
 {
@@ -34,7 +31,7 @@ namespace Loot.Modifiers.WeaponModifiers
 		//{
 		//	return new ShaderEntity(item,
 		//		GameShaders.Armor.GetShaderIdFromItemId(ItemID.MirageDye),
-		//		drawLayer: ShaderDrawLayer.Middle,
+		//		drawLayer: ShaderDrawLayer.Front,
 		//		drawOffsetStyle: ShaderDrawOffsetStyle.Alternate,
 		//		shaderDrawColor: Color.IndianRed);
 		//}

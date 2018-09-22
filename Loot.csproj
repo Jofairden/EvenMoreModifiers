@@ -87,7 +87,6 @@
     <Compile Include="Core\Graphics\ShaderDrawOffsetStyle.cs" />
     <Compile Include="Core\Graphics\ShaderEntity.cs" />
     <Compile Include="Core\Graphics\ShaderGlobalItem.cs" />
-    <Compile Include="Core\ModContent\AutoloadModContent.cs" />
     <Compile Include="Core\ModContent\ContentManager.cs" />
     <Compile Include="Core\ModContent\ModContent.cs" />
     <Compile Include="Core\ModContent\ModGraphicsContent.cs" />

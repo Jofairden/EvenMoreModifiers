@@ -1,3 +1,4 @@
+using Loot.Core.ModContent;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Terraria;
@@ -46,14 +47,16 @@ namespace Loot.Core.Graphics
 			return null;
 		}
 
-		// @todo dynamic load assets
 		protected void LoadAssets(Item item)
 		{
 			if (GlowmaskTexture != null) return;
-			//var graphicsContent = Loot.ContentManager.GetContent<ModGraphicsContent>();
-			//if (graphicsContent == null) return;
-			//GlowmaskTexture = graphicsContent.GetGlowmaskTexture(EntityKey);
-			GlowmaskTexture = Main.itemTexture[item.type];
+			var graphicsContent = Loot.ContentManager.GetContent<ModGraphicsContent>();
+			graphicsContent?.Prepare(item);
+			GlowmaskTexture = graphicsContent?.GetPreparedGlowmask(item.type.ToString());
+			if (GlowmaskTexture == null)
+			{
+				GlowmaskTexture = Main.itemTexture[item.type];
+			}
 		}
 
 		/// <summary>

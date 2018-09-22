@@ -1,9 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Reflection;
-using System.Text;
-using System.Threading.Tasks;
+using Terraria.ModLoader;
 
 namespace Loot.Core.ModContent
 {
@@ -44,13 +42,16 @@ namespace Loot.Core.ModContent
 
 			modContent._Initialize();
 			_contents.Add(key, modContent);
+			if (Loot.Loaded)
+			{
+				modContent._Load();
+			}
 		}
 
-		internal void Initialize()
+		internal void Initialize(Mod mod)
 		{
 			_contents = new Dictionary<string, ModContent>();
-
-			var assembly = Assembly.GetExecutingAssembly();
+			var assembly = mod.Code;
 			var modContents = assembly.GetTypes().Where(x => x.BaseType == typeof(ModContent) && !x.IsAbstract);
 			foreach (var modContent in modContents)
 			{

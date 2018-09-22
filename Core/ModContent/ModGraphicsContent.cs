@@ -2,11 +2,10 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
-using System.Runtime.Serialization;
-using System.Text;
-using System.Threading.Tasks;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
+using Terraria;
+using Terraria.ID;
 using Terraria.ModLoader;
 
 namespace Loot.Core.ModContent
@@ -15,20 +14,35 @@ namespace Loot.Core.ModContent
 	{
 		protected IDictionary<string, Texture2D> _glowmaskTextures;
 		protected IDictionary<string, Texture2D> _shaderTextures;
+		
+		private IDictionary<string, string> _keyStore;
+
 		private IDictionary<string, Texture2D> _lookupTable;
+		private IDictionary<string, Texture2D> _lookupGlowmaskTable;
+		private IDictionary<string, Texture2D> _lookupShaderTable;
 
 		protected override void Initialize()
 		{
 			_glowmaskTextures = new Dictionary<string, Texture2D>();
 			_shaderTextures = new Dictionary<string, Texture2D>();
+
+			_keyStore = new Dictionary<string, string>();
+
 			_lookupTable = new Dictionary<string, Texture2D>();
+			_lookupGlowmaskTable = new Dictionary<string, Texture2D>();
+			_lookupShaderTable = new Dictionary<string, Texture2D>();
 		}
 
 		protected override void Unload()
 		{
 			_glowmaskTextures = null;
 			_shaderTextures = null;
+			
+			_keyStore = null;
+
 			_lookupTable = null;
+			_lookupGlowmaskTable = null;
+			_lookupShaderTable = null;
 		}
 
 		public override string GetRegistryKey()
@@ -36,27 +50,170 @@ namespace Loot.Core.ModContent
 			return "ModGraphics";
 		}
 
-		// @todo expose a global GraphicsContent instance and prepare automagically in context ?
-		public void Prepare(object obj)
+		internal void AddKeyPass(string key, string keyPass)
 		{
-			string nm = obj.GetType().Namespace;
+			if (!_keyStore.ContainsKey(key))
+			{
+				_keyStore.Add(key, keyPass);
+			}
+		}
+
+		internal IDictionary<string, int> _vanillaNamesCache;
+
+		private void FillVanillaNamesCache()
+		{
+			_vanillaNamesCache = new Dictionary<string, int>();
+			for (int i = 1; i < ItemID.Count; i++)
+			{
+				Item item = new Item();
+				item.SetDefaults(i);
+				if (_vanillaNamesCache.ContainsKey(item.Name))
+				{
+					// "Something is not quite right..";
+				}
+				_vanillaNamesCache.Add($"{item.Name.Replace(" ", "")}_{i}", i);
+			}
+		}
+
+		internal string GetAssetKey(string key, Mod mod)
+		{
+			if (_vanillaNamesCache == null)
+			{
+				FillVanillaNamesCache();
+			}
+
+			string kvpName = key;
+			if (key.Contains('/'))
+			{
+				key = key.Substring(key.LastIndexOf('/') + 1);
+			}
+			// is an item name
+			if (char.IsLetter(key.First()))
+			{
+				int index = key.LastIndexOf('_');
+				key = new string(key.TakeWhile((x, i) => i < index).ToArray());
+				var itemName = key;
+				Item item = mod.GetItem(key)?.item;
+				if (item == null)
+				{
+					if (!_vanillaNamesCache.Keys.Any(x => x.StartsWith(key.Replace(" ", ""))))
+					{
+						return null;
+					}
+					item = new Item();
+					item.SetDefaults(_vanillaNamesCache[_vanillaNamesCache.Keys.First(x => x.StartsWith(key.Replace(" ", "")))]);
+				}
+				return kvpName.Replace(itemName, item.type.ToString());
+			}
+			// is an item id
+			if (char.IsNumber(key.First()))
+			{
+				int index = key.LastIndexOf('_');
+				string itemId = new string(key.TakeWhile((x, i) => i < index).ToArray());
+				if (int.Parse(itemId) >= ItemLoader.ItemCount) return null;
+				return kvpName;
+			}
+			return null;
+		}
+
+		internal bool AnyGlowmaskAssetExists(string key, Mod mod)
+		{
+			GetItemKey(key);
+			return _glowmaskTextures.Any(x => x.Key.StartsWith(mod.Name) && x.Key.Contains($"{key}_Glowmask") || x.Key.Contains($"{key}_Glow"));
+		}
+
+		internal bool AnyShaderAssetExists(string key, Mod mod)
+		{
+			key = GetItemKey(key);
+			return _shaderTextures.Any(x => x.Key.StartsWith(mod.Name) && x.Key.Contains($"{key}_Shader") || x.Key.Contains($"{key}_Shad"));
+		}
+
+		private string GetItemKey(string key)
+		{
+			if (key.Contains('/'))
+			{
+				key = key.Substring(key.LastIndexOf('/') + 1);
+			}
+			int index = key.LastIndexOf('_');
+			return new string(key.TakeWhile((x, i) => i < index).ToArray());
+		}
+
+		// @todo expose a global GraphicsContent instance and prepare automagically in context ?
+		public void Prepare(Mod mod)
+		{
+			// ReSharper disable once InlineOutVariableDeclaration
+			string keyPass;
+
+			if (_keyStore.TryGetValue(mod.Name, out keyPass))
+			{
+				var glowmasks = _glowmaskTextures.Where(x => x.Key.StartsWith(keyPass)).ToArray();
+				var shaders = _glowmaskTextures.Where(x => x.Key.StartsWith(keyPass)).ToArray();
+
+				_lookupTable =
+					_textures.Where(x => x.Key.StartsWith(keyPass))
+						.Concat(glowmasks)
+						.Concat(shaders)
+						.ToDictionary(x => SubstringLastIndex('/', x.Key), x => x.Value);
+
+				_lookupGlowmaskTable = glowmasks.ToDictionary(x => SubstringLastIndex('/', x.Key), x => x.Value);
+				_lookupShaderTable = shaders.ToDictionary(x => SubstringLastIndex('/', x.Key), x => x.Value);
+
+			}
+			else
+			{
+				throw new Exception($"Tried to get keyPass from keyStore for mod {mod.Name} but key not present");
+			}
+		}
+
+		public void Prepare(Item item)
+		{
+			string itemId = item.type.ToString();
+			var glowmasks = _glowmaskTextures.Where(x => GetItemKey(x.Key).Equals(itemId)).ToArray();
+			var shaders = _shaderTextures.Where(x => GetItemKey(x.Key).Equals(itemId)).ToArray();
+
 			_lookupTable =
-				_textures.Where(x => x.Key.StartsWith(nm))
-					.Concat(_glowmaskTextures.Where(x => x.Key.StartsWith(nm)))
-					.Concat(_shaderTextures.Where(x => x.Key.StartsWith(nm)))
-					.ToDictionary(x => SubstringLastIndex('.', x.Key), x => x.Value);
+				_textures.Where(x => GetItemKey(x.Key).Equals(itemId))
+					.Concat(glowmasks)
+					.Concat(shaders)
+					.ToDictionary(x => SubstringLastIndex('/', x.Key), x => x.Value);
+
+			_lookupGlowmaskTable = glowmasks.ToDictionary(x => SubstringLastIndex('/', x.Key), x => x.Value);
+			_lookupShaderTable = shaders.ToDictionary(x => SubstringLastIndex('/', x.Key), x => x.Value);
 		}
 
 		public void ClearPreparation()
 		{
 			_lookupTable.Clear();
+			_lookupGlowmaskTable.Clear();
+			_lookupShaderTable.Clear();
 		}
 
-		public Texture2D GetPreparedTexture(string key, bool clearPreperation = true)
+		public Texture2D GetPreparedTexture(string key, bool clearPreparation = true)
 		{
-			Texture2D texture = GetFrom(_lookupTable, key);
-			if (clearPreperation && texture != null)
+			return GetPreparedAsset(_lookupTable, key, clearPreparation);
+		}
+
+		public Texture2D GetPreparedGlowmask(string key, bool clearPreparation = true)
+		{
+			Texture2D glowmask = GetPreparedAsset(_lookupGlowmaskTable, $"{key}_Glowmask", clearPreparation);
+			if (glowmask != null) return glowmask;
+			return GetPreparedAsset(_lookupGlowmaskTable, $"{key}_Glow", clearPreparation);
+		}
+
+		public Texture2D GetPreparedShader(string key, bool clearPreparation = true)
+		{
+			Texture2D shader = GetPreparedAsset(_lookupShaderTable, $"{key}_Shader", clearPreparation);
+			if (shader != null) return shader;
+			return GetPreparedAsset(_lookupShaderTable, $"{key}_Shad", clearPreparation);
+		}
+
+		private Texture2D GetPreparedAsset(IDictionary<string, Texture2D> dict, string key, bool clearPreparation = true)
+		{
+			Texture2D texture = GetFrom(dict, key);
+			if (clearPreparation && texture != null)
+			{
 				ClearPreparation();
+			}
 			return texture;
 		}
 
@@ -65,7 +222,7 @@ namespace Loot.Core.ModContent
 			return GetFrom(_glowmaskTextures, key);
 		}
 
-		protected void AddGlowmaskTexture(string key, Texture2D texture)
+		public void AddGlowmaskTexture(string key, Texture2D texture)
 		{
 			AddTo(_glowmaskTextures, key, texture);
 		}
@@ -75,7 +232,7 @@ namespace Loot.Core.ModContent
 			return GetFrom(_shaderTextures, key);
 		}
 
-		protected void AddShaderTexture(string key, Texture2D texture)
+		public void AddShaderTexture(string key, Texture2D texture)
 		{
 			AddTo(_shaderTextures, key, texture);
 		}

@@ -5,6 +5,8 @@ using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
+using Loot.Core.ModContent;
+using Microsoft.Xna.Framework.Graphics;
 using Terraria.ModLoader;
 using Terraria.Utilities;
 using EffectMap = System.Collections.Generic.KeyValuePair<string, Loot.Core.ModifierEffect>;
@@ -121,6 +123,77 @@ namespace Loot
 			PoolsMap.Add(new KeyValuePair<string, List<PoolMap>>(mod.Name, new List<PoolMap>()));
 			EffectsMap.Add(new KeyValuePair<string, List<EffectMap>>(mod.Name, new List<EffectMap>()));
 			//			GlobalModifiersMap.Add(new KeyValuePair<string, List<GlobalModifierMap>>(mod.Name, new List<GlobalModifierMap>()));
+		}
+
+		public static void RegisterAssets(Mod mod, string folder, bool clearOwnTextures = true)
+		{
+			if (mod == null)
+			{
+				throw new NullReferenceException("Mod is null in RegisterAssets");
+			}
+
+			if (Loot.ContentManager == null)
+			{
+				throw new NullReferenceException("Loot.ContentManager is null in RegisterAssets");
+			}
+
+			var graphicsContent = Loot.ContentManager.GetContent<ModGraphicsContent>();
+			if (graphicsContent == null)
+			{
+				throw new NullReferenceException("ModGraphicsContent is null in RegisterAssets");
+			}
+
+			if (folder.StartsWith($"{mod.Name}/"))
+			{
+				folder = folder.Replace($"{mod.Name}/", "");
+			}
+			string keyPass = $"{mod.Name}/{folder}";
+			graphicsContent.AddKeyPass(mod.Name, keyPass);
+
+			FieldInfo texturesField = typeof(Mod).GetField("textures", BindingFlags.Instance | BindingFlags.NonPublic);
+			Dictionary<string, Texture2D> dictionary = ((Dictionary<string, Texture2D>)texturesField?.GetValue(mod));
+			if (dictionary == null)
+			{
+				throw new NullReferenceException($"textures dictionary for mod {mod.Name} was null");
+			}
+
+			var textures = dictionary.Where(x => x.Key.StartsWith(folder)).ToList();
+			var glowmasks = textures.Where(x => x.Key.EndsWith("_Glowmask") || x.Key.EndsWith("_Glow")).ToList();
+			var shaders = textures.Where(x => x.Key.EndsWith("_Shader") || x.Key.EndsWith("_Shad")).ToList();
+			
+			foreach (var kvp in glowmasks)
+			{
+				string assetKey = graphicsContent.GetAssetKey(kvp.Value.Name, mod);
+				if (assetKey == null) continue;
+				if (graphicsContent.AnyGlowmaskAssetExists(assetKey, mod))
+				{
+					throw new Exception($"{mod.Name} attempted to add a glowmask asset already present: {assetKey}");
+				}
+				graphicsContent.AddGlowmaskTexture(assetKey, kvp.Value);
+				if (clearOwnTextures)
+				{
+					dictionary.Remove(kvp.Key);
+				}
+			}
+
+			foreach (var kvp in shaders)
+			{
+				string assetKey = graphicsContent.GetAssetKey(kvp.Value.Name, mod);
+				if (assetKey == null) continue;
+				if (graphicsContent.AnyShaderAssetExists(assetKey, mod))
+				{
+					throw new Exception($"{mod.Name} attempted to add a shader asset already present: {assetKey}");
+				}
+				graphicsContent.AddShaderTexture(assetKey, kvp.Value);
+				if (clearOwnTextures)
+				{
+					dictionary.Remove(kvp.Key);
+				}
+			}
+
+			// sanity check
+			graphicsContent.Prepare(mod);
+			graphicsContent.ClearPreparation();
 		}
 
 		// todo refactor to ReserveID
@@ -243,7 +316,8 @@ namespace Loot
 				.Value
 				.GetTypes()
 				.OrderBy(x => x.FullName, StringComparer.InvariantCulture)
-				.Where(t => t.IsClass && !t.IsAbstract); /* || type.GetConstructor(new Type[0]) == null*/
+				.Where(t => t.IsClass && !t.IsAbstract)
+				.ToList(); /* || type.GetConstructor(new Type[0]) == null*/
 
 			var rarities = ordered.Where(x => x.IsSubclassOf(typeof(ModifierRarity)));
 			var modifiers = ordered.Where(x => x.IsSubclassOf(typeof(Modifier)));

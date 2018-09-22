@@ -39,6 +39,7 @@ namespace Loot
 		internal CubeSealUI CubeSealUI;
 
 		internal static ContentManager ContentManager;
+		public static bool Loaded;
 
 		public Loot()
 		{
@@ -73,6 +74,7 @@ namespace Loot
 			{
 				SetupContentMgr();
 				SetupUIs();
+				EMMLoader.RegisterAssets(this, "GraphicsAssets");
 
 				if (WingSlotLoaded)
 				{
@@ -85,12 +87,14 @@ namespace Loot
 					//	}));
 				}
 			}
+
+			Loaded = true;
 		}
 
 		private void SetupContentMgr()
 		{
 			ContentManager = new ContentManager();
-			ContentManager.Initialize();
+			ContentManager.Initialize(this);
 			ContentManager.Load();
 		}
 
@@ -129,6 +133,8 @@ namespace Loot
 			//        typesToProcess.Push(nestedType);
 			//    }
 			//}
+
+			Loaded = false;
 		}
 
 		private GameTime _lastUpdateUIGameTime;

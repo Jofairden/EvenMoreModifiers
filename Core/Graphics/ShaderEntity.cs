@@ -1,3 +1,4 @@
+using Loot.Core.ModContent;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Terraria;
@@ -117,19 +118,21 @@ namespace Loot.Core.Graphics
 		// @todo dynamic load assets
 		protected void LoadAssets(Item item)
 		{
-			//var graphicsContent = Loot.ContentManager.GetContent<ModGraphicsContent>();
-			//if (graphicsContent == null) return;
+			var graphicsContent = Loot.ContentManager.GetContent<ModGraphicsContent>();
+			graphicsContent?.Prepare(item);
 
 			if (SubjectTexture == null)
 			{
-				//SubjectTexture = graphicsContent.GetTexture(Identity.GetType().FullName);
 				SubjectTexture = Main.itemTexture[item.type];
 			}
 
 			if (ShaderTexture == null)
 			{
-				//ShaderTexture = graphicsContent.GetShaderTexture(EntityKey);
-				ShaderTexture = Main.itemTexture[item.type];
+				ShaderTexture = graphicsContent?.GetPreparedShader(item.type.ToString());
+				if (ShaderTexture == null)
+				{
+					ShaderTexture = Main.itemTexture[item.type];
+				}
 			}
 		}
 
@@ -151,18 +154,18 @@ namespace Loot.Core.Graphics
 					{
 						DoDrawShader(ShaderTexture, spriteBatch);
 						DoDrawSubject(SubjectTexture, spriteBatch, lightColor, alphaColor);
-						glowmaskEntity?.DoDrawGlowmask(spriteBatch, DrawColor, DrawColor, rotation, scale, Entity.whoAmI);
+						glowmaskEntity?.DoDrawGlowmask(spriteBatch, lightColor, alphaColor, rotation, scale, Entity.whoAmI);
 					}
 					else if (DrawLayer == ShaderDrawLayer.Middle)
 					{
 						DoDrawSubject(SubjectTexture, spriteBatch, lightColor, alphaColor);
 						DoDrawShader(ShaderTexture, spriteBatch);
-						glowmaskEntity?.DoDrawGlowmask(spriteBatch, DrawColor, DrawColor, rotation, scale, Entity.whoAmI);
+						glowmaskEntity?.DoDrawGlowmask(spriteBatch, lightColor, alphaColor, rotation, scale, Entity.whoAmI);
 					}
 					else if (DrawLayer == ShaderDrawLayer.Front)
 					{
 						DoDrawSubject(SubjectTexture, spriteBatch, lightColor, alphaColor);
-						glowmaskEntity?.DoDrawGlowmask(spriteBatch, DrawColor, DrawColor, rotation, scale, Entity.whoAmI);
+						glowmaskEntity?.DoDrawGlowmask(spriteBatch, lightColor, alphaColor, rotation, scale, Entity.whoAmI);
 						DoDrawShader(ShaderTexture, spriteBatch);
 					}
 				}

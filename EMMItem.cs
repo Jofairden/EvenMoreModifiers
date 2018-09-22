@@ -7,6 +7,7 @@ using System.Collections.Generic;
 using System.Globalization;
 using System.IO;
 using System.Linq;
+using Loot.Core.Graphics;
 using Terraria;
 using Terraria.ModLoader;
 using Terraria.ModLoader.IO;
@@ -122,6 +123,8 @@ namespace Loot
 				ModifierPool.UpdateRarity();
 			}
 
+			ctx.Item.GetGlobalItem<ShaderGlobalItem>().NeedsUpdate = true;
+			ctx.Item.GetGlobalItem<GlowmaskGlobalItem>().NeedsUpdate = true;
 			return ModifierPool;
 		}
 
