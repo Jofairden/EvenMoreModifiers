@@ -1,5 +1,6 @@
 using Loot.Core;
 using Loot.Core.Cubes;
+using Loot.Core.Graphics;
 using Loot.Modifiers.EquipModifiers.Utility;
 using Microsoft.Xna.Framework;
 using System;
@@ -7,7 +8,6 @@ using System.Collections.Generic;
 using System.Globalization;
 using System.IO;
 using System.Linq;
-using Loot.Core.Graphics;
 using Terraria;
 using Terraria.ModLoader;
 using Terraria.ModLoader.IO;
@@ -592,15 +592,18 @@ namespace Loot
 				}
 
 				// Insert modifier rarity
+				bool isVanityActivated = ActivatedModifierItem.Item(item).IsVanityActivated;
+				Color? inactiveColor = isVanityActivated ? (Color?)Color.DarkSlateGray : null;
+
 				i = tooltips.Count;
-				tooltips.Insert(i, new TooltipLine(mod, "Loot: Modifier:Rarity", $"[{pool.Rarity.Name}]") { overrideColor = pool.Rarity.Color * Main.inventoryScale });
+				tooltips.Insert(i, new TooltipLine(mod, "Loot: Modifier:Rarity", $"[{pool.Rarity.Name}]{(isVanityActivated ? " [INACTIVE]" : "")}") { overrideColor = inactiveColor ?? pool.Rarity.Color * Main.inventoryScale });
 
 				// Insert lines
 				foreach (var ttcol in pool.Description)
 				{
 					foreach (var tt in ttcol)
 					{
-						tooltips.Insert(++i, new TooltipLine(mod, $"Loot: Modifier:Line:{i}", tt.Text) { overrideColor = (tt.Color ?? Color.White) * Main.inventoryScale });
+						tooltips.Insert(++i, new TooltipLine(mod, $"Loot: Modifier:Line:{i}", tt.Text) { overrideColor = inactiveColor ?? (tt.Color ?? Color.White) * Main.inventoryScale });
 					}
 				}
 
@@ -609,7 +612,7 @@ namespace Loot
 				{
 					var ttl = new TooltipLine(mod, "Loot: Modifier:Sealed", "Modifiers cannot be changed")
 					{
-						overrideColor = Color.Cyan
+						overrideColor = inactiveColor ?? Color.Cyan
 					};
 					tooltips.Insert(++i, ttl);
 				}

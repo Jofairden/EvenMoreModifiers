@@ -20,23 +20,47 @@ namespace Loot
 		/// </summary>
 		public bool IsActivated { get; internal set; }
 
+		/// <summary>
+		/// Keeps track of if the item was activated whilst in a vanity slot (by another mod)
+		/// In this case activated means giving its regular bonuses
+		/// </summary>
 		public bool IsVanityActivated { get; internal set; }
 
+		/// <summary>
+		/// Returns if the item is in a player's vanity slot
+		/// </summary>
 		private bool IsInVanitySot(Item item, Player player)
 		{
 			return player.armor.Skip(13).Any(x => x.IsTheSameAs(item));
 		}
 
+		private bool IsNotEquippedAtAll(Item item, Player player)
+		{
+			return !player.armor.Any(x => x.IsTheSameAs(item));
+		}
+
 		public override void UpdateAccessory(Item item, Player player, bool hideVisual)
 		{
-			if (IsInVanitySot(item, player))
+			if (IsInVanitySot(item, player) || IsNotEquippedAtAll(item, player))
+			{
 				IsVanityActivated = true;
+			}
+			else
+			{
+				IsVanityActivated = false;
+			}
 		}
 
 		public override void UpdateEquip(Item item, Player player)
 		{
-			if (IsInVanitySot(item, player))
+			if (IsInVanitySot(item, player) || IsNotEquippedAtAll(item, player))
+			{
 				IsVanityActivated = true;
+			}
+			else
+			{
+				IsVanityActivated = false;
+			}
 		}
 
 		public static ActivatedModifierItem Item(Item item) => item.GetGlobalItem<ActivatedModifierItem>();
@@ -49,9 +73,15 @@ namespace Loot
 	{
 		public override bool InstancePerEntity => false;
 		public override bool CloneNewInstances => false;
+		private ActivatedModifierItem MItem(Item item) => ActivatedModifierItem.Item(item);
 
 		public override bool AltFunctionUse(Item item, Player player)
 		{
+			if (MItem(item).IsVanityActivated)
+			{
+				return base.AltFunctionUse(item, player);
+			}
+
 			bool b = base.AltFunctionUse(item, player);
 
 			foreach (Modifier m in EMMItem.GetActivePool(item))
@@ -64,6 +94,11 @@ namespace Loot
 
 		public override bool CanEquipAccessory(Item item, Player player, int slot)
 		{
+			if (MItem(item).IsVanityActivated)
+			{
+				return base.CanEquipAccessory(item, player, slot);
+			}
+
 			bool b = base.CanEquipAccessory(item, player, slot);
 
 			foreach (Modifier m in EMMItem.GetActivePool(item))
@@ -76,6 +111,11 @@ namespace Loot
 
 		public override bool? CanHitNPC(Item item, Player player, NPC target)
 		{
+			if (MItem(item).IsVanityActivated)
+			{
+				return base.CanHitNPC(item, player, target);
+			}
+
 			bool? b = base.CanHitNPC(item, player, target);
 
 			foreach (Modifier m in EMMItem.GetActivePool(item))
@@ -88,6 +128,11 @@ namespace Loot
 
 		public override bool CanHitPvp(Item item, Player player, Player target)
 		{
+			if (MItem(item).IsVanityActivated)
+			{
+				return base.CanHitPvp(item, player, target);
+			}
+
 			bool b = base.CanHitPvp(item, player, target);
 
 			foreach (Modifier m in EMMItem.GetActivePool(item))
@@ -100,6 +145,11 @@ namespace Loot
 
 		public override bool CanPickup(Item item, Player player)
 		{
+			if (MItem(item).IsVanityActivated)
+			{
+				return base.CanPickup(item, player);
+			}
+
 			bool b = base.CanPickup(item, player);
 
 			foreach (Modifier m in EMMItem.GetActivePool(item))
@@ -112,6 +162,11 @@ namespace Loot
 
 		public override bool CanRightClick(Item item)
 		{
+			if (MItem(item).IsVanityActivated)
+			{
+				return base.CanRightClick(item);
+			}
+
 			bool b = base.CanRightClick(item);
 
 			foreach (Modifier m in EMMItem.GetActivePool(item))
@@ -124,6 +179,11 @@ namespace Loot
 
 		public override bool CanUseItem(Item item, Player player)
 		{
+			if (MItem(item).IsVanityActivated)
+			{
+				return base.CanUseItem(item, player);
+			}
+
 			bool b = base.CanUseItem(item, player);
 
 			foreach (Modifier m in EMMItem.GetActivePool(item))
@@ -136,6 +196,11 @@ namespace Loot
 
 		public override int ChoosePrefix(Item item, UnifiedRandom rand)
 		{
+			if (MItem(item).IsVanityActivated)
+			{
+				return base.ChoosePrefix(item, rand);
+			}
+
 			int p = base.ChoosePrefix(item, rand);
 			if (p != -1)
 			{
@@ -157,6 +222,11 @@ namespace Loot
 
 		public override bool ConsumeAmmo(Item item, Player player)
 		{
+			if (MItem(item).IsVanityActivated)
+			{
+				return base.ConsumeAmmo(item, player);
+			}
+
 			bool b = base.ConsumeAmmo(item, player);
 
 			foreach (Modifier m in EMMItem.GetActivePool(item))
@@ -169,6 +239,11 @@ namespace Loot
 
 		public override bool ConsumeItem(Item item, Player player)
 		{
+			if (MItem(item).IsVanityActivated)
+			{
+				return base.ConsumeItem(item, player);
+			}
+
 			bool b = base.ConsumeItem(item, player);
 
 			foreach (Modifier m in EMMItem.GetActivePool(item))
@@ -181,6 +256,11 @@ namespace Loot
 
 		public override Color? GetAlpha(Item item, Color lightColor)
 		{
+			if (MItem(item).IsVanityActivated)
+			{
+				return base.GetAlpha(item, lightColor);
+			}
+
 			Color? a = base.GetAlpha(item, lightColor);
 			if (a.HasValue)
 			{
@@ -202,6 +282,11 @@ namespace Loot
 
 		public override void GetWeaponCrit(Item item, Player player, ref int crit)
 		{
+			if (MItem(item).IsVanityActivated)
+			{
+				return;
+			}
+
 			base.GetWeaponCrit(item, player, ref crit);
 
 			foreach (Modifier m in EMMItem.GetActivePool(item))
@@ -212,6 +297,11 @@ namespace Loot
 
 		public override void GetWeaponDamage(Item item, Player player, ref int damage)
 		{
+			if (MItem(item).IsVanityActivated)
+			{
+				return;
+			}
+
 			base.GetWeaponDamage(item, player, ref damage);
 
 			foreach (Modifier m in EMMItem.GetActivePool(item))
@@ -222,6 +312,11 @@ namespace Loot
 
 		public override void GetWeaponKnockback(Item item, Player player, ref float knockback)
 		{
+			if (MItem(item).IsVanityActivated)
+			{
+				return;
+			}
+
 			base.GetWeaponKnockback(item, player, ref knockback);
 
 			foreach (Modifier m in EMMItem.GetActivePool(item))
@@ -232,6 +327,11 @@ namespace Loot
 
 		public override void GrabRange(Item item, Player player, ref int grabRange)
 		{
+			if (MItem(item).IsVanityActivated)
+			{
+				return;
+			}
+
 			base.GrabRange(item, player, ref grabRange);
 
 			foreach (Modifier m in EMMItem.GetActivePool(item))
@@ -242,6 +342,11 @@ namespace Loot
 
 		public override bool GrabStyle(Item item, Player player)
 		{
+			if (MItem(item).IsVanityActivated)
+			{
+				return base.GrabStyle(item, player);
+			}
+
 			bool b = base.GrabStyle(item, player);
 
 			foreach (Modifier m in EMMItem.GetActivePool(item))
@@ -254,6 +359,11 @@ namespace Loot
 
 		public override void HoldItem(Item item, Player player)
 		{
+			if (MItem(item).IsVanityActivated)
+			{
+				return;
+			}
+
 			base.HoldItem(item, player);
 
 			foreach (Modifier m in EMMItem.GetActivePool(item))
@@ -264,6 +374,11 @@ namespace Loot
 
 		public override bool HoldItemFrame(Item item, Player player)
 		{
+			if (MItem(item).IsVanityActivated)
+			{
+				return base.HoldItemFrame(item, player);
+			}
+
 			bool b = base.HoldItemFrame(item, player);
 
 			foreach (Modifier m in EMMItem.GetActivePool(item))
@@ -276,6 +391,11 @@ namespace Loot
 
 		public override void HoldStyle(Item item, Player player)
 		{
+			if (MItem(item).IsVanityActivated)
+			{
+				return;
+			}
+
 			base.HoldStyle(item, player);
 
 			foreach (Modifier m in EMMItem.GetActivePool(item))
@@ -286,6 +406,11 @@ namespace Loot
 
 		public override void HorizontalWingSpeeds(Item item, Player player, ref float speed, ref float acceleration)
 		{
+			if (MItem(item).IsVanityActivated)
+			{
+				return;
+			}
+
 			base.HorizontalWingSpeeds(item, player, ref speed, ref acceleration);
 
 			foreach (Modifier m in EMMItem.GetActivePool(item))
@@ -296,6 +421,11 @@ namespace Loot
 
 		public override bool ItemSpace(Item item, Player player)
 		{
+			if (MItem(item).IsVanityActivated)
+			{
+				return base.ItemSpace(item, player);
+			}
+
 			bool b = base.ItemSpace(item, player);
 
 			foreach (Modifier m in EMMItem.GetActivePool(item))
@@ -308,6 +438,11 @@ namespace Loot
 
 		public override void MeleeEffects(Item item, Player player, Rectangle hitbox)
 		{
+			if (MItem(item).IsVanityActivated)
+			{
+				return;
+			}
+
 			base.MeleeEffects(item, player, hitbox);
 
 			foreach (Modifier m in EMMItem.GetActivePool(item))
@@ -318,6 +453,11 @@ namespace Loot
 
 		public override float MeleeSpeedMultiplier(Item item, Player player)
 		{
+			if (MItem(item).IsVanityActivated)
+			{
+				return base.MeleeSpeedMultiplier(item, player);
+			}
+
 			float mult = base.MeleeSpeedMultiplier(item, player);
 			if (mult != 1f)
 			{
@@ -339,6 +479,11 @@ namespace Loot
 
 		public override void ModifyHitNPC(Item item, Player player, NPC target, ref int damage, ref float knockBack, ref bool crit)
 		{
+			if (MItem(item).IsVanityActivated)
+			{
+				return;
+			}
+
 			base.ModifyHitNPC(item, player, target, ref damage, ref knockBack, ref crit);
 
 			foreach (Modifier m in EMMItem.GetActivePool(item))
@@ -349,6 +494,11 @@ namespace Loot
 
 		public override void ModifyHitPvp(Item item, Player player, Player target, ref int damage, ref bool crit)
 		{
+			if (MItem(item).IsVanityActivated)
+			{
+				return;
+			}
+
 			base.ModifyHitPvp(item, player, target, ref damage, ref crit);
 
 			foreach (Modifier m in EMMItem.GetActivePool(item))
@@ -391,6 +541,11 @@ namespace Loot
 
 		public override bool NewPreReforge(Item item)
 		{
+			if (MItem(item).IsVanityActivated)
+			{
+				return base.NewPreReforge(item);
+			}
+
 			bool b = base.NewPreReforge(item);
 
 			foreach (Modifier m in EMMItem.GetActivePool(item))
@@ -403,6 +558,11 @@ namespace Loot
 
 		public override void OnCraft(Item item, Recipe recipe)
 		{
+			if (MItem(item).IsVanityActivated)
+			{
+				return;
+			}
+
 			base.OnCraft(item, recipe);
 
 			foreach (Modifier m in EMMItem.GetActivePool(item))
@@ -413,6 +573,11 @@ namespace Loot
 
 		public override void OnHitNPC(Item item, Player player, NPC target, int damage, float knockBack, bool crit)
 		{
+			if (MItem(item).IsVanityActivated)
+			{
+				return;
+			}
+
 			base.OnHitNPC(item, player, target, damage, knockBack, crit);
 
 			foreach (Modifier m in EMMItem.GetActivePool(item))
@@ -423,6 +588,11 @@ namespace Loot
 
 		public override void OnHitPvp(Item item, Player player, Player target, int damage, bool crit)
 		{
+			if (MItem(item).IsVanityActivated)
+			{
+				return;
+			}
+
 			base.OnHitPvp(item, player, target, damage, crit);
 
 			foreach (Modifier m in EMMItem.GetActivePool(item))
@@ -433,6 +603,11 @@ namespace Loot
 
 		public override bool OnPickup(Item item, Player player)
 		{
+			if (MItem(item).IsVanityActivated)
+			{
+				return base.OnPickup(item, player);
+			}
+
 			bool b = base.OnPickup(item, player);
 
 			foreach (Modifier m in EMMItem.GetActivePool(item))
@@ -445,6 +620,11 @@ namespace Loot
 
 		public override void PickAmmo(Item item, Player player, ref int type, ref float speed, ref int damage, ref float knockback)
 		{
+			if (MItem(item).IsVanityActivated)
+			{
+				return;
+			}
+
 			base.PickAmmo(item, player, ref type, ref speed, ref damage, ref knockback);
 
 			foreach (Modifier m in EMMItem.GetActivePool(item))
@@ -455,6 +635,11 @@ namespace Loot
 
 		public override void PostDrawInInventory(Item item, SpriteBatch spriteBatch, Vector2 position, Rectangle frame, Color drawColor, Color itemColor, Vector2 origin, float scale)
 		{
+			if (MItem(item).IsVanityActivated)
+			{
+				return;
+			}
+
 			base.PostDrawInInventory(item, spriteBatch, position, frame, drawColor, itemColor, origin, scale);
 
 			foreach (Modifier m in EMMItem.GetActivePool(item))
@@ -465,6 +650,11 @@ namespace Loot
 
 		public override void PostDrawInWorld(Item item, SpriteBatch spriteBatch, Color lightColor, Color alphaColor, float rotation, float scale, int whoAmI)
 		{
+			if (MItem(item).IsVanityActivated)
+			{
+				return;
+			}
+
 			base.PostDrawInWorld(item, spriteBatch, lightColor, alphaColor, rotation, scale, whoAmI);
 
 			foreach (Modifier m in EMMItem.GetActivePool(item))
@@ -475,6 +665,11 @@ namespace Loot
 
 		public override void PostDrawTooltip(Item item, ReadOnlyCollection<DrawableTooltipLine> lines)
 		{
+			if (MItem(item).IsVanityActivated)
+			{
+				return;
+			}
+
 			base.PostDrawTooltip(item, lines);
 
 			foreach (Modifier m in EMMItem.GetActivePool(item))
@@ -485,6 +680,11 @@ namespace Loot
 
 		public override void PostDrawTooltipLine(Item item, DrawableTooltipLine line)
 		{
+			if (MItem(item).IsVanityActivated)
+			{
+				return;
+			}
+
 			base.PostDrawTooltipLine(item, line);
 
 			foreach (Modifier m in EMMItem.GetActivePool(item))
@@ -495,6 +695,11 @@ namespace Loot
 
 		public override void PostReforge(Item item)
 		{
+			if (MItem(item).IsVanityActivated)
+			{
+				return;
+			}
+
 			base.PostReforge(item);
 
 			foreach (Modifier m in EMMItem.GetActivePool(item))
@@ -505,6 +710,11 @@ namespace Loot
 
 		public override void PostUpdate(Item item)
 		{
+			if (MItem(item).IsVanityActivated)
+			{
+				return;
+			}
+
 			base.PostUpdate(item);
 
 			foreach (Modifier m in EMMItem.GetActivePool(item))
@@ -515,6 +725,11 @@ namespace Loot
 
 		public override bool PreDrawInInventory(Item item, SpriteBatch spriteBatch, Vector2 position, Rectangle frame, Color drawColor, Color itemColor, Vector2 origin, float scale)
 		{
+			if (MItem(item).IsVanityActivated)
+			{
+				return base.PreDrawInInventory(item, spriteBatch, position, frame, drawColor, itemColor, origin, scale);
+			}
+
 			bool b = base.PreDrawInInventory(item, spriteBatch, position, frame, drawColor, itemColor, origin, scale);
 
 			foreach (Modifier m in EMMItem.GetActivePool(item))
@@ -527,6 +742,11 @@ namespace Loot
 
 		public override bool PreDrawInWorld(Item item, SpriteBatch spriteBatch, Color lightColor, Color alphaColor, ref float rotation, ref float scale, int whoAmI)
 		{
+			if (MItem(item).IsVanityActivated)
+			{
+				return base.PreDrawInWorld(item, spriteBatch, lightColor, alphaColor, ref rotation, ref scale, whoAmI);
+			}
+
 			bool b = base.PreDrawInWorld(item, spriteBatch, lightColor, alphaColor, ref rotation, ref scale, whoAmI);
 
 			foreach (Modifier m in EMMItem.GetActivePool(item))
@@ -539,6 +759,11 @@ namespace Loot
 
 		public override bool PreDrawTooltip(Item item, ReadOnlyCollection<TooltipLine> lines, ref int x, ref int y)
 		{
+			if (MItem(item).IsVanityActivated)
+			{
+				return base.PreDrawTooltip(item, lines, ref x, ref y);
+			}
+
 			bool b = base.PreDrawTooltip(item, lines, ref x, ref y);
 
 			foreach (Modifier m in EMMItem.GetActivePool(item))
@@ -551,6 +776,11 @@ namespace Loot
 
 		public override bool PreDrawTooltipLine(Item item, DrawableTooltipLine line, ref int yOffset)
 		{
+			if (MItem(item).IsVanityActivated)
+			{
+				return base.PreDrawTooltipLine(item, line, ref yOffset);
+			}
+
 			bool b = base.PreDrawTooltipLine(item, line, ref yOffset);
 
 			foreach (Modifier m in EMMItem.GetActivePool(item))
@@ -563,6 +793,11 @@ namespace Loot
 
 		public override bool ReforgePrice(Item item, ref int reforgePrice, ref bool canApplyDiscount)
 		{
+			if (MItem(item).IsVanityActivated)
+			{
+				return base.ReforgePrice(item, ref reforgePrice, ref canApplyDiscount);
+			}
+
 			bool b = base.ReforgePrice(item, ref reforgePrice, ref canApplyDiscount);
 
 			foreach (Modifier m in EMMItem.GetActivePool(item))
@@ -575,6 +810,11 @@ namespace Loot
 
 		public override void RightClick(Item item, Player player)
 		{
+			if (MItem(item).IsVanityActivated)
+			{
+				return;
+			}
+
 			base.RightClick(item, player);
 
 			foreach (Modifier m in EMMItem.GetActivePool(item))
@@ -585,6 +825,11 @@ namespace Loot
 
 		public override void SetDefaults(Item item)
 		{
+			if (MItem(item).IsVanityActivated)
+			{
+				return;
+			}
+
 			base.SetDefaults(item);
 
 			foreach (Modifier m in EMMItem.GetActivePool(item))
@@ -595,6 +840,11 @@ namespace Loot
 
 		public override bool Shoot(Item item, Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)
 		{
+			if (MItem(item).IsVanityActivated)
+			{
+				return base.Shoot(item, player, ref position, ref speedX, ref speedY, ref type, ref damage, ref knockBack);
+			};
+
 			bool b = base.Shoot(item, player, ref position, ref speedX, ref speedY, ref type, ref damage, ref knockBack);
 
 			foreach (Modifier m in EMMItem.GetActivePool(item))
@@ -607,6 +857,11 @@ namespace Loot
 
 		public override void Update(Item item, ref float gravity, ref float maxFallSpeed)
 		{
+			if (MItem(item).IsVanityActivated)
+			{
+				return;
+			}
+
 			base.Update(item, ref gravity, ref maxFallSpeed);
 
 			foreach (Modifier m in EMMItem.GetActivePool(item))
@@ -617,6 +872,11 @@ namespace Loot
 
 		public override void UpdateAccessory(Item item, Player player, bool hideVisual)
 		{
+			if (MItem(item).IsVanityActivated)
+			{
+				return;
+			}
+
 			base.UpdateAccessory(item, player, hideVisual);
 
 			foreach (Modifier m in EMMItem.GetActivePool(item))
@@ -627,6 +887,11 @@ namespace Loot
 
 		public override void UpdateEquip(Item item, Player player)
 		{
+			if (MItem(item).IsVanityActivated)
+			{
+				return;
+			}
+
 			base.UpdateEquip(item, player);
 
 			foreach (Modifier m in EMMItem.GetActivePool(item))
@@ -637,6 +902,11 @@ namespace Loot
 
 		public override void UpdateInventory(Item item, Player player)
 		{
+			if (MItem(item).IsVanityActivated)
+			{
+				return;
+			}
+
 			base.UpdateInventory(item, player);
 
 			foreach (Modifier m in EMMItem.GetActivePool(item))
@@ -647,6 +917,11 @@ namespace Loot
 
 		public override bool UseItem(Item item, Player player)
 		{
+			if (MItem(item).IsVanityActivated)
+			{
+				return base.UseItem(item, player);
+			}
+
 			bool b = base.UseItem(item, player);
 
 			foreach (Modifier m in EMMItem.GetActivePool(item))
@@ -659,6 +934,11 @@ namespace Loot
 
 		public override bool UseItemFrame(Item item, Player player)
 		{
+			if (MItem(item).IsVanityActivated)
+			{
+				return base.UseItemFrame(item, player);
+			}
+
 			bool b = base.UseItemFrame(item, player);
 
 			foreach (Modifier m in EMMItem.GetActivePool(item))
@@ -671,6 +951,11 @@ namespace Loot
 
 		public override void UseItemHitbox(Item item, Player player, ref Rectangle hitbox, ref bool noHitbox)
 		{
+			if (MItem(item).IsVanityActivated)
+			{
+				return;
+			}
+
 			base.UseItemHitbox(item, player, ref hitbox, ref noHitbox);
 
 			foreach (Modifier m in EMMItem.GetActivePool(item))
@@ -681,6 +966,11 @@ namespace Loot
 
 		public override void UseStyle(Item item, Player player)
 		{
+			if (MItem(item).IsVanityActivated)
+			{
+				return;
+			}
+
 			base.UseStyle(item, player);
 
 			foreach (Modifier m in EMMItem.GetActivePool(item))
@@ -691,6 +981,11 @@ namespace Loot
 
 		public override float UseTimeMultiplier(Item item, Player player)
 		{
+			if (MItem(item).IsVanityActivated)
+			{
+				return base.UseTimeMultiplier(item, player);
+			}
+
 			float f = base.UseTimeMultiplier(item, player);
 			if (f != 1f)
 			{
@@ -712,6 +1007,11 @@ namespace Loot
 
 		public override void VerticalWingSpeeds(Item item, Player player, ref float ascentWhenFalling, ref float ascentWhenRising, ref float maxCanAscendMultiplier, ref float maxAscentMultiplier, ref float constantAscend)
 		{
+			if (MItem(item).IsVanityActivated)
+			{
+				return;
+			}
+
 			base.VerticalWingSpeeds(item, player, ref ascentWhenFalling, ref ascentWhenRising, ref maxCanAscendMultiplier, ref maxAscentMultiplier, ref constantAscend);
 
 			foreach (Modifier m in EMMItem.GetActivePool(item))
