@@ -1,0 +1,4 @@
+<map id="Loot.Core.Modifier.GetShaderEntity" name="Loot.Core.Modifier.GetShaderEntity">
+<area shape="rect" id="node2" href="$class_loot_1_1_core_1_1_graphics_1_1_shader_global_item.html#acbb9fa9246fafd0e7cf4deae08acf89a" title="Loot.Core.Graphics.Shader\lGlobalItem.UpdateEntities" alt="" coords="249,5,429,46"/>
+<area shape="rect" id="node3" href="$class_loot_1_1_core_1_1_graphics_1_1_shader_global_item.html#a698d6633a86ae8f32f52c79e54164359" title="Loot.Core.Graphics.Shader\lGlobalItem.PreDrawInWorld" alt="" coords="478,5,663,46"/>
+</map>

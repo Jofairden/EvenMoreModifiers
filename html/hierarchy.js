@@ -4,8 +4,7 @@ var hierarchy =
       [ "Loot.Core.Attributes.AutoDelegation", "class_loot_1_1_core_1_1_attributes_1_1_auto_delegation.html", null ],
       [ "Loot.Core.Attributes.DelegationPrioritizationAttribute", "class_loot_1_1_core_1_1_attributes_1_1_delegation_prioritization_attribute.html", null ],
       [ "Loot.Core.Attributes.PopulatePoolFromAttribute", "class_loot_1_1_core_1_1_attributes_1_1_populate_pool_from_attribute.html", null ],
-      [ "Loot.Core.Attributes.UsesEffectAttribute", "class_loot_1_1_core_1_1_attributes_1_1_uses_effect_attribute.html", null ],
-      [ "Loot.Core.ModContent.AutoloadModContent", "class_loot_1_1_core_1_1_mod_content_1_1_autoload_mod_content.html", null ]
+      [ "Loot.Core.Attributes.UsesEffectAttribute", "class_loot_1_1_core_1_1_attributes_1_1_uses_effect_attribute.html", null ]
     ] ],
     [ "Loot.Modifiers.AutoDelegationEntry", "class_loot_1_1_modifiers_1_1_auto_delegation_entry.html", null ],
     [ "Loot.Core.ModContent.ContentManager", "class_loot_1_1_core_1_1_mod_content_1_1_content_manager.html", null ],

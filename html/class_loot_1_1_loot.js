@@ -10,6 +10,7 @@ var class_loot_1_1_loot =
     [ "UpdateUI", "class_loot_1_1_loot.html#a7f296a7c4a011faca07302cf350881ef", null ],
     [ "_lastUpdateUIGameTime", "class_loot_1_1_loot.html#ab20bed3b213bad780fb564e22d3e2096", null ],
     [ "CheatSheetLoaded", "class_loot_1_1_loot.html#aa39c46c42abd7c6009ed5f4e11568653", null ],
+    [ "Loaded", "class_loot_1_1_loot.html#a515587a9028eb18ecd6f58b7f7f2ec38", null ],
     [ "WingSlotLoaded", "class_loot_1_1_loot.html#aaad9b1fb94aaf3e979dcfb8b314625ec", null ],
     [ "WingSlotVersionInvalid", "class_loot_1_1_loot.html#aeb3c76b42eac6abc8a6e5c83f9c4cb78", null ]
 ];

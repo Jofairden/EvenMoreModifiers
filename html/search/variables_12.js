@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['wingslotloaded',['WingSlotLoaded',['../class_loot_1_1_loot.html#aaad9b1fb94aaf3e979dcfb8b314625ec',1,'Loot::Loot']]],
-  ['wingslotversioninvalid',['WingSlotVersionInvalid',['../class_loot_1_1_loot.html#aeb3c76b42eac6abc8a6e5c83f9c4cb78',1,'Loot::Loot']]]
+  ['visible',['Visible',['../class_loot_1_1_u_i_1_1_visibility_u_i.html#aa39cfff644bff89797dcb6586ca8c406',1,'Loot::UI::VisibilityUI']]]
 ];

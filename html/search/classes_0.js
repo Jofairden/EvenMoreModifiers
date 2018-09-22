@@ -8,6 +8,5 @@ var searchData=
   ['armormodifier',['ArmorModifier',['../class_loot_1_1_modifiers_1_1_armor_modifier.html',1,'Loot::Modifiers']]],
   ['attribute',['Attribute',['../class_attribute.html',1,'']]],
   ['autodelegation',['AutoDelegation',['../class_loot_1_1_core_1_1_attributes_1_1_auto_delegation.html',1,'Loot::Core::Attributes']]],
-  ['autodelegationentry',['AutoDelegationEntry',['../class_loot_1_1_modifiers_1_1_auto_delegation_entry.html',1,'Loot::Modifiers']]],
-  ['autoloadmodcontent',['AutoloadModContent',['../class_loot_1_1_core_1_1_mod_content_1_1_autoload_mod_content.html',1,'Loot::Core::ModContent']]]
+  ['autodelegationentry',['AutoDelegationEntry',['../class_loot_1_1_modifiers_1_1_auto_delegation_entry.html',1,'Loot::Modifiers']]]
 ];

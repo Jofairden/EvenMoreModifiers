@@ -28,6 +28,7 @@ var class_loot_1_1_e_m_m_loader =
     [ "GetNewModifierInstance", "class_loot_1_1_e_m_m_loader.html#a791178cca943a3031d22e06185134c34", null ],
     [ "GetNewPoolInstance", "class_loot_1_1_e_m_m_loader.html#ae9d458b6bd00b2d6cee084fbd6cccf22", null ],
     [ "GetNewRarityInstance", "class_loot_1_1_e_m_m_loader.html#a73ce9fb50c9dca2a6f56b1f948347c41", null ],
+    [ "RegisterAssets", "class_loot_1_1_e_m_m_loader.html#aa5dfa2effc9fdc7a98114606d0f3c352", null ],
     [ "RegisterMod", "class_loot_1_1_e_m_m_loader.html#a31bf6b74bad44144e6dc7c312f6d0a30", null ],
     [ "RequestModifierEffects", "class_loot_1_1_e_m_m_loader.html#a4c75c0215b1690d65f9a4745b8e3dd69", null ],
     [ "RequestModifierPools", "class_loot_1_1_e_m_m_loader.html#abea328c9556511ac57ec4e628b4b7831", null ],

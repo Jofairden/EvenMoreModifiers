@@ -1,0 +1,4 @@
+<map id="Loot.Core.Modifier.GetGlowmaskEntity" name="Loot.Core.Modifier.GetGlowmaskEntity">
+<area shape="rect" id="node2" href="$class_loot_1_1_core_1_1_graphics_1_1_glowmask_global_item.html#ae93b162a68c4b0db6c733bfd9c601bdd" title="Loot.Core.Graphics.Glowmask\lGlobalItem.UpdateEntities" alt="" coords="270,5,471,46"/>
+<area shape="rect" id="node3" href="$class_loot_1_1_core_1_1_graphics_1_1_glowmask_global_item.html#a8ca2dccba7be2346e906cc770972d544" title="Loot.Core.Graphics.Glowmask\lGlobalItem.PostDrawInWorld" alt="" coords="521,5,722,46"/>
+</map>

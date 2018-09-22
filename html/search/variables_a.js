@@ -1,9 +1,8 @@
 var searchData=
 [
-  ['manashield',['ManaShield',['../class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_defensive_1_1_mana_shield_effect.html#a610e0ddc09e723990f9b6df76445faf5',1,'Loot::Modifiers::EquipModifiers::Defensive::ManaShieldEffect']]],
-  ['max_5fsurvival_5fchance',['MAX_SURVIVAL_CHANCE',['../class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_defensive_1_1_survival_effect.html#a4abe39a78d554976536a956b6ebe04cb',1,'Loot::Modifiers::EquipModifiers::Defensive::SurvivalEffect']]],
-  ['method',['Method',['../struct_loot_1_1_core_1_1_modifier_context.html#a53463a1ff54d52207c5ba84735014045',1,'Loot::Core::ModifierContext']]],
-  ['modifiernextid',['modifierNextID',['../class_loot_1_1_e_m_m_loader.html#aecc243db8ea9aa631877efc296cc3912',1,'Loot::EMMLoader']]],
-  ['modifierpool',['ModifierPool',['../class_loot_1_1_e_m_m_item.html#a8db5514ead52457b0ae97cb3ea291484',1,'Loot::EMMItem']]],
-  ['multiplier',['Multiplier',['../class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_offensive_1_1_crit_damage_plus_effect.html#a53c341a3eaf111fc14bb0f1c1f723573',1,'Loot.Modifiers.EquipModifiers.Offensive.CritDamagePlusEffect.Multiplier()'],['../class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_offensive_1_1_healthy_foes_effect.html#a6c73fcce1e789bd7c2d546e493269cf9',1,'Loot.Modifiers.EquipModifiers.Offensive.HealthyFoesEffect.Multiplier()']]]
+  ['liferegen',['LifeRegen',['../class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_defensive_1_1_life_regen_effect.html#ad9608aa93d67114e202131dc11f8838c',1,'Loot::Modifiers::EquipModifiers::Defensive::LifeRegenEffect']]],
+  ['lightcolor',['LightColor',['../class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_utility_1_1_light_effect.html#a67f9f5a85d8b4c7ecd9728a2e7d9a597',1,'Loot::Modifiers::EquipModifiers::Utility::LightEffect']]],
+  ['lightstrength',['LightStrength',['../class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_utility_1_1_light_effect.html#ad96f5653e50ebc2f3ca7675bdffe8de7',1,'Loot::Modifiers::EquipModifiers::Utility::LightEffect']]],
+  ['loaded',['Loaded',['../class_loot_1_1_loot.html#a515587a9028eb18ecd6f58b7f7f2ec38',1,'Loot::Loot']]],
+  ['luck',['Luck',['../class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_utility_1_1_luck_effect.html#a1c3731ce5ec33eb1aadfa246d6575755',1,'Loot::Modifiers::EquipModifiers::Utility::LuckEffect']]]
 ];

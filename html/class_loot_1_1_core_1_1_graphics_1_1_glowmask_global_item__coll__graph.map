@@ -1,3 +1,5 @@
 <map id="Loot.Core.Graphics.GlowmaskGlobalItem" name="Loot.Core.Graphics.GlowmaskGlobalItem">
-<area shape="rect" id="node2" href="$class_global_item.html" title="GlobalItem" alt="" coords="63,5,148,32"/>
+<area shape="rect" id="node2" href="$class_global_item.html" title="GlobalItem" alt="" coords="5,91,91,117"/>
+<area shape="rect" id="node3" href="$class_loot_1_1_core_1_1_graphics_1_1_glowmask_entity.html" title="Loot.Core.Graphics.Glowmask\lEntity" alt="" coords="115,83,316,125"/>
+<area shape="rect" id="node4" href="$class_loot_1_1_core_1_1_graphics_1_1_graphics_entity.html" title="GraphicsEntity" alt="" coords="162,5,269,32"/>
 </map>

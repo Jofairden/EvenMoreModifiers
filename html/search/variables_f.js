@@ -1,11 +1,8 @@
 var searchData=
 [
-  ['saveversion',['SaveVersion',['../class_loot_1_1_e_m_m_item.html#a8ce5218d600c0b68fc6da07bab1fe9d7',1,'Loot::EMMItem']]],
-  ['sealedmodifiers',['SealedModifiers',['../class_loot_1_1_e_m_m_item.html#aedce25fd48ae8bc38a8451f86b92927a',1,'Loot::EMMItem']]],
-  ['slottedincubeui',['SlottedInCubeUI',['../class_loot_1_1_e_m_m_item.html#a1819ece591debe2c1ff47f6eecb9cd08',1,'Loot::EMMItem']]],
-  ['slotteditem',['SlottedItem',['../class_loot_1_1_u_i_1_1_cube_reroll_u_i.html#ab27eaf392d6f4a01b0fb68f48ddf5bd7',1,'Loot.UI.CubeRerollUI.SlottedItem()'],['../class_loot_1_1_u_i_1_1_cube_seal_u_i.html#a6222168ca23460c7dadc9887c54eb894',1,'Loot.UI.CubeSealUI.SlottedItem()']]],
-  ['snapshot_5fcritmulti',['SNAPSHOT_CritMulti',['../class_loot_1_1_modifier_projectile.html#a609a8ead5c89ada4590f8d84934b29c3',1,'Loot::ModifierProjectile']]],
-  ['snapshot_5fdebuffchances',['SNAPSHOT_DebuffChances',['../class_loot_1_1_modifier_projectile.html#a017f1f3f503ff96548f9ac4ee93c9374',1,'Loot::ModifierProjectile']]],
-  ['snapshot_5fhealthyfoesmulti',['SNAPSHOT_HealthyFoesMulti',['../class_loot_1_1_modifier_projectile.html#a17a5315f3670165f667ec0908d8cb0a4',1,'Loot::ModifierProjectile']]],
-  ['survivalchance',['SurvivalChance',['../class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_defensive_1_1_survival_effect.html#a3889be5b24052f27f7260a244825a4d3',1,'Loot::Modifiers::EquipModifiers::Defensive::SurvivalEffect']]]
+  ['raritynextid',['rarityNextID',['../class_loot_1_1_e_m_m_loader.html#a5297d79632667d3f4cc3a596c92fcdf0',1,'Loot::EMMLoader']]],
+  ['recipe',['Recipe',['../struct_loot_1_1_core_1_1_modifier_context.html#a6fedc47f94b87e99c9548cf57491c8f4',1,'Loot::Core::ModifierContext']]],
+  ['requiredraritylevel',['RequiredRarityLevel',['../class_loot_tests_1_1_test_rarities_1_1_test_rarity.html#ab290369427a1881ccb612e89b04a0d47',1,'LootTests.TestRarities.TestRarity.RequiredRarityLevel()'],['../class_loot_1_1_rarities_1_1_common_rarity.html#ad866d206e0de72d67356071a79cbc239',1,'Loot.Rarities.CommonRarity.RequiredRarityLevel()'],['../class_loot_1_1_rarities_1_1_legendary_rarity.html#a434d9affd16c8ab41c42bcab9710ea91',1,'Loot.Rarities.LegendaryRarity.RequiredRarityLevel()'],['../class_loot_1_1_rarities_1_1_rare_rarity.html#a2dfa1b15bfc688eec41b10ae85532689',1,'Loot.Rarities.RareRarity.RequiredRarityLevel()'],['../class_loot_1_1_rarities_1_1_transcendent_rarity.html#ad45b52ce281580efc7f55810e66612c0',1,'Loot.Rarities.TranscendentRarity.RequiredRarityLevel()'],['../class_loot_1_1_rarities_1_1_uncommon_rarity.html#a6f43a39e30b8dc5c1aa87f2b7d8a521e',1,'Loot.Rarities.UncommonRarity.RequiredRarityLevel()']]],
+  ['rightclickfunctionalityenabled',['RightClickFunctionalityEnabled',['../class_loot_1_1_u_i_1_1_u_i_interactable_item_panel.html#a76a0b9421107bbdb3d6f51a98d39b62a',1,'Loot::UI::UIInteractableItemPanel']]],
+  ['rollchance',['RollChance',['../class_loot_1_1_core_1_1_all_modifiers_pool.html#ae982e185c2502bf320f3d2c8854b57a6',1,'Loot.Core.AllModifiersPool.RollChance()'],['../class_loot_1_1_core_1_1_modifier_pool.html#a6564f693c50e7fd75bd78afa412be2f7',1,'Loot.Core.ModifierPool.RollChance()'],['../class_loot_tests_1_1_test_pools_1_1_test_pool.html#aa1a62a9d1897347ade310f98e6095989',1,'LootTests.TestPools.TestPool.RollChance()']]]
 ];

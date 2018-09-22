@@ -16,6 +16,7 @@ var searchData=
   ['recipe',['Recipe',['../struct_loot_1_1_core_1_1_modifier_context.html#a6fedc47f94b87e99c9548cf57491c8f4',1,'Loot::Core::ModifierContext']]],
   ['reforgeprice',['ReforgePrice',['../class_loot_1_1_modifier_item.html#a53d071b69911da73b484779c4bc44292',1,'Loot::ModifierItem']]],
   ['regen',['Regen',['../class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_defensive_1_1_life_regen_effect.html#abcf17aa03805921985061c2f0398376d',1,'Loot::Modifiers::EquipModifiers::Defensive::LifeRegenEffect']]],
+  ['registerassets',['RegisterAssets',['../class_loot_1_1_e_m_m_loader.html#aa5dfa2effc9fdc7a98114606d0f3c352',1,'Loot::EMMLoader']]],
   ['registermod',['RegisterMod',['../class_loot_1_1_e_m_m_loader.html#a31bf6b74bad44144e6dc7c312f6d0a30',1,'Loot::EMMLoader']]],
   ['requestmodifiereffects',['RequestModifierEffects',['../class_loot_1_1_e_m_m_loader.html#a4c75c0215b1690d65f9a4745b8e3dd69',1,'Loot::EMMLoader']]],
   ['requestmodifierpools',['RequestModifierPools',['../class_loot_1_1_e_m_m_loader.html#abea328c9556511ac57ec4e628b4b7831',1,'Loot::EMMLoader']]],

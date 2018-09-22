@@ -7,6 +7,5 @@ var searchData=
   ['armoritemhack_2ecs',['ArmorItemHack.cs',['../_armor_item_hack_8cs.html',1,'']]],
   ['armormodifier_2ecs',['ArmorModifier.cs',['../_armor_modifier_8cs.html',1,'']]],
   ['assemblyinfo_2ecs',['AssemblyInfo.cs',['../_assembly_info_8cs.html',1,'']]],
-  ['autodelegationattribute_2ecs',['AutoDelegationAttribute.cs',['../_auto_delegation_attribute_8cs.html',1,'']]],
-  ['autoloadmodcontent_2ecs',['AutoloadModContent.cs',['../_autoload_mod_content_8cs.html',1,'']]]
+  ['autodelegationattribute_2ecs',['AutoDelegationAttribute.cs',['../_auto_delegation_attribute_8cs.html',1,'']]]
 ];
