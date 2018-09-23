@@ -34,6 +34,7 @@ ____
 This attribute is used to set a custom prioritization for a delegation
 It allows you to customize at which point your delegation is called in the chain
 The end result is a prioritization list as follows:
+
 * First part: all delegations prioritized as DelegationPrioritization.Early, order by their level
 * Second part: all delegations with no custom prioritization
 * Third part: all delegations prioritized as DelegationPrioritization.Late, order by their level
@@ -44,14 +45,17 @@ To increase the force put into your prioritization, increase the delegation leve
 ____
 Consider a modifier adding a flat +50 damage, and another modifier giving +100% damage to the item.
 Without the prioritization options, it sometimes happens that the latter modifier is delegated before the former one. This means the multiplication happens before addition. Example:
+
 `Base 10 damage. * 100% = 20 damage, + 50 damage = 70 damage`
+
 `Base 10 damage. + 50 = 60 damage * 100% = 120 damage`
 
 You can see how big of a difference this can make. So this is what this functionality is used for: **to prioritize when your delegation is executed in the chain**
 
 ##### How to use
 ____
-You have two options (technically three): early in the chain or later in the chain
+You have two options (technically three): early in the chain or later in the chain.
+
 To be in the middle, simply don't use this attribute.
 
 Examples:

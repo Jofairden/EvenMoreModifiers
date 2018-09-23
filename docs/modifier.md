@@ -46,6 +46,15 @@ public float RoundedPower
 ```
 
 ##### Properties explanation in context
+**In short:**
+1) roll around a certain number (BasePower)
+2) control the range in which the power will roll  (MinMagnitude and MaxMagnitude)
+3) influence the end result of the power (MagnitudeStrength)
+
+The luck stat is something you can roll on gear which influences some of this
+
+**In depth**:
+
 **MinMagnitude** and **MaxMagnitude** define the range that **Magnitude** will roll in. For example 10f - 15f will make **Magnitude** roll between 10f and 15f. **MagnitudeStrength** influences the final result of that roll as a multiplier. For example setting this to 2 and rolling the upper bound of the previous example (15f) would result in a Magnitude of 30. **Power** is then calculated by **BasePower**\***Magnitude**, so a BasePower of 10 in the previous context would result in a Power of 300. When Power is set, it automatically sets **RoundedPower** as well. This property is primarily useful for tooltips, where you'll likely want to display 230% instead of something like 230.568893%. The precision of the rounding can be adjusted with **RoundPrecision**, which defaults to 0. So by default it will prune all decimals. If you set it to 1, it will leave 1 decimal, at 2 it will leave 2, and so forth...
 
 These Properties (and all other hooks) support inheritance.  A good example of that can be found [here](https://github.com/Jofairden/EvenMoreModifiers/blob/rework/Modifiers/EquipModifiers/KnockbackImmunity.cs#L20-L31) and [here](https://github.com/Jofairden/EvenMoreModifiers/blob/rework/Modifiers/WeaponDebuffModifier.cs#L57-L60).

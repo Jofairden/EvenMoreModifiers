@@ -1,7 +1,7 @@
 author = Jofairden
 version = 0.1.2.2
 displayName = Even More Modifiers
-homepage = https://forums.terraria.org/index.php?threads/even-more-modifiers-relaunch-beta.68438/
+homepage = https://zond.tech/emm
 hideCode = false
 hideResources = false
 includeSource = true
