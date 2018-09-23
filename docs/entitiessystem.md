@@ -29,7 +29,7 @@ Note that custom shaders are not supported at this time.
 
 Read below to learn how to use a custom sprite.
 
-## Glowmask entity
+#### Glowmask entity
 Inside your modifier class, simply override `GetGlowmaskEntity()` and return an entity:
 ```cs
 public override GlowmaskEntity GetGlowmaskEntity(Item item)
