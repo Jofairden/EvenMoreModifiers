@@ -5,6 +5,7 @@ var class_loot_1_1_loot =
     [ "HandlePacket", "class_loot_1_1_loot.html#af8af80d391f6ac66f72e4979d3885522", null ],
     [ "Load", "class_loot_1_1_loot.html#a52ae642436e92b43a15d0a0ebbb9b25f", null ],
     [ "ModifyInterfaceLayers", "class_loot_1_1_loot.html#a73e8658a1a40dd26c2b9b2e6d3c200c8", null ],
+    [ "PreSaveAndQuit", "class_loot_1_1_loot.html#a6d4f9879de408582ce87061a1e21dcc2", null ],
     [ "SetupContentMgr", "class_loot_1_1_loot.html#ae299d7dbf57369a837cb558aa582f939", null ],
     [ "SetupUIs", "class_loot_1_1_loot.html#a72f503cd864a13f3d584e1ac2e437a3d", null ],
     [ "Unload", "class_loot_1_1_loot.html#a583d8d3d69bdd106d25030c5309e37bc", null ],
