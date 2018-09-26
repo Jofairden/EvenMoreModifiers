@@ -32,7 +32,7 @@ namespace Loot.Core.Cubes
 		private bool RightClickFunctionalityRequirements(Item item)
 		{
 			//todo replace with Loot.WingSlotVersionInvalid when it works
-			if (Loot.WingSlotLoaded && item.wingSlot > 0)
+			if (Loot.WingSlotVersionInvalid && item.wingSlot > 0)
 			{
 				return false;
 			}
@@ -117,7 +117,7 @@ namespace Loot.Core.Cubes
 			if (cubeUI != null)
 			{
 				//todo replace with Loot.WingSlotVersionInvalid when it works
-				if ((Loot.WingSlotLoaded && item.wingSlot > 0) // block wings if low version if wingslot
+				if ((Loot.WingSlotVersionInvalid && item.wingSlot > 0) // block wings if low version if wingslot
 					|| !cubeUI.IsItemValidForUISlot(item)
 					|| cubeUI.IsSlottedItemInCubeUI())
 				{

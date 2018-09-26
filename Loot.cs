@@ -78,13 +78,13 @@ namespace Loot
 
 				if (WingSlotLoaded)
 				{
-					//wingSlotMod.Call("add", (Func<bool>)(
-					//	() =>
-					//	{
-					//		if (CubeInterface.CurrentState == null) return false;
-					//		// ReSharper disable once PossibleNullReferenceException
-					//		return (CubeInterface.CurrentState as CubeUI)?.Visible ?? false;
-					//	}));
+					wingSlotMod.Call("add", (Func<bool>)(
+						() =>
+						{
+							if (CubeInterface.CurrentState == null) return false;
+							// ReSharper disable once PossibleNullReferenceException
+							return (CubeInterface.CurrentState as CubeUI)?.Visible ?? false;
+						}));
 				}
 			}
 		}
