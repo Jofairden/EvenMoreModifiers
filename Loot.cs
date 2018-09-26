@@ -144,6 +144,25 @@ namespace Loot
 			Loaded = false;
 		}
 
+		// If we quit we must give back the item in slot if it's there
+		public override void PreSaveAndQuit()
+		{
+			if (CubeRerollUI._rerollItemPanel != null
+			    && !CubeRerollUI._rerollItemPanel.item.IsAir)
+			{
+				// Runs only in SP or client, so this is safe
+				Main.LocalPlayer.QuickSpawnClonedItem(CubeRerollUI._rerollItemPanel.item, CubeRerollUI._rerollItemPanel.item.stack);
+				CubeRerollUI._rerollItemPanel.item.TurnToAir();
+			}
+
+			if (CubeSealUI.SlottedItem != null
+			    & !CubeSealUI.SlottedItem.IsAir)
+			{
+				Main.LocalPlayer.QuickSpawnClonedItem(CubeSealUI.SlottedItem, CubeSealUI.SlottedItem.stack);
+				CubeSealUI.SlottedItem.TurnToAir();
+			}
+		}
+
 		private GameTime _lastUpdateUIGameTime;
 		public override void UpdateUI(GameTime gameTime)
 		{
