@@ -128,11 +128,7 @@ namespace Loot.Core.Graphics
 
 			if (ShaderTexture == null)
 			{
-				ShaderTexture = graphicsContent?.GetPreparedShader(item.type.ToString());
-				if (ShaderTexture == null)
-				{
-					ShaderTexture = Main.itemTexture[item.type];
-				}
+				ShaderTexture = graphicsContent?.GetPreparedShader(item.type.ToString()) ?? Main.itemTexture[item.type];
 			}
 		}
 

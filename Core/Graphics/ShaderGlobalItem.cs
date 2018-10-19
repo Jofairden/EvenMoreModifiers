@@ -16,17 +16,17 @@ namespace Loot.Core.Graphics
 
 		public void UpdateEntities(Item item)
 		{
-			bool flag = false;
+			bool updateEntitiesArray = false;
 			var pool = EMMItem.GetActivePool(item).ToArray();
 
 			if (NeedsUpdate || ShaderEntities == null || ShaderEntities.Any(x => x != null && x.NeedsUpdate))
 			{
 				ShaderEntities = new ShaderEntity[pool.Length];
-				flag = true;
+				updateEntitiesArray = true;
 				NeedsUpdate = false;
 			}
 
-			if (flag)
+			if (updateEntitiesArray)
 			{
 				for (int i = 0; i < pool.Length; i++)
 				{

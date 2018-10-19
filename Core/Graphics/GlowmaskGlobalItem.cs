@@ -16,17 +16,17 @@ namespace Loot.Core.Graphics
 
 		public void UpdateEntities(Item item)
 		{
-			bool flag = false;
+			bool updateEntitiesArray = false;
 			var pool = EMMItem.GetActivePool(item).ToArray();
 
 			if (NeedsUpdate || GlowmaskEntities == null || GlowmaskEntities.Any(x => x != null && x.NeedsUpdate))
 			{
 				GlowmaskEntities = new GlowmaskEntity[pool.Length];
-				flag = true;
+				updateEntitiesArray = true;
 				NeedsUpdate = false;
 			}
 
-			if (flag)
+			if (updateEntitiesArray)
 			{
 				for (int i = 0; i < pool.Length; i++)
 				{

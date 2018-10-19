@@ -29,7 +29,7 @@ namespace Loot
 		/// <summary>
 		/// Returns if the item is in a player's vanity slot
 		/// </summary>
-		private bool IsInVanitySot(Item item, Player player)
+		public bool IsInVanitySot(Item item, Player player)
 		{
 			return player.armor.Skip(13).Any(x => x.IsTheSameAs(item));
 		}

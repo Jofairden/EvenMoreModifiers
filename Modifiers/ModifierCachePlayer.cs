@@ -41,12 +41,11 @@ namespace Loot.Modifiers
 	/// When equips and held items change, their respective modifiers' effects are automatically
 	/// called to detach and attach their delegations
 	/// </summary>
-	// ReSharper disable once ClassNeverInstantiated.Global
 	public sealed class ModifierCachePlayer : ModPlayer
 	{
 		private bool IsMouseUsable(Item item) => item.damage > 0;
 
-		private Item _oldHeldItem;
+		private int _oldSelectedItem;
 		private Item _oldMouseItem;
 		private Item[] _oldEquips;
 		private Item[] _oldVanityEquips;
@@ -59,7 +58,7 @@ namespace Loot.Modifiers
 
 		public override void Initialize()
 		{
-			_oldHeldItem = null;
+			_oldSelectedItem = player.selectedItem;
 			_oldMouseItem = null;
 			_oldEquips = new Item[8];
 			_oldVanityEquips = new Item[8];
@@ -262,10 +261,6 @@ namespace Loot.Modifiers
 			_detachList.Clear();
 			_attachList.Clear();
 
-			CacheModifierEffects(player);
-
-			bool flag = UpdateMouseItemCache();
-			if (flag) UpdateHeldItemCache();
 			UpdateEquipsCache();
 			if (Loot.CheatSheetLoaded)
 			{
@@ -273,6 +268,12 @@ namespace Loot.Modifiers
 			}
 			UpdateVanityCache();
 
+			if (!UpdateMouseItemCache())
+			{
+				UpdateHeldItemCache();
+			}
+
+			CacheModifierEffects();
 			UpdateAttachments();
 
 			_forceEquipUpdate = false;
@@ -300,7 +301,7 @@ namespace Loot.Modifiers
 				var newEquip = player.armor[i];
 
 				// If equip slot needs an update
-				if (_forceEquipUpdate || oldEquip == null || newEquip.IsNotTheSameAs(oldEquip))
+				if (_forceEquipUpdate || oldEquip == null || newEquip != oldEquip)
 				{
 					Ready = false;
 
@@ -330,16 +331,17 @@ namespace Loot.Modifiers
 		private void UpdateHeldItemCache()
 		{
 			// If held item needs an update
-			if (_oldHeldItem == null || _oldHeldItem.IsNotTheSameAs(player.HeldItem))
+			if (_oldSelectedItem != player.selectedItem)
 			{
 				Ready = false;
 
 				// detach old held item
-				if (_oldHeldItem != null && !_oldHeldItem.IsAir && IsMouseUsable(_oldHeldItem))
+				Item oldSelectedItem = player.inventory[_oldSelectedItem];
+				if (oldSelectedItem != null && !oldSelectedItem.IsAir && IsMouseUsable(oldSelectedItem))
 				{
-					foreach (Modifier m in EMMItem.GetActivePool(_oldHeldItem))
+					foreach (Modifier m in EMMItem.GetActivePool(oldSelectedItem))
 					{
-						AddDetachItem(_oldHeldItem, m);
+						AddDetachItem(oldSelectedItem, m);
 					}
 				}
 
@@ -351,19 +353,19 @@ namespace Loot.Modifiers
 						AddAttachItem(player.HeldItem, m);
 					}
 				}
-
-				_oldHeldItem = player.HeldItem;
+				
+				_oldSelectedItem = player.selectedItem;
 			}
 		}
 
 		private bool UpdateMouseItemCache()
 		{
-			bool flag = (_oldMouseItem?.IsAir ?? true);
-
-			if (_oldMouseItem == null || _oldMouseItem.IsNotTheSameAs(Main.mouseItem))
+			// If held item needs an update
+			if (_oldMouseItem == null || _oldMouseItem != Main.mouseItem)
 			{
 				Ready = false;
 
+				// detach old mouse item
 				if (_oldMouseItem != null && !_oldMouseItem.IsAir && IsMouseUsable(_oldMouseItem))
 				{
 					foreach (Modifier m in EMMItem.GetActivePool(_oldMouseItem))
@@ -372,29 +374,20 @@ namespace Loot.Modifiers
 					}
 				}
 
+				// attach new held item
 				if (Main.mouseItem != null && !Main.mouseItem.IsAir && IsMouseUsable(Main.mouseItem))
 				{
-					flag = false;
-
-					// Detach first so we override 'IsActivated' again in case it's the same item
-					if (_oldHeldItem != null && !_oldHeldItem.IsAir)
-					{
-						foreach (Modifier m in EMMItem.GetActivePool(_oldHeldItem))
-						{
-							AddDetachItem(_oldHeldItem, m);
-						}
-					}
-
-					foreach (Modifier m in EMMItem.GetActivePool(Main.mouseItem))
+					foreach (Modifier m in EMMItem.GetActivePool(player.HeldItem))
 					{
 						AddAttachItem(Main.mouseItem, m);
 					}
 				}
 
 				_oldMouseItem = Main.mouseItem;
+				return Main.mouseItem != null && !Main.mouseItem.IsAir;
 			}
 
-			return flag;
+			return false;
 		}
 
 		private void UpdateEquipsCache()
@@ -405,7 +398,7 @@ namespace Loot.Modifiers
 				var newEquip = player.armor[i];
 
 				// If equip slot needs an update
-				if (_forceEquipUpdate || oldEquip == null || newEquip.IsNotTheSameAs(oldEquip))
+				if (_forceEquipUpdate || oldEquip == null || newEquip != oldEquip)
 				{
 					Ready = false;
 
@@ -446,7 +439,7 @@ namespace Loot.Modifiers
 				var newEquip = curEquips[i];
 
 				// update delegations
-				if (oldEquip == null || newEquip.IsNotTheSameAs(oldEquip))
+				if (oldEquip == null || newEquip != oldEquip)
 				{
 					Ready = false;
 
@@ -473,7 +466,7 @@ namespace Loot.Modifiers
 			}
 
 			// current enabled is smaller than total
-			if (curEquips.Length < _oldCheatSheetEquips.Length)
+			if (curEquips.Length < _oldCheatSheetEquips.Count(x => x != null))
 			{
 				var outOfDateEquips = _oldCheatSheetEquips.Skip(curEquips.Length);
 				if (outOfDateEquips.Any())
@@ -492,19 +485,38 @@ namespace Loot.Modifiers
 			}
 		}
 
-		private void CacheModifierEffects(Player player)
+		private void CacheModifierEffects()
 		{
-			bool anyDifferentEquip = player.armor.Take(8 + player.extraAccessorySlots)
-				.Select((x, i) => new { Value = x, Index = i })
-				.Any(x => _oldEquips[x.Index] != null && x.Value.IsNotTheSameAs(_oldEquips[x.Index]));
+			//bool updateCache = _forceEquipUpdate;
 
-			// vanity, processed if hijacked to activate (antisocial)
-			anyDifferentEquip &= player.armor.Skip(13)
-				.Select((x, i) => new { Value = x, Index = i })
-				.Any(x => _oldVanityEquips[x.Index] != null && x.Value.IsNotTheSameAs(_oldVanityEquips[x.Index]));
+			//// Only recache if needed, so check if there are changes
+			//if (!updateCache)
+			//{
+			//	if (player.armor.Take(8 + player.extraAccessorySlots)
+			//		.Select((x, i) => new { Value = x, Index = i })
+			//		.Any(x => _oldEquips[x.Index] != null && x.Value != null && x.Value != _oldEquips[x.Index]))
+			//	{
+			//		updateCache = true;
+			//	}
+			//	else if (player.armor.Skip(13)
+			//		.Select((x, i) => new { Value = x, Index = i })
+			//		.Any(x => _oldVanityEquips[x.Index] != null && x.Value != null && x.Value != _oldVanityEquips[x.Index]))
+			//	{
+			//		updateCache = true;
+			//	}
+			//	else if (Main.mouseItem != null && _oldMouseItem == null
+			//			 || Main.mouseItem == null && _oldMouseItem != null
+			//			 || Main.mouseItem != null && _oldMouseItem != null && _oldMouseItem != Main.mouseItem)
+			//	{
+			//		updateCache = true;
+			//	}
+			//	else if (_oldSelectedItem != player.selectedItem)
+			//	{
+			//		updateCache = true;
+			//	}
+			//}
 
-			// Only recache if needed, so check if there are changes
-			if (_forceEquipUpdate || anyDifferentEquip)
+			if (_forceEquipUpdate || !Ready)
 			{
 				_modifierEffects.Clear();
 
@@ -528,16 +540,15 @@ namespace Loot.Modifiers
 						CacheItemModifierEffects(equip);
 					}
 				}
-			}
-
-			// else because in mouse should override held item
-			if (Main.mouseItem != null && !Main.mouseItem.IsAir && Main.mouseItem.IsWeapon())
-			{
-				CacheItemModifierEffects(Main.mouseItem);
-			}
-			else if ((_oldMouseItem?.IsAir ?? true) && player.HeldItem != null && !player.HeldItem.IsAir && player.HeldItem.IsWeapon())
-			{
-				CacheItemModifierEffects(player.HeldItem);
+				
+				if (Main.mouseItem != null && !Main.mouseItem.IsAir && Main.mouseItem.IsWeapon())
+				{
+					CacheItemModifierEffects(Main.mouseItem);
+				}
+				else if (player.HeldItem != null && !player.HeldItem.IsAir && player.HeldItem.IsWeapon())
+				{
+					CacheItemModifierEffects(player.HeldItem);
+				}
 			}
 		}
 

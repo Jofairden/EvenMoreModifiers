@@ -20,11 +20,13 @@ namespace Loot.Modifiers.WeaponModifiers
 		[AutoDelegation("OnPostUpdateEquips")]
 		private void CurseHolding(ModifierPlayer player)
 		{
-			if (Main.mouseItem != null && !Main.mouseItem.IsAir && Main.mouseItem.IsWeapon())
+			Item checkItem = Main.mouseItem != null && !Main.mouseItem.IsAir ? Main.mouseItem : player.player.HeldItem;
+
+			if (checkItem != null && !checkItem.IsAir && checkItem.IsWeapon())
 			{
-				if (ActivatedModifierItem.Item(Main.mouseItem).IsActivated)
+				if (ActivatedModifierItem.Item(checkItem).IsActivated)
 				{
-					int c = EMMItem.GetActivePool(Main.mouseItem).Count(x => x.GetType() == typeof(CursedDamage));
+					int c = EMMItem.GetActivePool(checkItem).Count(x => x.GetType() == typeof(CursedDamage));
 					if (c > 0)
 					{
 						ModifierPlayer.Player(player.player).GetEffect<CursedEffect>().CurseCount += c;
@@ -69,10 +71,10 @@ namespace Loot.Modifiers.WeaponModifiers
 		public override void UpdateInventory(Item item, Player player)
 		{
 			// todo Is this good? Or do we want to change ModifierItem?
-			if (ActivatedModifierItem.Item(item).IsActivated)
-			{
-				ModifierPlayer.Player(player).GetEffect<CursedEffect>().CurseCount++;
-			}
+			//if (ActivatedModifierItem.Item(item).IsActivated)
+			//{
+			//	ModifierPlayer.Player(player).GetEffect<CursedEffect>().CurseCount++;
+			//}
 		}
 
 		public override void GetWeaponDamage(Item item, Player player, ref int damage)

@@ -18,7 +18,7 @@ namespace Loot.Core.ModContent
 
 		public ModContent GetContent(Type type)
 		{
-			ModContent content = (ModContent)_modContents.FirstOrDefault(x => x.GetType() == type);
+			ModContent content = _modContents.FirstOrDefault(x => x.GetType() == type);
 			return content;
 		}
 
@@ -38,6 +38,7 @@ namespace Loot.Core.ModContent
 			if (_contents.Values.Contains(modContent))
 			{
 				// TODO warn
+				ErrorLogger.Log($"ModContent with registry key {modContent.GetRegistryKey()} was already present");
 			}
 
 			modContent._Initialize();
