@@ -1,5 +1,7 @@
 var NAVTREEINDEX2 =
 {
+"class_loot_1_1_core_1_1_modifier.html#ab9b9888e5629e1c23a8885d4ec5120f9":[2,0,0,0,5,18],
+"class_loot_1_1_core_1_1_modifier.html#abc4fc8e0e889a03b82858acc88d5d017":[2,0,0,0,5,32],
 "class_loot_1_1_core_1_1_modifier.html#abe1f8ecbfe99caba7bda8fe70df318f5":[2,0,0,0,5,10],
 "class_loot_1_1_core_1_1_modifier.html#ac23ff4968ad518a920ef837200cda3d3":[2,0,0,0,5,3],
 "class_loot_1_1_core_1_1_modifier.html#ace5315a06de3c699a0a01b319b069bce":[2,0,0,0,5,21],
@@ -247,7 +249,5 @@ var NAVTREEINDEX2 =
 "class_loot_1_1_modifier_player.html#a514f991833601945f5b31b3bc28e5a2c":[2,0,0,13,36],
 "class_loot_1_1_modifier_player.html#a529be07c466a1303c60206755ab98795":[2,0,0,13,38],
 "class_loot_1_1_modifier_player.html#a55d05e4ed9410c3c4e088d0f150bcc66":[2,0,0,13,19],
-"class_loot_1_1_modifier_player.html#a5fe625c082c0c644dfa4fa8306ce10ee":[2,0,0,13,17],
-"class_loot_1_1_modifier_player.html#a630b89f9736ea750b3cef8ac4e3618db":[2,0,0,13,15],
-"class_loot_1_1_modifier_player.html#a6c54743a82ef3944b48c7b15dfe2ef8f":[2,0,0,13,32]
+"class_loot_1_1_modifier_player.html#a5fe625c082c0c644dfa4fa8306ce10ee":[2,0,0,13,17]
 };

@@ -1,3 +1,6 @@
 <map id="Loot.ModifierItem.CanHitPvp" name="Loot.ModifierItem.CanHitPvp">
 <area shape="rect" id="node2" href="$class_loot_1_1_e_m_m_item.html#a0dc962c1a313ea02e94a891920703963" title="Loot.EMMItem.GetActivePool" alt="" coords="246,5,442,32"/>
+<area shape="rect" id="node3" href="$class_loot_1_1_activated_modifier_item.html#ac0ba9cc7b2d0d2b2c62e9431e6acfc48" title="Loot.ActivatedModifierItem.\lShouldBeIgnored" alt="" coords="253,57,435,98"/>
+<area shape="rect" id="node4" href="$class_loot_1_1_activated_modifier_item.html#aec85662e31e484311196b98f872cb4e3" title="Loot.ActivatedModifierItem.\lIsInInventory" alt="" coords="491,23,674,65"/>
+<area shape="rect" id="node5" href="$class_loot_1_1_activated_modifier_item.html#aedcb371be998be72f5e8d43064e0827f" title="Returns if the item is in a player&#39;s vanity slot " alt="" coords="491,89,674,130"/>
 </map>

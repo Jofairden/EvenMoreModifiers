@@ -1,5 +1,7 @@
 var NAVTREEINDEX3 =
 {
+"class_loot_1_1_modifier_player.html#a630b89f9736ea750b3cef8ac4e3618db":[2,0,0,13,15],
+"class_loot_1_1_modifier_player.html#a6c54743a82ef3944b48c7b15dfe2ef8f":[2,0,0,13,32],
 "class_loot_1_1_modifier_player.html#a6e16f35905c1b49d0aa688a8079fb8cb":[2,0,0,13,13],
 "class_loot_1_1_modifier_player.html#a6e535679526fb7a9293288458c95e89b":[2,0,0,13,18],
 "class_loot_1_1_modifier_player.html#a77dc747bbd0c051f0e042485912d10a0":[2,0,0,13,35],
@@ -247,7 +249,5 @@ var NAVTREEINDEX3 =
 "class_loot_1_1_modifiers_1_1_weapon_debuff_effect.html":[2,0,0,1,9],
 "class_loot_1_1_modifiers_1_1_weapon_debuff_effect.html#a856f1d5c213c7d1211fae082439d64d9":[2,0,0,1,9,1],
 "class_loot_1_1_modifiers_1_1_weapon_debuff_effect.html#adfc56bada2b6eb21bbee791d95edc6ff":[2,0,0,1,9,2],
-"class_loot_1_1_modifiers_1_1_weapon_debuff_effect.html#aff773d8cc476b7410c3ee33fb86a2ca2":[2,0,0,1,9,0],
-"class_loot_1_1_modifiers_1_1_weapon_debuff_modifier.html":[2,0,0,1,10],
-"class_loot_1_1_modifiers_1_1_weapon_debuff_modifier.html#a0df39113fe1c2b674da6df63bba9d338":[2,0,0,1,10,5]
+"class_loot_1_1_modifiers_1_1_weapon_debuff_effect.html#aff773d8cc476b7410c3ee33fb86a2ca2":[2,0,0,1,9,0]
 };

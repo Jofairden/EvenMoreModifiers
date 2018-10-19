@@ -17,6 +17,7 @@ var searchData=
   ['setupuis',['SetupUIs',['../class_loot_1_1_loot.html#a72f503cd864a13f3d584e1ac2e437a3d',1,'Loot::Loot']]],
   ['shaderentity',['ShaderEntity',['../class_loot_1_1_core_1_1_graphics_1_1_shader_entity.html#ab8053d1a68cc0735d9a012b97d92fa94',1,'Loot::Core::Graphics::ShaderEntity']]],
   ['shoot',['Shoot',['../class_loot_1_1_modifier_item.html#a9ef945b5de1a4101a2437e4eca06c192',1,'Loot::ModifierItem']]],
+  ['shouldbeignored',['ShouldBeIgnored',['../class_loot_1_1_activated_modifier_item.html#ac0ba9cc7b2d0d2b2c62e9431e6acfc48',1,'Loot::ActivatedModifierItem']]],
   ['substringlastindex',['SubstringLastIndex',['../class_loot_1_1_core_1_1_mod_content_1_1_mod_graphics_content.html#ab3d6289e911f17ab07f74baced41d890',1,'Loot::Core::ModContent::ModGraphicsContent']]],
   ['surviveevent',['SurviveEvent',['../class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_defensive_1_1_survival_effect.html#a40d759c3bf93a9bba82142962a75c22b',1,'Loot::Modifiers::EquipModifiers::Defensive::SurvivalEffect']]],
   ['swapitemslot',['SwapItemSlot',['../class_loot_1_1_core_1_1_cubes_1_1_cube_u_i_extensions.html#ae26cf7a95d5c57166c4fa4765836bbef',1,'Loot::Core::Cubes::CubeUIExtensions']]]
