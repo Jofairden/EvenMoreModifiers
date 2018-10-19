@@ -1,5 +1,6 @@
 <map id="Loot.EMMItem.ModifyTooltips" name="Loot.EMMItem.ModifyTooltips">
 <area shape="rect" id="node2" href="$class_loot_1_1_e_m_m_item.html#a7788b69f28ba9809f56f6ebc6c7a7b7f" title="Loot.EMMItem.GetItemInfo" alt="" coords="264,5,445,32"/>
 <area shape="rect" id="node3" href="$class_loot_1_1_e_m_m_item.html#aaa2a36652d66f66db17611404777c069" title="Loot.EMMItem.GetPrefixNorm\lString" alt="" coords="255,57,454,98"/>
-<area shape="rect" id="node4" href="$class_loot_1_1_activated_modifier_item.html#a6bb0485006eaaa1ab477c420abb67f15" title="Loot.ActivatedModifierItem.Item" alt="" coords="251,123,459,149"/>
+<area shape="rect" id="node4" href="$class_loot_1_1_activated_modifier_item.html#aedcb371be998be72f5e8d43064e0827f" title="Returns if the item is in a player&#39;s vanity slot " alt="" coords="263,122,446,163"/>
+<area shape="rect" id="node5" href="$class_loot_1_1_activated_modifier_item.html#a6bb0485006eaaa1ab477c420abb67f15" title="Loot.ActivatedModifierItem.Item" alt="" coords="251,188,459,215"/>
 </map>

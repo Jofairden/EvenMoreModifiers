@@ -3,7 +3,7 @@ var class_loot_1_1_modifiers_1_1_modifier_cache_player =
     [ "AddAttachItem", "class_loot_1_1_modifiers_1_1_modifier_cache_player.html#a88d35d241149142c0d5d4215802de05a", null ],
     [ "AddDetachItem", "class_loot_1_1_modifiers_1_1_modifier_cache_player.html#a44f084fbd5dc8a5959f76772fc8d4346", null ],
     [ "CacheItemModifierEffects", "class_loot_1_1_modifiers_1_1_modifier_cache_player.html#a80a11854749cd0f94beac37969881abb", null ],
-    [ "CacheModifierEffects", "class_loot_1_1_modifiers_1_1_modifier_cache_player.html#a510c560600f3a4a88cf6a2e0c8610f24", null ],
+    [ "CacheModifierEffects", "class_loot_1_1_modifiers_1_1_modifier_cache_player.html#ae08fe3cc53311a07b9c0d0c730dbaa6e", null ],
     [ "GetModifierEffectsForDelegations", "class_loot_1_1_modifiers_1_1_modifier_cache_player.html#afd4268cd584c57db741703d135a67d0b", null ],
     [ "Initialize", "class_loot_1_1_modifiers_1_1_modifier_cache_player.html#abd175489206e1d8495f2cda8537006ab", null ],
     [ "IsMouseUsable", "class_loot_1_1_modifiers_1_1_modifier_cache_player.html#a8a2959798f3d8299e6715b23480535ce", null ],
@@ -21,7 +21,7 @@ var class_loot_1_1_modifiers_1_1_modifier_cache_player =
     [ "_modifierEffects", "class_loot_1_1_modifiers_1_1_modifier_cache_player.html#a4e0f493831cf9801665fb3ea2b752722", null ],
     [ "_oldCheatSheetEquips", "class_loot_1_1_modifiers_1_1_modifier_cache_player.html#abacdfedf324007288e2b1fb032f795e0", null ],
     [ "_oldEquips", "class_loot_1_1_modifiers_1_1_modifier_cache_player.html#aacbb5694a838190770c41996a6e9cfd1", null ],
-    [ "_oldHeldItem", "class_loot_1_1_modifiers_1_1_modifier_cache_player.html#a0a042f5e18ed5fe1a34d79576d9a73d8", null ],
     [ "_oldMouseItem", "class_loot_1_1_modifiers_1_1_modifier_cache_player.html#ad2423f72666931d35ebfcc8f87dc6ab9", null ],
+    [ "_oldSelectedItem", "class_loot_1_1_modifiers_1_1_modifier_cache_player.html#a43767c47db6f5bf5d9b26a6fcc48077c", null ],
     [ "_oldVanityEquips", "class_loot_1_1_modifiers_1_1_modifier_cache_player.html#a0edfc6765603c4c143bd33cf695a793c", null ]
 ];

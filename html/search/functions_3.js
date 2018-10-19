@@ -1,7 +1,7 @@
 var searchData=
 [
   ['cacheitemmodifiereffects',['CacheItemModifierEffects',['../class_loot_1_1_modifiers_1_1_modifier_cache_player.html#a80a11854749cd0f94beac37969881abb',1,'Loot::Modifiers::ModifierCachePlayer']]],
-  ['cachemodifiereffects',['CacheModifierEffects',['../class_loot_1_1_modifiers_1_1_modifier_cache_player.html#a510c560600f3a4a88cf6a2e0c8610f24',1,'Loot::Modifiers::ModifierCachePlayer']]],
+  ['cachemodifiereffects',['CacheModifierEffects',['../class_loot_1_1_modifiers_1_1_modifier_cache_player.html#ae08fe3cc53311a07b9c0d0c730dbaa6e',1,'Loot::Modifiers::ModifierCachePlayer']]],
   ['canequipaccessory',['CanEquipAccessory',['../class_loot_1_1_modifier_item.html#af95c6bdeff934a21eb14432928a882cb',1,'Loot::ModifierItem']]],
   ['canhitnpc',['CanHitNPC',['../class_loot_1_1_modifier_item.html#a3da7a2b8560aad127febd14514633e91',1,'Loot::ModifierItem']]],
   ['canhitpvp',['CanHitPvp',['../class_loot_1_1_modifier_item.html#ad95757f542e4167175d3997b4863ff33',1,'Loot::ModifierItem']]],

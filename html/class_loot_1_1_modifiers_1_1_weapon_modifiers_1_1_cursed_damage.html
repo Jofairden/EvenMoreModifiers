@@ -284,7 +284,7 @@ Additional Inherited Members</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock">
-<p>Definition at line <a class="el" href="_cursed_damage_8cs_source.html#l00052">52</a> of file <a class="el" href="_cursed_damage_8cs_source.html">CursedDamage.cs</a>.</p>
+<p>Definition at line <a class="el" href="_cursed_damage_8cs_source.html#l00054">54</a> of file <a class="el" href="_cursed_damage_8cs_source.html">CursedDamage.cs</a>.</p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
 <a class="anchor" id="a6eca89c46387e297b7abb62e040cbfaf"></a>
 <div class="memitem">
@@ -312,10 +312,10 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Reimplemented from <a class="el" href="class_loot_1_1_modifiers_1_1_weapon_modifier.html#a5a1d7871ec184e3891d790fb22e0362e">Loot.Modifiers.WeaponModifier</a>.</p>
 
-<p>Definition at line <a class="el" href="_cursed_damage_8cs_source.html#l00064">64</a> of file <a class="el" href="_cursed_damage_8cs_source.html">CursedDamage.cs</a>.</p>
+<p>Definition at line <a class="el" href="_cursed_damage_8cs_source.html#l00066">66</a> of file <a class="el" href="_cursed_damage_8cs_source.html">CursedDamage.cs</a>.</p>
 
 <p>References <a class="el" href="_modifier_context_8cs_source.html#l00070">Loot.Core.ModifierContext.Method</a>.</p>
-<div class="fragment"><div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;        {</div><div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;            <span class="keywordflow">return</span> base.CanRoll(ctx) &amp;&amp; ctx.<a class="code" href="struct_loot_1_1_core_1_1_modifier_context.html#a53463a1ff54d52207c5ba84735014045">Method</a> != <a class="code" href="namespace_loot_1_1_core.html#aaee86006118cea302753a7826ebf417c">ModifierContextMethod</a>.SetupStartInventory;</div><div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;        }</div><div class="ttc" id="namespace_loot_1_1_core_html_aaee86006118cea302753a7826ebf417c"><div class="ttname"><a href="namespace_loot_1_1_core.html#aaee86006118cea302753a7826ebf417c">Loot.Core.ModifierContextMethod</a></div><div class="ttdeci">ModifierContextMethod</div><div class="ttdoc">Defines a method for a context in which a Modifier might be rolled Used in ModifierContext ...</div><div class="ttdef"><b>Definition:</b> <a href="_modifier_context_8cs_source.html#l00010">ModifierContext.cs:10</a></div></div>
+<div class="fragment"><div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;        {</div><div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;            <span class="keywordflow">return</span> base.CanRoll(ctx) &amp;&amp; ctx.<a class="code" href="struct_loot_1_1_core_1_1_modifier_context.html#a53463a1ff54d52207c5ba84735014045">Method</a> != <a class="code" href="namespace_loot_1_1_core.html#aaee86006118cea302753a7826ebf417c">ModifierContextMethod</a>.SetupStartInventory;</div><div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;        }</div><div class="ttc" id="namespace_loot_1_1_core_html_aaee86006118cea302753a7826ebf417c"><div class="ttname"><a href="namespace_loot_1_1_core.html#aaee86006118cea302753a7826ebf417c">Loot.Core.ModifierContextMethod</a></div><div class="ttdeci">ModifierContextMethod</div><div class="ttdoc">Defines a method for a context in which a Modifier might be rolled Used in ModifierContext ...</div><div class="ttdef"><b>Definition:</b> <a href="_modifier_context_8cs_source.html#l00010">ModifierContext.cs:10</a></div></div>
 <div class="ttc" id="struct_loot_1_1_core_1_1_modifier_context_html_a53463a1ff54d52207c5ba84735014045"><div class="ttname"><a href="struct_loot_1_1_core_1_1_modifier_context.html#a53463a1ff54d52207c5ba84735014045">Loot.Core.ModifierContext.Method</a></div><div class="ttdeci">ModifierContextMethod Method</div><div class="ttdef"><b>Definition:</b> <a href="_modifier_context_8cs_source.html#l00070">ModifierContext.cs:70</a></div></div>
 </div><!-- fragment -->
 </div>
@@ -344,10 +344,10 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Reimplemented from <a class="el" href="class_loot_1_1_core_1_1_modifier.html#aa6436f7245b3162dd58fa4b05d7f1cd0">Loot.Core.Modifier</a>.</p>
 
-<p>Definition at line <a class="el" href="_cursed_damage_8cs_source.html#l00059">59</a> of file <a class="el" href="_cursed_damage_8cs_source.html">CursedDamage.cs</a>.</p>
+<p>Definition at line <a class="el" href="_cursed_damage_8cs_source.html#l00061">61</a> of file <a class="el" href="_cursed_damage_8cs_source.html">CursedDamage.cs</a>.</p>
 
 <p>References <a class="el" href="_modifier_properties_8cs_source.html#l00045">Loot.Core.ModifierProperties.Set()</a>.</p>
-<div class="fragment"><div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;        {</div><div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;            <span class="keywordflow">return</span> base.GetModifierProperties(item).Set(minMagnitude: 5f, maxMagnitude: 15f, uniqueRoll: <span class="keyword">true</span>);</div><div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;        }</div></div><!-- fragment -->
+<div class="fragment"><div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;        {</div><div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;            <span class="keywordflow">return</span> base.GetModifierProperties(item).Set(minMagnitude: 5f, maxMagnitude: 15f, uniqueRoll: <span class="keyword">true</span>);</div><div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;        }</div></div><!-- fragment -->
 <p><div id="dynsection-2" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-2-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
 <div id="dynsection-2-summary" class="dynsummary" style="display:block;">
@@ -392,8 +392,8 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_cursed_damage_8cs_source.html#l00078">78</a> of file <a class="el" href="_cursed_damage_8cs_source.html">CursedDamage.cs</a>.</p>
-<div class="fragment"><div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;        {</div><div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;            base.GetWeaponDamage(item, player, ref damage);</div><div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;            damage = (int)Math.Ceiling(damage * (1 + <a class="code" href="class_loot_1_1_core_1_1_modifier.html#a9eae377805144431105d3202aef10510">Properties</a>.<a class="code" href="class_loot_1_1_core_1_1_modifier_properties.html#aad1248c4b9d93588c95f938194263d63">RoundedPower</a> / 100f));</div><div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;        }</div><div class="ttc" id="class_loot_1_1_core_1_1_modifier_html_a9eae377805144431105d3202aef10510"><div class="ttname"><a href="class_loot_1_1_core_1_1_modifier.html#a9eae377805144431105d3202aef10510">Loot.Core.Modifier.Properties</a></div><div class="ttdeci">ModifierProperties Properties</div><div class="ttdef"><b>Definition:</b> <a href="_modifier_8cs_source.html#l00028">Modifier.cs:28</a></div></div>
+<p>Definition at line <a class="el" href="_cursed_damage_8cs_source.html#l00080">80</a> of file <a class="el" href="_cursed_damage_8cs_source.html">CursedDamage.cs</a>.</p>
+<div class="fragment"><div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;        {</div><div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;            base.GetWeaponDamage(item, player, ref damage);</div><div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;            damage = (int)Math.Ceiling(damage * (1 + <a class="code" href="class_loot_1_1_core_1_1_modifier.html#a9eae377805144431105d3202aef10510">Properties</a>.<a class="code" href="class_loot_1_1_core_1_1_modifier_properties.html#aad1248c4b9d93588c95f938194263d63">RoundedPower</a> / 100f));</div><div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;        }</div><div class="ttc" id="class_loot_1_1_core_1_1_modifier_html_a9eae377805144431105d3202aef10510"><div class="ttname"><a href="class_loot_1_1_core_1_1_modifier.html#a9eae377805144431105d3202aef10510">Loot.Core.Modifier.Properties</a></div><div class="ttdeci">ModifierProperties Properties</div><div class="ttdef"><b>Definition:</b> <a href="_modifier_8cs_source.html#l00028">Modifier.cs:28</a></div></div>
 <div class="ttc" id="class_loot_1_1_core_1_1_modifier_properties_html_aad1248c4b9d93588c95f938194263d63"><div class="ttname"><a href="class_loot_1_1_core_1_1_modifier_properties.html#aad1248c4b9d93588c95f938194263d63">Loot.Core.ModifierProperties.RoundedPower</a></div><div class="ttdeci">float RoundedPower</div><div class="ttdef"><b>Definition:</b> <a href="_modifier_properties_8cs_source.html#l00034">ModifierProperties.cs:34</a></div></div>
 </div><!-- fragment -->
 </div>
@@ -422,24 +422,8 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_cursed_damage_8cs_source.html#l00069">69</a> of file <a class="el" href="_cursed_damage_8cs_source.html">CursedDamage.cs</a>.</p>
-
-<p>References <a class="el" href="_modifier_player_8cs_source.html#l00022">Loot.ModifierPlayer.GetEffect()</a>, <a class="el" href="_modifier_item_8cs_source.html#l00021">Loot.ActivatedModifierItem.IsActivated</a>, <a class="el" href="class_loot_1_1_activated_modifier_item.html#a6bb0485006eaaa1ab477c420abb67f15">Loot.ActivatedModifierItem.Item()</a>, and <a class="el" href="class_loot_1_1_modifier_player.html#aae3e56a930507049c3b282b29fece4f1">Loot.ModifierPlayer.Player()</a>.</p>
-<div class="fragment"><div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;        {</div><div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;            <span class="comment">// todo Is this good? Or do we want to change ModifierItem?</span></div><div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;            <span class="keywordflow">if</span> (ActivatedModifierItem.Item(item).IsActivated)</div><div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;            {</div><div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;                ModifierPlayer.Player(player).GetEffect&lt;CursedEffect&gt;().CurseCount++;</div><div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;            }</div><div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;        }</div></div><!-- fragment -->
-<p><div id="dynsection-3" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-3-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
-<div id="dynsection-3-summary" class="dynsummary" style="display:block;">
-</div>
-<div id="dynsection-3-content" class="dyncontent" style="display:none;">
-<div class="center"><img src="class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_cursed_damage_a6cf676c3234850fcdabfff5890111d7c_cgraph.png" border="0" usemap="#class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_cursed_damage_a6cf676c3234850fcdabfff5890111d7c_cgraph" alt=""/></div>
-<map name="class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_cursed_damage_a6cf676c3234850fcdabfff5890111d7c_cgraph" id="class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_cursed_damage_a6cf676c3234850fcdabfff5890111d7c_cgraph">
-<area shape="rect" id="node2" href="class_loot_1_1_modifier_player.html#a3e4b8a428276fb0205e9c0f166435bf0" title="Loot.ModifierPlayer.GetEffect" alt="" coords="273,5,468,32"/>
-<area shape="rect" id="node3" href="class_loot_1_1_activated_modifier_item.html#a6bb0485006eaaa1ab477c420abb67f15" title="Loot.ActivatedModifierItem.Item" alt="" coords="267,56,475,83"/>
-<area shape="rect" id="node4" href="class_loot_1_1_modifier_player.html#aae3e56a930507049c3b282b29fece4f1" title="Loot.ModifierPlayer.Player" alt="" coords="283,107,458,133"/>
-</map>
-</div>
-</p>
-
+<p>Definition at line <a class="el" href="_cursed_damage_8cs_source.html#l00071">71</a> of file <a class="el" href="_cursed_damage_8cs_source.html">CursedDamage.cs</a>.</p>
+<div class="fragment"><div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;        {</div><div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;            <span class="comment">// todo Is this good? Or do we want to change ModifierItem?</span></div><div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;            <span class="comment">//if (ActivatedModifierItem.Item(item).IsActivated)</span></div><div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;            <span class="comment">//{</span></div><div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;            <span class="comment">//  ModifierPlayer.Player(player).GetEffect&lt;CursedEffect&gt;().CurseCount++;</span></div><div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;            <span class="comment">//}</span></div><div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;        }</div></div><!-- fragment -->
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
@@ -453,7 +437,7 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <b>Initial value:</b><div class="fragment"><div class="line">=&gt; <span class="keyword">new</span>[]</div><div class="line">            {</div><div class="line">                <span class="keyword">new</span> ModifierTooltipLine { Text = $<span class="stringliteral">&quot;+{Properties.RoundedPower}% damage, but you are cursed while holding this item&quot;</span>, Color = Color.Lime}</div><div class="line">            }</div></div><!-- fragment -->
-<p>Definition at line <a class="el" href="_cursed_damage_8cs_source.html#l00054">54</a> of file <a class="el" href="_cursed_damage_8cs_source.html">CursedDamage.cs</a>.</p>
+<p>Definition at line <a class="el" href="_cursed_damage_8cs_source.html#l00056">56</a> of file <a class="el" href="_cursed_damage_8cs_source.html">CursedDamage.cs</a>.</p>
 
 </div>
 </div>
@@ -463,7 +447,7 @@ Additional Inherited Members</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespace_loot.html">Loot</a></li><li class="navelem"><a class="el" href="namespace_loot_1_1_modifiers.html">Modifiers</a></li><li class="navelem"><a class="el" href="namespace_loot_1_1_modifiers_1_1_weapon_modifiers.html">WeaponModifiers</a></li><li class="navelem"><a class="el" href="class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_cursed_damage.html">CursedDamage</a></li>
-    <li class="footer">Generated on Fri Sep 28 2018 14:19:10 for Even More Modifiers by
+    <li class="footer">Generated on Fri Oct 19 2018 20:06:10 for Even More Modifiers by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.11 </li>
   </ul>
