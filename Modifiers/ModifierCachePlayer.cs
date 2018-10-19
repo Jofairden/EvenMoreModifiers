@@ -306,7 +306,7 @@ namespace Loot.Modifiers
 					Ready = false;
 
 					// detach old first
-					if (oldEquip != null && !oldEquip.IsAir && ActivatedModifierItem.Item(oldEquip).IsVanityActivated)
+					if (oldEquip != null && !oldEquip.IsAir && ActivatedModifierItem.Item(oldEquip).IsCheated)
 					{
 						foreach (Modifier m in EMMItem.GetActivePool(oldEquip))
 						{
@@ -315,7 +315,7 @@ namespace Loot.Modifiers
 					}
 
 					// attach new
-					if (newEquip != null && !newEquip.IsAir && ActivatedModifierItem.Item(newEquip).IsVanityActivated)
+					if (newEquip != null && !newEquip.IsAir && ActivatedModifierItem.Item(newEquip).IsCheated)
 					{
 						foreach (Modifier m in EMMItem.GetActivePool(newEquip))
 						{
@@ -535,7 +535,7 @@ namespace Loot.Modifiers
 					var equip = player.armor[k];
 					if (equip != null
 						&& !equip.IsAir
-						&& ActivatedModifierItem.Item(equip).IsVanityActivated)
+						&& ActivatedModifierItem.Item(equip).IsCheated)
 					{
 						CacheItemModifierEffects(equip);
 					}

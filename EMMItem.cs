@@ -593,11 +593,12 @@ namespace Loot
 
 				// Insert modifier rarity
 				ActivatedModifierItem activatedModifierItem = ActivatedModifierItem.Item(item);
-				bool isVanityIgnored = !activatedModifierItem.IsVanityActivated && activatedModifierItem.IsInVanitySot(item, Main.LocalPlayer);
+				bool isVanityIgnored = activatedModifierItem.ShouldBeIgnored(item, Main.LocalPlayer);
+				
 				Color? inactiveColor = isVanityIgnored ? (Color?)Color.DarkSlateGray : null;
 
 				i = tooltips.Count;
-				tooltips.Insert(i, new TooltipLine(mod, "Loot: Modifier:Rarity", $"[{pool.Rarity.Name}]{(isVanityIgnored ? " [INACTIVE]" : "")}") { overrideColor = inactiveColor ?? pool.Rarity.Color * Main.inventoryScale });
+				tooltips.Insert(i, new TooltipLine(mod, "Loot: Modifier:Rarity", $"[{pool.Rarity.Name}]{(isVanityIgnored ? " [IGNORED]" : "")}") { overrideColor = inactiveColor ?? pool.Rarity.Color * Main.inventoryScale });
 
 				// Insert lines
 				foreach (var ttcol in pool.Description)

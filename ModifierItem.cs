@@ -24,7 +24,18 @@ namespace Loot
 		/// Keeps track of if the item was activated whilst in a vanity slot (by another mod)
 		/// In this case activated means giving its regular bonuses
 		/// </summary>
-		public bool IsVanityActivated { get; internal set; }
+		public bool IsCheated { get; internal set; }
+
+		public bool ShouldBeIgnored(Item item, Player player)
+		{
+			return !IsCheated && IsInVanitySot(item, player)
+					|| IsCheated && !IsInVanitySot(item, player) && !IsInInventory(item, player);
+		}
+
+		public bool IsInInventory(Item item, Player player)
+		{
+			return player.inventory.Any(x => x.IsTheSameAs(item));
+		}
 
 		/// <summary>
 		/// Returns if the item is in a player's vanity slot
@@ -43,11 +54,11 @@ namespace Loot
 		{
 			if (IsInVanitySot(item, player) || IsNotEquippedAtAll(item, player))
 			{
-				IsVanityActivated = true;
+				IsCheated = true;
 			}
 			else
 			{
-				IsVanityActivated = false;
+				IsCheated = false;
 			}
 		}
 
@@ -55,11 +66,11 @@ namespace Loot
 		{
 			if (IsInVanitySot(item, player) || IsNotEquippedAtAll(item, player))
 			{
-				IsVanityActivated = true;
+				IsCheated = true;
 			}
 			else
 			{
-				IsVanityActivated = false;
+				IsCheated = false;
 			}
 		}
 
@@ -77,7 +88,7 @@ namespace Loot
 
 		public override bool AltFunctionUse(Item item, Player player)
 		{
-			if (MItem(item).IsVanityActivated)
+			if (MItem(item).ShouldBeIgnored(item, player))
 			{
 				return base.AltFunctionUse(item, player);
 			}
@@ -94,7 +105,7 @@ namespace Loot
 
 		public override bool CanEquipAccessory(Item item, Player player, int slot)
 		{
-			if (MItem(item).IsVanityActivated)
+			if (MItem(item).ShouldBeIgnored(item, player))
 			{
 				return base.CanEquipAccessory(item, player, slot);
 			}
@@ -111,7 +122,7 @@ namespace Loot
 
 		public override bool? CanHitNPC(Item item, Player player, NPC target)
 		{
-			if (MItem(item).IsVanityActivated)
+			if (MItem(item).ShouldBeIgnored(item, player))
 			{
 				return base.CanHitNPC(item, player, target);
 			}
@@ -128,7 +139,7 @@ namespace Loot
 
 		public override bool CanHitPvp(Item item, Player player, Player target)
 		{
-			if (MItem(item).IsVanityActivated)
+			if (MItem(item).ShouldBeIgnored(item, player))
 			{
 				return base.CanHitPvp(item, player, target);
 			}
@@ -145,7 +156,7 @@ namespace Loot
 
 		public override bool CanPickup(Item item, Player player)
 		{
-			if (MItem(item).IsVanityActivated)
+			if (MItem(item).ShouldBeIgnored(item, player))
 			{
 				return base.CanPickup(item, player);
 			}
@@ -162,7 +173,7 @@ namespace Loot
 
 		public override bool CanRightClick(Item item)
 		{
-			if (MItem(item).IsVanityActivated)
+			if (MItem(item).ShouldBeIgnored(item, Main.LocalPlayer))
 			{
 				return base.CanRightClick(item);
 			}
@@ -179,7 +190,7 @@ namespace Loot
 
 		public override bool CanUseItem(Item item, Player player)
 		{
-			if (MItem(item).IsVanityActivated)
+			if (MItem(item).ShouldBeIgnored(item, player))
 			{
 				return base.CanUseItem(item, player);
 			}
@@ -196,7 +207,7 @@ namespace Loot
 
 		public override int ChoosePrefix(Item item, UnifiedRandom rand)
 		{
-			if (MItem(item).IsVanityActivated)
+			if (MItem(item).ShouldBeIgnored(item, Main.LocalPlayer))
 			{
 				return base.ChoosePrefix(item, rand);
 			}
@@ -222,7 +233,7 @@ namespace Loot
 
 		public override bool ConsumeAmmo(Item item, Player player)
 		{
-			if (MItem(item).IsVanityActivated)
+			if (MItem(item).ShouldBeIgnored(item, player))
 			{
 				return base.ConsumeAmmo(item, player);
 			}
@@ -239,7 +250,7 @@ namespace Loot
 
 		public override bool ConsumeItem(Item item, Player player)
 		{
-			if (MItem(item).IsVanityActivated)
+			if (MItem(item).ShouldBeIgnored(item, player))
 			{
 				return base.ConsumeItem(item, player);
 			}
@@ -256,7 +267,7 @@ namespace Loot
 
 		public override Color? GetAlpha(Item item, Color lightColor)
 		{
-			if (MItem(item).IsVanityActivated)
+			if (MItem(item).ShouldBeIgnored(item, Main.LocalPlayer))
 			{
 				return base.GetAlpha(item, lightColor);
 			}
@@ -282,7 +293,7 @@ namespace Loot
 
 		public override void GetWeaponCrit(Item item, Player player, ref int crit)
 		{
-			if (MItem(item).IsVanityActivated)
+			if (MItem(item).ShouldBeIgnored(item, player))
 			{
 				return;
 			}
@@ -297,7 +308,7 @@ namespace Loot
 
 		public override void GetWeaponDamage(Item item, Player player, ref int damage)
 		{
-			if (MItem(item).IsVanityActivated)
+			if (MItem(item).ShouldBeIgnored(item, player))
 			{
 				return;
 			}
@@ -312,7 +323,7 @@ namespace Loot
 
 		public override void GetWeaponKnockback(Item item, Player player, ref float knockback)
 		{
-			if (MItem(item).IsVanityActivated)
+			if (MItem(item).ShouldBeIgnored(item, player))
 			{
 				return;
 			}
@@ -327,7 +338,7 @@ namespace Loot
 
 		public override void GrabRange(Item item, Player player, ref int grabRange)
 		{
-			if (MItem(item).IsVanityActivated)
+			if (MItem(item).ShouldBeIgnored(item, player))
 			{
 				return;
 			}
@@ -342,7 +353,7 @@ namespace Loot
 
 		public override bool GrabStyle(Item item, Player player)
 		{
-			if (MItem(item).IsVanityActivated)
+			if (MItem(item).ShouldBeIgnored(item, player))
 			{
 				return base.GrabStyle(item, player);
 			}
@@ -359,7 +370,7 @@ namespace Loot
 
 		public override void HoldItem(Item item, Player player)
 		{
-			if (MItem(item).IsVanityActivated)
+			if (MItem(item).ShouldBeIgnored(item, player))
 			{
 				return;
 			}
@@ -374,7 +385,7 @@ namespace Loot
 
 		public override bool HoldItemFrame(Item item, Player player)
 		{
-			if (MItem(item).IsVanityActivated)
+			if (MItem(item).ShouldBeIgnored(item, player))
 			{
 				return base.HoldItemFrame(item, player);
 			}
@@ -391,7 +402,7 @@ namespace Loot
 
 		public override void HoldStyle(Item item, Player player)
 		{
-			if (MItem(item).IsVanityActivated)
+			if (MItem(item).ShouldBeIgnored(item, player))
 			{
 				return;
 			}
@@ -406,7 +417,7 @@ namespace Loot
 
 		public override void HorizontalWingSpeeds(Item item, Player player, ref float speed, ref float acceleration)
 		{
-			if (MItem(item).IsVanityActivated)
+			if (MItem(item).ShouldBeIgnored(item, player))
 			{
 				return;
 			}
@@ -421,7 +432,7 @@ namespace Loot
 
 		public override bool ItemSpace(Item item, Player player)
 		{
-			if (MItem(item).IsVanityActivated)
+			if (MItem(item).ShouldBeIgnored(item, player))
 			{
 				return base.ItemSpace(item, player);
 			}
@@ -438,7 +449,7 @@ namespace Loot
 
 		public override void MeleeEffects(Item item, Player player, Rectangle hitbox)
 		{
-			if (MItem(item).IsVanityActivated)
+			if (MItem(item).ShouldBeIgnored(item, player))
 			{
 				return;
 			}
@@ -453,7 +464,7 @@ namespace Loot
 
 		public override float MeleeSpeedMultiplier(Item item, Player player)
 		{
-			if (MItem(item).IsVanityActivated)
+			if (MItem(item).ShouldBeIgnored(item, player))
 			{
 				return base.MeleeSpeedMultiplier(item, player);
 			}
@@ -479,7 +490,7 @@ namespace Loot
 
 		public override void ModifyHitNPC(Item item, Player player, NPC target, ref int damage, ref float knockBack, ref bool crit)
 		{
-			if (MItem(item).IsVanityActivated)
+			if (MItem(item).ShouldBeIgnored(item, player))
 			{
 				return;
 			}
@@ -494,7 +505,7 @@ namespace Loot
 
 		public override void ModifyHitPvp(Item item, Player player, Player target, ref int damage, ref bool crit)
 		{
-			if (MItem(item).IsVanityActivated)
+			if (MItem(item).ShouldBeIgnored(item, player))
 			{
 				return;
 			}
@@ -541,7 +552,7 @@ namespace Loot
 
 		public override bool NewPreReforge(Item item)
 		{
-			if (MItem(item).IsVanityActivated)
+			if (MItem(item).ShouldBeIgnored(item, Main.LocalPlayer))
 			{
 				return base.NewPreReforge(item);
 			}
@@ -558,7 +569,7 @@ namespace Loot
 
 		public override void OnCraft(Item item, Recipe recipe)
 		{
-			if (MItem(item).IsVanityActivated)
+			if (MItem(item).ShouldBeIgnored(item, Main.LocalPlayer))
 			{
 				return;
 			}
@@ -573,7 +584,7 @@ namespace Loot
 
 		public override void OnHitNPC(Item item, Player player, NPC target, int damage, float knockBack, bool crit)
 		{
-			if (MItem(item).IsVanityActivated)
+			if (MItem(item).ShouldBeIgnored(item, player))
 			{
 				return;
 			}
@@ -588,7 +599,7 @@ namespace Loot
 
 		public override void OnHitPvp(Item item, Player player, Player target, int damage, bool crit)
 		{
-			if (MItem(item).IsVanityActivated)
+			if (MItem(item).ShouldBeIgnored(item, player))
 			{
 				return;
 			}
@@ -603,7 +614,7 @@ namespace Loot
 
 		public override bool OnPickup(Item item, Player player)
 		{
-			if (MItem(item).IsVanityActivated)
+			if (MItem(item).ShouldBeIgnored(item, player))
 			{
 				return base.OnPickup(item, player);
 			}
@@ -620,7 +631,7 @@ namespace Loot
 
 		public override void PickAmmo(Item item, Player player, ref int type, ref float speed, ref int damage, ref float knockback)
 		{
-			if (MItem(item).IsVanityActivated)
+			if (MItem(item).ShouldBeIgnored(item, player))
 			{
 				return;
 			}
@@ -635,7 +646,7 @@ namespace Loot
 
 		public override void PostDrawInInventory(Item item, SpriteBatch spriteBatch, Vector2 position, Rectangle frame, Color drawColor, Color itemColor, Vector2 origin, float scale)
 		{
-			if (MItem(item).IsVanityActivated)
+			if (MItem(item).ShouldBeIgnored(item, Main.LocalPlayer))
 			{
 				return;
 			}
@@ -650,7 +661,7 @@ namespace Loot
 
 		public override void PostDrawInWorld(Item item, SpriteBatch spriteBatch, Color lightColor, Color alphaColor, float rotation, float scale, int whoAmI)
 		{
-			if (MItem(item).IsVanityActivated)
+			if (MItem(item).ShouldBeIgnored(item, Main.LocalPlayer))
 			{
 				return;
 			}
@@ -665,7 +676,7 @@ namespace Loot
 
 		public override void PostDrawTooltip(Item item, ReadOnlyCollection<DrawableTooltipLine> lines)
 		{
-			if (MItem(item).IsVanityActivated)
+			if (MItem(item).ShouldBeIgnored(item, Main.LocalPlayer))
 			{
 				return;
 			}
@@ -680,7 +691,7 @@ namespace Loot
 
 		public override void PostDrawTooltipLine(Item item, DrawableTooltipLine line)
 		{
-			if (MItem(item).IsVanityActivated)
+			if (MItem(item).ShouldBeIgnored(item, Main.LocalPlayer))
 			{
 				return;
 			}
@@ -695,7 +706,7 @@ namespace Loot
 
 		public override void PostReforge(Item item)
 		{
-			if (MItem(item).IsVanityActivated)
+			if (MItem(item).ShouldBeIgnored(item, Main.LocalPlayer))
 			{
 				return;
 			}
@@ -710,7 +721,7 @@ namespace Loot
 
 		public override void PostUpdate(Item item)
 		{
-			if (MItem(item).IsVanityActivated)
+			if (MItem(item).ShouldBeIgnored(item, Main.LocalPlayer))
 			{
 				return;
 			}
@@ -725,7 +736,7 @@ namespace Loot
 
 		public override bool PreDrawInInventory(Item item, SpriteBatch spriteBatch, Vector2 position, Rectangle frame, Color drawColor, Color itemColor, Vector2 origin, float scale)
 		{
-			if (MItem(item).IsVanityActivated)
+			if (MItem(item).ShouldBeIgnored(item, Main.LocalPlayer))
 			{
 				return base.PreDrawInInventory(item, spriteBatch, position, frame, drawColor, itemColor, origin, scale);
 			}
@@ -742,7 +753,7 @@ namespace Loot
 
 		public override bool PreDrawInWorld(Item item, SpriteBatch spriteBatch, Color lightColor, Color alphaColor, ref float rotation, ref float scale, int whoAmI)
 		{
-			if (MItem(item).IsVanityActivated)
+			if (MItem(item).ShouldBeIgnored(item, Main.LocalPlayer))
 			{
 				return base.PreDrawInWorld(item, spriteBatch, lightColor, alphaColor, ref rotation, ref scale, whoAmI);
 			}
@@ -759,7 +770,7 @@ namespace Loot
 
 		public override bool PreDrawTooltip(Item item, ReadOnlyCollection<TooltipLine> lines, ref int x, ref int y)
 		{
-			if (MItem(item).IsVanityActivated)
+			if (MItem(item).ShouldBeIgnored(item, Main.LocalPlayer))
 			{
 				return base.PreDrawTooltip(item, lines, ref x, ref y);
 			}
@@ -776,7 +787,7 @@ namespace Loot
 
 		public override bool PreDrawTooltipLine(Item item, DrawableTooltipLine line, ref int yOffset)
 		{
-			if (MItem(item).IsVanityActivated)
+			if (MItem(item).ShouldBeIgnored(item, Main.LocalPlayer))
 			{
 				return base.PreDrawTooltipLine(item, line, ref yOffset);
 			}
@@ -793,7 +804,7 @@ namespace Loot
 
 		public override bool ReforgePrice(Item item, ref int reforgePrice, ref bool canApplyDiscount)
 		{
-			if (MItem(item).IsVanityActivated)
+			if (MItem(item).ShouldBeIgnored(item, Main.LocalPlayer))
 			{
 				return base.ReforgePrice(item, ref reforgePrice, ref canApplyDiscount);
 			}
@@ -810,7 +821,7 @@ namespace Loot
 
 		public override void RightClick(Item item, Player player)
 		{
-			if (MItem(item).IsVanityActivated)
+			if (MItem(item).ShouldBeIgnored(item, player))
 			{
 				return;
 			}
@@ -825,7 +836,7 @@ namespace Loot
 
 		public override void SetDefaults(Item item)
 		{
-			if (MItem(item).IsVanityActivated)
+			if (MItem(item).ShouldBeIgnored(item, Main.LocalPlayer))
 			{
 				return;
 			}
@@ -840,7 +851,7 @@ namespace Loot
 
 		public override bool Shoot(Item item, Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)
 		{
-			if (MItem(item).IsVanityActivated)
+			if (MItem(item).ShouldBeIgnored(item, player))
 			{
 				return base.Shoot(item, player, ref position, ref speedX, ref speedY, ref type, ref damage, ref knockBack);
 			};
@@ -857,7 +868,7 @@ namespace Loot
 
 		public override void Update(Item item, ref float gravity, ref float maxFallSpeed)
 		{
-			if (MItem(item).IsVanityActivated)
+			if (MItem(item).ShouldBeIgnored(item, Main.LocalPlayer))
 			{
 				return;
 			}
@@ -872,7 +883,7 @@ namespace Loot
 
 		public override void UpdateAccessory(Item item, Player player, bool hideVisual)
 		{
-			if (MItem(item).IsVanityActivated)
+			if (MItem(item).ShouldBeIgnored(item, player))
 			{
 				return;
 			}
@@ -887,7 +898,7 @@ namespace Loot
 
 		public override void UpdateEquip(Item item, Player player)
 		{
-			if (MItem(item).IsVanityActivated)
+			if (MItem(item).ShouldBeIgnored(item, player))
 			{
 				return;
 			}
@@ -902,7 +913,7 @@ namespace Loot
 
 		public override void UpdateInventory(Item item, Player player)
 		{
-			if (MItem(item).IsVanityActivated)
+			if (MItem(item).ShouldBeIgnored(item, player))
 			{
 				return;
 			}
@@ -917,7 +928,7 @@ namespace Loot
 
 		public override bool UseItem(Item item, Player player)
 		{
-			if (MItem(item).IsVanityActivated)
+			if (MItem(item).ShouldBeIgnored(item, player))
 			{
 				return base.UseItem(item, player);
 			}
@@ -934,7 +945,7 @@ namespace Loot
 
 		public override bool UseItemFrame(Item item, Player player)
 		{
-			if (MItem(item).IsVanityActivated)
+			if (MItem(item).ShouldBeIgnored(item, player))
 			{
 				return base.UseItemFrame(item, player);
 			}
@@ -951,7 +962,7 @@ namespace Loot
 
 		public override void UseItemHitbox(Item item, Player player, ref Rectangle hitbox, ref bool noHitbox)
 		{
-			if (MItem(item).IsVanityActivated)
+			if (MItem(item).ShouldBeIgnored(item, player))
 			{
 				return;
 			}
@@ -966,7 +977,7 @@ namespace Loot
 
 		public override void UseStyle(Item item, Player player)
 		{
-			if (MItem(item).IsVanityActivated)
+			if (MItem(item).ShouldBeIgnored(item, player))
 			{
 				return;
 			}
@@ -981,7 +992,7 @@ namespace Loot
 
 		public override float UseTimeMultiplier(Item item, Player player)
 		{
-			if (MItem(item).IsVanityActivated)
+			if (MItem(item).ShouldBeIgnored(item, player))
 			{
 				return base.UseTimeMultiplier(item, player);
 			}
@@ -1007,7 +1018,7 @@ namespace Loot
 
 		public override void VerticalWingSpeeds(Item item, Player player, ref float ascentWhenFalling, ref float ascentWhenRising, ref float maxCanAscendMultiplier, ref float maxAscentMultiplier, ref float constantAscend)
 		{
-			if (MItem(item).IsVanityActivated)
+			if (MItem(item).ShouldBeIgnored(item, player))
 			{
 				return;
 			}
