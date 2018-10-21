@@ -4,10 +4,10 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Runtime.CompilerServices;
+using Loot.Core.System.Loaders;
 using Loot.UI.Core;
 using Loot.UI.Rerolling;
 using Loot.UI.Sealing;
-using Loot.UserInterface;
 using Terraria;
 using Terraria.ModLoader;
 using Terraria.UI;
@@ -38,7 +38,8 @@ namespace Loot
 		internal CubeRerollUI CubeRerollUI;
 		internal CubeSealUI CubeSealUI;
 
-		internal static ContentManager ContentManager;
+		// @todo also refactor?
+		internal static ModContentManager ModContentManager;
 		public static bool Loaded;
 
 		public Loot()
@@ -64,17 +65,19 @@ namespace Loot
 
 			//(string Name, string test) variable = ("Compiled with", "C#7");
 
-			EMMLoader.Initialize();
-			EMMLoader.Load();
+			ContentLoader.Initialize();
+			ContentLoader.Load();
+			MainLoader.Initialize();
+			MainLoader.Load();
 
-			EMMLoader.RegisterMod(this);
-			EMMLoader.SetupContent(this);
+			MainLoader.RegisterMod(this);
+			MainLoader.AddContent(this);
 
 			if (!Main.dedServ)
 			{
 				SetupContentMgr();
 				SetupUIs();
-				EMMLoader.RegisterAssets(this, "GraphicsAssets");
+				AssetLoader.RegisterAssets(this, "GraphicsAssets");
 
 				if (WingSlotLoaded && !WingSlotVersionInvalid)
 				{
@@ -90,8 +93,8 @@ namespace Loot
 
 		private void SetupContentMgr()
 		{
-			ContentManager = new ContentManager();
-			ContentManager.Initialize(this);
+			ModContentManager = new ModContentManager();
+			ModContentManager.Initialize(this);
 		}
 
 		private void SetupUIs()
@@ -110,7 +113,7 @@ namespace Loot
 		{
 			if (!Main.dedServ)
 			{
-				ContentManager.Load();
+				ModContentManager.Load();
 			}
 			Loaded = true;
 		}
@@ -118,10 +121,11 @@ namespace Loot
 		public override void Unload()
 		{
 			Instance = null;
-			EMMLoader.Unload();
 
-			ContentManager?.Unload();
-			ContentManager = null;
+			ContentLoader.Unload();
+			MainLoader.Unload();
+			ModContentManager?.Unload();
+			ModContentManager = null;
 
 			// TODO causes trouble in unload?
 			// @todo this is not a feature of tml

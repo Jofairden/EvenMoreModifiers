@@ -1,5 +1,7 @@
+using System.Collections.Generic;
 using System.Linq;
 using Loot.Core.System;
+using Loot.Core.System.Loaders;
 
 namespace Loot.Pools
 {
@@ -10,10 +12,8 @@ namespace Loot.Pools
 	{
 		public override float RollChance => 0f;
 
-		public AllModifiersPool()
-		{
-			Modifiers = EMMLoader.Modifiers.Select(x => x.Value).ToArray();
-		}
+		public override IEnumerable<Modifier> GetModifiers() 
+			=> ContentLoader.Modifier.Content.Select(x => x.Value).ToArray();
 
 		public override bool CanRoll(ModifierContext ctx)
 		{

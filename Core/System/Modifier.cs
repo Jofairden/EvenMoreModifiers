@@ -1,9 +1,11 @@
+using Loot.Core.Graphics;
+using Loot.Core.System.Core;
+using Loot.Core.System.Loaders;
+using Microsoft.Xna.Framework;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Reflection;
-using Loot.Core.Graphics;
-using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.ModLoader;
 using Terraria.ModLoader.IO;
@@ -16,28 +18,31 @@ namespace Loot.Core.System
 	/// The various hooks are called by our own GlobalItem
 	/// In your Modifier, it is safe to assume when one of the hooks is called, that item currently is modified by this modifier
 	/// </summary>
-	public abstract class Modifier : GlobalItem, ICloneable
+	public abstract class Modifier : GlobalItem, ILoadableContent, ILoadableContentSetter, ICloneable
 	{
+		public Mod Mod { get; internal set; }
+
+		Mod ILoadableContentSetter.Mod
+		{
+			set { Mod = value; }
+		}
+
+		public uint Type { get; internal set; }
+
+		uint ILoadableContentSetter.Type
+		{
+			set { Type = value; }
+		}
+
+		public new string Name => GetType().Name;
+
 		public virtual GlowmaskEntity GetGlowmaskEntity(Item item) => null;
 		public virtual ShaderEntity GetShaderEntity(Item item) => null;
-
-		public Mod Mod { get; internal set; }
-		public uint Type { get; internal set; }
-		public new virtual string Name => GetType().Name;
 
 		public ModifierProperties Properties { get; internal set; }
 
 		// Must be getter due to various fields that can change interactively
-		public virtual ModifierTooltipLine[] TooltipLines { get; }
-
-		/// <summary>
-		/// Returns the Modifier specified by type, null if not present
-		/// </summary>
-		public static Modifier GetModifier(ushort type)
-			=> EMMLoader.GetModifier(type);
-
-		public Modifier AsNewInstance()
-			=> (Modifier)Activator.CreateInstance(GetType());
+		public virtual ModifierTooltipLine[] TooltipLines => new ModifierTooltipLine[0];
 
 		public virtual ModifierProperties GetModifierProperties(Item item)
 			=> new ModifierProperties();
@@ -104,31 +109,26 @@ namespace Loot.Core.System
 
 		protected internal static Modifier _NetReceive(Item item, BinaryReader reader)
 		{
-			string Type = reader.ReadString();
-			uint ModifierType = reader.ReadUInt32();
-			string ModName = reader.ReadString();
-			ModifierProperties Properties = ModifierProperties._NetReceive(item, reader);
+			string type = reader.ReadString();
+			string modName = reader.ReadString();
+			ModifierProperties properties = ModifierProperties._NetReceive(item, reader);
 
-			Assembly assembly;
-			if (EMMLoader.Mods.TryGetValue(ModName, out assembly))
+			Modifier m = ContentLoader.Modifier.GetContent(modName, type);
+			if (m != null)
 			{
-				Modifier m = (Modifier)Activator.CreateInstance(assembly.GetType(Type));
-				m.Type = ModifierType;
-				m.Mod = ModLoader.GetMod(ModName);
 				m.Properties = m.GetModifierProperties(item);
-				m.Properties.Magnitude = Properties.Magnitude;
-				m.Properties.Power = Properties.Power;
+				m.Properties.Magnitude = properties.Magnitude;
+				m.Properties.Power = properties.Power;
 				m.NetReceive(item, reader);
 				return m;
 			}
 
-			throw new Exception($"Modifier _NetReceive error for {ModName}");
+			throw new Exception($"Modifier _NetReceive error for {modName}");
 		}
 
 		protected internal static void _NetSend(Modifier modifier, Item item, BinaryWriter writer)
 		{
-			writer.Write(modifier.GetType().FullName);
-			writer.Write(modifier.Type);
+			writer.Write(modifier.GetType().Name);
 			writer.Write(modifier.Mod.Name);
 			ModifierProperties._NetSend(item, modifier.Properties, writer);
 			modifier.NetSend(item, writer);
@@ -145,9 +145,10 @@ namespace Loot.Core.System
 
 		protected internal static Modifier _Load(Item item, TagCompound tag)
 		{
-			string modname = tag.GetString("ModName");
+			string modName = tag.GetString("ModName");
 			Assembly assembly;
-			if (EMMLoader.Mods.TryGetValue(modname, out assembly))
+			if (modName != null
+				&& MainLoader.Mods.TryGetValue(modName, out assembly))
 			{
 				// If we load a null here, it means a modifier is unloaded
 				Modifier m = null;
@@ -162,12 +163,12 @@ namespace Loot.Core.System
 					// in first save version, modifiers were saved by full assembly namespace
 					//m = (ModifierPool)Activator.CreateInstance(assembly.GetType(tag.GetString("Type")));// we modified saving
 					modifierTypeName = modifierTypeName.Substring(modifierTypeName.LastIndexOf('.') + 1);
-					m = EMMLoader.GetModifier(modname, modifierTypeName);
+					m = ContentLoader.Modifier.GetContent(modName, modifierTypeName);
 				}
 				else if (saveVersion == 2)
 				{
 					// from saveVersion 2 and onwards, they are saved by assembly (mod) and type name
-					m = EMMLoader.GetModifier(modname, modifierTypeName);
+					m = ContentLoader.Modifier.GetContent(modName, modifierTypeName);
 				}
 
 				if (m != null)
@@ -186,7 +187,7 @@ namespace Loot.Core.System
 				return null;
 			}
 
-			throw new Exception($"Modifier load error for {modname}");
+			throw new Exception($"Modifier load error for {modName}");
 		}
 
 		/// <summary>

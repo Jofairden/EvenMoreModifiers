@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using Loot.Core.Caching;
 using Loot.Core.System;
+using Loot.Core.System.Loaders;
 using Loot.Ext;
 using Terraria;
 using Terraria.DataStructures;
@@ -51,7 +52,7 @@ namespace Loot
 			// Initialize the effects list for this player
 			_modifierEffects = new List<ModifierEffect>();
 			// Need to initialize with a fresh set of new effect instances
-			foreach (var effect in EMMLoader.Effects.Select(x => x.Value))
+			foreach (var effect in ContentLoader.ModifierEffect.Content.Select(x => x.Value))
 			{
 				var clone = (ModifierEffect)effect.Clone();
 				clone.OnInitialize(this);

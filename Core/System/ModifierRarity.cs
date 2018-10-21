@@ -1,7 +1,9 @@
+using Loot.Core.System.Core;
+using Loot.Core.System.Loaders;
+using Microsoft.Xna.Framework;
 using System;
 using System.IO;
 using System.Reflection;
-using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.ModLoader;
 using Terraria.ModLoader.IO;
@@ -11,12 +13,25 @@ namespace Loot.Core.System
 	/// <summary>
 	/// Defines the rarity of a modifier
 	/// </summary>
-	public abstract class ModifierRarity : ICloneable
+	public abstract class ModifierRarity : ILoadableContent, ILoadableContentSetter, ICloneable
 	{
 		public Mod Mod { get; internal set; }
+
+		Mod ILoadableContentSetter.Mod
+		{
+			set { Mod = value; }
+		}
+
 		public uint Type { get; internal set; }
 
-		public virtual string Name => GetType().Name;
+		uint ILoadableContentSetter.Type
+		{
+			set { Type = value; }
+		}
+
+		public string Name => GetType().Name;
+
+		public virtual string RarityName => Name;
 		public virtual Color? OverrideNameColor => null;
 		public virtual string ItemPrefix => null;
 		public virtual string ItemSuffix => null;
@@ -27,18 +42,8 @@ namespace Loot.Core.System
 		public virtual bool MatchesRequirements(ModifierPool modifierPool)
 			=> modifierPool.MatchesRarity(this);
 
-		/// <summary>
-		/// Returns the ModifierRarity specified by type, null if not present
-		/// </summary>
-		public static ModifierRarity GetModifierRarity(ushort type)
-			=> EMMLoader.GetModifierRarity(type);
-
-		public ModifierRarity AsNewInstance()
-			=> (ModifierRarity)Activator.CreateInstance(GetType());
-
 		public virtual void Clone(ref ModifierRarity clone)
 		{
-
 		}
 
 		public object Clone()
@@ -66,7 +71,7 @@ namespace Loot.Core.System
 			string ModName = reader.ReadString();
 
 			Assembly assembly;
-			if (EMMLoader.Mods.TryGetValue(ModName, out assembly))
+			if (MainLoader.Mods.TryGetValue(ModName, out assembly))
 			{
 				ModifierRarity r = (ModifierRarity)Activator.CreateInstance(assembly.GetType(Type));
 				r.Type = RarityType;
@@ -105,7 +110,7 @@ namespace Loot.Core.System
 		{
 			string modname = tag.GetString("ModName");
 			Assembly assembly;
-			if (EMMLoader.Mods.TryGetValue(modname, out assembly))
+			if (MainLoader.Mods.TryGetValue(modname, out assembly))
 			{
 				// If we load a null here, it means a rarity is unloaded
 				ModifierRarity r = null;
@@ -120,12 +125,12 @@ namespace Loot.Core.System
 					// in first save version, modifiers were saved by full assembly namespace
 					//m = (ModifierPool)Activator.CreateInstance(assembly.GetType(tag.GetString("Type")));// we modified saving
 					rarityTypeName = rarityTypeName.Substring(rarityTypeName.LastIndexOf('.') + 1);
-					r = EMMLoader.GetModifierRarity(modname, rarityTypeName);
+					r = ContentLoader.ModifierRarity.GetContent(modname, rarityTypeName);
 				}
 				else if (saveVersion == 2)
 				{
 					// from saveVersion 2 and onwards, they are saved by assembly (mod) and type name
-					r = EMMLoader.GetModifierRarity(modname, rarityTypeName);
+					r = ContentLoader.ModifierRarity.GetContent(modname, rarityTypeName);
 				}
 
 				if (r != null)

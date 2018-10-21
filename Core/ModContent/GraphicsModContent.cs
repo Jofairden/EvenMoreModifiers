@@ -10,7 +10,7 @@ using Terraria.ModLoader;
 
 namespace Loot.Core.ModContent
 {
-	public class GraphicsContent : TextureContent
+	public class GraphicsModContent : TextureModContent
 	{
 		protected IDictionary<string, Texture2D> _glowmaskTextures;
 		protected IDictionary<string, Texture2D> _shaderTextures;

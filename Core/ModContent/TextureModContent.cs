@@ -4,7 +4,7 @@ using Microsoft.Xna.Framework.Graphics;
 
 namespace Loot.Core.ModContent
 {
-	public abstract class TextureContent
+	public abstract class TextureModContent
 	{
 		protected IDictionary<string, Texture2D> _textures;
 

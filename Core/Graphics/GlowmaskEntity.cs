@@ -50,7 +50,7 @@ namespace Loot.Core.Graphics
 		protected void LoadAssets(Item item)
 		{
 			if (GlowmaskTexture != null) return;
-			var graphicsContent = Loot.ContentManager.GetContent<GraphicsContent>();
+			var graphicsContent = Loot.ModContentManager.GetContent<GraphicsModContent>();
 			graphicsContent?.Prepare(item);
 			GlowmaskTexture = graphicsContent?.GetPreparedGlowmask(item.type.ToString());
 			if (GlowmaskTexture == null)

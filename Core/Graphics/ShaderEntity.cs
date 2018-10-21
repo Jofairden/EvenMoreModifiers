@@ -118,7 +118,7 @@ namespace Loot.Core.Graphics
 		// @todo dynamic load assets
 		protected void LoadAssets(Item item)
 		{
-			var graphicsContent = Loot.ContentManager.GetContent<GraphicsContent>();
+			var graphicsContent = Loot.ModContentManager.GetContent<GraphicsModContent>();
 			graphicsContent?.Prepare(item);
 
 			if (SubjectTexture == null)

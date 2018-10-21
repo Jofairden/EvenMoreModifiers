@@ -89,9 +89,18 @@
     <Compile Include="Core\Graphics\ShaderDrawOffsetStyle.cs" />
     <Compile Include="Core\Graphics\ShaderEntity.cs" />
     <Compile Include="Core\Graphics\ShaderGlobalItem.cs" />
-    <Compile Include="Core\ModContent\ContentManager.cs" />
-    <Compile Include="Core\ModContent\TextureContent.cs" />
-    <Compile Include="Core\ModContent\GraphicsContent.cs" />
+    <Compile Include="Core\ModContent\ModContentManager.cs" />
+    <Compile Include="Core\ModContent\TextureModContent.cs" />
+    <Compile Include="Core\ModContent\GraphicsModContent.cs" />
+    <Compile Include="Core\System\Content\ModifierEffectContent.cs" />
+    <Compile Include="Core\System\Core\BaseContent.cs" />
+    <Compile Include="Core\System\Content\ModifierContent.cs" />
+    <Compile Include="Core\System\Content\ModifierPoolContent.cs" />
+    <Compile Include="Core\System\Content\ModifierRarityContent.cs" />
+    <Compile Include="Core\System\Core\ILoadableContent.cs" />
+    <Compile Include="Core\System\Loaders\AssetLoader.cs" />
+    <Compile Include="Core\System\Loaders\ContentLoader.cs" />
+    <Compile Include="Core\System\Loaders\MainLoader.cs" />
     <Compile Include="Core\System\ModifierContext.cs" />
     <Compile Include="Core\System\ModifierEffect.cs" />
     <Compile Include="Core\System\ModifierProperties.cs" />
@@ -155,7 +164,6 @@
     <Compile Include="Pools\AllModifiersPool.cs" />
     <Compile Include="Core\System\ModifierPool.cs" />
     <Compile Include="Core\System\Modifier.cs" />
-    <Compile Include="EMMLoader.cs" />
     <Compile Include="Core\System\ModifierRarity.cs" />
     <Compile Include="Pools\AccessoryModifierPool.cs" />
     <Compile Include="Pools\WeaponModifierPool.cs" />
@@ -190,10 +198,7 @@
     <None Include=".editorconfig" />
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Core\System\Content\" />
-    <Folder Include="Core\System\Loader\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- visual studio setting -->
   <PropertyGroup>

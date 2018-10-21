@@ -4,6 +4,9 @@ using System.IO;
 using System.Linq;
 using System.Reflection;
 using Loot.Core.Attributes;
+using Loot.Core.System.Content;
+using Loot.Core.System.Core;
+using Loot.Core.System.Loaders;
 using Loot.Ext;
 using Terraria;
 using Terraria.ModLoader;
@@ -16,13 +19,35 @@ namespace Loot.Core.System
 	/// It allows to roll a 'themed' item if it hits an already defined pool
 	/// Up to 4 effects are drawn from the pool, and activated
 	/// </summary>
-	public abstract class ModifierPool : ICloneable
+	public abstract class ModifierPool : ILoadableContent, ILoadableContentSetter, ICloneable
 	{
-		public uint Type { get; protected internal set; }
-		public Mod Mod { get; protected internal set; }
+		public Mod Mod { get; internal set; }
+
+		Mod ILoadableContentSetter.Mod
+		{
+			set { Mod = value; }
+		}
+
+		public uint Type { get; internal set; }
+
+		uint ILoadableContentSetter.Type
+		{
+			set { Type = value; }
+		}
+
+		public string Name => GetType().Name;
+
 		public ModifierRarity Rarity { get; protected internal set; }
-		protected internal Modifier[] Modifiers;
+
 		public Modifier[] ActiveModifiers { get; protected internal set; }
+
+		internal Modifier[] StoredModifiers = new Modifier[0];
+
+		internal IEnumerable<Modifier> _GetModifiers() 
+			=> StoredModifiers.Any() ? StoredModifiers : GetModifiers();
+
+		public virtual IEnumerable<Modifier> GetModifiers() 
+			=> Enumerable.Empty<Modifier>();
 
 		// The default constructor will try to
 		// populate the array dynamically using the
@@ -37,14 +62,14 @@ namespace Loot.Core.System
 
 				foreach (var @class in classes)
 				{
-					var mod = EMMLoader.GetModifier(@class);
+					var mod = ContentLoader.Modifier.GetContent(@class);
 					if (mod != null)
 					{
 						list.Add(mod);
 					}
 				}
 
-				Modifiers = list.ToArray();
+				StoredModifiers = list.ToArray();
 			}
 		}
 
@@ -54,7 +79,7 @@ namespace Loot.Core.System
 		/// <param name="ctx"></param>
 		/// <returns></returns>
 		protected internal IEnumerable<Modifier> RollableModifiers(ModifierContext ctx)
-			=> Modifiers.Where(x => x._CanRoll(ctx));
+			=> _GetModifiers().Where(x => x._CanRoll(ctx));
 
 		/// <summary>
 		/// Returns the sum of the rarity levels of the active modifiers
@@ -68,17 +93,7 @@ namespace Loot.Core.System
 		public IEnumerable<ModifierTooltipLine[]> Description
 			=> ActiveModifiers.Select(m => m.TooltipLines);
 
-		public virtual string Name => GetType().Name;
 		public virtual float RollChance => 1f;
-
-		/// <summary>
-		/// Returns the ModifierPool specified by type, null if not present
-		/// </summary>
-		public static ModifierPool GetModifierPool(ushort type)
-			=> EMMLoader.GetModifierPool(type);
-
-		public ModifierPool AsNewInstance()
-			=> (ModifierPool)Activator.CreateInstance(GetType());
 
 		/// <summary>
 		/// Gets the next appropriate rarity for this pool and applies it and returns it.
@@ -86,7 +101,7 @@ namespace Loot.Core.System
 		/// <returns></returns>
 		internal ModifierRarity UpdateRarity()
 		{
-			Rarity = EMMLoader.GetPoolRarity(this);
+			Rarity = ContentLoader.ModifierPool.GetPoolRarity(this);
 			return Rarity;
 		}
 
@@ -141,11 +156,6 @@ namespace Loot.Core.System
 			clone.Type = Type;
 			clone.Mod = Mod;
 			clone.Rarity = (ModifierRarity)Rarity?.Clone();
-			clone.Modifiers =
-				Modifiers?
-					.Select(x => x?.Clone())
-					.Cast<Modifier>()
-					.ToArray();
 			clone.ActiveModifiers =
 				ActiveModifiers?
 					.Select(x => x?.Clone())
@@ -176,7 +186,7 @@ namespace Loot.Core.System
 			}
 
 			Assembly assembly;
-			if (EMMLoader.Mods.TryGetValue(ModName, out assembly))
+			if (MainLoader.Mods.TryGetValue(ModName, out assembly))
 			{
 				ModifierPool m = (ModifierPool)Activator.CreateInstance(assembly.GetType(Type));
 				m.Type = ModifierType;
@@ -231,7 +241,7 @@ namespace Loot.Core.System
 
 			string modname = tag.GetString("ModName");
 			Assembly assembly;
-			if (EMMLoader.Mods.TryGetValue(modname, out assembly))
+			if (MainLoader.Mods.TryGetValue(modname, out assembly))
 			{
 				// If we manage to load null here, that means some pool got unloaded
 				ModifierPool m = null;
@@ -245,12 +255,12 @@ namespace Loot.Core.System
 					// in first save version, modifiers were saved by full assembly namespace
 					//m = (ModifierPool)Activator.CreateInstance(assembly.GetType(tag.GetString("Type")));// we modified saving
 					poolTypeName = poolTypeName.Substring(poolTypeName.LastIndexOf('.') + 1);
-					m = EMMLoader.GetModifierPool(modname, poolTypeName);
+					m = ContentLoader.ModifierPool.GetContent(modname, poolTypeName);
 				}
 				else if (saveVersion == 2)
 				{
 					// from saveVersion 2 and onwards, they are saved by assembly (mod) and type name
-					m = EMMLoader.GetModifierPool(modname, poolTypeName);
+					m = ContentLoader.ModifierPool.GetContent(modname, poolTypeName);
 				}
 
 				// if we have a pool
@@ -289,10 +299,9 @@ namespace Loot.Core.System
 					// If our rarity was unloaded, attempt rolling a new one that is applicable
 					if (rarityUnloaded && m.ActiveModifiers != null && m.ActiveModifiers.Length > 0)
 					{
-						m.Rarity = EMMLoader.GetPoolRarity(m);
+						m.Rarity = ContentLoader.ModifierPool.GetPoolRarity(m);
 					}
 
-					m.Modifiers = null;
 					return m;
 				}
 

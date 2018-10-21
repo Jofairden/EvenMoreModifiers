@@ -2,6 +2,8 @@ using System;
 using System.Linq;
 using System.Reflection;
 using Loot.Core.Attributes;
+using Loot.Core.System.Core;
+using Loot.Core.System.Loaders;
 using Terraria.ModLoader;
 
 namespace Loot.Core.System
@@ -11,20 +13,29 @@ namespace Loot.Core.System
 	/// It should house the implementation, and delegation of such an effect
 	/// Methods on effects can be delegated from ModPlayer
 	/// </summary>
-	public abstract class ModifierEffect : ICloneable
+	public abstract class ModifierEffect : ILoadableContent, ILoadableContentSetter, ICloneable
 	{
 		public Mod Mod { get; internal set; }
+
+		Mod ILoadableContentSetter.Mod
+		{
+			set { Mod = value; }
+		}
+
 		public uint Type { get; internal set; }
-		public virtual string Name => GetType().Name;
+
+		uint ILoadableContentSetter.Type
+		{
+			set { Type = value; }
+		}
+
+		public string Name => GetType().Name;
 
 		/// <summary>
 		/// Keeps track of if this particular modifier is being delegated or not
 		/// This is used to check if this effect's automatic delegation needs to be performed
 		/// </summary>
 		public bool IsBeingDelegated { get; internal set; }
-
-		public ModifierEffect AsNewInstance()
-			=> (ModifierEffect)Activator.CreateInstance(GetType());
 
 		/// <summary>
 		/// Called when the ModPlayer initializes the effect
@@ -109,11 +120,5 @@ namespace Loot.Core.System
 			Clone(ref clone);
 			return clone;
 		}
-
-		/// <summary>
-		/// Returns the ModifierEffect specified by type, null if not present
-		/// </summary>
-		public static ModifierEffect GetModifierEffect(ushort type)
-			=> EMMLoader.GetModifierEffect(type);
 	}
 }

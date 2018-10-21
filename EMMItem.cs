@@ -8,6 +8,7 @@ using System.Globalization;
 using System.IO;
 using System.Linq;
 using Loot.Core.System;
+using Loot.Core.System.Loaders;
 using Loot.Ext;
 using Loot.Pools;
 using Terraria;
@@ -82,7 +83,7 @@ namespace Loot
 				// A pool is forced to roll
 				if (itemRollProperties.ForceModifierPool != null)
 				{
-					ModifierPool = EMMLoader.GetModifierPool(itemRollProperties.ForceModifierPool.GetType());
+					ModifierPool = ContentLoader.ModifierPool.GetContent(itemRollProperties.ForceModifierPool.GetType());
 					noForce = !ModifierPool?._CanRoll(ctx) ?? true;
 				}
 
@@ -96,7 +97,7 @@ namespace Loot
 					if (rollPredefinedPool)
 					{
 						// GetWeightedPool already checks _CanRoll
-						ModifierPool = EMMLoader.GetWeightedPool(ctx);
+						ModifierPool = ContentLoader.ModifierPool.GetWeightedPool(ctx);
 						noForce = ModifierPool == null || !ModifierPool._CanRoll(ctx);
 					}
 
@@ -120,8 +121,6 @@ namespace Loot
 			}
 			else
 			{
-				// The possible modifiers are unloaded to save memory
-				ModifierPool.Modifiers = null;
 				ModifierPool.UpdateRarity();
 			}
 
@@ -600,7 +599,7 @@ namespace Loot
 				Color? inactiveColor = isVanityIgnored ? (Color?)Color.DarkSlateGray : null;
 
 				i = tooltips.Count;
-				tooltips.Insert(i, new TooltipLine(mod, "Loot: Modifier:Rarity", $"[{pool.Rarity.Name}]{(isVanityIgnored ? " [IGNORED]" : "")}") { overrideColor = inactiveColor ?? pool.Rarity.Color * Main.inventoryScale });
+				tooltips.Insert(i, new TooltipLine(mod, "Loot: Modifier:Rarity", $"[{pool.Rarity.RarityName}]{(isVanityIgnored ? " [IGNORED]" : "")}") { overrideColor = inactiveColor ?? pool.Rarity.Color * Main.inventoryScale });
 
 				// Insert lines
 				foreach (var ttcol in pool.Description)

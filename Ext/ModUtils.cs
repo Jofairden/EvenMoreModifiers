@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using Loot.Core.System;
+using Loot.Core.System.Loaders;
 using Terraria.ModLoader;
 using EffectMap = System.Collections.Generic.KeyValuePair<string, Loot.Core.System.ModifierEffect>;
 using ModifierMap = System.Collections.Generic.KeyValuePair<string, Loot.Core.System.Modifier>;
@@ -16,7 +17,7 @@ namespace Loot.Ext
 		public static ModifierRarity GetModifierRarity(this Mod mod, string name)
 		{
 			List<RarityMap> v;
-			if (EMMLoader.RaritiesMap.TryGetValue(mod.Name, out v))
+			if (ContentLoader.ModifierRarity.Map.TryGetValue(mod.Name, out v))
 			{
 				var fod = v.FirstOrDefault(x => x.Value.Name.Equals(name));
 				return (ModifierRarity)fod.Value.Clone();
@@ -32,7 +33,7 @@ namespace Loot.Ext
 		public static Modifier GetModifier(this Mod mod, string name)
 		{
 			List<ModifierMap> v;
-			if (EMMLoader.ModifiersMap.TryGetValue(mod.Name, out v))
+			if (ContentLoader.Modifier.Map.TryGetValue(mod.Name, out v))
 			{
 				var fod = v.FirstOrDefault(x => x.Value.Name.Equals(name));
 				return (Modifier)fod.Value.Clone();
@@ -48,7 +49,7 @@ namespace Loot.Ext
 		public static ModifierPool GetModifierPool(this Mod mod, string name)
 		{
 			List<PoolMap> v;
-			if (EMMLoader.PoolsMap.TryGetValue(mod.Name, out v))
+			if (ContentLoader.ModifierPool.Map.TryGetValue(mod.Name, out v))
 			{
 				var fod = v.FirstOrDefault(x => x.Value.Name.Equals(name));
 				return (ModifierPool)fod.Value.Clone();
@@ -64,7 +65,7 @@ namespace Loot.Ext
 		public static ModifierEffect GetModifierEffect(this Mod mod, string name)
 		{
 			List<EffectMap> v;
-			if (EMMLoader.EffectsMap.TryGetValue(mod.Name, out v))
+			if (ContentLoader.ModifierEffect.Map.TryGetValue(mod.Name, out v))
 			{
 				var fod = v.FirstOrDefault(x => x.Value.Name.Equals(name));
 				return (ModifierEffect)fod.Value.Clone();

@@ -5,7 +5,7 @@ namespace Loot.Rarities
 {
 	public class LegendaryRarity : ModifierRarity
 	{
-		public override string Name => "Legendary";
+		public override string RarityName => "Legendary";
 		public override Color Color => Color.Red;
 		//public override Color? OverrideNameColor => Color;
 		//public override string ItemPrefix => "Legendary";

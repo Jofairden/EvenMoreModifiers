@@ -5,7 +5,7 @@ namespace Loot.Rarities
 {
 	public class UncommonRarity : ModifierRarity
 	{
-		public override string Name => "Uncommon";
+		public override string RarityName => "Uncommon";
 		public override Color Color => Color.Orange;
 		public override float RequiredRarityLevel => 1f;
 	}
