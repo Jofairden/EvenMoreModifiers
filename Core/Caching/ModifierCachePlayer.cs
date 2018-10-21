@@ -1,5 +1,4 @@
 using CheatSheet;
-using Loot.Core;
 using Loot.Core.Attributes;
 using System;
 using System.Collections.Generic;
@@ -8,26 +7,8 @@ using System.Reflection;
 using Terraria;
 using Terraria.ModLoader;
 
-namespace Loot.Modifiers
+namespace Loot.Core.Caching
 {
-	public class AutoDelegationEntry
-	{
-		public Item Item { get; set; }
-		public Modifier Modifier { get; set; }
-
-		public AutoDelegationEntry(Item item, Modifier modifier)
-		{
-			Item = item;
-			Modifier = modifier;
-		}
-	}
-
-	public class OrderedDelegationEntry
-	{
-		public MethodInfo MethodInfo { get; set; }
-		public ModifierEffect Effect { get; set; }
-	}
-
 	/*
 	 * Do note that this class is very important
 	 * And without this class, any of the delegations will not work at all
@@ -73,7 +54,7 @@ namespace Loot.Modifiers
 		/// <summary>
 		/// This method will return a list of <see cref="ModifierEffect"/>s based on <see cref="Modifier"/>s passed to it 
 		/// </summary>
-		private List<ModifierEffect> GetModifierEffectsForDelegations(List<AutoDelegationEntry> list, ModifierPlayer modPlayer, Func<ModifierEffect, bool> conditionFunc)
+		private List<ModifierEffect> GetModifierEffectsForDelegations(IEnumerable<AutoDelegationEntry> list, ModifierPlayer modPlayer, Func<ModifierEffect, bool> conditionFunc)
 		{
 			var tempList = new List<ModifierEffect>();
 			foreach (var delegationTuple in list)
@@ -165,14 +146,14 @@ namespace Loot.Modifiers
 		/// following the rules of <see cref="DelegationPrioritizationAttribute"/> which orders by Early/Late prioritization
 		/// and a level ranging from 0-999 which indicates how much that prioritization should be enforced.
 		/// </summary>
-		private List<OrderedDelegationEntry> OrderDelegationList(List<AutoDelegationEntry> list, ModifierPlayer modPlayer)
+		private IEnumerable<OrderedDelegationEntry> OrderDelegationList(IEnumerable<AutoDelegationEntry> list, ModifierPlayer modPlayer)
 		{
 			var tempList = new List<OrderedDelegationEntry>();
 			var tempEarlyMethods = new List<OrderedDelegationEntry>();
 			var tempMiddleMethods = new List<OrderedDelegationEntry>();
 			var tempLateMethods = new List<OrderedDelegationEntry>();
 
-			var effects = GetModifierEffectsForDelegations(list, modPlayer, (e) => true);
+			var effects = GetModifierEffectsForDelegations(list, modPlayer, e => true);
 
 			foreach (var modEffect in effects)
 			{
@@ -180,60 +161,33 @@ namespace Loot.Modifiers
 					.GetType()
 					.GetMethods(BindingFlags.NonPublic | BindingFlags.Public | BindingFlags.Instance)
 					.Where(x => x.GetCustomAttributes(typeof(AutoDelegation), false).Length > 0)
-					.ToArray();
+					.ToDictionary(x => x, y => (DelegationPrioritizationAttribute)y.GetCustomAttribute(typeof(DelegationPrioritizationAttribute)));
 
 				tempEarlyMethods.AddRange(delegatedMethods.Where(x =>
-				{
-					var attr = x.GetCustomAttribute(typeof(DelegationPrioritizationAttribute));
-					if (attr != null && (attr as DelegationPrioritizationAttribute).DelegationPrioritization == DelegationPrioritization.Early)
+						x.Value?.DelegationPrioritization == DelegationPrioritization.Early)
+					.OrderByDescending(x => x.Value.DelegationLevel)
+					.Select(x => new OrderedDelegationEntry
 					{
-						return true;
-					}
+						MethodInfo = x.Key,
+						Effect = modEffect
+					}));
 
-					return false;
-				}).Select(x => new OrderedDelegationEntry
-				{
-					MethodInfo = x,
-					Effect = modEffect
-				}));
-
-				tempMiddleMethods.AddRange(delegatedMethods.Where(x =>
-				{
-					var attr = x.GetCustomAttribute(typeof(DelegationPrioritizationAttribute));
-					return attr == null;
-				}).Select(x => new OrderedDelegationEntry
-				{
-					MethodInfo = x,
-					Effect = modEffect
-				}));
+				tempMiddleMethods.AddRange(delegatedMethods.Where(x => x.Value == null)
+					.Select(x => new OrderedDelegationEntry
+					{
+						MethodInfo = x.Key,
+						Effect = modEffect
+					}));
 
 				tempLateMethods.AddRange(delegatedMethods.Where(x =>
-				{
-					var attr = x.GetCustomAttribute(typeof(DelegationPrioritizationAttribute));
-					if (attr != null && (attr as DelegationPrioritizationAttribute).DelegationPrioritization == DelegationPrioritization.Late)
+						x.Value?.DelegationPrioritization == DelegationPrioritization.Late)
+					.OrderByDescending(x => x.Value.DelegationLevel)
+					.Select(x => new OrderedDelegationEntry
 					{
-						return true;
-					}
-
-					return false;
-				}).Select(x => new OrderedDelegationEntry
-				{
-					MethodInfo = x,
-					Effect = modEffect
-				}));
+						MethodInfo = x.Key,
+						Effect = modEffect
+					}));
 			}
-
-			tempEarlyMethods = tempEarlyMethods.OrderByDescending(x =>
-			{
-				var attr = x.MethodInfo.GetCustomAttribute(typeof(DelegationPrioritizationAttribute));
-				return ((DelegationPrioritizationAttribute)attr).DelegationLevel;
-			}).ToList();
-
-			tempLateMethods = tempLateMethods.OrderByDescending(x =>
-			{
-				var attr = x.MethodInfo.GetCustomAttribute(typeof(DelegationPrioritizationAttribute));
-				return ((DelegationPrioritizationAttribute)attr).DelegationLevel;
-			}).ToList();
 
 			tempList.AddRange(tempEarlyMethods);
 			tempList.AddRange(tempMiddleMethods);
@@ -353,7 +307,7 @@ namespace Loot.Modifiers
 						AddAttachItem(player.HeldItem, m);
 					}
 				}
-				
+
 				_oldSelectedItem = player.selectedItem;
 			}
 		}
@@ -540,7 +494,7 @@ namespace Loot.Modifiers
 						CacheItemModifierEffects(equip);
 					}
 				}
-				
+
 				if (Main.mouseItem != null && !Main.mouseItem.IsAir && Main.mouseItem.IsWeapon())
 				{
 					CacheItemModifierEffects(Main.mouseItem);

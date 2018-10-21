@@ -70,6 +70,8 @@
   <ItemGroup>
     <Compile Include="ArmorItemHack.cs" />
     <Compile Include="Core\Attributes\AutoDelegationAttribute.cs" />
+    <Compile Include="Core\Caching\AutoDelegationEntry.cs" />
+    <Compile Include="Core\Caching\OrderedDelegationEntry.cs" />
     <Compile Include="Core\Cubes\BlackCube.cs" />
     <Compile Include="Core\Cubes\ItemRollProperties.cs" />
     <Compile Include="Core\Cubes\PoorCube.cs" />
@@ -129,7 +131,7 @@
     <Compile Include="Modifiers\EquipModifiers\Offensive\ThrownCritPlus.cs" />
     <Compile Include="Modifiers\EquipModifiers\Offensive\ThrownDamagePlus.cs" />
     <Compile Include="Modifiers\EquipModifiers\Utility\WingTimePlus.cs" />
-    <Compile Include="Modifiers\ModifierCachePlayer.cs" />
+    <Compile Include="Core\Caching\ModifierCachePlayer.cs" />
     <Compile Include="Modifiers\WeaponModifiers\AmmoReduce.cs" />
     <Compile Include="Modifiers\WeaponModifiers\CritPlus.cs" />
     <Compile Include="Modifiers\WeaponModifiers\CursedDamage.cs" />
