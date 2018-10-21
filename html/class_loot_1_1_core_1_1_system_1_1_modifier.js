@@ -4,7 +4,6 @@ var class_loot_1_1_core_1_1_system_1_1_modifier =
     [ "Apply", "class_loot_1_1_core_1_1_system_1_1_modifier.html#a7a226ff8e95a9550b30224afd5fbaa9e", null ],
     [ "ArmorArmGlowMask", "class_loot_1_1_core_1_1_system_1_1_modifier.html#a0255223be1ae95d8887fe7f7abdc8fd0", null ],
     [ "ArmorSetShadows", "class_loot_1_1_core_1_1_system_1_1_modifier.html#a0876e21e9300ac8423ab692c48fb11a0", null ],
-    [ "AsNewInstance", "class_loot_1_1_core_1_1_system_1_1_modifier.html#a3dd9d93b3978298346616da6beea6184", null ],
     [ "Autoload", "class_loot_1_1_core_1_1_system_1_1_modifier.html#a1d7f267645d9ce2a15f7b390f93bd49c", null ],
     [ "CanRoll", "class_loot_1_1_core_1_1_system_1_1_modifier.html#a1295877e229e339db41240cf214dcfc1", null ],
     [ "CaughtFishStack", "class_loot_1_1_core_1_1_system_1_1_modifier.html#a61a562e83282da6ff37b835000fd977c", null ],
@@ -19,7 +18,6 @@ var class_loot_1_1_core_1_1_system_1_1_modifier =
     [ "DrawLegs", "class_loot_1_1_core_1_1_system_1_1_modifier.html#a950c741c35c147f6011e62cf9ad7d17a", null ],
     [ "ExtractinatorUse", "class_loot_1_1_core_1_1_system_1_1_modifier.html#a16e55abde5fa6480a23771765fc6af7d", null ],
     [ "GetGlowmaskEntity", "class_loot_1_1_core_1_1_system_1_1_modifier.html#a4a833bbc9c165224eb8d3b713b8adb76", null ],
-    [ "GetModifier", "class_loot_1_1_core_1_1_system_1_1_modifier.html#a009faa73ee15d0fd102af5408c246e6e", null ],
     [ "GetModifierProperties", "class_loot_1_1_core_1_1_system_1_1_modifier.html#a950fea58646dd0da5874ad4eabf38a09", null ],
     [ "GetShaderEntity", "class_loot_1_1_core_1_1_system_1_1_modifier.html#a707f1997ae01b2a2a4033ef5b2e1a482", null ],
     [ "HoldoutOffset", "class_loot_1_1_core_1_1_system_1_1_modifier.html#aed9afd2289a7ce474f3e4f318c9622b0", null ],
@@ -45,9 +43,11 @@ var class_loot_1_1_core_1_1_system_1_1_modifier =
     [ "WingUpdate", "class_loot_1_1_core_1_1_system_1_1_modifier.html#ab97f9176d022288d8d70849afb2bd2cb", null ],
     [ "CloneNewInstances", "class_loot_1_1_core_1_1_system_1_1_modifier.html#a9c1f7852811f51522cbb89e88d371387", null ],
     [ "InstancePerEntity", "class_loot_1_1_core_1_1_system_1_1_modifier.html#ac9d7b09dd8b5d9133e9981a11cc46d34", null ],
-    [ "Name", "class_loot_1_1_core_1_1_system_1_1_modifier.html#a5ab4b67d2408bfe1b36df903dacedb04", null ],
-    [ "Mod", "class_loot_1_1_core_1_1_system_1_1_modifier.html#a26318447685d225be6cefeaf07850594", null ],
-    [ "Properties", "class_loot_1_1_core_1_1_system_1_1_modifier.html#ad8d7867c485986dd69cc2757f09d555a", null ],
+    [ "Name", "class_loot_1_1_core_1_1_system_1_1_modifier.html#ac7c03028a3ee248ebc9516628449eed2", null ],
     [ "TooltipLines", "class_loot_1_1_core_1_1_system_1_1_modifier.html#add5384c40fb08aaee20683e3867d1061", null ],
-    [ "Type", "class_loot_1_1_core_1_1_system_1_1_modifier.html#a3ad69aa88ed8d97b2c192f29e1a2ddf2", null ]
+    [ "Mod", "class_loot_1_1_core_1_1_system_1_1_modifier.html#a26318447685d225be6cefeaf07850594", null ],
+    [ "Mod", "class_loot_1_1_core_1_1_system_1_1_modifier.html#ab694c50c6774ad4be2852b0e33257e4c", null ],
+    [ "Properties", "class_loot_1_1_core_1_1_system_1_1_modifier.html#ad8d7867c485986dd69cc2757f09d555a", null ],
+    [ "Type", "class_loot_1_1_core_1_1_system_1_1_modifier.html#a3ad69aa88ed8d97b2c192f29e1a2ddf2", null ],
+    [ "Type", "class_loot_1_1_core_1_1_system_1_1_modifier.html#af7bd704c09713d3b1778bf7f4d90e283", null ]
 ];

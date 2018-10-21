@@ -1,7 +1,7 @@
 var searchData=
 [
   ['commonrarity',['CommonRarity',['../class_loot_1_1_rarities_1_1_common_rarity.html',1,'Loot::Rarities']]],
-  ['contentmanager',['ContentManager',['../class_loot_1_1_core_1_1_mod_content_1_1_content_manager.html',1,'Loot::Core::ModContent']]],
+  ['contentloader',['ContentLoader',['../class_loot_1_1_core_1_1_system_1_1_loaders_1_1_content_loader.html',1,'Loot::Core::System::Loaders']]],
   ['critdamageplus',['CritDamagePlus',['../class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_offensive_1_1_crit_damage_plus.html',1,'Loot::Modifiers::EquipModifiers::Offensive']]],
   ['critdamagepluseffect',['CritDamagePlusEffect',['../class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_offensive_1_1_crit_damage_plus_effect.html',1,'Loot::Modifiers::EquipModifiers::Offensive']]],
   ['critplus',['CritPlus',['../class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_crit_plus.html',1,'Loot::Modifiers::WeaponModifiers']]],

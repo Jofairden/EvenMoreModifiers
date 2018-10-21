@@ -1,4 +1,5 @@
 <map id="Loot.Core.System.ModifierPool" name="Loot.Core.System.ModifierPool">
-<area shape="rect" id="node4" href="$class_loot_1_1_pools_1_1_all_modifiers_pool.html" title="A modifier pool that always consists of all modifiers " alt="" coords="413,56,595,83"/>
-<area shape="rect" id="node2" href="$class_i_cloneable.html" title="ICloneable" alt="" coords="6,56,90,83"/>
+<area shape="rect" id="node6" href="$class_loot_1_1_pools_1_1_all_modifiers_pool.html" title="A modifier pool that always consists of all modifiers " alt="" coords="487,56,670,83"/>
+<area shape="rect" id="node2" href="$interface_loot_1_1_core_1_1_system_1_1_core_1_1_i_loadable_content.html" title="ILoadableContent" alt="" coords="23,5,147,32"/>
+<area shape="rect" id="node4" href="$class_i_cloneable.html" title="ICloneable" alt="" coords="43,107,127,133"/>
 </map>

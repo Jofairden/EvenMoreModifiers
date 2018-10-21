@@ -14,7 +14,6 @@ var files =
     [ "EMMItem.cs", "_e_m_m_item_8cs.html", [
       [ "EMMItem", "class_loot_1_1_e_m_m_item.html", "class_loot_1_1_e_m_m_item" ]
     ] ],
-    [ "EMMLoader.cs", "_e_m_m_loader_8cs.html", "_e_m_m_loader_8cs" ],
     [ "EMMPlayer.cs", "_e_m_m_player_8cs.html", [
       [ "EMMPlayer", "class_loot_1_1_e_m_m_player.html", "class_loot_1_1_e_m_m_player" ]
     ] ],

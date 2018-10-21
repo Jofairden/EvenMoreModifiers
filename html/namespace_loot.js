@@ -10,7 +10,6 @@ var namespace_loot =
     [ "ActivatedModifierItem", "class_loot_1_1_activated_modifier_item.html", "class_loot_1_1_activated_modifier_item" ],
     [ "ArmorItemHack", "class_loot_1_1_armor_item_hack.html", "class_loot_1_1_armor_item_hack" ],
     [ "EMMItem", "class_loot_1_1_e_m_m_item.html", "class_loot_1_1_e_m_m_item" ],
-    [ "EMMLoader", "class_loot_1_1_e_m_m_loader.html", "class_loot_1_1_e_m_m_loader" ],
     [ "EMMPlayer", "class_loot_1_1_e_m_m_player.html", "class_loot_1_1_e_m_m_player" ],
     [ "EMMWorld", "class_loot_1_1_e_m_m_world.html", "class_loot_1_1_e_m_m_world" ],
     [ "Loot", "class_loot_1_1_loot.html", "class_loot_1_1_loot" ],

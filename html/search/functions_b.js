@@ -23,5 +23,5 @@ var searchData=
   ['modifyinterfacelayers',['ModifyInterfaceLayers',['../class_loot_1_1_loot.html#a73e8658a1a40dd26c2b9b2e6d3c200c8',1,'Loot::Loot']]],
   ['modifytooltips',['ModifyTooltips',['../class_loot_1_1_core_1_1_cubes_1_1_cube_u_i_extensions.html#ada391ecca8d6033cad2d646b8eacc834',1,'Loot.Core.Cubes.CubeUIExtensions.ModifyTooltips()'],['../class_loot_1_1_core_1_1_cubes_1_1_magical_cube.html#ac35036105a8fb9ca984acfaffe7f6b52',1,'Loot.Core.Cubes.MagicalCube.ModifyTooltips()'],['../class_loot_1_1_e_m_m_item.html#a26adbebd59ab872c21d077b0b42904aa',1,'Loot.EMMItem.ModifyTooltips()']]],
   ['modifyworldgentasks',['ModifyWorldGenTasks',['../class_loot_1_1_e_m_m_world.html#af380c8373a9080f2d6144288c6aa87b4',1,'Loot::EMMWorld']]],
-  ['multiplycolorsbyalpha',['MultiplyColorsByAlpha',['../class_loot_1_1_core_1_1_mod_content_1_1_graphics_content.html#a51dba85e3243020aa82afd630a5146f8',1,'Loot::Core::ModContent::GraphicsContent']]]
+  ['multiplycolorsbyalpha',['MultiplyColorsByAlpha',['../class_loot_1_1_core_1_1_mod_content_1_1_graphics_mod_content.html#a81936db66a16bcea8f4ac91bf8e72162',1,'Loot::Core::ModContent::GraphicsModContent']]]
 ];

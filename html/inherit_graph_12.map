@@ -1,3 +1,4 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="node1" href="$struct_loot_1_1_core_1_1_system_1_1_modifier_context.html" title="Defines a context in which a Modifier might be rolled Which fields are available (not null) depends o..." alt="" coords="5,5,184,46"/>
+<area shape="rect" id="node1" href="$class_loot_1_1_core_1_1_system_1_1_core_1_1_base_content.html" title="Loot.Core.System.Core.Base\lContent\&lt; ModifierEffect \&gt;" alt="" coords="5,5,200,46"/>
+<area shape="rect" id="node2" href="$class_loot_1_1_core_1_1_system_1_1_content_1_1_modifier_effect_content.html" title="Loot.Core.System.Content.\lModifierEffectContent" alt="" coords="249,5,431,46"/>
 </map>

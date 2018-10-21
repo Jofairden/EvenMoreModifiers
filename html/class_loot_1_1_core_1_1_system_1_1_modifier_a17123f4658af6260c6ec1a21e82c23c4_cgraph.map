@@ -1,4 +1,3 @@
 <map id="Loot.Core.System.Modifier.Load" name="Loot.Core.System.Modifier.Load">
-<area shape="rect" id="node2" href="$class_loot_1_1_e_m_m_loader.html#aca32952e13350506ed4b155e5ebfe6b9" title="Returns the ModifierEffect specified by type, null if not present " alt="" coords="264,5,456,32"/>
-<area shape="rect" id="node3" href="$class_loot_1_1_core_1_1_system_1_1_modifier.html#a950fea58646dd0da5874ad4eabf38a09" title="Loot.Core.System.Modifier.\lGetModifierProperties" alt="" coords="269,57,451,98"/>
+<area shape="rect" id="node2" href="$class_loot_1_1_core_1_1_system_1_1_modifier.html#a950fea58646dd0da5874ad4eabf38a09" title="Loot.Core.System.Modifier.\lGetModifierProperties" alt="" coords="265,22,447,63"/>
 </map>

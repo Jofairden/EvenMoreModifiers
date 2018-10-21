@@ -10,14 +10,13 @@ var searchData=
   ['setrolllogic',['SetRollLogic',['../class_loot_1_1_core_1_1_cubes_1_1_black_cube.html#a68fbb9ce92f44d4520c0d6a8eee6c95b',1,'Loot.Core.Cubes.BlackCube.SetRollLogic()'],['../class_loot_1_1_core_1_1_cubes_1_1_magical_cube.html#af46c273ab2c36c2ba4acbf47bbdf4946',1,'Loot.Core.Cubes.MagicalCube.SetRollLogic()'],['../class_loot_1_1_core_1_1_cubes_1_1_poor_cube.html#a1d25f0ed5c94f8b5ee7943ebb78499b6',1,'Loot.Core.Cubes.PoorCube.SetRollLogic()']]],
   ['setstaticdefaults',['SetStaticDefaults',['../class_loot_1_1_core_1_1_cubes_1_1_magical_cube.html#a70d5fb38182e07a4c31daee5be840712',1,'Loot::Core::Cubes::MagicalCube']]],
   ['setup',['Setup',['../class_loot_tests_1_1_modifier_properties_tests.html#ab1e7cdfb8137e42398aa342056397084',1,'LootTests.ModifierPropertiesTests.Setup()'],['../class_loot_tests_1_1_unit_tests.html#a853eab844d4a461588ea50a00c4c6966',1,'LootTests.UnitTests.Setup()']]],
-  ['setupcontent',['SetupContent',['../class_loot_1_1_e_m_m_loader.html#a273f95fe314eaa95ee729d8b63933a11',1,'Loot::EMMLoader']]],
   ['setupcontentmgr',['SetupContentMgr',['../class_loot_1_1_loot.html#ae299d7dbf57369a837cb558aa582f939',1,'Loot::Loot']]],
   ['setupshop',['SetupShop',['../class_loot_1_1_core_1_1_cubes_1_1_cube_shop.html#a7cbf458f03f04a9cf26b4005afbc748a',1,'Loot::Core::Cubes::CubeShop']]],
   ['setupstartinventory',['SetupStartInventory',['../class_loot_1_1_modifier_player.html#a2ee5edbc75df5b0ab66ac8250c129586',1,'Loot::ModifierPlayer']]],
   ['setupuis',['SetupUIs',['../class_loot_1_1_loot.html#a72f503cd864a13f3d584e1ac2e437a3d',1,'Loot::Loot']]],
   ['shaderentity',['ShaderEntity',['../class_loot_1_1_core_1_1_graphics_1_1_shader_entity.html#ab8053d1a68cc0735d9a012b97d92fa94',1,'Loot::Core::Graphics::ShaderEntity']]],
   ['shouldbeignored',['ShouldBeIgnored',['../class_loot_1_1_activated_modifier_item.html#ac0ba9cc7b2d0d2b2c62e9431e6acfc48',1,'Loot::ActivatedModifierItem']]],
-  ['substringlastindex',['SubstringLastIndex',['../class_loot_1_1_core_1_1_mod_content_1_1_graphics_content.html#ab11c3e0e596c12cc4b2d278297f15b50',1,'Loot::Core::ModContent::GraphicsContent']]],
+  ['substringlastindex',['SubstringLastIndex',['../class_loot_1_1_core_1_1_mod_content_1_1_graphics_mod_content.html#a1dc64224de0f90c22c7336d934678c99',1,'Loot::Core::ModContent::GraphicsModContent']]],
   ['surviveevent',['SurviveEvent',['../class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_defensive_1_1_survival_effect.html#a40d759c3bf93a9bba82142962a75c22b',1,'Loot::Modifiers::EquipModifiers::Defensive::SurvivalEffect']]],
   ['swapitemslot',['SwapItemSlot',['../class_loot_1_1_core_1_1_cubes_1_1_cube_u_i_extensions.html#ae26cf7a95d5c57166c4fa4765836bbef',1,'Loot::Core::Cubes::CubeUIExtensions']]]
 ];

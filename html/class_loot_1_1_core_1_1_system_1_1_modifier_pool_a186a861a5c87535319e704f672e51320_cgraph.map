@@ -1,4 +1,4 @@
 <map id="Loot.Core.System.ModifierPool.ModifierPool" name="Loot.Core.System.ModifierPool.ModifierPool">
 <area shape="rect" id="node2" href="$class_loot_1_1_core_1_1_attributes_1_1_populate_pool_from_attribute.html#a8c377d1e4843a125aaaae2275f92d4df" title="Loot.Core.Attributes.Populate\lPoolFromAttribute.GetClasses" alt="" coords="232,5,432,46"/>
-<area shape="rect" id="node3" href="$class_loot_1_1_e_m_m_loader.html#aca32952e13350506ed4b155e5ebfe6b9" title="Returns the ModifierEffect specified by type, null if not present " alt="" coords="236,71,428,97"/>
+<area shape="rect" id="node3" href="$class_loot_1_1_core_1_1_system_1_1_core_1_1_base_content.html#af1e91f0a60fbede8f702dc4fdb6a8576" title="Loot.Core.System.Core.Base\lContent.GetContent" alt="" coords="235,70,429,111"/>
 </map>

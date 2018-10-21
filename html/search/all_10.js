@@ -7,8 +7,7 @@ var searchData=
   ['percentdefensebonus',['PercentDefenseBonus',['../class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_defensive_1_1_percent_defense_bonus.html',1,'Loot::Modifiers::EquipModifiers::Defensive']]],
   ['percentdefensebonus_2ecs',['PercentDefenseBonus.cs',['../_percent_defense_bonus_8cs.html',1,'']]],
   ['player',['Player',['../struct_loot_1_1_core_1_1_system_1_1_modifier_context.html#a03c814b49df81f6a3c67dea0ca9d30a4',1,'Loot.Core.System.ModifierContext.Player()'],['../class_loot_1_1_modifier_player.html#aae3e56a930507049c3b282b29fece4f1',1,'Loot.ModifierPlayer.Player()']]],
-  ['poolidcount',['PoolIdCount',['../class_loot_1_1_e_m_m_loader_1_1_identifiers.html#a2e6353d59b2da0bb68e4ad62bf2285d4',1,'Loot::EMMLoader::Identifiers']]],
-  ['poolmap',['PoolMap',['../_e_m_m_loader_8cs.html#a7f67873ae4604d300bbd6b239c5b3c65',1,'PoolMap():&#160;EMMLoader.cs'],['../_mod_utils_8cs.html#a7f67873ae4604d300bbd6b239c5b3c65',1,'PoolMap():&#160;ModUtils.cs']]],
+  ['poolmap',['PoolMap',['../_mod_utils_8cs.html#a7f67873ae4604d300bbd6b239c5b3c65',1,'ModUtils.cs']]],
   ['poorcube',['PoorCube',['../class_loot_1_1_core_1_1_cubes_1_1_poor_cube.html',1,'Loot::Core::Cubes']]],
   ['poorcube_2ecs',['PoorCube.cs',['../_poor_cube_8cs.html',1,'']]],
   ['populatepoolfromattribute',['PopulatePoolFromAttribute',['../class_loot_1_1_core_1_1_attributes_1_1_populate_pool_from_attribute.html',1,'Loot::Core::Attributes']]],
@@ -33,10 +32,10 @@ var searchData=
   ['prekilleventraiser',['PreKillEventRaiser',['../class_loot_1_1_modifier_player.html#aff931e8f289adca19fe875bffae50349',1,'Loot::ModifierPlayer']]],
   ['preonclick',['PreOnClick',['../class_loot_1_1_u_i_1_1_core_1_1_u_i_interactable_item_panel.html#a9204b2bb6b521d3ccba88637a1ce6eaa',1,'Loot.UI.Core.UIInteractableItemPanel.PreOnClick()'],['../class_loot_1_1_u_i_1_1_rerolling_1_1_u_i_reroll_item_panel.html#a84ebfe513c6e2cbf32c01460083a1a2d',1,'Loot.UI.Rerolling.UIRerollItemPanel.PreOnClick()'],['../class_loot_1_1_u_i_1_1_sealing_1_1_u_i_seal_item_panel.html#a4fcc0c925c2a120ef818bd169a13dd14',1,'Loot.UI.Sealing.UISealItemPanel.PreOnClick()']]],
   ['preopenvanillabag',['PreOpenVanillaBag',['../class_loot_1_1_core_1_1_system_1_1_modifier.html#a4f27494ed3c3d5297b53a5621a7baf6b',1,'Loot::Core::System::Modifier']]],
-  ['prepare',['Prepare',['../class_loot_1_1_core_1_1_mod_content_1_1_graphics_content.html#ae5e07257916d1742eeff860b9d24b7e4',1,'Loot.Core.ModContent.GraphicsContent.Prepare(Mod mod)'],['../class_loot_1_1_core_1_1_mod_content_1_1_graphics_content.html#a12821b426c78ad024b04b33d7759ef1e',1,'Loot.Core.ModContent.GraphicsContent.Prepare(Item item)']]],
+  ['prepare',['Prepare',['../class_loot_1_1_core_1_1_mod_content_1_1_graphics_mod_content.html#ad5ec4de1981e1c70d0c25aa891d7b8be',1,'Loot.Core.ModContent.GraphicsModContent.Prepare(Mod mod)'],['../class_loot_1_1_core_1_1_mod_content_1_1_graphics_mod_content.html#ad736ff6a85cc1821fd9bf48a30e65ada',1,'Loot.Core.ModContent.GraphicsModContent.Prepare(Item item)']]],
   ['presaveandquit',['PreSaveAndQuit',['../class_loot_1_1_loot.html#a6d4f9879de408582ce87061a1e21dcc2',1,'Loot::Loot']]],
   ['preupdate',['PreUpdate',['../class_loot_1_1_modifier_player.html#a891c39b53a01d041f78120c51149f5c9',1,'Loot::ModifierPlayer']]],
   ['preupdatevanityset',['PreUpdateVanitySet',['../class_loot_1_1_core_1_1_system_1_1_modifier.html#a70945f863bf12437e6c84d3673dd43fa',1,'Loot::Core::System::Modifier']]],
-  ['processtexture2d',['ProcessTexture2D',['../class_loot_1_1_core_1_1_mod_content_1_1_graphics_content.html#a5cacd1308dace175dcc09a542ce8722d',1,'Loot.Core.ModContent.GraphicsContent.ProcessTexture2D()'],['../class_loot_1_1_core_1_1_mod_content_1_1_texture_content.html#a44bf0ac2555837ad9268b6e6d22ffc1c',1,'Loot.Core.ModContent.TextureContent.ProcessTexture2D()']]],
+  ['processtexture2d',['ProcessTexture2D',['../class_loot_1_1_core_1_1_mod_content_1_1_graphics_mod_content.html#abde34de8e18d3db268f2eb1a2221e70f',1,'Loot.Core.ModContent.GraphicsModContent.ProcessTexture2D()'],['../class_loot_1_1_core_1_1_mod_content_1_1_texture_mod_content.html#a2f31c2778cbaa3d50bd966c8df9b8166',1,'Loot.Core.ModContent.TextureModContent.ProcessTexture2D()']]],
   ['properties',['Properties',['../class_loot_1_1_core_1_1_system_1_1_modifier.html#ad8d7867c485986dd69cc2757f09d555a',1,'Loot::Core::System::Modifier']]]
 ];

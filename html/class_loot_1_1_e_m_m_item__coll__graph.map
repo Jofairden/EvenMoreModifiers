@@ -1,6 +1,8 @@
 <map id="Loot.EMMItem" name="Loot.EMMItem">
-<area shape="rect" id="node2" href="$class_global_item.html" title="GlobalItem" alt="" coords="32,5,117,32"/>
-<area shape="rect" id="node6" href="$class_loot_1_1_core_1_1_system_1_1_modifier.html" title="Defines a modifier, which is an unloaded GlobalItem Making it a GlobalItem gives easy access to all h..." alt="" coords="332,128,511,155"/>
-<area shape="rect" id="node3" href="$class_loot_1_1_core_1_1_system_1_1_modifier_pool.html" title="Defines a modifier pool. A modifier pool holds a certain amount of effects in an array It allows to r..." alt="" coords="675,175,879,201"/>
-<area shape="rect" id="node4" href="$class_i_cloneable.html" title="ICloneable" alt="" coords="33,184,117,211"/>
+<area shape="rect" id="node2" href="$class_global_item.html" title="GlobalItem" alt="" coords="193,5,279,32"/>
+<area shape="rect" id="node7" href="$class_loot_1_1_core_1_1_system_1_1_modifier.html" title="Defines a modifier, which is an unloaded GlobalItem Making it a GlobalItem gives easy access to all h..." alt="" coords="513,283,692,309"/>
+<area shape="rect" id="node3" href="$class_loot_1_1_core_1_1_system_1_1_modifier_pool.html" title="Defines a modifier pool. A modifier pool holds a certain amount of effects in an array It allows to r..." alt="" coords="857,195,1061,221"/>
+<area shape="rect" id="node4" href="$interface_loot_1_1_core_1_1_system_1_1_core_1_1_i_loadable_content.html" title="ILoadableContent" alt="" coords="174,128,298,155"/>
+<area shape="rect" id="node6" href="$class_i_cloneable.html" title="ICloneable" alt="" coords="194,421,278,448"/>
+<area shape="rect" id="node9" href="$struct_loot_1_1_core_1_1_system_1_1_modifier_tooltip_line.html" title="Defines a tooltip line of a modifier A modifier can have multiple lines " alt="" coords="147,294,325,335"/>
 </map>

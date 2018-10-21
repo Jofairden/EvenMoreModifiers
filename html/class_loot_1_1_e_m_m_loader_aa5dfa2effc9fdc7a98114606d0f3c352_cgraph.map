@@ -1,5 +1,0 @@
-<map id="Loot.EMMLoader.RegisterAssets" name="Loot.EMMLoader.RegisterAssets">
-<area shape="rect" id="node2" href="$class_loot_1_1_e_m_m_loader.html#a022f37a51ba4e9fa6c99ed4ca4054a2f" title="Loot.EMMLoader.CheckModLoading" alt="" coords="278,5,511,32"/>
-<area shape="rect" id="node3" href="$class_loot_1_1_e_m_m_loader.html#a4b3d434de8b8e4722cd8fe629b642cb5" title="Loot.EMMLoader.CheckModRegistered" alt="" coords="269,56,520,83"/>
-<area shape="rect" id="node4" href="$class_loot_1_1_core_1_1_system_1_1_modifier_pool.html#a17e71f8c66b85b31f03ca90379b2ea8a" title="Allows modders to do custom cloning Happens after default cloning " alt="" coords="305,107,484,149"/>
-</map>

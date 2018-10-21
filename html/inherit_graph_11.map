@@ -1,4 +1,4 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="node1" href="$class_loot_1_1_core_1_1_mod_content_1_1_texture_content.html" title="Loot.Core.ModContent.Texture\lContent" alt="" coords="5,5,208,46"/>
-<area shape="rect" id="node2" href="$class_loot_1_1_core_1_1_mod_content_1_1_graphics_content.html" title="Loot.Core.ModContent.Graphics\lContent" alt="" coords="256,5,467,46"/>
+<area shape="rect" id="node1" href="$class_loot_1_1_core_1_1_system_1_1_core_1_1_base_content.html" title="Loot.Core.System.Core.Base\lContent\&lt; Modifier \&gt;" alt="" coords="5,5,200,46"/>
+<area shape="rect" id="node2" href="$class_loot_1_1_core_1_1_system_1_1_content_1_1_modifier_content.html" title="Loot.Core.System.Content.\lModifierContent" alt="" coords="249,5,431,46"/>
 </map>

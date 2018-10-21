@@ -1,6 +1,4 @@
 <map id="Loot.Core.System.ModifierPool.Clone" name="Loot.Core.System.ModifierPool.Clone">
-<area shape="rect" id="node2" href="$class_loot_1_1_ext_1_1_mod_utils.html#aa6d8b7af5381a6d6381ca090e44d207e" title="Loot.Ext.ModUtils.GetModifierPool" alt="" coords="232,5,456,32"/>
-<area shape="rect" id="node3" href="$class_loot_1_1_e_m_m_loader.html#aa5dfa2effc9fdc7a98114606d0f3c352" title="Loot.EMMLoader.RegisterAssets" alt="" coords="237,56,451,83"/>
-<area shape="rect" id="node4" href="$class_loot_1_1_loot.html#a52ae642436e92b43a15d0a0ebbb9b25f" title="Loot.Loot.Load" alt="" coords="505,56,613,83"/>
-<area shape="rect" id="node5" href="$class_loot_tests_1_1_unit_tests.html#ac3b03d71053b7540939e18da02c4370b" title="LootTests.UnitTests.LogEMMLoader\lEntries" alt="" coords="662,49,898,90"/>
+<area shape="rect" id="node2" href="$class_loot_1_1_ext_1_1_mod_utils.html#aa6d8b7af5381a6d6381ca090e44d207e" title="Loot.Ext.ModUtils.GetModifierPool" alt="" coords="244,5,468,32"/>
+<area shape="rect" id="node3" href="$class_loot_1_1_core_1_1_system_1_1_content_1_1_modifier_pool_content.html#a15c67878cb9df5857b4493b789518132" title="Returns a random weighted pool from all available pools that can apply " alt="" coords="233,57,479,98"/>
 </map>

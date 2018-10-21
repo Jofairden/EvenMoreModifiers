@@ -16,7 +16,7 @@ var NAVTREE =
       [ "Class Members", "functions.html", [
         [ "All", "functions.html", "functions_dup" ],
         [ "Functions", "functions_func.html", "functions_func" ],
-        [ "Variables", "functions_vars.html", null ],
+        [ "Variables", "functions_vars.html", "functions_vars" ],
         [ "Properties", "functions_prop.html", null ],
         [ "Events", "functions_evnt.html", null ]
       ] ]
@@ -34,11 +34,11 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "_accessory_modifier_8cs.html",
-"_velocity_plus_8cs.html",
-"class_loot_1_1_core_1_1_system_1_1_modifier.html#a1f2aebe52c6c9c9a70228f7194d54ecc",
-"class_loot_1_1_modifier_player.html#a5fe625c082c0c644dfa4fa8306ce10ee",
-"class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_cursed_damage.html#ab2fe88e6aaa820154f9ad9fb3c343a62",
-"dir_fb5f0fc4f6305f2279d40d97e8736590.html"
+"_u_i_reroll_item_panel_8cs.html",
+"class_loot_1_1_core_1_1_mod_content_1_1_texture_mod_content.html#ae8a5faba0906f1759514eb3341081ae2",
+"class_loot_1_1_modifier_player.html#a9212e684829429545c464740df4580f6",
+"class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_damage_plus.html#a08a070f855f8a14a19a9a3f8e0ed3a5e",
+"functions_b.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

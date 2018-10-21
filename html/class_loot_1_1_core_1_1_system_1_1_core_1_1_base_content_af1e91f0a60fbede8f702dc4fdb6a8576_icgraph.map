@@ -1,0 +1,4 @@
+<map id="Loot.Core.System.Core.BaseContent.GetContent" name="Loot.Core.System.Core.BaseContent.GetContent">
+<area shape="rect" id="node2" href="$class_loot_1_1_core_1_1_system_1_1_modifier_pool.html#a9b2566dc779f7cf7223047e32f929a16" title="Allows modder to do custom loading here Use the given TC to pull data you saved using Save(Item..." alt="" coords="248,29,427,70"/>
+<area shape="rect" id="node3" href="$class_loot_1_1_core_1_1_system_1_1_modifier_pool.html#a186a861a5c87535319e704f672e51320" title="Loot.Core.System.Modifier\lPool.ModifierPool" alt="" coords="248,94,427,135"/>
+</map>
