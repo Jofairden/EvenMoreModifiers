@@ -3,6 +3,7 @@ using Loot.Core.Attributes;
 using Microsoft.Xna.Framework;
 using System;
 using System.Linq;
+using Loot.Ext;
 using Terraria;
 using Terraria.ID;
 

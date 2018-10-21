@@ -1,4 +1,5 @@
-﻿using Loot.Core;
+using Loot.Core;
+using Loot.Ext;
 
 namespace Loot.Modifiers
 {

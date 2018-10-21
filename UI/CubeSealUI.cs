@@ -3,6 +3,7 @@ using Loot.Sounds;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using System.Linq;
+using Loot.Ext;
 using Terraria;
 using Terraria.GameContent.UI.Elements;
 using Terraria.ModLoader;

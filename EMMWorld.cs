@@ -2,6 +2,7 @@ using Loot.Core;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using Loot.Ext;
 using Terraria;
 using Terraria.ModLoader;
 using Terraria.ModLoader.IO;

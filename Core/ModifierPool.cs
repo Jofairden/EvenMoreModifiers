@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Reflection;
+using Loot.Ext;
 using Terraria;
 using Terraria.ModLoader;
 using Terraria.ModLoader.IO;

@@ -21,8 +21,6 @@ using Terraria.UI;
 [assembly: InternalsVisibleTo("LootTests")] // Allow doing unit tests
 namespace Loot
 {
-	[SuppressMessage("ReSharper", "InconsistentNaming")]
-	[SuppressMessage("ReSharper", "IdentifierTypo")]
 	public sealed class Loot : Mod
 	{
 		internal static Loot Instance;
@@ -82,7 +80,6 @@ namespace Loot
 						() =>
 						{
 							if (CubeInterface.CurrentState == null) return false;
-							// ReSharper disable once PossibleNullReferenceException
 							return (CubeInterface.CurrentState as CubeUI)?.Visible ?? false;
 						}));
 				}

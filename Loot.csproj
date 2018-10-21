@@ -98,8 +98,9 @@
     <Compile Include="Core\ModifierTooltipLine.cs" />
     <Compile Include="EMMPlayer.cs" />
     <Compile Include="EMMWorld.cs" />
-    <Compile Include="ItemHack.cs" />
-    <Compile Include="ItemHackPrefixes.cs" />
+    <Compile Include="Ext\ItemUtils.cs" />
+    <Compile Include="Ext\LootUtils.cs" />
+    <Compile Include="Ext\ModUtils.cs" />
     <Compile Include="ModifierProjectile.cs" />
     <Compile Include="Modifiers\AccessoryModifier.cs" />
     <Compile Include="Modifiers\ArmorModifier.cs" />
@@ -148,7 +149,6 @@
     <Compile Include="Modifiers\WeaponModifiers\VelocityPlus.cs" />
     <Compile Include="EMMItem.cs" />
     <Compile Include="Loot.cs" />
-    <Compile Include="EMMUtils.cs" />
     <Compile Include="ModifierItem.cs" />
     <Compile Include="ModifierPlayer.cs" />
     <Compile Include="Modifiers\WeaponModifier.cs" />
