@@ -12,6 +12,14 @@ using Terraria.ModLoader.IO;
 
 namespace Loot.Core.System
 {
+	// This won't be accepted by BaseLoader{T} though, because it al
+	public class MyClass : ILoadableContent
+	{
+		public Mod Mod { get; }
+		public uint Type { get; }
+		public string Name { get; }
+	}
+
 	/// <summary>
 	/// Defines a modifier, which is an unloaded GlobalItem
 	/// Making it a GlobalItem gives easy access to all hooks

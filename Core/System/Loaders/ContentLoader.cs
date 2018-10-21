@@ -1,13 +1,13 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Loot.Core.System.Content;
 using Terraria.ModLoader;
 
 namespace Loot.Core.System.Loaders
 {
+	/// <summary>
+	/// This class holds all Content holders of this mod
+	/// You can use this to access content loaded into the mod
+	/// Example use: ContentLoader.Modifier.GetContent("mod", "modifier")
+	/// </summary>
 	public static class ContentLoader
 	{
 		public static ModifierRarityContent ModifierRarity;

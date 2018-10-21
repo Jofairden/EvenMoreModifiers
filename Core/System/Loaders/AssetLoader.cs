@@ -8,6 +8,10 @@ using Terraria.ModLoader;
 
 namespace Loot.Core.System.Loaders
 {
+	/// <summary>
+	/// This Loader is responsible for loading graphics assets for a mod
+	/// These include shader and glowmask textures
+	/// </summary>
 	public static class AssetLoader
 	{
 		public static void RegisterAssets(Mod mod, string folder, bool clearOwnTextures = true)

@@ -4,7 +4,6 @@ using System.IO;
 using System.Linq;
 using System.Reflection;
 using Loot.Core.Attributes;
-using Loot.Core.System.Content;
 using Loot.Core.System.Core;
 using Loot.Core.System.Loaders;
 using Loot.Ext;

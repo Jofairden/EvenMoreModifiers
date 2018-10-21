@@ -274,20 +274,20 @@ namespace Loot.Core.ModContent
 
 		protected override void Load()
 		{
-			var assembly = Assembly.GetExecutingAssembly();
-			var types = assembly.GetTypes().Where(x => !x.IsAbstract && x.IsClass).ToList();
+			//var assembly = Assembly.GetExecutingAssembly();
+			//var types = assembly.GetTypes().Where(x => !x.IsAbstract && x.IsClass).ToList();
 
-			IList<string> exceptKeys = new List<string>();
+			//IList<string> exceptKeys = new List<string>();
 
 			// @todo
 			// @todo load entity/shader based on ItemID in Assets/Shader or Assets/Glowmask folders
 			// @todo Item_{Id} -> The usecase here is on GlobalItem, not ModItem
 
 			// Loads regular types by having a ShaderEntity or GlowmaskEntity
-			foreach (var type in types)
-			{
-				try
-				{
+			//foreach (var type in types)
+			//{
+			//	try
+			//	{
 					//var shaderEntity = type.GetProperty("ShaderEntity");
 					//var getShaderEntity = type.GetMethod("GetShaderEntity");
 					//string key;
@@ -336,13 +336,13 @@ namespace Loot.Core.ModContent
 					//	AddGlowmaskTexture(key, texture);
 					//	exceptKeys.Add(key);
 					//}
-				}
-				catch (Exception e)
-				{
-					// fluff
-					ErrorLogger.Log(e.ToString());
-				}
-			}
+			//	}
+			//	catch (Exception e)
+			//	{
+			//		// fluff
+			//		ErrorLogger.Log(e.ToString());
+			//	}
+			//}
 
 			// @todo support above usecase as well
 			// load all types that are marked for autoloading

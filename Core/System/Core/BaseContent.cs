@@ -6,16 +6,22 @@ using Terraria.ModLoader;
 
 namespace Loot.Core.System.Core
 {
+	/// <summary>
+	/// This class is used for Content holders in the Content namespace
+	/// As a modder you should not use this class
+	/// Even though it is public, this is only because
+	/// the fields on <see cref="ContentLoader"/> must be accessible to modders
+	/// </summary>
 	public abstract class BaseContent<T> where T : ILoadableContent, ICloneable
 	{
-		internal IDictionary<string, List<KeyValuePair<string, T>>> Map;
-		internal IDictionary<uint, T> Content;
+		internal Dictionary<string, List<KeyValuePair<string, T>>> Map;
+		internal Dictionary<uint, T> Content;
 
 		internal bool SkipModChecks;
 
 		public uint IdCount { get; private set; }
 
-		public uint GetNextId()
+		private uint GetNextId()
 		{
 			uint @return = IdCount;
 			IdCount++;
@@ -58,7 +64,7 @@ namespace Loot.Core.System.Core
 
 		internal void AddMod(Mod mod)
 		{
-			Map.Add(new KeyValuePair<string, List<KeyValuePair<string, T>>>(mod.Name, new List<KeyValuePair<string, T>>()));
+			Map.Add(mod.Name, new List<KeyValuePair<string, T>>());
 		}
 
 		internal virtual bool CheckContentPiece(T contentPiece) => true;
@@ -66,6 +72,11 @@ namespace Loot.Core.System.Core
 		public void AddContent(Type type, Mod mod)
 		{
 			T contentPiece = (T)Activator.CreateInstance(type);
+			if (!typeof(T).IsAssignableFrom(typeof(ILoadableContentSetter)))
+			{
+				throw new Exception("Invalid type passed to AddContent");
+			}
+
 			string s = $"[{nameof(T)}]{nameof(contentPiece)}";
 			if (!SkipModChecks)
 			{
@@ -117,6 +128,9 @@ namespace Loot.Core.System.Core
 			return type < IdCount ? (T)Content[type].Clone() : default(T);
 		}
 
+		public IReadOnlyCollection<T> GetContent()
+			=> Content.Select(e => (T)e.Value?.Clone()).ToList().AsReadOnly();
+
 		// I wish we could use dynamic :(
 
 		//private T BuildNewContentInstance(T contentPiece)
@@ -143,8 +157,5 @@ namespace Loot.Core.System.Core
 		//	throw new Exception($"There was an unknown constructing a new instance of [{nameof(T)}]{nameof(contentPiece)}" +
 		//						$"\n{exc}");
 		//}
-
-		public IReadOnlyCollection<T> RequestContent()
-			=> Content.Select(e => (T)e.Value?.Clone()).ToList().AsReadOnly();
 	}
 }
