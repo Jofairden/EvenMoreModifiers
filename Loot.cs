@@ -3,6 +3,7 @@ using Microsoft.Xna.Framework;
 using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using System.Runtime.CompilerServices;
 using Loot.Core.System.Loaders;
 using Loot.UI.Core;
@@ -115,6 +116,7 @@ namespace Loot
 			{
 				ModContentManager.Load();
 			}
+
 			Loaded = true;
 		}
 

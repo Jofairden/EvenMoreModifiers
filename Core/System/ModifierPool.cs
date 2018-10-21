@@ -40,44 +40,46 @@ namespace Loot.Core.System
 
 		public Modifier[] ActiveModifiers { get; protected internal set; }
 
-		internal Modifier[] StoredModifiers = new Modifier[0];
+		private PopulatePoolFromAttribute _populatePoolFrom;
+		internal void CacheAttributes()
+		{
+			_populatePoolFrom = GetType().GetCustomAttribute<PopulatePoolFromAttribute>(true);
+		}
 
 		internal IEnumerable<Modifier> _GetModifiers()
-			=> StoredModifiers.Any() ? StoredModifiers : GetModifiers();
-
-		public virtual IEnumerable<Modifier> GetModifiers()
-			=> Enumerable.Empty<Modifier>();
-
-		// The default constructor will try to
-		// populate the array dynamically using the
-		// populate attribute
-		protected ModifierPool()
 		{
-			var attr = GetType().GetCustomAttribute<PopulatePoolFromAttribute>(true);
-			if (attr != null)
+			if (_populatePoolFrom != null)
 			{
-				var classes = attr.GetClasses().SelectMany(x => x.Value).ToList();
-				var list = new List<Modifier>();
+				var classes = _populatePoolFrom.GetClasses().SelectMany(x => x.Value);
 
 				foreach (var @class in classes)
 				{
-					var mod = ContentLoader.Modifier.GetContent(@class);
-					if (mod != null)
+					var m = ContentLoader.Modifier.GetContent(@class);
+					if (m != null)
 					{
-						list.Add(mod);
+						yield return m;
 					}
 				}
+			}
 
-				StoredModifiers = list.ToArray();
+			foreach (Modifier m in GetModifiers())
+			{
+				if (m != null)
+				{
+					yield return m;
+				}
 			}
 		}
+
+		public virtual IEnumerable<Modifier> GetModifiers()
+			=> Enumerable.Empty<Modifier>();
 
 		/// <summary>
 		/// Returns an enumerable of the rollable modifiers in the given context
 		/// </summary>
 		/// <param name="ctx"></param>
 		/// <returns></returns>
-		protected internal IEnumerable<Modifier> RollableModifiers(ModifierContext ctx)
+		protected internal IEnumerable<Modifier> GetRollableModifiers(ModifierContext ctx)
 			=> _GetModifiers().Where(x => x._CanRoll(ctx));
 
 		/// <summary>

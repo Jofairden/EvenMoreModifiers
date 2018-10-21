@@ -143,7 +143,7 @@ namespace Loot
 			WeightedRandom<Modifier> wr = new WeightedRandom<Modifier>();
 			List<Modifier> list = new List<Modifier>();
 
-			foreach (var e in ModifierPool.RollableModifiers(ctx))
+			foreach (var e in ModifierPool.GetRollableModifiers(ctx))
 			{
 				wr.Add(e, e.Properties.RollChance);
 			}

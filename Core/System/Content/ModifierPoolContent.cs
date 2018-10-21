@@ -7,6 +7,12 @@ namespace Loot.Core.System.Content
 {
 	public class ModifierPoolContent : BaseContent<ModifierPool>
 	{
+		internal override bool CheckContentPiece(ModifierPool contentPiece)
+		{
+			contentPiece.CacheAttributes();
+			return true;
+		}
+
 		/// <summary>
 		/// Returns a random weighted pool from all available pools that can apply
 		/// </summary>

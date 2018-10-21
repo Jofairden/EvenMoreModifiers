@@ -7,6 +7,12 @@ using Terraria.ModLoader;
 
 namespace Loot.Core.Attributes
 {
+	/// <summary>
+	/// Will populate a ModifierPool based on a namespace
+	/// All Modifiers in that namespace will become part of the pool
+	/// You can specify multiple namespaces
+	/// Note: modifiers you return in GetModifiers() are also still added!
+	/// </summary>
 	[AttributeUsage(AttributeTargets.Class)]
 	public class PopulatePoolFromAttribute : Attribute
 	{

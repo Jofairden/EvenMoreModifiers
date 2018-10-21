@@ -50,6 +50,7 @@ namespace Loot.Core.ModContent
 			_textures = null;
 			Unload();
 		}
+
 		protected virtual void ProcessTexture2D(ref Texture2D texture) { }
 		protected virtual void Initialize() { }
 		protected virtual void Load() { }
