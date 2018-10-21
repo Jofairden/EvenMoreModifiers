@@ -1,18 +1,18 @@
-using Loot.Core;
-using Loot.Core.Cubes;
-using Loot.Sounds;
-using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Graphics;
 using System.Collections.Generic;
 using System.Linq;
+using Loot.Core.Cubes;
 using Loot.Core.System;
+using Loot.Sounds;
+using Loot.UI.Core;
+using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Graphics;
 using Terraria;
 using Terraria.GameContent.UI.Elements;
 using Terraria.ID;
 using Terraria.ModLoader;
 using Terraria.UI;
 
-namespace Loot.UI
+namespace Loot.UI.Rerolling
 {
 	// @todo add horizontal panel blow base with list of cubes in inventory to use, click to put into UI slot feature
 
@@ -29,7 +29,7 @@ namespace Loot.UI
 		private UIImageButton _rerollButton;
 		private const float padding = 5f;
 
-		public override void ToggleUI(UserInterface theInterface, UIState uiStateInstance)
+		public override void ToggleUI(Terraria.UI.UserInterface theInterface, UIState uiStateInstance)
 		{
 			base.ToggleUI(theInterface, uiStateInstance);
 

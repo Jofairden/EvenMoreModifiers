@@ -1,11 +1,11 @@
+using System.Linq;
 using Loot.Core.Cubes;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
-using System.Linq;
 using Terraria;
 using Terraria.UI;
 
-namespace Loot.UI
+namespace Loot.UI.Core
 {
 	public class UICubeItemPanel : UIInteractableItemPanel
 	{

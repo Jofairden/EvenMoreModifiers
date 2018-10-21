@@ -7,52 +7,52 @@ namespace Loot.Core.ModContent
 {
 	public class ContentManager
 	{
-		private IDictionary<string, ModContent> _contents;
-		private IEnumerable<ModContent> _modContents => _contents.Select(x => x.Value);
+		private IDictionary<string, TextureContent> _contents;
+		private IEnumerable<TextureContent> _modContents => _contents.Select(x => x.Value);
 
-		public T GetContent<T>() where T : ModContent
+		public T GetContent<T>() where T : TextureContent
 		{
 			T content = (T)_modContents.FirstOrDefault(x => x.GetType() == typeof(T));
 			return content;
 		}
 
-		public ModContent GetContent(Type type)
+		public TextureContent GetContent(Type type)
 		{
-			ModContent content = _modContents.FirstOrDefault(x => x.GetType() == type);
+			TextureContent content = _modContents.FirstOrDefault(x => x.GetType() == type);
 			return content;
 		}
 
-		public ModContent GetContent(string key)
+		public TextureContent GetContent(string key)
 		{
-			ModContent content;
+			TextureContent content;
 			return _contents.TryGetValue(key, out content) ? content : null;
 		}
 
-		public void AddContent(string key, ModContent modContent)
+		public void AddContent(string key, TextureContent textureContent)
 		{
 			if (_contents.ContainsKey(key))
 			{
 				throw new Exception($"Key '{key}' already present in ContentManager");
 			}
 
-			if (_contents.Values.Contains(modContent))
+			if (_contents.Values.Contains(textureContent))
 			{
 				// TODO warn
-				ErrorLogger.Log($"ModContent with registry key {modContent.GetRegistryKey()} was already present");
+				ErrorLogger.Log($"ModContent with registry key {textureContent.GetRegistryKey()} was already present");
 			}
 
-			modContent._Initialize();
-			_contents.Add(key, modContent);
+			textureContent._Initialize();
+			_contents.Add(key, textureContent);
 		}
 
 		internal void Initialize(Mod mod)
 		{
-			_contents = new Dictionary<string, ModContent>();
+			_contents = new Dictionary<string, TextureContent>();
 			var assembly = mod.Code;
-			var modContents = assembly.GetTypes().Where(x => x.BaseType == typeof(ModContent) && !x.IsAbstract);
+			var modContents = assembly.GetTypes().Where(x => x.BaseType == typeof(TextureContent) && !x.IsAbstract);
 			foreach (var modContent in modContents)
 			{
-				ModContent obj = (ModContent)Activator.CreateInstance(modContent);
+				TextureContent obj = (TextureContent)Activator.CreateInstance(modContent);
 				AddContent(obj.GetRegistryKey(), obj);
 			}
 		}

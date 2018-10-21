@@ -90,8 +90,8 @@
     <Compile Include="Core\Graphics\ShaderEntity.cs" />
     <Compile Include="Core\Graphics\ShaderGlobalItem.cs" />
     <Compile Include="Core\ModContent\ContentManager.cs" />
-    <Compile Include="Core\ModContent\ModContent.cs" />
-    <Compile Include="Core\ModContent\ModGraphicsContent.cs" />
+    <Compile Include="Core\ModContent\TextureContent.cs" />
+    <Compile Include="Core\ModContent\GraphicsContent.cs" />
     <Compile Include="Core\System\ModifierContext.cs" />
     <Compile Include="Core\System\ModifierEffect.cs" />
     <Compile Include="Core\System\ModifierProperties.cs" />
@@ -167,17 +167,17 @@
     <Compile Include="Rarities\UncommonRarity.cs" />
     <Compile Include="Sounds\Custom\UISounds.cs" />
     <Compile Include="Sounds\SoundHelper.cs" />
-    <Compile Include="UI\CubeRerollUI.cs" />
-    <Compile Include="UI\CubeSealUI.cs" />
-    <Compile Include="UI\CubeUI.cs" />
-    <Compile Include="UI\DraggableUIState.cs" />
-    <Compile Include="UI\UICubeItemPanel.cs" />
-    <Compile Include="UI\UIInteractableItemPanel.cs" />
-    <Compile Include="UI\UIItemPanel.cs" />
-    <Compile Include="UI\UIModifierPanel.cs" />
-    <Compile Include="UI\UIRerollItemPanel.cs" />
-    <Compile Include="UI\UISealItemPanel.cs" />
-    <Compile Include="UI\VisibilityUI.cs" />
+    <Compile Include="UI\Rerolling\CubeRerollUI.cs" />
+    <Compile Include="UI\Sealing\CubeSealUI.cs" />
+    <Compile Include="UI\Core\CubeUI.cs" />
+    <Compile Include="UI\Core\DraggableUIState.cs" />
+    <Compile Include="UI\Core\UICubeItemPanel.cs" />
+    <Compile Include="UI\Core\UIInteractableItemPanel.cs" />
+    <Compile Include="UI\Core\UIItemPanel.cs" />
+    <Compile Include="UI\Core\UIModifierPanel.cs" />
+    <Compile Include="UI\Rerolling\UIRerollItemPanel.cs" />
+    <Compile Include="UI\Sealing\UISealItemPanel.cs" />
+    <Compile Include="UI\Core\VisibilityUI.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="build.txt" />
@@ -191,7 +191,10 @@
     <None Include="packages.config" />
     <Compile Include="Core\System\GlobalModifier.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Core\System\Content\" />
+    <Folder Include="Core\System\Loader\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- visual studio setting -->
   <PropertyGroup>

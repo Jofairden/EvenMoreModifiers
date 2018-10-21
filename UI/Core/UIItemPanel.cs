@@ -1,11 +1,11 @@
+using System;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
-using System;
 using Terraria;
 using Terraria.GameContent.UI.Elements;
 using Terraria.UI;
 
-namespace Loot.UI
+namespace Loot.UI.Core
 {
 	/*
 	 * Ported from my deconstructor mod

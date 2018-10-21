@@ -1,6 +1,5 @@
 using System.Collections.Generic;
 using System.Linq;
-using Loot.Core;
 using Loot.Core.System;
 using Terraria.ModLoader;
 using EffectMap = System.Collections.Generic.KeyValuePair<string, Loot.Core.System.ModifierEffect>;

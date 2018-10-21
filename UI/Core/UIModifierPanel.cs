@@ -2,7 +2,7 @@ using Microsoft.Xna.Framework.Graphics;
 using Terraria;
 using Terraria.GameContent.UI.Elements;
 
-namespace Loot.UI
+namespace Loot.UI.Core
 {
 	// @todo make toggable to 'keep' rolled modifier
 	public class UIModifierPanel : UIPanel

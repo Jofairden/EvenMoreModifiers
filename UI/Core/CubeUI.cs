@@ -1,6 +1,6 @@
 using Terraria;
 
-namespace Loot.UI
+namespace Loot.UI.Core
 {
 	public abstract class CubeUI : DraggableUIState
 	{

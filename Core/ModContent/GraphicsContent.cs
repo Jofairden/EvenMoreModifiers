@@ -10,7 +10,7 @@ using Terraria.ModLoader;
 
 namespace Loot.Core.ModContent
 {
-	public class ModGraphicsContent : ModContent
+	public class GraphicsContent : TextureContent
 	{
 		protected IDictionary<string, Texture2D> _glowmaskTextures;
 		protected IDictionary<string, Texture2D> _shaderTextures;
@@ -141,7 +141,6 @@ namespace Loot.Core.ModContent
 		// @todo expose a global GraphicsContent instance and prepare automagically in context ?
 		public void Prepare(Mod mod)
 		{
-			// ReSharper disable once InlineOutVariableDeclaration
 			string keyPass;
 
 			if (_keyStore.TryGetValue(mod.Name, out keyPass))

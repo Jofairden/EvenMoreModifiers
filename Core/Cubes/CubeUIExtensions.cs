@@ -1,7 +1,9 @@
-using Loot.UI;
 using Microsoft.Xna.Framework.Input;
 using System;
 using System.Collections.Generic;
+using Loot.UI.Core;
+using Loot.UI.Rerolling;
+using Loot.UI.Sealing;
 using Terraria;
 using Terraria.GameInput;
 using Terraria.ID;
@@ -18,8 +20,7 @@ namespace Loot.Core.Cubes
 			{
 				return false;
 			}
-
-			// ReSharper disable once UsePatternMatching
+			
 			var ui = Loot.Instance.CubeInterface.CurrentState as CubeUI;
 			if (ui == null)
 			{
@@ -51,7 +52,6 @@ namespace Loot.Core.Cubes
 			// meaning that items such as goodie bags will end up in this hook
 			// regardless of our forced right click functionality in CanRightClick
 			// by which we need to assume any possible item can be passed into this hook
-			// ReSharper disable once UsePatternMatching
 			var ui = Loot.Instance.CubeInterface.CurrentState as CubeUI;
 			if (ui == null)
 			{
@@ -60,8 +60,6 @@ namespace Loot.Core.Cubes
 
 			if (RightClickFunctionalityRequirements(item) && !(item.modItem is MagicalCube) && ui.Visible && ui.IsItemValidForUISlot(item))
 			{
-				// ReSharper disable once ConvertIfStatementToSwitchStatement
-				// ^ needs C#7
 				if (ui is CubeRerollUI)
 				{
 					RerollUITakeItem(ui as CubeRerollUI, item);
@@ -111,8 +109,7 @@ namespace Loot.Core.Cubes
 		public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
 		{
 			var ui = Loot.Instance.CubeInterface;
-
-			// ReSharper disable once UsePatternMatching
+			
 			var cubeUI = ui?.CurrentState as CubeUI;
 			if (cubeUI != null)
 			{

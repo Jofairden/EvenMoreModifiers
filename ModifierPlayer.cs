@@ -1,5 +1,3 @@
-using Loot.Core;
-using Loot.Modifiers;
 using System;
 using System.Collections.Generic;
 using System.Linq;

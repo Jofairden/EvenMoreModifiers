@@ -1,4 +1,3 @@
-using Loot.Core;
 using Loot.Core.Cubes;
 using Loot.Core.Graphics;
 using Loot.Modifiers.EquipModifiers.Utility;

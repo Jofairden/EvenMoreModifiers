@@ -32,8 +32,7 @@ namespace Loot.Core.Attributes
 				{
 					useAssembly = mod.Code;
 				}
-
-				// ReSharper disable once SimplifyLinqExpression
+				
 				if (!useAssembly.GetTypes().Any(x => x.Namespace != null && x.Namespace.StartsWith(ns)))
 				{
 					throw new ArgumentException($"Namespace not found", nameof(ns));

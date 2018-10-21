@@ -1,15 +1,16 @@
+using System.Linq;
 using Loot.Core.Cubes;
+using Loot.Ext;
 using Loot.Sounds;
+using Loot.UI.Core;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
-using System.Linq;
-using Loot.Ext;
 using Terraria;
 using Terraria.GameContent.UI.Elements;
 using Terraria.ModLoader;
 using Terraria.UI;
 
-namespace Loot.UI
+namespace Loot.UI.Sealing
 {
 	public sealed class CubeSealUI : CubeUI
 	{
@@ -40,7 +41,7 @@ namespace Loot.UI
 			}
 		}
 
-		public override void ToggleUI(UserInterface theInterface, UIState uiStateInstance)
+		public override void ToggleUI(Terraria.UI.UserInterface theInterface, UIState uiStateInstance)
 		{
 			base.ToggleUI(theInterface, uiStateInstance);
 

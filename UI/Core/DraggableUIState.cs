@@ -1,11 +1,11 @@
+using System;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
-using System;
 using Terraria;
 using Terraria.GameContent.UI.Elements;
 using Terraria.UI;
 
-namespace Loot.UI
+namespace Loot.UI.Core
 {
 	/// <summary>
 	/// A UIState which primarily goal is to provide dragging on click functionality to the main panel

@@ -1,4 +1,3 @@
-using Loot.Core;
 using Microsoft.Xna.Framework;
 using System;
 using System.Linq;

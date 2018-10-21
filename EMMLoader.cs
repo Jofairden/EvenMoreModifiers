@@ -1,4 +1,3 @@
-using Loot.Core;
 using Loot.Core.Attributes;
 using Loot.Core.ModContent;
 using Microsoft.Xna.Framework.Graphics;
@@ -172,7 +171,7 @@ namespace Loot
 				throw new NullReferenceException("Loot.ContentManager is null in RegisterAssets");
 			}
 
-			var graphicsContent = Loot.ContentManager.GetContent<ModGraphicsContent>();
+			var graphicsContent = Loot.ContentManager.GetContent<GraphicsContent>();
 			if (graphicsContent == null)
 			{
 				throw new NullReferenceException("ModGraphicsContent is null in RegisterAssets");

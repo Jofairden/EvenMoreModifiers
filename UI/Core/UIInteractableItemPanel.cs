@@ -4,7 +4,7 @@ using Terraria;
 using Terraria.ID;
 using Terraria.UI;
 
-namespace Loot.UI
+namespace Loot.UI.Core
 {
 	public class UIInteractableItemPanel : UIItemPanel
 	{

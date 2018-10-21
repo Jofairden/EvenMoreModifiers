@@ -4,14 +4,12 @@ using Microsoft.Xna.Framework.Graphics;
 
 namespace Loot.Core.ModContent
 {
-	public abstract class ModContent
+	public abstract class TextureContent
 	{
 		protected IDictionary<string, Texture2D> _textures;
 
 		protected Texture2D GetFrom(IDictionary<string, Texture2D> dictionary, string key)
 		{
-			// need c#7
-			// ReSharper disable once InlineOutVariableDeclaration
 			Texture2D texture;
 			return dictionary.TryGetValue(key, out texture) ? texture : null;
 		}
