@@ -1,9 +1,5 @@
 var NAVTREEINDEX4 =
 {
-"class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_cursed_effect.html#a37bd163e1641ff85113daca8e82e62f1":[2,0,0,2,1,3,0],
-"class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_cursed_effect.html#a6290d1c8f6b4efb03fdf3ecafa6398b4":[2,0,0,2,1,3,3],
-"class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_cursed_effect.html#a7dbd3c5248a667a59b8a0c49636696cb":[2,0,0,2,1,3,1],
-"class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_damage_plus.html":[2,0,0,2,1,4],
 "class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_damage_plus.html#a08a070f855f8a14a19a9a3f8e0ed3a5e":[2,0,0,2,1,4,2],
 "class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_damage_plus.html#aa6e1d863e0354af1c5eeba075f885018":[2,0,0,2,1,4,1],
 "class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_damage_plus.html#aec14dbffd8606071998f8cdda9254c7e":[2,0,0,2,1,4,0],
@@ -249,5 +245,9 @@ var NAVTREEINDEX4 =
 "dir_d9effce6021c52ad5f41f041cf5402f7.html":[3,0,3],
 "dir_e0566f59f042068c187972f8b4893996.html":[3,0,5],
 "dir_e5d3fdc68d7a7d78348c3a6a7dc74941.html":[3,0,3,0,1],
-"dir_fb5f0fc4f6305f2279d40d97e8736590.html":[3,0,0,0]
+"dir_fb5f0fc4f6305f2279d40d97e8736590.html":[3,0,0,0],
+"files.html":[3,0],
+"functions.html":[2,3,0],
+"functions.html":[2,3,0,0],
+"functions_a.html":[2,3,0,1]
 };

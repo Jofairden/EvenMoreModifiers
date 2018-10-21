@@ -7,7 +7,6 @@ var searchData=
   ['matchesrerollrequirements',['MatchesRerollRequirements',['../class_loot_1_1_u_i_1_1_rerolling_1_1_cube_reroll_u_i.html#ac154e81427aa735aafbeea55172a7aad',1,'Loot::UI::Rerolling::CubeRerollUI']]],
   ['modifiereffecttype',['ModifierEffectType',['../class_loot_1_1_ext_1_1_mod_utils.html#a65b6933a0d1e070efba92ce8111d6ea3',1,'Loot::Ext::ModUtils']]],
   ['modifiereffecttype_3c_20t_20_3e',['ModifierEffectType&lt; T &gt;',['../class_loot_1_1_ext_1_1_mod_utils.html#ae5c3d922e8f258b643e623957326a350',1,'Loot::Ext::ModUtils']]],
-  ['modifierpool',['ModifierPool',['../class_loot_1_1_core_1_1_system_1_1_modifier_pool.html#a186a861a5c87535319e704f672e51320',1,'Loot::Core::System::ModifierPool']]],
   ['modifierpooltype',['ModifierPoolType',['../class_loot_1_1_ext_1_1_mod_utils.html#a1e0ac2c3ad6fca3dad9e0dcf233806ba',1,'Loot::Ext::ModUtils']]],
   ['modifierpooltype_3c_20t_20_3e',['ModifierPoolType&lt; T &gt;',['../class_loot_1_1_ext_1_1_mod_utils.html#abbdb79f2f21c401e55762d4a450d1c09',1,'Loot::Ext::ModUtils']]],
   ['modifierproperties',['ModifierProperties',['../class_loot_1_1_core_1_1_system_1_1_modifier_properties.html#adda9027ebda514af3ffb18612e8bfce7',1,'Loot::Core::System::ModifierProperties']]],

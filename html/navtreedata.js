@@ -36,9 +36,9 @@ var NAVTREEINDEX =
 "_accessory_modifier_8cs.html",
 "_u_i_reroll_item_panel_8cs.html",
 "class_loot_1_1_core_1_1_mod_content_1_1_texture_mod_content.html#ae8a5faba0906f1759514eb3341081ae2",
-"class_loot_1_1_modifier_player.html#a6e535679526fb7a9293288458c95e89b",
-"class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_cursed_effect.html#a37bd163e1641ff85113daca8e82e62f1",
-"files.html"
+"class_loot_1_1_modifier_player.html#a9212e684829429545c464740df4580f6",
+"class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_damage_plus.html#a08a070f855f8a14a19a9a3f8e0ed3a5e",
+"functions_b.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

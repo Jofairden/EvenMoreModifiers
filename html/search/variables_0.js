@@ -34,6 +34,7 @@ var searchData=
   ['_5foldmouseitem',['_oldMouseItem',['../class_loot_1_1_core_1_1_caching_1_1_modifier_cache_player.html#adb046d1abe28db2e7a9a957172e61088',1,'Loot::Core::Caching::ModifierCachePlayer']]],
   ['_5foldselecteditem',['_oldSelectedItem',['../class_loot_1_1_core_1_1_caching_1_1_modifier_cache_player.html#a4db27675b61fa642bf5761f357ff4c79',1,'Loot::Core::Caching::ModifierCachePlayer']]],
   ['_5foldvanityequips',['_oldVanityEquips',['../class_loot_1_1_core_1_1_caching_1_1_modifier_cache_player.html#a724edc4884e826d65713ffb692e2798f',1,'Loot::Core::Caching::ModifierCachePlayer']]],
+  ['_5fpopulatepoolfrom',['_populatePoolFrom',['../class_loot_1_1_core_1_1_system_1_1_modifier_pool.html#ae9d0cab3bb3329692ccc8f00156f4ca6',1,'Loot::Core::System::ModifierPool']]],
   ['_5fpower',['_power',['../class_loot_1_1_core_1_1_system_1_1_modifier_properties.html#a81051b5180b48879a306169692146fa1',1,'Loot::Core::System::ModifierProperties']]],
   ['_5frerollbutton',['_rerollButton',['../class_loot_1_1_u_i_1_1_rerolling_1_1_cube_reroll_u_i.html#ac7f4cecb3855cf952fb1284eb0785307',1,'Loot::UI::Rerolling::CubeRerollUI']]],
   ['_5fshadertextures',['_shaderTextures',['../class_loot_1_1_core_1_1_mod_content_1_1_graphics_mod_content.html#a522618bff39259f9a927d9677f546dda',1,'Loot::Core::ModContent::GraphicsModContent']]],
