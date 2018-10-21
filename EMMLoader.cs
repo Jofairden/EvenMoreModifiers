@@ -1,19 +1,18 @@
 using Loot.Core;
 using Loot.Core.Attributes;
+using Loot.Core.ModContent;
+using Microsoft.Xna.Framework.Graphics;
 using System;
 using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
-using Loot.Core.ModContent;
-using Microsoft.Xna.Framework.Graphics;
 using Terraria.ModLoader;
 using Terraria.Utilities;
 using EffectMap = System.Collections.Generic.KeyValuePair<string, Loot.Core.ModifierEffect>;
 using ModifierMap = System.Collections.Generic.KeyValuePair<string, Loot.Core.Modifier>;
 using PoolMap = System.Collections.Generic.KeyValuePair<string, Loot.Core.ModifierPool>;
 using RarityMap = System.Collections.Generic.KeyValuePair<string, Loot.Core.ModifierRarity>;
-//using GlobalModifierMap = System.Collections.Generic.KeyValuePair<string, Loot.Core.GlobalModifier>;
 
 namespace Loot
 {
@@ -22,46 +21,81 @@ namespace Loot
 	/// </summary>
 	public static class EMMLoader
 	{
-		private static uint rarityNextID;
-		private static uint modifierNextID;
-		private static uint poolNextID;
-		private static uint effectNextID;
-		//		private static uint globalModifierNextID;
+		private static class Identifiers
+		{
+			public static uint RarityIdCount { get; private set; }
+			public static uint NextRarityId
+			{
+				get
+				{
+					uint @return = RarityIdCount;
+					RarityIdCount++;
+					return @return;
+				}
+			}
+			public static uint ModifierIdCount { get; private set; }
+			public static uint NextModifierId
+			{
+				get
+				{
+					uint @return = ModifierIdCount;
+					ModifierIdCount++;
+					return @return;
+				}
+			}
+			public static uint PoolIdCount { get; private set; }
+			public static uint NextPoolId
+			{
+				get
+				{
+					uint @return = PoolIdCount;
+					PoolIdCount++;
+					return @return;
+				}
+			}
+			public static uint EffectIdCount { get; private set; }
+			public static uint NextEffectId
+			{
+				get
+				{
+					uint @return = EffectIdCount;
+					EffectIdCount++;
+					return @return;
+				}
+			}
+
+			public static void Reset()
+			{
+				RarityIdCount = 0;
+				ModifierIdCount = 0;
+				PoolIdCount = 0;
+				EffectIdCount = 0;
+			}
+		}
 
 		internal static IDictionary<string, List<RarityMap>> RaritiesMap;
 		internal static IDictionary<string, List<ModifierMap>> ModifiersMap;
 		internal static IDictionary<string, List<PoolMap>> PoolsMap;
 		internal static IDictionary<string, List<EffectMap>> EffectsMap;
-		//		internal static IDictionary<string, List<GlobalModifierMap>> GlobalModifiersMap;
 
 		internal static IDictionary<uint, ModifierRarity> Rarities;
 		internal static IDictionary<uint, Modifier> Modifiers;
 		internal static IDictionary<uint, ModifierPool> Pools;
 		internal static IDictionary<uint, ModifierEffect> Effects;
-		//		internal static IDictionary<uint, GlobalModifier> GlobalModifiers;
 
 		internal static IDictionary<string, Assembly> Mods;
 
 		internal static void Initialize()
 		{
-			rarityNextID = 0;
-			modifierNextID = 0;
-			poolNextID = 0;
-			effectNextID = 0;
-			//			globalModifierNextID = 0;
-
 			RaritiesMap = new Dictionary<string, List<RarityMap>>();
 			ModifiersMap = new Dictionary<string, List<ModifierMap>>();
 			PoolsMap = new Dictionary<string, List<PoolMap>>();
 			EffectsMap = new Dictionary<string, List<EffectMap>>();
 
-			//			GlobalModifiersMap = new Dictionary<string, List<GlobalModifierMap>>();
-
 			Rarities = new Dictionary<uint, ModifierRarity>();
 			Modifiers = new Dictionary<uint, Modifier>();
 			Pools = new Dictionary<uint, ModifierPool>();
 			Effects = new Dictionary<uint, ModifierEffect>();
-			//			GlobalModifiers = new Dictionary<uint, GlobalModifier>();
 
 			// todo why did I make this concurrent
 			Mods = new ConcurrentDictionary<string, Assembly>();
@@ -74,24 +108,40 @@ namespace Loot
 
 		internal static void Unload()
 		{
-			rarityNextID = 0;
-			modifierNextID = 0;
-			poolNextID = 0;
-			effectNextID = 0;
-			//			globalModifierNextID = 0;
+			Identifiers.Reset();
 
 			RaritiesMap = null;
 			ModifiersMap = null;
 			PoolsMap = null;
 			EffectsMap = null;
-			//			GlobalModifiersMap = null;
 
 			Rarities = null;
 			Modifiers = null;
 			Pools = null;
 			Mods = null;
 			Effects = null;
-			//			GlobalModifiers = null;
+		}
+
+		private static void CheckModLoading(Mod mod, string source)
+		{
+			if (mod == null)
+			{
+				throw new NullReferenceException($"Mod is null in {source}");
+			}
+
+			bool? b = mod.GetType().GetField("loading", BindingFlags.Instance | BindingFlags.NonPublic)?.GetValue(mod) as bool?;
+			if (b != null && !b.Value)
+			{
+				throw new Exception($"{source} can only be called from Mod.Load or Mod.Autoload");
+			}
+		}
+
+		private static void CheckModRegistered(Mod mod, string msg = "Mod {0} is not registered, please register before adding")
+		{
+			if (!Mods.ContainsKey(mod.Name))
+			{
+				throw new Exception(msg != null ? string.Format(msg, mod.Name) : "Error but msg was null");
+			}
 		}
 
 		/// <summary>
@@ -99,38 +149,22 @@ namespace Loot
 		/// </summary>
 		public static void RegisterMod(Mod mod)
 		{
-			bool? b = mod.GetType().GetField("loading", BindingFlags.Instance | BindingFlags.NonPublic)?.GetValue(mod) as bool?;
-			if (b != null && !b.Value)
-			{
-				throw new Exception("RegisterMod can only be called from Mod.Load or Mod.Autoload");
-			}
+			CheckModLoading(mod, "RegisterMod");
+			CheckModRegistered(mod, "Mod {0} is already registered");
 
-			if (Mods.ContainsKey(mod.Name))
-			{
-				throw new Exception($"Mod {mod.Name} is already registered");
-			}
-
-			Assembly code;
-#if DEBUG
-			code = Assembly.GetAssembly(mod.GetType());
-#else
-			code = mod.Code;
-#endif
+			Assembly code = mod.Code;
 
 			Mods.Add(new KeyValuePair<string, Assembly>(mod.Name, code));
 			RaritiesMap.Add(new KeyValuePair<string, List<RarityMap>>(mod.Name, new List<RarityMap>()));
 			ModifiersMap.Add(new KeyValuePair<string, List<ModifierMap>>(mod.Name, new List<ModifierMap>()));
 			PoolsMap.Add(new KeyValuePair<string, List<PoolMap>>(mod.Name, new List<PoolMap>()));
 			EffectsMap.Add(new KeyValuePair<string, List<EffectMap>>(mod.Name, new List<EffectMap>()));
-			//			GlobalModifiersMap.Add(new KeyValuePair<string, List<GlobalModifierMap>>(mod.Name, new List<GlobalModifierMap>()));
 		}
 
 		public static void RegisterAssets(Mod mod, string folder, bool clearOwnTextures = true)
 		{
-			if (mod == null)
-			{
-				throw new NullReferenceException("Mod is null in RegisterAssets");
-			}
+			CheckModLoading(mod, "RegisterAssets");
+			CheckModRegistered(mod);
 
 			if (Loot.ContentManager == null)
 			{
@@ -160,11 +194,15 @@ namespace Loot
 			var textures = dictionary.Where(x => x.Key.StartsWith(folder)).ToList();
 			var glowmasks = textures.Where(x => x.Key.EndsWith("_Glowmask") || x.Key.EndsWith("_Glow")).ToList();
 			var shaders = textures.Where(x => x.Key.EndsWith("_Shader") || x.Key.EndsWith("_Shad")).ToList();
-			
+
 			foreach (var kvp in glowmasks)
 			{
 				string assetKey = graphicsContent.GetAssetKey(kvp.Value.Name, mod);
-				if (assetKey == null) continue;
+				if (assetKey == null)
+				{
+					continue;
+				}
+
 				if (graphicsContent.AnyGlowmaskAssetExists(assetKey, mod))
 				{
 					throw new Exception($"{mod.Name} attempted to add a glowmask asset already present: {assetKey}");
@@ -179,7 +217,11 @@ namespace Loot
 			foreach (var kvp in shaders)
 			{
 				string assetKey = graphicsContent.GetAssetKey(kvp.Value.Name, mod);
-				if (assetKey == null) continue;
+				if (assetKey == null)
+				{
+					continue;
+				}
+
 				if (graphicsContent.AnyShaderAssetExists(assetKey, mod))
 				{
 					throw new Exception($"{mod.Name} attempted to add a shader asset already present: {assetKey}");
@@ -192,45 +234,10 @@ namespace Loot
 			}
 
 			// sanity check
+			// prepare throws an exception if keyPass not registered in keyStore correctly
 			graphicsContent.Prepare(mod);
 			graphicsContent.ClearPreparation();
 		}
-
-		// todo refactor to ReserveID
-		internal static uint ReserveRarityID()
-		{
-			uint reserved = rarityNextID;
-			rarityNextID++;
-			return reserved;
-		}
-
-		internal static uint ReserveModifierID()
-		{
-			uint reserved = modifierNextID;
-			modifierNextID++;
-			return reserved;
-		}
-
-		internal static uint ReservePoolID()
-		{
-			uint reserved = poolNextID;
-			poolNextID++;
-			return reserved;
-		}
-
-		internal static uint ReserveEffectID()
-		{
-			uint reserved = effectNextID;
-			effectNextID++;
-			return reserved;
-		}
-
-		//		internal static uint ReserveGlobalModifierID()
-		//		{
-		//			uint reserved = globalModifierNextID;
-		//			globalModifierNextID++;
-		//			return reserved;
-		//		}
 
 		/// <summary>
 		/// Returns a random weighted pool from all available pools that can apply
@@ -269,7 +276,7 @@ namespace Loot
 		/// </summary>
 		public static ModifierRarity GetModifierRarity(uint type)
 		{
-			return type < rarityNextID ? (ModifierRarity)Rarities[type].Clone() : null;
+			return type < Identifiers.RarityIdCount ? (ModifierRarity)Rarities[type].Clone() : null;
 		}
 
 		/// <summary>
@@ -277,7 +284,7 @@ namespace Loot
 		/// </summary>
 		public static Modifier GetModifier(uint type)
 		{
-			return type < modifierNextID ? (Modifier)Modifiers[type].Clone() : null;
+			return type < Identifiers.ModifierIdCount ? (Modifier)Modifiers[type].Clone() : null;
 		}
 
 		/// <summary>
@@ -285,7 +292,7 @@ namespace Loot
 		/// </summary>
 		public static ModifierPool GetModifierPool(uint type)
 		{
-			return type < poolNextID ? (ModifierPool)Pools[type].Clone() : null;
+			return type < Identifiers.PoolIdCount ? (ModifierPool)Pools[type].Clone() : null;
 		}
 
 		/// <summary>
@@ -293,7 +300,7 @@ namespace Loot
 		/// </summary>
 		public static ModifierEffect GetModifierEffect(uint type)
 		{
-			return type < effectNextID ? (ModifierEffect)Effects[type].Clone() : null;
+			return type < Identifiers.EffectIdCount ? (ModifierEffect)Effects[type].Clone() : null;
 		}
 
 		/// <summary>
@@ -301,16 +308,8 @@ namespace Loot
 		/// </summary>
 		public static void SetupContent(Mod mod)
 		{
-			bool? b = mod.GetType().GetField("loading", BindingFlags.Instance | BindingFlags.NonPublic)?.GetValue(mod) as bool?;
-			if (b != null && !b.Value)
-			{
-				throw new Exception("SetupContent for EMMLoader can only be called from Mod.Load or Mod.Autoload");
-			}
-
-			if (!Mods.ContainsKey(mod.Name))
-			{
-				throw new Exception($"Mod {mod.Name} is not yet registered in EMMLoader");
-			}
+			CheckModLoading(mod, "SetupContent");
+			CheckModRegistered(mod);
 
 			var ordered = Mods.FirstOrDefault(x => x.Key.Equals(mod.Name))
 				.Value
@@ -323,7 +322,6 @@ namespace Loot
 			var modifiers = ordered.Where(x => x.IsSubclassOf(typeof(Modifier)));
 			var pools = ordered.Where(x => x.IsSubclassOf(typeof(ModifierPool)));
 			var effects = ordered.Where(x => x.IsSubclassOf(typeof(ModifierEffect)));
-			//			var globalModifiers = ordered.Where(x => x.IsSubclassOf(typeof(GlobalModifier)));
 
 			// important: load things in order. (modifiers relies on all.. etc.)
 			foreach (Type type in rarities)
@@ -345,11 +343,6 @@ namespace Loot
 			{
 				AutoloadModifierEffect(effect, mod);
 			}
-
-			//			foreach (Type type in globalModifiers)
-			//			{
-			//				AutoloadGlobalModifier(type, mod);
-			//			}
 		}
 
 		/// <summary>
@@ -366,15 +359,8 @@ namespace Loot
 		/// </summary>
 		public static void AddModifierPool(ModifierPool pool, Mod mod)
 		{
-			bool? b = mod.GetType().GetField("loading", BindingFlags.Instance | BindingFlags.NonPublic)?.GetValue(mod) as bool?;
-			if (b != null && !b.Value)
-			{
-				throw new Exception("AddModifierPool can only be called from Mod.Load or Mod.Autoload");
-			}
-			if (!Mods.ContainsKey(mod.Name))
-			{
-				throw new Exception($"Mod {mod.Name} is not registered, please register before adding");
-			}
+			CheckModLoading(mod, "AddModifierPool");
+			CheckModRegistered(mod);
 
 			List<PoolMap> lmm;
 			if (!PoolsMap.TryGetValue(mod.Name, out lmm))
@@ -388,7 +374,7 @@ namespace Loot
 			}
 
 			pool.Mod = mod;
-			pool.Type = ReservePoolID();
+			pool.Type = Identifiers.NextPoolId;
 			Pools[pool.Type] = pool;
 			PoolsMap[mod.Name].Add(new PoolMap(pool.Name, pool));
 		}
@@ -407,15 +393,8 @@ namespace Loot
 		/// </summary>
 		public static void AddModifierRarity(ModifierRarity rarity, Mod mod)
 		{
-			bool? b = mod.GetType().GetField("loading", BindingFlags.Instance | BindingFlags.NonPublic)?.GetValue(mod) as bool?;
-			if (b != null && !b.Value)
-			{
-				throw new Exception("AddRarity can only be called from Mod.Load or Mod.Autoload");
-			}
-			if (!Mods.ContainsKey(mod.Name))
-			{
-				throw new Exception($"Mod {mod.Name} is not registered, please register before adding");
-			}
+			CheckModLoading(mod, "AddModifierRarity");
+			CheckModRegistered(mod);
 
 			List<RarityMap> lrm;
 			if (!RaritiesMap.TryGetValue(mod.Name, out lrm))
@@ -429,7 +408,7 @@ namespace Loot
 			}
 
 			rarity.Mod = mod;
-			rarity.Type = ReserveRarityID();
+			rarity.Type = Identifiers.NextRarityId;
 			Rarities[rarity.Type] = rarity;
 			RaritiesMap[mod.Name].Add(new RarityMap(rarity.Name, rarity));
 		}
@@ -448,11 +427,8 @@ namespace Loot
 		/// </summary>
 		public static void AddModifier(Modifier modifier, Mod mod)
 		{
-			bool? b = mod.GetType().GetField("loading", BindingFlags.Instance | BindingFlags.NonPublic)?.GetValue(mod) as bool?;
-			if (b != null && !b.Value)
-			{
-				throw new Exception("AddModifier can only be called from Mod.Load or Mod.Autoload");
-			}
+			CheckModLoading(mod, "AddModifier");
+			CheckModRegistered(mod);
 
 			List<ModifierMap> lem;
 			if (!ModifiersMap.TryGetValue(mod.Name, out lem))
@@ -466,7 +442,7 @@ namespace Loot
 			}
 
 			modifier.Mod = mod;
-			modifier.Type = ReserveModifierID();
+			modifier.Type = Identifiers.NextModifierId;
 			Modifiers[modifier.Type] = modifier;
 			ModifiersMap[mod.Name].Add(new ModifierMap(modifier.Name, modifier));
 		}
@@ -485,11 +461,8 @@ namespace Loot
 		/// </summary>
 		public static void AddModifierEffect(ModifierEffect effect, Mod mod)
 		{
-			bool? b = mod.GetType().GetField("loading", BindingFlags.Instance | BindingFlags.NonPublic)?.GetValue(mod) as bool?;
-			if (b != null && !b.Value)
-			{
-				throw new Exception("AddModifierEffect can only be called from Mod.Load or Mod.Autoload");
-			}
+			CheckModLoading(mod, "AddModifierEffect");
+			CheckModRegistered(mod);
 
 			List<EffectMap> lem;
 			if (!EffectsMap.TryGetValue(mod.Name, out lem))
@@ -508,7 +481,6 @@ namespace Loot
 			var attributes = effect
 				.GetType()
 				.GetMethods(BindingFlags.NonPublic | BindingFlags.Public | BindingFlags.Instance)
-				// ReSharper disable once ReturnValueOfPureMethodIsNotUsed
 				.Select(x => x.GetCustomAttributes(false).OfType<DelegationPrioritizationAttribute>());
 
 			foreach (var attribute in attributes.SelectMany(x => x))
@@ -517,54 +489,10 @@ namespace Loot
 			}
 
 			effect.Mod = mod;
-			effect.Type = ReserveEffectID();
+			effect.Type = Identifiers.NextEffectId;
 			Effects[effect.Type] = effect;
 			EffectsMap[mod.Name].Add(new EffectMap(effect.Name, effect));
 		}
-
-		/// <summary>
-		/// Autoloads a GlobalModifier
-		/// </summary>
-		/// <param name="type"></param>
-		/// <param name="mod"></param>
-		//		private static void AutoloadGlobalModifier(Type type, Mod mod)
-		//		{
-		//			GlobalModifier globalModifier = (GlobalModifier)Activator.CreateInstance(type);
-		//			AddGlobalModifier(globalModifier, mod);
-		//		}
-
-		/// <summary>
-		/// Adds a GlobalModifier
-		/// </summary>
-		/// <param name="modifier"></param>
-		/// <param name="mod"></param>
-		//		public static void AddGlobalModifier(GlobalModifier globalModifier, Mod mod)
-		//		{
-		//			bool? b = mod.GetType().GetField("loading", BindingFlags.Instance | BindingFlags.NonPublic)?.GetValue(mod) as bool?;
-		//			if (b != null && !b.Value)
-		//			{
-		//				throw new Exception("AddGlobalModifier can only be called from Mod.Load or Mod.Autoload");
-		//			}
-		//
-		//			List<GlobalModifierMap> lem;
-		//			if (!GlobalModifiersMap.TryGetValue(mod.Name, out lem))
-		//			{
-		//				throw new Exception($"GlobalModifiersMap for {mod.Name} not found");
-		//			}
-		//
-		//			if (lem.Exists(x => x.Value.Name.Equals(globalModifier.Name)))
-		//			{
-		//				throw new Exception($"You have already added a modifier with the name {globalModifier.Name}");
-		//			}
-		//
-		//			globalModifier.Mod = mod;
-		//			globalModifier.Type = ReserveGlobalModifierID();
-		//			GlobalModifiers[globalModifier.Type] = globalModifier;
-		//			GlobalModifiersMap[mod.Name].Add(new GlobalModifierMap(globalModifier.Name, globalModifier));
-		//		}
-
-		internal static Exception ThrowException(string message)
-			=> new Exception($"{Loot.Instance.DisplayName ?? "EvenMoreModifiers"}: {message}");
 
 		private static ModifierPool GetNewPoolInstance(ModifierPool pool)
 		{

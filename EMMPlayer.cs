@@ -6,6 +6,7 @@ namespace Loot
 {
 	/// <summary>
 	/// Currently handles armor hack to make armors reforge as accessories
+	/// This is needed so that armor can be slotted into the reforge slot
 	/// </summary>
 	public class EMMPlayer : ModPlayer
 	{
