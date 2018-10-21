@@ -161,6 +161,7 @@ namespace Loot.Core.Caching
 					.GetType()
 					.GetMethods(BindingFlags.NonPublic | BindingFlags.Public | BindingFlags.Instance)
 					.Where(x => x.GetCustomAttributes(typeof(AutoDelegation), false).Length > 0)
+					// todo: C#7 named/value tuple here
 					.ToDictionary(x => x, y => (DelegationPrioritizationAttribute)y.GetCustomAttribute(typeof(DelegationPrioritizationAttribute)));
 
 				tempEarlyMethods.AddRange(delegatedMethods.Where(x =>

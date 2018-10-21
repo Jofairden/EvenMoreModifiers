@@ -14,25 +14,25 @@ namespace Loot
 
 		public override GlobalProjectile Clone()
 		{
-			var clone = (ModifierProjectile)base.MemberwiseClone();
-			clone.SNAPSHOT_DebuffChances = new List<DebuffTrigger>(SNAPSHOT_DebuffChances);
+			var clone = (ModifierProjectile)MemberwiseClone();
+			clone.SnapshotDebuffChances = new List<DebuffTrigger>(SnapshotDebuffChances);
 			return clone;
 		}
 
-		public ModifierProjectile Info(Projectile projectile, Mod mod = null)
-			=> mod == null
+		public ModifierProjectile Info(Projectile projectile, Mod givenMod = null)
+			=> givenMod == null
 				? projectile.GetGlobalProjectile<ModifierProjectile>()
-				: projectile.GetGlobalProjectile<ModifierProjectile>(mod);
+				: projectile.GetGlobalProjectile<ModifierProjectile>(givenMod);
 
 		public bool NeedsClear;
 		public bool FirstTick;
-		public float SNAPSHOT_HealthyFoesMulti = 1f;
-		public float SNAPSHOT_CritMulti = 1f;
-		public IList<DebuffTrigger> SNAPSHOT_DebuffChances = new List<DebuffTrigger>();
+		public float SnapshotHealthyFoesMulti = 1f;
+		public float SnapshotCritMulti = 1f;
+		public List<DebuffTrigger> SnapshotDebuffChances = new List<DebuffTrigger>();
 
 		private void AttemptDebuff(Projectile projectile, Player target)
 		{
-			foreach (var x in Info(projectile).SNAPSHOT_DebuffChances)
+			foreach (var x in SnapshotDebuffChances)
 			{
 				if (Main.rand.NextFloat() < x.InflictionChance)
 				{
@@ -43,7 +43,7 @@ namespace Loot
 
 		private void AttemptDebuff(Projectile projectile, NPC target)
 		{
-			foreach (var x in Info(projectile).SNAPSHOT_DebuffChances)
+			foreach (var x in SnapshotDebuffChances)
 			{
 				if (Main.rand.NextFloat() < x.InflictionChance)
 				{
@@ -56,7 +56,7 @@ namespace Loot
 		{
 			if (target.life == target.lifeMax)
 			{
-				damage = (int)Math.Ceiling(damage * Info(projectile).SNAPSHOT_HealthyFoesMulti);
+				damage = (int)Math.Ceiling(damage * SnapshotHealthyFoesMulti);
 			}
 		}
 
@@ -64,7 +64,7 @@ namespace Loot
 		{
 			if (target.statLife == target.statLifeMax2)
 			{
-				damage = (int)Math.Ceiling(damage * Info(projectile).SNAPSHOT_HealthyFoesMulti);
+				damage = (int)Math.Ceiling(damage * SnapshotHealthyFoesMulti);
 			}
 		}
 
@@ -72,7 +72,7 @@ namespace Loot
 		{
 			if (crit)
 			{
-				damage = (int)Math.Ceiling(damage * Info(projectile).SNAPSHOT_CritMulti);
+				damage = (int)Math.Ceiling(damage * Info(projectile).SnapshotCritMulti);
 			}
 		}
 
@@ -83,16 +83,16 @@ namespace Loot
 			if (!mproj.FirstTick)
 			{
 				mproj.FirstTick = true;
-				
+
 				// Snapshot current player values
 				if (projectile.owner != 255 && projectile.friendly && projectile.owner == Main.myPlayer)
 				{
 					var mplr = Main.LocalPlayer.GetModPlayer<ModifierPlayer>();
-					mproj.SNAPSHOT_DebuffChances = new List<DebuffTrigger>(mplr.GetEffect<WeaponDebuffEffect>().DebuffChances);
-					mproj.SNAPSHOT_HealthyFoesMulti = mplr.GetEffect<HealthyFoesEffect>().Multiplier;
+					mproj.SnapshotDebuffChances = new List<DebuffTrigger>(mplr.GetEffect<WeaponDebuffEffect>().DebuffChances);
+					mproj.SnapshotHealthyFoesMulti = mplr.GetEffect<HealthyFoesEffect>().Multiplier;
 					if (!projectile.minion) // minions do not crit
 					{
-						mproj.SNAPSHOT_CritMulti = mplr.GetEffect<CritDamagePlusEffect>().Multiplier;
+						mproj.SnapshotCritMulti = mplr.GetEffect<CritDamagePlusEffect>().Multiplier;
 					}
 				}
 				else if (projectile.owner == 255)
@@ -102,8 +102,8 @@ namespace Loot
 			}
 			if (NeedsClear)
 			{
-				mproj.SNAPSHOT_HealthyFoesMulti = 1f;
-				mproj.SNAPSHOT_DebuffChances.Clear();
+				mproj.SnapshotHealthyFoesMulti = 1f;
+				mproj.SnapshotDebuffChances.Clear();
 			}
 			return base.PreAI(projectile);
 		}

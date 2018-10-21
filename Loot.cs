@@ -11,9 +11,9 @@ using Terraria.ModLoader;
 using Terraria.UI;
 
 /*
- * original version by hiccup
- * reworked and maintained by jofairden
- * for tmodloader
+ * original version by Hiccup
+ * reworked and maintained by Jofairden
+ * for tModLoader
  *
  * (c) Jofairden 2018
  */
@@ -76,7 +76,7 @@ namespace Loot
 				SetupUIs();
 				EMMLoader.RegisterAssets(this, "GraphicsAssets");
 
-				if (WingSlotLoaded)
+				if (WingSlotLoaded && !WingSlotVersionInvalid)
 				{
 					wingSlotMod.Call("add", (Func<bool>)(
 						() =>
@@ -156,7 +156,7 @@ namespace Loot
 			}
 
 			if (CubeSealUI.SlottedItem != null
-			    & !CubeSealUI.SlottedItem.IsAir)
+			    & !CubeSealUI.SlottedItem?.IsAir ?? false)
 			{
 				Main.LocalPlayer.QuickSpawnClonedItem(CubeSealUI.SlottedItem, CubeSealUI.SlottedItem.stack);
 				CubeSealUI.SlottedItem.TurnToAir();
