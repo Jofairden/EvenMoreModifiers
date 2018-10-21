@@ -1,12 +1,12 @@
+using Loot.Core.Attributes;
+using Loot.Core.System.Core;
+using Loot.Core.System.Loaders;
+using Loot.Ext;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Reflection;
-using Loot.Core.Attributes;
-using Loot.Core.System.Core;
-using Loot.Core.System.Loaders;
-using Loot.Ext;
 using Terraria;
 using Terraria.ModLoader;
 using Terraria.ModLoader.IO;
@@ -42,10 +42,10 @@ namespace Loot.Core.System
 
 		internal Modifier[] StoredModifiers = new Modifier[0];
 
-		internal IEnumerable<Modifier> _GetModifiers() 
+		internal IEnumerable<Modifier> _GetModifiers()
 			=> StoredModifiers.Any() ? StoredModifiers : GetModifiers();
 
-		public virtual IEnumerable<Modifier> GetModifiers() 
+		public virtual IEnumerable<Modifier> GetModifiers()
 			=> Enumerable.Empty<Modifier>();
 
 		// The default constructor will try to
@@ -173,30 +173,28 @@ namespace Loot.Core.System
 
 		protected internal static ModifierPool _NetReceive(Item item, BinaryReader reader)
 		{
-			string Type = reader.ReadString();
-			uint ModifierType = reader.ReadUInt32();
-			string ModName = reader.ReadString();
-			ModifierRarity ModifierRarity = ModifierRarity._NetReceive(item, reader);
-			int ActiveModifiersSize = reader.ReadInt32();
+			string type = reader.ReadString();
+			string modName = reader.ReadString();
+
+			ModifierPool p = ContentLoader.ModifierPool.GetContent(modName, type);
+			if (p == null)
+			{
+				throw new Exception($"Modifier _NetReceive error for {modName}");
+			}
+
+			ModifierRarity modifierRarity = ModifierRarity._NetReceive(item, reader);
+
+			int activeModifiersSize = reader.ReadInt32();
 			var list = new List<Modifier>();
-			for (int i = 0; i < ActiveModifiersSize; ++i)
+			for (int i = 0; i < activeModifiersSize; ++i)
 			{
 				list.Add(Modifier._NetReceive(item, reader));
 			}
 
-			Assembly assembly;
-			if (MainLoader.Mods.TryGetValue(ModName, out assembly))
-			{
-				ModifierPool m = (ModifierPool)Activator.CreateInstance(assembly.GetType(Type));
-				m.Type = ModifierType;
-				m.Mod = ModLoader.GetMod(ModName);
-				m.Rarity = ModifierRarity;
-				m.ActiveModifiers = list.ToArray();
-				m.NetReceive(item, reader);
-				return m;
-			}
-
-			throw new Exception($"Modifier _NetReceive error for {ModName}");
+			p.Rarity = modifierRarity;
+			p.ActiveModifiers = list.ToArray();
+			p.NetReceive(item, reader);
+			return p;
 		}
 
 		/// <summary>
@@ -208,8 +206,7 @@ namespace Loot.Core.System
 
 		protected internal static void _NetSend(ModifierPool modifierPool, Item item, BinaryWriter writer)
 		{
-			writer.Write(modifierPool.GetType().FullName);
-			writer.Write(modifierPool.Type);
+			writer.Write(modifierPool.Name);
 			writer.Write(modifierPool.Mod.Name);
 
 			ModifierRarity._NetSend(modifierPool.Rarity, item, writer);
@@ -238,12 +235,13 @@ namespace Loot.Core.System
 				return null;
 			}
 
-			string modname = tag.GetString("ModName");
+			string modName = tag.GetString("ModName");
 			Assembly assembly;
-			if (MainLoader.Mods.TryGetValue(modname, out assembly))
+
+			if (MainLoader.Mods.TryGetValue(modName, out assembly))
 			{
 				// If we manage to load null here, that means some pool got unloaded
-				ModifierPool m = null;
+				ModifierPool p = null;
 				var saveVersion = tag.ContainsKey("ModifierPoolSaveVersion") ? tag.GetInt("ModifierPoolSaveVersion") : 1;
 
 				string poolTypeName = tag.GetString("Type");
@@ -254,16 +252,16 @@ namespace Loot.Core.System
 					// in first save version, modifiers were saved by full assembly namespace
 					//m = (ModifierPool)Activator.CreateInstance(assembly.GetType(tag.GetString("Type")));// we modified saving
 					poolTypeName = poolTypeName.Substring(poolTypeName.LastIndexOf('.') + 1);
-					m = ContentLoader.ModifierPool.GetContent(modname, poolTypeName);
+					p = ContentLoader.ModifierPool.GetContent(modName, poolTypeName);
 				}
 				else if (saveVersion == 2)
 				{
 					// from saveVersion 2 and onwards, they are saved by assembly (mod) and type name
-					m = ContentLoader.ModifierPool.GetContent(modname, poolTypeName);
+					p = ContentLoader.ModifierPool.GetContent(modName, poolTypeName);
 				}
 
 				// if we have a pool
-				if (m != null)
+				if (p != null)
 				{
 					// saveVersion 1, no longer needed. Type and Mod is already created by new instance
 					//m.Type = tag.Get<uint>("ModifierType");
@@ -273,7 +271,7 @@ namespace Loot.Core.System
 					bool rarityUnloaded = preloadRarity == null;
 					if (!rarityUnloaded)
 					{
-						m.Rarity = preloadRarity;
+						p.Rarity = preloadRarity;
 					}
 
 					int activeModifiers = tag.GetAsInt("ActiveModifiers");
@@ -290,24 +288,24 @@ namespace Loot.Core.System
 							}
 						}
 
-						m.ActiveModifiers = list.ToArray();
+						p.ActiveModifiers = list.ToArray();
 					}
 
-					m.Load(item, tag);
+					p.Load(item, tag);
 
 					// If our rarity was unloaded, attempt rolling a new one that is applicable
-					if (rarityUnloaded && m.ActiveModifiers != null && m.ActiveModifiers.Length > 0)
+					if (rarityUnloaded && p.ActiveModifiers != null && p.ActiveModifiers.Length > 0)
 					{
-						m.Rarity = ContentLoader.ModifierPool.GetPoolRarity(m);
+						p.Rarity = ContentLoader.ModifierPool.GetPoolRarity(p);
 					}
 
-					return m;
+					return p;
 				}
 
 				return null;
 			}
 
-			throw new Exception($"Modifier load error for {modname}");
+			throw new Exception($"Modifier load error for {modName}");
 		}
 
 		/// <summary>
@@ -332,9 +330,10 @@ namespace Loot.Core.System
 				//{ "ModifierType", modifierPool.Type }, //Used to be saved in saveVersion 1
 				{"ModName", modifierPool.Mod.Name},
 				{"Rarity", ModifierRarity.Save(item, modifierPool.Rarity)},
-				{"ModifierPoolSaveVersion", 2} // increments each time save is changed
+				{"ModifierPoolSaveVersion", 2}, // increments each time save is changed
+				{"ActiveModifiers", modifierPool.ActiveModifiers.Length}
 			};
-			tag.Add("ActiveModifiers", modifierPool.ActiveModifiers.Length);
+
 			for (int i = 0; i < modifierPool.ActiveModifiers.Length; ++i)
 			{
 				tag.Add($"ActiveModifier{i}", Modifier.Save(item, modifierPool.ActiveModifiers[i]));

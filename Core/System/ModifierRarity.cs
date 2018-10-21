@@ -66,20 +66,17 @@ namespace Loot.Core.System
 
 		protected internal static ModifierRarity _NetReceive(Item item, BinaryReader reader)
 		{
-			string Type = reader.ReadString();
-			uint RarityType = reader.ReadUInt32();
-			string ModName = reader.ReadString();
+			string type = reader.ReadString();
+			string modName = reader.ReadString();
 
-			Assembly assembly;
-			if (MainLoader.Mods.TryGetValue(ModName, out assembly))
+			ModifierRarity r = ContentLoader.ModifierRarity.GetContent(modName, type);
+			if (r == null)
 			{
-				ModifierRarity r = (ModifierRarity)Activator.CreateInstance(assembly.GetType(Type));
-				r.Type = RarityType;
-				r.Mod = ModLoader.GetMod(ModName);
-				r.NetReceive(item, reader);
-				return r;
+				throw new Exception($"ModifierRarity _NetReceive error for {modName}");
 			}
-			throw new Exception($"ModifierRarity _NetReceive error for {ModName}");
+
+			r.NetReceive(item, reader);
+			return r;
 		}
 
 		/// <summary>
@@ -93,8 +90,7 @@ namespace Loot.Core.System
 
 		protected internal static void _NetSend(ModifierRarity rarity, Item item, BinaryWriter writer)
 		{
-			writer.Write(rarity.GetType().FullName);
-			writer.Write(rarity.Type);
+			writer.Write(rarity.Name);
 			writer.Write(rarity.Mod.Name);
 		}
 
