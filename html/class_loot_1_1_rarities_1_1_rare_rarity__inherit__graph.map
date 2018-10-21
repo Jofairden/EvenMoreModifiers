@@ -1,4 +1,4 @@
 <map id="Loot.Rarities.RareRarity" name="Loot.Rarities.RareRarity">
-<area shape="rect" id="node2" href="$class_loot_1_1_core_1_1_modifier_rarity.html" title="Defines the rarity of a modifier " alt="" coords="35,80,137,107"/>
+<area shape="rect" id="node2" href="$class_loot_1_1_core_1_1_system_1_1_modifier_rarity.html" title="Defines the rarity of a modifier " alt="" coords="35,80,137,107"/>
 <area shape="rect" id="node3" href="$class_i_cloneable.html" title="ICloneable" alt="" coords="45,5,128,32"/>
 </map>

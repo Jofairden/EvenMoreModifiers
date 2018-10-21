@@ -1,5 +1,5 @@
 <map id="Loot.ModifierPlayer.GetEffect" name="Loot.ModifierPlayer.GetEffect">
-<area shape="rect" id="node2" href="$class_loot_1_1_modifiers_1_1_modifier_cache_player.html#a80a11854749cd0f94beac37969881abb" title="Loot.Modifiers.ModifierCache\lPlayer.CacheItemModifierEffects" alt="" coords="289,5,503,46"/>
+<area shape="rect" id="node2" href="$class_loot_1_1_core_1_1_caching_1_1_modifier_cache_player.html#a4cb6df2c76d909b9ab210b3f4b9ac5ad" title="Loot.Core.Caching.Modifier\lCachePlayer.CacheItemModifierEffects" alt="" coords="269,5,523,46"/>
 <area shape="rect" id="node3" href="$class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_cursed_effect.html#a7dbd3c5248a667a59b8a0c49636696cb" title="Loot.Modifiers.WeaponModifiers.\lCursedEffect.CurseHolding" alt="" coords="289,70,503,111"/>
 <area shape="rect" id="node4" href="$class_loot_1_1_modifiers_1_1_weapon_debuff_modifier.html#ae7fa7c30e052a4e6e112f57b0d4a6441" title="Loot.Modifiers.WeaponDebuff\lModifier.HoldItem" alt="" coords="299,135,493,177"/>
 <area shape="rect" id="node5" href="$class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_utility_1_1_luck_plus.html#acb613d89cf9d4a746affceea6d063ceb" title="Loot.Modifiers.EquipModifiers.\lUtility.LuckPlus.UpdateEquip" alt="" coords="297,201,495,242"/>

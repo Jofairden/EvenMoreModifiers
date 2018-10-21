@@ -1,0 +1,4 @@
+<map id="Loot.Core.System.ModifierPool.Save" name="Loot.Core.System.ModifierPool.Save">
+<area shape="rect" id="node2" href="$class_loot_1_1_core_1_1_system_1_1_modifier_rarity.html#a1ff326441b1b93c99db2451b78e4086e" title="Allows modder to do custom saving here Use the given TC to put data you want to save, which can be loaded using Load(Item,TagCompound) " alt="" coords="249,29,428,70"/>
+<area shape="rect" id="node3" href="$class_loot_1_1_core_1_1_system_1_1_modifier.html#a0ef60dea6074d400b1f94fcb9c080ea6" title="Allows modder to do custom saving here Use the given TC to put data you want to save, which can be loaded using Load(Item,TagCompound) " alt="" coords="233,119,445,145"/>
+</map>

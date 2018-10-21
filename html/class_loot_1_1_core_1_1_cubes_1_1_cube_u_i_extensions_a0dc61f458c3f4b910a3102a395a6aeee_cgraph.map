@@ -1,4 +1,4 @@
 <map id="Loot.Core.Cubes.CubeUIExtensions.RerollUITakeItem" name="Loot.Core.Cubes.CubeUIExtensions.RerollUITakeItem">
-<area shape="rect" id="node2" href="$class_loot_1_1_u_i_1_1_cube_reroll_u_i.html#af33b3106799529bb09d5cc2ce520d20c" title="Loot.UI.CubeRerollUI.Update\lModifierLines" alt="" coords="293,5,488,46"/>
-<area shape="rect" id="node3" href="$class_loot_1_1_e_m_m_item.html#a0dc962c1a313ea02e94a891920703963" title="Loot.EMMItem.GetActivePool" alt="" coords="537,12,733,39"/>
+<area shape="rect" id="node2" href="$class_loot_1_1_u_i_1_1_rerolling_1_1_cube_reroll_u_i.html#a092d11e524ab9bad1f6096fde4796654" title="Loot.UI.Rerolling.CubeReroll\lUI.UpdateModifierLines" alt="" coords="293,5,483,46"/>
+<area shape="rect" id="node3" href="$class_loot_1_1_e_m_m_item.html#a0dc962c1a313ea02e94a891920703963" title="Loot.EMMItem.GetActivePool" alt="" coords="531,12,727,39"/>
 </map>

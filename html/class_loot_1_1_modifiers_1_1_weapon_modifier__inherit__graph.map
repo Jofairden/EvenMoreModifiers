@@ -12,7 +12,7 @@
 <area shape="rect" id="node16" href="$class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_speed_plus.html" title="Loot.Modifiers.WeaponModifiers.\lSpeedPlus" alt="" coords="507,659,720,701"/>
 <area shape="rect" id="node17" href="$class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_velocity_damage.html" title="Loot.Modifiers.WeaponModifiers.\lVelocityDamage" alt="" coords="507,725,720,766"/>
 <area shape="rect" id="node18" href="$class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_velocity_plus.html" title="Loot.Modifiers.WeaponModifiers.\lVelocityPlus" alt="" coords="507,790,720,831"/>
-<area shape="rect" id="node2" href="$class_loot_1_1_core_1_1_modifier.html" title="Defines a modifier, which is an unloaded GlobalItem Making it a GlobalItem gives easy access to all h..." alt="" coords="139,405,207,432"/>
+<area shape="rect" id="node2" href="$class_loot_1_1_core_1_1_system_1_1_modifier.html" title="Defines a modifier, which is an unloaded GlobalItem Making it a GlobalItem gives easy access to all h..." alt="" coords="139,405,207,432"/>
 <area shape="rect" id="node3" href="$class_global_item.html" title="GlobalItem" alt="" coords="5,380,91,407"/>
 <area shape="rect" id="node4" href="$class_i_cloneable.html" title="ICloneable" alt="" coords="6,431,90,457"/>
 <area shape="rect" id="node6" href="$class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_random_debuff.html" title="Rolls a random debuff " alt="" coords="768,6,981,47"/>

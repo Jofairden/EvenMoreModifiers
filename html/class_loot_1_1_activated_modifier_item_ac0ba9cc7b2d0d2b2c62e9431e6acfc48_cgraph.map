@@ -1,4 +1,0 @@
-<map id="Loot.ActivatedModifierItem.ShouldBeIgnored" name="Loot.ActivatedModifierItem.ShouldBeIgnored">
-<area shape="rect" id="node2" href="$class_loot_1_1_activated_modifier_item.html#aec85662e31e484311196b98f872cb4e3" title="Loot.ActivatedModifierItem.\lIsInInventory" alt="" coords="238,5,421,46"/>
-<area shape="rect" id="node3" href="$class_loot_1_1_activated_modifier_item.html#aedcb371be998be72f5e8d43064e0827f" title="Returns if the item is in a player&#39;s vanity slot " alt="" coords="238,70,421,111"/>
-</map>

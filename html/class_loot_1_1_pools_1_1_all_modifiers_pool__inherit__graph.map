@@ -1,0 +1,4 @@
+<map id="Loot.Pools.AllModifiersPool" name="Loot.Pools.AllModifiersPool">
+<area shape="rect" id="node2" href="$class_loot_1_1_core_1_1_system_1_1_modifier_pool.html" title="Defines a modifier pool. A modifier pool holds a certain amount of effects in an array It allows to r..." alt="" coords="49,80,143,107"/>
+<area shape="rect" id="node3" href="$class_i_cloneable.html" title="ICloneable" alt="" coords="54,5,137,32"/>
+</map>

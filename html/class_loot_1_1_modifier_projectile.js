@@ -6,7 +6,7 @@ var class_loot_1_1_modifier_projectile =
     [ "CritBonus", "class_loot_1_1_modifier_projectile.html#a88bbc92630f212d5b2430cf54b4e82f2", null ],
     [ "HealthyBonus", "class_loot_1_1_modifier_projectile.html#ab26593147c3a40e7c189323c09573efa", null ],
     [ "HealthyBonus", "class_loot_1_1_modifier_projectile.html#aa7d362f8ac06219ceb2ef59bdde602fd", null ],
-    [ "Info", "class_loot_1_1_modifier_projectile.html#a323642f716e4cb0500bac4379f16d689", null ],
+    [ "Info", "class_loot_1_1_modifier_projectile.html#a202dddbce3a3e079349d7336a3ea8813", null ],
     [ "ModifyHitNPC", "class_loot_1_1_modifier_projectile.html#a4ba8e2eb4213b5136bb56c24d17a3dc4", null ],
     [ "ModifyHitPlayer", "class_loot_1_1_modifier_projectile.html#a1672e51591f2ae82246c49b58473efe0", null ],
     [ "ModifyHitPvp", "class_loot_1_1_modifier_projectile.html#a6b30a3083556ccba59fb584d188c9476", null ],
@@ -18,7 +18,7 @@ var class_loot_1_1_modifier_projectile =
     [ "FirstTick", "class_loot_1_1_modifier_projectile.html#a36f9b9fc4559f6b7b66db09375865516", null ],
     [ "InstancePerEntity", "class_loot_1_1_modifier_projectile.html#a0a2325b6c34a59e0d70e476461ad5a37", null ],
     [ "NeedsClear", "class_loot_1_1_modifier_projectile.html#a5023fabf4c9add32ef23dd53a767029a", null ],
-    [ "SNAPSHOT_CritMulti", "class_loot_1_1_modifier_projectile.html#a609a8ead5c89ada4590f8d84934b29c3", null ],
-    [ "SNAPSHOT_DebuffChances", "class_loot_1_1_modifier_projectile.html#a017f1f3f503ff96548f9ac4ee93c9374", null ],
-    [ "SNAPSHOT_HealthyFoesMulti", "class_loot_1_1_modifier_projectile.html#a17a5315f3670165f667ec0908d8cb0a4", null ]
+    [ "SnapshotCritMulti", "class_loot_1_1_modifier_projectile.html#a3d2f9e00273412d1bdce3e6a98db8545", null ],
+    [ "SnapshotDebuffChances", "class_loot_1_1_modifier_projectile.html#a75882636f67500d6a2a7b2d25f4ac007", null ],
+    [ "SnapshotHealthyFoesMulti", "class_loot_1_1_modifier_projectile.html#ad7f2f10d9e167d640a7aca27876396ba", null ]
 ];

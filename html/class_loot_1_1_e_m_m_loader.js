@@ -1,5 +1,6 @@
 var class_loot_1_1_e_m_m_loader =
 [
+    [ "Identifiers", "class_loot_1_1_e_m_m_loader_1_1_identifiers.html", "class_loot_1_1_e_m_m_loader_1_1_identifiers" ],
     [ "_GetModifier", "class_loot_1_1_e_m_m_loader.html#a33eb39cc45b74bb6bf0d8f7cad090814", null ],
     [ "_GetModifierEffect", "class_loot_1_1_e_m_m_loader.html#ab5c0f407a898fa43be9b08477d0ba78b", null ],
     [ "_GetModifierPool", "class_loot_1_1_e_m_m_loader.html#a1d947f78efa1e720ad5ebd8648c84ff5", null ],
@@ -12,6 +13,8 @@ var class_loot_1_1_e_m_m_loader =
     [ "AutoloadModifierEffect", "class_loot_1_1_e_m_m_loader.html#aa10c2b8bd76a3fc1e011f7f1290d4911", null ],
     [ "AutoloadModifierPool", "class_loot_1_1_e_m_m_loader.html#a96fd118b85c32da5a676ccf2cc85199c", null ],
     [ "AutoloadModifierRarity", "class_loot_1_1_e_m_m_loader.html#adc7ec41170ca716e9acf23ebad25c214", null ],
+    [ "CheckModLoading", "class_loot_1_1_e_m_m_loader.html#a022f37a51ba4e9fa6c99ed4ca4054a2f", null ],
+    [ "CheckModRegistered", "class_loot_1_1_e_m_m_loader.html#a4b3d434de8b8e4722cd8fe629b642cb5", null ],
     [ "GetModifier", "class_loot_1_1_e_m_m_loader.html#aca32952e13350506ed4b155e5ebfe6b9", null ],
     [ "GetModifier", "class_loot_1_1_e_m_m_loader.html#a3dfc6ab4c42b38a1fa332b9da92f5a29", null ],
     [ "GetModifier", "class_loot_1_1_e_m_m_loader.html#ad84431b7f41008fbedef65626d2ed86a", null ],
@@ -34,9 +37,5 @@ var class_loot_1_1_e_m_m_loader =
     [ "RequestModifierPools", "class_loot_1_1_e_m_m_loader.html#abea328c9556511ac57ec4e628b4b7831", null ],
     [ "RequestModifierRarities", "class_loot_1_1_e_m_m_loader.html#a6de2ca346bb74dd008921652925b73fe", null ],
     [ "RequestModifiers", "class_loot_1_1_e_m_m_loader.html#a67f922e6f493468abc1df2edbe7b2c15", null ],
-    [ "SetupContent", "class_loot_1_1_e_m_m_loader.html#a273f95fe314eaa95ee729d8b63933a11", null ],
-    [ "effectNextID", "class_loot_1_1_e_m_m_loader.html#aa5a8e35ff57a6a8fec7ca92c7b689dc1", null ],
-    [ "modifierNextID", "class_loot_1_1_e_m_m_loader.html#aecc243db8ea9aa631877efc296cc3912", null ],
-    [ "poolNextID", "class_loot_1_1_e_m_m_loader.html#a4c7ff0c471552632c08fdeaa1384a895", null ],
-    [ "rarityNextID", "class_loot_1_1_e_m_m_loader.html#a5297d79632667d3f4cc3a596c92fcdf0", null ]
+    [ "SetupContent", "class_loot_1_1_e_m_m_loader.html#a273f95fe314eaa95ee729d8b63933a11", null ]
 ];

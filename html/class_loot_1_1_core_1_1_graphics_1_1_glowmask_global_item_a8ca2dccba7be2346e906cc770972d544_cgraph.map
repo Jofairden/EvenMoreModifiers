@@ -2,6 +2,6 @@
 <area shape="rect" id="node2" href="$class_loot_1_1_core_1_1_graphics_1_1_glowmask_entity.html#ac66e1767fe938f785eca9ff627bd91ee" title="Will draw the glowmask texture " alt="" coords="257,5,458,46"/>
 <area shape="rect" id="node3" href="$class_loot_1_1_core_1_1_graphics_1_1_glowmask_entity.html#ae1591f4369be6aebfccc47e3480176ab" title="Will draw the hitbox around the entity " alt="" coords="257,70,458,111"/>
 <area shape="rect" id="node4" href="$class_loot_1_1_core_1_1_graphics_1_1_glowmask_global_item.html#ae93b162a68c4b0db6c733bfd9c601bdd" title="Loot.Core.Graphics.Glowmask\lGlobalItem.UpdateEntities" alt="" coords="257,135,458,177"/>
-<area shape="rect" id="node5" href="$class_loot_1_1_e_m_m_item.html#a0dc962c1a313ea02e94a891920703963" title="Loot.EMMItem.GetActivePool" alt="" coords="517,113,713,140"/>
-<area shape="rect" id="node6" href="$class_loot_1_1_core_1_1_modifier.html#ab9b9888e5629e1c23a8885d4ec5120f9" title="Loot.Core.Modifier.GetGlowmask\lEntity" alt="" coords="507,165,723,206"/>
+<area shape="rect" id="node5" href="$class_loot_1_1_e_m_m_item.html#a0dc962c1a313ea02e94a891920703963" title="Loot.EMMItem.GetActivePool" alt="" coords="507,113,703,140"/>
+<area shape="rect" id="node6" href="$class_loot_1_1_core_1_1_system_1_1_modifier.html#a4a833bbc9c165224eb8d3b713b8adb76" title="Loot.Core.System.Modifier.\lGetGlowmaskEntity" alt="" coords="514,165,697,206"/>
 </map>

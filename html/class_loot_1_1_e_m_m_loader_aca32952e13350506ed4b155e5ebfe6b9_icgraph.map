@@ -1,4 +1,4 @@
 <map id="Loot.EMMLoader.GetModifier" name="Loot.EMMLoader.GetModifier">
-<area shape="rect" id="node2" href="$class_loot_1_1_core_1_1_modifier.html#ad4f545d050f5ed2bbb123134c50470f3" title="Allows modder to do custom loading here Use the given TC to pull data you saved using Save(Item..." alt="" coords="281,29,442,56"/>
-<area shape="rect" id="node3" href="$class_loot_1_1_core_1_1_modifier_pool.html#a40e8750307d1b6ee5bfda96f4c21e27b" title="Loot.Core.ModifierPool.ModifierPool" alt="" coords="246,80,477,107"/>
+<area shape="rect" id="node2" href="$class_loot_1_1_core_1_1_system_1_1_modifier.html#a17123f4658af6260c6ec1a21e82c23c4" title="Allows modder to do custom loading here Use the given TC to pull data you saved using Save(Item..." alt="" coords="245,29,456,56"/>
+<area shape="rect" id="node3" href="$class_loot_1_1_core_1_1_system_1_1_modifier_pool.html#a186a861a5c87535319e704f672e51320" title="Loot.Core.System.Modifier\lPool.ModifierPool" alt="" coords="261,81,440,122"/>
 </map>

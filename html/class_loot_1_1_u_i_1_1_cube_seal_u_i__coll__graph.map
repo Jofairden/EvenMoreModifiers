@@ -1,9 +1,0 @@
-<map id="Loot.UI.CubeSealUI" name="Loot.UI.CubeSealUI">
-<area shape="rect" id="node2" href="$class_loot_1_1_u_i_1_1_cube_u_i.html" title="CubeUI" alt="" coords="287,296,353,323"/>
-<area shape="rect" id="node3" href="$class_loot_1_1_u_i_1_1_draggable_u_i_state.html" title="A UIState which primarily goal is to provide dragging on click functionality to the main panel The dr..." alt="" coords="166,219,292,245"/>
-<area shape="rect" id="node4" href="$class_loot_1_1_u_i_1_1_visibility_u_i.html" title="A UIState which primarily goal is to provide easy visibility toggling " alt="" coords="5,127,91,153"/>
-<area shape="rect" id="node5" href="$class_u_i_state.html" title="UIState" alt="" coords="15,5,81,32"/>
-<area shape="rect" id="node12" href="$class_loot_1_1_u_i_1_1_u_i_interactable_item_panel.html" title="UIInteractableItemPanel" alt="" coords="469,219,632,245"/>
-<area shape="rect" id="node13" href="$class_loot_1_1_u_i_1_1_u_i_item_panel.html" title="UIItemPanel" alt="" coords="718,127,812,153"/>
-<area shape="rect" id="node11" href="$class_loot_1_1_u_i_1_1_u_i_seal_item_panel.html" title="Loot.UI.UISealItemPanel" alt="" coords="471,296,639,323"/>
-</map>

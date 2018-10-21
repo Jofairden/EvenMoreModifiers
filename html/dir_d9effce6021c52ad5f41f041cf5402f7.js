@@ -11,11 +11,6 @@ var dir_d9effce6021c52ad5f41f041cf5402f7 =
     [ "EquipModifier.cs", "_equip_modifier_8cs.html", [
       [ "EquipModifier", "class_loot_1_1_modifiers_1_1_equip_modifier.html", "class_loot_1_1_modifiers_1_1_equip_modifier" ]
     ] ],
-    [ "ModifierCachePlayer.cs", "_modifier_cache_player_8cs.html", [
-      [ "AutoDelegationEntry", "class_loot_1_1_modifiers_1_1_auto_delegation_entry.html", "class_loot_1_1_modifiers_1_1_auto_delegation_entry" ],
-      [ "ModifierCachePlayer", "class_loot_1_1_modifiers_1_1_modifier_cache_player.html", "class_loot_1_1_modifiers_1_1_modifier_cache_player" ],
-      [ "OrderedDelegationEntry", "class_loot_1_1_modifiers_1_1_ordered_delegation_entry.html", "class_loot_1_1_modifiers_1_1_ordered_delegation_entry" ]
-    ] ],
     [ "WeaponDebuffModifier.cs", "_weapon_debuff_modifier_8cs.html", [
       [ "DebuffTrigger", "struct_loot_1_1_modifiers_1_1_debuff_trigger.html", "struct_loot_1_1_modifiers_1_1_debuff_trigger" ],
       [ "WeaponDebuffEffect", "class_loot_1_1_modifiers_1_1_weapon_debuff_effect.html", "class_loot_1_1_modifiers_1_1_weapon_debuff_effect" ],

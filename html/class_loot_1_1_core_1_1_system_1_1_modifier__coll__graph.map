@@ -1,0 +1,4 @@
+<map id="Loot.Core.System.Modifier" name="Loot.Core.System.Modifier">
+<area shape="rect" id="node2" href="$class_global_item.html" title="GlobalItem" alt="" coords="5,5,91,32"/>
+<area shape="rect" id="node3" href="$class_i_cloneable.html" title="ICloneable" alt="" coords="115,5,199,32"/>
+</map>

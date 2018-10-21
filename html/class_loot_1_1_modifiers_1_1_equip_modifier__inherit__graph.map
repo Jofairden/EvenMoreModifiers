@@ -26,7 +26,7 @@
 <area shape="rect" id="node29" href="$class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_utility_1_1_mining_speed_plus.html" title="Loot.Modifiers.EquipModifiers.\lUtility.MiningSpeedPlus" alt="" coords="499,1573,698,1614"/>
 <area shape="rect" id="node30" href="$class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_utility_1_1_move_speed_plus.html" title="Loot.Modifiers.EquipModifiers.\lUtility.MoveSpeedPlus" alt="" coords="499,1638,698,1679"/>
 <area shape="rect" id="node31" href="$class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_utility_1_1_wing_time_plus.html" title="Loot.Modifiers.EquipModifiers.\lUtility.WingTimePlus" alt="" coords="499,1703,698,1745"/>
-<area shape="rect" id="node2" href="$class_loot_1_1_core_1_1_modifier.html" title="Defines a modifier, which is an unloaded GlobalItem Making it a GlobalItem gives easy access to all h..." alt="" coords="139,861,207,888"/>
+<area shape="rect" id="node2" href="$class_loot_1_1_core_1_1_system_1_1_modifier.html" title="Defines a modifier, which is an unloaded GlobalItem Making it a GlobalItem gives easy access to all h..." alt="" coords="139,861,207,888"/>
 <area shape="rect" id="node3" href="$class_global_item.html" title="GlobalItem" alt="" coords="5,836,91,863"/>
 <area shape="rect" id="node4" href="$class_i_cloneable.html" title="ICloneable" alt="" coords="6,887,90,913"/>
 </map>

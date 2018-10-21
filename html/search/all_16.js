@@ -10,6 +10,6 @@ var searchData=
   ['wingslotversioninvalid',['WingSlotVersionInvalid',['../class_loot_1_1_loot.html#aeb3c76b42eac6abc8a6e5c83f9c4cb78',1,'Loot::Loot']]],
   ['wingtimeplus',['WingTimePlus',['../class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_utility_1_1_wing_time_plus.html',1,'Loot::Modifiers::EquipModifiers::Utility']]],
   ['wingtimeplus_2ecs',['WingTimePlus.cs',['../_wing_time_plus_8cs.html',1,'']]],
-  ['wingupdate',['WingUpdate',['../class_loot_1_1_core_1_1_modifier.html#a795c71fcc3167fc1c86585cceabfe013',1,'Loot::Core::Modifier']]],
-  ['worldgeneration',['WorldGeneration',['../namespace_loot_1_1_core.html#aaee86006118cea302753a7826ebf417ca4a22bbb324fc4800e83b3fa0103e7bba',1,'Loot::Core']]]
+  ['wingupdate',['WingUpdate',['../class_loot_1_1_core_1_1_system_1_1_modifier.html#ab97f9176d022288d8d70849afb2bd2cb',1,'Loot::Core::System::Modifier']]],
+  ['worldgeneration',['WorldGeneration',['../namespace_loot_1_1_core_1_1_system.html#abbe1d918fb67605a6f8d854c34cee269a4a22bbb324fc4800e83b3fa0103e7bba',1,'Loot::Core::System']]]
 ];

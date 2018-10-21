@@ -188,7 +188,7 @@ Additional Inherited Members</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock">
-<p>Definition at line <a class="el" href="_poor_cube_8cs_source.html#l00007">7</a> of file <a class="el" href="_poor_cube_8cs_source.html">PoorCube.cs</a>.</p>
+<p>Definition at line <a class="el" href="_poor_cube_8cs_source.html#l00010">10</a> of file <a class="el" href="_poor_cube_8cs_source.html">PoorCube.cs</a>.</p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
 <a class="anchor" id="adca3053eae0aeb7f65911d89cddd3d85"></a>
 <div class="memitem">
@@ -213,8 +213,8 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Reimplemented from <a class="el" href="class_loot_1_1_core_1_1_cubes_1_1_magical_cube.html#ac23a76483cc3325760827de8bde34685">Loot.Core.Cubes.MagicalCube</a>.</p>
 
-<p>Definition at line <a class="el" href="_poor_cube_8cs_source.html#l00018">18</a> of file <a class="el" href="_poor_cube_8cs_source.html">PoorCube.cs</a>.</p>
-<div class="fragment"><div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;        {</div><div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;            item.value = Item.buyPrice(copper: 30);</div><div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;        }</div></div><!-- fragment -->
+<p>Definition at line <a class="el" href="_poor_cube_8cs_source.html#l00021">21</a> of file <a class="el" href="_poor_cube_8cs_source.html">PoorCube.cs</a>.</p>
+<div class="fragment"><div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;        {</div><div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;            item.value = Item.buyPrice(copper: 30);</div><div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;        }</div></div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="ac36395f90383ddfd963feb7e6912562f"></a>
@@ -240,8 +240,8 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Reimplemented from <a class="el" href="class_loot_1_1_core_1_1_cubes_1_1_magical_cube.html#a25e82ac84d9182623becdb5bf29f077e">Loot.Core.Cubes.MagicalCube</a>.</p>
 
-<p>Definition at line <a class="el" href="_poor_cube_8cs_source.html#l00023">23</a> of file <a class="el" href="_poor_cube_8cs_source.html">PoorCube.cs</a>.</p>
-<div class="fragment"><div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;        {</div><div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;        }</div></div><!-- fragment -->
+<p>Definition at line <a class="el" href="_poor_cube_8cs_source.html#l00026">26</a> of file <a class="el" href="_poor_cube_8cs_source.html">PoorCube.cs</a>.</p>
+<div class="fragment"><div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;        {</div><div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;        }</div></div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="a1d25f0ed5c94f8b5ee7943ebb78499b6"></a>
@@ -268,10 +268,11 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Reimplemented from <a class="el" href="class_loot_1_1_core_1_1_cubes_1_1_magical_cube.html#af46c273ab2c36c2ba4acbf47bbdf4946">Loot.Core.Cubes.MagicalCube</a>.</p>
 
-<p>Definition at line <a class="el" href="_poor_cube_8cs_source.html#l00027">27</a> of file <a class="el" href="_poor_cube_8cs_source.html">PoorCube.cs</a>.</p>
+<p>Definition at line <a class="el" href="_poor_cube_8cs_source.html#l00030">30</a> of file <a class="el" href="_poor_cube_8cs_source.html">PoorCube.cs</a>.</p>
 
-<p>References <a class="el" href="_item_roll_properties_8cs_source.html#l00042">Loot.Core.Cubes.ItemRollProperties.ForceModifierPool</a>, <a class="el" href="class_loot_1_1_core_1_1_modifier_pool.html#a6879cbc978cb671e56e2f5f28757d91e">Loot.Core.ModifierPool.GetModifierPool()</a>, and <a class="el" href="_item_roll_properties_8cs_source.html#l00023">Loot.Core.Cubes.ItemRollProperties.MaxRollableLines</a>.</p>
-<div class="fragment"><div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;        {</div><div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;            base.SetRollLogic(properties);</div><div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;            properties.MaxRollableLines = 2;</div><div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;            properties.ForceModifierPool = mod.GetModifierPool&lt;AllModifiersPool&gt;();</div><div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;        }</div></div><!-- fragment -->
+<p>References <a class="el" href="_item_roll_properties_8cs_source.html#l00043">Loot.Core.Cubes.ItemRollProperties.ForceModifierPool</a>, <a class="el" href="class_loot_1_1_core_1_1_system_1_1_modifier_pool.html#a9d3db41f6147fa37cf052968e27e437c">Loot.Core.System.ModifierPool.GetModifierPool()</a>, and <a class="el" href="_item_roll_properties_8cs_source.html#l00024">Loot.Core.Cubes.ItemRollProperties.MaxRollableLines</a>.</p>
+<div class="fragment"><div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        {</div><div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;            base.SetRollLogic(properties);</div><div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;            properties.MaxRollableLines = 2;</div><div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;            properties.ForceModifierPool = mod.GetModifierPool&lt;<a class="code" href="class_loot_1_1_pools_1_1_all_modifiers_pool.html">AllModifiersPool</a>&gt;();</div><div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        }</div><div class="ttc" id="class_loot_1_1_pools_1_1_all_modifiers_pool_html"><div class="ttname"><a href="class_loot_1_1_pools_1_1_all_modifiers_pool.html">Loot.Pools.AllModifiersPool</a></div><div class="ttdoc">A modifier pool that always consists of all modifiers </div><div class="ttdef"><b>Definition:</b> <a href="_all_modifiers_pool_8cs_source.html#l00009">AllModifiersPool.cs:9</a></div></div>
+</div><!-- fragment -->
 <p><div id="dynsection-2" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-2-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
 <div id="dynsection-2-summary" class="dynsummary" style="display:block;">
@@ -279,7 +280,7 @@ Additional Inherited Members</h2></td></tr>
 <div id="dynsection-2-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="class_loot_1_1_core_1_1_cubes_1_1_poor_cube_a1d25f0ed5c94f8b5ee7943ebb78499b6_cgraph.png" border="0" usemap="#class_loot_1_1_core_1_1_cubes_1_1_poor_cube_a1d25f0ed5c94f8b5ee7943ebb78499b6_cgraph" alt=""/></div>
 <map name="class_loot_1_1_core_1_1_cubes_1_1_poor_cube_a1d25f0ed5c94f8b5ee7943ebb78499b6_cgraph" id="class_loot_1_1_core_1_1_cubes_1_1_poor_cube_a1d25f0ed5c94f8b5ee7943ebb78499b6_cgraph">
-<area shape="rect" id="node2" href="class_loot_1_1_core_1_1_modifier_pool.html#a6879cbc978cb671e56e2f5f28757d91e" title="Returns the ModifierPool specified by type, null if not present " alt="" coords="241,5,421,46"/>
+<area shape="rect" id="node2" href="class_loot_1_1_core_1_1_system_1_1_modifier_pool.html#a9d3db41f6147fa37cf052968e27e437c" title="Returns the ModifierPool specified by type, null if not present " alt="" coords="240,5,419,46"/>
 </map>
 </div>
 </p>
@@ -305,7 +306,7 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_poor_cube_8cs_source.html#l00009">9</a> of file <a class="el" href="_poor_cube_8cs_source.html">PoorCube.cs</a>.</p>
+<p>Definition at line <a class="el" href="_poor_cube_8cs_source.html#l00012">12</a> of file <a class="el" href="_poor_cube_8cs_source.html">PoorCube.cs</a>.</p>
 
 </div>
 </div>
@@ -327,7 +328,7 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 <b>Initial value:</b><div class="fragment"><div class="line">=&gt; <span class="keyword">new</span> TooltipLine(mod, <span class="stringliteral">&quot;PoorCube::Description::Add_Box&quot;</span>,</div><div class="line">            <span class="stringliteral">&quot;Can only roll up 2 lines&quot;</span> +</div><div class="line">            <span class="stringliteral">&quot;\nAlways rolls from random modifiers&quot;</span>)</div><div class="line">        {</div><div class="line">            overrideColor = <a class="code" href="class_loot_1_1_core_1_1_cubes_1_1_poor_cube.html#ad26457f99e95e2dacc5a6ac633690a62">OverrideNameColor</a></div><div class="line">        }</div></div><!-- fragment -->
-<p>Definition at line <a class="el" href="_poor_cube_8cs_source.html#l00011">11</a> of file <a class="el" href="_poor_cube_8cs_source.html">PoorCube.cs</a>.</p>
+<p>Definition at line <a class="el" href="_poor_cube_8cs_source.html#l00014">14</a> of file <a class="el" href="_poor_cube_8cs_source.html">PoorCube.cs</a>.</p>
 
 </div>
 </div>
@@ -349,7 +350,7 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_poor_cube_8cs_source.html#l00010">10</a> of file <a class="el" href="_poor_cube_8cs_source.html">PoorCube.cs</a>.</p>
+<p>Definition at line <a class="el" href="_poor_cube_8cs_source.html#l00013">13</a> of file <a class="el" href="_poor_cube_8cs_source.html">PoorCube.cs</a>.</p>
 
 </div>
 </div>
@@ -359,7 +360,7 @@ Additional Inherited Members</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespace_loot.html">Loot</a></li><li class="navelem"><a class="el" href="namespace_loot_1_1_core.html">Core</a></li><li class="navelem"><a class="el" href="namespace_loot_1_1_core_1_1_cubes.html">Cubes</a></li><li class="navelem"><a class="el" href="class_loot_1_1_core_1_1_cubes_1_1_poor_cube.html">PoorCube</a></li>
-    <li class="footer">Generated on Sat Oct 20 2018 09:11:36 for Even More Modifiers by
+    <li class="footer">Generated on Sun Oct 21 2018 13:46:37 for Even More Modifiers by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.11 </li>
   </ul>

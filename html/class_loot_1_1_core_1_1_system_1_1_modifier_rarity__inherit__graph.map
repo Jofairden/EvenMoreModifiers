@@ -1,0 +1,8 @@
+<map id="Loot.Core.System.ModifierRarity" name="Loot.Core.System.ModifierRarity">
+<area shape="rect" id="node3" href="$class_loot_1_1_rarities_1_1_common_rarity.html" title="Loot.Rarities.CommonRarity" alt="" coords="373,5,561,32"/>
+<area shape="rect" id="node4" href="$class_loot_1_1_rarities_1_1_legendary_rarity.html" title="Loot.Rarities.LegendaryRarity" alt="" coords="369,56,564,83"/>
+<area shape="rect" id="node5" href="$class_loot_1_1_rarities_1_1_rare_rarity.html" title="Loot.Rarities.RareRarity" alt="" coords="385,107,548,133"/>
+<area shape="rect" id="node6" href="$class_loot_1_1_rarities_1_1_transcendent_rarity.html" title="Loot.Rarities.Transcendent\lRarity" alt="" coords="377,158,556,199"/>
+<area shape="rect" id="node7" href="$class_loot_1_1_rarities_1_1_uncommon_rarity.html" title="Loot.Rarities.UncommonRarity" alt="" coords="365,224,568,251"/>
+<area shape="rect" id="node2" href="$class_i_cloneable.html" title="ICloneable" alt="" coords="6,107,90,133"/>
+</map>

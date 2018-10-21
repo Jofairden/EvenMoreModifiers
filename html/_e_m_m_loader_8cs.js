@@ -1,8 +1,9 @@
 var _e_m_m_loader_8cs =
 [
     [ "EMMLoader", "class_loot_1_1_e_m_m_loader.html", "class_loot_1_1_e_m_m_loader" ],
-    [ "EffectMap", "_e_m_m_loader_8cs.html#ada429b1c4a904e28ff1f540bf310318c", null ],
-    [ "ModifierMap", "_e_m_m_loader_8cs.html#af57705a71bed8a44ae396a83da4fa073", null ],
-    [ "PoolMap", "_e_m_m_loader_8cs.html#a073280eef5e3eda61777837c7428cdbd", null ],
-    [ "RarityMap", "_e_m_m_loader_8cs.html#ae408420f7a6f6b24febcc3d2c5557620", null ]
+    [ "Identifiers", "class_loot_1_1_e_m_m_loader_1_1_identifiers.html", "class_loot_1_1_e_m_m_loader_1_1_identifiers" ],
+    [ "EffectMap", "_e_m_m_loader_8cs.html#ac008332a3d375b6d022dc01def3ee29b", null ],
+    [ "ModifierMap", "_e_m_m_loader_8cs.html#adfa4dcb8ff6910eef8138b289fdc71b0", null ],
+    [ "PoolMap", "_e_m_m_loader_8cs.html#a7f67873ae4604d300bbd6b239c5b3c65", null ],
+    [ "RarityMap", "_e_m_m_loader_8cs.html#a310a1e41a1bcd41e32a0cbf195a53e53", null ]
 ];

@@ -12,13 +12,10 @@ var searchData=
   ['healthyfoesbonus',['HealthyFoesBonus',['../class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_offensive_1_1_healthy_foes_bonus.html',1,'Loot::Modifiers::EquipModifiers::Offensive']]],
   ['healthyfoesbonus_2ecs',['HealthyFoesBonus.cs',['../_healthy_foes_bonus_8cs.html',1,'']]],
   ['healthyfoeseffect',['HealthyFoesEffect',['../class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_offensive_1_1_healthy_foes_effect.html',1,'Loot::Modifiers::EquipModifiers::Offensive']]],
-  ['hintonhover',['HintOnHover',['../class_loot_1_1_u_i_1_1_u_i_item_panel.html#a6fa2d1d6b2bf3621e5fbaebebb577f21',1,'Loot::UI::UIItemPanel']]],
-  ['hinttext',['HintText',['../class_loot_1_1_u_i_1_1_u_i_item_panel.html#a9e2f6185ca8e8b48f781bcfb8783fef6',1,'Loot::UI::UIItemPanel']]],
-  ['hinttexture',['HintTexture',['../class_loot_1_1_u_i_1_1_u_i_item_panel.html#aee1e275185d71d0f43d6c3637baf5462',1,'Loot::UI::UIItemPanel']]],
-  ['holditem',['HoldItem',['../class_loot_1_1_modifier_item.html#a94c1fdeb3813bc01ba177005ec77bb60',1,'Loot.ModifierItem.HoldItem()'],['../class_loot_1_1_modifiers_1_1_weapon_debuff_modifier.html#ae7fa7c30e052a4e6e112f57b0d4a6441',1,'Loot.Modifiers.WeaponDebuffModifier.HoldItem()']]],
-  ['holditemframe',['HoldItemFrame',['../class_loot_1_1_modifier_item.html#a6f0390bcf890b30ab86bf2fd60e8228c',1,'Loot::ModifierItem']]],
-  ['holdoutoffset',['HoldoutOffset',['../class_loot_1_1_core_1_1_modifier.html#ada602e5b93d8af399c6cd899d420cf4c',1,'Loot::Core::Modifier']]],
-  ['holdoutorigin',['HoldoutOrigin',['../class_loot_1_1_core_1_1_modifier.html#a5818bb0ed840cb6d79ca3905eaf19950',1,'Loot::Core::Modifier']]],
-  ['holdstyle',['HoldStyle',['../class_loot_1_1_modifier_item.html#a7759867eecf68cd185cd9a986baa5c1d',1,'Loot::ModifierItem']]],
-  ['horizontalwingspeeds',['HorizontalWingSpeeds',['../class_loot_1_1_modifier_item.html#a8bbc8ed5101fd63f2d64740ec68851fd',1,'Loot::ModifierItem']]]
+  ['hintonhover',['HintOnHover',['../class_loot_1_1_u_i_1_1_core_1_1_u_i_item_panel.html#aefbac3c468bc018f0eb34dfe8e74febb',1,'Loot::UI::Core::UIItemPanel']]],
+  ['hinttext',['HintText',['../class_loot_1_1_u_i_1_1_core_1_1_u_i_item_panel.html#a54c6a9ef0496d9bac8daea2c1038bc4a',1,'Loot::UI::Core::UIItemPanel']]],
+  ['hinttexture',['HintTexture',['../class_loot_1_1_u_i_1_1_core_1_1_u_i_item_panel.html#aaf61e540e0f40bc2807af64320a1ec21',1,'Loot::UI::Core::UIItemPanel']]],
+  ['holditem',['HoldItem',['../class_loot_1_1_modifiers_1_1_weapon_debuff_modifier.html#ae7fa7c30e052a4e6e112f57b0d4a6441',1,'Loot::Modifiers::WeaponDebuffModifier']]],
+  ['holdoutoffset',['HoldoutOffset',['../class_loot_1_1_core_1_1_system_1_1_modifier.html#aed9afd2289a7ce474f3e4f318c9622b0',1,'Loot::Core::System::Modifier']]],
+  ['holdoutorigin',['HoldoutOrigin',['../class_loot_1_1_core_1_1_system_1_1_modifier.html#a9e2e42bda57bf130eb864c39487160d8',1,'Loot::Core::System::Modifier']]]
 ];

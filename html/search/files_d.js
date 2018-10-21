@@ -1,8 +1,6 @@
 var searchData=
 [
-  ['randomdebuff_2ecs',['RandomDebuff.cs',['../_random_debuff_8cs.html',1,'']]],
-  ['rangedcritplus_2ecs',['RangedCritPlus.cs',['../_ranged_crit_plus_8cs.html',1,'']]],
-  ['rangeddamageplus_2ecs',['RangedDamagePlus.cs',['../_ranged_damage_plus_8cs.html',1,'']]],
-  ['rarerarity_2ecs',['RareRarity.cs',['../_rare_rarity_8cs.html',1,'']]],
-  ['readme_2emd',['README.md',['../_r_e_a_d_m_e_8md.html',1,'']]]
+  ['percentdefensebonus_2ecs',['PercentDefenseBonus.cs',['../_percent_defense_bonus_8cs.html',1,'']]],
+  ['poorcube_2ecs',['PoorCube.cs',['../_poor_cube_8cs.html',1,'']]],
+  ['populatepoolfromattribute_2ecs',['PopulatePoolFromAttribute.cs',['../_populate_pool_from_attribute_8cs.html',1,'']]]
 ];

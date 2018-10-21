@@ -1,0 +1,6 @@
+<map id="Loot.UI.Sealing.CubeSealUI" name="Loot.UI.Sealing.CubeSealUI">
+<area shape="rect" id="node2" href="$class_loot_1_1_u_i_1_1_core_1_1_cube_u_i.html" title="CubeUI" alt="" coords="65,229,132,256"/>
+<area shape="rect" id="node3" href="$class_loot_1_1_u_i_1_1_core_1_1_draggable_u_i_state.html" title="A UIState which primarily goal is to provide dragging on click functionality to the main panel The dr..." alt="" coords="35,155,161,181"/>
+<area shape="rect" id="node4" href="$class_loot_1_1_u_i_1_1_core_1_1_visibility_u_i.html" title="A UIState which primarily goal is to provide easy visibility toggling " alt="" coords="56,80,141,107"/>
+<area shape="rect" id="node5" href="$class_u_i_state.html" title="UIState" alt="" coords="65,5,132,32"/>
+</map>

@@ -1,7 +1,7 @@
 <map id="Loot.Modifiers.WeaponDebuffModifier" name="Loot.Modifiers.WeaponDebuffModifier">
-<area shape="rect" id="node2" href="$class_loot_1_1_modifiers_1_1_weapon_modifier.html" title="Defines a modifier that can roll on a weapon item You can use this class and add to CanRoll by callin..." alt="" coords="133,200,248,227"/>
-<area shape="rect" id="node3" href="$class_loot_1_1_core_1_1_modifier.html" title="Defines a modifier, which is an unloaded GlobalItem Making it a GlobalItem gives easy access to all h..." alt="" coords="157,109,224,136"/>
+<area shape="rect" id="node2" href="$class_loot_1_1_modifiers_1_1_weapon_modifier.html" title="Defines a modifier that can roll on a weapon item You can use this class and add to CanRoll by callin..." alt="" coords="167,208,283,235"/>
+<area shape="rect" id="node3" href="$class_loot_1_1_core_1_1_system_1_1_modifier.html" title="Defines a modifier, which is an unloaded GlobalItem Making it a GlobalItem gives easy access to all h..." alt="" coords="191,109,259,136"/>
 <area shape="rect" id="node4" href="$class_global_item.html" title="GlobalItem" alt="" coords="5,5,91,32"/>
 <area shape="rect" id="node5" href="$class_i_cloneable.html" title="ICloneable" alt="" coords="115,5,199,32"/>
-<area shape="rect" id="node8" href="$struct_loot_1_1_core_1_1_modifier_tooltip_line.html" title="Defines a tooltip line of a modifier A modifier can have multiple lines " alt="" coords="273,200,465,227"/>
+<area shape="rect" id="node8" href="$struct_loot_1_1_core_1_1_system_1_1_modifier_tooltip_line.html" title="Defines a tooltip line of a modifier A modifier can have multiple lines " alt="" coords="308,201,487,242"/>
 </map>

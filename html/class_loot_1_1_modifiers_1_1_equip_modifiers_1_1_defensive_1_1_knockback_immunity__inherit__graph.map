@@ -1,6 +1,6 @@
 <map id="Loot.Modifiers.EquipModifiers.Defensive.KnockbackImmunity" name="Loot.Modifiers.EquipModifiers.Defensive.KnockbackImmunity">
 <area shape="rect" id="node2" href="$class_loot_1_1_modifiers_1_1_equip_modifier.html" title="Defines a modifier that can roll on an accessory item or an armor item These modifiers will have 60% ..." alt="" coords="56,155,157,181"/>
-<area shape="rect" id="node3" href="$class_loot_1_1_core_1_1_modifier.html" title="Defines a modifier, which is an unloaded GlobalItem Making it a GlobalItem gives easy access to all h..." alt="" coords="73,80,140,107"/>
+<area shape="rect" id="node3" href="$class_loot_1_1_core_1_1_system_1_1_modifier.html" title="Defines a modifier, which is an unloaded GlobalItem Making it a GlobalItem gives easy access to all h..." alt="" coords="73,80,140,107"/>
 <area shape="rect" id="node4" href="$class_global_item.html" title="GlobalItem" alt="" coords="9,5,95,32"/>
 <area shape="rect" id="node5" href="$class_i_cloneable.html" title="ICloneable" alt="" coords="119,5,203,32"/>
 </map>

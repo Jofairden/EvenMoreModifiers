@@ -1,6 +1,6 @@
 <map id="Loot.Modifiers.EquipModifiers.Defensive.ManaShield" name="Loot.Modifiers.EquipModifiers.Defensive.ManaShield">
 <area shape="rect" id="node2" href="$class_loot_1_1_modifiers_1_1_equip_modifier.html" title="Defines a modifier that can roll on an accessory item or an armor item These modifiers will have 60% ..." alt="" coords="53,155,155,181"/>
-<area shape="rect" id="node3" href="$class_loot_1_1_core_1_1_modifier.html" title="Defines a modifier, which is an unloaded GlobalItem Making it a GlobalItem gives easy access to all h..." alt="" coords="70,80,137,107"/>
+<area shape="rect" id="node3" href="$class_loot_1_1_core_1_1_system_1_1_modifier.html" title="Defines a modifier, which is an unloaded GlobalItem Making it a GlobalItem gives easy access to all h..." alt="" coords="70,80,137,107"/>
 <area shape="rect" id="node4" href="$class_global_item.html" title="GlobalItem" alt="" coords="7,5,92,32"/>
 <area shape="rect" id="node5" href="$class_i_cloneable.html" title="ICloneable" alt="" coords="117,5,200,32"/>
 </map>
