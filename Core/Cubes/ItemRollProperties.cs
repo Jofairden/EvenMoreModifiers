@@ -1,5 +1,6 @@
 using Microsoft.Xna.Framework;
 using System;
+using Loot.Core.System;
 
 namespace Loot.Core.Cubes
 {

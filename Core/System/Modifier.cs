@@ -1,14 +1,14 @@
-using Microsoft.Xna.Framework;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Reflection;
 using Loot.Core.Graphics;
+using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.ModLoader;
 using Terraria.ModLoader.IO;
 
-namespace Loot.Core
+namespace Loot.Core.System
 {
 	/// <summary>
 	/// Defines a modifier, which is an unloaded GlobalItem

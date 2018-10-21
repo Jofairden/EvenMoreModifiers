@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using Terraria;
 
-namespace Loot.Core
+namespace Loot.Core.System
 {
 	/// <summary>
 	/// Defines a method for a context in which a Modifier might be rolled

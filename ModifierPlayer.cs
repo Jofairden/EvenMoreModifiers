@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using Loot.Core.Caching;
+using Loot.Core.System;
 using Loot.Ext;
 using Terraria;
 using Terraria.DataStructures;

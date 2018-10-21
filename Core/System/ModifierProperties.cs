@@ -3,7 +3,7 @@ using System.IO;
 using Terraria;
 using Terraria.ModLoader.IO;
 
-namespace Loot.Core
+namespace Loot.Core.System
 {
 	// @todo maybe builder like pattern instead of Set?
 

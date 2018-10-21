@@ -92,10 +92,10 @@
     <Compile Include="Core\ModContent\ContentManager.cs" />
     <Compile Include="Core\ModContent\ModContent.cs" />
     <Compile Include="Core\ModContent\ModGraphicsContent.cs" />
-    <Compile Include="Core\ModifierContext.cs" />
-    <Compile Include="Core\ModifierEffect.cs" />
-    <Compile Include="Core\ModifierProperties.cs" />
-    <Compile Include="Core\ModifierTooltipLine.cs" />
+    <Compile Include="Core\System\ModifierContext.cs" />
+    <Compile Include="Core\System\ModifierEffect.cs" />
+    <Compile Include="Core\System\ModifierProperties.cs" />
+    <Compile Include="Core\System\ModifierTooltipLine.cs" />
     <Compile Include="EMMPlayer.cs" />
     <Compile Include="EMMWorld.cs" />
     <Compile Include="Ext\ItemUtils.cs" />
@@ -152,11 +152,11 @@
     <Compile Include="ModifierItem.cs" />
     <Compile Include="ModifierPlayer.cs" />
     <Compile Include="Modifiers\WeaponModifier.cs" />
-    <Compile Include="Core\AllModifiersPool.cs" />
-    <Compile Include="Core\ModifierPool.cs" />
-    <Compile Include="Core\Modifier.cs" />
+    <Compile Include="Core\System\AllModifiersPool.cs" />
+    <Compile Include="Core\System\ModifierPool.cs" />
+    <Compile Include="Core\System\Modifier.cs" />
     <Compile Include="EMMLoader.cs" />
-    <Compile Include="Core\ModifierRarity.cs" />
+    <Compile Include="Core\System\ModifierRarity.cs" />
     <Compile Include="Pools\AccessoryModifierPool.cs" />
     <Compile Include="Pools\WeaponModifierPool.cs" />
     <Compile Include="Core\Attributes\PopulatePoolFromAttribute.cs" />
@@ -189,7 +189,7 @@
   <ItemGroup>
     <None Include=".editorconfig" />
     <None Include="packages.config" />
-    <Compile Include="Core\GlobalModifier.cs" />
+    <Compile Include="Core\System\GlobalModifier.cs" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

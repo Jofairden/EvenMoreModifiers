@@ -1,5 +1,6 @@
 using Loot.Core;
 using Loot.Core.Attributes;
+using Loot.Core.System;
 using Microsoft.Xna.Framework;
 using Terraria;
 

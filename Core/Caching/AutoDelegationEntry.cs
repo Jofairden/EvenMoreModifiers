@@ -1,3 +1,4 @@
+using Loot.Core.System;
 using Terraria;
 
 namespace Loot.Core.Caching

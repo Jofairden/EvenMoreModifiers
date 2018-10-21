@@ -1,12 +1,12 @@
-using Microsoft.Xna.Framework;
 using System;
 using System.IO;
 using System.Reflection;
+using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.ModLoader;
 using Terraria.ModLoader.IO;
 
-namespace Loot.Core
+namespace Loot.Core.System
 {
 	/// <summary>
 	/// Defines the rarity of a modifier

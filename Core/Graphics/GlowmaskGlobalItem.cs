@@ -1,6 +1,7 @@
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using System.Linq;
+using Loot.Core.System;
 using Terraria;
 using Terraria.ModLoader;
 

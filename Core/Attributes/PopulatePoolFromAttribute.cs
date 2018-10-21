@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
+using Loot.Core.System;
 using Terraria.ModLoader;
 
 namespace Loot.Core.Attributes

@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Reflection;
+using Loot.Core.System;
 using Terraria;
 using Terraria.ModLoader;
 

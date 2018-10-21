@@ -1,4 +1,5 @@
-﻿using Loot.Core;
+using Loot.Core;
+using Loot.Core.System;
 using Microsoft.Xna.Framework;
 
 namespace Loot.Rarities

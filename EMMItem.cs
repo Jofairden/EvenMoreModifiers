@@ -8,6 +8,7 @@ using System.Collections.Generic;
 using System.Globalization;
 using System.IO;
 using System.Linq;
+using Loot.Core.System;
 using Loot.Ext;
 using Terraria;
 using Terraria.ModLoader;

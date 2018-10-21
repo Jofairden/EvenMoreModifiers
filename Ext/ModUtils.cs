@@ -1,11 +1,12 @@
 using System.Collections.Generic;
 using System.Linq;
 using Loot.Core;
+using Loot.Core.System;
 using Terraria.ModLoader;
-using EffectMap = System.Collections.Generic.KeyValuePair<string, Loot.Core.ModifierEffect>;
-using ModifierMap = System.Collections.Generic.KeyValuePair<string, Loot.Core.Modifier>;
-using PoolMap = System.Collections.Generic.KeyValuePair<string, Loot.Core.ModifierPool>;
-using RarityMap = System.Collections.Generic.KeyValuePair<string, Loot.Core.ModifierRarity>;
+using EffectMap = System.Collections.Generic.KeyValuePair<string, Loot.Core.System.ModifierEffect>;
+using ModifierMap = System.Collections.Generic.KeyValuePair<string, Loot.Core.System.Modifier>;
+using PoolMap = System.Collections.Generic.KeyValuePair<string, Loot.Core.System.ModifierPool>;
+using RarityMap = System.Collections.Generic.KeyValuePair<string, Loot.Core.System.ModifierRarity>;
 
 namespace Loot.Ext
 {

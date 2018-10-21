@@ -2,6 +2,7 @@ using Loot.Core;
 using Loot.Core.Attributes;
 using Microsoft.Xna.Framework;
 using System;
+using Loot.Core.System;
 using Terraria;
 using Terraria.DataStructures;
 

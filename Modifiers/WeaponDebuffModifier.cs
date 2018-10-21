@@ -3,6 +3,7 @@ using Loot.Core.Attributes;
 using Microsoft.Xna.Framework;
 using System;
 using System.Collections.Generic;
+using Loot.Core.System;
 using Terraria;
 using Terraria.ID;
 using Terraria.Localization;

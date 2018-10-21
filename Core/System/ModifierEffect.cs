@@ -1,10 +1,10 @@
-using Loot.Core.Attributes;
 using System;
 using System.Linq;
 using System.Reflection;
+using Loot.Core.Attributes;
 using Terraria.ModLoader;
 
-namespace Loot.Core
+namespace Loot.Core.System
 {
 	/// <summary>
 	/// A ModifierEffect signifies the effect of a modifier on a player
