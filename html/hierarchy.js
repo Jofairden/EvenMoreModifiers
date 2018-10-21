@@ -130,7 +130,8 @@ var hierarchy =
       [ "Loot.Core.System.Modifier", "class_loot_1_1_core_1_1_system_1_1_modifier.html", null ],
       [ "Loot.Core.System.ModifierEffect", "class_loot_1_1_core_1_1_system_1_1_modifier_effect.html", null ],
       [ "Loot.Core.System.ModifierPool", "class_loot_1_1_core_1_1_system_1_1_modifier_pool.html", null ],
-      [ "Loot.Core.System.ModifierRarity", "class_loot_1_1_core_1_1_system_1_1_modifier_rarity.html", null ]
+      [ "Loot.Core.System.ModifierRarity", "class_loot_1_1_core_1_1_system_1_1_modifier_rarity.html", null ],
+      [ "Loot.Core.System.MyClass", "class_loot_1_1_core_1_1_system_1_1_my_class.html", null ]
     ] ],
     [ "Loot.Core.Cubes.ItemRollProperties", "class_loot_1_1_core_1_1_cubes_1_1_item_roll_properties.html", null ],
     [ "Loot.Ext.ItemUtils", "class_loot_1_1_ext_1_1_item_utils.html", null ],

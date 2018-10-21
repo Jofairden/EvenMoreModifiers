@@ -23,14 +23,14 @@ var searchData=
   ['modifiereffect',['ModifierEffect',['../class_loot_1_1_core_1_1_system_1_1_modifier_effect.html',1,'Loot::Core::System']]],
   ['modifiereffectcontent',['ModifierEffectContent',['../class_loot_1_1_core_1_1_system_1_1_content_1_1_modifier_effect_content.html',1,'Loot::Core::System::Content']]],
   ['modifierplayer',['ModifierPlayer',['../class_loot_1_1_modifier_player.html',1,'Loot']]],
-  ['modifierpool',['ModifierPool',['../class_modifier_pool.html',1,'']]],
   ['modifierpool',['ModifierPool',['../class_loot_1_1_core_1_1_system_1_1_modifier_pool.html',1,'Loot::Core::System']]],
+  ['modifierpool',['ModifierPool',['../class_modifier_pool.html',1,'']]],
   ['modifierpoolcontent',['ModifierPoolContent',['../class_loot_1_1_core_1_1_system_1_1_content_1_1_modifier_pool_content.html',1,'Loot::Core::System::Content']]],
   ['modifierprojectile',['ModifierProjectile',['../class_loot_1_1_modifier_projectile.html',1,'Loot']]],
   ['modifierproperties',['ModifierProperties',['../class_loot_1_1_core_1_1_system_1_1_modifier_properties.html',1,'Loot::Core::System']]],
   ['modifierpropertiestests',['ModifierPropertiesTests',['../class_loot_tests_1_1_modifier_properties_tests.html',1,'LootTests']]],
-  ['modifierrarity',['ModifierRarity',['../class_loot_1_1_core_1_1_system_1_1_modifier_rarity.html',1,'Loot::Core::System']]],
   ['modifierrarity',['ModifierRarity',['../class_modifier_rarity.html',1,'']]],
+  ['modifierrarity',['ModifierRarity',['../class_loot_1_1_core_1_1_system_1_1_modifier_rarity.html',1,'Loot::Core::System']]],
   ['modifierraritycontent',['ModifierRarityContent',['../class_loot_1_1_core_1_1_system_1_1_content_1_1_modifier_rarity_content.html',1,'Loot::Core::System::Content']]],
   ['modifiertooltipline',['ModifierTooltipLine',['../struct_loot_1_1_core_1_1_system_1_1_modifier_tooltip_line.html',1,'Loot::Core::System']]],
   ['moditem',['ModItem',['../class_mod_item.html',1,'']]],
@@ -38,5 +38,6 @@ var searchData=
   ['modsound',['ModSound',['../class_mod_sound.html',1,'']]],
   ['modutils',['ModUtils',['../class_loot_1_1_ext_1_1_mod_utils.html',1,'Loot::Ext']]],
   ['modworld',['ModWorld',['../class_mod_world.html',1,'']]],
-  ['movespeedplus',['MoveSpeedPlus',['../class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_utility_1_1_move_speed_plus.html',1,'Loot::Modifiers::EquipModifiers::Utility']]]
+  ['movespeedplus',['MoveSpeedPlus',['../class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_utility_1_1_move_speed_plus.html',1,'Loot::Modifiers::EquipModifiers::Utility']]],
+  ['myclass',['MyClass',['../class_loot_1_1_core_1_1_system_1_1_my_class.html',1,'Loot::Core::System']]]
 ];

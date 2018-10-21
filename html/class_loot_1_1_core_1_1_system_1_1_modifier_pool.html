@@ -220,7 +220,7 @@ Properties</h2></td></tr>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Defines a modifier pool. A modifier pool holds a certain amount of effects in an array It allows to roll a 'themed' item if it hits an already defined pool Up to 4 effects are drawn from the pool, and activated </p>
 
-<p>Definition at line <a class="el" href="_modifier_pool_8cs_source.html#l00022">22</a> of file <a class="el" href="_modifier_pool_8cs_source.html">ModifierPool.cs</a>.</p>
+<p>Definition at line <a class="el" href="_modifier_pool_8cs_source.html#l00021">21</a> of file <a class="el" href="_modifier_pool_8cs_source.html">ModifierPool.cs</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="a186a861a5c87535319e704f672e51320"></a>
 <div class="memitem">
@@ -243,14 +243,13 @@ Properties</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_modifier_pool_8cs_source.html#l00055">55</a> of file <a class="el" href="_modifier_pool_8cs_source.html">ModifierPool.cs</a>.</p>
+<p>Definition at line <a class="el" href="_modifier_pool_8cs_source.html#l00054">54</a> of file <a class="el" href="_modifier_pool_8cs_source.html">ModifierPool.cs</a>.</p>
 
-<p>References <a class="el" href="_populate_pool_from_attribute_8cs_source.html#l00044">Loot.Core.Attributes.PopulatePoolFromAttribute.GetClasses()</a>, <a class="el" href="_base_content_8cs_source.html#l00098">Loot.Core.System.Core.BaseContent&lt; T &gt;.GetContent()</a>, and <a class="el" href="_content_loader_8cs_source.html#l00014">Loot.Core.System.Loaders.ContentLoader.Modifier</a>.</p>
-<div class="fragment"><div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        {</div><div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;            var attr = GetType().GetCustomAttribute&lt;<a class="code" href="class_loot_1_1_core_1_1_attributes_1_1_populate_pool_from_attribute.html">PopulatePoolFromAttribute</a>&gt;(<span class="keyword">true</span>);</div><div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;            <span class="keywordflow">if</span> (attr != null)</div><div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;            {</div><div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;                var classes = attr.<a class="code" href="class_loot_1_1_core_1_1_attributes_1_1_populate_pool_from_attribute.html#a8c377d1e4843a125aaaae2275f92d4df">GetClasses</a>().SelectMany(x =&gt; x.Value).ToList();</div><div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;                var list = <span class="keyword">new</span> List&lt;Modifier&gt;();</div><div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;</div><div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;                <span class="keywordflow">foreach</span> (var <span class="keyword">@class</span> <span class="keywordflow">in</span> classes)</div><div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;                {</div><div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;                    var mod = <a class="code" href="class_loot_1_1_core_1_1_system_1_1_loaders_1_1_content_loader.html">ContentLoader</a>.<a class="code" href="class_loot_1_1_core_1_1_system_1_1_loaders_1_1_content_loader.html#a5bd371e71d318930bc7a72573fcf3daf">Modifier</a>.<a class="code" href="class_loot_1_1_core_1_1_system_1_1_core_1_1_base_content.html#af1e91f0a60fbede8f702dc4fdb6a8576">GetContent</a>(<span class="keyword">@class</span>);</div><div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;                    <span class="keywordflow">if</span> (mod != null)</div><div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;                    {</div><div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;                        list.Add(mod);</div><div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;                    }</div><div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;                }</div><div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;</div><div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;                StoredModifiers = list.ToArray();</div><div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;            }</div><div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;        }</div><div class="ttc" id="class_loot_1_1_core_1_1_attributes_1_1_populate_pool_from_attribute_html_a8c377d1e4843a125aaaae2275f92d4df"><div class="ttname"><a href="class_loot_1_1_core_1_1_attributes_1_1_populate_pool_from_attribute.html#a8c377d1e4843a125aaaae2275f92d4df">Loot.Core.Attributes.PopulatePoolFromAttribute.GetClasses</a></div><div class="ttdeci">Dictionary&lt; string, List&lt; Type &gt; &gt; GetClasses()</div><div class="ttdef"><b>Definition:</b> <a href="_populate_pool_from_attribute_8cs_source.html#l00044">PopulatePoolFromAttribute.cs:44</a></div></div>
+<p>References <a class="el" href="_populate_pool_from_attribute_8cs_source.html#l00044">Loot.Core.Attributes.PopulatePoolFromAttribute.GetClasses()</a>, and <a class="el" href="_content_loader_8cs_source.html#l00014">Loot.Core.System.Loaders.ContentLoader.Modifier</a>.</p>
+<div class="fragment"><div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        {</div><div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;            var attr = GetType().GetCustomAttribute&lt;<a class="code" href="class_loot_1_1_core_1_1_attributes_1_1_populate_pool_from_attribute.html">PopulatePoolFromAttribute</a>&gt;(<span class="keyword">true</span>);</div><div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;            <span class="keywordflow">if</span> (attr != null)</div><div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;            {</div><div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;                var classes = attr.<a class="code" href="class_loot_1_1_core_1_1_attributes_1_1_populate_pool_from_attribute.html#a8c377d1e4843a125aaaae2275f92d4df">GetClasses</a>().SelectMany(x =&gt; x.Value).ToList();</div><div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;                var list = <span class="keyword">new</span> List&lt;Modifier&gt;();</div><div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;</div><div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;                <span class="keywordflow">foreach</span> (var <span class="keyword">@class</span> <span class="keywordflow">in</span> classes)</div><div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;                {</div><div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;                    var mod = <a class="code" href="class_loot_1_1_core_1_1_system_1_1_loaders_1_1_content_loader.html">ContentLoader</a>.<a class="code" href="class_loot_1_1_core_1_1_system_1_1_loaders_1_1_content_loader.html#a5bd371e71d318930bc7a72573fcf3daf">Modifier</a>.GetContent(<span class="keyword">@class</span>);</div><div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;                    <span class="keywordflow">if</span> (mod != null)</div><div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;                    {</div><div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;                        list.Add(mod);</div><div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;                    }</div><div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;                }</div><div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;</div><div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;                StoredModifiers = list.ToArray();</div><div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;            }</div><div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;        }</div><div class="ttc" id="class_loot_1_1_core_1_1_attributes_1_1_populate_pool_from_attribute_html_a8c377d1e4843a125aaaae2275f92d4df"><div class="ttname"><a href="class_loot_1_1_core_1_1_attributes_1_1_populate_pool_from_attribute.html#a8c377d1e4843a125aaaae2275f92d4df">Loot.Core.Attributes.PopulatePoolFromAttribute.GetClasses</a></div><div class="ttdeci">Dictionary&lt; string, List&lt; Type &gt; &gt; GetClasses()</div><div class="ttdef"><b>Definition:</b> <a href="_populate_pool_from_attribute_8cs_source.html#l00044">PopulatePoolFromAttribute.cs:44</a></div></div>
 <div class="ttc" id="class_loot_1_1_core_1_1_attributes_1_1_populate_pool_from_attribute_html"><div class="ttname"><a href="class_loot_1_1_core_1_1_attributes_1_1_populate_pool_from_attribute.html">Loot.Core.Attributes.PopulatePoolFromAttribute</a></div><div class="ttdef"><b>Definition:</b> <a href="_populate_pool_from_attribute_8cs_source.html#l00011">PopulatePoolFromAttribute.cs:11</a></div></div>
 <div class="ttc" id="class_loot_1_1_core_1_1_system_1_1_loaders_1_1_content_loader_html_a5bd371e71d318930bc7a72573fcf3daf"><div class="ttname"><a href="class_loot_1_1_core_1_1_system_1_1_loaders_1_1_content_loader.html#a5bd371e71d318930bc7a72573fcf3daf">Loot.Core.System.Loaders.ContentLoader.Modifier</a></div><div class="ttdeci">static ModifierContent Modifier</div><div class="ttdef"><b>Definition:</b> <a href="_content_loader_8cs_source.html#l00014">ContentLoader.cs:14</a></div></div>
-<div class="ttc" id="class_loot_1_1_core_1_1_system_1_1_loaders_1_1_content_loader_html"><div class="ttname"><a href="class_loot_1_1_core_1_1_system_1_1_loaders_1_1_content_loader.html">Loot.Core.System.Loaders.ContentLoader</a></div><div class="ttdef"><b>Definition:</b> <a href="_content_loader_8cs_source.html#l00011">ContentLoader.cs:11</a></div></div>
-<div class="ttc" id="class_loot_1_1_core_1_1_system_1_1_core_1_1_base_content_html_af1e91f0a60fbede8f702dc4fdb6a8576"><div class="ttname"><a href="class_loot_1_1_core_1_1_system_1_1_core_1_1_base_content.html#af1e91f0a60fbede8f702dc4fdb6a8576">Loot.Core.System.Core.BaseContent.GetContent</a></div><div class="ttdeci">T GetContent(Type type)</div><div class="ttdef"><b>Definition:</b> <a href="_base_content_8cs_source.html#l00098">BaseContent.cs:98</a></div></div>
+<div class="ttc" id="class_loot_1_1_core_1_1_system_1_1_loaders_1_1_content_loader_html"><div class="ttname"><a href="class_loot_1_1_core_1_1_system_1_1_loaders_1_1_content_loader.html">Loot.Core.System.Loaders.ContentLoader</a></div><div class="ttdoc">This class holds all Content holders of this mod You can use this to access content loaded into the m...</div><div class="ttdef"><b>Definition:</b> <a href="_content_loader_8cs_source.html#l00011">ContentLoader.cs:11</a></div></div>
 </div><!-- fragment -->
 <p><div id="dynsection-2" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-2-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
@@ -260,7 +259,6 @@ Properties</h2></td></tr>
 <div class="center"><img src="class_loot_1_1_core_1_1_system_1_1_modifier_pool_a186a861a5c87535319e704f672e51320_cgraph.png" border="0" usemap="#class_loot_1_1_core_1_1_system_1_1_modifier_pool_a186a861a5c87535319e704f672e51320_cgraph" alt=""/></div>
 <map name="class_loot_1_1_core_1_1_system_1_1_modifier_pool_a186a861a5c87535319e704f672e51320_cgraph" id="class_loot_1_1_core_1_1_system_1_1_modifier_pool_a186a861a5c87535319e704f672e51320_cgraph">
 <area shape="rect" id="node2" href="class_loot_1_1_core_1_1_attributes_1_1_populate_pool_from_attribute.html#a8c377d1e4843a125aaaae2275f92d4df" title="Loot.Core.Attributes.Populate\lPoolFromAttribute.GetClasses" alt="" coords="232,5,432,46"/>
-<area shape="rect" id="node3" href="class_loot_1_1_core_1_1_system_1_1_core_1_1_base_content.html#af1e91f0a60fbede8f702dc4fdb6a8576" title="Loot.Core.System.Core.Base\lContent.GetContent" alt="" coords="235,70,429,111"/>
 </map>
 </div>
 </p>
@@ -320,10 +318,10 @@ Properties</h2></td></tr>
 
 <p>Allows modders to do custom cloning Happens after default cloning </p>
 
-<p>Definition at line <a class="el" href="_modifier_pool_8cs_source.html#l00149">149</a> of file <a class="el" href="_modifier_pool_8cs_source.html">ModifierPool.cs</a>.</p>
+<p>Definition at line <a class="el" href="_modifier_pool_8cs_source.html#l00148">148</a> of file <a class="el" href="_modifier_pool_8cs_source.html">ModifierPool.cs</a>.</p>
 
 <p>Referenced by <a class="el" href="_mod_utils_8cs_source.html#l00049">Loot.Ext.ModUtils.GetModifierPool()</a>, and <a class="el" href="_modifier_pool_content_8cs_source.html#l00015">Loot.Core.System.Content.ModifierPoolContent.GetWeightedPool()</a>.</p>
-<div class="fragment"><div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;        {</div><div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;        }</div></div><!-- fragment -->
+<div class="fragment"><div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;        {</div><div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;        }</div></div><!-- fragment -->
 <p><div id="dynsection-3" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-3-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
 <div id="dynsection-3-summary" class="dynsummary" style="display:block;">
@@ -352,18 +350,18 @@ Properties</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_modifier_pool_8cs_source.html#l00153">153</a> of file <a class="el" href="_modifier_pool_8cs_source.html">ModifierPool.cs</a>.</p>
+<p>Definition at line <a class="el" href="_modifier_pool_8cs_source.html#l00152">152</a> of file <a class="el" href="_modifier_pool_8cs_source.html">ModifierPool.cs</a>.</p>
 
-<p>References <a class="el" href="_modifier_pool_8cs_source.html#l00042">Loot.Core.System.ModifierPool.ActiveModifiers</a>, <a class="el" href="_modifier_pool_8cs_source.html#l00024">Loot.Core.System.ModifierPool.Mod</a>, <a class="el" href="_modifier_pool_8cs_source.html#l00040">Loot.Core.System.ModifierPool.Rarity</a>, and <a class="el" href="_modifier_pool_8cs_source.html#l00031">Loot.Core.System.ModifierPool.Type</a>.</p>
-<div class="fragment"><div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;        {</div><div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;            <a class="code" href="class_modifier_pool.html">ModifierPool</a> clone = (<a class="code" href="class_loot_1_1_core_1_1_system_1_1_modifier_pool.html#a186a861a5c87535319e704f672e51320">ModifierPool</a>)MemberwiseClone();</div><div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;            clone.Type = <a class="code" href="class_loot_1_1_core_1_1_system_1_1_modifier_pool.html#affdbad5ef20d8f63dd4cdc3dc06f300a">Type</a>;</div><div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;            clone.Mod = <a class="code" href="class_loot_1_1_core_1_1_system_1_1_modifier_pool.html#ae4219d64c296aa5f8eeb47198d20eba8">Mod</a>;</div><div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;            clone.Rarity = (<a class="code" href="class_modifier_rarity.html">ModifierRarity</a>)<a class="code" href="class_loot_1_1_core_1_1_system_1_1_modifier_pool.html#a1659151842a69a48a85806193bec6178">Rarity</a>?.<a class="code" href="class_loot_1_1_core_1_1_system_1_1_modifier_pool.html#a17d2125c115f06979b92c0757f96a748">Clone</a>();</div><div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;            clone.ActiveModifiers =</div><div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;                <a class="code" href="class_loot_1_1_core_1_1_system_1_1_modifier_pool.html#adf6eb46b8a8b35bbc71881930f53e0fc">ActiveModifiers</a>?</div><div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;                    .Select(x =&gt; x?.<a class="code" href="class_loot_1_1_core_1_1_system_1_1_modifier_pool.html#a17d2125c115f06979b92c0757f96a748">Clone</a>())</div><div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;                    .Cast&lt;<a class="code" href="class_modifier.html">Modifier</a>&gt;()</div><div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;                    .ToArray();</div><div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;            <a class="code" href="class_loot_1_1_core_1_1_system_1_1_modifier_pool.html#a17d2125c115f06979b92c0757f96a748">Clone</a>(ref clone);</div><div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;            <span class="keywordflow">return</span> clone;</div><div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;        }</div><div class="ttc" id="class_loot_1_1_core_1_1_system_1_1_modifier_pool_html_a186a861a5c87535319e704f672e51320"><div class="ttname"><a href="class_loot_1_1_core_1_1_system_1_1_modifier_pool.html#a186a861a5c87535319e704f672e51320">Loot.Core.System.ModifierPool.ModifierPool</a></div><div class="ttdeci">ModifierPool()</div><div class="ttdef"><b>Definition:</b> <a href="_modifier_pool_8cs_source.html#l00055">ModifierPool.cs:55</a></div></div>
-<div class="ttc" id="class_loot_1_1_core_1_1_system_1_1_modifier_pool_html_ae4219d64c296aa5f8eeb47198d20eba8"><div class="ttname"><a href="class_loot_1_1_core_1_1_system_1_1_modifier_pool.html#ae4219d64c296aa5f8eeb47198d20eba8">Loot.Core.System.ModifierPool.Mod</a></div><div class="ttdeci">Mod Mod</div><div class="ttdef"><b>Definition:</b> <a href="_modifier_pool_8cs_source.html#l00024">ModifierPool.cs:24</a></div></div>
-<div class="ttc" id="class_loot_1_1_core_1_1_system_1_1_modifier_pool_html_a1659151842a69a48a85806193bec6178"><div class="ttname"><a href="class_loot_1_1_core_1_1_system_1_1_modifier_pool.html#a1659151842a69a48a85806193bec6178">Loot.Core.System.ModifierPool.Rarity</a></div><div class="ttdeci">ModifierRarity Rarity</div><div class="ttdef"><b>Definition:</b> <a href="_modifier_pool_8cs_source.html#l00040">ModifierPool.cs:40</a></div></div>
+<p>References <a class="el" href="_modifier_pool_8cs_source.html#l00041">Loot.Core.System.ModifierPool.ActiveModifiers</a>, <a class="el" href="_modifier_pool_8cs_source.html#l00023">Loot.Core.System.ModifierPool.Mod</a>, <a class="el" href="_modifier_pool_8cs_source.html#l00039">Loot.Core.System.ModifierPool.Rarity</a>, and <a class="el" href="_modifier_pool_8cs_source.html#l00030">Loot.Core.System.ModifierPool.Type</a>.</p>
+<div class="fragment"><div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;        {</div><div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;            <a class="code" href="class_modifier_pool.html">ModifierPool</a> clone = (<a class="code" href="class_loot_1_1_core_1_1_system_1_1_modifier_pool.html#a186a861a5c87535319e704f672e51320">ModifierPool</a>)MemberwiseClone();</div><div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;            clone.Type = <a class="code" href="class_loot_1_1_core_1_1_system_1_1_modifier_pool.html#affdbad5ef20d8f63dd4cdc3dc06f300a">Type</a>;</div><div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;            clone.Mod = <a class="code" href="class_loot_1_1_core_1_1_system_1_1_modifier_pool.html#ae4219d64c296aa5f8eeb47198d20eba8">Mod</a>;</div><div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;            clone.Rarity = (<a class="code" href="class_modifier_rarity.html">ModifierRarity</a>)<a class="code" href="class_loot_1_1_core_1_1_system_1_1_modifier_pool.html#a1659151842a69a48a85806193bec6178">Rarity</a>?.<a class="code" href="class_loot_1_1_core_1_1_system_1_1_modifier_pool.html#a17d2125c115f06979b92c0757f96a748">Clone</a>();</div><div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;            clone.ActiveModifiers =</div><div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;                <a class="code" href="class_loot_1_1_core_1_1_system_1_1_modifier_pool.html#adf6eb46b8a8b35bbc71881930f53e0fc">ActiveModifiers</a>?</div><div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;                    .Select(x =&gt; x?.<a class="code" href="class_loot_1_1_core_1_1_system_1_1_modifier_pool.html#a17d2125c115f06979b92c0757f96a748">Clone</a>())</div><div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;                    .Cast&lt;<a class="code" href="class_modifier.html">Modifier</a>&gt;()</div><div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;                    .ToArray();</div><div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;            <a class="code" href="class_loot_1_1_core_1_1_system_1_1_modifier_pool.html#a17d2125c115f06979b92c0757f96a748">Clone</a>(ref clone);</div><div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;            <span class="keywordflow">return</span> clone;</div><div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;        }</div><div class="ttc" id="class_loot_1_1_core_1_1_system_1_1_modifier_pool_html_a186a861a5c87535319e704f672e51320"><div class="ttname"><a href="class_loot_1_1_core_1_1_system_1_1_modifier_pool.html#a186a861a5c87535319e704f672e51320">Loot.Core.System.ModifierPool.ModifierPool</a></div><div class="ttdeci">ModifierPool()</div><div class="ttdef"><b>Definition:</b> <a href="_modifier_pool_8cs_source.html#l00054">ModifierPool.cs:54</a></div></div>
+<div class="ttc" id="class_loot_1_1_core_1_1_system_1_1_modifier_pool_html_ae4219d64c296aa5f8eeb47198d20eba8"><div class="ttname"><a href="class_loot_1_1_core_1_1_system_1_1_modifier_pool.html#ae4219d64c296aa5f8eeb47198d20eba8">Loot.Core.System.ModifierPool.Mod</a></div><div class="ttdeci">Mod Mod</div><div class="ttdef"><b>Definition:</b> <a href="_modifier_pool_8cs_source.html#l00023">ModifierPool.cs:23</a></div></div>
+<div class="ttc" id="class_loot_1_1_core_1_1_system_1_1_modifier_pool_html_a1659151842a69a48a85806193bec6178"><div class="ttname"><a href="class_loot_1_1_core_1_1_system_1_1_modifier_pool.html#a1659151842a69a48a85806193bec6178">Loot.Core.System.ModifierPool.Rarity</a></div><div class="ttdeci">ModifierRarity Rarity</div><div class="ttdef"><b>Definition:</b> <a href="_modifier_pool_8cs_source.html#l00039">ModifierPool.cs:39</a></div></div>
 <div class="ttc" id="class_modifier_html"><div class="ttname"><a href="class_modifier.html">Modifier</a></div></div>
-<div class="ttc" id="class_loot_1_1_core_1_1_system_1_1_modifier_pool_html_a17d2125c115f06979b92c0757f96a748"><div class="ttname"><a href="class_loot_1_1_core_1_1_system_1_1_modifier_pool.html#a17d2125c115f06979b92c0757f96a748">Loot.Core.System.ModifierPool.Clone</a></div><div class="ttdeci">object Clone()</div><div class="ttdef"><b>Definition:</b> <a href="_modifier_pool_8cs_source.html#l00153">ModifierPool.cs:153</a></div></div>
+<div class="ttc" id="class_loot_1_1_core_1_1_system_1_1_modifier_pool_html_a17d2125c115f06979b92c0757f96a748"><div class="ttname"><a href="class_loot_1_1_core_1_1_system_1_1_modifier_pool.html#a17d2125c115f06979b92c0757f96a748">Loot.Core.System.ModifierPool.Clone</a></div><div class="ttdeci">object Clone()</div><div class="ttdef"><b>Definition:</b> <a href="_modifier_pool_8cs_source.html#l00152">ModifierPool.cs:152</a></div></div>
 <div class="ttc" id="class_modifier_pool_html"><div class="ttname"><a href="class_modifier_pool.html">ModifierPool</a></div></div>
-<div class="ttc" id="class_loot_1_1_core_1_1_system_1_1_modifier_pool_html_adf6eb46b8a8b35bbc71881930f53e0fc"><div class="ttname"><a href="class_loot_1_1_core_1_1_system_1_1_modifier_pool.html#adf6eb46b8a8b35bbc71881930f53e0fc">Loot.Core.System.ModifierPool.ActiveModifiers</a></div><div class="ttdeci">Modifier[] ActiveModifiers</div><div class="ttdef"><b>Definition:</b> <a href="_modifier_pool_8cs_source.html#l00042">ModifierPool.cs:42</a></div></div>
+<div class="ttc" id="class_loot_1_1_core_1_1_system_1_1_modifier_pool_html_adf6eb46b8a8b35bbc71881930f53e0fc"><div class="ttname"><a href="class_loot_1_1_core_1_1_system_1_1_modifier_pool.html#adf6eb46b8a8b35bbc71881930f53e0fc">Loot.Core.System.ModifierPool.ActiveModifiers</a></div><div class="ttdeci">Modifier[] ActiveModifiers</div><div class="ttdef"><b>Definition:</b> <a href="_modifier_pool_8cs_source.html#l00041">ModifierPool.cs:41</a></div></div>
 <div class="ttc" id="class_modifier_rarity_html"><div class="ttname"><a href="class_modifier_rarity.html">ModifierRarity</a></div></div>
-<div class="ttc" id="class_loot_1_1_core_1_1_system_1_1_modifier_pool_html_affdbad5ef20d8f63dd4cdc3dc06f300a"><div class="ttname"><a href="class_loot_1_1_core_1_1_system_1_1_modifier_pool.html#affdbad5ef20d8f63dd4cdc3dc06f300a">Loot.Core.System.ModifierPool.Type</a></div><div class="ttdeci">uint Type</div><div class="ttdef"><b>Definition:</b> <a href="_modifier_pool_8cs_source.html#l00031">ModifierPool.cs:31</a></div></div>
+<div class="ttc" id="class_loot_1_1_core_1_1_system_1_1_modifier_pool_html_affdbad5ef20d8f63dd4cdc3dc06f300a"><div class="ttname"><a href="class_loot_1_1_core_1_1_system_1_1_modifier_pool.html#affdbad5ef20d8f63dd4cdc3dc06f300a">Loot.Core.System.ModifierPool.Type</a></div><div class="ttdeci">uint Type</div><div class="ttdef"><b>Definition:</b> <a href="_modifier_pool_8cs_source.html#l00030">ModifierPool.cs:30</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -426,12 +424,12 @@ Properties</h2></td></tr>
 
 <p>Allows modder to do custom loading here Use the given TC to pull data you saved using <a class="el" href="class_loot_1_1_core_1_1_system_1_1_modifier_pool.html#a82f8e15828bfd54589143ccfd09711a3" title="Allows modder to do custom saving here Use the given TC to put data you want to save, which can be loaded using Load(TagCompound) ">Save(Item,TagCompound)</a> </p>
 
-<p>Definition at line <a class="el" href="_modifier_pool_8cs_source.html#l00231">231</a> of file <a class="el" href="_modifier_pool_8cs_source.html">ModifierPool.cs</a>.</p>
+<p>Definition at line <a class="el" href="_modifier_pool_8cs_source.html#l00227">227</a> of file <a class="el" href="_modifier_pool_8cs_source.html">ModifierPool.cs</a>.</p>
 
-<p>References <a class="el" href="_modifier_pool_8cs_source.html#l00042">Loot.Core.System.ModifierPool.ActiveModifiers</a>, <a class="el" href="_base_content_8cs_source.html#l00098">Loot.Core.System.Core.BaseContent&lt; T &gt;.GetContent()</a>, <a class="el" href="_modifier_pool_content_8cs_source.html#l00033">Loot.Core.System.Content.ModifierPoolContent.GetPoolRarity()</a>, <a class="el" href="_modifier_pool_8cs_source.html#l00231">Loot.Core.System.ModifierPool.Load()</a>, <a class="el" href="_content_loader_8cs_source.html#l00015">Loot.Core.System.Loaders.ContentLoader.ModifierPool</a>, and <a class="el" href="_modifier_pool_8cs_source.html#l00040">Loot.Core.System.ModifierPool.Rarity</a>.</p>
+<p>References <a class="el" href="_modifier_pool_8cs_source.html#l00041">Loot.Core.System.ModifierPool.ActiveModifiers</a>, <a class="el" href="_modifier_pool_8cs_source.html#l00227">Loot.Core.System.ModifierPool.Load()</a>, <a class="el" href="_content_loader_8cs_source.html#l00015">Loot.Core.System.Loaders.ContentLoader.ModifierPool</a>, and <a class="el" href="_modifier_pool_8cs_source.html#l00039">Loot.Core.System.ModifierPool.Rarity</a>.</p>
 
-<p>Referenced by <a class="el" href="_modifier_pool_8cs_source.html#l00231">Loot.Core.System.ModifierPool.Load()</a>.</p>
-<div class="fragment"><div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;        {</div><div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;        }</div></div><!-- fragment -->
+<p>Referenced by <a class="el" href="_modifier_pool_8cs_source.html#l00227">Loot.Core.System.ModifierPool.Load()</a>.</p>
+<div class="fragment"><div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;        {</div><div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;        }</div></div><!-- fragment -->
 <p><div id="dynsection-4" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-4-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
 <div id="dynsection-4-summary" class="dynsummary" style="display:block;">
@@ -439,8 +437,6 @@ Properties</h2></td></tr>
 <div id="dynsection-4-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="class_loot_1_1_core_1_1_system_1_1_modifier_pool_a9b2566dc779f7cf7223047e32f929a16_cgraph.png" border="0" usemap="#class_loot_1_1_core_1_1_system_1_1_modifier_pool_a9b2566dc779f7cf7223047e32f929a16_cgraph" alt=""/></div>
 <map name="class_loot_1_1_core_1_1_system_1_1_modifier_pool_a9b2566dc779f7cf7223047e32f929a16_cgraph" id="class_loot_1_1_core_1_1_system_1_1_modifier_pool_a9b2566dc779f7cf7223047e32f929a16_cgraph">
-<area shape="rect" id="node2" href="class_loot_1_1_core_1_1_system_1_1_core_1_1_base_content.html#af1e91f0a60fbede8f702dc4fdb6a8576" title="Loot.Core.System.Core.Base\lContent.GetContent" alt="" coords="248,5,443,46"/>
-<area shape="rect" id="node3" href="class_loot_1_1_core_1_1_system_1_1_content_1_1_modifier_pool_content.html#a056be711b75b1a308e82bc9a98bd04c8" title="Returns the rarity of a pool " alt="" coords="232,70,459,111"/>
 </map>
 </div>
 </p>
@@ -518,12 +514,12 @@ Properties</h2></td></tr>
 
 <p>Allows the modder to do custom NetReceive </p>
 
-<p>Definition at line <a class="el" href="_modifier_pool_8cs_source.html#l00171">171</a> of file <a class="el" href="_modifier_pool_8cs_source.html">ModifierPool.cs</a>.</p>
+<p>Definition at line <a class="el" href="_modifier_pool_8cs_source.html#l00170">170</a> of file <a class="el" href="_modifier_pool_8cs_source.html">ModifierPool.cs</a>.</p>
 
-<p>References <a class="el" href="_modifier_pool_8cs_source.html#l00042">Loot.Core.System.ModifierPool.ActiveModifiers</a>, <a class="el" href="_modifier_pool_8cs_source.html#l00024">Loot.Core.System.ModifierPool.Mod</a>, <a class="el" href="_modifier_pool_8cs_source.html#l00171">Loot.Core.System.ModifierPool.NetReceive()</a>, <a class="el" href="_modifier_pool_8cs_source.html#l00040">Loot.Core.System.ModifierPool.Rarity</a>, and <a class="el" href="_modifier_pool_8cs_source.html#l00031">Loot.Core.System.ModifierPool.Type</a>.</p>
+<p>References <a class="el" href="_modifier_pool_8cs_source.html#l00041">Loot.Core.System.ModifierPool.ActiveModifiers</a>, <a class="el" href="_content_loader_8cs_source.html#l00015">Loot.Core.System.Loaders.ContentLoader.ModifierPool</a>, <a class="el" href="_modifier_pool_8cs_source.html#l00170">Loot.Core.System.ModifierPool.NetReceive()</a>, and <a class="el" href="_modifier_pool_8cs_source.html#l00039">Loot.Core.System.ModifierPool.Rarity</a>.</p>
 
-<p>Referenced by <a class="el" href="_modifier_pool_8cs_source.html#l00171">Loot.Core.System.ModifierPool.NetReceive()</a>.</p>
-<div class="fragment"><div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;        {</div><div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;        }</div></div><!-- fragment -->
+<p>Referenced by <a class="el" href="_modifier_pool_8cs_source.html#l00170">Loot.Core.System.ModifierPool.NetReceive()</a>.</p>
+<div class="fragment"><div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;        {</div><div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;        }</div></div><!-- fragment -->
 <p><div id="dynsection-6" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-6-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
 <div id="dynsection-6-summary" class="dynsummary" style="display:block;">
@@ -582,12 +578,12 @@ Properties</h2></td></tr>
 
 <p>Allows modder to do custom NetSend here </p>
 
-<p>Definition at line <a class="el" href="_modifier_pool_8cs_source.html#l00206">206</a> of file <a class="el" href="_modifier_pool_8cs_source.html">ModifierPool.cs</a>.</p>
+<p>Definition at line <a class="el" href="_modifier_pool_8cs_source.html#l00203">203</a> of file <a class="el" href="_modifier_pool_8cs_source.html">ModifierPool.cs</a>.</p>
 
-<p>References <a class="el" href="_modifier_pool_8cs_source.html#l00042">Loot.Core.System.ModifierPool.ActiveModifiers</a>, <a class="el" href="_modifier_pool_8cs_source.html#l00024">Loot.Core.System.ModifierPool.Mod</a>, <a class="el" href="_modifier_pool_8cs_source.html#l00206">Loot.Core.System.ModifierPool.NetSend()</a>, <a class="el" href="_modifier_pool_8cs_source.html#l00040">Loot.Core.System.ModifierPool.Rarity</a>, and <a class="el" href="_modifier_pool_8cs_source.html#l00031">Loot.Core.System.ModifierPool.Type</a>.</p>
+<p>References <a class="el" href="_modifier_pool_8cs_source.html#l00041">Loot.Core.System.ModifierPool.ActiveModifiers</a>, <a class="el" href="_modifier_pool_8cs_source.html#l00023">Loot.Core.System.ModifierPool.Mod</a>, <a class="el" href="_modifier_pool_8cs_source.html#l00037">Loot.Core.System.ModifierPool.Name</a>, <a class="el" href="_modifier_pool_8cs_source.html#l00203">Loot.Core.System.ModifierPool.NetSend()</a>, and <a class="el" href="_modifier_pool_8cs_source.html#l00039">Loot.Core.System.ModifierPool.Rarity</a>.</p>
 
-<p>Referenced by <a class="el" href="_modifier_pool_8cs_source.html#l00206">Loot.Core.System.ModifierPool.NetSend()</a>.</p>
-<div class="fragment"><div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;        {</div><div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;        }</div></div><!-- fragment -->
+<p>Referenced by <a class="el" href="_modifier_pool_8cs_source.html#l00203">Loot.Core.System.ModifierPool.NetSend()</a>.</p>
+<div class="fragment"><div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;        {</div><div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;        }</div></div><!-- fragment -->
 <p><div id="dynsection-8" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-8-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
 <div id="dynsection-8-summary" class="dynsummary" style="display:block;">
@@ -652,12 +648,12 @@ Properties</h2></td></tr>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="_modifier_pool_8cs_source.html#l00319">319</a> of file <a class="el" href="_modifier_pool_8cs_source.html">ModifierPool.cs</a>.</p>
+<p>Definition at line <a class="el" href="_modifier_pool_8cs_source.html#l00316">316</a> of file <a class="el" href="_modifier_pool_8cs_source.html">ModifierPool.cs</a>.</p>
 
-<p>References <a class="el" href="_modifier_pool_8cs_source.html#l00042">Loot.Core.System.ModifierPool.ActiveModifiers</a>, <a class="el" href="_modifier_pool_8cs_source.html#l00024">Loot.Core.System.ModifierPool.Mod</a>, <a class="el" href="_modifier_pool_8cs_source.html#l00038">Loot.Core.System.ModifierPool.Name</a>, <a class="el" href="_modifier_pool_8cs_source.html#l00040">Loot.Core.System.ModifierPool.Rarity</a>, <a class="el" href="_modifier_rarity_8cs_source.html#l00154">Loot.Core.System.ModifierRarity.Save()</a>, <a class="el" href="_modifier_8cs_source.html#l00197">Loot.Core.System.Modifier.Save()</a>, and <a class="el" href="_modifier_pool_8cs_source.html#l00319">Loot.Core.System.ModifierPool.Save()</a>.</p>
+<p>References <a class="el" href="_modifier_pool_8cs_source.html#l00041">Loot.Core.System.ModifierPool.ActiveModifiers</a>, <a class="el" href="_modifier_pool_8cs_source.html#l00023">Loot.Core.System.ModifierPool.Mod</a>, <a class="el" href="_modifier_pool_8cs_source.html#l00037">Loot.Core.System.ModifierPool.Name</a>, <a class="el" href="_modifier_pool_8cs_source.html#l00039">Loot.Core.System.ModifierPool.Rarity</a>, <a class="el" href="_modifier_rarity_8cs_source.html#l00150">Loot.Core.System.ModifierRarity.Save()</a>, <a class="el" href="_modifier_8cs_source.html#l00205">Loot.Core.System.Modifier.Save()</a>, and <a class="el" href="_modifier_pool_8cs_source.html#l00316">Loot.Core.System.ModifierPool.Save()</a>.</p>
 
-<p>Referenced by <a class="el" href="_e_m_m_item_8cs_source.html#l00247">Loot.EMMItem.Save()</a>, and <a class="el" href="_modifier_pool_8cs_source.html#l00319">Loot.Core.System.ModifierPool.Save()</a>.</p>
-<div class="fragment"><div class="line"><a name="l00320"></a><span class="lineno">  320</span>&#160;        {</div><div class="line"><a name="l00321"></a><span class="lineno">  321</span>&#160;        }</div></div><!-- fragment -->
+<p>Referenced by <a class="el" href="_e_m_m_item_8cs_source.html#l00247">Loot.EMMItem.Save()</a>, and <a class="el" href="_modifier_pool_8cs_source.html#l00316">Loot.Core.System.ModifierPool.Save()</a>.</p>
+<div class="fragment"><div class="line"><a name="l00317"></a><span class="lineno">  317</span>&#160;        {</div><div class="line"><a name="l00318"></a><span class="lineno">  318</span>&#160;        }</div></div><!-- fragment -->
 <p><div id="dynsection-10" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-10-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
 <div id="dynsection-10-summary" class="dynsummary" style="display:block;">
@@ -698,7 +694,7 @@ Properties</h2></td></tr>
 
 <p>Returns an enumerable of the tooltiplines of the active modifiers </p>
 
-<p>Definition at line <a class="el" href="_modifier_pool_8cs_source.html#l00094">94</a> of file <a class="el" href="_modifier_pool_8cs_source.html">ModifierPool.cs</a>.</p>
+<p>Definition at line <a class="el" href="_modifier_pool_8cs_source.html#l00093">93</a> of file <a class="el" href="_modifier_pool_8cs_source.html">ModifierPool.cs</a>.</p>
 
 </div>
 </div>
@@ -712,9 +708,9 @@ Properties</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_modifier_pool_8cs_source.html#l00038">38</a> of file <a class="el" href="_modifier_pool_8cs_source.html">ModifierPool.cs</a>.</p>
+<p>Definition at line <a class="el" href="_modifier_pool_8cs_source.html#l00037">37</a> of file <a class="el" href="_modifier_pool_8cs_source.html">ModifierPool.cs</a>.</p>
 
-<p>Referenced by <a class="el" href="_modifier_pool_8cs_source.html#l00319">Loot.Core.System.ModifierPool.Save()</a>.</p>
+<p>Referenced by <a class="el" href="_modifier_pool_8cs_source.html#l00203">Loot.Core.System.ModifierPool.NetSend()</a>, and <a class="el" href="_modifier_pool_8cs_source.html#l00316">Loot.Core.System.ModifierPool.Save()</a>.</p>
 
 </div>
 </div>
@@ -728,7 +724,7 @@ Properties</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_modifier_pool_8cs_source.html#l00096">96</a> of file <a class="el" href="_modifier_pool_8cs_source.html">ModifierPool.cs</a>.</p>
+<p>Definition at line <a class="el" href="_modifier_pool_8cs_source.html#l00095">95</a> of file <a class="el" href="_modifier_pool_8cs_source.html">ModifierPool.cs</a>.</p>
 
 </div>
 </div>
@@ -744,7 +740,7 @@ Properties</h2></td></tr>
 
 <p>Returns the sum of the rarity levels of the active modifiers </p>
 
-<p>Definition at line <a class="el" href="_modifier_pool_8cs_source.html#l00088">88</a> of file <a class="el" href="_modifier_pool_8cs_source.html">ModifierPool.cs</a>.</p>
+<p>Definition at line <a class="el" href="_modifier_pool_8cs_source.html#l00087">87</a> of file <a class="el" href="_modifier_pool_8cs_source.html">ModifierPool.cs</a>.</p>
 
 </div>
 </div>
@@ -767,9 +763,9 @@ Properties</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_modifier_pool_8cs_source.html#l00042">42</a> of file <a class="el" href="_modifier_pool_8cs_source.html">ModifierPool.cs</a>.</p>
+<p>Definition at line <a class="el" href="_modifier_pool_8cs_source.html#l00041">41</a> of file <a class="el" href="_modifier_pool_8cs_source.html">ModifierPool.cs</a>.</p>
 
-<p>Referenced by <a class="el" href="_modifier_pool_8cs_source.html#l00153">Loot.Core.System.ModifierPool.Clone()</a>, <a class="el" href="_e_m_m_item_8cs_source.html#l00215">Loot.EMMItem.Load()</a>, <a class="el" href="_modifier_pool_8cs_source.html#l00231">Loot.Core.System.ModifierPool.Load()</a>, <a class="el" href="_modifier_pool_8cs_source.html#l00171">Loot.Core.System.ModifierPool.NetReceive()</a>, <a class="el" href="_modifier_pool_8cs_source.html#l00206">Loot.Core.System.ModifierPool.NetSend()</a>, and <a class="el" href="_modifier_pool_8cs_source.html#l00319">Loot.Core.System.ModifierPool.Save()</a>.</p>
+<p>Referenced by <a class="el" href="_modifier_pool_8cs_source.html#l00152">Loot.Core.System.ModifierPool.Clone()</a>, <a class="el" href="_e_m_m_item_8cs_source.html#l00215">Loot.EMMItem.Load()</a>, <a class="el" href="_modifier_pool_8cs_source.html#l00227">Loot.Core.System.ModifierPool.Load()</a>, <a class="el" href="_modifier_pool_8cs_source.html#l00170">Loot.Core.System.ModifierPool.NetReceive()</a>, <a class="el" href="_modifier_pool_8cs_source.html#l00203">Loot.Core.System.ModifierPool.NetSend()</a>, and <a class="el" href="_modifier_pool_8cs_source.html#l00316">Loot.Core.System.ModifierPool.Save()</a>.</p>
 
 </div>
 </div>
@@ -791,9 +787,9 @@ Properties</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_modifier_pool_8cs_source.html#l00024">24</a> of file <a class="el" href="_modifier_pool_8cs_source.html">ModifierPool.cs</a>.</p>
+<p>Definition at line <a class="el" href="_modifier_pool_8cs_source.html#l00023">23</a> of file <a class="el" href="_modifier_pool_8cs_source.html">ModifierPool.cs</a>.</p>
 
-<p>Referenced by <a class="el" href="_modifier_pool_8cs_source.html#l00153">Loot.Core.System.ModifierPool.Clone()</a>, <a class="el" href="_modifier_pool_8cs_source.html#l00171">Loot.Core.System.ModifierPool.NetReceive()</a>, <a class="el" href="_modifier_pool_8cs_source.html#l00206">Loot.Core.System.ModifierPool.NetSend()</a>, and <a class="el" href="_modifier_pool_8cs_source.html#l00319">Loot.Core.System.ModifierPool.Save()</a>.</p>
+<p>Referenced by <a class="el" href="_modifier_pool_8cs_source.html#l00152">Loot.Core.System.ModifierPool.Clone()</a>, <a class="el" href="_modifier_pool_8cs_source.html#l00203">Loot.Core.System.ModifierPool.NetSend()</a>, and <a class="el" href="_modifier_pool_8cs_source.html#l00316">Loot.Core.System.ModifierPool.Save()</a>.</p>
 
 </div>
 </div>
@@ -815,7 +811,7 @@ Properties</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_modifier_pool_8cs_source.html#l00027">27</a> of file <a class="el" href="_modifier_pool_8cs_source.html">ModifierPool.cs</a>.</p>
+<p>Definition at line <a class="el" href="_modifier_pool_8cs_source.html#l00026">26</a> of file <a class="el" href="_modifier_pool_8cs_source.html">ModifierPool.cs</a>.</p>
 
 </div>
 </div>
@@ -837,9 +833,9 @@ Properties</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_modifier_pool_8cs_source.html#l00040">40</a> of file <a class="el" href="_modifier_pool_8cs_source.html">ModifierPool.cs</a>.</p>
+<p>Definition at line <a class="el" href="_modifier_pool_8cs_source.html#l00039">39</a> of file <a class="el" href="_modifier_pool_8cs_source.html">ModifierPool.cs</a>.</p>
 
-<p>Referenced by <a class="el" href="_modifier_pool_8cs_source.html#l00153">Loot.Core.System.ModifierPool.Clone()</a>, <a class="el" href="_modifier_pool_8cs_source.html#l00231">Loot.Core.System.ModifierPool.Load()</a>, <a class="el" href="_modifier_pool_8cs_source.html#l00171">Loot.Core.System.ModifierPool.NetReceive()</a>, <a class="el" href="_modifier_pool_8cs_source.html#l00206">Loot.Core.System.ModifierPool.NetSend()</a>, and <a class="el" href="_modifier_pool_8cs_source.html#l00319">Loot.Core.System.ModifierPool.Save()</a>.</p>
+<p>Referenced by <a class="el" href="_modifier_pool_8cs_source.html#l00152">Loot.Core.System.ModifierPool.Clone()</a>, <a class="el" href="_modifier_pool_8cs_source.html#l00227">Loot.Core.System.ModifierPool.Load()</a>, <a class="el" href="_modifier_pool_8cs_source.html#l00170">Loot.Core.System.ModifierPool.NetReceive()</a>, <a class="el" href="_modifier_pool_8cs_source.html#l00203">Loot.Core.System.ModifierPool.NetSend()</a>, and <a class="el" href="_modifier_pool_8cs_source.html#l00316">Loot.Core.System.ModifierPool.Save()</a>.</p>
 
 </div>
 </div>
@@ -861,9 +857,9 @@ Properties</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_modifier_pool_8cs_source.html#l00031">31</a> of file <a class="el" href="_modifier_pool_8cs_source.html">ModifierPool.cs</a>.</p>
+<p>Definition at line <a class="el" href="_modifier_pool_8cs_source.html#l00030">30</a> of file <a class="el" href="_modifier_pool_8cs_source.html">ModifierPool.cs</a>.</p>
 
-<p>Referenced by <a class="el" href="_modifier_pool_8cs_source.html#l00153">Loot.Core.System.ModifierPool.Clone()</a>, <a class="el" href="_mod_utils_8cs_source.html#l00049">Loot.Ext.ModUtils.GetModifierPool()</a>, <a class="el" href="_modifier_pool_8cs_source.html#l00171">Loot.Core.System.ModifierPool.NetReceive()</a>, and <a class="el" href="_modifier_pool_8cs_source.html#l00206">Loot.Core.System.ModifierPool.NetSend()</a>.</p>
+<p>Referenced by <a class="el" href="_modifier_pool_8cs_source.html#l00152">Loot.Core.System.ModifierPool.Clone()</a>, and <a class="el" href="_mod_utils_8cs_source.html#l00049">Loot.Ext.ModUtils.GetModifierPool()</a>.</p>
 
 </div>
 </div>
@@ -885,7 +881,7 @@ Properties</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_modifier_pool_8cs_source.html#l00034">34</a> of file <a class="el" href="_modifier_pool_8cs_source.html">ModifierPool.cs</a>.</p>
+<p>Definition at line <a class="el" href="_modifier_pool_8cs_source.html#l00033">33</a> of file <a class="el" href="_modifier_pool_8cs_source.html">ModifierPool.cs</a>.</p>
 
 </div>
 </div>
@@ -895,7 +891,7 @@ Properties</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespace_loot.html">Loot</a></li><li class="navelem"><a class="el" href="namespace_loot_1_1_core.html">Core</a></li><li class="navelem"><a class="el" href="namespace_loot_1_1_core_1_1_system.html">System</a></li><li class="navelem"><a class="el" href="class_loot_1_1_core_1_1_system_1_1_modifier_pool.html">ModifierPool</a></li>
-    <li class="footer">Generated on Sun Oct 21 2018 17:34:21 for Even More Modifiers by
+    <li class="footer">Generated on Sun Oct 21 2018 18:26:04 for Even More Modifiers by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.11 </li>
   </ul>

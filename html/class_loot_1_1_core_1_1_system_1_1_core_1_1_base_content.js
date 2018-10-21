@@ -5,7 +5,7 @@ var class_loot_1_1_core_1_1_system_1_1_core_1_1_base_content =
     [ "GetContent", "class_loot_1_1_core_1_1_system_1_1_core_1_1_base_content.html#af1e91f0a60fbede8f702dc4fdb6a8576", null ],
     [ "GetContent", "class_loot_1_1_core_1_1_system_1_1_core_1_1_base_content.html#af352eb497e0ec70b2ac6a2823a47131c", null ],
     [ "GetContent", "class_loot_1_1_core_1_1_system_1_1_core_1_1_base_content.html#a2ba04f2982a4c18f418241d2be9c7b12", null ],
+    [ "GetContent", "class_loot_1_1_core_1_1_system_1_1_core_1_1_base_content.html#ac1cd4c88ad88211d2c0997d509740089", null ],
     [ "GetNextId", "class_loot_1_1_core_1_1_system_1_1_core_1_1_base_content.html#abb34820981bb70ac3ad77a28fc482ff4", null ],
-    [ "RequestContent", "class_loot_1_1_core_1_1_system_1_1_core_1_1_base_content.html#a45d833b4df968c289aabf28b011cb112", null ],
     [ "IdCount", "class_loot_1_1_core_1_1_system_1_1_core_1_1_base_content.html#ab573e31fbe36fa7c800495ed2f763103", null ]
 ];
