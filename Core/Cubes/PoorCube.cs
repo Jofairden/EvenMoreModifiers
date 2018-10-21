@@ -1,5 +1,6 @@
 using Loot.Core.System;
 using Loot.Ext;
+using Loot.Pools;
 using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.ModLoader;

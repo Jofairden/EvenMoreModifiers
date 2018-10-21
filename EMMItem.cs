@@ -9,6 +9,7 @@ using System.IO;
 using System.Linq;
 using Loot.Core.System;
 using Loot.Ext;
+using Loot.Pools;
 using Terraria;
 using Terraria.ModLoader;
 using Terraria.ModLoader.IO;

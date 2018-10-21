@@ -1,6 +1,7 @@
 using System.Linq;
+using Loot.Core.System;
 
-namespace Loot.Core.System
+namespace Loot.Pools
 {
 	/// <summary>
 	/// A modifier pool that always consists of all modifiers

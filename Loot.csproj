@@ -152,7 +152,7 @@
     <Compile Include="ModifierItem.cs" />
     <Compile Include="ModifierPlayer.cs" />
     <Compile Include="Modifiers\WeaponModifier.cs" />
-    <Compile Include="Core\System\AllModifiersPool.cs" />
+    <Compile Include="Pools\AllModifiersPool.cs" />
     <Compile Include="Core\System\ModifierPool.cs" />
     <Compile Include="Core\System\Modifier.cs" />
     <Compile Include="EMMLoader.cs" />
@@ -189,7 +189,6 @@
   <ItemGroup>
     <None Include=".editorconfig" />
     <None Include="packages.config" />
-    <Compile Include="Core\System\GlobalModifier.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Core\System\Content\" />
