@@ -10,10 +10,10 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Loot</RootNamespace>
     <AssemblyName>Loot</AssemblyName>
-    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
-    <TargetFrameworkProfile />
+    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
   </PropertyGroup>
@@ -105,6 +105,7 @@
     <Compile Include="Core\System\ModifierEffect.cs" />
     <Compile Include="Core\System\ModifierProperties.cs" />
     <Compile Include="Core\System\ModifierTooltipLine.cs" />
+    <Compile Include="CustomAttributeExtensions.cs" />
     <Compile Include="EMMPlayer.cs" />
     <Compile Include="EMMWorld.cs" />
     <Compile Include="Ext\ItemUtils.cs" />

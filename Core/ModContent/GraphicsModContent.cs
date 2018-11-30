@@ -300,13 +300,13 @@ namespace Loot.Core.ModContent
 
 					//	// Load the base texture
 					//	key = type.FullName;
-					//	var texture = ModLoader.GetTexture(key.Replace('.', '/'));
+					//	var texture = ModContent.GetTexture(key.Replace('.', '/'));
 					//	AddTexture(key, texture);
 					//	exceptKeys.Add(key);
 
 					//	// Load the shader texture
 					//	key = entity.GetEntityKey(type);
-					//	texture = ModLoader.GetTexture(key.Replace('.', '/'));
+					//	texture = ModContent.GetTexture(key.Replace('.', '/'));
 					//	AddShaderTexture(key, texture);
 					//	exceptKeys.Add(key);
 					//}
@@ -325,14 +325,14 @@ namespace Loot.Core.ModContent
 					//	key = type.FullName;
 					//	if (!exceptKeys.Contains(key))
 					//	{
-					//		texture = ModLoader.GetTexture(key.Replace('.', '/'));
+					//		texture = ModContent.GetTexture(key.Replace('.', '/'));
 					//		AddTexture(key, texture);
 					//		exceptKeys.Add(key);
 					//	}
 
 					//	// Try loading the glowmask
 					//	key = entity.GetEntityKey(type);
-					//	texture = ModLoader.GetTexture(key.Replace('.', '/'));
+					//	texture = ModContent.GetTexture(key.Replace('.', '/'));
 					//	AddGlowmaskTexture(key, texture);
 					//	exceptKeys.Add(key);
 					//}
