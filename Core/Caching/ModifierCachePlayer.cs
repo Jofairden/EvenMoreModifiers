@@ -1,12 +1,12 @@
 using CheatSheet;
 using Loot.Core.Attributes;
+using Loot.Core.System;
+using Loot.Ext;
+using Loot.Ext.ModSupport;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
-using Loot.Core.System;
-using Loot.Ext;
-using Loot.Ext.ModSupport;
 using Terraria;
 using Terraria.ModLoader;
 
@@ -151,15 +151,18 @@ namespace Loot.Core.Caching
 		/// </summary>
 		private IEnumerable<OrderedDelegationEntry> OrderDelegationList(IEnumerable<AutoDelegationEntry> list, ModifierPlayer modPlayer)
 		{
-			var tempList = new List<OrderedDelegationEntry>();
-			var tempEarlyMethods = new List<OrderedDelegationEntry>();
-			var tempMiddleMethods = new List<OrderedDelegationEntry>();
-			var tempLateMethods = new List<OrderedDelegationEntry>();
-
+			var delegationEntries = new List<OrderedDelegationEntry>();
 			var effects = GetModifierEffectsForDelegations(list, modPlayer, e => true);
 
 			foreach (var modEffect in effects)
 			{
+				// todo: C#7 named/value tuple here
+				OrderedDelegationEntry MakeEntry(KeyValuePair<MethodInfo, DelegationPrioritizationAttribute> kvp) => new OrderedDelegationEntry
+				{
+					MethodInfo = kvp.Key,
+					Effect = modEffect
+				};
+
 				var delegatedMethods = modEffect
 					.GetType()
 					.GetMethods(BindingFlags.NonPublic | BindingFlags.Public | BindingFlags.Instance)
@@ -167,36 +170,25 @@ namespace Loot.Core.Caching
 					// todo: C#7 named/value tuple here
 					.ToDictionary(x => x, y => (DelegationPrioritizationAttribute)y.GetCustomAttribute(typeof(DelegationPrioritizationAttribute)));
 
-				tempEarlyMethods.AddRange(delegatedMethods.Where(x =>
-						x.Value?.DelegationPrioritization == DelegationPrioritization.Early)
-					.OrderByDescending(x => x.Value.DelegationLevel)
-					.Select(x => new OrderedDelegationEntry
-					{
-						MethodInfo = x.Key,
-						Effect = modEffect
-					}));
+				delegationEntries.AddRange(
+					delegatedMethods
+						.Where(x => x.Value?.DelegationPrioritization == DelegationPrioritization.Early)
+						.OrderByDescending(x => x.Value.DelegationLevel)
+						.Select(MakeEntry));
 
-				tempMiddleMethods.AddRange(delegatedMethods.Where(x => x.Value == null)
-					.Select(x => new OrderedDelegationEntry
-					{
-						MethodInfo = x.Key,
-						Effect = modEffect
-					}));
+				delegationEntries.AddRange(
+					delegatedMethods
+						.Where(x => x.Value == null)
+						.Select(MakeEntry));
 
-				tempLateMethods.AddRange(delegatedMethods.Where(x =>
-						x.Value?.DelegationPrioritization == DelegationPrioritization.Late)
-					.OrderByDescending(x => x.Value.DelegationLevel)
-					.Select(x => new OrderedDelegationEntry
-					{
-						MethodInfo = x.Key,
-						Effect = modEffect
-					}));
+				delegationEntries.AddRange(
+					delegatedMethods
+						.Where(x => x.Value?.DelegationPrioritization == DelegationPrioritization.Late)
+						.OrderByDescending(x => x.Value.DelegationLevel)
+						.Select(MakeEntry));
 			}
 
-			tempList.AddRange(tempEarlyMethods);
-			tempList.AddRange(tempMiddleMethods);
-			tempList.AddRange(tempLateMethods);
-			return tempList;
+			return delegationEntries;
 		}
 
 		public override void PostUpdate()

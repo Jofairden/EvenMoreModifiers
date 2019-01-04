@@ -1,16 +1,16 @@
 using Loot.Core.Cubes;
 using Loot.Core.Graphics;
+using Loot.Core.System;
+using Loot.Core.System.Loaders;
+using Loot.Ext;
 using Loot.Modifiers.EquipModifiers.Utility;
+using Loot.Pools;
 using Microsoft.Xna.Framework;
 using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.IO;
 using System.Linq;
-using Loot.Core.System;
-using Loot.Core.System.Loaders;
-using Loot.Ext;
-using Loot.Pools;
 using Terraria;
 using Terraria.ModLoader;
 using Terraria.ModLoader.IO;
@@ -18,17 +18,6 @@ using Terraria.Utilities;
 
 namespace Loot
 {
-	//[ComVisible(true)]
-	//[Flags]
-	//public enum CustomReforgeMode : byte
-	//{
-	//	Vanilla = 1,
-	//	ForceWeapon = 2,
-	//	ForceAccessory = 4,
-	//	ForceSimulate = 8,
-	//	Custom = 16
-	//}
-
 	/// <summary>
 	/// Defines an item that may be modified by modifiers from mods
 	/// </summary>
@@ -50,7 +39,6 @@ namespace Loot
 		public bool SlottedInCubeUI; // is currently in cube UI slot
 
 		public const int SaveVersion = 2;
-		//public CustomReforgeMode CustomReforgeMode = CustomReforgeMode.ForceWeapon;
 
 		/// <summary>
 		/// Attempts to roll new modifiers
@@ -404,35 +392,26 @@ namespace Loot
 				baseItem.netDefaults(item.netID);
 
 				// the item with just the modifiers applied
-				//				var poolItem = baseItem.CloneWithModdedDataFrom(item);
-				//				GetItemInfo(poolItem)?.ModifierPool.ApplyModifiers(poolItem);
+				// var poolItem = baseItem.CloneWithModdedDataFrom(item);
+				// GetItemInfo(poolItem)?.ModifierPool.ApplyModifiers(poolItem);
 
 				// the item with just the prefix applied
 				var prefixItem = baseItem.Clone();
 				prefixItem.Prefix(item.prefix);
 
-
-				//var info = GetItemInfo(poolItem);
-				//if (!info.CustomReforgeMode.HasFlag(CustomReforgeMode.Vanilla))
-				//{
-				//	ItemHack.ModifyItemCustomReforce(GetItemInfo(baseItem), baseItem);
-				//	ItemHack.ModifyItemCustomReforce(info, poolItem);
-				//	if (poolItem.modItem != null && info.CustomReforgeMode.HasFlag(CustomReforgeMode.Custom))
-				//	{
-				//		var EMMCustomReforge = poolItem.modItem.GetType().GetMethod("EMMCustomReforge");
-				//		EMMCustomReforge?.Invoke(poolItem.modItem, null);
-				//	}
-				//}
-
 				try
 				{
-					foreach (var vttl in vanillaTooltips)
+					foreach (var tooltipLine in vanillaTooltips)
 					{
-						//int number = Int32.Parse(new string(vttl.text.Where(char.IsNumber).ToArray()));
 						double outNumber = 0d;
-						string newTT = vttl.text;
-						Color? newC = vttl.overrideColor;
-						string TTend = new string(vttl.text.Reverse().ToArray().TakeWhile(x => !char.IsDigit(x)).Reverse().ToArray());
+						string newTooltipLine = tooltipLine.text;
+						Color? newColor = tooltipLine.overrideColor;
+						string tooltipEndText =
+							new string(tooltipLine.text
+								.Reverse()
+								.TakeWhile(x => !char.IsDigit(x))
+								.Reverse()
+								.ToArray());
 
 						//private string[] _prefixTooltipLines = {
 						//		"PrefixDamage", "PrefixSpeed", "PrefixCritChance", "PrefixUseMana", "PrefixSize",
@@ -440,134 +419,96 @@ namespace Loot
 						//		"PrefixAccCritChance", "PrefixAccDamage", "PrefixAccMoveSpeed", "PrefixAccMeleeSpeed"
 						//	};
 
-						if (vttl.Name.Equals("PrefixDamage"))
+						if (tooltipLine.Name.Equals("PrefixDamage"))
 						{
-							if (baseItem.damage > 0)
-							{
-								newTT = GetPrefixNormString(baseItem.damage, prefixItem.damage, ref outNumber, ref newC);
-							}
-							else
-							{
-								newTT = GetPrefixNormString(prefixItem.damage, baseItem.damage, ref outNumber, ref newC);
-							}
+							newTooltipLine = baseItem.damage > 0
+								? GetPrefixNormString(baseItem.damage, prefixItem.damage, ref outNumber, ref newColor)
+								: GetPrefixNormString(prefixItem.damage, baseItem.damage, ref outNumber, ref newColor);
 						}
-						else if (vttl.Name.Equals("PrefixSpeed"))
+						else if (tooltipLine.Name.Equals("PrefixSpeed"))
 						{
-							if (baseItem.useAnimation <= 0)
-							{
-								newTT = GetPrefixNormString(baseItem.useAnimation, prefixItem.useAnimation, ref outNumber, ref newC);
-							}
-							else
-							{
-								newTT = GetPrefixNormString(prefixItem.useAnimation, baseItem.useAnimation, ref outNumber, ref newC);
-							}
+							newTooltipLine = baseItem.useAnimation <= 0
+								? GetPrefixNormString(baseItem.useAnimation, prefixItem.useAnimation, ref outNumber, ref newColor)
+								: GetPrefixNormString(prefixItem.useAnimation, baseItem.useAnimation, ref outNumber, ref newColor);
 						}
-						else if (vttl.Name.Equals("PrefixCritChance"))
+						else if (tooltipLine.Name.Equals("PrefixCritChance"))
 						{
 							outNumber = prefixItem.crit - baseItem.crit;
 							float defColorVal = Main.mouseTextColor / 255f;
 							int alphaColor = Main.mouseTextColor;
-							newTT = "";
+							newTooltipLine = "";
 							if (outNumber >= 0)
 							{
-								newTT += "+";
-								newC = new Color((byte)(120f * defColorVal), (byte)(190f * defColorVal), (byte)(120f * defColorVal), alphaColor);
+								newTooltipLine += "+";
+								newColor = new Color((byte)(120f * defColorVal), (byte)(190f * defColorVal), (byte)(120f * defColorVal), alphaColor);
 							}
 							else
 							{
-								newC = new Color((byte)(190f * defColorVal), (byte)(120f * defColorVal), (byte)(120f * defColorVal), alphaColor);
+								newColor = new Color((byte)(190f * defColorVal), (byte)(120f * defColorVal), (byte)(120f * defColorVal), alphaColor);
 							}
 
-							newTT += outNumber.ToString(CultureInfo.InvariantCulture);
+							newTooltipLine += outNumber.ToString(CultureInfo.InvariantCulture);
 						}
-						else if (vttl.Name.Equals("PrefixUseMana"))
+						else if (tooltipLine.Name.Equals("PrefixUseMana"))
 						{
 							if (baseItem.mana != 0)
 							{
 								float defColorVal = Main.mouseTextColor / 255f;
 								int alphaColor = Main.mouseTextColor;
-								newTT = GetPrefixNormString(baseItem.mana, prefixItem.mana, ref outNumber, ref newC);
-								if (prefixItem.mana < baseItem.mana)
-								{
-									newC = new Color((byte)(120f * defColorVal), (byte)(190f * defColorVal), (byte)(120f * defColorVal), alphaColor);
-								}
-								else
-								{
-									newC = new Color((byte)(190f * defColorVal), (byte)(120f * defColorVal), (byte)(120f * defColorVal), alphaColor);
-								}
+								newTooltipLine = GetPrefixNormString(baseItem.mana, prefixItem.mana, ref outNumber, ref newColor);
+								newColor = prefixItem.mana < baseItem.mana
+									? new Color((byte)(120f * defColorVal), (byte)(190f * defColorVal), (byte)(120f * defColorVal), alphaColor)
+									: new Color((byte)(190f * defColorVal), (byte)(120f * defColorVal), (byte)(120f * defColorVal), alphaColor);
 							}
 						}
-						else if (vttl.Name.Equals("PrefixSize"))
+						else if (tooltipLine.Name.Equals("PrefixSize"))
 						{
-							if (baseItem.scale > 0)
-							{
-								newTT = GetPrefixNormString(baseItem.scale, prefixItem.scale, ref outNumber, ref newC);
-							}
-							else
-							{
-								newTT = GetPrefixNormString(prefixItem.scale, baseItem.scale, ref outNumber, ref newC);
-							}
+							newTooltipLine = baseItem.scale > 0
+								? GetPrefixNormString(baseItem.scale, prefixItem.scale, ref outNumber, ref newColor)
+								: GetPrefixNormString(prefixItem.scale, baseItem.scale, ref outNumber, ref newColor);
 						}
-						else if (vttl.Name.Equals("PrefixShootSpeed"))
+						else if (tooltipLine.Name.Equals("PrefixShootSpeed"))
 						{
-							if (baseItem.shootSpeed > 0)
-							{
-								newTT = GetPrefixNormString(baseItem.shootSpeed, prefixItem.shootSpeed, ref outNumber, ref newC);
-							}
-							else
-							{
-								newTT = GetPrefixNormString(prefixItem.shootSpeed, baseItem.shootSpeed, ref outNumber, ref newC);
-							}
+							newTooltipLine = baseItem.shootSpeed > 0
+								? GetPrefixNormString(baseItem.shootSpeed, prefixItem.shootSpeed, ref outNumber, ref newColor)
+								: GetPrefixNormString(prefixItem.shootSpeed, baseItem.shootSpeed, ref outNumber, ref newColor);
 						}
-						else if (vttl.Name.Equals("PrefixKnockback"))
+						else if (tooltipLine.Name.Equals("PrefixKnockback"))
 						{
-							if (baseItem.knockBack > 0)
-							{
-								newTT = GetPrefixNormString(baseItem.knockBack, prefixItem.knockBack, ref outNumber, ref newC);
-							}
-							else
-							{
-								newTT = GetPrefixNormString(prefixItem.knockBack, baseItem.knockBack, ref outNumber, ref newC);
-							}
+							newTooltipLine = baseItem.knockBack > 0
+								? GetPrefixNormString(baseItem.knockBack, prefixItem.knockBack, ref outNumber, ref newColor)
+								: GetPrefixNormString(prefixItem.knockBack, baseItem.knockBack, ref outNumber, ref newColor);
 						}
 						else
 						{
 							continue;
 						}
 
-						int ttlI = tooltips.FindIndex(x => x.mod.Equals(vttl.mod) && x.Name.Equals(vttl.Name));
-						if (ttlI != -1)
+						int ttlI = tooltips.FindIndex(x => x.mod.Equals(tooltipLine.mod) && x.Name.Equals(tooltipLine.Name));
+						if (ttlI == -1)
 						{
-							if (outNumber == 0d)
-							{
-								tooltips.RemoveAt(ttlI);
-							}
-							else
-							{
-								tooltips[ttlI].text = $"{newTT}{TTend}";
-								tooltips[ttlI].overrideColor = newC;
-							}
+							continue;
+						}
+
+						if (outNumber == 0d)
+						{
+							tooltips.RemoveAt(ttlI);
+						}
+						else
+						{
+							tooltips[ttlI].text = $"{newTooltipLine}{tooltipEndText}";
+							tooltips[ttlI].overrideColor = newColor;
 						}
 					}
 				}
 				catch (Exception e)
 				{
-					// Hopefully never happens
-					Main.NewTextMultiline(e.ToString());
+					Loot.Instance.Logger.Error(
+						$"A problem occurred during modification of the item's tooltip." +
+						$"\nItem in question: {item.AffixName()}",
+						e);
 				}
 				// RECALC END
-
-				// Modifies the "Uses X Mana" line to match our mods
-				//				var useManaTT = vanillaTooltips.FirstOrDefault(x => x.mod.Equals("Terraria") && x.Name.Equals("UseMana"));
-				//				if (useManaTT != null)
-				//				{
-				//					if (poolItem.mana > baseItem.mana)
-				//					{
-				//						string foundMana = new string(useManaTT.text.Where(char.IsDigit).ToArray());
-				//						if (foundMana != string.Empty)
-				//							useManaTT.text = useManaTT.text.Replace(foundMana, poolItem.mana.ToString());
-				//					}
-				//				}
 
 				// Modifies the tooltips, to insert generic mods data
 				int i = tooltips.FindIndex(x => x.mod == "Terraria" && x.Name == "ItemName");
@@ -595,7 +536,7 @@ namespace Loot
 				// Insert modifier rarity
 				ActivatedModifierItem activatedModifierItem = ActivatedModifierItem.Item(item);
 				bool isVanityIgnored = activatedModifierItem.ShouldBeIgnored(item, Main.LocalPlayer);
-				
+
 				Color? inactiveColor = isVanityIgnored ? (Color?)Color.DarkSlateGray : null;
 
 				i = tooltips.Count;

@@ -1,12 +1,12 @@
 using Loot.Core.ModContent;
 using Loot.Core.System.Loaders;
+using Loot.Ext.ModSupport;
 using Loot.UI.Core;
 using Loot.UI.Rerolling;
 using Loot.UI.Sealing;
 using Microsoft.Xna.Framework;
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
-using Loot.Ext.ModSupport;
 using Terraria;
 using Terraria.ModLoader;
 using Terraria.UI;
@@ -25,10 +25,6 @@ namespace Loot
 	public sealed class Loot : Mod
 	{
 		internal static Loot Instance;
-
-#if DEBUG
-		public override string Name => "Loot";
-#endif
 
 		internal UserInterface CubeInterface;
 		internal CubeRerollUI CubeRerollUI;
