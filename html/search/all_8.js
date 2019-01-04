@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['handlepacket',['HandlePacket',['../class_loot_1_1_loot.html#af8af80d391f6ac66f72e4979d3885522',1,'Loot::Loot']]],
   ['haseffect',['HasEffect',['../class_loot_1_1_modifier_player.html#afaaf469b766a16529a1a06aefc3a05ce',1,'Loot::ModifierPlayer']]],
   ['haseffect_3c_20t_20_3e',['HasEffect&lt; T &gt;',['../class_loot_1_1_modifier_player.html#a0284e7ce458e1818899af7fe07474133',1,'Loot::ModifierPlayer']]],
   ['hasrolled',['HasRolled',['../class_loot_1_1_e_m_m_item.html#a09668d320c0ce09f7f9341851adc6e40',1,'Loot::EMMItem']]],

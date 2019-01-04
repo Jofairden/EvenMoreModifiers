@@ -1,5 +1,11 @@
 var NAVTREEINDEX3 =
 {
+"class_loot_1_1_modifier_player.html#a6c54743a82ef3944b48c7b15dfe2ef8f":[2,0,0,13,32],
+"class_loot_1_1_modifier_player.html#a6e16f35905c1b49d0aa688a8079fb8cb":[2,0,0,13,13],
+"class_loot_1_1_modifier_player.html#a6e535679526fb7a9293288458c95e89b":[2,0,0,13,18],
+"class_loot_1_1_modifier_player.html#a77dc747bbd0c051f0e042485912d10a0":[2,0,0,13,35],
+"class_loot_1_1_modifier_player.html#a891c39b53a01d041f78120c51149f5c9":[2,0,0,13,23],
+"class_loot_1_1_modifier_player.html#a8f9b5f9833c228f90be9c09e61b15372":[2,0,0,13,27],
 "class_loot_1_1_modifier_player.html#a9212e684829429545c464740df4580f6":[2,0,0,13,42],
 "class_loot_1_1_modifier_player.html#a93a410440a936dee2691917ba97ad936":[2,0,0,13,5],
 "class_loot_1_1_modifier_player.html#a953056e76655094e6bd7bc8008fad378":[2,0,0,13,7],
@@ -243,11 +249,5 @@ var NAVTREEINDEX3 =
 "class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_cursed_damage.html#a6cf676c3234850fcdabfff5890111d7c":[2,0,0,2,1,2,3],
 "class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_cursed_damage.html#a6eca89c46387e297b7abb62e040cbfaf":[2,0,0,2,1,2,0],
 "class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_cursed_damage.html#ab2fe88e6aaa820154f9ad9fb3c343a62":[2,0,0,2,1,2,2],
-"class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_cursed_damage.html#ab3d23d6acbfcff4d596e386007d58dae":[2,0,0,2,1,2,4],
-"class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_cursed_effect.html":[2,0,0,2,1,3],
-"class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_cursed_effect.html#a1aba0c690fd70e3f2594312641f779b2":[2,0,0,2,1,3,2],
-"class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_cursed_effect.html#a37bd163e1641ff85113daca8e82e62f1":[2,0,0,2,1,3,0],
-"class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_cursed_effect.html#a6290d1c8f6b4efb03fdf3ecafa6398b4":[2,0,0,2,1,3,3],
-"class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_cursed_effect.html#a7dbd3c5248a667a59b8a0c49636696cb":[2,0,0,2,1,3,1],
-"class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_damage_plus.html":[2,0,0,2,1,4]
+"class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_cursed_damage.html#ab3d23d6acbfcff4d596e386007d58dae":[2,0,0,2,1,2,4]
 };

@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['handlepacket',['HandlePacket',['../class_loot_1_1_loot.html#af8af80d391f6ac66f72e4979d3885522',1,'Loot::Loot']]],
   ['haseffect',['HasEffect',['../class_loot_1_1_modifier_player.html#afaaf469b766a16529a1a06aefc3a05ce',1,'Loot::ModifierPlayer']]],
   ['haseffect_3c_20t_20_3e',['HasEffect&lt; T &gt;',['../class_loot_1_1_modifier_player.html#a0284e7ce458e1818899af7fe07474133',1,'Loot::ModifierPlayer']]],
   ['hasvanilladamage',['HasVanillaDamage',['../class_loot_1_1_modifiers_1_1_weapon_modifier.html#a4ad792b5ef1317dd474744ac08594b6b',1,'Loot::Modifiers::WeaponModifier']]],

@@ -16,7 +16,7 @@ var NAVTREE =
       [ "Class Members", "functions.html", [
         [ "All", "functions.html", "functions_dup" ],
         [ "Functions", "functions_func.html", "functions_func" ],
-        [ "Variables", "functions_vars.html", "functions_vars" ],
+        [ "Variables", "functions_vars.html", null ],
         [ "Properties", "functions_prop.html", null ],
         [ "Events", "functions_evnt.html", null ]
       ] ]
@@ -34,11 +34,11 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "_accessory_modifier_8cs.html",
-"_u_i_reroll_item_panel_8cs.html",
-"class_loot_1_1_core_1_1_mod_content_1_1_texture_mod_content.html#ae8a5faba0906f1759514eb3341081ae2",
-"class_loot_1_1_modifier_player.html#a9212e684829429545c464740df4580f6",
-"class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_damage_plus.html#a08a070f855f8a14a19a9a3f8e0ed3a5e",
-"functions_b.html"
+"_u_i_interactable_item_panel_8cs.html",
+"class_loot_1_1_core_1_1_mod_content_1_1_texture_mod_content.html#a2f31c2778cbaa3d50bd966c8df9b8166",
+"class_loot_1_1_modifier_player.html#a6c54743a82ef3944b48c7b15dfe2ef8f",
+"class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_cursed_effect.html",
+"dir_e0566f59f042068c187972f8b4893996.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

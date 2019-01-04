@@ -1,17 +1,17 @@
 <map id="Loot.Loot" name="Loot.Loot">
-<area shape="rect" id="node2" href="$class_mod.html" title="Mod" alt="" coords="1334,17,1381,43"/>
+<area shape="rect" id="node2" href="$class_mod.html" title="Mod" alt="" coords="1313,17,1359,43"/>
 <area shape="rect" id="node8" href="$class_loot_1_1_u_i_1_1_core_1_1_draggable_u_i_state.html" title="A UIState which primarily goal is to provide dragging on click functionality to the main panel The dr..." alt="" coords="551,341,678,367"/>
 <area shape="rect" id="node9" href="$class_loot_1_1_u_i_1_1_core_1_1_visibility_u_i.html" title="A UIState which primarily goal is to provide easy visibility toggling " alt="" coords="300,374,385,401"/>
 <area shape="rect" id="node15" href="$class_loot_1_1_u_i_1_1_core_1_1_u_i_interactable_item_panel.html" title="UIInteractableItemPanel" alt="" coords="533,454,696,481"/>
-<area shape="rect" id="node6" href="$class_loot_1_1_u_i_1_1_sealing_1_1_cube_seal_u_i.html" title="Loot.UI.Sealing.CubeSealUI" alt="" coords="1264,751,1451,778"/>
-<area shape="rect" id="node7" href="$class_loot_1_1_u_i_1_1_core_1_1_cube_u_i.html" title="CubeUI" alt="" coords="951,290,1017,317"/>
-<area shape="rect" id="node20" href="$class_loot_1_1_u_i_1_1_rerolling_1_1_cube_reroll_u_i.html" title="A UIState that provides the ability to reroll an item&#39;s modifier " alt="" coords="1256,450,1459,477"/>
+<area shape="rect" id="node6" href="$class_loot_1_1_u_i_1_1_sealing_1_1_cube_seal_u_i.html" title="Loot.UI.Sealing.CubeSealUI" alt="" coords="1243,751,1429,778"/>
+<area shape="rect" id="node7" href="$class_loot_1_1_u_i_1_1_core_1_1_cube_u_i.html" title="CubeUI" alt="" coords="929,290,996,317"/>
+<area shape="rect" id="node20" href="$class_loot_1_1_u_i_1_1_rerolling_1_1_cube_reroll_u_i.html" title="A UIState that provides the ability to reroll an item&#39;s modifier " alt="" coords="1235,450,1437,477"/>
 <area shape="rect" id="node10" href="$class_u_i_state.html" title="UIState" alt="" coords="29,393,96,419"/>
 <area shape="rect" id="node16" href="$class_loot_1_1_u_i_1_1_core_1_1_u_i_item_panel.html" title="UIItemPanel" alt="" coords="295,639,390,666"/>
 <area shape="rect" id="node21" href="$class_loot_1_1_u_i_1_1_core_1_1_u_i_modifier_panel.html" title="Loot.UI.Core.UIModifierPanel" alt="" coords="245,169,440,195"/>
-<area shape="rect" id="node14" href="$class_loot_1_1_u_i_1_1_sealing_1_1_u_i_seal_item_panel.html" title="Loot.UI.Sealing.UISealItem\lPanel" alt="" coords="893,728,1075,769"/>
-<area shape="rect" id="node24" href="$class_loot_1_1_u_i_1_1_rerolling_1_1_u_i_reroll_item_panel.html" title="Loot.UI.Rerolling.UIReroll\lItemPanel" alt="" coords="898,443,1070,484"/>
-<area shape="rect" id="node26" href="$class_loot_1_1_u_i_1_1_core_1_1_u_i_cube_item_panel.html" title="Loot.UI.Core.UICubeItemPanel" alt="" coords="881,391,1087,418"/>
-<area shape="rect" id="node25" href="$class_loot_1_1_core_1_1_cubes_1_1_item_roll_properties.html" title="Defines properties that will be used when an item is being rolled These can interact with the rolling..." alt="" coords="897,560,1071,601"/>
-<area shape="rect" id="node27" href="$class_loot_1_1_core_1_1_mod_content_1_1_mod_content_manager.html" title="Loot.Core.ModContent.Mod\lContentManager" alt="" coords="1266,1009,1449,1051"/>
+<area shape="rect" id="node14" href="$class_loot_1_1_u_i_1_1_sealing_1_1_u_i_seal_item_panel.html" title="Loot.UI.Sealing.UISealItem\lPanel" alt="" coords="871,728,1054,769"/>
+<area shape="rect" id="node24" href="$class_loot_1_1_u_i_1_1_rerolling_1_1_u_i_reroll_item_panel.html" title="Loot.UI.Rerolling.UIReroll\lItemPanel" alt="" coords="877,443,1049,484"/>
+<area shape="rect" id="node26" href="$class_loot_1_1_u_i_1_1_core_1_1_u_i_cube_item_panel.html" title="Loot.UI.Core.UICubeItemPanel" alt="" coords="860,391,1065,418"/>
+<area shape="rect" id="node25" href="$class_loot_1_1_core_1_1_cubes_1_1_item_roll_properties.html" title="Defines properties that will be used when an item is being rolled These can interact with the rolling..." alt="" coords="875,560,1050,601"/>
+<area shape="rect" id="node27" href="$class_loot_1_1_core_1_1_mod_content_1_1_mod_content_manager.html" title="Loot.Core.ModContent.Mod\lContentManager" alt="" coords="1245,1009,1427,1051"/>
 </map>

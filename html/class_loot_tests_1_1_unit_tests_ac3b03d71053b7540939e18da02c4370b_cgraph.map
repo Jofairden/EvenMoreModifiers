@@ -1,6 +1,3 @@
 <map id="LootTests.UnitTests.LogEMMLoaderEntries" name="LootTests.UnitTests.LogEMMLoaderEntries">
-<area shape="rect" id="node2" href="$class_loot_1_1_loot.html#a52ae642436e92b43a15d0a0ebbb9b25f" title="Loot.Loot.Load" alt="" coords="291,77,399,104"/>
-<area shape="rect" id="node3" href="$class_loot_1_1_core_1_1_system_1_1_loaders_1_1_main_loader.html#a73481d5860e358c743d7bcab37d7b12a" title="Loot.Core.System.Loaders.\lMainLoader.AddContent" alt="" coords="451,5,634,46"/>
-<area shape="rect" id="node4" href="$class_loot_1_1_core_1_1_system_1_1_loaders_1_1_asset_loader.html#ac204461afbabc462cf1be744e67813fa" title="Loot.Core.System.Loaders.\lAssetLoader.RegisterAssets" alt="" coords="448,70,637,111"/>
-<area shape="rect" id="node5" href="$class_loot_1_1_core_1_1_system_1_1_loaders_1_1_main_loader.html#ae97746fdd3c02b4570d778c06f2162a4" title="Registers specified mod, enabling autoloading for that mod " alt="" coords="451,135,634,177"/>
+<area shape="rect" id="node2" href="$class_loot_1_1_loot.html#a52ae642436e92b43a15d0a0ebbb9b25f" title="Loot.Loot.Load" alt="" coords="291,12,399,39"/>
 </map>

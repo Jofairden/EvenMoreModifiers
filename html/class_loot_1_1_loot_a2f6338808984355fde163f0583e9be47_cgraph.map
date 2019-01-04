@@ -1,0 +1,4 @@
+<map id="Loot.Loot.LoadMod" name="Loot.Loot.LoadMod">
+<area shape="rect" id="node2" href="$class_loot_1_1_core_1_1_system_1_1_loaders_1_1_main_loader.html#a73481d5860e358c743d7bcab37d7b12a" title="Loot.Core.System.Loaders.\lMainLoader.AddContent" alt="" coords="187,5,370,46"/>
+<area shape="rect" id="node3" href="$class_loot_1_1_core_1_1_system_1_1_loaders_1_1_main_loader.html#ae97746fdd3c02b4570d778c06f2162a4" title="Registers specified mod, enabling autoloading for that mod " alt="" coords="187,70,370,111"/>
+</map>

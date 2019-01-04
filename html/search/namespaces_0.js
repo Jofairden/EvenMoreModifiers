@@ -17,6 +17,7 @@ var searchData=
   ['loottests',['LootTests',['../namespace_loot_tests.html',1,'']]],
   ['modcontent',['ModContent',['../namespace_loot_1_1_core_1_1_mod_content.html',1,'Loot::Core']]],
   ['modifiers',['Modifiers',['../namespace_loot_1_1_modifiers.html',1,'Loot']]],
+  ['modsupport',['ModSupport',['../namespace_loot_1_1_ext_1_1_mod_support.html',1,'Loot::Ext']]],
   ['offensive',['Offensive',['../namespace_loot_1_1_modifiers_1_1_equip_modifiers_1_1_offensive.html',1,'Loot::Modifiers::EquipModifiers']]],
   ['pools',['Pools',['../namespace_loot_1_1_pools.html',1,'Loot']]],
   ['rarities',['Rarities',['../namespace_loot_1_1_rarities.html',1,'Loot']]],

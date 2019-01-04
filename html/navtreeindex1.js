@@ -1,5 +1,11 @@
 var NAVTREEINDEX1 =
 {
+"_u_i_interactable_item_panel_8cs.html":[3,0,7,0,3],
+"_u_i_interactable_item_panel_8cs_source.html":[3,0,7,0,3],
+"_u_i_item_panel_8cs.html":[3,0,7,0,4],
+"_u_i_item_panel_8cs_source.html":[3,0,7,0,4],
+"_u_i_modifier_panel_8cs.html":[3,0,7,0,5],
+"_u_i_modifier_panel_8cs_source.html":[3,0,7,0,5],
 "_u_i_reroll_item_panel_8cs.html":[3,0,7,1,1],
 "_u_i_reroll_item_panel_8cs_source.html":[3,0,7,1,1],
 "_u_i_seal_item_panel_8cs.html":[3,0,7,2,1],
@@ -22,6 +28,8 @@ var NAVTREEINDEX1 =
 "_weapon_modifier_8cs_source.html":[3,0,3,6],
 "_weapon_modifier_pool_8cs.html":[3,0,4,2],
 "_weapon_modifier_pool_8cs_source.html":[3,0,4,2],
+"_wing_slot_supporter_8cs.html":[3,0,1,0,3],
+"_wing_slot_supporter_8cs_source.html":[3,0,1,0,3],
 "_wing_time_plus_8cs.html":[3,0,3,0,2,5],
 "_wing_time_plus_8cs_source.html":[3,0,3,0,2,5],
 "annotated.html":[2,0],
@@ -241,13 +249,5 @@ var NAVTREEINDEX1 =
 "class_loot_1_1_core_1_1_mod_content_1_1_mod_content_manager.html#add389db35ce2ef9760bba179ccfbb3da":[2,0,0,0,4,1,3],
 "class_loot_1_1_core_1_1_mod_content_1_1_texture_mod_content.html":[2,0,0,0,4,2],
 "class_loot_1_1_core_1_1_mod_content_1_1_texture_mod_content.html#a0ea5fcefc9c8760bfbba0d586395f9c4":[2,0,0,0,4,2,8],
-"class_loot_1_1_core_1_1_mod_content_1_1_texture_mod_content.html#a117a64903dcc958b751f00e779521baf":[2,0,0,0,4,2,0],
-"class_loot_1_1_core_1_1_mod_content_1_1_texture_mod_content.html#a2f31c2778cbaa3d50bd966c8df9b8166":[2,0,0,0,4,2,10],
-"class_loot_1_1_core_1_1_mod_content_1_1_texture_mod_content.html#a3d8086cbe795fd308df99f0d88cd41d6":[2,0,0,0,4,2,12],
-"class_loot_1_1_core_1_1_mod_content_1_1_texture_mod_content.html#a47aecfd6c96144c5d12b16c08182fac1":[2,0,0,0,4,2,3],
-"class_loot_1_1_core_1_1_mod_content_1_1_texture_mod_content.html#a47bacee2cafcb6f128506b8d60bb7c0b":[2,0,0,0,4,2,6],
-"class_loot_1_1_core_1_1_mod_content_1_1_texture_mod_content.html#a515ba440e3c381e03a8f0e7ec62edd1b":[2,0,0,0,4,2,2],
-"class_loot_1_1_core_1_1_mod_content_1_1_texture_mod_content.html#a56896e663bf84f11598e17e4076a8117":[2,0,0,0,4,2,9],
-"class_loot_1_1_core_1_1_mod_content_1_1_texture_mod_content.html#a5b724ec0e964058c73ae867da0b41247":[2,0,0,0,4,2,11],
-"class_loot_1_1_core_1_1_mod_content_1_1_texture_mod_content.html#a8c18ceea06a36b630f8f29d68dba93b2":[2,0,0,0,4,2,7]
+"class_loot_1_1_core_1_1_mod_content_1_1_texture_mod_content.html#a117a64903dcc958b751f00e779521baf":[2,0,0,0,4,2,0]
 };
