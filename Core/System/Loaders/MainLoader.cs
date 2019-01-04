@@ -75,7 +75,7 @@ namespace Loot.Core.System.Loaders
 				.GetTypes()
 				.OrderBy(x => x.FullName, StringComparer.InvariantCulture)
 				.Where(t => t.IsClass && !t.IsAbstract)
-				.ToList(); /* || type.GetConstructor(new Type[0]) == null*/
+				.ToList();
 
 			var rarities = ordered.Where(x => x.IsSubclassOf(typeof(ModifierRarity)));
 			var modifiers = ordered.Where(x => x.IsSubclassOf(typeof(Modifier)));

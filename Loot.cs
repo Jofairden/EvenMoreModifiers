@@ -4,10 +4,9 @@ using Loot.UI.Core;
 using Loot.UI.Rerolling;
 using Loot.UI.Sealing;
 using Microsoft.Xna.Framework;
-using System;
 using System.Collections.Generic;
-using System.IO;
 using System.Runtime.CompilerServices;
+using Loot.Ext.ModSupport;
 using Terraria;
 using Terraria.ModLoader;
 using Terraria.UI;
@@ -26,9 +25,6 @@ namespace Loot
 	public sealed class Loot : Mod
 	{
 		internal static Loot Instance;
-		public static bool CheatSheetLoaded;
-		public static bool WingSlotLoaded;
-		public static bool WingSlotVersionInvalid;
 
 #if DEBUG
 		public override string Name => "Loot";
@@ -38,7 +34,6 @@ namespace Loot
 		internal CubeRerollUI CubeRerollUI;
 		internal CubeSealUI CubeSealUI;
 
-		// @todo also refactor?
 		internal static ModContentManager ModContentManager;
 		public static bool Loaded;
 
@@ -55,15 +50,17 @@ namespace Loot
 		public override void Load()
 		{
 			Instance = this;
+			LoadMod();
 
-			// Ensure cheat sheet loaded and required version
-			var cheatSheetMod = ModLoader.GetMod("CheatSheet");
-			CheatSheetLoaded = cheatSheetMod != null && cheatSheetMod.Version >= new Version(0, 4, 3, 1);
-			var wingSlotMod = ModLoader.GetMod("WingSlot");
-			WingSlotLoaded = wingSlotMod != null;
-			WingSlotVersionInvalid = WingSlotLoaded && wingSlotMod.Version < new Version(1, 6, 1);
+			if (!Main.dedServ)
+			{
+				LoadModForClient();
+			}
+		}
 
-			//(string Name, string test) variable = ("Compiled with", "C#7");
+		private void LoadMod()
+		{
+			ModSupport.Init();
 
 			ContentLoader.Initialize();
 			ContentLoader.Load();
@@ -73,35 +70,27 @@ namespace Loot
 			MainLoader.RegisterMod(this);
 			MainLoader.AddContent(this);
 
-			if (!Main.dedServ)
-			{
-				SetupContentMgr();
-				SetupUIs();
-				AssetLoader.RegisterAssets(this, "GraphicsAssets");
-
-				if (WingSlotLoaded && !WingSlotVersionInvalid)
-				{
-					wingSlotMod.Call("add", (Func<bool>)(
-						() =>
-						{
-							if (CubeInterface.CurrentState == null)
-							{
-								return false;
-							}
-
-							return (CubeInterface.CurrentState as CubeUI)?.Visible ?? false;
-						}));
-				}
-			}
+			ModSupport.AddServerSupport();
 		}
 
-		private void SetupContentMgr()
+		private void LoadModForClient()
+		{
+			//(string compiledWith, string sevenSharp) = ("Even More Modifiers uses", "C#7");
+			//Logger.InfoFormat("{0} {1}", compiledWith, sevenSharp);
+
+			SetupContentManager();
+			SetupUserInterfaces();
+			AssetLoader.RegisterAssets(this, "GraphicsAssets");
+			ModSupport.AddClientSupport();
+		}
+
+		private void SetupContentManager()
 		{
 			ModContentManager = new ModContentManager();
 			ModContentManager.Initialize(this);
 		}
 
-		private void SetupUIs()
+		private void SetupUserInterfaces()
 		{
 			CubeRerollUI = new CubeRerollUI();
 			CubeRerollUI.Activate();
@@ -164,7 +153,7 @@ namespace Loot
 			}
 
 			if (CubeSealUI.SlottedItem != null
-				& !CubeSealUI.SlottedItem?.IsAir ?? false)
+				&& !CubeSealUI.SlottedItem.IsAir)
 			{
 				Main.LocalPlayer.QuickSpawnClonedItem(CubeSealUI.SlottedItem, CubeSealUI.SlottedItem.stack);
 				CubeSealUI.SlottedItem.TurnToAir();
@@ -200,11 +189,6 @@ namespace Loot
 					},
 					InterfaceScaleType.UI));
 			}
-		}
-
-		// @todo: probably write our own handler for packets
-		public override void HandlePacket(BinaryReader reader, int whoAmI)
-		{
 		}
 	}
 }

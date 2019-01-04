@@ -6,6 +6,7 @@ using System.Linq;
 using System.Reflection;
 using Loot.Core.System;
 using Loot.Ext;
+using Loot.Ext.ModSupport;
 using Terraria;
 using Terraria.ModLoader;
 
@@ -219,7 +220,7 @@ namespace Loot.Core.Caching
 			_attachList.Clear();
 
 			UpdateEquipsCache();
-			if (Loot.CheatSheetLoaded)
+			if (ModSupport.GetSupport<CheatSheetSupporter>().ModIsLoaded)
 			{
 				UpdateCheatSheetCache();
 			}

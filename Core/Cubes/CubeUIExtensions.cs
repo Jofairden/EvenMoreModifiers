@@ -1,6 +1,7 @@
 using Microsoft.Xna.Framework.Input;
 using System;
 using System.Collections.Generic;
+using Loot.Ext.ModSupport;
 using Loot.UI.Core;
 using Loot.UI.Rerolling;
 using Loot.UI.Sealing;
@@ -32,8 +33,7 @@ namespace Loot.Core.Cubes
 
 		private bool RightClickFunctionalityRequirements(Item item)
 		{
-			//todo replace with Loot.WingSlotVersionInvalid when it works
-			if (Loot.WingSlotVersionInvalid && item.wingSlot > 0)
+			if (ModSupport.GetSupport<WingSlotSupporter>().IsInvalid && item.wingSlot > 0)
 			{
 				return false;
 			}
@@ -114,7 +114,7 @@ namespace Loot.Core.Cubes
 			if (cubeUI != null)
 			{
 				//todo replace with Loot.WingSlotVersionInvalid when it works
-				if ((Loot.WingSlotVersionInvalid && item.wingSlot > 0) // block wings if low version if wingslot
+				if ((ModSupport.GetSupport<WingSlotSupporter>().IsInvalid && item.wingSlot > 0) // block wings if low version if wingslot
 					|| !cubeUI.IsItemValidForUISlot(item)
 					|| cubeUI.IsSlottedItemInCubeUI())
 				{
