@@ -1,11 +1,12 @@
-using System.Collections.Generic;
-using System.Linq;
 using Loot.Core.Cubes;
 using Loot.Core.System;
+using Loot.Ext;
 using Loot.Sounds;
 using Loot.UI.Core;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
+using System.Collections.Generic;
+using System.Linq;
 using Terraria;
 using Terraria.GameContent.UI.Elements;
 using Terraria.ID;
@@ -21,71 +22,123 @@ namespace Loot.UI.Rerolling
 	/// </summary>
 	public sealed class CubeRerollUI : CubeUI
 	{
-		private UIPanel _backPanel;
+		private const float PADDING = 5f;
+
 		internal UICubeItemPanel _cubePanel;
 		internal UIRerollItemPanel _rerollItemPanel;
 		internal ItemRollProperties _itemRollProperties;
-		private UIModifierPanel[] _modifierPanels;
-		private UIImageButton _rerollButton;
-		private const float padding = 5f;
 
-		public override void ToggleUI(Terraria.UI.UserInterface theInterface, UIState uiStateInstance)
+		private UIPanel _backPanel;
+		private UIImageButton _rerollButton;
+		private UIPanel _cubeListPanel;
+		private UIModifierPanel[] _modifierPanels;
+
+		public override void ToggleUI(UserInterface theInterface, UIState uiStateInstance)
 		{
 			base.ToggleUI(theInterface, uiStateInstance);
 
-			// If ui closed, we need to retrieve the slotted items
-			if (!Visible)
+			if (Visible)
 			{
-				var ui = Loot.Instance.CubeRerollUI;
-
-				SoundHelper.PlayCustomSound(SoundHelper.SoundType.CloseUI);
-
-				// Clear of the slotted cube type
-				ui._cubePanel?.item.TurnToAir();
-
-				// If there is an item slotted
-				if (ui._rerollItemPanel != null
-					&& !ui._rerollItemPanel.item.IsAir)
-				{
-					Main.LocalPlayer.QuickSpawnClonedItem(ui._rerollItemPanel.item, ui._rerollItemPanel.item.stack);
-					ui._rerollItemPanel.item.TurnToAir();
-				}
-
-				// Clear lines
-				ui.UpdateModifierLines();
+				DetermineAvailableCubes();
+				return;
 			}
+
+			// If ui closed, we need to retrieve the slotted items
+			var ui = Loot.Instance.CubeRerollUI;
+
+			SoundHelper.PlayCustomSound(SoundHelper.SoundType.CloseUI);
+
+			// Clear of the slotted cube type
+			ui._cubePanel?.item.TurnToAir();
+
+			// If there is an item slotted
+			if (ui._rerollItemPanel != null
+				&& !ui._rerollItemPanel.item.IsAir)
+			{
+				Main.LocalPlayer.QuickSpawnClonedItem(ui._rerollItemPanel.item, ui._rerollItemPanel.item.stack);
+				ui._rerollItemPanel.item.TurnToAir();
+			}
+
+			// Clear lines
+			ui.UpdateModifierLines();
+		}
+
+		internal void DetermineAvailableCubes()
+		{
+			_cubeListPanel.RemoveAllChildren();
+
+			var items =
+				Main.LocalPlayer.inventory.GetDistinctModItems<RerollingCube>()
+				.Select(i => i.item.type);
+
+			int current = 0;
+			foreach (var type in items)
+			{
+				var selectorPanel = new UICubeSelectorPanel(type)
+				{
+					Left = new StyleDimension { Pixels = UIItemPanel.PANEL_WIDTH * current }
+				};
+				if (_cubePanel.item.type != type)
+				{
+					selectorPanel.DrawScale = 0.8f;
+					selectorPanel.DrawColor = Color.LightGray * 0.5f;
+				}
+				selectorPanel.RecalculateStack();
+				_cubeListPanel.Append(selectorPanel);
+				current++;
+			}
+
+			if (current <= 0)
+			{
+				_cubeListPanel.Append(new UIText("No cubes found in inventory"));
+			}
+
+			_cubeListPanel.Recalculate();
 		}
 
 		public override bool IsItemValidForUISlot(Item item)
-		{
-			return _rerollItemPanel != null && _rerollItemPanel.CanTakeItem(item);
-		}
+			=> _rerollItemPanel != null
+			   && _rerollItemPanel.CanTakeItem(item);
 
 		public override bool IsSlottedItemInCubeUI()
-		{
-			return _rerollItemPanel != null && !_rerollItemPanel.item.IsAir && EMMItem.GetItemInfo(_rerollItemPanel.item).SlottedInCubeUI;
-		}
+			=> _rerollItemPanel != null
+			   && !_rerollItemPanel.item.IsAir
+			   && EMMItem.GetItemInfo(_rerollItemPanel.item).SlottedInCubeUI;
 
 		public override Item SlottedItem => _rerollItemPanel.item;
 
+		// TODO refactor UI code a bit. 
 		public override void OnInitialize()
 		{
 			_itemRollProperties = new ItemRollProperties();
 
-			// Makes back panel, and assigns it as the drag panel
+			float halfScreenWidth = Main.screenWidth / 2f;
+			float halfScreenHeight = Main.screenHeight / 2f;
+			Color baseColor = new Color(73, 94, 171);
+
 			_backPanel = new UIPanel();
 			_backPanel.Width.Set(600f, 0f);
 			_backPanel.Height.Set(200f, 0f);
-			_backPanel.Left.Set(Main.screenWidth / 2f - _backPanel.Width.Pixels / 2f, 0f);
-			_backPanel.Top.Set(Main.screenHeight / 2f - _backPanel.Height.Pixels / 2f, 0f);
-			_backPanel.BackgroundColor = new Color(73, 94, 171);
-			base.Append(_backPanel);
-			AssignDragPanel(_backPanel);
+			_backPanel.Left.Set(halfScreenWidth - _backPanel.Width.Pixels / 2f, 0f);
+			_backPanel.Top.Set(halfScreenHeight - _backPanel.Height.Pixels / 2f, 0f);
+
+			_cubeListPanel = new UIPanel
+			{
+				Width = new StyleDimension { Pixels = 600f },
+				Height = new StyleDimension { Pixels = 50f },
+				Left = new StyleDimension { Pixels = _backPanel.Left.Pixels },
+				Top = new StyleDimension { Pixels = _backPanel.Top.Pixels + _backPanel.Height.Pixels },
+			};
+
+			Append(_cubeListPanel);
+			Append(_backPanel);
+			AddDragPanel(_cubeListPanel);
+			AddDragPanel(_backPanel);
 			base.OnInitialize();
 
 			Texture2D btnCloseTexture = ModContent.GetTexture("Terraria/UI/InfoIcon_8");
 			UIImageButton closeButton = new UIImageButton(btnCloseTexture);
-			closeButton.Left.Set(_backPanel.Width.Pixels - btnCloseTexture.Width * 2f - padding, 0f);
+			closeButton.Left.Set(_backPanel.Width.Pixels - btnCloseTexture.Width * 2f - PADDING, 0f);
 			closeButton.Top.Set(0f, 0f);
 			closeButton.Width.Set(btnCloseTexture.Width, 0f);
 			closeButton.Height.Set(btnCloseTexture.Height, 0f);
@@ -97,7 +150,7 @@ namespace Loot.UI.Rerolling
 			_backPanel.Append(_cubePanel);
 
 			_rerollItemPanel = new UIRerollItemPanel(hintTexture: ModContent.GetTexture("Terraria/Item_24"), hintText: "Place an item to reroll here");
-			_rerollItemPanel.Top.Set(_cubePanel.Top.Pixels + _rerollItemPanel.Height.Pixels + padding, 0f);
+			_rerollItemPanel.Top.Set(_cubePanel.Top.Pixels + _rerollItemPanel.Height.Pixels + PADDING, 0f);
 			_backPanel.Append(_rerollItemPanel);
 
 			_modifierPanels = new UIModifierPanel[4];
@@ -106,19 +159,20 @@ namespace Loot.UI.Rerolling
 				_modifierPanels[i] = new UIModifierPanel();
 				var panel = _modifierPanels[i];
 
-				panel.Left.Set(padding + _cubePanel.Left.Pixels + _cubePanel.Width.Pixels, 0f);
+				panel.Left.Set(PADDING + _cubePanel.Left.Pixels + _cubePanel.Width.Pixels, 0f);
 				panel.Height.Set(40, 0f);
-				panel.Top.Set(i * padding + panel.Height.Pixels * i, 0f);
-				panel.Width.Set(_backPanel.Width.Pixels - closeButton.Width.Pixels * 2f - panel.Left.Pixels - padding * 2f, 0f);
-				panel.BackgroundColor = new Color(73, 94, 171);
+				panel.Top.Set(i * PADDING + panel.Height.Pixels * i, 0f);
+				panel.Width.Set(_backPanel.Width.Pixels - closeButton.Width.Pixels * 2f - panel.Left.Pixels - PADDING * 2f, 0f);
+				panel.BackgroundColor = baseColor;
 				_backPanel.Append(panel);
 			}
 
 			Texture2D rerollTexture = ModContent.GetTexture("Terraria/UI/Craft_Toggle_3");
 			_rerollButton = new UIImageButton(rerollTexture);
-			_rerollButton.Width.Set(UIItemPanel.panelwidth, 0f);
-			_rerollButton.Height.Set(UIItemPanel.panelwidth, 0f);
-			_rerollButton.Top.Set(_rerollItemPanel.Top.Pixels + _rerollItemPanel.Height.Pixels + padding, 0f);
+			_rerollButton.Width.Set(UIItemPanel.PANEL_WIDTH, 0f);
+			_rerollButton.Height.Set(UIItemPanel.PANEL_WIDTH, 0f);
+			_rerollButton.Top.Set(_rerollItemPanel.Top.Pixels + _rerollItemPanel.Height.Pixels + PADDING - _cubeListPanel.Height.Pixels, 0.33f);
+			_rerollButton.Left.Set(_rerollItemPanel.Left.Pixels + PADDING * 2f, 0f);
 			_rerollButton.OnClick += OnRerollClick;
 			_backPanel.Append(_rerollButton);
 		}
@@ -133,7 +187,7 @@ namespace Loot.UI.Rerolling
 				   && !EMMItem.GetItemInfo(_rerollItemPanel.item).SealedModifiers;
 
 			bool hasItem = Main.LocalPlayer.inventory.Any(x => x.type == _cubePanel.item.type)
-			               || (Main.mouseItem?.type == _cubePanel?.item?.type);
+						   || (Main.mouseItem?.type == _cubePanel?.item?.type);
 
 			return match && hasItem;
 		}
@@ -214,6 +268,7 @@ namespace Loot.UI.Rerolling
 				}
 
 				_cubePanel.RecalculateStack();
+				DetermineAvailableCubes();
 
 				// No slotted cubes available
 				if (_cubePanel.item.stack <= 0)
@@ -234,24 +289,30 @@ namespace Loot.UI.Rerolling
 				panel.ResetText();
 			}
 
-			if (_rerollItemPanel != null
-				&& !_rerollItemPanel.item.IsAir
-				&& _modifierPanels != null)
+			if (_rerollItemPanel == null
+				|| _rerollItemPanel.item.IsAir
+				|| _modifierPanels == null)
 			{
-				int i = 0;
-				foreach (var lines in EMMItem.GetActivePool(_rerollItemPanel.item)
+				return;
+			}
+
+			int i = 0;
+
+			IEnumerable<ModifierTooltipLine[]> getTooltipLines(Item item)
+				=> EMMItem.GetActivePool(item)
 					.Select(x => x.TooltipLines)
 					.Take(4)
-					.Where(x => x != null))
-				{
-					string line = lines.Aggregate("", (current, tooltipLine) => current + $"{tooltipLine.Text} ");
-					line = line.TrimEnd();
-					_modifierPanels[i].UpdateText(line);
-					i++;
-				}
+					.Where(x => x != null);
 
-				Recalculate();
+			foreach (var lines in getTooltipLines(_rerollItemPanel.item))
+			{
+				string line = lines.Aggregate("", (current, tooltipLine) => current + $"{tooltipLine.Text} ");
+				line = line.TrimEnd();
+				_modifierPanels[i].UpdateText(line);
+				i++;
 			}
+
+			Recalculate();
 		}
 	}
 }

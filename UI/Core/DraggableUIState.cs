@@ -1,6 +1,7 @@
-using System;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
+using System;
+using System.Collections.Generic;
 using Terraria;
 using Terraria.GameContent.UI.Elements;
 using Terraria.UI;
@@ -15,61 +16,90 @@ namespace Loot.UI.Core
 	public abstract class DraggableUIState : VisibilityUI
 	{
 		private bool _initialized;
-		private UIPanel _dragPanel;
-		private Vector2 _offset;
+		private List<UIPanel> _dragPanels = new List<UIPanel>();
+		private List<Vector2> _offsets = new List<Vector2>();
 		private bool _dragging;
 
-		protected void AssignDragPanel(UIPanel panel)
+		protected void AddDragPanel(UIPanel panel)
 		{
 			if (!_initialized)
 			{
-				_dragPanel = panel;
+				_dragPanels.Add(panel);
+				_offsets.Add(new Vector2());
 			}
 		}
 
 		public override void OnInitialize()
 		{
-			if (_dragPanel == null)
+			if (_dragPanels == null)
 			{
-				throw new Exception("dragPanel for DraggableUIState is not set");
+				// TODO warn when lists are uninitialized?
+				_dragPanels = new List<UIPanel>();
+			}
+			if (_offsets == null)
+			{
+				_offsets = new List<Vector2>();
 			}
 
-			_dragPanel.OnMouseDown += DragStart;
-			_dragPanel.OnMouseUp += DragEnd;
+			foreach (var panel in _dragPanels)
+			{
+				panel.OnMouseDown += DragStart;
+				panel.OnMouseUp += DragEnd;
+			}
+
 			_initialized = true;
 		}
 
-		private void DragEnd(UIMouseEvent evt, UIElement listeningelement)
+		private void DragEnd(UIMouseEvent evt, UIElement _)
 		{
 			Vector2 end = evt.MousePosition;
 			_dragging = false;
 
-			_dragPanel.Left.Set(end.X - _offset.X, 0f);
-			_dragPanel.Top.Set(end.Y - _offset.Y, 0f);
+			for (int i = 0; i < _dragPanels.Count; i++)
+			{
+				var panel = _dragPanels[i];
+				var offset = _offsets[i];
+				panel.Left.Set(end.X - offset.X, 0f);
+				panel.Top.Set(end.Y - offset.Y, 0f);
+			}
 
 			Recalculate();
 		}
 
-		private void DragStart(UIMouseEvent evt, UIElement listeningelement)
+		private void DragStart(UIMouseEvent evt, UIElement _)
 		{
 			//Should trigger on hit
-			_offset = new Vector2(evt.MousePosition.X - _dragPanel.Left.Pixels, evt.MousePosition.Y - _dragPanel.Top.Pixels);
+
+			for (int i = 0; i < _dragPanels.Count; i++)
+			{
+				var panel = _dragPanels[i];
+				_offsets[i] = new Vector2(evt.MousePosition.X - panel.Left.Pixels, evt.MousePosition.Y - panel.Top.Pixels);
+			}
+
 			_dragging = true;
 		}
 
 		protected override void DrawSelf(SpriteBatch spriteBatch)
 		{
 			Vector2 mousePosition = new Vector2((float)Main.mouseX, (float)Main.mouseY);
-			if (_dragPanel.ContainsPoint(mousePosition))
-			{
-				Main.LocalPlayer.mouseInterface = true;
-			}
 
-			if (_dragging)
+			for (int i = 0; i < _dragPanels.Count; i++)
 			{
-				_dragPanel.Left.Set(mousePosition.X - _offset.X, 0f);
-				_dragPanel.Top.Set(mousePosition.Y - _offset.Y, 0f);
-				Recalculate();
+				var panel = _dragPanels[i];
+				var offset = _offsets[i];
+
+				if (!Main.LocalPlayer.mouseInterface
+					&& panel.ContainsPoint(mousePosition))
+				{
+					Main.LocalPlayer.mouseInterface = true;
+				}
+
+				if (_dragging)
+				{
+					panel.Left.Set(mousePosition.X - offset.X, 0f);
+					panel.Top.Set(mousePosition.Y - offset.Y, 0f);
+					Recalculate();
+				}
 			}
 		}
 	}

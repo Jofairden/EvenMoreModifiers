@@ -44,6 +44,29 @@
   <PropertyGroup>
     <StartupObject />
   </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DocumentationFile>bin\Debug\Loot.xml</DocumentationFile>
+    <Optimize>false</Optimize>
+    <WarningLevel>3</WarningLevel>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <LangVersion>7</LangVersion>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <LangVersion>7</LangVersion>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="CheatSheet, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -87,6 +110,7 @@
     <Compile Include="Core\Cubes\MagicalCube.cs" />
     <Compile Include="Core\Attributes\DelegationPrioritizationAttribute.cs" />
     <Compile Include="Core\Attributes\UsesEffectAttribute.cs" />
+    <Compile Include="Core\Cubes\RerollingCube.cs" />
     <Compile Include="Core\Graphics\GlowmaskEntity.cs" />
     <Compile Include="Core\Graphics\GlowmaskGlobalItem.cs" />
     <Compile Include="Core\Graphics\GraphicsEntity.cs" />
@@ -185,6 +209,7 @@
     <Compile Include="Rarities\UncommonRarity.cs" />
     <Compile Include="Sounds\Custom\UISounds.cs" />
     <Compile Include="Sounds\SoundHelper.cs" />
+    <Compile Include="UI\Core\UICubeSelectorPanel.cs" />
     <Compile Include="UI\Rerolling\CubeRerollUI.cs" />
     <Compile Include="UI\Sealing\CubeSealUI.cs" />
     <Compile Include="UI\Core\CubeUI.cs" />

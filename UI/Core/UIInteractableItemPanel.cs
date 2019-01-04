@@ -11,6 +11,7 @@ namespace Loot.UI.Core
 		protected bool RightClickFunctionalityEnabled = true;
 		protected bool TakeUserItemOnClick = true;
 
+		public bool PerformRegularClickInteraction { get; protected internal set; } = true;
 
 		public UIInteractableItemPanel(int netID = 0, int stack = 0, Texture2D hintTexture = null, string hintText = null)
 			: base(netID, stack, hintTexture, hintText)
@@ -21,7 +22,7 @@ namespace Loot.UI.Core
 		public override void Update(GameTime gameTime)
 		{
 			base.Update(gameTime);
-			if (RightClickFunctionalityEnabled && base.IsMouseHovering && Main.mouseRight)
+			if (RightClickFunctionalityEnabled && IsMouseHovering && Main.mouseRight)
 			{
 				// Slot has an item
 				if (!item.IsAir)
@@ -99,81 +100,83 @@ namespace Loot.UI.Core
 		{
 			PreOnClick(evt, e);
 
-			// Slot has an item
-			if (!item.IsAir)
+			if (PerformRegularClickInteraction)
 			{
-				// Only slot has an item
-				if (Main.mouseItem.IsAir)
+				// Slot has an item
+				if (!item.IsAir)
 				{
-					Main.PlaySound(SoundID.Grab);
-					Main.playerInventory = true;
-					if (TakeUserItemOnClick)
+					// Only slot has an item
+					if (Main.mouseItem.IsAir)
 					{
-						Main.mouseItem = item.Clone();
-					}
+						Main.PlaySound(SoundID.Grab);
+						Main.playerInventory = true;
+						if (TakeUserItemOnClick)
+						{
+							Main.mouseItem = item.Clone();
+						}
 
-					item.TurnToAir();
+						item.TurnToAir();
+					}
+					// Mouse has an item
+					// Can take mouse item
+					else if (CanTakeItem(Main.mouseItem))
+					{
+						Main.PlaySound(SoundID.Grab);
+						Main.playerInventory = true;
+						// Items are the same type
+						if (item.type == Main.mouseItem.type)
+						{
+							// Attempt increment stack
+							var newStack = item.stack + Main.mouseItem.stack;
+							// Mouse item stack fits, increment
+							if (item.maxStack >= newStack)
+							{
+								item.stack = newStack;
+								if (TakeUserItemOnClick)
+								{
+									Main.mouseItem.TurnToAir();
+								}
+							}
+							// Doesn't fit, set item to maxstack, set mouse item stack to difference
+							else
+							{
+								var stackDiff = newStack - item.maxStack;
+								item.stack = item.maxStack;
+								if (TakeUserItemOnClick)
+								{
+									Main.mouseItem.stack = stackDiff;
+								}
+							}
+						}
+						// Items are not the same type
+						else
+						{
+							// Swap mouse item and slot item
+							var tmp = item.Clone();
+							var tmp2 = Main.mouseItem.Clone();
+							if (TakeUserItemOnClick)
+							{
+								Main.mouseItem = tmp;
+							}
+
+							item = tmp2;
+						}
+					}
 				}
-				// Mouse has an item
-				// Can take mouse item
+				// Slot has no item
+				// Slot can take mouse item
 				else if (CanTakeItem(Main.mouseItem))
 				{
 					Main.PlaySound(SoundID.Grab);
 					Main.playerInventory = true;
-					// Items are the same type
-					if (item.type == Main.mouseItem.type)
+					item = Main.mouseItem.Clone();
+					if (TakeUserItemOnClick)
 					{
-						// Attempt increment stack
-						var newStack = item.stack + Main.mouseItem.stack;
-						// Mouse item stack fits, increment
-						if (item.maxStack >= newStack)
-						{
-							item.stack = newStack;
-							if (TakeUserItemOnClick)
-							{
-								Main.mouseItem.TurnToAir();
-							}
-						}
-						// Doesn't fit, set item to maxstack, set mouse item stack to difference
-						else
-						{
-							var stackDiff = newStack - item.maxStack;
-							item.stack = item.maxStack;
-							if (TakeUserItemOnClick)
-							{
-								Main.mouseItem.stack = stackDiff;
-							}
-						}
-					}
-					// Items are not the same type
-					else
-					{
-						// Swap mouse item and slot item
-						var tmp = item.Clone();
-						var tmp2 = Main.mouseItem.Clone();
-						if (TakeUserItemOnClick)
-						{
-							Main.mouseItem = tmp;
-						}
-
-						item = tmp2;
+						Main.mouseItem.TurnToAir();
 					}
 				}
 			}
-			// Slot has no item
-			// Slot can take mouse item
-			else if (CanTakeItem(Main.mouseItem))
-			{
-				Main.PlaySound(SoundID.Grab);
-				Main.playerInventory = true;
-				item = Main.mouseItem.Clone();
-				if (TakeUserItemOnClick)
-				{
-					Main.mouseItem.TurnToAir();
-				}
-			}
 
-			// PostClick
 			PostOnClick(evt, e);
 		}
 	}

@@ -1,7 +1,8 @@
-using System.Linq;
 using Loot.Core.Cubes;
+using Loot.Ext;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
+using System.Linq;
 using Terraria;
 using Terraria.UI;
 
@@ -17,7 +18,7 @@ namespace Loot.UI.Core
 			this.HintOnHover = " (click to unslot)";
 		}
 
-		public override bool CanTakeItem(Item item) => item.modItem is MagicalCube;
+		public override bool CanTakeItem(Item item) => item.modItem is RerollingCube;
 
 		public override void PostOnClick(UIMouseEvent evt, UIElement e)
 		{
@@ -25,32 +26,24 @@ namespace Loot.UI.Core
 			{
 				RecalculateStack();
 			}
+			Loot.Instance.CubeRerollUI.DetermineAvailableCubes();
+		}
+
+		public void ChangeItem(int type)
+		{
+			item.SetDefaults(type);
+			RecalculateStack();
 		}
 
 		public void InteractionLogic(ItemRollProperties itemRollProperties)
 		{
-			(item.modItem as MagicalCube)?.SetRollLogic(itemRollProperties);
+			(item.modItem as RerollingCube)?.SetRollLogic(itemRollProperties);
 		}
 
-		internal void RecalculateStack()
+		public void RecalculateStack()
 		{
-			// @todo track cube tier as well
-			// after cube is slotted, count total number
-
-			// .Take 58 because 59th slot is MouseItem for some reason.
-			int stack = Main.LocalPlayer.inventory.Take(58)
-				.Where(x => x.type == item.type)
-				.Select(x => x.stack)
-				.Sum();
-
-			if (Main.mouseItem?.type == item.type)
-			{
-				stack += Main.mouseItem.stack;
-			}
-
-			stack = (int)MathHelper.Clamp(stack, 0f, 999f);
-
-			this.item.stack = stack;
+			item.stack = Main.LocalPlayer.inventory.CountItemStack(item.type, true);
+			item.stack = (int)MathHelper.Clamp(item.stack, 0f, 999f);
 		}
 	}
 }

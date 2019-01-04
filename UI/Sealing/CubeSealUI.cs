@@ -71,7 +71,7 @@ namespace Loot.UI.Sealing
 			_backPanel.Top.Set(Main.screenHeight / 2f - _backPanel.Height.Pixels / 2f, 0f);
 			_backPanel.BackgroundColor = new Color(73, 94, 171);
 			base.Append(_backPanel);
-			AssignDragPanel(_backPanel);
+			AddDragPanel(_backPanel);
 			base.OnInitialize();
 
 			var sealCubeTexture = Loot.Instance.GetTexture("Core/Cubes/CubeOfSealing");
@@ -84,8 +84,8 @@ namespace Loot.UI.Sealing
 			_backPanel.Append(_cubePanel);
 
 			_itemPanel = new UISealItemPanel(hintTexture: ModContent.GetTexture("Terraria/Item_24"), hintText: "Place an item to seal here");
-			_itemPanel.Width.Set(UIItemPanel.panelwidth, 0f);
-			_itemPanel.Height.Set(UIItemPanel.panelheight, 0f);
+			_itemPanel.Width.Set(UIItemPanel.PANEL_WIDTH, 0f);
+			_itemPanel.Height.Set(UIItemPanel.PANEL_HEIGHT, 0f);
 			_itemPanel.Left.Set(_cubePanel.Left.Pixels + _cubePanel.Width.Pixels + padding, 0f);
 			_backPanel.Append(_itemPanel);
 

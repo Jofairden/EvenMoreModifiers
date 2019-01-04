@@ -4,7 +4,7 @@ using Terraria.ModLoader;
 
 namespace Loot.Core.Cubes
 {
-	public class BlackCube : MagicalCube
+	public class BlackCube : RerollingCube
 	{
 		protected override string CubeName => "Black Cube";
 		protected override Color? OverrideNameColor => Color.LightSlateGray;
