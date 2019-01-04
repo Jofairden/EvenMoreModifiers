@@ -1,6 +1,7 @@
 var searchData=
 [
   ['uicubeitempanel_2ecs',['UICubeItemPanel.cs',['../_u_i_cube_item_panel_8cs.html',1,'']]],
+  ['uicubeselectorpanel_2ecs',['UICubeSelectorPanel.cs',['../_u_i_cube_selector_panel_8cs.html',1,'']]],
   ['uiinteractableitempanel_2ecs',['UIInteractableItemPanel.cs',['../_u_i_interactable_item_panel_8cs.html',1,'']]],
   ['uiitempanel_2ecs',['UIItemPanel.cs',['../_u_i_item_panel_8cs.html',1,'']]],
   ['uimodifierpanel_2ecs',['UIModifierPanel.cs',['../_u_i_modifier_panel_8cs.html',1,'']]],

@@ -208,6 +208,8 @@ var NAVTREEINDEX0 =
 "_ranged_damage_plus_8cs_source.html":[3,0,3,0,1,8],
 "_rare_rarity_8cs.html":[3,0,5,2],
 "_rare_rarity_8cs_source.html":[3,0,5,2],
+"_rerolling_cube_8cs.html":[3,0,0,2,7],
+"_rerolling_cube_8cs_source.html":[3,0,0,2,7],
 "_shader_draw_layer_8cs.html":[3,0,0,3,4],
 "_shader_draw_layer_8cs.html#ab9bc623e11f3c37b99846ba9daf478d0":[3,0,0,3,4,0],
 "_shader_draw_layer_8cs.html#ab9bc623e11f3c37b99846ba9daf478d0a0557fa923dcee4d0f86b1409f5c2167f":[3,0,0,3,4,0,0],
@@ -247,7 +249,5 @@ var NAVTREEINDEX0 =
 "_thrown_damage_plus_8cs.html":[3,0,3,0,1,10],
 "_thrown_damage_plus_8cs_source.html":[3,0,3,0,1,10],
 "_transcendent_rarity_8cs.html":[3,0,5,3],
-"_transcendent_rarity_8cs_source.html":[3,0,5,3],
-"_u_i_cube_item_panel_8cs.html":[3,0,7,0,2],
-"_u_i_cube_item_panel_8cs_source.html":[3,0,7,0,2]
+"_transcendent_rarity_8cs_source.html":[3,0,5,3]
 };

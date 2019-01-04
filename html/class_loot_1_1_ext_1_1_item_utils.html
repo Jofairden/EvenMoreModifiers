@@ -119,6 +119,14 @@ $(document).ready(function(){initNavTree('class_loot_1_1_ext_1_1_item_utils.html
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
+<tr class="memitem:a7aad7849de7aba74cb0aa2c329d1c9e7"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_loot_1_1_ext_1_1_item_utils.html#a7aad7849de7aba74cb0aa2c329d1c9e7">CountItemStack</a> (this Item[] inventory, int type, bool includeMouseItem=false)</td></tr>
+<tr class="separator:a7aad7849de7aba74cb0aa2c329d1c9e7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6dd664037f5220cd40f131d8b6e135d9"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_loot_1_1_ext_1_1_item_utils.html#a6dd664037f5220cd40f131d8b6e135d9">CountItemStack</a> (this Item[] inventory, bool includeMouseItem, Func&lt; Item, bool &gt; predicate)</td></tr>
+<tr class="separator:a6dd664037f5220cd40f131d8b6e135d9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5403a0c1d62378df2112a4880f8ec0d8"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_loot_1_1_ext_1_1_item_utils.html#a5403a0c1d62378df2112a4880f8ec0d8">CountModItemStack&lt; T &gt;</a> (this Item[] inventory, bool includeMouseItem=false)</td></tr>
+<tr class="separator:a5403a0c1d62378df2112a4880f8ec0d8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a927b26732f7a7d8ef077e683aa0532a7"><td class="memItemLeft" align="right" valign="top">static IEnumerable&lt; T &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_loot_1_1_ext_1_1_item_utils.html#a927b26732f7a7d8ef077e683aa0532a7">GetDistinctModItems&lt; T &gt;</a> (this Item[] inventory)</td></tr>
+<tr class="separator:a927b26732f7a7d8ef077e683aa0532a7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af58bed9e30ee3a8923f017b6a7236cfa"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_loot_1_1_ext_1_1_item_utils.html#af58bed9e30ee3a8923f017b6a7236cfa">IsAccessory</a> (this Item item)</td></tr>
 <tr class="separator:af58bed9e30ee3a8923f017b6a7236cfa"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aadc4b7173f9beda06818607e781182e7"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_loot_1_1_ext_1_1_item_utils.html#aadc4b7173f9beda06818607e781182e7">IsArmor</a> (this Item item)</td></tr>
@@ -130,8 +138,186 @@ Static Public Member Functions</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock">
-<p>Definition at line <a class="el" href="_item_utils_8cs_source.html#l00005">5</a> of file <a class="el" href="_item_utils_8cs_source.html">ItemUtils.cs</a>.</p>
+<p>Definition at line <a class="el" href="_item_utils_8cs_source.html#l00009">9</a> of file <a class="el" href="_item_utils_8cs_source.html">ItemUtils.cs</a>.</p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
+<a class="anchor" id="a7aad7849de7aba74cb0aa2c329d1c9e7"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static int Loot.Ext.ItemUtils.CountItemStack </td>
+          <td>(</td>
+          <td class="paramtype">this Item[]&#160;</td>
+          <td class="paramname"><em>inventory</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>type</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>includeMouseItem</em> = <code>false</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a6dd664037f5220cd40f131d8b6e135d9"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static int Loot.Ext.ItemUtils.CountItemStack </td>
+          <td>(</td>
+          <td class="paramtype">this Item[]&#160;</td>
+          <td class="paramname"><em>inventory</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>includeMouseItem</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Func&lt; Item, bool &gt;&#160;</td>
+          <td class="paramname"><em>predicate</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_item_utils_8cs_source.html#l00029">29</a> of file <a class="el" href="_item_utils_8cs_source.html">ItemUtils.cs</a>.</p>
+<div class="fragment"><div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;        {</div><div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;            <span class="keywordtype">int</span> size = includeMouseItem ? 59 : 58;</div><div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;            <span class="keywordflow">return</span> Main.LocalPlayer.inventory.Take(size)</div><div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;                .Where(predicate)</div><div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;                .Select(x =&gt; x.stack)</div><div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;                .Sum();</div><div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        }</div></div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="a5403a0c1d62378df2112a4880f8ec0d8"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static int Loot.Ext.ItemUtils.CountModItemStack&lt; T &gt; </td>
+          <td>(</td>
+          <td class="paramtype">this Item[]&#160;</td>
+          <td class="paramname"><em>inventory</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>includeMouseItem</em> = <code>false</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="typeconstraint">
+<dl><dt><b>Type Constraints</b></dt><dd>
+<table border="0" cellspacing="2" cellpadding="0">
+<tr><td valign="top"><em>T</em></td><td>&#160;:</td><td valign="top"><em><a class="el" href="class_mod_item.html">ModItem</a></em></td><td>&#160;</td></tr>
+<tr><td valign="top"><em>T</em></td><td>&#160;:</td><td valign="top"><em>CountItemStack</em></td><td>&#160;</td></tr>
+<tr><td valign="top"><em>T</em></td><td>&#160;:</td><td valign="top"><em>inventory</em></td><td>&#160;</td></tr>
+<tr><td valign="top"><em>T</em></td><td>&#160;:</td><td valign="top"><em>includeMouseItem</em></td><td>&#160;</td></tr>
+<tr><td valign="top"><em>T</em></td><td>&#160;:</td><td valign="top"><em>item</em></td><td>&#160;</td></tr>
+<tr><td valign="top"><em>T</em></td><td>&#160;:</td><td valign="top"><em>item.modItem</em></td><td>&#160;</td></tr>
+<tr><td valign="top"><em>T</em></td><td>&#160;:</td><td valign="top"><em>is</em></td><td>&#160;</td></tr>
+<tr><td valign="top"><em>T</em></td><td>&#160;:</td><td valign="top"><em>T</em></td><td>&#160;</td></tr>
+</table>
+</dd>
+</dl>
+</div>
+
+</div>
+</div>
+<a class="anchor" id="a927b26732f7a7d8ef077e683aa0532a7"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static IEnumerable&lt;T&gt; Loot.Ext.ItemUtils.GetDistinctModItems&lt; T &gt; </td>
+          <td>(</td>
+          <td class="paramtype">this Item[]&#160;</td>
+          <td class="paramname"><em>inventory</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="typeconstraint">
+<dl><dt><b>Type Constraints</b></dt><dd>
+<table border="0" cellspacing="2" cellpadding="0">
+<tr><td valign="top"><em>T</em></td><td>&#160;:</td><td valign="top"><em><a class="el" href="class_mod_item.html">ModItem</a></em></td><td>&#160;</td></tr>
+<tr><td valign="top"><em>T</em></td><td>&#160;:</td><td valign="top"><em>inventory</em></td><td>&#160;</td></tr>
+<tr><td valign="top"><em>T</em></td><td>&#160;:</td><td valign="top"><em>Where</em></td><td>&#160;</td></tr>
+<tr><td valign="top"><em>T</em></td><td>&#160;:</td><td valign="top"><em>x</em></td><td>&#160;</td></tr>
+<tr><td valign="top"><em>T</em></td><td>&#160;:</td><td valign="top"><em>x.IsAir</em></td><td>&#160;</td></tr>
+<tr><td valign="top"><em>T</em></td><td>&#160;:</td><td valign="top"><em>x.modItem</em></td><td>&#160;</td></tr>
+<tr><td valign="top"><em>T</em></td><td>&#160;:</td><td valign="top"><em>is</em></td><td>&#160;</td></tr>
+<tr><td valign="top"><em>T</em></td><td>&#160;:</td><td valign="top"><em>T</em></td><td>&#160;</td></tr>
+<tr><td valign="top"><em>T</em></td><td>&#160;:</td><td valign="top"><em>GroupBy</em></td><td>&#160;</td></tr>
+<tr><td valign="top"><em>T</em></td><td>&#160;:</td><td valign="top"><em>x</em></td><td>&#160;</td></tr>
+<tr><td valign="top"><em>T</em></td><td>&#160;:</td><td valign="top"><em>x.type</em></td><td>&#160;</td></tr>
+<tr><td valign="top"><em>T</em></td><td>&#160;:</td><td valign="top"><em>Select</em></td><td>&#160;</td></tr>
+<tr><td valign="top"><em>T</em></td><td>&#160;:</td><td valign="top"><em>g</em></td><td>&#160;</td></tr>
+<tr><td valign="top"><em>T</em></td><td>&#160;:</td><td valign="top"><em>T</em></td><td>&#160;</td></tr>
+<tr><td valign="top"><em>T</em></td><td>&#160;:</td><td valign="top"><em>g.First()</em></td><td>&#160;</td></tr>
+<tr><td valign="top"><em>T</em></td><td>&#160;:</td><td valign="top"><em>modItem</em></td><td>&#160;</td></tr>
+</table>
+</dd>
+</dl>
+</div>
+
+</div>
+</div>
 <a class="anchor" id="af58bed9e30ee3a8923f017b6a7236cfa"></a>
 <div class="memitem">
 <div class="memproto">
@@ -234,7 +420,7 @@ Static Public Member Functions</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespace_loot.html">Loot</a></li><li class="navelem"><a class="el" href="namespace_loot_1_1_ext.html">Ext</a></li><li class="navelem"><a class="el" href="class_loot_1_1_ext_1_1_item_utils.html">ItemUtils</a></li>
-    <li class="footer">Generated on Fri Jan 4 2019 19:31:46 for Even More Modifiers by
+    <li class="footer">Generated on Fri Jan 4 2019 22:33:00 for Even More Modifiers by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.11 </li>
   </ul>

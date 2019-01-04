@@ -1,6 +1,7 @@
 var searchData=
 [
   ['uicubeitempanel',['UICubeItemPanel',['../class_loot_1_1_u_i_1_1_core_1_1_u_i_cube_item_panel.html#ae3009e671771441e902d0de6eacefd1f',1,'Loot::UI::Core::UICubeItemPanel']]],
+  ['uicubeselectorpanel',['UICubeSelectorPanel',['../class_loot_1_1_u_i_1_1_core_1_1_u_i_cube_selector_panel.html#ae292755d1b7c506576ce1b521d48fcf8',1,'Loot::UI::Core::UICubeSelectorPanel']]],
   ['uiinteractableitempanel',['UIInteractableItemPanel',['../class_loot_1_1_u_i_1_1_core_1_1_u_i_interactable_item_panel.html#af80f9c43ca8b602aac159531242acbf8',1,'Loot::UI::Core::UIInteractableItemPanel']]],
   ['uiinteractableitempanel_5fonclick',['UIInteractableItemPanel_OnClick',['../class_loot_1_1_u_i_1_1_core_1_1_u_i_interactable_item_panel.html#a3adc1b17da7aa419ca1b61e602ea24fb',1,'Loot::UI::Core::UIInteractableItemPanel']]],
   ['uiitempanel',['UIItemPanel',['../class_loot_1_1_u_i_1_1_core_1_1_u_i_item_panel.html#a08f8403aca36aa0a46dd5a6062f9f163',1,'Loot::UI::Core::UIItemPanel']]],

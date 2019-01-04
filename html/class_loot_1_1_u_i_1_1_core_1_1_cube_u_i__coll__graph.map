@@ -1,5 +1,5 @@
 <map id="Loot.UI.Core.CubeUI" name="Loot.UI.Core.CubeUI">
-<area shape="rect" id="node2" href="$class_loot_1_1_u_i_1_1_core_1_1_draggable_u_i_state.html" title="A UIState which primarily goal is to provide dragging on click functionality to the main panel The dr..." alt="" coords="142,189,268,216"/>
+<area shape="rect" id="node2" href="$class_loot_1_1_u_i_1_1_core_1_1_draggable_u_i_state.html" title="A UIState which primarily goal is to provide dragging on click functionality to the main panel The dr..." alt="" coords="154,189,280,216"/>
 <area shape="rect" id="node3" href="$class_loot_1_1_u_i_1_1_core_1_1_visibility_u_i.html" title="A UIState which primarily goal is to provide easy visibility toggling " alt="" coords="13,97,99,124"/>
 <area shape="rect" id="node4" href="$class_u_i_state.html" title="UIState" alt="" coords="5,5,72,32"/>
 </map>

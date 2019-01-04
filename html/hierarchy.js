@@ -156,9 +156,11 @@ var hierarchy =
     [ "Loot.Core.System.ModifierTooltipLine", "struct_loot_1_1_core_1_1_system_1_1_modifier_tooltip_line.html", null ],
     [ "ModItem", "class_mod_item.html", [
       [ "Loot.Core.Cubes.MagicalCube", "class_loot_1_1_core_1_1_cubes_1_1_magical_cube.html", [
-        [ "Loot.Core.Cubes.BlackCube", "class_loot_1_1_core_1_1_cubes_1_1_black_cube.html", null ],
         [ "Loot.Core.Cubes.CubeOfSealing", "class_loot_1_1_core_1_1_cubes_1_1_cube_of_sealing.html", null ],
-        [ "Loot.Core.Cubes.PoorCube", "class_loot_1_1_core_1_1_cubes_1_1_poor_cube.html", null ]
+        [ "Loot.Core.Cubes.RerollingCube", "class_loot_1_1_core_1_1_cubes_1_1_rerolling_cube.html", [
+          [ "Loot.Core.Cubes.BlackCube", "class_loot_1_1_core_1_1_cubes_1_1_black_cube.html", null ],
+          [ "Loot.Core.Cubes.PoorCube", "class_loot_1_1_core_1_1_cubes_1_1_poor_cube.html", null ]
+        ] ]
       ] ]
     ] ],
     [ "ModPlayer", "class_mod_player.html", [
@@ -191,6 +193,7 @@ var hierarchy =
       [ "Loot.UI.Core.UIItemPanel", "class_loot_1_1_u_i_1_1_core_1_1_u_i_item_panel.html", [
         [ "Loot.UI.Core.UIInteractableItemPanel", "class_loot_1_1_u_i_1_1_core_1_1_u_i_interactable_item_panel.html", [
           [ "Loot.UI.Core.UICubeItemPanel", "class_loot_1_1_u_i_1_1_core_1_1_u_i_cube_item_panel.html", null ],
+          [ "Loot.UI.Core.UICubeSelectorPanel", "class_loot_1_1_u_i_1_1_core_1_1_u_i_cube_selector_panel.html", null ],
           [ "Loot.UI.Rerolling.UIRerollItemPanel", "class_loot_1_1_u_i_1_1_rerolling_1_1_u_i_reroll_item_panel.html", null ],
           [ "Loot.UI.Sealing.UISealItemPanel", "class_loot_1_1_u_i_1_1_sealing_1_1_u_i_seal_item_panel.html", null ]
         ] ]

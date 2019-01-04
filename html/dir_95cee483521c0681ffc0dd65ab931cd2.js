@@ -9,6 +9,9 @@ var dir_95cee483521c0681ffc0dd65ab931cd2 =
     [ "UICubeItemPanel.cs", "_u_i_cube_item_panel_8cs.html", [
       [ "UICubeItemPanel", "class_loot_1_1_u_i_1_1_core_1_1_u_i_cube_item_panel.html", "class_loot_1_1_u_i_1_1_core_1_1_u_i_cube_item_panel" ]
     ] ],
+    [ "UICubeSelectorPanel.cs", "_u_i_cube_selector_panel_8cs.html", [
+      [ "UICubeSelectorPanel", "class_loot_1_1_u_i_1_1_core_1_1_u_i_cube_selector_panel.html", "class_loot_1_1_u_i_1_1_core_1_1_u_i_cube_selector_panel" ]
+    ] ],
     [ "UIInteractableItemPanel.cs", "_u_i_interactable_item_panel_8cs.html", [
       [ "UIInteractableItemPanel", "class_loot_1_1_u_i_1_1_core_1_1_u_i_interactable_item_panel.html", "class_loot_1_1_u_i_1_1_core_1_1_u_i_interactable_item_panel" ]
     ] ],

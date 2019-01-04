@@ -20,5 +20,8 @@ var dir_2e7c132c9b84ae8f3fa968598cfe2222 =
     ] ],
     [ "PoorCube.cs", "_poor_cube_8cs.html", [
       [ "PoorCube", "class_loot_1_1_core_1_1_cubes_1_1_poor_cube.html", "class_loot_1_1_core_1_1_cubes_1_1_poor_cube" ]
+    ] ],
+    [ "RerollingCube.cs", "_rerolling_cube_8cs.html", [
+      [ "RerollingCube", "class_loot_1_1_core_1_1_cubes_1_1_rerolling_cube.html", "class_loot_1_1_core_1_1_cubes_1_1_rerolling_cube" ]
     ] ]
 ];
