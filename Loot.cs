@@ -1,14 +1,13 @@
 using Loot.Core.ModContent;
-using Microsoft.Xna.Framework;
-using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Runtime.CompilerServices;
 using Loot.Core.System.Loaders;
 using Loot.UI.Core;
 using Loot.UI.Rerolling;
 using Loot.UI.Sealing;
+using Microsoft.Xna.Framework;
+using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Runtime.CompilerServices;
 using Terraria;
 using Terraria.ModLoader;
 using Terraria.UI;
@@ -85,7 +84,11 @@ namespace Loot
 					wingSlotMod.Call("add", (Func<bool>)(
 						() =>
 						{
-							if (CubeInterface.CurrentState == null) return false;
+							if (CubeInterface.CurrentState == null)
+							{
+								return false;
+							}
+
 							return (CubeInterface.CurrentState as CubeUI)?.Visible ?? false;
 						}));
 				}
@@ -153,7 +156,7 @@ namespace Loot
 		public override void PreSaveAndQuit()
 		{
 			if (CubeRerollUI._rerollItemPanel != null
-			    && !CubeRerollUI._rerollItemPanel.item.IsAir)
+				&& !CubeRerollUI._rerollItemPanel.item.IsAir)
 			{
 				// Runs only in SP or client, so this is safe
 				Main.LocalPlayer.QuickSpawnClonedItem(CubeRerollUI._rerollItemPanel.item, CubeRerollUI._rerollItemPanel.item.stack);
@@ -161,7 +164,7 @@ namespace Loot
 			}
 
 			if (CubeSealUI.SlottedItem != null
-			    & !CubeSealUI.SlottedItem?.IsAir ?? false)
+				& !CubeSealUI.SlottedItem?.IsAir ?? false)
 			{
 				Main.LocalPlayer.QuickSpawnClonedItem(CubeSealUI.SlottedItem, CubeSealUI.SlottedItem.stack);
 				CubeSealUI.SlottedItem.TurnToAir();

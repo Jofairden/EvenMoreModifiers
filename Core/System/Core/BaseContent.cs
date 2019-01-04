@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using Loot.Core.System.Loaders;
 using Terraria.ModLoader;
@@ -128,7 +129,7 @@ namespace Loot.Core.System.Core
 			return type < IdCount ? (T)Content[type].Clone() : default(T);
 		}
 
-		public IReadOnlyCollection<T> GetContent()
+		public ReadOnlyCollection<T> GetContent()
 			=> Content.Select(e => (T)e.Value?.Clone()).ToList().AsReadOnly();
 
 		// I wish we could use dynamic :(
