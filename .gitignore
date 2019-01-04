@@ -1,8 +1,7 @@
 unreleased-changelog.txt
 [Dd]ocs/.doctrees/**/*
 [Dd]ocs/_build/**/*
-[Rr]eferences/[Tt]erraria.exe*
-[Rr]eferences/[Tt]erraria[Ss]erver.exe*
+[Rr]eferences/[Tt]erraria/**/*
 
 
 ## Ignore Visual Studio temporary files, build results, and

@@ -83,13 +83,13 @@ namespace Loot.UI.Sealing
 			_cubePanel.OnClick += TrySealingSlottedItem;
 			_backPanel.Append(_cubePanel);
 
-			_itemPanel = new UISealItemPanel(hintTexture: ModLoader.GetTexture("Terraria/Item_24"), hintText: "Place an item to seal here");
+			_itemPanel = new UISealItemPanel(hintTexture: ModContent.GetTexture("Terraria/Item_24"), hintText: "Place an item to seal here");
 			_itemPanel.Width.Set(UIItemPanel.panelwidth, 0f);
 			_itemPanel.Height.Set(UIItemPanel.panelheight, 0f);
 			_itemPanel.Left.Set(_cubePanel.Left.Pixels + _cubePanel.Width.Pixels + padding, 0f);
 			_backPanel.Append(_itemPanel);
 
-			Texture2D btnCloseTexture = ModLoader.GetTexture("Terraria/UI/InfoIcon_8");
+			Texture2D btnCloseTexture = ModContent.GetTexture("Terraria/UI/InfoIcon_8");
 			UIImageButton closeButton = new UIImageButton(btnCloseTexture);
 			closeButton.Left.Set(_backPanel.Width.Pixels - btnCloseTexture.Width - 20f, 0f);
 			closeButton.Top.Set(0f, 0f);

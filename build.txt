@@ -7,4 +7,5 @@ hideResources = false
 includeSource = tru
 buildIgnore = *.csproj, *.user, .vs\*, .idea\*, *.git*, *.config, tmp.txt, packages\*, UnitTests.cs, TestResults\*, LootTests\*, docs\*, bin\*, obj\*, references\*, travis\*
 includePDB = false
+languageVersion = 6
 weakReferences = CheatSheet, WingSlot

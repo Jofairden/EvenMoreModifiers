@@ -83,7 +83,7 @@ namespace Loot.UI.Rerolling
 			AssignDragPanel(_backPanel);
 			base.OnInitialize();
 
-			Texture2D btnCloseTexture = ModLoader.GetTexture("Terraria/UI/InfoIcon_8");
+			Texture2D btnCloseTexture = ModContent.GetTexture("Terraria/UI/InfoIcon_8");
 			UIImageButton closeButton = new UIImageButton(btnCloseTexture);
 			closeButton.Left.Set(_backPanel.Width.Pixels - btnCloseTexture.Width * 2f - padding, 0f);
 			closeButton.Top.Set(0f, 0f);
@@ -96,7 +96,7 @@ namespace Loot.UI.Rerolling
 			_cubePanel.Top.Set(0f, 0f);
 			_backPanel.Append(_cubePanel);
 
-			_rerollItemPanel = new UIRerollItemPanel(hintTexture: ModLoader.GetTexture("Terraria/Item_24"), hintText: "Place an item to reroll here");
+			_rerollItemPanel = new UIRerollItemPanel(hintTexture: ModContent.GetTexture("Terraria/Item_24"), hintText: "Place an item to reroll here");
 			_rerollItemPanel.Top.Set(_cubePanel.Top.Pixels + _rerollItemPanel.Height.Pixels + padding, 0f);
 			_backPanel.Append(_rerollItemPanel);
 
@@ -114,7 +114,7 @@ namespace Loot.UI.Rerolling
 				_backPanel.Append(panel);
 			}
 
-			Texture2D rerollTexture = ModLoader.GetTexture("Terraria/UI/Craft_Toggle_3");
+			Texture2D rerollTexture = ModContent.GetTexture("Terraria/UI/Craft_Toggle_3");
 			_rerollButton = new UIImageButton(rerollTexture);
 			_rerollButton.Width.Set(UIItemPanel.panelwidth, 0f);
 			_rerollButton.Height.Set(UIItemPanel.panelwidth, 0f);
