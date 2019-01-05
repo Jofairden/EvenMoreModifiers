@@ -1,7 +1,8 @@
+using Loot.Core.System;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Reflection;
-using Loot.Core.System;
 using Terraria;
 using Terraria.ModLoader;
 
@@ -23,7 +24,7 @@ namespace Loot.Core.Attributes
 
 		public AutoDelegation(params string[] types)
 		{
-			_delegationTypes = new List<string>(types);
+			_delegationTypes = new List<string>(types.Select(type => !type.StartsWith("On") ? $"On{type}" : type));
 		}
 
 		public void Attach(ModifierPlayer player, MethodInfo method, ModifierEffect effect)
