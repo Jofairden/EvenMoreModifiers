@@ -25,6 +25,7 @@ var searchData=
   ['modifierpoolcontent_2ecs',['ModifierPoolContent.cs',['../_modifier_pool_content_8cs.html',1,'']]],
   ['modifierprojectile_2ecs',['ModifierProjectile.cs',['../_modifier_projectile_8cs.html',1,'']]],
   ['modifierproperties_2ecs',['ModifierProperties.cs',['../_modifier_properties_8cs.html',1,'']]],
+  ['modifierpropertiesbuilder_2ecs',['ModifierPropertiesBuilder.cs',['../_modifier_properties_builder_8cs.html',1,'']]],
   ['modifierpropertiestests_2ecs',['ModifierPropertiesTests.cs',['../_modifier_properties_tests_8cs.html',1,'']]],
   ['modifierrarity_2ecs',['ModifierRarity.cs',['../_modifier_rarity_8cs.html',1,'']]],
   ['modifierraritycontent_2ecs',['ModifierRarityContent.cs',['../_modifier_rarity_content_8cs.html',1,'']]],

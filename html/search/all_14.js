@@ -26,7 +26,6 @@ var searchData=
   ['uistate',['UIState',['../class_u_i_state.html',1,'']]],
   ['uncommonrarity',['UncommonRarity',['../class_loot_1_1_rarities_1_1_uncommon_rarity.html',1,'Loot::Rarities']]],
   ['uncommonrarity_2ecs',['UncommonRarity.cs',['../_uncommon_rarity_8cs.html',1,'']]],
-  ['uniquemodifier',['UniqueModifier',['../class_loot_1_1_core_1_1_system_1_1_modifier_properties.html#a3396a7e70ad18e6553ee7239c4798bc6',1,'Loot::Core::System::ModifierProperties']]],
   ['unittests',['UnitTests',['../class_loot_tests_1_1_unit_tests.html',1,'LootTests']]],
   ['unload',['Unload',['../class_loot_1_1_core_1_1_mod_content_1_1_graphics_mod_content.html#acba742411b1f4d591a6eec324406f5f5',1,'Loot.Core.ModContent.GraphicsModContent.Unload()'],['../class_loot_1_1_core_1_1_mod_content_1_1_texture_mod_content.html#a5b724ec0e964058c73ae867da0b41247',1,'Loot.Core.ModContent.TextureModContent.Unload()'],['../class_loot_1_1_loot.html#a583d8d3d69bdd106d25030c5309e37bc',1,'Loot.Loot.Unload()']]],
   ['update',['Update',['../class_loot_1_1_u_i_1_1_core_1_1_u_i_interactable_item_panel.html#a50e85eaebdb657ed535be66a0c446cef',1,'Loot::UI::Core::UIInteractableItemPanel']]],
@@ -53,5 +52,6 @@ var searchData=
   ['usedestinationrectangle',['UseDestinationRectangle',['../class_loot_1_1_core_1_1_graphics_1_1_glowmask_entity.html#af7020a69eb429863b27a4756a8594258',1,'Loot.Core.Graphics.GlowmaskEntity.UseDestinationRectangle()'],['../class_loot_1_1_core_1_1_graphics_1_1_shader_entity.html#a7f6c5ffe180de6c6c9c61dd6e3c8736d',1,'Loot.Core.Graphics.ShaderEntity.UseDestinationRectangle()']]],
   ['useseffectattribute',['UsesEffectAttribute',['../class_loot_1_1_core_1_1_attributes_1_1_uses_effect_attribute.html',1,'Loot::Core::Attributes']]],
   ['useseffectattribute',['UsesEffectAttribute',['../class_loot_1_1_core_1_1_attributes_1_1_uses_effect_attribute.html#abcb21092ec20cf52b0a12857edbf39fb',1,'Loot::Core::Attributes::UsesEffectAttribute']]],
-  ['useseffectattribute_2ecs',['UsesEffectAttribute.cs',['../_uses_effect_attribute_8cs.html',1,'']]]
+  ['useseffectattribute_2ecs',['UsesEffectAttribute.cs',['../_uses_effect_attribute_8cs.html',1,'']]],
+  ['usingdefault',['UsingDefault',['../class_loot_1_1_core_1_1_system_1_1_modifier_properties_builder.html#a1176e6004abefd2e2ddcac6e558b2617',1,'Loot.Core.System.ModifierPropertiesBuilder.UsingDefault(ModifierProperties val)'],['../class_loot_1_1_core_1_1_system_1_1_modifier_properties_builder.html#a2c7a11262d1a06eb64bbc28ec348f2e0',1,'Loot.Core.System.ModifierPropertiesBuilder.UsingDefault(ModifierPropertiesBuilder val)']]]
 ];

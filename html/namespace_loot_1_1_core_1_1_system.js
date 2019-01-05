@@ -8,6 +8,7 @@ var namespace_loot_1_1_core_1_1_system =
     [ "ModifierEffect", "class_loot_1_1_core_1_1_system_1_1_modifier_effect.html", "class_loot_1_1_core_1_1_system_1_1_modifier_effect" ],
     [ "ModifierPool", "class_loot_1_1_core_1_1_system_1_1_modifier_pool.html", "class_loot_1_1_core_1_1_system_1_1_modifier_pool" ],
     [ "ModifierProperties", "class_loot_1_1_core_1_1_system_1_1_modifier_properties.html", "class_loot_1_1_core_1_1_system_1_1_modifier_properties" ],
+    [ "ModifierPropertiesBuilder", "class_loot_1_1_core_1_1_system_1_1_modifier_properties_builder.html", "class_loot_1_1_core_1_1_system_1_1_modifier_properties_builder" ],
     [ "ModifierRarity", "class_loot_1_1_core_1_1_system_1_1_modifier_rarity.html", "class_loot_1_1_core_1_1_system_1_1_modifier_rarity" ],
     [ "ModifierTooltipLine", "struct_loot_1_1_core_1_1_system_1_1_modifier_tooltip_line.html", "struct_loot_1_1_core_1_1_system_1_1_modifier_tooltip_line" ]
 ];

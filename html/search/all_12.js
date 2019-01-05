@@ -6,7 +6,6 @@ var searchData=
   ['saveversion',['SaveVersion',['../class_loot_1_1_e_m_m_item.html#a8ce5218d600c0b68fc6da07bab1fe9d7',1,'Loot::EMMItem']]],
   ['sealedmodifiers',['SealedModifiers',['../class_loot_1_1_e_m_m_item.html#aedce25fd48ae8bc38a8451f86b92927a',1,'Loot::EMMItem']]],
   ['sealuitakeitem',['SealUITakeItem',['../class_loot_1_1_core_1_1_cubes_1_1_cube_u_i_extensions.html#a88c61e7afa166e553bb04b4d85b04dc2',1,'Loot::Core::Cubes::CubeUIExtensions']]],
-  ['set',['Set',['../class_loot_1_1_core_1_1_system_1_1_modifier_properties.html#a56f652f6fabb6897e6f2b12eb63ce9bc',1,'Loot::Core::System::ModifierProperties']]],
   ['setdefaults',['SetDefaults',['../class_loot_1_1_core_1_1_cubes_1_1_magical_cube.html#a79281d4be09e408d03bd29db728a03f2',1,'Loot.Core.Cubes.MagicalCube.SetDefaults()'],['../class_loot_1_1_core_1_1_system_1_1_modifier.html#a7e94f1e766ebaf41f42b391a2e66115d',1,'Loot.Core.System.Modifier.SetDefaults()']]],
   ['setmatch',['SetMatch',['../class_loot_1_1_core_1_1_system_1_1_modifier.html#ac59b0d5a4fb1baf03ab7b2dc488bc4a6',1,'Loot::Core::System::Modifier']]],
   ['setrolllogic',['SetRollLogic',['../class_loot_1_1_core_1_1_cubes_1_1_black_cube.html#a68fbb9ce92f44d4520c0d6a8eee6c95b',1,'Loot.Core.Cubes.BlackCube.SetRollLogic()'],['../class_loot_1_1_core_1_1_cubes_1_1_poor_cube.html#a1d25f0ed5c94f8b5ee7943ebb78499b6',1,'Loot.Core.Cubes.PoorCube.SetRollLogic()'],['../class_loot_1_1_core_1_1_cubes_1_1_rerolling_cube.html#ab19060a22ef37ea517054005667737e4',1,'Loot.Core.Cubes.RerollingCube.SetRollLogic()']]],

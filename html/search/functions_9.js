@@ -15,6 +15,7 @@ var searchData=
   ['ismouseusable',['IsMouseUsable',['../class_loot_1_1_core_1_1_caching_1_1_modifier_cache_player.html#ac7b230eb9cdce633470d85d020ebf00e',1,'Loot::Core::Caching::ModifierCachePlayer']]],
   ['isnotequippedatall',['IsNotEquippedAtAll',['../class_loot_1_1_activated_modifier_item.html#a735629d51b2d3001807c835bf5cab4ff',1,'Loot::ActivatedModifierItem']]],
   ['isslotteditemincubeui',['IsSlottedItemInCubeUI',['../class_loot_1_1_u_i_1_1_core_1_1_cube_u_i.html#af76262047ed39a5f7cce5adbd180e7e1',1,'Loot.UI.Core.CubeUI.IsSlottedItemInCubeUI()'],['../class_loot_1_1_u_i_1_1_rerolling_1_1_cube_reroll_u_i.html#a37792b38cc3880d912b3df6d3506d8df',1,'Loot.UI.Rerolling.CubeRerollUI.IsSlottedItemInCubeUI()'],['../class_loot_1_1_u_i_1_1_sealing_1_1_cube_seal_u_i.html#ab9a4163545de6a74c52440370d69d418',1,'Loot.UI.Sealing.CubeSealUI.IsSlottedItemInCubeUI()']]],
+  ['isuniquemodifier',['IsUniqueModifier',['../class_loot_1_1_core_1_1_system_1_1_modifier_properties_builder.html#a29d607d21a80200c03970fa8feca6dfd',1,'Loot::Core::System::ModifierPropertiesBuilder']]],
   ['isvanityset',['IsVanitySet',['../class_loot_1_1_core_1_1_system_1_1_modifier.html#aeb0f864a6aba7b3db337165ec86b3273',1,'Loot::Core::System::Modifier']]],
   ['isweapon',['IsWeapon',['../class_loot_1_1_ext_1_1_item_utils.html#a4bcb26340f08d9265583ebb2eb1ac73a',1,'Loot::Ext::ItemUtils']]],
   ['item',['Item',['../class_loot_1_1_activated_modifier_item.html#a6bb0485006eaaa1ab477c420abb67f15',1,'Loot::ActivatedModifierItem']]]

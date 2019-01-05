@@ -149,8 +149,8 @@ $(document).ready(function(){initNavTree('class_loot_1_1_modifiers_1_1_equip_mod
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:aa7d325832d47fa8a1f44e3affa33486c"><td class="memItemLeft" align="right" valign="top">override <a class="el" href="class_loot_1_1_core_1_1_system_1_1_modifier_properties.html">ModifierProperties</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_utility_1_1_luck_plus.html#aa7d325832d47fa8a1f44e3affa33486c">GetModifierProperties</a> (Item item)</td></tr>
-<tr class="separator:aa7d325832d47fa8a1f44e3affa33486c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acb1e84a9c797b6f545bf236f7b757937"><td class="memItemLeft" align="right" valign="top">override <a class="el" href="class_loot_1_1_core_1_1_system_1_1_modifier_properties_builder.html">ModifierPropertiesBuilder</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_utility_1_1_luck_plus.html#acb1e84a9c797b6f545bf236f7b757937">GetModifierProperties</a> (Item item)</td></tr>
+<tr class="separator:acb1e84a9c797b6f545bf236f7b757937"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acb613d89cf9d4a746affceea6d063ceb"><td class="memItemLeft" align="right" valign="top">override void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_utility_1_1_luck_plus.html#acb613d89cf9d4a746affceea6d063ceb">UpdateEquip</a> (Item item, Player player)</td></tr>
 <tr class="separator:acb613d89cf9d4a746affceea6d063ceb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_class_loot_1_1_modifiers_1_1_equip_modifier"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_class_loot_1_1_modifiers_1_1_equip_modifier')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="class_loot_1_1_modifiers_1_1_equip_modifier.html">Loot.Modifiers.EquipModifier</a></td></tr>
@@ -282,7 +282,7 @@ Additional Inherited Members</h2></td></tr>
 <div class="textblock">
 <p>Definition at line <a class="el" href="_luck_plus_8cs_source.html#l00021">21</a> of file <a class="el" href="_luck_plus_8cs_source.html">LuckPlus.cs</a>.</p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
-<a class="anchor" id="aa7d325832d47fa8a1f44e3affa33486c"></a>
+<a class="anchor" id="acb1e84a9c797b6f545bf236f7b757937"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -290,7 +290,7 @@ Additional Inherited Members</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">override <a class="el" href="class_loot_1_1_core_1_1_system_1_1_modifier_properties.html">ModifierProperties</a> Loot.Modifiers.EquipModifiers.Utility.LuckPlus.GetModifierProperties </td>
+          <td class="memname">override <a class="el" href="class_loot_1_1_core_1_1_system_1_1_modifier_properties_builder.html">ModifierPropertiesBuilder</a> Loot.Modifiers.EquipModifiers.Utility.LuckPlus.GetModifierProperties </td>
           <td>(</td>
           <td class="paramtype">Item&#160;</td>
           <td class="paramname"><em>item</em></td><td>)</td>
@@ -304,20 +304,20 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Reimplemented from <a class="el" href="class_loot_1_1_modifiers_1_1_equip_modifier.html#a7d0ef8f1d8dcd30053a3cd01bc7a044b">Loot.Modifiers.EquipModifier</a>.</p>
+<p>Reimplemented from <a class="el" href="class_loot_1_1_modifiers_1_1_equip_modifier.html#aa880a678e10e4bf97cc9ad1aef38c05e">Loot.Modifiers.EquipModifier</a>.</p>
 
 <p>Definition at line <a class="el" href="_luck_plus_8cs_source.html#l00028">28</a> of file <a class="el" href="_luck_plus_8cs_source.html">LuckPlus.cs</a>.</p>
 
-<p>References <a class="el" href="_modifier_properties_8cs_source.html#l00045">Loot.Core.System.ModifierProperties.Set()</a>.</p>
-<div class="fragment"><div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;        {</div><div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;            <span class="keywordflow">return</span> base.GetModifierProperties(item).Set(maxMagnitude: 2f);</div><div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        }</div></div><!-- fragment -->
+<p>References <a class="el" href="_modifier_properties_builder_8cs_source.html#l00112">Loot.Core.System.ModifierPropertiesBuilder.WithMaxMagnitude()</a>.</p>
+<div class="fragment"><div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;        {</div><div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;            <span class="keywordflow">return</span> base.GetModifierProperties(item)</div><div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;                .WithMaxMagnitude(2f);</div><div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;        }</div></div><!-- fragment -->
 <p><div id="dynsection-2" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-2-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
 <div id="dynsection-2-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-2-content" class="dyncontent" style="display:none;">
-<div class="center"><img src="class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_utility_1_1_luck_plus_aa7d325832d47fa8a1f44e3affa33486c_cgraph.png" border="0" usemap="#class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_utility_1_1_luck_plus_aa7d325832d47fa8a1f44e3affa33486c_cgraph" alt=""/></div>
-<map name="class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_utility_1_1_luck_plus_aa7d325832d47fa8a1f44e3affa33486c_cgraph" id="class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_utility_1_1_luck_plus_aa7d325832d47fa8a1f44e3affa33486c_cgraph">
-<area shape="rect" id="node2" href="class_loot_1_1_core_1_1_system_1_1_modifier_properties.html#a56f652f6fabb6897e6f2b12eb63ce9bc" title="Loot.Core.System.Modifier\lProperties.Set" alt="" coords="299,5,477,46"/>
+<div class="center"><img src="class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_utility_1_1_luck_plus_acb1e84a9c797b6f545bf236f7b757937_cgraph.png" border="0" usemap="#class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_utility_1_1_luck_plus_acb1e84a9c797b6f545bf236f7b757937_cgraph" alt=""/></div>
+<map name="class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_utility_1_1_luck_plus_acb1e84a9c797b6f545bf236f7b757937_cgraph" id="class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_utility_1_1_luck_plus_acb1e84a9c797b6f545bf236f7b757937_cgraph">
+<area shape="rect" id="node2" href="class_loot_1_1_core_1_1_system_1_1_modifier_properties_builder.html#afc21b5754f1127b3217e11ba64c415cd" title="Loot.Core.System.Modifier\lPropertiesBuilder.WithMaxMagnitude" alt="" coords="299,5,536,46"/>
 </map>
 </div>
 </p>
@@ -348,10 +348,10 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_luck_plus_8cs_source.html#l00033">33</a> of file <a class="el" href="_luck_plus_8cs_source.html">LuckPlus.cs</a>.</p>
+<p>Definition at line <a class="el" href="_luck_plus_8cs_source.html#l00034">34</a> of file <a class="el" href="_luck_plus_8cs_source.html">LuckPlus.cs</a>.</p>
 
 <p>References <a class="el" href="_modifier_player_8cs_source.html#l00024">Loot.ModifierPlayer.GetEffect()</a>, and <a class="el" href="class_loot_1_1_modifier_player.html#aae3e56a930507049c3b282b29fece4f1">Loot.ModifierPlayer.Player()</a>.</p>
-<div class="fragment"><div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        {</div><div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;            ModifierPlayer.Player(player).GetEffect&lt;LuckEffect&gt;().Luck += (<span class="keywordtype">int</span>)<a class="code" href="class_loot_1_1_core_1_1_system_1_1_modifier.html#ad8d7867c485986dd69cc2757f09d555a">Properties</a>.RoundedPower;</div><div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        }</div><div class="ttc" id="class_loot_1_1_core_1_1_system_1_1_modifier_html_ad8d7867c485986dd69cc2757f09d555a"><div class="ttname"><a href="class_loot_1_1_core_1_1_system_1_1_modifier.html#ad8d7867c485986dd69cc2757f09d555a">Loot.Core.System.Modifier.Properties</a></div><div class="ttdeci">ModifierProperties Properties</div><div class="ttdef"><b>Definition:</b> <a href="_modifier_8cs_source.html#l00042">Modifier.cs:42</a></div></div>
+<div class="fragment"><div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        {</div><div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;            ModifierPlayer.Player(player).GetEffect&lt;LuckEffect&gt;().Luck += (<span class="keywordtype">int</span>)<a class="code" href="class_loot_1_1_core_1_1_system_1_1_modifier.html#ad8d7867c485986dd69cc2757f09d555a">Properties</a>.RoundedPower;</div><div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        }</div><div class="ttc" id="class_loot_1_1_core_1_1_system_1_1_modifier_html_ad8d7867c485986dd69cc2757f09d555a"><div class="ttname"><a href="class_loot_1_1_core_1_1_system_1_1_modifier.html#ad8d7867c485986dd69cc2757f09d555a">Loot.Core.System.Modifier.Properties</a></div><div class="ttdeci">ModifierProperties Properties</div><div class="ttdef"><b>Definition:</b> <a href="_modifier_8cs_source.html#l00042">Modifier.cs:42</a></div></div>
 </div><!-- fragment -->
 <p><div id="dynsection-3" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-3-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
@@ -389,7 +389,7 @@ Additional Inherited Members</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespace_loot.html">Loot</a></li><li class="navelem"><a class="el" href="namespace_loot_1_1_modifiers.html">Modifiers</a></li><li class="navelem"><a class="el" href="namespace_loot_1_1_modifiers_1_1_equip_modifiers.html">EquipModifiers</a></li><li class="navelem"><a class="el" href="namespace_loot_1_1_modifiers_1_1_equip_modifiers_1_1_utility.html">Utility</a></li><li class="navelem"><a class="el" href="class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_utility_1_1_luck_plus.html">LuckPlus</a></li>
-    <li class="footer">Generated on Fri Jan 4 2019 22:33:00 for Even More Modifiers by
+    <li class="footer">Generated on Sat Jan 5 2019 14:54:27 for Even More Modifiers by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.11 </li>
   </ul>

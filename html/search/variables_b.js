@@ -1,8 +1,11 @@
 var searchData=
 [
+  ['magnitudestrength',['MagnitudeStrength',['../class_loot_1_1_core_1_1_system_1_1_modifier_properties.html#a10d9621eae28b38cc0f9896fd7cb59aa',1,'Loot::Core::System::ModifierProperties']]],
   ['manashield',['ManaShield',['../class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_defensive_1_1_mana_shield_effect.html#a610e0ddc09e723990f9b6df76445faf5',1,'Loot::Modifiers::EquipModifiers::Defensive::ManaShieldEffect']]],
   ['max_5fsurvival_5fchance',['MAX_SURVIVAL_CHANCE',['../class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_defensive_1_1_survival_effect.html#a4abe39a78d554976536a956b6ebe04cb',1,'Loot::Modifiers::EquipModifiers::Defensive::SurvivalEffect']]],
+  ['maxmagnitude',['MaxMagnitude',['../class_loot_1_1_core_1_1_system_1_1_modifier_properties.html#a6c284e3209655c685210a499cf816d5a',1,'Loot::Core::System::ModifierProperties']]],
   ['method',['Method',['../struct_loot_1_1_core_1_1_system_1_1_modifier_context.html#aaa729eef26a460e91c20915eaf08dd8a',1,'Loot::Core::System::ModifierContext']]],
+  ['minmagnitude',['MinMagnitude',['../class_loot_1_1_core_1_1_system_1_1_modifier_properties.html#a248fe8aebbf53263d0273abc9197ebcb',1,'Loot::Core::System::ModifierProperties']]],
   ['modcount',['ModCount',['../class_loot_1_1_core_1_1_system_1_1_loaders_1_1_main_loader.html#a12300d7243122252434c60b87d16df75',1,'Loot::Core::System::Loaders::MainLoader']]],
   ['modifier',['Modifier',['../class_loot_1_1_core_1_1_system_1_1_loaders_1_1_content_loader.html#a5bd371e71d318930bc7a72573fcf3daf',1,'Loot::Core::System::Loaders::ContentLoader']]],
   ['modifiereffect',['ModifierEffect',['../class_loot_1_1_core_1_1_system_1_1_loaders_1_1_content_loader.html#a4851e47902e95d6127525be6cab65ce6',1,'Loot::Core::System::Loaders::ContentLoader']]],

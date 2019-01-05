@@ -155,8 +155,8 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:ad09ee5d97e2f8ec54474afe08cdc8b45"><td class="memItemLeft" align="right" valign="top">override bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_velocity_plus.html#ad09ee5d97e2f8ec54474afe08cdc8b45">CanRoll</a> (<a class="el" href="struct_loot_1_1_core_1_1_system_1_1_modifier_context.html">ModifierContext</a> ctx)</td></tr>
 <tr class="memdesc:ad09ee5d97e2f8ec54474afe08cdc8b45"><td class="mdescLeft">&#160;</td><td class="mdescRight">If this <a class="el" href="class_modifier.html">Modifier</a> can roll at all in the given context Properties are available here, apart from magnitude and power  <a href="#ad09ee5d97e2f8ec54474afe08cdc8b45">More...</a><br /></td></tr>
 <tr class="separator:ad09ee5d97e2f8ec54474afe08cdc8b45"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a79f64fd097b64b421fb514c466e09ca3"><td class="memItemLeft" align="right" valign="top">override <a class="el" href="class_loot_1_1_core_1_1_system_1_1_modifier_properties.html">ModifierProperties</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_velocity_plus.html#a79f64fd097b64b421fb514c466e09ca3">GetModifierProperties</a> (Item item)</td></tr>
-<tr class="separator:a79f64fd097b64b421fb514c466e09ca3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8124c2f90186cd8f72ff96471016f594"><td class="memItemLeft" align="right" valign="top">override <a class="el" href="class_loot_1_1_core_1_1_system_1_1_modifier_properties_builder.html">ModifierPropertiesBuilder</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_velocity_plus.html#a8124c2f90186cd8f72ff96471016f594">GetModifierProperties</a> (Item item)</td></tr>
+<tr class="separator:a8124c2f90186cd8f72ff96471016f594"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_class_loot_1_1_modifiers_1_1_weapon_modifier"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_class_loot_1_1_modifiers_1_1_weapon_modifier')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="class_loot_1_1_modifiers_1_1_weapon_modifier.html">Loot.Modifiers.WeaponModifier</a></td></tr>
 <tr class="memitem:a28c449ee5e5e712ff711c367a032d935 inherit pub_methods_class_loot_1_1_modifiers_1_1_weapon_modifier"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_loot_1_1_modifiers_1_1_weapon_modifier.html#a28c449ee5e5e712ff711c367a032d935">UpdateShootSpeed</a> (Item item, Player player, float speedXBefore, float speedYBefore, ref float speedX, ref float speedY, float percentModifier)</td></tr>
 <tr class="separator:a28c449ee5e5e712ff711c367a032d935 inherit pub_methods_class_loot_1_1_modifiers_1_1_weapon_modifier"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -315,8 +315,8 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Reimplemented from <a class="el" href="class_loot_1_1_core_1_1_system_1_1_modifier.html#a7a226ff8e95a9550b30224afd5fbaa9e">Loot.Core.System.Modifier</a>.</p>
 
-<p>Definition at line <a class="el" href="_velocity_plus_8cs_source.html#l00022">22</a> of file <a class="el" href="_velocity_plus_8cs_source.html">VelocityPlus.cs</a>.</p>
-<div class="fragment"><div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;        {</div><div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;            base.Apply(item);</div><div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;            <span class="comment">// TODO needs better way</span></div><div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;            item.shootSpeed *= <a class="code" href="class_loot_1_1_core_1_1_system_1_1_modifier.html#ad8d7867c485986dd69cc2757f09d555a">Properties</a>.<a class="code" href="class_loot_1_1_core_1_1_system_1_1_modifier_properties.html#a14f10daa691d3c84b0babf8452bb6b47">RoundedPower</a> / 100f + 1f;</div><div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;        }</div><div class="ttc" id="class_loot_1_1_core_1_1_system_1_1_modifier_properties_html_a14f10daa691d3c84b0babf8452bb6b47"><div class="ttname"><a href="class_loot_1_1_core_1_1_system_1_1_modifier_properties.html#a14f10daa691d3c84b0babf8452bb6b47">Loot.Core.System.ModifierProperties.RoundedPower</a></div><div class="ttdeci">float RoundedPower</div><div class="ttdef"><b>Definition:</b> <a href="_modifier_properties_8cs_source.html#l00034">ModifierProperties.cs:34</a></div></div>
+<p>Definition at line <a class="el" href="_velocity_plus_8cs_source.html#l00028">28</a> of file <a class="el" href="_velocity_plus_8cs_source.html">VelocityPlus.cs</a>.</p>
+<div class="fragment"><div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;        {</div><div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;            base.Apply(item);</div><div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;            <span class="comment">// TODO needs better way</span></div><div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;            item.shootSpeed *= <a class="code" href="class_loot_1_1_core_1_1_system_1_1_modifier.html#ad8d7867c485986dd69cc2757f09d555a">Properties</a>.<a class="code" href="class_loot_1_1_core_1_1_system_1_1_modifier_properties.html#a14f10daa691d3c84b0babf8452bb6b47">RoundedPower</a> / 100f + 1f;</div><div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;        }</div><div class="ttc" id="class_loot_1_1_core_1_1_system_1_1_modifier_properties_html_a14f10daa691d3c84b0babf8452bb6b47"><div class="ttname"><a href="class_loot_1_1_core_1_1_system_1_1_modifier_properties.html#a14f10daa691d3c84b0babf8452bb6b47">Loot.Core.System.ModifierProperties.RoundedPower</a></div><div class="ttdeci">float RoundedPower</div><div class="ttdef"><b>Definition:</b> <a href="_modifier_properties_8cs_source.html#l00036">ModifierProperties.cs:36</a></div></div>
 <div class="ttc" id="class_loot_1_1_core_1_1_system_1_1_modifier_html_ad8d7867c485986dd69cc2757f09d555a"><div class="ttname"><a href="class_loot_1_1_core_1_1_system_1_1_modifier.html#ad8d7867c485986dd69cc2757f09d555a">Loot.Core.System.Modifier.Properties</a></div><div class="ttdeci">ModifierProperties Properties</div><div class="ttdef"><b>Definition:</b> <a href="_modifier_8cs_source.html#l00042">Modifier.cs:42</a></div></div>
 </div><!-- fragment -->
 </div>
@@ -349,7 +349,7 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a79f64fd097b64b421fb514c466e09ca3"></a>
+<a class="anchor" id="a8124c2f90186cd8f72ff96471016f594"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -357,7 +357,7 @@ Additional Inherited Members</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">override <a class="el" href="class_loot_1_1_core_1_1_system_1_1_modifier_properties.html">ModifierProperties</a> Loot.Modifiers.WeaponModifiers.VelocityPlus.GetModifierProperties </td>
+          <td class="memname">override <a class="el" href="class_loot_1_1_core_1_1_system_1_1_modifier_properties_builder.html">ModifierPropertiesBuilder</a> Loot.Modifiers.WeaponModifiers.VelocityPlus.GetModifierProperties </td>
           <td>(</td>
           <td class="paramtype">Item&#160;</td>
           <td class="paramname"><em>item</em></td><td>)</td>
@@ -371,24 +371,13 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Reimplemented from <a class="el" href="class_loot_1_1_core_1_1_system_1_1_modifier.html#a950fea58646dd0da5874ad4eabf38a09">Loot.Core.System.Modifier</a>.</p>
+<p>Reimplemented from <a class="el" href="class_loot_1_1_core_1_1_system_1_1_modifier.html#ae3c2d87a69486d13cc7f577d1149d660">Loot.Core.System.Modifier</a>.</p>
 
 <p>Definition at line <a class="el" href="_velocity_plus_8cs_source.html#l00014">14</a> of file <a class="el" href="_velocity_plus_8cs_source.html">VelocityPlus.cs</a>.</p>
 
-<p>References <a class="el" href="_modifier_context_8cs_source.html#l00073">Loot.Core.System.ModifierContext.Item</a>, and <a class="el" href="_modifier_properties_8cs_source.html#l00045">Loot.Core.System.ModifierProperties.Set()</a>.</p>
-<div class="fragment"><div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;        {</div><div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;            <span class="keywordflow">return</span> base.GetModifierProperties(item).Set(maxMagnitude: 10f);</div><div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;        }</div></div><!-- fragment -->
-<p><div id="dynsection-2" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-2-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
-<div id="dynsection-2-summary" class="dynsummary" style="display:block;">
-</div>
-<div id="dynsection-2-content" class="dyncontent" style="display:none;">
-<div class="center"><img src="class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_velocity_plus_a79f64fd097b64b421fb514c466e09ca3_cgraph.png" border="0" usemap="#class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_velocity_plus_a79f64fd097b64b421fb514c466e09ca3_cgraph" alt=""/></div>
-<map name="class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_velocity_plus_a79f64fd097b64b421fb514c466e09ca3_cgraph" id="class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_velocity_plus_a79f64fd097b64b421fb514c466e09ca3_cgraph">
-<area shape="rect" id="node2" href="class_loot_1_1_core_1_1_system_1_1_modifier_properties.html#a56f652f6fabb6897e6f2b12eb63ce9bc" title="Loot.Core.System.Modifier\lProperties.Set" alt="" coords="280,5,459,46"/>
-</map>
-</div>
-</p>
-
+<p>References <a class="el" href="_modifier_context_8cs_source.html#l00073">Loot.Core.System.ModifierContext.Item</a>.</p>
+<div class="fragment"><div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;        {</div><div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;            <span class="keywordflow">return</span> <span class="keyword">new</span> <a class="code" href="class_loot_1_1_core_1_1_system_1_1_modifier_properties_builder.html">ModifierPropertiesBuilder</a></div><div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;            {</div><div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;                DefaultBuilder = base.GetModifierProperties(item),</div><div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;                MinMagnitude = 5f,</div><div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;                MaxMagnitude = 10f,</div><div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;                RoundPrecision = 1</div><div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;            };</div><div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;        }</div><div class="ttc" id="class_loot_1_1_core_1_1_system_1_1_modifier_properties_builder_html"><div class="ttname"><a href="class_loot_1_1_core_1_1_system_1_1_modifier_properties_builder.html">Loot.Core.System.ModifierPropertiesBuilder</a></div><div class="ttdoc">The ModifierPropertiesBuilder implements the builder pattern for ModifierProperties It provides a str...</div><div class="ttdef"><b>Definition:</b> <a href="_modifier_properties_builder_8cs_source.html#l00009">ModifierPropertiesBuilder.cs:9</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
@@ -412,7 +401,7 @@ Additional Inherited Members</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespace_loot.html">Loot</a></li><li class="navelem"><a class="el" href="namespace_loot_1_1_modifiers.html">Modifiers</a></li><li class="navelem"><a class="el" href="namespace_loot_1_1_modifiers_1_1_weapon_modifiers.html">WeaponModifiers</a></li><li class="navelem"><a class="el" href="class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_velocity_plus.html">VelocityPlus</a></li>
-    <li class="footer">Generated on Fri Jan 4 2019 22:33:00 for Even More Modifiers by
+    <li class="footer">Generated on Sat Jan 5 2019 14:54:27 for Even More Modifiers by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.11 </li>
   </ul>

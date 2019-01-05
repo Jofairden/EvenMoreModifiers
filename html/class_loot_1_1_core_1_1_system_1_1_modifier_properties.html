@@ -111,6 +111,8 @@ $(document).ready(function(){initNavTree('class_loot_1_1_core_1_1_system_1_1_mod
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pub-attribs">Public Attributes</a> &#124;
+<a href="#pub-static-attribs">Static Public Attributes</a> &#124;
 <a href="#properties">Properties</a> &#124;
 <a href="#pri-methods">Private Member Functions</a> &#124;
 <a href="#pri-attribs">Private Attributes</a> &#124;
@@ -129,13 +131,14 @@ $(document).ready(function(){initNavTree('class_loot_1_1_core_1_1_system_1_1_mod
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="class_loot_1_1_core_1_1_system_1_1_modifier_properties__coll__graph.png" border="0" usemap="#_loot_8_core_8_system_8_modifier_properties_coll__map" alt="Collaboration graph"/></div>
 <map name="_loot_8_core_8_system_8_modifier_properties_coll__map" id="_loot_8_core_8_system_8_modifier_properties_coll__map">
+<area shape="rect" id="node2" href="class_loot_1_1_core_1_1_system_1_1_modifier_properties_builder.html" title="The ModifierPropertiesBuilder implements the builder pattern for ModifierProperties It provides a str..." alt="" coords="5,6,184,47"/>
 </map>
 <center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:adda9027ebda514af3ffb18612e8bfce7"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_loot_1_1_core_1_1_system_1_1_modifier_properties.html#adda9027ebda514af3ffb18612e8bfce7">ModifierProperties</a> (float minMagnitude=1f, float maxMagnitude=1f, float magnitudeStrength=1f, float basePower=1f, float rarityLevel=1f, float rollChance=1f, int roundPrecision=0, bool uniqueRoll=false, bool mergeTooltips=false)</td></tr>
-<tr class="separator:adda9027ebda514af3ffb18612e8bfce7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac45faf2843cc11ed6b7d4051579fb70e"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_loot_1_1_core_1_1_system_1_1_modifier_properties.html#ac45faf2843cc11ed6b7d4051579fb70e">ModifierProperties</a> (float minMagnitude=1f, float maxMagnitude=1f, float magnitudeStrength=1f, float basePower=1f, float rarityLevel=1f, float rollChance=1f, int roundPrecision=0, bool isUnique=false)</td></tr>
+<tr class="separator:ac45faf2843cc11ed6b7d4051579fb70e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aaac9df27325cc4badc1452f006f5a6e2"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_loot_1_1_core_1_1_system_1_1_modifier_properties.html#aaac9df27325cc4badc1452f006f5a6e2">Load</a> (Item item, TagCompound tag)</td></tr>
 <tr class="separator:aaac9df27325cc4badc1452f006f5a6e2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aee85edf8368cf91eaf27fee639a7f6ae"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_loot_1_1_core_1_1_system_1_1_modifier_properties.html#aee85edf8368cf91eaf27fee639a7f6ae">NetReceive</a> (Item item, BinaryReader reader)</td></tr>
@@ -146,33 +149,39 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a49b1a8b354396995c61b78321eb9106a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab2b3e69ba1dc8f9e625e6b9c934075e4"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_loot_1_1_core_1_1_system_1_1_modifier_properties.html#ab2b3e69ba1dc8f9e625e6b9c934075e4">Save</a> (Item item, TagCompound tag)</td></tr>
 <tr class="separator:ab2b3e69ba1dc8f9e625e6b9c934075e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a56f652f6fabb6897e6f2b12eb63ce9bc"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_loot_1_1_core_1_1_system_1_1_modifier_properties.html">ModifierProperties</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_loot_1_1_core_1_1_system_1_1_modifier_properties.html#a56f652f6fabb6897e6f2b12eb63ce9bc">Set</a> (float?minMagnitude=null, float?maxMagnitude=null, float?magnitudeStrength=null, float?basePower=null, float?rarityLevel=null, float?rollChance=null, int?roundPrecision=null, bool?uniqueRoll=null)</td></tr>
-<tr class="separator:a56f652f6fabb6897e6f2b12eb63ce9bc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
+Public Attributes</h2></td></tr>
+<tr class="memitem:acdd78c317ff3f4ca9e65e3b96afac79a"><td class="memItemLeft" align="right" valign="top">readonly float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_loot_1_1_core_1_1_system_1_1_modifier_properties.html#acdd78c317ff3f4ca9e65e3b96afac79a">BasePower</a></td></tr>
+<tr class="separator:acdd78c317ff3f4ca9e65e3b96afac79a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a56225b15946f881741d2bbfa3cb2208f"><td class="memItemLeft" align="right" valign="top">readonly bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_loot_1_1_core_1_1_system_1_1_modifier_properties.html#a56225b15946f881741d2bbfa3cb2208f">IsUnique</a></td></tr>
+<tr class="separator:a56225b15946f881741d2bbfa3cb2208f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a10d9621eae28b38cc0f9896fd7cb59aa"><td class="memItemLeft" align="right" valign="top">readonly float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_loot_1_1_core_1_1_system_1_1_modifier_properties.html#a10d9621eae28b38cc0f9896fd7cb59aa">MagnitudeStrength</a></td></tr>
+<tr class="separator:a10d9621eae28b38cc0f9896fd7cb59aa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6c284e3209655c685210a499cf816d5a"><td class="memItemLeft" align="right" valign="top">readonly float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_loot_1_1_core_1_1_system_1_1_modifier_properties.html#a6c284e3209655c685210a499cf816d5a">MaxMagnitude</a></td></tr>
+<tr class="separator:a6c284e3209655c685210a499cf816d5a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a248fe8aebbf53263d0273abc9197ebcb"><td class="memItemLeft" align="right" valign="top">readonly float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_loot_1_1_core_1_1_system_1_1_modifier_properties.html#a248fe8aebbf53263d0273abc9197ebcb">MinMagnitude</a></td></tr>
+<tr class="separator:a248fe8aebbf53263d0273abc9197ebcb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6a0bd16fb3019aed44c2de5979b66ab9"><td class="memItemLeft" align="right" valign="top">readonly float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_loot_1_1_core_1_1_system_1_1_modifier_properties.html#a6a0bd16fb3019aed44c2de5979b66ab9">RarityLevel</a></td></tr>
+<tr class="separator:a6a0bd16fb3019aed44c2de5979b66ab9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a41e0e83208e4361e11f8a96eb9f97921"><td class="memItemLeft" align="right" valign="top">readonly float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_loot_1_1_core_1_1_system_1_1_modifier_properties.html#a41e0e83208e4361e11f8a96eb9f97921">RollChance</a></td></tr>
+<tr class="separator:a41e0e83208e4361e11f8a96eb9f97921"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa6e4e1f4e7f2b91b4c3be5408ce25235"><td class="memItemLeft" align="right" valign="top">readonly int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_loot_1_1_core_1_1_system_1_1_modifier_properties.html#aa6e4e1f4e7f2b91b4c3be5408ce25235">RoundPrecision</a></td></tr>
+<tr class="separator:aa6e4e1f4e7f2b91b4c3be5408ce25235"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-attribs"></a>
+Static Public Attributes</h2></td></tr>
+<tr class="memitem:ab618686634d78750055cb3eddfd6a29c"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="class_loot_1_1_core_1_1_system_1_1_modifier_properties_builder.html">ModifierPropertiesBuilder</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_loot_1_1_core_1_1_system_1_1_modifier_properties.html#ab618686634d78750055cb3eddfd6a29c">Builder</a> =&gt; new <a class="el" href="class_loot_1_1_core_1_1_system_1_1_modifier_properties_builder.html">ModifierPropertiesBuilder</a>()</td></tr>
+<tr class="separator:ab618686634d78750055cb3eddfd6a29c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="properties"></a>
 Properties</h2></td></tr>
-<tr class="memitem:a93cdc675011bb3af8ba6c97d85da188e"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_loot_1_1_core_1_1_system_1_1_modifier_properties.html#a93cdc675011bb3af8ba6c97d85da188e">BasePower</a><code> [get, private set]</code></td></tr>
-<tr class="separator:a93cdc675011bb3af8ba6c97d85da188e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a172e41aa042a8f8718972aee5d4473c0"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_loot_1_1_core_1_1_system_1_1_modifier_properties.html#a172e41aa042a8f8718972aee5d4473c0">Magnitude</a><code> [get, set]</code></td></tr>
 <tr class="separator:a172e41aa042a8f8718972aee5d4473c0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9f7f81e5a196d4511dd172eb7d0af205"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_loot_1_1_core_1_1_system_1_1_modifier_properties.html#a9f7f81e5a196d4511dd172eb7d0af205">MagnitudeStrength</a><code> [get, private set]</code></td></tr>
-<tr class="separator:a9f7f81e5a196d4511dd172eb7d0af205"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae18392b03e83be24b3ff5e726a4ac75a"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_loot_1_1_core_1_1_system_1_1_modifier_properties.html#ae18392b03e83be24b3ff5e726a4ac75a">MaxMagnitude</a><code> [get, private set]</code></td></tr>
-<tr class="separator:ae18392b03e83be24b3ff5e726a4ac75a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a30c4c7304162d66cb752d5bf92fdadfe"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_loot_1_1_core_1_1_system_1_1_modifier_properties.html#a30c4c7304162d66cb752d5bf92fdadfe">MinMagnitude</a><code> [get, private set]</code></td></tr>
-<tr class="separator:a30c4c7304162d66cb752d5bf92fdadfe"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa3ee7f6900c815e56205f65bb9312a97"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_loot_1_1_core_1_1_system_1_1_modifier_properties.html#aa3ee7f6900c815e56205f65bb9312a97">Power</a><code> [get, set]</code></td></tr>
 <tr class="separator:aa3ee7f6900c815e56205f65bb9312a97"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a19f8dc4d089073fc13e854dbeb03abef"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_loot_1_1_core_1_1_system_1_1_modifier_properties.html#a19f8dc4d089073fc13e854dbeb03abef">RarityLevel</a><code> [get, private set]</code></td></tr>
-<tr class="separator:a19f8dc4d089073fc13e854dbeb03abef"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a74e388a273d6e69fe0fb2be7f0bead7b"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_loot_1_1_core_1_1_system_1_1_modifier_properties.html#a74e388a273d6e69fe0fb2be7f0bead7b">RollChance</a><code> [get, private set]</code></td></tr>
-<tr class="separator:a74e388a273d6e69fe0fb2be7f0bead7b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a14f10daa691d3c84b0babf8452bb6b47"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_loot_1_1_core_1_1_system_1_1_modifier_properties.html#a14f10daa691d3c84b0babf8452bb6b47">RoundedPower</a><code> [get, private set]</code></td></tr>
 <tr class="separator:a14f10daa691d3c84b0babf8452bb6b47"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab91a55fff4c7d3a2848413f70dd625f1"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_loot_1_1_core_1_1_system_1_1_modifier_properties.html#ab91a55fff4c7d3a2848413f70dd625f1">RoundPrecision</a><code> [get, private set]</code></td></tr>
-<tr class="separator:ab91a55fff4c7d3a2848413f70dd625f1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3396a7e70ad18e6553ee7239c4798bc6"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_loot_1_1_core_1_1_system_1_1_modifier_properties.html#a3396a7e70ad18e6553ee7239c4798bc6">UniqueModifier</a><code> [get, private set]</code></td></tr>
-<tr class="separator:a3396a7e70ad18e6553ee7239c4798bc6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
 Private Member Functions</h2></td></tr>
@@ -189,9 +198,9 @@ Private Attributes</h2></td></tr>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Defines the properties of a modifier </p>
 
-<p>Definition at line <a class="el" href="_modifier_properties_8cs_source.html#l00013">13</a> of file <a class="el" href="_modifier_properties_8cs_source.html">ModifierProperties.cs</a>.</p>
+<p>Definition at line <a class="el" href="_modifier_properties_8cs_source.html#l00011">11</a> of file <a class="el" href="_modifier_properties_8cs_source.html">ModifierProperties.cs</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a class="anchor" id="adda9027ebda514af3ffb18612e8bfce7"></a>
+<a class="anchor" id="ac45faf2843cc11ed6b7d4051579fb70e"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -241,13 +250,7 @@ Private Attributes</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">bool&#160;</td>
-          <td class="paramname"><em>uniqueRoll</em> = <code>false</code>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">bool&#160;</td>
-          <td class="paramname"><em>mergeTooltips</em> = <code>false</code>&#160;</td>
+          <td class="paramname"><em>isUnique</em> = <code>false</code>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -257,8 +260,15 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_modifier_properties_8cs_source.html#l00040">40</a> of file <a class="el" href="_modifier_properties_8cs_source.html">ModifierProperties.cs</a>.</p>
-<div class="fragment"><div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        {</div><div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;            <a class="code" href="class_loot_1_1_core_1_1_system_1_1_modifier_properties.html#a56f652f6fabb6897e6f2b12eb63ce9bc">Set</a>(minMagnitude, maxMagnitude, magnitudeStrength, basePower, rarityLevel, rollChance, roundPrecision);</div><div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        }</div><div class="ttc" id="class_loot_1_1_core_1_1_system_1_1_modifier_properties_html_a56f652f6fabb6897e6f2b12eb63ce9bc"><div class="ttname"><a href="class_loot_1_1_core_1_1_system_1_1_modifier_properties.html#a56f652f6fabb6897e6f2b12eb63ce9bc">Loot.Core.System.ModifierProperties.Set</a></div><div class="ttdeci">ModifierProperties Set(float?minMagnitude=null, float?maxMagnitude=null, float?magnitudeStrength=null, float?basePower=null, float?rarityLevel=null, float?rollChance=null, int?roundPrecision=null, bool?uniqueRoll=null)</div><div class="ttdef"><b>Definition:</b> <a href="_modifier_properties_8cs_source.html#l00045">ModifierProperties.cs:45</a></div></div>
+<p>Definition at line <a class="el" href="_modifier_properties_8cs_source.html#l00041">41</a> of file <a class="el" href="_modifier_properties_8cs_source.html">ModifierProperties.cs</a>.</p>
+<div class="fragment"><div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        {</div><div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;            <a class="code" href="class_loot_1_1_core_1_1_system_1_1_modifier_properties.html#a248fe8aebbf53263d0273abc9197ebcb">MinMagnitude</a> = minMagnitude;</div><div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;            <a class="code" href="class_loot_1_1_core_1_1_system_1_1_modifier_properties.html#a6c284e3209655c685210a499cf816d5a">MaxMagnitude</a> = maxMagnitude;</div><div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;            <a class="code" href="class_loot_1_1_core_1_1_system_1_1_modifier_properties.html#a10d9621eae28b38cc0f9896fd7cb59aa">MagnitudeStrength</a> = magnitudeStrength;</div><div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;            <a class="code" href="class_loot_1_1_core_1_1_system_1_1_modifier_properties.html#acdd78c317ff3f4ca9e65e3b96afac79a">BasePower</a> = basePower;</div><div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;            <a class="code" href="class_loot_1_1_core_1_1_system_1_1_modifier_properties.html#a6a0bd16fb3019aed44c2de5979b66ab9">RarityLevel</a> = rarityLevel;</div><div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;            <a class="code" href="class_loot_1_1_core_1_1_system_1_1_modifier_properties.html#a41e0e83208e4361e11f8a96eb9f97921">RollChance</a> = rollChance;</div><div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;            <a class="code" href="class_loot_1_1_core_1_1_system_1_1_modifier_properties.html#aa6e4e1f4e7f2b91b4c3be5408ce25235">RoundPrecision</a> = roundPrecision;</div><div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;            <a class="code" href="class_loot_1_1_core_1_1_system_1_1_modifier_properties.html#a56225b15946f881741d2bbfa3cb2208f">IsUnique</a> = isUnique;</div><div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;        }</div><div class="ttc" id="class_loot_1_1_core_1_1_system_1_1_modifier_properties_html_a6c284e3209655c685210a499cf816d5a"><div class="ttname"><a href="class_loot_1_1_core_1_1_system_1_1_modifier_properties.html#a6c284e3209655c685210a499cf816d5a">Loot.Core.System.ModifierProperties.MaxMagnitude</a></div><div class="ttdeci">readonly float MaxMagnitude</div><div class="ttdef"><b>Definition:</b> <a href="_modifier_properties_8cs_source.html#l00017">ModifierProperties.cs:17</a></div></div>
+<div class="ttc" id="class_loot_1_1_core_1_1_system_1_1_modifier_properties_html_a10d9621eae28b38cc0f9896fd7cb59aa"><div class="ttname"><a href="class_loot_1_1_core_1_1_system_1_1_modifier_properties.html#a10d9621eae28b38cc0f9896fd7cb59aa">Loot.Core.System.ModifierProperties.MagnitudeStrength</a></div><div class="ttdeci">readonly float MagnitudeStrength</div><div class="ttdef"><b>Definition:</b> <a href="_modifier_properties_8cs_source.html#l00018">ModifierProperties.cs:18</a></div></div>
+<div class="ttc" id="class_loot_1_1_core_1_1_system_1_1_modifier_properties_html_aa6e4e1f4e7f2b91b4c3be5408ce25235"><div class="ttname"><a href="class_loot_1_1_core_1_1_system_1_1_modifier_properties.html#aa6e4e1f4e7f2b91b4c3be5408ce25235">Loot.Core.System.ModifierProperties.RoundPrecision</a></div><div class="ttdeci">readonly int RoundPrecision</div><div class="ttdef"><b>Definition:</b> <a href="_modifier_properties_8cs_source.html#l00022">ModifierProperties.cs:22</a></div></div>
+<div class="ttc" id="class_loot_1_1_core_1_1_system_1_1_modifier_properties_html_a41e0e83208e4361e11f8a96eb9f97921"><div class="ttname"><a href="class_loot_1_1_core_1_1_system_1_1_modifier_properties.html#a41e0e83208e4361e11f8a96eb9f97921">Loot.Core.System.ModifierProperties.RollChance</a></div><div class="ttdeci">readonly float RollChance</div><div class="ttdef"><b>Definition:</b> <a href="_modifier_properties_8cs_source.html#l00021">ModifierProperties.cs:21</a></div></div>
+<div class="ttc" id="class_loot_1_1_core_1_1_system_1_1_modifier_properties_html_acdd78c317ff3f4ca9e65e3b96afac79a"><div class="ttname"><a href="class_loot_1_1_core_1_1_system_1_1_modifier_properties.html#acdd78c317ff3f4ca9e65e3b96afac79a">Loot.Core.System.ModifierProperties.BasePower</a></div><div class="ttdeci">readonly float BasePower</div><div class="ttdef"><b>Definition:</b> <a href="_modifier_properties_8cs_source.html#l00019">ModifierProperties.cs:19</a></div></div>
+<div class="ttc" id="class_loot_1_1_core_1_1_system_1_1_modifier_properties_html_a248fe8aebbf53263d0273abc9197ebcb"><div class="ttname"><a href="class_loot_1_1_core_1_1_system_1_1_modifier_properties.html#a248fe8aebbf53263d0273abc9197ebcb">Loot.Core.System.ModifierProperties.MinMagnitude</a></div><div class="ttdeci">readonly float MinMagnitude</div><div class="ttdef"><b>Definition:</b> <a href="_modifier_properties_8cs_source.html#l00016">ModifierProperties.cs:16</a></div></div>
+<div class="ttc" id="class_loot_1_1_core_1_1_system_1_1_modifier_properties_html_a6a0bd16fb3019aed44c2de5979b66ab9"><div class="ttname"><a href="class_loot_1_1_core_1_1_system_1_1_modifier_properties.html#a6a0bd16fb3019aed44c2de5979b66ab9">Loot.Core.System.ModifierProperties.RarityLevel</a></div><div class="ttdeci">readonly float RarityLevel</div><div class="ttdef"><b>Definition:</b> <a href="_modifier_properties_8cs_source.html#l00020">ModifierProperties.cs:20</a></div></div>
+<div class="ttc" id="class_loot_1_1_core_1_1_system_1_1_modifier_properties_html_a56225b15946f881741d2bbfa3cb2208f"><div class="ttname"><a href="class_loot_1_1_core_1_1_system_1_1_modifier_properties.html#a56225b15946f881741d2bbfa3cb2208f">Loot.Core.System.ModifierProperties.IsUnique</a></div><div class="ttdeci">readonly bool IsUnique</div><div class="ttdef"><b>Definition:</b> <a href="_modifier_properties_8cs_source.html#l00023">ModifierProperties.cs:23</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -295,12 +305,12 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_modifier_properties_8cs_source.html#l00134">134</a> of file <a class="el" href="_modifier_properties_8cs_source.html">ModifierProperties.cs</a>.</p>
+<p>Definition at line <a class="el" href="_modifier_properties_8cs_source.html#l00129">129</a> of file <a class="el" href="_modifier_properties_8cs_source.html">ModifierProperties.cs</a>.</p>
 
-<p>References <a class="el" href="_modifier_properties_8cs_source.html#l00134">Loot.Core.System.ModifierProperties.Load()</a>, and <a class="el" href="_modifier_properties_8cs_source.html#l00058">Loot.Core.System.ModifierProperties.RollMagnitudeAndPower()</a>.</p>
+<p>References <a class="el" href="_modifier_properties_8cs_source.html#l00129">Loot.Core.System.ModifierProperties.Load()</a>, and <a class="el" href="_modifier_properties_8cs_source.html#l00053">Loot.Core.System.ModifierProperties.RollMagnitudeAndPower()</a>.</p>
 
-<p>Referenced by <a class="el" href="_modifier_properties_8cs_source.html#l00134">Loot.Core.System.ModifierProperties.Load()</a>.</p>
-<div class="fragment"><div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;        {</div><div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;        }</div></div><!-- fragment -->
+<p>Referenced by <a class="el" href="_modifier_properties_8cs_source.html#l00129">Loot.Core.System.ModifierProperties.Load()</a>.</p>
+<div class="fragment"><div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;        {</div><div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;        }</div></div><!-- fragment -->
 <p><div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-1-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
 <div id="dynsection-1-summary" class="dynsummary" style="display:block;">
@@ -358,12 +368,12 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_modifier_properties_8cs_source.html#l00092">92</a> of file <a class="el" href="_modifier_properties_8cs_source.html">ModifierProperties.cs</a>.</p>
+<p>Definition at line <a class="el" href="_modifier_properties_8cs_source.html#l00087">87</a> of file <a class="el" href="_modifier_properties_8cs_source.html">ModifierProperties.cs</a>.</p>
 
-<p>References <a class="el" href="_modifier_properties_8cs_source.html#l00092">Loot.Core.System.ModifierProperties.NetReceive()</a>.</p>
+<p>References <a class="el" href="_modifier_properties_8cs_source.html#l00087">Loot.Core.System.ModifierProperties.NetReceive()</a>.</p>
 
-<p>Referenced by <a class="el" href="_modifier_properties_8cs_source.html#l00092">Loot.Core.System.ModifierProperties.NetReceive()</a>.</p>
-<div class="fragment"><div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;        {</div><div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;        }</div></div><!-- fragment -->
+<p>Referenced by <a class="el" href="_modifier_properties_8cs_source.html#l00087">Loot.Core.System.ModifierProperties.NetReceive()</a>.</p>
+<div class="fragment"><div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;        {</div><div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;        }</div></div><!-- fragment -->
 <p><div id="dynsection-3" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-3-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
 <div id="dynsection-3-summary" class="dynsummary" style="display:block;">
@@ -420,12 +430,12 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_modifier_properties_8cs_source.html#l00107">107</a> of file <a class="el" href="_modifier_properties_8cs_source.html">ModifierProperties.cs</a>.</p>
+<p>Definition at line <a class="el" href="_modifier_properties_8cs_source.html#l00102">102</a> of file <a class="el" href="_modifier_properties_8cs_source.html">ModifierProperties.cs</a>.</p>
 
-<p>References <a class="el" href="_modifier_properties_8cs_source.html#l00022">Loot.Core.System.ModifierProperties.Magnitude</a>, <a class="el" href="_modifier_properties_8cs_source.html#l00107">Loot.Core.System.ModifierProperties.NetSend()</a>, and <a class="el" href="_modifier_properties_8cs_source.html#l00025">Loot.Core.System.ModifierProperties.Power</a>.</p>
+<p>References <a class="el" href="_modifier_properties_8cs_source.html#l00024">Loot.Core.System.ModifierProperties.Magnitude</a>, <a class="el" href="_modifier_properties_8cs_source.html#l00102">Loot.Core.System.ModifierProperties.NetSend()</a>, and <a class="el" href="_modifier_properties_8cs_source.html#l00027">Loot.Core.System.ModifierProperties.Power</a>.</p>
 
-<p>Referenced by <a class="el" href="_modifier_properties_8cs_source.html#l00107">Loot.Core.System.ModifierProperties.NetSend()</a>.</p>
-<div class="fragment"><div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;        {</div><div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;        }</div></div><!-- fragment -->
+<p>Referenced by <a class="el" href="_modifier_properties_8cs_source.html#l00102">Loot.Core.System.ModifierProperties.NetSend()</a>.</p>
+<div class="fragment"><div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;        {</div><div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;        }</div></div><!-- fragment -->
 <p><div id="dynsection-5" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-5-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
 <div id="dynsection-5-summary" class="dynsummary" style="display:block;">
@@ -482,10 +492,10 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_modifier_properties_8cs_source.html#l00079">79</a> of file <a class="el" href="_modifier_properties_8cs_source.html">ModifierProperties.cs</a>.</p>
-<div class="fragment"><div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;        {</div><div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;            <span class="keywordtype">float</span> useMin = <a class="code" href="class_loot_1_1_core_1_1_system_1_1_modifier_properties.html#a30c4c7304162d66cb752d5bf92fdadfe">MinMagnitude</a> * (1f + magnitudePower / 10f);</div><div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;            <span class="keywordtype">float</span> useMax = <a class="code" href="class_loot_1_1_core_1_1_system_1_1_modifier_properties.html#ae18392b03e83be24b3ff5e726a4ac75a">MaxMagnitude</a> * magnitudePower;</div><div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;            <span class="keywordtype">float</span> randomMag = (useMin + Main.rand.NextFloat() * (useMax - useMin));</div><div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;            <span class="keywordflow">return</span> randomMag * <a class="code" href="class_loot_1_1_core_1_1_system_1_1_modifier_properties.html#a9f7f81e5a196d4511dd172eb7d0af205">MagnitudeStrength</a>;</div><div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;        }</div><div class="ttc" id="class_loot_1_1_core_1_1_system_1_1_modifier_properties_html_a9f7f81e5a196d4511dd172eb7d0af205"><div class="ttname"><a href="class_loot_1_1_core_1_1_system_1_1_modifier_properties.html#a9f7f81e5a196d4511dd172eb7d0af205">Loot.Core.System.ModifierProperties.MagnitudeStrength</a></div><div class="ttdeci">float MagnitudeStrength</div><div class="ttdef"><b>Definition:</b> <a href="_modifier_properties_8cs_source.html#l00017">ModifierProperties.cs:17</a></div></div>
-<div class="ttc" id="class_loot_1_1_core_1_1_system_1_1_modifier_properties_html_a30c4c7304162d66cb752d5bf92fdadfe"><div class="ttname"><a href="class_loot_1_1_core_1_1_system_1_1_modifier_properties.html#a30c4c7304162d66cb752d5bf92fdadfe">Loot.Core.System.ModifierProperties.MinMagnitude</a></div><div class="ttdeci">float MinMagnitude</div><div class="ttdef"><b>Definition:</b> <a href="_modifier_properties_8cs_source.html#l00015">ModifierProperties.cs:15</a></div></div>
-<div class="ttc" id="class_loot_1_1_core_1_1_system_1_1_modifier_properties_html_ae18392b03e83be24b3ff5e726a4ac75a"><div class="ttname"><a href="class_loot_1_1_core_1_1_system_1_1_modifier_properties.html#ae18392b03e83be24b3ff5e726a4ac75a">Loot.Core.System.ModifierProperties.MaxMagnitude</a></div><div class="ttdeci">float MaxMagnitude</div><div class="ttdef"><b>Definition:</b> <a href="_modifier_properties_8cs_source.html#l00016">ModifierProperties.cs:16</a></div></div>
+<p>Definition at line <a class="el" href="_modifier_properties_8cs_source.html#l00074">74</a> of file <a class="el" href="_modifier_properties_8cs_source.html">ModifierProperties.cs</a>.</p>
+<div class="fragment"><div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;        {</div><div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;            <span class="keywordtype">float</span> useMin = <a class="code" href="class_loot_1_1_core_1_1_system_1_1_modifier_properties.html#a248fe8aebbf53263d0273abc9197ebcb">MinMagnitude</a> * (1f + magnitudePower / 10f);</div><div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;            <span class="keywordtype">float</span> useMax = <a class="code" href="class_loot_1_1_core_1_1_system_1_1_modifier_properties.html#a6c284e3209655c685210a499cf816d5a">MaxMagnitude</a> * magnitudePower;</div><div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;            <span class="keywordtype">float</span> randomMag = (useMin + Main.rand.NextFloat() * (useMax - useMin));</div><div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;            <span class="keywordflow">return</span> randomMag * <a class="code" href="class_loot_1_1_core_1_1_system_1_1_modifier_properties.html#a10d9621eae28b38cc0f9896fd7cb59aa">MagnitudeStrength</a>;</div><div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;        }</div><div class="ttc" id="class_loot_1_1_core_1_1_system_1_1_modifier_properties_html_a6c284e3209655c685210a499cf816d5a"><div class="ttname"><a href="class_loot_1_1_core_1_1_system_1_1_modifier_properties.html#a6c284e3209655c685210a499cf816d5a">Loot.Core.System.ModifierProperties.MaxMagnitude</a></div><div class="ttdeci">readonly float MaxMagnitude</div><div class="ttdef"><b>Definition:</b> <a href="_modifier_properties_8cs_source.html#l00017">ModifierProperties.cs:17</a></div></div>
+<div class="ttc" id="class_loot_1_1_core_1_1_system_1_1_modifier_properties_html_a10d9621eae28b38cc0f9896fd7cb59aa"><div class="ttname"><a href="class_loot_1_1_core_1_1_system_1_1_modifier_properties.html#a10d9621eae28b38cc0f9896fd7cb59aa">Loot.Core.System.ModifierProperties.MagnitudeStrength</a></div><div class="ttdeci">readonly float MagnitudeStrength</div><div class="ttdef"><b>Definition:</b> <a href="_modifier_properties_8cs_source.html#l00018">ModifierProperties.cs:18</a></div></div>
+<div class="ttc" id="class_loot_1_1_core_1_1_system_1_1_modifier_properties_html_a248fe8aebbf53263d0273abc9197ebcb"><div class="ttname"><a href="class_loot_1_1_core_1_1_system_1_1_modifier_properties.html#a248fe8aebbf53263d0273abc9197ebcb">Loot.Core.System.ModifierProperties.MinMagnitude</a></div><div class="ttdeci">readonly float MinMagnitude</div><div class="ttdef"><b>Definition:</b> <a href="_modifier_properties_8cs_source.html#l00016">ModifierProperties.cs:16</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -513,13 +523,13 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_modifier_properties_8cs_source.html#l00058">58</a> of file <a class="el" href="_modifier_properties_8cs_source.html">ModifierProperties.cs</a>.</p>
+<p>Definition at line <a class="el" href="_modifier_properties_8cs_source.html#l00053">53</a> of file <a class="el" href="_modifier_properties_8cs_source.html">ModifierProperties.cs</a>.</p>
 
-<p>Referenced by <a class="el" href="_modifier_properties_8cs_source.html#l00134">Loot.Core.System.ModifierProperties.Load()</a>.</p>
-<div class="fragment"><div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;        {</div><div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;            <a class="code" href="class_loot_1_1_core_1_1_system_1_1_modifier_properties.html#a172e41aa042a8f8718972aee5d4473c0">Magnitude</a> = <a class="code" href="class_loot_1_1_core_1_1_system_1_1_modifier_properties.html#a713f27c62d6718b832954b5e9d0fe833">RollMagnitude</a>(magnitudePower, lukStat);</div><div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;</div><div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;            <span class="keywordtype">int</span> iterations = (int)Math.Ceiling(lukStat) / 2;</div><div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;</div><div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;            <span class="comment">// makes you more lucky rolling better magnitudes</span></div><div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; iterations; i++)</div><div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;            {</div><div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;                <span class="keywordtype">float</span> rolledMagnitude = <a class="code" href="class_loot_1_1_core_1_1_system_1_1_modifier_properties.html#a713f27c62d6718b832954b5e9d0fe833">RollMagnitude</a>(magnitudePower, lukStat);</div><div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;                <span class="keywordflow">if</span> (rolledMagnitude &gt; <a class="code" href="class_loot_1_1_core_1_1_system_1_1_modifier_properties.html#a172e41aa042a8f8718972aee5d4473c0">Magnitude</a>)</div><div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;                {</div><div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;                    <a class="code" href="class_loot_1_1_core_1_1_system_1_1_modifier_properties.html#a172e41aa042a8f8718972aee5d4473c0">Magnitude</a> = rolledMagnitude;</div><div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;                }</div><div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;            }</div><div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;</div><div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;            <a class="code" href="class_loot_1_1_core_1_1_system_1_1_modifier_properties.html#aa3ee7f6900c815e56205f65bb9312a97">Power</a> = <a class="code" href="class_loot_1_1_core_1_1_system_1_1_modifier_properties.html#a74e61900d2dc1a20c36ac71b29357534">RollPower</a>();</div><div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;</div><div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;            <span class="keywordflow">return</span> <span class="keyword">this</span>;</div><div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;        }</div><div class="ttc" id="class_loot_1_1_core_1_1_system_1_1_modifier_properties_html_aa3ee7f6900c815e56205f65bb9312a97"><div class="ttname"><a href="class_loot_1_1_core_1_1_system_1_1_modifier_properties.html#aa3ee7f6900c815e56205f65bb9312a97">Loot.Core.System.ModifierProperties.Power</a></div><div class="ttdeci">float Power</div><div class="ttdef"><b>Definition:</b> <a href="_modifier_properties_8cs_source.html#l00025">ModifierProperties.cs:25</a></div></div>
-<div class="ttc" id="class_loot_1_1_core_1_1_system_1_1_modifier_properties_html_a74e61900d2dc1a20c36ac71b29357534"><div class="ttname"><a href="class_loot_1_1_core_1_1_system_1_1_modifier_properties.html#a74e61900d2dc1a20c36ac71b29357534">Loot.Core.System.ModifierProperties.RollPower</a></div><div class="ttdeci">float RollPower()</div><div class="ttdef"><b>Definition:</b> <a href="_modifier_properties_8cs_source.html#l00087">ModifierProperties.cs:87</a></div></div>
-<div class="ttc" id="class_loot_1_1_core_1_1_system_1_1_modifier_properties_html_a172e41aa042a8f8718972aee5d4473c0"><div class="ttname"><a href="class_loot_1_1_core_1_1_system_1_1_modifier_properties.html#a172e41aa042a8f8718972aee5d4473c0">Loot.Core.System.ModifierProperties.Magnitude</a></div><div class="ttdeci">float Magnitude</div><div class="ttdef"><b>Definition:</b> <a href="_modifier_properties_8cs_source.html#l00022">ModifierProperties.cs:22</a></div></div>
-<div class="ttc" id="class_loot_1_1_core_1_1_system_1_1_modifier_properties_html_a713f27c62d6718b832954b5e9d0fe833"><div class="ttname"><a href="class_loot_1_1_core_1_1_system_1_1_modifier_properties.html#a713f27c62d6718b832954b5e9d0fe833">Loot.Core.System.ModifierProperties.RollMagnitude</a></div><div class="ttdeci">float RollMagnitude(float magnitudePower, float lukStat)</div><div class="ttdef"><b>Definition:</b> <a href="_modifier_properties_8cs_source.html#l00079">ModifierProperties.cs:79</a></div></div>
+<p>Referenced by <a class="el" href="_modifier_properties_8cs_source.html#l00129">Loot.Core.System.ModifierProperties.Load()</a>.</p>
+<div class="fragment"><div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        {</div><div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;            <a class="code" href="class_loot_1_1_core_1_1_system_1_1_modifier_properties.html#a172e41aa042a8f8718972aee5d4473c0">Magnitude</a> = <a class="code" href="class_loot_1_1_core_1_1_system_1_1_modifier_properties.html#a713f27c62d6718b832954b5e9d0fe833">RollMagnitude</a>(magnitudePower, lukStat);</div><div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;</div><div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;            <span class="keywordtype">int</span> iterations = (int)Math.Ceiling(lukStat) / 2;</div><div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;</div><div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;            <span class="comment">// makes you more lucky rolling better magnitudes</span></div><div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; iterations; i++)</div><div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;            {</div><div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;                <span class="keywordtype">float</span> rolledMagnitude = <a class="code" href="class_loot_1_1_core_1_1_system_1_1_modifier_properties.html#a713f27c62d6718b832954b5e9d0fe833">RollMagnitude</a>(magnitudePower, lukStat);</div><div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;                <span class="keywordflow">if</span> (rolledMagnitude &gt; <a class="code" href="class_loot_1_1_core_1_1_system_1_1_modifier_properties.html#a172e41aa042a8f8718972aee5d4473c0">Magnitude</a>)</div><div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;                {</div><div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;                    <a class="code" href="class_loot_1_1_core_1_1_system_1_1_modifier_properties.html#a172e41aa042a8f8718972aee5d4473c0">Magnitude</a> = rolledMagnitude;</div><div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;                }</div><div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;            }</div><div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;</div><div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;            <a class="code" href="class_loot_1_1_core_1_1_system_1_1_modifier_properties.html#aa3ee7f6900c815e56205f65bb9312a97">Power</a> = <a class="code" href="class_loot_1_1_core_1_1_system_1_1_modifier_properties.html#a74e61900d2dc1a20c36ac71b29357534">RollPower</a>();</div><div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;</div><div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;            <span class="keywordflow">return</span> <span class="keyword">this</span>;</div><div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;        }</div><div class="ttc" id="class_loot_1_1_core_1_1_system_1_1_modifier_properties_html_aa3ee7f6900c815e56205f65bb9312a97"><div class="ttname"><a href="class_loot_1_1_core_1_1_system_1_1_modifier_properties.html#aa3ee7f6900c815e56205f65bb9312a97">Loot.Core.System.ModifierProperties.Power</a></div><div class="ttdeci">float Power</div><div class="ttdef"><b>Definition:</b> <a href="_modifier_properties_8cs_source.html#l00027">ModifierProperties.cs:27</a></div></div>
+<div class="ttc" id="class_loot_1_1_core_1_1_system_1_1_modifier_properties_html_a74e61900d2dc1a20c36ac71b29357534"><div class="ttname"><a href="class_loot_1_1_core_1_1_system_1_1_modifier_properties.html#a74e61900d2dc1a20c36ac71b29357534">Loot.Core.System.ModifierProperties.RollPower</a></div><div class="ttdeci">float RollPower()</div><div class="ttdef"><b>Definition:</b> <a href="_modifier_properties_8cs_source.html#l00082">ModifierProperties.cs:82</a></div></div>
+<div class="ttc" id="class_loot_1_1_core_1_1_system_1_1_modifier_properties_html_a172e41aa042a8f8718972aee5d4473c0"><div class="ttname"><a href="class_loot_1_1_core_1_1_system_1_1_modifier_properties.html#a172e41aa042a8f8718972aee5d4473c0">Loot.Core.System.ModifierProperties.Magnitude</a></div><div class="ttdeci">float Magnitude</div><div class="ttdef"><b>Definition:</b> <a href="_modifier_properties_8cs_source.html#l00024">ModifierProperties.cs:24</a></div></div>
+<div class="ttc" id="class_loot_1_1_core_1_1_system_1_1_modifier_properties_html_a713f27c62d6718b832954b5e9d0fe833"><div class="ttname"><a href="class_loot_1_1_core_1_1_system_1_1_modifier_properties.html#a713f27c62d6718b832954b5e9d0fe833">Loot.Core.System.ModifierProperties.RollMagnitude</a></div><div class="ttdeci">float RollMagnitude(float magnitudePower, float lukStat)</div><div class="ttdef"><b>Definition:</b> <a href="_modifier_properties_8cs_source.html#l00074">ModifierProperties.cs:74</a></div></div>
 </div><!-- fragment -->
 <p><div id="dynsection-7" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-7-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
@@ -556,9 +566,9 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_modifier_properties_8cs_source.html#l00087">87</a> of file <a class="el" href="_modifier_properties_8cs_source.html">ModifierProperties.cs</a>.</p>
-<div class="fragment"><div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;        {</div><div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;            <span class="keywordflow">return</span> <a class="code" href="class_loot_1_1_core_1_1_system_1_1_modifier_properties.html#a93cdc675011bb3af8ba6c97d85da188e">BasePower</a> * <a class="code" href="class_loot_1_1_core_1_1_system_1_1_modifier_properties.html#a172e41aa042a8f8718972aee5d4473c0">Magnitude</a>;</div><div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;        }</div><div class="ttc" id="class_loot_1_1_core_1_1_system_1_1_modifier_properties_html_a93cdc675011bb3af8ba6c97d85da188e"><div class="ttname"><a href="class_loot_1_1_core_1_1_system_1_1_modifier_properties.html#a93cdc675011bb3af8ba6c97d85da188e">Loot.Core.System.ModifierProperties.BasePower</a></div><div class="ttdeci">float BasePower</div><div class="ttdef"><b>Definition:</b> <a href="_modifier_properties_8cs_source.html#l00018">ModifierProperties.cs:18</a></div></div>
-<div class="ttc" id="class_loot_1_1_core_1_1_system_1_1_modifier_properties_html_a172e41aa042a8f8718972aee5d4473c0"><div class="ttname"><a href="class_loot_1_1_core_1_1_system_1_1_modifier_properties.html#a172e41aa042a8f8718972aee5d4473c0">Loot.Core.System.ModifierProperties.Magnitude</a></div><div class="ttdeci">float Magnitude</div><div class="ttdef"><b>Definition:</b> <a href="_modifier_properties_8cs_source.html#l00022">ModifierProperties.cs:22</a></div></div>
+<p>Definition at line <a class="el" href="_modifier_properties_8cs_source.html#l00082">82</a> of file <a class="el" href="_modifier_properties_8cs_source.html">ModifierProperties.cs</a>.</p>
+<div class="fragment"><div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;        {</div><div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;            <span class="keywordflow">return</span> <a class="code" href="class_loot_1_1_core_1_1_system_1_1_modifier_properties.html#acdd78c317ff3f4ca9e65e3b96afac79a">BasePower</a> * <a class="code" href="class_loot_1_1_core_1_1_system_1_1_modifier_properties.html#a172e41aa042a8f8718972aee5d4473c0">Magnitude</a>;</div><div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;        }</div><div class="ttc" id="class_loot_1_1_core_1_1_system_1_1_modifier_properties_html_acdd78c317ff3f4ca9e65e3b96afac79a"><div class="ttname"><a href="class_loot_1_1_core_1_1_system_1_1_modifier_properties.html#acdd78c317ff3f4ca9e65e3b96afac79a">Loot.Core.System.ModifierProperties.BasePower</a></div><div class="ttdeci">readonly float BasePower</div><div class="ttdef"><b>Definition:</b> <a href="_modifier_properties_8cs_source.html#l00019">ModifierProperties.cs:19</a></div></div>
+<div class="ttc" id="class_loot_1_1_core_1_1_system_1_1_modifier_properties_html_a172e41aa042a8f8718972aee5d4473c0"><div class="ttname"><a href="class_loot_1_1_core_1_1_system_1_1_modifier_properties.html#a172e41aa042a8f8718972aee5d4473c0">Loot.Core.System.ModifierProperties.Magnitude</a></div><div class="ttdeci">float Magnitude</div><div class="ttdef"><b>Definition:</b> <a href="_modifier_properties_8cs_source.html#l00024">ModifierProperties.cs:24</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -594,12 +604,12 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_modifier_properties_8cs_source.html#l00118">118</a> of file <a class="el" href="_modifier_properties_8cs_source.html">ModifierProperties.cs</a>.</p>
+<p>Definition at line <a class="el" href="_modifier_properties_8cs_source.html#l00113">113</a> of file <a class="el" href="_modifier_properties_8cs_source.html">ModifierProperties.cs</a>.</p>
 
-<p>References <a class="el" href="_modifier_properties_8cs_source.html#l00022">Loot.Core.System.ModifierProperties.Magnitude</a>, <a class="el" href="_modifier_properties_8cs_source.html#l00025">Loot.Core.System.ModifierProperties.Power</a>, and <a class="el" href="_modifier_properties_8cs_source.html#l00118">Loot.Core.System.ModifierProperties.Save()</a>.</p>
+<p>References <a class="el" href="_modifier_properties_8cs_source.html#l00024">Loot.Core.System.ModifierProperties.Magnitude</a>, <a class="el" href="_modifier_properties_8cs_source.html#l00027">Loot.Core.System.ModifierProperties.Power</a>, and <a class="el" href="_modifier_properties_8cs_source.html#l00113">Loot.Core.System.ModifierProperties.Save()</a>.</p>
 
-<p>Referenced by <a class="el" href="_modifier_properties_8cs_source.html#l00118">Loot.Core.System.ModifierProperties.Save()</a>.</p>
-<div class="fragment"><div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;        {</div><div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;        }</div></div><!-- fragment -->
+<p>Referenced by <a class="el" href="_modifier_properties_8cs_source.html#l00113">Loot.Core.System.ModifierProperties.Save()</a>.</p>
+<div class="fragment"><div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;        {</div><div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;        }</div></div><!-- fragment -->
 <p><div id="dynsection-8" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-8-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
 <div id="dynsection-8-summary" class="dynsummary" style="display:block;">
@@ -618,131 +628,6 @@ Private Attributes</h2></td></tr>
 <div id="dynsection-9-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="class_loot_1_1_core_1_1_system_1_1_modifier_properties_ab2b3e69ba1dc8f9e625e6b9c934075e4_icgraph.png" border="0" usemap="#class_loot_1_1_core_1_1_system_1_1_modifier_properties_ab2b3e69ba1dc8f9e625e6b9c934075e4_icgraph" alt=""/></div>
 <map name="class_loot_1_1_core_1_1_system_1_1_modifier_properties_ab2b3e69ba1dc8f9e625e6b9c934075e4_icgraph" id="class_loot_1_1_core_1_1_system_1_1_modifier_properties_ab2b3e69ba1dc8f9e625e6b9c934075e4_icgraph">
-</map>
-</div>
-</p>
-
-</div>
-</div>
-<a class="anchor" id="a56f652f6fabb6897e6f2b12eb63ce9bc"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="class_loot_1_1_core_1_1_system_1_1_modifier_properties.html">ModifierProperties</a> Loot.Core.System.ModifierProperties.Set </td>
-          <td>(</td>
-          <td class="paramtype">float?&#160;</td>
-          <td class="paramname"><em>minMagnitude</em> = <code>null</code>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">float?&#160;</td>
-          <td class="paramname"><em>maxMagnitude</em> = <code>null</code>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">float?&#160;</td>
-          <td class="paramname"><em>magnitudeStrength</em> = <code>null</code>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">float?&#160;</td>
-          <td class="paramname"><em>basePower</em> = <code>null</code>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">float?&#160;</td>
-          <td class="paramname"><em>rarityLevel</em> = <code>null</code>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">float?&#160;</td>
-          <td class="paramname"><em>rollChance</em> = <code>null</code>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int?&#160;</td>
-          <td class="paramname"><em>roundPrecision</em> = <code>null</code>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">bool?&#160;</td>
-          <td class="paramname"><em>uniqueRoll</em> = <code>null</code>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Definition at line <a class="el" href="_modifier_properties_8cs_source.html#l00045">45</a> of file <a class="el" href="_modifier_properties_8cs_source.html">ModifierProperties.cs</a>.</p>
-
-<p>Referenced by <a class="el" href="_health_plus_8cs_source.html#l00014">Loot.Modifiers.EquipModifiers.Defensive.HealthPlus.GetModifierProperties()</a>, <a class="el" href="_thorns_8cs_source.html#l00014">Loot.Modifiers.EquipModifiers.Defensive.Thorns.GetModifierProperties()</a>, <a class="el" href="_melee_damage_plus_8cs_source.html#l00014">Loot.Modifiers.EquipModifiers.Offensive.MeleeDamagePlus.GetModifierProperties()</a>, <a class="el" href="_speed_plus_8cs_source.html#l00014">Loot.Modifiers.WeaponModifiers.SpeedPlus.GetModifierProperties()</a>, <a class="el" href="_minion_damage_plus_8cs_source.html#l00014">Loot.Modifiers.EquipModifiers.Offensive.MinionDamagePlus.GetModifierProperties()</a>, <a class="el" href="_knockback_plus_8cs_source.html#l00014">Loot.Modifiers.WeaponModifiers.KnockbackPlus.GetModifierProperties()</a>, <a class="el" href="_ranged_crit_plus_8cs_source.html#l00014">Loot.Modifiers.EquipModifiers.Offensive.RangedCritPlus.GetModifierProperties()</a>, <a class="el" href="_missing_health_damage_8cs_source.html#l00014">Loot.Modifiers.WeaponModifiers.MissingHealthDamage.GetModifierProperties()</a>, <a class="el" href="_ranged_damage_plus_8cs_source.html#l00014">Loot.Modifiers.EquipModifiers.Offensive.RangedDamagePlus.GetModifierProperties()</a>, <a class="el" href="_thrown_crit_plus_8cs_source.html#l00014">Loot.Modifiers.EquipModifiers.Offensive.ThrownCritPlus.GetModifierProperties()</a>, <a class="el" href="_thrown_damage_plus_8cs_source.html#l00014">Loot.Modifiers.EquipModifiers.Offensive.ThrownDamagePlus.GetModifierProperties()</a>, <a class="el" href="_velocity_plus_8cs_source.html#l00014">Loot.Modifiers.WeaponModifiers.VelocityPlus.GetModifierProperties()</a>, <a class="el" href="_fishing_plus_8cs_source.html#l00014">Loot.Modifiers.EquipModifiers.Utility.FishingPlus.GetModifierProperties()</a>, <a class="el" href="_mana_plus_8cs_source.html#l00014">Loot.Modifiers.EquipModifiers.Defensive.ManaPlus.GetModifierProperties()</a>, <a class="el" href="_magic_crit_plus_8cs_source.html#l00014">Loot.Modifiers.EquipModifiers.Offensive.MagicCritPlus.GetModifierProperties()</a>, <a class="el" href="_mining_speed_plus_8cs_source.html#l00014">Loot.Modifiers.EquipModifiers.Utility.MiningSpeedPlus.GetModifierProperties()</a>, <a class="el" href="_move_speed_plus_8cs_source.html#l00014">Loot.Modifiers.EquipModifiers.Utility.MoveSpeedPlus.GetModifierProperties()</a>, <a class="el" href="_magic_damage_plus_8cs_source.html#l00014">Loot.Modifiers.EquipModifiers.Offensive.MagicDamagePlus.GetModifierProperties()</a>, <a class="el" href="_ammo_reduce_8cs_source.html#l00014">Loot.Modifiers.WeaponModifiers.AmmoReduce.GetModifierProperties()</a>, <a class="el" href="_melee_crit_plus_8cs_source.html#l00014">Loot.Modifiers.EquipModifiers.Offensive.MeleeCritPlus.GetModifierProperties()</a>, <a class="el" href="_velocity_damage_8cs_source.html#l00015">Loot.Modifiers.WeaponModifiers.VelocityDamage.GetModifierProperties()</a>, <a class="el" href="_damage_plus_8cs_source.html#l00015">Loot.Modifiers.WeaponModifiers.DamagePlus.GetModifierProperties()</a>, <a class="el" href="_mana_reduce_8cs_source.html#l00015">Loot.Modifiers.WeaponModifiers.ManaReduce.GetModifierProperties()</a>, <a class="el" href="_crit_plus_8cs_source.html#l00015">Loot.Modifiers.WeaponModifiers.CritPlus.GetModifierProperties()</a>, <a class="el" href="_knockback_immunity_8cs_source.html#l00015">Loot.Modifiers.EquipModifiers.Defensive.KnockbackImmunity.GetModifierProperties()</a>, <a class="el" href="_wing_time_plus_8cs_source.html#l00015">Loot.Modifiers.EquipModifiers.Utility.WingTimePlus.GetModifierProperties()</a>, <a class="el" href="_damage_with_mana_cost_8cs_source.html#l00016">Loot.Modifiers.WeaponModifiers.DamageWithManaCost.GetModifierProperties()</a>, <a class="el" href="_damage_plus_daytime_8cs_source.html#l00018">Loot.Modifiers.WeaponModifiers.DamagePlusDaytime.GetModifierProperties()</a>, <a class="el" href="_luck_plus_8cs_source.html#l00028">Loot.Modifiers.EquipModifiers.Utility.LuckPlus.GetModifierProperties()</a>, <a class="el" href="_life_regen_8cs_source.html#l00033">Loot.Modifiers.EquipModifiers.Defensive.LifeRegen.GetModifierProperties()</a>, <a class="el" href="_percent_defense_bonus_8cs_source.html#l00034">Loot.Modifiers.EquipModifiers.Defensive.PercentDefenseBonus.GetModifierProperties()</a>, <a class="el" href="_immunity_time_plus_8cs_source.html#l00039">Loot.Modifiers.EquipModifiers.Defensive.ImmunityTimePlus.GetModifierProperties()</a>, <a class="el" href="_dodge_chance_8cs_source.html#l00040">Loot.Modifiers.EquipModifiers.Defensive.DodgeChance.GetModifierProperties()</a>, <a class="el" href="_survival_chance_8cs_source.html#l00048">Loot.Modifiers.EquipModifiers.Defensive.SurvivalChance.GetModifierProperties()</a>, <a class="el" href="_mana_shield_8cs_source.html#l00053">Loot.Modifiers.EquipModifiers.Defensive.ManaShield.GetModifierProperties()</a>, <a class="el" href="_weapon_debuff_modifier_8cs_source.html#l00057">Loot.Modifiers.WeaponDebuffModifier.GetModifierProperties()</a>, <a class="el" href="_healthy_foes_bonus_8cs_source.html#l00059">Loot.Modifiers.EquipModifiers.Offensive.HealthyFoesBonus.GetModifierProperties()</a>, <a class="el" href="_crit_damage_plus_8cs_source.html#l00059">Loot.Modifiers.EquipModifiers.Offensive.CritDamagePlus.GetModifierProperties()</a>, <a class="el" href="_cursed_damage_8cs_source.html#l00062">Loot.Modifiers.WeaponModifiers.CursedDamage.GetModifierProperties()</a>, and <a class="el" href="_light_plus_8cs_source.html#l00064">Loot.Modifiers.EquipModifiers.Utility.LightPlus.GetModifierProperties()</a>.</p>
-<div class="fragment"><div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        {</div><div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;            <a class="code" href="class_loot_1_1_core_1_1_system_1_1_modifier_properties.html#a30c4c7304162d66cb752d5bf92fdadfe">MinMagnitude</a> = minMagnitude ?? <a class="code" href="class_loot_1_1_core_1_1_system_1_1_modifier_properties.html#a30c4c7304162d66cb752d5bf92fdadfe">MinMagnitude</a>;</div><div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;            <a class="code" href="class_loot_1_1_core_1_1_system_1_1_modifier_properties.html#ae18392b03e83be24b3ff5e726a4ac75a">MaxMagnitude</a> = maxMagnitude ?? <a class="code" href="class_loot_1_1_core_1_1_system_1_1_modifier_properties.html#ae18392b03e83be24b3ff5e726a4ac75a">MaxMagnitude</a>;</div><div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;            <a class="code" href="class_loot_1_1_core_1_1_system_1_1_modifier_properties.html#a9f7f81e5a196d4511dd172eb7d0af205">MagnitudeStrength</a> = magnitudeStrength ?? <a class="code" href="class_loot_1_1_core_1_1_system_1_1_modifier_properties.html#a9f7f81e5a196d4511dd172eb7d0af205">MagnitudeStrength</a>;</div><div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;            <a class="code" href="class_loot_1_1_core_1_1_system_1_1_modifier_properties.html#a93cdc675011bb3af8ba6c97d85da188e">BasePower</a> = basePower ?? <a class="code" href="class_loot_1_1_core_1_1_system_1_1_modifier_properties.html#a93cdc675011bb3af8ba6c97d85da188e">BasePower</a>;</div><div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;            <a class="code" href="class_loot_1_1_core_1_1_system_1_1_modifier_properties.html#a19f8dc4d089073fc13e854dbeb03abef">RarityLevel</a> = rarityLevel ?? <a class="code" href="class_loot_1_1_core_1_1_system_1_1_modifier_properties.html#a19f8dc4d089073fc13e854dbeb03abef">RarityLevel</a>;</div><div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;            <a class="code" href="class_loot_1_1_core_1_1_system_1_1_modifier_properties.html#a74e388a273d6e69fe0fb2be7f0bead7b">RollChance</a> = rollChance ?? <a class="code" href="class_loot_1_1_core_1_1_system_1_1_modifier_properties.html#a74e388a273d6e69fe0fb2be7f0bead7b">RollChance</a>;</div><div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;            <a class="code" href="class_loot_1_1_core_1_1_system_1_1_modifier_properties.html#ab91a55fff4c7d3a2848413f70dd625f1">RoundPrecision</a> = roundPrecision ?? <a class="code" href="class_loot_1_1_core_1_1_system_1_1_modifier_properties.html#ab91a55fff4c7d3a2848413f70dd625f1">RoundPrecision</a>;</div><div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;            <a class="code" href="class_loot_1_1_core_1_1_system_1_1_modifier_properties.html#a3396a7e70ad18e6553ee7239c4798bc6">UniqueModifier</a> = uniqueRoll ?? <a class="code" href="class_loot_1_1_core_1_1_system_1_1_modifier_properties.html#a3396a7e70ad18e6553ee7239c4798bc6">UniqueModifier</a>;</div><div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;            <span class="keywordflow">return</span> <span class="keyword">this</span>;</div><div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        }</div><div class="ttc" id="class_loot_1_1_core_1_1_system_1_1_modifier_properties_html_a93cdc675011bb3af8ba6c97d85da188e"><div class="ttname"><a href="class_loot_1_1_core_1_1_system_1_1_modifier_properties.html#a93cdc675011bb3af8ba6c97d85da188e">Loot.Core.System.ModifierProperties.BasePower</a></div><div class="ttdeci">float BasePower</div><div class="ttdef"><b>Definition:</b> <a href="_modifier_properties_8cs_source.html#l00018">ModifierProperties.cs:18</a></div></div>
-<div class="ttc" id="class_loot_1_1_core_1_1_system_1_1_modifier_properties_html_a9f7f81e5a196d4511dd172eb7d0af205"><div class="ttname"><a href="class_loot_1_1_core_1_1_system_1_1_modifier_properties.html#a9f7f81e5a196d4511dd172eb7d0af205">Loot.Core.System.ModifierProperties.MagnitudeStrength</a></div><div class="ttdeci">float MagnitudeStrength</div><div class="ttdef"><b>Definition:</b> <a href="_modifier_properties_8cs_source.html#l00017">ModifierProperties.cs:17</a></div></div>
-<div class="ttc" id="class_loot_1_1_core_1_1_system_1_1_modifier_properties_html_a74e388a273d6e69fe0fb2be7f0bead7b"><div class="ttname"><a href="class_loot_1_1_core_1_1_system_1_1_modifier_properties.html#a74e388a273d6e69fe0fb2be7f0bead7b">Loot.Core.System.ModifierProperties.RollChance</a></div><div class="ttdeci">float RollChance</div><div class="ttdef"><b>Definition:</b> <a href="_modifier_properties_8cs_source.html#l00020">ModifierProperties.cs:20</a></div></div>
-<div class="ttc" id="class_loot_1_1_core_1_1_system_1_1_modifier_properties_html_a30c4c7304162d66cb752d5bf92fdadfe"><div class="ttname"><a href="class_loot_1_1_core_1_1_system_1_1_modifier_properties.html#a30c4c7304162d66cb752d5bf92fdadfe">Loot.Core.System.ModifierProperties.MinMagnitude</a></div><div class="ttdeci">float MinMagnitude</div><div class="ttdef"><b>Definition:</b> <a href="_modifier_properties_8cs_source.html#l00015">ModifierProperties.cs:15</a></div></div>
-<div class="ttc" id="class_loot_1_1_core_1_1_system_1_1_modifier_properties_html_ab91a55fff4c7d3a2848413f70dd625f1"><div class="ttname"><a href="class_loot_1_1_core_1_1_system_1_1_modifier_properties.html#ab91a55fff4c7d3a2848413f70dd625f1">Loot.Core.System.ModifierProperties.RoundPrecision</a></div><div class="ttdeci">int RoundPrecision</div><div class="ttdef"><b>Definition:</b> <a href="_modifier_properties_8cs_source.html#l00021">ModifierProperties.cs:21</a></div></div>
-<div class="ttc" id="class_loot_1_1_core_1_1_system_1_1_modifier_properties_html_a19f8dc4d089073fc13e854dbeb03abef"><div class="ttname"><a href="class_loot_1_1_core_1_1_system_1_1_modifier_properties.html#a19f8dc4d089073fc13e854dbeb03abef">Loot.Core.System.ModifierProperties.RarityLevel</a></div><div class="ttdeci">float RarityLevel</div><div class="ttdef"><b>Definition:</b> <a href="_modifier_properties_8cs_source.html#l00019">ModifierProperties.cs:19</a></div></div>
-<div class="ttc" id="class_loot_1_1_core_1_1_system_1_1_modifier_properties_html_ae18392b03e83be24b3ff5e726a4ac75a"><div class="ttname"><a href="class_loot_1_1_core_1_1_system_1_1_modifier_properties.html#ae18392b03e83be24b3ff5e726a4ac75a">Loot.Core.System.ModifierProperties.MaxMagnitude</a></div><div class="ttdeci">float MaxMagnitude</div><div class="ttdef"><b>Definition:</b> <a href="_modifier_properties_8cs_source.html#l00016">ModifierProperties.cs:16</a></div></div>
-<div class="ttc" id="class_loot_1_1_core_1_1_system_1_1_modifier_properties_html_a3396a7e70ad18e6553ee7239c4798bc6"><div class="ttname"><a href="class_loot_1_1_core_1_1_system_1_1_modifier_properties.html#a3396a7e70ad18e6553ee7239c4798bc6">Loot.Core.System.ModifierProperties.UniqueModifier</a></div><div class="ttdeci">bool UniqueModifier</div><div class="ttdef"><b>Definition:</b> <a href="_modifier_properties_8cs_source.html#l00038">ModifierProperties.cs:38</a></div></div>
-</div><!-- fragment -->
-<p><div id="dynsection-10" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-10-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-10-summary" class="dynsummary" style="display:block;">
-</div>
-<div id="dynsection-10-content" class="dyncontent" style="display:none;">
-<div class="center"><img src="class_loot_1_1_core_1_1_system_1_1_modifier_properties_a56f652f6fabb6897e6f2b12eb63ce9bc_icgraph.png" border="0" usemap="#class_loot_1_1_core_1_1_system_1_1_modifier_properties_a56f652f6fabb6897e6f2b12eb63ce9bc_icgraph" alt=""/></div>
-<map name="class_loot_1_1_core_1_1_system_1_1_modifier_properties_a56f652f6fabb6897e6f2b12eb63ce9bc_icgraph" id="class_loot_1_1_core_1_1_system_1_1_modifier_properties_a56f652f6fabb6897e6f2b12eb63ce9bc_icgraph">
-<area shape="rect" id="node2" href="class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_defensive_1_1_health_plus.html#af92f621bd4291d93cc7038766bb6c13f" title="Loot.Modifiers.EquipModifiers.\lDefensive.HealthPlus.GetModifier\lProperties" alt="" coords="266,5,486,61"/>
-<area shape="rect" id="node3" href="class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_defensive_1_1_thorns.html#a1c5adef9f31e90f8d4e8f7e177f821a8" title="Loot.Modifiers.EquipModifiers.\lDefensive.Thorns.GetModifierProperties" alt="" coords="249,85,503,126"/>
-<area shape="rect" id="node4" href="class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_offensive_1_1_melee_damage_plus.html#a0c1ad49fddb457bb5050de20163d071a" title="Loot.Modifiers.EquipModifiers.\lOffensive.MeleeDamagePlus.GetModifier\lProperties" alt="" coords="245,149,507,205"/>
-<area shape="rect" id="node5" href="class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_speed_plus.html#a690bbe1a5344fee76a927682d0daf86f" title="Loot.Modifiers.WeaponModifiers.\lSpeedPlus.GetModifierProperties" alt="" coords="269,229,483,270"/>
-<area shape="rect" id="node6" href="class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_offensive_1_1_minion_damage_plus.html#ac6a90ffa5fa7e87b4dd16a327335e4cb" title="Loot.Modifiers.EquipModifiers.\lOffensive.MinionDamagePlus.GetModifier\lProperties" alt="" coords="243,293,509,349"/>
-<area shape="rect" id="node7" href="class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_knockback_plus.html#a13e10e9ff3c30710f5a1c518d3b9fabf" title="Loot.Modifiers.WeaponModifiers.\lKnockbackPlus.GetModifierProperties" alt="" coords="255,373,497,414"/>
-<area shape="rect" id="node8" href="class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_offensive_1_1_ranged_crit_plus.html#ac3c523bb895fa4ab1595a4a23131fb2d" title="Loot.Modifiers.EquipModifiers.\lOffensive.RangedCritPlus.GetModifier\lProperties" alt="" coords="253,437,499,493"/>
-<area shape="rect" id="node9" href="class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_missing_health_damage.html#a745b934814f836a3f3c5abe645636403" title="Loot.Modifiers.WeaponModifiers.\lMissingHealthDamage.GetModifierProperties" alt="" coords="234,517,518,558"/>
-<area shape="rect" id="node10" href="class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_offensive_1_1_ranged_damage_plus.html#a4fbc2db7004ee09ca11eeb78bfd34b7b" title="Loot.Modifiers.EquipModifiers.\lOffensive.RangedDamagePlus.GetModifier\lProperties" alt="" coords="239,581,513,637"/>
-<area shape="rect" id="node11" href="class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_offensive_1_1_thrown_crit_plus.html#a9cd2e50e6d93bf61b58b93d12f14e99b" title="Loot.Modifiers.EquipModifiers.\lOffensive.ThrownCritPlus.GetModifier\lProperties" alt="" coords="255,661,497,717"/>
-<area shape="rect" id="node12" href="class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_offensive_1_1_thrown_damage_plus.html#af08f3108dd913d38d2a99778d2beb2c9" title="Loot.Modifiers.EquipModifiers.\lOffensive.ThrownDamagePlus.GetModifier\lProperties" alt="" coords="241,741,511,797"/>
-<area shape="rect" id="node13" href="class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_velocity_plus.html#a79f64fd097b64b421fb514c466e09ca3" title="Loot.Modifiers.WeaponModifiers.\lVelocityPlus.GetModifierProperties" alt="" coords="263,821,489,862"/>
-<area shape="rect" id="node14" href="class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_utility_1_1_fishing_plus.html#a48d538c25b672ce1955f975e776dad01" title="Loot.Modifiers.EquipModifiers.\lUtility.FishingPlus.GetModifierProperties" alt="" coords="247,886,505,927"/>
-<area shape="rect" id="node15" href="class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_defensive_1_1_mana_plus.html#a52443703335116aec0e2082389895b50" title="Loot.Modifiers.EquipModifiers.\lDefensive.ManaPlus.GetModifierProperties" alt="" coords="239,951,513,993"/>
-<area shape="rect" id="node16" href="class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_offensive_1_1_magic_crit_plus.html#a6cd7cd84c2b284083998a5810fa12939" title="Loot.Modifiers.EquipModifiers.\lOffensive.MagicCritPlus.GetModifier\lProperties" alt="" coords="259,1016,493,1072"/>
-<area shape="rect" id="node17" href="class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_utility_1_1_mining_speed_plus.html#aab4279951e5205d6ee5b0a2934b6b27a" title="Loot.Modifiers.EquipModifiers.\lUtility.MiningSpeedPlus.GetModifier\lProperties" alt="" coords="260,1096,492,1152"/>
-<area shape="rect" id="node18" href="class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_utility_1_1_move_speed_plus.html#acbdb96b9eeaaf1e490b63c9e3081c849" title="Loot.Modifiers.EquipModifiers.\lUtility.MoveSpeedPlus.GetModifier\lProperties" alt="" coords="263,1176,489,1232"/>
-<area shape="rect" id="node19" href="class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_offensive_1_1_magic_damage_plus.html#aeeb4d8e6eadc5aaec80b71f4b404899a" title="Loot.Modifiers.EquipModifiers.\lOffensive.MagicDamagePlus.GetModifier\lProperties" alt="" coords="245,1256,507,1312"/>
-<area shape="rect" id="node20" href="class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_ammo_reduce.html#acbe2335f8afc646f425467ca80689785" title="Loot.Modifiers.WeaponModifiers.\lAmmoReduce.GetModifierProperties" alt="" coords="259,1335,493,1377"/>
-<area shape="rect" id="node21" href="class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_offensive_1_1_melee_crit_plus.html#aac1de7220e3826f9fef0e15f4b30ffc5" title="Loot.Modifiers.EquipModifiers.\lOffensive.MeleeCritPlus.GetModifier\lProperties" alt="" coords="259,1400,493,1456"/>
-<area shape="rect" id="node22" href="class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_velocity_damage.html#a91c682a46892abb276bf1483e86e8e7f" title="Loot.Modifiers.WeaponModifiers.\lVelocityDamage.GetModifierProperties" alt="" coords="252,1479,500,1521"/>
-<area shape="rect" id="node23" href="class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_damage_plus.html#aec14dbffd8606071998f8cdda9254c7e" title="Loot.Modifiers.WeaponModifiers.\lDamagePlus.GetModifierProperties" alt="" coords="263,1545,489,1586"/>
-<area shape="rect" id="node24" href="class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_mana_reduce.html#af2a680e6fd937d142ca0adccb25a4864" title="Loot.Modifiers.WeaponModifiers.\lManaReduce.GetModifierProperties" alt="" coords="261,1610,491,1651"/>
-<area shape="rect" id="node25" href="class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_crit_plus.html#a25f138bb98914c43170c666520f5cef5" title="Loot.Modifiers.WeaponModifiers.\lCritPlus.GetModifierProperties" alt="" coords="269,1675,483,1717"/>
-<area shape="rect" id="node26" href="class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_defensive_1_1_knockback_immunity.html#a513d51b847c755823316e4ee60b19832" title="Loot.Modifiers.EquipModifiers.\lDefensive.KnockbackImmunity.GetModifier\lProperties" alt="" coords="239,1740,513,1796"/>
-<area shape="rect" id="node27" href="class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_utility_1_1_wing_time_plus.html#a09ff9bf0387a20822e7f921f0a4e1551" title="Loot.Modifiers.EquipModifiers.\lUtility.WingTimePlus.GetModifier\lProperties" alt="" coords="268,1820,484,1876"/>
-<area shape="rect" id="node28" href="class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_damage_with_mana_cost.html#a15bc964dff900effcf084f503fdc061d" title="Loot.Modifiers.WeaponModifiers.\lDamageWithManaCost.GetModifierProperties" alt="" coords="232,1899,520,1941"/>
-<area shape="rect" id="node29" href="class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_damage_plus_daytime.html#ad01afdca7f2e9fc83fe1e96c59f212e8" title="Loot.Modifiers.WeaponModifiers.\lDamagePlusDaytime.GetModifierProperties" alt="" coords="238,1965,514,2006"/>
-<area shape="rect" id="node30" href="class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_utility_1_1_luck_plus.html#aa7d325832d47fa8a1f44e3affa33486c" title="Loot.Modifiers.EquipModifiers.\lUtility.LuckPlus.GetModifierProperties" alt="" coords="254,2030,498,2071"/>
-<area shape="rect" id="node31" href="class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_defensive_1_1_life_regen.html#af3ece5989982b882af3a3d37e62a7848" title="Loot.Modifiers.EquipModifiers.\lDefensive.LifeRegen.GetModifierProperties" alt="" coords="239,2095,513,2137"/>
-<area shape="rect" id="node32" href="class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_defensive_1_1_percent_defense_bonus.html#aa3b651d66811b3b4ed5d0be6dc771d48" title="Loot.Modifiers.EquipModifiers.\lDefensive.PercentDefenseBonus.Get\lModifierProperties" alt="" coords="255,2160,497,2216"/>
-<area shape="rect" id="node33" href="class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_defensive_1_1_immunity_time_plus.html#a39546fca77be0ba2d0edf494a7d46e98" title="Loot.Modifiers.EquipModifiers.\lDefensive.ImmunityTimePlus.GetModifier\lProperties" alt="" coords="243,2240,509,2296"/>
-<area shape="rect" id="node34" href="class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_defensive_1_1_dodge_chance.html#a187d84508a5884e9ab664f4449ec829d" title="Loot.Modifiers.EquipModifiers.\lDefensive.DodgeChance.GetModifier\lProperties" alt="" coords="257,2320,495,2376"/>
-<area shape="rect" id="node35" href="class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_defensive_1_1_survival_chance.html#aac85db6b313ec5df7950de4aac8a26d3" title="Loot.Modifiers.EquipModifiers.\lDefensive.SurvivalChance.GetModifier\lProperties" alt="" coords="252,2400,500,2456"/>
-<area shape="rect" id="node36" href="class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_defensive_1_1_mana_shield.html#acd756f8e8d1c57dde496467987e9212b" title="Loot.Modifiers.EquipModifiers.\lDefensive.ManaShield.GetModifier\lProperties" alt="" coords="264,2480,488,2536"/>
-<area shape="rect" id="node37" href="class_loot_1_1_modifiers_1_1_weapon_debuff_modifier.html#a36d95e9981a2a292a362b11c67975594" title="Loot.Modifiers.WeaponDebuff\lModifier.GetModifierProperties" alt="" coords="277,2559,475,2601"/>
-<area shape="rect" id="node38" href="class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_offensive_1_1_healthy_foes_bonus.html#a8a140922e885d9ab67b1e9e24f9e50f9" title="Loot.Modifiers.EquipModifiers.\lOffensive.HealthyFoesBonus.GetModifier\lProperties" alt="" coords="244,2624,508,2680"/>
-<area shape="rect" id="node39" href="class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_offensive_1_1_crit_damage_plus.html#a71ae9d184723d7836545cc3964ea72e9" title="Loot.Modifiers.EquipModifiers.\lOffensive.CritDamagePlus.GetModifier\lProperties" alt="" coords="251,2704,501,2760"/>
-<area shape="rect" id="node40" href="class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_cursed_damage.html#a210b146d12bebc633671323663962709" title="Loot.Modifiers.WeaponModifiers.\lCursedDamage.GetModifierProperties" alt="" coords="255,2783,497,2825"/>
-<area shape="rect" id="node41" href="class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_utility_1_1_light_plus.html#a3e3e4ff546adaf58f32684e4e4e4d95e" title="Loot.Modifiers.EquipModifiers.\lUtility.LightPlus.GetModifierProperties" alt="" coords="254,2849,498,2890"/>
 </map>
 </div>
 </p>
@@ -768,12 +653,25 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_modifier_properties_8cs_source.html#l00023">23</a> of file <a class="el" href="_modifier_properties_8cs_source.html">ModifierProperties.cs</a>.</p>
+<p>Definition at line <a class="el" href="_modifier_properties_8cs_source.html#l00025">25</a> of file <a class="el" href="_modifier_properties_8cs_source.html">ModifierProperties.cs</a>.</p>
 
 </div>
 </div>
-<h2 class="groupheader">Property Documentation</h2>
-<a class="anchor" id="a93cdc675011bb3af8ba6c97d85da188e"></a>
+<a class="anchor" id="acdd78c317ff3f4ca9e65e3b96afac79a"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">readonly float Loot.Core.System.ModifierProperties.BasePower</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_modifier_properties_8cs_source.html#l00019">19</a> of file <a class="el" href="_modifier_properties_8cs_source.html">ModifierProperties.cs</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ab618686634d78750055cb3eddfd6a29c"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -781,20 +679,121 @@ Private Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">float Loot.Core.System.ModifierProperties.BasePower</td>
+          <td class="memname"><a class="el" href="class_loot_1_1_core_1_1_system_1_1_modifier_properties_builder.html">ModifierPropertiesBuilder</a> Loot.Core.System.ModifierProperties.Builder =&gt; new <a class="el" href="class_loot_1_1_core_1_1_system_1_1_modifier_properties_builder.html">ModifierPropertiesBuilder</a>()</td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">get</span><span class="mlabel">private set</span></span>  </td>
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
   </tr>
 </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_modifier_properties_8cs_source.html#l00014">14</a> of file <a class="el" href="_modifier_properties_8cs_source.html">ModifierProperties.cs</a>.</p>
+
+<p>Referenced by <a class="el" href="_equip_modifier_8cs_source.html#l00014">Loot.Modifiers.EquipModifier.GetModifierProperties()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a56225b15946f881741d2bbfa3cb2208f"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">readonly bool Loot.Core.System.ModifierProperties.IsUnique</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_modifier_properties_8cs_source.html#l00023">23</a> of file <a class="el" href="_modifier_properties_8cs_source.html">ModifierProperties.cs</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a10d9621eae28b38cc0f9896fd7cb59aa"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">readonly float Loot.Core.System.ModifierProperties.MagnitudeStrength</td>
+        </tr>
+      </table>
 </div><div class="memdoc">
 
 <p>Definition at line <a class="el" href="_modifier_properties_8cs_source.html#l00018">18</a> of file <a class="el" href="_modifier_properties_8cs_source.html">ModifierProperties.cs</a>.</p>
 
 </div>
 </div>
+<a class="anchor" id="a6c284e3209655c685210a499cf816d5a"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">readonly float Loot.Core.System.ModifierProperties.MaxMagnitude</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_modifier_properties_8cs_source.html#l00017">17</a> of file <a class="el" href="_modifier_properties_8cs_source.html">ModifierProperties.cs</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a248fe8aebbf53263d0273abc9197ebcb"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">readonly float Loot.Core.System.ModifierProperties.MinMagnitude</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_modifier_properties_8cs_source.html#l00016">16</a> of file <a class="el" href="_modifier_properties_8cs_source.html">ModifierProperties.cs</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a6a0bd16fb3019aed44c2de5979b66ab9"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">readonly float Loot.Core.System.ModifierProperties.RarityLevel</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_modifier_properties_8cs_source.html#l00020">20</a> of file <a class="el" href="_modifier_properties_8cs_source.html">ModifierProperties.cs</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a41e0e83208e4361e11f8a96eb9f97921"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">readonly float Loot.Core.System.ModifierProperties.RollChance</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_modifier_properties_8cs_source.html#l00021">21</a> of file <a class="el" href="_modifier_properties_8cs_source.html">ModifierProperties.cs</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="aa6e4e1f4e7f2b91b4c3be5408ce25235"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">readonly int Loot.Core.System.ModifierProperties.RoundPrecision</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_modifier_properties_8cs_source.html#l00022">22</a> of file <a class="el" href="_modifier_properties_8cs_source.html">ModifierProperties.cs</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Property Documentation</h2>
 <a class="anchor" id="a172e41aa042a8f8718972aee5d4473c0"></a>
 <div class="memitem">
 <div class="memproto">
@@ -813,75 +812,9 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_modifier_properties_8cs_source.html#l00022">22</a> of file <a class="el" href="_modifier_properties_8cs_source.html">ModifierProperties.cs</a>.</p>
+<p>Definition at line <a class="el" href="_modifier_properties_8cs_source.html#l00024">24</a> of file <a class="el" href="_modifier_properties_8cs_source.html">ModifierProperties.cs</a>.</p>
 
-<p>Referenced by <a class="el" href="_modifier_8cs_source.html#l00100">Loot.Core.System.Modifier.Clone()</a>, <a class="el" href="_modifier_8cs_source.html#l00142">Loot.Core.System.Modifier.Load()</a>, <a class="el" href="_modifier_properties_8cs_source.html#l00107">Loot.Core.System.ModifierProperties.NetSend()</a>, and <a class="el" href="_modifier_properties_8cs_source.html#l00118">Loot.Core.System.ModifierProperties.Save()</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="a9f7f81e5a196d4511dd172eb7d0af205"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">float Loot.Core.System.ModifierProperties.MagnitudeStrength</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">get</span><span class="mlabel">private set</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Definition at line <a class="el" href="_modifier_properties_8cs_source.html#l00017">17</a> of file <a class="el" href="_modifier_properties_8cs_source.html">ModifierProperties.cs</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="ae18392b03e83be24b3ff5e726a4ac75a"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">float Loot.Core.System.ModifierProperties.MaxMagnitude</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">get</span><span class="mlabel">private set</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Definition at line <a class="el" href="_modifier_properties_8cs_source.html#l00016">16</a> of file <a class="el" href="_modifier_properties_8cs_source.html">ModifierProperties.cs</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="a30c4c7304162d66cb752d5bf92fdadfe"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">float Loot.Core.System.ModifierProperties.MinMagnitude</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">get</span><span class="mlabel">private set</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Definition at line <a class="el" href="_modifier_properties_8cs_source.html#l00015">15</a> of file <a class="el" href="_modifier_properties_8cs_source.html">ModifierProperties.cs</a>.</p>
+<p>Referenced by <a class="el" href="_modifier_8cs_source.html#l00100">Loot.Core.System.Modifier.Clone()</a>, <a class="el" href="_modifier_8cs_source.html#l00142">Loot.Core.System.Modifier.Load()</a>, <a class="el" href="_modifier_properties_8cs_source.html#l00102">Loot.Core.System.ModifierProperties.NetSend()</a>, and <a class="el" href="_modifier_properties_8cs_source.html#l00113">Loot.Core.System.ModifierProperties.Save()</a>.</p>
 
 </div>
 </div>
@@ -903,53 +836,9 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_modifier_properties_8cs_source.html#l00025">25</a> of file <a class="el" href="_modifier_properties_8cs_source.html">ModifierProperties.cs</a>.</p>
+<p>Definition at line <a class="el" href="_modifier_properties_8cs_source.html#l00027">27</a> of file <a class="el" href="_modifier_properties_8cs_source.html">ModifierProperties.cs</a>.</p>
 
-<p>Referenced by <a class="el" href="_modifier_8cs_source.html#l00100">Loot.Core.System.Modifier.Clone()</a>, <a class="el" href="_modifier_8cs_source.html#l00142">Loot.Core.System.Modifier.Load()</a>, <a class="el" href="_modifier_properties_8cs_source.html#l00107">Loot.Core.System.ModifierProperties.NetSend()</a>, and <a class="el" href="_modifier_properties_8cs_source.html#l00118">Loot.Core.System.ModifierProperties.Save()</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="a19f8dc4d089073fc13e854dbeb03abef"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">float Loot.Core.System.ModifierProperties.RarityLevel</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">get</span><span class="mlabel">private set</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Definition at line <a class="el" href="_modifier_properties_8cs_source.html#l00019">19</a> of file <a class="el" href="_modifier_properties_8cs_source.html">ModifierProperties.cs</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="a74e388a273d6e69fe0fb2be7f0bead7b"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">float Loot.Core.System.ModifierProperties.RollChance</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">get</span><span class="mlabel">private set</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Definition at line <a class="el" href="_modifier_properties_8cs_source.html#l00020">20</a> of file <a class="el" href="_modifier_properties_8cs_source.html">ModifierProperties.cs</a>.</p>
+<p>Referenced by <a class="el" href="_modifier_8cs_source.html#l00100">Loot.Core.System.Modifier.Clone()</a>, <a class="el" href="_modifier_8cs_source.html#l00142">Loot.Core.System.Modifier.Load()</a>, <a class="el" href="_modifier_properties_8cs_source.html#l00102">Loot.Core.System.ModifierProperties.NetSend()</a>, and <a class="el" href="_modifier_properties_8cs_source.html#l00113">Loot.Core.System.ModifierProperties.Save()</a>.</p>
 
 </div>
 </div>
@@ -971,51 +860,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_modifier_properties_8cs_source.html#l00034">34</a> of file <a class="el" href="_modifier_properties_8cs_source.html">ModifierProperties.cs</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="ab91a55fff4c7d3a2848413f70dd625f1"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">int Loot.Core.System.ModifierProperties.RoundPrecision</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">get</span><span class="mlabel">private set</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Definition at line <a class="el" href="_modifier_properties_8cs_source.html#l00021">21</a> of file <a class="el" href="_modifier_properties_8cs_source.html">ModifierProperties.cs</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="a3396a7e70ad18e6553ee7239c4798bc6"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool Loot.Core.System.ModifierProperties.UniqueModifier</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">get</span><span class="mlabel">private set</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Definition at line <a class="el" href="_modifier_properties_8cs_source.html#l00038">38</a> of file <a class="el" href="_modifier_properties_8cs_source.html">ModifierProperties.cs</a>.</p>
+<p>Definition at line <a class="el" href="_modifier_properties_8cs_source.html#l00036">36</a> of file <a class="el" href="_modifier_properties_8cs_source.html">ModifierProperties.cs</a>.</p>
 
 </div>
 </div>
@@ -1025,7 +870,7 @@ Private Attributes</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespace_loot.html">Loot</a></li><li class="navelem"><a class="el" href="namespace_loot_1_1_core.html">Core</a></li><li class="navelem"><a class="el" href="namespace_loot_1_1_core_1_1_system.html">System</a></li><li class="navelem"><a class="el" href="class_loot_1_1_core_1_1_system_1_1_modifier_properties.html">ModifierProperties</a></li>
-    <li class="footer">Generated on Fri Jan 4 2019 22:33:00 for Even More Modifiers by
+    <li class="footer">Generated on Sat Jan 5 2019 14:54:26 for Even More Modifiers by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.11 </li>
   </ul>

@@ -1,0 +1,4 @@
+<map id="Loot.Modifiers.EquipModifiers.Offensive.HealthyFoesBonus.GetModifierProperties" name="Loot.Modifiers.EquipModifiers.Offensive.HealthyFoesBonus.GetModifierProperties">
+<area shape="rect" id="node2" href="$class_loot_1_1_core_1_1_system_1_1_modifier_properties_builder.html#afc21b5754f1127b3217e11ba64c415cd" title="Loot.Core.System.Modifier\lPropertiesBuilder.WithMaxMagnitude" alt="" coords="317,5,555,46"/>
+<area shape="rect" id="node3" href="$class_loot_1_1_core_1_1_system_1_1_modifier_properties_builder.html#af3a292d24116183c7947656579b16284" title="Loot.Core.System.Modifier\lPropertiesBuilder.WithMinMagnitude" alt="" coords="319,70,553,111"/>
+</map>

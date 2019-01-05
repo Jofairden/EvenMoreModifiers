@@ -6,5 +6,6 @@ var searchData=
   ['isactivated',['IsActivated',['../class_loot_1_1_activated_modifier_item.html#a0df38c30d670976ae033ac28631bda9b',1,'Loot::ActivatedModifierItem']]],
   ['isbeingdelegated',['IsBeingDelegated',['../class_loot_1_1_core_1_1_system_1_1_modifier_effect.html#a878121ed203df5844558949b08c9476f',1,'Loot::Core::System::ModifierEffect']]],
   ['ischeated',['IsCheated',['../class_loot_1_1_activated_modifier_item.html#a929d88e1d897e054cef88e564dd94637',1,'Loot::ActivatedModifierItem']]],
+  ['isunique',['IsUnique',['../class_loot_1_1_core_1_1_system_1_1_modifier_properties_builder.html#ada7c074e4e584112ff84344bdb54fab6',1,'Loot::Core::System::ModifierPropertiesBuilder']]],
   ['item',['Item',['../class_loot_1_1_core_1_1_caching_1_1_auto_delegation_entry.html#a45072850d6d95b3e0b7b9dba5141debe',1,'Loot::Core::Caching::AutoDelegationEntry']]]
 ];

@@ -149,6 +149,7 @@ var hierarchy =
       [ "LootTests.TestPools.TestPool", "class_loot_tests_1_1_test_pools_1_1_test_pool.html", null ]
     ] ],
     [ "Loot.Core.System.ModifierProperties", "class_loot_1_1_core_1_1_system_1_1_modifier_properties.html", null ],
+    [ "Loot.Core.System.ModifierPropertiesBuilder", "class_loot_1_1_core_1_1_system_1_1_modifier_properties_builder.html", null ],
     [ "LootTests.ModifierPropertiesTests", "class_loot_tests_1_1_modifier_properties_tests.html", null ],
     [ "ModifierRarity", "class_modifier_rarity.html", [
       [ "LootTests.TestRarities.TestRarity", "class_loot_tests_1_1_test_rarities_1_1_test_rarity.html", null ]

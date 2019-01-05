@@ -16,6 +16,9 @@ var dir_87523e216a6603c4c77018f1fbf99254 =
     [ "ModifierProperties.cs", "_modifier_properties_8cs.html", [
       [ "ModifierProperties", "class_loot_1_1_core_1_1_system_1_1_modifier_properties.html", "class_loot_1_1_core_1_1_system_1_1_modifier_properties" ]
     ] ],
+    [ "ModifierPropertiesBuilder.cs", "_modifier_properties_builder_8cs.html", [
+      [ "ModifierPropertiesBuilder", "class_loot_1_1_core_1_1_system_1_1_modifier_properties_builder.html", "class_loot_1_1_core_1_1_system_1_1_modifier_properties_builder" ]
+    ] ],
     [ "ModifierRarity.cs", "_modifier_rarity_8cs.html", [
       [ "ModifierRarity", "class_loot_1_1_core_1_1_system_1_1_modifier_rarity.html", "class_loot_1_1_core_1_1_system_1_1_modifier_rarity" ]
     ] ],

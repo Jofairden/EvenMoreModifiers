@@ -1,5 +1,7 @@
 var NAVTREEINDEX1 =
 {
+"_transcendent_rarity_8cs.html":[3,0,5,3],
+"_transcendent_rarity_8cs_source.html":[3,0,5,3],
 "_u_i_cube_item_panel_8cs.html":[3,0,7,0,2],
 "_u_i_cube_item_panel_8cs_source.html":[3,0,7,0,2],
 "_u_i_cube_selector_panel_8cs.html":[3,0,7,0,3],
@@ -247,7 +249,5 @@ var NAVTREEINDEX1 =
 "class_loot_1_1_core_1_1_mod_content_1_1_graphics_mod_content.html#af7fb148cf671c481fa140d36fd2d36b0":[2,0,0,0,4,0,9],
 "class_loot_1_1_core_1_1_mod_content_1_1_mod_content_manager.html":[2,0,0,0,4,1],
 "class_loot_1_1_core_1_1_mod_content_1_1_mod_content_manager.html#a2d4c0c619e10569cf727b6bd4f2e1bb1":[2,0,0,0,4,1,5],
-"class_loot_1_1_core_1_1_mod_content_1_1_mod_content_manager.html#a357ecb3461923c9a42c2d296cc9d632e":[2,0,0,0,4,1,0],
-"class_loot_1_1_core_1_1_mod_content_1_1_mod_content_manager.html#a64a4b8a08e90bd2a6666a479616d239f":[2,0,0,0,4,1,4],
-"class_loot_1_1_core_1_1_mod_content_1_1_mod_content_manager.html#a87a94aa5cf160a5a6a69bb5ff9f08ec6":[2,0,0,0,4,1,2]
+"class_loot_1_1_core_1_1_mod_content_1_1_mod_content_manager.html#a357ecb3461923c9a42c2d296cc9d632e":[2,0,0,0,4,1,0]
 };

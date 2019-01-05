@@ -152,8 +152,8 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a0b7e4278fa4252ef4c5674dd51cdb1a1"><td class="memItemLeft" align="right" valign="top">override bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_knockback_plus.html#a0b7e4278fa4252ef4c5674dd51cdb1a1">CanRoll</a> (<a class="el" href="struct_loot_1_1_core_1_1_system_1_1_modifier_context.html">ModifierContext</a> ctx)</td></tr>
 <tr class="memdesc:a0b7e4278fa4252ef4c5674dd51cdb1a1"><td class="mdescLeft">&#160;</td><td class="mdescRight">If this <a class="el" href="class_modifier.html">Modifier</a> can roll at all in the given context Properties are available here, apart from magnitude and power  <a href="#a0b7e4278fa4252ef4c5674dd51cdb1a1">More...</a><br /></td></tr>
 <tr class="separator:a0b7e4278fa4252ef4c5674dd51cdb1a1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a13e10e9ff3c30710f5a1c518d3b9fabf"><td class="memItemLeft" align="right" valign="top">override <a class="el" href="class_loot_1_1_core_1_1_system_1_1_modifier_properties.html">ModifierProperties</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_knockback_plus.html#a13e10e9ff3c30710f5a1c518d3b9fabf">GetModifierProperties</a> (Item item)</td></tr>
-<tr class="separator:a13e10e9ff3c30710f5a1c518d3b9fabf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0c0e18e35b2a28a3f8110ef2011b4e9e"><td class="memItemLeft" align="right" valign="top">override <a class="el" href="class_loot_1_1_core_1_1_system_1_1_modifier_properties_builder.html">ModifierPropertiesBuilder</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_knockback_plus.html#a0c0e18e35b2a28a3f8110ef2011b4e9e">GetModifierProperties</a> (Item item)</td></tr>
+<tr class="separator:a0c0e18e35b2a28a3f8110ef2011b4e9e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae48ee8465a88687760f649a0eff292aa"><td class="memItemLeft" align="right" valign="top">override void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_knockback_plus.html#ae48ee8465a88687760f649a0eff292aa">GetWeaponKnockback</a> (Item item, Player player, ref float knockback)</td></tr>
 <tr class="separator:ae48ee8465a88687760f649a0eff292aa"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_class_loot_1_1_modifiers_1_1_weapon_modifier"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_class_loot_1_1_modifiers_1_1_weapon_modifier')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="class_loot_1_1_modifiers_1_1_weapon_modifier.html">Loot.Modifiers.WeaponModifier</a></td></tr>
@@ -319,7 +319,7 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a13e10e9ff3c30710f5a1c518d3b9fabf"></a>
+<a class="anchor" id="a0c0e18e35b2a28a3f8110ef2011b4e9e"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -327,7 +327,7 @@ Additional Inherited Members</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">override <a class="el" href="class_loot_1_1_core_1_1_system_1_1_modifier_properties.html">ModifierProperties</a> Loot.Modifiers.WeaponModifiers.KnockbackPlus.GetModifierProperties </td>
+          <td class="memname">override <a class="el" href="class_loot_1_1_core_1_1_system_1_1_modifier_properties_builder.html">ModifierPropertiesBuilder</a> Loot.Modifiers.WeaponModifiers.KnockbackPlus.GetModifierProperties </td>
           <td>(</td>
           <td class="paramtype">Item&#160;</td>
           <td class="paramname"><em>item</em></td><td>)</td>
@@ -341,20 +341,20 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Reimplemented from <a class="el" href="class_loot_1_1_core_1_1_system_1_1_modifier.html#a950fea58646dd0da5874ad4eabf38a09">Loot.Core.System.Modifier</a>.</p>
+<p>Reimplemented from <a class="el" href="class_loot_1_1_core_1_1_system_1_1_modifier.html#ae3c2d87a69486d13cc7f577d1149d660">Loot.Core.System.Modifier</a>.</p>
 
 <p>Definition at line <a class="el" href="_knockback_plus_8cs_source.html#l00014">14</a> of file <a class="el" href="_knockback_plus_8cs_source.html">KnockbackPlus.cs</a>.</p>
 
-<p>References <a class="el" href="_modifier_context_8cs_source.html#l00073">Loot.Core.System.ModifierContext.Item</a>, and <a class="el" href="_modifier_properties_8cs_source.html#l00045">Loot.Core.System.ModifierProperties.Set()</a>.</p>
-<div class="fragment"><div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;        {</div><div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;            <span class="keywordflow">return</span> base.GetModifierProperties(item).Set(maxMagnitude: 10f);</div><div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;        }</div></div><!-- fragment -->
+<p>References <a class="el" href="_modifier_context_8cs_source.html#l00073">Loot.Core.System.ModifierContext.Item</a>, and <a class="el" href="_modifier_properties_builder_8cs_source.html#l00112">Loot.Core.System.ModifierPropertiesBuilder.WithMaxMagnitude()</a>.</p>
+<div class="fragment"><div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;        {</div><div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;            <span class="keywordflow">return</span> base.GetModifierProperties(item)</div><div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;                .WithMaxMagnitude(10f);</div><div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;        }</div></div><!-- fragment -->
 <p><div id="dynsection-2" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-2-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
 <div id="dynsection-2-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-2-content" class="dyncontent" style="display:none;">
-<div class="center"><img src="class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_knockback_plus_a13e10e9ff3c30710f5a1c518d3b9fabf_cgraph.png" border="0" usemap="#class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_knockback_plus_a13e10e9ff3c30710f5a1c518d3b9fabf_cgraph" alt=""/></div>
-<map name="class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_knockback_plus_a13e10e9ff3c30710f5a1c518d3b9fabf_cgraph" id="class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_knockback_plus_a13e10e9ff3c30710f5a1c518d3b9fabf_cgraph">
-<area shape="rect" id="node2" href="class_loot_1_1_core_1_1_system_1_1_modifier_properties.html#a56f652f6fabb6897e6f2b12eb63ce9bc" title="Loot.Core.System.Modifier\lProperties.Set" alt="" coords="296,5,475,46"/>
+<div class="center"><img src="class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_knockback_plus_a0c0e18e35b2a28a3f8110ef2011b4e9e_cgraph.png" border="0" usemap="#class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_knockback_plus_a0c0e18e35b2a28a3f8110ef2011b4e9e_cgraph" alt=""/></div>
+<map name="class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_knockback_plus_a0c0e18e35b2a28a3f8110ef2011b4e9e_cgraph" id="class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_knockback_plus_a0c0e18e35b2a28a3f8110ef2011b4e9e_cgraph">
+<area shape="rect" id="node2" href="class_loot_1_1_core_1_1_system_1_1_modifier_properties_builder.html#afc21b5754f1127b3217e11ba64c415cd" title="Loot.Core.System.Modifier\lPropertiesBuilder.WithMaxMagnitude" alt="" coords="296,5,533,46"/>
 </map>
 </div>
 </p>
@@ -391,8 +391,8 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_knockback_plus_8cs_source.html#l00022">22</a> of file <a class="el" href="_knockback_plus_8cs_source.html">KnockbackPlus.cs</a>.</p>
-<div class="fragment"><div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;        {</div><div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;            base.GetWeaponKnockback(item, player, ref knockback);</div><div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;            knockback *= <a class="code" href="class_loot_1_1_core_1_1_system_1_1_modifier.html#ad8d7867c485986dd69cc2757f09d555a">Properties</a>.<a class="code" href="class_loot_1_1_core_1_1_system_1_1_modifier_properties.html#a14f10daa691d3c84b0babf8452bb6b47">RoundedPower</a> / 100f + 1;</div><div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;        }</div><div class="ttc" id="class_loot_1_1_core_1_1_system_1_1_modifier_properties_html_a14f10daa691d3c84b0babf8452bb6b47"><div class="ttname"><a href="class_loot_1_1_core_1_1_system_1_1_modifier_properties.html#a14f10daa691d3c84b0babf8452bb6b47">Loot.Core.System.ModifierProperties.RoundedPower</a></div><div class="ttdeci">float RoundedPower</div><div class="ttdef"><b>Definition:</b> <a href="_modifier_properties_8cs_source.html#l00034">ModifierProperties.cs:34</a></div></div>
+<p>Definition at line <a class="el" href="_knockback_plus_8cs_source.html#l00023">23</a> of file <a class="el" href="_knockback_plus_8cs_source.html">KnockbackPlus.cs</a>.</p>
+<div class="fragment"><div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;        {</div><div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;            base.GetWeaponKnockback(item, player, ref knockback);</div><div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;            knockback *= <a class="code" href="class_loot_1_1_core_1_1_system_1_1_modifier.html#ad8d7867c485986dd69cc2757f09d555a">Properties</a>.<a class="code" href="class_loot_1_1_core_1_1_system_1_1_modifier_properties.html#a14f10daa691d3c84b0babf8452bb6b47">RoundedPower</a> / 100f + 1;</div><div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;        }</div><div class="ttc" id="class_loot_1_1_core_1_1_system_1_1_modifier_properties_html_a14f10daa691d3c84b0babf8452bb6b47"><div class="ttname"><a href="class_loot_1_1_core_1_1_system_1_1_modifier_properties.html#a14f10daa691d3c84b0babf8452bb6b47">Loot.Core.System.ModifierProperties.RoundedPower</a></div><div class="ttdeci">float RoundedPower</div><div class="ttdef"><b>Definition:</b> <a href="_modifier_properties_8cs_source.html#l00036">ModifierProperties.cs:36</a></div></div>
 <div class="ttc" id="class_loot_1_1_core_1_1_system_1_1_modifier_html_ad8d7867c485986dd69cc2757f09d555a"><div class="ttname"><a href="class_loot_1_1_core_1_1_system_1_1_modifier.html#ad8d7867c485986dd69cc2757f09d555a">Loot.Core.System.Modifier.Properties</a></div><div class="ttdeci">ModifierProperties Properties</div><div class="ttdef"><b>Definition:</b> <a href="_modifier_8cs_source.html#l00042">Modifier.cs:42</a></div></div>
 </div><!-- fragment -->
 </div>
@@ -418,7 +418,7 @@ Additional Inherited Members</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespace_loot.html">Loot</a></li><li class="navelem"><a class="el" href="namespace_loot_1_1_modifiers.html">Modifiers</a></li><li class="navelem"><a class="el" href="namespace_loot_1_1_modifiers_1_1_weapon_modifiers.html">WeaponModifiers</a></li><li class="navelem"><a class="el" href="class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_knockback_plus.html">KnockbackPlus</a></li>
-    <li class="footer">Generated on Fri Jan 4 2019 22:33:00 for Even More Modifiers by
+    <li class="footer">Generated on Sat Jan 5 2019 14:54:27 for Even More Modifiers by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.11 </li>
   </ul>

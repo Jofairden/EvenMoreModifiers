@@ -30,5 +30,6 @@ var searchData=
   ['updateuseknockback',['UpdateUseKnockback',['../class_loot_1_1_modifiers_1_1_weapon_modifier.html#ab0668c8452692232348e87640f26e5f2',1,'Loot::Modifiers::WeaponModifier']]],
   ['updatevanitycache',['UpdateVanityCache',['../class_loot_1_1_core_1_1_caching_1_1_modifier_cache_player.html#aa4daaef3e93cfec1180ec53e159ba4d7',1,'Loot::Core::Caching::ModifierCachePlayer']]],
   ['updatevanityset',['UpdateVanitySet',['../class_loot_1_1_core_1_1_system_1_1_modifier.html#aef40a628ea475d8f095afaa8d2dfd35e',1,'Loot::Core::System::Modifier']]],
-  ['useseffectattribute',['UsesEffectAttribute',['../class_loot_1_1_core_1_1_attributes_1_1_uses_effect_attribute.html#abcb21092ec20cf52b0a12857edbf39fb',1,'Loot::Core::Attributes::UsesEffectAttribute']]]
+  ['useseffectattribute',['UsesEffectAttribute',['../class_loot_1_1_core_1_1_attributes_1_1_uses_effect_attribute.html#abcb21092ec20cf52b0a12857edbf39fb',1,'Loot::Core::Attributes::UsesEffectAttribute']]],
+  ['usingdefault',['UsingDefault',['../class_loot_1_1_core_1_1_system_1_1_modifier_properties_builder.html#a1176e6004abefd2e2ddcac6e558b2617',1,'Loot.Core.System.ModifierPropertiesBuilder.UsingDefault(ModifierProperties val)'],['../class_loot_1_1_core_1_1_system_1_1_modifier_properties_builder.html#a2c7a11262d1a06eb64bbc28ec348f2e0',1,'Loot.Core.System.ModifierPropertiesBuilder.UsingDefault(ModifierPropertiesBuilder val)']]]
 ];

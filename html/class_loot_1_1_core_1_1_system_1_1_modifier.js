@@ -18,7 +18,7 @@ var class_loot_1_1_core_1_1_system_1_1_modifier =
     [ "DrawLegs", "class_loot_1_1_core_1_1_system_1_1_modifier.html#a950c741c35c147f6011e62cf9ad7d17a", null ],
     [ "ExtractinatorUse", "class_loot_1_1_core_1_1_system_1_1_modifier.html#a16e55abde5fa6480a23771765fc6af7d", null ],
     [ "GetGlowmaskEntity", "class_loot_1_1_core_1_1_system_1_1_modifier.html#a4a833bbc9c165224eb8d3b713b8adb76", null ],
-    [ "GetModifierProperties", "class_loot_1_1_core_1_1_system_1_1_modifier.html#a950fea58646dd0da5874ad4eabf38a09", null ],
+    [ "GetModifierProperties", "class_loot_1_1_core_1_1_system_1_1_modifier.html#ae3c2d87a69486d13cc7f577d1149d660", null ],
     [ "GetShaderEntity", "class_loot_1_1_core_1_1_system_1_1_modifier.html#a707f1997ae01b2a2a4033ef5b2e1a482", null ],
     [ "HoldoutOffset", "class_loot_1_1_core_1_1_system_1_1_modifier.html#aed9afd2289a7ce474f3e4f318c9622b0", null ],
     [ "HoldoutOrigin", "class_loot_1_1_core_1_1_system_1_1_modifier.html#a9e2e42bda57bf130eb864c39487160d8", null ],

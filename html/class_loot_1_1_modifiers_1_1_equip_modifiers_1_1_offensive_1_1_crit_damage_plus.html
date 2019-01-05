@@ -149,8 +149,8 @@ $(document).ready(function(){initNavTree('class_loot_1_1_modifiers_1_1_equip_mod
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a71ae9d184723d7836545cc3964ea72e9"><td class="memItemLeft" align="right" valign="top">override <a class="el" href="class_loot_1_1_core_1_1_system_1_1_modifier_properties.html">ModifierProperties</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_offensive_1_1_crit_damage_plus.html#a71ae9d184723d7836545cc3964ea72e9">GetModifierProperties</a> (Item item)</td></tr>
-<tr class="separator:a71ae9d184723d7836545cc3964ea72e9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa58411f17121abc95d27180171440e20"><td class="memItemLeft" align="right" valign="top">override <a class="el" href="class_loot_1_1_core_1_1_system_1_1_modifier_properties_builder.html">ModifierPropertiesBuilder</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_offensive_1_1_crit_damage_plus.html#aa58411f17121abc95d27180171440e20">GetModifierProperties</a> (Item item)</td></tr>
+<tr class="separator:aa58411f17121abc95d27180171440e20"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae72f5516e13bb3180179f306de537416"><td class="memItemLeft" align="right" valign="top">override void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_offensive_1_1_crit_damage_plus.html#ae72f5516e13bb3180179f306de537416">UpdateEquip</a> (Item item, Player player)</td></tr>
 <tr class="separator:ae72f5516e13bb3180179f306de537416"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_class_loot_1_1_modifiers_1_1_equip_modifier"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_class_loot_1_1_modifiers_1_1_equip_modifier')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="class_loot_1_1_modifiers_1_1_equip_modifier.html">Loot.Modifiers.EquipModifier</a></td></tr>
@@ -282,7 +282,7 @@ Additional Inherited Members</h2></td></tr>
 <div class="textblock">
 <p>Definition at line <a class="el" href="_crit_damage_plus_8cs_source.html#l00052">52</a> of file <a class="el" href="_crit_damage_plus_8cs_source.html">CritDamagePlus.cs</a>.</p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
-<a class="anchor" id="a71ae9d184723d7836545cc3964ea72e9"></a>
+<a class="anchor" id="aa58411f17121abc95d27180171440e20"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -290,7 +290,7 @@ Additional Inherited Members</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">override <a class="el" href="class_loot_1_1_core_1_1_system_1_1_modifier_properties.html">ModifierProperties</a> Loot.Modifiers.EquipModifiers.Offensive.CritDamagePlus.GetModifierProperties </td>
+          <td class="memname">override <a class="el" href="class_loot_1_1_core_1_1_system_1_1_modifier_properties_builder.html">ModifierPropertiesBuilder</a> Loot.Modifiers.EquipModifiers.Offensive.CritDamagePlus.GetModifierProperties </td>
           <td>(</td>
           <td class="paramtype">Item&#160;</td>
           <td class="paramname"><em>item</em></td><td>)</td>
@@ -304,20 +304,21 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Reimplemented from <a class="el" href="class_loot_1_1_modifiers_1_1_equip_modifier.html#a7d0ef8f1d8dcd30053a3cd01bc7a044b">Loot.Modifiers.EquipModifier</a>.</p>
+<p>Reimplemented from <a class="el" href="class_loot_1_1_modifiers_1_1_equip_modifier.html#aa880a678e10e4bf97cc9ad1aef38c05e">Loot.Modifiers.EquipModifier</a>.</p>
 
 <p>Definition at line <a class="el" href="_crit_damage_plus_8cs_source.html#l00059">59</a> of file <a class="el" href="_crit_damage_plus_8cs_source.html">CritDamagePlus.cs</a>.</p>
 
-<p>References <a class="el" href="_modifier_properties_8cs_source.html#l00045">Loot.Core.System.ModifierProperties.Set()</a>.</p>
-<div class="fragment"><div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;        {</div><div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;            <span class="keywordflow">return</span> base.GetModifierProperties(item).Set(minMagnitude: 5f, maxMagnitude: 15f);</div><div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;        }</div></div><!-- fragment -->
+<p>References <a class="el" href="_modifier_properties_builder_8cs_source.html#l00112">Loot.Core.System.ModifierPropertiesBuilder.WithMaxMagnitude()</a>, and <a class="el" href="_modifier_properties_builder_8cs_source.html#l00106">Loot.Core.System.ModifierPropertiesBuilder.WithMinMagnitude()</a>.</p>
+<div class="fragment"><div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;        {</div><div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;            <span class="keywordflow">return</span> base.GetModifierProperties(item)</div><div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;                .WithMinMagnitude(5f)</div><div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;                .WithMaxMagnitude(15f);</div><div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;        }</div></div><!-- fragment -->
 <p><div id="dynsection-2" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-2-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
 <div id="dynsection-2-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-2-content" class="dyncontent" style="display:none;">
-<div class="center"><img src="class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_offensive_1_1_crit_damage_plus_a71ae9d184723d7836545cc3964ea72e9_cgraph.png" border="0" usemap="#class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_offensive_1_1_crit_damage_plus_a71ae9d184723d7836545cc3964ea72e9_cgraph" alt=""/></div>
-<map name="class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_offensive_1_1_crit_damage_plus_a71ae9d184723d7836545cc3964ea72e9_cgraph" id="class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_offensive_1_1_crit_damage_plus_a71ae9d184723d7836545cc3964ea72e9_cgraph">
-<area shape="rect" id="node2" href="class_loot_1_1_core_1_1_system_1_1_modifier_properties.html#a56f652f6fabb6897e6f2b12eb63ce9bc" title="Loot.Core.System.Modifier\lProperties.Set" alt="" coords="304,11,483,53"/>
+<div class="center"><img src="class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_offensive_1_1_crit_damage_plus_aa58411f17121abc95d27180171440e20_cgraph.png" border="0" usemap="#class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_offensive_1_1_crit_damage_plus_aa58411f17121abc95d27180171440e20_cgraph" alt=""/></div>
+<map name="class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_offensive_1_1_crit_damage_plus_aa58411f17121abc95d27180171440e20_cgraph" id="class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_offensive_1_1_crit_damage_plus_aa58411f17121abc95d27180171440e20_cgraph">
+<area shape="rect" id="node2" href="class_loot_1_1_core_1_1_system_1_1_modifier_properties_builder.html#afc21b5754f1127b3217e11ba64c415cd" title="Loot.Core.System.Modifier\lPropertiesBuilder.WithMaxMagnitude" alt="" coords="304,5,541,46"/>
+<area shape="rect" id="node3" href="class_loot_1_1_core_1_1_system_1_1_modifier_properties_builder.html#af3a292d24116183c7947656579b16284" title="Loot.Core.System.Modifier\lPropertiesBuilder.WithMinMagnitude" alt="" coords="306,70,539,111"/>
 </map>
 </div>
 </p>
@@ -348,10 +349,10 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_crit_damage_plus_8cs_source.html#l00064">64</a> of file <a class="el" href="_crit_damage_plus_8cs_source.html">CritDamagePlus.cs</a>.</p>
+<p>Definition at line <a class="el" href="_crit_damage_plus_8cs_source.html#l00066">66</a> of file <a class="el" href="_crit_damage_plus_8cs_source.html">CritDamagePlus.cs</a>.</p>
 
 <p>References <a class="el" href="_modifier_player_8cs_source.html#l00024">Loot.ModifierPlayer.GetEffect()</a>, and <a class="el" href="class_loot_1_1_modifier_player.html#aae3e56a930507049c3b282b29fece4f1">Loot.ModifierPlayer.Player()</a>.</p>
-<div class="fragment"><div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;        {</div><div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;            ModifierPlayer.Player(player).GetEffect&lt;CritDamagePlusEffect&gt;().Multiplier += <a class="code" href="class_loot_1_1_core_1_1_system_1_1_modifier.html#ad8d7867c485986dd69cc2757f09d555a">Properties</a>.<a class="code" href="class_loot_1_1_core_1_1_system_1_1_modifier_properties.html#a14f10daa691d3c84b0babf8452bb6b47">RoundedPower</a> / 100f;</div><div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;        }</div><div class="ttc" id="class_loot_1_1_core_1_1_system_1_1_modifier_properties_html_a14f10daa691d3c84b0babf8452bb6b47"><div class="ttname"><a href="class_loot_1_1_core_1_1_system_1_1_modifier_properties.html#a14f10daa691d3c84b0babf8452bb6b47">Loot.Core.System.ModifierProperties.RoundedPower</a></div><div class="ttdeci">float RoundedPower</div><div class="ttdef"><b>Definition:</b> <a href="_modifier_properties_8cs_source.html#l00034">ModifierProperties.cs:34</a></div></div>
+<div class="fragment"><div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;        {</div><div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;            ModifierPlayer.Player(player).GetEffect&lt;CritDamagePlusEffect&gt;().Multiplier += <a class="code" href="class_loot_1_1_core_1_1_system_1_1_modifier.html#ad8d7867c485986dd69cc2757f09d555a">Properties</a>.<a class="code" href="class_loot_1_1_core_1_1_system_1_1_modifier_properties.html#a14f10daa691d3c84b0babf8452bb6b47">RoundedPower</a> / 100f;</div><div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;        }</div><div class="ttc" id="class_loot_1_1_core_1_1_system_1_1_modifier_properties_html_a14f10daa691d3c84b0babf8452bb6b47"><div class="ttname"><a href="class_loot_1_1_core_1_1_system_1_1_modifier_properties.html#a14f10daa691d3c84b0babf8452bb6b47">Loot.Core.System.ModifierProperties.RoundedPower</a></div><div class="ttdeci">float RoundedPower</div><div class="ttdef"><b>Definition:</b> <a href="_modifier_properties_8cs_source.html#l00036">ModifierProperties.cs:36</a></div></div>
 <div class="ttc" id="class_loot_1_1_core_1_1_system_1_1_modifier_html_ad8d7867c485986dd69cc2757f09d555a"><div class="ttname"><a href="class_loot_1_1_core_1_1_system_1_1_modifier.html#ad8d7867c485986dd69cc2757f09d555a">Loot.Core.System.Modifier.Properties</a></div><div class="ttdeci">ModifierProperties Properties</div><div class="ttdef"><b>Definition:</b> <a href="_modifier_8cs_source.html#l00042">Modifier.cs:42</a></div></div>
 </div><!-- fragment -->
 <p><div id="dynsection-3" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
@@ -390,7 +391,7 @@ Additional Inherited Members</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespace_loot.html">Loot</a></li><li class="navelem"><a class="el" href="namespace_loot_1_1_modifiers.html">Modifiers</a></li><li class="navelem"><a class="el" href="namespace_loot_1_1_modifiers_1_1_equip_modifiers.html">EquipModifiers</a></li><li class="navelem"><a class="el" href="namespace_loot_1_1_modifiers_1_1_equip_modifiers_1_1_offensive.html">Offensive</a></li><li class="navelem"><a class="el" href="class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_offensive_1_1_crit_damage_plus.html">CritDamagePlus</a></li>
-    <li class="footer">Generated on Fri Jan 4 2019 22:33:00 for Even More Modifiers by
+    <li class="footer">Generated on Sat Jan 5 2019 14:54:27 for Even More Modifiers by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.11 </li>
   </ul>

@@ -149,8 +149,8 @@ $(document).ready(function(){initNavTree('class_loot_1_1_modifiers_1_1_weapon_mo
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:aec14dbffd8606071998f8cdda9254c7e"><td class="memItemLeft" align="right" valign="top">override <a class="el" href="class_loot_1_1_core_1_1_system_1_1_modifier_properties.html">ModifierProperties</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_damage_plus.html#aec14dbffd8606071998f8cdda9254c7e">GetModifierProperties</a> (Item item)</td></tr>
-<tr class="separator:aec14dbffd8606071998f8cdda9254c7e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afb6813def9c4482b69157b8fafe3418d"><td class="memItemLeft" align="right" valign="top">override <a class="el" href="class_loot_1_1_core_1_1_system_1_1_modifier_properties_builder.html">ModifierPropertiesBuilder</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_damage_plus.html#afb6813def9c4482b69157b8fafe3418d">GetModifierProperties</a> (Item item)</td></tr>
+<tr class="separator:afb6813def9c4482b69157b8fafe3418d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa6e1d863e0354af1c5eeba075f885018"><td class="memItemLeft" align="right" valign="top">override void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_damage_plus.html#aa6e1d863e0354af1c5eeba075f885018">GetWeaponDamage</a> (Item item, Player player, ref int damage)</td></tr>
 <tr class="separator:aa6e1d863e0354af1c5eeba075f885018"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_class_loot_1_1_modifiers_1_1_weapon_modifier"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_class_loot_1_1_modifiers_1_1_weapon_modifier')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="class_loot_1_1_modifiers_1_1_weapon_modifier.html">Loot.Modifiers.WeaponModifier</a></td></tr>
@@ -291,7 +291,7 @@ Additional Inherited Members</h2></td></tr>
 <div class="textblock">
 <p>Definition at line <a class="el" href="_damage_plus_8cs_source.html#l00008">8</a> of file <a class="el" href="_damage_plus_8cs_source.html">DamagePlus.cs</a>.</p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
-<a class="anchor" id="aec14dbffd8606071998f8cdda9254c7e"></a>
+<a class="anchor" id="afb6813def9c4482b69157b8fafe3418d"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -299,7 +299,7 @@ Additional Inherited Members</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">override <a class="el" href="class_loot_1_1_core_1_1_system_1_1_modifier_properties.html">ModifierProperties</a> Loot.Modifiers.WeaponModifiers.DamagePlus.GetModifierProperties </td>
+          <td class="memname">override <a class="el" href="class_loot_1_1_core_1_1_system_1_1_modifier_properties_builder.html">ModifierPropertiesBuilder</a> Loot.Modifiers.WeaponModifiers.DamagePlus.GetModifierProperties </td>
           <td>(</td>
           <td class="paramtype">Item&#160;</td>
           <td class="paramname"><em>item</em></td><td>)</td>
@@ -313,20 +313,20 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Reimplemented from <a class="el" href="class_loot_1_1_core_1_1_system_1_1_modifier.html#a950fea58646dd0da5874ad4eabf38a09">Loot.Core.System.Modifier</a>.</p>
+<p>Reimplemented from <a class="el" href="class_loot_1_1_core_1_1_system_1_1_modifier.html#ae3c2d87a69486d13cc7f577d1149d660">Loot.Core.System.Modifier</a>.</p>
 
 <p>Definition at line <a class="el" href="_damage_plus_8cs_source.html#l00015">15</a> of file <a class="el" href="_damage_plus_8cs_source.html">DamagePlus.cs</a>.</p>
 
-<p>References <a class="el" href="_modifier_properties_8cs_source.html#l00045">Loot.Core.System.ModifierProperties.Set()</a>.</p>
-<div class="fragment"><div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;        {</div><div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;            <span class="keywordflow">return</span> base.GetModifierProperties(item).Set(maxMagnitude: 10f);</div><div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;        }</div></div><!-- fragment -->
+<p>References <a class="el" href="_modifier_properties_builder_8cs_source.html#l00112">Loot.Core.System.ModifierPropertiesBuilder.WithMaxMagnitude()</a>.</p>
+<div class="fragment"><div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;        {</div><div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;            <span class="keywordflow">return</span> base.GetModifierProperties(item)</div><div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;                .WithMaxMagnitude(10f);</div><div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;        }</div></div><!-- fragment -->
 <p><div id="dynsection-2" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-2-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
 <div id="dynsection-2-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-2-content" class="dyncontent" style="display:none;">
-<div class="center"><img src="class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_damage_plus_aec14dbffd8606071998f8cdda9254c7e_cgraph.png" border="0" usemap="#class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_damage_plus_aec14dbffd8606071998f8cdda9254c7e_cgraph" alt=""/></div>
-<map name="class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_damage_plus_aec14dbffd8606071998f8cdda9254c7e_cgraph" id="class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_damage_plus_aec14dbffd8606071998f8cdda9254c7e_cgraph">
-<area shape="rect" id="node2" href="class_loot_1_1_core_1_1_system_1_1_modifier_properties.html#a56f652f6fabb6897e6f2b12eb63ce9bc" title="Loot.Core.System.Modifier\lProperties.Set" alt="" coords="280,5,459,46"/>
+<div class="center"><img src="class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_damage_plus_afb6813def9c4482b69157b8fafe3418d_cgraph.png" border="0" usemap="#class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_damage_plus_afb6813def9c4482b69157b8fafe3418d_cgraph" alt=""/></div>
+<map name="class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_damage_plus_afb6813def9c4482b69157b8fafe3418d_cgraph" id="class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_damage_plus_afb6813def9c4482b69157b8fafe3418d_cgraph">
+<area shape="rect" id="node2" href="class_loot_1_1_core_1_1_system_1_1_modifier_properties_builder.html#afc21b5754f1127b3217e11ba64c415cd" title="Loot.Core.System.Modifier\lPropertiesBuilder.WithMaxMagnitude" alt="" coords="280,5,517,46"/>
 </map>
 </div>
 </p>
@@ -363,8 +363,8 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_damage_plus_8cs_source.html#l00020">20</a> of file <a class="el" href="_damage_plus_8cs_source.html">DamagePlus.cs</a>.</p>
-<div class="fragment"><div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;        {</div><div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;</div><div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;            base.GetWeaponDamage(item, player, ref damage);</div><div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;            damage = (int)Math.Ceiling(damage * (1 + <a class="code" href="class_loot_1_1_core_1_1_system_1_1_modifier.html#ad8d7867c485986dd69cc2757f09d555a">Properties</a>.<a class="code" href="class_loot_1_1_core_1_1_system_1_1_modifier_properties.html#a14f10daa691d3c84b0babf8452bb6b47">RoundedPower</a> / 100f));</div><div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;        }</div><div class="ttc" id="class_loot_1_1_core_1_1_system_1_1_modifier_properties_html_a14f10daa691d3c84b0babf8452bb6b47"><div class="ttname"><a href="class_loot_1_1_core_1_1_system_1_1_modifier_properties.html#a14f10daa691d3c84b0babf8452bb6b47">Loot.Core.System.ModifierProperties.RoundedPower</a></div><div class="ttdeci">float RoundedPower</div><div class="ttdef"><b>Definition:</b> <a href="_modifier_properties_8cs_source.html#l00034">ModifierProperties.cs:34</a></div></div>
+<p>Definition at line <a class="el" href="_damage_plus_8cs_source.html#l00021">21</a> of file <a class="el" href="_damage_plus_8cs_source.html">DamagePlus.cs</a>.</p>
+<div class="fragment"><div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;        {</div><div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;</div><div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;            base.GetWeaponDamage(item, player, ref damage);</div><div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;            damage = (int)Math.Ceiling(damage * (1 + <a class="code" href="class_loot_1_1_core_1_1_system_1_1_modifier.html#ad8d7867c485986dd69cc2757f09d555a">Properties</a>.<a class="code" href="class_loot_1_1_core_1_1_system_1_1_modifier_properties.html#a14f10daa691d3c84b0babf8452bb6b47">RoundedPower</a> / 100f));</div><div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;        }</div><div class="ttc" id="class_loot_1_1_core_1_1_system_1_1_modifier_properties_html_a14f10daa691d3c84b0babf8452bb6b47"><div class="ttname"><a href="class_loot_1_1_core_1_1_system_1_1_modifier_properties.html#a14f10daa691d3c84b0babf8452bb6b47">Loot.Core.System.ModifierProperties.RoundedPower</a></div><div class="ttdeci">float RoundedPower</div><div class="ttdef"><b>Definition:</b> <a href="_modifier_properties_8cs_source.html#l00036">ModifierProperties.cs:36</a></div></div>
 <div class="ttc" id="class_loot_1_1_core_1_1_system_1_1_modifier_html_ad8d7867c485986dd69cc2757f09d555a"><div class="ttname"><a href="class_loot_1_1_core_1_1_system_1_1_modifier.html#ad8d7867c485986dd69cc2757f09d555a">Loot.Core.System.Modifier.Properties</a></div><div class="ttdeci">ModifierProperties Properties</div><div class="ttdef"><b>Definition:</b> <a href="_modifier_8cs_source.html#l00042">Modifier.cs:42</a></div></div>
 </div><!-- fragment -->
 </div>
@@ -390,7 +390,7 @@ Additional Inherited Members</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespace_loot.html">Loot</a></li><li class="navelem"><a class="el" href="namespace_loot_1_1_modifiers.html">Modifiers</a></li><li class="navelem"><a class="el" href="namespace_loot_1_1_modifiers_1_1_weapon_modifiers.html">WeaponModifiers</a></li><li class="navelem"><a class="el" href="class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_damage_plus.html">DamagePlus</a></li>
-    <li class="footer">Generated on Fri Jan 4 2019 22:33:00 for Even More Modifiers by
+    <li class="footer">Generated on Sat Jan 5 2019 14:54:27 for Even More Modifiers by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.11 </li>
   </ul>

@@ -1,7 +1,7 @@
 var class_loot_1_1_modifiers_1_1_weapon_debuff_modifier =
 [
     [ "GetBuffName", "class_loot_1_1_modifiers_1_1_weapon_debuff_modifier.html#aae52ec2ab87344e66049642c6bf3dcc5", null ],
-    [ "GetModifierProperties", "class_loot_1_1_modifiers_1_1_weapon_debuff_modifier.html#a36d95e9981a2a292a362b11c67975594", null ],
+    [ "GetModifierProperties", "class_loot_1_1_modifiers_1_1_weapon_debuff_modifier.html#a74a3eeccea302aecfdc67041a62aca5e", null ],
     [ "HoldItem", "class_loot_1_1_modifiers_1_1_weapon_debuff_modifier.html#ae7fa7c30e052a4e6e112f57b0d4a6441", null ],
     [ "OnHitNPC", "class_loot_1_1_modifiers_1_1_weapon_debuff_modifier.html#a4e1acfcbd7c8edb0b2bf8effebba7b7b", null ],
     [ "OnHitPvp", "class_loot_1_1_modifiers_1_1_weapon_debuff_modifier.html#a6198f7d1193435bb0092b51314b920f5", null ],
