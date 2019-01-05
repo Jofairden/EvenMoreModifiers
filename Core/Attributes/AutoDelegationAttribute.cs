@@ -24,8 +24,18 @@ namespace Loot.Core.Attributes
 
 		public AutoDelegation(params string[] types)
 		{
-			_delegationTypes = new List<string>(types.Select(type => !type.StartsWith("On") ? $"On{type}" : type));
+			_delegationTypes = new List<string>(GetTargetNames(types));
 		}
+
+		public AutoDelegation(params DelegationTarget[] targets)
+		{
+			_delegationTypes = new List<string>(
+				GetTargetNames(targets
+					.Select(target => Enum.GetName(typeof(DelegationTarget), target))));
+		}
+
+		private IEnumerable<string> GetTargetNames(IEnumerable<string> names)
+			=> names.Select(name => !name.StartsWith("On") ? $"On{name}" : name);
 
 		public void Attach(ModifierPlayer player, MethodInfo method, ModifierEffect effect)
 		{

@@ -18,7 +18,10 @@ namespace Loot.Modifiers.WeaponModifiers
 			CurseCount = 0;
 		}
 
-		[AutoDelegation("OnPostUpdateEquips")]
+		// There are two ways to delegate your method,
+		// you can either specify by enum (safest) like here
+		// or by string (see below)
+		[AutoDelegation(DelegationTarget.PostUpdateEquips)]
 		private void CurseHolding(ModifierPlayer player)
 		{
 			Item checkItem = Main.mouseItem != null && !Main.mouseItem.IsAir ? Main.mouseItem : player.player.HeldItem;
@@ -36,6 +39,9 @@ namespace Loot.Modifiers.WeaponModifiers
 			}
 		}
 
+		// The alternative way is providing the target name yourself
+		// in the form of a string. It can be preceded by "On"
+		// but it may also be left out.
 		[AutoDelegation("OnUpdateBadLifeRegen")]
 		private void Curse(ModifierPlayer player)
 		{
