@@ -29,6 +29,11 @@ namespace Loot.Core.Cubes
 			SafeDefaults();
 		}
 
+		public override void SetStaticDefaults()
+		{
+			SafeStaticDefaults();
+		}
+
 		protected virtual void SafeStaticDefaults()
 		{
 		}
