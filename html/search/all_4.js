@@ -19,6 +19,8 @@ var searchData=
   ['delegationprioritizationattribute',['DelegationPrioritizationAttribute',['../class_loot_1_1_core_1_1_attributes_1_1_delegation_prioritization_attribute.html',1,'Loot::Core::Attributes']]],
   ['delegationprioritizationattribute',['DelegationPrioritizationAttribute',['../class_loot_1_1_core_1_1_attributes_1_1_delegation_prioritization_attribute.html#a3c52d9aacf756547893b4a207fe3facc',1,'Loot::Core::Attributes::DelegationPrioritizationAttribute']]],
   ['delegationprioritizationattribute_2ecs',['DelegationPrioritizationAttribute.cs',['../_delegation_prioritization_attribute_8cs.html',1,'']]],
+  ['delegationtarget',['DelegationTarget',['../namespace_loot_1_1_core_1_1_attributes.html#ae8ba07b4224e46d925c4cda7cc9b9624',1,'Loot::Core::Attributes']]],
+  ['delegationtarget_2ecs',['DelegationTarget.cs',['../_delegation_target_8cs.html',1,'']]],
   ['delegationtypes',['DelegationTypes',['../class_loot_1_1_core_1_1_attributes_1_1_auto_delegation.html#ad8d05afc3963bcbf447ffd085954c2fe',1,'Loot::Core::Attributes::AutoDelegation']]],
   ['description',['Description',['../class_loot_1_1_core_1_1_system_1_1_modifier_pool.html#acc9104617e4804ad506190314818215a',1,'Loot::Core::System::ModifierPool']]],
   ['destinationrectangle',['DestinationRectangle',['../class_loot_1_1_core_1_1_graphics_1_1_glowmask_entity.html#a34f3a4153073dedb2218046bd3209c86',1,'Loot.Core.Graphics.GlowmaskEntity.DestinationRectangle()'],['../class_loot_1_1_core_1_1_graphics_1_1_shader_entity.html#a82a12dfe5653258031dc4b589722c47d',1,'Loot.Core.Graphics.ShaderEntity.DestinationRectangle()']]],

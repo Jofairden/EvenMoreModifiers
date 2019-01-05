@@ -1,7 +1,6 @@
 var searchData=
 [
-  ['oncraft',['OnCraft',['../namespace_loot_1_1_core_1_1_system.html#abbe1d918fb67605a6f8d854c34cee269a9858a8b8d69b5a5efe42d85db54bb469',1,'Loot::Core::System']]],
-  ['oncubereroll',['OnCubeReroll',['../namespace_loot_1_1_core_1_1_system.html#abbe1d918fb67605a6f8d854c34cee269acc452c93d23e37450cd2613e785935db',1,'Loot::Core::System']]],
-  ['onpickup',['OnPickup',['../namespace_loot_1_1_core_1_1_system.html#abbe1d918fb67605a6f8d854c34cee269a66571fead888a69cec1b7b611dedb790',1,'Loot::Core::System']]],
-  ['onreforge',['OnReforge',['../namespace_loot_1_1_core_1_1_system.html#abbe1d918fb67605a6f8d854c34cee269a91b3d5576320a8c37a1960a59841416c',1,'Loot::Core::System']]]
+  ['middle',['Middle',['../namespace_loot_1_1_core_1_1_graphics.html#ab9bc623e11f3c37b99846ba9daf478d0ab1ca34f82e83c52b010f86955f264e05',1,'Loot::Core::Graphics']]],
+  ['modifyhitnpc',['ModifyHitNPC',['../namespace_loot_1_1_core_1_1_attributes.html#ae8ba07b4224e46d925c4cda7cc9b9624ad478499aa62723b4685f11224cfded21',1,'Loot::Core::Attributes']]],
+  ['modifyhitpvp',['ModifyHitPvp',['../namespace_loot_1_1_core_1_1_attributes.html#ae8ba07b4224e46d925c4cda7cc9b9624a6698fe79001921dbbb13382104fbafe0',1,'Loot::Core::Attributes']]]
 ];

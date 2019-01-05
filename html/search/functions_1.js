@@ -16,7 +16,7 @@ var searchData=
   ['attach',['Attach',['../class_loot_1_1_core_1_1_attributes_1_1_auto_delegation.html#ab877e4fb083e9213c22844827de2d01c',1,'Loot::Core::Attributes::AutoDelegation']]],
   ['attachdelegations',['AttachDelegations',['../class_loot_1_1_core_1_1_system_1_1_modifier_effect.html#a461cf5176ad626ff821fb7318118eff1',1,'Loot::Core::System::ModifierEffect']]],
   ['attemptdebuff',['AttemptDebuff',['../class_loot_1_1_modifier_projectile.html#ab1eb6aabf071dcf5ecf7335b12a934f0',1,'Loot.ModifierProjectile.AttemptDebuff(Projectile projectile, Player target)'],['../class_loot_1_1_modifier_projectile.html#aff398cb3908d02a1601fbe808bc0de14',1,'Loot.ModifierProjectile.AttemptDebuff(Projectile projectile, NPC target)']]],
-  ['autodelegation',['AutoDelegation',['../class_loot_1_1_core_1_1_attributes_1_1_auto_delegation.html#a5ded686caa58bb9c84f73a5cc0136d68',1,'Loot::Core::Attributes::AutoDelegation']]],
+  ['autodelegation',['AutoDelegation',['../class_loot_1_1_core_1_1_attributes_1_1_auto_delegation.html#a5ded686caa58bb9c84f73a5cc0136d68',1,'Loot.Core.Attributes.AutoDelegation.AutoDelegation(params string[] types)'],['../class_loot_1_1_core_1_1_attributes_1_1_auto_delegation.html#a7f7d684fc9f8d4282e4ede9a9d422bfe',1,'Loot.Core.Attributes.AutoDelegation.AutoDelegation(params DelegationTarget[] targets)']]],
   ['autodelegationentry',['AutoDelegationEntry',['../class_loot_1_1_core_1_1_caching_1_1_auto_delegation_entry.html#a18025b7f0d8efe8a9747348df47963e3',1,'Loot::Core::Caching::AutoDelegationEntry']]],
   ['autoload',['Autoload',['../class_loot_1_1_core_1_1_system_1_1_modifier.html#a1d7f267645d9ce2a15f7b390f93bd49c',1,'Loot::Core::System::Modifier']]]
 ];
