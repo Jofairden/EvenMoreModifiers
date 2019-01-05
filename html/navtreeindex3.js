@@ -1,5 +1,6 @@
 var NAVTREEINDEX3 =
 {
+"class_loot_1_1_ext_1_1_mod_utils.html#ad79e2c46db001eb38bb2d85e7c010315":[2,0,0,1,1,1],
 "class_loot_1_1_ext_1_1_mod_utils.html#ae44825bfd3929bd22d924a7100f3b8fa":[2,0,0,1,1,0],
 "class_loot_1_1_ext_1_1_mod_utils.html#ae5c3d922e8f258b643e623957326a350":[2,0,0,1,1,9],
 "class_loot_1_1_ext_1_1_mod_utils.html#afc178d2601b067f50c6593428ecd074c":[2,0,0,1,1,5],
@@ -248,6 +249,5 @@ var NAVTREEINDEX3 =
 "class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_utility_1_1_wing_time_plus.html":[2,0,0,2,0,2,7],
 "class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_utility_1_1_wing_time_plus.html#a423f42e48a49adff3568c8e20ec20d2e":[2,0,0,2,0,2,7,1],
 "class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_utility_1_1_wing_time_plus.html#a62a4f8c7b7e486a34580d5a121809467":[2,0,0,2,0,2,7,0],
-"class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_utility_1_1_wing_time_plus.html#a793241460288acd3b62c58f09128bef3":[2,0,0,2,0,2,7,2],
-"class_loot_1_1_modifiers_1_1_weapon_debuff_effect.html":[2,0,0,2,6]
+"class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_utility_1_1_wing_time_plus.html#a793241460288acd3b62c58f09128bef3":[2,0,0,2,0,2,7,2]
 };

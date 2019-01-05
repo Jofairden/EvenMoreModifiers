@@ -35,10 +35,10 @@ var NAVTREEINDEX =
 [
 "_accessory_modifier_8cs.html",
 "_transcendent_rarity_8cs.html",
-"class_loot_1_1_core_1_1_mod_content_1_1_mod_content_manager.html#a64a4b8a08e90bd2a6666a479616d239f",
-"class_loot_1_1_ext_1_1_mod_utils.html#ae44825bfd3929bd22d924a7100f3b8fa",
-"class_loot_1_1_modifiers_1_1_weapon_debuff_effect.html#a856f1d5c213c7d1211fae082439d64d9",
-"class_loot_tests_1_1_test_pools_1_1_test_pool.html"
+"class_loot_1_1_core_1_1_mod_content_1_1_mod_content_manager.html#a357ecb3461923c9a42c2d296cc9d632e",
+"class_loot_1_1_ext_1_1_mod_utils.html#ad79e2c46db001eb38bb2d85e7c010315",
+"class_loot_1_1_modifiers_1_1_weapon_debuff_effect.html",
+"class_loot_tests_1_1_test_modifiers_1_1_test_apply_mod.html#a250fb8646a9bbde0ef10f10ec4a0b97a"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

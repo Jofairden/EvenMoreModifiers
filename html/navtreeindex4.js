@@ -1,5 +1,6 @@
 var NAVTREEINDEX4 =
 {
+"class_loot_1_1_modifiers_1_1_weapon_debuff_effect.html":[2,0,0,2,6],
 "class_loot_1_1_modifiers_1_1_weapon_debuff_effect.html#a856f1d5c213c7d1211fae082439d64d9":[2,0,0,2,6,1],
 "class_loot_1_1_modifiers_1_1_weapon_debuff_effect.html#adfc56bada2b6eb21bbee791d95edc6ff":[2,0,0,2,6,2],
 "class_loot_1_1_modifiers_1_1_weapon_debuff_effect.html#aff773d8cc476b7410c3ee33fb86a2ca2":[2,0,0,2,6,0],
@@ -248,6 +249,5 @@ var NAVTREEINDEX4 =
 "class_loot_tests_1_1_modifier_properties_tests_1_1_fake_properties.html#a8d8f3b5c08fe993eea79598ef392d4a9":[2,0,1,6,0,0],
 "class_loot_tests_1_1_modifier_properties_tests_1_1_fake_properties.html#a90faa1a2e099dd6a401deb6e9df04fca":[2,0,1,6,0,2],
 "class_loot_tests_1_1_modifier_properties_tests_1_1_fake_properties.html#ab21d57e8f8f3c57ae92a6174e3cf8ffb":[2,0,1,6,0,4],
-"class_loot_tests_1_1_test_modifiers_1_1_test_apply_mod.html":[2,0,1,0,0],
-"class_loot_tests_1_1_test_modifiers_1_1_test_apply_mod.html#a250fb8646a9bbde0ef10f10ec4a0b97a":[2,0,1,0,0,0]
+"class_loot_tests_1_1_test_modifiers_1_1_test_apply_mod.html":[2,0,1,0,0]
 };
