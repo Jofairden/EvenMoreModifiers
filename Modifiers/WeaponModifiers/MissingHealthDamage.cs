@@ -11,9 +11,11 @@ namespace Loot.Modifiers.WeaponModifiers
 				new ModifierTooltipLine { Text = $"Up to +{Properties.RoundedPower}% damage based on missing health", Color = Color.Lime}
 			};
 
-		public override ModifierProperties GetModifierProperties(Item item)
+		public override ModifierPropertiesBuilder GetModifierProperties(Item item)
 		{
-			return base.GetModifierProperties(item).Set(minMagnitude: 5f, maxMagnitude: 15f);
+			return base.GetModifierProperties(item)
+				.WithMinMagnitude(5f)
+				.WithMaxMagnitude(15f);
 		}
 
 		public override void GetWeaponDamage(Item item, Player player, ref int damage)

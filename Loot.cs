@@ -1,3 +1,4 @@
+using System;
 using Loot.Core.ModContent;
 using Loot.Core.System.Loaders;
 using Loot.Ext.ModSupport;
@@ -6,6 +7,7 @@ using Loot.UI.Rerolling;
 using Loot.UI.Sealing;
 using Microsoft.Xna.Framework;
 using System.Collections.Generic;
+using System.Reflection;
 using System.Runtime.CompilerServices;
 using Terraria;
 using Terraria.ModLoader;
@@ -110,6 +112,7 @@ namespace Loot
 
 		public override void Unload()
 		{
+			
 			Instance = null;
 
 			ContentLoader.Unload();

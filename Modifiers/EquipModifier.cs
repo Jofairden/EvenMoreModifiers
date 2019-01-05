@@ -11,9 +11,10 @@ namespace Loot.Modifiers
 	/// </summary>
 	public abstract class EquipModifier : Modifier
 	{
-		public override ModifierProperties GetModifierProperties(Item item)
+		public override ModifierPropertiesBuilder GetModifierProperties(Item item)
 		{
-			return new ModifierProperties(magnitudeStrength: item.IsAccessory() ? .6f : 1f);
+			return ModifierProperties.Builder
+				.WithMagnitudeStrength(item.IsAccessory() ? .6f : 1f);
 		}
 
 		public override bool CanRoll(ModifierContext ctx)

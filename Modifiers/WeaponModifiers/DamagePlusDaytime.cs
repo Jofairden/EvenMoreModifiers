@@ -15,9 +15,12 @@ namespace Loot.Modifiers.WeaponModifiers
 				new ModifierTooltipLine { Text = $"+{Properties.RoundedPower}% damage during the {(_duringDay ? "day" : "night")}", Color = Color.Lime}
 			};
 
-		public override ModifierProperties GetModifierProperties(Item item)
+		public override ModifierPropertiesBuilder GetModifierProperties(Item item)
 		{
-			return base.GetModifierProperties(item).Set(minMagnitude: 5f, maxMagnitude: 15f, rollChance: 2f);
+			return base.GetModifierProperties(item)
+				.WithMinMagnitude(5f)
+				.WithMaxMagnitude(15f)
+				.WithRollChance(2f);
 		}
 
 		private bool _duringDay;

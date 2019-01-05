@@ -134,6 +134,7 @@
     <Compile Include="Core\System\ModifierContext.cs" />
     <Compile Include="Core\System\ModifierEffect.cs" />
     <Compile Include="Core\System\ModifierProperties.cs" />
+    <Compile Include="Core\System\ModifierPropertiesBuilder.cs" />
     <Compile Include="Core\System\ModifierTooltipLine.cs" />
     <Compile Include="EMMPlayer.cs" />
     <Compile Include="EMMWorld.cs" />

@@ -162,7 +162,7 @@ namespace Loot
 					luck += ModifierPlayer.Player(ctx.Player).GetEffect<LuckEffect>().Luck;
 				}
 				eClone.Properties =
-					eClone.GetModifierProperties(ctx.Item)
+					eClone.GetModifierProperties(ctx.Item).Build()
 					.RollMagnitudeAndPower(
 							magnitudePower: itemRollProperties.MagnitudePower,
 							lukStat: luck);
@@ -181,7 +181,7 @@ namespace Loot
 				list.Add(eClone);
 
 				// If it is a unique modifier, remove it from the list to be rolled
-				if (eClone.Properties.UniqueModifier)
+				if (eClone.Properties.IsUnique)
 				{
 					wr.elements.RemoveAll(x => x.Item1.Type == eClone.Type);
 					wr.needsRefresh = true;

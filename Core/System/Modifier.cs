@@ -44,8 +44,8 @@ namespace Loot.Core.System
 		// Must be getter due to various fields that can change interactively
 		public virtual ModifierTooltipLine[] TooltipLines => new ModifierTooltipLine[0];
 
-		public virtual ModifierProperties GetModifierProperties(Item item)
-			=> new ModifierProperties();
+		public virtual ModifierPropertiesBuilder GetModifierProperties(Item item)
+			=> ModifierProperties.Builder;
 
 		/* Global
 			For now:
@@ -54,7 +54,7 @@ namespace Loot.Core.System
 		protected internal bool _CanRoll(ModifierContext ctx)
 		{
 			// Properties are pre-loaded before CanRoll as they may be needed for checks
-			Properties = GetModifierProperties(ctx.Item);
+			Properties = GetModifierProperties(ctx.Item).Build();
 			return ctx.Item.maxStack <= 1 && CanRoll(ctx);
 		}
 
@@ -116,7 +116,7 @@ namespace Loot.Core.System
 			Modifier m = ContentLoader.Modifier.GetContent(modName, type);
 			if (m != null)
 			{
-				m.Properties = m.GetModifierProperties(item);
+				m.Properties = m.GetModifierProperties(item).Build();
 				m.Properties.Magnitude = properties.Magnitude;
 				m.Properties.Power = properties.Power;
 				m.NetReceive(item, reader);
@@ -148,7 +148,7 @@ namespace Loot.Core.System
 			string modName = tag.GetString("ModName");
 			Assembly assembly;
 			if (modName != null
-			    && MainLoader.Mods.TryGetValue(modName, out assembly))
+				&& MainLoader.Mods.TryGetValue(modName, out assembly))
 			{
 				// If we load a null here, it means a modifier is unloaded
 				Modifier m = null;
@@ -177,7 +177,7 @@ namespace Loot.Core.System
 					//m.Type = tag.Get<uint>("ModifierType");
 					//m.Mod = ModLoader.GetMod(modname);
 					var p = ModifierProperties._Load(item, tag.GetCompound("ModifierProperties"));
-					m.Properties = m.GetModifierProperties(item);
+					m.Properties = m.GetModifierProperties(item).Build();
 					m.Properties.Magnitude = p.Magnitude;
 					m.Properties.Power = p.Power;
 					m.Load(item, tag);

@@ -12,9 +12,12 @@ namespace Loot.Modifiers.EquipModifiers.Defensive
 			new ModifierTooltipLine {Text = $"Knockback immunity", Color = Color.LimeGreen},
 		};
 
-		public override ModifierProperties GetModifierProperties(Item item)
+		public override ModifierPropertiesBuilder GetModifierProperties(Item item)
 		{
-			return base.GetModifierProperties(item).Set(rollChance: .333f, rarityLevel: 3f, uniqueRoll: true);
+			return base.GetModifierProperties(item)
+				.WithRollChance(0.333f)
+				.WithRarityLevel(3f)
+				.IsUniqueModifier(true);
 		}
 
 		public override bool CanRoll(ModifierContext ctx)

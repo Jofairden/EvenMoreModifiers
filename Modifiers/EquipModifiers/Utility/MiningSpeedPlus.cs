@@ -11,9 +11,10 @@ namespace Loot.Modifiers.EquipModifiers.Utility
 			new ModifierTooltipLine { Text = $"+{Properties.RoundedPower}% mining speed", Color =  Color.LimeGreen},
 		};
 
-		public override ModifierProperties GetModifierProperties(Item item)
+		public override ModifierPropertiesBuilder GetModifierProperties(Item item)
 		{
-			return base.GetModifierProperties(item).Set(maxMagnitude: 7.5f);
+			return base.GetModifierProperties(item)
+				.WithMaxMagnitude(7.5f);
 		}
 
 		public override void UpdateEquip(Item item, Player player)

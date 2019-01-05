@@ -61,9 +61,10 @@ namespace Loot.Modifiers.EquipModifiers.Utility
 			new ModifierTooltipLine { Text = $"+{Properties.RoundedPower} light", Color =  Color.LimeGreen},
 		};
 
-		public override ModifierProperties GetModifierProperties(Item item)
+		public override ModifierPropertiesBuilder GetModifierProperties(Item item)
 		{
-			return base.GetModifierProperties(item).Set(maxMagnitude: 2f);
+			return base.GetModifierProperties(item)
+				.WithMaxMagnitude(2f);
 		}
 
 		// todo Just pass ModifierPlayer here?

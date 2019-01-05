@@ -59,9 +59,12 @@ namespace Loot.Modifiers.WeaponModifiers
 				new ModifierTooltipLine { Text = $"+{Properties.RoundedPower}% damage, but you are cursed while holding this item", Color = Color.Lime}
 			};
 
-		public override ModifierProperties GetModifierProperties(Item item)
+		public override ModifierPropertiesBuilder GetModifierProperties(Item item)
 		{
-			return base.GetModifierProperties(item).Set(minMagnitude: 5f, maxMagnitude: 15f, uniqueRoll: true);
+			return base.GetModifierProperties(item)
+				.WithMinMagnitude(5f)
+				.WithMaxMagnitude(15f)
+				.IsUniqueModifier(true);
 		}
 
 		public override bool CanRoll(ModifierContext ctx)

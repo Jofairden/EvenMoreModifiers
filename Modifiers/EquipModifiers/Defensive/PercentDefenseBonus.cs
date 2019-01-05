@@ -31,9 +31,10 @@ namespace Loot.Modifiers.EquipModifiers.Defensive
 			new ModifierTooltipLine {Text = $"+{Properties.RoundedPower}% defense", Color = Color.LimeGreen},
 		};
 
-		public override ModifierProperties GetModifierProperties(Item item)
+		public override ModifierPropertiesBuilder GetModifierProperties(Item item)
 		{
-			return base.GetModifierProperties(item).Set(maxMagnitude: 10f);
+			return base.GetModifierProperties(item)
+				.WithMaxMagnitude(10f);
 		}
 
 		public override void UpdateEquip(Item item, Player player)

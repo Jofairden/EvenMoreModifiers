@@ -13,9 +13,11 @@ namespace Loot.Modifiers.WeaponModifiers
 				new ModifierTooltipLine { Text = $"+{Properties.RoundedPower}% damage, but adds +{_manaCost} mana cost", Color = Color.Lime}
 			};
 
-		public override ModifierProperties GetModifierProperties(Item item)
+		public override ModifierPropertiesBuilder GetModifierProperties(Item item)
 		{
-			return base.GetModifierProperties(item).Set(minMagnitude: 5f, maxMagnitude: 15f);
+			return base.GetModifierProperties(item)
+				.WithMinMagnitude(5f)
+				.WithMaxMagnitude(15f);
 		}
 
 		public override bool CanRoll(ModifierContext ctx)

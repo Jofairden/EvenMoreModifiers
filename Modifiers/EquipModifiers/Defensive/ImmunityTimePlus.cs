@@ -36,9 +36,11 @@ namespace Loot.Modifiers.EquipModifiers.Defensive
 			new ModifierTooltipLine {Text = $"+{Properties.RoundedPower} immunity frames", Color = Color.LimeGreen},
 		};
 
-		public override ModifierProperties GetModifierProperties(Item item)
+		public override ModifierPropertiesBuilder GetModifierProperties(Item item)
 		{
-			return base.GetModifierProperties(item).Set(maxMagnitude: 3f, rollChance: 0.222f);
+			return base.GetModifierProperties(item)
+				.WithMaxMagnitude(3f)
+				.WithRollChance(0.222f);
 		}
 
 		public override void UpdateEquip(Item item, Player player)

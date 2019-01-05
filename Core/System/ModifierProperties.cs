@@ -5,25 +5,27 @@ using Terraria.ModLoader.IO;
 
 namespace Loot.Core.System
 {
-	// @todo maybe builder like pattern instead of Set?
-
 	/// <summary>
 	/// Defines the properties of a modifier
 	/// </summary>
 	public class ModifierProperties
 	{
-		public float MinMagnitude { get; private set; }
-		public float MaxMagnitude { get; private set; }
-		public float MagnitudeStrength { get; private set; }
-		public float BasePower { get; private set; }
-		public float RarityLevel { get; private set; }
-		public float RollChance { get; private set; }
-		public int RoundPrecision { get; private set; }
+		public static ModifierPropertiesBuilder Builder
+			=> new ModifierPropertiesBuilder();
+
+		public readonly float MinMagnitude;
+		public readonly float MaxMagnitude;
+		public readonly float MagnitudeStrength;
+		public readonly float BasePower;
+		public readonly float RarityLevel;
+		public readonly float RollChance;
+		public readonly int RoundPrecision;
+		public readonly bool IsUnique;
 		public float Magnitude { get; internal set; }
 		private float _power;
 		public float Power
 		{
-			get { return _power; }
+			get => _power;
 			internal set
 			{
 				_power = value;
@@ -35,24 +37,17 @@ namespace Loot.Core.System
 			get;
 			private set;
 		}
-		public bool UniqueModifier { get; private set; }
 
-		public ModifierProperties(float minMagnitude = 1f, float maxMagnitude = 1f, float magnitudeStrength = 1f, float basePower = 1f, float rarityLevel = 1f, float rollChance = 1f, int roundPrecision = 0, bool uniqueRoll = false, bool mergeTooltips = false)
+		public ModifierProperties(float minMagnitude = 1f, float maxMagnitude = 1f, float magnitudeStrength = 1f, float basePower = 1f, float rarityLevel = 1f, float rollChance = 1f, int roundPrecision = 0, bool isUnique = false)
 		{
-			Set(minMagnitude, maxMagnitude, magnitudeStrength, basePower, rarityLevel, rollChance, roundPrecision);
-		}
-
-		public ModifierProperties Set(float? minMagnitude = null, float? maxMagnitude = null, float? magnitudeStrength = null, float? basePower = null, float? rarityLevel = null, float? rollChance = null, int? roundPrecision = null, bool? uniqueRoll = null)
-		{
-			MinMagnitude = minMagnitude ?? MinMagnitude;
-			MaxMagnitude = maxMagnitude ?? MaxMagnitude;
-			MagnitudeStrength = magnitudeStrength ?? MagnitudeStrength;
-			BasePower = basePower ?? BasePower;
-			RarityLevel = rarityLevel ?? RarityLevel;
-			RollChance = rollChance ?? RollChance;
-			RoundPrecision = roundPrecision ?? RoundPrecision;
-			UniqueModifier = uniqueRoll ?? UniqueModifier;
-			return this;
+			MinMagnitude = minMagnitude;
+			MaxMagnitude = maxMagnitude;
+			MagnitudeStrength = magnitudeStrength;
+			BasePower = basePower;
+			RarityLevel = rarityLevel;
+			RollChance = rollChance;
+			RoundPrecision = roundPrecision;
+			IsUnique = isUnique;
 		}
 
 		public ModifierProperties RollMagnitudeAndPower(float magnitudePower = 1f, float lukStat = 0f)

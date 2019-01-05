@@ -12,9 +12,10 @@ namespace Loot.Modifiers.WeaponModifiers
 				new ModifierTooltipLine { Text = $"+{Properties.RoundedPower}% crit chance", Color = Color.Lime}
 			};
 
-		public override ModifierProperties GetModifierProperties(Item item)
+		public override ModifierPropertiesBuilder GetModifierProperties(Item item)
 		{
-			return base.GetModifierProperties(item).Set(maxMagnitude: 10f);
+			return base.GetModifierProperties(item)
+				.WithMaxMagnitude(10f);
 		}
 
 		public override bool CanRoll(ModifierContext ctx)

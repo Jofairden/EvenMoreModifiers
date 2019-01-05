@@ -1,8 +1,8 @@
 using Loot.Core.Attributes;
+using Loot.Core.System;
 using Microsoft.Xna.Framework;
 using System;
 using System.Collections.Generic;
-using Loot.Core.System;
 using Terraria;
 using Terraria.ID;
 using Terraria.Localization;
@@ -54,9 +54,12 @@ namespace Loot.Modifiers
 			new ModifierTooltipLine {Text = $"+{Properties.RoundedPower}% chance to inflict {GetBuffName()} for {RoundedBuffTime()}s", Color = Color.Lime}
 		};
 
-		public override ModifierProperties GetModifierProperties(Item item)
+		public override ModifierPropertiesBuilder GetModifierProperties(Item item)
 		{
-			return base.GetModifierProperties(item).Set(minMagnitude: 5f, maxMagnitude: 10f, roundPrecision: 1);
+			return base.GetModifierProperties(item)
+				.WithMinMagnitude(5f)
+				.WithMinMagnitude(10f)
+				.WithRoundPrecision(1);
 		}
 
 		private float RoundedBuffTime()

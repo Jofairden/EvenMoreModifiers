@@ -37,9 +37,11 @@ namespace Loot.Modifiers.EquipModifiers.Defensive
 			new ModifierTooltipLine {Text = $"+{Properties.RoundedPower}% dodge chance", Color = Color.LimeGreen},
 		};
 
-		public override ModifierProperties GetModifierProperties(Item item)
+		public override ModifierPropertiesBuilder GetModifierProperties(Item item)
 		{
-			return base.GetModifierProperties(item).Set(maxMagnitude: 5f, rollChance: 0.333f);
+			return base.GetModifierProperties(item)
+				.WithMaxMagnitude(5f)
+				.WithRollChance(0.333f);
 		}
 
 		public override void UpdateEquip(Item item, Player player)

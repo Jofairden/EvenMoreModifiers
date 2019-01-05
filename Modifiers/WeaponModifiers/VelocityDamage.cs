@@ -12,9 +12,11 @@ namespace Loot.Modifiers.WeaponModifiers
 				new ModifierTooltipLine { Text = $"Added damage based on player's velocity (multiplier: {Math.Round(Properties.RoundedPower/2, 1)}x)", Color = Color.Lime}
 			};
 
-		public override ModifierProperties GetModifierProperties(Item item)
+		public override ModifierPropertiesBuilder GetModifierProperties(Item item)
 		{
-			return base.GetModifierProperties(item).Set(maxMagnitude: 2f, roundPrecision: 1);
+			return base.GetModifierProperties(item)
+				.WithMaxMagnitude(2)
+				.WithRoundPrecision(1);
 		}
 
 		public override void GetWeaponDamage(Item item, Player player, ref int damage)

@@ -11,9 +11,15 @@ namespace Loot.Modifiers.WeaponModifiers
 				new ModifierTooltipLine { Text = $"+{Properties.RoundedPower}% projectile velocity", Color = Color.Lime}
 			};
 
-		public override ModifierProperties GetModifierProperties(Item item)
+		public override ModifierPropertiesBuilder GetModifierProperties(Item item)
 		{
-			return base.GetModifierProperties(item).Set(maxMagnitude: 10f);
+			return new ModifierPropertiesBuilder
+			{
+				DefaultBuilder = base.GetModifierProperties(item),
+				MinMagnitude = 5f,
+				MaxMagnitude = 10f,
+				RoundPrecision = 1
+			};
 		}
 
 		public override bool CanRoll(ModifierContext ctx)
