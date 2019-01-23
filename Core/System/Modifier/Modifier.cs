@@ -23,14 +23,14 @@ namespace Loot.Core.System.Modifier
 
 		Mod ILoadableContentSetter.Mod
 		{
-			set { Mod = value; }
+			set => Mod = value;
 		}
 
 		public uint Type { get; internal set; }
 
 		uint ILoadableContentSetter.Type
 		{
-			set { Type = value; }
+			set => Type = value;
 		}
 
 		public new string Name => GetType().Name;

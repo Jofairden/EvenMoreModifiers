@@ -13,9 +13,9 @@ namespace Loot.Core.Attributes
 	[AttributeUsage(AttributeTargets.Class, Inherited = true)]
 	public sealed class UsesEffectAttribute : Attribute
 	{
-		private readonly IList<Type> _effects;
+		private readonly List<Type> _effects;
 
-		public IList<Type> Effects => new List<Type>(_effects);
+		public List<Type> Effects => new List<Type>(_effects);
 
 		public UsesEffectAttribute(params Type[] types)
 		{
