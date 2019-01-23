@@ -2,6 +2,11 @@ using Terraria;
 
 namespace Loot.Core.Cubes
 {
+	/// <summary>
+	/// Defines a rerolling cube that opens the rerolling UI on right click
+	/// The method <see cref="M:SetRollLogic"/> can be overridden to provide
+	/// custom roll logic
+	/// </summary>
 	public abstract class RerollingCube : MagicalCube
 	{
 		public override void SetStaticDefaults()

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 
 namespace Loot.Core.Attributes
 {
+	/// <inheritdoc cref="Attribute"/>
 	/// <summary>
 	/// This attribute is used to attach a certain Modifier to
 	/// given ModifierEffects (can be attached to more than 1)

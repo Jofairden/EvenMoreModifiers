@@ -11,13 +11,13 @@ namespace Loot.UI.Core
 	{
 		public bool Visible;
 
-		public virtual void ToggleUI(Terraria.UI.UserInterface theInterface, UIState uiStateInstance)
+		public virtual void ToggleUI(UserInterface theInterface, UIState uiStateInstance)
 		{
 			// If new state toggled but old visibility state present, that one needs to be toggled first
-			if (theInterface.CurrentState is VisibilityUI
+			if (theInterface.CurrentState is VisibilityUI ui
 			    && theInterface.CurrentState != uiStateInstance)
 			{
-				((VisibilityUI) theInterface.CurrentState).ToggleUI(theInterface, theInterface.CurrentState);
+				ui.ToggleUI(theInterface, ui);
 			}
 
 			// Toggle the state

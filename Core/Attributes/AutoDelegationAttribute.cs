@@ -8,7 +8,7 @@ using static Loot.Log4c;
 
 namespace Loot.Core.Attributes
 {
-	/// <inheritdoc />
+	/// <inheritdoc cref="Attribute"/>
 	/// <summary>
 	/// This attribute may be used to skip usage of AttachDelegations and DetachDelegations
 	/// Which is a cumbersome side effect of using events

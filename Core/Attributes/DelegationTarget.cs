@@ -1,5 +1,9 @@
 namespace Loot.Core.Attributes
 {
+	/// <summary>
+	/// Defines a target that can be used in conjunction with <see cref="AutoDelegation"/>
+	/// for identifying the target event
+	/// </summary>
 	public enum DelegationTarget
 	{
 		Initialize,
