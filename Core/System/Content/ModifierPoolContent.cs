@@ -6,6 +6,9 @@ using Terraria.Utilities;
 
 namespace Loot.Core.System.Content
 {
+	/// <summary>
+	/// This class holds all loaded <see cref="ModifierPool"/> content
+	/// </summary>
 	public class ModifierPoolContent : BaseContent<ModifierPool>
 	{
 		internal override bool CheckContentPiece(ModifierPool contentPiece)
@@ -18,7 +21,7 @@ namespace Loot.Core.System.Content
 		/// Returns a random weighted pool from all available pools that can apply
 		/// </summary>
 		/// <param name="ctx"></param>
-		/// <returns></returns>
+		/// <returns><see cref="ModifierPool"/></returns>
 		public ModifierPool GetWeightedPool(ModifierContext ctx)
 		{
 			var wr = new WeightedRandom<ModifierPool>();
@@ -36,7 +39,7 @@ namespace Loot.Core.System.Content
 		/// Returns the rarity of a pool
 		/// </summary>
 		/// <param name="modifierPool"></param>
-		/// <returns></returns>
+		/// <returns><see cref="ModifierRarity"/></returns>
 		public ModifierRarity GetPoolRarity(ModifierPool modifierPool)
 		{
 			return (ModifierRarity) ContentLoader.ModifierRarity.Content

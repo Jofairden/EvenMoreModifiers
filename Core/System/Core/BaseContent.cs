@@ -130,32 +130,5 @@ namespace Loot.Core.System.Core
 
 		public ReadOnlyCollection<T> GetContent()
 			=> Content.Select(e => (T) e.Value?.Clone()).ToList().AsReadOnly();
-
-		// I wish we could use dynamic :(
-
-		//private T BuildNewContentInstance(T contentPiece)
-		//{
-		//	if (contentPiece == null)
-		//	{
-		//		throw new ArgumentNullException(nameof(contentPiece), $"contentPiece was null when trying to construct a new instance of it.");
-		//	}
-
-		//	Exception exc;
-		//	T instance = (T)Activator.CreateInstance(contentPiece.GetType());
-		//	try
-		//	{
-		//		dynamic dynPiece = (dynamic)contentPiece;
-		//		dynamic dynInstance = (dynamic)instance;
-		//		dynInstance.Type = dynPiece.Type;
-		//		dynInstance.Mod = dynPiece.Mod;
-		//		return (T)dynInstance;
-		//	}
-		//	catch (Exception e)
-		//	{
-		//		exc = e;
-		//	}
-		//	throw new Exception($"There was an unknown constructing a new instance of [{nameof(T)}]{nameof(contentPiece)}" +
-		//						$"\n{exc}");
-		//}
 	}
 }

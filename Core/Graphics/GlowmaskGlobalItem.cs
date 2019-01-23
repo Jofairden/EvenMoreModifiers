@@ -7,6 +7,10 @@ using Terraria.ModLoader;
 
 namespace Loot.Core.Graphics
 {
+	/// <summary>
+	/// This class is responsible for handling <see cref="GlowmaskEntity"/>
+	/// that come from the <see cref="Modifier"/>s on a given item
+	/// </summary>
 	public class GlowmaskGlobalItem : GlobalItem
 	{
 		public GlowmaskEntity[] GlowmaskEntities;

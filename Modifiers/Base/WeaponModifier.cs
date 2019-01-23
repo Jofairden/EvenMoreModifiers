@@ -2,7 +2,7 @@ using Loot.Core.System.Modifier;
 using Loot.Ext;
 using Terraria;
 
-namespace Loot.Modifiers
+namespace Loot.Modifiers.Base
 {
 	/// <summary>
 	/// Defines a modifier that can roll on a weapon item

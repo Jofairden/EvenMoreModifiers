@@ -29,7 +29,7 @@ namespace Loot.UI.Core
 			};
 		}
 
-		public override bool CanTakeItem(Item item)
+		public override bool CanTakeItem(Item givenItem)
 			=> false;
 
 		public override void PostOnClick(UIMouseEvent evt, UIElement e)

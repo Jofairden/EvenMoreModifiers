@@ -1,5 +1,6 @@
 using Loot.Core.Attributes;
 using Loot.Core.System.Modifier;
+using Loot.Modifiers.Base;
 using Terraria;
 
 namespace Loot.Modifiers.EquipModifiers.Utility

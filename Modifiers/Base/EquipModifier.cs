@@ -2,10 +2,10 @@ using Loot.Core.System.Modifier;
 using Loot.Ext;
 using Terraria;
 
-namespace Loot.Modifiers
+namespace Loot.Modifiers.Base
 {
 	/// <summary>
-	/// Defines a modifier that can roll on an accessory item or an armor item
+	/// Defines a modifier that can roll on an equip item (armor or accessory)
 	/// These modifiers will have 60% maximum Power on accessories
 	/// You can use this class and add to CanRoll by calling base.CanRoll(ctx) and then your own conditionals
 	/// </summary>

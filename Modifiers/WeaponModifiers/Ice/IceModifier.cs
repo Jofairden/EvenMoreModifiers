@@ -1,4 +1,5 @@
 using Loot.Core.Graphics;
+using Loot.Modifiers.Base;
 using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.Graphics.Shaders;

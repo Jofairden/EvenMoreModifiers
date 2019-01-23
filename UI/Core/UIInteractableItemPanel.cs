@@ -22,67 +22,65 @@ namespace Loot.UI.Core
 		public override void Update(GameTime gameTime)
 		{
 			base.Update(gameTime);
-			if (RightClickFunctionalityEnabled && IsMouseHovering && Main.mouseRight)
+			if (!RightClickFunctionalityEnabled || !IsMouseHovering || !Main.mouseRight) 
+				return;
+			
+			// Slot has an item
+			if (!item.IsAir)
 			{
-				// Slot has an item
-				if (!item.IsAir)
+				// Open inventory
+				Main.playerInventory = true;
+
+				// Mouseitem has to be the same as slot
+				if (Main.stackSplit <= 1 &&
+				    (Main.mouseItem.type == item.type
+				     || Main.mouseItem.IsAir))
 				{
-					// Open inventory
-					Main.playerInventory = true;
-
-					// Mouseitem has to be the same as slot
-					if (Main.stackSplit <= 1 &&
-					    (Main.mouseItem.type == item.type
-					     || Main.mouseItem.IsAir))
+					int num2 = Main.superFastStack + 1;
+					for (int j = 0; j < num2; j++)
 					{
-						int num2 = Main.superFastStack + 1;
-						for (int j = 0; j < num2; j++)
+						// Mouseitem is air, or stack is smaller than maxstack, and slot has stack
+						if (!Main.mouseItem.IsAir && ((Main.mouseItem.stack >= Main.mouseItem.maxStack) || item.stack <= 0)) 
+							continue;
+						
+						// Play sound
+						if (j == 0)
 						{
-							// Mouseitem is air, or stack is smaller than maxstack, and slot has stack
-							if (Main.mouseItem.IsAir
-							    || (Main.mouseItem.stack < Main.mouseItem.maxStack)
-							    && item.stack > 0)
+							Main.PlaySound(18, -1, -1, 1);
+						}
+
+						// Mouseitem is air, clone item
+						if (Main.mouseItem.IsAir)
+						{
+							Main.mouseItem = item.Clone();
+							// If it has prefix, copy it
+							if (item.prefix != 0)
 							{
-								// Play sound
-								if (j == 0)
-								{
-									Main.PlaySound(18, -1, -1, 1);
-								}
-
-								// Mouseitem is air, clone item
-								if (Main.mouseItem.IsAir)
-								{
-									Main.mouseItem = item.Clone();
-									// If it has prefix, copy it
-									if (item.prefix != 0)
-									{
-										Main.mouseItem.Prefix((int) item.prefix);
-									}
-
-									Main.mouseItem.stack = 0;
-								}
-
-								// Add to mouseitem stack
-								Main.mouseItem.stack++;
-								// Take from slot stack
-								item.stack--;
-								Main.stackSplit = Main.stackSplit == 0 ? 15 : Main.stackDelay;
-
-								// Reset item
-								if (item.stack <= 0)
-								{
-									item.TurnToAir();
-								}
+								Main.mouseItem.Prefix((int) item.prefix);
 							}
+
+							Main.mouseItem.stack = 0;
+						}
+
+						// Add to mouseitem stack
+						Main.mouseItem.stack++;
+						// Take from slot stack
+						item.stack--;
+						Main.stackSplit = Main.stackSplit == 0 ? 15 : Main.stackDelay;
+
+						// Reset item
+						if (item.stack <= 0)
+						{
+							item.TurnToAir();
 						}
 					}
 				}
-
-				PostOnRightClick();
 			}
+
+			PostOnRightClick();
 		}
 
-		public virtual bool CanTakeItem(Item item) => !item.IsAir;
+		public virtual bool CanTakeItem(Item givenItem) => !givenItem.IsAir;
 
 		public virtual void PostOnRightClick()
 		{

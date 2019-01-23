@@ -6,6 +6,9 @@ using Terraria.ModLoader;
 
 namespace Loot.Ext
 {
+	/// <summary>
+	/// Defines a set of utility methods for <see cref="Item"/>
+	/// </summary>
 	public static class ItemUtils
 	{
 		public static bool IsModifierRollableItem(this Item item) => item.maxStack == 1 && item.IsWeapon() || item.IsAccessory() || item.IsArmor();

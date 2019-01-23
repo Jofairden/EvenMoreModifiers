@@ -7,6 +7,9 @@ using Loot.Core.System.Modifier;
 
 namespace Loot.Core.System.Content
 {
+	/// <summary>
+	/// This class holds all loaded <see cref="ModifierEffect"/> content
+	/// </summary>
 	public class ModifierEffectContent : BaseContent<ModifierEffect>
 	{
 		internal override bool CheckContentPiece(ModifierEffect contentPiece)

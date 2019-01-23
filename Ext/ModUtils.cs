@@ -9,6 +9,9 @@ using RarityMap = System.Collections.Generic.KeyValuePair<string, Loot.Core.Syst
 
 namespace Loot.Ext
 {
+	/// <summary>
+	/// Defines a set of utility methods for <see cref="Mod"/>
+	/// </summary>
 	public static class ModUtils
 	{
 		public static T GetModifierRarity<T>(this Mod mod) where T : ModifierRarity => (T) GetModifierRarity(mod, typeof(T).Name);

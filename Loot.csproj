@@ -97,6 +97,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ActivatedModifierItem.cs" />
     <Compile Include="ArmorItemHack.cs" />
     <Compile Include="Core\Attributes\AutoDelegationAttribute.cs" />
     <Compile Include="Core\Attributes\DelegationTarget.cs" />
@@ -151,9 +152,11 @@
     <Compile Include="Ext\ModUtils.cs" />
     <Compile Include="Log4c.cs" />
     <Compile Include="ModifierProjectile.cs" />
-    <Compile Include="Modifiers\AccessoryModifier.cs" />
-    <Compile Include="Modifiers\ArmorModifier.cs" />
-    <Compile Include="Modifiers\EquipModifier.cs" />
+    <Compile Include="Modifiers\Base\AccessoryModifier.cs" />
+    <Compile Include="Modifiers\Base\ArmorModifier.cs" />
+    <Compile Include="Modifiers\Base\EquipModifier.cs" />
+    <Compile Include="Modifiers\Base\WeaponDebuffModifier.cs" />
+    <Compile Include="Modifiers\Base\WeaponModifier.cs" />
     <Compile Include="Modifiers\EquipModifiers\Offensive\CritDamagePlus.cs" />
     <Compile Include="Modifiers\EquipModifiers\Defensive\DodgeChance.cs" />
     <Compile Include="Modifiers\EquipModifiers\Utility\FishingPlus.cs" />
@@ -188,7 +191,6 @@
     <Compile Include="Modifiers\WeaponModifiers\DamagePlusDaytime.cs" />
     <Compile Include="Modifiers\WeaponModifiers\DamagePlus.cs" />
     <Compile Include="Modifiers\WeaponModifiers\DamageWithManaCost.cs" />
-    <Compile Include="Modifiers\WeaponDebuffModifier.cs" />
     <Compile Include="Modifiers\WeaponModifiers\Ice\IceModifier.cs" />
     <Compile Include="Modifiers\WeaponModifiers\Ice\IcyModifier.cs" />
     <Compile Include="Modifiers\WeaponModifiers\KnockbackPlus.cs" />
@@ -202,7 +204,6 @@
     <Compile Include="Loot.cs" />
     <Compile Include="ModifierItem.cs" />
     <Compile Include="ModifierPlayer.cs" />
-    <Compile Include="Modifiers\WeaponModifier.cs" />
     <Compile Include="Pools\AllModifiersPool.cs" />
     <Compile Include="Pools\AccessoryModifierPool.cs" />
     <Compile Include="Pools\WeaponModifierPool.cs" />

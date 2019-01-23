@@ -3,6 +3,9 @@ using Terraria;
 
 namespace Loot.Core.Graphics
 {
+	/// <summary>
+	/// Defines a set of utility methods for graphic subjects
+	/// </summary>
 	public static class GraphicsUtils
 	{
 		public static void BeginShaderBatch(this SpriteBatch batch)

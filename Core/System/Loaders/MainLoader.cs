@@ -7,6 +7,11 @@ using Terraria.ModLoader;
 
 namespace Loot.Core.System.Loaders
 {
+	/// <summary>
+	/// The MainLoader is responsible for loading mods into EMM
+	/// Mods can be registered and triggered to have their content
+	/// added via this class
+	/// </summary>
 	public static class MainLoader
 	{
 		internal static IDictionary<string, Assembly> Mods;

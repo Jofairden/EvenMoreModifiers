@@ -5,6 +5,13 @@ using Terraria;
 
 namespace Loot.Core.Graphics
 {
+	/// <summary>
+	/// Defines a Glowmask entity, part of <see cref="GraphicsEntity"/>
+	/// The entity defines a particular 'glowmask' "of" the entity
+	/// and can be drawn appropriately
+	/// The entity makes use of <see cref="GraphicsModContent"/> to get
+	/// art assets
+	/// </summary>
 	public class GlowmaskEntity : GraphicsEntity
 	{
 		public bool DrawHitbox { get; set; } // mostly for debug purposes

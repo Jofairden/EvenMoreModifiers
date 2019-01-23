@@ -1,7 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using Loot.Modifiers;
+using Loot.Modifiers.Base;
 using Loot.Modifiers.EquipModifiers.Offensive;
 using Terraria;
 using Terraria.ModLoader;
@@ -20,7 +20,7 @@ namespace Loot
 			return clone;
 		}
 
-		public ModifierProjectile Info(Projectile projectile, Mod givenMod = null)
+		public ModifierProjectile GetInfo(Projectile projectile, Mod givenMod = null)
 			=> givenMod == null
 				? projectile.GetGlobalProjectile<ModifierProjectile>()
 				: projectile.GetGlobalProjectile<ModifierProjectile>(givenMod);
@@ -73,13 +73,13 @@ namespace Loot
 		{
 			if (crit)
 			{
-				damage = (int) Math.Ceiling(damage * Info(projectile).SnapshotCritMulti);
+				damage = (int) Math.Ceiling(damage * GetInfo(projectile).SnapshotCritMulti);
 			}
 		}
 
 		public override bool PreAI(Projectile projectile)
 		{
-			var mproj = Info(projectile);
+			var mproj = GetInfo(projectile);
 			// On first tick, copy over player stats
 			if (!mproj.FirstTick)
 			{

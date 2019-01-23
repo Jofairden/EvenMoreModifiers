@@ -1,15 +1,15 @@
 using Loot.Core.System.Modifier;
 using Loot.Ext;
 
-namespace Loot.Modifiers
+namespace Loot.Modifiers.Base
 {
 	/// <summary>
-	/// Defines a modifier that can roll on an accessory item
+	/// Defines a modifier that can roll on an armor item (head/body/legs)
 	/// You can use this class and add to CanRoll by calling base.CanRoll(ctx) and then your own conditionals
 	/// </summary>
-	public abstract class AccessoryModifier : Modifier
+	public abstract class ArmorModifier : Modifier
 	{
 		public override bool CanRoll(ModifierContext ctx)
-			=> ctx.Item.IsAccessory();
+			=> ctx.Item.IsArmor();
 	}
 }

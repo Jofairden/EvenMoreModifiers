@@ -1,6 +1,7 @@
 using System;
 using Loot.Core.Attributes;
 using Loot.Core.System.Modifier;
+using Loot.Modifiers.Base;
 using Terraria;
 using Terraria.DataStructures;
 

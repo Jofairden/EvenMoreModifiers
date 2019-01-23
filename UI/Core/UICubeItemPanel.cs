@@ -17,7 +17,7 @@ namespace Loot.UI.Core
 			this.HintOnHover = " (click to unslot)";
 		}
 
-		public override bool CanTakeItem(Item item) => item.modItem is RerollingCube;
+		public override bool CanTakeItem(Item givenItem) => givenItem.modItem is RerollingCube;
 
 		public override void PostOnClick(UIMouseEvent evt, UIElement e)
 		{

@@ -15,7 +15,7 @@ namespace Loot.UI.Rerolling
 			this.HintOnHover = " (click to take item)";
 		}
 
-		public override bool CanTakeItem(Item item) => base.CanTakeItem(item) && item.IsModifierRollableItem() && !EMMItem.GetItemInfo(item).SealedModifiers;
+		public override bool CanTakeItem(Item givenItem) => base.CanTakeItem(givenItem) && givenItem.IsModifierRollableItem() && !EMMItem.GetItemInfo(givenItem).SealedModifiers;
 
 		public override void PreOnClick(UIMouseEvent evt, UIElement e)
 		{

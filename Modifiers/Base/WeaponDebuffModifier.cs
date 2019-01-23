@@ -7,7 +7,7 @@ using Terraria.ID;
 using Terraria.Localization;
 using Terraria.ModLoader;
 
-namespace Loot.Modifiers
+namespace Loot.Modifiers.Base
 {
 	public class WeaponDebuffEffect : ModifierEffect
 	{
