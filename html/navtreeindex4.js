@@ -243,7 +243,7 @@ var NAVTREEINDEX4 =
 "class_loot_1_1_u_i_1_1_core_1_1_u_i_modifier_panel.html#ad977ccd506fa355e0aece7b11e39f033":[2,0,0,6,0,6,2],
 "class_loot_1_1_u_i_1_1_core_1_1_u_i_modifier_panel.html#aea2a97f6c1b1c77f9828211696b2e405":[2,0,0,6,0,6,4],
 "class_loot_1_1_u_i_1_1_core_1_1_visibility_u_i.html":[2,0,0,6,0,7],
-"class_loot_1_1_u_i_1_1_core_1_1_visibility_u_i.html#a24f8057d2ec5b2279e55c0bd7f1d5529":[2,0,0,6,0,7,0],
+"class_loot_1_1_u_i_1_1_core_1_1_visibility_u_i.html#a9bfbbef8888b2e9bbb8fcff796fee38a":[2,0,0,6,0,7,0],
 "class_loot_1_1_u_i_1_1_core_1_1_visibility_u_i.html#ab560543b09926b8cf31af2d347ca9701":[2,0,0,6,0,7,1],
 "class_loot_1_1_u_i_1_1_rerolling_1_1_cube_reroll_u_i.html":[2,0,0,6,1,0],
 "class_loot_1_1_u_i_1_1_rerolling_1_1_cube_reroll_u_i.html#a092d11e524ab9bad1f6096fde4796654":[2,0,0,6,1,0,7],

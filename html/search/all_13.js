@@ -22,7 +22,7 @@ var searchData=
   ['throwncritplus_2ecs',['ThrownCritPlus.cs',['../_thrown_crit_plus_8cs.html',1,'']]],
   ['throwndamageplus',['ThrownDamagePlus',['../class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_offensive_1_1_thrown_damage_plus.html',1,'Loot::Modifiers::EquipModifiers::Offensive']]],
   ['throwndamageplus_2ecs',['ThrownDamagePlus.cs',['../_thrown_damage_plus_8cs.html',1,'']]],
-  ['toggleui',['ToggleUI',['../class_loot_1_1_u_i_1_1_core_1_1_visibility_u_i.html#a24f8057d2ec5b2279e55c0bd7f1d5529',1,'Loot.UI.Core.VisibilityUI.ToggleUI()'],['../class_loot_1_1_u_i_1_1_rerolling_1_1_cube_reroll_u_i.html#a8996c95abe6f22fe80e03c2014b998e4',1,'Loot.UI.Rerolling.CubeRerollUI.ToggleUI()'],['../class_loot_1_1_u_i_1_1_sealing_1_1_cube_seal_u_i.html#abb1026cca3536d3331313a3c9b5e2a7f',1,'Loot.UI.Sealing.CubeSealUI.ToggleUI()']]],
+  ['toggleui',['ToggleUI',['../class_loot_1_1_u_i_1_1_core_1_1_visibility_u_i.html#a9bfbbef8888b2e9bbb8fcff796fee38a',1,'Loot.UI.Core.VisibilityUI.ToggleUI()'],['../class_loot_1_1_u_i_1_1_rerolling_1_1_cube_reroll_u_i.html#a8996c95abe6f22fe80e03c2014b998e4',1,'Loot.UI.Rerolling.CubeRerollUI.ToggleUI()'],['../class_loot_1_1_u_i_1_1_sealing_1_1_cube_seal_u_i.html#abb1026cca3536d3331313a3c9b5e2a7f',1,'Loot.UI.Sealing.CubeSealUI.ToggleUI()']]],
   ['totalraritylevel',['TotalRarityLevel',['../class_loot_1_1_core_1_1_system_1_1_modifier_1_1_modifier_pool.html#a9ecf634f04ef08d3a7a6cec07dcc94a6',1,'Loot::Core::System::Modifier::ModifierPool']]],
   ['transcendentrarity',['TranscendentRarity',['../class_loot_1_1_rarities_1_1_transcendent_rarity.html',1,'Loot::Rarities']]],
   ['transcendentrarity_2ecs',['TranscendentRarity.cs',['../_transcendent_rarity_8cs.html',1,'']]],
