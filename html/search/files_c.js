@@ -1,4 +1,6 @@
 var searchData=
 [
-  ['ordereddelegationentry_2ecs',['OrderedDelegationEntry.cs',['../_ordered_delegation_entry_8cs.html',1,'']]]
+  ['percentdefensebonus_2ecs',['PercentDefenseBonus.cs',['../_percent_defense_bonus_8cs.html',1,'']]],
+  ['poorcube_2ecs',['PoorCube.cs',['../_poor_cube_8cs.html',1,'']]],
+  ['populatepoolfromattribute_2ecs',['PopulatePoolFromAttribute.cs',['../_populate_pool_from_attribute_8cs.html',1,'']]]
 ];

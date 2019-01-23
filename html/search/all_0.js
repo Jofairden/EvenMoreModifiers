@@ -1,13 +1,13 @@
 var searchData=
 [
-  ['_5fattachlist',['_attachList',['../class_loot_1_1_core_1_1_caching_1_1_modifier_cache_player.html#ab1d423079aaaf1c57c9fb743890073e3',1,'Loot::Core::Caching::ModifierCachePlayer']]],
+  ['_5fattachlist',['_attachList',['../class_loot_1_1_core_1_1_caching_1_1_modifier_cache_player.html#a01215a41d4df230775f9ff8c09afcea2',1,'Loot::Core::Caching::ModifierCachePlayer']]],
   ['_5fbackpanel',['_backPanel',['../class_loot_1_1_u_i_1_1_rerolling_1_1_cube_reroll_u_i.html#ac36c5702eecb6b1bfcb0749cc1d5a7d7',1,'Loot.UI.Rerolling.CubeRerollUI._backPanel()'],['../class_loot_1_1_u_i_1_1_sealing_1_1_cube_seal_u_i.html#a976baa2a3c9d219cc8a558b1f37c6556',1,'Loot.UI.Sealing.CubeSealUI._backPanel()']]],
   ['_5fcontents',['_contents',['../class_loot_1_1_core_1_1_mod_content_1_1_mod_content_manager.html#a64a4b8a08e90bd2a6666a479616d239f',1,'Loot::Core::ModContent::ModContentManager']]],
   ['_5fcubecount',['_cubeCount',['../class_loot_1_1_u_i_1_1_sealing_1_1_cube_seal_u_i.html#a640f439090721066215d0ce3811c7280',1,'Loot::UI::Sealing::CubeSealUI']]],
   ['_5fcubelistpanel',['_cubeListPanel',['../class_loot_1_1_u_i_1_1_rerolling_1_1_cube_reroll_u_i.html#a16a73ca3c01c95d947bd27f1c181e6e9',1,'Loot::UI::Rerolling::CubeRerollUI']]],
   ['_5fcubepanel',['_cubePanel',['../class_loot_1_1_u_i_1_1_sealing_1_1_cube_seal_u_i.html#a9ef6ac06a83401371bcf986b493a8927',1,'Loot::UI::Sealing::CubeSealUI']]],
   ['_5fdelegationtypes',['_delegationTypes',['../class_loot_1_1_core_1_1_attributes_1_1_auto_delegation.html#a9a4e5a62e5523363ad6557832e2a3d52',1,'Loot::Core::Attributes::AutoDelegation']]],
-  ['_5fdetachlist',['_detachList',['../class_loot_1_1_core_1_1_caching_1_1_modifier_cache_player.html#a3804cf5e49097f60022b42f3c95ad6f0',1,'Loot::Core::Caching::ModifierCachePlayer']]],
+  ['_5fdetachlist',['_detachList',['../class_loot_1_1_core_1_1_caching_1_1_modifier_cache_player.html#ab474e2a9f415f0d7c28ca9d7f97d2028',1,'Loot::Core::Caching::ModifierCachePlayer']]],
   ['_5fdragging',['_dragging',['../class_loot_1_1_u_i_1_1_core_1_1_draggable_u_i_state.html#a4244e1f2edee7779563d856f3abf2899',1,'Loot::UI::Core::DraggableUIState']]],
   ['_5fdragpanels',['_dragPanels',['../class_loot_1_1_u_i_1_1_core_1_1_draggable_u_i_state.html#a5ea51616a51cc52eb95116cf629b4645',1,'Loot::UI::Core::DraggableUIState']]],
   ['_5fduringday',['_duringDay',['../class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_damage_plus_daytime.html#ae7e52f4f581d8c27a3b628957b8e3d5b',1,'Loot::Modifiers::WeaponModifiers::DamagePlusDaytime']]],

@@ -35,11 +35,10 @@ var NAVTREEINDEX =
 [
 "_accessory_modifier_8cs.html",
 "_sound_helper_8cs.html",
-"class_loot_1_1_core_1_1_mod_content_1_1_graphics_mod_content.html#a1dc64224de0f90c22c7336d934678c99",
-"class_loot_1_1_e_m_m_item.html#a1f63c47cf8556dfe65917f30469cfc2b",
-"class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_offensive_1_1_minion_damage_plus.html#af37fdc08edb0d12447e7871facf4abdd",
-"class_loot_1_1_u_i_1_1_rerolling_1_1_cube_reroll_u_i.html",
-"struct_loot_1_1_core_1_1_system_1_1_modifier_1_1_modifier_context.html"
+"class_loot_1_1_core_1_1_mod_content_1_1_graphics_mod_content.html#a48d812943d75e20a2ebc5c23326889b3",
+"class_loot_1_1_e_m_m_item.html#a6672ede9c3208712a10ce4b266d95a15",
+"class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_offensive_1_1_ranged_damage_plus.html#a484af17d07ae165ea6ff2c56aba96e0a",
+"class_loot_1_1_u_i_1_1_rerolling_1_1_cube_reroll_u_i.html#a765883df3a5d1cb840b735be1d289cc2"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

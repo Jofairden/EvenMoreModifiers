@@ -1,3 +1,8 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="node1" href="$class_mod_sound.html" title="ModSound" alt="" coords="6,5,90,32"/>
+<area shape="rect" id="node1" href="$class_u_i_state.html" title="UIState" alt="" coords="5,31,72,57"/>
+<area shape="rect" id="node2" href="$class_loot_1_1_u_i_1_1_core_1_1_visibility_u_i.html" title="A UIState which primarily goal is to provide easy visibility toggling " alt="" coords="121,31,285,57"/>
+<area shape="rect" id="node3" href="$class_loot_1_1_u_i_1_1_core_1_1_draggable_u_i_state.html" title="A UIState which primarily goal is to provide dragging on click functionality to the main panel The dr..." alt="" coords="333,31,539,57"/>
+<area shape="rect" id="node4" href="$class_loot_1_1_u_i_1_1_core_1_1_cube_u_i.html" title="Loot.UI.Core.CubeUI" alt="" coords="587,31,733,57"/>
+<area shape="rect" id="node5" href="$class_loot_1_1_u_i_1_1_rerolling_1_1_cube_reroll_u_i.html" title="A UIState that provides the ability to reroll an item&#39;s modifier " alt="" coords="781,5,984,32"/>
+<area shape="rect" id="node6" href="$class_loot_1_1_u_i_1_1_sealing_1_1_cube_seal_u_i.html" title="Loot.UI.Sealing.CubeSealUI" alt="" coords="789,56,976,83"/>
 </map>

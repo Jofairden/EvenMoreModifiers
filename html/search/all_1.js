@@ -39,8 +39,5 @@ var searchData=
   ['autodelegation',['AutoDelegation',['../class_loot_1_1_core_1_1_attributes_1_1_auto_delegation.html',1,'Loot::Core::Attributes']]],
   ['autodelegation',['AutoDelegation',['../class_loot_1_1_core_1_1_attributes_1_1_auto_delegation.html#a5ded686caa58bb9c84f73a5cc0136d68',1,'Loot.Core.Attributes.AutoDelegation.AutoDelegation(params string[] types)'],['../class_loot_1_1_core_1_1_attributes_1_1_auto_delegation.html#a7f7d684fc9f8d4282e4ede9a9d422bfe',1,'Loot.Core.Attributes.AutoDelegation.AutoDelegation(params DelegationTarget[] targets)']]],
   ['autodelegationattribute_2ecs',['AutoDelegationAttribute.cs',['../_auto_delegation_attribute_8cs.html',1,'']]],
-  ['autodelegationentry',['AutoDelegationEntry',['../class_loot_1_1_core_1_1_caching_1_1_auto_delegation_entry.html',1,'Loot::Core::Caching']]],
-  ['autodelegationentry',['AutoDelegationEntry',['../class_loot_1_1_core_1_1_caching_1_1_auto_delegation_entry.html#a18025b7f0d8efe8a9747348df47963e3',1,'Loot::Core::Caching::AutoDelegationEntry']]],
-  ['autodelegationentry_2ecs',['AutoDelegationEntry.cs',['../_auto_delegation_entry_8cs.html',1,'']]],
   ['autoload',['Autoload',['../class_loot_1_1_core_1_1_system_1_1_modifier_1_1_modifier.html#a15be14746faf3c6e367c86013e0f49be',1,'Loot::Core::System::Modifier::Modifier']]]
 ];

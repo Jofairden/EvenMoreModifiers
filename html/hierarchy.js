@@ -7,7 +7,6 @@ var hierarchy =
       [ "Loot.Core.Attributes.PopulatePoolFromAttribute", "class_loot_1_1_core_1_1_attributes_1_1_populate_pool_from_attribute.html", null ],
       [ "Loot.Core.Attributes.UsesEffectAttribute", "class_loot_1_1_core_1_1_attributes_1_1_uses_effect_attribute.html", null ]
     ] ],
-    [ "Loot.Core.Caching.AutoDelegationEntry", "class_loot_1_1_core_1_1_caching_1_1_auto_delegation_entry.html", null ],
     [ "Loot.Core.System.Core.BaseContent< T >", "class_loot_1_1_core_1_1_system_1_1_core_1_1_base_content.html", null ],
     [ "Loot.Core.System.Core.BaseContent< Modifier.Modifier >", "class_loot_1_1_core_1_1_system_1_1_core_1_1_base_content.html", [
       [ "Loot.Core.System.Content.ModifierContent", "class_loot_1_1_core_1_1_system_1_1_content_1_1_modifier_content.html", null ]
@@ -177,7 +176,6 @@ var hierarchy =
     [ "ModWorld", "class_mod_world.html", [
       [ "Loot.EMMWorld", "class_loot_1_1_e_m_m_world.html", null ]
     ] ],
-    [ "Loot.Core.Caching.OrderedDelegationEntry", "class_loot_1_1_core_1_1_caching_1_1_ordered_delegation_entry.html", null ],
     [ "Loot.Sounds.Custom.SoundMaker", "class_loot_1_1_sounds_1_1_custom_1_1_sound_maker.html", null ],
     [ "Loot.Core.ModContent.TextureModContent", "class_loot_1_1_core_1_1_mod_content_1_1_texture_mod_content.html", [
       [ "Loot.Core.ModContent.GraphicsModContent", "class_loot_1_1_core_1_1_mod_content_1_1_graphics_mod_content.html", null ]
