@@ -25,5 +25,6 @@ var class_loot_1_1_core_1_1_mod_content_1_1_graphics_mod_content =
     [ "_lookupGlowmaskTable", "class_loot_1_1_core_1_1_mod_content_1_1_graphics_mod_content.html#a3b0bebd82fcd7466be1a4fa609eeea8a", null ],
     [ "_lookupShaderTable", "class_loot_1_1_core_1_1_mod_content_1_1_graphics_mod_content.html#a66fa3fecc906d03ec7107ca5b9e8288a", null ],
     [ "_lookupTable", "class_loot_1_1_core_1_1_mod_content_1_1_graphics_mod_content.html#a34ff09e52ae87b27175254a7db198a30", null ],
-    [ "_shaderTextures", "class_loot_1_1_core_1_1_mod_content_1_1_graphics_mod_content.html#a522618bff39259f9a927d9677f546dda", null ]
+    [ "_shaderTextures", "class_loot_1_1_core_1_1_mod_content_1_1_graphics_mod_content.html#a522618bff39259f9a927d9677f546dda", null ],
+    [ "_vanillaNamesCache", "class_loot_1_1_core_1_1_mod_content_1_1_graphics_mod_content.html#a32b69b2a49a03f0a876abe4cb4b3cc09", null ]
 ];

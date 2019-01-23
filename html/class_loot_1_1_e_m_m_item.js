@@ -12,6 +12,7 @@ var class_loot_1_1_e_m_m_item =
     [ "OnCraft", "class_loot_1_1_e_m_m_item.html#a40d02fc083c67022b5c8603d7dd9faee", null ],
     [ "OnPickup", "class_loot_1_1_e_m_m_item.html#a9f88fc9f71c3313481fa4a2364d2c280", null ],
     [ "PostReforge", "class_loot_1_1_e_m_m_item.html#a3b707b45eb50ce917bbb0052cfa81855", null ],
+    [ "RollNewModifiers", "class_loot_1_1_e_m_m_item.html#adb5a6b968d2055218bedb3f0ba3a4eee", null ],
     [ "Save", "class_loot_1_1_e_m_m_item.html#a51f2704f9654af48ab0ee1abbfc07b86", null ],
     [ "_forceNextRoll", "class_loot_1_1_e_m_m_item.html#ab5ab3c7bd4e00d9092f556f1ac039daf", null ],
     [ "CloneNewInstances", "class_loot_1_1_e_m_m_item.html#a5367a0f6cb29085872d2799fd6b65e47", null ],
@@ -19,7 +20,7 @@ var class_loot_1_1_e_m_m_item =
     [ "InstancePerEntity", "class_loot_1_1_e_m_m_item.html#a6672ede9c3208712a10ce4b266d95a15", null ],
     [ "JustTinkerModified", "class_loot_1_1_e_m_m_item.html#aeedf28285dc4dfa1f1e8af141119a5af", null ],
     [ "ModifierPool", "class_loot_1_1_e_m_m_item.html#a8db5514ead52457b0ae97cb3ea291484", null ],
-    [ "SaveVersion", "class_loot_1_1_e_m_m_item.html#a8ce5218d600c0b68fc6da07bab1fe9d7", null ],
+    [ "SAVE_VERSION", "class_loot_1_1_e_m_m_item.html#a1f63c47cf8556dfe65917f30469cfc2b", null ],
     [ "SealedModifiers", "class_loot_1_1_e_m_m_item.html#aedce25fd48ae8bc38a8451f86b92927a", null ],
     [ "SlottedInCubeUI", "class_loot_1_1_e_m_m_item.html#a1819ece591debe2c1ff47f6eecb9cd08", null ]
 ];

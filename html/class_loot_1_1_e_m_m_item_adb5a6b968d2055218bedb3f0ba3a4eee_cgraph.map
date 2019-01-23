@@ -1,0 +1,10 @@
+<map id="Loot.EMMItem.RollNewModifiers" name="Loot.EMMItem.RollNewModifiers">
+<area shape="rect" id="node2" href="$class_loot_1_1_core_1_1_system_1_1_modifier_properties_builder.html#ae6080e4f698987618aaa9d3ee5243c69" title="Loot.Core.System.Modifier\lPropertiesBuilder.Build" alt="" coords="295,5,473,46"/>
+<area shape="rect" id="node3" href="$class_loot_1_1_core_1_1_system_1_1_modifier.html#a4092adfee1c901882fabc117e8169fb4" title="Allows modders to do custom cloning here Happens after default cloning, which clones various info (mo..." alt="" coords="293,70,475,111"/>
+<area shape="rect" id="node4" href="$class_loot_1_1_modifier_player.html#a3e4b8a428276fb0205e9c0f166435bf0" title="Loot.ModifierPlayer.GetEffect" alt="" coords="287,136,481,163"/>
+<area shape="rect" id="node5" href="$class_loot_1_1_core_1_1_system_1_1_modifier.html#ae3c2d87a69486d13cc7f577d1149d660" title="Loot.Core.System.Modifier.\lGetModifierProperties" alt="" coords="293,187,475,229"/>
+<area shape="rect" id="node6" href="$class_loot_1_1_modifier_player.html#aae3e56a930507049c3b282b29fece4f1" title="Loot.ModifierPlayer.Player" alt="" coords="297,253,471,280"/>
+<area shape="rect" id="node7" href="$class_loot_1_1_core_1_1_system_1_1_modifier.html#a24fa99b8213b346e49d18f8e994a5241" title="Returns if the modifier will actually be added after it is rolled. This is called after Roll is calle..." alt="" coords="293,305,475,346"/>
+<area shape="rect" id="node8" href="$class_loot_1_1_core_1_1_system_1_1_modifier.html#a4c84ae94fa7b7c7dc074bb95ebd0328c" title="Allows modders to do something when the modifier is rolled in the given context The passed rolledModi..." alt="" coords="281,371,487,397"/>
+<area shape="rect" id="node9" href="$class_loot_1_1_core_1_1_system_1_1_modifier_properties.html#a49b1a8b354396995c61b78321eb9106a" title="Loot.Core.System.Modifier\lProperties.RollMagnitudeAndPower" alt="" coords="270,422,498,463"/>
+</map>

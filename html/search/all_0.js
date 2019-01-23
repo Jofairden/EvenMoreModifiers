@@ -45,5 +45,6 @@ var searchData=
   ['_5ftext',['_text',['../class_loot_1_1_u_i_1_1_core_1_1_u_i_modifier_panel.html#aea2a97f6c1b1c77f9828211696b2e405',1,'Loot::UI::Core::UIModifierPanel']]],
   ['_5ftextures',['_textures',['../class_loot_1_1_core_1_1_mod_content_1_1_texture_mod_content.html#a3d8086cbe795fd308df99f0d88cd41d6',1,'Loot::Core::ModContent::TextureModContent']]],
   ['_5ftimescalefactor',['_timeScaleFactor',['../class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_random_debuff.html#a7edec10f8adbfe10a23db8eb9380b37d',1,'Loot::Modifiers::WeaponModifiers::RandomDebuff']]],
-  ['_5funload',['_Unload',['../class_loot_1_1_core_1_1_mod_content_1_1_texture_mod_content.html#a515ba440e3c381e03a8f0e7ec62edd1b',1,'Loot::Core::ModContent::TextureModContent']]]
+  ['_5funload',['_Unload',['../class_loot_1_1_core_1_1_mod_content_1_1_texture_mod_content.html#a515ba440e3c381e03a8f0e7ec62edd1b',1,'Loot::Core::ModContent::TextureModContent']]],
+  ['_5fvanillanamescache',['_vanillaNamesCache',['../class_loot_1_1_core_1_1_mod_content_1_1_graphics_mod_content.html#a32b69b2a49a03f0a876abe4cb4b3cc09',1,'Loot::Core::ModContent::GraphicsModContent']]]
 ];

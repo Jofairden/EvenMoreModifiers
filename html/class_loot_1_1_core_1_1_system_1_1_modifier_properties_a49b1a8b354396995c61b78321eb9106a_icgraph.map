@@ -1,3 +1,4 @@
 <map id="Loot.Core.System.ModifierProperties.RollMagnitudeAndPower" name="Loot.Core.System.ModifierProperties.RollMagnitudeAndPower">
-<area shape="rect" id="node2" href="$class_loot_1_1_core_1_1_system_1_1_modifier_properties.html#aaac9df27325cc4badc1452f006f5a6e2" title="Loot.Core.System.Modifier\lProperties.Load" alt="" coords="283,29,461,70"/>
+<area shape="rect" id="node2" href="$class_loot_1_1_core_1_1_system_1_1_modifier_properties.html#aaac9df27325cc4badc1452f006f5a6e2" title="Loot.Core.System.Modifier\lProperties.Load" alt="" coords="301,29,480,70"/>
+<area shape="rect" id="node3" href="$class_loot_1_1_e_m_m_item.html#adb5a6b968d2055218bedb3f0ba3a4eee" title="Roll active modifiers, can roll up to n maximum effects Returns if any modifiers were activated ..." alt="" coords="283,95,498,121"/>
 </map>

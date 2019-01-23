@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['saveversion',['SaveVersion',['../class_loot_1_1_e_m_m_item.html#a8ce5218d600c0b68fc6da07bab1fe9d7',1,'Loot::EMMItem']]],
+  ['save_5fversion',['SAVE_VERSION',['../class_loot_1_1_e_m_m_item.html#a1f63c47cf8556dfe65917f30469cfc2b',1,'Loot::EMMItem']]],
   ['sealedmodifiers',['SealedModifiers',['../class_loot_1_1_e_m_m_item.html#aedce25fd48ae8bc38a8451f86b92927a',1,'Loot::EMMItem']]],
   ['shaderentities',['ShaderEntities',['../class_loot_1_1_core_1_1_graphics_1_1_shader_global_item.html#a7a57f761180a69f20cd5eb673acaa622',1,'Loot::Core::Graphics::ShaderGlobalItem']]],
   ['slottedincubeui',['SlottedInCubeUI',['../class_loot_1_1_e_m_m_item.html#a1819ece591debe2c1ff47f6eecb9cd08',1,'Loot::EMMItem']]],

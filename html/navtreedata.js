@@ -34,8 +34,8 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "_accessory_modifier_8cs.html",
-"_survival_chance_8cs.html",
-"class_loot_1_1_core_1_1_mod_content_1_1_graphics_mod_content.html#a48d812943d75e20a2ebc5c23326889b3",
+"_test_apply_mod_8cs.html",
+"class_loot_1_1_core_1_1_mod_content_1_1_graphics_mod_content.html#a4a828843ce296ca1b90a5558650bb0c7",
 "class_loot_1_1_ext_1_1_item_utils.html#a3fdd92513a7f250897d1c439490328fc",
 "class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_utility_1_1_light_plus.html#a79be81f10a4ba089f06034aeaf91e879",
 "class_loot_1_1_u_i_1_1_sealing_1_1_u_i_seal_item_panel.html#aec1c20f414aa6e939cec85a830e05ca9"
