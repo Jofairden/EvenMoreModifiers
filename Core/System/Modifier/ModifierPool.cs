@@ -1,17 +1,17 @@
-using Loot.Core.Attributes;
-using Loot.Core.System.Core;
-using Loot.Core.System.Loaders;
-using Loot.Ext;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Reflection;
+using Loot.Core.Attributes;
+using Loot.Core.System.Core;
+using Loot.Core.System.Loaders;
+using Loot.Ext;
 using Terraria;
 using Terraria.ModLoader;
 using Terraria.ModLoader.IO;
 
-namespace Loot.Core.System
+namespace Loot.Core.System.Modifier
 {
 	/// <summary>
 	/// Defines a modifier pool. A modifier pool holds a certain amount of effects in an array
@@ -36,17 +36,23 @@ namespace Loot.Core.System
 
 		public string Name => GetType().Name;
 
+		public IEnumerable<string> UniqueNames =>
+			ActiveModifiers
+				.Where(x => x.UniqueName != string.Empty)
+				.Select(x => x.UniqueName);
+
 		public ModifierRarity Rarity { get; protected internal set; }
 
 		public Modifier[] ActiveModifiers { get; protected internal set; }
 
 		private PopulatePoolFromAttribute _populatePoolFrom;
+
 		internal void CacheAttributes()
 		{
 			_populatePoolFrom = GetType().GetCustomAttribute<PopulatePoolFromAttribute>(true);
 		}
 
-		internal IEnumerable<Modifier> _GetModifiers()
+		private IEnumerable<Modifier> _GetModifiers()
 		{
 			if (_populatePoolFrom != null)
 			{
@@ -153,10 +159,10 @@ namespace Loot.Core.System
 
 		public object Clone()
 		{
-			ModifierPool clone = (ModifierPool)MemberwiseClone();
+			ModifierPool clone = (ModifierPool) MemberwiseClone();
 			clone.Type = Type;
 			clone.Mod = Mod;
-			clone.Rarity = (ModifierRarity)Rarity?.Clone();
+			clone.Rarity = (ModifierRarity) Rarity?.Clone();
 			clone.ActiveModifiers =
 				ActiveModifiers?
 					.Select(x => x?.Clone())
@@ -322,7 +328,7 @@ namespace Loot.Core.System
 		{
 			if (modifierPool == null)
 			{
-				return new TagCompound { { "EMMErr:PoolNullErr", "ModifierPool was null err" } };
+				return new TagCompound {{"EMMErr:PoolNullErr", "ModifierPool was null err"}};
 			}
 
 			var tag = new TagCompound

@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using Microsoft.Xna.Framework;
 
-namespace Loot.Core.System
+namespace Loot.Core.System.Modifier
 {
 	public class ModifierTooltipBuilder
 	{

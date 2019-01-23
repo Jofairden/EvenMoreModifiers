@@ -1,8 +1,8 @@
-using Loot.Core.System;
-using Loot.Ext;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using Loot.Core.System.Modifier;
+using Loot.Ext;
 using Terraria;
 using Terraria.ModLoader;
 using Terraria.ModLoader.IO;
@@ -44,7 +44,7 @@ namespace Loot
 		public override void PostUpdate()
 		{
 			if (Initialized) return;
-			
+
 			Initialized = true;
 			foreach (var chest in Main.chest.Where(chest => chest != null && chest.x > 0 && chest.y > 0))
 			{
@@ -114,9 +114,9 @@ namespace Loot
 				Initialized = true;
 				foreach (var chest in Main.chest.Where(chest => chest != null && chest.x > 0 && chest.y > 0))
 				{
-					GenerateModifiers(progress, 
-						ModifierContextMethod.WorldGeneration, 
-						chest.item.Where(x => x != null && !x.IsAir && x.IsModifierRollableItem()), 
+					GenerateModifiers(progress,
+						ModifierContextMethod.WorldGeneration,
+						chest.item.Where(x => x != null && !x.IsAir && x.IsModifierRollableItem()),
 						chest);
 				}
 			}

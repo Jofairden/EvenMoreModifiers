@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
+using Loot.Core.System.Modifier;
 using Terraria.ModLoader;
 
 namespace Loot.Core.System.Loaders
@@ -18,7 +19,6 @@ namespace Loot.Core.System.Loaders
 
 		internal static void Load()
 		{
-			
 		}
 
 		internal static void Unload()
@@ -77,7 +77,7 @@ namespace Loot.Core.System.Loaders
 				.ToList();
 
 			var rarities = ordered.Where(x => x.IsSubclassOf(typeof(ModifierRarity)));
-			var modifiers = ordered.Where(x => x.IsSubclassOf(typeof(Modifier)));
+			var modifiers = ordered.Where(x => x.IsSubclassOf(typeof(Modifier.Modifier)));
 			var pools = ordered.Where(x => x.IsSubclassOf(typeof(ModifierPool)));
 			var effects = ordered.Where(x => x.IsSubclassOf(typeof(ModifierEffect)));
 

@@ -1,8 +1,9 @@
-using Loot.Core.Attributes;
-using Loot.Core.System.Core;
 using System;
 using System.Linq;
 using System.Reflection;
+using Loot.Core.Attributes;
+using Loot.Core.System.Core;
+using Loot.Core.System.Modifier;
 
 namespace Loot.Core.System.Content
 {

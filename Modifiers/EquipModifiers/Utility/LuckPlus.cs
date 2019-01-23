@@ -1,6 +1,5 @@
 using Loot.Core.Attributes;
-using Loot.Core.System;
-using Microsoft.Xna.Framework;
+using Loot.Core.System.Modifier;
 using Terraria;
 
 namespace Loot.Modifiers.EquipModifiers.Utility
@@ -34,7 +33,7 @@ namespace Loot.Modifiers.EquipModifiers.Utility
 
 		public override void UpdateEquip(Item item, Player player)
 		{
-			ModifierPlayer.Player(player).GetEffect<LuckEffect>().Luck += (int)Properties.RoundedPower;
+			ModifierPlayer.Player(player).GetEffect<LuckEffect>().Luck += (int) Properties.RoundedPower;
 		}
 	}
 }

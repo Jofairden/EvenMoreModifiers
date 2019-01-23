@@ -1,7 +1,6 @@
 using System;
 using System.Linq;
-using Loot.Core.System;
-using Microsoft.Xna.Framework;
+using Loot.Core.System.Modifier;
 using Terraria;
 
 namespace Loot.Modifiers.WeaponModifiers

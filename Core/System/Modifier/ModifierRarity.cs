@@ -1,14 +1,13 @@
+using System;
+using System.IO;
 using Loot.Core.System.Core;
 using Loot.Core.System.Loaders;
 using Microsoft.Xna.Framework;
-using System;
-using System.IO;
-using System.Reflection;
 using Terraria;
 using Terraria.ModLoader;
 using Terraria.ModLoader.IO;
 
-namespace Loot.Core.System
+namespace Loot.Core.System.Modifier
 {
 	/// <summary>
 	/// Defines the rarity of a modifier
@@ -48,7 +47,7 @@ namespace Loot.Core.System
 
 		public object Clone()
 		{
-			ModifierRarity clone = (ModifierRarity)MemberwiseClone();
+			ModifierRarity clone = (ModifierRarity) MemberwiseClone();
 			clone.Mod = Mod;
 			clone.Type = Type;
 			Clone(ref clone);
@@ -139,6 +138,7 @@ namespace Loot.Core.System
 
 				return null;
 			}
+
 			throw new Exception($"ModifierRarity load error for {modname}");
 		}
 
@@ -154,10 +154,10 @@ namespace Loot.Core.System
 		{
 			var tag = new TagCompound
 			{
-				{ "Type", rarity.GetType().Name },
+				{"Type", rarity.GetType().Name},
 				//{ "RarityType", rarity.Type },//Used to be saved in saveVersion 1
-				{ "ModName", rarity.Mod.Name },
-				{ "ModifierRaritySaveVersion", 2 }
+				{"ModName", rarity.Mod.Name},
+				{"ModifierRaritySaveVersion", 2}
 			};
 			rarity.Save(item, tag);
 			return tag;

@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using Loot.Core.System;
+using Loot.Core.System.Modifier;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader.IO;
@@ -87,15 +87,15 @@ namespace Loot.Modifiers.WeaponModifiers
 		{
 			// The roll is only valid, if none other rolled random debuff has the same index
 			return base.PostRoll(ctx, rolledModifiers)
-				   && _index != -1
-				   && rolledModifiers
-					   .Select(x => x as RandomDebuff)
-					   .All(x => x?.GetRolledIndex() != _index);
+			       && _index != -1
+			       && rolledModifiers
+				       .Select(x => x as RandomDebuff)
+				       .All(x => x?.GetRolledIndex() != _index);
 		}
 
 		private float _timeScaleFactor = 1f;
 		public override int BuffType => BuffPairs[_index].BuffType;
-		public override int BuffTime => (int)(BuffPairs[_index].BuffTime * _timeScaleFactor);
+		public override int BuffTime => (int) (BuffPairs[_index].BuffTime * _timeScaleFactor);
 		public override float BuffInflictionChance => BuffPairs[_index].InflictionChance;
 	}
 }

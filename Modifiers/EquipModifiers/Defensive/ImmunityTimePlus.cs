@@ -1,6 +1,5 @@
 using Loot.Core.Attributes;
-using Loot.Core.System;
-using Microsoft.Xna.Framework;
+using Loot.Core.System.Modifier;
 using Terraria;
 
 namespace Loot.Modifiers.EquipModifiers.Defensive
@@ -46,7 +45,7 @@ namespace Loot.Modifiers.EquipModifiers.Defensive
 
 		public override void UpdateEquip(Item item, Player player)
 		{
-			ModifierPlayer.Player(player).GetEffect<ImmunityEffect>().BonusImmunityTime += (int)Properties.RoundedPower;
+			ModifierPlayer.Player(player).GetEffect<ImmunityEffect>().BonusImmunityTime += (int) Properties.RoundedPower;
 		}
 	}
 }

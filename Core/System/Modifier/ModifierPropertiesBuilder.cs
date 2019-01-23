@@ -1,4 +1,4 @@
-namespace Loot.Core.System
+namespace Loot.Core.System.Modifier
 {
 	/// <summary>
 	/// The ModifierPropertiesBuilder implements the builder pattern for ModifierProperties
@@ -23,53 +23,21 @@ namespace Loot.Core.System
 			DefaultBuilder = defaultBuilder;
 		}
 
-		public float MinMagnitude
-		{
-			protected get;
-			set;
-		}
+		public float MinMagnitude { protected get; set; }
 
-		public float MaxMagnitude
-		{
-			protected get;
-			set;
-		}
+		public float MaxMagnitude { protected get; set; }
 
-		public float MagnitudeStrength
-		{
-			protected get;
-			set;
-		}
+		public float MagnitudeStrength { protected get; set; }
 
-		public float BasePower
-		{
-			protected get;
-			set;
-		}
+		public float BasePower { protected get; set; }
 
-		public float RarityLevel
-		{
-			protected get;
-			set;
-		}
+		public float RarityLevel { protected get; set; }
 
-		public float RollChance
-		{
-			protected get;
-			set;
-		}
+		public float RollChance { protected get; set; }
 
-		public int RoundPrecision
-		{
-			protected get;
-			set;
-		}
+		public int RoundPrecision { protected get; set; }
 
-		public bool IsUnique
-		{
-			protected get;
-			set;
-		}
+		public bool IsUnique { protected get; set; }
 
 		public ModifierProperties DefaultProperties
 		{

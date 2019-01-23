@@ -1,12 +1,12 @@
-using CheatSheet;
-using Loot.Core.Attributes;
-using Loot.Core.System;
-using Loot.Ext;
-using Loot.Ext.ModSupport;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
+using CheatSheet;
+using Loot.Core.Attributes;
+using Loot.Core.System.Modifier;
+using Loot.Ext;
+using Loot.Ext.ModSupport;
 using Terraria;
 using Terraria.ModLoader;
 
@@ -168,7 +168,7 @@ namespace Loot.Core.Caching
 					.GetMethods(BindingFlags.NonPublic | BindingFlags.Public | BindingFlags.Instance)
 					.Where(x => x.GetCustomAttributes(typeof(AutoDelegation), false).Length > 0)
 					// todo: C#7 named/value tuple here
-					.ToDictionary(x => x, y => (DelegationPrioritizationAttribute)y.GetCustomAttribute(typeof(DelegationPrioritizationAttribute)));
+					.ToDictionary(x => x, y => (DelegationPrioritizationAttribute) y.GetCustomAttribute(typeof(DelegationPrioritizationAttribute)));
 
 				delegationEntries.AddRange(
 					delegatedMethods
@@ -216,6 +216,7 @@ namespace Loot.Core.Caching
 			{
 				UpdateCheatSheetCache();
 			}
+
 			UpdateVanityCache();
 
 			if (!UpdateMouseItemCache())
@@ -484,8 +485,8 @@ namespace Loot.Core.Caching
 				{
 					var equip = player.armor[k];
 					if (equip != null
-						&& !equip.IsAir
-						&& ActivatedModifierItem.Item(equip).IsCheated)
+					    && !equip.IsAir
+					    && ActivatedModifierItem.Item(equip).IsCheated)
 					{
 						CacheItemModifierEffects(equip);
 					}

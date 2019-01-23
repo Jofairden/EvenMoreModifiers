@@ -1,16 +1,16 @@
-using Loot.Core.Cubes;
-using Loot.Core.Graphics;
-using Loot.Core.System;
-using Loot.Core.System.Loaders;
-using Loot.Ext;
-using Loot.Modifiers.EquipModifiers.Utility;
-using Loot.Pools;
-using Microsoft.Xna.Framework;
 using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.IO;
 using System.Linq;
+using Loot.Core.Cubes;
+using Loot.Core.Graphics;
+using Loot.Core.System.Loaders;
+using Loot.Core.System.Modifier;
+using Loot.Ext;
+using Loot.Modifiers.EquipModifiers.Utility;
+using Loot.Pools;
+using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.ModLoader;
 using Terraria.ModLoader.IO;
@@ -142,10 +142,10 @@ namespace Loot
 			{
 				// If there are no mods left, or we fail the roll, break.
 				if (wr.elements.Count <= 0
-					|| !_forceNextRoll
-					&& i > 0
-					&& list.Count >= itemRollProperties.MinModifierRolls
-					&& Main.rand.NextFloat() > itemRollProperties.RollNextChance)
+				    || !_forceNextRoll
+				    && i > 0
+				    && list.Count >= itemRollProperties.MinModifierRolls
+				    && Main.rand.NextFloat() > itemRollProperties.RollNextChance)
 				{
 					break;
 				}
@@ -155,15 +155,16 @@ namespace Loot
 				// Get a next weighted random mod
 				// Clone the mod (new instance) and roll it's properties, then roll it
 				Modifier e = wr.Get();
-				Modifier eClone = (Modifier)e.Clone();
+				Modifier eClone = (Modifier) e.Clone();
 				float luck = itemRollProperties.ExtraLuck;
 				if (ctx.Player != null)
 				{
 					luck += ModifierPlayer.Player(ctx.Player).GetEffect<LuckEffect>().Luck;
 				}
+
 				eClone.Properties =
 					eClone.GetModifierProperties(ctx.Item).Build()
-					.RollMagnitudeAndPower(
+						.RollMagnitudeAndPower(
 							magnitudePower: itemRollProperties.MagnitudePower,
 							lukStat: luck);
 				eClone.Roll(ctx, list);
@@ -192,8 +193,8 @@ namespace Loot
 
 		public override GlobalItem Clone(Item item, Item itemClone)
 		{
-			EMMItem clone = (EMMItem)base.Clone(item, itemClone);
-			clone.ModifierPool = (ModifierPool)ModifierPool?.Clone();
+			EMMItem clone = (EMMItem) base.Clone(item, itemClone);
+			clone.ModifierPool = (ModifierPool) ModifierPool?.Clone();
 			// there is no need to apply here, we already cloned the item which stats are already modified by its pool
 			return clone;
 		}
@@ -345,11 +346,11 @@ namespace Loot
 				num = 1;
 				if (rStat > 0f)
 				{
-					color = new Color((byte)(120f * defColorVal), (byte)(190f * defColorVal), (byte)(120f * defColorVal), alphaColor);
+					color = new Color((byte) (120f * defColorVal), (byte) (190f * defColorVal), (byte) (120f * defColorVal), alphaColor);
 					return "+" + rStat.ToString(CultureInfo.InvariantCulture); /* + Lang.tip[39].Value;*/
 				}
 
-				color = new Color((byte)(190f * defColorVal), (byte)(120f * defColorVal), (byte)(120f * defColorVal), alphaColor);
+				color = new Color((byte) (190f * defColorVal), (byte) (120f * defColorVal), (byte) (120f * defColorVal), alphaColor);
 				return rStat.ToString(CultureInfo.InvariantCulture); /* + Lang.tip[39].Value;*/
 			}
 
@@ -361,16 +362,16 @@ namespace Loot
 			// for some reason - is handled automatically, but + is not
 			if (diffStat > 0.0)
 			{
-				color = new Color((byte)(120f * defColorVal), (byte)(190f * defColorVal), (byte)(120f * defColorVal), alphaColor);
+				color = new Color((byte) (120f * defColorVal), (byte) (190f * defColorVal), (byte) (120f * defColorVal), alphaColor);
 				return "+" + diffStat.ToString(CultureInfo.InvariantCulture); /* + Lang.tip[39].Value;*/
 			}
 
-			color = new Color((byte)(190f * defColorVal), (byte)(120f * defColorVal), (byte)(120f * defColorVal), alphaColor);
+			color = new Color((byte) (190f * defColorVal), (byte) (120f * defColorVal), (byte) (120f * defColorVal), alphaColor);
 			return diffStat.ToString(CultureInfo.InvariantCulture); /* + Lang.tip[39].Value;*/
-																	//if (num12 < 0.0)
-																	//{
-																	//	array3[num4] = true;
-																	//}
+			//if (num12 < 0.0)
+			//{
+			//	array3[num4] = true;
+			//}
 		}
 
 		/// <summary>
@@ -438,11 +439,11 @@ namespace Loot
 							if (outNumber >= 0)
 							{
 								newTooltipLine += "+";
-								newColor = new Color((byte)(120f * defColorVal), (byte)(190f * defColorVal), (byte)(120f * defColorVal), alphaColor);
+								newColor = new Color((byte) (120f * defColorVal), (byte) (190f * defColorVal), (byte) (120f * defColorVal), alphaColor);
 							}
 							else
 							{
-								newColor = new Color((byte)(190f * defColorVal), (byte)(120f * defColorVal), (byte)(120f * defColorVal), alphaColor);
+								newColor = new Color((byte) (190f * defColorVal), (byte) (120f * defColorVal), (byte) (120f * defColorVal), alphaColor);
 							}
 
 							newTooltipLine += outNumber.ToString(CultureInfo.InvariantCulture);
@@ -455,8 +456,8 @@ namespace Loot
 								int alphaColor = Main.mouseTextColor;
 								newTooltipLine = GetPrefixNormString(baseItem.mana, prefixItem.mana, ref outNumber, ref newColor);
 								newColor = prefixItem.mana < baseItem.mana
-									? new Color((byte)(120f * defColorVal), (byte)(190f * defColorVal), (byte)(120f * defColorVal), alphaColor)
-									: new Color((byte)(190f * defColorVal), (byte)(120f * defColorVal), (byte)(120f * defColorVal), alphaColor);
+									? new Color((byte) (120f * defColorVal), (byte) (190f * defColorVal), (byte) (120f * defColorVal), alphaColor)
+									: new Color((byte) (190f * defColorVal), (byte) (120f * defColorVal), (byte) (120f * defColorVal), alphaColor);
 							}
 						}
 						else if (tooltipLine.Name.Equals("PrefixSize"))
@@ -513,6 +514,7 @@ namespace Loot
 				if (i != -1)
 				{
 					var namelayer = tooltips[i];
+
 					if (pool.Rarity.ItemPrefix != null)
 					{
 						namelayer.text = $"{pool.Rarity.ItemPrefix} {namelayer.text}";
@@ -535,21 +537,25 @@ namespace Loot
 				ActivatedModifierItem activatedModifierItem = ActivatedModifierItem.Item(item);
 				bool isVanityIgnored = activatedModifierItem.ShouldBeIgnored(item, Main.LocalPlayer);
 
-				Color? inactiveColor = isVanityIgnored ? (Color?)Color.DarkSlateGray : null;
+				Color? inactiveColor = isVanityIgnored ? (Color?) Color.DarkSlateGray : null;
 
 				i = tooltips.Count;
-				tooltips.Insert(i, new TooltipLine(mod, "Loot: Modifier:Rarity", $"[{pool.Rarity.RarityName}]{(isVanityIgnored ? " [IGNORED]" : "")}") { overrideColor = inactiveColor ?? pool.Rarity.Color * Main.inventoryScale });
-
-				// Insert lines
-				foreach (var ttcol in pool.Description)
+				tooltips.Insert(i, new TooltipLine(mod, "Loot: Modifier:Rarity", $"[{pool.Rarity.RarityName}]{(isVanityIgnored ? " [IGNORED]" : "")}")
 				{
-					foreach (var tt in ttcol)
+					overrideColor = inactiveColor ?? pool.Rarity.Color * Main.inventoryScale
+				});
+
+				foreach (var modifier in pool.ActiveModifiers)
+				{
+					foreach (var tt in modifier.GetTooltip().Build())
 					{
-						tooltips.Insert(++i, new TooltipLine(mod, $"Loot: Modifier:Line:{i}", tt.Text) { overrideColor = inactiveColor ?? (tt.Color ?? Color.White) * Main.inventoryScale });
+						tooltips.Insert(++i, new TooltipLine(mod, $"Loot: Modifier:Line:{i}", $"{modifier.GetFormattedUniqueName()} {tt.Text}".TrimStart())
+						{
+							overrideColor = inactiveColor ?? (tt.Color ?? Color.White) * Main.inventoryScale
+						});
 					}
 				}
 
-				// Insert sealed notation
 				if (SealedModifiers)
 				{
 					var ttl = new TooltipLine(mod, "Loot: Modifier:Sealed", "Modifiers cannot be changed")
@@ -559,7 +565,6 @@ namespace Loot
 					tooltips.Insert(++i, ttl);
 				}
 
-				// Call modify tooltips
 				foreach (var e in pool.ActiveModifiers)
 				{
 					e.ModifyTooltips(item, tooltips);

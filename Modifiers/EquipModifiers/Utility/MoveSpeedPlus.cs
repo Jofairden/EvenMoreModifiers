@@ -1,5 +1,4 @@
-using Loot.Core.System;
-using Microsoft.Xna.Framework;
+using Loot.Core.System.Modifier;
 using Terraria;
 
 namespace Loot.Modifiers.EquipModifiers.Utility
@@ -15,7 +14,7 @@ namespace Loot.Modifiers.EquipModifiers.Utility
 		public override ModifierPropertiesBuilder GetModifierProperties(Item item)
 		{
 			return base.GetModifierProperties(item)
-				.WithBasePower(1/5f)
+				.WithBasePower(1 / 5f)
 				.WithMaxMagnitude(50f);
 		}
 

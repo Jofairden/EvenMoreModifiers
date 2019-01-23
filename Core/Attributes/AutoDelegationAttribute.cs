@@ -1,10 +1,9 @@
-using Loot.Core.System;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
+using Loot.Core.System.Modifier;
 using Terraria;
-using Terraria.ModLoader;
 using static Loot.Log4c;
 
 namespace Loot.Core.Attributes

@@ -1,7 +1,7 @@
 using System;
 using System.Collections.Generic;
 using Loot.Core.Attributes;
-using Loot.Core.System;
+using Loot.Core.System.Modifier;
 using Terraria;
 using Terraria.ID;
 using Terraria.Localization;

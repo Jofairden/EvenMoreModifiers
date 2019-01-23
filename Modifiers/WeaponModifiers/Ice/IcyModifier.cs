@@ -1,4 +1,4 @@
-using Loot.Core.System;
+using Loot.Core.System.Modifier;
 using Terraria;
 using Terraria.ID;
 
@@ -6,6 +6,8 @@ namespace Loot.Modifiers.WeaponModifiers.Ice
 {
 	public class IcyModifier : IceModifier
 	{
+		public override string UniqueName => "Icy";
+
 		public override ModifierTooltipBuilder GetTooltip()
 		{
 			return base.GetTooltip()

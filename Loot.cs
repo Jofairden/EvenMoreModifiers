@@ -1,3 +1,5 @@
+using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 using Loot.Core.ModContent;
 using Loot.Core.System.Loaders;
 using Loot.Ext.ModSupport;
@@ -5,10 +7,6 @@ using Loot.UI.Core;
 using Loot.UI.Rerolling;
 using Loot.UI.Sealing;
 using Microsoft.Xna.Framework;
-using System;
-using System.Collections.Generic;
-using System.Reflection;
-using System.Runtime.CompilerServices;
 using Terraria;
 using Terraria.ModLoader;
 using Terraria.UI;
@@ -22,6 +20,7 @@ using Terraria.UI;
  */
 
 [assembly: InternalsVisibleTo("LootTests")] // Allow doing unit tests
+
 namespace Loot
 {
 	public sealed class Loot : Mod
@@ -45,6 +44,12 @@ namespace Loot
 			};
 		}
 
+		public static void AddMod(Mod mod)
+		{
+			MainLoader.RegisterMod(mod);
+			MainLoader.AddContent(mod);
+		}
+
 		public override void Load()
 		{
 			Instance = this;
@@ -65,16 +70,15 @@ namespace Loot
 			MainLoader.Initialize();
 			MainLoader.Load();
 
-			MainLoader.RegisterMod(this);
-			MainLoader.AddContent(this);
+			AddMod(this);
 
 			ModSupport.AddServerSupport();
 		}
 
 		private void LoadModForClient()
 		{
-			//(string compiledWith, string sevenSharp) = ("Even More Modifiers uses", "C#7");
-			//Logger.InfoFormat("{0} {1}", compiledWith, sevenSharp);
+			(string compiledWith, string sevenSharp) = ("Even More Modifiers uses", "C#7");
+			Logger.InfoFormat("{0} {1}", compiledWith, sevenSharp);
 
 			SetupContentManager();
 			SetupUserInterfaces();
@@ -143,7 +147,7 @@ namespace Loot
 		public override void PreSaveAndQuit()
 		{
 			if (CubeRerollUI._rerollItemPanel != null
-				&& !CubeRerollUI._rerollItemPanel.item.IsAir)
+			    && !CubeRerollUI._rerollItemPanel.item.IsAir)
 			{
 				// Runs only in SP or client, so this is safe
 				Main.LocalPlayer.QuickSpawnClonedItem(CubeRerollUI._rerollItemPanel.item, CubeRerollUI._rerollItemPanel.item.stack);
@@ -151,7 +155,7 @@ namespace Loot
 			}
 
 			if (CubeSealUI.SlottedItem != null
-				&& !CubeSealUI.SlottedItem.IsAir)
+			    && !CubeSealUI.SlottedItem.IsAir)
 			{
 				Main.LocalPlayer.QuickSpawnClonedItem(CubeSealUI.SlottedItem, CubeSealUI.SlottedItem.stack);
 				CubeSealUI.SlottedItem.TurnToAir();
@@ -159,6 +163,7 @@ namespace Loot
 		}
 
 		private GameTime _lastUpdateUIGameTime;
+
 		public override void UpdateUI(GameTime gameTime)
 		{
 			_lastUpdateUIGameTime = gameTime;
@@ -178,7 +183,7 @@ namespace Loot
 					delegate
 					{
 						if (((CubeInterface.CurrentState as CubeUI)?.Visible ?? false)
-							&& _lastUpdateUIGameTime != null)
+						    && _lastUpdateUIGameTime != null)
 						{
 							CubeInterface.Draw(Main.spriteBatch, _lastUpdateUIGameTime);
 						}

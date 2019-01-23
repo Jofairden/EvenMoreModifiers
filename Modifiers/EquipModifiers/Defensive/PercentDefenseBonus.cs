@@ -1,6 +1,6 @@
 using System;
 using Loot.Core.Attributes;
-using Loot.Core.System;
+using Loot.Core.System.Modifier;
 using Terraria;
 
 namespace Loot.Modifiers.EquipModifiers.Defensive

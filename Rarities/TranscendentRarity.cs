@@ -1,4 +1,4 @@
-using Loot.Core.System;
+using Loot.Core.System.Modifier;
 using Microsoft.Xna.Framework;
 
 namespace Loot.Rarities
@@ -7,6 +7,7 @@ namespace Loot.Rarities
 	{
 		public override string RarityName => "Transcendent";
 		public override Color Color => Color.Purple;
+
 		public override float RequiredRarityLevel => 8f;
 		//public override string ItemSuffix => "of the Transcendent";
 	}

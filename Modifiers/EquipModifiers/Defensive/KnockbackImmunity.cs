@@ -1,4 +1,4 @@
-using Loot.Core.System;
+using Loot.Core.System.Modifier;
 using Terraria;
 using Terraria.ID;
 

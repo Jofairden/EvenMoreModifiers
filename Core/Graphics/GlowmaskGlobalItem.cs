@@ -1,5 +1,5 @@
 using System.Linq;
-using Loot.Core.System;
+using Loot.Core.System.Modifier;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Terraria;

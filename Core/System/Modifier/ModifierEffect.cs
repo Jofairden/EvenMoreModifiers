@@ -1,11 +1,11 @@
-using Loot.Core.Attributes;
-using Loot.Core.System.Core;
 using System;
 using System.Linq;
 using System.Reflection;
+using Loot.Core.Attributes;
+using Loot.Core.System.Core;
 using Terraria.ModLoader;
 
-namespace Loot.Core.System
+namespace Loot.Core.System.Modifier
 {
 	/// <summary>
 	/// A ModifierEffect signifies the effect of a modifier on a player
@@ -85,7 +85,7 @@ namespace Loot.Core.System
 			{
 				try
 				{
-					kvp.Key.Invoke(this, new object[] { player.player });
+					kvp.Key.Invoke(this, new object[] {player.player});
 				}
 				catch (Exception e)
 				{
@@ -113,7 +113,7 @@ namespace Loot.Core.System
 
 		public object Clone()
 		{
-			ModifierEffect clone = (ModifierEffect)MemberwiseClone();
+			ModifierEffect clone = (ModifierEffect) MemberwiseClone();
 			clone.Mod = Mod;
 			clone.Type = Type;
 			Clone(ref clone);

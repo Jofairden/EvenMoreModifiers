@@ -9,7 +9,7 @@ using Terraria;
 using Terraria.ModLoader;
 using Terraria.ModLoader.IO;
 
-namespace Loot.Core.System
+namespace Loot.Core.System.Modifier
 {
 	/// <summary>
 	/// Defines a modifier, which is an unloaded GlobalItem
@@ -34,6 +34,8 @@ namespace Loot.Core.System
 		}
 
 		public new string Name => GetType().Name;
+		public virtual string UniqueName => string.Empty;
+		public string GetFormattedUniqueName() => !string.IsNullOrEmpty(UniqueName) ? $"\"{UniqueName}\"" : string.Empty;
 
 		public virtual GlowmaskEntity GetGlowmaskEntity(Item item) => null;
 		public virtual ShaderEntity GetShaderEntity(Item item) => null;

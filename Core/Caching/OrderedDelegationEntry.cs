@@ -1,5 +1,5 @@
 using System.Reflection;
-using Loot.Core.System;
+using Loot.Core.System.Modifier;
 
 namespace Loot.Core.Caching
 {

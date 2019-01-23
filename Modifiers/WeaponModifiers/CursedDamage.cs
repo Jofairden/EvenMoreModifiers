@@ -1,7 +1,7 @@
 using System;
 using System.Linq;
 using Loot.Core.Attributes;
-using Loot.Core.System;
+using Loot.Core.System.Modifier;
 using Loot.Ext;
 using Terraria;
 using Terraria.ID;

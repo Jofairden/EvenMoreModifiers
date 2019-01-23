@@ -1,8 +1,8 @@
-using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Graphics;
 using System.Collections.ObjectModel;
 using System.Linq;
-using Loot.Core.System;
+using Loot.Core.System.Modifier;
+using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Graphics;
 using Terraria;
 using Terraria.ModLoader;
 using Terraria.Utilities;
@@ -29,18 +29,18 @@ namespace Loot
 
 		public bool ShouldBeIgnored(Item item, Player player)
 			=> !IsCheated && IsInVanitySot(item, player)
-				|| IsCheated && !IsInVanitySot(item, player) && !IsInInventory(item, player);
+			   || IsCheated && !IsInVanitySot(item, player) && !IsInInventory(item, player);
 
-		public bool IsInInventory(Item item, Player player) 
+		public bool IsInInventory(Item item, Player player)
 			=> player.inventory.Any(x => x.IsTheSameAs(item));
 
 		/// <summary>
 		/// Returns if the item is in a player's vanity slot
 		/// </summary>
-		public bool IsInVanitySot(Item item, Player player) 
+		public bool IsInVanitySot(Item item, Player player)
 			=> player.armor.Skip(13).Any(x => x.IsTheSameAs(item));
 
-		private bool IsNotEquippedAtAll(Item item, Player player) 
+		private bool IsNotEquippedAtAll(Item item, Player player)
 			=> !player.armor.Any(x => x.IsTheSameAs(item));
 
 		public override void UpdateAccessory(Item item, Player player, bool hideVisual)
@@ -67,7 +67,7 @@ namespace Loot
 			}
 		}
 
-		public static ActivatedModifierItem Item(Item item) 
+		public static ActivatedModifierItem Item(Item item)
 			=> item.GetGlobalItem<ActivatedModifierItem>();
 	}
 
@@ -848,7 +848,9 @@ namespace Loot
 			if (GetActivatedModifierItem(item).ShouldBeIgnored(item, player))
 			{
 				return base.Shoot(item, player, ref position, ref speedX, ref speedY, ref type, ref damage, ref knockBack);
-			};
+			}
+
+			;
 
 			bool b = base.Shoot(item, player, ref position, ref speedX, ref speedY, ref type, ref damage, ref knockBack);
 

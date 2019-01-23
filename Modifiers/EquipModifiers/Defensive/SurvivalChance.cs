@@ -1,7 +1,6 @@
 using System;
 using Loot.Core.Attributes;
-using Loot.Core.System;
-using Microsoft.Xna.Framework;
+using Loot.Core.System.Modifier;
 using Terraria;
 using Terraria.DataStructures;
 
@@ -38,7 +37,7 @@ namespace Loot.Modifiers.EquipModifiers.Defensive
 		public override ModifierTooltipBuilder GetTooltip()
 		{
 			return base.GetTooltip()
-				.WithPositive($"+{Properties.RoundedPower}% chance to survive lethal blows" 
+				.WithPositive($"+{Properties.RoundedPower}% chance to survive lethal blows"
 				              + $"{(Main.LocalPlayer.GetModPlayer<ModifierPlayer>().GetEffect<SurvivalEffect>().SurvivalChance >= SurvivalEffect.MAX_SURVIVAL_CHANCE ? $" (cap reached: {SurvivalEffect.MAX_SURVIVAL_CHANCE * 100f}%)" : "")}"
 				);
 		}

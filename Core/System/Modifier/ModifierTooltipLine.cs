@@ -1,6 +1,6 @@
 using Microsoft.Xna.Framework;
 
-namespace Loot.Core.System
+namespace Loot.Core.System.Modifier
 {
 	/// <summary>
 	/// Defines a tooltip line of a modifier

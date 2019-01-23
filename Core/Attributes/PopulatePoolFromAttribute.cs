@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
-using Loot.Core.System;
+using Loot.Core.System.Modifier;
 using Terraria.ModLoader;
 
 namespace Loot.Core.Attributes
@@ -38,12 +38,13 @@ namespace Loot.Core.Attributes
 				{
 					useAssembly = mod.Code;
 				}
-				
+
 				if (!useAssembly.GetTypes().Any(x => x.Namespace != null && x.Namespace.StartsWith(ns)))
 				{
 					throw new ArgumentException($"Namespace not found", nameof(ns));
 				}
 			}
+
 			Namespaces = namespaces;
 		}
 
@@ -54,6 +55,7 @@ namespace Loot.Core.Attributes
 			{
 				dict.Add(s, GetModifierClasses(s).ToList());
 			}
+
 			return dict;
 		}
 

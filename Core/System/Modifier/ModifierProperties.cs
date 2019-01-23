@@ -3,7 +3,7 @@ using System.IO;
 using Terraria;
 using Terraria.ModLoader.IO;
 
-namespace Loot.Core.System
+namespace Loot.Core.System.Modifier
 {
 	/// <summary>
 	/// Defines the properties of a modifier
@@ -23,20 +23,18 @@ namespace Loot.Core.System
 		public readonly bool IsUnique;
 		public float Magnitude { get; internal set; }
 		private float _power;
+
 		public float Power
 		{
 			get => _power;
 			internal set
 			{
 				_power = value;
-				RoundedPower = (float)Math.Round(value, RoundPrecision);
+				RoundedPower = (float) Math.Round(value, RoundPrecision);
 			}
 		}
-		public float RoundedPower
-		{
-			get;
-			private set;
-		}
+
+		public float RoundedPower { get; private set; }
 
 		public ModifierProperties(float minMagnitude = 1f, float maxMagnitude = 1f, float magnitudeStrength = 1f, float basePower = 1f, float rarityLevel = 1f, float rollChance = 1f, int roundPrecision = 0, bool isUnique = false)
 		{
@@ -54,7 +52,7 @@ namespace Loot.Core.System
 		{
 			Magnitude = RollMagnitude(magnitudePower, lukStat);
 
-			int iterations = (int)Math.Ceiling(lukStat) / 2;
+			int iterations = (int) Math.Ceiling(lukStat) / 2;
 
 			// makes you more lucky rolling better magnitudes
 			for (int i = 0; i < iterations; i++)
@@ -120,7 +118,7 @@ namespace Loot.Core.System
 			{
 				{"Magnitude", properties.Magnitude},
 				{"Power", properties.Power},
-				{"ModifierPropertiesSaveVersion", 1 }
+				{"ModifierPropertiesSaveVersion", 1}
 			};
 			properties.Save(item, tc);
 			return tc;
@@ -146,6 +144,7 @@ namespace Loot.Core.System
 				// Something was wrong with the TC, roll new values
 				prop = new ModifierProperties().RollMagnitudeAndPower();
 			}
+
 			prop.Load(item, tag);
 			return prop;
 		}
