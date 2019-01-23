@@ -1,6 +1,7 @@
 var class_loot_1_1_loot =
 [
     [ "Loot", "class_loot_1_1_loot.html#aff94937930e74f900f3fdba690a5ca9b", null ],
+    [ "AddMod", "class_loot_1_1_loot.html#a3f4fdc469aa29a32589adf1ef2a3659e", null ],
     [ "AddRecipes", "class_loot_1_1_loot.html#a9afccc75e56292d043923bb41284083c", null ],
     [ "Load", "class_loot_1_1_loot.html#a52ae642436e92b43a15d0a0ebbb9b25f", null ],
     [ "LoadMod", "class_loot_1_1_loot.html#a2f6338808984355fde163f0583e9be47", null ],

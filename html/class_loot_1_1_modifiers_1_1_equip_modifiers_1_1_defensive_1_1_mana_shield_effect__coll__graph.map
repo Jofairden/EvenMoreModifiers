@@ -1,5 +1,5 @@
 <map id="Loot.Modifiers.EquipModifiers.Defensive.ManaShieldEffect" name="Loot.Modifiers.EquipModifiers.Defensive.ManaShieldEffect">
-<area shape="rect" id="node2" href="$class_loot_1_1_core_1_1_system_1_1_modifier_effect.html" title="A ModifierEffect signifies the effect of a modifier on a player It should house the implementation..." alt="" coords="253,96,355,123"/>
+<area shape="rect" id="node2" href="$class_loot_1_1_core_1_1_system_1_1_modifier_1_1_modifier_effect.html" title="A ModifierEffect signifies the effect of a modifier on a player It should house the implementation..." alt="" coords="253,96,355,123"/>
 <area shape="rect" id="node3" href="$interface_loot_1_1_core_1_1_system_1_1_core_1_1_i_loadable_content.html" title="ILoadableContent" alt="" coords="5,5,128,32"/>
 <area shape="rect" id="node5" href="$class_i_cloneable.html" title="ICloneable" alt="" coords="335,5,419,32"/>
 </map>

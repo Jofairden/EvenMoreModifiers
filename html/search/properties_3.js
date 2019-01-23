@@ -1,7 +1,7 @@
 var searchData=
 [
-  ['defaultbuilder',['DefaultBuilder',['../class_loot_1_1_core_1_1_system_1_1_modifier_properties_builder.html#a3f83a3f38940f5427935314cadbd122a',1,'Loot::Core::System::ModifierPropertiesBuilder']]],
-  ['defaultproperties',['DefaultProperties',['../class_loot_1_1_core_1_1_system_1_1_modifier_properties_builder.html#a839967ccc754150a0f4274d644136f1d',1,'Loot::Core::System::ModifierPropertiesBuilder']]],
+  ['defaultbuilder',['DefaultBuilder',['../class_loot_1_1_core_1_1_system_1_1_modifier_1_1_modifier_properties_builder.html#ae898b374603705aad868beed40335045',1,'Loot::Core::System::Modifier::ModifierPropertiesBuilder']]],
+  ['defaultproperties',['DefaultProperties',['../class_loot_1_1_core_1_1_system_1_1_modifier_1_1_modifier_properties_builder.html#af33e70deda72397f49b4469c3bbb6a66',1,'Loot::Core::System::Modifier::ModifierPropertiesBuilder']]],
   ['delegationlevel',['DelegationLevel',['../class_loot_1_1_core_1_1_attributes_1_1_delegation_prioritization_attribute.html#a1687c617ae952bae8266833ca905728a',1,'Loot::Core::Attributes::DelegationPrioritizationAttribute']]],
   ['delegationprioritization',['DelegationPrioritization',['../class_loot_1_1_core_1_1_attributes_1_1_delegation_prioritization_attribute.html#af3d6afb846d67cdc370d4bb1660e38c9',1,'Loot::Core::Attributes::DelegationPrioritizationAttribute']]],
   ['destinationrectangle',['DestinationRectangle',['../class_loot_1_1_core_1_1_graphics_1_1_glowmask_entity.html#a34f3a4153073dedb2218046bd3209c86',1,'Loot.Core.Graphics.GlowmaskEntity.DestinationRectangle()'],['../class_loot_1_1_core_1_1_graphics_1_1_shader_entity.html#a82a12dfe5653258031dc4b589722c47d',1,'Loot.Core.Graphics.ShaderEntity.DestinationRectangle()']]],

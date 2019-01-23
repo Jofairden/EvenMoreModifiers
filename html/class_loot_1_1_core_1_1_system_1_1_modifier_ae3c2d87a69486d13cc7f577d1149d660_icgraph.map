@@ -1,5 +1,0 @@
-<map id="Loot.Core.System.Modifier.GetModifierProperties" name="Loot.Core.System.Modifier.GetModifierProperties">
-<area shape="rect" id="node2" href="$class_loot_1_1_core_1_1_system_1_1_modifier.html#a69262b86fae22496d50f8e4b0f82b566" title="Loot.Core.System.Modifier.\lClone" alt="" coords="254,5,437,46"/>
-<area shape="rect" id="node3" href="$class_loot_1_1_core_1_1_system_1_1_modifier.html#a17123f4658af6260c6ec1a21e82c23c4" title="Allows modder to do custom loading here Use the given TC to pull data you saved using Save(Item..." alt="" coords="240,95,451,121"/>
-<area shape="rect" id="node4" href="$class_loot_1_1_e_m_m_item.html#adb5a6b968d2055218bedb3f0ba3a4eee" title="Roll active modifiers, can roll up to n maximum effects Returns if any modifiers were activated ..." alt="" coords="238,145,453,172"/>
-</map>

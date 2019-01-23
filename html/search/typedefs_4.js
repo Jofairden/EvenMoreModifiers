@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['raritymap',['RarityMap',['../_mod_utils_8cs.html#a310a1e41a1bcd41e32a0cbf195a53e53',1,'ModUtils.cs']]]
+  ['raritymap',['RarityMap',['../_mod_utils_8cs.html#aed77c0373f38dd4c187771ef3488308f',1,'ModUtils.cs']]]
 ];

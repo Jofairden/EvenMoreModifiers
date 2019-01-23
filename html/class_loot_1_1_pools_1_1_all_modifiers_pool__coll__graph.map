@@ -1,7 +1,7 @@
 <map id="Loot.Pools.AllModifiersPool" name="Loot.Pools.AllModifiersPool">
-<area shape="rect" id="node2" href="$class_loot_1_1_core_1_1_system_1_1_modifier_pool.html" title="Defines a modifier pool. A modifier pool holds a certain amount of effects in an array It allows to r..." alt="" coords="513,189,607,216"/>
-<area shape="rect" id="node3" href="$interface_loot_1_1_core_1_1_system_1_1_core_1_1_i_loadable_content.html" title="ILoadableContent" alt="" coords="175,71,299,97"/>
-<area shape="rect" id="node5" href="$class_i_cloneable.html" title="ICloneable" alt="" coords="195,172,279,199"/>
-<area shape="rect" id="node6" href="$class_loot_1_1_core_1_1_attributes_1_1_populate_pool_from_attribute.html" title="Will populate a ModifierPool based on a namespace All Modifiers in that namespace will become part of..." alt="" coords="140,223,335,265"/>
-<area shape="rect" id="node7" href="$class_attribute.html" title="Attribute" alt="" coords="6,231,77,257"/>
+<area shape="rect" id="node2" href="$class_loot_1_1_core_1_1_system_1_1_modifier_1_1_modifier_pool.html" title="Defines a modifier pool. A modifier pool holds a certain amount of effects in an array It allows to r..." alt="" coords="513,216,607,243"/>
+<area shape="rect" id="node3" href="$interface_loot_1_1_core_1_1_system_1_1_core_1_1_i_loadable_content.html" title="ILoadableContent" alt="" coords="175,56,299,83"/>
+<area shape="rect" id="node5" href="$class_i_cloneable.html" title="ICloneable" alt="" coords="195,157,279,184"/>
+<area shape="rect" id="node7" href="$class_loot_1_1_core_1_1_attributes_1_1_populate_pool_from_attribute.html" title="Will populate a ModifierPool based on a namespace All Modifiers in that namespace will become part of..." alt="" coords="140,274,335,315"/>
+<area shape="rect" id="node8" href="$class_attribute.html" title="Attribute" alt="" coords="6,281,77,308"/>
 </map>

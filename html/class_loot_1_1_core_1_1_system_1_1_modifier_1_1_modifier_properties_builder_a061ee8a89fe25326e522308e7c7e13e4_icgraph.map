@@ -1,0 +1,4 @@
+<map id="Loot.Core.System.Modifier.ModifierPropertiesBuilder.WithBasePower" name="Loot.Core.System.Modifier.ModifierPropertiesBuilder.WithBasePower">
+<area shape="rect" id="node2" href="$class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_utility_1_1_move_speed_plus.html#af0299e3def51b663bf5b063e86d9e680" title="Loot.Modifiers.EquipModifiers.\lUtility.MoveSpeedPlus.GetModifier\lProperties" alt="" coords="253,5,480,61"/>
+<area shape="rect" id="node3" href="$class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_speed_plus.html#a9bc91e54fdf4c34cc709f3264d59f42c" title="Loot.Modifiers.WeaponModifiers.\lSpeedPlus.GetModifierProperties" alt="" coords="259,85,474,126"/>
+</map>

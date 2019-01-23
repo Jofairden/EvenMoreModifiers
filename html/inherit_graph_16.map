@@ -1,12 +1,12 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="node1" href="$class_global_item.html" title="GlobalItem" alt="" coords="73,2081,159,2108"/>
-<area shape="rect" id="node2" href="$class_loot_1_1_activated_modifier_item.html" title="Loot.ActivatedModifierItem" alt="" coords="303,1921,481,1948"/>
-<area shape="rect" id="node3" href="$class_loot_1_1_armor_item_hack.html" title="This class forces armor equips to be able to be reforged as accessories The actual activation to allo..." alt="" coords="321,1972,463,1999"/>
-<area shape="rect" id="node4" href="$class_loot_1_1_core_1_1_cubes_1_1_cube_u_i_extensions.html" title="Loot.Core.Cubes.CubeUIExtensions" alt="" coords="275,2023,509,2049"/>
-<area shape="rect" id="node5" href="$class_loot_1_1_core_1_1_graphics_1_1_glowmask_global_item.html" title="Loot.Core.Graphics.Glowmask\lGlobalItem" alt="" coords="291,2074,493,2115"/>
-<area shape="rect" id="node6" href="$class_loot_1_1_core_1_1_graphics_1_1_shader_global_item.html" title="Loot.Core.Graphics.Shader\lGlobalItem" alt="" coords="302,2139,482,2181"/>
-<area shape="rect" id="node7" href="$class_loot_1_1_core_1_1_system_1_1_modifier.html" title="Defines a modifier, which is an unloaded GlobalItem Making it a GlobalItem gives easy access to all h..." alt="" coords="303,2256,481,2283"/>
-<area shape="rect" id="node55" href="$class_loot_1_1_e_m_m_item.html" title="Defines an item that may be modified by modifiers from mods " alt="" coords="338,2205,446,2232"/>
+<area shape="rect" id="node1" href="$class_global_item.html" title="GlobalItem" alt="" coords="73,2073,159,2100"/>
+<area shape="rect" id="node2" href="$class_loot_1_1_activated_modifier_item.html" title="Loot.ActivatedModifierItem" alt="" coords="303,1913,481,1940"/>
+<area shape="rect" id="node3" href="$class_loot_1_1_armor_item_hack.html" title="This class forces armor equips to be able to be reforged as accessories The actual activation to allo..." alt="" coords="321,1964,463,1991"/>
+<area shape="rect" id="node4" href="$class_loot_1_1_core_1_1_cubes_1_1_cube_u_i_extensions.html" title="Loot.Core.Cubes.CubeUIExtensions" alt="" coords="275,2015,509,2041"/>
+<area shape="rect" id="node5" href="$class_loot_1_1_core_1_1_graphics_1_1_glowmask_global_item.html" title="Loot.Core.Graphics.Glowmask\lGlobalItem" alt="" coords="291,2066,493,2107"/>
+<area shape="rect" id="node6" href="$class_loot_1_1_core_1_1_graphics_1_1_shader_global_item.html" title="Loot.Core.Graphics.Shader\lGlobalItem" alt="" coords="302,2131,482,2173"/>
+<area shape="rect" id="node7" href="$class_loot_1_1_core_1_1_system_1_1_modifier_1_1_modifier.html" title="Defines a modifier, which is an unloaded GlobalItem Making it a GlobalItem gives easy access to all h..." alt="" coords="301,2249,483,2290"/>
+<area shape="rect" id="node55" href="$class_loot_1_1_e_m_m_item.html" title="Defines an item that may be modified by modifiers from mods " alt="" coords="338,2197,446,2224"/>
 <area shape="rect" id="node8" href="$class_loot_1_1_modifiers_1_1_accessory_modifier.html" title="Defines a modifier that can roll on an accessory item You can use this class and add to CanRoll by ca..." alt="" coords="583,2219,753,2261"/>
 <area shape="rect" id="node9" href="$class_loot_1_1_modifiers_1_1_armor_modifier.html" title="Defines a modifier that can roll on a weapon item You can use this class and add to CanRoll by callin..." alt="" coords="573,2285,763,2312"/>
 <area shape="rect" id="node10" href="$class_loot_1_1_modifiers_1_1_equip_modifier.html" title="Defines a modifier that can roll on an accessory item or an armor item These modifiers will have 60% ..." alt="" coords="575,895,761,921"/>
@@ -54,10 +54,10 @@
 <area shape="rect" id="node54" href="$class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_velocity_plus.html" title="Loot.Modifiers.WeaponModifiers.\lVelocityPlus" alt="" coords="828,2422,1041,2463"/>
 <area shape="rect" id="node40" href="$class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_random_debuff.html" title="Rolls a random debuff " alt="" coords="1091,2487,1304,2529"/>
 <area shape="rect" id="node48" href="$class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_ice_1_1_icy_modifier.html" title="Loot.Modifiers.WeaponModifiers.\lIce.IcyModifier" alt="" coords="1091,2030,1304,2071"/>
-<area shape="rect" id="node56" href="$class_i_cloneable.html" title="ICloneable" alt="" coords="74,2795,158,2821"/>
-<area shape="rect" id="node57" href="$class_loot_1_1_core_1_1_system_1_1_modifier_effect.html" title="A ModifierEffect signifies the effect of a modifier on a player It should house the implementation..." alt="" coords="303,2729,481,2770"/>
-<area shape="rect" id="node70" href="$class_loot_1_1_core_1_1_system_1_1_modifier_pool.html" title="Defines a modifier pool. A modifier pool holds a certain amount of effects in an array It allows to r..." alt="" coords="290,2795,494,2821"/>
-<area shape="rect" id="node72" href="$class_loot_1_1_core_1_1_system_1_1_modifier_rarity.html" title="Defines the rarity of a modifier " alt="" coords="303,3223,481,3265"/>
+<area shape="rect" id="node56" href="$class_i_cloneable.html" title="ICloneable" alt="" coords="74,2800,158,2827"/>
+<area shape="rect" id="node57" href="$class_loot_1_1_core_1_1_system_1_1_modifier_1_1_modifier_effect.html" title="A ModifierEffect signifies the effect of a modifier on a player It should house the implementation..." alt="" coords="301,2729,483,2770"/>
+<area shape="rect" id="node70" href="$class_loot_1_1_core_1_1_system_1_1_modifier_1_1_modifier_pool.html" title="Defines a modifier pool. A modifier pool holds a certain amount of effects in an array It allows to r..." alt="" coords="301,2794,483,2835"/>
+<area shape="rect" id="node72" href="$class_loot_1_1_core_1_1_system_1_1_modifier_1_1_modifier_rarity.html" title="Defines the rarity of a modifier " alt="" coords="301,3223,483,3265"/>
 <area shape="rect" id="node58" href="$class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_defensive_1_1_dodge_effect.html" title="Loot.Modifiers.EquipModifiers.\lDefensive.DodgeEffect" alt="" coords="569,2337,767,2378"/>
 <area shape="rect" id="node59" href="$class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_defensive_1_1_immunity_effect.html" title="Loot.Modifiers.EquipModifiers.\lDefensive.ImmunityEffect" alt="" coords="569,2402,767,2443"/>
 <area shape="rect" id="node60" href="$class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_defensive_1_1_life_regen_effect.html" title="Loot.Modifiers.EquipModifiers.\lDefensive.LifeRegenEffect" alt="" coords="569,2467,767,2509"/>
@@ -76,5 +76,5 @@
 <area shape="rect" id="node75" href="$class_loot_1_1_rarities_1_1_rare_rarity.html" title="Loot.Rarities.RareRarity" alt="" coords="587,3172,749,3199"/>
 <area shape="rect" id="node76" href="$class_loot_1_1_rarities_1_1_transcendent_rarity.html" title="Loot.Rarities.Transcendent\lRarity" alt="" coords="579,3223,757,3265"/>
 <area shape="rect" id="node77" href="$class_loot_1_1_rarities_1_1_uncommon_rarity.html" title="Loot.Rarities.UncommonRarity" alt="" coords="567,3289,769,3316"/>
-<area shape="rect" id="node78" href="$interface_loot_1_1_core_1_1_system_1_1_core_1_1_i_loadable_content.html" title="Loot.Core.System.Core.ILoadable\lContent" alt="" coords="6,2729,226,2770"/>
+<area shape="rect" id="node78" href="$interface_loot_1_1_core_1_1_system_1_1_core_1_1_i_loadable_content.html" title="Loot.Core.System.Core.ILoadable\lContent" alt="" coords="6,2731,226,2773"/>
 </map>

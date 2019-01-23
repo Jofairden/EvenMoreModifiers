@@ -1,11 +1,11 @@
 var searchData=
 [
-  ['rarity',['Rarity',['../class_loot_1_1_core_1_1_system_1_1_modifier_pool.html#a1659151842a69a48a85806193bec6178',1,'Loot::Core::System::ModifierPool']]],
-  ['raritylevel',['RarityLevel',['../class_loot_1_1_core_1_1_system_1_1_modifier_properties_builder.html#a773269548ef4a40b29ad328391c8aca2',1,'Loot::Core::System::ModifierPropertiesBuilder']]],
-  ['requiredraritylevel',['RequiredRarityLevel',['../class_loot_1_1_core_1_1_system_1_1_modifier_rarity.html#a6efdb9ef5276c79d4682f531aefe7b38',1,'Loot::Core::System::ModifierRarity']]],
-  ['rollchance',['RollChance',['../class_loot_1_1_core_1_1_system_1_1_modifier_properties_builder.html#ae3865e9b722b0ea15ac68f17758e8477',1,'Loot::Core::System::ModifierPropertiesBuilder']]],
+  ['rarity',['Rarity',['../class_loot_1_1_core_1_1_system_1_1_modifier_1_1_modifier_pool.html#a97746eadb455b44782c09d09c35f8048',1,'Loot::Core::System::Modifier::ModifierPool']]],
+  ['raritylevel',['RarityLevel',['../class_loot_1_1_core_1_1_system_1_1_modifier_1_1_modifier_properties_builder.html#a471a1953f16b8e279377b0315b7dfb2a',1,'Loot::Core::System::Modifier::ModifierPropertiesBuilder']]],
+  ['requiredraritylevel',['RequiredRarityLevel',['../class_loot_1_1_core_1_1_system_1_1_modifier_1_1_modifier_rarity.html#a271eaca061a6c4a70a948f232628e562',1,'Loot::Core::System::Modifier::ModifierRarity']]],
+  ['rollchance',['RollChance',['../class_loot_1_1_core_1_1_system_1_1_modifier_1_1_modifier_properties_builder.html#a884b58fd8f94aab89faab28a63b771c0',1,'Loot::Core::System::Modifier::ModifierPropertiesBuilder']]],
   ['rollnextchance',['RollNextChance',['../class_loot_1_1_core_1_1_cubes_1_1_item_roll_properties.html#a1f78e78cc145196a4276869d2a78edea',1,'Loot::Core::Cubes::ItemRollProperties']]],
   ['rollpredefinedpoolchance',['RollPredefinedPoolChance',['../class_loot_1_1_core_1_1_cubes_1_1_item_roll_properties.html#adff74defdf66c4a15bd37bbea2fd0474',1,'Loot::Core::Cubes::ItemRollProperties']]],
-  ['roundedpower',['RoundedPower',['../class_loot_1_1_core_1_1_system_1_1_modifier_properties.html#a14f10daa691d3c84b0babf8452bb6b47',1,'Loot::Core::System::ModifierProperties']]],
-  ['roundprecision',['RoundPrecision',['../class_loot_1_1_core_1_1_system_1_1_modifier_properties_builder.html#aacf75fa54ea12084b680b667801638a3',1,'Loot::Core::System::ModifierPropertiesBuilder']]]
+  ['roundedpower',['RoundedPower',['../class_loot_1_1_core_1_1_system_1_1_modifier_1_1_modifier_properties.html#ad71fbad530844a0b6cae1aa458980d62',1,'Loot::Core::System::Modifier::ModifierProperties']]],
+  ['roundprecision',['RoundPrecision',['../class_loot_1_1_core_1_1_system_1_1_modifier_1_1_modifier_properties_builder.html#a950239d0da67195ec6ced3a6f2e68ef6',1,'Loot::Core::System::Modifier::ModifierPropertiesBuilder']]]
 ];

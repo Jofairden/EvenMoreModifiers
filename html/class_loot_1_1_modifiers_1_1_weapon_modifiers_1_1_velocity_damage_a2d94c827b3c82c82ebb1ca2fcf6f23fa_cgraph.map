@@ -1,4 +1,4 @@
 <map id="Loot.Modifiers.WeaponModifiers.VelocityDamage.GetModifierProperties" name="Loot.Modifiers.WeaponModifiers.VelocityDamage.GetModifierProperties">
-<area shape="rect" id="node2" href="$class_loot_1_1_core_1_1_system_1_1_modifier_properties_builder.html#afc21b5754f1127b3217e11ba64c415cd" title="Loot.Core.System.Modifier\lPropertiesBuilder.WithMaxMagnitude" alt="" coords="305,5,543,46"/>
-<area shape="rect" id="node3" href="$class_loot_1_1_core_1_1_system_1_1_modifier_properties_builder.html#ab050bf273937b5a75f98c60d3acf0c9e" title="Loot.Core.System.Modifier\lPropertiesBuilder.WithRoundPrecision" alt="" coords="302,70,546,111"/>
+<area shape="rect" id="node2" href="$class_loot_1_1_core_1_1_system_1_1_modifier_1_1_modifier_properties_builder.html#af322e369df14e9bab51031fa400db131" title="Loot.Core.System.Modifier.\lModifierPropertiesBuilder.With\lMaxMagnitude" alt="" coords="302,5,501,61"/>
+<area shape="rect" id="node3" href="$class_loot_1_1_core_1_1_system_1_1_modifier_1_1_modifier_properties_builder.html#a1759a4e7ed5fb7e9f03bd24e640381d6" title="Loot.Core.System.Modifier.\lModifierPropertiesBuilder.With\lRoundPrecision" alt="" coords="302,85,501,141"/>
 </map>

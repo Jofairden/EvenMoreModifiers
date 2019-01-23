@@ -1,0 +1,6 @@
+<map id="Loot.Core.System.Modifier.ModifierPool" name="Loot.Core.System.Modifier.ModifierPool">
+<area shape="rect" id="node2" href="$interface_loot_1_1_core_1_1_system_1_1_core_1_1_i_loadable_content.html" title="ILoadableContent" alt="" coords="175,5,299,32"/>
+<area shape="rect" id="node4" href="$class_i_cloneable.html" title="ICloneable" alt="" coords="195,107,279,133"/>
+<area shape="rect" id="node6" href="$class_loot_1_1_core_1_1_attributes_1_1_populate_pool_from_attribute.html" title="Will populate a ModifierPool based on a namespace All Modifiers in that namespace will become part of..." alt="" coords="140,223,335,265"/>
+<area shape="rect" id="node7" href="$class_attribute.html" title="Attribute" alt="" coords="6,231,77,257"/>
+</map>

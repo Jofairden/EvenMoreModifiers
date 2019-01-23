@@ -1,0 +1,16 @@
+<map id="Loot.Core.System.Modifier.ModifierEffect" name="Loot.Core.System.Modifier.ModifierEffect">
+<area shape="rect" id="node5" href="$class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_defensive_1_1_dodge_effect.html" title="Loot.Modifiers.EquipModifiers.\lDefensive.DodgeEffect" alt="" coords="457,5,655,46"/>
+<area shape="rect" id="node6" href="$class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_defensive_1_1_immunity_effect.html" title="Loot.Modifiers.EquipModifiers.\lDefensive.ImmunityEffect" alt="" coords="457,70,655,111"/>
+<area shape="rect" id="node7" href="$class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_defensive_1_1_life_regen_effect.html" title="Loot.Modifiers.EquipModifiers.\lDefensive.LifeRegenEffect" alt="" coords="457,135,655,177"/>
+<area shape="rect" id="node8" href="$class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_defensive_1_1_mana_shield_effect.html" title="Loot.Modifiers.EquipModifiers.\lDefensive.ManaShieldEffect" alt="" coords="457,201,655,242"/>
+<area shape="rect" id="node9" href="$class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_defensive_1_1_percent_def_boost_effect.html" title="Loot.Modifiers.EquipModifiers.\lDefensive.PercentDefBoostEffect" alt="" coords="446,266,666,307"/>
+<area shape="rect" id="node10" href="$class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_defensive_1_1_survival_effect.html" title="Loot.Modifiers.EquipModifiers.\lDefensive.SurvivalEffect" alt="" coords="457,331,655,373"/>
+<area shape="rect" id="node11" href="$class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_offensive_1_1_crit_damage_plus_effect.html" title="Loot.Modifiers.EquipModifiers.\lOffensive.CritDamagePlusEffect" alt="" coords="449,397,663,438"/>
+<area shape="rect" id="node12" href="$class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_offensive_1_1_healthy_foes_effect.html" title="Loot.Modifiers.EquipModifiers.\lOffensive.HealthyFoesEffect" alt="" coords="457,462,655,503"/>
+<area shape="rect" id="node13" href="$class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_utility_1_1_light_effect.html" title="Loot.Modifiers.EquipModifiers.\lUtility.LightEffect" alt="" coords="457,527,655,569"/>
+<area shape="rect" id="node14" href="$class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_utility_1_1_luck_effect.html" title="Loot.Modifiers.EquipModifiers.\lUtility.LuckEffect" alt="" coords="457,593,655,634"/>
+<area shape="rect" id="node15" href="$class_loot_1_1_modifiers_1_1_weapon_debuff_effect.html" title="Loot.Modifiers.WeaponDebuff\lEffect" alt="" coords="459,658,653,699"/>
+<area shape="rect" id="node16" href="$class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_cursed_effect.html" title="Loot.Modifiers.WeaponModifiers.\lCursedEffect" alt="" coords="449,723,663,765"/>
+<area shape="rect" id="node2" href="$interface_loot_1_1_core_1_1_system_1_1_core_1_1_i_loadable_content.html" title="ILoadableContent" alt="" coords="23,321,147,348"/>
+<area shape="rect" id="node4" href="$class_i_cloneable.html" title="ICloneable" alt="" coords="43,423,127,449"/>
+</map>

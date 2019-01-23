@@ -3,7 +3,7 @@
 <area shape="rect" id="node3" href="$class_loot_1_1_activated_modifier_item.html#aedcb371be998be72f5e8d43064e0827f" title="Returns if the item is in a player&#39;s vanity slot " alt="" coords="494,78,677,119"/>
 <area shape="rect" id="node4" href="$class_loot_1_1_activated_modifier_item.html#a735629d51b2d3001807c835bf5cab4ff" title="Loot.ActivatedModifierItem.\lIsNotEquippedAtAll" alt="" coords="494,231,677,273"/>
 <area shape="rect" id="node5" href="$class_loot_1_1_activated_modifier_item.html#a6bb0485006eaaa1ab477c420abb67f15" title="Loot.ActivatedModifierItem.Item" alt="" coords="237,173,445,200"/>
-<area shape="rect" id="node6" href="$class_loot_1_1_core_1_1_system_1_1_modifier.html#a7e94f1e766ebaf41f42b391a2e66115d" title="Loot.Core.System.Modifier.\lSetDefaults" alt="" coords="250,225,433,266"/>
+<area shape="rect" id="node6" href="$class_loot_1_1_core_1_1_system_1_1_modifier_1_1_modifier.html#a21067b9deaafea9d226bc74a2acf49a0" title="Loot.Core.System.Modifier.\lModifier.SetDefaults" alt="" coords="250,225,433,266"/>
 <area shape="rect" id="node7" href="$class_loot_1_1_activated_modifier_item.html#ac0ba9cc7b2d0d2b2c62e9431e6acfc48" title="Loot.ActivatedModifierItem.\lShouldBeIgnored" alt="" coords="250,290,433,331"/>
 <area shape="rect" id="node8" href="$class_loot_1_1_activated_modifier_item.html#a5b7691b08a15216ab61dd4e9055662d4" title="Loot.ActivatedModifierItem.\lUpdateAccessory" alt="" coords="250,107,433,149"/>
 </map>

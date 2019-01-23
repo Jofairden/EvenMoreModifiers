@@ -11,7 +11,7 @@ var searchData=
   ['unload',['Unload',['../class_loot_1_1_core_1_1_mod_content_1_1_graphics_mod_content.html#acba742411b1f4d591a6eec324406f5f5',1,'Loot.Core.ModContent.GraphicsModContent.Unload()'],['../class_loot_1_1_core_1_1_mod_content_1_1_texture_mod_content.html#a5b724ec0e964058c73ae867da0b41247',1,'Loot.Core.ModContent.TextureModContent.Unload()'],['../class_loot_1_1_loot.html#a583d8d3d69bdd106d25030c5309e37bc',1,'Loot.Loot.Unload()']]],
   ['update',['Update',['../class_loot_1_1_u_i_1_1_core_1_1_u_i_interactable_item_panel.html#a50e85eaebdb657ed535be66a0c446cef',1,'Loot::UI::Core::UIInteractableItemPanel']]],
   ['updateaccessory',['UpdateAccessory',['../class_loot_1_1_activated_modifier_item.html#a5b7691b08a15216ab61dd4e9055662d4',1,'Loot::ActivatedModifierItem']]],
-  ['updatearmorset',['UpdateArmorSet',['../class_loot_1_1_core_1_1_system_1_1_modifier.html#ae6ddb93a448c6633174b91b29912092c',1,'Loot::Core::System::Modifier']]],
+  ['updatearmorset',['UpdateArmorSet',['../class_loot_1_1_core_1_1_system_1_1_modifier_1_1_modifier.html#a05cf4dfd6a6c0cc02e33abc3abafce5c',1,'Loot::Core::System::Modifier::Modifier']]],
   ['updateattachments',['UpdateAttachments',['../class_loot_1_1_core_1_1_caching_1_1_modifier_cache_player.html#a6d13a915c8488f15fa7dd071022f85b3',1,'Loot::Core::Caching::ModifierCachePlayer']]],
   ['updatebadliferegen',['UpdateBadLifeRegen',['../class_loot_1_1_modifier_player.html#a15d8d9bda2ed8244fae1c0a5de7ddee8',1,'Loot::ModifierPlayer']]],
   ['updatecheatsheetcache',['UpdateCheatSheetCache',['../class_loot_1_1_core_1_1_caching_1_1_modifier_cache_player.html#a59240f62e87c50eaae97df20ca2e5d1b',1,'Loot::Core::Caching::ModifierCachePlayer']]],
@@ -29,7 +29,7 @@ var searchData=
   ['updateusedamage',['UpdateUseDamage',['../class_loot_1_1_modifiers_1_1_weapon_modifier.html#a669438a07451c8e82d514ede19fbda22',1,'Loot::Modifiers::WeaponModifier']]],
   ['updateuseknockback',['UpdateUseKnockback',['../class_loot_1_1_modifiers_1_1_weapon_modifier.html#ab0668c8452692232348e87640f26e5f2',1,'Loot::Modifiers::WeaponModifier']]],
   ['updatevanitycache',['UpdateVanityCache',['../class_loot_1_1_core_1_1_caching_1_1_modifier_cache_player.html#aa4daaef3e93cfec1180ec53e159ba4d7',1,'Loot::Core::Caching::ModifierCachePlayer']]],
-  ['updatevanityset',['UpdateVanitySet',['../class_loot_1_1_core_1_1_system_1_1_modifier.html#aef40a628ea475d8f095afaa8d2dfd35e',1,'Loot::Core::System::Modifier']]],
+  ['updatevanityset',['UpdateVanitySet',['../class_loot_1_1_core_1_1_system_1_1_modifier_1_1_modifier.html#a91591941007095fc9badb693f2078eed',1,'Loot::Core::System::Modifier::Modifier']]],
   ['useseffectattribute',['UsesEffectAttribute',['../class_loot_1_1_core_1_1_attributes_1_1_uses_effect_attribute.html#abcb21092ec20cf52b0a12857edbf39fb',1,'Loot::Core::Attributes::UsesEffectAttribute']]],
-  ['usingdefault',['UsingDefault',['../class_loot_1_1_core_1_1_system_1_1_modifier_properties_builder.html#a1176e6004abefd2e2ddcac6e558b2617',1,'Loot.Core.System.ModifierPropertiesBuilder.UsingDefault(ModifierProperties val)'],['../class_loot_1_1_core_1_1_system_1_1_modifier_properties_builder.html#a2c7a11262d1a06eb64bbc28ec348f2e0',1,'Loot.Core.System.ModifierPropertiesBuilder.UsingDefault(ModifierPropertiesBuilder val)']]]
+  ['usingdefault',['UsingDefault',['../class_loot_1_1_core_1_1_system_1_1_modifier_1_1_modifier_properties_builder.html#aeba81fb8fe35a91b9a076de97bc87237',1,'Loot.Core.System.Modifier.ModifierPropertiesBuilder.UsingDefault(ModifierProperties val)'],['../class_loot_1_1_core_1_1_system_1_1_modifier_1_1_modifier_properties_builder.html#afc388a672a322404f354d10f11da3765',1,'Loot.Core.System.Modifier.ModifierPropertiesBuilder.UsingDefault(ModifierPropertiesBuilder val)']]]
 ];

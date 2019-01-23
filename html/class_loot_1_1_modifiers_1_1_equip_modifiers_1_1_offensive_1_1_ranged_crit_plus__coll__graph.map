@@ -1,6 +1,6 @@
 <map id="Loot.Modifiers.EquipModifiers.Offensive.RangedCritPlus" name="Loot.Modifiers.EquipModifiers.Offensive.RangedCritPlus">
-<area shape="rect" id="node2" href="$class_loot_1_1_modifiers_1_1_equip_modifier.html" title="Defines a modifier that can roll on an accessory item or an armor item These modifiers will have 60% ..." alt="" coords="453,132,555,159"/>
-<area shape="rect" id="node3" href="$class_loot_1_1_core_1_1_system_1_1_modifier.html" title="Defines a modifier, which is an unloaded GlobalItem Making it a GlobalItem gives easy access to all h..." alt="" coords="334,132,402,159"/>
+<area shape="rect" id="node2" href="$class_loot_1_1_modifiers_1_1_equip_modifier.html" title="Defines a modifier that can roll on an accessory item or an armor item These modifiers will have 60% ..." alt="" coords="453,157,555,184"/>
+<area shape="rect" id="node3" href="$class_loot_1_1_core_1_1_system_1_1_modifier_1_1_modifier.html" title="Defines a modifier, which is an unloaded GlobalItem Making it a GlobalItem gives easy access to all h..." alt="" coords="334,157,402,184"/>
 <area shape="rect" id="node4" href="$class_global_item.html" title="GlobalItem" alt="" coords="43,5,128,32"/>
 <area shape="rect" id="node5" href="$interface_loot_1_1_core_1_1_system_1_1_core_1_1_i_loadable_content.html" title="ILoadableContent" alt="" coords="23,56,147,83"/>
 <area shape="rect" id="node7" href="$class_i_cloneable.html" title="ICloneable" alt="" coords="43,157,127,184"/>

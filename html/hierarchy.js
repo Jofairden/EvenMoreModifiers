@@ -9,7 +9,7 @@ var hierarchy =
     ] ],
     [ "Loot.Core.Caching.AutoDelegationEntry", "class_loot_1_1_core_1_1_caching_1_1_auto_delegation_entry.html", null ],
     [ "Loot.Core.System.Core.BaseContent< T >", "class_loot_1_1_core_1_1_system_1_1_core_1_1_base_content.html", null ],
-    [ "Loot.Core.System.Core.BaseContent< Modifier >", "class_loot_1_1_core_1_1_system_1_1_core_1_1_base_content.html", [
+    [ "Loot.Core.System.Core.BaseContent< Modifier.Modifier >", "class_loot_1_1_core_1_1_system_1_1_core_1_1_base_content.html", [
       [ "Loot.Core.System.Content.ModifierContent", "class_loot_1_1_core_1_1_system_1_1_content_1_1_modifier_content.html", null ]
     ] ],
     [ "Loot.Core.System.Core.BaseContent< ModifierEffect >", "class_loot_1_1_core_1_1_system_1_1_core_1_1_base_content.html", [
@@ -30,7 +30,7 @@ var hierarchy =
       [ "Loot.Core.Cubes.CubeUIExtensions", "class_loot_1_1_core_1_1_cubes_1_1_cube_u_i_extensions.html", null ],
       [ "Loot.Core.Graphics.GlowmaskGlobalItem", "class_loot_1_1_core_1_1_graphics_1_1_glowmask_global_item.html", null ],
       [ "Loot.Core.Graphics.ShaderGlobalItem", "class_loot_1_1_core_1_1_graphics_1_1_shader_global_item.html", null ],
-      [ "Loot.Core.System.Modifier", "class_loot_1_1_core_1_1_system_1_1_modifier.html", [
+      [ "Loot.Core.System.Modifier.Modifier", "class_loot_1_1_core_1_1_system_1_1_modifier_1_1_modifier.html", [
         [ "Loot.Modifiers.AccessoryModifier", "class_loot_1_1_modifiers_1_1_accessory_modifier.html", null ],
         [ "Loot.Modifiers.ArmorModifier", "class_loot_1_1_modifiers_1_1_armor_modifier.html", null ],
         [ "Loot.Modifiers.EquipModifier", "class_loot_1_1_modifiers_1_1_equip_modifier.html", [
@@ -97,8 +97,8 @@ var hierarchy =
     ] ],
     [ "Loot.Core.Graphics.GraphicsUtils", "class_loot_1_1_core_1_1_graphics_1_1_graphics_utils.html", null ],
     [ "ICloneable", "class_i_cloneable.html", [
-      [ "Loot.Core.System.Modifier", "class_loot_1_1_core_1_1_system_1_1_modifier.html", null ],
-      [ "Loot.Core.System.ModifierEffect", "class_loot_1_1_core_1_1_system_1_1_modifier_effect.html", [
+      [ "Loot.Core.System.Modifier.Modifier", "class_loot_1_1_core_1_1_system_1_1_modifier_1_1_modifier.html", null ],
+      [ "Loot.Core.System.Modifier.ModifierEffect", "class_loot_1_1_core_1_1_system_1_1_modifier_1_1_modifier_effect.html", [
         [ "Loot.Modifiers.EquipModifiers.Defensive.DodgeEffect", "class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_defensive_1_1_dodge_effect.html", null ],
         [ "Loot.Modifiers.EquipModifiers.Defensive.ImmunityEffect", "class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_defensive_1_1_immunity_effect.html", null ],
         [ "Loot.Modifiers.EquipModifiers.Defensive.LifeRegenEffect", "class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_defensive_1_1_life_regen_effect.html", null ],
@@ -112,10 +112,10 @@ var hierarchy =
         [ "Loot.Modifiers.WeaponDebuffEffect", "class_loot_1_1_modifiers_1_1_weapon_debuff_effect.html", null ],
         [ "Loot.Modifiers.WeaponModifiers.CursedEffect", "class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_cursed_effect.html", null ]
       ] ],
-      [ "Loot.Core.System.ModifierPool", "class_loot_1_1_core_1_1_system_1_1_modifier_pool.html", [
+      [ "Loot.Core.System.Modifier.ModifierPool", "class_loot_1_1_core_1_1_system_1_1_modifier_1_1_modifier_pool.html", [
         [ "Loot.Pools.AllModifiersPool", "class_loot_1_1_pools_1_1_all_modifiers_pool.html", null ]
       ] ],
-      [ "Loot.Core.System.ModifierRarity", "class_loot_1_1_core_1_1_system_1_1_modifier_rarity.html", [
+      [ "Loot.Core.System.Modifier.ModifierRarity", "class_loot_1_1_core_1_1_system_1_1_modifier_1_1_modifier_rarity.html", [
         [ "Loot.Rarities.CommonRarity", "class_loot_1_1_rarities_1_1_common_rarity.html", null ],
         [ "Loot.Rarities.LegendaryRarity", "class_loot_1_1_rarities_1_1_legendary_rarity.html", null ],
         [ "Loot.Rarities.RareRarity", "class_loot_1_1_rarities_1_1_rare_rarity.html", null ],
@@ -130,10 +130,10 @@ var hierarchy =
       [ "LootTests.ModifierPropertiesTests.FakeProperties", "class_loot_tests_1_1_modifier_properties_tests_1_1_fake_properties.html", null ]
     ] ],
     [ "Loot.Core.System.Core.ILoadableContent", "interface_loot_1_1_core_1_1_system_1_1_core_1_1_i_loadable_content.html", [
-      [ "Loot.Core.System.Modifier", "class_loot_1_1_core_1_1_system_1_1_modifier.html", null ],
-      [ "Loot.Core.System.ModifierEffect", "class_loot_1_1_core_1_1_system_1_1_modifier_effect.html", null ],
-      [ "Loot.Core.System.ModifierPool", "class_loot_1_1_core_1_1_system_1_1_modifier_pool.html", null ],
-      [ "Loot.Core.System.ModifierRarity", "class_loot_1_1_core_1_1_system_1_1_modifier_rarity.html", null ]
+      [ "Loot.Core.System.Modifier.Modifier", "class_loot_1_1_core_1_1_system_1_1_modifier_1_1_modifier.html", null ],
+      [ "Loot.Core.System.Modifier.ModifierEffect", "class_loot_1_1_core_1_1_system_1_1_modifier_1_1_modifier_effect.html", null ],
+      [ "Loot.Core.System.Modifier.ModifierPool", "class_loot_1_1_core_1_1_system_1_1_modifier_1_1_modifier_pool.html", null ],
+      [ "Loot.Core.System.Modifier.ModifierRarity", "class_loot_1_1_core_1_1_system_1_1_modifier_1_1_modifier_rarity.html", null ]
     ] ],
     [ "Loot.Core.Cubes.ItemRollProperties", "class_loot_1_1_core_1_1_cubes_1_1_item_roll_properties.html", null ],
     [ "Loot.Ext.ItemUtils", "class_loot_1_1_ext_1_1_item_utils.html", null ],
@@ -144,23 +144,20 @@ var hierarchy =
       [ "LootTests.FakeMod", "class_loot_tests_1_1_fake_mod.html", null ]
     ] ],
     [ "Loot.Core.ModContent.ModContentManager", "class_loot_1_1_core_1_1_mod_content_1_1_mod_content_manager.html", null ],
-    [ "Modifier", "class_modifier.html", [
-      [ "LootTests.TestModifiers.TestApplyMod", "class_loot_tests_1_1_test_modifiers_1_1_test_apply_mod.html", null ]
-    ] ],
-    [ "Loot.Core.System.ModifierContext", "struct_loot_1_1_core_1_1_system_1_1_modifier_context.html", null ],
+    [ "Loot.Core.System.Modifier.ModifierContext", "struct_loot_1_1_core_1_1_system_1_1_modifier_1_1_modifier_context.html", null ],
     [ "ModifierPool", "class_modifier_pool.html", [
       [ "LootTests.TestPools.TestPool", "class_loot_tests_1_1_test_pools_1_1_test_pool.html", null ]
     ] ],
-    [ "Loot.Core.System.ModifierProperties", "class_loot_1_1_core_1_1_system_1_1_modifier_properties.html", null ],
-    [ "Loot.Core.System.ModifierPropertiesBuilder", "class_loot_1_1_core_1_1_system_1_1_modifier_properties_builder.html", null ],
+    [ "Loot.Core.System.Modifier.ModifierProperties", "class_loot_1_1_core_1_1_system_1_1_modifier_1_1_modifier_properties.html", null ],
+    [ "Loot.Core.System.Modifier.ModifierPropertiesBuilder", "class_loot_1_1_core_1_1_system_1_1_modifier_1_1_modifier_properties_builder.html", null ],
     [ "LootTests.ModifierPropertiesTests", "class_loot_tests_1_1_modifier_properties_tests.html", null ],
     [ "ModifierRarity", "class_modifier_rarity.html", [
       [ "LootTests.TestRarities.TestRarity", "class_loot_tests_1_1_test_rarities_1_1_test_rarity.html", null ]
     ] ],
-    [ "Loot.Core.System.ModifierTooltipBuilder", "class_loot_1_1_core_1_1_system_1_1_modifier_tooltip_builder.html", null ],
-    [ "Loot.Core.System.ModifierTooltipLine", "class_loot_1_1_core_1_1_system_1_1_modifier_tooltip_line.html", [
-      [ "Loot.Core.System.NegativeTooltipLine", "class_loot_1_1_core_1_1_system_1_1_negative_tooltip_line.html", null ],
-      [ "Loot.Core.System.PositiveTooltipLine", "class_loot_1_1_core_1_1_system_1_1_positive_tooltip_line.html", null ]
+    [ "Loot.Core.System.Modifier.ModifierTooltipBuilder", "class_loot_1_1_core_1_1_system_1_1_modifier_1_1_modifier_tooltip_builder.html", null ],
+    [ "Loot.Core.System.Modifier.ModifierTooltipLine", "class_loot_1_1_core_1_1_system_1_1_modifier_1_1_modifier_tooltip_line.html", [
+      [ "Loot.Core.System.Modifier.NegativeTooltipLine", "class_loot_1_1_core_1_1_system_1_1_modifier_1_1_negative_tooltip_line.html", null ],
+      [ "Loot.Core.System.Modifier.PositiveTooltipLine", "class_loot_1_1_core_1_1_system_1_1_modifier_1_1_positive_tooltip_line.html", null ]
     ] ],
     [ "ModItem", "class_mod_item.html", [
       [ "Loot.Core.Cubes.MagicalCube", "class_loot_1_1_core_1_1_cubes_1_1_magical_cube.html", [
@@ -197,6 +194,9 @@ var hierarchy =
       ] ]
     ] ],
     [ "LootTests.UnitTests", "class_loot_tests_1_1_unit_tests.html", null ],
+    [ "Modifier", null, [
+      [ "LootTests.TestModifiers.TestApplyMod", "class_loot_tests_1_1_test_modifiers_1_1_test_apply_mod.html", null ]
+    ] ],
     [ "UIPanel", null, [
       [ "Loot.UI.Core.UIItemPanel", "class_loot_1_1_u_i_1_1_core_1_1_u_i_item_panel.html", [
         [ "Loot.UI.Core.UIInteractableItemPanel", "class_loot_1_1_u_i_1_1_core_1_1_u_i_interactable_item_panel.html", [

@@ -1,4 +1,4 @@
 <map id="Loot.Modifiers.EquipModifiers.Utility.MoveSpeedPlus.GetModifierProperties" name="Loot.Modifiers.EquipModifiers.Utility.MoveSpeedPlus.GetModifierProperties">
-<area shape="rect" id="node2" href="$class_loot_1_1_core_1_1_system_1_1_modifier_properties_builder.html#a7ed165d43cdcb5d8bf87efed01503f55" title="Loot.Core.System.Modifier\lPropertiesBuilder.WithBasePower" alt="" coords="289,5,508,46"/>
-<area shape="rect" id="node3" href="$class_loot_1_1_core_1_1_system_1_1_modifier_properties_builder.html#afc21b5754f1127b3217e11ba64c415cd" title="Loot.Core.System.Modifier\lPropertiesBuilder.WithMaxMagnitude" alt="" coords="280,70,517,111"/>
+<area shape="rect" id="node2" href="$class_loot_1_1_core_1_1_system_1_1_modifier_1_1_modifier_properties_builder.html#a061ee8a89fe25326e522308e7c7e13e4" title="Loot.Core.System.Modifier.\lModifierPropertiesBuilder.With\lBasePower" alt="" coords="281,5,479,61"/>
+<area shape="rect" id="node3" href="$class_loot_1_1_core_1_1_system_1_1_modifier_1_1_modifier_properties_builder.html#af322e369df14e9bab51031fa400db131" title="Loot.Core.System.Modifier.\lModifierPropertiesBuilder.With\lMaxMagnitude" alt="" coords="281,85,479,141"/>
 </map>

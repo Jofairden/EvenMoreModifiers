@@ -3,7 +3,7 @@ var searchData=
   ['fakemod',['FakeMod',['../class_loot_tests_1_1_fake_mod.html',1,'LootTests']]],
   ['fakeproperties',['FakeProperties',['../class_loot_tests_1_1_modifier_properties_tests_1_1_fake_properties.html',1,'LootTests::ModifierPropertiesTests']]],
   ['fillvanillanamescache',['FillVanillaNamesCache',['../class_loot_1_1_core_1_1_mod_content_1_1_graphics_mod_content.html#a3e9decc8389ace041683fbf1290296f4',1,'Loot::Core::ModContent::GraphicsModContent']]],
-  ['firstload',['FirstLoad',['../namespace_loot_1_1_core_1_1_system.html#abbe1d918fb67605a6f8d854c34cee269aa5382010e77d31e27da44053b5fee5f0',1,'Loot::Core::System']]],
+  ['firstload',['FirstLoad',['../namespace_loot_1_1_core_1_1_system_1_1_modifier.html#a296941ba969bd16212e7bb7bd358683daa5382010e77d31e27da44053b5fee5f0',1,'Loot::Core::System::Modifier']]],
   ['firsttick',['FirstTick',['../class_loot_1_1_modifier_projectile.html#a36f9b9fc4559f6b7b66db09375865516',1,'Loot::ModifierProjectile']]],
   ['fishingplus',['FishingPlus',['../class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_utility_1_1_fishing_plus.html',1,'Loot::Modifiers::EquipModifiers::Utility']]],
   ['fishingplus_2ecs',['FishingPlus.cs',['../_fishing_plus_8cs.html',1,'']]],

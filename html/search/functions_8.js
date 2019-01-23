@@ -6,6 +6,6 @@ var searchData=
   ['healthybonus',['HealthyBonus',['../class_loot_1_1_modifier_projectile.html#ab26593147c3a40e7c189323c09573efa',1,'Loot.ModifierProjectile.HealthyBonus(Projectile projectile, ref int damage, NPC target)'],['../class_loot_1_1_modifier_projectile.html#aa7d362f8ac06219ceb2ef59bdde602fd',1,'Loot.ModifierProjectile.HealthyBonus(Projectile projectile, ref int damage, Player target)']]],
   ['healthyfoes',['HealthyFoes',['../class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_offensive_1_1_healthy_foes_effect.html#a536a89f0caf2b29e34dccfc914412bdc',1,'Loot::Modifiers::EquipModifiers::Offensive::HealthyFoesEffect']]],
   ['holditem',['HoldItem',['../class_loot_1_1_modifiers_1_1_weapon_debuff_modifier.html#ae7fa7c30e052a4e6e112f57b0d4a6441',1,'Loot::Modifiers::WeaponDebuffModifier']]],
-  ['holdoutoffset',['HoldoutOffset',['../class_loot_1_1_core_1_1_system_1_1_modifier.html#aed9afd2289a7ce474f3e4f318c9622b0',1,'Loot::Core::System::Modifier']]],
-  ['holdoutorigin',['HoldoutOrigin',['../class_loot_1_1_core_1_1_system_1_1_modifier.html#a9e2e42bda57bf130eb864c39487160d8',1,'Loot::Core::System::Modifier']]]
+  ['holdoutoffset',['HoldoutOffset',['../class_loot_1_1_core_1_1_system_1_1_modifier_1_1_modifier.html#a6003f04710db66ff184e9a6f4131fd88',1,'Loot::Core::System::Modifier::Modifier']]],
+  ['holdoutorigin',['HoldoutOrigin',['../class_loot_1_1_core_1_1_system_1_1_modifier_1_1_modifier.html#a78d91dda3f075ccbf77ddb8879b89f61',1,'Loot::Core::System::Modifier::Modifier']]]
 ];

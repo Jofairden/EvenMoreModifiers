@@ -1,7 +1,7 @@
 <map id="Loot.Modifiers.WeaponModifiers.Ice.IceModifier" name="Loot.Modifiers.WeaponModifiers.Ice.IceModifier">
 <area shape="rect" id="node8" href="$class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_ice_1_1_icy_modifier.html" title="Loot.Modifiers.WeaponModifiers.\lIce.IcyModifier" alt="" coords="153,321,367,362"/>
 <area shape="rect" id="node2" href="$class_loot_1_1_modifiers_1_1_weapon_modifier.html" title="Defines a modifier that can roll on a weapon item You can use this class and add to CanRoll by callin..." alt="" coords="202,155,317,181"/>
-<area shape="rect" id="node3" href="$class_loot_1_1_core_1_1_system_1_1_modifier.html" title="Defines a modifier, which is an unloaded GlobalItem Making it a GlobalItem gives easy access to all h..." alt="" coords="226,80,293,107"/>
+<area shape="rect" id="node3" href="$class_loot_1_1_core_1_1_system_1_1_modifier_1_1_modifier.html" title="Defines a modifier, which is an unloaded GlobalItem Making it a GlobalItem gives easy access to all h..." alt="" coords="226,80,293,107"/>
 <area shape="rect" id="node4" href="$class_global_item.html" title="GlobalItem" alt="" coords="5,5,91,32"/>
 <area shape="rect" id="node5" href="$interface_loot_1_1_core_1_1_system_1_1_core_1_1_i_loadable_content.html" title="ILoadableContent" alt="" coords="115,5,239,32"/>
 <area shape="rect" id="node7" href="$class_i_cloneable.html" title="ICloneable" alt="" coords="446,5,529,32"/>

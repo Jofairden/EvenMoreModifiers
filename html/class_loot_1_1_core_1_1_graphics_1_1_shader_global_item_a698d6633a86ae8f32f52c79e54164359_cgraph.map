@@ -2,5 +2,5 @@
 <area shape="rect" id="node2" href="$class_loot_1_1_core_1_1_graphics_1_1_shader_entity.html#a43d5fc0fdace9143cacf8a2e38d5dc56" title="Will draw all the layers (subject, glowmask, shader) in the proper order " alt="" coords="241,5,429,46"/>
 <area shape="rect" id="node3" href="$class_loot_1_1_core_1_1_graphics_1_1_shader_global_item.html#acbb9fa9246fafd0e7cf4deae08acf89a" title="Loot.Core.Graphics.Shader\lGlobalItem.UpdateEntities" alt="" coords="245,70,425,111"/>
 <area shape="rect" id="node4" href="$class_loot_1_1_e_m_m_item.html#a0dc962c1a313ea02e94a891920703963" title="Loot.EMMItem.GetActivePool" alt="" coords="478,48,674,75"/>
-<area shape="rect" id="node5" href="$class_loot_1_1_core_1_1_system_1_1_modifier.html#a707f1997ae01b2a2a4033ef5b2e1a482" title="Loot.Core.System.Modifier.\lGetShaderEntity" alt="" coords="485,99,667,141"/>
+<area shape="rect" id="node5" href="$class_loot_1_1_core_1_1_system_1_1_modifier_1_1_modifier.html#aba4254c65137a0f01d57740863961cdc" title="Loot.Core.System.Modifier.\lModifier.GetShaderEntity" alt="" coords="485,99,667,141"/>
 </map>

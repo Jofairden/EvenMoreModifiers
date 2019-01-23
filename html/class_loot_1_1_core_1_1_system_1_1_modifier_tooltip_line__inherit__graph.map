@@ -1,4 +1,0 @@
-<map id="Loot.Core.System.ModifierTooltipLine" name="Loot.Core.System.ModifierTooltipLine">
-<area shape="rect" id="node2" href="$class_loot_1_1_core_1_1_system_1_1_negative_tooltip_line.html" title="Loot.Core.System.Negative\lTooltipLine" alt="" coords="5,97,189,138"/>
-<area shape="rect" id="node3" href="$class_loot_1_1_core_1_1_system_1_1_positive_tooltip_line.html" title="Loot.Core.System.Positive\lTooltipLine" alt="" coords="213,97,392,138"/>
-</map>
