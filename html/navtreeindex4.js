@@ -1,5 +1,7 @@
 var NAVTREEINDEX4 =
 {
+"class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_offensive_1_1_ranged_damage_plus.html":[2,0,0,2,0,1,10],
+"class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_offensive_1_1_ranged_damage_plus.html#a40d2327c05c318d4f65f9686e502043f":[2,0,0,2,0,1,10,2],
 "class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_offensive_1_1_ranged_damage_plus.html#a484af17d07ae165ea6ff2c56aba96e0a":[2,0,0,2,0,1,10,0],
 "class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_offensive_1_1_ranged_damage_plus.html#ab0572cd05dde435d5a0c7999ef0d39b9":[2,0,0,2,0,1,10,1],
 "class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_offensive_1_1_thrown_crit_plus.html":[2,0,0,2,0,1,11],
@@ -247,7 +249,5 @@ var NAVTREEINDEX4 =
 "class_loot_1_1_u_i_1_1_rerolling_1_1_cube_reroll_u_i.html#a092d11e524ab9bad1f6096fde4796654":[2,0,0,6,1,0,7],
 "class_loot_1_1_u_i_1_1_rerolling_1_1_cube_reroll_u_i.html#a16a73ca3c01c95d947bd27f1c181e6e9":[2,0,0,6,1,0,9],
 "class_loot_1_1_u_i_1_1_rerolling_1_1_cube_reroll_u_i.html#a19a4cb91a4850b1c4962c873628bdc0e":[2,0,0,6,1,0,3],
-"class_loot_1_1_u_i_1_1_rerolling_1_1_cube_reroll_u_i.html#a37792b38cc3880d912b3df6d3506d8df":[2,0,0,6,1,0,1],
-"class_loot_1_1_u_i_1_1_rerolling_1_1_cube_reroll_u_i.html#a5ca047556452a0a6c2248712f1ba3f58":[2,0,0,6,1,0,5],
-"class_loot_1_1_u_i_1_1_rerolling_1_1_cube_reroll_u_i.html#a64e4c106ef600d0312cb1dac9f3296f8":[2,0,0,6,1,0,10]
+"class_loot_1_1_u_i_1_1_rerolling_1_1_cube_reroll_u_i.html#a37792b38cc3880d912b3df6d3506d8df":[2,0,0,6,1,0,1]
 };

@@ -1,6 +1,6 @@
 var class_loot_1_1_core_1_1_graphics_1_1_shader_entity =
 [
-    [ "ShaderEntity", "class_loot_1_1_core_1_1_graphics_1_1_shader_entity.html#ab8053d1a68cc0735d9a012b97d92fa94", null ],
+    [ "ShaderEntity", "class_loot_1_1_core_1_1_graphics_1_1_shader_entity.html#aed26f00644ba779533058f80510e2d61", null ],
     [ "DoDrawLayeredEntity", "class_loot_1_1_core_1_1_graphics_1_1_shader_entity.html#a43d5fc0fdace9143cacf8a2e38d5dc56", null ],
     [ "DoDrawShader", "class_loot_1_1_core_1_1_graphics_1_1_shader_entity.html#afc2f2f62ee1e1fa5a28eabeb9ea1ad90", null ],
     [ "DoDrawSubject", "class_loot_1_1_core_1_1_graphics_1_1_shader_entity.html#a270471ba503ea48b7b71f4605505871c", null ],
@@ -17,6 +17,7 @@ var class_loot_1_1_core_1_1_graphics_1_1_shader_entity =
     [ "DrawShader", "class_loot_1_1_core_1_1_graphics_1_1_shader_entity.html#ab6c808d53c04fd2d712389842be013ac", null ],
     [ "NeedsUpdate", "class_loot_1_1_core_1_1_graphics_1_1_shader_entity.html#a8ea7b43293a28a0b6f9ff791fb66c6d2", null ],
     [ "NumSegments", "class_loot_1_1_core_1_1_graphics_1_1_shader_entity.html#ae1b14ffa0691c16d38f6f391e7f0bb7d", null ],
+    [ "Order", "class_loot_1_1_core_1_1_graphics_1_1_shader_entity.html#a9a7ecc87e019122a137117f506c09924", null ],
     [ "ShaderId", "class_loot_1_1_core_1_1_graphics_1_1_shader_entity.html#af3178e0c3a9e21d67adbac5784868513", null ],
     [ "ShaderTexture", "class_loot_1_1_core_1_1_graphics_1_1_shader_entity.html#a37f75b16109d2a87be3d539946c4609f", null ],
     [ "SubjectTexture", "class_loot_1_1_core_1_1_graphics_1_1_shader_entity.html#ae8102468326add7d0821d2b2ed46d041", null ],

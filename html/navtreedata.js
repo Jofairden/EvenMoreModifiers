@@ -35,11 +35,11 @@ var NAVTREEINDEX =
 [
 "_accessory_modifier_8cs.html",
 "_sound_helper_8cs.html",
-"class_loot_1_1_core_1_1_mod_content_1_1_graphics_mod_content.html#a34ff09e52ae87b27175254a7db198a30",
-"class_loot_1_1_e_m_m_item.html#a5367a0f6cb29085872d2799fd6b65e47",
-"class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_offensive_1_1_ranged_damage_plus.html#a484af17d07ae165ea6ff2c56aba96e0a",
-"class_loot_1_1_u_i_1_1_rerolling_1_1_cube_reroll_u_i.html#a765883df3a5d1cb840b735be1d289cc2",
-"struct_loot_1_1_modifiers_1_1_debuff_trigger.html#a5c0c851f19e20ba2045c15bda5c0c4f2"
+"class_loot_1_1_core_1_1_mod_content_1_1_graphics_mod_content.html#a1dc64224de0f90c22c7336d934678c99",
+"class_loot_1_1_e_m_m_item.html#a40d02fc083c67022b5c8603d7dd9faee",
+"class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_offensive_1_1_ranged_damage_plus.html",
+"class_loot_1_1_u_i_1_1_rerolling_1_1_cube_reroll_u_i.html#a5ca047556452a0a6c2248712f1ba3f58",
+"struct_loot_1_1_modifiers_1_1_debuff_trigger.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

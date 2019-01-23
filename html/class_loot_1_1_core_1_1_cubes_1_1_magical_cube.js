@@ -9,6 +9,6 @@ var class_loot_1_1_core_1_1_cubes_1_1_magical_cube =
     [ "SetStaticDefaults", "class_loot_1_1_core_1_1_cubes_1_1_magical_cube.html#a70d5fb38182e07a4c31daee5be840712", null ],
     [ "ExtraTooltip", "class_loot_1_1_core_1_1_cubes_1_1_magical_cube.html#ad97514b97a151b8580ee747b14941f4f", null ],
     [ "OverrideNameColor", "class_loot_1_1_core_1_1_cubes_1_1_magical_cube.html#a4f1ebae0c73dffdf57a52f9c39f761d5", null ],
-    [ "PaddingForBox", "class_loot_1_1_core_1_1_cubes_1_1_magical_cube.html#a09d3bba6152544f4741ea9921134dd30", null ],
+    [ "PADDING_FOR_BOX", "class_loot_1_1_core_1_1_cubes_1_1_magical_cube.html#a57b324ddc4b80d7bc2ea02bfec7e2d69", null ],
     [ "CubeName", "class_loot_1_1_core_1_1_cubes_1_1_magical_cube.html#a0ded35b3dd611a8e6e2c1da8f0c7a63b", null ]
 ];

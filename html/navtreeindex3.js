@@ -1,5 +1,7 @@
 var NAVTREEINDEX3 =
 {
+"class_loot_1_1_e_m_m_item.html#a40d02fc083c67022b5c8603d7dd9faee":[2,0,0,9,9],
+"class_loot_1_1_e_m_m_item.html#a51f2704f9654af48ab0ee1abbfc07b86":[2,0,0,9,13],
 "class_loot_1_1_e_m_m_item.html#a5367a0f6cb29085872d2799fd6b65e47":[2,0,0,9,15],
 "class_loot_1_1_e_m_m_item.html#a6672ede9c3208712a10ce4b266d95a15":[2,0,0,9,17],
 "class_loot_1_1_e_m_m_item.html#a7788b69f28ba9809f56f6ebc6c7a7b7f":[2,0,0,9,2],
@@ -247,7 +249,5 @@ var NAVTREEINDEX3 =
 "class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_offensive_1_1_ranged_crit_plus.html":[2,0,0,2,0,1,9],
 "class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_offensive_1_1_ranged_crit_plus.html#a20cfaed8aae39202632bd48bab310ae0":[2,0,0,2,0,1,9,0],
 "class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_offensive_1_1_ranged_crit_plus.html#a30bbf5b18cd22afe38a1573e48246459":[2,0,0,2,0,1,9,2],
-"class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_offensive_1_1_ranged_crit_plus.html#a7ef6c5609204e71e5d3da117bdb83113":[2,0,0,2,0,1,9,1],
-"class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_offensive_1_1_ranged_damage_plus.html":[2,0,0,2,0,1,10],
-"class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_offensive_1_1_ranged_damage_plus.html#a40d2327c05c318d4f65f9686e502043f":[2,0,0,2,0,1,10,2]
+"class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_offensive_1_1_ranged_crit_plus.html#a7ef6c5609204e71e5d3da117bdb83113":[2,0,0,2,0,1,9,1]
 };

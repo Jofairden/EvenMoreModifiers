@@ -1,6 +1,6 @@
 var class_loot_1_1_core_1_1_graphics_1_1_glowmask_entity =
 [
-    [ "GlowmaskEntity", "class_loot_1_1_core_1_1_graphics_1_1_glowmask_entity.html#ad7c3929d405d1d1f3793e13c6b19de8e", null ],
+    [ "GlowmaskEntity", "class_loot_1_1_core_1_1_graphics_1_1_glowmask_entity.html#a4e638a376f43903cb01cfe689593ce3d", null ],
     [ "DoDrawGlowmask", "class_loot_1_1_core_1_1_graphics_1_1_glowmask_entity.html#ac66e1767fe938f785eca9ff627bd91ee", null ],
     [ "DoDrawHitbox", "class_loot_1_1_core_1_1_graphics_1_1_glowmask_entity.html#ae1591f4369be6aebfccc47e3480176ab", null ],
     [ "GetFrameRectangle", "class_loot_1_1_core_1_1_graphics_1_1_glowmask_entity.html#a6d248a7b0ac056dc92fc90b6b1d028ac", null ],
@@ -10,5 +10,6 @@ var class_loot_1_1_core_1_1_graphics_1_1_glowmask_entity =
     [ "DrawHitbox", "class_loot_1_1_core_1_1_graphics_1_1_glowmask_entity.html#af5640ba3a9f9189c983e9cc3f420d399", null ],
     [ "GlowmaskTexture", "class_loot_1_1_core_1_1_graphics_1_1_glowmask_entity.html#a8583184fe3d2d8801ded5ba00be045b0", null ],
     [ "NeedsUpdate", "class_loot_1_1_core_1_1_graphics_1_1_glowmask_entity.html#abc2f9bb1f90cda0cc17c6851d18108d8", null ],
+    [ "Order", "class_loot_1_1_core_1_1_graphics_1_1_glowmask_entity.html#ae6c1afc630970e591aff93f7af38f3f4", null ],
     [ "UseDestinationRectangle", "class_loot_1_1_core_1_1_graphics_1_1_glowmask_entity.html#af7020a69eb429863b27a4756a8594258", null ]
 ];
