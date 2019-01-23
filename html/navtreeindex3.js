@@ -1,5 +1,7 @@
 var NAVTREEINDEX3 =
 {
+"class_loot_1_1_ext_1_1_item_utils.html#a3fdd92513a7f250897d1c439490328fc":[2,0,0,1,0,6],
+"class_loot_1_1_ext_1_1_item_utils.html#a4bcb26340f08d9265583ebb2eb1ac73a":[2,0,0,1,0,7],
 "class_loot_1_1_ext_1_1_item_utils.html#a5403a0c1d62378df2112a4880f8ec0d8":[2,0,0,1,0,2],
 "class_loot_1_1_ext_1_1_item_utils.html#a6dd664037f5220cd40f131d8b6e135d9":[2,0,0,1,0,1],
 "class_loot_1_1_ext_1_1_item_utils.html#a7aad7849de7aba74cb0aa2c329d1c9e7":[2,0,0,1,0,0],
@@ -43,7 +45,6 @@ var NAVTREEINDEX3 =
 "class_loot_1_1_modifier_player.html#a0fde724e7550b077ca289c3e1c14b580":[2,0,0,13,40],
 "class_loot_1_1_modifier_player.html#a15d8d9bda2ed8244fae1c0a5de7ddee8":[2,0,0,13,26],
 "class_loot_1_1_modifier_player.html#a2457880c81440d078dcb9b51fa2a7e70":[2,0,0,13,8],
-"class_loot_1_1_modifier_player.html#a2ee5edbc75df5b0ab66ac8250c129586":[2,0,0,13,25],
 "class_loot_1_1_modifier_player.html#a33540a9304078ea536e9de48322732a2":[2,0,0,13,37],
 "class_loot_1_1_modifier_player.html#a3491140b388033279b7bd3fc2f1cec06":[2,0,0,13,20],
 "class_loot_1_1_modifier_player.html#a3c38a2e5ef2bd3ffaf66e2b49c6de5b2":[2,0,0,13,31],
@@ -76,6 +77,7 @@ var NAVTREEINDEX3 =
 "class_loot_1_1_modifier_player.html#ac2e32bba2f537fc349ae064e093bc5a8":[2,0,0,13,12],
 "class_loot_1_1_modifier_player.html#ac79c0ce41c1940dae96aee8c45528db9":[2,0,0,13,28],
 "class_loot_1_1_modifier_player.html#acb57e6fbf2a2209d49ac273813602185":[2,0,0,13,33],
+"class_loot_1_1_modifier_player.html#ad914569f66112df7999ecab1ace26488":[2,0,0,13,25],
 "class_loot_1_1_modifier_player.html#ae0a74b968fa28a63cf57f96eb5067534":[2,0,0,13,10],
 "class_loot_1_1_modifier_player.html#ae508e6647350f479c05d39aa6ffc9d6a":[2,0,0,13,30],
 "class_loot_1_1_modifier_player.html#af61a3c0c3d1c1b32d511ba28c561cfd9":[2,0,0,13,41],
@@ -247,7 +249,5 @@ var NAVTREEINDEX3 =
 "class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_utility_1_1_light_effect.html#ac56450d1318b8c6b1d3bcfdaee18dc48":[2,0,0,2,0,2,1,2],
 "class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_utility_1_1_light_effect.html#ad96f5653e50ebc2f3ca7675bdffe8de7":[2,0,0,2,0,2,1,5],
 "class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_utility_1_1_light_plus.html":[2,0,0,2,0,2,2],
-"class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_utility_1_1_light_plus.html#a08c67d0c5706496cf88dab124a5999fa":[2,0,0,2,0,2,2,2],
-"class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_utility_1_1_light_plus.html#a79be81f10a4ba089f06034aeaf91e879":[2,0,0,2,0,2,2,0],
-"class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_utility_1_1_light_plus.html#a7ad294af7df5314694ccd77d52556628":[2,0,0,2,0,2,2,1]
+"class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_utility_1_1_light_plus.html#a08c67d0c5706496cf88dab124a5999fa":[2,0,0,2,0,2,2,2]
 };

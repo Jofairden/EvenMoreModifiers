@@ -13,7 +13,7 @@ var searchData=
   ['setup',['Setup',['../class_loot_tests_1_1_modifier_properties_tests.html#ab1e7cdfb8137e42398aa342056397084',1,'LootTests.ModifierPropertiesTests.Setup()'],['../class_loot_tests_1_1_unit_tests.html#a853eab844d4a461588ea50a00c4c6966',1,'LootTests.UnitTests.Setup()']]],
   ['setupcontentmanager',['SetupContentManager',['../class_loot_1_1_loot.html#aa3e25e390787987379a4fc73f1a0134b',1,'Loot::Loot']]],
   ['setupshop',['SetupShop',['../class_loot_1_1_core_1_1_cubes_1_1_cube_shop.html#a7cbf458f03f04a9cf26b4005afbc748a',1,'Loot::Core::Cubes::CubeShop']]],
-  ['setupstartinventory',['SetupStartInventory',['../class_loot_1_1_modifier_player.html#a2ee5edbc75df5b0ab66ac8250c129586',1,'Loot.ModifierPlayer.SetupStartInventory()'],['../namespace_loot_1_1_core_1_1_system.html#abbe1d918fb67605a6f8d854c34cee269a92d9fe690e5a0bcdc7c534a464eb4646',1,'Loot.Core.System.SetupStartInventory()']]],
+  ['setupstartinventory',['SetupStartInventory',['../class_loot_1_1_modifier_player.html#ad914569f66112df7999ecab1ace26488',1,'Loot.ModifierPlayer.SetupStartInventory()'],['../namespace_loot_1_1_core_1_1_system.html#abbe1d918fb67605a6f8d854c34cee269a92d9fe690e5a0bcdc7c534a464eb4646',1,'Loot.Core.System.SetupStartInventory()']]],
   ['setupuserinterfaces',['SetupUserInterfaces',['../class_loot_1_1_loot.html#a139cba0d17b87db6a94ea81c5b03787b',1,'Loot::Loot']]],
   ['shaderdrawlayer',['ShaderDrawLayer',['../namespace_loot_1_1_core_1_1_graphics.html#ab9bc623e11f3c37b99846ba9daf478d0',1,'Loot::Core::Graphics']]],
   ['shaderdrawlayer_2ecs',['ShaderDrawLayer.cs',['../_shader_draw_layer_8cs.html',1,'']]],

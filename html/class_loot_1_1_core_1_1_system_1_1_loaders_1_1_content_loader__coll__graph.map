@@ -1,10 +1,2 @@
 <map id="Loot.Core.System.Loaders.ContentLoader" name="Loot.Core.System.Loaders.ContentLoader">
-<area shape="rect" id="node2" href="$class_loot_1_1_core_1_1_system_1_1_content_1_1_modifier_effect_content.html" title="Loot.Core.System.Content.\lModifierEffectContent" alt="" coords="259,5,442,46"/>
-<area shape="rect" id="node3" href="$class_loot_1_1_core_1_1_system_1_1_core_1_1_base_content.html" title="BaseContent\&lt; ModifierEffect \&gt;" alt="" coords="5,12,208,39"/>
-<area shape="rect" id="node4" href="$class_loot_1_1_core_1_1_system_1_1_content_1_1_modifier_pool_content.html" title="Loot.Core.System.Content.\lModifierPoolContent" alt="" coords="259,70,442,111"/>
-<area shape="rect" id="node5" href="$class_loot_1_1_core_1_1_system_1_1_core_1_1_base_content.html" title="BaseContent\&lt; ModifierPool \&gt;" alt="" coords="9,77,204,104"/>
-<area shape="rect" id="node6" href="$class_loot_1_1_core_1_1_system_1_1_content_1_1_modifier_content.html" title="Loot.Core.System.Content.\lModifierContent" alt="" coords="259,135,442,177"/>
-<area shape="rect" id="node7" href="$class_loot_1_1_core_1_1_system_1_1_core_1_1_base_content.html" title="BaseContent\&lt; Modifier \&gt;" alt="" coords="23,143,191,169"/>
-<area shape="rect" id="node8" href="$class_loot_1_1_core_1_1_system_1_1_content_1_1_modifier_rarity_content.html" title="Loot.Core.System.Content.\lModifierRarityContent" alt="" coords="259,201,442,242"/>
-<area shape="rect" id="node9" href="$class_loot_1_1_core_1_1_system_1_1_core_1_1_base_content.html" title="BaseContent\&lt; ModifierRarity \&gt;" alt="" coords="5,208,208,235"/>
 </map>

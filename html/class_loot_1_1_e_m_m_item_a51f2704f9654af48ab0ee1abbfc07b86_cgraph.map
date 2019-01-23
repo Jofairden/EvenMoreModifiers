@@ -1,6 +1,6 @@
 <map id="Loot.EMMItem.Save" name="Loot.EMMItem.Save">
 <area shape="rect" id="node2" href="$class_loot_1_1_e_m_m_item.html#aa936e09aa7f7230804ebe5b4cca477c4" title="Loot.EMMItem.NeedsSaving" alt="" coords="198,5,389,32"/>
-<area shape="rect" id="node3" href="$class_loot_1_1_core_1_1_system_1_1_modifier_pool.html#a82f8e15828bfd54589143ccfd09711a3" title="Allows modder to do custom saving here Use the given TC to put data you want to save, which can be loaded using Load(TagCompound) " alt="" coords="204,81,383,122"/>
+<area shape="rect" id="node3" href="$class_loot_1_1_core_1_1_system_1_1_modifier_pool.html#a82f8e15828bfd54589143ccfd09711a3" title="Allows modder to do custom saving here Use the given TC to put data you want to save, which can be loaded using Load(Item, TagCompound) " alt="" coords="204,81,383,122"/>
 <area shape="rect" id="node4" href="$class_loot_1_1_core_1_1_system_1_1_modifier_rarity.html#a1ff326441b1b93c99db2451b78e4086e" title="Allows modder to do custom saving here Use the given TC to put data you want to save, which can be loaded using Load(Item,TagCompound) " alt="" coords="455,39,633,81"/>
 <area shape="rect" id="node5" href="$class_loot_1_1_core_1_1_system_1_1_modifier.html#a0ef60dea6074d400b1f94fcb9c080ea6" title="Allows modder to do custom saving here Use the given TC to put data you want to save, which can be loaded using Load(Item,TagCompound) " alt="" coords="438,129,650,156"/>
 </map>

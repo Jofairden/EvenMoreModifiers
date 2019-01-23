@@ -1,5 +1,7 @@
 var NAVTREEINDEX4 =
 {
+"class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_utility_1_1_light_plus.html#a79be81f10a4ba089f06034aeaf91e879":[2,0,0,2,0,2,2,0],
+"class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_utility_1_1_light_plus.html#a7ad294af7df5314694ccd77d52556628":[2,0,0,2,0,2,2,1],
 "class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_utility_1_1_luck_effect.html":[2,0,0,2,0,2,3],
 "class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_utility_1_1_luck_effect.html#a1c3731ce5ec33eb1aadfa246d6575755":[2,0,0,2,0,2,3,1],
 "class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_utility_1_1_luck_effect.html#a91acee3d20b6119d0445c50bd19b6e7a":[2,0,0,2,0,2,3,0],
@@ -247,7 +249,5 @@ var NAVTREEINDEX4 =
 "class_loot_1_1_u_i_1_1_sealing_1_1_u_i_seal_item_panel.html":[2,0,0,6,2,1],
 "class_loot_1_1_u_i_1_1_sealing_1_1_u_i_seal_item_panel.html#a4fcc0c925c2a120ef818bd169a13dd14":[2,0,0,6,2,1,3],
 "class_loot_1_1_u_i_1_1_sealing_1_1_u_i_seal_item_panel.html#a90b68329c307b95f1f7589716222d9b1":[2,0,0,6,2,1,2],
-"class_loot_1_1_u_i_1_1_sealing_1_1_u_i_seal_item_panel.html#a939367e4ad1ba1cd791edb866375932d":[2,0,0,6,2,1,0],
-"class_loot_1_1_u_i_1_1_sealing_1_1_u_i_seal_item_panel.html#aec1c20f414aa6e939cec85a830e05ca9":[2,0,0,6,2,1,1],
-"class_loot_tests_1_1_empty_mod_load_shell.html":[2,0,1,3]
+"class_loot_1_1_u_i_1_1_sealing_1_1_u_i_seal_item_panel.html#a939367e4ad1ba1cd791edb866375932d":[2,0,0,6,2,1,0]
 };

@@ -25,7 +25,7 @@ var class_loot_1_1_modifier_player =
     [ "PreKillEventRaiser", "class_loot_1_1_modifier_player.html#aff931e8f289adca19fe875bffae50349", null ],
     [ "PreUpdate", "class_loot_1_1_modifier_player.html#a891c39b53a01d041f78120c51149f5c9", null ],
     [ "ResetEffects", "class_loot_1_1_modifier_player.html#a49ec0986bc9e1182cf834ba4cb47635b", null ],
-    [ "SetupStartInventory", "class_loot_1_1_modifier_player.html#a2ee5edbc75df5b0ab66ac8250c129586", null ],
+    [ "SetupStartInventory", "class_loot_1_1_modifier_player.html#ad914569f66112df7999ecab1ace26488", null ],
     [ "UpdateBadLifeRegen", "class_loot_1_1_modifier_player.html#a15d8d9bda2ed8244fae1c0a5de7ddee8", null ],
     [ "UpdateLifeRegen", "class_loot_1_1_modifier_player.html#a8f9b5f9833c228f90be9c09e61b15372", null ],
     [ "VoidEventRaiser", "class_loot_1_1_modifier_player.html#ac79c0ce41c1940dae96aee8c45528db9", null ],
