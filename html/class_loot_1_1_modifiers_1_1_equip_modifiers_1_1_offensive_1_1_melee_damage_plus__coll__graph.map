@@ -1,8 +1,7 @@
 <map id="Loot.Modifiers.EquipModifiers.Offensive.MeleeDamagePlus" name="Loot.Modifiers.EquipModifiers.Offensive.MeleeDamagePlus">
-<area shape="rect" id="node2" href="$class_loot_1_1_modifiers_1_1_equip_modifier.html" title="Defines a modifier that can roll on an accessory item or an armor item These modifiers will have 60% ..." alt="" coords="685,260,787,287"/>
-<area shape="rect" id="node3" href="$class_loot_1_1_core_1_1_system_1_1_modifier.html" title="Defines a modifier, which is an unloaded GlobalItem Making it a GlobalItem gives easy access to all h..." alt="" coords="494,179,562,205"/>
-<area shape="rect" id="node4" href="$class_global_item.html" title="GlobalItem" alt="" coords="193,56,279,83"/>
-<area shape="rect" id="node5" href="$interface_loot_1_1_core_1_1_system_1_1_core_1_1_i_loadable_content.html" title="ILoadableContent" alt="" coords="174,107,298,133"/>
-<area shape="rect" id="node7" href="$class_i_cloneable.html" title="ICloneable" alt="" coords="194,208,278,235"/>
-<area shape="rect" id="node9" href="$struct_loot_1_1_core_1_1_system_1_1_modifier_tooltip_line.html" title="Defines a tooltip line of a modifier A modifier can have multiple lines " alt="" coords="147,319,325,361"/>
+<area shape="rect" id="node2" href="$class_loot_1_1_modifiers_1_1_equip_modifier.html" title="Defines a modifier that can roll on an accessory item or an armor item These modifiers will have 60% ..." alt="" coords="453,132,555,159"/>
+<area shape="rect" id="node3" href="$class_loot_1_1_core_1_1_system_1_1_modifier.html" title="Defines a modifier, which is an unloaded GlobalItem Making it a GlobalItem gives easy access to all h..." alt="" coords="334,132,402,159"/>
+<area shape="rect" id="node4" href="$class_global_item.html" title="GlobalItem" alt="" coords="43,5,128,32"/>
+<area shape="rect" id="node5" href="$interface_loot_1_1_core_1_1_system_1_1_core_1_1_i_loadable_content.html" title="ILoadableContent" alt="" coords="23,56,147,83"/>
+<area shape="rect" id="node7" href="$class_i_cloneable.html" title="ICloneable" alt="" coords="43,157,127,184"/>
 </map>

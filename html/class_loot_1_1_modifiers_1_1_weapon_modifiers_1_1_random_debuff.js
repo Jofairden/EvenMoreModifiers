@@ -12,6 +12,7 @@ var class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_random_debuff =
     [ "_len", "class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_random_debuff.html#a9f5f155b2428a7ef22a8b81acf5cee09", null ],
     [ "_timeScaleFactor", "class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_random_debuff.html#a7edec10f8adbfe10a23db8eb9380b37d", null ],
     [ "BuffInflictionChance", "class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_random_debuff.html#a726558235a140f1b3d1985d79e9b87b0", null ],
+    [ "BuffPairs", "class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_random_debuff.html#ae56bcec70d0fab68c999c43fdbce7743", null ],
     [ "BuffTime", "class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_random_debuff.html#a8390666b643ba19f22e54ac3847ede03", null ],
     [ "BuffType", "class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_random_debuff.html#afd00707ca69335df5c63b32c39e5654f", null ]
 ];

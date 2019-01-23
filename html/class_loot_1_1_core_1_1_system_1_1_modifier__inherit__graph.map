@@ -40,10 +40,10 @@
 <area shape="rect" id="node41" href="$class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_damage_plus.html" title="Loot.Modifiers.WeaponModifiers.\lDamagePlus" alt="" coords="692,2030,905,2071"/>
 <area shape="rect" id="node42" href="$class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_damage_plus_daytime.html" title="Loot.Modifiers.WeaponModifiers.\lDamagePlusDaytime" alt="" coords="692,2095,905,2137"/>
 <area shape="rect" id="node43" href="$class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_damage_with_mana_cost.html" title="Loot.Modifiers.WeaponModifiers.\lDamageWithManaCost" alt="" coords="692,2161,905,2202"/>
-<area shape="rect" id="node44" href="$class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_knockback_plus.html" title="Loot.Modifiers.WeaponModifiers.\lKnockbackPlus" alt="" coords="692,2226,905,2267"/>
-<area shape="rect" id="node45" href="$class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_mana_reduce.html" title="Loot.Modifiers.WeaponModifiers.\lManaReduce" alt="" coords="692,2291,905,2333"/>
-<area shape="rect" id="node46" href="$class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_missing_health_damage.html" title="Loot.Modifiers.WeaponModifiers.\lMissingHealthDamage" alt="" coords="692,2357,905,2398"/>
-<area shape="rect" id="node47" href="$class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_speed_plus.html" title="Loot.Modifiers.WeaponModifiers.\lSpeedPlus" alt="" coords="692,2422,905,2463"/>
-<area shape="rect" id="node48" href="$class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_velocity_damage.html" title="Loot.Modifiers.WeaponModifiers.\lVelocityDamage" alt="" coords="692,2487,905,2529"/>
-<area shape="rect" id="node49" href="$class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_velocity_plus.html" title="Loot.Modifiers.WeaponModifiers.\lVelocityPlus" alt="" coords="692,2553,905,2594"/>
+<area shape="rect" id="node44" href="$class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_ice_1_1_ice_modifier.html" title="Loot.Modifiers.WeaponModifiers.\lIce.IceModifier" alt="" coords="692,2226,905,2267"/>
+<area shape="rect" id="node45" href="$class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_knockback_plus.html" title="Loot.Modifiers.WeaponModifiers.\lKnockbackPlus" alt="" coords="692,2291,905,2333"/>
+<area shape="rect" id="node46" href="$class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_mana_reduce.html" title="Loot.Modifiers.WeaponModifiers.\lManaReduce" alt="" coords="692,2357,905,2398"/>
+<area shape="rect" id="node47" href="$class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_missing_health_damage.html" title="Loot.Modifiers.WeaponModifiers.\lMissingHealthDamage" alt="" coords="692,2422,905,2463"/>
+<area shape="rect" id="node48" href="$class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_speed_plus.html" title="Loot.Modifiers.WeaponModifiers.\lSpeedPlus" alt="" coords="692,2487,905,2529"/>
+<area shape="rect" id="node49" href="$class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_velocity_damage.html" title="Loot.Modifiers.WeaponModifiers.\lVelocityDamage" alt="" coords="692,2553,905,2594"/>
 </map>

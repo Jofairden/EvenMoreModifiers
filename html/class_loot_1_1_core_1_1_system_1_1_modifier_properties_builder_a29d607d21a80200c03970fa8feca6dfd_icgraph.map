@@ -1,4 +1,5 @@
 <map id="Loot.Core.System.ModifierPropertiesBuilder.IsUniqueModifier" name="Loot.Core.System.ModifierPropertiesBuilder.IsUniqueModifier">
 <area shape="rect" id="node2" href="$class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_defensive_1_1_knockback_immunity.html#afa6d317388caf544a6baf2987f946843" title="Loot.Modifiers.EquipModifiers.\lDefensive.KnockbackImmunity.GetModifier\lProperties" alt="" coords="277,5,552,61"/>
-<area shape="rect" id="node3" href="$class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_cursed_damage.html#a530537f698e4ad7103ed1918c7cca2c9" title="Loot.Modifiers.WeaponModifiers.\lCursedDamage.GetModifierProperties" alt="" coords="293,85,536,126"/>
+<area shape="rect" id="node3" href="$class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_ice_1_1_icy_modifier.html#a5169dcde715f7332cb3296db93f5fb66" title="Loot.Modifiers.WeaponModifiers.\lIce.IcyModifier.GetModifierProperties" alt="" coords="295,85,534,126"/>
+<area shape="rect" id="node4" href="$class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_cursed_damage.html#a530537f698e4ad7103ed1918c7cca2c9" title="Loot.Modifiers.WeaponModifiers.\lCursedDamage.GetModifierProperties" alt="" coords="293,150,536,191"/>
 </map>

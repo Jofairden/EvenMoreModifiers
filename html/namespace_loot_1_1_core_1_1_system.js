@@ -10,5 +10,8 @@ var namespace_loot_1_1_core_1_1_system =
     [ "ModifierProperties", "class_loot_1_1_core_1_1_system_1_1_modifier_properties.html", "class_loot_1_1_core_1_1_system_1_1_modifier_properties" ],
     [ "ModifierPropertiesBuilder", "class_loot_1_1_core_1_1_system_1_1_modifier_properties_builder.html", "class_loot_1_1_core_1_1_system_1_1_modifier_properties_builder" ],
     [ "ModifierRarity", "class_loot_1_1_core_1_1_system_1_1_modifier_rarity.html", "class_loot_1_1_core_1_1_system_1_1_modifier_rarity" ],
-    [ "ModifierTooltipLine", "struct_loot_1_1_core_1_1_system_1_1_modifier_tooltip_line.html", "struct_loot_1_1_core_1_1_system_1_1_modifier_tooltip_line" ]
+    [ "ModifierTooltipBuilder", "class_loot_1_1_core_1_1_system_1_1_modifier_tooltip_builder.html", "class_loot_1_1_core_1_1_system_1_1_modifier_tooltip_builder" ],
+    [ "ModifierTooltipLine", "class_loot_1_1_core_1_1_system_1_1_modifier_tooltip_line.html", "class_loot_1_1_core_1_1_system_1_1_modifier_tooltip_line" ],
+    [ "NegativeTooltipLine", "class_loot_1_1_core_1_1_system_1_1_negative_tooltip_line.html", "class_loot_1_1_core_1_1_system_1_1_negative_tooltip_line" ],
+    [ "PositiveTooltipLine", "class_loot_1_1_core_1_1_system_1_1_positive_tooltip_line.html", "class_loot_1_1_core_1_1_system_1_1_positive_tooltip_line" ]
 ];

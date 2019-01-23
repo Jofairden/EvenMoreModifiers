@@ -22,7 +22,12 @@ var dir_87523e216a6603c4c77018f1fbf99254 =
     [ "ModifierRarity.cs", "_modifier_rarity_8cs.html", [
       [ "ModifierRarity", "class_loot_1_1_core_1_1_system_1_1_modifier_rarity.html", "class_loot_1_1_core_1_1_system_1_1_modifier_rarity" ]
     ] ],
+    [ "ModifierTooltipBuilder.cs", "_modifier_tooltip_builder_8cs.html", [
+      [ "ModifierTooltipBuilder", "class_loot_1_1_core_1_1_system_1_1_modifier_tooltip_builder.html", "class_loot_1_1_core_1_1_system_1_1_modifier_tooltip_builder" ]
+    ] ],
     [ "ModifierTooltipLine.cs", "_modifier_tooltip_line_8cs.html", [
-      [ "ModifierTooltipLine", "struct_loot_1_1_core_1_1_system_1_1_modifier_tooltip_line.html", "struct_loot_1_1_core_1_1_system_1_1_modifier_tooltip_line" ]
+      [ "ModifierTooltipLine", "class_loot_1_1_core_1_1_system_1_1_modifier_tooltip_line.html", "class_loot_1_1_core_1_1_system_1_1_modifier_tooltip_line" ],
+      [ "NegativeTooltipLine", "class_loot_1_1_core_1_1_system_1_1_negative_tooltip_line.html", "class_loot_1_1_core_1_1_system_1_1_negative_tooltip_line" ],
+      [ "PositiveTooltipLine", "class_loot_1_1_core_1_1_system_1_1_positive_tooltip_line.html", "class_loot_1_1_core_1_1_system_1_1_positive_tooltip_line" ]
     ] ]
 ];

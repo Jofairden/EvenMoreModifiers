@@ -1,5 +1,11 @@
 var NAVTREEINDEX1 =
 {
+"_sound_helper_8cs.html":[3,0,6,1],
+"_sound_helper_8cs_source.html":[3,0,6,1],
+"_speed_plus_8cs.html":[3,0,3,1,11],
+"_speed_plus_8cs_source.html":[3,0,3,1,11],
+"_survival_chance_8cs.html":[3,0,3,0,0,8],
+"_survival_chance_8cs_source.html":[3,0,3,0,0,8],
 "_test_apply_mod_8cs.html":[3,0,2,1,0],
 "_test_apply_mod_8cs_source.html":[3,0,2,1,0],
 "_test_pool_8cs.html":[3,0,2,2,0],
@@ -39,10 +45,10 @@ var NAVTREEINDEX1 =
 "_uncommon_rarity_8cs_source.html":[3,0,5,4],
 "_uses_effect_attribute_8cs.html":[3,0,0,0,4],
 "_uses_effect_attribute_8cs_source.html":[3,0,0,0,4],
-"_velocity_damage_8cs.html":[3,0,3,1,11],
-"_velocity_damage_8cs_source.html":[3,0,3,1,11],
-"_velocity_plus_8cs.html":[3,0,3,1,12],
-"_velocity_plus_8cs_source.html":[3,0,3,1,12],
+"_velocity_damage_8cs.html":[3,0,3,1,12],
+"_velocity_damage_8cs_source.html":[3,0,3,1,12],
+"_velocity_plus_8cs.html":[3,0,3,1,13],
+"_velocity_plus_8cs_source.html":[3,0,3,1,13],
 "_visibility_u_i_8cs.html":[3,0,7,0,7],
 "_visibility_u_i_8cs_source.html":[3,0,7,0,7],
 "_weapon_debuff_modifier_8cs.html":[3,0,3,5],
@@ -243,11 +249,5 @@ var NAVTREEINDEX1 =
 "class_loot_1_1_core_1_1_mod_content_1_1_graphics_mod_content.html":[2,0,0,0,4,0],
 "class_loot_1_1_core_1_1_mod_content_1_1_graphics_mod_content.html#a02a19add9838705742b8f75ac8633bc9":[2,0,0,0,4,0,20],
 "class_loot_1_1_core_1_1_mod_content_1_1_graphics_mod_content.html#a1dc64224de0f90c22c7336d934678c99":[2,0,0,0,4,0,18],
-"class_loot_1_1_core_1_1_mod_content_1_1_graphics_mod_content.html#a32b69b2a49a03f0a876abe4cb4b3cc09":[2,0,0,0,4,0,26],
-"class_loot_1_1_core_1_1_mod_content_1_1_graphics_mod_content.html#a34ff09e52ae87b27175254a7db198a30":[2,0,0,0,4,0,24],
-"class_loot_1_1_core_1_1_mod_content_1_1_graphics_mod_content.html#a3b0bebd82fcd7466be1a4fa609eeea8a":[2,0,0,0,4,0,22],
-"class_loot_1_1_core_1_1_mod_content_1_1_graphics_mod_content.html#a3dca8614ee84739c49f9c449b807692b":[2,0,0,0,4,0,7],
-"class_loot_1_1_core_1_1_mod_content_1_1_graphics_mod_content.html#a3e9decc8389ace041683fbf1290296f4":[2,0,0,0,4,0,3],
-"class_loot_1_1_core_1_1_mod_content_1_1_graphics_mod_content.html#a422f1d121a48a79b8a8808278a2cd8a8":[2,0,0,0,4,0,6],
-"class_loot_1_1_core_1_1_mod_content_1_1_graphics_mod_content.html#a48d812943d75e20a2ebc5c23326889b3":[2,0,0,0,4,0,1]
+"class_loot_1_1_core_1_1_mod_content_1_1_graphics_mod_content.html#a32b69b2a49a03f0a876abe4cb4b3cc09":[2,0,0,0,4,0,26]
 };

@@ -72,6 +72,9 @@ var hierarchy =
           [ "Loot.Modifiers.WeaponModifiers.DamagePlus", "class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_damage_plus.html", null ],
           [ "Loot.Modifiers.WeaponModifiers.DamagePlusDaytime", "class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_damage_plus_daytime.html", null ],
           [ "Loot.Modifiers.WeaponModifiers.DamageWithManaCost", "class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_damage_with_mana_cost.html", null ],
+          [ "Loot.Modifiers.WeaponModifiers.Ice.IceModifier", "class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_ice_1_1_ice_modifier.html", [
+            [ "Loot.Modifiers.WeaponModifiers.Ice.IcyModifier", "class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_ice_1_1_icy_modifier.html", null ]
+          ] ],
           [ "Loot.Modifiers.WeaponModifiers.KnockbackPlus", "class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_knockback_plus.html", null ],
           [ "Loot.Modifiers.WeaponModifiers.ManaReduce", "class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_mana_reduce.html", null ],
           [ "Loot.Modifiers.WeaponModifiers.MissingHealthDamage", "class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_missing_health_damage.html", null ],
@@ -154,7 +157,11 @@ var hierarchy =
     [ "ModifierRarity", "class_modifier_rarity.html", [
       [ "LootTests.TestRarities.TestRarity", "class_loot_tests_1_1_test_rarities_1_1_test_rarity.html", null ]
     ] ],
-    [ "Loot.Core.System.ModifierTooltipLine", "struct_loot_1_1_core_1_1_system_1_1_modifier_tooltip_line.html", null ],
+    [ "Loot.Core.System.ModifierTooltipBuilder", "class_loot_1_1_core_1_1_system_1_1_modifier_tooltip_builder.html", null ],
+    [ "Loot.Core.System.ModifierTooltipLine", "class_loot_1_1_core_1_1_system_1_1_modifier_tooltip_line.html", [
+      [ "Loot.Core.System.NegativeTooltipLine", "class_loot_1_1_core_1_1_system_1_1_negative_tooltip_line.html", null ],
+      [ "Loot.Core.System.PositiveTooltipLine", "class_loot_1_1_core_1_1_system_1_1_positive_tooltip_line.html", null ]
+    ] ],
     [ "ModItem", "class_mod_item.html", [
       [ "Loot.Core.Cubes.MagicalCube", "class_loot_1_1_core_1_1_cubes_1_1_magical_cube.html", [
         [ "Loot.Core.Cubes.CubeOfSealing", "class_loot_1_1_core_1_1_cubes_1_1_cube_of_sealing.html", null ],

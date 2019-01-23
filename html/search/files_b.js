@@ -29,6 +29,7 @@ var searchData=
   ['modifierpropertiestests_2ecs',['ModifierPropertiesTests.cs',['../_modifier_properties_tests_8cs.html',1,'']]],
   ['modifierrarity_2ecs',['ModifierRarity.cs',['../_modifier_rarity_8cs.html',1,'']]],
   ['modifierraritycontent_2ecs',['ModifierRarityContent.cs',['../_modifier_rarity_content_8cs.html',1,'']]],
+  ['modifiertooltipbuilder_2ecs',['ModifierTooltipBuilder.cs',['../_modifier_tooltip_builder_8cs.html',1,'']]],
   ['modifiertooltipline_2ecs',['ModifierTooltipLine.cs',['../_modifier_tooltip_line_8cs.html',1,'']]],
   ['modsupport_2ecs',['ModSupport.cs',['../_mod_support_8cs.html',1,'']]],
   ['modsupporter_2ecs',['ModSupporter.cs',['../_mod_supporter_8cs.html',1,'']]],

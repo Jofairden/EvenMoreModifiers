@@ -12,6 +12,7 @@ var searchData=
   ['equipmodifiers',['EquipModifiers',['../namespace_loot_1_1_modifiers_1_1_equip_modifiers.html',1,'Loot::Modifiers']]],
   ['ext',['Ext',['../namespace_loot_1_1_ext.html',1,'Loot']]],
   ['graphics',['Graphics',['../namespace_loot_1_1_core_1_1_graphics.html',1,'Loot::Core']]],
+  ['ice',['Ice',['../namespace_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_ice.html',1,'Loot::Modifiers::WeaponModifiers']]],
   ['late',['Late',['../namespace_loot_1_1_core_1_1_attributes.html#ac51e8c3bfabd3413fe3be5ba253c1b8fad9359722ca1b596c94882e47ad970cb5',1,'Loot::Core::Attributes']]],
   ['legendaryrarity',['LegendaryRarity',['../class_loot_1_1_rarities_1_1_legendary_rarity.html',1,'Loot::Rarities']]],
   ['legendaryrarity_2ecs',['LegendaryRarity.cs',['../_legendary_rarity_8cs.html',1,'']]],

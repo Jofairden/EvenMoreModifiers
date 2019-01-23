@@ -1,5 +1,6 @@
 var namespace_loot_1_1_modifiers_1_1_weapon_modifiers =
 [
+    [ "Ice", "namespace_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_ice.html", "namespace_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_ice" ],
     [ "AmmoReduce", "class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_ammo_reduce.html", "class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_ammo_reduce" ],
     [ "CritPlus", "class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_crit_plus.html", "class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_crit_plus" ],
     [ "CursedDamage", "class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_cursed_damage.html", "class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_cursed_damage" ],

@@ -12,6 +12,7 @@ var searchData=
   ['equipmodifiers',['EquipModifiers',['../namespace_loot_1_1_modifiers_1_1_equip_modifiers.html',1,'Loot::Modifiers']]],
   ['ext',['Ext',['../namespace_loot_1_1_ext.html',1,'Loot']]],
   ['graphics',['Graphics',['../namespace_loot_1_1_core_1_1_graphics.html',1,'Loot::Core']]],
+  ['ice',['Ice',['../namespace_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_ice.html',1,'Loot::Modifiers::WeaponModifiers']]],
   ['loaders',['Loaders',['../namespace_loot_1_1_core_1_1_system_1_1_loaders.html',1,'Loot::Core::System']]],
   ['loot',['Loot',['../namespace_loot.html',1,'']]],
   ['loottests',['LootTests',['../namespace_loot_tests.html',1,'']]],

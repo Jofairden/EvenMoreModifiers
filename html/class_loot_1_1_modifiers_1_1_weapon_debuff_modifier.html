@@ -111,7 +111,6 @@ $(document).ready(function(){initNavTree('class_loot_1_1_modifiers_1_1_weapon_de
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
-<a href="#pub-attribs">Public Attributes</a> &#124;
 <a href="#properties">Properties</a> &#124;
 <a href="#pri-methods">Private Member Functions</a> &#124;
 <a href="class_loot_1_1_modifiers_1_1_weapon_debuff_modifier-members.html">List of all members</a>  </div>
@@ -144,12 +143,11 @@ $(document).ready(function(){initNavTree('class_loot_1_1_modifiers_1_1_weapon_de
 <div id="dynsection-1-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="class_loot_1_1_modifiers_1_1_weapon_debuff_modifier__coll__graph.png" border="0" usemap="#_loot_8_modifiers_8_weapon_debuff_modifier_coll__map" alt="Collaboration graph"/></div>
 <map name="_loot_8_modifiers_8_weapon_debuff_modifier_coll__map" id="_loot_8_modifiers_8_weapon_debuff_modifier_coll__map">
-<area shape="rect" id="node2" href="class_loot_1_1_modifiers_1_1_weapon_modifier.html" title="Defines a modifier that can roll on a weapon item You can use this class and add to CanRoll by callin..." alt="" coords="686,260,802,287"/>
-<area shape="rect" id="node3" href="class_loot_1_1_core_1_1_system_1_1_modifier.html" title="Defines a modifier, which is an unloaded GlobalItem Making it a GlobalItem gives easy access to all h..." alt="" coords="494,179,562,205"/>
-<area shape="rect" id="node4" href="class_global_item.html" title="GlobalItem" alt="" coords="193,56,279,83"/>
-<area shape="rect" id="node5" href="interface_loot_1_1_core_1_1_system_1_1_core_1_1_i_loadable_content.html" title="ILoadableContent" alt="" coords="174,107,298,133"/>
-<area shape="rect" id="node7" href="class_i_cloneable.html" title="ICloneable" alt="" coords="194,208,278,235"/>
-<area shape="rect" id="node9" href="struct_loot_1_1_core_1_1_system_1_1_modifier_tooltip_line.html" title="Defines a tooltip line of a modifier A modifier can have multiple lines " alt="" coords="147,319,325,361"/>
+<area shape="rect" id="node2" href="class_loot_1_1_modifiers_1_1_weapon_modifier.html" title="Defines a modifier that can roll on a weapon item You can use this class and add to CanRoll by callin..." alt="" coords="454,132,570,159"/>
+<area shape="rect" id="node3" href="class_loot_1_1_core_1_1_system_1_1_modifier.html" title="Defines a modifier, which is an unloaded GlobalItem Making it a GlobalItem gives easy access to all h..." alt="" coords="334,132,402,159"/>
+<area shape="rect" id="node4" href="class_global_item.html" title="GlobalItem" alt="" coords="43,5,128,32"/>
+<area shape="rect" id="node5" href="interface_loot_1_1_core_1_1_system_1_1_core_1_1_i_loadable_content.html" title="ILoadableContent" alt="" coords="23,56,147,83"/>
+<area shape="rect" id="node7" href="class_i_cloneable.html" title="ICloneable" alt="" coords="43,157,127,184"/>
 </map>
 <center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
@@ -157,6 +155,8 @@ $(document).ready(function(){initNavTree('class_loot_1_1_modifiers_1_1_weapon_de
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a74a3eeccea302aecfdc67041a62aca5e"><td class="memItemLeft" align="right" valign="top">override <a class="el" href="class_loot_1_1_core_1_1_system_1_1_modifier_properties_builder.html">ModifierPropertiesBuilder</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_loot_1_1_modifiers_1_1_weapon_debuff_modifier.html#a74a3eeccea302aecfdc67041a62aca5e">GetModifierProperties</a> (Item item)</td></tr>
 <tr class="separator:a74a3eeccea302aecfdc67041a62aca5e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab647da05b30b425f8fc2548aae55e60d"><td class="memItemLeft" align="right" valign="top">override <a class="el" href="class_loot_1_1_core_1_1_system_1_1_modifier_tooltip_builder.html">ModifierTooltipBuilder</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_loot_1_1_modifiers_1_1_weapon_debuff_modifier.html#ab647da05b30b425f8fc2548aae55e60d">GetTooltip</a> ()</td></tr>
+<tr class="separator:ab647da05b30b425f8fc2548aae55e60d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae7fa7c30e052a4e6e112f57b0d4a6441"><td class="memItemLeft" align="right" valign="top">override void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_loot_1_1_modifiers_1_1_weapon_debuff_modifier.html#ae7fa7c30e052a4e6e112f57b0d4a6441">HoldItem</a> (Item item, Player player)</td></tr>
 <tr class="separator:ae7fa7c30e052a4e6e112f57b0d4a6441"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4e1acfcbd7c8edb0b2bf8effebba7b7b"><td class="memItemLeft" align="right" valign="top">override void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_loot_1_1_modifiers_1_1_weapon_debuff_modifier.html#a4e1acfcbd7c8edb0b2bf8effebba7b7b">OnHitNPC</a> (Item item, Player player, NPC target, int damage, float knockBack, bool crit)</td></tr>
@@ -259,20 +259,6 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:ab97f9176d022288d8d70849afb2bd2cb inherit pub_methods_class_loot_1_1_core_1_1_system_1_1_modifier"><td class="memItemLeft" align="right" valign="top">sealed override bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_loot_1_1_core_1_1_system_1_1_modifier.html#ab97f9176d022288d8d70849afb2bd2cb">WingUpdate</a> (int wings, Player player, bool inUse)</td></tr>
 <tr class="separator:ab97f9176d022288d8d70849afb2bd2cb inherit pub_methods_class_loot_1_1_core_1_1_system_1_1_modifier"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
-Public Attributes</h2></td></tr>
-<tr class="memitem:a7002ee6e0ac3ca10ab191e61084903a0"><td class="memItemLeft" align="right" valign="top">override <a class="el" href="struct_loot_1_1_core_1_1_system_1_1_modifier_tooltip_line.html">ModifierTooltipLine</a>[]&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_loot_1_1_modifiers_1_1_weapon_debuff_modifier.html#a7002ee6e0ac3ca10ab191e61084903a0">TooltipLines</a></td></tr>
-<tr class="separator:a7002ee6e0ac3ca10ab191e61084903a0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="inherit_header pub_attribs_class_loot_1_1_core_1_1_system_1_1_modifier"><td colspan="2" onclick="javascript:toggleInherit('pub_attribs_class_loot_1_1_core_1_1_system_1_1_modifier')"><img src="closed.png" alt="-"/>&#160;Public Attributes inherited from <a class="el" href="class_loot_1_1_core_1_1_system_1_1_modifier.html">Loot.Core.System.Modifier</a></td></tr>
-<tr class="memitem:a9c1f7852811f51522cbb89e88d371387 inherit pub_attribs_class_loot_1_1_core_1_1_system_1_1_modifier"><td class="memItemLeft" align="right" valign="top">sealed override bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_loot_1_1_core_1_1_system_1_1_modifier.html#a9c1f7852811f51522cbb89e88d371387">CloneNewInstances</a> =&gt; true</td></tr>
-<tr class="separator:a9c1f7852811f51522cbb89e88d371387 inherit pub_attribs_class_loot_1_1_core_1_1_system_1_1_modifier"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac9d7b09dd8b5d9133e9981a11cc46d34 inherit pub_attribs_class_loot_1_1_core_1_1_system_1_1_modifier"><td class="memItemLeft" align="right" valign="top">sealed override bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_loot_1_1_core_1_1_system_1_1_modifier.html#ac9d7b09dd8b5d9133e9981a11cc46d34">InstancePerEntity</a> =&gt; true</td></tr>
-<tr class="separator:ac9d7b09dd8b5d9133e9981a11cc46d34 inherit pub_attribs_class_loot_1_1_core_1_1_system_1_1_modifier"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac7c03028a3ee248ebc9516628449eed2 inherit pub_attribs_class_loot_1_1_core_1_1_system_1_1_modifier"><td class="memItemLeft" align="right" valign="top">new string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_loot_1_1_core_1_1_system_1_1_modifier.html#ac7c03028a3ee248ebc9516628449eed2">Name</a> =&gt; GetType().Name</td></tr>
-<tr class="separator:ac7c03028a3ee248ebc9516628449eed2 inherit pub_attribs_class_loot_1_1_core_1_1_system_1_1_modifier"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:add5384c40fb08aaee20683e3867d1061 inherit pub_attribs_class_loot_1_1_core_1_1_system_1_1_modifier"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="struct_loot_1_1_core_1_1_system_1_1_modifier_tooltip_line.html">ModifierTooltipLine</a>[]&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_loot_1_1_core_1_1_system_1_1_modifier.html#add5384c40fb08aaee20683e3867d1061">TooltipLines</a> =&gt; new <a class="el" href="struct_loot_1_1_core_1_1_system_1_1_modifier_tooltip_line.html">ModifierTooltipLine</a>[0]</td></tr>
-<tr class="separator:add5384c40fb08aaee20683e3867d1061 inherit pub_attribs_class_loot_1_1_core_1_1_system_1_1_modifier"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="properties"></a>
 Properties</h2></td></tr>
 <tr class="memitem:a8b5bf73e06723ac9caedbea6229f8447"><td class="memItemLeft" align="right" valign="top">abstract float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_loot_1_1_modifiers_1_1_weapon_debuff_modifier.html#a8b5bf73e06723ac9caedbea6229f8447">BuffInflictionChance</a><code> [get]</code></td></tr>
@@ -312,11 +298,18 @@ Additional Inherited Members</h2></td></tr>
 <tr class="inherit_header pub_static_methods_class_loot_1_1_modifiers_1_1_weapon_modifier"><td colspan="2" onclick="javascript:toggleInherit('pub_static_methods_class_loot_1_1_modifiers_1_1_weapon_modifier')"><img src="closed.png" alt="-"/>&#160;Static Public Member Functions inherited from <a class="el" href="class_loot_1_1_modifiers_1_1_weapon_modifier.html">Loot.Modifiers.WeaponModifier</a></td></tr>
 <tr class="memitem:a4ad792b5ef1317dd474744ac08594b6b inherit pub_static_methods_class_loot_1_1_modifiers_1_1_weapon_modifier"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_loot_1_1_modifiers_1_1_weapon_modifier.html#a4ad792b5ef1317dd474744ac08594b6b">HasVanillaDamage</a> (Item item)</td></tr>
 <tr class="separator:a4ad792b5ef1317dd474744ac08594b6b inherit pub_static_methods_class_loot_1_1_modifiers_1_1_weapon_modifier"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_attribs_class_loot_1_1_core_1_1_system_1_1_modifier"><td colspan="2" onclick="javascript:toggleInherit('pub_attribs_class_loot_1_1_core_1_1_system_1_1_modifier')"><img src="closed.png" alt="-"/>&#160;Public Attributes inherited from <a class="el" href="class_loot_1_1_core_1_1_system_1_1_modifier.html">Loot.Core.System.Modifier</a></td></tr>
+<tr class="memitem:a9c1f7852811f51522cbb89e88d371387 inherit pub_attribs_class_loot_1_1_core_1_1_system_1_1_modifier"><td class="memItemLeft" align="right" valign="top">sealed override bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_loot_1_1_core_1_1_system_1_1_modifier.html#a9c1f7852811f51522cbb89e88d371387">CloneNewInstances</a> =&gt; true</td></tr>
+<tr class="separator:a9c1f7852811f51522cbb89e88d371387 inherit pub_attribs_class_loot_1_1_core_1_1_system_1_1_modifier"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac9d7b09dd8b5d9133e9981a11cc46d34 inherit pub_attribs_class_loot_1_1_core_1_1_system_1_1_modifier"><td class="memItemLeft" align="right" valign="top">sealed override bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_loot_1_1_core_1_1_system_1_1_modifier.html#ac9d7b09dd8b5d9133e9981a11cc46d34">InstancePerEntity</a> =&gt; true</td></tr>
+<tr class="separator:ac9d7b09dd8b5d9133e9981a11cc46d34 inherit pub_attribs_class_loot_1_1_core_1_1_system_1_1_modifier"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac7c03028a3ee248ebc9516628449eed2 inherit pub_attribs_class_loot_1_1_core_1_1_system_1_1_modifier"><td class="memItemLeft" align="right" valign="top">new string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_loot_1_1_core_1_1_system_1_1_modifier.html#ac7c03028a3ee248ebc9516628449eed2">Name</a> =&gt; GetType().Name</td></tr>
+<tr class="separator:ac7c03028a3ee248ebc9516628449eed2 inherit pub_attribs_class_loot_1_1_core_1_1_system_1_1_modifier"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Defines a modifier that can inflict a debuff, applicable for weapons </p>
 
-<p>Definition at line <a class="el" href="_weapon_debuff_modifier_8cs_source.html#l00050">50</a> of file <a class="el" href="_weapon_debuff_modifier_8cs_source.html">WeaponDebuffModifier.cs</a>.</p>
+<p>Definition at line <a class="el" href="_weapon_debuff_modifier_8cs_source.html#l00049">49</a> of file <a class="el" href="_weapon_debuff_modifier_8cs_source.html">WeaponDebuffModifier.cs</a>.</p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
 <a class="anchor" id="aae52ec2ab87344e66049642c6bf3dcc5"></a>
 <div class="memitem">
@@ -387,6 +380,47 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="ab647da05b30b425f8fc2548aae55e60d"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">override <a class="el" href="class_loot_1_1_core_1_1_system_1_1_modifier_tooltip_builder.html">ModifierTooltipBuilder</a> Loot.Modifiers.WeaponDebuffModifier.GetTooltip </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Reimplemented from <a class="el" href="class_loot_1_1_core_1_1_system_1_1_modifier.html#adfc7716a0563555cf8de448dfdc79bd3">Loot.Core.System.Modifier</a>.</p>
+
+<p>Definition at line <a class="el" href="_weapon_debuff_modifier_8cs_source.html#l00051">51</a> of file <a class="el" href="_weapon_debuff_modifier_8cs_source.html">WeaponDebuffModifier.cs</a>.</p>
+
+<p>References <a class="el" href="_modifier_tooltip_builder_8cs_source.html#l00032">Loot.Core.System.ModifierTooltipBuilder.WithPositive()</a>.</p>
+<div class="fragment"><div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        {</div><div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;            <span class="keywordflow">return</span> base.GetTooltip()</div><div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;                .WithPositive($<span class="stringliteral">&quot;+{Properties.RoundedPower}% chance to inflict {GetBuffName()} for {RoundedBuffTime()}s&quot;</span>);</div><div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        }</div></div><!-- fragment -->
+<p><div id="dynsection-3" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-3-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-3-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-3-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="class_loot_1_1_modifiers_1_1_weapon_debuff_modifier_ab647da05b30b425f8fc2548aae55e60d_cgraph.png" border="0" usemap="#class_loot_1_1_modifiers_1_1_weapon_debuff_modifier_ab647da05b30b425f8fc2548aae55e60d_cgraph" alt=""/></div>
+<map name="class_loot_1_1_modifiers_1_1_weapon_debuff_modifier_ab647da05b30b425f8fc2548aae55e60d_cgraph" id="class_loot_1_1_modifiers_1_1_weapon_debuff_modifier_ab647da05b30b425f8fc2548aae55e60d_cgraph">
+<area shape="rect" id="node2" href="class_loot_1_1_core_1_1_system_1_1_modifier_tooltip_builder.html#af93d9e4477ce1f2f777886627269a371" title="Loot.Core.System.Modifier\lTooltipBuilder.WithPositive" alt="" coords="248,5,427,46"/>
+</map>
+</div>
+</p>
+
+</div>
+</div>
 <a class="anchor" id="ae7fa7c30e052a4e6e112f57b0d4a6441"></a>
 <div class="memitem">
 <div class="memproto">
@@ -417,14 +451,14 @@ Additional Inherited Members</h2></td></tr>
 <div class="fragment"><div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;        {</div><div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;            ModifierPlayer.Player(player).GetEffect&lt;WeaponDebuffEffect&gt;()</div><div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;                .DebuffChances</div><div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;                .Add(<span class="keyword">new</span> DebuffTrigger(<a class="code" href="class_loot_1_1_modifiers_1_1_weapon_debuff_modifier.html#ab975dfece367a8c70c11da89cfaeb5f8">BuffType</a>, <a class="code" href="class_loot_1_1_modifiers_1_1_weapon_debuff_modifier.html#a91d84cd30e0023bae36b8c9ae3d81154">BuffTime</a>, <a class="code" href="class_loot_1_1_core_1_1_system_1_1_modifier.html#ad8d7867c485986dd69cc2757f09d555a">Properties</a>.<a class="code" href="class_loot_1_1_core_1_1_system_1_1_modifier_properties.html#a14f10daa691d3c84b0babf8452bb6b47">RoundedPower</a> / 100f * <a class="code" href="class_loot_1_1_modifiers_1_1_weapon_debuff_modifier.html#a8b5bf73e06723ac9caedbea6229f8447">BuffInflictionChance</a>));</div><div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;        }</div><div class="ttc" id="class_loot_1_1_modifiers_1_1_weapon_debuff_modifier_html_a8b5bf73e06723ac9caedbea6229f8447"><div class="ttname"><a href="class_loot_1_1_modifiers_1_1_weapon_debuff_modifier.html#a8b5bf73e06723ac9caedbea6229f8447">Loot.Modifiers.WeaponDebuffModifier.BuffInflictionChance</a></div><div class="ttdeci">abstract float BuffInflictionChance</div><div class="ttdef"><b>Definition:</b> <a href="_weapon_debuff_modifier_8cs_source.html#l00072">WeaponDebuffModifier.cs:72</a></div></div>
 <div class="ttc" id="class_loot_1_1_modifiers_1_1_weapon_debuff_modifier_html_ab975dfece367a8c70c11da89cfaeb5f8"><div class="ttname"><a href="class_loot_1_1_modifiers_1_1_weapon_debuff_modifier.html#ab975dfece367a8c70c11da89cfaeb5f8">Loot.Modifiers.WeaponDebuffModifier.BuffType</a></div><div class="ttdeci">abstract int BuffType</div><div class="ttdef"><b>Definition:</b> <a href="_weapon_debuff_modifier_8cs_source.html#l00070">WeaponDebuffModifier.cs:70</a></div></div>
 <div class="ttc" id="class_loot_1_1_core_1_1_system_1_1_modifier_properties_html_a14f10daa691d3c84b0babf8452bb6b47"><div class="ttname"><a href="class_loot_1_1_core_1_1_system_1_1_modifier_properties.html#a14f10daa691d3c84b0babf8452bb6b47">Loot.Core.System.ModifierProperties.RoundedPower</a></div><div class="ttdeci">float RoundedPower</div><div class="ttdef"><b>Definition:</b> <a href="_modifier_properties_8cs_source.html#l00036">ModifierProperties.cs:36</a></div></div>
-<div class="ttc" id="class_loot_1_1_core_1_1_system_1_1_modifier_html_ad8d7867c485986dd69cc2757f09d555a"><div class="ttname"><a href="class_loot_1_1_core_1_1_system_1_1_modifier.html#ad8d7867c485986dd69cc2757f09d555a">Loot.Core.System.Modifier.Properties</a></div><div class="ttdeci">ModifierProperties Properties</div><div class="ttdef"><b>Definition:</b> <a href="_modifier_8cs_source.html#l00042">Modifier.cs:42</a></div></div>
+<div class="ttc" id="class_loot_1_1_core_1_1_system_1_1_modifier_html_ad8d7867c485986dd69cc2757f09d555a"><div class="ttname"><a href="class_loot_1_1_core_1_1_system_1_1_modifier.html#ad8d7867c485986dd69cc2757f09d555a">Loot.Core.System.Modifier.Properties</a></div><div class="ttdeci">ModifierProperties Properties</div><div class="ttdef"><b>Definition:</b> <a href="_modifier_8cs_source.html#l00041">Modifier.cs:41</a></div></div>
 <div class="ttc" id="class_loot_1_1_modifiers_1_1_weapon_debuff_modifier_html_a91d84cd30e0023bae36b8c9ae3d81154"><div class="ttname"><a href="class_loot_1_1_modifiers_1_1_weapon_debuff_modifier.html#a91d84cd30e0023bae36b8c9ae3d81154">Loot.Modifiers.WeaponDebuffModifier.BuffTime</a></div><div class="ttdeci">abstract int BuffTime</div><div class="ttdef"><b>Definition:</b> <a href="_weapon_debuff_modifier_8cs_source.html#l00071">WeaponDebuffModifier.cs:71</a></div></div>
 </div><!-- fragment -->
-<p><div id="dynsection-3" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-3-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
-<div id="dynsection-3-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-4" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-4-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-4-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-3-content" class="dyncontent" style="display:none;">
+<div id="dynsection-4-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="class_loot_1_1_modifiers_1_1_weapon_debuff_modifier_ae7fa7c30e052a4e6e112f57b0d4a6441_cgraph.png" border="0" usemap="#class_loot_1_1_modifiers_1_1_weapon_debuff_modifier_ae7fa7c30e052a4e6e112f57b0d4a6441_cgraph" alt=""/></div>
 <map name="class_loot_1_1_modifiers_1_1_weapon_debuff_modifier_ae7fa7c30e052a4e6e112f57b0d4a6441_cgraph" id="class_loot_1_1_modifiers_1_1_weapon_debuff_modifier_ae7fa7c30e052a4e6e112f57b0d4a6441_cgraph">
 <area shape="rect" id="node2" href="class_loot_1_1_modifier_player.html#a3e4b8a428276fb0205e9c0f166435bf0" title="Loot.ModifierPlayer.GetEffect" alt="" coords="248,5,443,32"/>
@@ -487,7 +521,7 @@ Additional Inherited Members</h2></td></tr>
 <div class="fragment"><div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;        {</div><div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;            <span class="keywordflow">if</span> (Main.rand.NextFloat() &lt; <a class="code" href="class_loot_1_1_core_1_1_system_1_1_modifier.html#ad8d7867c485986dd69cc2757f09d555a">Properties</a>.<a class="code" href="class_loot_1_1_core_1_1_system_1_1_modifier_properties.html#a14f10daa691d3c84b0babf8452bb6b47">RoundedPower</a> / 100f * <a class="code" href="class_loot_1_1_modifiers_1_1_weapon_debuff_modifier.html#a8b5bf73e06723ac9caedbea6229f8447">BuffInflictionChance</a>)</div><div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;            {</div><div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;                target.AddBuff(<a class="code" href="class_loot_1_1_modifiers_1_1_weapon_debuff_modifier.html#ab975dfece367a8c70c11da89cfaeb5f8">BuffType</a>, <a class="code" href="class_loot_1_1_modifiers_1_1_weapon_debuff_modifier.html#a91d84cd30e0023bae36b8c9ae3d81154">BuffTime</a>);</div><div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;            }</div><div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;        }</div><div class="ttc" id="class_loot_1_1_modifiers_1_1_weapon_debuff_modifier_html_a8b5bf73e06723ac9caedbea6229f8447"><div class="ttname"><a href="class_loot_1_1_modifiers_1_1_weapon_debuff_modifier.html#a8b5bf73e06723ac9caedbea6229f8447">Loot.Modifiers.WeaponDebuffModifier.BuffInflictionChance</a></div><div class="ttdeci">abstract float BuffInflictionChance</div><div class="ttdef"><b>Definition:</b> <a href="_weapon_debuff_modifier_8cs_source.html#l00072">WeaponDebuffModifier.cs:72</a></div></div>
 <div class="ttc" id="class_loot_1_1_modifiers_1_1_weapon_debuff_modifier_html_ab975dfece367a8c70c11da89cfaeb5f8"><div class="ttname"><a href="class_loot_1_1_modifiers_1_1_weapon_debuff_modifier.html#ab975dfece367a8c70c11da89cfaeb5f8">Loot.Modifiers.WeaponDebuffModifier.BuffType</a></div><div class="ttdeci">abstract int BuffType</div><div class="ttdef"><b>Definition:</b> <a href="_weapon_debuff_modifier_8cs_source.html#l00070">WeaponDebuffModifier.cs:70</a></div></div>
 <div class="ttc" id="class_loot_1_1_core_1_1_system_1_1_modifier_properties_html_a14f10daa691d3c84b0babf8452bb6b47"><div class="ttname"><a href="class_loot_1_1_core_1_1_system_1_1_modifier_properties.html#a14f10daa691d3c84b0babf8452bb6b47">Loot.Core.System.ModifierProperties.RoundedPower</a></div><div class="ttdeci">float RoundedPower</div><div class="ttdef"><b>Definition:</b> <a href="_modifier_properties_8cs_source.html#l00036">ModifierProperties.cs:36</a></div></div>
-<div class="ttc" id="class_loot_1_1_core_1_1_system_1_1_modifier_html_ad8d7867c485986dd69cc2757f09d555a"><div class="ttname"><a href="class_loot_1_1_core_1_1_system_1_1_modifier.html#ad8d7867c485986dd69cc2757f09d555a">Loot.Core.System.Modifier.Properties</a></div><div class="ttdeci">ModifierProperties Properties</div><div class="ttdef"><b>Definition:</b> <a href="_modifier_8cs_source.html#l00042">Modifier.cs:42</a></div></div>
+<div class="ttc" id="class_loot_1_1_core_1_1_system_1_1_modifier_html_ad8d7867c485986dd69cc2757f09d555a"><div class="ttname"><a href="class_loot_1_1_core_1_1_system_1_1_modifier.html#ad8d7867c485986dd69cc2757f09d555a">Loot.Core.System.Modifier.Properties</a></div><div class="ttdeci">ModifierProperties Properties</div><div class="ttdef"><b>Definition:</b> <a href="_modifier_8cs_source.html#l00041">Modifier.cs:41</a></div></div>
 <div class="ttc" id="class_loot_1_1_modifiers_1_1_weapon_debuff_modifier_html_a91d84cd30e0023bae36b8c9ae3d81154"><div class="ttname"><a href="class_loot_1_1_modifiers_1_1_weapon_debuff_modifier.html#a91d84cd30e0023bae36b8c9ae3d81154">Loot.Modifiers.WeaponDebuffModifier.BuffTime</a></div><div class="ttdeci">abstract int BuffTime</div><div class="ttdef"><b>Definition:</b> <a href="_weapon_debuff_modifier_8cs_source.html#l00071">WeaponDebuffModifier.cs:71</a></div></div>
 </div><!-- fragment -->
 </div>
@@ -538,7 +572,7 @@ Additional Inherited Members</h2></td></tr>
 <div class="fragment"><div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;        {</div><div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;            <span class="keywordflow">if</span> (Main.rand.NextFloat() &lt; <a class="code" href="class_loot_1_1_core_1_1_system_1_1_modifier.html#ad8d7867c485986dd69cc2757f09d555a">Properties</a>.<a class="code" href="class_loot_1_1_core_1_1_system_1_1_modifier_properties.html#a14f10daa691d3c84b0babf8452bb6b47">RoundedPower</a> / 100f * <a class="code" href="class_loot_1_1_modifiers_1_1_weapon_debuff_modifier.html#a8b5bf73e06723ac9caedbea6229f8447">BuffInflictionChance</a>)</div><div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;            {</div><div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;                target.AddBuff(<a class="code" href="class_loot_1_1_modifiers_1_1_weapon_debuff_modifier.html#ab975dfece367a8c70c11da89cfaeb5f8">BuffType</a>, <a class="code" href="class_loot_1_1_modifiers_1_1_weapon_debuff_modifier.html#a91d84cd30e0023bae36b8c9ae3d81154">BuffTime</a>);</div><div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;            }</div><div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;        }</div><div class="ttc" id="class_loot_1_1_modifiers_1_1_weapon_debuff_modifier_html_a8b5bf73e06723ac9caedbea6229f8447"><div class="ttname"><a href="class_loot_1_1_modifiers_1_1_weapon_debuff_modifier.html#a8b5bf73e06723ac9caedbea6229f8447">Loot.Modifiers.WeaponDebuffModifier.BuffInflictionChance</a></div><div class="ttdeci">abstract float BuffInflictionChance</div><div class="ttdef"><b>Definition:</b> <a href="_weapon_debuff_modifier_8cs_source.html#l00072">WeaponDebuffModifier.cs:72</a></div></div>
 <div class="ttc" id="class_loot_1_1_modifiers_1_1_weapon_debuff_modifier_html_ab975dfece367a8c70c11da89cfaeb5f8"><div class="ttname"><a href="class_loot_1_1_modifiers_1_1_weapon_debuff_modifier.html#ab975dfece367a8c70c11da89cfaeb5f8">Loot.Modifiers.WeaponDebuffModifier.BuffType</a></div><div class="ttdeci">abstract int BuffType</div><div class="ttdef"><b>Definition:</b> <a href="_weapon_debuff_modifier_8cs_source.html#l00070">WeaponDebuffModifier.cs:70</a></div></div>
 <div class="ttc" id="class_loot_1_1_core_1_1_system_1_1_modifier_properties_html_a14f10daa691d3c84b0babf8452bb6b47"><div class="ttname"><a href="class_loot_1_1_core_1_1_system_1_1_modifier_properties.html#a14f10daa691d3c84b0babf8452bb6b47">Loot.Core.System.ModifierProperties.RoundedPower</a></div><div class="ttdeci">float RoundedPower</div><div class="ttdef"><b>Definition:</b> <a href="_modifier_properties_8cs_source.html#l00036">ModifierProperties.cs:36</a></div></div>
-<div class="ttc" id="class_loot_1_1_core_1_1_system_1_1_modifier_html_ad8d7867c485986dd69cc2757f09d555a"><div class="ttname"><a href="class_loot_1_1_core_1_1_system_1_1_modifier.html#ad8d7867c485986dd69cc2757f09d555a">Loot.Core.System.Modifier.Properties</a></div><div class="ttdeci">ModifierProperties Properties</div><div class="ttdef"><b>Definition:</b> <a href="_modifier_8cs_source.html#l00042">Modifier.cs:42</a></div></div>
+<div class="ttc" id="class_loot_1_1_core_1_1_system_1_1_modifier_html_ad8d7867c485986dd69cc2757f09d555a"><div class="ttname"><a href="class_loot_1_1_core_1_1_system_1_1_modifier.html#ad8d7867c485986dd69cc2757f09d555a">Loot.Core.System.Modifier.Properties</a></div><div class="ttdeci">ModifierProperties Properties</div><div class="ttdef"><b>Definition:</b> <a href="_modifier_8cs_source.html#l00041">Modifier.cs:41</a></div></div>
 <div class="ttc" id="class_loot_1_1_modifiers_1_1_weapon_debuff_modifier_html_a91d84cd30e0023bae36b8c9ae3d81154"><div class="ttname"><a href="class_loot_1_1_modifiers_1_1_weapon_debuff_modifier.html#a91d84cd30e0023bae36b8c9ae3d81154">Loot.Modifiers.WeaponDebuffModifier.BuffTime</a></div><div class="ttdeci">abstract int BuffTime</div><div class="ttdef"><b>Definition:</b> <a href="_weapon_debuff_modifier_8cs_source.html#l00071">WeaponDebuffModifier.cs:71</a></div></div>
 </div><!-- fragment -->
 </div>
@@ -565,25 +599,10 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Definition at line <a class="el" href="_weapon_debuff_modifier_8cs_source.html#l00065">65</a> of file <a class="el" href="_weapon_debuff_modifier_8cs_source.html">WeaponDebuffModifier.cs</a>.</p>
-<div class="fragment"><div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;        {</div><div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;            <span class="keywordflow">return</span> (<span class="keywordtype">float</span>)Math.Round((<span class="keywordtype">double</span>)<a class="code" href="class_loot_1_1_modifiers_1_1_weapon_debuff_modifier.html#a91d84cd30e0023bae36b8c9ae3d81154">BuffTime</a> / 60f, <a class="code" href="class_loot_1_1_core_1_1_system_1_1_modifier.html#ad8d7867c485986dd69cc2757f09d555a">Properties</a>.<a class="code" href="class_loot_1_1_core_1_1_system_1_1_modifier_properties.html#aa6e4e1f4e7f2b91b4c3be5408ce25235">RoundPrecision</a>);</div><div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;        }</div><div class="ttc" id="class_loot_1_1_core_1_1_system_1_1_modifier_properties_html_aa6e4e1f4e7f2b91b4c3be5408ce25235"><div class="ttname"><a href="class_loot_1_1_core_1_1_system_1_1_modifier_properties.html#aa6e4e1f4e7f2b91b4c3be5408ce25235">Loot.Core.System.ModifierProperties.RoundPrecision</a></div><div class="ttdeci">readonly int RoundPrecision</div><div class="ttdef"><b>Definition:</b> <a href="_modifier_properties_8cs_source.html#l00022">ModifierProperties.cs:22</a></div></div>
-<div class="ttc" id="class_loot_1_1_core_1_1_system_1_1_modifier_html_ad8d7867c485986dd69cc2757f09d555a"><div class="ttname"><a href="class_loot_1_1_core_1_1_system_1_1_modifier.html#ad8d7867c485986dd69cc2757f09d555a">Loot.Core.System.Modifier.Properties</a></div><div class="ttdeci">ModifierProperties Properties</div><div class="ttdef"><b>Definition:</b> <a href="_modifier_8cs_source.html#l00042">Modifier.cs:42</a></div></div>
+<div class="fragment"><div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;        {</div><div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;            <span class="keywordflow">return</span> (<span class="keywordtype">float</span>) Math.Round((<span class="keywordtype">double</span>) <a class="code" href="class_loot_1_1_modifiers_1_1_weapon_debuff_modifier.html#a91d84cd30e0023bae36b8c9ae3d81154">BuffTime</a> / 60f, <a class="code" href="class_loot_1_1_core_1_1_system_1_1_modifier.html#ad8d7867c485986dd69cc2757f09d555a">Properties</a>.<a class="code" href="class_loot_1_1_core_1_1_system_1_1_modifier_properties.html#aa6e4e1f4e7f2b91b4c3be5408ce25235">RoundPrecision</a>);</div><div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;        }</div><div class="ttc" id="class_loot_1_1_core_1_1_system_1_1_modifier_properties_html_aa6e4e1f4e7f2b91b4c3be5408ce25235"><div class="ttname"><a href="class_loot_1_1_core_1_1_system_1_1_modifier_properties.html#aa6e4e1f4e7f2b91b4c3be5408ce25235">Loot.Core.System.ModifierProperties.RoundPrecision</a></div><div class="ttdeci">readonly int RoundPrecision</div><div class="ttdef"><b>Definition:</b> <a href="_modifier_properties_8cs_source.html#l00022">ModifierProperties.cs:22</a></div></div>
+<div class="ttc" id="class_loot_1_1_core_1_1_system_1_1_modifier_html_ad8d7867c485986dd69cc2757f09d555a"><div class="ttname"><a href="class_loot_1_1_core_1_1_system_1_1_modifier.html#ad8d7867c485986dd69cc2757f09d555a">Loot.Core.System.Modifier.Properties</a></div><div class="ttdeci">ModifierProperties Properties</div><div class="ttdef"><b>Definition:</b> <a href="_modifier_8cs_source.html#l00041">Modifier.cs:41</a></div></div>
 <div class="ttc" id="class_loot_1_1_modifiers_1_1_weapon_debuff_modifier_html_a91d84cd30e0023bae36b8c9ae3d81154"><div class="ttname"><a href="class_loot_1_1_modifiers_1_1_weapon_debuff_modifier.html#a91d84cd30e0023bae36b8c9ae3d81154">Loot.Modifiers.WeaponDebuffModifier.BuffTime</a></div><div class="ttdeci">abstract int BuffTime</div><div class="ttdef"><b>Definition:</b> <a href="_weapon_debuff_modifier_8cs_source.html#l00071">WeaponDebuffModifier.cs:71</a></div></div>
 </div><!-- fragment -->
-</div>
-</div>
-<h2 class="groupheader">Member Data Documentation</h2>
-<a class="anchor" id="a7002ee6e0ac3ca10ab191e61084903a0"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">override <a class="el" href="struct_loot_1_1_core_1_1_system_1_1_modifier_tooltip_line.html">ModifierTooltipLine</a> [] Loot.Modifiers.WeaponDebuffModifier.TooltipLines</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<b>Initial value:</b><div class="fragment"><div class="line">=&gt; <span class="keyword">new</span>[]</div><div class="line">        {</div><div class="line">            <span class="keyword">new</span> ModifierTooltipLine {Text = $<span class="stringliteral">&quot;+{Properties.RoundedPower}% chance to inflict {GetBuffName()} for {RoundedBuffTime()}s&quot;</span>, Color = Color.Lime}</div><div class="line">        }</div></div><!-- fragment -->
-<p>Definition at line <a class="el" href="_weapon_debuff_modifier_8cs_source.html#l00052">52</a> of file <a class="el" href="_weapon_debuff_modifier_8cs_source.html">WeaponDebuffModifier.cs</a>.</p>
-
 </div>
 </div>
 <h2 class="groupheader">Property Documentation</h2>
@@ -659,7 +678,7 @@ Additional Inherited Members</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespace_loot.html">Loot</a></li><li class="navelem"><a class="el" href="namespace_loot_1_1_modifiers.html">Modifiers</a></li><li class="navelem"><a class="el" href="class_loot_1_1_modifiers_1_1_weapon_debuff_modifier.html">WeaponDebuffModifier</a></li>
-    <li class="footer">Generated on Wed Jan 23 2019 15:31:36 for Even More Modifiers by
+    <li class="footer">Generated on Wed Jan 23 2019 16:51:57 for Even More Modifiers by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.11 </li>
   </ul>

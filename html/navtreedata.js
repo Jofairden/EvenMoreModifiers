@@ -16,7 +16,7 @@ var NAVTREE =
       [ "Class Members", "functions.html", [
         [ "All", "functions.html", "functions_dup" ],
         [ "Functions", "functions_func.html", "functions_func" ],
-        [ "Variables", "functions_vars.html", "functions_vars" ],
+        [ "Variables", "functions_vars.html", null ],
         [ "Properties", "functions_prop.html", null ],
         [ "Events", "functions_evnt.html", null ]
       ] ]
@@ -34,11 +34,12 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "_accessory_modifier_8cs.html",
-"_test_apply_mod_8cs.html",
-"class_loot_1_1_core_1_1_mod_content_1_1_graphics_mod_content.html#a4a828843ce296ca1b90a5558650bb0c7",
-"class_loot_1_1_ext_1_1_item_utils.html#a3fdd92513a7f250897d1c439490328fc",
-"class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_utility_1_1_light_plus.html#a79be81f10a4ba089f06034aeaf91e879",
-"class_loot_1_1_u_i_1_1_sealing_1_1_u_i_seal_item_panel.html#aec1c20f414aa6e939cec85a830e05ca9"
+"_sound_helper_8cs.html",
+"class_loot_1_1_core_1_1_mod_content_1_1_graphics_mod_content.html#a34ff09e52ae87b27175254a7db198a30",
+"class_loot_1_1_e_m_m_item.html#a5367a0f6cb29085872d2799fd6b65e47",
+"class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_offensive_1_1_ranged_damage_plus.html#a484af17d07ae165ea6ff2c56aba96e0a",
+"class_loot_1_1_u_i_1_1_rerolling_1_1_cube_reroll_u_i.html#a765883df3a5d1cb840b735be1d289cc2",
+"struct_loot_1_1_modifiers_1_1_debuff_trigger.html#a5c0c851f19e20ba2045c15bda5c0c4f2"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';
