@@ -22,10 +22,11 @@ namespace Loot.Core.Graphics
 		public bool NeedsUpdate { get; set; }
 		public bool UseDestinationRectangle { get; set; }
 		public Rectangle? DestinationRectangle { get; set; }
+		public short Order { get; set; }
 
 		public ShaderEntity(object subjectIdentity, int shaderId, bool drawShader = true, ShaderDrawLayer drawLayer = ShaderDrawLayer.Back, ShaderDrawOffsetStyle drawOffsetStyle = ShaderDrawOffsetStyle.Default,
-			int numSegments = 8, int drawDistance = 4, Color? shaderDrawColor = null, bool useDestinationRectangle = true)
-		: base(subjectIdentity)
+			int numSegments = 8, int drawDistance = 4, Color? shaderDrawColor = null, bool useDestinationRectangle = true, short order = 0)
+			: base(subjectIdentity)
 		{
 			ShaderId = shaderId;
 			DrawShader = drawShader;
@@ -37,6 +38,7 @@ namespace Loot.Core.Graphics
 			NeedsUpdate = false;
 			UseDestinationRectangle = useDestinationRectangle;
 			DestinationRectangle = null;
+			Order = 0;
 		}
 
 		/// <summary>
@@ -48,15 +50,16 @@ namespace Loot.Core.Graphics
 		{
 			if (DrawOffsetStyle == ShaderDrawOffsetStyle.Default)
 			{
-				return new Vector2(0, DrawDistance).RotatedBy((float)i / NumSegments * MathHelper.TwoPi);
+				return new Vector2(0, DrawDistance).RotatedBy((float) i / NumSegments * MathHelper.TwoPi);
 			}
 
 			if (DrawOffsetStyle == ShaderDrawOffsetStyle.Alternate)
 			{
 				var halfDist = DrawDistance / 2;
 				var offY = halfDist + halfDist * i % halfDist;
-				return new Vector2(0, offY).RotatedBy((float)i / NumSegments * MathHelper.TwoPi);
+				return new Vector2(0, offY).RotatedBy((float) i / NumSegments * MathHelper.TwoPi);
 			}
+
 			return Vector2.Zero;
 		}
 
@@ -105,11 +108,11 @@ namespace Loot.Core.Graphics
 
 					if (Entity is NPC)
 					{
-						DrawData.destinationRectangle = ((NPC)Entity).frame;
+						DrawData.destinationRectangle = ((NPC) Entity).frame;
 					}
 					else if (Entity is Projectile)
 					{
-						DrawData.destinationRectangle.Y = ((Projectile)Entity).frame * Entity.height;
+						DrawData.destinationRectangle.Y = ((Projectile) Entity).frame * Entity.height;
 					}
 				}
 			}
@@ -140,7 +143,7 @@ namespace Loot.Core.Graphics
 			if (DrawShader)
 			{
 				TryGettingDrawData(rotation, scale);
-				LoadAssets((Item)Entity);
+				LoadAssets((Item) Entity);
 
 				// Assets present
 				if (SubjectTexture != null && ShaderTexture != null)

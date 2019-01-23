@@ -13,8 +13,9 @@ namespace Loot.Core.Graphics
 		public Texture2D GlowmaskTexture { get; protected set; }
 		public bool UseDestinationRectangle { get; set; }
 		public Rectangle? DestinationRectangle { get; set; }
+		public short Order { get; set; }
 
-		public GlowmaskEntity(object subjectIdentity, bool drawHitbox = false, bool drawGlowmask = true, bool useDestinationRectangle = true) 
+		public GlowmaskEntity(object subjectIdentity, bool drawHitbox = false, bool drawGlowmask = true, bool useDestinationRectangle = true, short order = 0)
 			: base(subjectIdentity)
 		{
 			DrawHitbox = drawHitbox;
@@ -22,6 +23,7 @@ namespace Loot.Core.Graphics
 			NeedsUpdate = false;
 			UseDestinationRectangle = useDestinationRectangle;
 			DestinationRectangle = null;
+			Order = order;
 		}
 
 		// TODO custom animation logic
@@ -35,15 +37,16 @@ namespace Loot.Core.Graphics
 				Rectangle rectangle = new Rectangle(0, 0, texture.Width, texture.Height);
 				if (Entity is NPC)
 				{
-					rectangle = ((NPC)Entity).frame;
+					rectangle = ((NPC) Entity).frame;
 				}
 				else if (Entity is Projectile)
 				{
-					rectangle.Y = ((Projectile)Entity).frame * Entity.height;
+					rectangle.Y = ((Projectile) Entity).frame * Entity.height;
 				}
 
 				return rectangle;
 			}
+
 			return null;
 		}
 
@@ -69,7 +72,7 @@ namespace Loot.Core.Graphics
 				Texture2D drawTexture = suppliedGlowmask;
 				if (drawTexture == null)
 				{
-					LoadAssets((Item)Entity);
+					LoadAssets((Item) Entity);
 					drawTexture = GlowmaskTexture;
 				}
 
@@ -81,7 +84,7 @@ namespace Loot.Core.Graphics
 					//	effect |= SpriteEffects.FlipVertically;
 					if (Entity.direction == -1)
 						effect |= SpriteEffects.FlipHorizontally;
-					
+
 					// Draw the glowmask
 					spriteBatch.Draw
 					(
@@ -111,7 +114,7 @@ namespace Loot.Core.Graphics
 			if (DrawHitbox)
 			{
 				Rectangle hitbox = Entity.Hitbox;
-				hitbox.Offset((int)-Main.screenPosition.X, (int)-Main.screenPosition.Y);
+				hitbox.Offset((int) -Main.screenPosition.X, (int) -Main.screenPosition.Y);
 				spriteBatch.Draw(Main.magicPixel, hitbox, Color.White);
 			}
 		}

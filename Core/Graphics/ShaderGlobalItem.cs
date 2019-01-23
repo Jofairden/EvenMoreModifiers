@@ -1,7 +1,7 @@
-using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Graphics;
 using System.Linq;
 using Loot.Core.System;
+using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Graphics;
 using Terraria;
 using Terraria.ModLoader;
 
@@ -34,6 +34,8 @@ namespace Loot.Core.Graphics
 					Modifier m = pool[i];
 					ShaderEntities[i] = m.GetShaderEntity(item);
 				}
+
+				ShaderEntities = ShaderEntities.OrderBy(x => x.Order).ToArray();
 			}
 		}
 
@@ -54,6 +56,7 @@ namespace Loot.Core.Graphics
 					shaderEntity.DoDrawLayeredEntity(spriteBatch, lightColor, alphaColor, scale, rotation, glowmaskInfo.GlowmaskEntities[i]);
 				}
 			}
+
 			return flag;
 		}
 	}

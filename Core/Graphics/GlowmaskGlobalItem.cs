@@ -1,7 +1,7 @@
-using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Graphics;
 using System.Linq;
 using Loot.Core.System;
+using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Graphics;
 using Terraria;
 using Terraria.ModLoader;
 
@@ -34,6 +34,8 @@ namespace Loot.Core.Graphics
 					Modifier m = pool[i];
 					GlowmaskEntities[i] = m.GetGlowmaskEntity(item);
 				}
+
+				GlowmaskEntities = GlowmaskEntities.OrderBy(x => x.Order).ToArray();
 			}
 		}
 

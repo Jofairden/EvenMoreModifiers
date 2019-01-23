@@ -12,7 +12,7 @@ namespace Loot.Ext.ModSupport
 
 		public static T GetSupport<T>() where T : ModSupporter
 		{
-			return (T)_modSupporters?.FirstOrDefault(s => s.GetType() == typeof(T) || s.GetType().IsAssignableFrom(typeof(T)));
+			return (T) _modSupporters?.FirstOrDefault(s => s.GetType() == typeof(T) || s.GetType().IsAssignableFrom(typeof(T)));
 		}
 
 		public static void Init()
@@ -56,11 +56,8 @@ namespace Loot.Ext.ModSupport
 				string root = typeof(ModSupport).Namespace;
 				_modSupporters = Assembly.GetExecutingAssembly().GetTypes()
 					.Where(t => t.IsClass && !t.IsAbstract && t.Namespace != null && t.Namespace.StartsWith(root)
-								&& t.IsSubclassOf(typeof(ModSupporter)))
-					.Select(t =>
-					{
-						return (ModSupporter)Activator.CreateInstance(t);
-					})
+					            && t.IsSubclassOf(typeof(ModSupporter)))
+					.Select(t => { return (ModSupporter) Activator.CreateInstance(t); })
 					.ToList();
 			}
 
