@@ -11,7 +11,7 @@ namespace Loot.Core.ModContent
 		private IEnumerable<TextureModContent> _modContents => _contents.Select(x => x.Value);
 
 		public T GetContent<T>() where T : TextureModContent
-			=> (T)_modContents.FirstOrDefault(x => x.GetType() == typeof(T));
+			=> (T) _modContents.FirstOrDefault(x => x.GetType() == typeof(T));
 
 		public TextureModContent GetContent(Type type)
 			=> _modContents.FirstOrDefault(x => x.GetType() == type);
@@ -44,7 +44,7 @@ namespace Loot.Core.ModContent
 			var modContents = assembly.GetTypes().Where(x => x.BaseType == typeof(TextureModContent) && !x.IsAbstract);
 			foreach (var modContent in modContents)
 			{
-				TextureModContent obj = (TextureModContent)Activator.CreateInstance(modContent);
+				TextureModContent obj = (TextureModContent) Activator.CreateInstance(modContent);
 				AddContent(obj.GetRegistryKey(), obj);
 			}
 		}
@@ -63,6 +63,7 @@ namespace Loot.Core.ModContent
 			{
 				content._Unload();
 			}
+
 			_contents = null;
 		}
 	}

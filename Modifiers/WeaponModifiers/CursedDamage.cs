@@ -25,16 +25,14 @@ namespace Loot.Modifiers.WeaponModifiers
 		{
 			Item checkItem = Main.mouseItem != null && !Main.mouseItem.IsAir ? Main.mouseItem : player.player.HeldItem;
 
-			if (checkItem != null && !checkItem.IsAir && checkItem.IsWeapon())
+			if (checkItem == null || checkItem.IsAir || !checkItem.IsWeapon()
+			    || !ActivatedModifierItem.Item(checkItem).IsActivated)
+				return;
+
+			int c = EMMItem.GetActivePool(checkItem).Count(x => x.GetType() == typeof(CursedDamage));
+			if (c > 0)
 			{
-				if (ActivatedModifierItem.Item(checkItem).IsActivated)
-				{
-					int c = EMMItem.GetActivePool(checkItem).Count(x => x.GetType() == typeof(CursedDamage));
-					if (c > 0)
-					{
-						ModifierPlayer.Player(player.player).GetEffect<CursedEffect>().CurseCount += c;
-					}
-				}
+				ModifierPlayer.Player(player.player).GetEffect<CursedEffect>().CurseCount += c;
 			}
 		}
 
@@ -44,16 +42,16 @@ namespace Loot.Modifiers.WeaponModifiers
 		[AutoDelegation("OnUpdateBadLifeRegen")]
 		private void Curse(ModifierPlayer player)
 		{
-			if (CurseCount > 0 && !player.player.buffImmune[BuffID.Cursed])
-			{
-				if (player.player.lifeRegen > 0)
-				{
-					player.player.lifeRegen = 0;
-				}
+			if (CurseCount <= 0 || player.player.buffImmune[BuffID.Cursed])
+				return;
 
-				player.player.lifeRegen -= 2 * CurseCount;
-				player.player.lifeRegenTime = 0;
+			if (player.player.lifeRegen > 0)
+			{
+				player.player.lifeRegen = 0;
 			}
+
+			player.player.lifeRegen -= 2 * CurseCount;
+			player.player.lifeRegenTime = 0;
 		}
 	}
 
@@ -77,15 +75,6 @@ namespace Loot.Modifiers.WeaponModifiers
 		public override bool CanRoll(ModifierContext ctx)
 		{
 			return base.CanRoll(ctx) && ctx.Method != ModifierContextMethod.SetupStartInventory;
-		}
-
-		public override void UpdateInventory(Item item, Player player)
-		{
-			// todo Is this good? Or do we want to change ModifierItem?
-			//if (ActivatedModifierItem.Item(item).IsActivated)
-			//{
-			//	ModifierPlayer.Player(player).GetEffect<CursedEffect>().CurseCount++;
-			//}
 		}
 
 		public override void GetWeaponDamage(Item item, Player player, ref int damage)

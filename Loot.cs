@@ -77,9 +77,6 @@ namespace Loot
 
 		private void LoadModForClient()
 		{
-			(string compiledWith, string sevenSharp) = ("Even More Modifiers uses", "C#7");
-			Logger.InfoFormat("{0} {1}", compiledWith, sevenSharp);
-
 			SetupContentManager();
 			SetupUserInterfaces();
 			AssetLoader.RegisterAssets(this, "GraphicsAssets");

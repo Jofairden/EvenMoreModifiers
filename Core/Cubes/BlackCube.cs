@@ -8,6 +8,7 @@ namespace Loot.Core.Cubes
 	{
 		protected override string CubeName => "Black Cube";
 		protected override Color? OverrideNameColor => Color.LightSlateGray;
+
 		protected override TooltipLine ExtraTooltip => new TooltipLine(mod, "BlackCube::Description::Add_Box",
 			"Always rolls 4 lines" +
 			"\nCan roll 25% stronger modifiers" +
@@ -36,4 +37,3 @@ namespace Loot.Core.Cubes
 		}
 	}
 }
-

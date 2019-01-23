@@ -24,6 +24,7 @@ namespace Loot.Core.ModContent
 			{
 				throw new Exception($"Key '{key}' already present in ModContent");
 			}
+
 			ProcessTexture2D(ref texture);
 			dictionary.Add(key, texture);
 		}
@@ -50,10 +51,21 @@ namespace Loot.Core.ModContent
 			Unload();
 		}
 
-		protected virtual void ProcessTexture2D(ref Texture2D texture) { }
-		protected virtual void Initialize() { }
-		protected virtual void Load() { }
-		protected virtual void Unload() { }
+		protected virtual void ProcessTexture2D(ref Texture2D texture)
+		{
+		}
+
+		protected virtual void Initialize()
+		{
+		}
+
+		protected virtual void Load()
+		{
+		}
+
+		protected virtual void Unload()
+		{
+		}
 
 		public abstract string GetRegistryKey();
 	}

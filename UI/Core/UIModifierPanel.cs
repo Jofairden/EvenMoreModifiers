@@ -10,11 +10,11 @@ namespace Loot.UI.Core
 		//private Modifier rolledModifier;
 
 		private readonly UIText _text;
-		private readonly string defaultText = "...";
+		private const string DEFAULT_TEXT = "...";
 
 		public UIModifierPanel() : base()
 		{
-			_text = new UIText("...", 0.75f);
+			_text = new UIText(DEFAULT_TEXT, 0.75f);
 			base.Append(_text);
 		}
 
@@ -25,7 +25,7 @@ namespace Loot.UI.Core
 
 		public void ResetText()
 		{
-			_text?.SetText(defaultText);
+			_text?.SetText(DEFAULT_TEXT);
 		}
 
 		protected override void DrawSelf(SpriteBatch spriteBatch)

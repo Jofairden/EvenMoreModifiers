@@ -1,6 +1,6 @@
+using System;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
-using System;
 using Terraria;
 using Terraria.GameContent.UI.Elements;
 using Terraria.UI;
@@ -81,19 +81,19 @@ namespace Loot.UI.Core
 						//Main.HoverItem.GetGlobalItem<DeconGlobalItem>(TheDeconstructor.instance).addValueTooltip = true;
 						//ItemValue value = new ItemValue().SetFromCopperValue(item.value*item.stack);
 						Main.HoverItem.SetNameOverride(
-							$"{Main.HoverItem.Name}{Main.HoverItem.modItem?.mod.Name.Insert((int)Main.HoverItem.modItem?.mod.Name.Length, "]").Insert(0, " [")}{HintOnHover ?? ""}");
+							$"{Main.HoverItem.Name}{Main.HoverItem.modItem?.mod.Name.Insert((int) Main.HoverItem.modItem?.mod.Name.Length, "]").Insert(0, " [")}{HintOnHover ?? ""}");
 					}
 				}
 			}
 
 			var frame =
-					!item.IsAir && Main.itemAnimations[item.type] != null
-						? Main.itemAnimations[item.type].GetFrame(texture2D)
-						: texture2D.Frame();
+				!item.IsAir && Main.itemAnimations[item.type] != null
+					? Main.itemAnimations[item.type].GetFrame(texture2D)
+					: texture2D.Frame();
 
 			float drawScale = DrawScale;
 			if (frame.Width > innerDimensions.Width
-				|| frame.Height > innerDimensions.Width)
+			    || frame.Height > innerDimensions.Width)
 			{
 				if (frame.Width > frame.Height)
 				{
@@ -106,7 +106,7 @@ namespace Loot.UI.Core
 			}
 
 			var unreflectedScale = drawScale;
-			
+
 			// TODO why was this here?
 			//var tmpcolor = Color.White;
 			//// 'Breathing' effect
@@ -114,13 +114,12 @@ namespace Loot.UI.Core
 
 			Vector2 drawPosition = new Vector2(innerDimensions.X, innerDimensions.Y);
 
-
 			drawPosition.X += innerDimensions.Width * 1f / 2f - frame.Width * drawScale / 2f;
 			drawPosition.Y += innerDimensions.Height * 1f / 2f - frame.Height * drawScale / 2f;
 
 			// TODO globalitem Pre and Post draws?
 			if (item.modItem == null
-				|| item.modItem.PreDrawInInventory(spriteBatch, drawPosition, frame, drawColor, drawColor, Vector2.Zero, drawScale))
+			    || item.modItem.PreDrawInInventory(spriteBatch, drawPosition, frame, drawColor, drawColor, Vector2.Zero, drawScale))
 			{
 				spriteBatch.Draw(texture2D, drawPosition, frame, drawColor, 0f,
 					Vector2.Zero, drawScale, SpriteEffects.None, 0f);

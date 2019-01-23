@@ -46,7 +46,7 @@ namespace Loot.UI.Core
 		public void RecalculateStack()
 		{
 			item.stack = Main.LocalPlayer.inventory.CountItemStack(item.type, true);
-			item.stack = (int)MathHelper.Clamp(item.stack, 0f, 999f);
+			item.stack = (int) MathHelper.Clamp(item.stack, 0f, 999f);
 		}
 	}
 }

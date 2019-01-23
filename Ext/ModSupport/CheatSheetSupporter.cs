@@ -9,6 +9,5 @@ namespace Loot.Ext.ModSupport
 
 		public override bool CheckValidity(Mod mod)
 			=> mod.Version >= new Version(0, 4, 3, 1);
-
 	}
 }

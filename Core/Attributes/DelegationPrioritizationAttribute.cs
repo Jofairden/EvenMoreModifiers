@@ -11,6 +11,7 @@ namespace Loot.Core.Attributes
 		/// Specify that you want your delegation to happen early in the chain
 		/// </summary>
 		Early,
+
 		/// <summary>
 		/// Specify that you want your delegation to happen late in the chain
 		/// </summary>

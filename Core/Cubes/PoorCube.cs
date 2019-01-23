@@ -10,6 +10,7 @@ namespace Loot.Core.Cubes
 	{
 		protected override string CubeName => "Poor Cube";
 		protected override Color? OverrideNameColor => Color.White;
+
 		protected override TooltipLine ExtraTooltip => new TooltipLine(mod, "PoorCube::Description::Add_Box",
 			"Can only roll up 2 lines" +
 			"\nAlways rolls from random modifiers")

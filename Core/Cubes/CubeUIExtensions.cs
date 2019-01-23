@@ -1,10 +1,10 @@
-using Microsoft.Xna.Framework.Input;
 using System;
 using System.Collections.Generic;
 using Loot.Ext.ModSupport;
 using Loot.UI.Core;
 using Loot.UI.Rerolling;
 using Loot.UI.Sealing;
+using Microsoft.Xna.Framework.Input;
 using Terraria;
 using Terraria.GameInput;
 using Terraria.ID;
@@ -21,7 +21,7 @@ namespace Loot.Core.Cubes
 			{
 				return false;
 			}
-			
+
 			var ui = Loot.Instance.CubeInterface.CurrentState as CubeUI;
 			if (ui == null)
 			{
@@ -39,9 +39,9 @@ namespace Loot.Core.Cubes
 			}
 
 			return !PlayerInput.WritingText
-				   && Main.hasFocus
-				   && Main.keyState.IsKeyDown(Keys.LeftControl)
-				   && Loot.Instance.CubeInterface.CurrentState != null;
+			       && Main.hasFocus
+			       && Main.keyState.IsKeyDown(Keys.LeftControl)
+			       && Loot.Instance.CubeInterface.CurrentState != null;
 		}
 
 		// Auto slot item in UI if possible
@@ -68,6 +68,7 @@ namespace Loot.Core.Cubes
 				{
 					SealUITakeItem(ui as CubeSealUI, item);
 				}
+
 				// else // item has innate right click or mod allows it, do nothing
 			}
 		}
@@ -109,23 +110,19 @@ namespace Loot.Core.Cubes
 		public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
 		{
 			var ui = Loot.Instance.CubeInterface;
-			
-			var cubeUI = ui?.CurrentState as CubeUI;
-			if (cubeUI != null)
-			{
-				//todo replace with Loot.WingSlotVersionInvalid when it works
-				if ((ModSupport.GetSupport<WingSlotSupporter>().IsInvalid && item.wingSlot > 0) // block wings if low version if wingslot
-					|| !cubeUI.IsItemValidForUISlot(item)
-					|| cubeUI.IsSlottedItemInCubeUI())
-				{
-					return;
-				}
 
-				var i = tooltips.FindIndex(x => x.mod.Equals("Terraria") && x.Name.Equals("ItemName"));
-				if (i != -1)
-				{
-					tooltips[i].text += " (control right click to slot into UI)";
-				}
+			if (!(ui?.CurrentState is CubeUI cubeUI))
+				return;
+
+			if ((ModSupport.GetSupport<WingSlotSupporter>().IsInvalid && item.wingSlot > 0) // block wings if low version if wingslot
+			    || !cubeUI.IsItemValidForUISlot(item)
+			    || cubeUI.IsSlottedItemInCubeUI())
+				return;
+
+			var i = tooltips.FindIndex(x => x.mod.Equals("Terraria") && x.Name.Equals("ItemName"));
+			if (i != -1)
+			{
+				tooltips[i].text += " (control right click to slot into UI)";
 			}
 		}
 	}

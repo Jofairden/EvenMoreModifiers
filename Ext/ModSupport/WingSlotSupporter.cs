@@ -1,5 +1,5 @@
-using Loot.UI.Core;
 using System;
+using Loot.UI.Core;
 using Terraria.ModLoader;
 
 namespace Loot.Ext.ModSupport
@@ -21,7 +21,7 @@ namespace Loot.Ext.ModSupport
 
 		public override void AddClientSupport(Mod mod)
 		{
-			mod.Call("add", (Func<bool>)WingSlotHandler);
+			mod.Call("add", (Func<bool>) WingSlotHandler);
 		}
 	}
 }

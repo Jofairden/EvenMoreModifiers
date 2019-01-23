@@ -14,23 +14,23 @@ namespace Loot.Core.Graphics
 			Identity = subjectIdentity;
 			if (subjectIdentity is Entity)
 			{
-				Entity = (Entity)subjectIdentity;
+				Entity = (Entity) subjectIdentity;
 			}
 			else if (subjectIdentity is ModItem)
 			{
-				Entity = ((ModItem)subjectIdentity).item;
+				Entity = ((ModItem) subjectIdentity).item;
 			}
 			else if (subjectIdentity is ModNPC)
 			{
-				Entity = ((ModNPC)subjectIdentity).npc;
+				Entity = ((ModNPC) subjectIdentity).npc;
 			}
 			else if (subjectIdentity is ModProjectile)
 			{
-				Entity = ((ModProjectile)subjectIdentity).projectile;
+				Entity = ((ModProjectile) subjectIdentity).projectile;
 			}
 			else if (subjectIdentity is ModPlayer)
 			{
-				Entity = ((ModPlayer)subjectIdentity).player;
+				Entity = ((ModPlayer) subjectIdentity).player;
 			}
 			else
 			{

@@ -1,9 +1,9 @@
-using Loot.Core.ModContent;
-using Microsoft.Xna.Framework.Graphics;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
+using Loot.Core.ModContent;
+using Microsoft.Xna.Framework.Graphics;
 using Terraria.ModLoader;
 
 namespace Loot.Core.System.Loaders
@@ -34,11 +34,12 @@ namespace Loot.Core.System.Loaders
 			{
 				folder = folder.Replace($"{mod.Name}/", "");
 			}
+
 			string keyPass = $"{mod.Name}/{folder}";
 			graphicsContent.AddKeyPass(mod.Name, keyPass);
 
 			FieldInfo texturesField = typeof(Mod).GetField("textures", BindingFlags.Instance | BindingFlags.NonPublic);
-			Dictionary<string, Texture2D> dictionary = ((Dictionary<string, Texture2D>)texturesField?.GetValue(mod));
+			Dictionary<string, Texture2D> dictionary = ((Dictionary<string, Texture2D>) texturesField?.GetValue(mod));
 			if (dictionary == null)
 			{
 				throw new NullReferenceException($"textures dictionary for mod {mod.Name} was null");
@@ -60,6 +61,7 @@ namespace Loot.Core.System.Loaders
 				{
 					throw new Exception($"{mod.Name} attempted to add a glowmask asset already present: {assetKey}");
 				}
+
 				graphicsContent.AddGlowmaskTexture(assetKey, kvp.Value);
 				if (clearOwnTextures)
 				{
@@ -79,6 +81,7 @@ namespace Loot.Core.System.Loaders
 				{
 					throw new Exception($"{mod.Name} attempted to add a shader asset already present: {assetKey}");
 				}
+
 				graphicsContent.AddShaderTexture(assetKey, kvp.Value);
 				if (clearOwnTextures)
 				{

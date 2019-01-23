@@ -1,7 +1,6 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Reflection;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Terraria;
@@ -14,7 +13,7 @@ namespace Loot.Core.ModContent
 	{
 		private IDictionary<string, Texture2D> _glowmaskTextures;
 		private IDictionary<string, Texture2D> _shaderTextures;
-		
+
 		private IDictionary<string, string> _keyStore;
 
 		private IDictionary<string, Texture2D> _lookupTable;
@@ -37,7 +36,7 @@ namespace Loot.Core.ModContent
 		{
 			_glowmaskTextures = null;
 			_shaderTextures = null;
-			
+
 			_keyStore = null;
 
 			_lookupTable = null;
@@ -71,6 +70,7 @@ namespace Loot.Core.ModContent
 				{
 					Log4c.Logger.Error("There was a problem during initialization of vanilla names cache");
 				}
+
 				_vanillaNamesCache.Add($"{item.Name.Replace(" ", "")}_{i}", i);
 			}
 		}
@@ -87,6 +87,7 @@ namespace Loot.Core.ModContent
 			{
 				key = key.Substring(key.LastIndexOf('/') + 1);
 			}
+
 			// is an item name
 			if (char.IsLetter(key.First()))
 			{
@@ -100,11 +101,14 @@ namespace Loot.Core.ModContent
 					{
 						return null;
 					}
+
 					item = new Item();
 					item.SetDefaults(_vanillaNamesCache[_vanillaNamesCache.Keys.First(x => x.StartsWith(key.Replace(" ", "")))]);
 				}
+
 				return kvpName.Replace(itemName, item.type.ToString());
 			}
+
 			// is an item id
 			if (char.IsNumber(key.First()))
 			{
@@ -113,6 +117,7 @@ namespace Loot.Core.ModContent
 				if (int.Parse(itemId) >= ItemLoader.ItemCount) return null;
 				return kvpName;
 			}
+
 			return null;
 		}
 
@@ -134,6 +139,7 @@ namespace Loot.Core.ModContent
 			{
 				key = key.Substring(key.LastIndexOf('/') + 1);
 			}
+
 			int index = key.LastIndexOf('_');
 			return new string(key.TakeWhile((x, i) => i < index).ToArray());
 		}
@@ -154,7 +160,6 @@ namespace Loot.Core.ModContent
 
 				_lookupGlowmaskTable = glowmasks.ToDictionary(x => SubstringLastIndex('/', x.Key), x => x.Value);
 				_lookupShaderTable = shaders.ToDictionary(x => SubstringLastIndex('/', x.Key), x => x.Value);
-
 			}
 			else
 			{
@@ -211,6 +216,7 @@ namespace Loot.Core.ModContent
 			{
 				ClearPreparation();
 			}
+
 			return texture;
 		}
 
@@ -255,6 +261,7 @@ namespace Loot.Core.ModContent
 				Vector4 we = data[i].ToVector4();
 				data[i] = new Color(we.X * we.W, we.Y * we.W, we.Z * we.W, we.W);
 			}
+
 			texture.SetData(data);
 			return texture;
 		}
@@ -286,54 +293,54 @@ namespace Loot.Core.ModContent
 			//{
 			//	try
 			//	{
-					//var shaderEntity = type.GetProperty("ShaderEntity");
-					//var getShaderEntity = type.GetMethod("GetShaderEntity");
-					//string key;
+			//var shaderEntity = type.GetProperty("ShaderEntity");
+			//var getShaderEntity = type.GetMethod("GetShaderEntity");
+			//string key;
 
-					//if (shaderEntity != null && getShaderEntity != null)
-					//{
-					//	// Get the shader entity
-					//	object obj = FormatterServices.GetUninitializedObject(type);
-					//	ShaderEntity entity = (ShaderEntity)getShaderEntity.Invoke(obj, null);
+			//if (shaderEntity != null && getShaderEntity != null)
+			//{
+			//	// Get the shader entity
+			//	object obj = FormatterServices.GetUninitializedObject(type);
+			//	ShaderEntity entity = (ShaderEntity)getShaderEntity.Invoke(obj, null);
 
-					//	// Load the base texture
-					//	key = type.FullName;
-					//	var texture = ModLoader.GetTexture(key.Replace('.', '/'));
-					//	AddTexture(key, texture);
-					//	exceptKeys.Add(key);
+			//	// Load the base texture
+			//	key = type.FullName;
+			//	var texture = ModLoader.GetTexture(key.Replace('.', '/'));
+			//	AddTexture(key, texture);
+			//	exceptKeys.Add(key);
 
-					//	// Load the shader texture
-					//	key = entity.GetEntityKey(type);
-					//	texture = ModLoader.GetTexture(key.Replace('.', '/'));
-					//	AddShaderTexture(key, texture);
-					//	exceptKeys.Add(key);
-					//}
+			//	// Load the shader texture
+			//	key = entity.GetEntityKey(type);
+			//	texture = ModLoader.GetTexture(key.Replace('.', '/'));
+			//	AddShaderTexture(key, texture);
+			//	exceptKeys.Add(key);
+			//}
 
-					//var glowmaskEntity = type.GetProperty("GlowmaskEntity");
-					//var getGlowmaskEntity = type.GetMethod("GetGlowmaskEntity");
+			//var glowmaskEntity = type.GetProperty("GlowmaskEntity");
+			//var getGlowmaskEntity = type.GetMethod("GetGlowmaskEntity");
 
-					//if (glowmaskEntity != null && getGlowmaskEntity != null)
-					//{
-					//	// Get the glowmask entity
-					//	object obj = FormatterServices.GetUninitializedObject(type);
-					//	GlowmaskEntity entity = (GlowmaskEntity)getGlowmaskEntity.Invoke(obj, null);
-					//	Texture2D texture;
+			//if (glowmaskEntity != null && getGlowmaskEntity != null)
+			//{
+			//	// Get the glowmask entity
+			//	object obj = FormatterServices.GetUninitializedObject(type);
+			//	GlowmaskEntity entity = (GlowmaskEntity)getGlowmaskEntity.Invoke(obj, null);
+			//	Texture2D texture;
 
-					//	// Try loading the base texture
-					//	key = type.FullName;
-					//	if (!exceptKeys.Contains(key))
-					//	{
-					//		texture = ModLoader.GetTexture(key.Replace('.', '/'));
-					//		AddTexture(key, texture);
-					//		exceptKeys.Add(key);
-					//	}
+			//	// Try loading the base texture
+			//	key = type.FullName;
+			//	if (!exceptKeys.Contains(key))
+			//	{
+			//		texture = ModLoader.GetTexture(key.Replace('.', '/'));
+			//		AddTexture(key, texture);
+			//		exceptKeys.Add(key);
+			//	}
 
-					//	// Try loading the glowmask
-					//	key = entity.GetEntityKey(type);
-					//	texture = ModLoader.GetTexture(key.Replace('.', '/'));
-					//	AddGlowmaskTexture(key, texture);
-					//	exceptKeys.Add(key);
-					//}
+			//	// Try loading the glowmask
+			//	key = entity.GetEntityKey(type);
+			//	texture = ModLoader.GetTexture(key.Replace('.', '/'));
+			//	AddGlowmaskTexture(key, texture);
+			//	exceptKeys.Add(key);
+			//}
 			//	}
 			//	catch (Exception e)
 			//	{

@@ -106,7 +106,7 @@ namespace Loot.UI.Sealing
 			if (_cubePanel.IsMouseHovering)
 			{
 				Main.hoverItemName = "Click to seal slotted item's modifiers" +
-									 "\nIf an item is already sealed the seal will be removed";
+				                     "\nIf an item is already sealed the seal will be removed";
 			}
 		}
 
@@ -130,9 +130,9 @@ namespace Loot.UI.Sealing
 		private void TrySealingSlottedItem(UIMouseEvent evt, UIElement listeningelement)
 		{
 			if (_cubeCount <= 0
-				|| _itemPanel.item.IsAir
-				|| !_itemPanel.item.IsModifierRollableItem()
-				|| !EMMItem.GetActivePool(_itemPanel.item).Any())
+			    || _itemPanel.item.IsAir
+			    || !_itemPanel.item.IsModifierRollableItem()
+			    || !EMMItem.GetActivePool(_itemPanel.item).Any())
 			{
 				SoundHelper.PlayCustomSound(SoundHelper.SoundType.Decline);
 				return;

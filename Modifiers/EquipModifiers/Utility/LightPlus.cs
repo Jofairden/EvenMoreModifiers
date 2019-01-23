@@ -68,7 +68,6 @@ namespace Loot.Modifiers.EquipModifiers.Utility
 				.WithMaxMagnitude(2f);
 		}
 
-		// todo Just pass ModifierPlayer here?
 		public override void UpdateEquip(Item item, Player player)
 		{
 			ModifierPlayer.Player(player).GetEffect<LightEffect>().LightStrength += (int) Properties.RoundedPower;

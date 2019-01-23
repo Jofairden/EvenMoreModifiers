@@ -27,7 +27,7 @@ namespace Loot.Core.Caching
 	/// </summary>
 	public sealed class ModifierCachePlayer : ModPlayer
 	{
-		private bool IsMouseUsable(Item item) => item.damage > 0;
+		private static bool IsMouseUsable(Item item) => item.damage > 0;
 
 		private int _oldSelectedItem;
 		private Item _oldMouseItem;
@@ -57,7 +57,7 @@ namespace Loot.Core.Caching
 		/// <summary>
 		/// This method will return a list of <see cref="ModifierEffect"/>s based on <see cref="Modifier"/>s passed to it 
 		/// </summary>
-		private List<ModifierEffect> GetModifierEffectsForDelegations(IEnumerable<AutoDelegationEntry> list, ModifierPlayer modPlayer, Func<ModifierEffect, bool> conditionFunc)
+		private IEnumerable<ModifierEffect> GetModifierEffectsForDelegations(IEnumerable<AutoDelegationEntry> list, ModifierPlayer modPlayer, Func<ModifierEffect, bool> conditionFunc)
 		{
 			var tempList = new List<ModifierEffect>();
 			foreach (var delegationTuple in list)
@@ -67,17 +67,10 @@ namespace Loot.Core.Caching
 						.GetType()
 						.GetCustomAttribute<UsesEffectAttribute>();
 
-				if (effectsAttribute != null)
-				{
-					foreach (Type effect in effectsAttribute.Effects)
-					{
-						var modEffect = modPlayer.GetEffect(effect);
-						if (modEffect != null && conditionFunc.Invoke(modEffect))
-						{
-							tempList.Add(modEffect);
-						}
-					}
-				}
+				if (effectsAttribute == null) continue;
+				tempList.AddRange(effectsAttribute.Effects
+					.Select(modPlayer.GetEffect)
+					.Where(modEffect => modEffect != null && conditionFunc.Invoke(modEffect)));
 			}
 
 			return tempList;
@@ -95,52 +88,52 @@ namespace Loot.Core.Caching
 		/// </summary>
 		private void UpdateAttachments()
 		{
-			ModifierPlayer modplr = ModifierPlayer.Player(player);
+			ModifierPlayer modPlayer = ModifierPlayer.Player(player);
 
 			// Manual detach
-			var detachEffects = GetModifierEffectsForDelegations(_detachList, modplr, (e) => e.IsBeingDelegated && !_modifierEffects.Contains(e.GetType()));
-			var attachEffects = GetModifierEffectsForDelegations(_attachList, modplr, (e) => !e.IsBeingDelegated);
+			var detachEffects = GetModifierEffectsForDelegations(_detachList, modPlayer, (e) => e.IsBeingDelegated && !_modifierEffects.Contains(e.GetType()));
+			var attachEffects = GetModifierEffectsForDelegations(_attachList, modPlayer, (e) => !e.IsBeingDelegated);
 			// Automatic delegation lists
-			var orderedDetachList = OrderDelegationList(_detachList, modplr)
-				.Where(x => x.Effect.IsBeingDelegated && !_modifierEffects.Contains(x.Effect.GetType()))
-				.GroupBy(x => x.MethodInfo)
+			var orderedDetachList = OrderDelegationList(_detachList, modPlayer)
+				.Where(x => x.effect.IsBeingDelegated && !_modifierEffects.Contains(x.effect.GetType()))
+				.GroupBy(x => x.methodInfo)
 				.Select(x => x.First())
 				.ToList();
 
-			var orderedAttachList = OrderDelegationList(_attachList, modplr)
-				.Where(x => !x.Effect.IsBeingDelegated)
-				.GroupBy(x => x.MethodInfo)
+			var orderedAttachList = OrderDelegationList(_attachList, modPlayer)
+				.Where(x => !x.effect.IsBeingDelegated)
+				.GroupBy(x => x.methodInfo)
 				.Select(x => x.First())
 				.ToList();
 
 			// Manual detach
 			foreach (var effect in detachEffects.Distinct())
 			{
-				modplr.OnResetEffects -= effect.ResetEffects;
-				effect._DetachDelegations(modplr);
+				modPlayer.OnResetEffects -= effect.ResetEffects;
+				effect._DetachDelegations(modPlayer);
 				effect.IsBeingDelegated = false;
 			}
 
 			// Manual attach
 			foreach (var effect in attachEffects.Distinct())
 			{
-				modplr.OnResetEffects += effect.ResetEffects;
-				effect.AttachDelegations(modplr);
+				modPlayer.OnResetEffects += effect.ResetEffects;
+				effect.AttachDelegations(modPlayer);
 				effect.IsBeingDelegated = true;
 			}
 
 			// Auto delegation detach
-			foreach (var info in orderedDetachList)
+			foreach (var (methodInfo, effect) in orderedDetachList)
 			{
-				var attr = info.MethodInfo.GetCustomAttribute<AutoDelegation>();
-				attr.Detach(modplr, info.MethodInfo, info.Effect);
+				var attr = methodInfo.GetCustomAttribute<AutoDelegation>();
+				attr.Detach(modPlayer, methodInfo, effect);
 			}
 
 			// Auto delegation attach
-			foreach (var info in orderedAttachList)
+			foreach (var (methodInfo, effect) in orderedAttachList)
 			{
-				var attr = info.MethodInfo.GetCustomAttribute<AutoDelegation>();
-				attr.Attach(modplr, info.MethodInfo, info.Effect);
+				var attr = methodInfo.GetCustomAttribute<AutoDelegation>();
+				attr.Attach(modPlayer, methodInfo, effect);
 			}
 		}
 
@@ -149,42 +142,38 @@ namespace Loot.Core.Caching
 		/// following the rules of <see cref="DelegationPrioritizationAttribute"/> which orders by Early/Late prioritization
 		/// and a level ranging from 0-999 which indicates how much that prioritization should be enforced.
 		/// </summary>
-		private IEnumerable<OrderedDelegationEntry> OrderDelegationList(IEnumerable<AutoDelegationEntry> list, ModifierPlayer modPlayer)
+		private IEnumerable<(MethodInfo methodInfo, ModifierEffect effect)> OrderDelegationList(IEnumerable<AutoDelegationEntry> list, ModifierPlayer modPlayer)
 		{
-			var delegationEntries = new List<OrderedDelegationEntry>();
+			var delegationEntries = new List<(MethodInfo, ModifierEffect)>();
 			var effects = GetModifierEffectsForDelegations(list, modPlayer, e => true);
 
 			foreach (var modEffect in effects)
 			{
-				// todo: C#7 named/value tuple here
-				OrderedDelegationEntry MakeEntry(KeyValuePair<MethodInfo, DelegationPrioritizationAttribute> kvp) => new OrderedDelegationEntry
-				{
-					MethodInfo = kvp.Key,
-					Effect = modEffect
-				};
+				(MethodInfo, ModifierEffect) MakeEntry((MethodInfo, DelegationPrioritizationAttribute) tuple) 
+					=> (tuple.Item1, modEffect);
 
 				var delegatedMethods = modEffect
 					.GetType()
 					.GetMethods(BindingFlags.NonPublic | BindingFlags.Public | BindingFlags.Instance)
 					.Where(x => x.GetCustomAttributes(typeof(AutoDelegation), false).Length > 0)
-					// todo: C#7 named/value tuple here
-					.ToDictionary(x => x, y => (DelegationPrioritizationAttribute) y.GetCustomAttribute(typeof(DelegationPrioritizationAttribute)));
+					.Select(x => (methodInfo: x, attribute: (DelegationPrioritizationAttribute) x.GetCustomAttribute(typeof(DelegationPrioritizationAttribute))))
+					.ToList();
 
 				delegationEntries.AddRange(
 					delegatedMethods
-						.Where(x => x.Value?.DelegationPrioritization == DelegationPrioritization.Early)
-						.OrderByDescending(x => x.Value.DelegationLevel)
+						.Where(x => x.attribute?.DelegationPrioritization == DelegationPrioritization.Early)
+						.OrderByDescending(x => x.attribute.DelegationLevel)
 						.Select(MakeEntry));
 
 				delegationEntries.AddRange(
 					delegatedMethods
-						.Where(x => x.Value == null)
+						.Where(x => x.attribute == null)
 						.Select(MakeEntry));
 
 				delegationEntries.AddRange(
 					delegatedMethods
-						.Where(x => x.Value?.DelegationPrioritization == DelegationPrioritization.Late)
-						.OrderByDescending(x => x.Value.DelegationLevel)
+						.Where(x => x.attribute?.DelegationPrioritization == DelegationPrioritization.Late)
+						.OrderByDescending(x => x.attribute.DelegationLevel)
 						.Select(MakeEntry));
 			}
 
@@ -252,93 +241,92 @@ namespace Loot.Core.Caching
 				var newEquip = player.armor[i];
 
 				// If equip slot needs an update
-				if (_forceEquipUpdate || oldEquip == null || newEquip != oldEquip)
+				if (!_forceEquipUpdate && oldEquip != null && newEquip == oldEquip) 
+					continue;
+				
+				Ready = false;
+
+				// detach old first
+				if (oldEquip != null && !oldEquip.IsAir && ActivatedModifierItem.Item(oldEquip).IsCheated)
 				{
-					Ready = false;
-
-					// detach old first
-					if (oldEquip != null && !oldEquip.IsAir && ActivatedModifierItem.Item(oldEquip).IsCheated)
+					foreach (Modifier m in EMMItem.GetActivePool(oldEquip))
 					{
-						foreach (Modifier m in EMMItem.GetActivePool(oldEquip))
-						{
-							AddDetachItem(oldEquip, m);
-						}
+						AddDetachItem(oldEquip, m);
 					}
-
-					// attach new
-					if (newEquip != null && !newEquip.IsAir && ActivatedModifierItem.Item(newEquip).IsCheated)
-					{
-						foreach (Modifier m in EMMItem.GetActivePool(newEquip))
-						{
-							AddAttachItem(newEquip, m);
-						}
-					}
-
-					_oldVanityEquips[i - 13] = newEquip;
 				}
+
+				// attach new
+				if (newEquip != null && !newEquip.IsAir && ActivatedModifierItem.Item(newEquip).IsCheated)
+				{
+					foreach (Modifier m in EMMItem.GetActivePool(newEquip))
+					{
+						AddAttachItem(newEquip, m);
+					}
+				}
+
+				_oldVanityEquips[i - 13] = newEquip;
 			}
 		}
 
 		private void UpdateHeldItemCache()
 		{
 			// If held item needs an update
-			if (_oldSelectedItem != player.selectedItem)
+			if (_oldSelectedItem == player.selectedItem) 
+				return;
+			
+			Ready = false;
+
+			// detach old held item
+			Item oldSelectedItem = player.inventory[_oldSelectedItem];
+			if (oldSelectedItem != null && !oldSelectedItem.IsAir && IsMouseUsable(oldSelectedItem))
 			{
-				Ready = false;
-
-				// detach old held item
-				Item oldSelectedItem = player.inventory[_oldSelectedItem];
-				if (oldSelectedItem != null && !oldSelectedItem.IsAir && IsMouseUsable(oldSelectedItem))
+				foreach (Modifier m in EMMItem.GetActivePool(oldSelectedItem))
 				{
-					foreach (Modifier m in EMMItem.GetActivePool(oldSelectedItem))
-					{
-						AddDetachItem(oldSelectedItem, m);
-					}
+					AddDetachItem(oldSelectedItem, m);
 				}
-
-				// attach new held item
-				if (player.HeldItem != null && !player.HeldItem.IsAir && IsMouseUsable(player.HeldItem))
-				{
-					foreach (Modifier m in EMMItem.GetActivePool(player.HeldItem))
-					{
-						AddAttachItem(player.HeldItem, m);
-					}
-				}
-
-				_oldSelectedItem = player.selectedItem;
 			}
+
+			// attach new held item
+			if (player.HeldItem != null && !player.HeldItem.IsAir && IsMouseUsable(player.HeldItem))
+			{
+				foreach (Modifier m in EMMItem.GetActivePool(player.HeldItem))
+				{
+					AddAttachItem(player.HeldItem, m);
+				}
+			}
+
+			_oldSelectedItem = player.selectedItem;
 		}
 
 		private bool UpdateMouseItemCache()
 		{
 			// If held item needs an update
-			if (_oldMouseItem == null || _oldMouseItem != Main.mouseItem)
+			if (_oldMouseItem != null && _oldMouseItem == Main.mouseItem)
+				return false;
+			
+			Ready = false;
+
+			// detach old mouse item
+			if (_oldMouseItem != null && !_oldMouseItem.IsAir && IsMouseUsable(_oldMouseItem))
 			{
-				Ready = false;
-
-				// detach old mouse item
-				if (_oldMouseItem != null && !_oldMouseItem.IsAir && IsMouseUsable(_oldMouseItem))
+				foreach (Modifier m in EMMItem.GetActivePool(_oldMouseItem))
 				{
-					foreach (Modifier m in EMMItem.GetActivePool(_oldMouseItem))
-					{
-						AddDetachItem(_oldMouseItem, m);
-					}
+					AddDetachItem(_oldMouseItem, m);
 				}
-
-				// attach new held item
-				if (Main.mouseItem != null && !Main.mouseItem.IsAir && IsMouseUsable(Main.mouseItem))
-				{
-					foreach (Modifier m in EMMItem.GetActivePool(player.HeldItem))
-					{
-						AddAttachItem(Main.mouseItem, m);
-					}
-				}
-
-				_oldMouseItem = Main.mouseItem;
-				return Main.mouseItem != null && !Main.mouseItem.IsAir;
 			}
 
-			return false;
+			// attach new held item
+			if (Main.mouseItem != null && !Main.mouseItem.IsAir && IsMouseUsable(Main.mouseItem))
+			{
+				foreach (Modifier m in EMMItem.GetActivePool(player.HeldItem))
+				{
+					AddAttachItem(Main.mouseItem, m);
+				}
+			}
+
+			_oldMouseItem = Main.mouseItem;
+			return Main.mouseItem != null && !Main.mouseItem.IsAir;
+
 		}
 
 		private void UpdateEquipsCache()
@@ -349,30 +337,30 @@ namespace Loot.Core.Caching
 				var newEquip = player.armor[i];
 
 				// If equip slot needs an update
-				if (_forceEquipUpdate || oldEquip == null || newEquip != oldEquip)
+				if (!_forceEquipUpdate && oldEquip != null && newEquip == oldEquip) 
+					continue;
+				
+				Ready = false;
+
+				// detach old first
+				if (oldEquip != null && !oldEquip.IsAir)
 				{
-					Ready = false;
-
-					// detach old first
-					if (oldEquip != null && !oldEquip.IsAir)
+					foreach (Modifier m in EMMItem.GetActivePool(oldEquip))
 					{
-						foreach (Modifier m in EMMItem.GetActivePool(oldEquip))
-						{
-							AddDetachItem(oldEquip, m);
-						}
+						AddDetachItem(oldEquip, m);
 					}
-
-					// attach new
-					if (newEquip != null && !newEquip.IsAir)
-					{
-						foreach (Modifier m in EMMItem.GetActivePool(newEquip))
-						{
-							AddAttachItem(newEquip, m);
-						}
-					}
-
-					_oldEquips[i] = newEquip;
 				}
+
+				// attach new
+				if (newEquip != null && !newEquip.IsAir)
+				{
+					foreach (Modifier m in EMMItem.GetActivePool(newEquip))
+					{
+						AddAttachItem(newEquip, m);
+					}
+				}
+
+				_oldEquips[i] = newEquip;
 			}
 		}
 
@@ -390,30 +378,30 @@ namespace Loot.Core.Caching
 				var newEquip = curEquips[i];
 
 				// update delegations
-				if (oldEquip == null || newEquip != oldEquip)
+				if (oldEquip != null && newEquip == oldEquip) 
+					continue;
+				
+				Ready = false;
+
+				// detach old first
+				if (oldEquip != null && !oldEquip.IsAir)
 				{
-					Ready = false;
-
-					// detach old first
-					if (oldEquip != null && !oldEquip.IsAir)
+					foreach (Modifier m in EMMItem.GetActivePool(oldEquip))
 					{
-						foreach (Modifier m in EMMItem.GetActivePool(oldEquip))
-						{
-							AddDetachItem(oldEquip, m);
-						}
+						AddDetachItem(oldEquip, m);
 					}
-
-					// attach new
-					if (newEquip != null && !newEquip.IsAir)
-					{
-						foreach (Modifier m in EMMItem.GetActivePool(newEquip))
-						{
-							AddAttachItem(newEquip, m);
-						}
-					}
-
-					_oldCheatSheetEquips[i] = newEquip;
 				}
+
+				// attach new
+				if (newEquip != null && !newEquip.IsAir)
+				{
+					foreach (Modifier m in EMMItem.GetActivePool(newEquip))
+					{
+						AddAttachItem(newEquip, m);
+					}
+				}
+
+				_oldCheatSheetEquips[i] = newEquip;
 			}
 
 			// current enabled is smaller than total
@@ -467,39 +455,39 @@ namespace Loot.Core.Caching
 			//	}
 			//}
 
-			if (_forceEquipUpdate || !Ready)
+			if (!_forceEquipUpdate && Ready) 
+				return;
+			
+			_modifierEffects.Clear();
+
+			for (int i = 0; i < 8 + player.extraAccessorySlots; i++)
 			{
-				_modifierEffects.Clear();
+				var equip = player.armor[i];
+				if (equip != null && !equip.IsAir)
+				{
+					CacheItemModifierEffects(equip);
+				}
+			}
 
-				for (int i = 0; i < 8 + player.extraAccessorySlots; i++)
+			// vanity
+			for (int k = 13; k < 18 + player.extraAccessorySlots; k++)
+			{
+				var equip = player.armor[k];
+				if (equip != null
+				    && !equip.IsAir
+				    && ActivatedModifierItem.Item(equip).IsCheated)
 				{
-					var equip = player.armor[i];
-					if (equip != null && !equip.IsAir)
-					{
-						CacheItemModifierEffects(equip);
-					}
+					CacheItemModifierEffects(equip);
 				}
+			}
 
-				// vanity
-				for (int k = 13; k < 18 + player.extraAccessorySlots; k++)
-				{
-					var equip = player.armor[k];
-					if (equip != null
-					    && !equip.IsAir
-					    && ActivatedModifierItem.Item(equip).IsCheated)
-					{
-						CacheItemModifierEffects(equip);
-					}
-				}
-
-				if (Main.mouseItem != null && !Main.mouseItem.IsAir && Main.mouseItem.IsWeapon())
-				{
-					CacheItemModifierEffects(Main.mouseItem);
-				}
-				else if (player.HeldItem != null && !player.HeldItem.IsAir && player.HeldItem.IsWeapon())
-				{
-					CacheItemModifierEffects(player.HeldItem);
-				}
+			if (Main.mouseItem != null && !Main.mouseItem.IsAir && Main.mouseItem.IsWeapon())
+			{
+				CacheItemModifierEffects(Main.mouseItem);
+			}
+			else if (player.HeldItem != null && !player.HeldItem.IsAir && player.HeldItem.IsWeapon())
+			{
+				CacheItemModifierEffects(player.HeldItem);
 			}
 		}
 

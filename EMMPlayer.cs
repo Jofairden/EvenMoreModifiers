@@ -22,7 +22,7 @@ namespace Loot
 			{
 				var tinkerPos = new Rectangle(49, 291, 44, 44);
 				var mouse = Main.MouseScreen;
-				bool isInTinkerSlot = tinkerPos.Intersects(new Rectangle((int)mouse.X, (int)mouse.Y, 20, 20));
+				bool isInTinkerSlot = tinkerPos.Intersects(new Rectangle((int) mouse.X, (int) mouse.Y, 20, 20));
 				if (isInTinkerSlot)
 				{
 					// just put in reforge slot

@@ -15,8 +15,6 @@ using Terraria.UI;
 
 namespace Loot.UI.Rerolling
 {
-	// @todo add horizontal panel blow base with list of cubes in inventory to use, click to put into UI slot feature
-
 	/// <summary>
 	/// A UIState that provides the ability to reroll an item's modifier
 	/// </summary>

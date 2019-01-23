@@ -9,36 +9,18 @@ using Terraria.ModLoader;
 
 namespace Loot.Modifiers
 {
-	// TODO , this could should be added to to include min/max magnitude rolls, that influence the time and chance to apply 
-	public struct DebuffTrigger
-	{
-		public int BuffType;
-		public int BuffTime;
-		public float InflictionChance;
-
-		public DebuffTrigger(int buffType, int buffTime, float inflictionChance)
-		{
-			BuffType = buffType;
-			BuffTime = buffTime;
-			InflictionChance = inflictionChance;
-		}
-	}
-
 	public class WeaponDebuffEffect : ModifierEffect
 	{
-		// List of current debuff chances. Tuple format is [chance, buffType, buffTime]
-		// TODO with c#7 we should favor a named tuple (waiting for TML support)
-		//public IList<(float chance, int type, int time)> DebuffChances;
-		public IList<DebuffTrigger> DebuffChances = new List<DebuffTrigger>();
+		public IList<(int type, int time, float chance)> DebuffChances = new List<(int type, int time, float chance)>();
 
 		public override void OnInitialize(ModifierPlayer player)
 		{
-			DebuffChances = new List<DebuffTrigger>();
+			DebuffChances = new List<(int type, int time, float chance)>();
 		}
 
 		public override void ResetEffects(ModifierPlayer player)
 		{
-			DebuffChances?.Clear();
+			DebuffChances.Clear();
 		}
 	}
 
@@ -102,7 +84,7 @@ namespace Loot.Modifiers
 		{
 			ModifierPlayer.Player(player).GetEffect<WeaponDebuffEffect>()
 				.DebuffChances
-				.Add(new DebuffTrigger(BuffType, BuffTime, Properties.RoundedPower / 100f * BuffInflictionChance));
+				.Add((BuffType, BuffTime, Properties.RoundedPower / 100f * BuffInflictionChance));
 		}
 	}
 }

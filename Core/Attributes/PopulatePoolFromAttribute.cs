@@ -7,6 +7,7 @@ using Terraria.ModLoader;
 
 namespace Loot.Core.Attributes
 {
+	/// <inheritdoc cref="Attribute"/>
 	/// <summary>
 	/// Will populate a ModifierPool based on a namespace
 	/// All Modifiers in that namespace will become part of the pool
@@ -22,7 +23,7 @@ namespace Loot.Core.Attributes
 		{
 			Assembly asm = Assembly.GetExecutingAssembly();
 
-			// @todo custom assembly not tested!
+			// TODO custom assembly not tested!
 			foreach (string ns in namespaces)
 			{
 				Assembly useAssembly = asm;

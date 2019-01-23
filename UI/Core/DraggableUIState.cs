@@ -1,7 +1,6 @@
+using System.Collections.Generic;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
-using System;
-using System.Collections.Generic;
 using Terraria;
 using Terraria.GameContent.UI.Elements;
 using Terraria.UI;
@@ -31,11 +30,13 @@ namespace Loot.UI.Core
 		{
 			if (_dragPanels == null)
 			{
-				// TODO warn when lists are uninitialized?
+				Log4c.Logger.Warn("_dragPanels was uninitialized in DraggableUIState");
 				_dragPanels = new List<UIPanel>();
 			}
+
 			if (_offsets == null)
 			{
+				Log4c.Logger.Warn("_offsets was uninitialized in DraggableUIState");
 				_offsets = new List<Vector2>();
 			}
 
@@ -79,7 +80,7 @@ namespace Loot.UI.Core
 
 		protected override void DrawSelf(SpriteBatch spriteBatch)
 		{
-			Vector2 mousePosition = new Vector2((float)Main.mouseX, (float)Main.mouseY);
+			Vector2 mousePosition = new Vector2((float) Main.mouseX, (float) Main.mouseY);
 
 			for (int i = 0; i < _dragPanels.Count; i++)
 			{
@@ -87,7 +88,7 @@ namespace Loot.UI.Core
 				var offset = _offsets[i];
 
 				if (!Main.LocalPlayer.mouseInterface
-					&& panel.ContainsPoint(mousePosition))
+				    && panel.ContainsPoint(mousePosition))
 				{
 					Main.LocalPlayer.mouseInterface = true;
 				}

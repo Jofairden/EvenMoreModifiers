@@ -2,7 +2,6 @@ using Loot.Core.Cubes;
 using Loot.Ext;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
-using System.Linq;
 using Terraria;
 using Terraria.UI;
 
@@ -26,6 +25,7 @@ namespace Loot.UI.Core
 			{
 				RecalculateStack();
 			}
+
 			Loot.Instance.CubeRerollUI.DetermineAvailableCubes();
 		}
 
@@ -43,7 +43,7 @@ namespace Loot.UI.Core
 		public void RecalculateStack()
 		{
 			item.stack = Main.LocalPlayer.inventory.CountItemStack(item.type, true);
-			item.stack = (int)MathHelper.Clamp(item.stack, 0f, 999f);
+			item.stack = (int) MathHelper.Clamp(item.stack, 0f, 999f);
 		}
 	}
 }

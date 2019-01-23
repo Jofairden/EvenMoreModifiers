@@ -10,7 +10,13 @@ namespace Loot.Ext.ModSupport
 		public Mod GetSupportingMod() => ModLoader.GetMod(ModName);
 
 		public abstract bool CheckValidity(Mod mod);
-		public virtual void AddClientSupport(Mod mod) { }
-		public virtual void AddServerSupport(Mod mod) { }
+
+		public virtual void AddClientSupport(Mod mod)
+		{
+		}
+
+		public virtual void AddServerSupport(Mod mod)
+		{
+		}
 	}
 }
