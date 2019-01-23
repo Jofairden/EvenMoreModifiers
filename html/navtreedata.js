@@ -38,8 +38,8 @@ var NAVTREEINDEX =
 "class_loot_1_1_core_1_1_mod_content_1_1_graphics_mod_content.html#a1dc64224de0f90c22c7336d934678c99",
 "class_loot_1_1_e_m_m_item.html#a1f63c47cf8556dfe65917f30469cfc2b",
 "class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_offensive_1_1_minion_damage_plus.html#af37fdc08edb0d12447e7871facf4abdd",
-"class_loot_1_1_u_i_1_1_core_1_1_visibility_u_i.html#ab560543b09926b8cf31af2d347ca9701",
-"pages.html"
+"class_loot_1_1_u_i_1_1_rerolling_1_1_cube_reroll_u_i.html",
+"struct_loot_1_1_core_1_1_system_1_1_modifier_1_1_modifier_context.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

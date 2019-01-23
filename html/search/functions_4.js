@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['debufftrigger',['DebuffTrigger',['../struct_loot_1_1_modifiers_1_1_debuff_trigger.html#a8b90c6b901803d1699f81ebe6557fc5f',1,'Loot::Modifiers::DebuffTrigger']]],
   ['defboost',['DefBoost',['../class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_defensive_1_1_percent_def_boost_effect.html#aa23743a697a78c337048bc9e3ba89e89',1,'Loot::Modifiers::EquipModifiers::Defensive::PercentDefBoostEffect']]],
   ['delegationprioritizationattribute',['DelegationPrioritizationAttribute',['../class_loot_1_1_core_1_1_attributes_1_1_delegation_prioritization_attribute.html#a3c52d9aacf756547893b4a207fe3facc',1,'Loot::Core::Attributes::DelegationPrioritizationAttribute']]],
   ['detach',['Detach',['../class_loot_1_1_core_1_1_attributes_1_1_auto_delegation.html#a1221719faf290300b2513ed6b60d8a96',1,'Loot::Core::Attributes::AutoDelegation']]],

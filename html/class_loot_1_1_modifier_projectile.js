@@ -19,6 +19,6 @@ var class_loot_1_1_modifier_projectile =
     [ "InstancePerEntity", "class_loot_1_1_modifier_projectile.html#a0a2325b6c34a59e0d70e476461ad5a37", null ],
     [ "NeedsClear", "class_loot_1_1_modifier_projectile.html#a5023fabf4c9add32ef23dd53a767029a", null ],
     [ "SnapshotCritMulti", "class_loot_1_1_modifier_projectile.html#a3d2f9e00273412d1bdce3e6a98db8545", null ],
-    [ "SnapshotDebuffChances", "class_loot_1_1_modifier_projectile.html#a75882636f67500d6a2a7b2d25f4ac007", null ],
+    [ "SnapshotDebuffChances", "class_loot_1_1_modifier_projectile.html#accd2bb8d03802fc71010e3f217537a7e", null ],
     [ "SnapshotHealthyFoesMulti", "class_loot_1_1_modifier_projectile.html#ad7f2f10d9e167d640a7aca27876396ba", null ]
 ];

@@ -1,5 +1,6 @@
 var searchData=
 [
+  ['readonly',['readonly',['../class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_random_debuff.html#adff461eba04f66de78cbcaa00387f4e8',1,'Loot::Modifiers::WeaponModifiers::RandomDebuff']]],
   ['recalculatestack',['RecalculateStack',['../class_loot_1_1_u_i_1_1_core_1_1_u_i_cube_item_panel.html#a8fb5d9deb444541ac0ec70dd97fbc9cd',1,'Loot.UI.Core.UICubeItemPanel.RecalculateStack()'],['../class_loot_1_1_u_i_1_1_core_1_1_u_i_cube_selector_panel.html#a3606d92dd71c0d1fe91879734c101893',1,'Loot.UI.Core.UICubeSelectorPanel.RecalculateStack()']]],
   ['regen',['Regen',['../class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_defensive_1_1_life_regen_effect.html#abcf17aa03805921985061c2f0398376d',1,'Loot::Modifiers::EquipModifiers::Defensive::LifeRegenEffect']]],
   ['registerassets',['RegisterAssets',['../class_loot_1_1_core_1_1_system_1_1_loaders_1_1_asset_loader.html#ac204461afbabc462cf1be744e67813fa',1,'Loot::Core::System::Loaders::AssetLoader']]],

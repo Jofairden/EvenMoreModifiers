@@ -22,7 +22,6 @@ var hierarchy =
       [ "Loot.Core.System.Content.ModifierRarityContent", "class_loot_1_1_core_1_1_system_1_1_content_1_1_modifier_rarity_content.html", null ]
     ] ],
     [ "Loot.Core.System.Loaders.ContentLoader", "class_loot_1_1_core_1_1_system_1_1_loaders_1_1_content_loader.html", null ],
-    [ "Loot.Modifiers.DebuffTrigger", "struct_loot_1_1_modifiers_1_1_debuff_trigger.html", null ],
     [ "GenPass", "class_gen_pass.html", null ],
     [ "GlobalItem", "class_global_item.html", [
       [ "Loot.ActivatedModifierItem", "class_loot_1_1_activated_modifier_item.html", null ],

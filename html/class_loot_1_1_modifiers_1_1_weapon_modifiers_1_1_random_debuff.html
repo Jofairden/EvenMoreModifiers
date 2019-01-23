@@ -113,8 +113,8 @@ $(document).ready(function(){initNavTree('class_loot_1_1_modifiers_1_1_weapon_mo
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pub-attribs">Public Attributes</a> &#124;
 <a href="#pri-methods">Private Member Functions</a> &#124;
+<a href="#pri-static-methods">Static Private Member Functions</a> &#124;
 <a href="#pri-attribs">Private Attributes</a> &#124;
-<a href="#pri-static-attribs">Static Private Attributes</a> &#124;
 <a href="class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_random_debuff-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">Loot.Modifiers.WeaponModifiers.RandomDebuff Class Reference</div>  </div>
@@ -273,11 +273,11 @@ Public Member Functions</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
-<tr class="memitem:a726558235a140f1b3d1985d79e9b87b0"><td class="memItemLeft" align="right" valign="top">override float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_random_debuff.html#a726558235a140f1b3d1985d79e9b87b0">BuffInflictionChance</a> =&gt; <a class="el" href="class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_random_debuff.html#ae56bcec70d0fab68c999c43fdbce7743">BuffPairs</a>[<a class="el" href="class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_random_debuff.html#a040cdb393b0405729b6f18b65534d4f3">_index</a>].InflictionChance</td></tr>
+<tr class="memitem:a726558235a140f1b3d1985d79e9b87b0"><td class="memItemLeft" align="right" valign="top">override float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_random_debuff.html#a726558235a140f1b3d1985d79e9b87b0">BuffInflictionChance</a> =&gt; BuffPairs[<a class="el" href="class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_random_debuff.html#a040cdb393b0405729b6f18b65534d4f3">_index</a>].chance</td></tr>
 <tr class="separator:a726558235a140f1b3d1985d79e9b87b0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8390666b643ba19f22e54ac3847ede03"><td class="memItemLeft" align="right" valign="top">override int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_random_debuff.html#a8390666b643ba19f22e54ac3847ede03">BuffTime</a> =&gt; (int) (<a class="el" href="class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_random_debuff.html#ae56bcec70d0fab68c999c43fdbce7743">BuffPairs</a>[<a class="el" href="class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_random_debuff.html#a040cdb393b0405729b6f18b65534d4f3">_index</a>].BuffTime * <a class="el" href="class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_random_debuff.html#a7edec10f8adbfe10a23db8eb9380b37d">_timeScaleFactor</a>)</td></tr>
+<tr class="memitem:a8390666b643ba19f22e54ac3847ede03"><td class="memItemLeft" align="right" valign="top">override int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_random_debuff.html#a8390666b643ba19f22e54ac3847ede03">BuffTime</a> =&gt; (int) (BuffPairs[<a class="el" href="class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_random_debuff.html#a040cdb393b0405729b6f18b65534d4f3">_index</a>].time * <a class="el" href="class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_random_debuff.html#a7edec10f8adbfe10a23db8eb9380b37d">_timeScaleFactor</a>)</td></tr>
 <tr class="separator:a8390666b643ba19f22e54ac3847ede03"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afd00707ca69335df5c63b32c39e5654f"><td class="memItemLeft" align="right" valign="top">override int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_random_debuff.html#afd00707ca69335df5c63b32c39e5654f">BuffType</a> =&gt; <a class="el" href="class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_random_debuff.html#ae56bcec70d0fab68c999c43fdbce7743">BuffPairs</a>[<a class="el" href="class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_random_debuff.html#a040cdb393b0405729b6f18b65534d4f3">_index</a>].BuffType</td></tr>
+<tr class="memitem:afd00707ca69335df5c63b32c39e5654f"><td class="memItemLeft" align="right" valign="top">override int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_random_debuff.html#afd00707ca69335df5c63b32c39e5654f">BuffType</a> =&gt; BuffPairs[<a class="el" href="class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_random_debuff.html#a040cdb393b0405729b6f18b65534d4f3">_index</a>].type</td></tr>
 <tr class="separator:afd00707ca69335df5c63b32c39e5654f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_attribs_class_loot_1_1_core_1_1_system_1_1_modifier_1_1_modifier"><td colspan="2" onclick="javascript:toggleInherit('pub_attribs_class_loot_1_1_core_1_1_system_1_1_modifier_1_1_modifier')"><img src="closed.png" alt="-"/>&#160;Public Attributes inherited from <a class="el" href="class_loot_1_1_core_1_1_system_1_1_modifier_1_1_modifier.html">Loot.Core.System.Modifier.Modifier</a></td></tr>
 <tr class="memitem:a92a71648c42653f15fbce5388bca9671 inherit pub_attribs_class_loot_1_1_core_1_1_system_1_1_modifier_1_1_modifier"><td class="memItemLeft" align="right" valign="top">sealed override bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_loot_1_1_core_1_1_system_1_1_modifier_1_1_modifier.html#a92a71648c42653f15fbce5388bca9671">CloneNewInstances</a> =&gt; true</td></tr>
@@ -294,19 +294,19 @@ Private Member Functions</h2></td></tr>
 <tr class="memitem:ac33528dedb0dc00afb03cf11b97ebe34"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_random_debuff.html#ac33528dedb0dc00afb03cf11b97ebe34">RollTimeScaleFactor</a> ()</td></tr>
 <tr class="separator:ac33528dedb0dc00afb03cf11b97ebe34"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-static-methods"></a>
+Static Private Member Functions</h2></td></tr>
+<tr class="memitem:adff461eba04f66de78cbcaa00387f4e8"><td class="memItemLeft" align="right" valign="top">static&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_random_debuff.html#adff461eba04f66de78cbcaa00387f4e8">readonly</a> (int type, int time, float chance)[] BuffPairs</td></tr>
+<tr class="separator:adff461eba04f66de78cbcaa00387f4e8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
 <tr class="memitem:a040cdb393b0405729b6f18b65534d4f3"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_random_debuff.html#a040cdb393b0405729b6f18b65534d4f3">_index</a> = -1</td></tr>
 <tr class="separator:a040cdb393b0405729b6f18b65534d4f3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9f5f155b2428a7ef22a8b81acf5cee09"><td class="memItemLeft" align="right" valign="top">readonly int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_random_debuff.html#a9f5f155b2428a7ef22a8b81acf5cee09">_len</a> = BuffPairs.GetLength(0)</td></tr>
+<tr class="memitem:a9f5f155b2428a7ef22a8b81acf5cee09"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_random_debuff.html#adff461eba04f66de78cbcaa00387f4e8">readonly</a> int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_random_debuff.html#a9f5f155b2428a7ef22a8b81acf5cee09">_len</a> = BuffPairs.GetLength(0)</td></tr>
 <tr class="separator:a9f5f155b2428a7ef22a8b81acf5cee09"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7edec10f8adbfe10a23db8eb9380b37d"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_random_debuff.html#a7edec10f8adbfe10a23db8eb9380b37d">_timeScaleFactor</a> = 1f</td></tr>
 <tr class="separator:a7edec10f8adbfe10a23db8eb9380b37d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-static-attribs"></a>
-Static Private Attributes</h2></td></tr>
-<tr class="memitem:ae56bcec70d0fab68c999c43fdbce7743"><td class="memItemLeft" align="right" valign="top">static readonly <a class="el" href="struct_loot_1_1_modifiers_1_1_debuff_trigger.html">DebuffTrigger</a>[]&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_random_debuff.html#ae56bcec70d0fab68c999c43fdbce7743">BuffPairs</a></td></tr>
-<tr class="separator:ae56bcec70d0fab68c999c43fdbce7743"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
@@ -510,6 +510,46 @@ Additional Inherited Members</h2></td></tr>
 </div><!-- fragment -->
 </div>
 </div>
+<a class="anchor" id="adff461eba04f66de78cbcaa00387f4e8"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static Loot.Modifiers.WeaponModifiers.RandomDebuff.readonly </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>type</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>time</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>chance</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a class="anchor" id="ab0e283a0342c8d70069e523f8a6ca82f"></a>
 <div class="memitem">
 <div class="memproto">
@@ -547,8 +587,7 @@ Additional Inherited Members</h2></td></tr>
 <p>Reimplemented from <a class="el" href="class_loot_1_1_core_1_1_system_1_1_modifier_1_1_modifier.html#a76d43e3033efeb91be5a8ae7f45fee93">Loot.Core.System.Modifier.Modifier</a>.</p>
 
 <p>Definition at line <a class="el" href="_random_debuff_8cs_source.html#l00073">73</a> of file <a class="el" href="_random_debuff_8cs_source.html">RandomDebuff.cs</a>.</p>
-<div class="fragment"><div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;        {</div><div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;            base.Roll(ctx, rolledModifiers);</div><div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;</div><div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;            <span class="comment">// Exclude already rolled random debuffs from the list</span></div><div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;            <span class="comment">// Try rolling a new random one</span></div><div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;            var similarModsBuffTypes = rolledModifiers.Where(x =&gt; x is RandomDebuff).Cast&lt;RandomDebuff&gt;().Select(x =&gt; x.BuffType);</div><div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;            var rollableBuffTypes = <a class="code" href="class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_random_debuff.html#ae56bcec70d0fab68c999c43fdbce7743">BuffPairs</a>.Select(x =&gt; x.BuffType).Except(similarModsBuffTypes);</div><div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;            <span class="keywordtype">int</span> randBuffIndex = Main.rand.Next(rollableBuffTypes.Count());</div><div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;            <a class="code" href="class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_random_debuff.html#a040cdb393b0405729b6f18b65534d4f3">_index</a> = <a class="code" href="class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_random_debuff.html#ae56bcec70d0fab68c999c43fdbce7743">BuffPairs</a>.ToList().FindIndex(x =&gt; x.BuffType == rollableBuffTypes.ElementAt(randBuffIndex));</div><div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;            <a class="code" href="class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_random_debuff.html#ac33528dedb0dc00afb03cf11b97ebe34">RollTimeScaleFactor</a>();</div><div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;        }</div><div class="ttc" id="class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_random_debuff_html_a040cdb393b0405729b6f18b65534d4f3"><div class="ttname"><a href="class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_random_debuff.html#a040cdb393b0405729b6f18b65534d4f3">Loot.Modifiers.WeaponModifiers.RandomDebuff._index</a></div><div class="ttdeci">int _index</div><div class="ttdef"><b>Definition:</b> <a href="_random_debuff_8cs_source.html#l00029">RandomDebuff.cs:29</a></div></div>
-<div class="ttc" id="class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_random_debuff_html_ae56bcec70d0fab68c999c43fdbce7743"><div class="ttname"><a href="class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_random_debuff.html#ae56bcec70d0fab68c999c43fdbce7743">Loot.Modifiers.WeaponModifiers.RandomDebuff.BuffPairs</a></div><div class="ttdeci">static readonly DebuffTrigger[] BuffPairs</div><div class="ttdef"><b>Definition:</b> <a href="_random_debuff_8cs_source.html#l00016">RandomDebuff.cs:16</a></div></div>
+<div class="fragment"><div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;        {</div><div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;            base.Roll(ctx, rolledModifiers);</div><div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;</div><div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;            <span class="comment">// Exclude already rolled random debuffs from the list</span></div><div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;            <span class="comment">// Try rolling a new random one</span></div><div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;            var similarModsBuffTypes = rolledModifiers.Where(x =&gt; x is RandomDebuff).Cast&lt;RandomDebuff&gt;().Select(x =&gt; x.BuffType);</div><div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;            var rollableBuffTypes = BuffPairs.Select(x =&gt; x.type).Except(similarModsBuffTypes);</div><div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;            <span class="keywordtype">int</span> randBuffIndex = Main.rand.Next(rollableBuffTypes.Count());</div><div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;            <a class="code" href="class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_random_debuff.html#a040cdb393b0405729b6f18b65534d4f3">_index</a> = BuffPairs.ToList().FindIndex(x =&gt; x.type == rollableBuffTypes.ElementAt(randBuffIndex));</div><div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;            <a class="code" href="class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_random_debuff.html#ac33528dedb0dc00afb03cf11b97ebe34">RollTimeScaleFactor</a>();</div><div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;        }</div><div class="ttc" id="class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_random_debuff_html_a040cdb393b0405729b6f18b65534d4f3"><div class="ttname"><a href="class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_random_debuff.html#a040cdb393b0405729b6f18b65534d4f3">Loot.Modifiers.WeaponModifiers.RandomDebuff._index</a></div><div class="ttdeci">int _index</div><div class="ttdef"><b>Definition:</b> <a href="_random_debuff_8cs_source.html#l00029">RandomDebuff.cs:29</a></div></div>
 <div class="ttc" id="class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_random_debuff_html_ac33528dedb0dc00afb03cf11b97ebe34"><div class="ttname"><a href="class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_random_debuff.html#ac33528dedb0dc00afb03cf11b97ebe34">Loot.Modifiers.WeaponModifiers.RandomDebuff.RollTimeScaleFactor</a></div><div class="ttdeci">void RollTimeScaleFactor()</div><div class="ttdef"><b>Definition:</b> <a href="_random_debuff_8cs_source.html#l00068">RandomDebuff.cs:68</a></div></div>
 </div><!-- fragment -->
 </div>
@@ -654,7 +693,7 @@ Additional Inherited Members</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">readonly int Loot.Modifiers.WeaponModifiers.RandomDebuff._len = BuffPairs.GetLength(0)</td>
+          <td class="memname"><a class="el" href="class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_random_debuff.html#adff461eba04f66de78cbcaa00387f4e8">readonly</a> int Loot.Modifiers.WeaponModifiers.RandomDebuff._len = BuffPairs.GetLength(0)</td>
         </tr>
       </table>
   </td>
@@ -695,7 +734,7 @@ Additional Inherited Members</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">override float Loot.Modifiers.WeaponModifiers.RandomDebuff.BuffInflictionChance =&gt; <a class="el" href="class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_random_debuff.html#ae56bcec70d0fab68c999c43fdbce7743">BuffPairs</a>[<a class="el" href="class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_random_debuff.html#a040cdb393b0405729b6f18b65534d4f3">_index</a>].InflictionChance</td>
+          <td class="memname">override float Loot.Modifiers.WeaponModifiers.RandomDebuff.BuffInflictionChance =&gt; BuffPairs[<a class="el" href="class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_random_debuff.html#a040cdb393b0405729b6f18b65534d4f3">_index</a>].chance</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -704,34 +743,12 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="ae56bcec70d0fab68c999c43fdbce7743"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">readonly <a class="el" href="struct_loot_1_1_modifiers_1_1_debuff_trigger.html">DebuffTrigger</a> [] Loot.Modifiers.WeaponModifiers.RandomDebuff.BuffPairs</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<b>Initial value:</b><div class="fragment"><div class="line">=</div><div class="line">        {</div><div class="line">            <span class="keyword">new</span> DebuffTrigger {<a class="code" href="class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_random_debuff.html#afd00707ca69335df5c63b32c39e5654f">BuffType</a> = BuffID.Confused, <a class="code" href="class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_random_debuff.html#a8390666b643ba19f22e54ac3847ede03">BuffTime</a> = 100, InflictionChance = 1f},</div><div class="line">            <span class="keyword">new</span> DebuffTrigger {<a class="code" href="class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_random_debuff.html#afd00707ca69335df5c63b32c39e5654f">BuffType</a> = BuffID.CursedInferno, <a class="code" href="class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_random_debuff.html#a8390666b643ba19f22e54ac3847ede03">BuffTime</a> = 100, InflictionChance = 1f},</div><div class="line">            <span class="keyword">new</span> DebuffTrigger {<a class="code" href="class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_random_debuff.html#afd00707ca69335df5c63b32c39e5654f">BuffType</a> = BuffID.Frostburn, <a class="code" href="class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_random_debuff.html#a8390666b643ba19f22e54ac3847ede03">BuffTime</a> = 100, InflictionChance = 1f},</div><div class="line">            <span class="keyword">new</span> DebuffTrigger {<a class="code" href="class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_random_debuff.html#afd00707ca69335df5c63b32c39e5654f">BuffType</a> = BuffID.OnFire, <a class="code" href="class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_random_debuff.html#a8390666b643ba19f22e54ac3847ede03">BuffTime</a> = 100, InflictionChance = 1f},</div><div class="line">            <span class="keyword">new</span> DebuffTrigger {<a class="code" href="class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_random_debuff.html#afd00707ca69335df5c63b32c39e5654f">BuffType</a> = BuffID.Poisoned, <a class="code" href="class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_random_debuff.html#a8390666b643ba19f22e54ac3847ede03">BuffTime</a> = 100, InflictionChance = 1f},</div><div class="line">            <span class="keyword">new</span> DebuffTrigger {<a class="code" href="class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_random_debuff.html#afd00707ca69335df5c63b32c39e5654f">BuffType</a> = BuffID.Ichor, <a class="code" href="class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_random_debuff.html#a8390666b643ba19f22e54ac3847ede03">BuffTime</a> = 100, InflictionChance = 1f}</div><div class="line">        }</div></div><!-- fragment -->
-<p>Definition at line <a class="el" href="_random_debuff_8cs_source.html#l00016">16</a> of file <a class="el" href="_random_debuff_8cs_source.html">RandomDebuff.cs</a>.</p>
-
-</div>
-</div>
 <a class="anchor" id="a8390666b643ba19f22e54ac3847ede03"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">override int Loot.Modifiers.WeaponModifiers.RandomDebuff.BuffTime =&gt; (int) (<a class="el" href="class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_random_debuff.html#ae56bcec70d0fab68c999c43fdbce7743">BuffPairs</a>[<a class="el" href="class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_random_debuff.html#a040cdb393b0405729b6f18b65534d4f3">_index</a>].BuffTime * <a class="el" href="class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_random_debuff.html#a7edec10f8adbfe10a23db8eb9380b37d">_timeScaleFactor</a>)</td>
+          <td class="memname">override int Loot.Modifiers.WeaponModifiers.RandomDebuff.BuffTime =&gt; (int) (BuffPairs[<a class="el" href="class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_random_debuff.html#a040cdb393b0405729b6f18b65534d4f3">_index</a>].time * <a class="el" href="class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_random_debuff.html#a7edec10f8adbfe10a23db8eb9380b37d">_timeScaleFactor</a>)</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -745,7 +762,7 @@ Additional Inherited Members</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">override int Loot.Modifiers.WeaponModifiers.RandomDebuff.BuffType =&gt; <a class="el" href="class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_random_debuff.html#ae56bcec70d0fab68c999c43fdbce7743">BuffPairs</a>[<a class="el" href="class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_random_debuff.html#a040cdb393b0405729b6f18b65534d4f3">_index</a>].BuffType</td>
+          <td class="memname">override int Loot.Modifiers.WeaponModifiers.RandomDebuff.BuffType =&gt; BuffPairs[<a class="el" href="class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_random_debuff.html#a040cdb393b0405729b6f18b65534d4f3">_index</a>].type</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -760,7 +777,7 @@ Additional Inherited Members</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespace_loot.html">Loot</a></li><li class="navelem"><a class="el" href="namespace_loot_1_1_modifiers.html">Modifiers</a></li><li class="navelem"><a class="el" href="namespace_loot_1_1_modifiers_1_1_weapon_modifiers.html">WeaponModifiers</a></li><li class="navelem"><a class="el" href="class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_random_debuff.html">RandomDebuff</a></li>
-    <li class="footer">Generated on Wed Jan 23 2019 20:57:55 for Even More Modifiers by
+    <li class="footer">Generated on Wed Jan 23 2019 21:23:55 for Even More Modifiers by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.11 </li>
   </ul>

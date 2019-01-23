@@ -165,8 +165,8 @@ Public Member Functions</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
-<tr class="memitem:adfc56bada2b6eb21bbee791d95edc6ff"><td class="memItemLeft" align="right" valign="top">IList&lt; <a class="el" href="struct_loot_1_1_modifiers_1_1_debuff_trigger.html">DebuffTrigger</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_loot_1_1_modifiers_1_1_weapon_debuff_effect.html#adfc56bada2b6eb21bbee791d95edc6ff">DebuffChances</a> = new List&lt;<a class="el" href="struct_loot_1_1_modifiers_1_1_debuff_trigger.html">DebuffTrigger</a>&gt;()</td></tr>
-<tr class="separator:adfc56bada2b6eb21bbee791d95edc6ff"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0bd80f5383bbe890b843eaa5668d3be3"><td class="memItemLeft" align="right" valign="top">IList&lt;(int type, int time, float chance)&gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_loot_1_1_modifiers_1_1_weapon_debuff_effect.html#a0bd80f5383bbe890b843eaa5668d3be3">DebuffChances</a> = new List&lt;(int type, int time, float chance)&gt;()</td></tr>
+<tr class="separator:a0bd80f5383bbe890b843eaa5668d3be3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_attribs_class_loot_1_1_core_1_1_system_1_1_modifier_1_1_modifier_effect"><td colspan="2" onclick="javascript:toggleInherit('pub_attribs_class_loot_1_1_core_1_1_system_1_1_modifier_1_1_modifier_effect')"><img src="closed.png" alt="-"/>&#160;Public Attributes inherited from <a class="el" href="class_loot_1_1_core_1_1_system_1_1_modifier_1_1_modifier_effect.html">Loot.Core.System.Modifier.ModifierEffect</a></td></tr>
 <tr class="memitem:a783ce1cdcc1f50833ce3af2515271b1b inherit pub_attribs_class_loot_1_1_core_1_1_system_1_1_modifier_1_1_modifier_effect"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_loot_1_1_core_1_1_system_1_1_modifier_1_1_modifier_effect.html#a783ce1cdcc1f50833ce3af2515271b1b">Name</a> =&gt; GetType().Name</td></tr>
 <tr class="separator:a783ce1cdcc1f50833ce3af2515271b1b inherit pub_attribs_class_loot_1_1_core_1_1_system_1_1_modifier_1_1_modifier_effect"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -195,7 +195,7 @@ Additional Inherited Members</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock">
-<p>Definition at line <a class="el" href="_weapon_debuff_modifier_8cs_source.html#l00027">27</a> of file <a class="el" href="_weapon_debuff_modifier_8cs_source.html">WeaponDebuffModifier.cs</a>.</p>
+<p>Definition at line <a class="el" href="_weapon_debuff_modifier_8cs_source.html#l00012">12</a> of file <a class="el" href="_weapon_debuff_modifier_8cs_source.html">WeaponDebuffModifier.cs</a>.</p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
 <a class="anchor" id="aff773d8cc476b7410c3ee33fb86a2ca2"></a>
 <div class="memitem">
@@ -223,8 +223,8 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Reimplemented from <a class="el" href="class_loot_1_1_core_1_1_system_1_1_modifier_1_1_modifier_effect.html#a611deb5f93707a9a7594507588dc64b7">Loot.Core.System.Modifier.ModifierEffect</a>.</p>
 
-<p>Definition at line <a class="el" href="_weapon_debuff_modifier_8cs_source.html#l00034">34</a> of file <a class="el" href="_weapon_debuff_modifier_8cs_source.html">WeaponDebuffModifier.cs</a>.</p>
-<div class="fragment"><div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        {</div><div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;            <a class="code" href="class_loot_1_1_modifiers_1_1_weapon_debuff_effect.html#adfc56bada2b6eb21bbee791d95edc6ff">DebuffChances</a> = <span class="keyword">new</span> List&lt;DebuffTrigger&gt;();</div><div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        }</div><div class="ttc" id="class_loot_1_1_modifiers_1_1_weapon_debuff_effect_html_adfc56bada2b6eb21bbee791d95edc6ff"><div class="ttname"><a href="class_loot_1_1_modifiers_1_1_weapon_debuff_effect.html#adfc56bada2b6eb21bbee791d95edc6ff">Loot.Modifiers.WeaponDebuffEffect.DebuffChances</a></div><div class="ttdeci">IList&lt; DebuffTrigger &gt; DebuffChances</div><div class="ttdef"><b>Definition:</b> <a href="_weapon_debuff_modifier_8cs_source.html#l00032">WeaponDebuffModifier.cs:32</a></div></div>
+<p>Definition at line <a class="el" href="_weapon_debuff_modifier_8cs_source.html#l00016">16</a> of file <a class="el" href="_weapon_debuff_modifier_8cs_source.html">WeaponDebuffModifier.cs</a>.</p>
+<div class="fragment"><div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;        {</div><div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;            <a class="code" href="class_loot_1_1_modifiers_1_1_weapon_debuff_effect.html#a0bd80f5383bbe890b843eaa5668d3be3">DebuffChances</a> = <span class="keyword">new</span> List&lt;(int type, int time, float chance)&gt;();</div><div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;        }</div><div class="ttc" id="class_loot_1_1_modifiers_1_1_weapon_debuff_effect_html_a0bd80f5383bbe890b843eaa5668d3be3"><div class="ttname"><a href="class_loot_1_1_modifiers_1_1_weapon_debuff_effect.html#a0bd80f5383bbe890b843eaa5668d3be3">Loot.Modifiers.WeaponDebuffEffect.DebuffChances</a></div><div class="ttdeci">IList&lt;(int type, int time, float chance)&gt; DebuffChances</div><div class="ttdef"><b>Definition:</b> <a href="_weapon_debuff_modifier_8cs_source.html#l00014">WeaponDebuffModifier.cs:14</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -254,23 +254,23 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Reimplemented from <a class="el" href="class_loot_1_1_core_1_1_system_1_1_modifier_1_1_modifier_effect.html#ac29bf0a36ee159a55d5bfb1c2dc58753">Loot.Core.System.Modifier.ModifierEffect</a>.</p>
 
-<p>Definition at line <a class="el" href="_weapon_debuff_modifier_8cs_source.html#l00039">39</a> of file <a class="el" href="_weapon_debuff_modifier_8cs_source.html">WeaponDebuffModifier.cs</a>.</p>
-<div class="fragment"><div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        {</div><div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;            <a class="code" href="class_loot_1_1_modifiers_1_1_weapon_debuff_effect.html#adfc56bada2b6eb21bbee791d95edc6ff">DebuffChances</a>?.Clear();</div><div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        }</div><div class="ttc" id="class_loot_1_1_modifiers_1_1_weapon_debuff_effect_html_adfc56bada2b6eb21bbee791d95edc6ff"><div class="ttname"><a href="class_loot_1_1_modifiers_1_1_weapon_debuff_effect.html#adfc56bada2b6eb21bbee791d95edc6ff">Loot.Modifiers.WeaponDebuffEffect.DebuffChances</a></div><div class="ttdeci">IList&lt; DebuffTrigger &gt; DebuffChances</div><div class="ttdef"><b>Definition:</b> <a href="_weapon_debuff_modifier_8cs_source.html#l00032">WeaponDebuffModifier.cs:32</a></div></div>
+<p>Definition at line <a class="el" href="_weapon_debuff_modifier_8cs_source.html#l00021">21</a> of file <a class="el" href="_weapon_debuff_modifier_8cs_source.html">WeaponDebuffModifier.cs</a>.</p>
+<div class="fragment"><div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;        {</div><div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;            <a class="code" href="class_loot_1_1_modifiers_1_1_weapon_debuff_effect.html#a0bd80f5383bbe890b843eaa5668d3be3">DebuffChances</a>.Clear();</div><div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;        }</div><div class="ttc" id="class_loot_1_1_modifiers_1_1_weapon_debuff_effect_html_a0bd80f5383bbe890b843eaa5668d3be3"><div class="ttname"><a href="class_loot_1_1_modifiers_1_1_weapon_debuff_effect.html#a0bd80f5383bbe890b843eaa5668d3be3">Loot.Modifiers.WeaponDebuffEffect.DebuffChances</a></div><div class="ttdeci">IList&lt;(int type, int time, float chance)&gt; DebuffChances</div><div class="ttdef"><b>Definition:</b> <a href="_weapon_debuff_modifier_8cs_source.html#l00014">WeaponDebuffModifier.cs:14</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
-<a class="anchor" id="adfc56bada2b6eb21bbee791d95edc6ff"></a>
+<a class="anchor" id="a0bd80f5383bbe890b843eaa5668d3be3"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">IList&lt;<a class="el" href="struct_loot_1_1_modifiers_1_1_debuff_trigger.html">DebuffTrigger</a>&gt; Loot.Modifiers.WeaponDebuffEffect.DebuffChances = new List&lt;<a class="el" href="struct_loot_1_1_modifiers_1_1_debuff_trigger.html">DebuffTrigger</a>&gt;()</td>
+          <td class="memname">IList&lt;(int type, int time, float chance)&gt; Loot.Modifiers.WeaponDebuffEffect.DebuffChances = new List&lt;(int type, int time, float chance)&gt;()</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_weapon_debuff_modifier_8cs_source.html#l00032">32</a> of file <a class="el" href="_weapon_debuff_modifier_8cs_source.html">WeaponDebuffModifier.cs</a>.</p>
+<p>Definition at line <a class="el" href="_weapon_debuff_modifier_8cs_source.html#l00014">14</a> of file <a class="el" href="_weapon_debuff_modifier_8cs_source.html">WeaponDebuffModifier.cs</a>.</p>
 
 </div>
 </div>
@@ -280,7 +280,7 @@ Additional Inherited Members</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespace_loot.html">Loot</a></li><li class="navelem"><a class="el" href="namespace_loot_1_1_modifiers.html">Modifiers</a></li><li class="navelem"><a class="el" href="class_loot_1_1_modifiers_1_1_weapon_debuff_effect.html">WeaponDebuffEffect</a></li>
-    <li class="footer">Generated on Wed Jan 23 2019 20:57:55 for Even More Modifiers by
+    <li class="footer">Generated on Wed Jan 23 2019 21:23:54 for Even More Modifiers by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.11 </li>
   </ul>

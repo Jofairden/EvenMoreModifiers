@@ -12,7 +12,6 @@ var dir_d9effce6021c52ad5f41f041cf5402f7 =
       [ "EquipModifier", "class_loot_1_1_modifiers_1_1_equip_modifier.html", "class_loot_1_1_modifiers_1_1_equip_modifier" ]
     ] ],
     [ "WeaponDebuffModifier.cs", "_weapon_debuff_modifier_8cs.html", [
-      [ "DebuffTrigger", "struct_loot_1_1_modifiers_1_1_debuff_trigger.html", "struct_loot_1_1_modifiers_1_1_debuff_trigger" ],
       [ "WeaponDebuffEffect", "class_loot_1_1_modifiers_1_1_weapon_debuff_effect.html", "class_loot_1_1_modifiers_1_1_weapon_debuff_effect" ],
       [ "WeaponDebuffModifier", "class_loot_1_1_modifiers_1_1_weapon_debuff_modifier.html", "class_loot_1_1_modifiers_1_1_weapon_debuff_modifier" ]
     ] ],
