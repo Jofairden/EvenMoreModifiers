@@ -1,15 +1,15 @@
 using Loot.Core.System;
-using Microsoft.Xna.Framework;
 using Terraria;
 
 namespace Loot.Modifiers.EquipModifiers.Offensive
 {
 	public class RangedCritPlus : EquipModifier
 	{
-		public override ModifierTooltipLine[] TooltipLines => new[]
+		public override ModifierTooltipBuilder GetTooltip()
 		{
-			new ModifierTooltipLine { Text = $"+{Properties.RoundedPower}% ranged crit chance", Color =  Color.LimeGreen},
-		};
+			return base.GetTooltip()
+				.WithPositive($"+{Properties.RoundedPower}% ranged crit chance");
+		}
 
 		public override ModifierPropertiesBuilder GetModifierProperties(Item item)
 		{
@@ -19,7 +19,7 @@ namespace Loot.Modifiers.EquipModifiers.Offensive
 
 		public override void UpdateEquip(Item item, Player player)
 		{
-			player.rangedCrit += (int)Properties.RoundedPower;
+			player.rangedCrit += (int) Properties.RoundedPower;
 		}
 	}
 }

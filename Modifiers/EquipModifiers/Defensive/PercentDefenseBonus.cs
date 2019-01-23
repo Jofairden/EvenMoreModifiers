@@ -1,6 +1,5 @@
-using Loot.Core.Attributes;
-using Microsoft.Xna.Framework;
 using System;
+using Loot.Core.Attributes;
 using Loot.Core.System;
 using Terraria;
 
@@ -19,17 +18,18 @@ namespace Loot.Modifiers.EquipModifiers.Defensive
 		[DelegationPrioritization(DelegationPrioritization.Late, 999)]
 		private void DefBoost(ModifierPlayer player)
 		{
-			player.player.statDefense = (int)Math.Ceiling(player.player.statDefense * (1 + PercentDefBoost));
+			player.player.statDefense = (int) Math.Ceiling(player.player.statDefense * (1 + PercentDefBoost));
 		}
 	}
 
 	[UsesEffect(typeof(PercentDefBoostEffect))]
 	public class PercentDefenseBonus : EquipModifier
 	{
-		public override ModifierTooltipLine[] TooltipLines => new[]
+		public override ModifierTooltipBuilder GetTooltip()
 		{
-			new ModifierTooltipLine {Text = $"+{Properties.RoundedPower}% defense", Color = Color.LimeGreen},
-		};
+			return base.GetTooltip()
+				.WithPositive($"+{Properties.RoundedPower}% defense");
+		}
 
 		public override ModifierPropertiesBuilder GetModifierProperties(Item item)
 		{

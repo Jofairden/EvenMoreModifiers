@@ -1,15 +1,15 @@
 using Loot.Core.System;
-using Microsoft.Xna.Framework;
 using Terraria;
 
 namespace Loot.Modifiers.WeaponModifiers
 {
 	public class KnockbackPlus : WeaponModifier
 	{
-		public override ModifierTooltipLine[] TooltipLines => new[]
-			{
-				new ModifierTooltipLine { Text = $"+{Properties.RoundedPower}% knockback", Color = Color.Lime}
-			};
+		public override ModifierTooltipBuilder GetTooltip()
+		{
+			return base.GetTooltip()
+				.WithPositive($"+{Properties.RoundedPower}% knockback");
+		}
 
 		public override ModifierPropertiesBuilder GetModifierProperties(Item item)
 		{

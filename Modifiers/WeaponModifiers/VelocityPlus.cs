@@ -6,10 +6,11 @@ namespace Loot.Modifiers.WeaponModifiers
 {
 	public class VelocityPlus : WeaponModifier
 	{
-		public override ModifierTooltipLine[] TooltipLines => new[]
-			{
-				new ModifierTooltipLine { Text = $"+{Properties.RoundedPower}% projectile velocity", Color = Color.Lime}
-			};
+		public override ModifierTooltipBuilder GetTooltip()
+		{
+			return base.GetTooltip()
+				.WithPositive($"+{Properties.RoundedPower}% projectile velocity");
+		}
 
 		public override ModifierPropertiesBuilder GetModifierProperties(Item item)
 		{

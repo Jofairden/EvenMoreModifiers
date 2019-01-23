@@ -7,10 +7,11 @@ namespace Loot.Modifiers.WeaponModifiers
 {
 	public class CritPlus : WeaponModifier
 	{
-		public override ModifierTooltipLine[] TooltipLines => new[]
-			{
-				new ModifierTooltipLine { Text = $"+{Properties.RoundedPower}% crit chance", Color = Color.Lime}
-			};
+		public override ModifierTooltipBuilder GetTooltip()
+		{
+			return base.GetTooltip()
+				.WithPositive($"+{Properties.RoundedPower}% crit chance");
+		}
 
 		public override ModifierPropertiesBuilder GetModifierProperties(Item item)
 		{
@@ -25,7 +26,7 @@ namespace Loot.Modifiers.WeaponModifiers
 
 		public override void GetWeaponCrit(Item item, Player player, ref int crit)
 		{
-			crit = (int)Math.Min(100, crit + Properties.RoundedPower);
+			crit = (int) Math.Min(100, crit + Properties.RoundedPower);
 		}
 
 		//public override ShaderEntity GetShaderEntity(Item item)

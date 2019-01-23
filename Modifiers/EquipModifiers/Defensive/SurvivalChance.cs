@@ -1,7 +1,7 @@
-using Loot.Core.Attributes;
-using Microsoft.Xna.Framework;
 using System;
+using Loot.Core.Attributes;
 using Loot.Core.System;
+using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.DataStructures;
 
@@ -35,15 +35,13 @@ namespace Loot.Modifiers.EquipModifiers.Defensive
 	public class SurvivalChance : EquipModifier
 	{
 		// TODO easier tooltip templating
-		public override ModifierTooltipLine[] TooltipLines => new[]
+		public override ModifierTooltipBuilder GetTooltip()
 		{
-			new ModifierTooltipLine
-			{
-				Text = $"+{Properties.RoundedPower}% chance to survive lethal blows" +
-					   $"{(Main.LocalPlayer.GetModPlayer<ModifierPlayer>().GetEffect<SurvivalEffect>().SurvivalChance >= SurvivalEffect.MAX_SURVIVAL_CHANCE ? $" (cap reached: {SurvivalEffect.MAX_SURVIVAL_CHANCE * 100f}%)" : "")}",
-				Color = Color.LimeGreen
-			},
-		};
+			return base.GetTooltip()
+				.WithPositive($"+{Properties.RoundedPower}% chance to survive lethal blows" 
+				              + $"{(Main.LocalPlayer.GetModPlayer<ModifierPlayer>().GetEffect<SurvivalEffect>().SurvivalChance >= SurvivalEffect.MAX_SURVIVAL_CHANCE ? $" (cap reached: {SurvivalEffect.MAX_SURVIVAL_CHANCE * 100f}%)" : "")}"
+				);
+		}
 
 		public override ModifierPropertiesBuilder GetModifierProperties(Item item)
 		{

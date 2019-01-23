@@ -1,20 +1,20 @@
 using Loot.Core.System;
-using Microsoft.Xna.Framework;
 using Terraria;
 
 namespace Loot.Modifiers.WeaponModifiers
 {
 	public class SpeedPlus : WeaponModifier
 	{
-		public override ModifierTooltipLine[] TooltipLines => new[]
-			{
-				new ModifierTooltipLine { Text = $"+{Properties.RoundedPower}% use speed", Color = Color.Lime}
-			};
+		public override ModifierTooltipBuilder GetTooltip()
+		{
+			return base.GetTooltip()
+				.WithPositive($"+{Properties.RoundedPower}% use speed");
+		}
 
 		public override ModifierPropertiesBuilder GetModifierProperties(Item item)
 		{
 			return base.GetModifierProperties(item)
-				.WithBasePower(1/5f)
+				.WithBasePower(1 / 5f)
 				.WithMaxMagnitude(25f);
 		}
 
@@ -22,8 +22,8 @@ namespace Loot.Modifiers.WeaponModifiers
 		{
 			base.Apply(item);
 
-			item.useTime = (int)(item.useTime * (1 - Properties.RoundedPower / 100f));
-			item.useAnimation = (int)(item.useAnimation * (1 - Properties.RoundedPower / 100f));
+			item.useTime = (int) (item.useTime * (1 - Properties.RoundedPower / 100f));
+			item.useAnimation = (int) (item.useAnimation * (1 - Properties.RoundedPower / 100f));
 
 			// Don't go below the minimum
 			if (item.useTime < 2)

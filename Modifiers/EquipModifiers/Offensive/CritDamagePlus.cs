@@ -1,6 +1,5 @@
-using Loot.Core.Attributes;
-using Microsoft.Xna.Framework;
 using System;
+using Loot.Core.Attributes;
 using Loot.Core.System;
 using Terraria;
 
@@ -19,8 +18,6 @@ namespace Loot.Modifiers.EquipModifiers.Offensive
 		{
 			Multiplier = 1f;
 		}
-
-		// @todo must be prioritized after healthy foes
 
 		[AutoDelegation("OnModifyHitNPC")]
 		[DelegationPrioritization(DelegationPrioritization.Late, 999)]
@@ -44,17 +41,18 @@ namespace Loot.Modifiers.EquipModifiers.Offensive
 
 		private void CritBonus(ref int damage)
 		{
-			damage = (int)Math.Ceiling(damage * Multiplier);
+			damage = (int) Math.Ceiling(damage * Multiplier);
 		}
 	}
 
 	[UsesEffect(typeof(CritDamagePlusEffect))]
 	public class CritDamagePlus : EquipModifier
 	{
-		public override ModifierTooltipLine[] TooltipLines => new[]
+		public override ModifierTooltipBuilder GetTooltip()
 		{
-			new ModifierTooltipLine {Text = $"+{Properties.RoundedPower}% crit multiplier", Color = Color.LimeGreen},
-		};
+			return base.GetTooltip()
+				.WithPositive($"+{Properties.RoundedPower}% crit multiplier");
+		}
 
 		public override ModifierPropertiesBuilder GetModifierProperties(Item item)
 		{

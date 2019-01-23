@@ -298,13 +298,13 @@ namespace Loot.UI.Rerolling
 
 			int i = 0;
 
-			IEnumerable<ModifierTooltipLine[]> getTooltipLines(Item item)
+			IEnumerable<ModifierTooltipLine[]> GetTooltipLines(Item item)
 				=> EMMItem.GetActivePool(item)
-					.Select(x => x.TooltipLines)
+					.Select(x => x.GetTooltip().Build())
 					.Take(4)
 					.Where(x => x != null);
 
-			foreach (var lines in getTooltipLines(_rerollItemPanel.item))
+			foreach (var lines in GetTooltipLines(_rerollItemPanel.item))
 			{
 				string line = lines.Aggregate("", (current, tooltipLine) => current + $"{tooltipLine.Text} ");
 				line = line.TrimEnd();

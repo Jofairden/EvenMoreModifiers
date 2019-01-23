@@ -6,10 +6,11 @@ namespace Loot.Modifiers.EquipModifiers.Utility
 {
 	public class MoveSpeedPlus : EquipModifier
 	{
-		public override ModifierTooltipLine[] TooltipLines => new[]
+		public override ModifierTooltipBuilder GetTooltip()
 		{
-			new ModifierTooltipLine { Text = $"+{Properties.RoundedPower}% movement speed", Color =  Color.LimeGreen},
-		};
+			return base.GetTooltip()
+				.WithPositive($"+{Properties.RoundedPower}% movement speed");
+		}
 
 		public override ModifierPropertiesBuilder GetModifierProperties(Item item)
 		{

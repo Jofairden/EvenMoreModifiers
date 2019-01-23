@@ -92,7 +92,7 @@ namespace Loot.Core.System
 		/// Returns an enumerable of the tooltiplines of the active modifiers
 		/// </summary>
 		public IEnumerable<ModifierTooltipLine[]> Description
-			=> ActiveModifiers.Select(m => m.TooltipLines);
+			=> ActiveModifiers.Select(m => m.GetTooltip().Build());
 
 		public virtual float RollChance => 1f;
 

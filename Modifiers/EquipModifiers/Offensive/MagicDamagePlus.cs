@@ -1,15 +1,15 @@
 using Loot.Core.System;
-using Microsoft.Xna.Framework;
 using Terraria;
 
 namespace Loot.Modifiers.EquipModifiers.Offensive
 {
 	public class MagicDamagePlus : EquipModifier
 	{
-		public override ModifierTooltipLine[] TooltipLines => new[]
+		public override ModifierTooltipBuilder GetTooltip()
 		{
-			new ModifierTooltipLine { Text = $"+{Properties.RoundedPower}% magic damage", Color =  Color.LimeGreen},
-		};
+			return base.GetTooltip()
+				.WithPositive($"+{Properties.RoundedPower}% magic damage");
+		}
 
 		public override ModifierPropertiesBuilder GetModifierProperties(Item item)
 		{

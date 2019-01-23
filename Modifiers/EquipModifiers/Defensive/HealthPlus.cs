@@ -1,15 +1,15 @@
 using Loot.Core.System;
-using Microsoft.Xna.Framework;
 using Terraria;
 
 namespace Loot.Modifiers.EquipModifiers.Defensive
 {
 	public class HealthPlus : EquipModifier
 	{
-		public override ModifierTooltipLine[] TooltipLines => new[]
+		public override ModifierTooltipBuilder GetTooltip()
 		{
-			new ModifierTooltipLine { Text = $"+{Properties.RoundedPower} max life", Color =  Color.LimeGreen},
-		};
+			return base.GetTooltip()
+				.WithPositive($"+{Properties.RoundedPower} max life");
+		}
 
 		public override ModifierPropertiesBuilder GetModifierProperties(Item item)
 		{
@@ -20,7 +20,7 @@ namespace Loot.Modifiers.EquipModifiers.Defensive
 
 		public override void UpdateEquip(Item item, Player player)
 		{
-			player.statLifeMax2 += (int)Properties.RoundedPower;
+			player.statLifeMax2 += (int) Properties.RoundedPower;
 		}
 	}
 }

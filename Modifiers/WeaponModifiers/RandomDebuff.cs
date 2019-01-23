@@ -13,7 +13,7 @@ namespace Loot.Modifiers.WeaponModifiers
 	/// </summary>
 	public sealed class RandomDebuff : WeaponDebuffModifier
 	{
-		internal static DebuffTrigger[] BuffPairs =
+		private static readonly DebuffTrigger[] BuffPairs =
 		{
 			new DebuffTrigger {BuffType = BuffID.Confused, BuffTime = 100, InflictionChance = 1f},
 			new DebuffTrigger {BuffType = BuffID.CursedInferno, BuffTime = 100, InflictionChance = 1f},

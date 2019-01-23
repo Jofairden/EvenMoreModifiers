@@ -20,10 +20,11 @@ namespace Loot.Modifiers.EquipModifiers.Utility
 	[UsesEffect(typeof(LuckEffect))]
 	public class LuckPlus : EquipModifier
 	{
-		public override ModifierTooltipLine[] TooltipLines => new[]
+		public override ModifierTooltipBuilder GetTooltip()
 		{
-			new ModifierTooltipLine { Text = $"+{Properties.RoundedPower} luck", Color =  Color.LimeGreen},
-		};
+			return base.GetTooltip()
+				.WithPositive($"+{Properties.RoundedPower} luck");
+		}
 
 		public override ModifierPropertiesBuilder GetModifierProperties(Item item)
 		{

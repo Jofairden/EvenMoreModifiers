@@ -1,4 +1,3 @@
-using Microsoft.Xna.Framework;
 using System;
 using Loot.Core.System;
 using Terraria;
@@ -7,10 +6,11 @@ namespace Loot.Modifiers.WeaponModifiers
 {
 	public class ManaReduce : WeaponModifier
 	{
-		public override ModifierTooltipLine[] TooltipLines => new[]
-			{
-				new ModifierTooltipLine { Text = $"-{Properties.RoundedPower}% mana cost", Color = Color.Lime}
-			};
+		public override ModifierTooltipBuilder GetTooltip()
+		{
+			return base.GetTooltip()
+				.WithPositive($"-{Properties.RoundedPower}% mana cost");
+		}
 
 		public override ModifierPropertiesBuilder GetModifierProperties(Item item)
 		{
@@ -25,7 +25,7 @@ namespace Loot.Modifiers.WeaponModifiers
 		{
 			base.Apply(item);
 			// Always reduce by at least 1 mana cost
-			item.mana = (int)Math.Floor(item.mana * (1 - Properties.RoundedPower / 100f));
+			item.mana = (int) Math.Floor(item.mana * (1 - Properties.RoundedPower / 100f));
 
 			// Don't go below 1 mana cost! 0 cost is too OP :P
 			if (item.mana < 1)

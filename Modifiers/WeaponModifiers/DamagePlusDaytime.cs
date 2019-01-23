@@ -1,4 +1,3 @@
-using Microsoft.Xna.Framework;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -10,10 +9,11 @@ namespace Loot.Modifiers.WeaponModifiers
 {
 	public class DamagePlusDaytime : WeaponModifier
 	{
-		public override ModifierTooltipLine[] TooltipLines => new[]
-			{
-				new ModifierTooltipLine { Text = $"+{Properties.RoundedPower}% damage during the {(_duringDay ? "day" : "night")}", Color = Color.Lime}
-			};
+		public override ModifierTooltipBuilder GetTooltip()
+		{
+			return base.GetTooltip()
+				.WithPositive($"+{Properties.RoundedPower}% damage during the {(_duringDay ? "day" : "night")}");
+		}
 
 		public override ModifierPropertiesBuilder GetModifierProperties(Item item)
 		{
@@ -64,7 +64,7 @@ namespace Loot.Modifiers.WeaponModifiers
 			base.GetWeaponDamage(item, player, ref damage);
 			if (_duringDay && Main.dayTime || !_duringDay && !Main.dayTime)
 			{
-				damage = (int)Math.Ceiling(damage * (1 + Properties.RoundedPower / 100));
+				damage = (int) Math.Ceiling(damage * (1 + Properties.RoundedPower / 100));
 			}
 		}
 	}

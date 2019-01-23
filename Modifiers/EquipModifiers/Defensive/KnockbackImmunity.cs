@@ -1,5 +1,4 @@
 using Loot.Core.System;
-using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.ID;
 
@@ -7,10 +6,11 @@ namespace Loot.Modifiers.EquipModifiers.Defensive
 {
 	public class KnockbackImmunity : EquipModifier
 	{
-		public override ModifierTooltipLine[] TooltipLines => new[]
+		public override ModifierTooltipBuilder GetTooltip()
 		{
-			new ModifierTooltipLine {Text = $"Knockback immunity", Color = Color.LimeGreen},
-		};
+			return base.GetTooltip()
+				.WithPositive($"Knockback immunity");
+		}
 
 		public override ModifierPropertiesBuilder GetModifierProperties(Item item)
 		{
@@ -38,6 +38,5 @@ namespace Loot.Modifiers.EquipModifiers.Defensive
 		{
 			player.noKnockback = true;
 		}
-
 	}
 }

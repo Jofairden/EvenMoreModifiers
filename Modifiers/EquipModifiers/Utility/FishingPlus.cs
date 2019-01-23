@@ -1,15 +1,15 @@
 using Loot.Core.System;
-using Microsoft.Xna.Framework;
 using Terraria;
 
 namespace Loot.Modifiers.EquipModifiers.Utility
 {
 	public class FishingPlus : EquipModifier
 	{
-		public override ModifierTooltipLine[] TooltipLines => new[]
+		public override ModifierTooltipBuilder GetTooltip()
 		{
-			new ModifierTooltipLine { Text = $"+{Properties.RoundedPower} fishing skill [WIP]", Color =  Color.LimeGreen},
-		};
+			return base.GetTooltip()
+				.WithPositive($"+{Properties.RoundedPower} fishing skill [WIP]");
+		}
 
 		public override ModifierPropertiesBuilder GetModifierProperties(Item item)
 		{
@@ -19,7 +19,7 @@ namespace Loot.Modifiers.EquipModifiers.Utility
 
 		public override void UpdateEquip(Item item, Player player)
 		{
-			player.fishingSkill += (int)Properties.RoundedPower;
+			player.fishingSkill += (int) Properties.RoundedPower;
 		}
 	}
 }

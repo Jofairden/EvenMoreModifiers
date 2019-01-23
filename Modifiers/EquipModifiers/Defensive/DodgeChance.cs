@@ -32,10 +32,11 @@ namespace Loot.Modifiers.EquipModifiers.Defensive
 	[UsesEffect(typeof(DodgeEffect))]
 	public class DodgeChance : EquipModifier
 	{
-		public override ModifierTooltipLine[] TooltipLines => new[]
+		public override ModifierTooltipBuilder GetTooltip()
 		{
-			new ModifierTooltipLine {Text = $"+{Properties.RoundedPower}% dodge chance", Color = Color.LimeGreen},
-		};
+			return base.GetTooltip()
+				.WithPositive($"+{Properties.RoundedPower}% dodge chance");
+		}
 
 		public override ModifierPropertiesBuilder GetModifierProperties(Item item)
 		{

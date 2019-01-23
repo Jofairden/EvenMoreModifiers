@@ -1,9 +1,8 @@
+using System;
+using System.Linq;
 using Loot.Core.Attributes;
 using Loot.Core.System;
 using Loot.Ext;
-using Microsoft.Xna.Framework;
-using System;
-using System.Linq;
 using Terraria;
 using Terraria.ID;
 
@@ -51,6 +50,7 @@ namespace Loot.Modifiers.WeaponModifiers
 				{
 					player.player.lifeRegen = 0;
 				}
+
 				player.player.lifeRegen -= 2 * CurseCount;
 				player.player.lifeRegenTime = 0;
 			}
@@ -60,10 +60,11 @@ namespace Loot.Modifiers.WeaponModifiers
 	[UsesEffect(typeof(CursedEffect))]
 	public class CursedDamage : WeaponModifier
 	{
-		public override ModifierTooltipLine[] TooltipLines => new[]
-			{
-				new ModifierTooltipLine { Text = $"+{Properties.RoundedPower}% damage, but you are cursed while holding this item", Color = Color.Lime}
-			};
+		public override ModifierTooltipBuilder GetTooltip()
+		{
+			return base.GetTooltip()
+				.WithPositive($"+{Properties.RoundedPower}% damage, but you are cursed while holding this item");
+		}
 
 		public override ModifierPropertiesBuilder GetModifierProperties(Item item)
 		{
@@ -90,7 +91,7 @@ namespace Loot.Modifiers.WeaponModifiers
 		public override void GetWeaponDamage(Item item, Player player, ref int damage)
 		{
 			base.GetWeaponDamage(item, player, ref damage);
-			damage = (int)Math.Ceiling(damage * (1 + Properties.RoundedPower / 100f));
+			damage = (int) Math.Ceiling(damage * (1 + Properties.RoundedPower / 100f));
 		}
 	}
 }

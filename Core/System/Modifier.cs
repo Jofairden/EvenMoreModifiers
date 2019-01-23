@@ -1,11 +1,10 @@
+using System;
+using System.Collections.Generic;
+using System.IO;
 using Loot.Core.Graphics;
 using Loot.Core.System.Core;
 using Loot.Core.System.Loaders;
 using Microsoft.Xna.Framework;
-using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Reflection;
 using Terraria;
 using Terraria.ModLoader;
 using Terraria.ModLoader.IO;
@@ -41,8 +40,8 @@ namespace Loot.Core.System
 
 		public ModifierProperties Properties { get; internal set; }
 
-		// Must be getter due to various fields that can change interactively
-		public virtual ModifierTooltipLine[] TooltipLines => new ModifierTooltipLine[0];
+		public virtual ModifierTooltipBuilder GetTooltip()
+			=> ModifierTooltipLine.Builder;
 
 		public virtual ModifierPropertiesBuilder GetModifierProperties(Item item)
 			=> ModifierProperties.Builder;
@@ -99,7 +98,7 @@ namespace Loot.Core.System
 
 		public new object Clone()
 		{
-			Modifier clone = (Modifier)MemberwiseClone();
+			Modifier clone = (Modifier) MemberwiseClone();
 			clone.Mod = Mod;
 			clone.Type = Type;
 			clone.Properties = Properties;
@@ -147,7 +146,7 @@ namespace Loot.Core.System
 		{
 			string modName = tag.GetString("ModName");
 			if (modName != null
-				&& MainLoader.Mods.TryGetValue(modName, out var assembly))
+			    && MainLoader.Mods.TryGetValue(modName, out var assembly))
 			{
 				// If we load a null here, it means a modifier is unloaded
 				Modifier m = null;

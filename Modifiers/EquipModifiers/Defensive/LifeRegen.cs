@@ -25,10 +25,11 @@ namespace Loot.Modifiers.EquipModifiers.Defensive
 	[UsesEffect(typeof(LifeRegenEffect))]
 	public class LifeRegen : EquipModifier
 	{
-		public override ModifierTooltipLine[] TooltipLines => new[]
+		public override ModifierTooltipBuilder GetTooltip()
 		{
-			new ModifierTooltipLine { Text = $"+{Properties.RoundedPower} life regen/minute", Color =  Color.LimeGreen},
-		};
+			return base.GetTooltip()
+				.WithPositive($"+{Properties.RoundedPower} life regen/minute");
+		}
 
 		public override ModifierPropertiesBuilder GetModifierProperties(Item item)
 		{
@@ -39,7 +40,7 @@ namespace Loot.Modifiers.EquipModifiers.Defensive
 
 		public override void UpdateEquip(Item item, Player player)
 		{
-			ModifierPlayer.Player(player).GetEffect<LifeRegenEffect>().LifeRegen += (int)Properties.RoundedPower;
+			ModifierPlayer.Player(player).GetEffect<LifeRegenEffect>().LifeRegen += (int) Properties.RoundedPower;
 		}
 	}
 }

@@ -1,8 +1,7 @@
-using Loot.Core.Attributes;
-using Loot.Core.System;
-using Microsoft.Xna.Framework;
 using System;
 using System.Collections.Generic;
+using Loot.Core.Attributes;
+using Loot.Core.System;
 using Terraria;
 using Terraria.ID;
 using Terraria.Localization;
@@ -49,10 +48,11 @@ namespace Loot.Modifiers
 	[UsesEffect(typeof(WeaponDebuffEffect))] // The attribute is inherited, which is nice
 	public abstract class WeaponDebuffModifier : WeaponModifier
 	{
-		public override ModifierTooltipLine[] TooltipLines => new[]
+		public override ModifierTooltipBuilder GetTooltip()
 		{
-			new ModifierTooltipLine {Text = $"+{Properties.RoundedPower}% chance to inflict {GetBuffName()} for {RoundedBuffTime()}s", Color = Color.Lime}
-		};
+			return base.GetTooltip()
+				.WithPositive($"+{Properties.RoundedPower}% chance to inflict {GetBuffName()} for {RoundedBuffTime()}s");
+		}
 
 		public override ModifierPropertiesBuilder GetModifierProperties(Item item)
 		{
@@ -64,7 +64,7 @@ namespace Loot.Modifiers
 
 		private float RoundedBuffTime()
 		{
-			return (float)Math.Round((double)BuffTime / 60f, Properties.RoundPrecision);
+			return (float) Math.Round((double) BuffTime / 60f, Properties.RoundPrecision);
 		}
 
 		public abstract int BuffType { get; }

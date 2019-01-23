@@ -31,10 +31,11 @@ namespace Loot.Modifiers.EquipModifiers.Defensive
 	[UsesEffect(typeof(ImmunityEffect))]
 	public class ImmunityTimePlus : EquipModifier
 	{
-		public override ModifierTooltipLine[] TooltipLines => new[]
+		public override ModifierTooltipBuilder GetTooltip()
 		{
-			new ModifierTooltipLine {Text = $"+{Properties.RoundedPower} immunity frames", Color = Color.LimeGreen},
-		};
+			return base.GetTooltip()
+				.WithPositive($"+{Properties.RoundedPower} immunity frames");
+		}
 
 		public override ModifierPropertiesBuilder GetModifierProperties(Item item)
 		{

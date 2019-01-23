@@ -6,10 +6,11 @@ namespace Loot.Modifiers.EquipModifiers.Offensive
 {
 	public class RangedDamagePlus : EquipModifier
 	{
-		public override ModifierTooltipLine[] TooltipLines => new[]
+		public override ModifierTooltipBuilder GetTooltip()
 		{
-			new ModifierTooltipLine { Text = $"+{Properties.RoundedPower}% ranged damage", Color =  Color.LimeGreen},
-		};
+			return base.GetTooltip()
+				.WithPositive($"+{Properties.RoundedPower}% ranged damage");
+		}
 
 		public override ModifierPropertiesBuilder GetModifierProperties(Item item)
 		{

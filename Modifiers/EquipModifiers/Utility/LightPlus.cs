@@ -34,8 +34,8 @@ namespace Loot.Modifiers.EquipModifiers.Utility
 		public override void Clone(ref ModifierEffect clone)
 		{
 			// For clarity, additional cloning is possible like this
-			((LightEffect)clone).LightStrength = LightStrength;
-			((LightEffect)clone).LightColor = LightColor;
+			((LightEffect) clone).LightStrength = LightStrength;
+			((LightEffect) clone).LightColor = LightColor;
 		}
 
 		// This method will be delegated to PostUpdate
@@ -56,10 +56,11 @@ namespace Loot.Modifiers.EquipModifiers.Utility
 	[UsesEffect(typeof(LightEffect))]
 	public class LightPlus : EquipModifier
 	{
-		public override ModifierTooltipLine[] TooltipLines => new[]
+		public override ModifierTooltipBuilder GetTooltip()
 		{
-			new ModifierTooltipLine { Text = $"+{Properties.RoundedPower} light", Color =  Color.LimeGreen},
-		};
+			return base.GetTooltip()
+				.WithPositive($"+{Properties.RoundedPower} light");
+		}
 
 		public override ModifierPropertiesBuilder GetModifierProperties(Item item)
 		{
@@ -70,7 +71,7 @@ namespace Loot.Modifiers.EquipModifiers.Utility
 		// todo Just pass ModifierPlayer here?
 		public override void UpdateEquip(Item item, Player player)
 		{
-			ModifierPlayer.Player(player).GetEffect<LightEffect>().LightStrength += (int)Properties.RoundedPower;
+			ModifierPlayer.Player(player).GetEffect<LightEffect>().LightStrength += (int) Properties.RoundedPower;
 		}
 	}
 }

@@ -1,6 +1,5 @@
-using Loot.Core.Attributes;
-using Microsoft.Xna.Framework;
 using System;
+using Loot.Core.Attributes;
 using Loot.Core.System;
 using Terraria;
 
@@ -20,10 +19,8 @@ namespace Loot.Modifiers.EquipModifiers.Offensive
 			Multiplier = 1f;
 		}
 
-		// @todo must be prioritized before crit
-
 		[AutoDelegation("OnModifyHitNPC")]
-		[DelegationPrioritization(DelegationPrioritization.Late, 999)]
+		[DelegationPrioritization(DelegationPrioritization.Late, 998)]
 		public void ModifyHitNPC(ModifierPlayer player, Item item, NPC target, ref int damage, ref float knockback, ref bool crit)
 		{
 			if (target.life == target.lifeMax)
@@ -33,7 +30,7 @@ namespace Loot.Modifiers.EquipModifiers.Offensive
 		}
 
 		[AutoDelegation("OnModifyHitPvp")]
-		[DelegationPrioritization(DelegationPrioritization.Late, 999)]
+		[DelegationPrioritization(DelegationPrioritization.Late, 998)]
 		private void ModifyHitPvp(ModifierPlayer player, Item item, Player target, ref int damage, ref bool crit)
 		{
 			if (target.statLife == target.statLifeMax2)
@@ -44,17 +41,18 @@ namespace Loot.Modifiers.EquipModifiers.Offensive
 
 		private void HealthyFoes(ref int damage)
 		{
-			damage = (int)(Math.Ceiling(damage * Multiplier));
+			damage = (int) (Math.Ceiling(damage * Multiplier));
 		}
 	}
 
 	[UsesEffect(typeof(HealthyFoesEffect))]
 	public class HealthyFoesBonus : EquipModifier
 	{
-		public override ModifierTooltipLine[] TooltipLines => new[]
+		public override ModifierTooltipBuilder GetTooltip()
 		{
-			new ModifierTooltipLine {Text = $"+{Properties.RoundedPower}% damage vs max life foes", Color = Color.LimeGreen},
-		};
+			return base.GetTooltip()
+				.WithPositive($"+{Properties.RoundedPower}% damage vs max life foes");
+		}
 
 		public override ModifierPropertiesBuilder GetModifierProperties(Item item)
 		{

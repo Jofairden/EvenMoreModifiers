@@ -1,15 +1,15 @@
 using Loot.Core.System;
-using Microsoft.Xna.Framework;
 using Terraria;
 
 namespace Loot.Modifiers.WeaponModifiers
 {
 	public class AmmoReduce : WeaponModifier
 	{
-		public override ModifierTooltipLine[] TooltipLines => new[]
-			{
-				new ModifierTooltipLine { Text = $"{Properties.RoundedPower}% chance to not consume ammo", Color = Color.Lime}
-			};
+		public override ModifierTooltipBuilder GetTooltip()
+		{
+			return base.GetTooltip()
+				.WithPositive($"{Properties.RoundedPower}% chance to not consume ammo");
+		}
 
 		public override ModifierPropertiesBuilder GetModifierProperties(Item item)
 		{

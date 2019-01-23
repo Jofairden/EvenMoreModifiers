@@ -1,4 +1,3 @@
-using Microsoft.Xna.Framework;
 using System;
 using Loot.Core.System;
 using Terraria;
@@ -7,10 +6,11 @@ namespace Loot.Modifiers.EquipModifiers.Utility
 {
 	public class WingTimePlus : EquipModifier
 	{
-		public override ModifierTooltipLine[] TooltipLines => new[]
+		public override ModifierTooltipBuilder GetTooltip()
 		{
-			new ModifierTooltipLine { Text = $"+{Math.Round(Properties.RoundedPower/60f, 2)}s flight time", Color =  Color.LimeGreen},
-		};
+			return base.GetTooltip()
+				.WithPositive($"+{Math.Round(Properties.RoundedPower / 60f, 2)}s flight time");
+		}
 
 		public override ModifierPropertiesBuilder GetModifierProperties(Item item)
 		{
@@ -20,7 +20,7 @@ namespace Loot.Modifiers.EquipModifiers.Utility
 
 		public override void UpdateEquip(Item item, Player player)
 		{
-			player.wingTimeMax += (int)Properties.RoundedPower;
+			player.wingTimeMax += (int) Properties.RoundedPower;
 		}
 	}
 }

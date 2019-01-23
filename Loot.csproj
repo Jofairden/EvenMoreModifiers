@@ -136,6 +136,7 @@
     <Compile Include="Core\System\ModifierEffect.cs" />
     <Compile Include="Core\System\ModifierProperties.cs" />
     <Compile Include="Core\System\ModifierPropertiesBuilder.cs" />
+    <Compile Include="Core\System\ModifierTooltipBuilder.cs" />
     <Compile Include="Core\System\ModifierTooltipLine.cs" />
     <Compile Include="EMMPlayer.cs" />
     <Compile Include="EMMWorld.cs" />
@@ -185,6 +186,8 @@
     <Compile Include="Modifiers\WeaponModifiers\DamagePlus.cs" />
     <Compile Include="Modifiers\WeaponModifiers\DamageWithManaCost.cs" />
     <Compile Include="Modifiers\WeaponDebuffModifier.cs" />
+    <Compile Include="Modifiers\WeaponModifiers\Ice\IceModifier.cs" />
+    <Compile Include="Modifiers\WeaponModifiers\Ice\IcyModifier.cs" />
     <Compile Include="Modifiers\WeaponModifiers\KnockbackPlus.cs" />
     <Compile Include="Modifiers\WeaponModifiers\ManaReduce.cs" />
     <Compile Include="Modifiers\WeaponModifiers\MissingHealthDamage.cs" />
@@ -235,7 +238,6 @@
     <None Include=".editorconfig" />
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- visual studio setting -->
   <PropertyGroup>

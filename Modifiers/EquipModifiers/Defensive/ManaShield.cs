@@ -1,6 +1,5 @@
-using Loot.Core.Attributes;
-using Microsoft.Xna.Framework;
 using System;
+using Loot.Core.Attributes;
 using Loot.Core.System;
 using Terraria;
 using Terraria.DataStructures;
@@ -24,7 +23,7 @@ namespace Loot.Modifiers.EquipModifiers.Defensive
 		{
 			// If we have a mana shield (% damage redirected to mana)
 			// Then try to redirect the damage
-			int manaBlock = (int)Math.Ceiling(damage * ManaShield) * 2;
+			int manaBlock = (int) Math.Ceiling(damage * ManaShield) * 2;
 			if (manaBlock > 0 && player.player.statMana > 0)
 			{
 				// We cannot block more than how much mana we have
@@ -45,10 +44,11 @@ namespace Loot.Modifiers.EquipModifiers.Defensive
 	[UsesEffect(typeof(ManaShieldEffect))]
 	public class ManaShield : EquipModifier
 	{
-		public override ModifierTooltipLine[] TooltipLines => new[]
+		public override ModifierTooltipBuilder GetTooltip()
 		{
-			new ModifierTooltipLine {Text = $"+{Properties.RoundedPower}% of damage taken is redirected to mana", Color = Color.LimeGreen},
-		};
+			return base.GetTooltip()
+				.WithPositive($"+{Properties.RoundedPower}% of damage taken is redirected to mana");
+		}
 
 		public override ModifierPropertiesBuilder GetModifierProperties(Item item)
 		{
