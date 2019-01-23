@@ -116,6 +116,9 @@ $(document).ready(function(){initNavTree('class_loot_1_1_ext_1_1_item_utils.html
 <div class="title">Loot.Ext.ItemUtils Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>Defines a set of utility methods for Item  
+ <a href="class_loot_1_1_ext_1_1_item_utils.html#details">More...</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
@@ -137,8 +140,9 @@ Static Public Member Functions</h2></td></tr>
 <tr class="separator:a4bcb26340f08d9265583ebb2eb1ac73a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock">
-<p>Definition at line <a class="el" href="_item_utils_8cs_source.html#l00009">9</a> of file <a class="el" href="_item_utils_8cs_source.html">ItemUtils.cs</a>.</p>
+<div class="textblock"><p>Defines a set of utility methods for Item </p>
+
+<p>Definition at line <a class="el" href="_item_utils_8cs_source.html#l00012">12</a> of file <a class="el" href="_item_utils_8cs_source.html">ItemUtils.cs</a>.</p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
 <a class="anchor" id="a7aad7849de7aba74cb0aa2c329d1c9e7"></a>
 <div class="memitem">
@@ -218,8 +222,8 @@ Static Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_item_utils_8cs_source.html#l00029">29</a> of file <a class="el" href="_item_utils_8cs_source.html">ItemUtils.cs</a>.</p>
-<div class="fragment"><div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;        {</div><div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;            <span class="keywordtype">int</span> size = includeMouseItem ? 59 : 58;</div><div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;            <span class="keywordflow">return</span> Main.LocalPlayer.inventory.Take(size)</div><div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;                .Where(predicate)</div><div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;                .Select(x =&gt; x.stack)</div><div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;                .Sum();</div><div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        }</div></div><!-- fragment -->
+<p>Definition at line <a class="el" href="_item_utils_8cs_source.html#l00032">32</a> of file <a class="el" href="_item_utils_8cs_source.html">ItemUtils.cs</a>.</p>
+<div class="fragment"><div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;        {</div><div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;            <span class="keywordtype">int</span> size = includeMouseItem ? 59 : 58;</div><div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;            <span class="keywordflow">return</span> Main.LocalPlayer.inventory.Take(size)</div><div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;                .Where(predicate)</div><div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;                .Select(x =&gt; x.stack)</div><div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;                .Sum();</div><div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;        }</div></div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="a5403a0c1d62378df2112a4880f8ec0d8"></a>
@@ -420,7 +424,7 @@ Static Public Member Functions</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespace_loot.html">Loot</a></li><li class="navelem"><a class="el" href="namespace_loot_1_1_ext.html">Ext</a></li><li class="navelem"><a class="el" href="class_loot_1_1_ext_1_1_item_utils.html">ItemUtils</a></li>
-    <li class="footer">Generated on Wed Jan 23 2019 21:34:11 for Even More Modifiers by
+    <li class="footer">Generated on Wed Jan 23 2019 21:56:06 for Even More Modifiers by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.11 </li>
   </ul>

@@ -1,11 +1,12 @@
 var searchData=
 [
   ['attributes',['Attributes',['../namespace_loot_1_1_core_1_1_attributes.html',1,'Loot::Core']]],
+  ['base',['Base',['../namespace_loot_1_1_modifiers_1_1_base.html',1,'Loot::Modifiers']]],
   ['caching',['Caching',['../namespace_loot_1_1_core_1_1_caching.html',1,'Loot::Core']]],
   ['content',['Content',['../namespace_loot_1_1_core_1_1_system_1_1_content.html',1,'Loot::Core::System']]],
   ['core',['Core',['../namespace_loot_1_1_core.html',1,'Loot']]],
-  ['core',['Core',['../namespace_loot_1_1_u_i_1_1_core.html',1,'Loot::UI']]],
   ['core',['Core',['../namespace_loot_1_1_core_1_1_system_1_1_core.html',1,'Loot::Core::System']]],
+  ['core',['Core',['../namespace_loot_1_1_u_i_1_1_core.html',1,'Loot::UI']]],
   ['cubes',['Cubes',['../namespace_loot_1_1_core_1_1_cubes.html',1,'Loot::Core']]],
   ['custom',['Custom',['../namespace_loot_1_1_sounds_1_1_custom.html',1,'Loot::Sounds']]],
   ['defensive',['Defensive',['../namespace_loot_1_1_modifiers_1_1_equip_modifiers_1_1_defensive.html',1,'Loot::Modifiers::EquipModifiers']]],

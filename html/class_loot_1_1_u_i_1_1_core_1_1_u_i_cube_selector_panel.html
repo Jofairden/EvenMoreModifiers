@@ -143,8 +143,8 @@ $(document).ready(function(){initNavTree('class_loot_1_1_u_i_1_1_core_1_1_u_i_cu
 Public Member Functions</h2></td></tr>
 <tr class="memitem:ae292755d1b7c506576ce1b521d48fcf8"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_loot_1_1_u_i_1_1_core_1_1_u_i_cube_selector_panel.html#ae292755d1b7c506576ce1b521d48fcf8">UICubeSelectorPanel</a> (int netID=0, int stack=1, Texture2D hintTexture=null, string hintText=null)</td></tr>
 <tr class="separator:ae292755d1b7c506576ce1b521d48fcf8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a848d5aa0060e9bb9eb04f656498cd6b2"><td class="memItemLeft" align="right" valign="top">override bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_loot_1_1_u_i_1_1_core_1_1_u_i_cube_selector_panel.html#a848d5aa0060e9bb9eb04f656498cd6b2">CanTakeItem</a> (Item <a class="el" href="class_loot_1_1_u_i_1_1_core_1_1_u_i_item_panel.html#a58ea7401b3b394c9875f349fe4118003">item</a>)</td></tr>
-<tr class="separator:a848d5aa0060e9bb9eb04f656498cd6b2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9fe8b9e66b559b70f4a5a76adcca3b92"><td class="memItemLeft" align="right" valign="top">override bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_loot_1_1_u_i_1_1_core_1_1_u_i_cube_selector_panel.html#a9fe8b9e66b559b70f4a5a76adcca3b92">CanTakeItem</a> (Item givenItem)</td></tr>
+<tr class="separator:a9fe8b9e66b559b70f4a5a76adcca3b92"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abf1981f2c747b2b2ced0ae1ac36d5b68"><td class="memItemLeft" align="right" valign="top">override void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_loot_1_1_u_i_1_1_core_1_1_u_i_cube_selector_panel.html#abf1981f2c747b2b2ced0ae1ac36d5b68">PostOnClick</a> (UIMouseEvent evt, UIElement e)</td></tr>
 <tr class="separator:abf1981f2c747b2b2ced0ae1ac36d5b68"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3606d92dd71c0d1fe91879734c101893"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_loot_1_1_u_i_1_1_core_1_1_u_i_cube_selector_panel.html#a3606d92dd71c0d1fe91879734c101893">RecalculateStack</a> ()</td></tr>
@@ -250,7 +250,7 @@ Additional Inherited Members</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a class="anchor" id="a848d5aa0060e9bb9eb04f656498cd6b2"></a>
+<a class="anchor" id="a9fe8b9e66b559b70f4a5a76adcca3b92"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -261,7 +261,7 @@ Additional Inherited Members</h2></td></tr>
           <td class="memname">override bool Loot.UI.Core.UICubeSelectorPanel.CanTakeItem </td>
           <td>(</td>
           <td class="paramtype">Item&#160;</td>
-          <td class="paramname"><em>item</em></td><td>)</td>
+          <td class="paramname"><em>givenItem</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -272,7 +272,7 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Reimplemented from <a class="el" href="class_loot_1_1_u_i_1_1_core_1_1_u_i_interactable_item_panel.html#a9ba81770230cf2134619de8c4884b02f">Loot.UI.Core.UIInteractableItemPanel</a>.</p>
+<p>Reimplemented from <a class="el" href="class_loot_1_1_u_i_1_1_core_1_1_u_i_interactable_item_panel.html#aa6409b7f60fcb7b0c3ebabb523c8e737">Loot.UI.Core.UIInteractableItemPanel</a>.</p>
 
 </div>
 </div>
@@ -311,7 +311,7 @@ Additional Inherited Members</h2></td></tr>
 <p>Reimplemented from <a class="el" href="class_loot_1_1_u_i_1_1_core_1_1_u_i_interactable_item_panel.html#a708ee04650fa580c193e6aec2f6b1535">Loot.UI.Core.UIInteractableItemPanel</a>.</p>
 
 <p>Definition at line <a class="el" href="_u_i_cube_selector_panel_8cs_source.html#l00035">35</a> of file <a class="el" href="_u_i_cube_selector_panel_8cs_source.html">UICubeSelectorPanel.cs</a>.</p>
-<div class="fragment"><div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        {</div><div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;            <span class="keywordflow">if</span> (!<a class="code" href="class_loot_1_1_u_i_1_1_core_1_1_u_i_item_panel.html#a58ea7401b3b394c9875f349fe4118003">item</a>.IsAir &amp;&amp; <a class="code" href="namespace_loot.html">Loot</a>.Instance.CubeRerollUI._cubePanel.CanTakeItem(<a class="code" href="class_loot_1_1_u_i_1_1_core_1_1_u_i_item_panel.html#a58ea7401b3b394c9875f349fe4118003">item</a>))</div><div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;            {</div><div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;                <a class="code" href="namespace_loot.html">Loot</a>.Instance.CubeRerollUI.MouseUp(evt);</div><div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;                MouseUp(evt);</div><div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;                <a class="code" href="namespace_loot.html">Loot</a>.Instance.CubeRerollUI._cubePanel.ChangeItem(<a class="code" href="class_loot_1_1_u_i_1_1_core_1_1_u_i_item_panel.html#a58ea7401b3b394c9875f349fe4118003">item</a>.type);</div><div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;                <a class="code" href="namespace_loot.html">Loot</a>.Instance.CubeRerollUI.DetermineAvailableCubes();</div><div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;            }</div><div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        }</div><div class="ttc" id="namespace_loot_html"><div class="ttname"><a href="namespace_loot.html">Loot</a></div><div class="ttdef"><b>Definition:</b> <a href="_armor_item_hack_8cs_source.html#l00005">ArmorItemHack.cs:5</a></div></div>
+<div class="fragment"><div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        {</div><div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;            <span class="keywordflow">if</span> (!<a class="code" href="class_loot_1_1_u_i_1_1_core_1_1_u_i_item_panel.html#a58ea7401b3b394c9875f349fe4118003">item</a>.IsAir &amp;&amp; <a class="code" href="namespace_loot.html">Loot</a>.Instance.CubeRerollUI._cubePanel.CanTakeItem(<a class="code" href="class_loot_1_1_u_i_1_1_core_1_1_u_i_item_panel.html#a58ea7401b3b394c9875f349fe4118003">item</a>))</div><div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;            {</div><div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;                <a class="code" href="namespace_loot.html">Loot</a>.Instance.CubeRerollUI.MouseUp(evt);</div><div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;                MouseUp(evt);</div><div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;                <a class="code" href="namespace_loot.html">Loot</a>.Instance.CubeRerollUI._cubePanel.ChangeItem(<a class="code" href="class_loot_1_1_u_i_1_1_core_1_1_u_i_item_panel.html#a58ea7401b3b394c9875f349fe4118003">item</a>.type);</div><div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;                <a class="code" href="namespace_loot.html">Loot</a>.Instance.CubeRerollUI.DetermineAvailableCubes();</div><div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;            }</div><div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        }</div><div class="ttc" id="namespace_loot_html"><div class="ttname"><a href="namespace_loot.html">Loot</a></div><div class="ttdef"><b>Definition:</b> <a href="_activated_modifier_item_8cs_source.html#l00005">ActivatedModifierItem.cs:5</a></div></div>
 <div class="ttc" id="class_loot_1_1_u_i_1_1_core_1_1_u_i_item_panel_html_a58ea7401b3b394c9875f349fe4118003"><div class="ttname"><a href="class_loot_1_1_u_i_1_1_core_1_1_u_i_item_panel.html#a58ea7401b3b394c9875f349fe4118003">Loot.UI.Core.UIItemPanel.item</a></div><div class="ttdeci">Item item</div><div class="ttdef"><b>Definition:</b> <a href="_u_i_item_panel_8cs_source.html#l00026">UIItemPanel.cs:26</a></div></div>
 </div><!-- fragment -->
 </div>
@@ -340,7 +340,7 @@ Additional Inherited Members</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespace_loot.html">Loot</a></li><li class="navelem"><a class="el" href="namespace_loot_1_1_u_i.html">UI</a></li><li class="navelem"><a class="el" href="namespace_loot_1_1_u_i_1_1_core.html">Core</a></li><li class="navelem"><a class="el" href="class_loot_1_1_u_i_1_1_core_1_1_u_i_cube_selector_panel.html">UICubeSelectorPanel</a></li>
-    <li class="footer">Generated on Wed Jan 23 2019 21:34:11 for Even More Modifiers by
+    <li class="footer">Generated on Wed Jan 23 2019 21:56:07 for Even More Modifiers by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.11 </li>
   </ul>

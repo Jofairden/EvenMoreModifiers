@@ -1,9 +1,10 @@
 var searchData=
 [
-  ['accessorymodifier',['AccessoryModifier',['../class_loot_1_1_modifiers_1_1_accessory_modifier.html',1,'Loot::Modifiers']]],
+  ['accessorymodifier',['AccessoryModifier',['../class_loot_1_1_modifiers_1_1_base_1_1_accessory_modifier.html',1,'Loot::Modifiers::Base']]],
   ['accessorymodifier_2ecs',['AccessoryModifier.cs',['../_accessory_modifier_8cs.html',1,'']]],
   ['accessorymodifierpool_2ecs',['AccessoryModifierPool.cs',['../_accessory_modifier_pool_8cs.html',1,'']]],
   ['activatedmodifieritem',['ActivatedModifierItem',['../class_loot_1_1_activated_modifier_item.html',1,'Loot']]],
+  ['activatedmodifieritem_2ecs',['ActivatedModifierItem.cs',['../_activated_modifier_item_8cs.html',1,'']]],
   ['activemodifiers',['ActiveModifiers',['../class_loot_1_1_core_1_1_system_1_1_modifier_1_1_modifier_pool.html#ab20366639a279d67ff09247665b1c307',1,'Loot::Core::System::Modifier::ModifierPool']]],
   ['addattachitem',['AddAttachItem',['../class_loot_1_1_core_1_1_caching_1_1_modifier_cache_player.html#ad728fdbb9d7aa443caa7590a5418900a',1,'Loot::Core::Caching::ModifierCachePlayer']]],
   ['addcontent',['AddContent',['../class_loot_1_1_core_1_1_mod_content_1_1_mod_content_manager.html#a357ecb3461923c9a42c2d296cc9d632e',1,'Loot.Core.ModContent.ModContentManager.AddContent()'],['../class_loot_1_1_core_1_1_system_1_1_core_1_1_base_content.html#a77a0b190c896cadfaa500c6c8cccbc0b',1,'Loot.Core.System.Core.BaseContent.AddContent()'],['../class_loot_1_1_core_1_1_system_1_1_loaders_1_1_main_loader.html#a73481d5860e358c743d7bcab37d7b12a',1,'Loot.Core.System.Loaders.MainLoader.AddContent()']]],
@@ -25,7 +26,7 @@ var searchData=
   ['armorarmglowmask',['ArmorArmGlowMask',['../class_loot_1_1_core_1_1_system_1_1_modifier_1_1_modifier.html#ac946eea2e8a7b9b84acc592a54253315',1,'Loot::Core::System::Modifier::Modifier']]],
   ['armoritemhack',['ArmorItemHack',['../class_loot_1_1_armor_item_hack.html',1,'Loot']]],
   ['armoritemhack_2ecs',['ArmorItemHack.cs',['../_armor_item_hack_8cs.html',1,'']]],
-  ['armormodifier',['ArmorModifier',['../class_loot_1_1_modifiers_1_1_armor_modifier.html',1,'Loot::Modifiers']]],
+  ['armormodifier',['ArmorModifier',['../class_loot_1_1_modifiers_1_1_base_1_1_armor_modifier.html',1,'Loot::Modifiers::Base']]],
   ['armormodifier_2ecs',['ArmorModifier.cs',['../_armor_modifier_8cs.html',1,'']]],
   ['armorsetshadows',['ArmorSetShadows',['../class_loot_1_1_core_1_1_system_1_1_modifier_1_1_modifier.html#aecece2cfba26c2e6307310db77ce2dd7',1,'Loot::Core::System::Modifier::Modifier']]],
   ['assemblyinfo_2ecs',['AssemblyInfo.cs',['../_assembly_info_8cs.html',1,'']]],
@@ -36,8 +37,8 @@ var searchData=
   ['attachdelegations',['AttachDelegations',['../class_loot_1_1_core_1_1_system_1_1_modifier_1_1_modifier_effect.html#a38859aca7102bbdf7a2769a97282323e',1,'Loot::Core::System::Modifier::ModifierEffect']]],
   ['attemptdebuff',['AttemptDebuff',['../class_loot_1_1_modifier_projectile.html#ab1eb6aabf071dcf5ecf7335b12a934f0',1,'Loot.ModifierProjectile.AttemptDebuff(Projectile projectile, Player target)'],['../class_loot_1_1_modifier_projectile.html#aff398cb3908d02a1601fbe808bc0de14',1,'Loot.ModifierProjectile.AttemptDebuff(Projectile projectile, NPC target)']]],
   ['attribute',['Attribute',['../class_attribute.html',1,'']]],
-  ['autodelegation',['AutoDelegation',['../class_loot_1_1_core_1_1_attributes_1_1_auto_delegation.html',1,'Loot::Core::Attributes']]],
   ['autodelegation',['AutoDelegation',['../class_loot_1_1_core_1_1_attributes_1_1_auto_delegation.html#a5ded686caa58bb9c84f73a5cc0136d68',1,'Loot.Core.Attributes.AutoDelegation.AutoDelegation(params string[] types)'],['../class_loot_1_1_core_1_1_attributes_1_1_auto_delegation.html#a7f7d684fc9f8d4282e4ede9a9d422bfe',1,'Loot.Core.Attributes.AutoDelegation.AutoDelegation(params DelegationTarget[] targets)']]],
+  ['autodelegation',['AutoDelegation',['../class_loot_1_1_core_1_1_attributes_1_1_auto_delegation.html',1,'Loot::Core::Attributes']]],
   ['autodelegationattribute_2ecs',['AutoDelegationAttribute.cs',['../_auto_delegation_attribute_8cs.html',1,'']]],
   ['autoload',['Autoload',['../class_loot_1_1_core_1_1_system_1_1_modifier_1_1_modifier.html#a15be14746faf3c6e367c86013e0f49be',1,'Loot::Core::System::Modifier::Modifier']]]
 ];

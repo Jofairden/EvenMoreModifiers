@@ -8,6 +8,9 @@ var files =
     [ "Rarities", "dir_e0566f59f042068c187972f8b4893996.html", "dir_e0566f59f042068c187972f8b4893996" ],
     [ "Sounds", "dir_39b9972f69123432ab2c3e40729b7fd5.html", "dir_39b9972f69123432ab2c3e40729b7fd5" ],
     [ "UI", "dir_53ff6e473d46d4e442ba5a7ce9f895e3.html", "dir_53ff6e473d46d4e442ba5a7ce9f895e3" ],
+    [ "ActivatedModifierItem.cs", "_activated_modifier_item_8cs.html", [
+      [ "ActivatedModifierItem", "class_loot_1_1_activated_modifier_item.html", "class_loot_1_1_activated_modifier_item" ]
+    ] ],
     [ "ArmorItemHack.cs", "_armor_item_hack_8cs.html", [
       [ "ArmorItemHack", "class_loot_1_1_armor_item_hack.html", "class_loot_1_1_armor_item_hack" ]
     ] ],
@@ -24,9 +27,7 @@ var files =
     [ "Loot.cs", "_loot_8cs.html", [
       [ "Loot", "class_loot_1_1_loot.html", "class_loot_1_1_loot" ]
     ] ],
-    [ "ModifierItem.cs", "_modifier_item_8cs.html", [
-      [ "ActivatedModifierItem", "class_loot_1_1_activated_modifier_item.html", "class_loot_1_1_activated_modifier_item" ]
-    ] ],
+    [ "ModifierItem.cs", "_modifier_item_8cs.html", null ],
     [ "ModifierPlayer.cs", "_modifier_player_8cs.html", [
       [ "ModifierPlayer", "class_loot_1_1_modifier_player.html", "class_loot_1_1_modifier_player" ]
     ] ],

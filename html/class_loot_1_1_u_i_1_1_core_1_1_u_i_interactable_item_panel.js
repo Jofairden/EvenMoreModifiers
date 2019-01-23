@@ -1,7 +1,7 @@
 var class_loot_1_1_u_i_1_1_core_1_1_u_i_interactable_item_panel =
 [
     [ "UIInteractableItemPanel", "class_loot_1_1_u_i_1_1_core_1_1_u_i_interactable_item_panel.html#af80f9c43ca8b602aac159531242acbf8", null ],
-    [ "CanTakeItem", "class_loot_1_1_u_i_1_1_core_1_1_u_i_interactable_item_panel.html#a9ba81770230cf2134619de8c4884b02f", null ],
+    [ "CanTakeItem", "class_loot_1_1_u_i_1_1_core_1_1_u_i_interactable_item_panel.html#aa6409b7f60fcb7b0c3ebabb523c8e737", null ],
     [ "PostOnClick", "class_loot_1_1_u_i_1_1_core_1_1_u_i_interactable_item_panel.html#a708ee04650fa580c193e6aec2f6b1535", null ],
     [ "PostOnRightClick", "class_loot_1_1_u_i_1_1_core_1_1_u_i_interactable_item_panel.html#abeee4a8f2fed3955d2a2c6fb183bdfd9", null ],
     [ "PreOnClick", "class_loot_1_1_u_i_1_1_core_1_1_u_i_interactable_item_panel.html#a9204b2bb6b521d3ccba88637a1ce6eaa", null ],

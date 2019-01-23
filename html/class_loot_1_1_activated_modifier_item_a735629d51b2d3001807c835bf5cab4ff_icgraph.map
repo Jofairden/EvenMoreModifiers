@@ -1,4 +1,4 @@
 <map id="Loot.ActivatedModifierItem.IsNotEquippedAtAll" name="Loot.ActivatedModifierItem.IsNotEquippedAtAll">
 <area shape="rect" id="node2" href="$class_loot_1_1_activated_modifier_item.html#a5b7691b08a15216ab61dd4e9055662d4" title="Loot.ActivatedModifierItem.\lUpdateAccessory" alt="" coords="238,5,421,46"/>
-<area shape="rect" id="node3" href="$class_loot_1_1_activated_modifier_item.html#abb2bf22119b44d0f510356c4c978438a" title="Loot.ActivatedModifierItem.\lUpdateEquip" alt="" coords="470,34,653,75"/>
+<area shape="rect" id="node3" href="$class_loot_1_1_activated_modifier_item.html#abb2bf22119b44d0f510356c4c978438a" title="Loot.ActivatedModifierItem.\lUpdateEquip" alt="" coords="238,70,421,111"/>
 </map>

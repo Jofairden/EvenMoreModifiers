@@ -6,7 +6,7 @@ var searchData=
   ['damageplusdaytime_2ecs',['DamagePlusDaytime.cs',['../_damage_plus_daytime_8cs.html',1,'']]],
   ['damagewithmanacost',['DamageWithManaCost',['../class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_damage_with_mana_cost.html',1,'Loot::Modifiers::WeaponModifiers']]],
   ['damagewithmanacost_2ecs',['DamageWithManaCost.cs',['../_damage_with_mana_cost_8cs.html',1,'']]],
-  ['debuffchances',['DebuffChances',['../class_loot_1_1_modifiers_1_1_weapon_debuff_effect.html#a0bd80f5383bbe890b843eaa5668d3be3',1,'Loot::Modifiers::WeaponDebuffEffect']]],
+  ['debuffchances',['DebuffChances',['../class_loot_1_1_modifiers_1_1_base_1_1_weapon_debuff_effect.html#aed029d66e2cf75109da14d1d1b25f72f',1,'Loot::Modifiers::Base::WeaponDebuffEffect']]],
   ['default',['Default',['../namespace_loot_1_1_core_1_1_graphics.html#a4d61ed486cee189a9ed5ea9ba0272c43a7a1920d61156abc05a60135aefe8bc67',1,'Loot::Core::Graphics']]],
   ['default_5ftext',['DEFAULT_TEXT',['../class_loot_1_1_u_i_1_1_core_1_1_u_i_modifier_panel.html#acfdfea99b4ae0776c234643918a84f61',1,'Loot::UI::Core::UIModifierPanel']]],
   ['defaultbuilder',['DefaultBuilder',['../class_loot_1_1_core_1_1_system_1_1_modifier_1_1_modifier_properties_builder.html#ae898b374603705aad868beed40335045',1,'Loot::Core::System::Modifier::ModifierPropertiesBuilder']]],

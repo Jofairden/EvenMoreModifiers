@@ -29,9 +29,9 @@ var hierarchy =
       [ "Loot.Core.Graphics.GlowmaskGlobalItem", "class_loot_1_1_core_1_1_graphics_1_1_glowmask_global_item.html", null ],
       [ "Loot.Core.Graphics.ShaderGlobalItem", "class_loot_1_1_core_1_1_graphics_1_1_shader_global_item.html", null ],
       [ "Loot.Core.System.Modifier.Modifier", "class_loot_1_1_core_1_1_system_1_1_modifier_1_1_modifier.html", [
-        [ "Loot.Modifiers.AccessoryModifier", "class_loot_1_1_modifiers_1_1_accessory_modifier.html", null ],
-        [ "Loot.Modifiers.ArmorModifier", "class_loot_1_1_modifiers_1_1_armor_modifier.html", null ],
-        [ "Loot.Modifiers.EquipModifier", "class_loot_1_1_modifiers_1_1_equip_modifier.html", [
+        [ "Loot.Modifiers.Base.AccessoryModifier", "class_loot_1_1_modifiers_1_1_base_1_1_accessory_modifier.html", null ],
+        [ "Loot.Modifiers.Base.ArmorModifier", "class_loot_1_1_modifiers_1_1_base_1_1_armor_modifier.html", null ],
+        [ "Loot.Modifiers.Base.EquipModifier", "class_loot_1_1_modifiers_1_1_base_1_1_equip_modifier.html", [
           [ "Loot.Modifiers.EquipModifiers.Defensive.DodgeChance", "class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_defensive_1_1_dodge_chance.html", null ],
           [ "Loot.Modifiers.EquipModifiers.Defensive.HealthPlus", "class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_defensive_1_1_health_plus.html", null ],
           [ "Loot.Modifiers.EquipModifiers.Defensive.ImmunityTimePlus", "class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_defensive_1_1_immunity_time_plus.html", null ],
@@ -60,8 +60,8 @@ var hierarchy =
           [ "Loot.Modifiers.EquipModifiers.Utility.MoveSpeedPlus", "class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_utility_1_1_move_speed_plus.html", null ],
           [ "Loot.Modifiers.EquipModifiers.Utility.WingTimePlus", "class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_utility_1_1_wing_time_plus.html", null ]
         ] ],
-        [ "Loot.Modifiers.WeaponModifier", "class_loot_1_1_modifiers_1_1_weapon_modifier.html", [
-          [ "Loot.Modifiers.WeaponDebuffModifier", "class_loot_1_1_modifiers_1_1_weapon_debuff_modifier.html", [
+        [ "Loot.Modifiers.Base.WeaponModifier", "class_loot_1_1_modifiers_1_1_base_1_1_weapon_modifier.html", [
+          [ "Loot.Modifiers.Base.WeaponDebuffModifier", "class_loot_1_1_modifiers_1_1_base_1_1_weapon_debuff_modifier.html", [
             [ "Loot.Modifiers.WeaponModifiers.RandomDebuff", "class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_random_debuff.html", null ]
           ] ],
           [ "Loot.Modifiers.WeaponModifiers.AmmoReduce", "class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_ammo_reduce.html", null ],
@@ -97,6 +97,7 @@ var hierarchy =
     [ "ICloneable", "class_i_cloneable.html", [
       [ "Loot.Core.System.Modifier.Modifier", "class_loot_1_1_core_1_1_system_1_1_modifier_1_1_modifier.html", null ],
       [ "Loot.Core.System.Modifier.ModifierEffect", "class_loot_1_1_core_1_1_system_1_1_modifier_1_1_modifier_effect.html", [
+        [ "Loot.Modifiers.Base.WeaponDebuffEffect", "class_loot_1_1_modifiers_1_1_base_1_1_weapon_debuff_effect.html", null ],
         [ "Loot.Modifiers.EquipModifiers.Defensive.DodgeEffect", "class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_defensive_1_1_dodge_effect.html", null ],
         [ "Loot.Modifiers.EquipModifiers.Defensive.ImmunityEffect", "class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_defensive_1_1_immunity_effect.html", null ],
         [ "Loot.Modifiers.EquipModifiers.Defensive.LifeRegenEffect", "class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_defensive_1_1_life_regen_effect.html", null ],
@@ -107,7 +108,6 @@ var hierarchy =
         [ "Loot.Modifiers.EquipModifiers.Offensive.HealthyFoesEffect", "class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_offensive_1_1_healthy_foes_effect.html", null ],
         [ "Loot.Modifiers.EquipModifiers.Utility.LightEffect", "class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_utility_1_1_light_effect.html", null ],
         [ "Loot.Modifiers.EquipModifiers.Utility.LuckEffect", "class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_utility_1_1_luck_effect.html", null ],
-        [ "Loot.Modifiers.WeaponDebuffEffect", "class_loot_1_1_modifiers_1_1_weapon_debuff_effect.html", null ],
         [ "Loot.Modifiers.WeaponModifiers.CursedEffect", "class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_cursed_effect.html", null ]
       ] ],
       [ "Loot.Core.System.Modifier.ModifierPool", "class_loot_1_1_core_1_1_system_1_1_modifier_1_1_modifier_pool.html", [

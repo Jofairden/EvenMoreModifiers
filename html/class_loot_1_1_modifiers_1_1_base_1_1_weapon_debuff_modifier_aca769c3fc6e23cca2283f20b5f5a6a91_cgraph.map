@@ -1,0 +1,4 @@
+<map id="Loot.Modifiers.Base.WeaponDebuffModifier.HoldItem" name="Loot.Modifiers.Base.WeaponDebuffModifier.HoldItem">
+<area shape="rect" id="node2" href="$class_loot_1_1_modifier_player.html#a3e4b8a428276fb0205e9c0f166435bf0" title="Loot.ModifierPlayer.GetEffect" alt="" coords="245,5,440,32"/>
+<area shape="rect" id="node3" href="$class_loot_1_1_modifier_player.html#aae3e56a930507049c3b282b29fece4f1" title="Loot.ModifierPlayer.Player" alt="" coords="255,56,430,83"/>
+</map>

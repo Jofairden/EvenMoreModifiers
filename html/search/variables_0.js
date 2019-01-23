@@ -11,7 +11,7 @@ var searchData=
   ['_5fdragging',['_dragging',['../class_loot_1_1_u_i_1_1_core_1_1_draggable_u_i_state.html#a4244e1f2edee7779563d856f3abf2899',1,'Loot::UI::Core::DraggableUIState']]],
   ['_5fdragpanels',['_dragPanels',['../class_loot_1_1_u_i_1_1_core_1_1_draggable_u_i_state.html#a5ea51616a51cc52eb95116cf629b4645',1,'Loot::UI::Core::DraggableUIState']]],
   ['_5fduringday',['_duringDay',['../class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_damage_plus_daytime.html#ae7e52f4f581d8c27a3b628957b8e3d5b',1,'Loot::Modifiers::WeaponModifiers::DamagePlusDaytime']]],
-  ['_5feffects',['_effects',['../class_loot_1_1_core_1_1_attributes_1_1_uses_effect_attribute.html#a62cd513f68e1803e4d573709aee821fc',1,'Loot::Core::Attributes::UsesEffectAttribute']]],
+  ['_5feffects',['_effects',['../class_loot_1_1_core_1_1_attributes_1_1_uses_effect_attribute.html#a347a7c04977b32fcbe858515f90f9aa1',1,'Loot::Core::Attributes::UsesEffectAttribute']]],
   ['_5fforceequipupdate',['_forceEquipUpdate',['../class_loot_1_1_core_1_1_caching_1_1_modifier_cache_player.html#a9fbe7b74c76ffe723727b1d452fbfb73',1,'Loot::Core::Caching::ModifierCachePlayer']]],
   ['_5fforcenextroll',['_forceNextRoll',['../class_loot_1_1_e_m_m_item.html#ab5ab3c7bd4e00d9092f556f1ac039daf',1,'Loot::EMMItem']]],
   ['_5fglowmasktextures',['_glowmaskTextures',['../class_loot_1_1_core_1_1_mod_content_1_1_graphics_mod_content.html#a02a19add9838705742b8f75ac8633bc9',1,'Loot::Core::ModContent::GraphicsModContent']]],

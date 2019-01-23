@@ -150,7 +150,7 @@ $(document).ready(function(){initNavTree('functions_func_g.html','');});
 : <a class="el" href="class_loot_1_1_e_m_m_item.html#a0dc962c1a313ea02e94a891920703963">Loot.EMMItem</a>
 </li>
 <li>GetBuffName()
-: <a class="el" href="class_loot_1_1_modifiers_1_1_weapon_debuff_modifier.html#aae52ec2ab87344e66049642c6bf3dcc5">Loot.Modifiers.WeaponDebuffModifier</a>
+: <a class="el" href="class_loot_1_1_modifiers_1_1_base_1_1_weapon_debuff_modifier.html#a9443016d43a9a6ac5683b512a5920e48">Loot.Modifiers.Base.WeaponDebuffModifier</a>
 </li>
 <li>GetClasses()
 : <a class="el" href="class_loot_1_1_core_1_1_attributes_1_1_populate_pool_from_attribute.html#a8c377d1e4843a125aaaae2275f92d4df">Loot.Core.Attributes.PopulatePoolFromAttribute</a>
@@ -189,6 +189,9 @@ $(document).ready(function(){initNavTree('functions_func_g.html','');});
 <li>GetGlowmaskTexture()
 : <a class="el" href="class_loot_1_1_core_1_1_mod_content_1_1_graphics_mod_content.html#a6e8384d6745a52c440f9c5b59e43a6c4">Loot.Core.ModContent.GraphicsModContent</a>
 </li>
+<li>GetInfo()
+: <a class="el" href="class_loot_1_1_modifier_projectile.html#aff9f2707bb1749988bff5e315fdf4c5c">Loot.ModifierProjectile</a>
+</li>
 <li>GetItemInfo()
 : <a class="el" href="class_loot_1_1_e_m_m_item.html#a7788b69f28ba9809f56f6ebc6c7a7b7f">Loot.EMMItem</a>
 </li>
@@ -224,7 +227,8 @@ $(document).ready(function(){initNavTree('functions_func_g.html','');});
 </li>
 <li>GetModifierProperties()
 : <a class="el" href="class_loot_1_1_core_1_1_system_1_1_modifier_1_1_modifier.html#a5362b41c7dd4bb869c33daaccb0bc534">Loot.Core.System.Modifier.Modifier</a>
-, <a class="el" href="class_loot_1_1_modifiers_1_1_equip_modifier.html#aa880a678e10e4bf97cc9ad1aef38c05e">Loot.Modifiers.EquipModifier</a>
+, <a class="el" href="class_loot_1_1_modifiers_1_1_base_1_1_equip_modifier.html#a31b83cdc159fd094498b54956f378ab7">Loot.Modifiers.Base.EquipModifier</a>
+, <a class="el" href="class_loot_1_1_modifiers_1_1_base_1_1_weapon_debuff_modifier.html#ade4214e94feb48ce8f3cb2bc8d8e8125">Loot.Modifiers.Base.WeaponDebuffModifier</a>
 , <a class="el" href="class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_defensive_1_1_dodge_chance.html#a78191d2f65069d7fede4edf4555dd4b9">Loot.Modifiers.EquipModifiers.Defensive.DodgeChance</a>
 , <a class="el" href="class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_defensive_1_1_health_plus.html#a584a3b00764d9e7c6f722e40ee6b5eec">Loot.Modifiers.EquipModifiers.Defensive.HealthPlus</a>
 , <a class="el" href="class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_defensive_1_1_immunity_time_plus.html#a9e3998005a95106daa876a0c7a21f299">Loot.Modifiers.EquipModifiers.Defensive.ImmunityTimePlus</a>
@@ -252,7 +256,6 @@ $(document).ready(function(){initNavTree('functions_func_g.html','');});
 , <a class="el" href="class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_utility_1_1_mining_speed_plus.html#a02333062607a1216abe38818737629ef">Loot.Modifiers.EquipModifiers.Utility.MiningSpeedPlus</a>
 , <a class="el" href="class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_utility_1_1_move_speed_plus.html#af0299e3def51b663bf5b063e86d9e680">Loot.Modifiers.EquipModifiers.Utility.MoveSpeedPlus</a>
 , <a class="el" href="class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_utility_1_1_wing_time_plus.html#a62a4f8c7b7e486a34580d5a121809467">Loot.Modifiers.EquipModifiers.Utility.WingTimePlus</a>
-, <a class="el" href="class_loot_1_1_modifiers_1_1_weapon_debuff_modifier.html#a74a3eeccea302aecfdc67041a62aca5e">Loot.Modifiers.WeaponDebuffModifier</a>
 , <a class="el" href="class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_ammo_reduce.html#a0aa1e2e5f49b816b4f27f424bb125c6d">Loot.Modifiers.WeaponModifiers.AmmoReduce</a>
 , <a class="el" href="class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_crit_plus.html#a3c110eeb4182df18c77d6879b2efc9c8">Loot.Modifiers.WeaponModifiers.CritPlus</a>
 , <a class="el" href="class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_cursed_damage.html#a530537f698e4ad7103ed1918c7cca2c9">Loot.Modifiers.WeaponModifiers.CursedDamage</a>
@@ -320,6 +323,7 @@ $(document).ready(function(){initNavTree('functions_func_g.html','');});
 </li>
 <li>GetTooltip()
 : <a class="el" href="class_loot_1_1_core_1_1_system_1_1_modifier_1_1_modifier.html#a9351e6ef234b011642f0f3ccd6bc1640">Loot.Core.System.Modifier.Modifier</a>
+, <a class="el" href="class_loot_1_1_modifiers_1_1_base_1_1_weapon_debuff_modifier.html#ae850685fab750de25313e8563e681824">Loot.Modifiers.Base.WeaponDebuffModifier</a>
 , <a class="el" href="class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_defensive_1_1_dodge_chance.html#a773818aade046353cd40a576448dd62e">Loot.Modifiers.EquipModifiers.Defensive.DodgeChance</a>
 , <a class="el" href="class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_defensive_1_1_health_plus.html#ade047703cada529865cb296e93a9d2cc">Loot.Modifiers.EquipModifiers.Defensive.HealthPlus</a>
 , <a class="el" href="class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_defensive_1_1_immunity_time_plus.html#ad4baf227bfe3ff245bf7187c2c409afb">Loot.Modifiers.EquipModifiers.Defensive.ImmunityTimePlus</a>
@@ -347,7 +351,6 @@ $(document).ready(function(){initNavTree('functions_func_g.html','');});
 , <a class="el" href="class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_utility_1_1_mining_speed_plus.html#a7a58d35f310875bca55b6b62ebeff0c2">Loot.Modifiers.EquipModifiers.Utility.MiningSpeedPlus</a>
 , <a class="el" href="class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_utility_1_1_move_speed_plus.html#a5317d85a04ab63542a04009a8106eb88">Loot.Modifiers.EquipModifiers.Utility.MoveSpeedPlus</a>
 , <a class="el" href="class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_utility_1_1_wing_time_plus.html#a338a773e980516a0b98d75f7353874b0">Loot.Modifiers.EquipModifiers.Utility.WingTimePlus</a>
-, <a class="el" href="class_loot_1_1_modifiers_1_1_weapon_debuff_modifier.html#ab647da05b30b425f8fc2548aae55e60d">Loot.Modifiers.WeaponDebuffModifier</a>
 , <a class="el" href="class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_ammo_reduce.html#a6923399e3a88e7355a9b005f608fd654">Loot.Modifiers.WeaponModifiers.AmmoReduce</a>
 , <a class="el" href="class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_crit_plus.html#a97f78d00308a4aaeb4d6abb9e5902eaf">Loot.Modifiers.WeaponModifiers.CritPlus</a>
 , <a class="el" href="class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_cursed_damage.html#a6b6211c8e09d50e8f4df3a326e54a9c8">Loot.Modifiers.WeaponModifiers.CursedDamage</a>
@@ -391,7 +394,7 @@ $(document).ready(function(){initNavTree('functions_func_g.html','');});
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Wed Jan 23 2019 21:34:12 for Even More Modifiers by
+    <li class="footer">Generated on Wed Jan 23 2019 21:56:07 for Even More Modifiers by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.11 </li>
   </ul>

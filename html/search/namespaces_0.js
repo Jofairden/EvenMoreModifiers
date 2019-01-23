@@ -1,6 +1,7 @@
 var searchData=
 [
   ['attributes',['Attributes',['../namespace_loot_1_1_core_1_1_attributes.html',1,'Loot::Core']]],
+  ['base',['Base',['../namespace_loot_1_1_modifiers_1_1_base.html',1,'Loot::Modifiers']]],
   ['caching',['Caching',['../namespace_loot_1_1_core_1_1_caching.html',1,'Loot::Core']]],
   ['content',['Content',['../namespace_loot_1_1_core_1_1_system_1_1_content.html',1,'Loot::Core::System']]],
   ['core',['Core',['../namespace_loot_1_1_core_1_1_system_1_1_core.html',1,'Loot::Core::System']]],
