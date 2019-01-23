@@ -20,7 +20,7 @@ namespace Loot.Ext.ModSupport
 			foreach (var modSupporter in GetSupporters())
 			{
 				Mod supportingMod = modSupporter.GetSupportingMod();
-				modSupporter.ModIsLoaded = modSupporter.CheckValidity(supportingMod);
+				modSupporter.ModIsLoaded = supportingMod != null && modSupporter.CheckValidity(supportingMod);
 			}
 		}
 
@@ -59,7 +59,7 @@ namespace Loot.Ext.ModSupport
 								&& t.IsSubclassOf(typeof(ModSupporter)))
 					.Select(t =>
 					{
-						return (ModSupporter) Activator.CreateInstance(t);
+						return (ModSupporter)Activator.CreateInstance(t);
 					})
 					.ToList();
 			}

@@ -1,8 +1,8 @@
+using Loot.Core.Attributes;
+using Loot.Core.System.Core;
 using System;
 using System.Linq;
 using System.Reflection;
-using Loot.Core.Attributes;
-using Loot.Core.System.Core;
 using Terraria.ModLoader;
 
 namespace Loot.Core.System
@@ -89,7 +89,7 @@ namespace Loot.Core.System
 				}
 				catch (Exception e)
 				{
-					// @todo notify
+					Log4c.Logger.Error("Error in ModifierEffect._DetachDelegations", e);
 				}
 			}
 

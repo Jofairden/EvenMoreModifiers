@@ -1,10 +1,10 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using Loot.Core.Caching;
 using Loot.Core.System;
 using Loot.Core.System.Loaders;
 using Loot.Ext;
+using System;
+using System.Collections.Generic;
+using System.Linq;
 using Terraria;
 using Terraria.DataStructures;
 using Terraria.ModLoader;
@@ -31,10 +31,12 @@ namespace Loot
 			return (T)_modifierEffects.FirstOrDefault(x => x.GetType() == typeof(T));
 		}
 
-		// Attempt rolling modifiers on first load
-		public override void SetupStartInventory(IList<Item> items)
+		public override void SetupStartInventory(IList<Item> items, bool mediumcoreDeath)
 		{
-			EMMWorld.WorldGenModifiersPass.GenerateModifiers(null, ModifierContextMethod.SetupStartInventory, items.Where(x => !x.IsAir && x.IsModifierRollableItem()), player);
+			if (!mediumcoreDeath)
+			{
+				EMMWorld.WorldGenModifiersPass.GenerateModifiers(null, ModifierContextMethod.SetupStartInventory, items.Where(x => !x.IsAir && x.IsModifierRollableItem()), player);
+			}
 		}
 
 		public override void OnEnterWorld(Player player)

@@ -1,8 +1,8 @@
+using Loot.Core.System;
+using Loot.Ext;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using Loot.Core.System;
-using Loot.Ext;
 using Terraria;
 using Terraria.ModLoader;
 using Terraria.ModLoader.IO;
@@ -37,7 +37,7 @@ namespace Loot
 			}
 			catch (Exception e)
 			{
-				ErrorLogger.Log($"Error on EMMWorld:Load: {e}");
+				Log4c.Logger.Error("Error on EMMWorld.Load", e);
 			}
 		}
 

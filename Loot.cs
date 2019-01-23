@@ -1,4 +1,3 @@
-using System;
 using Loot.Core.ModContent;
 using Loot.Core.System.Loaders;
 using Loot.Ext.ModSupport;
@@ -6,6 +5,7 @@ using Loot.UI.Core;
 using Loot.UI.Rerolling;
 using Loot.UI.Sealing;
 using Microsoft.Xna.Framework;
+using System;
 using System.Collections.Generic;
 using System.Reflection;
 using System.Runtime.CompilerServices;
@@ -112,7 +112,6 @@ namespace Loot
 
 		public override void Unload()
 		{
-			
 			Instance = null;
 
 			ContentLoader.Unload();

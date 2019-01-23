@@ -312,7 +312,7 @@ namespace Loot.Core.System
 
 		/// <summary>
 		/// Allows modder to do custom saving here
-		/// Use the given TC to put data you want to save, which can be loaded using <see cref="Load(TagCompound)"/>
+		/// Use the given TC to put data you want to save, which can be loaded using <see cref="Load(Item, TagCompound)"/>
 		/// </summary>
 		/// <param name="tag"></param>
 		public virtual void Save(Item item, TagCompound tag)

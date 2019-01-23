@@ -1,9 +1,9 @@
 using Loot.Core.Attributes;
+using Loot.Core.System;
+using Loot.Ext;
 using Microsoft.Xna.Framework;
 using System;
 using System.Linq;
-using Loot.Core.System;
-using Loot.Ext;
 using Terraria;
 using Terraria.ID;
 

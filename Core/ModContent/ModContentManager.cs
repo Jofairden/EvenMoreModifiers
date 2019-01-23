@@ -11,22 +11,15 @@ namespace Loot.Core.ModContent
 		private IEnumerable<TextureModContent> _modContents => _contents.Select(x => x.Value);
 
 		public T GetContent<T>() where T : TextureModContent
-		{
-			T content = (T)_modContents.FirstOrDefault(x => x.GetType() == typeof(T));
-			return content;
-		}
+			=> (T)_modContents.FirstOrDefault(x => x.GetType() == typeof(T));
 
 		public TextureModContent GetContent(Type type)
-		{
-			TextureModContent modContent = _modContents.FirstOrDefault(x => x.GetType() == type);
-			return modContent;
-		}
+			=> _modContents.FirstOrDefault(x => x.GetType() == type);
+
 
 		public TextureModContent GetContent(string key)
-		{
-			TextureModContent modContent;
-			return _contents.TryGetValue(key, out modContent) ? modContent : null;
-		}
+			=> _contents.TryGetValue(key, out var modContent) ? modContent : null;
+
 
 		public void AddContent(string key, TextureModContent textureModContent)
 		{
@@ -37,8 +30,7 @@ namespace Loot.Core.ModContent
 
 			if (_contents.Values.Contains(textureModContent))
 			{
-				// TODO warn
-				ErrorLogger.Log($"ModContent with registry key {textureModContent.GetRegistryKey()} was already present");
+				Log4c.Logger.WarnFormat("ModContent with registry key {0} was already present", textureModContent.GetRegistryKey());
 			}
 
 			textureModContent._Initialize();

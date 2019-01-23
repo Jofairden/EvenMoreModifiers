@@ -146,6 +146,7 @@
     <Compile Include="Ext\ModSupport\CheatSheetSupporter.cs" />
     <Compile Include="Ext\ModSupport\WingSlotSupporter.cs" />
     <Compile Include="Ext\ModUtils.cs" />
+    <Compile Include="Log4c.cs" />
     <Compile Include="ModifierProjectile.cs" />
     <Compile Include="Modifiers\AccessoryModifier.cs" />
     <Compile Include="Modifiers\ArmorModifier.cs" />
