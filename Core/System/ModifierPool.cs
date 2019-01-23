@@ -238,9 +238,8 @@ namespace Loot.Core.System
 			}
 
 			string modName = tag.GetString("ModName");
-			Assembly assembly;
 
-			if (MainLoader.Mods.TryGetValue(modName, out assembly))
+			if (MainLoader.Mods.TryGetValue(modName, out var assembly))
 			{
 				// If we manage to load null here, that means some pool got unloaded
 				ModifierPool p = null;

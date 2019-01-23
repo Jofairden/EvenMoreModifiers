@@ -33,8 +33,7 @@ namespace Loot.Core.System.Loaders
 				throw new NullReferenceException($"Mod is null in {source}");
 			}
 
-			bool? b = mod.GetType().GetField("loading", BindingFlags.Instance | BindingFlags.NonPublic)?.GetValue(mod) as bool?;
-			if (b != null && !b.Value)
+			if (mod.GetType().GetField("loading", BindingFlags.Instance | BindingFlags.NonPublic)?.GetValue(mod) is bool b && !b)
 			{
 				throw new Exception($"{source} can only be called from Mod.Load or Mod.Autoload");
 			}

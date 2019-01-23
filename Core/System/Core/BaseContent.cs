@@ -85,8 +85,7 @@ namespace Loot.Core.System.Core
 				MainLoader.CheckModRegistered(mod);
 			}
 
-			List<KeyValuePair<string, T>> lrm;
-			if (!Map.TryGetValue(mod.Name, out lrm))
+			if (!Map.TryGetValue(mod.Name, out var lrm))
 			{
 				throw new Exception($"Map for {mod.Name} not found (trying to add {s}");
 			}

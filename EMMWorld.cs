@@ -43,13 +43,12 @@ namespace Loot
 
 		public override void PostUpdate()
 		{
-			if (!Initialized)
+			if (Initialized) return;
+			
+			Initialized = true;
+			foreach (var chest in Main.chest.Where(chest => chest != null && chest.x > 0 && chest.y > 0))
 			{
-				Initialized = true;
-				foreach (var chest in Main.chest.Where(chest => chest != null && chest.x > 0 && chest.y > 0))
-				{
-					WorldGenModifiersPass.GenerateModifiers(null, ModifierContextMethod.FirstLoad, chest.item.Where(x => !x.IsAir), chest);
-				}
+				WorldGenModifiersPass.GenerateModifiers(null, ModifierContextMethod.FirstLoad, chest.item.Where(x => !x.IsAir), chest);
 			}
 		}
 
@@ -79,36 +78,34 @@ namespace Loot
 					EMMItem itemInfo = EMMItem.GetItemInfo(item);
 					ModifierPool pool = itemInfo.ModifierPool;
 					UnifiedRandom rand = Main.rand != null ? Main.rand : WorldGen.genRand != null ? WorldGen.genRand : null;
-					if (!itemInfo.HasRolled && pool == null)
+					if (itemInfo.HasRolled || pool != null) continue;
+					itemInfo.HasRolled = true;
+
+					if (rand != null && rand.NextBool())
 					{
-						itemInfo.HasRolled = true;
-
-						if (rand != null && rand.NextBool())
-						{
-							continue;
-						}
-
-						ModifierContext ctx = new ModifierContext
-						{
-							Method = method,
-							Item = item
-						};
-
-						if (obj is Chest)
-						{
-							ctx.CustomData = new Dictionary<string, object>
-							{
-								{"chestData", new Tuple<int, int>(((Chest)obj).x, ((Chest)obj).y)}
-							};
-						}
-						else if (obj is Player)
-						{
-							ctx.Player = (Player)obj;
-						}
-
-						pool = itemInfo.RollNewPool(ctx);
-						pool?.ApplyModifiers(item);
+						continue;
 					}
+
+					ModifierContext ctx = new ModifierContext
+					{
+						Method = method,
+						Item = item
+					};
+
+					if (obj is Chest chest)
+					{
+						ctx.CustomData = new Dictionary<string, object>
+						{
+							{"chestData", new Tuple<int, int>(chest.x, chest.y)}
+						};
+					}
+					else if (obj is Player player)
+					{
+						ctx.Player = player;
+					}
+
+					pool = itemInfo.RollNewPool(ctx);
+					pool?.ApplyModifiers(item);
 				}
 			}
 
@@ -117,7 +114,10 @@ namespace Loot
 				Initialized = true;
 				foreach (var chest in Main.chest.Where(chest => chest != null && chest.x > 0 && chest.y > 0))
 				{
-					GenerateModifiers(progress, ModifierContextMethod.WorldGeneration, chest.item.Where(x => x != null && !x.IsAir && x.IsModifierRollableItem()), chest);
+					GenerateModifiers(progress, 
+						ModifierContextMethod.WorldGeneration, 
+						chest.item.Where(x => x != null && !x.IsAir && x.IsModifierRollableItem()), 
+						chest);
 				}
 			}
 		}

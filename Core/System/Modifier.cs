@@ -146,9 +146,8 @@ namespace Loot.Core.System
 		protected internal static Modifier _Load(Item item, TagCompound tag)
 		{
 			string modName = tag.GetString("ModName");
-			Assembly assembly;
 			if (modName != null
-				&& MainLoader.Mods.TryGetValue(modName, out assembly))
+				&& MainLoader.Mods.TryGetValue(modName, out var assembly))
 			{
 				// If we load a null here, it means a modifier is unloaded
 				Modifier m = null;

@@ -12,8 +12,8 @@ namespace Loot.Core.ModContent
 {
 	public class GraphicsModContent : TextureModContent
 	{
-		protected IDictionary<string, Texture2D> _glowmaskTextures;
-		protected IDictionary<string, Texture2D> _shaderTextures;
+		private IDictionary<string, Texture2D> _glowmaskTextures;
+		private IDictionary<string, Texture2D> _shaderTextures;
 		
 		private IDictionary<string, string> _keyStore;
 
@@ -58,7 +58,7 @@ namespace Loot.Core.ModContent
 			}
 		}
 
-		internal IDictionary<string, int> _vanillaNamesCache;
+		private IDictionary<string, int> _vanillaNamesCache;
 
 		private void FillVanillaNamesCache()
 		{
@@ -69,7 +69,7 @@ namespace Loot.Core.ModContent
 				item.SetDefaults(i);
 				if (_vanillaNamesCache.ContainsKey(item.Name))
 				{
-					// "Something is not quite right..";
+					Log4c.Logger.Error("There was a problem during initialization of vanilla names cache");
 				}
 				_vanillaNamesCache.Add($"{item.Name.Replace(" ", "")}_{i}", i);
 			}
@@ -141,9 +141,7 @@ namespace Loot.Core.ModContent
 		// @todo expose a global GraphicsContent instance and prepare automagically in context ?
 		public void Prepare(Mod mod)
 		{
-			string keyPass;
-
-			if (_keyStore.TryGetValue(mod.Name, out keyPass))
+			if (_keyStore.TryGetValue(mod.Name, out var keyPass))
 			{
 				var glowmasks = _glowmaskTextures.Where(x => x.Key.StartsWith(keyPass)).ToArray();
 				var shaders = _glowmaskTextures.Where(x => x.Key.StartsWith(keyPass)).ToArray();

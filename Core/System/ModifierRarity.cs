@@ -105,8 +105,7 @@ namespace Loot.Core.System
 		protected internal static ModifierRarity _Load(Item item, TagCompound tag)
 		{
 			string modname = tag.GetString("ModName");
-			Assembly assembly;
-			if (MainLoader.Mods.TryGetValue(modname, out assembly))
+			if (MainLoader.Mods.TryGetValue(modname, out var assembly))
 			{
 				// If we load a null here, it means a rarity is unloaded
 				ModifierRarity r = null;

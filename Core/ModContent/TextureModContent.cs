@@ -10,8 +10,7 @@ namespace Loot.Core.ModContent
 
 		protected Texture2D GetFrom(IDictionary<string, Texture2D> dictionary, string key)
 		{
-			Texture2D texture;
-			return dictionary.TryGetValue(key, out texture) ? texture : null;
+			return dictionary.TryGetValue(key, out var texture) ? texture : null;
 		}
 
 		public Texture2D GetTexture(string key)

@@ -140,7 +140,6 @@
     <Compile Include="EMMPlayer.cs" />
     <Compile Include="EMMWorld.cs" />
     <Compile Include="Ext\ItemUtils.cs" />
-    <Compile Include="Ext\LootUtils.cs" />
     <Compile Include="Ext\ModSupport\ModSupport.cs" />
     <Compile Include="Ext\ModSupport\ModSupporter.cs" />
     <Compile Include="Ext\ModSupport\CheatSheetSupporter.cs" />

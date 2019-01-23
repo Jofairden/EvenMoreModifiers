@@ -16,8 +16,7 @@ namespace Loot.Ext
 
 		public static ModifierRarity GetModifierRarity(this Mod mod, string name)
 		{
-			List<RarityMap> v;
-			if (ContentLoader.ModifierRarity.Map.TryGetValue(mod.Name, out v))
+			if (ContentLoader.ModifierRarity.Map.TryGetValue(mod.Name, out var v))
 			{
 				var fod = v.FirstOrDefault(x => x.Value.Name.Equals(name));
 				return (ModifierRarity)fod.Value.Clone();
@@ -32,8 +31,7 @@ namespace Loot.Ext
 		public static T GetModifier<T>(this Mod mod) where T : Modifier => (T)GetModifier(mod, typeof(T).Name);
 		public static Modifier GetModifier(this Mod mod, string name)
 		{
-			List<ModifierMap> v;
-			if (ContentLoader.Modifier.Map.TryGetValue(mod.Name, out v))
+			if (ContentLoader.Modifier.Map.TryGetValue(mod.Name, out var v))
 			{
 				var fod = v.FirstOrDefault(x => x.Value.Name.Equals(name));
 				return (Modifier)fod.Value.Clone();
@@ -48,8 +46,7 @@ namespace Loot.Ext
 		public static T GetModifierPool<T>(this Mod mod) where T : ModifierPool => (T)GetModifierPool(mod, typeof(T).Name);
 		public static ModifierPool GetModifierPool(this Mod mod, string name)
 		{
-			List<PoolMap> v;
-			if (ContentLoader.ModifierPool.Map.TryGetValue(mod.Name, out v))
+			if (ContentLoader.ModifierPool.Map.TryGetValue(mod.Name, out var v))
 			{
 				var fod = v.FirstOrDefault(x => x.Value.Name.Equals(name));
 				return (ModifierPool)fod.Value.Clone();
@@ -64,8 +61,7 @@ namespace Loot.Ext
 		public static T GetModifierEffect<T>(this Mod mod) where T : ModifierEffect => (T)GetModifierEffect(mod, typeof(T).Name);
 		public static ModifierEffect GetModifierEffect(this Mod mod, string name)
 		{
-			List<EffectMap> v;
-			if (ContentLoader.ModifierEffect.Map.TryGetValue(mod.Name, out v))
+			if (ContentLoader.ModifierEffect.Map.TryGetValue(mod.Name, out var v))
 			{
 				var fod = v.FirstOrDefault(x => x.Value.Name.Equals(name));
 				return (ModifierEffect)fod.Value.Clone();

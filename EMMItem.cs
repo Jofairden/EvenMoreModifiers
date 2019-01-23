@@ -38,7 +38,7 @@ namespace Loot
 		public bool JustTinkerModified; // is just tinker modified: e.g. armor hacked
 		public bool SlottedInCubeUI; // is currently in cube UI slot
 
-		public const int SaveVersion = 2;
+		private const int SAVE_VERSION = 2;
 
 		/// <summary>
 		/// Attempts to roll new modifiers
@@ -124,7 +124,7 @@ namespace Loot
 		/// Roll active modifiers, can roll up to n maximum effects
 		/// Returns if any modifiers were activated
 		/// </summary>
-		internal bool RollNewModifiers(ModifierContext ctx, ItemRollProperties itemRollProperties)
+		private bool RollNewModifiers(ModifierContext ctx, ItemRollProperties itemRollProperties)
 		{
 			// Firstly, prepare a WeightedRandom list with modifiers
 			// that are rollable in this context
@@ -181,11 +181,9 @@ namespace Loot
 				list.Add(eClone);
 
 				// If it is a unique modifier, remove it from the list to be rolled
-				if (eClone.Properties.IsUnique)
-				{
-					wr.elements.RemoveAll(x => x.Item1.Type == eClone.Type);
-					wr.needsRefresh = true;
-				}
+				if (!eClone.Properties.IsUnique) continue;
+				wr.elements.RemoveAll(x => x.Item1.Type == eClone.Type);
+				wr.needsRefresh = true;
 			}
 
 			ModifierPool.ActiveModifiers = list.ToArray();
@@ -241,7 +239,7 @@ namespace Loot
 			tag.Add("HasRolled", HasRolled);
 
 			// SaveVersion saved since SaveVersion 2, version 1 not present
-			tag.Add("SaveVersion", SaveVersion);
+			tag.Add("SaveVersion", SAVE_VERSION);
 			tag.Add("SealedModifiers", SealedModifiers);
 
 			return tag;

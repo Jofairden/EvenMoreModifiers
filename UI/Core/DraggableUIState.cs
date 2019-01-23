@@ -22,11 +22,9 @@ namespace Loot.UI.Core
 
 		protected void AddDragPanel(UIPanel panel)
 		{
-			if (!_initialized)
-			{
-				_dragPanels.Add(panel);
-				_offsets.Add(new Vector2());
-			}
+			if (_initialized) return;
+			_dragPanels.Add(panel);
+			_offsets.Add(new Vector2());
 		}
 
 		public override void OnInitialize()
