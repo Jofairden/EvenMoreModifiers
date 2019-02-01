@@ -1,8 +1,9 @@
 <map id="Loot.EMMItem" name="Loot.EMMItem">
-<area shape="rect" id="node2" href="$class_global_item.html" title="GlobalItem" alt="" coords="561,5,647,32"/>
-<area shape="rect" id="node5" href="$class_loot_1_1_core_1_1_system_1_1_modifier_1_1_modifier_pool.html" title="Defines a modifier pool. A modifier pool holds a certain amount of effects in an array It allows to r..." alt="" coords="513,241,695,282"/>
-<area shape="rect" id="node6" href="$interface_loot_1_1_core_1_1_system_1_1_core_1_1_i_loadable_content.html" title="ILoadableContent" alt="" coords="175,60,299,87"/>
-<area shape="rect" id="node8" href="$class_i_cloneable.html" title="ICloneable" alt="" coords="195,161,279,188"/>
-<area shape="rect" id="node10" href="$class_loot_1_1_core_1_1_attributes_1_1_populate_pool_from_attribute.html" title="Will populate a ModifierPool based on a namespace All Modifiers in that namespace will become part of..." alt="" coords="140,278,335,319"/>
-<area shape="rect" id="node11" href="$class_attribute.html" title="Attribute" alt="" coords="6,285,77,312"/>
+<area shape="rect" id="node2" href="$class_global_item.html" title="GlobalItem" alt="" coords="575,63,660,89"/>
+<area shape="rect" id="node5" href="$class_loot_1_1_core_1_1_system_1_1_modifier_1_1_modifier_rarity.html" title="Defines the rarity of a modifier " alt="" coords="526,254,709,295"/>
+<area shape="rect" id="node13" href="$class_loot_1_1_core_1_1_system_1_1_modifier_1_1_modifier_pool.html" title="Defines a modifier pool. A modifier pool holds a certain amount of effects in an array It allows to r..." alt="" coords="526,571,709,613"/>
+<area shape="rect" id="node6" href="$interface_loot_1_1_core_1_1_system_1_1_core_1_1_i_loadable_content.html" title="ILoadableContent" alt="" coords="175,377,299,404"/>
+<area shape="rect" id="node8" href="$class_i_cloneable.html" title="ICloneable" alt="" coords="195,556,279,583"/>
+<area shape="rect" id="node15" href="$class_loot_1_1_core_1_1_attributes_1_1_populate_pool_from_attribute.html" title="Will populate a ModifierPool based on a namespace All Modifiers in that namespace will become part of..." alt="" coords="140,707,335,749"/>
+<area shape="rect" id="node16" href="$class_attribute.html" title="Attribute" alt="" coords="6,715,77,741"/>
 </map>

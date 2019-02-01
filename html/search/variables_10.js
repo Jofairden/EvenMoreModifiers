@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['save_5fversion',['SAVE_VERSION',['../class_loot_1_1_e_m_m_item.html#a1f63c47cf8556dfe65917f30469cfc2b',1,'Loot::EMMItem']]],
+  ['save_5fversion',['SAVE_VERSION',['../class_loot_1_1_core_1_1_system_1_1_modifier_1_1_modifier_pool.html#a11db99e8d7583eb9aaf6f433a128d7c7',1,'Loot.Core.System.Modifier.ModifierPool.SAVE_VERSION()'],['../class_loot_1_1_core_1_1_system_1_1_modifier_1_1_modifier_rarity.html#ac9779ecc458d4d43c2ccea480a055773',1,'Loot.Core.System.Modifier.ModifierRarity.SAVE_VERSION()'],['../class_loot_1_1_e_m_m_item.html#a1f63c47cf8556dfe65917f30469cfc2b',1,'Loot.EMMItem.SAVE_VERSION()']]],
   ['sealedmodifiers',['SealedModifiers',['../class_loot_1_1_e_m_m_item.html#aedce25fd48ae8bc38a8451f86b92927a',1,'Loot::EMMItem']]],
   ['shaderentities',['ShaderEntities',['../class_loot_1_1_core_1_1_graphics_1_1_shader_global_item.html#a7a57f761180a69f20cd5eb673acaa622',1,'Loot::Core::Graphics::ShaderGlobalItem']]],
   ['slottedincubeui',['SlottedInCubeUI',['../class_loot_1_1_e_m_m_item.html#a1819ece591debe2c1ff47f6eecb9cd08',1,'Loot::EMMItem']]],

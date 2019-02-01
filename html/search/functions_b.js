@@ -2,8 +2,6 @@ var searchData=
 [
   ['makesoundinstance',['MakeSoundInstance',['../class_loot_1_1_sounds_1_1_custom_1_1_sound_maker.html#ad0c71bae603b16c6e98848e2dbc675df',1,'Loot::Sounds::Custom::SoundMaker']]],
   ['manablock',['ManaBlock',['../class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_defensive_1_1_mana_shield_effect.html#ae872e672cbeb246a0fdc84baec014203',1,'Loot::Modifiers::EquipModifiers::Defensive::ManaShieldEffect']]],
-  ['matchesrarity',['MatchesRarity',['../class_loot_1_1_core_1_1_system_1_1_modifier_1_1_modifier_pool.html#a9c59b477d7dc7cc89ce9c70a20adee0a',1,'Loot::Core::System::Modifier::ModifierPool']]],
-  ['matchesrequirements',['MatchesRequirements',['../class_loot_1_1_core_1_1_system_1_1_modifier_1_1_modifier_rarity.html#afdd78db6c24db9b9be267fff96dbfe5f',1,'Loot::Core::System::Modifier::ModifierRarity']]],
   ['matchesrerollrequirements',['MatchesRerollRequirements',['../class_loot_1_1_u_i_1_1_rerolling_1_1_cube_reroll_u_i.html#ac154e81427aa735aafbeea55172a7aad',1,'Loot::UI::Rerolling::CubeRerollUI']]],
   ['modifiereffecttype',['ModifierEffectType',['../class_loot_1_1_ext_1_1_mod_utils.html#a65b6933a0d1e070efba92ce8111d6ea3',1,'Loot::Ext::ModUtils']]],
   ['modifiereffecttype_3c_20t_20_3e',['ModifierEffectType&lt; T &gt;',['../class_loot_1_1_ext_1_1_mod_utils.html#ae5c3d922e8f258b643e623957326a350',1,'Loot::Ext::ModUtils']]],

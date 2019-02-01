@@ -30,6 +30,7 @@ var searchData=
   ['_5flookuptable',['_lookupTable',['../class_loot_1_1_core_1_1_mod_content_1_1_graphics_mod_content.html#a34ff09e52ae87b27175254a7db198a30',1,'Loot::Core::ModContent::GraphicsModContent']]],
   ['_5fmanacost',['_manaCost',['../class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_damage_with_mana_cost.html#a9e123eec4ffabf52130c98b882c90774',1,'Loot::Modifiers::WeaponModifiers::DamageWithManaCost']]],
   ['_5fmaxrollablelines',['_maxRollableLines',['../class_loot_1_1_core_1_1_cubes_1_1_item_roll_properties.html#a82bbfcb88468b2cd0352e4f49e505d0a',1,'Loot::Core::Cubes::ItemRollProperties']]],
+  ['_5fminmodifierrolls',['_minModifierRolls',['../class_loot_1_1_core_1_1_cubes_1_1_item_roll_properties.html#a267eca045644de1751ce345ff3ac86b6',1,'Loot::Core::Cubes::ItemRollProperties']]],
   ['_5fmodcontents',['_modContents',['../class_loot_1_1_core_1_1_mod_content_1_1_mod_content_manager.html#a2d4c0c619e10569cf727b6bd4f2e1bb1',1,'Loot::Core::ModContent::ModContentManager']]],
   ['_5fmodifiereffects',['_modifierEffects',['../class_loot_1_1_core_1_1_caching_1_1_modifier_cache_player.html#abb0c1a9af4a7072f9a2a5cb6267514af',1,'Loot.Core.Caching.ModifierCachePlayer._modifierEffects()'],['../class_loot_1_1_modifier_player.html#aa4f99df64373ba48ad235daab14b5591',1,'Loot.ModifierPlayer._modifierEffects()']]],
   ['_5fmodifierpanels',['_modifierPanels',['../class_loot_1_1_u_i_1_1_rerolling_1_1_cube_reroll_u_i.html#a64e4c106ef600d0312cb1dac9f3296f8',1,'Loot::UI::Rerolling::CubeRerollUI']]],

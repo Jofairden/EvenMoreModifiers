@@ -57,7 +57,7 @@
 <area shape="rect" id="node56" href="$class_i_cloneable.html" title="ICloneable" alt="" coords="74,2820,158,2847"/>
 <area shape="rect" id="node57" href="$class_loot_1_1_core_1_1_system_1_1_modifier_1_1_modifier_effect.html" title="A ModifierEffect signifies the effect of a modifier on a player It should house the implementation..." alt="" coords="301,2749,483,2790"/>
 <area shape="rect" id="node70" href="$class_loot_1_1_core_1_1_system_1_1_modifier_1_1_modifier_pool.html" title="Defines a modifier pool. A modifier pool holds a certain amount of effects in an array It allows to r..." alt="" coords="301,2814,483,2855"/>
-<area shape="rect" id="node72" href="$class_loot_1_1_core_1_1_system_1_1_modifier_1_1_modifier_rarity.html" title="Defines the rarity of a modifier " alt="" coords="301,3243,483,3285"/>
+<area shape="rect" id="node72" href="$class_loot_1_1_core_1_1_system_1_1_modifier_1_1_modifier_rarity.html" title="Defines the rarity of a modifier " alt="" coords="301,3235,483,3277"/>
 <area shape="rect" id="node58" href="$class_loot_1_1_modifiers_1_1_base_1_1_weapon_debuff_effect.html" title="Loot.Modifiers.Base.Weapon\lDebuffEffect" alt="" coords="573,2357,763,2398"/>
 <area shape="rect" id="node59" href="$class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_defensive_1_1_dodge_effect.html" title="Loot.Modifiers.EquipModifiers.\lDefensive.DodgeEffect" alt="" coords="569,2422,767,2463"/>
 <area shape="rect" id="node60" href="$class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_defensive_1_1_immunity_effect.html" title="Loot.Modifiers.EquipModifiers.\lDefensive.ImmunityEffect" alt="" coords="569,2487,767,2529"/>
@@ -71,10 +71,10 @@
 <area shape="rect" id="node68" href="$class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_utility_1_1_luck_effect.html" title="Loot.Modifiers.EquipModifiers.\lUtility.LuckEffect" alt="" coords="569,3010,767,3051"/>
 <area shape="rect" id="node69" href="$class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_cursed_effect.html" title="Loot.Modifiers.WeaponModifiers.\lCursedEffect" alt="" coords="561,3075,775,3117"/>
 <area shape="rect" id="node71" href="$class_loot_1_1_pools_1_1_all_modifiers_pool.html" title="A modifier pool that always consists of all modifiers " alt="" coords="577,3141,759,3168"/>
-<area shape="rect" id="node73" href="$class_loot_1_1_rarities_1_1_common_rarity.html" title="Loot.Rarities.CommonRarity" alt="" coords="574,3360,762,3387"/>
-<area shape="rect" id="node74" href="$class_loot_1_1_rarities_1_1_legendary_rarity.html" title="Loot.Rarities.LegendaryRarity" alt="" coords="571,3411,765,3437"/>
-<area shape="rect" id="node75" href="$class_loot_1_1_rarities_1_1_rare_rarity.html" title="Loot.Rarities.RareRarity" alt="" coords="587,3192,749,3219"/>
-<area shape="rect" id="node76" href="$class_loot_1_1_rarities_1_1_transcendent_rarity.html" title="Loot.Rarities.Transcendent\lRarity" alt="" coords="579,3243,757,3285"/>
-<area shape="rect" id="node77" href="$class_loot_1_1_rarities_1_1_uncommon_rarity.html" title="Loot.Rarities.UncommonRarity" alt="" coords="567,3309,769,3336"/>
+<area shape="rect" id="node73" href="$class_loot_1_1_rarities_1_1_common_rarity.html" title="Describes the common rarity, which every item starts with " alt="" coords="574,3360,762,3387"/>
+<area shape="rect" id="node74" href="$class_loot_1_1_rarities_1_1_epic_rarity.html" title="The epic rarity, before legendary but after rare " alt="" coords="587,3411,749,3437"/>
+<area shape="rect" id="node75" href="$class_loot_1_1_rarities_1_1_legendary_rarity.html" title="The legendary rarity, before transcendent but after epic " alt="" coords="571,3192,765,3219"/>
+<area shape="rect" id="node76" href="$class_loot_1_1_rarities_1_1_rare_rarity.html" title="The rare rarity, before epic but after common " alt="" coords="587,3243,749,3269"/>
+<area shape="rect" id="node77" href="$class_loot_1_1_rarities_1_1_transcendent_rarity.html" title="The Transcendent rarity, the most powerful rarity " alt="" coords="579,3294,757,3335"/>
 <area shape="rect" id="node78" href="$interface_loot_1_1_core_1_1_system_1_1_core_1_1_i_loadable_content.html" title="Loot.Core.System.Core.ILoadable\lContent" alt="" coords="6,2751,226,2793"/>
 </map>

@@ -8,5 +8,6 @@ var searchData=
   ['fishingplus',['FishingPlus',['../class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_utility_1_1_fishing_plus.html',1,'Loot::Modifiers::EquipModifiers::Utility']]],
   ['fishingplus_2ecs',['FishingPlus.cs',['../_fishing_plus_8cs.html',1,'']]],
   ['forcemodifierpool',['ForceModifierPool',['../class_loot_1_1_core_1_1_cubes_1_1_item_roll_properties.html#aed4b43414d8e06fa2e9079b299f4ab1a',1,'Loot::Core::Cubes::ItemRollProperties']]],
+  ['forcemodifierrarity',['ForceModifierRarity',['../class_loot_1_1_core_1_1_cubes_1_1_item_roll_properties.html#ab88a71047da4235c690cba2a18ab0bea',1,'Loot::Core::Cubes::ItemRollProperties']]],
   ['front',['Front',['../namespace_loot_1_1_core_1_1_graphics.html#ab9bc623e11f3c37b99846ba9daf478d0a5835bab1ade0060909e31a06af2e2cde',1,'Loot::Core::Graphics']]]
 ];

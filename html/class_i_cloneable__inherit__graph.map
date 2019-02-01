@@ -40,9 +40,9 @@
 <area shape="rect" id="node38" href="$class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_utility_1_1_luck_effect.html" title="Loot.Modifiers.EquipModifiers.\lUtility.LuckEffect" alt="" coords="383,1410,582,1451"/>
 <area shape="rect" id="node39" href="$class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_cursed_effect.html" title="Loot.Modifiers.WeaponModifiers.\lCursedEffect" alt="" coords="376,1475,589,1517"/>
 <area shape="rect" id="node42" href="$class_loot_1_1_pools_1_1_all_modifiers_pool.html" title="A modifier pool that always consists of all modifiers " alt="" coords="391,1592,574,1619"/>
-<area shape="rect" id="node45" href="$class_loot_1_1_rarities_1_1_common_rarity.html" title="Loot.Rarities.CommonRarity" alt="" coords="389,1693,577,1720"/>
-<area shape="rect" id="node46" href="$class_loot_1_1_rarities_1_1_legendary_rarity.html" title="Loot.Rarities.LegendaryRarity" alt="" coords="385,1744,580,1771"/>
-<area shape="rect" id="node47" href="$class_loot_1_1_rarities_1_1_rare_rarity.html" title="Loot.Rarities.RareRarity" alt="" coords="401,1795,564,1821"/>
-<area shape="rect" id="node48" href="$class_loot_1_1_rarities_1_1_transcendent_rarity.html" title="Loot.Rarities.Transcendent\lRarity" alt="" coords="393,1846,572,1887"/>
-<area shape="rect" id="node49" href="$class_loot_1_1_rarities_1_1_uncommon_rarity.html" title="Loot.Rarities.UncommonRarity" alt="" coords="381,1912,584,1939"/>
+<area shape="rect" id="node45" href="$class_loot_1_1_rarities_1_1_common_rarity.html" title="Describes the common rarity, which every item starts with " alt="" coords="389,1693,577,1720"/>
+<area shape="rect" id="node46" href="$class_loot_1_1_rarities_1_1_epic_rarity.html" title="The epic rarity, before legendary but after rare " alt="" coords="402,1744,563,1771"/>
+<area shape="rect" id="node47" href="$class_loot_1_1_rarities_1_1_legendary_rarity.html" title="The legendary rarity, before transcendent but after epic " alt="" coords="385,1795,580,1821"/>
+<area shape="rect" id="node48" href="$class_loot_1_1_rarities_1_1_rare_rarity.html" title="The rare rarity, before epic but after common " alt="" coords="401,1845,564,1872"/>
+<area shape="rect" id="node49" href="$class_loot_1_1_rarities_1_1_transcendent_rarity.html" title="The Transcendent rarity, the most powerful rarity " alt="" coords="393,1897,572,1938"/>
 </map>

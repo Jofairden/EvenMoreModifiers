@@ -31,7 +31,6 @@ var searchData=
   ['getmodifierrarity_3c_20t_20_3e',['GetModifierRarity&lt; T &gt;',['../class_loot_1_1_ext_1_1_mod_utils.html#a198020d5171ed740de46b7fa8d0c8f6a',1,'Loot::Ext::ModUtils']]],
   ['getmodifiers',['GetModifiers',['../class_loot_1_1_core_1_1_system_1_1_modifier_1_1_modifier_pool.html#a09cd8bdb9bc2cb8c3c4e09caa1752504',1,'Loot.Core.System.Modifier.ModifierPool.GetModifiers()'],['../class_loot_1_1_pools_1_1_all_modifiers_pool.html#a29d4045130334736e25c0691ba50f927',1,'Loot.Pools.AllModifiersPool.GetModifiers()']]],
   ['getnextid',['GetNextId',['../class_loot_1_1_core_1_1_system_1_1_core_1_1_base_content.html#abb34820981bb70ac3ad77a28fc482ff4',1,'Loot::Core::System::Core::BaseContent']]],
-  ['getpoolrarity',['GetPoolRarity',['../class_loot_1_1_core_1_1_system_1_1_content_1_1_modifier_pool_content.html#a056be711b75b1a308e82bc9a98bd04c8',1,'Loot::Core::System::Content::ModifierPoolContent']]],
   ['getprefixnormstring',['GetPrefixNormString',['../class_loot_1_1_e_m_m_item.html#aaa2a36652d66f66db17611404777c069',1,'Loot::EMMItem']]],
   ['getpreparedasset',['GetPreparedAsset',['../class_loot_1_1_core_1_1_mod_content_1_1_graphics_mod_content.html#a422f1d121a48a79b8a8808278a2cd8a8',1,'Loot::Core::ModContent::GraphicsModContent']]],
   ['getpreparedglowmask',['GetPreparedGlowmask',['../class_loot_1_1_core_1_1_mod_content_1_1_graphics_mod_content.html#a3dca8614ee84739c49f9c449b807692b',1,'Loot::Core::ModContent::GraphicsModContent']]],

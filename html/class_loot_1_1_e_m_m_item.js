@@ -4,6 +4,7 @@ var class_loot_1_1_e_m_m_item =
     [ "GetActivePool", "class_loot_1_1_e_m_m_item.html#a0dc962c1a313ea02e94a891920703963", null ],
     [ "GetItemInfo", "class_loot_1_1_e_m_m_item.html#a7788b69f28ba9809f56f6ebc6c7a7b7f", null ],
     [ "GetPrefixNormString", "class_loot_1_1_e_m_m_item.html#aaa2a36652d66f66db17611404777c069", null ],
+    [ "InvalidateRolls", "class_loot_1_1_e_m_m_item.html#a3c96b9a7d32d86f9e9cfe88dcbdcf22a", null ],
     [ "Load", "class_loot_1_1_e_m_m_item.html#a024154a5db4ea5e828639527da0e5543", null ],
     [ "ModifyTooltips", "class_loot_1_1_e_m_m_item.html#a26adbebd59ab872c21d077b0b42904aa", null ],
     [ "NeedsSaving", "class_loot_1_1_e_m_m_item.html#aa936e09aa7f7230804ebe5b4cca477c4", null ],
@@ -20,6 +21,7 @@ var class_loot_1_1_e_m_m_item =
     [ "InstancePerEntity", "class_loot_1_1_e_m_m_item.html#a6672ede9c3208712a10ce4b266d95a15", null ],
     [ "JustTinkerModified", "class_loot_1_1_e_m_m_item.html#aeedf28285dc4dfa1f1e8af141119a5af", null ],
     [ "ModifierPool", "class_loot_1_1_e_m_m_item.html#a8db5514ead52457b0ae97cb3ea291484", null ],
+    [ "ModifierRarity", "class_loot_1_1_e_m_m_item.html#acfc13ea67da815a68dfc3e45bca08df8", null ],
     [ "SAVE_VERSION", "class_loot_1_1_e_m_m_item.html#a1f63c47cf8556dfe65917f30469cfc2b", null ],
     [ "SealedModifiers", "class_loot_1_1_e_m_m_item.html#aedce25fd48ae8bc38a8451f86b92927a", null ],
     [ "SlottedInCubeUI", "class_loot_1_1_e_m_m_item.html#a1819ece591debe2c1ff47f6eecb9cd08", null ]

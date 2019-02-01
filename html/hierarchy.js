@@ -115,10 +115,10 @@ var hierarchy =
       ] ],
       [ "Loot.Core.System.Modifier.ModifierRarity", "class_loot_1_1_core_1_1_system_1_1_modifier_1_1_modifier_rarity.html", [
         [ "Loot.Rarities.CommonRarity", "class_loot_1_1_rarities_1_1_common_rarity.html", null ],
+        [ "Loot.Rarities.EpicRarity", "class_loot_1_1_rarities_1_1_epic_rarity.html", null ],
         [ "Loot.Rarities.LegendaryRarity", "class_loot_1_1_rarities_1_1_legendary_rarity.html", null ],
         [ "Loot.Rarities.RareRarity", "class_loot_1_1_rarities_1_1_rare_rarity.html", null ],
-        [ "Loot.Rarities.TranscendentRarity", "class_loot_1_1_rarities_1_1_transcendent_rarity.html", null ],
-        [ "Loot.Rarities.UncommonRarity", "class_loot_1_1_rarities_1_1_uncommon_rarity.html", null ]
+        [ "Loot.Rarities.TranscendentRarity", "class_loot_1_1_rarities_1_1_transcendent_rarity.html", null ]
       ] ]
     ] ],
     [ "LootTests.IFakeMod", "interface_loot_tests_1_1_i_fake_mod.html", [

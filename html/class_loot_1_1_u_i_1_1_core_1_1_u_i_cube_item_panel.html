@@ -147,8 +147,8 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a737b1e62b72a71e4ed6974e39de94fea"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5c0bd0453b7e1a532159c99e50cf61b8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_loot_1_1_u_i_1_1_core_1_1_u_i_cube_item_panel.html#a5c0bd0453b7e1a532159c99e50cf61b8">ChangeItem</a> (int type)</td></tr>
 <tr class="separator:a5c0bd0453b7e1a532159c99e50cf61b8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:accbce0e7159a72befd77f05ee3f36136"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_loot_1_1_u_i_1_1_core_1_1_u_i_cube_item_panel.html#accbce0e7159a72befd77f05ee3f36136">InteractionLogic</a> (<a class="el" href="class_loot_1_1_core_1_1_cubes_1_1_item_roll_properties.html">ItemRollProperties</a> itemRollProperties)</td></tr>
-<tr class="separator:accbce0e7159a72befd77f05ee3f36136"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a263c26a2a138651d908c338a3b1c2f8e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_loot_1_1_u_i_1_1_core_1_1_u_i_cube_item_panel.html#a263c26a2a138651d908c338a3b1c2f8e">InteractionLogic</a> (Item <a class="el" href="class_loot_1_1_u_i_1_1_core_1_1_u_i_item_panel.html#a58ea7401b3b394c9875f349fe4118003">item</a>, <a class="el" href="class_loot_1_1_core_1_1_cubes_1_1_item_roll_properties.html">ItemRollProperties</a> itemRollProperties)</td></tr>
+<tr class="separator:a263c26a2a138651d908c338a3b1c2f8e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac00f61e7416685163150f32d4160f06a"><td class="memItemLeft" align="right" valign="top">override void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_loot_1_1_u_i_1_1_core_1_1_u_i_cube_item_panel.html#ac00f61e7416685163150f32d4160f06a">PostOnClick</a> (UIMouseEvent evt, UIElement e)</td></tr>
 <tr class="separator:ac00f61e7416685163150f32d4160f06a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8fb5d9deb444541ac0ec70dd97fbc9cd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_loot_1_1_u_i_1_1_core_1_1_u_i_cube_item_panel.html#a8fb5d9deb444541ac0ec70dd97fbc9cd">RecalculateStack</a> ()</td></tr>
@@ -308,16 +308,26 @@ Additional Inherited Members</h2></td></tr>
 </div><!-- fragment -->
 </div>
 </div>
-<a class="anchor" id="accbce0e7159a72befd77f05ee3f36136"></a>
+<a class="anchor" id="a263c26a2a138651d908c338a3b1c2f8e"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
           <td class="memname">void Loot.UI.Core.UICubeItemPanel.InteractionLogic </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="class_loot_1_1_core_1_1_cubes_1_1_item_roll_properties.html">ItemRollProperties</a>&#160;</td>
-          <td class="paramname"><em>itemRollProperties</em></td><td>)</td>
+          <td class="paramtype">Item&#160;</td>
+          <td class="paramname"><em>item</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype"><a class="el" href="class_loot_1_1_core_1_1_cubes_1_1_item_roll_properties.html">ItemRollProperties</a>&#160;</td>
+          <td class="paramname"><em>itemRollProperties</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -325,7 +335,7 @@ Additional Inherited Members</h2></td></tr>
 <p>Definition at line <a class="el" href="_u_i_cube_item_panel_8cs_source.html#l00038">38</a> of file <a class="el" href="_u_i_cube_item_panel_8cs_source.html">UICubeItemPanel.cs</a>.</p>
 
 <p>Referenced by <a class="el" href="_cube_reroll_u_i_8cs_source.html#l00212">Loot.UI.Rerolling.CubeRerollUI.OnRerollClick()</a>.</p>
-<div class="fragment"><div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;        {</div><div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;            (<a class="code" href="class_loot_1_1_u_i_1_1_core_1_1_u_i_item_panel.html#a58ea7401b3b394c9875f349fe4118003">item</a>.modItem as <a class="code" href="class_loot_1_1_core_1_1_cubes_1_1_rerolling_cube.html">RerollingCube</a>)?.SetRollLogic(itemRollProperties);</div><div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        }</div><div class="ttc" id="class_loot_1_1_core_1_1_cubes_1_1_rerolling_cube_html"><div class="ttname"><a href="class_loot_1_1_core_1_1_cubes_1_1_rerolling_cube.html">Loot.Core.Cubes.RerollingCube</a></div><div class="ttdoc">Defines a rerolling cube that opens the rerolling UI on right click The method M:SetRollLogic can be ...</div><div class="ttdef"><b>Definition:</b> <a href="_rerolling_cube_8cs_source.html#l00010">RerollingCube.cs:10</a></div></div>
+<div class="fragment"><div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;        {</div><div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;            (this.<a class="code" href="class_loot_1_1_u_i_1_1_core_1_1_u_i_item_panel.html#a58ea7401b3b394c9875f349fe4118003">item</a>.modItem as <a class="code" href="class_loot_1_1_core_1_1_cubes_1_1_rerolling_cube.html">RerollingCube</a>)?.SetRollLogic(<a class="code" href="class_loot_1_1_u_i_1_1_core_1_1_u_i_item_panel.html#a58ea7401b3b394c9875f349fe4118003">item</a>, itemRollProperties);</div><div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        }</div><div class="ttc" id="class_loot_1_1_core_1_1_cubes_1_1_rerolling_cube_html"><div class="ttname"><a href="class_loot_1_1_core_1_1_cubes_1_1_rerolling_cube.html">Loot.Core.Cubes.RerollingCube</a></div><div class="ttdoc">Defines a rerolling cube that opens the rerolling UI on right click The method M:SetRollLogic can be ...</div><div class="ttdef"><b>Definition:</b> <a href="_rerolling_cube_8cs_source.html#l00010">RerollingCube.cs:10</a></div></div>
 <div class="ttc" id="class_loot_1_1_u_i_1_1_core_1_1_u_i_item_panel_html_a58ea7401b3b394c9875f349fe4118003"><div class="ttname"><a href="class_loot_1_1_u_i_1_1_core_1_1_u_i_item_panel.html#a58ea7401b3b394c9875f349fe4118003">Loot.UI.Core.UIItemPanel.item</a></div><div class="ttdeci">Item item</div><div class="ttdef"><b>Definition:</b> <a href="_u_i_item_panel_8cs_source.html#l00026">UIItemPanel.cs:26</a></div></div>
 </div><!-- fragment -->
 <p><div id="dynsection-3" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
@@ -333,8 +343,8 @@ Additional Inherited Members</h2></td></tr>
 <div id="dynsection-3-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-3-content" class="dyncontent" style="display:none;">
-<div class="center"><img src="class_loot_1_1_u_i_1_1_core_1_1_u_i_cube_item_panel_accbce0e7159a72befd77f05ee3f36136_icgraph.png" border="0" usemap="#class_loot_1_1_u_i_1_1_core_1_1_u_i_cube_item_panel_accbce0e7159a72befd77f05ee3f36136_icgraph" alt=""/></div>
-<map name="class_loot_1_1_u_i_1_1_core_1_1_u_i_cube_item_panel_accbce0e7159a72befd77f05ee3f36136_icgraph" id="class_loot_1_1_u_i_1_1_core_1_1_u_i_cube_item_panel_accbce0e7159a72befd77f05ee3f36136_icgraph">
+<div class="center"><img src="class_loot_1_1_u_i_1_1_core_1_1_u_i_cube_item_panel_a263c26a2a138651d908c338a3b1c2f8e_icgraph.png" border="0" usemap="#class_loot_1_1_u_i_1_1_core_1_1_u_i_cube_item_panel_a263c26a2a138651d908c338a3b1c2f8e_icgraph" alt=""/></div>
+<map name="class_loot_1_1_u_i_1_1_core_1_1_u_i_cube_item_panel_a263c26a2a138651d908c338a3b1c2f8e_icgraph" id="class_loot_1_1_u_i_1_1_core_1_1_u_i_cube_item_panel_a263c26a2a138651d908c338a3b1c2f8e_icgraph">
 <area shape="rect" id="node2" href="class_loot_1_1_u_i_1_1_rerolling_1_1_cube_reroll_u_i.html#a765883df3a5d1cb840b735be1d289cc2" title="Loot.UI.Rerolling.CubeReroll\lUI.OnRerollClick" alt="" coords="264,5,453,46"/>
 </map>
 </div>
@@ -399,7 +409,7 @@ Additional Inherited Members</h2></td></tr>
 <p>Definition at line <a class="el" href="_u_i_cube_item_panel_8cs_source.html#l00043">43</a> of file <a class="el" href="_u_i_cube_item_panel_8cs_source.html">UICubeItemPanel.cs</a>.</p>
 
 <p>Referenced by <a class="el" href="_cube_reroll_u_i_8cs_source.html#l00212">Loot.UI.Rerolling.CubeRerollUI.OnRerollClick()</a>.</p>
-<div class="fragment"><div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        {</div><div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;            <a class="code" href="class_loot_1_1_u_i_1_1_core_1_1_u_i_item_panel.html#a58ea7401b3b394c9875f349fe4118003">item</a>.stack = Main.LocalPlayer.inventory.CountItemStack(<a class="code" href="class_loot_1_1_u_i_1_1_core_1_1_u_i_item_panel.html#a58ea7401b3b394c9875f349fe4118003">item</a>.type, <span class="keyword">true</span>);</div><div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;            <a class="code" href="class_loot_1_1_u_i_1_1_core_1_1_u_i_item_panel.html#a58ea7401b3b394c9875f349fe4118003">item</a>.stack = (int) MathHelper.Clamp(<a class="code" href="class_loot_1_1_u_i_1_1_core_1_1_u_i_item_panel.html#a58ea7401b3b394c9875f349fe4118003">item</a>.stack, 0f, 999f);</div><div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        }</div><div class="ttc" id="class_loot_1_1_u_i_1_1_core_1_1_u_i_item_panel_html_a58ea7401b3b394c9875f349fe4118003"><div class="ttname"><a href="class_loot_1_1_u_i_1_1_core_1_1_u_i_item_panel.html#a58ea7401b3b394c9875f349fe4118003">Loot.UI.Core.UIItemPanel.item</a></div><div class="ttdeci">Item item</div><div class="ttdef"><b>Definition:</b> <a href="_u_i_item_panel_8cs_source.html#l00026">UIItemPanel.cs:26</a></div></div>
+<div class="fragment"><div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        {</div><div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;            <a class="code" href="class_loot_1_1_u_i_1_1_core_1_1_u_i_item_panel.html#a58ea7401b3b394c9875f349fe4118003">item</a>.stack = Main.LocalPlayer.inventory.CountItemStack(<a class="code" href="class_loot_1_1_u_i_1_1_core_1_1_u_i_item_panel.html#a58ea7401b3b394c9875f349fe4118003">item</a>.type, <span class="keyword">true</span>);</div><div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;            <a class="code" href="class_loot_1_1_u_i_1_1_core_1_1_u_i_item_panel.html#a58ea7401b3b394c9875f349fe4118003">item</a>.stack = (int)MathHelper.Clamp(<a class="code" href="class_loot_1_1_u_i_1_1_core_1_1_u_i_item_panel.html#a58ea7401b3b394c9875f349fe4118003">item</a>.stack, 0f, 999f);</div><div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        }</div><div class="ttc" id="class_loot_1_1_u_i_1_1_core_1_1_u_i_item_panel_html_a58ea7401b3b394c9875f349fe4118003"><div class="ttname"><a href="class_loot_1_1_u_i_1_1_core_1_1_u_i_item_panel.html#a58ea7401b3b394c9875f349fe4118003">Loot.UI.Core.UIItemPanel.item</a></div><div class="ttdeci">Item item</div><div class="ttdef"><b>Definition:</b> <a href="_u_i_item_panel_8cs_source.html#l00026">UIItemPanel.cs:26</a></div></div>
 </div><!-- fragment -->
 <p><div id="dynsection-4" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-4-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
@@ -421,7 +431,7 @@ Additional Inherited Members</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespace_loot.html">Loot</a></li><li class="navelem"><a class="el" href="namespace_loot_1_1_u_i.html">UI</a></li><li class="navelem"><a class="el" href="namespace_loot_1_1_u_i_1_1_core.html">Core</a></li><li class="navelem"><a class="el" href="class_loot_1_1_u_i_1_1_core_1_1_u_i_cube_item_panel.html">UICubeItemPanel</a></li>
-    <li class="footer">Generated on Wed Jan 23 2019 22:18:20 for Even More Modifiers by
+    <li class="footer">Generated on Fri Feb 1 2019 22:34:44 for Even More Modifiers by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.11 </li>
   </ul>

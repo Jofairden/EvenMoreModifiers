@@ -113,6 +113,7 @@ $(document).ready(function(){initNavTree('class_loot_1_1_core_1_1_system_1_1_mod
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pub-attribs">Public Attributes</a> &#124;
 <a href="#properties">Properties</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="class_loot_1_1_core_1_1_system_1_1_modifier_1_1_modifier_rarity-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">Loot.Core.System.Modifier.ModifierRarity Class Reference</div>  </div>
@@ -128,11 +129,11 @@ $(document).ready(function(){initNavTree('class_loot_1_1_core_1_1_system_1_1_mod
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="class_loot_1_1_core_1_1_system_1_1_modifier_1_1_modifier_rarity__inherit__graph.png" border="0" usemap="#_loot_8_core_8_system_8_modifier_8_modifier_rarity_inherit__map" alt="Inheritance graph"/></div>
 <map name="_loot_8_core_8_system_8_modifier_8_modifier_rarity_inherit__map" id="_loot_8_core_8_system_8_modifier_8_modifier_rarity_inherit__map">
-<area shape="rect" id="node5" href="class_loot_1_1_rarities_1_1_common_rarity.html" title="Loot.Rarities.CommonRarity" alt="" coords="453,5,641,32"/>
-<area shape="rect" id="node6" href="class_loot_1_1_rarities_1_1_legendary_rarity.html" title="Loot.Rarities.LegendaryRarity" alt="" coords="449,56,644,83"/>
-<area shape="rect" id="node7" href="class_loot_1_1_rarities_1_1_rare_rarity.html" title="Loot.Rarities.RareRarity" alt="" coords="465,107,628,133"/>
-<area shape="rect" id="node8" href="class_loot_1_1_rarities_1_1_transcendent_rarity.html" title="Loot.Rarities.Transcendent\lRarity" alt="" coords="457,158,636,199"/>
-<area shape="rect" id="node9" href="class_loot_1_1_rarities_1_1_uncommon_rarity.html" title="Loot.Rarities.UncommonRarity" alt="" coords="445,224,648,251"/>
+<area shape="rect" id="node5" href="class_loot_1_1_rarities_1_1_common_rarity.html" title="Describes the common rarity, which every item starts with " alt="" coords="449,5,637,32"/>
+<area shape="rect" id="node6" href="class_loot_1_1_rarities_1_1_epic_rarity.html" title="The epic rarity, before legendary but after rare " alt="" coords="462,56,623,83"/>
+<area shape="rect" id="node7" href="class_loot_1_1_rarities_1_1_legendary_rarity.html" title="The legendary rarity, before transcendent but after epic " alt="" coords="445,107,640,133"/>
+<area shape="rect" id="node8" href="class_loot_1_1_rarities_1_1_rare_rarity.html" title="The rare rarity, before epic but after common " alt="" coords="461,157,624,184"/>
+<area shape="rect" id="node9" href="class_loot_1_1_rarities_1_1_transcendent_rarity.html" title="The Transcendent rarity, the most powerful rarity " alt="" coords="453,209,632,250"/>
 <area shape="rect" id="node2" href="interface_loot_1_1_core_1_1_system_1_1_core_1_1_i_loadable_content.html" title="ILoadableContent" alt="" coords="23,56,147,83"/>
 <area shape="rect" id="node4" href="class_i_cloneable.html" title="ICloneable" alt="" coords="43,157,127,184"/>
 </map>
@@ -158,8 +159,6 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:ac3b72c99ba4074b49b3b13df52c36071"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_loot_1_1_core_1_1_system_1_1_modifier_1_1_modifier_rarity.html#ac3b72c99ba4074b49b3b13df52c36071">Load</a> (Item item, TagCompound tag)</td></tr>
 <tr class="memdesc:ac3b72c99ba4074b49b3b13df52c36071"><td class="mdescLeft">&#160;</td><td class="mdescRight">Allows modder to do custom loading here Use the given TC to pull data you saved using <a class="el" href="class_loot_1_1_core_1_1_system_1_1_modifier_1_1_modifier_rarity.html#a822cb210b4d6495452e28d376d0cf2a2" title="Allows modder to do custom saving here Use the given TC to put data you want to save, which can be loaded using Load(Item,TagCompound) ">Save(Item,TagCompound)</a>  <a href="#ac3b72c99ba4074b49b3b13df52c36071">More...</a><br /></td></tr>
 <tr class="separator:ac3b72c99ba4074b49b3b13df52c36071"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afdd78db6c24db9b9be267fff96dbfe5f"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_loot_1_1_core_1_1_system_1_1_modifier_1_1_modifier_rarity.html#afdd78db6c24db9b9be267fff96dbfe5f">MatchesRequirements</a> (<a class="el" href="class_loot_1_1_core_1_1_system_1_1_modifier_1_1_modifier_pool.html">ModifierPool</a> modifierPool)</td></tr>
-<tr class="separator:afdd78db6c24db9b9be267fff96dbfe5f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acb5093779cfa3587e5723d869f94a7a2"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_loot_1_1_core_1_1_system_1_1_modifier_1_1_modifier_rarity.html#acb5093779cfa3587e5723d869f94a7a2">NetReceive</a> (Item item, BinaryReader reader)</td></tr>
 <tr class="memdesc:acb5093779cfa3587e5723d869f94a7a2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Allows the modder to do custom NetReceive  <a href="#acb5093779cfa3587e5723d869f94a7a2">More...</a><br /></td></tr>
 <tr class="separator:acb5093779cfa3587e5723d869f94a7a2"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -172,6 +171,15 @@ Public Member Functions</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
+<tr class="memitem:a403a53f74d57a5d60deb592b3d9dba59"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="class_loot_1_1_core_1_1_system_1_1_modifier_1_1_modifier_rarity.html#a9cb67b80b60aee99744e8d8514330fbc">Type</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_loot_1_1_core_1_1_system_1_1_modifier_1_1_modifier_rarity.html#a403a53f74d57a5d60deb592b3d9dba59">Downgrade</a> =&gt; null</td></tr>
+<tr class="separator:a403a53f74d57a5d60deb592b3d9dba59"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6807c8ecc68c23b6106faef2cc346388"><td class="memItemLeft" align="right" valign="top">virtual float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_loot_1_1_core_1_1_system_1_1_modifier_1_1_modifier_rarity.html#a6807c8ecc68c23b6106faef2cc346388">DowngradeChance</a> =&gt; null</td></tr>
+<tr class="memdesc:a6807c8ecc68c23b6106faef2cc346388"><td class="mdescLeft">&#160;</td><td class="mdescRight">Describes the chance of this rarity downgrading to the previous tier If null, is the same as 0f (no chance)  <a href="#a6807c8ecc68c23b6106faef2cc346388">More...</a><br /></td></tr>
+<tr class="separator:a6807c8ecc68c23b6106faef2cc346388"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a255c22881129c914fecc8d95076cd294"><td class="memItemLeft" align="right" valign="top">virtual float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_loot_1_1_core_1_1_system_1_1_modifier_1_1_modifier_rarity.html#a255c22881129c914fecc8d95076cd294">ExtraLuck</a> =&gt; 0f</td></tr>
+<tr class="separator:a255c22881129c914fecc8d95076cd294"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afb97b0964feb121e8eb35b410397b39d"><td class="memItemLeft" align="right" valign="top">virtual float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_loot_1_1_core_1_1_system_1_1_modifier_1_1_modifier_rarity.html#afb97b0964feb121e8eb35b410397b39d">ExtraMagnitudePower</a> =&gt; 0f</td></tr>
+<tr class="separator:afb97b0964feb121e8eb35b410397b39d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a14a156190d67fd2744f03ce36ebed59a"><td class="memItemLeft" align="right" valign="top">virtual string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_loot_1_1_core_1_1_system_1_1_modifier_1_1_modifier_rarity.html#a14a156190d67fd2744f03ce36ebed59a">ItemPrefix</a> =&gt; null</td></tr>
 <tr class="separator:a14a156190d67fd2744f03ce36ebed59a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6c0393769d09edd9e5ec15d10e091182"><td class="memItemLeft" align="right" valign="top">virtual string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_loot_1_1_core_1_1_system_1_1_modifier_1_1_modifier_rarity.html#a6c0393769d09edd9e5ec15d10e091182">ItemSuffix</a> =&gt; null</td></tr>
@@ -182,6 +190,11 @@ Public Attributes</h2></td></tr>
 <tr class="separator:aa1bbc36fa2a32c52db288aae3e89ed7d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7463121f94b54f1a1e49928040c24866"><td class="memItemLeft" align="right" valign="top">virtual string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_loot_1_1_core_1_1_system_1_1_modifier_1_1_modifier_rarity.html#a7463121f94b54f1a1e49928040c24866">RarityName</a> =&gt; <a class="el" href="class_loot_1_1_core_1_1_system_1_1_modifier_1_1_modifier_rarity.html#a3b37e3ed1826606c648e852bcc9e5345">Name</a></td></tr>
 <tr class="separator:a7463121f94b54f1a1e49928040c24866"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa877e7288ef7367ea118a6c8f709d2fd"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="class_loot_1_1_core_1_1_system_1_1_modifier_1_1_modifier_rarity.html#a9cb67b80b60aee99744e8d8514330fbc">Type</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_loot_1_1_core_1_1_system_1_1_modifier_1_1_modifier_rarity.html#aa877e7288ef7367ea118a6c8f709d2fd">Upgrade</a> =&gt; null</td></tr>
+<tr class="separator:aa877e7288ef7367ea118a6c8f709d2fd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a21de2acbb9d4572cf9567c7d9fa0e481"><td class="memItemLeft" align="right" valign="top">virtual float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_loot_1_1_core_1_1_system_1_1_modifier_1_1_modifier_rarity.html#a21de2acbb9d4572cf9567c7d9fa0e481">UpgradeChance</a> =&gt; null</td></tr>
+<tr class="memdesc:a21de2acbb9d4572cf9567c7d9fa0e481"><td class="mdescLeft">&#160;</td><td class="mdescRight">Describes the chance of this rarity upgrading to the next tier If null, is the same as 0f (no chance)  <a href="#a21de2acbb9d4572cf9567c7d9fa0e481">More...</a><br /></td></tr>
+<tr class="separator:a21de2acbb9d4572cf9567c7d9fa0e481"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="properties"></a>
 Properties</h2></td></tr>
@@ -191,8 +204,6 @@ Properties</h2></td></tr>
 <tr class="separator:a5edbfe0c69dc27cf64681055112a385f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a688f22b9dae467ae417a4417a8af3bc1"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_mod.html">Mod</a> ILoadableContentSetter.&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_loot_1_1_core_1_1_system_1_1_modifier_1_1_modifier_rarity.html#a688f22b9dae467ae417a4417a8af3bc1">Mod</a><code> [set]</code></td></tr>
 <tr class="separator:a688f22b9dae467ae417a4417a8af3bc1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a271eaca061a6c4a70a948f232628e562"><td class="memItemLeft" align="right" valign="top">abstract float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_loot_1_1_core_1_1_system_1_1_modifier_1_1_modifier_rarity.html#a271eaca061a6c4a70a948f232628e562">RequiredRarityLevel</a><code> [get]</code></td></tr>
-<tr class="separator:a271eaca061a6c4a70a948f232628e562"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9cb67b80b60aee99744e8d8514330fbc"><td class="memItemLeft" align="right" valign="top">uint&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_loot_1_1_core_1_1_system_1_1_modifier_1_1_modifier_rarity.html#a9cb67b80b60aee99744e8d8514330fbc">Type</a><code> [get, set]</code></td></tr>
 <tr class="separator:a9cb67b80b60aee99744e8d8514330fbc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9668dbf2930b847fcdb43bdc1fb2a7f3"><td class="memItemLeft" align="right" valign="top">uint ILoadableContentSetter.&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_loot_1_1_core_1_1_system_1_1_modifier_1_1_modifier_rarity.html#a9668dbf2930b847fcdb43bdc1fb2a7f3">Type</a><code> [set]</code></td></tr>
@@ -204,6 +215,11 @@ Properties</h2></td></tr>
 <tr class="separator:ace1fc09ed2857a3852ae4947077e8984 inherit properties_interface_loot_1_1_core_1_1_system_1_1_core_1_1_i_loadable_content"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1fd8c05d59619bb5b59a93649909a468 inherit properties_interface_loot_1_1_core_1_1_system_1_1_core_1_1_i_loadable_content"><td class="memItemLeft" align="right" valign="top">uint&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_loot_1_1_core_1_1_system_1_1_core_1_1_i_loadable_content.html#a1fd8c05d59619bb5b59a93649909a468">Type</a><code> [get]</code></td></tr>
 <tr class="separator:a1fd8c05d59619bb5b59a93649909a468 inherit properties_interface_loot_1_1_core_1_1_system_1_1_core_1_1_i_loadable_content"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:ac9779ecc458d4d43c2ccea480a055773"><td class="memItemLeft" align="right" valign="top">const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_loot_1_1_core_1_1_system_1_1_modifier_1_1_modifier_rarity.html#ac9779ecc458d4d43c2ccea480a055773">SAVE_VERSION</a> = 2</td></tr>
+<tr class="separator:ac9779ecc458d4d43c2ccea480a055773"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Defines the rarity of a modifier </p>
@@ -232,10 +248,10 @@ Properties</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_modifier_rarity_8cs_source.html#l00044">44</a> of file <a class="el" href="_modifier_rarity_8cs_source.html">ModifierRarity.cs</a>.</p>
+<p>Definition at line <a class="el" href="_modifier_rarity_8cs_source.html#l00059">59</a> of file <a class="el" href="_modifier_rarity_8cs_source.html">ModifierRarity.cs</a>.</p>
 
 <p>Referenced by <a class="el" href="_mod_utils_8cs_source.html#l00019">Loot.Ext.ModUtils.GetModifierRarity()</a>.</p>
-<div class="fragment"><div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        {</div><div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        }</div></div><!-- fragment -->
+<div class="fragment"><div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;        {</div><div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        }</div></div><!-- fragment -->
 <p><div id="dynsection-2" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-2-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
 <div id="dynsection-2-summary" class="dynsummary" style="display:block;">
@@ -263,12 +279,12 @@ Properties</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_modifier_rarity_8cs_source.html#l00048">48</a> of file <a class="el" href="_modifier_rarity_8cs_source.html">ModifierRarity.cs</a>.</p>
+<p>Definition at line <a class="el" href="_modifier_rarity_8cs_source.html#l00063">63</a> of file <a class="el" href="_modifier_rarity_8cs_source.html">ModifierRarity.cs</a>.</p>
 
-<p>References <a class="el" href="_modifier_rarity_8cs_source.html#l00017">Loot.Core.System.Modifier.ModifierRarity.Mod</a>, and <a class="el" href="_modifier_rarity_8cs_source.html#l00024">Loot.Core.System.Modifier.ModifierRarity.Type</a>.</p>
-<div class="fragment"><div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        {</div><div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;            <a class="code" href="class_modifier_rarity.html">ModifierRarity</a> clone = (<a class="code" href="class_modifier_rarity.html">ModifierRarity</a>) MemberwiseClone();</div><div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;            clone.Mod = <a class="code" href="class_loot_1_1_core_1_1_system_1_1_modifier_1_1_modifier_rarity.html#a5edbfe0c69dc27cf64681055112a385f">Mod</a>;</div><div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;            clone.Type = <a class="code" href="class_loot_1_1_core_1_1_system_1_1_modifier_1_1_modifier_rarity.html#a9cb67b80b60aee99744e8d8514330fbc">Type</a>;</div><div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;            <a class="code" href="class_loot_1_1_core_1_1_system_1_1_modifier_1_1_modifier_rarity.html#ab07596319509adc166a4052e73013f09">Clone</a>(ref clone);</div><div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;            <span class="keywordflow">return</span> clone;</div><div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        }</div><div class="ttc" id="class_loot_1_1_core_1_1_system_1_1_modifier_1_1_modifier_rarity_html_a5edbfe0c69dc27cf64681055112a385f"><div class="ttname"><a href="class_loot_1_1_core_1_1_system_1_1_modifier_1_1_modifier_rarity.html#a5edbfe0c69dc27cf64681055112a385f">Loot.Core.System.Modifier.ModifierRarity.Mod</a></div><div class="ttdeci">Mod Mod</div><div class="ttdef"><b>Definition:</b> <a href="_modifier_rarity_8cs_source.html#l00017">ModifierRarity.cs:17</a></div></div>
-<div class="ttc" id="class_loot_1_1_core_1_1_system_1_1_modifier_1_1_modifier_rarity_html_ab07596319509adc166a4052e73013f09"><div class="ttname"><a href="class_loot_1_1_core_1_1_system_1_1_modifier_1_1_modifier_rarity.html#ab07596319509adc166a4052e73013f09">Loot.Core.System.Modifier.ModifierRarity.Clone</a></div><div class="ttdeci">object Clone()</div><div class="ttdef"><b>Definition:</b> <a href="_modifier_rarity_8cs_source.html#l00048">ModifierRarity.cs:48</a></div></div>
-<div class="ttc" id="class_loot_1_1_core_1_1_system_1_1_modifier_1_1_modifier_rarity_html_a9cb67b80b60aee99744e8d8514330fbc"><div class="ttname"><a href="class_loot_1_1_core_1_1_system_1_1_modifier_1_1_modifier_rarity.html#a9cb67b80b60aee99744e8d8514330fbc">Loot.Core.System.Modifier.ModifierRarity.Type</a></div><div class="ttdeci">uint Type</div><div class="ttdef"><b>Definition:</b> <a href="_modifier_rarity_8cs_source.html#l00024">ModifierRarity.cs:24</a></div></div>
+<p>References <a class="el" href="_modifier_rarity_8cs_source.html#l00019">Loot.Core.System.Modifier.ModifierRarity.Mod</a>, and <a class="el" href="_modifier_rarity_8cs_source.html#l00026">Loot.Core.System.Modifier.ModifierRarity.Type</a>.</p>
+<div class="fragment"><div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;        {</div><div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;            <a class="code" href="class_modifier_rarity.html">ModifierRarity</a> clone = (<a class="code" href="class_modifier_rarity.html">ModifierRarity</a>)MemberwiseClone();</div><div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;            clone.Mod = <a class="code" href="class_loot_1_1_core_1_1_system_1_1_modifier_1_1_modifier_rarity.html#a5edbfe0c69dc27cf64681055112a385f">Mod</a>;</div><div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;            clone.Type = <a class="code" href="class_loot_1_1_core_1_1_system_1_1_modifier_1_1_modifier_rarity.html#a9cb67b80b60aee99744e8d8514330fbc">Type</a>;</div><div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;            <a class="code" href="class_loot_1_1_core_1_1_system_1_1_modifier_1_1_modifier_rarity.html#ab07596319509adc166a4052e73013f09">Clone</a>(ref clone);</div><div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;            <span class="keywordflow">return</span> clone;</div><div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;        }</div><div class="ttc" id="class_loot_1_1_core_1_1_system_1_1_modifier_1_1_modifier_rarity_html_a5edbfe0c69dc27cf64681055112a385f"><div class="ttname"><a href="class_loot_1_1_core_1_1_system_1_1_modifier_1_1_modifier_rarity.html#a5edbfe0c69dc27cf64681055112a385f">Loot.Core.System.Modifier.ModifierRarity.Mod</a></div><div class="ttdeci">Mod Mod</div><div class="ttdef"><b>Definition:</b> <a href="_modifier_rarity_8cs_source.html#l00019">ModifierRarity.cs:19</a></div></div>
+<div class="ttc" id="class_loot_1_1_core_1_1_system_1_1_modifier_1_1_modifier_rarity_html_ab07596319509adc166a4052e73013f09"><div class="ttname"><a href="class_loot_1_1_core_1_1_system_1_1_modifier_1_1_modifier_rarity.html#ab07596319509adc166a4052e73013f09">Loot.Core.System.Modifier.ModifierRarity.Clone</a></div><div class="ttdeci">object Clone()</div><div class="ttdef"><b>Definition:</b> <a href="_modifier_rarity_8cs_source.html#l00063">ModifierRarity.cs:63</a></div></div>
+<div class="ttc" id="class_loot_1_1_core_1_1_system_1_1_modifier_1_1_modifier_rarity_html_a9cb67b80b60aee99744e8d8514330fbc"><div class="ttname"><a href="class_loot_1_1_core_1_1_system_1_1_modifier_1_1_modifier_rarity.html#a9cb67b80b60aee99744e8d8514330fbc">Loot.Core.System.Modifier.ModifierRarity.Type</a></div><div class="ttdeci">uint Type</div><div class="ttdef"><b>Definition:</b> <a href="_modifier_rarity_8cs_source.html#l00026">ModifierRarity.cs:26</a></div></div>
 <div class="ttc" id="class_modifier_rarity_html"><div class="ttname"><a href="class_modifier_rarity.html">ModifierRarity</a></div></div>
 </div><!-- fragment -->
 </div>
@@ -307,12 +323,12 @@ Properties</h2></td></tr>
 
 <p>Allows modder to do custom loading here Use the given TC to pull data you saved using <a class="el" href="class_loot_1_1_core_1_1_system_1_1_modifier_1_1_modifier_rarity.html#a822cb210b4d6495452e28d376d0cf2a2" title="Allows modder to do custom saving here Use the given TC to put data you want to save, which can be loaded using Load(Item,TagCompound) ">Save(Item,TagCompound)</a> </p>
 
-<p>Definition at line <a class="el" href="_modifier_rarity_8cs_source.html#l00100">100</a> of file <a class="el" href="_modifier_rarity_8cs_source.html">ModifierRarity.cs</a>.</p>
+<p>Definition at line <a class="el" href="_modifier_rarity_8cs_source.html#l00115">115</a> of file <a class="el" href="_modifier_rarity_8cs_source.html">ModifierRarity.cs</a>.</p>
 
-<p>References <a class="el" href="_modifier_rarity_8cs_source.html#l00100">Loot.Core.System.Modifier.ModifierRarity.Load()</a>, and <a class="el" href="_content_loader_8cs_source.html#l00013">Loot.Core.System.Loaders.ContentLoader.ModifierRarity</a>.</p>
+<p>References <a class="el" href="_modifier_rarity_8cs_source.html#l00115">Loot.Core.System.Modifier.ModifierRarity.Load()</a>, and <a class="el" href="_content_loader_8cs_source.html#l00013">Loot.Core.System.Loaders.ContentLoader.ModifierRarity</a>.</p>
 
-<p>Referenced by <a class="el" href="_modifier_rarity_8cs_source.html#l00100">Loot.Core.System.Modifier.ModifierRarity.Load()</a>.</p>
-<div class="fragment"><div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;        {</div><div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;        }</div></div><!-- fragment -->
+<p>Referenced by <a class="el" href="_modifier_rarity_8cs_source.html#l00115">Loot.Core.System.Modifier.ModifierRarity.Load()</a>.</p>
+<div class="fragment"><div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;        {</div><div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;        }</div></div><!-- fragment -->
 <p><div id="dynsection-3" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-3-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
 <div id="dynsection-3-summary" class="dynsummary" style="display:block;">
@@ -334,30 +350,6 @@ Properties</h2></td></tr>
 </map>
 </div>
 </p>
-
-</div>
-</div>
-<a class="anchor" id="afdd78db6c24db9b9be267fff96dbfe5f"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">virtual bool Loot.Core.System.Modifier.ModifierRarity.MatchesRequirements </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="class_loot_1_1_core_1_1_system_1_1_modifier_1_1_modifier_pool.html">ModifierPool</a>&#160;</td>
-          <td class="paramname"><em>modifierPool</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
 
 </div>
 </div>
@@ -402,12 +394,12 @@ Properties</h2></td></tr>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="_modifier_rarity_8cs_source.html#l00062">62</a> of file <a class="el" href="_modifier_rarity_8cs_source.html">ModifierRarity.cs</a>.</p>
+<p>Definition at line <a class="el" href="_modifier_rarity_8cs_source.html#l00077">77</a> of file <a class="el" href="_modifier_rarity_8cs_source.html">ModifierRarity.cs</a>.</p>
 
-<p>References <a class="el" href="_content_loader_8cs_source.html#l00013">Loot.Core.System.Loaders.ContentLoader.ModifierRarity</a>, and <a class="el" href="_modifier_rarity_8cs_source.html#l00062">Loot.Core.System.Modifier.ModifierRarity.NetReceive()</a>.</p>
+<p>References <a class="el" href="_content_loader_8cs_source.html#l00013">Loot.Core.System.Loaders.ContentLoader.ModifierRarity</a>, and <a class="el" href="_modifier_rarity_8cs_source.html#l00077">Loot.Core.System.Modifier.ModifierRarity.NetReceive()</a>.</p>
 
-<p>Referenced by <a class="el" href="_modifier_rarity_8cs_source.html#l00062">Loot.Core.System.Modifier.ModifierRarity.NetReceive()</a>.</p>
-<div class="fragment"><div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;        {</div><div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;        }</div></div><!-- fragment -->
+<p>Referenced by <a class="el" href="_modifier_rarity_8cs_source.html#l00077">Loot.Core.System.Modifier.ModifierRarity.NetReceive()</a>.</p>
+<div class="fragment"><div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;        {</div><div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;        }</div></div><!-- fragment -->
 <p><div id="dynsection-5" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-5-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
 <div id="dynsection-5-summary" class="dynsummary" style="display:block;">
@@ -473,10 +465,10 @@ Properties</h2></td></tr>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="_modifier_rarity_8cs_source.html#l00086">86</a> of file <a class="el" href="_modifier_rarity_8cs_source.html">ModifierRarity.cs</a>.</p>
+<p>Definition at line <a class="el" href="_modifier_rarity_8cs_source.html#l00101">101</a> of file <a class="el" href="_modifier_rarity_8cs_source.html">ModifierRarity.cs</a>.</p>
 
-<p>References <a class="el" href="_modifier_rarity_8cs_source.html#l00017">Loot.Core.System.Modifier.ModifierRarity.Mod</a>, and <a class="el" href="_modifier_rarity_8cs_source.html#l00031">Loot.Core.System.Modifier.ModifierRarity.Name</a>.</p>
-<div class="fragment"><div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;        {</div><div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;        }</div></div><!-- fragment -->
+<p>References <a class="el" href="_modifier_rarity_8cs_source.html#l00019">Loot.Core.System.Modifier.ModifierRarity.Mod</a>, and <a class="el" href="_modifier_rarity_8cs_source.html#l00033">Loot.Core.System.Modifier.ModifierRarity.Name</a>.</p>
+<div class="fragment"><div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;        {</div><div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;        }</div></div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="a822cb210b4d6495452e28d376d0cf2a2"></a>
@@ -513,12 +505,12 @@ Properties</h2></td></tr>
 
 <p>Allows modder to do custom saving here Use the given TC to put data you want to save, which can be loaded using <a class="el" href="class_loot_1_1_core_1_1_system_1_1_modifier_1_1_modifier_rarity.html#ac3b72c99ba4074b49b3b13df52c36071" title="Allows modder to do custom loading here Use the given TC to pull data you saved using Save(Item...">Load(Item,TagCompound)</a> </p>
 
-<p>Definition at line <a class="el" href="_modifier_rarity_8cs_source.html#l00149">149</a> of file <a class="el" href="_modifier_rarity_8cs_source.html">ModifierRarity.cs</a>.</p>
+<p>Definition at line <a class="el" href="_modifier_rarity_8cs_source.html#l00170">170</a> of file <a class="el" href="_modifier_rarity_8cs_source.html">ModifierRarity.cs</a>.</p>
 
-<p>References <a class="el" href="_modifier_rarity_8cs_source.html#l00017">Loot.Core.System.Modifier.ModifierRarity.Mod</a>, <a class="el" href="_modifier_rarity_8cs_source.html#l00031">Loot.Core.System.Modifier.ModifierRarity.Name</a>, and <a class="el" href="_modifier_rarity_8cs_source.html#l00149">Loot.Core.System.Modifier.ModifierRarity.Save()</a>.</p>
+<p>References <a class="el" href="_modifier_rarity_8cs_source.html#l00019">Loot.Core.System.Modifier.ModifierRarity.Mod</a>, <a class="el" href="_modifier_rarity_8cs_source.html#l00033">Loot.Core.System.Modifier.ModifierRarity.Name</a>, and <a class="el" href="_modifier_rarity_8cs_source.html#l00170">Loot.Core.System.Modifier.ModifierRarity.Save()</a>.</p>
 
-<p>Referenced by <a class="el" href="_modifier_rarity_8cs_source.html#l00149">Loot.Core.System.Modifier.ModifierRarity.Save()</a>, and <a class="el" href="_modifier_pool_8cs_source.html#l00323">Loot.Core.System.Modifier.ModifierPool.Save()</a>.</p>
-<div class="fragment"><div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;        {</div><div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;        }</div></div><!-- fragment -->
+<p>Referenced by <a class="el" href="_modifier_rarity_8cs_source.html#l00170">Loot.Core.System.Modifier.ModifierRarity.Save()</a>, and <a class="el" href="_e_m_m_item_8cs_source.html#l00299">Loot.EMMItem.Save()</a>.</p>
+<div class="fragment"><div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;        {</div><div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;        }</div></div><!-- fragment -->
 <p><div id="dynsection-7" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-7-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
 <div id="dynsection-7-summary" class="dynsummary" style="display:block;">
@@ -537,8 +529,7 @@ Properties</h2></td></tr>
 <div id="dynsection-8-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="class_loot_1_1_core_1_1_system_1_1_modifier_1_1_modifier_rarity_a822cb210b4d6495452e28d376d0cf2a2_icgraph.png" border="0" usemap="#class_loot_1_1_core_1_1_system_1_1_modifier_1_1_modifier_rarity_a822cb210b4d6495452e28d376d0cf2a2_icgraph" alt=""/></div>
 <map name="class_loot_1_1_core_1_1_system_1_1_modifier_1_1_modifier_rarity_a822cb210b4d6495452e28d376d0cf2a2_icgraph" id="class_loot_1_1_core_1_1_system_1_1_modifier_1_1_modifier_rarity_a822cb210b4d6495452e28d376d0cf2a2_icgraph">
-<area shape="rect" id="node2" href="class_loot_1_1_core_1_1_system_1_1_modifier_1_1_modifier_pool.html#a3819038ebb2d9967e434a85120d2a4b7" title="Allows modder to do custom saving here Use the given TC to put data you want to save, which can be loaded using Load(Item, TagCompound) " alt="" coords="238,29,421,70"/>
-<area shape="rect" id="node3" href="class_loot_1_1_e_m_m_item.html#a51f2704f9654af48ab0ee1abbfc07b86" title="Loot.EMMItem.Save" alt="" coords="470,36,613,63"/>
+<area shape="rect" id="node2" href="class_loot_1_1_e_m_m_item.html#a51f2704f9654af48ab0ee1abbfc07b86" title="Loot.EMMItem.Save" alt="" coords="238,36,381,63"/>
 </map>
 </div>
 </p>
@@ -546,6 +537,72 @@ Properties</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
+<a class="anchor" id="a403a53f74d57a5d60deb592b3d9dba59"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual <a class="el" href="class_loot_1_1_core_1_1_system_1_1_modifier_1_1_modifier_rarity.html#a9cb67b80b60aee99744e8d8514330fbc">Type</a> Loot.Core.System.Modifier.ModifierRarity.Downgrade =&gt; null</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_modifier_rarity_8cs_source.html#l00054">54</a> of file <a class="el" href="_modifier_rarity_8cs_source.html">ModifierRarity.cs</a>.</p>
+
+<p>Referenced by <a class="el" href="_e_m_m_item_8cs_source.html#l00044">Loot.EMMItem.InvalidateRolls()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a6807c8ecc68c23b6106faef2cc346388"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual float Loot.Core.System.Modifier.ModifierRarity.DowngradeChance =&gt; null</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Describes the chance of this rarity downgrading to the previous tier If null, is the same as 0f (no chance) </p>
+
+<p>Definition at line <a class="el" href="_modifier_rarity_8cs_source.html#l00050">50</a> of file <a class="el" href="_modifier_rarity_8cs_source.html">ModifierRarity.cs</a>.</p>
+
+<p>Referenced by <a class="el" href="_e_m_m_item_8cs_source.html#l00044">Loot.EMMItem.InvalidateRolls()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a255c22881129c914fecc8d95076cd294"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual float Loot.Core.System.Modifier.ModifierRarity.ExtraLuck =&gt; 0f</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_modifier_rarity_8cs_source.html#l00053">53</a> of file <a class="el" href="_modifier_rarity_8cs_source.html">ModifierRarity.cs</a>.</p>
+
+<p>Referenced by <a class="el" href="_e_m_m_item_8cs_source.html#l00167">Loot.EMMItem.RollNewModifiers()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="afb97b0964feb121e8eb35b410397b39d"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual float Loot.Core.System.Modifier.ModifierRarity.ExtraMagnitudePower =&gt; 0f</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_modifier_rarity_8cs_source.html#l00052">52</a> of file <a class="el" href="_modifier_rarity_8cs_source.html">ModifierRarity.cs</a>.</p>
+
+<p>Referenced by <a class="el" href="_e_m_m_item_8cs_source.html#l00167">Loot.EMMItem.RollNewModifiers()</a>.</p>
+
+</div>
+</div>
 <a class="anchor" id="a14a156190d67fd2744f03ce36ebed59a"></a>
 <div class="memitem">
 <div class="memproto">
@@ -556,7 +613,9 @@ Properties</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_modifier_rarity_8cs_source.html#l00035">35</a> of file <a class="el" href="_modifier_rarity_8cs_source.html">ModifierRarity.cs</a>.</p>
+<p>Definition at line <a class="el" href="_modifier_rarity_8cs_source.html#l00037">37</a> of file <a class="el" href="_modifier_rarity_8cs_source.html">ModifierRarity.cs</a>.</p>
+
+<p>Referenced by <a class="el" href="_e_m_m_item_8cs_source.html#l00447">Loot.EMMItem.ModifyTooltips()</a>.</p>
 
 </div>
 </div>
@@ -570,7 +629,9 @@ Properties</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_modifier_rarity_8cs_source.html#l00036">36</a> of file <a class="el" href="_modifier_rarity_8cs_source.html">ModifierRarity.cs</a>.</p>
+<p>Definition at line <a class="el" href="_modifier_rarity_8cs_source.html#l00038">38</a> of file <a class="el" href="_modifier_rarity_8cs_source.html">ModifierRarity.cs</a>.</p>
+
+<p>Referenced by <a class="el" href="_e_m_m_item_8cs_source.html#l00447">Loot.EMMItem.ModifyTooltips()</a>.</p>
 
 </div>
 </div>
@@ -584,9 +645,9 @@ Properties</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_modifier_rarity_8cs_source.html#l00031">31</a> of file <a class="el" href="_modifier_rarity_8cs_source.html">ModifierRarity.cs</a>.</p>
+<p>Definition at line <a class="el" href="_modifier_rarity_8cs_source.html#l00033">33</a> of file <a class="el" href="_modifier_rarity_8cs_source.html">ModifierRarity.cs</a>.</p>
 
-<p>Referenced by <a class="el" href="_modifier_rarity_8cs_source.html#l00086">Loot.Core.System.Modifier.ModifierRarity.NetSend()</a>, and <a class="el" href="_modifier_rarity_8cs_source.html#l00149">Loot.Core.System.Modifier.ModifierRarity.Save()</a>.</p>
+<p>Referenced by <a class="el" href="_modifier_rarity_8cs_source.html#l00101">Loot.Core.System.Modifier.ModifierRarity.NetSend()</a>, and <a class="el" href="_modifier_rarity_8cs_source.html#l00170">Loot.Core.System.Modifier.ModifierRarity.Save()</a>.</p>
 
 </div>
 </div>
@@ -600,7 +661,9 @@ Properties</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_modifier_rarity_8cs_source.html#l00034">34</a> of file <a class="el" href="_modifier_rarity_8cs_source.html">ModifierRarity.cs</a>.</p>
+<p>Definition at line <a class="el" href="_modifier_rarity_8cs_source.html#l00036">36</a> of file <a class="el" href="_modifier_rarity_8cs_source.html">ModifierRarity.cs</a>.</p>
+
+<p>Referenced by <a class="el" href="_e_m_m_item_8cs_source.html#l00447">Loot.EMMItem.ModifyTooltips()</a>.</p>
 
 </div>
 </div>
@@ -614,7 +677,63 @@ Properties</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_modifier_rarity_8cs_source.html#l00033">33</a> of file <a class="el" href="_modifier_rarity_8cs_source.html">ModifierRarity.cs</a>.</p>
+<p>Definition at line <a class="el" href="_modifier_rarity_8cs_source.html#l00035">35</a> of file <a class="el" href="_modifier_rarity_8cs_source.html">ModifierRarity.cs</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ac9779ecc458d4d43c2ccea480a055773"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const int Loot.Core.System.Modifier.ModifierRarity.SAVE_VERSION = 2</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_modifier_rarity_8cs_source.html#l00017">17</a> of file <a class="el" href="_modifier_rarity_8cs_source.html">ModifierRarity.cs</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="aa877e7288ef7367ea118a6c8f709d2fd"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual <a class="el" href="class_loot_1_1_core_1_1_system_1_1_modifier_1_1_modifier_rarity.html#a9cb67b80b60aee99744e8d8514330fbc">Type</a> Loot.Core.System.Modifier.ModifierRarity.Upgrade =&gt; null</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_modifier_rarity_8cs_source.html#l00055">55</a> of file <a class="el" href="_modifier_rarity_8cs_source.html">ModifierRarity.cs</a>.</p>
+
+<p>Referenced by <a class="el" href="_e_m_m_item_8cs_source.html#l00044">Loot.EMMItem.InvalidateRolls()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a21de2acbb9d4572cf9567c7d9fa0e481"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual float Loot.Core.System.Modifier.ModifierRarity.UpgradeChance =&gt; null</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Describes the chance of this rarity upgrading to the next tier If null, is the same as 0f (no chance) </p>
+
+<p>Definition at line <a class="el" href="_modifier_rarity_8cs_source.html#l00044">44</a> of file <a class="el" href="_modifier_rarity_8cs_source.html">ModifierRarity.cs</a>.</p>
+
+<p>Referenced by <a class="el" href="_e_m_m_item_8cs_source.html#l00044">Loot.EMMItem.InvalidateRolls()</a>.</p>
 
 </div>
 </div>
@@ -637,7 +756,9 @@ Properties</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_modifier_rarity_8cs_source.html#l00039">39</a> of file <a class="el" href="_modifier_rarity_8cs_source.html">ModifierRarity.cs</a>.</p>
+<p>Definition at line <a class="el" href="_modifier_rarity_8cs_source.html#l00057">57</a> of file <a class="el" href="_modifier_rarity_8cs_source.html">ModifierRarity.cs</a>.</p>
+
+<p>Referenced by <a class="el" href="_e_m_m_item_8cs_source.html#l00447">Loot.EMMItem.ModifyTooltips()</a>.</p>
 
 </div>
 </div>
@@ -659,9 +780,9 @@ Properties</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_modifier_rarity_8cs_source.html#l00017">17</a> of file <a class="el" href="_modifier_rarity_8cs_source.html">ModifierRarity.cs</a>.</p>
+<p>Definition at line <a class="el" href="_modifier_rarity_8cs_source.html#l00019">19</a> of file <a class="el" href="_modifier_rarity_8cs_source.html">ModifierRarity.cs</a>.</p>
 
-<p>Referenced by <a class="el" href="_modifier_rarity_8cs_source.html#l00048">Loot.Core.System.Modifier.ModifierRarity.Clone()</a>, <a class="el" href="_modifier_rarity_8cs_source.html#l00086">Loot.Core.System.Modifier.ModifierRarity.NetSend()</a>, and <a class="el" href="_modifier_rarity_8cs_source.html#l00149">Loot.Core.System.Modifier.ModifierRarity.Save()</a>.</p>
+<p>Referenced by <a class="el" href="_modifier_rarity_8cs_source.html#l00063">Loot.Core.System.Modifier.ModifierRarity.Clone()</a>, <a class="el" href="_modifier_rarity_8cs_source.html#l00101">Loot.Core.System.Modifier.ModifierRarity.NetSend()</a>, and <a class="el" href="_modifier_rarity_8cs_source.html#l00170">Loot.Core.System.Modifier.ModifierRarity.Save()</a>.</p>
 
 </div>
 </div>
@@ -683,29 +804,7 @@ Properties</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_modifier_rarity_8cs_source.html#l00020">20</a> of file <a class="el" href="_modifier_rarity_8cs_source.html">ModifierRarity.cs</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="a271eaca061a6c4a70a948f232628e562"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">abstract float Loot.Core.System.Modifier.ModifierRarity.RequiredRarityLevel</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">get</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Definition at line <a class="el" href="_modifier_rarity_8cs_source.html#l00038">38</a> of file <a class="el" href="_modifier_rarity_8cs_source.html">ModifierRarity.cs</a>.</p>
+<p>Definition at line <a class="el" href="_modifier_rarity_8cs_source.html#l00022">22</a> of file <a class="el" href="_modifier_rarity_8cs_source.html">ModifierRarity.cs</a>.</p>
 
 </div>
 </div>
@@ -727,9 +826,9 @@ Properties</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_modifier_rarity_8cs_source.html#l00024">24</a> of file <a class="el" href="_modifier_rarity_8cs_source.html">ModifierRarity.cs</a>.</p>
+<p>Definition at line <a class="el" href="_modifier_rarity_8cs_source.html#l00026">26</a> of file <a class="el" href="_modifier_rarity_8cs_source.html">ModifierRarity.cs</a>.</p>
 
-<p>Referenced by <a class="el" href="_modifier_rarity_8cs_source.html#l00048">Loot.Core.System.Modifier.ModifierRarity.Clone()</a>, and <a class="el" href="_mod_utils_8cs_source.html#l00019">Loot.Ext.ModUtils.GetModifierRarity()</a>.</p>
+<p>Referenced by <a class="el" href="_modifier_rarity_8cs_source.html#l00063">Loot.Core.System.Modifier.ModifierRarity.Clone()</a>, and <a class="el" href="_mod_utils_8cs_source.html#l00019">Loot.Ext.ModUtils.GetModifierRarity()</a>.</p>
 
 </div>
 </div>
@@ -751,7 +850,7 @@ Properties</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_modifier_rarity_8cs_source.html#l00027">27</a> of file <a class="el" href="_modifier_rarity_8cs_source.html">ModifierRarity.cs</a>.</p>
+<p>Definition at line <a class="el" href="_modifier_rarity_8cs_source.html#l00029">29</a> of file <a class="el" href="_modifier_rarity_8cs_source.html">ModifierRarity.cs</a>.</p>
 
 </div>
 </div>
@@ -761,7 +860,7 @@ Properties</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespace_loot.html">Loot</a></li><li class="navelem"><a class="el" href="namespace_loot_1_1_core.html">Core</a></li><li class="navelem"><a class="el" href="namespace_loot_1_1_core_1_1_system.html">System</a></li><li class="navelem"><a class="el" href="namespace_loot_1_1_core_1_1_system_1_1_modifier.html">Modifier</a></li><li class="navelem"><a class="el" href="class_loot_1_1_core_1_1_system_1_1_modifier_1_1_modifier_rarity.html">ModifierRarity</a></li>
-    <li class="footer">Generated on Wed Jan 23 2019 22:18:20 for Even More Modifiers by
+    <li class="footer">Generated on Fri Feb 1 2019 22:34:43 for Even More Modifiers by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.11 </li>
   </ul>

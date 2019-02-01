@@ -3,7 +3,7 @@
 <area shape="rect" id="node3" href="$class_loot_1_1_u_i_1_1_core_1_1_draggable_u_i_state.html" title="A UIState which primarily goal is to provide dragging on click functionality to the main panel The dr..." alt="" coords="621,145,747,172"/>
 <area shape="rect" id="node4" href="$class_loot_1_1_u_i_1_1_core_1_1_visibility_u_i.html" title="A UIState which primarily goal is to provide easy visibility toggling " alt="" coords="337,17,423,44"/>
 <area shape="rect" id="node5" href="$class_u_i_state.html" title="UIState" alt="" coords="29,5,96,32"/>
-<area shape="rect" id="node15" href="$class_loot_1_1_u_i_1_1_core_1_1_u_i_interactable_item_panel.html" title="UIInteractableItemPanel" alt="" coords="603,268,765,295"/>
+<area shape="rect" id="node15" href="$class_loot_1_1_u_i_1_1_core_1_1_u_i_interactable_item_panel.html" title="UIInteractableItemPanel" alt="" coords="603,265,765,292"/>
 <area shape="rect" id="node16" href="$class_loot_1_1_u_i_1_1_core_1_1_u_i_item_panel.html" title="UIItemPanel" alt="" coords="333,387,427,413"/>
 <area shape="rect" id="node10" href="$class_loot_1_1_u_i_1_1_core_1_1_u_i_modifier_panel.html" title="Loot.UI.Core.UIModifierPanel" alt="" coords="283,581,477,608"/>
 <area shape="rect" id="node14" href="$class_loot_1_1_u_i_1_1_rerolling_1_1_u_i_reroll_item_panel.html" title="Loot.UI.Rerolling.UIReroll\lItemPanel" alt="" coords="945,207,1117,249"/>
