@@ -1,5 +1,3 @@
-using System.Collections.Generic;
-using System.Linq;
 using Loot.Core.Cubes;
 using Loot.Core.System.Modifier;
 using Loot.Ext;
@@ -7,6 +5,8 @@ using Loot.Sounds;
 using Loot.UI.Core;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
+using System.Collections.Generic;
+using System.Linq;
 using Terraria;
 using Terraria.GameContent.UI.Elements;
 using Terraria.ID;
@@ -51,7 +51,7 @@ namespace Loot.UI.Rerolling
 
 			// If there is an item slotted
 			if (ui._rerollItemPanel != null
-			    && !ui._rerollItemPanel.item.IsAir)
+				&& !ui._rerollItemPanel.item.IsAir)
 			{
 				Main.LocalPlayer.QuickSpawnClonedItem(ui._rerollItemPanel.item, ui._rerollItemPanel.item.stack);
 				ui._rerollItemPanel.item.TurnToAir();
@@ -74,7 +74,7 @@ namespace Loot.UI.Rerolling
 			{
 				var selectorPanel = new UICubeSelectorPanel(type)
 				{
-					Left = new StyleDimension {Pixels = UIItemPanel.PANEL_WIDTH * current}
+					Left = new StyleDimension { Pixels = UIItemPanel.PANEL_WIDTH * current }
 				};
 				if (_cubePanel.item.type != type)
 				{
@@ -123,10 +123,10 @@ namespace Loot.UI.Rerolling
 
 			_cubeListPanel = new UIPanel
 			{
-				Width = new StyleDimension {Pixels = 600f},
-				Height = new StyleDimension {Pixels = 50f},
-				Left = new StyleDimension {Pixels = _backPanel.Left.Pixels},
-				Top = new StyleDimension {Pixels = _backPanel.Top.Pixels + _backPanel.Height.Pixels},
+				Width = new StyleDimension { Pixels = 600f },
+				Height = new StyleDimension { Pixels = 50f },
+				Left = new StyleDimension { Pixels = _backPanel.Left.Pixels },
+				Top = new StyleDimension { Pixels = _backPanel.Top.Pixels + _backPanel.Height.Pixels },
 			};
 
 			Append(_cubeListPanel);
@@ -179,14 +179,14 @@ namespace Loot.UI.Rerolling
 		private bool MatchesRerollRequirements()
 		{
 			bool match = _rerollItemPanel != null
-			             && _cubePanel != null
-			             && !_rerollItemPanel.item.IsAir && !_cubePanel.item.IsAir
-			             && _rerollItemPanel.CanTakeItem(_rerollItemPanel.item)
-			             && _cubePanel.CanTakeItem(_cubePanel.item)
-			             && !EMMItem.GetItemInfo(_rerollItemPanel.item).SealedModifiers;
+						 && _cubePanel != null
+						 && !_rerollItemPanel.item.IsAir && !_cubePanel.item.IsAir
+						 && _rerollItemPanel.CanTakeItem(_rerollItemPanel.item)
+						 && _cubePanel.CanTakeItem(_cubePanel.item)
+						 && !EMMItem.GetItemInfo(_rerollItemPanel.item).SealedModifiers;
 
 			bool hasItem = Main.LocalPlayer.inventory.Any(x => x.type == _cubePanel.item.type)
-			               || (Main.mouseItem?.type == _cubePanel?.item?.type);
+						   || (Main.mouseItem?.type == _cubePanel?.item?.type);
 
 			return match && hasItem;
 		}
@@ -214,7 +214,7 @@ namespace Loot.UI.Rerolling
 			if (MatchesRerollRequirements())
 			{
 				_itemRollProperties = new ItemRollProperties();
-				_cubePanel.InteractionLogic(_itemRollProperties);
+				_cubePanel.InteractionLogic(_rerollItemPanel.item, _itemRollProperties);
 				_cubePanel.RecalculateStack();
 
 				// No slotted cubes available
@@ -289,8 +289,8 @@ namespace Loot.UI.Rerolling
 			}
 
 			if (_rerollItemPanel == null
-			    || _rerollItemPanel.item.IsAir
-			    || _modifierPanels == null)
+				|| _rerollItemPanel.item.IsAir
+				|| _modifierPanels == null)
 			{
 				return;
 			}

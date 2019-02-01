@@ -1,8 +1,3 @@
-using System;
-using System.Collections.Generic;
-using System.Globalization;
-using System.IO;
-using System.Linq;
 using Loot.Core.Cubes;
 using Loot.Core.Graphics;
 using Loot.Core.System.Loaders;
@@ -10,7 +5,13 @@ using Loot.Core.System.Modifier;
 using Loot.Ext;
 using Loot.Modifiers.EquipModifiers.Utility;
 using Loot.Pools;
+using Loot.Rarities;
 using Microsoft.Xna.Framework;
+using System;
+using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Linq;
 using Terraria;
 using Terraria.ModLoader;
 using Terraria.ModLoader.IO;
@@ -23,13 +24,15 @@ namespace Loot
 	/// </summary>
 	public sealed class EMMItem : GlobalItem
 	{
-		// Helpers
+		private const int SAVE_VERSION = 3;
+
 		public static EMMItem GetItemInfo(Item item) => item.GetGlobalItem<EMMItem>();
 		public static IEnumerable<Modifier> GetActivePool(Item item) => GetItemInfo(item)?.ModifierPool?.ActiveModifiers ?? Enumerable.Empty<Modifier>();
 
 		public override bool InstancePerEntity => true;
 		public override bool CloneNewInstances => true;
 
+		public ModifierRarity ModifierRarity; // the current rarity
 		public ModifierPool ModifierPool; // the current pool of mods. null if none.
 		public bool HasRolled; // has rolled a pool
 		public bool SealedModifiers; // are modifiers unchangeable
@@ -38,7 +41,11 @@ namespace Loot
 		public bool JustTinkerModified; // is just tinker modified: e.g. armor hacked
 		public bool SlottedInCubeUI; // is currently in cube UI slot
 
-		private const int SAVE_VERSION = 2;
+		private void InvalidateRolls()
+		{
+			ModifierRarity = null;
+			ModifierPool = null;
+		}
 
 		/// <summary>
 		/// Attempts to roll new modifiers
@@ -46,19 +53,56 @@ namespace Loot
 		/// </summary>
 		internal ModifierPool RollNewPool(ModifierContext ctx, ItemRollProperties itemRollProperties = null)
 		{
-			// Default to normal
 			if (itemRollProperties == null)
 			{
 				itemRollProperties = new ItemRollProperties();
 			}
 
-			// Now we have actually rolled
 			HasRolled = true;
-
-			// Rolling logic
 			bool noForce = true;
 
-			// Custom roll behavior provided
+			// Custom rarity provided
+			if (itemRollProperties.OverrideRollModifierRarity != null)
+			{
+				ModifierRarity = itemRollProperties.OverrideRollModifierRarity.Invoke();
+			}
+			else if (itemRollProperties.ForceModifierRarity != null)
+			{
+				ModifierRarity = itemRollProperties.ForceModifierRarity;
+			}
+			else if (ModifierRarity == null)
+			{
+				ModifierRarity = ContentLoader.ModifierRarity.GetContent(typeof(CommonRarity));
+			}
+
+			ctx.Rarity = ModifierRarity;
+
+			// Upgrade rarity
+			if (itemRollProperties.CanUpgradeRarity(ctx)
+				&& Main.rand.NextFloat() <= (ModifierRarity.UpgradeChance ?? 0f))
+			{
+				var newRarity = ModifierRarity.Upgrade;
+				var newFromLoader = ContentLoader.ModifierRarity.GetContent(newRarity);
+				if (newRarity != null && newFromLoader != null)
+				{
+					ModifierRarity = newFromLoader;
+				}
+			}
+			// Downgrade rarity
+			else if (itemRollProperties.CanDowngradeRarity(ctx)
+					&& Main.rand.NextFloat() <= (ModifierRarity.DowngradeChance ?? 0f))
+			{
+				var newRarity = ModifierRarity.Downgrade;
+				var newFromLoader = ContentLoader.ModifierRarity.GetContent(newRarity);
+				if (newRarity != null && newFromLoader != null)
+				{
+					ModifierRarity = newFromLoader;
+				}
+			}
+
+			ctx.Rarity = ModifierRarity;
+
+			// Custom pool provided
 			if (itemRollProperties.OverrideRollModifierPool != null)
 			{
 				ModifierPool = itemRollProperties.OverrideRollModifierPool.Invoke();
@@ -95,7 +139,7 @@ namespace Loot
 						ModifierPool = Loot.Instance.GetModifierPool<AllModifiersPool>();
 						if (!ModifierPool._CanRoll(ctx))
 						{
-							ModifierPool = null;
+							InvalidateRolls();
 							return null;
 						}
 					}
@@ -105,11 +149,7 @@ namespace Loot
 			// Attempt rolling modifiers
 			if (!RollNewModifiers(ctx, itemRollProperties))
 			{
-				ModifierPool = null; // reset (didn't roll anything)
-			}
-			else
-			{
-				ModifierPool.UpdateRarity();
+				InvalidateRolls();
 			}
 
 			ctx.Item.GetGlobalItem<ShaderGlobalItem>().NeedsUpdate = true;
@@ -142,10 +182,9 @@ namespace Loot
 			{
 				// If there are no mods left, or we fail the roll, break.
 				if (wr.elements.Count <= 0
-				    || !_forceNextRoll
-				    && i > 0
-				    && list.Count >= itemRollProperties.MinModifierRolls
-				    && Main.rand.NextFloat() > itemRollProperties.RollNextChance)
+					|| !_forceNextRoll
+					&& list.Count >= itemRollProperties.MinModifierRolls
+					&& Main.rand.NextFloat() > itemRollProperties.RollNextChance)
 				{
 					break;
 				}
@@ -153,37 +192,47 @@ namespace Loot
 				_forceNextRoll = false;
 
 				// Get a next weighted random mod
-				// Clone the mod (new instance) and roll it's properties, then roll it
-				Modifier e = wr.Get();
-				Modifier eClone = (Modifier) e.Clone();
+				// Clone the mod (new instance) and roll its properties, then roll it
+				Modifier rolledModifier = (Modifier)wr.Get().Clone();
 				float luck = itemRollProperties.ExtraLuck;
+				float magnitudePower = itemRollProperties.MagnitudePower;
+
 				if (ctx.Player != null)
 				{
 					luck += ModifierPlayer.Player(ctx.Player).GetEffect<LuckEffect>().Luck;
 				}
+				if (ctx.Rarity != null)
+				{
+					luck += ctx.Rarity.ExtraLuck;
+					magnitudePower += ctx.Rarity.ExtraMagnitudePower;
+				}
 
-				eClone.Properties =
-					eClone.GetModifierProperties(ctx.Item).Build()
+				rolledModifier.Properties =
+					rolledModifier.GetModifierProperties(ctx.Item).Build()
 						.RollMagnitudeAndPower(
-							magnitudePower: itemRollProperties.MagnitudePower,
+							magnitudePower: magnitudePower,
 							lukStat: luck);
-				eClone.Roll(ctx, list);
+				rolledModifier.Roll(ctx, list);
 
 				// If the mod deemed to be unable to be added,
 				// Force that the next roll is successful
 				// (no RNG on top of RNG)
-				if (!eClone.PostRoll(ctx, list))
+				if (!rolledModifier.PostRoll(ctx, list))
 				{
 					_forceNextRoll = true;
 					continue;
 				}
 
 				// The mod can be added
-				list.Add(eClone);
+				list.Add(rolledModifier);
 
 				// If it is a unique modifier, remove it from the list to be rolled
-				if (!eClone.Properties.IsUnique) continue;
-				wr.elements.RemoveAll(x => x.Item1.Type == eClone.Type);
+				if (!rolledModifier.Properties.IsUnique)
+				{
+					continue;
+				}
+
+				wr.elements.RemoveAll(x => x.Item1.Type == rolledModifier.Type);
 				wr.needsRefresh = true;
 			}
 
@@ -193,55 +242,71 @@ namespace Loot
 
 		public override GlobalItem Clone(Item item, Item itemClone)
 		{
-			EMMItem clone = (EMMItem) base.Clone(item, itemClone);
-			clone.ModifierPool = (ModifierPool) ModifierPool?.Clone();
+			EMMItem clone = (EMMItem)base.Clone(item, itemClone);
+			clone.ModifierRarity = (ModifierRarity)ModifierRarity?.Clone();
+			clone.ModifierPool = (ModifierPool)ModifierPool?.Clone();
 			// there is no need to apply here, we already cloned the item which stats are already modified by its pool
 			return clone;
 		}
 
 		public override void Load(Item item, TagCompound tag)
 		{
-			// enforce illegitimate rolls to go away
-			if (!ModifierPool.IsValidFor(item))
+			// enforce illegitimate rolls to go away (needed for earliest versions saves)
+			if (!item.IsModifierRollableItem())
 			{
-				ModifierPool = null;
+				InvalidateRolls();
 			}
-			else if (tag.ContainsKey("Type"))
+			else
 			{
-				ModifierPool = ModifierPool._Load(item, tag);
-
-				// enforce illegitimate rolls to go away
-				if (ModifierPool.ActiveModifiers == null || ModifierPool.ActiveModifiers.Length <= 0)
+				// SaveVersion >= 2
+				if (tag.ContainsKey("SaveVersion"))
 				{
-					ModifierPool = null;
+					int saveVersion = tag.GetInt("SaveVersion");
+					SealedModifiers = tag.GetBool("SealedModifiers");
+					HasRolled = tag.GetBool("HasRolled");
+					if (saveVersion < 3)
+					{
+						// Rarity should be set by pool loading
+						ModifierPool = ModifierPool._Load(item, tag);
+					}
+					else
+					{
+						ModifierRarity = ModifierRarity._Load(item, tag.GetCompound("ModifierRarity"));
+						ModifierPool = ModifierPool._Load(item, tag.GetCompound("ModifierPool"));
+					}
+				}
+				else // SaveVersion 1
+				{
+					HasRolled = tag.GetBool("HasRolled");
+					ModifierPool = ModifierPool._Load(item, tag);
+				}
+
+				if (ModifierPool != null)
+				{
+					// enforce illegitimate rolls to go away
+					if (ModifierPool.ActiveModifiers == null || ModifierPool.ActiveModifiers.Length <= 0)
+					{
+						InvalidateRolls();
+					}
+					else
+					{
+						ModifierPool.ApplyModifiers(item);
+					}
 				}
 			}
-
-			// SaveVersion >= 2
-			if (tag.ContainsKey("SaveVersion"))
-			{
-				HasRolled = tag.GetBool("HasRolled");
-				SealedModifiers = tag.GetBool("SealedModifiers");
-			}
-			else // SaveVersion 1
-			{
-				HasRolled = tag.GetBool("HasRolled");
-			}
-
-			ModifierPool?.ApplyModifiers(item);
 		}
 
 		public override TagCompound Save(Item item)
 		{
-			TagCompound tag = ModifierPool != null
-				? ModifierPool.Save(item, ModifierPool)
-				: new TagCompound();
-
-			tag.Add("HasRolled", HasRolled);
-
-			// SaveVersion saved since SaveVersion 2, version 1 not present
-			tag.Add("SaveVersion", SAVE_VERSION);
-			tag.Add("SealedModifiers", SealedModifiers);
+			TagCompound tag = new TagCompound
+			{
+				// SaveVersion saved since SaveVersion 2, version 1 not present
+				{"SaveVersion", SAVE_VERSION},
+				{"SealedModifiers", SealedModifiers},
+				{"HasRolled", HasRolled},
+				{"ModifierRarity", ModifierRarity.Save(item, ModifierRarity)},
+				{"ModifierPool", ModifierPool.Save(item, ModifierPool)}
+			};
 
 			return tag;
 		}
@@ -253,6 +318,7 @@ namespace Loot
 		{
 			if (reader.ReadBoolean())
 			{
+				ModifierRarity = ModifierRarity._NetReceive(item, reader); // Since SaveVersion 3
 				ModifierPool = ModifierPool._NetReceive(item, reader);
 			}
 
@@ -270,6 +336,7 @@ namespace Loot
 			writer.Write(hasPool);
 			if (hasPool)
 			{
+				ModifierRarity._NetSend(ModifierRarity, item, writer); // Since SaveVersion 3
 				ModifierPool._NetSend(ModifierPool, item, writer);
 			}
 
@@ -346,11 +413,11 @@ namespace Loot
 				num = 1;
 				if (rStat > 0f)
 				{
-					color = new Color((byte) (120f * defColorVal), (byte) (190f * defColorVal), (byte) (120f * defColorVal), alphaColor);
+					color = new Color((byte)(120f * defColorVal), (byte)(190f * defColorVal), (byte)(120f * defColorVal), alphaColor);
 					return "+" + rStat.ToString(CultureInfo.InvariantCulture); /* + Lang.tip[39].Value;*/
 				}
 
-				color = new Color((byte) (190f * defColorVal), (byte) (120f * defColorVal), (byte) (120f * defColorVal), alphaColor);
+				color = new Color((byte)(190f * defColorVal), (byte)(120f * defColorVal), (byte)(120f * defColorVal), alphaColor);
 				return rStat.ToString(CultureInfo.InvariantCulture); /* + Lang.tip[39].Value;*/
 			}
 
@@ -362,16 +429,16 @@ namespace Loot
 			// for some reason - is handled automatically, but + is not
 			if (diffStat > 0.0)
 			{
-				color = new Color((byte) (120f * defColorVal), (byte) (190f * defColorVal), (byte) (120f * defColorVal), alphaColor);
+				color = new Color((byte)(120f * defColorVal), (byte)(190f * defColorVal), (byte)(120f * defColorVal), alphaColor);
 				return "+" + diffStat.ToString(CultureInfo.InvariantCulture); /* + Lang.tip[39].Value;*/
 			}
 
-			color = new Color((byte) (190f * defColorVal), (byte) (120f * defColorVal), (byte) (120f * defColorVal), alphaColor);
+			color = new Color((byte)(190f * defColorVal), (byte)(120f * defColorVal), (byte)(120f * defColorVal), alphaColor);
 			return diffStat.ToString(CultureInfo.InvariantCulture); /* + Lang.tip[39].Value;*/
-			//if (num12 < 0.0)
-			//{
-			//	array3[num4] = true;
-			//}
+																	//if (num12 < 0.0)
+																	//{
+																	//	array3[num4] = true;
+																	//}
 		}
 
 		/// <summary>
@@ -439,11 +506,11 @@ namespace Loot
 							if (outNumber >= 0)
 							{
 								newTooltipLine += "+";
-								newColor = new Color((byte) (120f * defColorVal), (byte) (190f * defColorVal), (byte) (120f * defColorVal), alphaColor);
+								newColor = new Color((byte)(120f * defColorVal), (byte)(190f * defColorVal), (byte)(120f * defColorVal), alphaColor);
 							}
 							else
 							{
-								newColor = new Color((byte) (190f * defColorVal), (byte) (120f * defColorVal), (byte) (120f * defColorVal), alphaColor);
+								newColor = new Color((byte)(190f * defColorVal), (byte)(120f * defColorVal), (byte)(120f * defColorVal), alphaColor);
 							}
 
 							newTooltipLine += outNumber.ToString(CultureInfo.InvariantCulture);
@@ -456,8 +523,8 @@ namespace Loot
 								int alphaColor = Main.mouseTextColor;
 								newTooltipLine = GetPrefixNormString(baseItem.mana, prefixItem.mana, ref outNumber, ref newColor);
 								newColor = prefixItem.mana < baseItem.mana
-									? new Color((byte) (120f * defColorVal), (byte) (190f * defColorVal), (byte) (120f * defColorVal), alphaColor)
-									: new Color((byte) (190f * defColorVal), (byte) (120f * defColorVal), (byte) (120f * defColorVal), alphaColor);
+									? new Color((byte)(120f * defColorVal), (byte)(190f * defColorVal), (byte)(120f * defColorVal), alphaColor)
+									: new Color((byte)(190f * defColorVal), (byte)(120f * defColorVal), (byte)(120f * defColorVal), alphaColor);
 							}
 						}
 						else if (tooltipLine.Name.Equals("PrefixSize"))
@@ -515,19 +582,19 @@ namespace Loot
 				{
 					var namelayer = tooltips[i];
 
-					if (pool.Rarity.ItemPrefix != null)
+					if (ModifierRarity.ItemPrefix != null)
 					{
-						namelayer.text = $"{pool.Rarity.ItemPrefix} {namelayer.text}";
+						namelayer.text = $"{ModifierRarity.ItemPrefix} {namelayer.text}";
 					}
 
-					if (pool.Rarity.ItemSuffix != null)
+					if (ModifierRarity.ItemSuffix != null)
 					{
-						namelayer.text += $" {pool.Rarity.ItemSuffix}";
+						namelayer.text = $"{namelayer.text} {ModifierRarity.ItemSuffix}";
 					}
 
-					if (pool.Rarity.OverrideNameColor != null)
+					if (ModifierRarity.OverrideNameColor != null)
 					{
-						namelayer.overrideColor = pool.Rarity.OverrideNameColor;
+						namelayer.overrideColor = ModifierRarity.OverrideNameColor;
 					}
 
 					tooltips[i] = namelayer;
@@ -537,12 +604,12 @@ namespace Loot
 				ActivatedModifierItem activatedModifierItem = ActivatedModifierItem.Item(item);
 				bool isVanityIgnored = activatedModifierItem.ShouldBeIgnored(item, Main.LocalPlayer);
 
-				Color? inactiveColor = isVanityIgnored ? (Color?) Color.DarkSlateGray : null;
+				Color? inactiveColor = isVanityIgnored ? (Color?)Color.DarkSlateGray : null;
 
 				i = tooltips.Count;
-				tooltips.Insert(i, new TooltipLine(mod, "Loot: Modifier:Rarity", $"[{pool.Rarity.RarityName}]{(isVanityIgnored ? " [IGNORED]" : "")}")
+				tooltips.Insert(i, new TooltipLine(mod, "Loot: Modifier:Rarity", $"[{ModifierRarity.RarityName}]{(isVanityIgnored ? " [IGNORED]" : "")}")
 				{
-					overrideColor = inactiveColor ?? pool.Rarity.Color * Main.inventoryScale
+					overrideColor = inactiveColor ?? ModifierRarity.Color * Main.inventoryScale
 				});
 
 				foreach (var modifier in pool.ActiveModifiers)

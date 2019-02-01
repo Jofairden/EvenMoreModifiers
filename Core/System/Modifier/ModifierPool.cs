@@ -1,12 +1,13 @@
+using Loot.Core.Attributes;
+using Loot.Core.System.Core;
+using Loot.Core.System.Loaders;
+using Loot.Ext;
+using Loot.Rarities;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Reflection;
-using Loot.Core.Attributes;
-using Loot.Core.System.Core;
-using Loot.Core.System.Loaders;
-using Loot.Ext;
 using Terraria;
 using Terraria.ModLoader;
 using Terraria.ModLoader.IO;
@@ -20,6 +21,8 @@ namespace Loot.Core.System.Modifier
 	/// </summary>
 	public abstract class ModifierPool : ILoadableContent, ILoadableContentSetter, ICloneable
 	{
+		private const int SAVE_VERSION = 3;
+
 		public Mod Mod { get; internal set; }
 
 		Mod ILoadableContentSetter.Mod
@@ -40,8 +43,6 @@ namespace Loot.Core.System.Modifier
 			ActiveModifiers
 				.Where(x => x.UniqueName != string.Empty)
 				.Select(x => x.UniqueName);
-
-		public ModifierRarity Rarity { get; protected internal set; }
 
 		public Modifier[] ActiveModifiers { get; protected internal set; }
 
@@ -102,20 +103,7 @@ namespace Loot.Core.System.Modifier
 
 		public virtual float RollChance => 1f;
 
-		/// <summary>
-		/// Gets the next appropriate rarity for this pool and applies it and returns it.
-		/// </summary>
-		/// <returns></returns>
-		internal ModifierRarity UpdateRarity()
-		{
-			Rarity = ContentLoader.ModifierPool.GetPoolRarity(this);
-			return Rarity;
-		}
-
 		//internal float ModifierRollChance(int len) => 0.5f / (float)Math.Pow(2, len);
-
-		internal static bool IsValidFor(Item item)
-			=> item.IsModifierRollableItem();
 
 		/// <summary>
 		/// Returns if this pool can roll in the given context. 
@@ -129,13 +117,7 @@ namespace Loot.Core.System.Modifier
 		/// Returns true by default
 		/// </summary>
 		public virtual bool CanRoll(ModifierContext ctx)
-			=> true;
-
-		/// <summary>
-		/// By default returns if this pool matches the given <see cref="ModifierRarity"/>'s <see cref="ModifierRarity.RequiredRarityLevel"/>
-		/// </summary>
-		public virtual bool MatchesRarity(ModifierRarity rarity)
-			=> TotalRarityLevel >= rarity.RequiredRarityLevel;
+			=> ctx.Item?.IsModifierRollableItem() ?? true;
 
 		/// <summary>
 		/// Will run <see cref="Modifier.Apply"/> for all modifiers in <see cref="ActiveModifiers"/>
@@ -159,10 +141,9 @@ namespace Loot.Core.System.Modifier
 
 		public object Clone()
 		{
-			ModifierPool clone = (ModifierPool) MemberwiseClone();
+			ModifierPool clone = (ModifierPool)MemberwiseClone();
 			clone.Type = Type;
 			clone.Mod = Mod;
-			clone.Rarity = (ModifierRarity) Rarity?.Clone();
 			clone.ActiveModifiers =
 				ActiveModifiers?
 					.Select(x => x?.Clone())
@@ -190,8 +171,6 @@ namespace Loot.Core.System.Modifier
 				throw new Exception($"Modifier _NetReceive error for {modName}");
 			}
 
-			ModifierRarity modifierRarity = ModifierRarity._NetReceive(item, reader);
-
 			int activeModifiersSize = reader.ReadInt32();
 			var list = new List<Modifier>();
 			for (int i = 0; i < activeModifiersSize; ++i)
@@ -199,7 +178,6 @@ namespace Loot.Core.System.Modifier
 				list.Add(Modifier._NetReceive(item, reader));
 			}
 
-			p.Rarity = modifierRarity;
 			p.ActiveModifiers = list.ToArray();
 			p.NetReceive(item, reader);
 			return p;
@@ -216,8 +194,6 @@ namespace Loot.Core.System.Modifier
 		{
 			writer.Write(modifierPool.Name);
 			writer.Write(modifierPool.Mod.Name);
-
-			ModifierRarity._NetSend(modifierPool.Rarity, item, writer);
 
 			writer.Write(modifierPool.ActiveModifiers.Length);
 			for (int i = 0; i < modifierPool.ActiveModifiers.Length; ++i)
@@ -261,7 +237,7 @@ namespace Loot.Core.System.Modifier
 					poolTypeName = poolTypeName.Substring(poolTypeName.LastIndexOf('.') + 1);
 					p = ContentLoader.ModifierPool.GetContent(modName, poolTypeName);
 				}
-				else if (saveVersion == 2)
+				else if (saveVersion >= 2)
 				{
 					// from saveVersion 2 and onwards, they are saved by assembly (mod) and type name
 					p = ContentLoader.ModifierPool.GetContent(modName, poolTypeName);
@@ -274,11 +250,14 @@ namespace Loot.Core.System.Modifier
 					//m.Type = tag.Get<uint>("ModifierType");
 					// m.Mod = ModLoader.GetMod(modname);
 					// preload rarity
-					ModifierRarity preloadRarity = ModifierRarity._Load(item, tag.Get<TagCompound>("Rarity"));
-					bool rarityUnloaded = preloadRarity == null;
-					if (!rarityUnloaded)
+					if (saveVersion < 3)
 					{
-						p.Rarity = preloadRarity;
+						// Since save version 3, the rarity is no longer saved on the pool, rather on the item itself
+						// however, it was saved on the pool in earlier versions, so we need to catch it here.
+						ModifierRarity preloadRarity = ModifierRarity._Load(item, tag.GetCompound("Rarity"));
+
+						EMMItem.GetItemInfo(item).ModifierRarity =
+							preloadRarity ?? ContentLoader.ModifierRarity.GetContent(typeof(CommonRarity));
 					}
 
 					int activeModifiers = tag.GetAsInt("ActiveModifiers");
@@ -299,20 +278,14 @@ namespace Loot.Core.System.Modifier
 					}
 
 					p.Load(item, tag);
-
-					// If our rarity was unloaded, attempt rolling a new one that is applicable
-					if (rarityUnloaded && p.ActiveModifiers != null && p.ActiveModifiers.Length > 0)
-					{
-						p.Rarity = ContentLoader.ModifierPool.GetPoolRarity(p);
-					}
-
 					return p;
 				}
 
 				return null;
 			}
 
-			throw new Exception($"Modifier load error for {modName}");
+			Log4c.Logger.ErrorFormat("There was a load error for modifierpool, TC: {0}", tag);
+			return null;
 		}
 
 		/// <summary>
@@ -328,7 +301,7 @@ namespace Loot.Core.System.Modifier
 		{
 			if (modifierPool == null)
 			{
-				return new TagCompound {{"EMMErr:PoolNullErr", "ModifierPool was null err"}};
+				return new TagCompound { { "EMMErr:PoolNullErr", "ModifierPool was null err" } };
 			}
 
 			var tag = new TagCompound
@@ -336,8 +309,7 @@ namespace Loot.Core.System.Modifier
 				{"Type", modifierPool.GetType().Name},
 				//{ "ModifierType", modifierPool.Type }, //Used to be saved in saveVersion 1
 				{"ModName", modifierPool.Mod.Name},
-				{"Rarity", ModifierRarity.Save(item, modifierPool.Rarity)},
-				{"ModifierPoolSaveVersion", 2}, // increments each time save is changed
+				{"ModifierPoolSaveVersion", SAVE_VERSION}, // increments each time save is changed
 				{"ActiveModifiers", modifierPool.ActiveModifiers.Length}
 			};
 

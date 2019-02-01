@@ -72,5 +72,6 @@ namespace Loot.Core.System.Modifier
 		public NPC NPC;
 		public Item Item;
 		public Recipe Recipe;
+		public ModifierRarity Rarity;
 	}
 }

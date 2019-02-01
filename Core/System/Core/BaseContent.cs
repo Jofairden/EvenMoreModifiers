@@ -1,8 +1,8 @@
+using Loot.Core.System.Loaders;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
-using Loot.Core.System.Loaders;
 using Terraria.ModLoader;
 
 namespace Loot.Core.System.Core
@@ -72,7 +72,7 @@ namespace Loot.Core.System.Core
 
 		public void AddContent(Type type, Mod mod)
 		{
-			T contentPiece = (T) Activator.CreateInstance(type);
+			T contentPiece = (T)Activator.CreateInstance(type);
 			if (!typeof(ILoadableContentSetter).IsAssignableFrom(typeof(T)))
 			{
 				throw new Exception("Invalid type passed to AddContent");
@@ -100,8 +100,8 @@ namespace Loot.Core.System.Core
 				throw new Exception($"You have already added {s}");
 			}
 
-			((ILoadableContentSetter) contentPiece).Mod = mod;
-			((ILoadableContentSetter) contentPiece).Type = GetNextId();
+			((ILoadableContentSetter)contentPiece).Mod = mod;
+			((ILoadableContentSetter)contentPiece).Type = GetNextId();
 			Content[contentPiece.Type] = contentPiece;
 			Map[mod.Name].Add(new KeyValuePair<string, T>(contentPiece.Name, contentPiece));
 		}
@@ -109,13 +109,13 @@ namespace Loot.Core.System.Core
 		public T GetContent(Type type)
 		{
 			T contentPiece = Content.Values.FirstOrDefault(x => x.GetType().FullName == type.FullName);
-			return (T) contentPiece?.Clone();
+			return (T)contentPiece?.Clone();
 		}
 
 		public T GetContent(string modName, string contentKey)
 		{
 			T contentPiece = _GetContent(modName, contentKey);
-			return (T) contentPiece.Clone();
+			return (T)contentPiece?.Clone();
 		}
 
 		private T _GetContent(string modName, string key)
@@ -125,10 +125,10 @@ namespace Loot.Core.System.Core
 
 		public T GetContent(uint type)
 		{
-			return type < IdCount ? (T) Content[type].Clone() : default(T);
+			return type < IdCount ? (T)Content[type].Clone() : default(T);
 		}
 
 		public ReadOnlyCollection<T> GetContent()
-			=> Content.Select(e => (T) e.Value?.Clone()).ToList().AsReadOnly();
+			=> Content.Select(e => (T)e.Value?.Clone()).ToList().AsReadOnly();
 	}
 }

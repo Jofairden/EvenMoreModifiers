@@ -1,10 +1,10 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using Loot.Core.Caching;
 using Loot.Core.System.Loaders;
 using Loot.Core.System.Modifier;
 using Loot.Ext;
+using System;
+using System.Collections.Generic;
+using System.Linq;
 using Terraria;
 using Terraria.DataStructures;
 using Terraria.ModLoader;
@@ -28,7 +28,7 @@ namespace Loot
 
 		public T GetEffect<T>() where T : ModifierEffect
 		{
-			return (T) _modifierEffects.FirstOrDefault(x => x.GetType() == typeof(T));
+			return (T)_modifierEffects.FirstOrDefault(x => x.GetType() == typeof(T));
 		}
 
 		public override void SetupStartInventory(IList<Item> items, bool mediumcoreDeath)
@@ -57,7 +57,7 @@ namespace Loot
 			// Need to initialize with a fresh set of new effect instances
 			foreach (var effect in ContentLoader.ModifierEffect.Content.Select(x => x.Value))
 			{
-				var clone = (ModifierEffect) effect.Clone();
+				var clone = (ModifierEffect)effect.Clone();
 				clone.OnInitialize(this);
 				_modifierEffects.Add(clone);
 			}

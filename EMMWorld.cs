@@ -1,8 +1,11 @@
+using Loot.Core.Cubes;
+using Loot.Core.System.Loaders;
+using Loot.Core.System.Modifier;
+using Loot.Ext;
+using Loot.Rarities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using Loot.Core.System.Modifier;
-using Loot.Ext;
 using Terraria;
 using Terraria.ModLoader;
 using Terraria.ModLoader.IO;
@@ -43,7 +46,10 @@ namespace Loot
 
 		public override void PostUpdate()
 		{
-			if (Initialized) return;
+			if (Initialized)
+			{
+				return;
+			}
 
 			Initialized = true;
 			foreach (var chest in Main.chest.Where(chest => chest != null && chest.x > 0 && chest.y > 0))
@@ -78,7 +84,11 @@ namespace Loot
 					EMMItem itemInfo = EMMItem.GetItemInfo(item);
 					ModifierPool pool = itemInfo.ModifierPool;
 					UnifiedRandom rand = Main.rand != null ? Main.rand : WorldGen.genRand != null ? WorldGen.genRand : null;
-					if (itemInfo.HasRolled || pool != null) continue;
+					if (itemInfo.HasRolled || pool != null)
+					{
+						continue;
+					}
+
 					itemInfo.HasRolled = true;
 
 					if (rand != null && rand.NextBool())
@@ -104,7 +114,13 @@ namespace Loot
 						ctx.Player = player;
 					}
 
-					pool = itemInfo.RollNewPool(ctx);
+					ItemRollProperties itemRollProperties = new ItemRollProperties
+					{
+						MaxRollableLines = 2,
+						ExtraLuck = 0,
+						CanUpgradeRarity = context => false
+					};
+					pool = itemInfo.RollNewPool(ctx, itemRollProperties);
 					pool?.ApplyModifiers(item);
 				}
 			}

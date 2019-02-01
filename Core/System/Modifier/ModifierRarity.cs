@@ -1,8 +1,8 @@
-using System;
-using System.IO;
 using Loot.Core.System.Core;
 using Loot.Core.System.Loaders;
 using Microsoft.Xna.Framework;
+using System;
+using System.IO;
 using Terraria;
 using Terraria.ModLoader;
 using Terraria.ModLoader.IO;
@@ -14,6 +14,8 @@ namespace Loot.Core.System.Modifier
 	/// </summary>
 	public abstract class ModifierRarity : ILoadableContent, ILoadableContentSetter, ICloneable
 	{
+		private const int SAVE_VERSION = 2;
+
 		public Mod Mod { get; internal set; }
 
 		Mod ILoadableContentSetter.Mod
@@ -35,11 +37,24 @@ namespace Loot.Core.System.Modifier
 		public virtual string ItemPrefix => null;
 		public virtual string ItemSuffix => null;
 
-		public abstract float RequiredRarityLevel { get; }
-		public abstract Color Color { get; }
+		/// <summary>
+		/// Describes the chance of this rarity upgrading to the next tier
+		/// If null, is the same as 0f (no chance)
+		/// </summary>
+		public virtual float? UpgradeChance => null;
 
-		public virtual bool MatchesRequirements(ModifierPool modifierPool)
-			=> modifierPool.MatchesRarity(this);
+		/// <summary>
+		/// Describes the chance of this rarity downgrading to the previous tier
+		/// If null, is the same as 0f (no chance)
+		/// </summary>
+		public virtual float? DowngradeChance => null;
+
+		public virtual float ExtraMagnitudePower => 0f;
+		public virtual float ExtraLuck => 0f;
+		public virtual Type Downgrade => null;
+		public virtual Type Upgrade => null;
+
+		public abstract Color Color { get; }
 
 		public virtual void Clone(ref ModifierRarity clone)
 		{
@@ -47,7 +62,7 @@ namespace Loot.Core.System.Modifier
 
 		public object Clone()
 		{
-			ModifierRarity clone = (ModifierRarity) MemberwiseClone();
+			ModifierRarity clone = (ModifierRarity)MemberwiseClone();
 			clone.Mod = Mod;
 			clone.Type = Type;
 			Clone(ref clone);
@@ -103,6 +118,11 @@ namespace Loot.Core.System.Modifier
 
 		protected internal static ModifierRarity _Load(Item item, TagCompound tag)
 		{
+			if (tag == null || tag.ContainsKey("EMMErr:RarityNullErr"))
+			{
+				return null;
+			}
+
 			string modname = tag.GetString("ModName");
 			if (MainLoader.Mods.TryGetValue(modname, out var assembly))
 			{
@@ -121,7 +141,7 @@ namespace Loot.Core.System.Modifier
 					rarityTypeName = rarityTypeName.Substring(rarityTypeName.LastIndexOf('.') + 1);
 					r = ContentLoader.ModifierRarity.GetContent(modname, rarityTypeName);
 				}
-				else if (saveVersion == 2)
+				else if (saveVersion >= 2)
 				{
 					// from saveVersion 2 and onwards, they are saved by assembly (mod) and type name
 					r = ContentLoader.ModifierRarity.GetContent(modname, rarityTypeName);
@@ -139,7 +159,8 @@ namespace Loot.Core.System.Modifier
 				return null;
 			}
 
-			throw new Exception($"ModifierRarity load error for {modname}");
+			Log4c.Logger.ErrorFormat("There was a load error for modifierrarity, TC: {0}", tag);
+			return null;
 		}
 
 		/// <summary>
@@ -152,12 +173,17 @@ namespace Loot.Core.System.Modifier
 
 		protected internal static TagCompound Save(Item item, ModifierRarity rarity)
 		{
+			if (rarity == null)
+			{
+				return new TagCompound { { "EMMErr:RarityNullErr", "ModifierRarity was null err" } };
+			}
+
 			var tag = new TagCompound
 			{
 				{"Type", rarity.GetType().Name},
 				//{ "RarityType", rarity.Type },//Used to be saved in saveVersion 1
 				{"ModName", rarity.Mod.Name},
-				{"ModifierRaritySaveVersion", 2}
+				{"ModifierRaritySaveVersion", SAVE_VERSION}
 			};
 			rarity.Save(item, tag);
 			return tag;

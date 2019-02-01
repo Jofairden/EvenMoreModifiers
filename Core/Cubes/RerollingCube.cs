@@ -13,8 +13,8 @@ namespace Loot.Core.Cubes
 		{
 			DisplayName.SetDefault(CubeName);
 			Tooltip.SetDefault("Press left control and right click to open cube UI" +
-			                   "\nAllows rerolling modifiers of an item" +
-			                   "\nSlotted cube is consumed upon use");
+							   "\nAllows rerolling modifiers of an item" +
+							   "\nSlotted cube is consumed upon use");
 			SafeStaticDefaults();
 		}
 
@@ -31,7 +31,7 @@ namespace Loot.Core.Cubes
 			item.stack++;
 		}
 
-		public virtual void SetRollLogic(ItemRollProperties properties)
+		public virtual void SetRollLogic(Item item, ItemRollProperties properties)
 		{
 		}
 	}

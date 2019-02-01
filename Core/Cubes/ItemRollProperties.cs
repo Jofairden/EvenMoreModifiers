@@ -1,6 +1,6 @@
-using System;
 using Loot.Core.System.Modifier;
 using Microsoft.Xna.Framework;
+using System;
 
 namespace Loot.Core.Cubes
 {
@@ -10,10 +10,16 @@ namespace Loot.Core.Cubes
 	/// </summary>
 	public sealed class ItemRollProperties
 	{
+		private int _minModifierRolls = 1;
+
 		/// <summary>
 		/// The minimum amount of modifiers to roll
 		/// </summary>
-		public int MinModifierRolls { get; set; } = 1;
+		public int MinModifierRolls
+		{
+			get => _minModifierRolls;
+			set => _minModifierRolls = (int)MathHelper.Max(value, 1);
+		}
 
 		private int _maxRollableLines = 4;
 
@@ -23,7 +29,7 @@ namespace Loot.Core.Cubes
 		public int MaxRollableLines
 		{
 			get => _maxRollableLines;
-			set => _maxRollableLines = (int) MathHelper.Clamp(value, 1f, 4f);
+			set => _maxRollableLines = (int)MathHelper.Clamp(value, 1f, 4f);
 		}
 
 		/// <summary>
@@ -32,7 +38,7 @@ namespace Loot.Core.Cubes
 		public float RollNextChance { get; set; } = 0.5f;
 
 		/// <summary>
-		/// The minimum strength of them to roll
+		/// The minimum strength of lines to roll
 		/// </summary>
 		public float MagnitudePower { get; set; } = 1f;
 
@@ -45,12 +51,18 @@ namespace Loot.Core.Cubes
 		/// <summary>
 		/// The chance to roll a pre-defined (weighted) pool
 		/// </summary>
-		public float RollPredefinedPoolChance { get; set; } = 0.25f;
+		public float RollPredefinedPoolChance { get; set; } = 0f;
 
 		/// <summary>
 		/// Apply a custom behavior for rolling a pool
 		/// </summary>
 		public Func<ModifierPool> OverrideRollModifierPool { get; set; } = null;
+
+		public ModifierRarity ForceModifierRarity { get; set; } = null;
+		public Func<ModifierRarity> OverrideRollModifierRarity { get; set; } = null;
+
+		public Func<ModifierContext, bool> CanUpgradeRarity { get; set; } = ctx => true;
+		public Func<ModifierContext, bool> CanDowngradeRarity { get; set; } = ctx => true;
 
 		/// <summary>
 		/// Gives extra luck when rolling modifiers

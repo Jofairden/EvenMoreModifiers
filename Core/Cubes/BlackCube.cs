@@ -11,6 +11,7 @@ namespace Loot.Core.Cubes
 
 		protected override TooltipLine ExtraTooltip => new TooltipLine(mod, "BlackCube::Description::Add_Box",
 			"Always rolls 4 lines" +
+			"\nMaximum potential: Legendary" +
 			"\nCan roll 25% stronger modifiers" +
 			"\n+4 luck with this cube")
 		{
@@ -26,11 +27,9 @@ namespace Loot.Core.Cubes
 		{
 		}
 
-		public override void SetRollLogic(ItemRollProperties properties)
+		public override void SetRollLogic(Item item, ItemRollProperties properties)
 		{
-			base.SetRollLogic(properties);
-			// set forced rolls to always roll 4 lines
-			// set forced strength minimum 25%
+			base.SetRollLogic(item, properties);
 			properties.MinModifierRolls = 4;
 			properties.MagnitudePower = 1.25f;
 			properties.ExtraLuck = 4;

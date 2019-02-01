@@ -35,15 +35,15 @@ namespace Loot.UI.Core
 			RecalculateStack();
 		}
 
-		public void InteractionLogic(ItemRollProperties itemRollProperties)
+		public void InteractionLogic(Item item, ItemRollProperties itemRollProperties)
 		{
-			(item.modItem as RerollingCube)?.SetRollLogic(itemRollProperties);
+			(this.item.modItem as RerollingCube)?.SetRollLogic(item, itemRollProperties);
 		}
 
 		public void RecalculateStack()
 		{
 			item.stack = Main.LocalPlayer.inventory.CountItemStack(item.type, true);
-			item.stack = (int) MathHelper.Clamp(item.stack, 0f, 999f);
+			item.stack = (int)MathHelper.Clamp(item.stack, 0f, 999f);
 		}
 	}
 }

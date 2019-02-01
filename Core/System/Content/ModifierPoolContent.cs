@@ -1,7 +1,7 @@
-using System.Linq;
 using Loot.Core.System.Core;
 using Loot.Core.System.Loaders;
 using Loot.Core.System.Modifier;
+using System.Linq;
 using Terraria.Utilities;
 
 namespace Loot.Core.System.Content
@@ -31,22 +31,7 @@ namespace Loot.Core.System.Content
 			}
 
 			var mod = wr.Get();
-			return (ModifierPool) mod?.Clone();
-		}
-
-		//@todo this might need a better place.
-		/// <summary>
-		/// Returns the rarity of a pool
-		/// </summary>
-		/// <param name="modifierPool"></param>
-		/// <returns><see cref="ModifierRarity"/></returns>
-		public ModifierRarity GetPoolRarity(ModifierPool modifierPool)
-		{
-			return (ModifierRarity) ContentLoader.ModifierRarity.Content
-				.Select(r => r.Value)
-				.OrderByDescending(r => r.RequiredRarityLevel)
-				.FirstOrDefault(r => r.MatchesRequirements(modifierPool))
-				?.Clone();
+			return (ModifierPool)mod?.Clone();
 		}
 	}
 }

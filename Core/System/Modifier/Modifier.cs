@@ -1,10 +1,10 @@
-using System;
-using System.Collections.Generic;
-using System.IO;
 using Loot.Core.Graphics;
 using Loot.Core.System.Core;
 using Loot.Core.System.Loaders;
 using Microsoft.Xna.Framework;
+using System;
+using System.Collections.Generic;
+using System.IO;
 using Terraria;
 using Terraria.ModLoader;
 using Terraria.ModLoader.IO;
@@ -63,7 +63,8 @@ namespace Loot.Core.System.Modifier
 		/// If this Modifier can roll at all in the given context
 		/// Properties are available here, apart from magnitude and power
 		/// </summary>
-		public virtual bool CanRoll(ModifierContext ctx) => true;
+		public virtual bool CanRoll(ModifierContext ctx)
+			=> true;
 
 		/// <summary>
 		/// Allows modders to do something when the modifier is rolled in the given context
@@ -79,7 +80,8 @@ namespace Loot.Core.System.Modifier
 		/// This is used to be able to stop a modifier from being added after it has rolled
 		/// If the roll is deemed illicit, the next roll is forced to succeed
 		/// </summary>
-		public virtual bool PostRoll(ModifierContext ctx, IEnumerable<Modifier> rolledModifiers) => true;
+		public virtual bool PostRoll(ModifierContext ctx, IEnumerable<Modifier> rolledModifiers)
+			=> true;
 
 		/// <summary>
 		/// Allows modders to do something when this modifier is applied
@@ -100,7 +102,7 @@ namespace Loot.Core.System.Modifier
 
 		public new object Clone()
 		{
-			Modifier clone = (Modifier) MemberwiseClone();
+			Modifier clone = (Modifier)MemberwiseClone();
 			clone.Mod = Mod;
 			clone.Type = Type;
 			clone.Properties = Properties;
@@ -148,7 +150,7 @@ namespace Loot.Core.System.Modifier
 		{
 			string modName = tag.GetString("ModName");
 			if (modName != null
-			    && MainLoader.Mods.TryGetValue(modName, out var assembly))
+				&& MainLoader.Mods.TryGetValue(modName, out var assembly))
 			{
 				// If we load a null here, it means a modifier is unloaded
 				Modifier m = null;
@@ -165,7 +167,7 @@ namespace Loot.Core.System.Modifier
 					modifierTypeName = modifierTypeName.Substring(modifierTypeName.LastIndexOf('.') + 1);
 					m = ContentLoader.Modifier.GetContent(modName, modifierTypeName);
 				}
-				else if (saveVersion == 2)
+				else if (saveVersion >= 2)
 				{
 					// from saveVersion 2 and onwards, they are saved by assembly (mod) and type name
 					m = ContentLoader.Modifier.GetContent(modName, modifierTypeName);
@@ -187,7 +189,8 @@ namespace Loot.Core.System.Modifier
 				return null;
 			}
 
-			throw new Exception($"Modifier load error for {modName}");
+			Log4c.Logger.ErrorFormat("There was a load error for modifier, TC: {0}", tag);
+			return null;
 		}
 
 		/// <summary>
