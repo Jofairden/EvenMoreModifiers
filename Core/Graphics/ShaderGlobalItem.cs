@@ -1,7 +1,8 @@
-using System.Linq;
 using Loot.Core.System.Modifier;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
+using System.Collections.Generic;
+using System.Linq;
 using Terraria;
 using Terraria.ModLoader;
 
@@ -13,7 +14,7 @@ namespace Loot.Core.Graphics
 	/// </summary>
 	public class ShaderGlobalItem : GlobalItem
 	{
-		public ShaderEntity[] ShaderEntities;
+		public List<ShaderEntity> ShaderEntities = new List<ShaderEntity>();
 		public bool NeedsUpdate;
 
 		public override bool InstancePerEntity => true;
@@ -21,26 +22,27 @@ namespace Loot.Core.Graphics
 
 		public void UpdateEntities(Item item)
 		{
-			bool updateEntitiesArray = false;
 			var pool = EMMItem.GetActivePool(item).ToArray();
 
-			if (NeedsUpdate || ShaderEntities == null || ShaderEntities.Any(x => x != null && x.NeedsUpdate))
+			if (!NeedsUpdate && ShaderEntities != null && !ShaderEntities.Any(x => x != null && x.NeedsUpdate))
 			{
-				ShaderEntities = new ShaderEntity[pool.Length];
-				updateEntitiesArray = true;
-				NeedsUpdate = false;
+				return;
 			}
 
-			if (updateEntitiesArray)
+			if (ShaderEntities != null)
 			{
-				for (int i = 0; i < pool.Length; i++)
+				ShaderEntities.Clear();
+
+				foreach (var m in pool)
 				{
-					Modifier m = pool[i];
-					ShaderEntities[i] = m.GetShaderEntity(item);
+					var ent = m.GetShaderEntity(item);
+					ShaderEntities.Add(ent);
 				}
 
-				ShaderEntities = ShaderEntities.OrderBy(x => x.Order).ToArray();
+				ShaderEntities = new List<ShaderEntity>(ShaderEntities.OrderBy(x => x?.Order ?? 0));
 			}
+
+			NeedsUpdate = false;
 		}
 
 		public override bool PreDrawInWorld(Item item, SpriteBatch spriteBatch, Color lightColor, Color alphaColor, ref float rotation, ref float scale, int whoAmI)
@@ -51,7 +53,7 @@ namespace Loot.Core.Graphics
 			shaderInfo.UpdateEntities(item);
 			glowmaskInfo.UpdateEntities(item);
 
-			for (int i = 0; i < shaderInfo.ShaderEntities.Length; i++)
+			for (int i = 0; i < shaderInfo.ShaderEntities.Count; i++)
 			{
 				ShaderEntity shaderEntity = shaderInfo.ShaderEntities[i];
 				if (shaderEntity != null)

@@ -1,7 +1,8 @@
-using System.Linq;
 using Loot.Core.System.Modifier;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
+using System.Collections.Generic;
+using System.Linq;
 using Terraria;
 using Terraria.ModLoader;
 
@@ -13,7 +14,7 @@ namespace Loot.Core.Graphics
 	/// </summary>
 	public class GlowmaskGlobalItem : GlobalItem
 	{
-		public GlowmaskEntity[] GlowmaskEntities;
+		public List<GlowmaskEntity> GlowmaskEntities = new List<GlowmaskEntity>();
 		public bool NeedsUpdate;
 
 		public override bool InstancePerEntity => true;
@@ -21,26 +22,27 @@ namespace Loot.Core.Graphics
 
 		public void UpdateEntities(Item item)
 		{
-			bool updateEntitiesArray = false;
 			var pool = EMMItem.GetActivePool(item).ToArray();
 
-			if (NeedsUpdate || GlowmaskEntities == null || GlowmaskEntities.Any(x => x != null && x.NeedsUpdate))
+			if (!NeedsUpdate && GlowmaskEntities != null && !GlowmaskEntities.Any(x => x != null && x.NeedsUpdate))
 			{
-				GlowmaskEntities = new GlowmaskEntity[pool.Length];
-				updateEntitiesArray = true;
-				NeedsUpdate = false;
+				return;
 			}
 
-			if (updateEntitiesArray)
+			if (GlowmaskEntities != null)
 			{
-				for (int i = 0; i < pool.Length; i++)
+				GlowmaskEntities.Clear();
+
+				foreach (var m in pool)
 				{
-					Modifier m = pool[i];
-					GlowmaskEntities[i] = m.GetGlowmaskEntity(item);
+					var ent = m.GetGlowmaskEntity(item);
+					GlowmaskEntities.Add(ent);
 				}
 
-				GlowmaskEntities = GlowmaskEntities.OrderBy(x => x.Order).ToArray();
+				GlowmaskEntities = new List<GlowmaskEntity>(GlowmaskEntities.OrderBy(x => x?.Order ?? 0));
 			}
+
+			NeedsUpdate = false;
 		}
 
 		public override void PostDrawInWorld(Item item, SpriteBatch spriteBatch, Color lightColor, Color alphaColor, float rotation, float scale, int whoAmI)
@@ -48,7 +50,8 @@ namespace Loot.Core.Graphics
 			ShaderGlobalItem shaderInfo = item.GetGlobalItem<ShaderGlobalItem>();
 			GlowmaskGlobalItem glowmaskInfo = item.GetGlobalItem<GlowmaskGlobalItem>();
 			glowmaskInfo.UpdateEntities(item);
-			for (int i = 0; i < glowmaskInfo.GlowmaskEntities.Length; i++)
+
+			for (int i = 0; i < glowmaskInfo.GlowmaskEntities.Count; i++)
 			{
 				GlowmaskEntity glowmaskEntity = glowmaskInfo.GlowmaskEntities[i];
 				if (glowmaskEntity != null && shaderInfo.ShaderEntities[i] == null)
