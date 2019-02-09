@@ -51,7 +51,7 @@ var searchData=
   ['globalitem',['GlobalItem',['../class_global_item.html',1,'']]],
   ['globalnpc',['GlobalNPC',['../class_global_n_p_c.html',1,'']]],
   ['globalprojectile',['GlobalProjectile',['../class_global_projectile.html',1,'']]],
-  ['glowmaskentities',['GlowmaskEntities',['../class_loot_1_1_core_1_1_graphics_1_1_glowmask_global_item.html#a844bd97ac2a5f80b020c5b1fae24be5d',1,'Loot::Core::Graphics::GlowmaskGlobalItem']]],
+  ['glowmaskentities',['GlowmaskEntities',['../class_loot_1_1_core_1_1_graphics_1_1_glowmask_global_item.html#af0de05b4dc51fd5f8e00f0aab0c0a393',1,'Loot::Core::Graphics::GlowmaskGlobalItem']]],
   ['glowmaskentity',['GlowmaskEntity',['../class_loot_1_1_core_1_1_graphics_1_1_glowmask_entity.html',1,'Loot::Core::Graphics']]],
   ['glowmaskentity',['GlowmaskEntity',['../class_loot_1_1_core_1_1_graphics_1_1_glowmask_entity.html#a4e638a376f43903cb01cfe689593ce3d',1,'Loot::Core::Graphics::GlowmaskEntity']]],
   ['glowmaskentity_2ecs',['GlowmaskEntity.cs',['../_glowmask_entity_8cs.html',1,'']]],
