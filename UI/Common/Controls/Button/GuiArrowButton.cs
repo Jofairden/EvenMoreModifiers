@@ -36,7 +36,7 @@ namespace Loot.UI.Common.Controls.Button
 
 		public GuiArrowButton(ArrowDirection direction)
 		{
-			_btnTexture = Loot.Instance.GetTexture("UI/Common/GuiArrowButton");
+			_btnTexture = Loot.Instance.GetTexture("UI/Common/Controls/Button/GuiArrowButton");
 			_arrowDirection = direction;
 		}
 
