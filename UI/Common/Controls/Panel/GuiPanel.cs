@@ -1,7 +1,6 @@
 using Loot.Ext;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
-using Terraria;
 
 namespace Loot.UI.Common.Controls.Panel
 {

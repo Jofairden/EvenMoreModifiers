@@ -1,5 +1,4 @@
 using Loot.Core.System.Core;
-using Loot.Core.System.Loaders;
 using Loot.Core.System.Modifier;
 using System.Linq;
 using Terraria.Utilities;

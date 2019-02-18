@@ -1,13 +1,3 @@
-using Loot.Ext.ModSupport;
-using Loot.UI.Common.Core;
-using Microsoft.Xna.Framework.Input;
-using System;
-using System.Collections.Generic;
-using Terraria;
-using Terraria.GameInput;
-using Terraria.ID;
-using Terraria.ModLoader;
-
 namespace Loot.Core.Cubes
 {
 	// TODO

@@ -5,7 +5,6 @@ using Loot.UI.Common.Tabs.Cubing;
 using Loot.UI.Common.Tabs.EssenceCrafting;
 using Loot.UI.Common.Tabs.Soulforging;
 using Microsoft.Xna.Framework;
-using System;
 using System.Collections.Generic;
 using Terraria;
 using Terraria.UI;
