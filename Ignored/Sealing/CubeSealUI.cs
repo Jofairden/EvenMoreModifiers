@@ -1,10 +1,10 @@
-using System.Linq;
 using Loot.Core.Cubes;
 using Loot.Ext;
 using Loot.Sounds;
 using Loot.UI.Core;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
+using System.Linq;
 using Terraria;
 using Terraria.GameContent.UI.Elements;
 using Terraria.ModLoader;
@@ -71,7 +71,7 @@ namespace Loot.UI.Sealing
 			_backPanel.Top.Set(Main.screenHeight / 2f - _backPanel.Height.Pixels / 2f, 0f);
 			_backPanel.BackgroundColor = new Color(73, 94, 171);
 			base.Append(_backPanel);
-			AddDragPanel(_backPanel);
+			//AddDragPanel(_backPanel);
 			base.OnInitialize();
 
 			var sealCubeTexture = Loot.Instance.GetTexture("Core/Cubes/CubeOfSealing");
@@ -106,7 +106,7 @@ namespace Loot.UI.Sealing
 			if (_cubePanel.IsMouseHovering)
 			{
 				Main.hoverItemName = "Click to seal slotted item's modifiers" +
-				                     "\nIf an item is already sealed the seal will be removed";
+									 "\nIf an item is already sealed the seal will be removed";
 			}
 		}
 
@@ -130,9 +130,9 @@ namespace Loot.UI.Sealing
 		private void TrySealingSlottedItem(UIMouseEvent evt, UIElement listeningelement)
 		{
 			if (_cubeCount <= 0
-			    || _itemPanel.item.IsAir
-			    || !_itemPanel.item.IsModifierRollableItem()
-			    || !EMMItem.GetActivePool(_itemPanel.item).Any())
+				|| _itemPanel.item.IsAir
+				|| !_itemPanel.item.IsModifierRollableItem()
+				|| !EMMItem.GetActivePool(_itemPanel.item).Any())
 			{
 				SoundHelper.PlayCustomSound(SoundHelper.SoundType.Decline);
 				return;

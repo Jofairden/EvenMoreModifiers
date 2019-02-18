@@ -1,11 +1,11 @@
 author = Jofairden
-version = 0.1.2.3
+version = 1.0
 displayName = Even More Modifiers
 homepage = https://zond.tech/emm
 hideCode = false
 hideResources = false
-includeSource = tru
-buildIgnore = *.csproj, *.user, .vs\*, .idea\*, *.git*, *.config, tmp.txt, packages\*, UnitTests.cs, TestResults\*, LootTests\*, docs\*, bin\*, obj\*, references\*, travis\*
-includePDB = false
+includeSource = true
+buildIgnore = Ignored\*, *.csproj, *.user, .vs\*, .idea\*, *.git*, *.config, tmp.txt, packages\*, UnitTests.cs, TestResults\*, LootTests\*, docs\*, bin\*, obj\*, references\*, travis\*
+includePDB = true
 languageVersion = 6
 weakReferences = CheatSheet, WingSlot

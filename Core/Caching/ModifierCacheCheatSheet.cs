@@ -1,6 +1,6 @@
-using System.Linq;
 using CheatSheet;
 using Loot.Core.System.Modifier;
+using System.Linq;
 
 namespace Loot.Core.Caching
 {
@@ -21,7 +21,9 @@ namespace Loot.Core.Caching
 
 				// update delegations
 				if (oldEquip != null && newEquip == oldEquip)
+				{
 					continue;
+				}
 
 				Ready = false;
 
@@ -48,7 +50,9 @@ namespace Loot.Core.Caching
 
 			// current enabled is smaller than total
 			if (curEquips.Length >= _oldCheatSheetEquips.Count(x => x != null))
+			{
 				return;
+			}
 
 			var outOfDateEquips = _oldCheatSheetEquips.Skip(curEquips.Length);
 			if (outOfDateEquips.Any())

@@ -1,12 +1,11 @@
-using System.Collections.Generic;
-using System.Runtime.CompilerServices;
 using Loot.Core.ModContent;
 using Loot.Core.System.Loaders;
 using Loot.Ext.ModSupport;
-using Loot.UI.Core;
-using Loot.UI.Rerolling;
-using Loot.UI.Sealing;
+using Loot.UI.Common;
+using Loot.UI.Common.Core;
 using Microsoft.Xna.Framework;
+using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 using Terraria;
 using Terraria.ModLoader;
 using Terraria.UI;
@@ -27,9 +26,8 @@ namespace Loot
 	{
 		internal static Loot Instance;
 
-		internal UserInterface CubeInterface;
-		internal CubeRerollUI CubeRerollUI;
-		internal CubeSealUI CubeSealUI;
+		internal UserInterface GuiInterface;
+		internal GuiTabWindow GuiState;
 
 		internal static ModContentManager ModContentManager;
 		public static bool Loaded;
@@ -91,13 +89,9 @@ namespace Loot
 
 		private void SetupUserInterfaces()
 		{
-			CubeRerollUI = new CubeRerollUI();
-			CubeRerollUI.Activate();
-
-			CubeSealUI = new CubeSealUI();
-			CubeSealUI.Activate();
-
-			CubeInterface = new UserInterface();
+			GuiInterface = new UserInterface();
+			GuiState = new GuiTabWindow();
+			GuiState.Activate();
 		}
 
 		// AddRecipes() here functions as a PostLoad() hook where all mods have loaded
@@ -143,30 +137,30 @@ namespace Loot
 		// If we quit we must give back the item in slot if it's there
 		public override void PreSaveAndQuit()
 		{
-			if (CubeRerollUI._rerollItemPanel != null
-			    && !CubeRerollUI._rerollItemPanel.item.IsAir)
-			{
-				// Runs only in SP or client, so this is safe
-				Main.LocalPlayer.QuickSpawnClonedItem(CubeRerollUI._rerollItemPanel.item, CubeRerollUI._rerollItemPanel.item.stack);
-				CubeRerollUI._rerollItemPanel.item.TurnToAir();
-			}
+			//if (CubeRerollUI._rerollItemPanel != null
+			//	&& !CubeRerollUI._rerollItemPanel.item.IsAir)
+			//{
+			//	// Runs only in SP or client, so this is safe
+			//	Main.LocalPlayer.QuickSpawnClonedItem(CubeRerollUI._rerollItemPanel.item, CubeRerollUI._rerollItemPanel.item.stack);
+			//	CubeRerollUI._rerollItemPanel.item.TurnToAir();
+			//}
 
-			if (CubeSealUI.SlottedItem != null
-			    && !CubeSealUI.SlottedItem.IsAir)
-			{
-				Main.LocalPlayer.QuickSpawnClonedItem(CubeSealUI.SlottedItem, CubeSealUI.SlottedItem.stack);
-				CubeSealUI.SlottedItem.TurnToAir();
-			}
+			//if (CubeSealUI.SlottedItem != null
+			//	&& !CubeSealUI.SlottedItem.IsAir)
+			//{
+			//	Main.LocalPlayer.QuickSpawnClonedItem(CubeSealUI.SlottedItem, CubeSealUI.SlottedItem.stack);
+			//	CubeSealUI.SlottedItem.TurnToAir();
+			//}
 		}
 
-		private GameTime _lastUpdateUIGameTime;
+		private GameTime _lastUpdateUiGameTime;
 
 		public override void UpdateUI(GameTime gameTime)
 		{
-			_lastUpdateUIGameTime = gameTime;
-			if (CubeInterface?.CurrentState != null)
+			_lastUpdateUiGameTime = gameTime;
+			if (GuiInterface?.CurrentState != null)
 			{
-				CubeInterface.Update(gameTime);
+				GuiInterface.Update(gameTime);
 			}
 		}
 
@@ -176,18 +170,31 @@ namespace Loot
 			if (mouseTextIndex != -1)
 			{
 				layers.Insert(mouseTextIndex, new LegacyGameInterfaceLayer(
-					"Loot: CubeUI",
+					"Loot: GuiInterface",
 					delegate
 					{
-						if (((CubeInterface.CurrentState as CubeUI)?.Visible ?? false)
-						    && _lastUpdateUIGameTime != null)
+						if (GuiInterface?.CurrentState is VisibilityUI visibilityUi
+							&& visibilityUi.Visible && _lastUpdateUiGameTime != null)
 						{
-							CubeInterface.Draw(Main.spriteBatch, _lastUpdateUIGameTime);
+							GuiInterface.Draw(Main.spriteBatch, _lastUpdateUiGameTime);
 						}
-
 						return true;
 					},
 					InterfaceScaleType.UI));
+
+				//layers.Insert(mouseTextIndex, new LegacyGameInterfaceLayer(
+				//	"Loot: CubeUI",
+				//	delegate
+				//	{
+				//		if (((CubeInterface.CurrentState as CubeUI)?.Visible ?? false)
+				//			&& _lastUpdateUIGameTime != null)
+				//		{
+				//			CubeInterface.Draw(Main.spriteBatch, _lastUpdateUIGameTime);
+				//		}
+
+				//		return true;
+				//	},
+				//	InterfaceScaleType.UI));
 			}
 		}
 	}

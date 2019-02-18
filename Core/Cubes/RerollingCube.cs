@@ -20,12 +20,14 @@ namespace Loot.Core.Cubes
 
 		public override void RightClick(Player player)
 		{
-			Loot.Instance.CubeRerollUI._cubePanel.ChangeItem(item.type);
+			//Loot.Instance.CubeRerollUI._cubePanel.ChangeItem(item.type);
 
-			if (!Loot.Instance.CubeRerollUI.Visible || Loot.Instance.CubeRerollUI.Visible && Loot.Instance.CubeRerollUI._rerollItemPanel.item.IsAir)
-			{
-				Loot.Instance.CubeRerollUI.ToggleUI(Loot.Instance.CubeInterface, Loot.Instance.CubeRerollUI);
-			}
+			//if (!Loot.Instance.CubeRerollUI.Visible || Loot.Instance.CubeRerollUI.Visible && Loot.Instance.CubeRerollUI._rerollItemPanel.item.IsAir)
+			//{
+			//	Loot.Instance.CubeRerollUI.ToggleUI(Loot.Instance.CubeInterface, Loot.Instance.CubeRerollUI);
+			//}
+
+			Loot.Instance.GuiState.ToggleUI(Loot.Instance.GuiInterface);
 
 			// Must be after recalc, otherwise it affects the calculated stack
 			item.stack++;

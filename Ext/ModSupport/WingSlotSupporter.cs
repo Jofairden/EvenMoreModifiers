@@ -1,5 +1,4 @@
 using System;
-using Loot.UI.Core;
 using Terraria.ModLoader;
 
 namespace Loot.Ext.ModSupport
@@ -11,7 +10,9 @@ namespace Loot.Ext.ModSupport
 		public bool IsInvalid;
 
 		private static bool WingSlotHandler()
-			=> Loot.Instance.CubeInterface.CurrentState is CubeUI uiState && uiState.Visible;
+			// TODO
+			//=> Loot.Instance.CubeInterface.CurrentState is CubeUI uiState && uiState.Visible;
+			=> true;
 
 		public override bool CheckValidity(Mod mod)
 		{
@@ -21,7 +22,7 @@ namespace Loot.Ext.ModSupport
 
 		public override void AddClientSupport(Mod mod)
 		{
-			mod.Call("add", (Func<bool>) WingSlotHandler);
+			mod.Call("add", (Func<bool>)WingSlotHandler);
 		}
 	}
 }

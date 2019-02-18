@@ -2,25 +2,30 @@ using Microsoft.Xna.Framework.Graphics;
 using Terraria;
 using Terraria.GameContent.UI.Elements;
 
-namespace Loot.UI.Core
+namespace Loot.UI.Common.Controls.Panel
 {
-	// @todo make toggable to 'keep' rolled modifier
-	public class UIModifierPanel : UIPanel
+	internal class GuiTextPanel : GuiPanel
 	{
-		//private Modifier rolledModifier;
-
-		private readonly UIText _text;
 		private const string DEFAULT_TEXT = "...";
+		private string _hoverText;
+		private UIText _text;
 
-		public UIModifierPanel() : base()
+		public override void OnInitialize()
 		{
+			base.OnInitialize();
 			_text = new UIText(DEFAULT_TEXT, 0.75f);
-			base.Append(_text);
+			Frame.Append(_text);
+		}
+
+		public void SetHoverText(string line)
+		{
+			_hoverText = line;
 		}
 
 		public void UpdateText(string line)
 		{
 			_text?.SetText(line);
+			_text?.Top.Set(Main.fontMouseText.MeasureString(line).Y * 0.375f, 0);
 		}
 
 		public void ResetText()
@@ -32,9 +37,9 @@ namespace Loot.UI.Core
 		{
 			base.DrawSelf(spriteBatch);
 
-			if (base.IsMouseHovering)
+			if (IsMouseHovering)
 			{
-				Main.hoverItemName = _text.Text;
+				Main.hoverItemName = _hoverText ?? _text.Text;
 			}
 		}
 	}
