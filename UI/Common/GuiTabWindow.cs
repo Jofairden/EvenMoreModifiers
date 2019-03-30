@@ -6,6 +6,7 @@ using Loot.UI.Common.Tabs.EssenceCrafting;
 using Loot.UI.Common.Tabs.Soulforging;
 using Microsoft.Xna.Framework;
 using System.Collections.Generic;
+using System.Linq;
 using Terraria;
 using Terraria.UI;
 
@@ -17,7 +18,7 @@ namespace Loot.UI.Common
 		private GuiHeader _header;
 		private GuiCloseButton _closeButton;
 		private GuiTab _currentTab;
-		private GuiTabState _currentTabState = GuiTabState.DEFAULT;
+		private GuiTabState _currentTabState = GuiTabState.CUBING;
 
 		private readonly Dictionary<GuiTabState, GuiTab> _tabs = new Dictionary<GuiTabState, GuiTab>
 		{
@@ -26,11 +27,11 @@ namespace Loot.UI.Common
 			{GuiTabState.SOULFORGE, new GuiSoulforgeTab()},
 		};
 
-		private readonly List<GuiTabToggle> _toggles = new List<GuiTabToggle>
+		private readonly Dictionary<GuiTabState, GuiTabToggle> _toggles = new Dictionary<GuiTabState, GuiTabToggle>
 		{
-			new GuiTabToggle(GuiTabState.CUBING),
-			new GuiTabToggle(GuiTabState.ESSENCE),
-			new GuiTabToggle(GuiTabState.SOULFORGE)
+			{GuiTabState.CUBING, new GuiTabToggle(GuiTabState.CUBING)},
+			{GuiTabState.ESSENCE, new GuiTabToggle(GuiTabState.ESSENCE)},
+			{GuiTabState.SOULFORGE, new GuiTabToggle(GuiTabState.SOULFORGE)}
 		};
 
 		public GuiTab GetTab()
@@ -42,7 +43,13 @@ namespace Loot.UI.Common
 
 		private void ToggleTab(UIMouseEvent evt, UIElement element, GuiTabToggle toggle)
 		{
+			if (_currentTabState == toggle.TargetState)
+			{
+				return;
+			}
 			SoundHelper.PlayCustomSound(SoundHelper.SoundType.OpenUI);
+			_toggles[_currentTabState].SetActive(false);
+			toggle.SetActive(true);
 			_currentTabState = toggle.TargetState;
 			UpdateTab();
 		}
@@ -94,7 +101,7 @@ namespace Loot.UI.Common
 			var togglePosition = new Vector2(422, _header.GetOffset());
 			var toggleOffset = Vector2.UnitY * 10;
 
-			foreach (var toggle in _toggles)
+			foreach (var toggle in _toggles.Select(x => x.Value))
 			{
 				toggle.Activate();
 				toggle.WhenClicked += ToggleTab;
@@ -105,6 +112,7 @@ namespace Loot.UI.Common
 				Append(toggle);
 			}
 
+			_toggles[_currentTabState].SetActive(true);
 			UpdateTab();
 			CenterWindow();
 		}
