@@ -40,8 +40,8 @@ namespace Loot.UI.Common
 
 		protected override void DrawSelf(SpriteBatch spriteBatch)
 		{
-			CalculatedStyle dimensions = base.GetDimensions();
-			spriteBatch.Draw(this._texture, dimensions.Position(), Color.White * VisiblityMultiplier);
+			CalculatedStyle dimensions = GetDimensions();
+			spriteBatch.Draw(_texture, dimensions.Position(), Color.White * VisiblityMultiplier);
 		}
 
 		private Texture2D GetTexture()

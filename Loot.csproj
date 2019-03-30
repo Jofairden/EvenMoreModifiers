@@ -204,11 +204,13 @@
     <Compile Include="UI\Common\GuiHeader.cs" />
     <Compile Include="UI\Common\Controls\Panel\GuiTextPanel.cs" />
     <Compile Include="UI\Common\Controls\Panel\GuiPanel.cs" />
+    <Compile Include="UI\Common\Tabs\Soulforging\GaugeLevel.cs" />
     <Compile Include="UI\Common\Tabs\Soulforging\GuiSoulforgeTab.cs" />
     <Compile Include="UI\Common\GuiTab.cs" />
     <Compile Include="UI\Common\GuiTabWindow.cs" />
     <Compile Include="UI\Common\GuiTabState.cs" />
     <Compile Include="UI\Common\GuiTabToggle.cs" />
+    <Compile Include="UI\Common\Tabs\Soulforging\GuiSoulgauge.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="build.txt" />
