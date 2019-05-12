@@ -101,7 +101,7 @@ namespace Loot.UI.Common
 			var togglePosition = new Vector2(422, _header.GetOffset());
 			var toggleOffset = Vector2.UnitY * 10;
 
-			foreach (var toggle in _toggles.Select(x => x.Value))
+			foreach (var toggle in _toggles.Select(x => x.Value).Take(1)) // TODO remove Take(1) later
 			{
 				toggle.Activate();
 				toggle.WhenClicked += ToggleTab;
