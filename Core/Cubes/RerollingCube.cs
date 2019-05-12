@@ -1,4 +1,3 @@
-using System.Linq;
 using Loot.UI.Common;
 using Loot.UI.Common.Tabs.Cubing;
 using Terraria;

@@ -3,14 +3,14 @@ using Terraria.ModLoader;
 
 namespace Loot.Ext.ModSupport
 {
-	internal class WingSlotSupporter : ModSupporter
+	internal class WingSlotSupport : ModSupport
 	{
 		public override string ModName => "WingSlot";
 
 		public bool IsInvalid;
 
 		private static bool WingSlotHandler()
-			// TODO
+			// TODO re-add the support (need WingSlot beta compatible)
 			//=> Loot.Instance.CubeInterface.CurrentState is CubeUI uiState && uiState.Visible;
 			=> true;
 

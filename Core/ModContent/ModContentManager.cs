@@ -20,7 +20,6 @@ namespace Loot.Core.ModContent
 		public TextureModContent GetContent(string key)
 			=> _contents.TryGetValue(key, out var modContent) ? modContent : null;
 
-
 		public void AddContent(string key, TextureModContent textureModContent)
 		{
 			if (_contents.ContainsKey(key))

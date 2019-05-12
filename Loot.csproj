@@ -95,11 +95,12 @@
     <Compile Include="EMMWorld.cs" />
     <Compile Include="Ext\GuiUtils.cs" />
     <Compile Include="Ext\ItemUtils.cs" />
-    <Compile Include="Ext\ModSupport\CheatSheetSupporter.cs" />
+    <Compile Include="Ext\ModSupport\CheatSheetSupport.cs" />
+    <Compile Include="Ext\ModSupport\ModSupportTunneler.cs" />
     <Compile Include="Ext\ModSupport\ModSupport.cs" />
-    <Compile Include="Ext\ModSupport\ModSupporter.cs" />
-    <Compile Include="Ext\ModSupport\WingSlotSupporter.cs" />
+    <Compile Include="Ext\ModSupport\WingSlotSupport.cs" />
     <Compile Include="Ext\ModUtils.cs" />
+    <Compile Include="LoadingFunneler.cs" />
     <Compile Include="Log4c.cs" />
     <Compile Include="Loot.cs" />
     <Compile Include="ModifierItem.cs" />

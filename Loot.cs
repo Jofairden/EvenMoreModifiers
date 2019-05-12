@@ -1,6 +1,4 @@
 using Loot.Core.ModContent;
-using Loot.Core.System.Loaders;
-using Loot.Ext.ModSupport;
 using Loot.UI.Common;
 using Loot.UI.Common.Core;
 using Microsoft.Xna.Framework;
@@ -33,111 +31,26 @@ namespace Loot
 		internal static ModContentManager ModContentManager;
 		public static bool Loaded;
 
-		public Loot()
-		{
-			Properties = new ModProperties
-			{
-				Autoload = true,
-				AutoloadGores = true,
-				AutoloadSounds = true
-			};
-		}
-
-		public static void AddMod(Mod mod)
-		{
-			MainLoader.RegisterMod(mod);
-			MainLoader.AddContent(mod);
-		}
-
 		public override void Load()
 		{
 			Instance = this;
-			LoadMod();
-
-			if (!Main.dedServ)
-			{
-				LoadModForClient();
-			}
+			LoadingFunneler.Load();
 		}
 
-		private void LoadMod()
-		{
-			ModSupport.Init();
-
-			ContentLoader.Initialize();
-			ContentLoader.Load();
-			MainLoader.Initialize();
-			MainLoader.Load();
-
-			AddMod(this);
-
-			ModSupport.AddServerSupport();
-		}
-
-		private void LoadModForClient()
-		{
-			SetupContentManager();
-			SetupUserInterfaces();
-			AssetLoader.RegisterAssets(this, "GraphicsAssets");
-			ModSupport.AddClientSupport();
-		}
-
-		private void SetupContentManager()
-		{
-			ModContentManager = new ModContentManager();
-			ModContentManager.Initialize(this);
-		}
-
-		private void SetupUserInterfaces()
-		{
-			GuiInterface = new UserInterface();
-			GuiState = new GuiTabWindow();
-			GuiState.Activate();
-		}
-
-		// AddRecipes() here functions as a PostLoad() hook where all mods have loaded
 		public override void AddRecipes()
 		{
-			if (!Main.dedServ)
-			{
-				ModContentManager.Load();
-			}
-
-			Loaded = true;
+			LoadingFunneler.PostLoad();
 		}
 
 		public override void Unload()
 		{
 			Instance = null;
-
-			ContentLoader.Unload();
-			MainLoader.Unload();
-			ModContentManager?.Unload();
-			ModContentManager = null;
-
-			// TODO causes trouble in unload?
-			// @todo this is not a feature of tml
-			// Attempt to unload our static variables
-			//Stack<Type> typesToProcess = new Stack<Type>(this.Code.GetTypes());
-			//while (typesToProcess.Count > 0)
-			//{
-			//    Type type = typesToProcess.Pop();
-			//    foreach (FieldInfo info in type.GetFields(BindingFlags.Static | BindingFlags.Public | BindingFlags.NonPublic))
-			//    {
-			//        info.SetValue(null, info.FieldType.IsValueType ? Activator.CreateInstance(info.FieldType) : null);
-			//    }
-			//    foreach (Type nestedType in type.GetNestedTypes(BindingFlags.Static | BindingFlags.Public | BindingFlags.NonPublic))
-			//    {
-			//        typesToProcess.Push(nestedType);
-			//    }
-			//}
-
-			Loaded = false;
+			LoadingFunneler.Unload();
 		}
 
-		// If we quit we must give back the item in slot if it's there
 		public override void PreSaveAndQuit()
 		{
+			// If we quit we must give back the item in slot if it's there
 			GuiState.GetTab<GuiCubingTab>().GiveBackSlottedItem();
 			if (GuiState.Visible)
 			{
@@ -173,20 +86,6 @@ namespace Loot
 						return true;
 					},
 					InterfaceScaleType.UI));
-
-				//layers.Insert(mouseTextIndex, new LegacyGameInterfaceLayer(
-				//	"Loot: CubeUI",
-				//	delegate
-				//	{
-				//		if (((CubeInterface.CurrentState as CubeUI)?.Visible ?? false)
-				//			&& _lastUpdateUIGameTime != null)
-				//		{
-				//			CubeInterface.Draw(Main.spriteBatch, _lastUpdateUIGameTime);
-				//		}
-
-				//		return true;
-				//	},
-				//	InterfaceScaleType.UI));
 			}
 		}
 	}

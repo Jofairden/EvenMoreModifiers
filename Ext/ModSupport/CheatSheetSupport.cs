@@ -3,7 +3,7 @@ using Terraria.ModLoader;
 
 namespace Loot.Ext.ModSupport
 {
-	internal class CheatSheetSupporter : ModSupporter
+	internal class CheatSheetSupport : ModSupport
 	{
 		public override string ModName => "CheatSheet";
 

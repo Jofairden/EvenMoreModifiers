@@ -1,5 +1,3 @@
-using Loot.Sounds;
-using Loot.UI.Common.Tabs.Cubing;
 using Terraria;
 
 namespace Loot.Core.Cubes
