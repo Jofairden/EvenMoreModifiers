@@ -50,7 +50,7 @@ namespace Loot.UI.Common.Tabs.Soulforging
 			public static class ANIM
 			{
 				public const int MAX_FRAME = 4;
-				public const int MAX_TICK = 60;
+				public const int MAX_TICK = 6;
 				public static Vector2 FRAME = new Vector2(124, 106);
 				public static Texture2D TEX_TWENTY;
 				public static Texture2D TEX_FOURTY;
@@ -104,7 +104,7 @@ namespace Loot.UI.Common.Tabs.Soulforging
 			public static void Update()
 			{
 				_tick++;
-				if (_tick >= 6)
+				if (_tick >= ANIM.MAX_TICK)
 				{
 					_tick = 0;
 					_frame++;
@@ -116,9 +116,7 @@ namespace Loot.UI.Common.Tabs.Soulforging
 			}
 
 			public static Rectangle GetDrawFrame()
-			{
-				return new Rectangle(0, _frame * (int)ANIM.FRAME.Y, (int)ANIM.FRAME.X, (int)ANIM.FRAME.Y);
-			}
+				=> new Rectangle(0, _frame * (int)ANIM.FRAME.Y, (int)ANIM.FRAME.X, (int)ANIM.FRAME.Y);
 		}
 
 		// TODO trivial asf
