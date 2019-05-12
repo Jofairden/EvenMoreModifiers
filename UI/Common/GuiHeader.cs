@@ -8,8 +8,8 @@ namespace Loot.UI.Common
 {
 	internal class GuiHeader : UIElement
 	{
-		private Texture2D _texture;
-		private Texture2D _decoration;
+		private readonly Texture2D _texture;
+		private readonly Texture2D _decoration;
 		private string _headerText;
 
 		public int GetOffset() => _texture.Height;

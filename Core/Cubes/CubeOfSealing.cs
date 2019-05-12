@@ -1,3 +1,5 @@
+using Loot.Sounds;
+using Loot.UI.Common.Tabs.Cubing;
 using Terraria;
 
 namespace Loot.Core.Cubes
@@ -5,7 +7,7 @@ namespace Loot.Core.Cubes
 	/// <summary>
 	/// A cube of sealing is used to lock modifiers in place on an item
 	/// </summary>
-	public class CubeOfSealing : MagicalCube
+	public class CubeOfSealing : RerollingCube
 	{
 		protected override string CubeName => "Sealing Cube";
 
@@ -22,15 +24,10 @@ namespace Loot.Core.Cubes
 			item.value = Item.buyPrice(silver: 50);
 		}
 
-		// TODO
-		//public override void RightClick(Player player)
-		//{
-		//	if (!Loot.Instance.CubeSealUI.Visible || Loot.Instance.CubeSealUI.Visible && Loot.Instance.CubeSealUI._itemPanel.item.IsAir)
-		//	{
-		//		Loot.Instance.CubeSealUI.ToggleUI(Loot.Instance.CubeInterface, Loot.Instance.CubeSealUI);
-		//	}
-
-		//	item.stack++;
-		//}
+		public override void RightClick(Player player)
+		{
+			// TODO for now, just use cubing UI
+			base.RightClick(player);
+		}
 	}
 }

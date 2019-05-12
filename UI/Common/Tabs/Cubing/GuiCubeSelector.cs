@@ -12,6 +12,9 @@ using Terraria.UI;
 
 namespace Loot.UI.Common.Tabs.Cubing
 {
+	/// <summary>
+	/// The cube selector is a panel below the cubing UI used to easily insert a cube into the UI
+	/// </summary>
 	internal class GuiCubeSelector : GuiPanel
 	{
 		private const string NO_CUBES_FOUND = "No cubes found in inventory";

@@ -14,6 +14,9 @@ using Terraria.UI;
 
 namespace Loot.UI.Common.Tabs.Cubing
 {
+	/// <summary>
+	/// The tab allows using a magical cube on the slotted item to modify its potential
+	/// </summary>
 	internal class GuiCubingTab : GuiTab
 	{
 		public override string Header => "Cubing";
@@ -82,8 +85,8 @@ namespace Loot.UI.Common.Tabs.Cubing
 		{
 			bool match = !_itemButton.Item.IsAir && !_cubeButton.Item.IsAir
 						 && _itemButton.CanTakeItem(_itemButton.Item)
-						 && _cubeButton.CanTakeItem(_cubeButton.Item)
-						 && !EMMItem.GetItemInfo(_itemButton.Item).SealedModifiers;
+						 && _cubeButton.CanTakeItem(_cubeButton.Item);
+			//&& !EMMItem.GetItemInfo(_itemButton.Item).SealedModifiers // omitted for now
 
 			bool hasItem = Main.LocalPlayer.inventory.Any(x => x.type == _cubeButton.Item.type)
 						   || Main.mouseItem?.type == _cubeButton?.Item?.type;
@@ -106,24 +109,38 @@ namespace Loot.UI.Common.Tabs.Cubing
 					return;
 				}
 
-				// Refresh item
-				Item newItem = new Item();
-				newItem.netDefaults(_itemButton.Item.type);
-				// Clone to preserve modded data
-				newItem = newItem.CloneWithModdedDataFrom(_itemButton.Item);
-				EMMItem.GetItemInfo(newItem).ModifierPool = null; // unload previous pool
-
-				// Restore prefix
-				if (_itemButton.Item.prefix > 0)
+				var info = EMMItem.GetItemInfo(_itemButton.Item);
+				if (_cubeButton.Item.modItem is CubeOfSealing)
 				{
-					newItem.Prefix(_itemButton.Item.prefix);
+					info.SealedModifiers = !info.SealedModifiers;
+					SoundHelper.PlayCustomSound(info.SealedModifiers ? SoundHelper.SoundType.GainSeal : SoundHelper.SoundType.LoseSeal);
+					ConsumeCubes();
 				}
+				else if (info.SealedModifiers)
+				{
+					SoundHelper.PlayCustomSound(SoundHelper.SoundType.Decline);
+				}
+				else
+				{
+					// Refresh item
+					Item newItem = new Item();
+					newItem.netDefaults(_itemButton.Item.type);
+					// Clone to preserve modded data
+					newItem = newItem.CloneWithModdedDataFrom(_itemButton.Item);
+					EMMItem.GetItemInfo(newItem).ModifierPool = null; // unload previous pool
 
-				// reroll pool
-				RerollModifiers(newItem);
-				ConsumeCubes();
-				UpdateModifiersInGui();
-				Main.PlaySound(SoundID.Item37, -1, -1);
+					// Restore prefix
+					if (_itemButton.Item.prefix > 0)
+					{
+						newItem.Prefix(_itemButton.Item.prefix);
+					}
+
+					// reroll pool
+					RerollModifiers(newItem);
+					UpdateModifiersInGui();
+					ConsumeCubes();
+					Main.PlaySound(SoundID.Item37, -1, -1);
+				}
 			}
 			else
 			{

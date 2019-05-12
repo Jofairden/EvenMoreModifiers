@@ -13,21 +13,25 @@ using Terraria.UI;
 namespace Loot.UI.Common
 {
 	// TODO make items in inventory not targetable when in this UI
+	/// <summary>
+	/// The GuiTabWindow is a window with tabs on the right side that are toggable
+	/// The window will only display one tab's contents at a time
+	/// </summary>
 	internal class GuiTabWindow : DraggableUIState
 	{
 		private GuiHeader _header;
 		private GuiCloseButton _closeButton;
 		private GuiTab _currentTab;
-		private GuiTabState _currentTabState = GuiTabState.CUBING;
+		internal GuiTabState _currentTabState = GuiTabState.CUBING;
 
-		private readonly Dictionary<GuiTabState, GuiTab> _tabs = new Dictionary<GuiTabState, GuiTab>
+		internal readonly Dictionary<GuiTabState, GuiTab> _tabs = new Dictionary<GuiTabState, GuiTab>
 		{
 			{GuiTabState.CUBING, new GuiCubingTab()},
 			{GuiTabState.ESSENCE, new GuiEssenceTab()},
 			{GuiTabState.SOULFORGE, new GuiSoulforgeTab()},
 		};
 
-		private readonly Dictionary<GuiTabState, GuiTabToggle> _toggles = new Dictionary<GuiTabState, GuiTabToggle>
+		internal readonly Dictionary<GuiTabState, GuiTabToggle> _toggles = new Dictionary<GuiTabState, GuiTabToggle>
 		{
 			{GuiTabState.CUBING, new GuiTabToggle(GuiTabState.CUBING)},
 			{GuiTabState.ESSENCE, new GuiTabToggle(GuiTabState.ESSENCE)},
@@ -48,9 +52,14 @@ namespace Loot.UI.Common
 				return;
 			}
 			SoundHelper.PlayCustomSound(SoundHelper.SoundType.OpenUI);
+			UpdateTabTo(toggle.TargetState);
+		}
+
+		public void UpdateTabTo(GuiTabState newState)
+		{
+			_toggles[newState].SetActive(true);
 			_toggles[_currentTabState].SetActive(false);
-			toggle.SetActive(true);
-			_currentTabState = toggle.TargetState;
+			_currentTabState = _toggles[newState].TargetState;
 			UpdateTab();
 		}
 

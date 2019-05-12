@@ -46,7 +46,7 @@ namespace Loot.UI.Common.Tabs.Cubing
 
 		public void InteractionLogic(Item item, ItemRollProperties itemRollProperties)
 		{
-			(Item.modItem as RerollingCube)?.SetRollLogic(item, itemRollProperties);
+			((RerollingCube)Item.modItem).SetRollLogic(item, itemRollProperties);
 		}
 
 		public void RecalculateStack()

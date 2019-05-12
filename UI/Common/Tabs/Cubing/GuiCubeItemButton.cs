@@ -14,7 +14,8 @@ namespace Loot.UI.Common.Tabs.Cubing
 			HintOnHover = " (click to take item)";
 		}
 
-		public override bool CanTakeItem(Item givenItem) => base.CanTakeItem(givenItem) && givenItem.IsModifierRollableItem() && !EMMItem.GetItemInfo(givenItem).SealedModifiers;
+		public override bool CanTakeItem(Item givenItem) => base.CanTakeItem(givenItem) && givenItem.IsModifierRollableItem();
+		//&& !EMMItem.GetItemInfo(givenItem).SealedModifiers // Omitted for now, cubing tab is used for sealing
 
 		public override void PreOnClick(UIMouseEvent evt, UIElement e)
 		{
