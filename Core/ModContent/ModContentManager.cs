@@ -20,7 +20,6 @@ namespace Loot.Core.ModContent
 		public TextureModContent GetContent(string key)
 			=> _contents.TryGetValue(key, out var modContent) ? modContent : null;
 
-
 		public void AddContent(string key, TextureModContent textureModContent)
 		{
 			if (_contents.ContainsKey(key))
@@ -30,7 +29,7 @@ namespace Loot.Core.ModContent
 
 			if (_contents.Values.Contains(textureModContent))
 			{
-				Log4c.Logger.WarnFormat("ModContent with registry key {0} was already present", textureModContent.GetRegistryKey());
+				Loot.Logger.WarnFormat("ModContent with registry key {0} was already present", textureModContent.GetRegistryKey());
 			}
 
 			textureModContent._Initialize();

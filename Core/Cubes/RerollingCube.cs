@@ -1,3 +1,5 @@
+using Loot.UI.Common;
+using Loot.UI.Common.Tabs.Cubing;
 using Terraria;
 
 namespace Loot.Core.Cubes
@@ -20,13 +22,11 @@ namespace Loot.Core.Cubes
 
 		public override void RightClick(Player player)
 		{
-			Loot.Instance.CubeRerollUI._cubePanel.ChangeItem(item.type);
-
-			if (!Loot.Instance.CubeRerollUI.Visible || Loot.Instance.CubeRerollUI.Visible && Loot.Instance.CubeRerollUI._rerollItemPanel.item.IsAir)
-			{
-				Loot.Instance.CubeRerollUI.ToggleUI(Loot.Instance.CubeInterface, Loot.Instance.CubeRerollUI);
-			}
-
+			var gui = Loot.Instance.GuiState;
+			gui.ToggleUI(Loot.Instance.GuiInterface);
+			// Force the cubing tab and set the active cube
+			gui.UpdateTabTo(GuiTabState.CUBING);
+			gui.GetTab<GuiCubingTab>()._cubeButton.ChangeItem(item.type);
 			// Must be after recalc, otherwise it affects the calculated stack
 			item.stack++;
 		}

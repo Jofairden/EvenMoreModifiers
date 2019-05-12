@@ -1,8 +1,6 @@
 using Loot.Core.Cubes;
-using Loot.Core.System.Loaders;
 using Loot.Core.System.Modifier;
 using Loot.Ext;
-using Loot.Rarities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -40,7 +38,7 @@ namespace Loot
 			}
 			catch (Exception e)
 			{
-				Log4c.Logger.Error("Error on EMMWorld.Load", e);
+				Loot.Logger.Error("Error on EMMWorld.Load", e);
 			}
 		}
 

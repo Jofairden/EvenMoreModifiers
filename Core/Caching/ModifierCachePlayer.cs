@@ -201,7 +201,7 @@ namespace Loot.Core.Caching
 			_attachList.Clear();
 
 			UpdateEquipsCache();
-			if (ModSupport.GetSupport<CheatSheetSupporter>().ModIsLoaded)
+			if (ModSupportTunneler.GetSupport<CheatSheetSupport>().ModIsLoaded)
 			{
 				UpdateCheatSheetCache();
 			}

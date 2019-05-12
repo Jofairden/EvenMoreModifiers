@@ -8,7 +8,7 @@ namespace Loot.Core.Cubes
 	{
 		public override void SetupShop(int type, Chest shop, ref int nextSlot)
 		{
-			if (type == NPCID.Wizard)
+			if (type == NPCID.Wizard || type == NPCID.TravellingMerchant)
 			{
 				shop.item[nextSlot++].SetDefaults(Loot.Instance.ItemType<PoorCube>());
 				shop.item[nextSlot++].SetDefaults(Loot.Instance.ItemType<CubeOfSealing>());

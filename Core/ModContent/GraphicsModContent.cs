@@ -68,7 +68,7 @@ namespace Loot.Core.ModContent
 				item.SetDefaults(i);
 				if (_vanillaNamesCache.ContainsKey(item.Name))
 				{
-					Log4c.Logger.Error("There was a problem during initialization of vanilla names cache");
+					Loot.Logger.Error("There was a problem during initialization of vanilla names cache");
 				}
 
 				_vanillaNamesCache.Add($"{item.Name.Replace(" ", "")}_{i}", i);

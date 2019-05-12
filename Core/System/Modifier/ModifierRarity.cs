@@ -159,7 +159,7 @@ namespace Loot.Core.System.Modifier
 				return null;
 			}
 
-			Log4c.Logger.ErrorFormat("There was a load error for modifierrarity, TC: {0}", tag);
+			Loot.Logger.ErrorFormat("There was a load error for modifierrarity, TC: {0}", tag);
 			return null;
 		}
 

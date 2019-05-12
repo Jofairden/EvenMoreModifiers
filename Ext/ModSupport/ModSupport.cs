@@ -1,67 +1,25 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Reflection;
 using Terraria.ModLoader;
 
 namespace Loot.Ext.ModSupport
 {
-	internal static class ModSupport
+	/// <summary>
+	/// The ModSupport class defines a class that adds cross-mod compatibility for another mod
+	/// </summary>
+	internal abstract class ModSupport
 	{
-		private static List<ModSupporter> _modSupporters;
+		public abstract string ModName { get; }
+		public bool ModIsLoaded { internal set; get; }
 
-		public static T GetSupport<T>() where T : ModSupporter
+		public Mod GetSupportingMod() => ModLoader.GetMod(ModName);
+
+		public abstract bool CheckValidity(Mod mod);
+
+		public virtual void AddClientSupport(Mod mod)
 		{
-			return (T) _modSupporters?.FirstOrDefault(s => s.GetType() == typeof(T) || s.GetType().IsAssignableFrom(typeof(T)));
 		}
 
-		public static void Init()
+		public virtual void AddServerSupport(Mod mod)
 		{
-			foreach (var modSupporter in GetSupporters())
-			{
-				Mod supportingMod = modSupporter.GetSupportingMod();
-				modSupporter.ModIsLoaded = supportingMod != null && modSupporter.CheckValidity(supportingMod);
-			}
-		}
-
-		public static void AddServerSupport()
-		{
-			foreach (var modSupporter in GetSupporters())
-			{
-				Mod supportingMod = modSupporter.GetSupportingMod();
-				if (modSupporter.ModIsLoaded)
-				{
-					modSupporter.AddServerSupport(supportingMod);
-				}
-			}
-		}
-
-		public static void AddClientSupport()
-		{
-			foreach (var modSupporter in GetSupporters())
-			{
-				Mod supportingMod = modSupporter.GetSupportingMod();
-				if (modSupporter.ModIsLoaded)
-				{
-					modSupporter.AddClientSupport(supportingMod);
-				}
-			}
-		}
-
-		private static IEnumerable<ModSupporter> GetSupporters()
-		{
-			if (_modSupporters == null)
-			{
-				// Not loaded yet, load them dynamically
-				string root = typeof(ModSupport).Namespace;
-				_modSupporters = Assembly.GetExecutingAssembly().GetTypes()
-					.Where(t => t.IsClass && !t.IsAbstract && t.Namespace != null && t.Namespace.StartsWith(root)
-					            && t.IsSubclassOf(typeof(ModSupporter)))
-					.Select(t => { return (ModSupporter) Activator.CreateInstance(t); })
-					.ToList();
-			}
-
-			return _modSupporters;
 		}
 	}
 }

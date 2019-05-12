@@ -1,17 +1,18 @@
 using System;
-using Loot.UI.Core;
 using Terraria.ModLoader;
 
 namespace Loot.Ext.ModSupport
 {
-	internal class WingSlotSupporter : ModSupporter
+	internal class WingSlotSupport : ModSupport
 	{
 		public override string ModName => "WingSlot";
 
 		public bool IsInvalid;
 
 		private static bool WingSlotHandler()
-			=> Loot.Instance.CubeInterface.CurrentState is CubeUI uiState && uiState.Visible;
+			// TODO re-add the support (need WingSlot beta compatible)
+			//=> Loot.Instance.CubeInterface.CurrentState is CubeUI uiState && uiState.Visible;
+			=> true;
 
 		public override bool CheckValidity(Mod mod)
 		{
@@ -21,7 +22,7 @@ namespace Loot.Ext.ModSupport
 
 		public override void AddClientSupport(Mod mod)
 		{
-			mod.Call("add", (Func<bool>) WingSlotHandler);
+			mod.Call("add", (Func<bool>)WingSlotHandler);
 		}
 	}
 }

@@ -569,7 +569,7 @@ namespace Loot
 				}
 				catch (Exception e)
 				{
-					Loot.Instance.Logger.Error(
+					Loot.Logger.Error(
 						$"A problem occurred during modification of the item's tooltip." +
 						$"\nItem in question: {item.AffixName()}",
 						e);

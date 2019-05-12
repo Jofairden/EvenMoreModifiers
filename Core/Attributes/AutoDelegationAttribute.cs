@@ -4,7 +4,6 @@ using System.Linq;
 using System.Reflection;
 using Loot.Core.System.Modifier;
 using Terraria;
-using static Loot.Log4c;
 
 namespace Loot.Core.Attributes
 {
@@ -51,7 +50,7 @@ namespace Loot.Core.Attributes
 					}
 					catch (Exception e)
 					{
-						Logger.Error(e);
+						Loot.Logger.Error(e);
 						Main.NewTextMultiline(e.ToString());
 						Main.NewText("An error just occurred. Please let the mod author know on the forums and show a screenshot of it", 255, 0, 0);
 					}
@@ -73,7 +72,7 @@ namespace Loot.Core.Attributes
 					}
 					catch (Exception e)
 					{
-						Logger.Error(e);
+						Loot.Logger.Error(e);
 						Main.NewTextMultiline(e.ToString());
 						Main.NewText("An error just occurred. Please let the mod author know on the forums and show a screenshot of it.", 255, 0, 0);
 					}

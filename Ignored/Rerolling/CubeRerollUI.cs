@@ -131,8 +131,8 @@ namespace Loot.UI.Rerolling
 
 			Append(_cubeListPanel);
 			Append(_backPanel);
-			AddDragPanel(_cubeListPanel);
-			AddDragPanel(_backPanel);
+			//AddDragPanel(_cubeListPanel);
+			//AddDragPanel(_backPanel);
 			base.OnInitialize();
 
 			Texture2D btnCloseTexture = ModContent.GetTexture("Terraria/UI/InfoIcon_8");
@@ -162,7 +162,7 @@ namespace Loot.UI.Rerolling
 				panel.Height.Set(40, 0f);
 				panel.Top.Set(i * PADDING + panel.Height.Pixels * i, 0f);
 				panel.Width.Set(_backPanel.Width.Pixels - closeButton.Width.Pixels * 2f - panel.Left.Pixels - PADDING * 2f, 0f);
-				panel.BackgroundColor = baseColor;
+				//panel.BackgroundColor = baseColor;
 				_backPanel.Append(panel);
 			}
 
