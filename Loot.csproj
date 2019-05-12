@@ -43,11 +43,6 @@
     <Reference Include="Microsoft.CSharp" />
   </ItemGroup>
   <ItemGroup>
-    <None Include=".editorconfig" />
-    <None Include=".gitignore" />
-    <None Include=".travis.yml" />
-  </ItemGroup>
-  <ItemGroup>
     <Compile Include="ActivatedModifierItem.cs" />
     <Compile Include="ArmorItemHack.cs" />
     <Compile Include="Core\Attributes\AutoDelegationAttribute.cs" />
