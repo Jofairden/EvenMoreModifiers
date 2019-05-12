@@ -8,19 +8,6 @@ var hierarchy =
       [ "Loot.Core.Attributes.PopulatePoolFromAttribute", "class_loot_1_1_core_1_1_attributes_1_1_populate_pool_from_attribute.html", null ],
       [ "Loot.Core.Attributes.UsesEffectAttribute", "class_loot_1_1_core_1_1_attributes_1_1_uses_effect_attribute.html", null ]
     ] ],
-    [ "Loot.Core.System.Core.BaseContent< T >", "class_loot_1_1_core_1_1_system_1_1_core_1_1_base_content.html", null ],
-    [ "Loot.Core.System.Core.BaseContent< Modifier.Modifier >", "class_loot_1_1_core_1_1_system_1_1_core_1_1_base_content.html", [
-      [ "Loot.Core.System.Content.ModifierContent", "class_loot_1_1_core_1_1_system_1_1_content_1_1_modifier_content.html", null ]
-    ] ],
-    [ "Loot.Core.System.Core.BaseContent< ModifierEffect >", "class_loot_1_1_core_1_1_system_1_1_core_1_1_base_content.html", [
-      [ "Loot.Core.System.Content.ModifierEffectContent", "class_loot_1_1_core_1_1_system_1_1_content_1_1_modifier_effect_content.html", null ]
-    ] ],
-    [ "Loot.Core.System.Core.BaseContent< ModifierPool >", "class_loot_1_1_core_1_1_system_1_1_core_1_1_base_content.html", [
-      [ "Loot.Core.System.Content.ModifierPoolContent", "class_loot_1_1_core_1_1_system_1_1_content_1_1_modifier_pool_content.html", null ]
-    ] ],
-    [ "Loot.Core.System.Core.BaseContent< ModifierRarity >", "class_loot_1_1_core_1_1_system_1_1_core_1_1_base_content.html", [
-      [ "Loot.Core.System.Content.ModifierRarityContent", "class_loot_1_1_core_1_1_system_1_1_content_1_1_modifier_rarity_content.html", null ]
-    ] ],
     [ "Loot.Core.System.Loaders.ContentLoader", "class_loot_1_1_core_1_1_system_1_1_loaders_1_1_content_loader.html", null ],
     [ "Loot.UI.Common.Tabs.Soulforging.GuiSoulgauge.GaugeDrawing", "class_loot_1_1_u_i_1_1_common_1_1_tabs_1_1_soulforging_1_1_gui_soulgauge_1_1_gauge_drawing.html", null ],
     [ "GenPass", "class_gen_pass.html", null ],
@@ -30,6 +17,7 @@ var hierarchy =
       [ "Loot.Core.Graphics.GlowmaskGlobalItem", "class_loot_1_1_core_1_1_graphics_1_1_glowmask_global_item.html", null ],
       [ "Loot.Core.Graphics.ShaderGlobalItem", "class_loot_1_1_core_1_1_graphics_1_1_shader_global_item.html", null ],
       [ "Loot.Core.System.Modifier.Modifier", "class_loot_1_1_core_1_1_system_1_1_modifier_1_1_modifier.html", [
+        [ "Loot.Core.System.Modifier.NullModifier", "class_loot_1_1_core_1_1_system_1_1_modifier_1_1_null_modifier.html", null ],
         [ "Loot.Modifiers.Base.AccessoryModifier", "class_loot_1_1_modifiers_1_1_base_1_1_accessory_modifier.html", null ],
         [ "Loot.Modifiers.Base.ArmorModifier", "class_loot_1_1_modifiers_1_1_base_1_1_armor_modifier.html", null ],
         [ "Loot.Modifiers.Base.EquipModifier", "class_loot_1_1_modifiers_1_1_base_1_1_equip_modifier.html", [
@@ -98,6 +86,7 @@ var hierarchy =
     [ "ICloneable", "class_i_cloneable.html", [
       [ "Loot.Core.System.Modifier.Modifier", "class_loot_1_1_core_1_1_system_1_1_modifier_1_1_modifier.html", null ],
       [ "Loot.Core.System.Modifier.ModifierEffect", "class_loot_1_1_core_1_1_system_1_1_modifier_1_1_modifier_effect.html", [
+        [ "Loot.Core.System.Modifier.NullModifierEffect", "class_loot_1_1_core_1_1_system_1_1_modifier_1_1_null_modifier_effect.html", null ],
         [ "Loot.Modifiers.Base.WeaponDebuffEffect", "class_loot_1_1_modifiers_1_1_base_1_1_weapon_debuff_effect.html", null ],
         [ "Loot.Modifiers.EquipModifiers.Defensive.DodgeEffect", "class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_defensive_1_1_dodge_effect.html", null ],
         [ "Loot.Modifiers.EquipModifiers.Defensive.ImmunityEffect", "class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_defensive_1_1_immunity_effect.html", null ],
@@ -112,9 +101,11 @@ var hierarchy =
         [ "Loot.Modifiers.WeaponModifiers.CursedEffect", "class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_cursed_effect.html", null ]
       ] ],
       [ "Loot.Core.System.Modifier.ModifierPool", "class_loot_1_1_core_1_1_system_1_1_modifier_1_1_modifier_pool.html", [
-        [ "Loot.Pools.AllModifiersPool", "class_loot_1_1_pools_1_1_all_modifiers_pool.html", null ]
+        [ "Loot.Core.System.Modifier.AllModifiersPool", "class_loot_1_1_core_1_1_system_1_1_modifier_1_1_all_modifiers_pool.html", null ],
+        [ "Loot.Core.System.Modifier.NullModifierPool", "class_loot_1_1_core_1_1_system_1_1_modifier_1_1_null_modifier_pool.html", null ]
       ] ],
       [ "Loot.Core.System.Modifier.ModifierRarity", "class_loot_1_1_core_1_1_system_1_1_modifier_1_1_modifier_rarity.html", [
+        [ "Loot.Core.System.Modifier.NullModifierRarity", "class_loot_1_1_core_1_1_system_1_1_modifier_1_1_null_modifier_rarity.html", null ],
         [ "Loot.Rarities.CommonRarity", "class_loot_1_1_rarities_1_1_common_rarity.html", null ],
         [ "Loot.Rarities.EpicRarity", "class_loot_1_1_rarities_1_1_epic_rarity.html", null ],
         [ "Loot.Rarities.LegendaryRarity", "class_loot_1_1_rarities_1_1_legendary_rarity.html", null ],
@@ -136,7 +127,20 @@ var hierarchy =
     ] ],
     [ "Loot.Core.Cubes.ItemRollProperties", "class_loot_1_1_core_1_1_cubes_1_1_item_roll_properties.html", null ],
     [ "Loot.Ext.ItemUtils", "class_loot_1_1_ext_1_1_item_utils.html", null ],
-    [ "Loot.LoadingFunneler", "class_loot_1_1_loading_funneler.html", null ],
+    [ "Loot.Core.System.Core.LoadableContentBase< T >", "class_loot_1_1_core_1_1_system_1_1_core_1_1_loadable_content_base.html", null ],
+    [ "Loot.Core.System.Core.LoadableContentBase< Modifier.Modifier >", "class_loot_1_1_core_1_1_system_1_1_core_1_1_loadable_content_base.html", [
+      [ "Loot.Core.System.Content.ModifierContent", "class_loot_1_1_core_1_1_system_1_1_content_1_1_modifier_content.html", null ]
+    ] ],
+    [ "Loot.Core.System.Core.LoadableContentBase< ModifierEffect >", "class_loot_1_1_core_1_1_system_1_1_core_1_1_loadable_content_base.html", [
+      [ "Loot.Core.System.Content.ModifierEffectContent", "class_loot_1_1_core_1_1_system_1_1_content_1_1_modifier_effect_content.html", null ]
+    ] ],
+    [ "Loot.Core.System.Core.LoadableContentBase< ModifierPool >", "class_loot_1_1_core_1_1_system_1_1_core_1_1_loadable_content_base.html", [
+      [ "Loot.Core.System.Content.ModifierPoolContent", "class_loot_1_1_core_1_1_system_1_1_content_1_1_modifier_pool_content.html", null ]
+    ] ],
+    [ "Loot.Core.System.Core.LoadableContentBase< ModifierRarity >", "class_loot_1_1_core_1_1_system_1_1_core_1_1_loadable_content_base.html", [
+      [ "Loot.Core.System.Content.ModifierRarityContent", "class_loot_1_1_core_1_1_system_1_1_content_1_1_modifier_rarity_content.html", null ]
+    ] ],
+    [ "Loot.Core.System.Loaders.LoadingFunneler", "class_loot_1_1_core_1_1_system_1_1_loaders_1_1_loading_funneler.html", null ],
     [ "Loot.Core.System.Loaders.MainLoader", "class_loot_1_1_core_1_1_system_1_1_loaders_1_1_main_loader.html", null ],
     [ "Mod", "class_mod.html", [
       [ "Loot.Loot", "class_loot_1_1_loot.html", null ],

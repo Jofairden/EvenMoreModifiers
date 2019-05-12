@@ -1,6 +1,7 @@
 var searchData=
 [
-  ['percentdefensebonus_2ecs',['PercentDefenseBonus.cs',['../_percent_defense_bonus_8cs.html',1,'']]],
-  ['poorcube_2ecs',['PoorCube.cs',['../_poor_cube_8cs.html',1,'']]],
-  ['populatepoolfromattribute_2ecs',['PopulatePoolFromAttribute.cs',['../_populate_pool_from_attribute_8cs.html',1,'']]]
+  ['nullmodifier_2ecs',['NullModifier.cs',['../_null_modifier_8cs.html',1,'']]],
+  ['nullmodifiereffect_2ecs',['NullModifierEffect.cs',['../_null_modifier_effect_8cs.html',1,'']]],
+  ['nullmodifierpool_2ecs',['NullModifierPool.cs',['../_null_modifier_pool_8cs.html',1,'']]],
+  ['nullmodifierrarity_2ecs',['NullModifierRarity.cs',['../_null_modifier_rarity_8cs.html',1,'']]]
 ];

@@ -1,7 +1,6 @@
 var searchData=
 [
   ['early',['Early',['../namespace_loot_1_1_core_1_1_attributes.html#ac51e8c3bfabd3413fe3be5ba253c1b8fa1dec90af1a623cee26f9b2a40d9f648b',1,'Loot::Core::Attributes']]],
-  ['effectmap',['EffectMap',['../_mod_utils_8cs.html#a75615b365bec9bfd2c531b7b37ce9750',1,'ModUtils.cs']]],
   ['effects',['Effects',['../class_loot_1_1_core_1_1_attributes_1_1_uses_effect_attribute.html#a054ceccbc951d90867d228e944615e81',1,'Loot::Core::Attributes::UsesEffectAttribute']]],
   ['emmitem',['EMMItem',['../class_loot_1_1_e_m_m_item.html',1,'Loot']]],
   ['emmitem_2ecs',['EMMItem.cs',['../_e_m_m_item_8cs.html',1,'']]],

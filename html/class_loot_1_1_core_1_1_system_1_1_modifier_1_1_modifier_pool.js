@@ -9,6 +9,7 @@ var class_loot_1_1_core_1_1_system_1_1_modifier_1_1_modifier_pool =
     [ "NetReceive", "class_loot_1_1_core_1_1_system_1_1_modifier_1_1_modifier_pool.html#aa875e7551498471060738f2549c0f62a", null ],
     [ "NetSend", "class_loot_1_1_core_1_1_system_1_1_modifier_1_1_modifier_pool.html#abdacc93a0658b62bb7f09e04c6191db2", null ],
     [ "Save", "class_loot_1_1_core_1_1_system_1_1_modifier_1_1_modifier_pool.html#a3819038ebb2d9967e434a85120d2a4b7", null ],
+    [ "_activeModifiers", "class_loot_1_1_core_1_1_system_1_1_modifier_1_1_modifier_pool.html#a8eff46537e73be73558bb5ad25a99ed6", null ],
     [ "_populatePoolFrom", "class_loot_1_1_core_1_1_system_1_1_modifier_1_1_modifier_pool.html#a3656a5b3c3b9d3f112e14f8bf71b94bd", null ],
     [ "Description", "class_loot_1_1_core_1_1_system_1_1_modifier_1_1_modifier_pool.html#af142166b0988cd355f1986f7d6006584", null ],
     [ "Name", "class_loot_1_1_core_1_1_system_1_1_modifier_1_1_modifier_pool.html#a82af83fcd649d65d4e37d713a1a2cdcb", null ],

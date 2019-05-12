@@ -24,9 +24,6 @@ var files =
     [ "EMMWorld.cs", "_e_m_m_world_8cs.html", [
       [ "EMMWorld", "class_loot_1_1_e_m_m_world.html", "class_loot_1_1_e_m_m_world" ]
     ] ],
-    [ "LoadingFunneler.cs", "_loading_funneler_8cs.html", [
-      [ "LoadingFunneler", "class_loot_1_1_loading_funneler.html", "class_loot_1_1_loading_funneler" ]
-    ] ],
     [ "Loot.cs", "_loot_8cs.html", [
       [ "Loot", "class_loot_1_1_loot.html", "class_loot_1_1_loot" ]
     ] ],

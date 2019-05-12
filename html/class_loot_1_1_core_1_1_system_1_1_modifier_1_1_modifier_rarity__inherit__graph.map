@@ -1,9 +1,10 @@
 <map id="Loot.Core.System.Modifier.ModifierRarity" name="Loot.Core.System.Modifier.ModifierRarity">
-<area shape="rect" id="node5" href="$class_loot_1_1_rarities_1_1_common_rarity.html" title="Describes the common rarity, which every item starts with " alt="" coords="449,5,637,32"/>
-<area shape="rect" id="node6" href="$class_loot_1_1_rarities_1_1_epic_rarity.html" title="The epic rarity, before legendary but after rare " alt="" coords="462,56,623,83"/>
-<area shape="rect" id="node7" href="$class_loot_1_1_rarities_1_1_legendary_rarity.html" title="The legendary rarity, before transcendent but after epic " alt="" coords="445,107,640,133"/>
-<area shape="rect" id="node8" href="$class_loot_1_1_rarities_1_1_rare_rarity.html" title="The rare rarity, before epic but after common " alt="" coords="461,157,624,184"/>
-<area shape="rect" id="node9" href="$class_loot_1_1_rarities_1_1_transcendent_rarity.html" title="The Transcendent rarity, the most powerful rarity " alt="" coords="453,209,632,250"/>
-<area shape="rect" id="node2" href="$interface_loot_1_1_core_1_1_system_1_1_core_1_1_i_loadable_content.html" title="ILoadableContent" alt="" coords="23,56,147,83"/>
-<area shape="rect" id="node4" href="$class_i_cloneable.html" title="ICloneable" alt="" coords="43,157,127,184"/>
+<area shape="rect" id="node5" href="$class_loot_1_1_core_1_1_system_1_1_modifier_1_1_null_modifier_rarity.html" title="Defines a &quot;Null&quot; rarity which represents no rarity safely Cannot be rolled normally ..." alt="" coords="451,5,634,46"/>
+<area shape="rect" id="node6" href="$class_loot_1_1_rarities_1_1_common_rarity.html" title="Describes the common rarity, which every item starts with " alt="" coords="449,71,637,97"/>
+<area shape="rect" id="node7" href="$class_loot_1_1_rarities_1_1_epic_rarity.html" title="The epic rarity, before legendary but after rare " alt="" coords="462,121,623,148"/>
+<area shape="rect" id="node8" href="$class_loot_1_1_rarities_1_1_legendary_rarity.html" title="The legendary rarity, before transcendent but after epic " alt="" coords="445,172,640,199"/>
+<area shape="rect" id="node9" href="$class_loot_1_1_rarities_1_1_rare_rarity.html" title="The rare rarity, before epic but after common " alt="" coords="461,223,624,249"/>
+<area shape="rect" id="node10" href="$class_loot_1_1_rarities_1_1_transcendent_rarity.html" title="The Transcendent rarity, the most powerful rarity " alt="" coords="453,274,632,315"/>
+<area shape="rect" id="node2" href="$interface_loot_1_1_core_1_1_system_1_1_core_1_1_i_loadable_content.html" title="ILoadableContent" alt="" coords="23,96,147,123"/>
+<area shape="rect" id="node4" href="$class_i_cloneable.html" title="ICloneable" alt="" coords="43,197,127,224"/>
 </map>

@@ -1,8 +1,0 @@
-<map id="Loot.LoadingFunneler.AddMod" name="Loot.LoadingFunneler.AddMod">
-<area shape="rect" id="node2" href="$class_loot_1_1_core_1_1_system_1_1_loaders_1_1_main_loader.html#a73481d5860e358c743d7bcab37d7b12a" title="Loot.Core.System.Loaders.\lMainLoader.AddContent" alt="" coords="270,5,453,46"/>
-<area shape="rect" id="node3" href="$class_loot_1_1_loading_funneler.html#a24a6d1dbb91ccc70de5e5b136acc973a" title="Loot.LoadingFunneler.LoadMod" alt="" coords="260,71,463,97"/>
-<area shape="rect" id="node4" href="$class_loot_1_1_loading_funneler.html#a8d4da11813579cb5d933660dc0c37800" title="Loot.LoadingFunneler.Load\lModForClient" alt="" coords="272,122,451,163"/>
-<area shape="rect" id="node6" href="$class_loot_1_1_core_1_1_system_1_1_loaders_1_1_main_loader.html#ae97746fdd3c02b4570d778c06f2162a4" title="Registers specified mod, enabling autoloading for that mod " alt="" coords="270,187,453,229"/>
-<area shape="rect" id="node7" href="$class_loot_1_1_loading_funneler.html#a2609bf2a944ac24709bba84940e84e41" title="Loot.LoadingFunneler.UnloadMod" alt="" coords="253,253,469,280"/>
-<area shape="rect" id="node5" href="$class_loot_1_1_core_1_1_system_1_1_loaders_1_1_asset_loader.html#ac204461afbabc462cf1be744e67813fa" title="Loot.Core.System.Loaders.\lAssetLoader.RegisterAssets" alt="" coords="517,122,707,163"/>
-</map>

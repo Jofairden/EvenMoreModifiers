@@ -5,7 +5,7 @@ var searchData=
   ['icloneable',['ICloneable',['../class_i_cloneable.html',1,'']]],
   ['icymodifier',['IcyModifier',['../class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_ice_1_1_icy_modifier.html',1,'Loot::Modifiers::WeaponModifiers::Ice']]],
   ['icymodifier_2ecs',['IcyModifier.cs',['../_icy_modifier_8cs.html',1,'']]],
-  ['idcount',['IdCount',['../class_loot_1_1_core_1_1_system_1_1_core_1_1_base_content.html#ab573e31fbe36fa7c800495ed2f763103',1,'Loot::Core::System::Core::BaseContent']]],
+  ['idcount',['IdCount',['../class_loot_1_1_core_1_1_system_1_1_core_1_1_loadable_content_base.html#ae4bf3a9c71d5583324e8fb6a9af1df28',1,'Loot::Core::System::Core::LoadableContentBase']]],
   ['identity',['Identity',['../class_loot_1_1_core_1_1_graphics_1_1_graphics_entity.html#a16e9d23fd60b5720a25452ea1c79e791',1,'Loot::Core::Graphics::GraphicsEntity']]],
   ['ifakemod',['IFakeMod',['../interface_loot_tests_1_1_i_fake_mod.html',1,'LootTests']]],
   ['ifakeproperties',['IFakeProperties',['../interface_loot_tests_1_1_modifier_properties_tests_1_1_i_fake_properties.html',1,'LootTests::ModifierPropertiesTests']]],

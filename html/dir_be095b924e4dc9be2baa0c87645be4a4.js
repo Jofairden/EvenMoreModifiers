@@ -5,5 +5,7 @@ var dir_be095b924e4dc9be2baa0c87645be4a4 =
     [ "ItemUtils.cs", "_item_utils_8cs.html", [
       [ "ItemUtils", "class_loot_1_1_ext_1_1_item_utils.html", "class_loot_1_1_ext_1_1_item_utils" ]
     ] ],
-    [ "ModUtils.cs", "_mod_utils_8cs.html", "_mod_utils_8cs" ]
+    [ "ModUtils.cs", "_mod_utils_8cs.html", [
+      [ "ModUtils", "class_loot_1_1_ext_1_1_mod_utils.html", "class_loot_1_1_ext_1_1_mod_utils" ]
+    ] ]
 ];

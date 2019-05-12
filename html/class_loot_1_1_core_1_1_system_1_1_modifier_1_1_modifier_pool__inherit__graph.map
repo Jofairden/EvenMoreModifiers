@@ -1,5 +1,6 @@
 <map id="Loot.Core.System.Modifier.ModifierPool" name="Loot.Core.System.Modifier.ModifierPool">
-<area shape="rect" id="node6" href="$class_loot_1_1_pools_1_1_all_modifiers_pool.html" title="A modifier pool that always consists of all modifiers " alt="" coords="466,56,649,83"/>
-<area shape="rect" id="node2" href="$interface_loot_1_1_core_1_1_system_1_1_core_1_1_i_loadable_content.html" title="ILoadableContent" alt="" coords="23,5,147,32"/>
-<area shape="rect" id="node4" href="$class_i_cloneable.html" title="ICloneable" alt="" coords="43,107,127,133"/>
+<area shape="rect" id="node5" href="$class_loot_1_1_core_1_1_system_1_1_modifier_1_1_all_modifiers_pool.html" title="A modifier pool that always consists of all modifiers Cannot be rolled normally " alt="" coords="466,5,649,46"/>
+<area shape="rect" id="node6" href="$class_loot_1_1_core_1_1_system_1_1_modifier_1_1_null_modifier_pool.html" title="Defines a &quot;Null&quot; modifier which represents a pool with no modifiers Cannot be rolled normally ..." alt="" coords="466,70,649,111"/>
+<area shape="rect" id="node2" href="$interface_loot_1_1_core_1_1_system_1_1_core_1_1_i_loadable_content.html" title="ILoadableContent" alt="" coords="23,56,147,83"/>
+<area shape="rect" id="node4" href="$class_i_cloneable.html" title="ICloneable" alt="" coords="43,157,127,184"/>
 </map>

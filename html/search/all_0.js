@@ -1,5 +1,6 @@
 var searchData=
 [
+  ['_5factivemodifiers',['_activeModifiers',['../class_loot_1_1_core_1_1_system_1_1_modifier_1_1_modifier_pool.html#a8eff46537e73be73558bb5ad25a99ed6',1,'Loot::Core::System::Modifier::ModifierPool']]],
   ['_5factivetexture',['_activeTexture',['../class_loot_1_1_u_i_1_1_common_1_1_tabs_1_1_soulforging_1_1_gui_soulgauge_1_1_gauge_drawing.html#a8ea934e7a36d2d5e766fed2dce253800',1,'Loot::UI::Common::Tabs::Soulforging::GuiSoulgauge::GaugeDrawing']]],
   ['_5fattachlist',['_attachList',['../class_loot_1_1_core_1_1_caching_1_1_modifier_cache_player.html#a01215a41d4df230775f9ff8c09afcea2',1,'Loot::Core::Caching::ModifierCachePlayer']]],
   ['_5fbackpanel',['_backPanel',['../class_loot_1_1_u_i_1_1_rerolling_1_1_cube_reroll_u_i.html#ac36c5702eecb6b1bfcb0749cc1d5a7d7',1,'Loot.UI.Rerolling.CubeRerollUI._backPanel()'],['../class_loot_1_1_u_i_1_1_sealing_1_1_cube_seal_u_i.html#a976baa2a3c9d219cc8a558b1f37c6556',1,'Loot.UI.Sealing.CubeSealUI._backPanel()']]],
@@ -16,7 +17,7 @@ var searchData=
   ['_5fforceequipupdate',['_forceEquipUpdate',['../class_loot_1_1_core_1_1_caching_1_1_modifier_cache_player.html#a9fbe7b74c76ffe723727b1d452fbfb73',1,'Loot::Core::Caching::ModifierCachePlayer']]],
   ['_5fforcenextroll',['_forceNextRoll',['../class_loot_1_1_e_m_m_item.html#ab5ab3c7bd4e00d9092f556f1ac039daf',1,'Loot::EMMItem']]],
   ['_5fframe',['_frame',['../class_loot_1_1_u_i_1_1_common_1_1_tabs_1_1_soulforging_1_1_gui_soulgauge_1_1_gauge_drawing.html#a02f3db167d4879a3260b56598f6be65f',1,'Loot::UI::Common::Tabs::Soulforging::GuiSoulgauge::GaugeDrawing']]],
-  ['_5fgetcontent',['_GetContent',['../class_loot_1_1_core_1_1_system_1_1_core_1_1_base_content.html#a7d24d4944998d86841067cf5ea95b825',1,'Loot::Core::System::Core::BaseContent']]],
+  ['_5fgetcontent',['_GetContent',['../class_loot_1_1_core_1_1_system_1_1_core_1_1_loadable_content_base.html#afae20e5c35df847fde648182321e1cd1',1,'Loot::Core::System::Core::LoadableContentBase']]],
   ['_5fgetmodifiers',['_GetModifiers',['../class_loot_1_1_core_1_1_system_1_1_modifier_1_1_modifier_pool.html#a5db12adc9203317b1f4acd369297250d',1,'Loot::Core::System::Modifier::ModifierPool']]],
   ['_5fglowmasktextures',['_glowmaskTextures',['../class_loot_1_1_core_1_1_mod_content_1_1_graphics_mod_content.html#a02a19add9838705742b8f75ac8633bc9',1,'Loot::Core::ModContent::GraphicsModContent']]],
   ['_5findex',['_index',['../class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_random_debuff.html#a040cdb393b0405729b6f18b65534d4f3',1,'Loot::Modifiers::WeaponModifiers::RandomDebuff']]],

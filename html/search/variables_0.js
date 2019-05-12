@@ -1,5 +1,6 @@
 var searchData=
 [
+  ['_5factivemodifiers',['_activeModifiers',['../class_loot_1_1_core_1_1_system_1_1_modifier_1_1_modifier_pool.html#a8eff46537e73be73558bb5ad25a99ed6',1,'Loot::Core::System::Modifier::ModifierPool']]],
   ['_5factivetexture',['_activeTexture',['../class_loot_1_1_u_i_1_1_common_1_1_tabs_1_1_soulforging_1_1_gui_soulgauge_1_1_gauge_drawing.html#a8ea934e7a36d2d5e766fed2dce253800',1,'Loot::UI::Common::Tabs::Soulforging::GuiSoulgauge::GaugeDrawing']]],
   ['_5fattachlist',['_attachList',['../class_loot_1_1_core_1_1_caching_1_1_modifier_cache_player.html#a01215a41d4df230775f9ff8c09afcea2',1,'Loot::Core::Caching::ModifierCachePlayer']]],
   ['_5fbackpanel',['_backPanel',['../class_loot_1_1_u_i_1_1_rerolling_1_1_cube_reroll_u_i.html#ac36c5702eecb6b1bfcb0749cc1d5a7d7',1,'Loot.UI.Rerolling.CubeRerollUI._backPanel()'],['../class_loot_1_1_u_i_1_1_sealing_1_1_cube_seal_u_i.html#a976baa2a3c9d219cc8a558b1f37c6556',1,'Loot.UI.Sealing.CubeSealUI._backPanel()']]],
