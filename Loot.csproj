@@ -101,7 +101,6 @@
     <Compile Include="Ext\ModSupport\WingSlotSupport.cs" />
     <Compile Include="Ext\ModUtils.cs" />
     <Compile Include="LoadingFunneler.cs" />
-    <Compile Include="Log4c.cs" />
     <Compile Include="Loot.cs" />
     <Compile Include="ModifierItem.cs" />
     <Compile Include="ModifierPlayer.cs" />

@@ -38,7 +38,7 @@ namespace Loot
 			}
 			catch (Exception e)
 			{
-				Log4c.Logger.Error("Error on EMMWorld.Load", e);
+				Loot.Logger.Error("Error on EMMWorld.Load", e);
 			}
 		}
 

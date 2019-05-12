@@ -4,6 +4,7 @@ using Loot.UI.Common.Core;
 using Microsoft.Xna.Framework;
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
+using log4net;
 using Loot.UI.Common.Tabs.Cubing;
 using Terraria;
 using Terraria.ModLoader;
@@ -23,6 +24,7 @@ namespace Loot
 {
 	public sealed class Loot : Mod
 	{
+		internal new static ILog Logger => ((Mod)Instance)?.Logger;
 		internal static Loot Instance;
 
 		internal UserInterface GuiInterface;

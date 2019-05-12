@@ -89,7 +89,7 @@ namespace Loot.Core.System.Modifier
 				}
 				catch (Exception e)
 				{
-					Log4c.Logger.Error("Error in ModifierEffect._DetachDelegations", e);
+					Loot.Logger.Error("Error in ModifierEffect._DetachDelegations", e);
 				}
 			}
 
