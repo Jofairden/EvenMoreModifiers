@@ -5,6 +5,7 @@ using Microsoft.Xna.Framework;
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 using log4net;
+using Loot.Core.System.Loaders;
 using Loot.UI.Common.Tabs.Cubing;
 using Terraria;
 using Terraria.ModLoader;

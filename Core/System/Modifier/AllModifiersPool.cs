@@ -1,12 +1,12 @@
-using Loot.Core.System.Loaders;
-using Loot.Core.System.Modifier;
 using System.Collections.Generic;
 using System.Linq;
+using Loot.Core.System.Loaders;
 
-namespace Loot.Pools
+namespace Loot.Core.System.Modifier
 {
 	/// <summary>
 	/// A modifier pool that always consists of all modifiers
+	/// Cannot be rolled normally
 	/// </summary>
 	public sealed class AllModifiersPool : ModifierPool
 	{
@@ -14,5 +14,11 @@ namespace Loot.Pools
 
 		public override IEnumerable<Modifier> GetModifiers()
 			=> ContentLoader.Modifier.Content.Select(x => x.Value).ToArray();
+
+		public AllModifiersPool()
+		{
+			Mod = Loot.Instance;
+			Type = 1;
+		}
 	}
 }

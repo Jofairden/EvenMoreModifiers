@@ -81,16 +81,13 @@ namespace Loot.Core.System.Loaders
 				.Where(t => t.IsClass && !t.IsAbstract)
 				.ToList();
 
-			var rarities = ordered.Where(x => x.IsSubclassOf(typeof(ModifierRarity)));
-			var modifiers = ordered.Where(x => x.IsSubclassOf(typeof(Modifier.Modifier)));
-			var pools = ordered.Where(x => x.IsSubclassOf(typeof(ModifierPool)));
-			var effects = ordered.Where(x => x.IsSubclassOf(typeof(ModifierEffect)));
+			var rarities = ordered.Where(x => x.IsSubclassOf(typeof(ModifierRarity)) && x != typeof(NullModifierRarity));
+			var modifiers = ordered.Where(x => x.IsSubclassOf(typeof(Modifier.Modifier)) && x != typeof(NullModifier));
+			var pools = ordered.Where(x => x.IsSubclassOf(typeof(ModifierPool)) && x != typeof(NullModifierPool));
+			var effects = ordered.Where(x => x.IsSubclassOf(typeof(ModifierEffect)) && x != typeof(NullModifierEffect));
 
 			// Kinda meh, but no need to recheck here..
-			ContentLoader.ModifierRarity.SkipModChecks = true;
-			ContentLoader.Modifier.SkipModChecks = true;
-			ContentLoader.ModifierPool.SkipModChecks = true;
-			ContentLoader.ModifierEffect.SkipModChecks = true;
+			ContentLoader.SkipModChecks(true);
 
 			// important: load things in order. (modifiers relies on all.. etc.)
 			foreach (Type type in rarities)
@@ -113,10 +110,7 @@ namespace Loot.Core.System.Loaders
 				ContentLoader.ModifierEffect.AddContent(type, mod);
 			}
 
-			ContentLoader.ModifierRarity.SkipModChecks = false;
-			ContentLoader.Modifier.SkipModChecks = false;
-			ContentLoader.ModifierPool.SkipModChecks = false;
-			ContentLoader.ModifierEffect.SkipModChecks = false;
+			ContentLoader.SkipModChecks(false);
 		}
 	}
 }

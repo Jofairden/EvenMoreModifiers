@@ -8,7 +8,7 @@ namespace Loot.Core.System.Content
 	/// <summary>
 	/// This class holds all loaded <see cref="ModifierPool"/> content
 	/// </summary>
-	public class ModifierPoolContent : BaseContent<ModifierPool>
+	public sealed class ModifierPoolContent : LoadableContentBase<ModifierPool>
 	{
 		internal override bool CheckContentPiece(ModifierPool contentPiece)
 		{
@@ -24,7 +24,7 @@ namespace Loot.Core.System.Content
 		public ModifierPool GetWeightedPool(ModifierContext ctx)
 		{
 			var wr = new WeightedRandom<ModifierPool>();
-			foreach (var m in Content.Where(x => x.Value._CanRoll(ctx)))
+			foreach (var m in Content.Where(x => x.Value._CanRoll(ctx) && x.Value.Type > 0))
 			{
 				wr.Add(m.Value, m.Value.RollChance);
 			}

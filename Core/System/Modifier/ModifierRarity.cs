@@ -3,6 +3,7 @@ using Loot.Core.System.Loaders;
 using Microsoft.Xna.Framework;
 using System;
 using System.IO;
+using Loot.Ext;
 using Terraria;
 using Terraria.ModLoader;
 using Terraria.ModLoader.IO;
@@ -123,8 +124,9 @@ namespace Loot.Core.System.Modifier
 				return null;
 			}
 
-			string modname = tag.GetString("ModName");
-			if (MainLoader.Mods.TryGetValue(modname, out var assembly))
+			string modName = tag.GetString("ModName");
+
+			if (MainLoader.Mods.TryGetValue(modName, out var assembly))
 			{
 				// If we load a null here, it means a rarity is unloaded
 				ModifierRarity r = null;
@@ -139,12 +141,12 @@ namespace Loot.Core.System.Modifier
 					// in first save version, modifiers were saved by full assembly namespace
 					//m = (ModifierPool)Activator.CreateInstance(assembly.GetType(tag.GetString("Type")));// we modified saving
 					rarityTypeName = rarityTypeName.Substring(rarityTypeName.LastIndexOf('.') + 1);
-					r = ContentLoader.ModifierRarity.GetContent(modname, rarityTypeName);
+					r = ContentLoader.ModifierRarity.GetContent(modName, rarityTypeName);
 				}
 				else if (saveVersion >= 2)
 				{
 					// from saveVersion 2 and onwards, they are saved by assembly (mod) and type name
-					r = ContentLoader.ModifierRarity.GetContent(modname, rarityTypeName);
+					r = ContentLoader.ModifierRarity.GetContent(modName, rarityTypeName);
 				}
 
 				if (r != null)

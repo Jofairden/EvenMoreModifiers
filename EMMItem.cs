@@ -33,7 +33,7 @@ namespace Loot
 		public override bool CloneNewInstances => true;
 
 		public ModifierRarity ModifierRarity; // the current rarity
-		public ModifierPool ModifierPool; // the current pool of mods. null if none.
+		public ModifierPool ModifierPool; // the current pool of mods.
 		public bool HasRolled; // has rolled a pool
 		public bool SealedModifiers; // are modifiers unchangeable
 
@@ -43,8 +43,8 @@ namespace Loot
 
 		private void InvalidateRolls()
 		{
-			ModifierRarity = null;
-			ModifierPool = null;
+			ModifierRarity = mod.GetNullModifierRarity();
+			ModifierPool = mod.GetNullModifierPool();
 		}
 
 		/// <summary>
@@ -70,9 +70,9 @@ namespace Loot
 			{
 				ModifierRarity = itemRollProperties.ForceModifierRarity;
 			}
-			else if (ModifierRarity == null)
+			else if (ModifierRarity == null || ModifierRarity.Type == 0)
 			{
-				ModifierRarity = ContentLoader.ModifierRarity.GetContent(typeof(CommonRarity));
+				ModifierRarity = mod.GetModifierRarity<CommonRarity>();
 			}
 
 			ctx.Rarity = ModifierRarity;
@@ -82,7 +82,7 @@ namespace Loot
 				&& Main.rand.NextFloat() <= (ModifierRarity.UpgradeChance ?? 0f))
 			{
 				var newRarity = ModifierRarity.Upgrade;
-				var newFromLoader = ContentLoader.ModifierRarity.GetContent(newRarity);
+				var newFromLoader = ModUtils.GetModifierRarity(newRarity);
 				if (newRarity != null && newFromLoader != null)
 				{
 					ModifierRarity = newFromLoader;
@@ -93,7 +93,7 @@ namespace Loot
 					&& Main.rand.NextFloat() <= (ModifierRarity.DowngradeChance ?? 0f))
 			{
 				var newRarity = ModifierRarity.Downgrade;
-				var newFromLoader = ContentLoader.ModifierRarity.GetContent(newRarity);
+				var newFromLoader = ModUtils.GetModifierRarity(newRarity);
 				if (newRarity != null && newFromLoader != null)
 				{
 					ModifierRarity = newFromLoader;
@@ -115,7 +115,7 @@ namespace Loot
 				// A pool is forced to roll
 				if (itemRollProperties.ForceModifierPool != null)
 				{
-					ModifierPool = ContentLoader.ModifierPool.GetContent(itemRollProperties.ForceModifierPool.GetType());
+					ModifierPool = mod.GetModifierPool(itemRollProperties.ForceModifierPool.GetType());
 					noForce = !ModifierPool?._CanRoll(ctx) ?? true;
 				}
 
@@ -136,7 +136,7 @@ namespace Loot
 					// Roll from all modifiers
 					if (noForce)
 					{
-						ModifierPool = Loot.Instance.GetModifierPool<AllModifiersPool>();
+						ModifierPool = mod.GetAllModifiersPool();
 						if (!ModifierPool._CanRoll(ctx))
 						{
 							InvalidateRolls();
@@ -177,7 +177,7 @@ namespace Loot
 			}
 
 			// Up to n times, try rolling a mod
-			// @ todo since we can increase lines rolled, make it so that MaxRollableLines influences the number of rows drawn in the UI
+			// TODO since we can increase lines rolled, make it so that MaxRollableLines influences the number of rows drawn in the UI
 			for (int i = 0; i < itemRollProperties.MaxRollableLines; ++i)
 			{
 				// If there are no mods left, or we fail the roll, break.
@@ -243,8 +243,8 @@ namespace Loot
 		public override GlobalItem Clone(Item item, Item itemClone)
 		{
 			EMMItem clone = (EMMItem)base.Clone(item, itemClone);
-			clone.ModifierRarity = (ModifierRarity)ModifierRarity?.Clone();
-			clone.ModifierPool = (ModifierPool)ModifierPool?.Clone();
+			clone.ModifierRarity = (ModifierRarity)ModifierRarity?.Clone() ?? mod.GetNullModifierRarity();
+			clone.ModifierPool = (ModifierPool)ModifierPool?.Clone() ?? mod.GetNullModifierPool();
 			// there is no need to apply here, we already cloned the item which stats are already modified by its pool
 			return clone;
 		}

@@ -1,6 +1,6 @@
 using Loot.Core.System.Loaders;
+using Loot.Core.System.Modifier;
 using Loot.Ext;
-using Loot.Pools;
 using Loot.Rarities;
 using Microsoft.Xna.Framework;
 using Terraria;
@@ -40,7 +40,7 @@ namespace Loot.Core.Cubes
 			if (forcedDowngrade)
 			{
 				properties.CanUpgradeRarity = ctx => false;
-				properties.ForceModifierRarity = ContentLoader.ModifierRarity.GetContent(typeof(RareRarity));
+				properties.ForceModifierRarity = mod.GetModifierRarity<RareRarity>();
 			}
 
 			properties.MaxRollableLines = 2;

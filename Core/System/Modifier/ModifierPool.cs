@@ -44,7 +44,12 @@ namespace Loot.Core.System.Modifier
 				.Where(x => x.UniqueName != string.Empty)
 				.Select(x => x.UniqueName);
 
-		public Modifier[] ActiveModifiers { get; protected internal set; }
+		private Modifier[] _activeModifiers = new Modifier[0];
+		public Modifier[] ActiveModifiers
+		{
+			get => _activeModifiers.Where(x => x.GetType() != typeof(NullModifier)).ToArray();
+			protected internal set => _activeModifiers = value;
+		}
 
 		private PopulatePoolFromAttribute _populatePoolFrom;
 
@@ -146,8 +151,7 @@ namespace Loot.Core.System.Modifier
 			clone.Mod = Mod;
 			clone.ActiveModifiers =
 				ActiveModifiers?
-					.Select(x => x?.Clone())
-					.Cast<Modifier>()
+					.Select(x => (Modifier)x?.Clone() ?? Loot.Instance.GetNullModifier())
 					.ToArray();
 			Clone(ref clone);
 			return clone;

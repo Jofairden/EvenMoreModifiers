@@ -10,7 +10,7 @@ namespace Loot.Core.System.Content
 	/// <summary>
 	/// This class holds all loaded <see cref="ModifierEffect"/> content
 	/// </summary>
-	public class ModifierEffectContent : BaseContent<ModifierEffect>
+	public sealed class ModifierEffectContent : LoadableContentBase<ModifierEffect>
 	{
 		internal override bool CheckContentPiece(ModifierEffect contentPiece)
 		{

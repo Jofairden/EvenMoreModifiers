@@ -13,7 +13,7 @@ namespace Loot.Core.System.Core
 	/// Even though it is public, this is only because
 	/// the fields on <see cref="ContentLoader"/> must be accessible to modders
 	/// </summary>
-	public abstract class BaseContent<T> where T : ILoadableContent, ICloneable
+	public abstract class LoadableContentBase<T> where T : ILoadableContent, ICloneable
 	{
 		internal Dictionary<string, List<KeyValuePair<string, T>>> Map;
 		internal Dictionary<uint, T> Content;

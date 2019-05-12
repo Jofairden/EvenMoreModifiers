@@ -5,6 +5,7 @@ using Microsoft.Xna.Framework;
 using System;
 using System.Collections.Generic;
 using System.IO;
+using Loot.Ext;
 using Terraria;
 using Terraria.ModLoader;
 using Terraria.ModLoader.IO;
@@ -149,8 +150,8 @@ namespace Loot.Core.System.Modifier
 		protected internal static Modifier _Load(Item item, TagCompound tag)
 		{
 			string modName = tag.GetString("ModName");
-			if (modName != null
-				&& MainLoader.Mods.TryGetValue(modName, out var assembly))
+
+			if (MainLoader.Mods.TryGetValue(modName, out var assembly))
 			{
 				// If we load a null here, it means a modifier is unloaded
 				Modifier m = null;

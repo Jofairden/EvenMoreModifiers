@@ -6,7 +6,7 @@ namespace Loot.Core.System.Content
 	/// <summary>
 	/// This class holds all loaded <see cref="ModifierRarity"/> content
 	/// </summary>
-	public class ModifierRarityContent : BaseContent<ModifierRarity>
+	public sealed class ModifierRarityContent : LoadableContentBase<ModifierRarity>
 	{
 	}
 }

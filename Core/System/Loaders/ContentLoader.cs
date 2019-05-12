@@ -15,6 +15,14 @@ namespace Loot.Core.System.Loaders
 		public static ModifierPoolContent ModifierPool;
 		public static ModifierEffectContent ModifierEffect;
 
+		internal static void SkipModChecks(bool val)
+		{
+			ModifierRarity.SkipModChecks = val;
+			Modifier.SkipModChecks = val;
+			ModifierPool.SkipModChecks = val;
+			ModifierEffect.SkipModChecks = val;
+		}
+
 		internal static void Initialize()
 		{
 			ModifierRarity = new ModifierRarityContent();

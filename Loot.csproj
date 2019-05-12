@@ -76,7 +76,7 @@
     <Compile Include="Core\System\Content\ModifierEffectContent.cs" />
     <Compile Include="Core\System\Content\ModifierPoolContent.cs" />
     <Compile Include="Core\System\Content\ModifierRarityContent.cs" />
-    <Compile Include="Core\System\Core\BaseContent.cs" />
+    <Compile Include="Core\System\Core\LoadableContentBase.cs" />
     <Compile Include="Core\System\Core\ILoadableContent.cs" />
     <Compile Include="Core\System\Loaders\AssetLoader.cs" />
     <Compile Include="Core\System\Loaders\ContentLoader.cs" />
@@ -90,6 +90,9 @@
     <Compile Include="Core\System\Modifier\ModifierRarity.cs" />
     <Compile Include="Core\System\Modifier\ModifierTooltipBuilder.cs" />
     <Compile Include="Core\System\Modifier\ModifierTooltipLine.cs" />
+    <Compile Include="Core\System\Modifier\NullModifierEffect.cs" />
+    <Compile Include="Core\System\Modifier\NullModifierRarity.cs" />
+    <Compile Include="Core\System\Modifier\NullModifier.cs" />
     <Compile Include="EMMItem.cs" />
     <Compile Include="EMMPlayer.cs" />
     <Compile Include="EMMWorld.cs" />
@@ -100,7 +103,7 @@
     <Compile Include="Ext\ModSupport\ModSupport.cs" />
     <Compile Include="Ext\ModSupport\WingSlotSupport.cs" />
     <Compile Include="Ext\ModUtils.cs" />
-    <Compile Include="LoadingFunneler.cs" />
+    <Compile Include="Core\System\Loaders\LoadingFunneler.cs" />
     <Compile Include="Loot.cs" />
     <Compile Include="ModifierItem.cs" />
     <Compile Include="ModifierPlayer.cs" />
@@ -153,8 +156,8 @@
     <Compile Include="Modifiers\WeaponModifiers\VelocityDamage.cs" />
     <Compile Include="Modifiers\WeaponModifiers\VelocityPlus.cs" />
     <Compile Include="Pools\AccessoryModifierPool.cs" />
-    <Compile Include="Pools\AllModifiersPool.cs" />
-    <Compile Include="Pools\WeaponModifierPool.cs" />
+    <Compile Include="Core\System\Modifier\AllModifiersPool.cs" />
+    <Compile Include="Core\System\Modifier\NullModifierPool.cs" />
     <Compile Include="Rarities\CommonRarity.cs" />
     <Compile Include="Rarities\EpicRarity.cs" />
     <Compile Include="Rarities\LegendaryRarity.cs" />

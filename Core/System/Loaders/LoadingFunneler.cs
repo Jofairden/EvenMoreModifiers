@@ -2,14 +2,14 @@ using System;
 using System.Collections.Generic;
 using System.Reflection;
 using Loot.Core.ModContent;
-using Loot.Core.System.Loaders;
+using Loot.Core.System.Modifier;
 using Loot.Ext.ModSupport;
 using Loot.UI.Common;
 using Terraria;
 using Terraria.ModLoader;
 using Terraria.UI;
 
-namespace Loot
+namespace Loot.Core.System.Loaders
 {
 	/// <summary>
 	/// The LoadingFunneler's purpose is to funnel all loading and unloading to one class
@@ -56,7 +56,12 @@ namespace Loot
 			MainLoader.Initialize();
 			MainLoader.Load();
 
-			AddMod(Loot.Instance);
+			MainLoader.RegisterMod(Loot.Instance);
+			ContentLoader.Modifier.AddContent(typeof(NullModifier), Loot.Instance);
+			ContentLoader.ModifierPool.AddContent(typeof(NullModifierPool), Loot.Instance);
+			ContentLoader.ModifierRarity.AddContent(typeof(NullModifierRarity), Loot.Instance);
+			ContentLoader.ModifierEffect.AddContent(typeof(NullModifierEffect), Loot.Instance);
+			MainLoader.AddContent(Loot.Instance);
 
 			if (Main.dedServ)
 			{
