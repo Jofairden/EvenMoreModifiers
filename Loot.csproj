@@ -1,4 +1,7 @@
-﻿<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <Import Project="..\..\references\tModLoader.targets" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
@@ -6,30 +9,26 @@
     <OutputType>Library</OutputType>
     <NoStandardLibraries>false</NoStandardLibraries>
     <AssemblyName>Loot</AssemblyName>
-    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
-    <TargetFrameworkProfile />
-    <LangVersion>7.3</LangVersion>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <LangVersion>latest</LangVersion>
   </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' Or '$(Configuration)|$(Platform)' == 'ServerDebug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
     <OutputPath>bin\Debug\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>3</WarningLevel>
-    <Prefer32Bit>false</Prefer32Bit>
-    <DocumentationFile>bin\Debug\Loot.xml</DocumentationFile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
     <DefineConstants>TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup>
     <RootNamespace>Loot</RootNamespace>
@@ -42,25 +41,6 @@
       <HintPath>references\log4net.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
-    <Reference Include="ReLogic">
-      <HintPath>references\ReLogic.dll</HintPath>
-    </Reference>
-    <Reference Include="System" />
-    <Reference Include="System.Core" />
-    <Reference Include="System.Data" />
-    <Reference Include="System.Data.DataSetExtensions" />
-    <Reference Include="System.ValueTuple, Version=4.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>references\System.ValueTuple.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Xml" />
-    <Reference Include="System.Xml.Linq" />
-    <Reference Include="Terraria">
-      <HintPath>G:\Steam\steamapps\common\Terraria\Terraria.exe</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.Xna.Framework" />
-    <Reference Include="Microsoft.Xna.Framework.Game" />
-    <Reference Include="Microsoft.Xna.Framework.Graphics" />
   </ItemGroup>
   <ItemGroup>
     <None Include=".editorconfig" />
@@ -118,6 +98,7 @@
     <Compile Include="EMMItem.cs" />
     <Compile Include="EMMPlayer.cs" />
     <Compile Include="EMMWorld.cs" />
+    <Compile Include="Ext\GuiUtils.cs" />
     <Compile Include="Ext\ItemUtils.cs" />
     <Compile Include="Ext\ModSupport\CheatSheetSupporter.cs" />
     <Compile Include="Ext\ModSupport\ModSupport.cs" />
@@ -186,63 +167,36 @@
     <Compile Include="Rarities\TranscendentRarity.cs" />
     <Compile Include="Sounds\Custom\UISounds.cs" />
     <Compile Include="Sounds\SoundHelper.cs" />
+    <Compile Include="UI\Common\Controls\Button\GuiArrowButton.cs" />
     <Compile Include="UI\Common\Controls\Button\GuiButton.cs" />
     <Compile Include="UI\Common\Controls\Button\GuiImageButton.cs" />
     <Compile Include="UI\Common\Controls\Button\GuiInteractableItemButton.cs" />
     <Compile Include="UI\Common\Controls\Button\GuiItemButton.cs" />
+    <Compile Include="UI\Common\Controls\Panel\GuiPanel.cs" />
+    <Compile Include="UI\Common\Controls\Panel\GuiTextPanel.cs" />
     <Compile Include="UI\Common\Core\DraggableUIState.cs" />
     <Compile Include="UI\Common\Core\VisibilityUI.cs" />
-    <Compile Include="UI\Common\Controls\Button\GuiArrowButton.cs" />
     <Compile Include="UI\Common\GuiCloseButton.cs" />
     <Compile Include="UI\Common\GuiFramedElement.cs" />
+    <Compile Include="UI\Common\GuiHeader.cs" />
+    <Compile Include="UI\Common\GuiTab.cs" />
+    <Compile Include="UI\Common\GuiTabState.cs" />
+    <Compile Include="UI\Common\GuiTabToggle.cs" />
+    <Compile Include="UI\Common\GuiTabWindow.cs" />
     <Compile Include="UI\Common\Tabs\Cubing\GuiCubeButton.cs" />
     <Compile Include="UI\Common\Tabs\Cubing\GuiCubeItemButton.cs" />
     <Compile Include="UI\Common\Tabs\Cubing\GuiCubeSelector.cs" />
     <Compile Include="UI\Common\Tabs\Cubing\GuiCubingTab.cs" />
     <Compile Include="UI\Common\Tabs\EssenceCrafting\GuiEssenceTab.cs" />
-    <Compile Include="Ext\GuiUtils.cs" />
-    <Compile Include="UI\Common\GuiHeader.cs" />
-    <Compile Include="UI\Common\Controls\Panel\GuiTextPanel.cs" />
-    <Compile Include="UI\Common\Controls\Panel\GuiPanel.cs" />
     <Compile Include="UI\Common\Tabs\Soulforging\GaugeLevel.cs" />
     <Compile Include="UI\Common\Tabs\Soulforging\GuiSoulforgeTab.cs" />
-    <Compile Include="UI\Common\GuiTab.cs" />
-    <Compile Include="UI\Common\GuiTabWindow.cs" />
-    <Compile Include="UI\Common\GuiTabState.cs" />
-    <Compile Include="UI\Common\GuiTabToggle.cs" />
     <Compile Include="UI\Common\Tabs\Soulforging\GuiSoulgauge.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="build.txt" />
-    <Content Include="Core\Cubes\BlackCube.png" />
-    <Content Include="Core\Cubes\Cube2.png" />
-    <Content Include="Core\Cubes\Cube3.png" />
-    <Content Include="Core\Cubes\Cube4.png" />
-    <Content Include="Core\Cubes\Cube5.png" />
-    <Content Include="Core\Cubes\Cube6.png" />
-    <Content Include="Core\Cubes\CubeOfSealing.png" />
-    <Content Include="Core\Cubes\FireCube.png" />
-    <Content Include="Core\Cubes\IceCube.png" />
-    <Content Include="Core\Cubes\MagicalCube.png" />
-    <Content Include="Core\Cubes\PoorCube.png" />
-    <Content Include="Core\Cubes\VioletCube.png" />
-    <Content Include="Core\Cubes\VoidCube.png" />
-    <Content Include="Core\Cubes\WhiteCube.png" />
-    <Content Include="description.txt" />
-    <Content Include="Sounds\Custom\CloseUI.wav" />
-    <Content Include="Sounds\Custom\Decline.wav" />
-    <Content Include="Sounds\Custom\GainSeal.wav" />
-    <Content Include="Sounds\Custom\LoseSeal.wav" />
-    <Content Include="Sounds\Custom\Notif.wav" />
-    <Content Include="Sounds\Custom\OpenUI.wav" />
-    <Content Include="Sounds\Custom\Receive.wav" />
-    <Content Include="Sounds\Custom\Redeem.wav" />
+    <Reference Include="System" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSHARP.Targets" />
-  <ProjectExtensions>
-    <VisualStudio AllowExistingFolder="true" />
-  </ProjectExtensions>
   <PropertyGroup>
-    <PostBuildEvent>"$(ProjectDir)\references\Terraria\tModLoaderServer.exe" -build "$(ProjectDir)\" -eac "$(TargetPath)"</PostBuildEvent>
+    <PostBuildEvent>"$(tMLServerPath)" -build "$(ProjectDir)\" -eac "$(TargetPath)"</PostBuildEvent>
   </PropertyGroup>
 </Project>
