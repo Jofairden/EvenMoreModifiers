@@ -1,5 +1,6 @@
 var hierarchy =
 [
+    [ "Loot.UI.Common.Tabs.Soulforging.GuiSoulgauge.GaugeDrawing.ANIM", "class_loot_1_1_u_i_1_1_common_1_1_tabs_1_1_soulforging_1_1_gui_soulgauge_1_1_gauge_drawing_1_1_a_n_i_m.html", null ],
     [ "Loot.Core.System.Loaders.AssetLoader", "class_loot_1_1_core_1_1_system_1_1_loaders_1_1_asset_loader.html", null ],
     [ "Attribute", "class_attribute.html", [
       [ "Loot.Core.Attributes.AutoDelegation", "class_loot_1_1_core_1_1_attributes_1_1_auto_delegation.html", null ],
@@ -21,11 +22,11 @@ var hierarchy =
       [ "Loot.Core.System.Content.ModifierRarityContent", "class_loot_1_1_core_1_1_system_1_1_content_1_1_modifier_rarity_content.html", null ]
     ] ],
     [ "Loot.Core.System.Loaders.ContentLoader", "class_loot_1_1_core_1_1_system_1_1_loaders_1_1_content_loader.html", null ],
+    [ "Loot.UI.Common.Tabs.Soulforging.GuiSoulgauge.GaugeDrawing", "class_loot_1_1_u_i_1_1_common_1_1_tabs_1_1_soulforging_1_1_gui_soulgauge_1_1_gauge_drawing.html", null ],
     [ "GenPass", "class_gen_pass.html", null ],
     [ "GlobalItem", "class_global_item.html", [
       [ "Loot.ActivatedModifierItem", "class_loot_1_1_activated_modifier_item.html", null ],
       [ "Loot.ArmorItemHack", "class_loot_1_1_armor_item_hack.html", null ],
-      [ "Loot.Core.Cubes.CubeUIExtensions", "class_loot_1_1_core_1_1_cubes_1_1_cube_u_i_extensions.html", null ],
       [ "Loot.Core.Graphics.GlowmaskGlobalItem", "class_loot_1_1_core_1_1_graphics_1_1_glowmask_global_item.html", null ],
       [ "Loot.Core.Graphics.ShaderGlobalItem", "class_loot_1_1_core_1_1_graphics_1_1_shader_global_item.html", null ],
       [ "Loot.Core.System.Modifier.Modifier", "class_loot_1_1_core_1_1_system_1_1_modifier_1_1_modifier.html", [
@@ -159,9 +160,9 @@ var hierarchy =
     ] ],
     [ "ModItem", "class_mod_item.html", [
       [ "Loot.Core.Cubes.MagicalCube", "class_loot_1_1_core_1_1_cubes_1_1_magical_cube.html", [
-        [ "Loot.Core.Cubes.CubeOfSealing", "class_loot_1_1_core_1_1_cubes_1_1_cube_of_sealing.html", null ],
         [ "Loot.Core.Cubes.RerollingCube", "class_loot_1_1_core_1_1_cubes_1_1_rerolling_cube.html", [
           [ "Loot.Core.Cubes.BlackCube", "class_loot_1_1_core_1_1_cubes_1_1_black_cube.html", null ],
+          [ "Loot.Core.Cubes.CubeOfSealing", "class_loot_1_1_core_1_1_cubes_1_1_cube_of_sealing.html", null ],
           [ "Loot.Core.Cubes.PoorCube", "class_loot_1_1_core_1_1_cubes_1_1_poor_cube.html", null ]
         ] ]
       ] ]
@@ -177,10 +178,14 @@ var hierarchy =
       [ "Loot.EMMWorld", "class_loot_1_1_e_m_m_world.html", null ]
     ] ],
     [ "Loot.Sounds.Custom.SoundMaker", "class_loot_1_1_sounds_1_1_custom_1_1_sound_maker.html", null ],
+    [ "Loot.UI.Common.Tabs.Soulforging.GuiSoulgauge.GaugeDrawing.STATIC", "class_loot_1_1_u_i_1_1_common_1_1_tabs_1_1_soulforging_1_1_gui_soulgauge_1_1_gauge_drawing_1_1_s_t_a_t_i_c.html", null ],
     [ "Loot.Core.ModContent.TextureModContent", "class_loot_1_1_core_1_1_mod_content_1_1_texture_mod_content.html", [
       [ "Loot.Core.ModContent.GraphicsModContent", "class_loot_1_1_core_1_1_mod_content_1_1_graphics_mod_content.html", null ]
     ] ],
     [ "UIState", "class_u_i_state.html", [
+      [ "Loot.UI.Common.Core.VisibilityUI", "class_loot_1_1_u_i_1_1_common_1_1_core_1_1_visibility_u_i.html", [
+        [ "Loot.UI.Common.Core.DraggableUIState", "class_loot_1_1_u_i_1_1_common_1_1_core_1_1_draggable_u_i_state.html", null ]
+      ] ],
       [ "Loot.UI.Core.VisibilityUI", "class_loot_1_1_u_i_1_1_core_1_1_visibility_u_i.html", [
         [ "Loot.UI.Core.DraggableUIState", "class_loot_1_1_u_i_1_1_core_1_1_draggable_u_i_state.html", [
           [ "Loot.UI.Core.CubeUI", "class_loot_1_1_u_i_1_1_core_1_1_cube_u_i.html", [
@@ -194,6 +199,9 @@ var hierarchy =
     [ "Modifier", null, [
       [ "LootTests.TestModifiers.TestApplyMod", "class_loot_tests_1_1_test_modifiers_1_1_test_apply_mod.html", null ]
     ] ],
+    [ "UIElement", null, [
+      [ "Loot.UI.Core.UIModifierPanel", "class_loot_1_1_u_i_1_1_core_1_1_u_i_modifier_panel.html", null ]
+    ] ],
     [ "UIPanel", null, [
       [ "Loot.UI.Core.UIItemPanel", "class_loot_1_1_u_i_1_1_core_1_1_u_i_item_panel.html", [
         [ "Loot.UI.Core.UIInteractableItemPanel", "class_loot_1_1_u_i_1_1_core_1_1_u_i_interactable_item_panel.html", [
@@ -202,7 +210,6 @@ var hierarchy =
           [ "Loot.UI.Rerolling.UIRerollItemPanel", "class_loot_1_1_u_i_1_1_rerolling_1_1_u_i_reroll_item_panel.html", null ],
           [ "Loot.UI.Sealing.UISealItemPanel", "class_loot_1_1_u_i_1_1_sealing_1_1_u_i_seal_item_panel.html", null ]
         ] ]
-      ] ],
-      [ "Loot.UI.Core.UIModifierPanel", "class_loot_1_1_u_i_1_1_core_1_1_u_i_modifier_panel.html", null ]
+      ] ]
     ] ]
 ];

@@ -6,6 +6,7 @@ var searchData=
   ['invalidaterolls',['InvalidateRolls',['../class_loot_1_1_e_m_m_item.html#a3c96b9a7d32d86f9e9cfe88dcbdcf22a',1,'Loot::EMMItem']]],
   ['isaccessory',['IsAccessory',['../class_loot_1_1_ext_1_1_item_utils.html#af58bed9e30ee3a8923f017b6a7236cfa',1,'Loot::Ext::ItemUtils']]],
   ['isanglerquestavailable',['IsAnglerQuestAvailable',['../class_loot_1_1_core_1_1_system_1_1_modifier_1_1_modifier.html#a257f44872efa6afd7e4d4b7d55927d4b',1,'Loot::Core::System::Modifier::Modifier']]],
+  ['isanimation',['IsAnimation',['../class_loot_1_1_u_i_1_1_common_1_1_tabs_1_1_soulforging_1_1_gui_soulgauge_1_1_gauge_drawing.html#ae6d6bfba97347ce18e42aedafd6a3213',1,'Loot::UI::Common::Tabs::Soulforging::GuiSoulgauge::GaugeDrawing']]],
   ['isarmor',['IsArmor',['../class_loot_1_1_ext_1_1_item_utils.html#aadc4b7173f9beda06818607e781182e7',1,'Loot::Ext::ItemUtils']]],
   ['isarmorset',['IsArmorSet',['../class_loot_1_1_core_1_1_system_1_1_modifier_1_1_modifier.html#ad656ac6ce174995ede10e364987cd6ad',1,'Loot::Core::System::Modifier::Modifier']]],
   ['isininventory',['IsInInventory',['../class_loot_1_1_activated_modifier_item.html#aec85662e31e484311196b98f872cb4e3',1,'Loot::ActivatedModifierItem']]],

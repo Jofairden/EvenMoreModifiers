@@ -110,9 +110,7 @@ $(document).ready(function(){initNavTree('class_loot_1_1_u_i_1_1_core_1_1_dragga
 
 <div class="header">
   <div class="summary">
-<a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pro-methods">Protected Member Functions</a> &#124;
-<a href="#pri-methods">Private Member Functions</a> &#124;
 <a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="class_loot_1_1_u_i_1_1_core_1_1_draggable_u_i_state-members.html">List of all members</a>  </div>
   <div class="headertitle">
@@ -120,7 +118,7 @@ $(document).ready(function(){initNavTree('class_loot_1_1_u_i_1_1_core_1_1_dragga
 </div><!--header-->
 <div class="contents">
 
-<p>A <a class="el" href="class_u_i_state.html">UIState</a> which primarily goal is to provide dragging on click functionality to the main panel The drag panel MUST become assigned in OnInitialize Which means the base panel must be created, and then assigned, before calling the base OnInitialize  
+<p>A <a class="el" href="class_u_i_state.html">UIState</a> which primarily goal is to provide dragging on click functionality to another element (or itself)  
  <a href="class_loot_1_1_u_i_1_1_core_1_1_draggable_u_i_state.html#details">More...</a></p>
 <div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Inheritance diagram for Loot.UI.Core.DraggableUIState:</div>
@@ -143,56 +141,42 @@ $(document).ready(function(){initNavTree('class_loot_1_1_u_i_1_1_core_1_1_dragga
 <div id="dynsection-1-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="class_loot_1_1_u_i_1_1_core_1_1_draggable_u_i_state__coll__graph.png" border="0" usemap="#_loot_8_u_i_8_core_8_draggable_u_i_state_coll__map" alt="Collaboration graph"/></div>
 <map name="_loot_8_u_i_8_core_8_draggable_u_i_state_coll__map" id="_loot_8_u_i_8_core_8_draggable_u_i_state_coll__map">
-<area shape="rect" id="node2" href="class_loot_1_1_u_i_1_1_core_1_1_visibility_u_i.html" title="A UIState which primarily goal is to provide easy visibility toggling " alt="" coords="13,97,99,124"/>
+<area shape="rect" id="node2" href="class_loot_1_1_u_i_1_1_core_1_1_visibility_u_i.html" title="A UIState which primarily goal is to provide easy visibility toggling " alt="" coords="211,31,296,57"/>
 <area shape="rect" id="node3" href="class_u_i_state.html" title="UIState" alt="" coords="5,5,72,32"/>
 </map>
 <center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
-Public Member Functions</h2></td></tr>
-<tr class="memitem:a35a3d3e39a8fc5f013f0ce2181bc7e43"><td class="memItemLeft" align="right" valign="top">override void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_loot_1_1_u_i_1_1_core_1_1_draggable_u_i_state.html#a35a3d3e39a8fc5f013f0ce2181bc7e43">OnInitialize</a> ()</td></tr>
-<tr class="separator:a35a3d3e39a8fc5f013f0ce2181bc7e43"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="inherit_header pub_methods_class_loot_1_1_u_i_1_1_core_1_1_visibility_u_i"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_class_loot_1_1_u_i_1_1_core_1_1_visibility_u_i')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="class_loot_1_1_u_i_1_1_core_1_1_visibility_u_i.html">Loot.UI.Core.VisibilityUI</a></td></tr>
-<tr class="memitem:a9bfbbef8888b2e9bbb8fcff796fee38a inherit pub_methods_class_loot_1_1_u_i_1_1_core_1_1_visibility_u_i"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_loot_1_1_u_i_1_1_core_1_1_visibility_u_i.html#a9bfbbef8888b2e9bbb8fcff796fee38a">ToggleUI</a> (UserInterface theInterface, <a class="el" href="class_u_i_state.html">UIState</a> uiStateInstance)</td></tr>
-<tr class="separator:a9bfbbef8888b2e9bbb8fcff796fee38a inherit pub_methods_class_loot_1_1_u_i_1_1_core_1_1_visibility_u_i"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-methods"></a>
 Protected Member Functions</h2></td></tr>
-<tr class="memitem:a4a119b99fc1d081a61df43e1ee1bf798"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_loot_1_1_u_i_1_1_core_1_1_draggable_u_i_state.html#a4a119b99fc1d081a61df43e1ee1bf798">AddDragPanel</a> (UIPanel panel)</td></tr>
-<tr class="separator:a4a119b99fc1d081a61df43e1ee1bf798"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa916c4cd004d2e98dcdc8b5ef4dd770c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_loot_1_1_u_i_1_1_core_1_1_draggable_u_i_state.html#aa916c4cd004d2e98dcdc8b5ef4dd770c">AddDragging</a> (UIElement dragger, UIElement draggable=null)</td></tr>
+<tr class="separator:aa916c4cd004d2e98dcdc8b5ef4dd770c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5a49dadcda72a7a8201471ccd31ed65e"><td class="memItemLeft" align="right" valign="top">override void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_loot_1_1_u_i_1_1_core_1_1_draggable_u_i_state.html#a5a49dadcda72a7a8201471ccd31ed65e">DrawSelf</a> (SpriteBatch spriteBatch)</td></tr>
 <tr class="separator:a5a49dadcda72a7a8201471ccd31ed65e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
-Private Member Functions</h2></td></tr>
-<tr class="memitem:ab449f585e4fe554fea3f0aae4084b196"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_loot_1_1_u_i_1_1_core_1_1_draggable_u_i_state.html#ab449f585e4fe554fea3f0aae4084b196">DragEnd</a> (UIMouseEvent evt, UIElement _)</td></tr>
-<tr class="separator:ab449f585e4fe554fea3f0aae4084b196"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6c1fe7f620f110ea4f75792c3be19715"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_loot_1_1_u_i_1_1_core_1_1_draggable_u_i_state.html#a6c1fe7f620f110ea4f75792c3be19715">DragStart</a> (UIMouseEvent evt, UIElement _)</td></tr>
-<tr class="separator:a6c1fe7f620f110ea4f75792c3be19715"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
-<tr class="memitem:a4244e1f2edee7779563d856f3abf2899"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_loot_1_1_u_i_1_1_core_1_1_draggable_u_i_state.html#a4244e1f2edee7779563d856f3abf2899">_dragging</a></td></tr>
-<tr class="separator:a4244e1f2edee7779563d856f3abf2899"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5ea51616a51cc52eb95116cf629b4645"><td class="memItemLeft" align="right" valign="top">List&lt; UIPanel &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_loot_1_1_u_i_1_1_core_1_1_draggable_u_i_state.html#a5ea51616a51cc52eb95116cf629b4645">_dragPanels</a> = new List&lt;UIPanel&gt;()</td></tr>
-<tr class="separator:a5ea51616a51cc52eb95116cf629b4645"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6f5925e87f6d5fea091cb3d357158724"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_loot_1_1_u_i_1_1_core_1_1_draggable_u_i_state.html#a6f5925e87f6d5fea091cb3d357158724">_initialized</a></td></tr>
-<tr class="separator:a6f5925e87f6d5fea091cb3d357158724"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a629ade0ef1cc562516bfd7395b1f767a"><td class="memItemLeft" align="right" valign="top">List&lt; Vector2 &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_loot_1_1_u_i_1_1_core_1_1_draggable_u_i_state.html#a629ade0ef1cc562516bfd7395b1f767a">_offsets</a> = new List&lt;Vector2&gt;()</td></tr>
-<tr class="separator:a629ade0ef1cc562516bfd7395b1f767a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a881886cec92dde6d870a4152a992ce8a"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_loot_1_1_u_i_1_1_core_1_1_draggable_u_i_state.html#a881886cec92dde6d870a4152a992ce8a">_dragging</a></td></tr>
+<tr class="separator:a881886cec92dde6d870a4152a992ce8a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae610c4c87f4a191e2b2bde842ff218a3"><td class="memItemLeft" align="right" valign="top">readonly List&lt;(UIElement, UIElement)&gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_loot_1_1_u_i_1_1_core_1_1_draggable_u_i_state.html#ae610c4c87f4a191e2b2bde842ff218a3">_draggingList</a> = new List&lt;(UIElement, UIElement)&gt;()</td></tr>
+<tr class="separator:ae610c4c87f4a191e2b2bde842ff218a3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa456a6d188b4e7b134feeccfdc9730a0"><td class="memItemLeft" align="right" valign="top">readonly Dictionary&lt; UIElement, Vector2 &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_loot_1_1_u_i_1_1_core_1_1_draggable_u_i_state.html#aa456a6d188b4e7b134feeccfdc9730a0">_offsets</a> = new Dictionary&lt;UIElement, Vector2&gt;()</td></tr>
+<tr class="separator:aa456a6d188b4e7b134feeccfdc9730a0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
+<tr class="inherit_header pub_methods_class_loot_1_1_u_i_1_1_core_1_1_visibility_u_i"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_class_loot_1_1_u_i_1_1_core_1_1_visibility_u_i')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="class_loot_1_1_u_i_1_1_core_1_1_visibility_u_i.html">Loot.UI.Core.VisibilityUI</a></td></tr>
+<tr class="memitem:afc3e0627481bf8178c47cb66547eab6b inherit pub_methods_class_loot_1_1_u_i_1_1_core_1_1_visibility_u_i"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_loot_1_1_u_i_1_1_core_1_1_visibility_u_i.html#afc3e0627481bf8178c47cb66547eab6b">ToggleUI</a> (UserInterface theInterface, <a class="el" href="class_u_i_state.html">UIState</a> uiStateInstance=null)</td></tr>
+<tr class="separator:afc3e0627481bf8178c47cb66547eab6b inherit pub_methods_class_loot_1_1_u_i_1_1_core_1_1_visibility_u_i"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_attribs_class_loot_1_1_u_i_1_1_core_1_1_visibility_u_i"><td colspan="2" onclick="javascript:toggleInherit('pub_attribs_class_loot_1_1_u_i_1_1_core_1_1_visibility_u_i')"><img src="closed.png" alt="-"/>&#160;Public Attributes inherited from <a class="el" href="class_loot_1_1_u_i_1_1_core_1_1_visibility_u_i.html">Loot.UI.Core.VisibilityUI</a></td></tr>
 <tr class="memitem:ab560543b09926b8cf31af2d347ca9701 inherit pub_attribs_class_loot_1_1_u_i_1_1_core_1_1_visibility_u_i"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_loot_1_1_u_i_1_1_core_1_1_visibility_u_i.html#ab560543b09926b8cf31af2d347ca9701">Visible</a></td></tr>
 <tr class="separator:ab560543b09926b8cf31af2d347ca9701 inherit pub_attribs_class_loot_1_1_u_i_1_1_core_1_1_visibility_u_i"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>A <a class="el" href="class_u_i_state.html">UIState</a> which primarily goal is to provide dragging on click functionality to the main panel The drag panel MUST become assigned in OnInitialize Which means the base panel must be created, and then assigned, before calling the base OnInitialize </p>
+<div class="textblock"><p>A <a class="el" href="class_u_i_state.html">UIState</a> which primarily goal is to provide dragging on click functionality to another element (or itself) </p>
 
-<p>Definition at line <a class="el" href="_draggable_u_i_state_8cs_source.html#l00015">15</a> of file <a class="el" href="_draggable_u_i_state_8cs_source.html">DraggableUIState.cs</a>.</p>
+<p>Definition at line <a class="el" href="_ignored_2_core_2_draggable_u_i_state_8cs_source.html#l00012">12</a> of file <a class="el" href="_ignored_2_core_2_draggable_u_i_state_8cs_source.html">DraggableUIState.cs</a>.</p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
-<a class="anchor" id="a4a119b99fc1d081a61df43e1ee1bf798"></a>
+<a class="anchor" id="aa916c4cd004d2e98dcdc8b5ef4dd770c"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -200,11 +184,21 @@ Additional Inherited Members</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void Loot.UI.Core.DraggableUIState.AddDragPanel </td>
+          <td class="memname">void Loot.UI.Core.DraggableUIState.AddDragging </td>
           <td>(</td>
-          <td class="paramtype">UIPanel&#160;</td>
-          <td class="paramname"><em>panel</em></td><td>)</td>
+          <td class="paramtype">UIElement&#160;</td>
+          <td class="paramname"><em>dragger</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">UIElement&#160;</td>
+          <td class="paramname"><em>draggable</em> = <code>null</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
   </td>
@@ -214,88 +208,10 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_draggable_u_i_state_8cs_source.html#l00022">22</a> of file <a class="el" href="_draggable_u_i_state_8cs_source.html">DraggableUIState.cs</a>.</p>
-<div class="fragment"><div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;        {</div><div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;            <span class="keywordflow">if</span> (<a class="code" href="class_loot_1_1_u_i_1_1_core_1_1_draggable_u_i_state.html#a6f5925e87f6d5fea091cb3d357158724">_initialized</a>) <span class="keywordflow">return</span>;</div><div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;            <a class="code" href="class_loot_1_1_u_i_1_1_core_1_1_draggable_u_i_state.html#a5ea51616a51cc52eb95116cf629b4645">_dragPanels</a>.Add(panel);</div><div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;            <a class="code" href="class_loot_1_1_u_i_1_1_core_1_1_draggable_u_i_state.html#a629ade0ef1cc562516bfd7395b1f767a">_offsets</a>.Add(<span class="keyword">new</span> Vector2());</div><div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;        }</div><div class="ttc" id="class_loot_1_1_u_i_1_1_core_1_1_draggable_u_i_state_html_a5ea51616a51cc52eb95116cf629b4645"><div class="ttname"><a href="class_loot_1_1_u_i_1_1_core_1_1_draggable_u_i_state.html#a5ea51616a51cc52eb95116cf629b4645">Loot.UI.Core.DraggableUIState._dragPanels</a></div><div class="ttdeci">List&lt; UIPanel &gt; _dragPanels</div><div class="ttdef"><b>Definition:</b> <a href="_draggable_u_i_state_8cs_source.html#l00018">DraggableUIState.cs:18</a></div></div>
-<div class="ttc" id="class_loot_1_1_u_i_1_1_core_1_1_draggable_u_i_state_html_a6f5925e87f6d5fea091cb3d357158724"><div class="ttname"><a href="class_loot_1_1_u_i_1_1_core_1_1_draggable_u_i_state.html#a6f5925e87f6d5fea091cb3d357158724">Loot.UI.Core.DraggableUIState._initialized</a></div><div class="ttdeci">bool _initialized</div><div class="ttdef"><b>Definition:</b> <a href="_draggable_u_i_state_8cs_source.html#l00017">DraggableUIState.cs:17</a></div></div>
-<div class="ttc" id="class_loot_1_1_u_i_1_1_core_1_1_draggable_u_i_state_html_a629ade0ef1cc562516bfd7395b1f767a"><div class="ttname"><a href="class_loot_1_1_u_i_1_1_core_1_1_draggable_u_i_state.html#a629ade0ef1cc562516bfd7395b1f767a">Loot.UI.Core.DraggableUIState._offsets</a></div><div class="ttdeci">List&lt; Vector2 &gt; _offsets</div><div class="ttdef"><b>Definition:</b> <a href="_draggable_u_i_state_8cs_source.html#l00019">DraggableUIState.cs:19</a></div></div>
-</div><!-- fragment -->
-</div>
-</div>
-<a class="anchor" id="ab449f585e4fe554fea3f0aae4084b196"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void Loot.UI.Core.DraggableUIState.DragEnd </td>
-          <td>(</td>
-          <td class="paramtype">UIMouseEvent&#160;</td>
-          <td class="paramname"><em>evt</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">UIElement&#160;</td>
-          <td class="paramname"><em>_</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Definition at line <a class="el" href="_draggable_u_i_state_8cs_source.html#l00052">52</a> of file <a class="el" href="_draggable_u_i_state_8cs_source.html">DraggableUIState.cs</a>.</p>
-<div class="fragment"><div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        {</div><div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;            Vector2 end = evt.MousePosition;</div><div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;            <a class="code" href="class_loot_1_1_u_i_1_1_core_1_1_draggable_u_i_state.html#a4244e1f2edee7779563d856f3abf2899">_dragging</a> = <span class="keyword">false</span>;</div><div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;</div><div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; <a class="code" href="class_loot_1_1_u_i_1_1_core_1_1_draggable_u_i_state.html#a5ea51616a51cc52eb95116cf629b4645">_dragPanels</a>.Count; i++)</div><div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;            {</div><div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;                var panel = <a class="code" href="class_loot_1_1_u_i_1_1_core_1_1_draggable_u_i_state.html#a5ea51616a51cc52eb95116cf629b4645">_dragPanels</a>[i];</div><div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;                var offset = <a class="code" href="class_loot_1_1_u_i_1_1_core_1_1_draggable_u_i_state.html#a629ade0ef1cc562516bfd7395b1f767a">_offsets</a>[i];</div><div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;                panel.Left.Set(end.X - offset.X, 0f);</div><div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;                panel.Top.Set(end.Y - offset.Y, 0f);</div><div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;            }</div><div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;</div><div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;            Recalculate();</div><div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;        }</div><div class="ttc" id="class_loot_1_1_u_i_1_1_core_1_1_draggable_u_i_state_html_a4244e1f2edee7779563d856f3abf2899"><div class="ttname"><a href="class_loot_1_1_u_i_1_1_core_1_1_draggable_u_i_state.html#a4244e1f2edee7779563d856f3abf2899">Loot.UI.Core.DraggableUIState._dragging</a></div><div class="ttdeci">bool _dragging</div><div class="ttdef"><b>Definition:</b> <a href="_draggable_u_i_state_8cs_source.html#l00020">DraggableUIState.cs:20</a></div></div>
-<div class="ttc" id="class_loot_1_1_u_i_1_1_core_1_1_draggable_u_i_state_html_a5ea51616a51cc52eb95116cf629b4645"><div class="ttname"><a href="class_loot_1_1_u_i_1_1_core_1_1_draggable_u_i_state.html#a5ea51616a51cc52eb95116cf629b4645">Loot.UI.Core.DraggableUIState._dragPanels</a></div><div class="ttdeci">List&lt; UIPanel &gt; _dragPanels</div><div class="ttdef"><b>Definition:</b> <a href="_draggable_u_i_state_8cs_source.html#l00018">DraggableUIState.cs:18</a></div></div>
-<div class="ttc" id="class_loot_1_1_u_i_1_1_core_1_1_draggable_u_i_state_html_a629ade0ef1cc562516bfd7395b1f767a"><div class="ttname"><a href="class_loot_1_1_u_i_1_1_core_1_1_draggable_u_i_state.html#a629ade0ef1cc562516bfd7395b1f767a">Loot.UI.Core.DraggableUIState._offsets</a></div><div class="ttdeci">List&lt; Vector2 &gt; _offsets</div><div class="ttdef"><b>Definition:</b> <a href="_draggable_u_i_state_8cs_source.html#l00019">DraggableUIState.cs:19</a></div></div>
-</div><!-- fragment -->
-</div>
-</div>
-<a class="anchor" id="a6c1fe7f620f110ea4f75792c3be19715"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void Loot.UI.Core.DraggableUIState.DragStart </td>
-          <td>(</td>
-          <td class="paramtype">UIMouseEvent&#160;</td>
-          <td class="paramname"><em>evt</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">UIElement&#160;</td>
-          <td class="paramname"><em>_</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Definition at line <a class="el" href="_draggable_u_i_state_8cs_source.html#l00068">68</a> of file <a class="el" href="_draggable_u_i_state_8cs_source.html">DraggableUIState.cs</a>.</p>
-<div class="fragment"><div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;        {</div><div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;            <span class="comment">//Should trigger on hit</span></div><div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;</div><div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; <a class="code" href="class_loot_1_1_u_i_1_1_core_1_1_draggable_u_i_state.html#a5ea51616a51cc52eb95116cf629b4645">_dragPanels</a>.Count; i++)</div><div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;            {</div><div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;                var panel = <a class="code" href="class_loot_1_1_u_i_1_1_core_1_1_draggable_u_i_state.html#a5ea51616a51cc52eb95116cf629b4645">_dragPanels</a>[i];</div><div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;                <a class="code" href="class_loot_1_1_u_i_1_1_core_1_1_draggable_u_i_state.html#a629ade0ef1cc562516bfd7395b1f767a">_offsets</a>[i] = <span class="keyword">new</span> Vector2(evt.MousePosition.X - panel.Left.Pixels, evt.MousePosition.Y - panel.Top.Pixels);</div><div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;            }</div><div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;</div><div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;            <a class="code" href="class_loot_1_1_u_i_1_1_core_1_1_draggable_u_i_state.html#a4244e1f2edee7779563d856f3abf2899">_dragging</a> = <span class="keyword">true</span>;</div><div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;        }</div><div class="ttc" id="class_loot_1_1_u_i_1_1_core_1_1_draggable_u_i_state_html_a4244e1f2edee7779563d856f3abf2899"><div class="ttname"><a href="class_loot_1_1_u_i_1_1_core_1_1_draggable_u_i_state.html#a4244e1f2edee7779563d856f3abf2899">Loot.UI.Core.DraggableUIState._dragging</a></div><div class="ttdeci">bool _dragging</div><div class="ttdef"><b>Definition:</b> <a href="_draggable_u_i_state_8cs_source.html#l00020">DraggableUIState.cs:20</a></div></div>
-<div class="ttc" id="class_loot_1_1_u_i_1_1_core_1_1_draggable_u_i_state_html_a5ea51616a51cc52eb95116cf629b4645"><div class="ttname"><a href="class_loot_1_1_u_i_1_1_core_1_1_draggable_u_i_state.html#a5ea51616a51cc52eb95116cf629b4645">Loot.UI.Core.DraggableUIState._dragPanels</a></div><div class="ttdeci">List&lt; UIPanel &gt; _dragPanels</div><div class="ttdef"><b>Definition:</b> <a href="_draggable_u_i_state_8cs_source.html#l00018">DraggableUIState.cs:18</a></div></div>
-<div class="ttc" id="class_loot_1_1_u_i_1_1_core_1_1_draggable_u_i_state_html_a629ade0ef1cc562516bfd7395b1f767a"><div class="ttname"><a href="class_loot_1_1_u_i_1_1_core_1_1_draggable_u_i_state.html#a629ade0ef1cc562516bfd7395b1f767a">Loot.UI.Core.DraggableUIState._offsets</a></div><div class="ttdeci">List&lt; Vector2 &gt; _offsets</div><div class="ttdef"><b>Definition:</b> <a href="_draggable_u_i_state_8cs_source.html#l00019">DraggableUIState.cs:19</a></div></div>
+<p>Definition at line <a class="el" href="_ignored_2_core_2_draggable_u_i_state_8cs_source.html#l00019">19</a> of file <a class="el" href="_ignored_2_core_2_draggable_u_i_state_8cs_source.html">DraggableUIState.cs</a>.</p>
+<div class="fragment"><div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;        {</div><div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;            draggable = draggable ?? dragger;</div><div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;            <a class="code" href="class_loot_1_1_u_i_1_1_core_1_1_draggable_u_i_state.html#ae610c4c87f4a191e2b2bde842ff218a3">_draggingList</a>.Add((dragger, draggable));</div><div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;            <span class="keywordflow">if</span> (!<a class="code" href="class_loot_1_1_u_i_1_1_core_1_1_draggable_u_i_state.html#aa456a6d188b4e7b134feeccfdc9730a0">_offsets</a>.ContainsKey(dragger))</div><div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;            {</div><div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;                <a class="code" href="class_loot_1_1_u_i_1_1_core_1_1_draggable_u_i_state.html#aa456a6d188b4e7b134feeccfdc9730a0">_offsets</a>.Add(dragger, Vector2.Zero);</div><div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;            }</div><div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;</div><div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;            dragger.OnMouseDown += (evt, element) =&gt;</div><div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;            {</div><div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;                <span class="comment">//start</span></div><div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;                <a class="code" href="class_loot_1_1_u_i_1_1_core_1_1_draggable_u_i_state.html#aa456a6d188b4e7b134feeccfdc9730a0">_offsets</a>[dragger] = <span class="keyword">new</span> Vector2(evt.MousePosition.X - draggable.Left.Pixels, evt.MousePosition.Y - draggable.Top.Pixels);</div><div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;                <a class="code" href="class_loot_1_1_u_i_1_1_core_1_1_draggable_u_i_state.html#a881886cec92dde6d870a4152a992ce8a">_dragging</a>++;</div><div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;            };</div><div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;</div><div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;            dragger.OnMouseUp += (evt, element) =&gt;</div><div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;            {</div><div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;                <span class="comment">//end</span></div><div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;                Vector2 end = evt.MousePosition;</div><div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;                <a class="code" href="class_loot_1_1_u_i_1_1_core_1_1_draggable_u_i_state.html#a881886cec92dde6d870a4152a992ce8a">_dragging</a>--;</div><div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;</div><div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;                draggable.Left.Set(end.X - <a class="code" href="class_loot_1_1_u_i_1_1_core_1_1_draggable_u_i_state.html#aa456a6d188b4e7b134feeccfdc9730a0">_offsets</a>[dragger].X, 0f);</div><div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;                draggable.Top.Set(end.Y - <a class="code" href="class_loot_1_1_u_i_1_1_core_1_1_draggable_u_i_state.html#aa456a6d188b4e7b134feeccfdc9730a0">_offsets</a>[dragger].Y, 0f);</div><div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;</div><div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;                dragger.Recalculate();</div><div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;                draggable.Recalculate();</div><div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;            };</div><div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        }</div><div class="ttc" id="class_loot_1_1_u_i_1_1_core_1_1_draggable_u_i_state_html_a881886cec92dde6d870a4152a992ce8a"><div class="ttname"><a href="class_loot_1_1_u_i_1_1_core_1_1_draggable_u_i_state.html#a881886cec92dde6d870a4152a992ce8a">Loot.UI.Core.DraggableUIState._dragging</a></div><div class="ttdeci">int _dragging</div><div class="ttdef"><b>Definition:</b> <a href="_ignored_2_core_2_draggable_u_i_state_8cs_source.html#l00014">DraggableUIState.cs:14</a></div></div>
+<div class="ttc" id="class_loot_1_1_u_i_1_1_core_1_1_draggable_u_i_state_html_ae610c4c87f4a191e2b2bde842ff218a3"><div class="ttname"><a href="class_loot_1_1_u_i_1_1_core_1_1_draggable_u_i_state.html#ae610c4c87f4a191e2b2bde842ff218a3">Loot.UI.Core.DraggableUIState._draggingList</a></div><div class="ttdeci">readonly List&lt;(UIElement, UIElement)&gt; _draggingList</div><div class="ttdef"><b>Definition:</b> <a href="_ignored_2_core_2_draggable_u_i_state_8cs_source.html#l00016">DraggableUIState.cs:16</a></div></div>
+<div class="ttc" id="class_loot_1_1_u_i_1_1_core_1_1_draggable_u_i_state_html_aa456a6d188b4e7b134feeccfdc9730a0"><div class="ttname"><a href="class_loot_1_1_u_i_1_1_core_1_1_draggable_u_i_state.html#aa456a6d188b4e7b134feeccfdc9730a0">Loot.UI.Core.DraggableUIState._offsets</a></div><div class="ttdeci">readonly Dictionary&lt; UIElement, Vector2 &gt; _offsets</div><div class="ttdef"><b>Definition:</b> <a href="_ignored_2_core_2_draggable_u_i_state_8cs_source.html#l00017">DraggableUIState.cs:17</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -321,37 +237,15 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_draggable_u_i_state_8cs_source.html#l00081">81</a> of file <a class="el" href="_draggable_u_i_state_8cs_source.html">DraggableUIState.cs</a>.</p>
-<div class="fragment"><div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;        {</div><div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;            Vector2 mousePosition = <span class="keyword">new</span> Vector2((<span class="keywordtype">float</span>) Main.mouseX, (<span class="keywordtype">float</span>) Main.mouseY);</div><div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;</div><div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; <a class="code" href="class_loot_1_1_u_i_1_1_core_1_1_draggable_u_i_state.html#a5ea51616a51cc52eb95116cf629b4645">_dragPanels</a>.Count; i++)</div><div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;            {</div><div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;                var panel = <a class="code" href="class_loot_1_1_u_i_1_1_core_1_1_draggable_u_i_state.html#a5ea51616a51cc52eb95116cf629b4645">_dragPanels</a>[i];</div><div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;                var offset = <a class="code" href="class_loot_1_1_u_i_1_1_core_1_1_draggable_u_i_state.html#a629ade0ef1cc562516bfd7395b1f767a">_offsets</a>[i];</div><div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;</div><div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;                <span class="keywordflow">if</span> (!Main.LocalPlayer.mouseInterface</div><div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;                    &amp;&amp; panel.ContainsPoint(mousePosition))</div><div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;                {</div><div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;                    Main.LocalPlayer.mouseInterface = <span class="keyword">true</span>;</div><div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;                }</div><div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;</div><div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;                <span class="keywordflow">if</span> (<a class="code" href="class_loot_1_1_u_i_1_1_core_1_1_draggable_u_i_state.html#a4244e1f2edee7779563d856f3abf2899">_dragging</a>)</div><div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;                {</div><div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;                    panel.Left.Set(mousePosition.X - offset.X, 0f);</div><div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;                    panel.Top.Set(mousePosition.Y - offset.Y, 0f);</div><div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;                    Recalculate();</div><div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;                }</div><div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;            }</div><div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;        }</div><div class="ttc" id="class_loot_1_1_u_i_1_1_core_1_1_draggable_u_i_state_html_a4244e1f2edee7779563d856f3abf2899"><div class="ttname"><a href="class_loot_1_1_u_i_1_1_core_1_1_draggable_u_i_state.html#a4244e1f2edee7779563d856f3abf2899">Loot.UI.Core.DraggableUIState._dragging</a></div><div class="ttdeci">bool _dragging</div><div class="ttdef"><b>Definition:</b> <a href="_draggable_u_i_state_8cs_source.html#l00020">DraggableUIState.cs:20</a></div></div>
-<div class="ttc" id="class_loot_1_1_u_i_1_1_core_1_1_draggable_u_i_state_html_a5ea51616a51cc52eb95116cf629b4645"><div class="ttname"><a href="class_loot_1_1_u_i_1_1_core_1_1_draggable_u_i_state.html#a5ea51616a51cc52eb95116cf629b4645">Loot.UI.Core.DraggableUIState._dragPanels</a></div><div class="ttdeci">List&lt; UIPanel &gt; _dragPanels</div><div class="ttdef"><b>Definition:</b> <a href="_draggable_u_i_state_8cs_source.html#l00018">DraggableUIState.cs:18</a></div></div>
-<div class="ttc" id="class_loot_1_1_u_i_1_1_core_1_1_draggable_u_i_state_html_a629ade0ef1cc562516bfd7395b1f767a"><div class="ttname"><a href="class_loot_1_1_u_i_1_1_core_1_1_draggable_u_i_state.html#a629ade0ef1cc562516bfd7395b1f767a">Loot.UI.Core.DraggableUIState._offsets</a></div><div class="ttdeci">List&lt; Vector2 &gt; _offsets</div><div class="ttdef"><b>Definition:</b> <a href="_draggable_u_i_state_8cs_source.html#l00019">DraggableUIState.cs:19</a></div></div>
-</div><!-- fragment -->
-</div>
-</div>
-<a class="anchor" id="a35a3d3e39a8fc5f013f0ce2181bc7e43"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">override void Loot.UI.Core.DraggableUIState.OnInitialize </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Definition at line <a class="el" href="_draggable_u_i_state_8cs_source.html#l00029">29</a> of file <a class="el" href="_draggable_u_i_state_8cs_source.html">DraggableUIState.cs</a>.</p>
-<div class="fragment"><div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;        {</div><div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;            <span class="keywordflow">if</span> (<a class="code" href="class_loot_1_1_u_i_1_1_core_1_1_draggable_u_i_state.html#a5ea51616a51cc52eb95116cf629b4645">_dragPanels</a> == null)</div><div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;            {</div><div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;                Log4c.Logger.Warn(<span class="stringliteral">&quot;_dragPanels was uninitialized in DraggableUIState&quot;</span>);</div><div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;                <a class="code" href="class_loot_1_1_u_i_1_1_core_1_1_draggable_u_i_state.html#a5ea51616a51cc52eb95116cf629b4645">_dragPanels</a> = <span class="keyword">new</span> List&lt;UIPanel&gt;();</div><div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;            }</div><div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;</div><div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;            <span class="keywordflow">if</span> (<a class="code" href="class_loot_1_1_u_i_1_1_core_1_1_draggable_u_i_state.html#a629ade0ef1cc562516bfd7395b1f767a">_offsets</a> == null)</div><div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;            {</div><div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;                Log4c.Logger.Warn(<span class="stringliteral">&quot;_offsets was uninitialized in DraggableUIState&quot;</span>);</div><div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;                <a class="code" href="class_loot_1_1_u_i_1_1_core_1_1_draggable_u_i_state.html#a629ade0ef1cc562516bfd7395b1f767a">_offsets</a> = <span class="keyword">new</span> List&lt;Vector2&gt;();</div><div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;            }</div><div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;</div><div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;            <span class="keywordflow">foreach</span> (var panel <span class="keywordflow">in</span> <a class="code" href="class_loot_1_1_u_i_1_1_core_1_1_draggable_u_i_state.html#a5ea51616a51cc52eb95116cf629b4645">_dragPanels</a>)</div><div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;            {</div><div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;                panel.OnMouseDown += <a class="code" href="class_loot_1_1_u_i_1_1_core_1_1_draggable_u_i_state.html#a6c1fe7f620f110ea4f75792c3be19715">DragStart</a>;</div><div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;                panel.OnMouseUp += <a class="code" href="class_loot_1_1_u_i_1_1_core_1_1_draggable_u_i_state.html#ab449f585e4fe554fea3f0aae4084b196">DragEnd</a>;</div><div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;            }</div><div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;</div><div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;            <a class="code" href="class_loot_1_1_u_i_1_1_core_1_1_draggable_u_i_state.html#a6f5925e87f6d5fea091cb3d357158724">_initialized</a> = <span class="keyword">true</span>;</div><div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        }</div><div class="ttc" id="class_loot_1_1_u_i_1_1_core_1_1_draggable_u_i_state_html_a5ea51616a51cc52eb95116cf629b4645"><div class="ttname"><a href="class_loot_1_1_u_i_1_1_core_1_1_draggable_u_i_state.html#a5ea51616a51cc52eb95116cf629b4645">Loot.UI.Core.DraggableUIState._dragPanels</a></div><div class="ttdeci">List&lt; UIPanel &gt; _dragPanels</div><div class="ttdef"><b>Definition:</b> <a href="_draggable_u_i_state_8cs_source.html#l00018">DraggableUIState.cs:18</a></div></div>
-<div class="ttc" id="class_loot_1_1_u_i_1_1_core_1_1_draggable_u_i_state_html_a6f5925e87f6d5fea091cb3d357158724"><div class="ttname"><a href="class_loot_1_1_u_i_1_1_core_1_1_draggable_u_i_state.html#a6f5925e87f6d5fea091cb3d357158724">Loot.UI.Core.DraggableUIState._initialized</a></div><div class="ttdeci">bool _initialized</div><div class="ttdef"><b>Definition:</b> <a href="_draggable_u_i_state_8cs_source.html#l00017">DraggableUIState.cs:17</a></div></div>
-<div class="ttc" id="class_loot_1_1_u_i_1_1_core_1_1_draggable_u_i_state_html_a629ade0ef1cc562516bfd7395b1f767a"><div class="ttname"><a href="class_loot_1_1_u_i_1_1_core_1_1_draggable_u_i_state.html#a629ade0ef1cc562516bfd7395b1f767a">Loot.UI.Core.DraggableUIState._offsets</a></div><div class="ttdeci">List&lt; Vector2 &gt; _offsets</div><div class="ttdef"><b>Definition:</b> <a href="_draggable_u_i_state_8cs_source.html#l00019">DraggableUIState.cs:19</a></div></div>
-<div class="ttc" id="class_loot_1_1_u_i_1_1_core_1_1_draggable_u_i_state_html_a6c1fe7f620f110ea4f75792c3be19715"><div class="ttname"><a href="class_loot_1_1_u_i_1_1_core_1_1_draggable_u_i_state.html#a6c1fe7f620f110ea4f75792c3be19715">Loot.UI.Core.DraggableUIState.DragStart</a></div><div class="ttdeci">void DragStart(UIMouseEvent evt, UIElement _)</div><div class="ttdef"><b>Definition:</b> <a href="_draggable_u_i_state_8cs_source.html#l00068">DraggableUIState.cs:68</a></div></div>
-<div class="ttc" id="class_loot_1_1_u_i_1_1_core_1_1_draggable_u_i_state_html_ab449f585e4fe554fea3f0aae4084b196"><div class="ttname"><a href="class_loot_1_1_u_i_1_1_core_1_1_draggable_u_i_state.html#ab449f585e4fe554fea3f0aae4084b196">Loot.UI.Core.DraggableUIState.DragEnd</a></div><div class="ttdeci">void DragEnd(UIMouseEvent evt, UIElement _)</div><div class="ttdef"><b>Definition:</b> <a href="_draggable_u_i_state_8cs_source.html#l00052">DraggableUIState.cs:52</a></div></div>
+<p>Definition at line <a class="el" href="_ignored_2_core_2_draggable_u_i_state_8cs_source.html#l00049">49</a> of file <a class="el" href="_ignored_2_core_2_draggable_u_i_state_8cs_source.html">DraggableUIState.cs</a>.</p>
+<div class="fragment"><div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        {</div><div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;            <span class="keywordflow">if</span> (<a class="code" href="class_loot_1_1_u_i_1_1_core_1_1_draggable_u_i_state.html#a881886cec92dde6d870a4152a992ce8a">_dragging</a> &gt; 0)</div><div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;            {</div><div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;                Main.LocalPlayer.mouseInterface = <span class="keyword">true</span>;</div><div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;</div><div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;                <span class="keywordflow">foreach</span> (var (dragger, draggable) in <a class="code" href="class_loot_1_1_u_i_1_1_core_1_1_draggable_u_i_state.html#ae610c4c87f4a191e2b2bde842ff218a3">_draggingList</a>)</div><div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;                {</div><div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;                    draggable.Left.Set(Main.MouseScreen.X - <a class="code" href="class_loot_1_1_u_i_1_1_core_1_1_draggable_u_i_state.html#aa456a6d188b4e7b134feeccfdc9730a0">_offsets</a>[dragger].X, 0f);</div><div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;                    draggable.Top.Set(Main.MouseScreen.Y - <a class="code" href="class_loot_1_1_u_i_1_1_core_1_1_draggable_u_i_state.html#aa456a6d188b4e7b134feeccfdc9730a0">_offsets</a>[dragger].Y, 0f);</div><div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;</div><div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;                    dragger.Recalculate();</div><div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;                    draggable.Recalculate();</div><div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;                }</div><div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;            }</div><div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;        }</div><div class="ttc" id="class_loot_1_1_u_i_1_1_core_1_1_draggable_u_i_state_html_a881886cec92dde6d870a4152a992ce8a"><div class="ttname"><a href="class_loot_1_1_u_i_1_1_core_1_1_draggable_u_i_state.html#a881886cec92dde6d870a4152a992ce8a">Loot.UI.Core.DraggableUIState._dragging</a></div><div class="ttdeci">int _dragging</div><div class="ttdef"><b>Definition:</b> <a href="_ignored_2_core_2_draggable_u_i_state_8cs_source.html#l00014">DraggableUIState.cs:14</a></div></div>
+<div class="ttc" id="class_loot_1_1_u_i_1_1_core_1_1_draggable_u_i_state_html_ae610c4c87f4a191e2b2bde842ff218a3"><div class="ttname"><a href="class_loot_1_1_u_i_1_1_core_1_1_draggable_u_i_state.html#ae610c4c87f4a191e2b2bde842ff218a3">Loot.UI.Core.DraggableUIState._draggingList</a></div><div class="ttdeci">readonly List&lt;(UIElement, UIElement)&gt; _draggingList</div><div class="ttdef"><b>Definition:</b> <a href="_ignored_2_core_2_draggable_u_i_state_8cs_source.html#l00016">DraggableUIState.cs:16</a></div></div>
+<div class="ttc" id="class_loot_1_1_u_i_1_1_core_1_1_draggable_u_i_state_html_aa456a6d188b4e7b134feeccfdc9730a0"><div class="ttname"><a href="class_loot_1_1_u_i_1_1_core_1_1_draggable_u_i_state.html#aa456a6d188b4e7b134feeccfdc9730a0">Loot.UI.Core.DraggableUIState._offsets</a></div><div class="ttdeci">readonly Dictionary&lt; UIElement, Vector2 &gt; _offsets</div><div class="ttdef"><b>Definition:</b> <a href="_ignored_2_core_2_draggable_u_i_state_8cs_source.html#l00017">DraggableUIState.cs:17</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
-<a class="anchor" id="a4244e1f2edee7779563d856f3abf2899"></a>
+<a class="anchor" id="a881886cec92dde6d870a4152a992ce8a"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -359,7 +253,7 @@ Additional Inherited Members</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">bool Loot.UI.Core.DraggableUIState._dragging</td>
+          <td class="memname">int Loot.UI.Core.DraggableUIState._dragging</td>
         </tr>
       </table>
   </td>
@@ -369,11 +263,11 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_draggable_u_i_state_8cs_source.html#l00020">20</a> of file <a class="el" href="_draggable_u_i_state_8cs_source.html">DraggableUIState.cs</a>.</p>
+<p>Definition at line <a class="el" href="_ignored_2_core_2_draggable_u_i_state_8cs_source.html#l00014">14</a> of file <a class="el" href="_ignored_2_core_2_draggable_u_i_state_8cs_source.html">DraggableUIState.cs</a>.</p>
 
 </div>
 </div>
-<a class="anchor" id="a5ea51616a51cc52eb95116cf629b4645"></a>
+<a class="anchor" id="ae610c4c87f4a191e2b2bde842ff218a3"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -381,7 +275,7 @@ Additional Inherited Members</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">List&lt;UIPanel&gt; Loot.UI.Core.DraggableUIState._dragPanels = new List&lt;UIPanel&gt;()</td>
+          <td class="memname">readonly List&lt;(UIElement, UIElement)&gt; Loot.UI.Core.DraggableUIState._draggingList = new List&lt;(UIElement, UIElement)&gt;()</td>
         </tr>
       </table>
   </td>
@@ -391,11 +285,11 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_draggable_u_i_state_8cs_source.html#l00018">18</a> of file <a class="el" href="_draggable_u_i_state_8cs_source.html">DraggableUIState.cs</a>.</p>
+<p>Definition at line <a class="el" href="_ignored_2_core_2_draggable_u_i_state_8cs_source.html#l00016">16</a> of file <a class="el" href="_ignored_2_core_2_draggable_u_i_state_8cs_source.html">DraggableUIState.cs</a>.</p>
 
 </div>
 </div>
-<a class="anchor" id="a6f5925e87f6d5fea091cb3d357158724"></a>
+<a class="anchor" id="aa456a6d188b4e7b134feeccfdc9730a0"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -403,7 +297,7 @@ Additional Inherited Members</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">bool Loot.UI.Core.DraggableUIState._initialized</td>
+          <td class="memname">readonly Dictionary&lt;UIElement, Vector2&gt; Loot.UI.Core.DraggableUIState._offsets = new Dictionary&lt;UIElement, Vector2&gt;()</td>
         </tr>
       </table>
   </td>
@@ -413,29 +307,7 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_draggable_u_i_state_8cs_source.html#l00017">17</a> of file <a class="el" href="_draggable_u_i_state_8cs_source.html">DraggableUIState.cs</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="a629ade0ef1cc562516bfd7395b1f767a"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">List&lt;Vector2&gt; Loot.UI.Core.DraggableUIState._offsets = new List&lt;Vector2&gt;()</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Definition at line <a class="el" href="_draggable_u_i_state_8cs_source.html#l00019">19</a> of file <a class="el" href="_draggable_u_i_state_8cs_source.html">DraggableUIState.cs</a>.</p>
+<p>Definition at line <a class="el" href="_ignored_2_core_2_draggable_u_i_state_8cs_source.html#l00017">17</a> of file <a class="el" href="_ignored_2_core_2_draggable_u_i_state_8cs_source.html">DraggableUIState.cs</a>.</p>
 
 </div>
 </div>
@@ -445,7 +317,7 @@ Additional Inherited Members</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespace_loot.html">Loot</a></li><li class="navelem"><a class="el" href="namespace_loot_1_1_u_i.html">UI</a></li><li class="navelem"><a class="el" href="namespace_loot_1_1_u_i_1_1_core.html">Core</a></li><li class="navelem"><a class="el" href="class_loot_1_1_u_i_1_1_core_1_1_draggable_u_i_state.html">DraggableUIState</a></li>
-    <li class="footer">Generated on Sat Feb 9 2019 21:57:00 for Even More Modifiers by
+    <li class="footer">Generated on Sun May 12 2019 19:23:25 for Even More Modifiers by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.11 </li>
   </ul>

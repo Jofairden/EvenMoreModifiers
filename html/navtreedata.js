@@ -16,7 +16,7 @@ var NAVTREE =
       [ "Class Members", "functions.html", [
         [ "All", "functions.html", "functions_dup" ],
         [ "Functions", "functions_func.html", "functions_func" ],
-        [ "Variables", "functions_vars.html", null ],
+        [ "Variables", "functions_vars.html", "functions_vars" ],
         [ "Properties", "functions_prop.html", null ],
         [ "Events", "functions_evnt.html", null ]
       ] ]
@@ -34,12 +34,12 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "_accessory_modifier_8cs.html",
-"_shader_entity_8cs.html",
-"class_loot_1_1_core_1_1_mod_content_1_1_graphics_mod_content.html#a1dc64224de0f90c22c7336d934678c99",
-"class_loot_1_1_e_m_m_item.html#a09668d320c0ce09f7f9341851adc6e40",
-"class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_offensive_1_1_healthy_foes_effect.html",
-"class_loot_1_1_u_i_1_1_core_1_1_u_i_interactable_item_panel.html#af80f9c43ca8b602aac159531242acbf8",
-"namespace_loot_1_1_rarities.html"
+"_modifier_context_8cs.html#a296941ba969bd16212e7bb7bd358683dacc452c93d23e37450cd2613e785935db",
+"class_loot_1_1_core_1_1_graphics_1_1_glowmask_entity.html#abc2f9bb1f90cda0cc17c6851d18108d8",
+"class_loot_1_1_core_1_1_system_1_1_modifier_1_1_modifier_properties_builder.html#ae0756836051bb5b4b05c1400c7f4eedb",
+"class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_defensive_1_1_life_regen.html#aaf91ca3caac08d4bb4f7c24ee649e031",
+"class_loot_1_1_rarities_1_1_rare_rarity.html#a40d969fe78a2e3905c63fc97a1d0d36b",
+"functions_t.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

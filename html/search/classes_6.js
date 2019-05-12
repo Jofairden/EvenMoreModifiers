@@ -1,5 +1,6 @@
 var searchData=
 [
+  ['gaugedrawing',['GaugeDrawing',['../class_loot_1_1_u_i_1_1_common_1_1_tabs_1_1_soulforging_1_1_gui_soulgauge_1_1_gauge_drawing.html',1,'Loot::UI::Common::Tabs::Soulforging::GuiSoulgauge']]],
   ['genpass',['GenPass',['../class_gen_pass.html',1,'']]],
   ['globalitem',['GlobalItem',['../class_global_item.html',1,'']]],
   ['globalnpc',['GlobalNPC',['../class_global_n_p_c.html',1,'']]],

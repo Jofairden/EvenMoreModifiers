@@ -127,7 +127,7 @@ $(document).ready(function(){initNavTree('class_loot_1_1_u_i_1_1_core_1_1_visibi
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="class_loot_1_1_u_i_1_1_core_1_1_visibility_u_i__inherit__graph.png" border="0" usemap="#_loot_8_u_i_8_core_8_visibility_u_i_inherit__map" alt="Inheritance graph"/></div>
 <map name="_loot_8_u_i_8_core_8_visibility_u_i_inherit__map" id="_loot_8_u_i_8_core_8_visibility_u_i_inherit__map">
-<area shape="rect" id="node3" href="class_loot_1_1_u_i_1_1_core_1_1_draggable_u_i_state.html" title="A UIState which primarily goal is to provide dragging on click functionality to the main panel The dr..." alt="" coords="113,155,319,181"/>
+<area shape="rect" id="node3" href="class_loot_1_1_u_i_1_1_core_1_1_draggable_u_i_state.html" title="A UIState which primarily goal is to provide dragging on click functionality to another element (or i..." alt="" coords="113,155,319,181"/>
 <area shape="rect" id="node2" href="class_u_i_state.html" title="UIState" alt="" coords="183,5,249,32"/>
 <area shape="rect" id="node4" href="class_loot_1_1_u_i_1_1_core_1_1_cube_u_i.html" title="Loot.UI.Core.CubeUI" alt="" coords="143,229,289,256"/>
 <area shape="rect" id="node5" href="class_loot_1_1_u_i_1_1_rerolling_1_1_cube_reroll_u_i.html" title="A UIState that provides the ability to reroll an item&#39;s modifier " alt="" coords="5,304,208,331"/>
@@ -147,8 +147,8 @@ $(document).ready(function(){initNavTree('class_loot_1_1_u_i_1_1_core_1_1_visibi
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a9bfbbef8888b2e9bbb8fcff796fee38a"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_loot_1_1_u_i_1_1_core_1_1_visibility_u_i.html#a9bfbbef8888b2e9bbb8fcff796fee38a">ToggleUI</a> (UserInterface theInterface, <a class="el" href="class_u_i_state.html">UIState</a> uiStateInstance)</td></tr>
-<tr class="separator:a9bfbbef8888b2e9bbb8fcff796fee38a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afc3e0627481bf8178c47cb66547eab6b"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_loot_1_1_u_i_1_1_core_1_1_visibility_u_i.html#afc3e0627481bf8178c47cb66547eab6b">ToggleUI</a> (UserInterface theInterface, <a class="el" href="class_u_i_state.html">UIState</a> uiStateInstance=null)</td></tr>
+<tr class="separator:afc3e0627481bf8178c47cb66547eab6b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
@@ -158,9 +158,9 @@ Public Attributes</h2></td></tr>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>A <a class="el" href="class_u_i_state.html">UIState</a> which primarily goal is to provide easy visibility toggling </p>
 
-<p>Definition at line <a class="el" href="_visibility_u_i_8cs_source.html#l00010">10</a> of file <a class="el" href="_visibility_u_i_8cs_source.html">VisibilityUI.cs</a>.</p>
+<p>Definition at line <a class="el" href="_ignored_2_core_2_visibility_u_i_8cs_source.html#l00010">10</a> of file <a class="el" href="_ignored_2_core_2_visibility_u_i_8cs_source.html">VisibilityUI.cs</a>.</p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
-<a class="anchor" id="a9bfbbef8888b2e9bbb8fcff796fee38a"></a>
+<a class="anchor" id="afc3e0627481bf8178c47cb66547eab6b"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -177,7 +177,7 @@ Public Attributes</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype"><a class="el" href="class_u_i_state.html">UIState</a>&#160;</td>
-          <td class="paramname"><em>uiStateInstance</em>&#160;</td>
+          <td class="paramname"><em>uiStateInstance</em> = <code>null</code>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -194,8 +194,8 @@ Public Attributes</h2></td></tr>
 
 <p>Reimplemented in <a class="el" href="class_loot_1_1_u_i_1_1_rerolling_1_1_cube_reroll_u_i.html#a8996c95abe6f22fe80e03c2014b998e4">Loot.UI.Rerolling.CubeRerollUI</a>.</p>
 
-<p>Definition at line <a class="el" href="_visibility_u_i_8cs_source.html#l00014">14</a> of file <a class="el" href="_visibility_u_i_8cs_source.html">VisibilityUI.cs</a>.</p>
-<div class="fragment"><div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;        {</div><div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;            <span class="comment">// If new state toggled but old visibility state present, that one needs to be toggled first</span></div><div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;            <span class="keywordflow">if</span> (theInterface.CurrentState is VisibilityUI ui</div><div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;                &amp;&amp; theInterface.CurrentState != uiStateInstance)</div><div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;            {</div><div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;                ui.ToggleUI(theInterface, ui);</div><div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;            }</div><div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;</div><div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;            <span class="comment">// Toggle the state</span></div><div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;            <a class="code" href="class_loot_1_1_u_i_1_1_core_1_1_visibility_u_i.html#ab560543b09926b8cf31af2d347ca9701">Visible</a> = !<a class="code" href="class_loot_1_1_u_i_1_1_core_1_1_visibility_u_i.html#ab560543b09926b8cf31af2d347ca9701">Visible</a>;</div><div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;            theInterface.ResetLasts();</div><div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;            theInterface.SetState(<a class="code" href="class_loot_1_1_u_i_1_1_core_1_1_visibility_u_i.html#ab560543b09926b8cf31af2d347ca9701">Visible</a> ? uiStateInstance : null);</div><div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;</div><div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;            Main.PlaySound(SoundID.MenuOpen);</div><div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;        }</div><div class="ttc" id="class_loot_1_1_u_i_1_1_core_1_1_visibility_u_i_html_ab560543b09926b8cf31af2d347ca9701"><div class="ttname"><a href="class_loot_1_1_u_i_1_1_core_1_1_visibility_u_i.html#ab560543b09926b8cf31af2d347ca9701">Loot.UI.Core.VisibilityUI.Visible</a></div><div class="ttdeci">bool Visible</div><div class="ttdef"><b>Definition:</b> <a href="_visibility_u_i_8cs_source.html#l00012">VisibilityUI.cs:12</a></div></div>
+<p>Definition at line <a class="el" href="_ignored_2_core_2_visibility_u_i_8cs_source.html#l00014">14</a> of file <a class="el" href="_ignored_2_core_2_visibility_u_i_8cs_source.html">VisibilityUI.cs</a>.</p>
+<div class="fragment"><div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;        {</div><div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;            uiStateInstance = uiStateInstance ?? <span class="keyword">this</span>;</div><div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;</div><div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;            <span class="comment">// If new state toggled but old visibility state present, that one needs to be toggled first</span></div><div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;            <span class="keywordflow">if</span> (theInterface.CurrentState is VisibilityUI ui</div><div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;                &amp;&amp; theInterface.CurrentState != uiStateInstance)</div><div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;            {</div><div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;                ui.ToggleUI(theInterface, ui);</div><div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;            }</div><div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;</div><div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;            <span class="comment">// Toggle the state</span></div><div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;            <a class="code" href="class_loot_1_1_u_i_1_1_core_1_1_visibility_u_i.html#ab560543b09926b8cf31af2d347ca9701">Visible</a> = !<a class="code" href="class_loot_1_1_u_i_1_1_core_1_1_visibility_u_i.html#ab560543b09926b8cf31af2d347ca9701">Visible</a>;</div><div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;            theInterface.ResetLasts();</div><div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;            theInterface.SetState(<a class="code" href="class_loot_1_1_u_i_1_1_core_1_1_visibility_u_i.html#ab560543b09926b8cf31af2d347ca9701">Visible</a> ? uiStateInstance : null);</div><div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;</div><div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;            Main.PlaySound(SoundID.MenuOpen);</div><div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        }</div><div class="ttc" id="class_loot_1_1_u_i_1_1_core_1_1_visibility_u_i_html_ab560543b09926b8cf31af2d347ca9701"><div class="ttname"><a href="class_loot_1_1_u_i_1_1_core_1_1_visibility_u_i.html#ab560543b09926b8cf31af2d347ca9701">Loot.UI.Core.VisibilityUI.Visible</a></div><div class="ttdeci">bool Visible</div><div class="ttdef"><b>Definition:</b> <a href="_ignored_2_core_2_visibility_u_i_8cs_source.html#l00012">VisibilityUI.cs:12</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -210,9 +210,7 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_visibility_u_i_8cs_source.html#l00012">12</a> of file <a class="el" href="_visibility_u_i_8cs_source.html">VisibilityUI.cs</a>.</p>
-
-<p>Referenced by <a class="el" href="_cube_u_i_extensions_8cs_source.html#l00018">Loot.Core.Cubes.CubeUIExtensions.CanRightClick()</a>.</p>
+<p>Definition at line <a class="el" href="_ignored_2_core_2_visibility_u_i_8cs_source.html#l00012">12</a> of file <a class="el" href="_ignored_2_core_2_visibility_u_i_8cs_source.html">VisibilityUI.cs</a>.</p>
 
 </div>
 </div>
@@ -222,7 +220,7 @@ Public Attributes</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespace_loot.html">Loot</a></li><li class="navelem"><a class="el" href="namespace_loot_1_1_u_i.html">UI</a></li><li class="navelem"><a class="el" href="namespace_loot_1_1_u_i_1_1_core.html">Core</a></li><li class="navelem"><a class="el" href="class_loot_1_1_u_i_1_1_core_1_1_visibility_u_i.html">VisibilityUI</a></li>
-    <li class="footer">Generated on Sat Feb 9 2019 21:57:00 for Even More Modifiers by
+    <li class="footer">Generated on Sun May 12 2019 19:23:25 for Even More Modifiers by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.11 </li>
   </ul>

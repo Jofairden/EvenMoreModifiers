@@ -1,4 +1,4 @@
 <map id="Loot.UI.Core.DraggableUIState" name="Loot.UI.Core.DraggableUIState">
-<area shape="rect" id="node2" href="$class_loot_1_1_u_i_1_1_core_1_1_visibility_u_i.html" title="A UIState which primarily goal is to provide easy visibility toggling " alt="" coords="13,97,99,124"/>
+<area shape="rect" id="node2" href="$class_loot_1_1_u_i_1_1_core_1_1_visibility_u_i.html" title="A UIState which primarily goal is to provide easy visibility toggling " alt="" coords="211,31,296,57"/>
 <area shape="rect" id="node3" href="$class_u_i_state.html" title="UIState" alt="" coords="5,5,72,32"/>
 </map>

@@ -1,0 +1,4 @@
+<map id="Loot.UI.Common.Tabs.Soulforging.GuiSoulgauge.GaugeDrawing.Unload" name="Loot.UI.Common.Tabs.Soulforging.GuiSoulgauge.GaugeDrawing.Unload">
+<area shape="rect" id="node2" href="$class_loot_1_1_u_i_1_1_common_1_1_tabs_1_1_soulforging_1_1_gui_soulgauge_1_1_gauge_drawing_1_1_s_t_a_t_i_c.html#aba8cfcd13ea3574bd455c7c680c241e7" title="Loot.UI.Common.Tabs.Soulforging.\lGuiSoulgauge.GaugeDrawing.STATIC.Unload" alt="" coords="293,5,584,46"/>
+<area shape="rect" id="node3" href="$class_loot_1_1_u_i_1_1_common_1_1_tabs_1_1_soulforging_1_1_gui_soulgauge_1_1_gauge_drawing_1_1_a_n_i_m.html#ae06cfb4c6366031f6a698d386eefb8b2" title="Loot.UI.Common.Tabs.Soulforging.\lGuiSoulgauge.GaugeDrawing.ANIM.Unload" alt="" coords="301,70,577,111"/>
+</map>

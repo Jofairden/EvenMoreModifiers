@@ -2,7 +2,9 @@ var searchData=
 [
   ['magnitudestrength',['MagnitudeStrength',['../class_loot_1_1_core_1_1_system_1_1_modifier_1_1_modifier_properties.html#a42c95be286d4e60c8d7236c8d7168dbb',1,'Loot::Core::System::Modifier::ModifierProperties']]],
   ['manashield',['ManaShield',['../class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_defensive_1_1_mana_shield_effect.html#a610e0ddc09e723990f9b6df76445faf5',1,'Loot::Modifiers::EquipModifiers::Defensive::ManaShieldEffect']]],
+  ['max_5fframe',['MAX_FRAME',['../class_loot_1_1_u_i_1_1_common_1_1_tabs_1_1_soulforging_1_1_gui_soulgauge_1_1_gauge_drawing_1_1_a_n_i_m.html#a0e9325f1fc7e824d49f0aed4d80ea98c',1,'Loot::UI::Common::Tabs::Soulforging::GuiSoulgauge::GaugeDrawing::ANIM']]],
   ['max_5fsurvival_5fchance',['MAX_SURVIVAL_CHANCE',['../class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_defensive_1_1_survival_effect.html#a4abe39a78d554976536a956b6ebe04cb',1,'Loot::Modifiers::EquipModifiers::Defensive::SurvivalEffect']]],
+  ['max_5ftick',['MAX_TICK',['../class_loot_1_1_u_i_1_1_common_1_1_tabs_1_1_soulforging_1_1_gui_soulgauge_1_1_gauge_drawing_1_1_a_n_i_m.html#a29402ad44bf23ecaa1289081a416f0da',1,'Loot::UI::Common::Tabs::Soulforging::GuiSoulgauge::GaugeDrawing::ANIM']]],
   ['maxmagnitude',['MaxMagnitude',['../class_loot_1_1_core_1_1_system_1_1_modifier_1_1_modifier_properties.html#a19671683b04792819fea15ae0ff5e694',1,'Loot::Core::System::Modifier::ModifierProperties']]],
   ['method',['Method',['../struct_loot_1_1_core_1_1_system_1_1_modifier_1_1_modifier_context.html#adf719f58224226e4b5470d74146c5482',1,'Loot::Core::System::Modifier::ModifierContext']]],
   ['minmagnitude',['MinMagnitude',['../class_loot_1_1_core_1_1_system_1_1_modifier_1_1_modifier_properties.html#a642f6fff519355913b30effb2698a5dd',1,'Loot::Core::System::Modifier::ModifierProperties']]],

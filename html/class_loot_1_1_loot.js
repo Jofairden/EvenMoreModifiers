@@ -12,6 +12,6 @@ var class_loot_1_1_loot =
     [ "SetupUserInterfaces", "class_loot_1_1_loot.html#a139cba0d17b87db6a94ea81c5b03787b", null ],
     [ "Unload", "class_loot_1_1_loot.html#a583d8d3d69bdd106d25030c5309e37bc", null ],
     [ "UpdateUI", "class_loot_1_1_loot.html#a7f296a7c4a011faca07302cf350881ef", null ],
-    [ "_lastUpdateUIGameTime", "class_loot_1_1_loot.html#ab20bed3b213bad780fb564e22d3e2096", null ],
+    [ "_lastUpdateUiGameTime", "class_loot_1_1_loot.html#a8706bf929344678026f2bb45e3d52a56", null ],
     [ "Loaded", "class_loot_1_1_loot.html#a515587a9028eb18ecd6f58b7f7f2ec38", null ]
 ];

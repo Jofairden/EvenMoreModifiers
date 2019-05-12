@@ -10,7 +10,6 @@ var searchData=
   ['cubesealui',['CubeSealUI',['../class_loot_1_1_u_i_1_1_sealing_1_1_cube_seal_u_i.html',1,'Loot::UI::Sealing']]],
   ['cubeshop',['CubeShop',['../class_loot_1_1_core_1_1_cubes_1_1_cube_shop.html',1,'Loot::Core::Cubes']]],
   ['cubeui',['CubeUI',['../class_loot_1_1_u_i_1_1_core_1_1_cube_u_i.html',1,'Loot::UI::Core']]],
-  ['cubeuiextensions',['CubeUIExtensions',['../class_loot_1_1_core_1_1_cubes_1_1_cube_u_i_extensions.html',1,'Loot::Core::Cubes']]],
   ['curseddamage',['CursedDamage',['../class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_cursed_damage.html',1,'Loot::Modifiers::WeaponModifiers']]],
   ['cursedeffect',['CursedEffect',['../class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_cursed_effect.html',1,'Loot::Modifiers::WeaponModifiers']]]
 ];

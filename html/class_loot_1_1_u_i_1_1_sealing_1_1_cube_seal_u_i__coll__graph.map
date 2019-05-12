@@ -1,9 +1,9 @@
 <map id="Loot.UI.Sealing.CubeSealUI" name="Loot.UI.Sealing.CubeSealUI">
-<area shape="rect" id="node2" href="$class_loot_1_1_u_i_1_1_core_1_1_cube_u_i.html" title="CubeUI" alt="" coords="391,304,457,331"/>
-<area shape="rect" id="node3" href="$class_loot_1_1_u_i_1_1_core_1_1_draggable_u_i_state.html" title="A UIState which primarily goal is to provide dragging on click functionality to the main panel The dr..." alt="" coords="259,219,385,245"/>
-<area shape="rect" id="node4" href="$class_loot_1_1_u_i_1_1_core_1_1_visibility_u_i.html" title="A UIState which primarily goal is to provide easy visibility toggling " alt="" coords="280,127,365,153"/>
-<area shape="rect" id="node5" href="$class_u_i_state.html" title="UIState" alt="" coords="272,5,339,32"/>
-<area shape="rect" id="node11" href="$class_loot_1_1_u_i_1_1_core_1_1_u_i_interactable_item_panel.html" title="UIInteractableItemPanel" alt="" coords="536,219,699,245"/>
-<area shape="rect" id="node12" href="$class_loot_1_1_u_i_1_1_core_1_1_u_i_item_panel.html" title="UIItemPanel" alt="" coords="818,127,912,153"/>
-<area shape="rect" id="node10" href="$class_loot_1_1_u_i_1_1_sealing_1_1_u_i_seal_item_panel.html" title="Loot.UI.Sealing.UISealItem\lPanel" alt="" coords="526,297,708,338"/>
+<area shape="rect" id="node2" href="$class_loot_1_1_u_i_1_1_core_1_1_cube_u_i.html" title="CubeUI" alt="" coords="899,135,965,161"/>
+<area shape="rect" id="node3" href="$class_loot_1_1_u_i_1_1_core_1_1_draggable_u_i_state.html" title="A UIState which primarily goal is to provide dragging on click functionality to another element (or i..." alt="" coords="573,115,699,141"/>
+<area shape="rect" id="node4" href="$class_loot_1_1_u_i_1_1_core_1_1_visibility_u_i.html" title="A UIState which primarily goal is to provide easy visibility toggling " alt="" coords="288,5,373,32"/>
+<area shape="rect" id="node5" href="$class_u_i_state.html" title="UIState" alt="" coords="7,5,73,32"/>
+<area shape="rect" id="node12" href="$class_loot_1_1_u_i_1_1_core_1_1_u_i_interactable_item_panel.html" title="UIInteractableItemPanel" alt="" coords="555,263,717,289"/>
+<area shape="rect" id="node13" href="$class_loot_1_1_u_i_1_1_core_1_1_u_i_item_panel.html" title="UIItemPanel" alt="" coords="283,383,378,409"/>
+<area shape="rect" id="node11" href="$class_loot_1_1_u_i_1_1_sealing_1_1_u_i_seal_item_panel.html" title="Loot.UI.Sealing.UISealItem\lPanel" alt="" coords="841,255,1023,297"/>
 </map>
