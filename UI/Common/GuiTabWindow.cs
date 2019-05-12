@@ -7,6 +7,7 @@ using Loot.UI.Common.Tabs.Soulforging;
 using Microsoft.Xna.Framework;
 using System.Collections.Generic;
 using System.Linq;
+using Microsoft.Xna.Framework.Graphics;
 using Terraria;
 using Terraria.UI;
 
@@ -51,6 +52,7 @@ namespace Loot.UI.Common
 			{
 				return;
 			}
+
 			SoundHelper.PlayCustomSound(SoundHelper.SoundType.OpenUI);
 			UpdateTabTo(toggle.TargetState);
 		}
@@ -69,6 +71,7 @@ namespace Loot.UI.Common
 			{
 				RemoveChild(_currentTab);
 			}
+
 			GetTab();
 			_header.SetHeader(_currentTab.Header);
 			Append(_currentTab);
@@ -135,6 +138,21 @@ namespace Loot.UI.Common
 				UpdateTab();
 				_currentTab?.ToggleUI(Visible);
 			}
+		}
+
+		public override void Draw(SpriteBatch spriteBatch)
+		{
+			base.Draw(spriteBatch);
+			if (IsMouseHovering || MouseOverUI())
+			{
+				Main.LocalPlayer.mouseInterface = true;
+			}
+		}
+
+		private bool MouseOverUI()
+		{
+			var rect = new Rectangle((int)Left.Pixels, (int)Top.Pixels, (int)Width.Pixels, (int)Height.Pixels);
+			return rect.Contains(Main.MouseScreen.ToPoint());
 		}
 	}
 }

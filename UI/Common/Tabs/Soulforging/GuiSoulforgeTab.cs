@@ -1,6 +1,5 @@
 using Loot.Ext;
 using Loot.UI.Common.Controls.Button;
-using Terraria.UI;
 
 namespace Loot.UI.Common.Tabs.Soulforging
 {
