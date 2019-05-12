@@ -27,7 +27,7 @@ namespace Loot.Core.Cubes
 			gui.ToggleUI(Loot.Instance.GuiInterface);
 			// Force the cubing tab and set the active cube
 			gui.UpdateTabTo(GuiTabState.CUBING);
-			((GuiCubingTab)gui.GetTab())._cubeButton.ChangeItem(item.type);
+			gui.GetTab<GuiCubingTab>()._cubeButton.ChangeItem(item.type);
 			// Must be after recalc, otherwise it affects the calculated stack
 			item.stack++;
 		}

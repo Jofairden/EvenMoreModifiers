@@ -46,6 +46,11 @@ namespace Loot.UI.Common
 			return _currentTab;
 		}
 
+		public T GetTab<T>() where T : GuiTab
+		{
+			return (T)_tabs.Values.FirstOrDefault(t => t.GetType() == typeof(T));
+		}
+
 		private void ToggleTab(UIMouseEvent evt, UIElement element, GuiTabToggle toggle)
 		{
 			if (_currentTabState == toggle.TargetState)
@@ -136,8 +141,8 @@ namespace Loot.UI.Common
 			if (Visible)
 			{
 				UpdateTab();
-				_currentTab?.ToggleUI(Visible);
 			}
+			_currentTab?.ToggleUI(Visible);
 		}
 
 		public override void Draw(SpriteBatch spriteBatch)

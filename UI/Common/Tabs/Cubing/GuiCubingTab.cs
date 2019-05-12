@@ -123,17 +123,8 @@ namespace Loot.UI.Common.Tabs.Cubing
 				else
 				{
 					// Refresh item
-					Item newItem = new Item();
-					newItem.netDefaults(_itemButton.Item.type);
-					// Clone to preserve modded data
-					newItem = newItem.CloneWithModdedDataFrom(_itemButton.Item);
+					Item newItem = GetClonedItem(_itemButton.Item);
 					EMMItem.GetItemInfo(newItem).ModifierPool = null; // unload previous pool
-
-					// Restore prefix
-					if (_itemButton.Item.prefix > 0)
-					{
-						newItem.Prefix(_itemButton.Item.prefix);
-					}
 
 					// reroll pool
 					RerollModifiers(newItem);
@@ -146,6 +137,21 @@ namespace Loot.UI.Common.Tabs.Cubing
 			{
 				SoundHelper.PlayCustomSound(SoundHelper.SoundType.Decline);
 			}
+		}
+
+		private Item GetClonedItem(Item toClone)
+		{
+			var clone = new Item();
+			clone.netDefaults(toClone.type);
+			// Clone to preserve modded data
+			clone = clone.CloneWithModdedDataFrom(_itemButton.Item);
+			// Restore prefix
+			if (_itemButton.Item.prefix > 0)
+			{
+				clone.Prefix(toClone.prefix);
+			}
+			clone.stack = toClone.stack;
+			return clone;
 		}
 
 		private void RerollModifiers(Item newItem)
@@ -247,10 +253,26 @@ namespace Loot.UI.Common.Tabs.Cubing
 
 		internal override void ToggleUI(bool visible)
 		{
+			base.ToggleUI(visible);
 			if (visible)
 			{
-				base.ToggleUI(visible);
+				UpdateModifiersInGui();
 				_guiCubeSelector.DetermineAvailableCubes();
+			}
+			else
+			{
+				GiveBackSlottedItem();
+			}
+		}
+
+		public void GiveBackSlottedItem()
+		{
+			if (!_itemButton.Item?.IsAir ?? false)
+			{
+				// Runs only in SP or client, so this is safe
+				_itemButton.Item.noGrabDelay = 0;
+				Main.LocalPlayer.GetItem(Main.myPlayer, GetClonedItem(_itemButton.Item));
+				_itemButton.Item.TurnToAir();
 			}
 		}
 	}

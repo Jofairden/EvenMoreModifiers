@@ -6,6 +6,7 @@ using Loot.UI.Common.Core;
 using Microsoft.Xna.Framework;
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
+using Loot.UI.Common.Tabs.Cubing;
 using Terraria;
 using Terraria.ModLoader;
 using Terraria.UI;
@@ -137,20 +138,11 @@ namespace Loot
 		// If we quit we must give back the item in slot if it's there
 		public override void PreSaveAndQuit()
 		{
-			//if (CubeRerollUI._rerollItemPanel != null
-			//	&& !CubeRerollUI._rerollItemPanel.item.IsAir)
-			//{
-			//	// Runs only in SP or client, so this is safe
-			//	Main.LocalPlayer.QuickSpawnClonedItem(CubeRerollUI._rerollItemPanel.item, CubeRerollUI._rerollItemPanel.item.stack);
-			//	CubeRerollUI._rerollItemPanel.item.TurnToAir();
-			//}
-
-			//if (CubeSealUI.SlottedItem != null
-			//	&& !CubeSealUI.SlottedItem.IsAir)
-			//{
-			//	Main.LocalPlayer.QuickSpawnClonedItem(CubeSealUI.SlottedItem, CubeSealUI.SlottedItem.stack);
-			//	CubeSealUI.SlottedItem.TurnToAir();
-			//}
+			GuiState.GetTab<GuiCubingTab>().GiveBackSlottedItem();
+			if (GuiState.Visible)
+			{
+				GuiState.ToggleUI(GuiInterface);
+			}
 		}
 
 		private GameTime _lastUpdateUiGameTime;
