@@ -1,3 +1,4 @@
 <map id="Loot.Core.System.Loaders.MainLoader.AddContent" name="Loot.Core.System.Loaders.MainLoader.AddContent">
-<area shape="rect" id="node2" href="$class_loot_1_1_loot.html#a3f4fdc469aa29a32589adf1ef2a3659e" title="Loot.Loot.AddMod" alt="" coords="237,12,365,39"/>
+<area shape="rect" id="node2" href="$class_loot_1_1_loading_funneler.html#a069a51341f91e7671f8e96b5d74a0bbc" title="Loot.LoadingFunneler.AddMod" alt="" coords="238,12,437,39"/>
+<area shape="rect" id="node3" href="$class_loot_1_1_loading_funneler.html#a24a6d1dbb91ccc70de5e5b136acc973a" title="Loot.LoadingFunneler.LoadMod" alt="" coords="485,12,688,39"/>
 </map>

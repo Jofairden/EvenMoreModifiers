@@ -136,6 +136,7 @@ var hierarchy =
     ] ],
     [ "Loot.Core.Cubes.ItemRollProperties", "class_loot_1_1_core_1_1_cubes_1_1_item_roll_properties.html", null ],
     [ "Loot.Ext.ItemUtils", "class_loot_1_1_ext_1_1_item_utils.html", null ],
+    [ "Loot.LoadingFunneler", "class_loot_1_1_loading_funneler.html", null ],
     [ "Loot.Core.System.Loaders.MainLoader", "class_loot_1_1_core_1_1_system_1_1_loaders_1_1_main_loader.html", null ],
     [ "Mod", "class_mod.html", [
       [ "Loot.Loot", "class_loot_1_1_loot.html", null ],

@@ -12,6 +12,7 @@ var namespace_loot =
     [ "EMMItem", "class_loot_1_1_e_m_m_item.html", "class_loot_1_1_e_m_m_item" ],
     [ "EMMPlayer", "class_loot_1_1_e_m_m_player.html", "class_loot_1_1_e_m_m_player" ],
     [ "EMMWorld", "class_loot_1_1_e_m_m_world.html", "class_loot_1_1_e_m_m_world" ],
+    [ "LoadingFunneler", "class_loot_1_1_loading_funneler.html", "class_loot_1_1_loading_funneler" ],
     [ "Loot", "class_loot_1_1_loot.html", "class_loot_1_1_loot" ],
     [ "ModifierPlayer", "class_loot_1_1_modifier_player.html", "class_loot_1_1_modifier_player" ],
     [ "ModifierProjectile", "class_loot_1_1_modifier_projectile.html", "class_loot_1_1_modifier_projectile" ]

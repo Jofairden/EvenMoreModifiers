@@ -11,7 +11,7 @@ var searchData=
   ['adddetachitem',['AddDetachItem',['../class_loot_1_1_core_1_1_caching_1_1_modifier_cache_player.html#a0a512b92fefcf5321f8bab88cade7a21',1,'Loot::Core::Caching::ModifierCachePlayer']]],
   ['adddragging',['AddDragging',['../class_loot_1_1_u_i_1_1_core_1_1_draggable_u_i_state.html#aa916c4cd004d2e98dcdc8b5ef4dd770c',1,'Loot.UI.Core.DraggableUIState.AddDragging()'],['../class_loot_1_1_u_i_1_1_common_1_1_core_1_1_draggable_u_i_state.html#a53e55a59db9e604186c68fa7f46223d4',1,'Loot.UI.Common.Core.DraggableUIState.AddDragging()']]],
   ['addglowmasktexture',['AddGlowmaskTexture',['../class_loot_1_1_core_1_1_mod_content_1_1_graphics_mod_content.html#aa59e80c8e105fd34ff731a694276c0aa',1,'Loot::Core::ModContent::GraphicsModContent']]],
-  ['addmod',['AddMod',['../class_loot_1_1_loot.html#a3f4fdc469aa29a32589adf1ef2a3659e',1,'Loot::Loot']]],
+  ['addmod',['AddMod',['../class_loot_1_1_loading_funneler.html#a069a51341f91e7671f8e96b5d74a0bbc',1,'Loot::LoadingFunneler']]],
   ['addrecipes',['AddRecipes',['../class_loot_1_1_loot.html#a9afccc75e56292d043923bb41284083c',1,'Loot::Loot']]],
   ['addshadertexture',['AddShaderTexture',['../class_loot_1_1_core_1_1_mod_content_1_1_graphics_mod_content.html#a48d812943d75e20a2ebc5c23326889b3',1,'Loot::Core::ModContent::GraphicsModContent']]],
   ['addtexture',['AddTexture',['../class_loot_1_1_core_1_1_mod_content_1_1_texture_mod_content.html#a47aecfd6c96144c5d12b16c08182fac1',1,'Loot::Core::ModContent::TextureModContent']]],

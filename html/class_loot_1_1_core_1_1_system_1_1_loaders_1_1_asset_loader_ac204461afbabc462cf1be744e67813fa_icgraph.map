@@ -1,3 +1,5 @@
 <map id="Loot.Core.System.Loaders.AssetLoader.RegisterAssets" name="Loot.Core.System.Loaders.AssetLoader.RegisterAssets">
-<area shape="rect" id="node2" href="$class_loot_1_1_loot.html#a6b685f469d8b8735f2e6c5ff0c776089" title="Loot.Loot.LoadModForClient" alt="" coords="243,12,429,39"/>
+<area shape="rect" id="node2" href="$class_loot_1_1_loading_funneler.html#a8d4da11813579cb5d933660dc0c37800" title="Loot.LoadingFunneler.Load\lModForClient" alt="" coords="243,5,421,46"/>
+<area shape="rect" id="node3" href="$class_loot_1_1_loading_funneler.html#a069a51341f91e7671f8e96b5d74a0bbc" title="Loot.LoadingFunneler.AddMod" alt="" coords="470,12,669,39"/>
+<area shape="rect" id="node4" href="$class_loot_1_1_loading_funneler.html#a24a6d1dbb91ccc70de5e5b136acc973a" title="Loot.LoadingFunneler.LoadMod" alt="" coords="717,12,920,39"/>
 </map>

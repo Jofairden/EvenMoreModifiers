@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['cheatsheetsupporter_2ecs',['CheatSheetSupporter.cs',['../_cheat_sheet_supporter_8cs.html',1,'']]],
+  ['cheatsheetsupport_2ecs',['CheatSheetSupport.cs',['../_cheat_sheet_support_8cs.html',1,'']]],
   ['commonrarity_2ecs',['CommonRarity.cs',['../_common_rarity_8cs.html',1,'']]],
   ['contentloader_2ecs',['ContentLoader.cs',['../_content_loader_8cs.html',1,'']]],
   ['critdamageplus_2ecs',['CritDamagePlus.cs',['../_crit_damage_plus_8cs.html',1,'']]],

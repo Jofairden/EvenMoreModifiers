@@ -1,10 +1,4 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="node1" href="$class_u_i_state.html" title="UIState" alt="" coords="5,41,72,68"/>
-<area shape="rect" id="node2" href="$class_loot_1_1_u_i_1_1_common_1_1_core_1_1_visibility_u_i.html" title="A UIState which primarily goal is to provide easy visibility toggling " alt="" coords="120,15,341,41"/>
-<area shape="rect" id="node4" href="$class_loot_1_1_u_i_1_1_core_1_1_visibility_u_i.html" title="A UIState which primarily goal is to provide easy visibility toggling " alt="" coords="149,67,313,93"/>
-<area shape="rect" id="node3" href="$class_loot_1_1_u_i_1_1_common_1_1_core_1_1_draggable_u_i_state.html" title="A UIState which primarily goal is to provide dragging on click functionality to another element (or i..." alt="" coords="390,5,607,46"/>
-<area shape="rect" id="node5" href="$class_loot_1_1_u_i_1_1_core_1_1_draggable_u_i_state.html" title="A UIState which primarily goal is to provide dragging on click functionality to another element (or i..." alt="" coords="396,71,601,97"/>
-<area shape="rect" id="node6" href="$class_loot_1_1_u_i_1_1_core_1_1_cube_u_i.html" title="Loot.UI.Core.CubeUI" alt="" coords="656,71,803,97"/>
-<area shape="rect" id="node7" href="$class_loot_1_1_u_i_1_1_rerolling_1_1_cube_reroll_u_i.html" title="A UIState that provides the ability to reroll an item&#39;s modifier " alt="" coords="851,45,1053,72"/>
-<area shape="rect" id="node8" href="$class_loot_1_1_u_i_1_1_sealing_1_1_cube_seal_u_i.html" title="Loot.UI.Sealing.CubeSealUI" alt="" coords="859,96,1045,123"/>
+<area shape="rect" id="node1" href="$class_mod_world.html" title="ModWorld" alt="" coords="6,5,87,32"/>
+<area shape="rect" id="node2" href="$class_loot_1_1_e_m_m_world.html" title="Loot.EMMWorld" alt="" coords="137,5,253,32"/>
 </map>

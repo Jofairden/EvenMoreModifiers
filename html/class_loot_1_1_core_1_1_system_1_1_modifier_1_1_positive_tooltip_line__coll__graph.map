@@ -1,3 +1,4 @@
 <map id="Loot.Core.System.Modifier.PositiveTooltipLine" name="Loot.Core.System.Modifier.PositiveTooltipLine">
-<area shape="rect" id="node2" href="$class_loot_1_1_core_1_1_system_1_1_modifier_1_1_modifier_tooltip_line.html" title="Defines a tooltip line of a modifier A modifier can have multiple lines " alt="" coords="45,96,175,123"/>
+<area shape="rect" id="node2" href="$class_loot_1_1_core_1_1_system_1_1_modifier_1_1_modifier_tooltip_line.html" title="Defines a tooltip line of a modifier A modifier can have multiple lines " alt="" coords="109,232,239,259"/>
+<area shape="rect" id="node4" href="$class_loot_1_1_core_1_1_system_1_1_modifier_1_1_modifier_tooltip_builder.html" title="Loot.Core.System.Modifier.\lModifierTooltipBuilder" alt="" coords="83,126,265,167"/>
 </map>

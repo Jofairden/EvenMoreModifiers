@@ -1,3 +1,8 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="node2" href="$class_loot_1_1_u_i_1_1_core_1_1_u_i_modifier_panel.html" title="Loot.UI.Core.UIModifierPanel" alt="" coords="139,5,333,32"/>
+<area shape="rect" id="node2" href="$class_loot_1_1_u_i_1_1_core_1_1_u_i_item_panel.html" title="Loot.UI.Core.UIItemPanel" alt="" coords="123,97,298,124"/>
+<area shape="rect" id="node3" href="$class_loot_1_1_u_i_1_1_core_1_1_u_i_interactable_item_panel.html" title="Loot.UI.Core.UIInteractable\lItemPanel" alt="" coords="347,90,530,131"/>
+<area shape="rect" id="node4" href="$class_loot_1_1_u_i_1_1_core_1_1_u_i_cube_item_panel.html" title="Loot.UI.Core.UICubeItemPanel" alt="" coords="579,5,784,32"/>
+<area shape="rect" id="node5" href="$class_loot_1_1_u_i_1_1_core_1_1_u_i_cube_selector_panel.html" title="Loot.UI.Core.UICubeSelector\lPanel" alt="" coords="584,57,779,98"/>
+<area shape="rect" id="node6" href="$class_loot_1_1_u_i_1_1_rerolling_1_1_u_i_reroll_item_panel.html" title="Loot.UI.Rerolling.UIReroll\lItemPanel" alt="" coords="595,122,767,163"/>
+<area shape="rect" id="node7" href="$class_loot_1_1_u_i_1_1_sealing_1_1_u_i_seal_item_panel.html" title="Loot.UI.Sealing.UISealItem\lPanel" alt="" coords="590,187,773,229"/>
 </map>

@@ -110,7 +110,7 @@ var searchData=
   ['modplayer',['ModPlayer',['../class_mod_player.html',1,'']]],
   ['modsound',['ModSound',['../class_mod_sound.html',1,'']]],
   ['modsupport_2ecs',['ModSupport.cs',['../_mod_support_8cs.html',1,'']]],
-  ['modsupporter_2ecs',['ModSupporter.cs',['../_mod_supporter_8cs.html',1,'']]],
+  ['modsupporttunneler_2ecs',['ModSupportTunneler.cs',['../_mod_support_tunneler_8cs.html',1,'']]],
   ['modutils',['ModUtils',['../class_loot_1_1_ext_1_1_mod_utils.html',1,'Loot::Ext']]],
   ['modutils_2ecs',['ModUtils.cs',['../_mod_utils_8cs.html',1,'']]],
   ['modworld',['ModWorld',['../class_mod_world.html',1,'']]],
