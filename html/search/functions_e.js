@@ -1,7 +1,7 @@
 var searchData=
 [
   ['onconsumeammo',['OnConsumeAmmo',['../class_loot_1_1_api_1_1_delegators_1_1_modifier_delegator_player.html#a0409a1eac1bc879175cf67656ab93888',1,'Loot::Api::Delegators::ModifierDelegatorPlayer']]],
-  ['oncraft',['OnCraft',['../class_loot_1_1_loot_mod_item.html#a78bb40da8243931fd3d5028c8801b1b7',1,'Loot::LootModItem']]],
+  ['oncraft',['OnCraft',['../class_loot_1_1_api_1_1_modifier_1_1_modifier.html#a4d02a5b51583f87b79de3f27f0fa2114',1,'Loot.Api.Modifier.Modifier.OnCraft()'],['../class_loot_1_1_loot_mod_item.html#a78bb40da8243931fd3d5028c8801b1b7',1,'Loot.LootModItem.OnCraft()']]],
   ['onenterworld',['OnEnterWorld',['../class_loot_1_1_api_1_1_delegators_1_1_modifier_delegator_player.html#a133829559885710484a87fbf6514190a',1,'Loot.Api.Delegators.ModifierDelegatorPlayer.OnEnterWorld()'],['../class_loot_1_1_api_1_1_modifier_1_1_modifier_effect.html#a398772f2ec0702c507fb7a9b465a9c3e',1,'Loot.Api.Modifier.ModifierEffect.OnEnterWorld()']]],
   ['onhitanything',['OnHitAnything',['../class_loot_1_1_api_1_1_delegators_1_1_modifier_delegator_player.html#a5af118545059b62ac35831470700a079',1,'Loot::Api::Delegators::ModifierDelegatorPlayer']]],
   ['onhitbynpc',['OnHitByNPC',['../class_loot_1_1_api_1_1_delegators_1_1_modifier_delegator_player.html#a515ea935f337ccf3560fbbb47a9ba45b',1,'Loot::Api::Delegators::ModifierDelegatorPlayer']]],

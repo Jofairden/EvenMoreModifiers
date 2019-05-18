@@ -1,5 +1,7 @@
 var NAVTREEINDEX5 =
 {
+"class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_defensive_1_1_mana_shield_effect.html":[2,0,0,6,1,0,10],
+"class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_defensive_1_1_mana_shield_effect.html#a610e0ddc09e723990f9b6df76445faf5":[2,0,0,6,1,0,10,2],
 "class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_defensive_1_1_mana_shield_effect.html#a753d918c75cc473a02d47b8c946103b8":[2,0,0,6,1,0,10,1],
 "class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_defensive_1_1_mana_shield_effect.html#ab370616e31ba7cd755ead0f5a46f6a5f":[2,0,0,6,1,0,10,0],
 "class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_defensive_1_1_percent_def_boost_effect.html":[2,0,0,6,1,0,11],
@@ -247,7 +249,5 @@ var NAVTREEINDEX5 =
 "class_loot_1_1_rarities_1_1_rare_rarity.html":[2,0,0,8,4],
 "class_loot_1_1_rarities_1_1_rare_rarity.html#a2ca8a5e3d7fba0c19213280eddb6834c":[2,0,0,8,4,5],
 "class_loot_1_1_rarities_1_1_rare_rarity.html#a40d969fe78a2e3905c63fc97a1d0d36b":[2,0,0,8,4,0],
-"class_loot_1_1_rarities_1_1_rare_rarity.html#a55f0fd8a927a3fa6796fd43f9fade851":[2,0,0,8,4,4],
-"class_loot_1_1_rarities_1_1_rare_rarity.html#a584dd5dffc5093cbc61f530282575b7d":[2,0,0,8,4,1],
-"class_loot_1_1_rarities_1_1_rare_rarity.html#a5d597dcf9a58d61c8a1bd26f646241e5":[2,0,0,8,4,3]
+"class_loot_1_1_rarities_1_1_rare_rarity.html#a55f0fd8a927a3fa6796fd43f9fade851":[2,0,0,8,4,4]
 };

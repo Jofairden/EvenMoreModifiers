@@ -1,10 +1,12 @@
 var NAVTREEINDEX7 =
 {
+"namespace_loot_1_1_u_i_1_1_tabs.html":[2,0,0,11,1],
+"namespace_loot_1_1_u_i_1_1_tabs.html":[1,0,0,12,1],
 "namespace_loot_1_1_u_i_1_1_tabs_1_1_cubing.html":[1,0,0,12,1,0],
 "namespace_loot_1_1_u_i_1_1_tabs_1_1_essence_crafting.html":[1,0,0,12,1,1],
 "namespace_loot_1_1_u_i_1_1_tabs_1_1_soulforging.html":[1,0,0,12,1,2],
-"namespace_loot_tests.html":[2,0,1],
 "namespace_loot_tests.html":[1,0,1],
+"namespace_loot_tests.html":[2,0,1],
 "namespace_loot_tests_1_1_test_modifiers.html":[1,0,1,0],
 "namespace_loot_tests_1_1_test_modifiers.html":[2,0,1,0],
 "namespace_loot_tests_1_1_test_pools.html":[2,0,1,1],

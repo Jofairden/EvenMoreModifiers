@@ -37,10 +37,10 @@ var NAVTREEINDEX =
 "_mana_shield_8cs_source.html",
 "class_loot_1_1_api_1_1_delegators_1_1_modifier_delegator_player.html#a2c07a1b0fce680beb9074c1854526a61",
 "class_loot_1_1_api_1_1_graphics_1_1_graphics_global_item.html#a91622cba55944a153f95a043ecb74e3a",
-"class_loot_1_1_api_1_1_modifier_1_1_modifier_properties_builder.html#aabe157fa7ba774f0ca0fc3db57d6d4b5",
-"class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_defensive_1_1_mana_shield_effect.html#a753d918c75cc473a02d47b8c946103b8",
-"class_loot_1_1_rarities_1_1_rare_rarity.html#aaa2b02caaa2664881260425688cedabd",
-"namespace_loot_1_1_u_i_1_1_tabs_1_1_cubing.html"
+"class_loot_1_1_api_1_1_modifier_1_1_modifier_properties_builder.html#a996fab72340f368748db45ee2859296a",
+"class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_defensive_1_1_mana_shield_effect.html",
+"class_loot_1_1_rarities_1_1_rare_rarity.html#a584dd5dffc5093cbc61f530282575b7d",
+"namespace_loot_1_1_u_i_1_1_tabs.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

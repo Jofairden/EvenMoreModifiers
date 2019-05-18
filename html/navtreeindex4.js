@@ -1,5 +1,7 @@
 var NAVTREEINDEX4 =
 {
+"class_loot_1_1_api_1_1_modifier_1_1_modifier_properties_builder.html#a996fab72340f368748db45ee2859296a":[2,0,0,0,8,5,5],
+"class_loot_1_1_api_1_1_modifier_1_1_modifier_properties_builder.html#aa7eb431964590be5c1bee9af8a49f6fa":[2,0,0,0,8,5,15],
 "class_loot_1_1_api_1_1_modifier_1_1_modifier_properties_builder.html#aabe157fa7ba774f0ca0fc3db57d6d4b5":[2,0,0,0,8,5,3],
 "class_loot_1_1_api_1_1_modifier_1_1_modifier_properties_builder.html#aba94d27973e560e6e871f02a28b69306":[2,0,0,0,8,5,23],
 "class_loot_1_1_api_1_1_modifier_1_1_modifier_properties_builder.html#abd535078034bd946c2f86743ea762fe5":[2,0,0,0,8,5,16],
@@ -247,7 +249,5 @@ var NAVTREEINDEX4 =
 "class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_defensive_1_1_mana_shield.html":[2,0,0,6,1,0,9],
 "class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_defensive_1_1_mana_shield.html#a513e41645ce9a34e034d8481058b25fb":[2,0,0,6,1,0,9,1],
 "class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_defensive_1_1_mana_shield.html#aa351c7f140f6aefb29d18f8184b30e73":[2,0,0,6,1,0,9,0],
-"class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_defensive_1_1_mana_shield.html#ad29f7dbdd1408e4f6f8946a89d04ba90":[2,0,0,6,1,0,9,2],
-"class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_defensive_1_1_mana_shield_effect.html":[2,0,0,6,1,0,10],
-"class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_defensive_1_1_mana_shield_effect.html#a610e0ddc09e723990f9b6df76445faf5":[2,0,0,6,1,0,10,2]
+"class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_defensive_1_1_mana_shield.html#ad29f7dbdd1408e4f6f8946a89d04ba90":[2,0,0,6,1,0,9,2]
 };

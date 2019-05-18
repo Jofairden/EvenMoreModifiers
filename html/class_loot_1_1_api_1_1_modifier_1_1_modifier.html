@@ -210,6 +210,8 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a807106d8ec4216b05a8e6d7fcdefe30b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adca626b8e148a584240ede1783743b2f"><td class="memItemLeft" align="right" valign="top">sealed override void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_loot_1_1_api_1_1_modifier_1_1_modifier.html#adca626b8e148a584240ede1783743b2f">CaughtFishStack</a> (int type, ref int stack)</td></tr>
 <tr class="separator:adca626b8e148a584240ede1783743b2f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae6739eb3242dd3b711a9b36198aebb4d"><td class="memItemLeft" align="right" valign="top">sealed override int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_loot_1_1_api_1_1_modifier_1_1_modifier.html#ae6739eb3242dd3b711a9b36198aebb4d">ChoosePrefix</a> (Item item, UnifiedRandom rand)</td></tr>
+<tr class="separator:ae6739eb3242dd3b711a9b36198aebb4d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8999e07e70bb890645ee1c97c31de4c8"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_loot_1_1_api_1_1_modifier_1_1_modifier.html#a8999e07e70bb890645ee1c97c31de4c8">Clone</a> (ref <a class="el" href="class_loot_1_1_api_1_1_modifier_1_1_modifier.html">Modifier</a> clone)</td></tr>
 <tr class="memdesc:a8999e07e70bb890645ee1c97c31de4c8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Allows modders to do custom cloning here Happens after default cloning, which clones various info (mod, type, magnitude and power)  <a href="#a8999e07e70bb890645ee1c97c31de4c8">More...</a><br /></td></tr>
 <tr class="separator:a8999e07e70bb890645ee1c97c31de4c8"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -260,6 +262,8 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a3ff787144406e555a85b8bbec29c735d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4ce7d9b3686c987b3070d15499d7129d"><td class="memItemLeft" align="right" valign="top">sealed override <a class="el" href="class_global_item.html">GlobalItem</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_loot_1_1_api_1_1_modifier_1_1_modifier.html#a4ce7d9b3686c987b3070d15499d7129d">NewInstance</a> (Item item)</td></tr>
 <tr class="separator:a4ce7d9b3686c987b3070d15499d7129d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4d02a5b51583f87b79de3f27f0fa2114"><td class="memItemLeft" align="right" valign="top">sealed override void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_loot_1_1_api_1_1_modifier_1_1_modifier.html#a4d02a5b51583f87b79de3f27f0fa2114">OnCraft</a> (Item item, Recipe recipe)</td></tr>
+<tr class="separator:a4d02a5b51583f87b79de3f27f0fa2114"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a687846a9ff643e147199f318e9f233c6"><td class="memItemLeft" align="right" valign="top">sealed override void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_loot_1_1_api_1_1_modifier_1_1_modifier.html#a687846a9ff643e147199f318e9f233c6">OpenVanillaBag</a> (string context, Player player, int arg)</td></tr>
 <tr class="separator:a687846a9ff643e147199f318e9f233c6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abfd33a43ffa83a736a8ef1ab1c20ad1e"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_loot_1_1_api_1_1_modifier_1_1_modifier.html#abfd33a43ffa83a736a8ef1ab1c20ad1e">PostRoll</a> (<a class="el" href="struct_loot_1_1_api_1_1_modifier_1_1_modifier_context.html">ModifierContext</a> ctx, IEnumerable&lt; <a class="el" href="class_loot_1_1_api_1_1_modifier_1_1_modifier.html">Modifier</a> &gt; rolledModifiers)</td></tr>
@@ -322,7 +326,7 @@ Properties</h2></td></tr>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Defines a modifier, which is an unloaded <a class="el" href="class_global_item.html">GlobalItem</a> Making it a <a class="el" href="class_global_item.html">GlobalItem</a> gives easy access to all hooks The various hooks are called by our own <a class="el" href="class_global_item.html">GlobalItem</a> In your <a class="el" href="class_loot_1_1_api_1_1_modifier_1_1_modifier.html" title="Defines a modifier, which is an unloaded GlobalItem Making it a GlobalItem gives easy access to all h...">Modifier</a>, it is safe to assume when one of the hooks is called, that item currently is modified by this modifier </p>
 
-<p>Definition at line <a class="el" href="_modifier_8cs_source.html#l00020">20</a> of file <a class="el" href="_modifier_8cs_source.html">Modifier.cs</a>.</p>
+<p>Definition at line <a class="el" href="_modifier_8cs_source.html#l00021">21</a> of file <a class="el" href="_modifier_8cs_source.html">Modifier.cs</a>.</p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
 <a class="anchor" id="a3be0b560fbfa44a09c0e0ebb4ab31a9d"></a>
 <div class="memitem">
@@ -354,8 +358,8 @@ Properties</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_modifier_8cs_source.html#l00240">240</a> of file <a class="el" href="_modifier_8cs_source.html">Modifier.cs</a>.</p>
-<div class="fragment"><div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;        {</div><div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;        }</div></div><!-- fragment -->
+<p>Definition at line <a class="el" href="_modifier_8cs_source.html#l00246">246</a> of file <a class="el" href="_modifier_8cs_source.html">Modifier.cs</a>.</p>
+<div class="fragment"><div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;        {</div><div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;        }</div></div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="aa901af78cd32890266eeb55a589dac1f"></a>
@@ -384,8 +388,8 @@ Properties</h2></td></tr>
 
 <p>Reimplemented in <a class="el" href="class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_damage_with_mana_cost.html#a4c8d3f06f56ff381a3af4b50009e832a">Loot.Modifiers.WeaponModifiers.DamageWithManaCost</a>, <a class="el" href="class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_velocity_plus.html#a7caf8e6fb2cd2067ca5225149d37cc75">Loot.Modifiers.WeaponModifiers.VelocityPlus</a>, <a class="el" href="class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_mana_reduce.html#a675636bf2e4c960a03cee5ca27b112d0">Loot.Modifiers.WeaponModifiers.ManaReduce</a>, and <a class="el" href="class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_speed_plus.html#acc7cb6d499af48d649519082aefe3da0">Loot.Modifiers.WeaponModifiers.SpeedPlus</a>.</p>
 
-<p>Definition at line <a class="el" href="_modifier_8cs_source.html#l00091">91</a> of file <a class="el" href="_modifier_8cs_source.html">Modifier.cs</a>.</p>
-<div class="fragment"><div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;        {</div><div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;        }</div></div><!-- fragment -->
+<p>Definition at line <a class="el" href="_modifier_8cs_source.html#l00092">92</a> of file <a class="el" href="_modifier_8cs_source.html">Modifier.cs</a>.</p>
+<div class="fragment"><div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;        {</div><div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;        }</div></div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="a54ff0c5eda51c62348bab1d892c65b74"></a>
@@ -430,8 +434,8 @@ Properties</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_modifier_8cs_source.html#l00248">248</a> of file <a class="el" href="_modifier_8cs_source.html">Modifier.cs</a>.</p>
-<div class="fragment"><div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;        {</div><div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;        }</div></div><!-- fragment -->
+<p>Definition at line <a class="el" href="_modifier_8cs_source.html#l00258">258</a> of file <a class="el" href="_modifier_8cs_source.html">Modifier.cs</a>.</p>
+<div class="fragment"><div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;        {</div><div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;        }</div></div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="acd48634af8d38bb15434ebb6277c74ee"></a>
@@ -458,8 +462,8 @@ Properties</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_modifier_8cs_source.html#l00244">244</a> of file <a class="el" href="_modifier_8cs_source.html">Modifier.cs</a>.</p>
-<div class="fragment"><div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;        {</div><div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;        }</div></div><!-- fragment -->
+<p>Definition at line <a class="el" href="_modifier_8cs_source.html#l00254">254</a> of file <a class="el" href="_modifier_8cs_source.html">Modifier.cs</a>.</p>
+<div class="fragment"><div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;        {</div><div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;        }</div></div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="a92cd5f3cabab223047f0dd904bd8dea0"></a>
@@ -530,8 +534,36 @@ Properties</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_modifier_8cs_source.html#l00236">236</a> of file <a class="el" href="_modifier_8cs_source.html">Modifier.cs</a>.</p>
-<div class="fragment"><div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;        {</div><div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;        }</div></div><!-- fragment -->
+<p>Definition at line <a class="el" href="_modifier_8cs_source.html#l00242">242</a> of file <a class="el" href="_modifier_8cs_source.html">Modifier.cs</a>.</p>
+<div class="fragment"><div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;        {</div><div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;        }</div></div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="ae6739eb3242dd3b711a9b36198aebb4d"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">sealed override int Loot.Api.Modifier.Modifier.ChoosePrefix </td>
+          <td>(</td>
+          <td class="paramtype">Item&#160;</td>
+          <td class="paramname"><em>item</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">UnifiedRandom&#160;</td>
+          <td class="paramname"><em>rand</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_modifier_8cs_source.html#l00230">230</a> of file <a class="el" href="_modifier_8cs_source.html">Modifier.cs</a>.</p>
+<div class="fragment"><div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;        {</div><div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;            <span class="keywordflow">return</span> base.ChoosePrefix(item, rand);</div><div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;        }</div></div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="a8999e07e70bb890645ee1c97c31de4c8"></a>
@@ -558,10 +590,10 @@ Properties</h2></td></tr>
 
 <p>Allows modders to do custom cloning here Happens after default cloning, which clones various info (mod, type, magnitude and power) </p>
 
-<p>Definition at line <a class="el" href="_modifier_8cs_source.html#l00099">99</a> of file <a class="el" href="_modifier_8cs_source.html">Modifier.cs</a>.</p>
+<p>Definition at line <a class="el" href="_modifier_8cs_source.html#l00100">100</a> of file <a class="el" href="_modifier_8cs_source.html">Modifier.cs</a>.</p>
 
 <p>Referenced by <a class="el" href="_mod_utils_8cs_source.html#l00051">Loot.Api.Ext.ModUtils.GetModifier()</a>, and <a class="el" href="_normal_rolling_strategy_8cs_source.html#l00040">Loot.RollingStrategies.NormalRollingStrategy.Roll()</a>.</p>
-<div class="fragment"><div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;        {</div><div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;        }</div></div><!-- fragment -->
+<div class="fragment"><div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;        {</div><div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;        }</div></div><!-- fragment -->
 <p><div id="dynsection-2" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-2-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
 <div id="dynsection-2-summary" class="dynsummary" style="display:block;">
@@ -590,13 +622,13 @@ Properties</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_modifier_8cs_source.html#l00103">103</a> of file <a class="el" href="_modifier_8cs_source.html">Modifier.cs</a>.</p>
+<p>Definition at line <a class="el" href="_modifier_8cs_source.html#l00104">104</a> of file <a class="el" href="_modifier_8cs_source.html">Modifier.cs</a>.</p>
 
-<p>References <a class="el" href="_modifier_properties_builder_8cs_source.html#l00122">Loot.Api.Modifier.ModifierPropertiesBuilder.Build()</a>, <a class="el" href="class_loot_1_1_api_1_1_modifier_1_1_modifier.html#a69706cc0f7d159fd9e79e5849398a153">Loot.Api.Modifier.Modifier.GetModifierProperties()</a>, <a class="el" href="_modifier_properties_8cs_source.html#l00024">Loot.Api.Modifier.ModifierProperties.Magnitude</a>, <a class="el" href="_modifier_8cs_source.html#l00022">Loot.Api.Modifier.Modifier.Mod</a>, <a class="el" href="_content_loader_8cs_source.html#l00014">Loot.Api.Loaders.ContentLoader.Modifier</a>, <a class="el" href="_modifier_8cs_source.html#l00036">Loot.Api.Modifier.Modifier.Name</a>, <a class="el" href="_modifier_properties_8cs_source.html#l00028">Loot.Api.Modifier.ModifierProperties.Power</a>, <a class="el" href="_modifier_8cs_source.html#l00043">Loot.Api.Modifier.Modifier.Properties</a>, and <a class="el" href="_modifier_8cs_source.html#l00029">Loot.Api.Modifier.Modifier.Type</a>.</p>
-<div class="fragment"><div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;        {</div><div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;            Modifier clone = (Modifier)MemberwiseClone();</div><div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;            clone.Mod = <a class="code" href="class_loot_1_1_api_1_1_modifier_1_1_modifier.html#af2f1ac616685b57590fa8769e405303e">Mod</a>;</div><div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;            clone.Type = <a class="code" href="class_loot_1_1_api_1_1_modifier_1_1_modifier.html#a00272c6b0cf37328946e64f84432e861">Type</a>;</div><div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;            clone.Properties = <a class="code" href="class_loot_1_1_api_1_1_modifier_1_1_modifier.html#a293f173222666944dffe7957753d0d53">Properties</a>;</div><div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;            <a class="code" href="class_loot_1_1_api_1_1_modifier_1_1_modifier.html#a8ffe6e0b17e12baae8700d37e11b9075">Clone</a>(ref clone);</div><div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;            <span class="keywordflow">return</span> clone;</div><div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;        }</div><div class="ttc" id="class_loot_1_1_api_1_1_modifier_1_1_modifier_html_a293f173222666944dffe7957753d0d53"><div class="ttname"><a href="class_loot_1_1_api_1_1_modifier_1_1_modifier.html#a293f173222666944dffe7957753d0d53">Loot.Api.Modifier.Modifier.Properties</a></div><div class="ttdeci">ModifierProperties Properties</div><div class="ttdef"><b>Definition:</b> <a href="_modifier_8cs_source.html#l00043">Modifier.cs:43</a></div></div>
-<div class="ttc" id="class_loot_1_1_api_1_1_modifier_1_1_modifier_html_a00272c6b0cf37328946e64f84432e861"><div class="ttname"><a href="class_loot_1_1_api_1_1_modifier_1_1_modifier.html#a00272c6b0cf37328946e64f84432e861">Loot.Api.Modifier.Modifier.Type</a></div><div class="ttdeci">uint Type</div><div class="ttdef"><b>Definition:</b> <a href="_modifier_8cs_source.html#l00029">Modifier.cs:29</a></div></div>
-<div class="ttc" id="class_loot_1_1_api_1_1_modifier_1_1_modifier_html_a8ffe6e0b17e12baae8700d37e11b9075"><div class="ttname"><a href="class_loot_1_1_api_1_1_modifier_1_1_modifier.html#a8ffe6e0b17e12baae8700d37e11b9075">Loot.Api.Modifier.Modifier.Clone</a></div><div class="ttdeci">new object Clone()</div><div class="ttdef"><b>Definition:</b> <a href="_modifier_8cs_source.html#l00103">Modifier.cs:103</a></div></div>
-<div class="ttc" id="class_loot_1_1_api_1_1_modifier_1_1_modifier_html_af2f1ac616685b57590fa8769e405303e"><div class="ttname"><a href="class_loot_1_1_api_1_1_modifier_1_1_modifier.html#af2f1ac616685b57590fa8769e405303e">Loot.Api.Modifier.Modifier.Mod</a></div><div class="ttdeci">Mod Mod</div><div class="ttdef"><b>Definition:</b> <a href="_modifier_8cs_source.html#l00022">Modifier.cs:22</a></div></div>
+<p>References <a class="el" href="_modifier_properties_builder_8cs_source.html#l00122">Loot.Api.Modifier.ModifierPropertiesBuilder.Build()</a>, <a class="el" href="class_loot_1_1_api_1_1_modifier_1_1_modifier.html#a69706cc0f7d159fd9e79e5849398a153">Loot.Api.Modifier.Modifier.GetModifierProperties()</a>, <a class="el" href="_modifier_properties_8cs_source.html#l00024">Loot.Api.Modifier.ModifierProperties.Magnitude</a>, <a class="el" href="_modifier_8cs_source.html#l00023">Loot.Api.Modifier.Modifier.Mod</a>, <a class="el" href="_content_loader_8cs_source.html#l00014">Loot.Api.Loaders.ContentLoader.Modifier</a>, <a class="el" href="_modifier_8cs_source.html#l00037">Loot.Api.Modifier.Modifier.Name</a>, <a class="el" href="_modifier_properties_8cs_source.html#l00028">Loot.Api.Modifier.ModifierProperties.Power</a>, <a class="el" href="_modifier_8cs_source.html#l00044">Loot.Api.Modifier.Modifier.Properties</a>, and <a class="el" href="_modifier_8cs_source.html#l00030">Loot.Api.Modifier.Modifier.Type</a>.</p>
+<div class="fragment"><div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;        {</div><div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;            Modifier clone = (Modifier)MemberwiseClone();</div><div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;            clone.Mod = <a class="code" href="class_loot_1_1_api_1_1_modifier_1_1_modifier.html#af2f1ac616685b57590fa8769e405303e">Mod</a>;</div><div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;            clone.Type = <a class="code" href="class_loot_1_1_api_1_1_modifier_1_1_modifier.html#a00272c6b0cf37328946e64f84432e861">Type</a>;</div><div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;            clone.Properties = <a class="code" href="class_loot_1_1_api_1_1_modifier_1_1_modifier.html#a293f173222666944dffe7957753d0d53">Properties</a>;</div><div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;            <a class="code" href="class_loot_1_1_api_1_1_modifier_1_1_modifier.html#a8ffe6e0b17e12baae8700d37e11b9075">Clone</a>(ref clone);</div><div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;            <span class="keywordflow">return</span> clone;</div><div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;        }</div><div class="ttc" id="class_loot_1_1_api_1_1_modifier_1_1_modifier_html_a293f173222666944dffe7957753d0d53"><div class="ttname"><a href="class_loot_1_1_api_1_1_modifier_1_1_modifier.html#a293f173222666944dffe7957753d0d53">Loot.Api.Modifier.Modifier.Properties</a></div><div class="ttdeci">ModifierProperties Properties</div><div class="ttdef"><b>Definition:</b> <a href="_modifier_8cs_source.html#l00044">Modifier.cs:44</a></div></div>
+<div class="ttc" id="class_loot_1_1_api_1_1_modifier_1_1_modifier_html_a00272c6b0cf37328946e64f84432e861"><div class="ttname"><a href="class_loot_1_1_api_1_1_modifier_1_1_modifier.html#a00272c6b0cf37328946e64f84432e861">Loot.Api.Modifier.Modifier.Type</a></div><div class="ttdeci">uint Type</div><div class="ttdef"><b>Definition:</b> <a href="_modifier_8cs_source.html#l00030">Modifier.cs:30</a></div></div>
+<div class="ttc" id="class_loot_1_1_api_1_1_modifier_1_1_modifier_html_a8ffe6e0b17e12baae8700d37e11b9075"><div class="ttname"><a href="class_loot_1_1_api_1_1_modifier_1_1_modifier.html#a8ffe6e0b17e12baae8700d37e11b9075">Loot.Api.Modifier.Modifier.Clone</a></div><div class="ttdeci">new object Clone()</div><div class="ttdef"><b>Definition:</b> <a href="_modifier_8cs_source.html#l00104">Modifier.cs:104</a></div></div>
+<div class="ttc" id="class_loot_1_1_api_1_1_modifier_1_1_modifier_html_af2f1ac616685b57590fa8769e405303e"><div class="ttname"><a href="class_loot_1_1_api_1_1_modifier_1_1_modifier.html#af2f1ac616685b57590fa8769e405303e">Loot.Api.Modifier.Modifier.Mod</a></div><div class="ttdeci">Mod Mod</div><div class="ttdef"><b>Definition:</b> <a href="_modifier_8cs_source.html#l00023">Modifier.cs:23</a></div></div>
 </div><!-- fragment -->
 <p><div id="dynsection-3" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-3-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
@@ -693,8 +725,8 @@ Properties</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_modifier_8cs_source.html#l00252">252</a> of file <a class="el" href="_modifier_8cs_source.html">Modifier.cs</a>.</p>
-<div class="fragment"><div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;        {</div><div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;        }</div></div><!-- fragment -->
+<p>Definition at line <a class="el" href="_modifier_8cs_source.html#l00262">262</a> of file <a class="el" href="_modifier_8cs_source.html">Modifier.cs</a>.</p>
+<div class="fragment"><div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;        {</div><div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;        }</div></div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="a12c40b76169d209264cc1023b728dae5"></a>
@@ -743,8 +775,8 @@ Properties</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_modifier_8cs_source.html#l00258">258</a> of file <a class="el" href="_modifier_8cs_source.html">Modifier.cs</a>.</p>
-<div class="fragment"><div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;        {</div><div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;        }</div></div><!-- fragment -->
+<p>Definition at line <a class="el" href="_modifier_8cs_source.html#l00268">268</a> of file <a class="el" href="_modifier_8cs_source.html">Modifier.cs</a>.</p>
+<div class="fragment"><div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;        {</div><div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;        }</div></div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="a6cce309e6032c17280cced2907514ed6"></a>
@@ -777,8 +809,8 @@ Properties</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_modifier_8cs_source.html#l00262">262</a> of file <a class="el" href="_modifier_8cs_source.html">Modifier.cs</a>.</p>
-<div class="fragment"><div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;        {</div><div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;        }</div></div><!-- fragment -->
+<p>Definition at line <a class="el" href="_modifier_8cs_source.html#l00272">272</a> of file <a class="el" href="_modifier_8cs_source.html">Modifier.cs</a>.</p>
+<div class="fragment"><div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;        {</div><div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;        }</div></div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="a9751b00c53d0d8b2184f23d91d55a5e9"></a>
@@ -853,8 +885,8 @@ Properties</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_modifier_8cs_source.html#l00232">232</a> of file <a class="el" href="_modifier_8cs_source.html">Modifier.cs</a>.</p>
-<div class="fragment"><div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;        {</div><div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;        }</div></div><!-- fragment -->
+<p>Definition at line <a class="el" href="_modifier_8cs_source.html#l00238">238</a> of file <a class="el" href="_modifier_8cs_source.html">Modifier.cs</a>.</p>
+<div class="fragment"><div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;        {</div><div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;        }</div></div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="af96f6cdd1915b178a44e9c9607a7b6d6"></a>
@@ -920,7 +952,7 @@ Properties</h2></td></tr>
 
 <p>Reimplemented in <a class="el" href="class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_cursed_damage.html#a530537f698e4ad7103ed1918c7cca2c9">Loot.Modifiers.WeaponModifiers.CursedDamage</a>, <a class="el" href="class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_utility_1_1_light_plus.html#a79be81f10a4ba089f06034aeaf91e879">Loot.Modifiers.EquipModifiers.Utility.LightPlus</a>, <a class="el" href="class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_offensive_1_1_crit_damage_plus.html#aa58411f17121abc95d27180171440e20">Loot.Modifiers.EquipModifiers.Offensive.CritDamagePlus</a>, <a class="el" href="class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_offensive_1_1_healthy_foes_bonus.html#ab2bf8d645dd262dff981a0b69cbb893a">Loot.Modifiers.EquipModifiers.Offensive.HealthyFoesBonus</a>, <a class="el" href="class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_defensive_1_1_mana_shield.html#aa351c7f140f6aefb29d18f8184b30e73">Loot.Modifiers.EquipModifiers.Defensive.ManaShield</a>, <a class="el" href="class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_defensive_1_1_survival_chance.html#a01498b47050332ca2cab74fc925cf284">Loot.Modifiers.EquipModifiers.Defensive.SurvivalChance</a>, <a class="el" href="class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_defensive_1_1_dodge_chance.html#a78191d2f65069d7fede4edf4555dd4b9">Loot.Modifiers.EquipModifiers.Defensive.DodgeChance</a>, <a class="el" href="class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_defensive_1_1_immunity_time_plus.html#a9e3998005a95106daa876a0c7a21f299">Loot.Modifiers.EquipModifiers.Defensive.ImmunityTimePlus</a>, <a class="el" href="class_loot_1_1_modifiers_1_1_base_1_1_weapon_debuff_modifier.html#ade4214e94feb48ce8f3cb2bc8d8e8125">Loot.Modifiers.Base.WeaponDebuffModifier</a>, <a class="el" href="class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_defensive_1_1_percent_defense_bonus.html#aeae95dd5136e5bd1e01d7bf32ee05a81">Loot.Modifiers.EquipModifiers.Defensive.PercentDefenseBonus</a>, <a class="el" href="class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_defensive_1_1_life_regen.html#a5e64be5ff6eced69e097af9071469714">Loot.Modifiers.EquipModifiers.Defensive.LifeRegen</a>, <a class="el" href="class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_utility_1_1_luck_plus.html#acb1e84a9c797b6f545bf236f7b757937">Loot.Modifiers.EquipModifiers.Utility.LuckPlus</a>, <a class="el" href="class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_damage_plus_daytime.html#afc59087d895fc78a60597f041069a3f6">Loot.Modifiers.WeaponModifiers.DamagePlusDaytime</a>, <a class="el" href="class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_damage_with_mana_cost.html#a54687b1ae94cf04248f0292ba2989231">Loot.Modifiers.WeaponModifiers.DamageWithManaCost</a>, <a class="el" href="class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_ice_1_1_icy_modifier.html#a5169dcde715f7332cb3296db93f5fb66">Loot.Modifiers.WeaponModifiers.Ice.IcyModifier</a>, <a class="el" href="class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_defensive_1_1_knockback_immunity.html#afa6d317388caf544a6baf2987f946843">Loot.Modifiers.EquipModifiers.Defensive.KnockbackImmunity</a>, <a class="el" href="class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_utility_1_1_wing_time_plus.html#a62a4f8c7b7e486a34580d5a121809467">Loot.Modifiers.EquipModifiers.Utility.WingTimePlus</a>, <a class="el" href="class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_crit_plus.html#a3c110eeb4182df18c77d6879b2efc9c8">Loot.Modifiers.WeaponModifiers.CritPlus</a>, <a class="el" href="class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_damage_plus.html#afb6813def9c4482b69157b8fafe3418d">Loot.Modifiers.WeaponModifiers.DamagePlus</a>, <a class="el" href="class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_mana_reduce.html#ad5ca8ceca23c533beb7d5a2b324c08ac">Loot.Modifiers.WeaponModifiers.ManaReduce</a>, <a class="el" href="class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_velocity_damage.html#a2d94c827b3c82c82ebb1ca2fcf6f23fa">Loot.Modifiers.WeaponModifiers.VelocityDamage</a>, <a class="el" href="class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_defensive_1_1_health_plus.html#a584a3b00764d9e7c6f722e40ee6b5eec">Loot.Modifiers.EquipModifiers.Defensive.HealthPlus</a>, <a class="el" href="class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_defensive_1_1_mana_plus.html#a141506696591ff0500bd7ec5ed811ffd">Loot.Modifiers.EquipModifiers.Defensive.ManaPlus</a>, <a class="el" href="class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_defensive_1_1_thorns.html#a40cae12eef4063275f526f57aa9df034">Loot.Modifiers.EquipModifiers.Defensive.Thorns</a>, <a class="el" href="class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_offensive_1_1_magic_crit_plus.html#a8061b9ef17e9b54c71c7c4420598295e">Loot.Modifiers.EquipModifiers.Offensive.MagicCritPlus</a>, <a class="el" href="class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_offensive_1_1_magic_damage_plus.html#a87a8060903440ffdc3c737b90679f271">Loot.Modifiers.EquipModifiers.Offensive.MagicDamagePlus</a>, <a class="el" href="class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_offensive_1_1_melee_crit_plus.html#a091e0d9ab9c55aa9890e4ea9022bb217">Loot.Modifiers.EquipModifiers.Offensive.MeleeCritPlus</a>, <a class="el" href="class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_offensive_1_1_melee_damage_plus.html#a80f98e1341dbfd2f7840881b39bdea13">Loot.Modifiers.EquipModifiers.Offensive.MeleeDamagePlus</a>, <a class="el" href="class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_offensive_1_1_minion_damage_plus.html#a87295bd3d412c080ddac5d77c3238e9b">Loot.Modifiers.EquipModifiers.Offensive.MinionDamagePlus</a>, <a class="el" href="class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_offensive_1_1_ranged_crit_plus.html#a20cfaed8aae39202632bd48bab310ae0">Loot.Modifiers.EquipModifiers.Offensive.RangedCritPlus</a>, <a class="el" href="class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_offensive_1_1_ranged_damage_plus.html#a484af17d07ae165ea6ff2c56aba96e0a">Loot.Modifiers.EquipModifiers.Offensive.RangedDamagePlus</a>, <a class="el" href="class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_offensive_1_1_thrown_crit_plus.html#aec0a4b8c7d667e5e015e258a8dbf5b51">Loot.Modifiers.EquipModifiers.Offensive.ThrownCritPlus</a>, <a class="el" href="class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_offensive_1_1_thrown_damage_plus.html#a2c464c20c971615381296f076ac03253">Loot.Modifiers.EquipModifiers.Offensive.ThrownDamagePlus</a>, <a class="el" href="class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_utility_1_1_fishing_plus.html#a5afd204d2e61014ab8c98a4e4f0b09ac">Loot.Modifiers.EquipModifiers.Utility.FishingPlus</a>, <a class="el" href="class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_utility_1_1_mining_speed_plus.html#a02333062607a1216abe38818737629ef">Loot.Modifiers.EquipModifiers.Utility.MiningSpeedPlus</a>, <a class="el" href="class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_utility_1_1_move_speed_plus.html#af0299e3def51b663bf5b063e86d9e680">Loot.Modifiers.EquipModifiers.Utility.MoveSpeedPlus</a>, <a class="el" href="class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_ammo_reduce.html#a0aa1e2e5f49b816b4f27f424bb125c6d">Loot.Modifiers.WeaponModifiers.AmmoReduce</a>, <a class="el" href="class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_knockback_plus.html#a0c0e18e35b2a28a3f8110ef2011b4e9e">Loot.Modifiers.WeaponModifiers.KnockbackPlus</a>, <a class="el" href="class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_missing_health_damage.html#a72e03ac309d559e91dd1f853a7b7cbdd">Loot.Modifiers.WeaponModifiers.MissingHealthDamage</a>, <a class="el" href="class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_speed_plus.html#a9bc91e54fdf4c34cc709f3264d59f42c">Loot.Modifiers.WeaponModifiers.SpeedPlus</a>, <a class="el" href="class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_velocity_plus.html#a8124c2f90186cd8f72ff96471016f594">Loot.Modifiers.WeaponModifiers.VelocityPlus</a>, and <a class="el" href="class_loot_1_1_modifiers_1_1_base_1_1_equip_modifier.html#a31b83cdc159fd094498b54956f378ab7">Loot.Modifiers.Base.EquipModifier</a>.</p>
 
-<p>Referenced by <a class="el" href="_modifier_8cs_source.html#l00103">Loot.Api.Modifier.Modifier.Clone()</a>, <a class="el" href="_modifier_8cs_source.html#l00145">Loot.Api.Modifier.Modifier.Load()</a>, and <a class="el" href="_normal_rolling_strategy_8cs_source.html#l00040">Loot.RollingStrategies.NormalRollingStrategy.Roll()</a>.</p>
+<p>Referenced by <a class="el" href="_modifier_8cs_source.html#l00104">Loot.Api.Modifier.Modifier.Clone()</a>, <a class="el" href="_modifier_8cs_source.html#l00146">Loot.Api.Modifier.Modifier.Load()</a>, and <a class="el" href="_normal_rolling_strategy_8cs_source.html#l00040">Loot.RollingStrategies.NormalRollingStrategy.Roll()</a>.</p>
 
 <p><div id="dynsection-4" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-4-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
@@ -1143,12 +1175,12 @@ Properties</h2></td></tr>
 
 <p>Reimplemented in <a class="el" href="class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_random_debuff.html#a69961048e7c2d23ec3619da931b1ed2f">Loot.Modifiers.WeaponModifiers.RandomDebuff</a>, and <a class="el" href="class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_damage_plus_daytime.html#a9e2688d024f67e0c88df900bcaa68da8">Loot.Modifiers.WeaponModifiers.DamagePlusDaytime</a>.</p>
 
-<p>Definition at line <a class="el" href="_modifier_8cs_source.html#l00145">145</a> of file <a class="el" href="_modifier_8cs_source.html">Modifier.cs</a>.</p>
+<p>Definition at line <a class="el" href="_modifier_8cs_source.html#l00146">146</a> of file <a class="el" href="_modifier_8cs_source.html">Modifier.cs</a>.</p>
 
-<p>References <a class="el" href="_modifier_properties_builder_8cs_source.html#l00122">Loot.Api.Modifier.ModifierPropertiesBuilder.Build()</a>, <a class="el" href="class_loot_1_1_api_1_1_modifier_1_1_modifier.html#a69706cc0f7d159fd9e79e5849398a153">Loot.Api.Modifier.Modifier.GetModifierProperties()</a>, <a class="el" href="_modifier_8cs_source.html#l00145">Loot.Api.Modifier.Modifier.Load()</a>, <a class="el" href="_modifier_properties_8cs_source.html#l00024">Loot.Api.Modifier.ModifierProperties.Magnitude</a>, <a class="el" href="_content_loader_8cs_source.html#l00014">Loot.Api.Loaders.ContentLoader.Modifier</a>, <a class="el" href="_modifier_properties_8cs_source.html#l00028">Loot.Api.Modifier.ModifierProperties.Power</a>, and <a class="el" href="_modifier_8cs_source.html#l00043">Loot.Api.Modifier.Modifier.Properties</a>.</p>
+<p>References <a class="el" href="_modifier_properties_builder_8cs_source.html#l00122">Loot.Api.Modifier.ModifierPropertiesBuilder.Build()</a>, <a class="el" href="class_loot_1_1_api_1_1_modifier_1_1_modifier.html#a69706cc0f7d159fd9e79e5849398a153">Loot.Api.Modifier.Modifier.GetModifierProperties()</a>, <a class="el" href="_modifier_8cs_source.html#l00146">Loot.Api.Modifier.Modifier.Load()</a>, <a class="el" href="_modifier_properties_8cs_source.html#l00024">Loot.Api.Modifier.ModifierProperties.Magnitude</a>, <a class="el" href="_content_loader_8cs_source.html#l00014">Loot.Api.Loaders.ContentLoader.Modifier</a>, <a class="el" href="_modifier_properties_8cs_source.html#l00028">Loot.Api.Modifier.ModifierProperties.Power</a>, and <a class="el" href="_modifier_8cs_source.html#l00044">Loot.Api.Modifier.Modifier.Properties</a>.</p>
 
-<p>Referenced by <a class="el" href="_modifier_8cs_source.html#l00145">Loot.Api.Modifier.Modifier.Load()</a>.</p>
-<div class="fragment"><div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;        {</div><div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;        }</div></div><!-- fragment -->
+<p>Referenced by <a class="el" href="_modifier_8cs_source.html#l00146">Loot.Api.Modifier.Modifier.Load()</a>.</p>
+<div class="fragment"><div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;        {</div><div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;        }</div></div><!-- fragment -->
 <p><div id="dynsection-5" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-5-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
 <div id="dynsection-5-summary" class="dynsummary" style="display:block;">
@@ -1199,8 +1231,8 @@ Properties</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_modifier_8cs_source.html#l00279">279</a> of file <a class="el" href="_modifier_8cs_source.html">Modifier.cs</a>.</p>
-<div class="fragment"><div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160;        {</div><div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;        }</div></div><!-- fragment -->
+<p>Definition at line <a class="el" href="_modifier_8cs_source.html#l00286">286</a> of file <a class="el" href="_modifier_8cs_source.html">Modifier.cs</a>.</p>
+<div class="fragment"><div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160;        {</div><div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160;        }</div></div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="a3ff787144406e555a85b8bbec29c735d"></a>
@@ -1235,6 +1267,34 @@ Properties</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="a4d02a5b51583f87b79de3f27f0fa2114"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">sealed override void Loot.Api.Modifier.Modifier.OnCraft </td>
+          <td>(</td>
+          <td class="paramtype">Item&#160;</td>
+          <td class="paramname"><em>item</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Recipe&#160;</td>
+          <td class="paramname"><em>recipe</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_modifier_8cs_source.html#l00250">250</a> of file <a class="el" href="_modifier_8cs_source.html">Modifier.cs</a>.</p>
+<div class="fragment"><div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;        {</div><div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;        }</div></div><!-- fragment -->
+</div>
+</div>
 <a class="anchor" id="a687846a9ff643e147199f318e9f233c6"></a>
 <div class="memitem">
 <div class="memproto">
@@ -1265,8 +1325,8 @@ Properties</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_modifier_8cs_source.html#l00286">286</a> of file <a class="el" href="_modifier_8cs_source.html">Modifier.cs</a>.</p>
-<div class="fragment"><div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160;        {</div><div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160;        }</div></div><!-- fragment -->
+<p>Definition at line <a class="el" href="_modifier_8cs_source.html#l00293">293</a> of file <a class="el" href="_modifier_8cs_source.html">Modifier.cs</a>.</p>
+<div class="fragment"><div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;        {</div><div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160;        }</div></div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="abfd33a43ffa83a736a8ef1ab1c20ad1e"></a>
@@ -1377,8 +1437,8 @@ Properties</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_modifier_8cs_source.html#l00292">292</a> of file <a class="el" href="_modifier_8cs_source.html">Modifier.cs</a>.</p>
-<div class="fragment"><div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160;        {</div><div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;        }</div></div><!-- fragment -->
+<p>Definition at line <a class="el" href="_modifier_8cs_source.html#l00299">299</a> of file <a class="el" href="_modifier_8cs_source.html">Modifier.cs</a>.</p>
+<div class="fragment"><div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160;        {</div><div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160;        }</div></div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="a8b64100fd359b45dd390fff41de895bf"></a>
@@ -1417,10 +1477,10 @@ Properties</h2></td></tr>
 
 <p>Reimplemented in <a class="el" href="class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_random_debuff.html#ab0e283a0342c8d70069e523f8a6ca82f">Loot.Modifiers.WeaponModifiers.RandomDebuff</a>, and <a class="el" href="class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_damage_plus_daytime.html#ad64ee24ee84ceb423ed585b459296d49">Loot.Modifiers.WeaponModifiers.DamagePlusDaytime</a>.</p>
 
-<p>Definition at line <a class="el" href="_modifier_8cs_source.html#l00073">73</a> of file <a class="el" href="_modifier_8cs_source.html">Modifier.cs</a>.</p>
+<p>Definition at line <a class="el" href="_modifier_8cs_source.html#l00074">74</a> of file <a class="el" href="_modifier_8cs_source.html">Modifier.cs</a>.</p>
 
 <p>Referenced by <a class="el" href="_normal_rolling_strategy_8cs_source.html#l00040">Loot.RollingStrategies.NormalRollingStrategy.Roll()</a>.</p>
-<div class="fragment"><div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;        {</div><div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;        }</div></div><!-- fragment -->
+<div class="fragment"><div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;        {</div><div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;        }</div></div><!-- fragment -->
 <p><div id="dynsection-8" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-8-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
 <div id="dynsection-8-summary" class="dynsummary" style="display:block;">
@@ -1471,12 +1531,12 @@ Properties</h2></td></tr>
 
 <p>Reimplemented in <a class="el" href="class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_damage_plus_daytime.html#a723fbeb5b721580510d1c078780d8912">Loot.Modifiers.WeaponModifiers.DamagePlusDaytime</a>, and <a class="el" href="class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_random_debuff.html#ae965bbb1e28d192f9f0dc212690e5fbe">Loot.Modifiers.WeaponModifiers.RandomDebuff</a>.</p>
 
-<p>Definition at line <a class="el" href="_modifier_8cs_source.html#l00200">200</a> of file <a class="el" href="_modifier_8cs_source.html">Modifier.cs</a>.</p>
+<p>Definition at line <a class="el" href="_modifier_8cs_source.html#l00201">201</a> of file <a class="el" href="_modifier_8cs_source.html">Modifier.cs</a>.</p>
 
-<p>References <a class="el" href="_modifier_8cs_source.html#l00022">Loot.Api.Modifier.Modifier.Mod</a>, <a class="el" href="_modifier_8cs_source.html#l00036">Loot.Api.Modifier.Modifier.Name</a>, <a class="el" href="_modifier_8cs_source.html#l00043">Loot.Api.Modifier.Modifier.Properties</a>, and <a class="el" href="_modifier_8cs_source.html#l00200">Loot.Api.Modifier.Modifier.Save()</a>.</p>
+<p>References <a class="el" href="_modifier_8cs_source.html#l00023">Loot.Api.Modifier.Modifier.Mod</a>, <a class="el" href="_modifier_8cs_source.html#l00037">Loot.Api.Modifier.Modifier.Name</a>, <a class="el" href="_modifier_8cs_source.html#l00044">Loot.Api.Modifier.Modifier.Properties</a>, and <a class="el" href="_modifier_8cs_source.html#l00201">Loot.Api.Modifier.Modifier.Save()</a>.</p>
 
-<p>Referenced by <a class="el" href="_modifier_8cs_source.html#l00200">Loot.Api.Modifier.Modifier.Save()</a>, and <a class="el" href="_modifier_pool_8cs_source.html#l00301">Loot.Api.Modifier.ModifierPool.Save()</a>.</p>
-<div class="fragment"><div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;        {</div><div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;        }</div></div><!-- fragment -->
+<p>Referenced by <a class="el" href="_modifier_8cs_source.html#l00201">Loot.Api.Modifier.Modifier.Save()</a>, and <a class="el" href="_modifier_pool_8cs_source.html#l00301">Loot.Api.Modifier.ModifierPool.Save()</a>.</p>
+<div class="fragment"><div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;        {</div><div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;        }</div></div><!-- fragment -->
 <p><div id="dynsection-9" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-9-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
 <div id="dynsection-9-summary" class="dynsummary" style="display:block;">
@@ -1533,8 +1593,8 @@ Properties</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_modifier_8cs_source.html#l00223">223</a> of file <a class="el" href="_modifier_8cs_source.html">Modifier.cs</a>.</p>
-<div class="fragment"><div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;        {</div><div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;            base.SetDefaults(item);</div><div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;            <a class="code" href="class_loot_1_1_api_1_1_modifier_1_1_modifier.html#aa901af78cd32890266eeb55a589dac1f">Apply</a>(item);</div><div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;        }</div><div class="ttc" id="class_loot_1_1_api_1_1_modifier_1_1_modifier_html_aa901af78cd32890266eeb55a589dac1f"><div class="ttname"><a href="class_loot_1_1_api_1_1_modifier_1_1_modifier.html#aa901af78cd32890266eeb55a589dac1f">Loot.Api.Modifier.Modifier.Apply</a></div><div class="ttdeci">virtual void Apply(Item item)</div><div class="ttdoc">Allows modders to do something when this modifier is applied If a modder needs ModPlayer hooks...</div><div class="ttdef"><b>Definition:</b> <a href="_modifier_8cs_source.html#l00091">Modifier.cs:91</a></div></div>
+<p>Definition at line <a class="el" href="_modifier_8cs_source.html#l00224">224</a> of file <a class="el" href="_modifier_8cs_source.html">Modifier.cs</a>.</p>
+<div class="fragment"><div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;        {</div><div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;            base.SetDefaults(item);</div><div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;            <a class="code" href="class_loot_1_1_api_1_1_modifier_1_1_modifier.html#aa901af78cd32890266eeb55a589dac1f">Apply</a>(item);</div><div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;        }</div><div class="ttc" id="class_loot_1_1_api_1_1_modifier_1_1_modifier_html_aa901af78cd32890266eeb55a589dac1f"><div class="ttname"><a href="class_loot_1_1_api_1_1_modifier_1_1_modifier.html#aa901af78cd32890266eeb55a589dac1f">Loot.Api.Modifier.Modifier.Apply</a></div><div class="ttdeci">virtual void Apply(Item item)</div><div class="ttdoc">Allows modders to do something when this modifier is applied If a modder needs ModPlayer hooks...</div><div class="ttdef"><b>Definition:</b> <a href="_modifier_8cs_source.html#l00092">Modifier.cs:92</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -1580,8 +1640,8 @@ Properties</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_modifier_8cs_source.html#l00299">299</a> of file <a class="el" href="_modifier_8cs_source.html">Modifier.cs</a>.</p>
-<div class="fragment"><div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160;        {</div><div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160;        }</div></div><!-- fragment -->
+<p>Definition at line <a class="el" href="_modifier_8cs_source.html#l00306">306</a> of file <a class="el" href="_modifier_8cs_source.html">Modifier.cs</a>.</p>
+<div class="fragment"><div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160;        {</div><div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160;        }</div></div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="a6b96befaafc1a74a0001b9fc992a9535"></a>
@@ -1608,8 +1668,8 @@ Properties</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_modifier_8cs_source.html#l00303">303</a> of file <a class="el" href="_modifier_8cs_source.html">Modifier.cs</a>.</p>
-<div class="fragment"><div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160;        {</div><div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160;        }</div></div><!-- fragment -->
+<p>Definition at line <a class="el" href="_modifier_8cs_source.html#l00310">310</a> of file <a class="el" href="_modifier_8cs_source.html">Modifier.cs</a>.</p>
+<div class="fragment"><div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160;        {</div><div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160;        }</div></div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="aac069f26f8e24210a6e22ab968cb79ac"></a>
@@ -1636,8 +1696,8 @@ Properties</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_modifier_8cs_source.html#l00307">307</a> of file <a class="el" href="_modifier_8cs_source.html">Modifier.cs</a>.</p>
-<div class="fragment"><div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160;        {</div><div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160;        }</div></div><!-- fragment -->
+<p>Definition at line <a class="el" href="_modifier_8cs_source.html#l00314">314</a> of file <a class="el" href="_modifier_8cs_source.html">Modifier.cs</a>.</p>
+<div class="fragment"><div class="line"><a name="l00315"></a><span class="lineno">  315</span>&#160;        {</div><div class="line"><a name="l00316"></a><span class="lineno">  316</span>&#160;        }</div></div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="a9b0fd3c99f7f62ac623a52ab69bfb45a"></a>
@@ -1683,7 +1743,7 @@ Properties</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_modifier_8cs_source.html#l00221">221</a> of file <a class="el" href="_modifier_8cs_source.html">Modifier.cs</a>.</p>
+<p>Definition at line <a class="el" href="_modifier_8cs_source.html#l00222">222</a> of file <a class="el" href="_modifier_8cs_source.html">Modifier.cs</a>.</p>
 
 </div>
 </div>
@@ -1697,7 +1757,7 @@ Properties</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_modifier_8cs_source.html#l00220">220</a> of file <a class="el" href="_modifier_8cs_source.html">Modifier.cs</a>.</p>
+<p>Definition at line <a class="el" href="_modifier_8cs_source.html#l00221">221</a> of file <a class="el" href="_modifier_8cs_source.html">Modifier.cs</a>.</p>
 
 </div>
 </div>
@@ -1711,9 +1771,9 @@ Properties</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_modifier_8cs_source.html#l00036">36</a> of file <a class="el" href="_modifier_8cs_source.html">Modifier.cs</a>.</p>
+<p>Definition at line <a class="el" href="_modifier_8cs_source.html#l00037">37</a> of file <a class="el" href="_modifier_8cs_source.html">Modifier.cs</a>.</p>
 
-<p>Referenced by <a class="el" href="_modifier_8cs_source.html#l00103">Loot.Api.Modifier.Modifier.Clone()</a>, and <a class="el" href="_modifier_8cs_source.html#l00200">Loot.Api.Modifier.Modifier.Save()</a>.</p>
+<p>Referenced by <a class="el" href="_modifier_8cs_source.html#l00104">Loot.Api.Modifier.Modifier.Clone()</a>, and <a class="el" href="_modifier_8cs_source.html#l00201">Loot.Api.Modifier.Modifier.Save()</a>.</p>
 
 </div>
 </div>
@@ -1727,7 +1787,7 @@ Properties</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_modifier_8cs_source.html#l00037">37</a> of file <a class="el" href="_modifier_8cs_source.html">Modifier.cs</a>.</p>
+<p>Definition at line <a class="el" href="_modifier_8cs_source.html#l00038">38</a> of file <a class="el" href="_modifier_8cs_source.html">Modifier.cs</a>.</p>
 
 </div>
 </div>
@@ -1750,9 +1810,9 @@ Properties</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_modifier_8cs_source.html#l00022">22</a> of file <a class="el" href="_modifier_8cs_source.html">Modifier.cs</a>.</p>
+<p>Definition at line <a class="el" href="_modifier_8cs_source.html#l00023">23</a> of file <a class="el" href="_modifier_8cs_source.html">Modifier.cs</a>.</p>
 
-<p>Referenced by <a class="el" href="_modifier_8cs_source.html#l00103">Loot.Api.Modifier.Modifier.Clone()</a>, and <a class="el" href="_modifier_8cs_source.html#l00200">Loot.Api.Modifier.Modifier.Save()</a>.</p>
+<p>Referenced by <a class="el" href="_modifier_8cs_source.html#l00104">Loot.Api.Modifier.Modifier.Clone()</a>, and <a class="el" href="_modifier_8cs_source.html#l00201">Loot.Api.Modifier.Modifier.Save()</a>.</p>
 
 </div>
 </div>
@@ -1774,7 +1834,7 @@ Properties</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_modifier_8cs_source.html#l00025">25</a> of file <a class="el" href="_modifier_8cs_source.html">Modifier.cs</a>.</p>
+<p>Definition at line <a class="el" href="_modifier_8cs_source.html#l00026">26</a> of file <a class="el" href="_modifier_8cs_source.html">Modifier.cs</a>.</p>
 
 </div>
 </div>
@@ -1796,9 +1856,9 @@ Properties</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_modifier_8cs_source.html#l00043">43</a> of file <a class="el" href="_modifier_8cs_source.html">Modifier.cs</a>.</p>
+<p>Definition at line <a class="el" href="_modifier_8cs_source.html#l00044">44</a> of file <a class="el" href="_modifier_8cs_source.html">Modifier.cs</a>.</p>
 
-<p>Referenced by <a class="el" href="_modifier_8cs_source.html#l00103">Loot.Api.Modifier.Modifier.Clone()</a>, <a class="el" href="_modifier_8cs_source.html#l00145">Loot.Api.Modifier.Modifier.Load()</a>, <a class="el" href="_normal_rolling_strategy_8cs_source.html#l00040">Loot.RollingStrategies.NormalRollingStrategy.Roll()</a>, and <a class="el" href="_modifier_8cs_source.html#l00200">Loot.Api.Modifier.Modifier.Save()</a>.</p>
+<p>Referenced by <a class="el" href="_modifier_8cs_source.html#l00104">Loot.Api.Modifier.Modifier.Clone()</a>, <a class="el" href="_modifier_8cs_source.html#l00146">Loot.Api.Modifier.Modifier.Load()</a>, <a class="el" href="_normal_rolling_strategy_8cs_source.html#l00040">Loot.RollingStrategies.NormalRollingStrategy.Roll()</a>, and <a class="el" href="_modifier_8cs_source.html#l00201">Loot.Api.Modifier.Modifier.Save()</a>.</p>
 
 </div>
 </div>
@@ -1820,9 +1880,9 @@ Properties</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_modifier_8cs_source.html#l00029">29</a> of file <a class="el" href="_modifier_8cs_source.html">Modifier.cs</a>.</p>
+<p>Definition at line <a class="el" href="_modifier_8cs_source.html#l00030">30</a> of file <a class="el" href="_modifier_8cs_source.html">Modifier.cs</a>.</p>
 
-<p>Referenced by <a class="el" href="_modifier_8cs_source.html#l00103">Loot.Api.Modifier.Modifier.Clone()</a>, and <a class="el" href="_normal_rolling_strategy_8cs_source.html#l00040">Loot.RollingStrategies.NormalRollingStrategy.Roll()</a>.</p>
+<p>Referenced by <a class="el" href="_modifier_8cs_source.html#l00104">Loot.Api.Modifier.Modifier.Clone()</a>, and <a class="el" href="_normal_rolling_strategy_8cs_source.html#l00040">Loot.RollingStrategies.NormalRollingStrategy.Roll()</a>.</p>
 
 </div>
 </div>
@@ -1844,7 +1904,7 @@ Properties</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_modifier_8cs_source.html#l00032">32</a> of file <a class="el" href="_modifier_8cs_source.html">Modifier.cs</a>.</p>
+<p>Definition at line <a class="el" href="_modifier_8cs_source.html#l00033">33</a> of file <a class="el" href="_modifier_8cs_source.html">Modifier.cs</a>.</p>
 
 </div>
 </div>
@@ -1854,7 +1914,7 @@ Properties</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespace_loot.html">Loot</a></li><li class="navelem"><a class="el" href="namespace_loot_1_1_api.html">Api</a></li><li class="navelem"><a class="el" href="namespace_loot_1_1_api_1_1_modifier.html">Modifier</a></li><li class="navelem"><a class="el" href="class_loot_1_1_api_1_1_modifier_1_1_modifier.html">Modifier</a></li>
-    <li class="footer">Generated on Sat May 18 2019 16:33:04 for Even More Modifiers by
+    <li class="footer">Generated on Sat May 18 2019 18:19:52 for Even More Modifiers by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.11 </li>
   </ul>
