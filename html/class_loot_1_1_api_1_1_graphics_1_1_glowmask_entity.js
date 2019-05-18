@@ -11,5 +11,6 @@ var class_loot_1_1_api_1_1_graphics_1_1_glowmask_entity =
     [ "GlowmaskTexture", "class_loot_1_1_api_1_1_graphics_1_1_glowmask_entity.html#a70679865b72691da0498bcbad7235602", null ],
     [ "NeedsUpdate", "class_loot_1_1_api_1_1_graphics_1_1_glowmask_entity.html#a7386aad9c9119e7c090b7641336be861", null ],
     [ "Order", "class_loot_1_1_api_1_1_graphics_1_1_glowmask_entity.html#aa3a4a9b3e1a876207612a7afdad95e96", null ],
+    [ "SkipUpdatingDrawData", "class_loot_1_1_api_1_1_graphics_1_1_glowmask_entity.html#a68b205aa15660b5129fbccb9a7fc1676", null ],
     [ "UseDestinationRectangle", "class_loot_1_1_api_1_1_graphics_1_1_glowmask_entity.html#a2435c9c2f8592875062b96e36d1c006a", null ]
 ];

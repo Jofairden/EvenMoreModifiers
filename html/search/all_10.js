@@ -5,7 +5,7 @@ var searchData=
   ['percentdefboosteffect',['PercentDefBoostEffect',['../class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_defensive_1_1_percent_def_boost_effect.html',1,'Loot::Modifiers::EquipModifiers::Defensive']]],
   ['percentdefensebonus',['PercentDefenseBonus',['../class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_defensive_1_1_percent_defense_bonus.html',1,'Loot::Modifiers::EquipModifiers::Defensive']]],
   ['percentdefensebonus_2ecs',['PercentDefenseBonus.cs',['../_percent_defense_bonus_8cs.html',1,'']]],
-  ['player',['player',['../class_loot_1_1_api_1_1_modifier_1_1_modifier_effect.html#ac2ef991246d44e84f602d87443dc3f0a',1,'Loot.Api.Modifier.ModifierEffect.player()'],['../struct_loot_1_1_api_1_1_modifier_1_1_modifier_context.html#a428e7adb7c9e4518fed871a186e6f432',1,'Loot.Api.Modifier.ModifierContext.Player()']]],
+  ['player',['Player',['../struct_loot_1_1_api_1_1_modifier_1_1_modifier_context.html#a428e7adb7c9e4518fed871a186e6f432',1,'Loot.Api.Modifier.ModifierContext.Player()'],['../class_loot_1_1_api_1_1_modifier_1_1_modifier_effect.html#ac2ef991246d44e84f602d87443dc3f0a',1,'Loot.Api.Modifier.ModifierEffect.player()']]],
   ['playerconnect',['PlayerConnect',['../class_loot_1_1_api_1_1_modifier_1_1_modifier_effect.html#a1f70069d938fee7dc7afcb2cda0aeed5',1,'Loot::Api::Modifier::ModifierEffect']]],
   ['playerdisconnect',['PlayerDisconnect',['../class_loot_1_1_api_1_1_modifier_1_1_modifier_effect.html#a6597ac87157369ead0e25a761b101f6e',1,'Loot::Api::Modifier::ModifierEffect']]],
   ['poorcube',['PoorCube',['../class_loot_1_1_cubes_1_1_poor_cube.html',1,'Loot::Cubes']]],

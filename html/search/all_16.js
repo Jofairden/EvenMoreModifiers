@@ -6,6 +6,7 @@ var searchData=
   ['weaponmodifier',['WeaponModifier',['../class_loot_1_1_modifiers_1_1_base_1_1_weapon_modifier.html',1,'Loot::Modifiers::Base']]],
   ['weaponmodifier_2ecs',['WeaponModifier.cs',['../_weapon_modifier_8cs.html',1,'']]],
   ['weaponmodifierpool_2ecs',['WeaponModifierPool.cs',['../_weapon_modifier_pool_8cs.html',1,'']]],
+  ['weaponoutsupport_2ecs',['WeaponOutSupport.cs',['../_weapon_out_support_8cs.html',1,'']]],
   ['wingslotsupport_2ecs',['WingSlotSupport.cs',['../_wing_slot_support_8cs.html',1,'']]],
   ['wingslotsupportglobalitem',['WingSlotSupportGlobalItem',['../class_loot_1_1_mod_support_1_1_wing_slot_support_1_1_wing_slot_support_global_item.html',1,'Loot::ModSupport::WingSlotSupport']]],
   ['wingtimeplus',['WingTimePlus',['../class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_utility_1_1_wing_time_plus.html',1,'Loot::Modifiers::EquipModifiers::Utility']]],

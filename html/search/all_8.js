@@ -2,7 +2,9 @@ var searchData=
 [
   ['haseffect',['HasEffect',['../class_loot_1_1_api_1_1_delegators_1_1_modifier_delegator_player.html#a2c07a1b0fce680beb9074c1854526a61',1,'Loot::Api::Delegators::ModifierDelegatorPlayer']]],
   ['haseffect_3c_20t_20_3e',['HasEffect&lt; T &gt;',['../class_loot_1_1_api_1_1_delegators_1_1_modifier_delegator_player.html#ab104ad6e213c86b693a2295bdadb9f49',1,'Loot::Api::Delegators::ModifierDelegatorPlayer']]],
+  ['hasglowmasks',['HasGlowmasks',['../class_loot_1_1_api_1_1_graphics_1_1_graphics_global_item.html#afbed847df908f32ebb491013a2377204',1,'Loot::Api::Graphics::GraphicsGlobalItem']]],
   ['hasrolled',['HasRolled',['../class_loot_1_1_loot_mod_item.html#a3df96a7be288ab9273334200ec455a4e',1,'Loot::LootModItem']]],
+  ['hasshaders',['HasShaders',['../class_loot_1_1_api_1_1_graphics_1_1_graphics_global_item.html#aeb94d876c68d13ae5b774a930c66f425',1,'Loot::Api::Graphics::GraphicsGlobalItem']]],
   ['hasvanilladamage',['HasVanillaDamage',['../class_loot_1_1_modifiers_1_1_base_1_1_weapon_modifier.html#aa85deddf4ac683dbf54126792bf04b2b',1,'Loot::Modifiers::Base::WeaponModifier']]],
   ['healthplus',['HealthPlus',['../class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_defensive_1_1_health_plus.html',1,'Loot::Modifiers::EquipModifiers::Defensive']]],
   ['healthplus_2ecs',['HealthPlus.cs',['../_health_plus_8cs.html',1,'']]],

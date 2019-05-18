@@ -14,7 +14,6 @@ var searchData=
   ['_5fgetcontent',['_GetContent',['../class_loot_1_1_api_1_1_content_1_1_loadable_content_base.html#a63042f72edac016539562d0fe6cd2b66',1,'Loot::Api::Content::LoadableContentBase']]],
   ['_5fgetmodifiers',['_GetModifiers',['../class_loot_1_1_api_1_1_modifier_1_1_modifier_pool.html#a3faff99b666429f4169b961d74c7e297',1,'Loot::Api::Modifier::ModifierPool']]],
   ['_5fglowmasktextures',['_glowmaskTextures',['../class_loot_1_1_api_1_1_mod_content_1_1_graphics_mod_content.html#a6f5d597c9144ca8857750c94bad530a7',1,'Loot::Api::ModContent::GraphicsModContent']]],
-  ['_5fhasshaderentities',['_hasShaderEntities',['../class_loot_1_1_api_1_1_graphics_1_1_graphics_global_item.html#a63a6df6e16cc59f35f45fb41625db2e9',1,'Loot::Api::Graphics::GraphicsGlobalItem']]],
   ['_5findex',['_index',['../class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_random_debuff.html#a040cdb393b0405729b6f18b65534d4f3',1,'Loot::Modifiers::WeaponModifiers::RandomDebuff']]],
   ['_5finitialize',['_Initialize',['../class_loot_1_1_api_1_1_mod_content_1_1_texture_mod_content.html#a783907f2422d0bbce3f42bb770870f26',1,'Loot::Api::ModContent::TextureModContent']]],
   ['_5fkeystore',['_keyStore',['../class_loot_1_1_api_1_1_mod_content_1_1_graphics_mod_content.html#a8aabece4c6fef749e56cbc8696af103a',1,'Loot::Api::ModContent::GraphicsModContent']]],

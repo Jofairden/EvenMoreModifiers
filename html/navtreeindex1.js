@@ -166,8 +166,10 @@ var NAVTREEINDEX1 =
 "_weapon_modifier_8cs_source.html":[3,0,7,0,4],
 "_weapon_modifier_pool_8cs.html":[3,0,9,3],
 "_weapon_modifier_pool_8cs_source.html":[3,0,9,3],
-"_wing_slot_support_8cs.html":[3,0,8,3],
-"_wing_slot_support_8cs_source.html":[3,0,8,3],
+"_weapon_out_support_8cs.html":[3,0,8,3],
+"_weapon_out_support_8cs_source.html":[3,0,8,3],
+"_wing_slot_support_8cs.html":[3,0,8,4],
+"_wing_slot_support_8cs_source.html":[3,0,8,4],
 "_wing_time_plus_8cs.html":[3,0,7,1,2,5],
 "_wing_time_plus_8cs_source.html":[3,0,7,1,2,5],
 "annotated.html":[2,0],
@@ -247,7 +249,5 @@ var NAVTREEINDEX1 =
 "class_loot_1_1_api_1_1_delegators_1_1_modifier_delegator_player.html#a107ad560af9a73c85cd0a823f64dfddd":[2,0,0,0,4,0,175],
 "class_loot_1_1_api_1_1_delegators_1_1_modifier_delegator_player.html#a133829559885710484a87fbf6514190a":[2,0,0,0,4,0,63],
 "class_loot_1_1_api_1_1_delegators_1_1_modifier_delegator_player.html#a134427a69c7e9ddfe57e2cbb0cc78c75":[2,0,0,0,4,0,21],
-"class_loot_1_1_api_1_1_delegators_1_1_modifier_delegator_player.html#a1540eb6f2ebccb9c2ddc016fb42a84c6":[2,0,0,0,4,0,127],
-"class_loot_1_1_api_1_1_delegators_1_1_modifier_delegator_player.html#a181dd744b64de389790b56841989e895":[2,0,0,0,4,0,114],
-"class_loot_1_1_api_1_1_delegators_1_1_modifier_delegator_player.html#a1a00ccc31ced940e13a0c19212e53bc9":[2,0,0,0,4,0,7]
+"class_loot_1_1_api_1_1_delegators_1_1_modifier_delegator_player.html#a1540eb6f2ebccb9c2ddc016fb42a84c6":[2,0,0,0,4,0,127]
 };

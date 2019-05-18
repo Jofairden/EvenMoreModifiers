@@ -1,5 +1,7 @@
 var NAVTREEINDEX2 =
 {
+"class_loot_1_1_api_1_1_delegators_1_1_modifier_delegator_player.html#a181dd744b64de389790b56841989e895":[2,0,0,0,4,0,114],
+"class_loot_1_1_api_1_1_delegators_1_1_modifier_delegator_player.html#a1a00ccc31ced940e13a0c19212e53bc9":[2,0,0,0,4,0,7],
 "class_loot_1_1_api_1_1_delegators_1_1_modifier_delegator_player.html#a1a3b2a01117c9ea185d19fabc1f6a1e9":[2,0,0,0,4,0,104],
 "class_loot_1_1_api_1_1_delegators_1_1_modifier_delegator_player.html#a1ce9358e5cbac1886a17d685da7ece2c":[2,0,0,0,4,0,133],
 "class_loot_1_1_api_1_1_delegators_1_1_modifier_delegator_player.html#a1d00138c05cc485b70dbb16a432a930b":[2,0,0,0,4,0,68],
@@ -238,16 +240,14 @@ var NAVTREEINDEX2 =
 "class_loot_1_1_api_1_1_ext_1_1_rolling_utils_1_1_strategies.html#a58399e5b6537b46487cf2cc07cdd08fd":[2,0,0,0,5,3,1,0],
 "class_loot_1_1_api_1_1_graphics_1_1_glowmask_entity.html":[2,0,0,0,6,0],
 "class_loot_1_1_api_1_1_graphics_1_1_glowmask_entity.html#a003493e784d2a9a05277c67feddbfa36":[2,0,0,0,6,0,6],
-"class_loot_1_1_api_1_1_graphics_1_1_glowmask_entity.html#a2435c9c2f8592875062b96e36d1c006a":[2,0,0,0,6,0,11],
+"class_loot_1_1_api_1_1_graphics_1_1_glowmask_entity.html#a2435c9c2f8592875062b96e36d1c006a":[2,0,0,0,6,0,12],
 "class_loot_1_1_api_1_1_graphics_1_1_glowmask_entity.html#a55a66c53d6fdba054d7d07a955e87145":[2,0,0,0,6,0,3],
 "class_loot_1_1_api_1_1_graphics_1_1_glowmask_entity.html#a651b5410663db90c3b4e02fc2ffb06b1":[2,0,0,0,6,0,0],
+"class_loot_1_1_api_1_1_graphics_1_1_glowmask_entity.html#a68b205aa15660b5129fbccb9a7fc1676":[2,0,0,0,6,0,11],
 "class_loot_1_1_api_1_1_graphics_1_1_glowmask_entity.html#a70679865b72691da0498bcbad7235602":[2,0,0,0,6,0,8],
 "class_loot_1_1_api_1_1_graphics_1_1_glowmask_entity.html#a7386aad9c9119e7c090b7641336be861":[2,0,0,0,6,0,9],
 "class_loot_1_1_api_1_1_graphics_1_1_glowmask_entity.html#a80587cc9c2221617592ec37db1f033de":[2,0,0,0,6,0,1],
 "class_loot_1_1_api_1_1_graphics_1_1_glowmask_entity.html#a974b77f0e58750ff51ce86248dd11161":[2,0,0,0,6,0,7],
 "class_loot_1_1_api_1_1_graphics_1_1_glowmask_entity.html#aa3a4a9b3e1a876207612a7afdad95e96":[2,0,0,0,6,0,10],
-"class_loot_1_1_api_1_1_graphics_1_1_glowmask_entity.html#aad4a8a51bf7ab0e27f947a0a30aa1321":[2,0,0,0,6,0,2],
-"class_loot_1_1_api_1_1_graphics_1_1_glowmask_entity.html#aee7122d14d7c1c18c123c1b77774c2af":[2,0,0,0,6,0,5],
-"class_loot_1_1_api_1_1_graphics_1_1_glowmask_entity.html#aeebd93fa6c73860a2049f3e437dba55f":[2,0,0,0,6,0,4],
-"class_loot_1_1_api_1_1_graphics_1_1_graphics_entity.html":[2,0,0,0,6,1]
+"class_loot_1_1_api_1_1_graphics_1_1_glowmask_entity.html#aad4a8a51bf7ab0e27f947a0a30aa1321":[2,0,0,0,6,0,2]
 };

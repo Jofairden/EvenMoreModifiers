@@ -12,7 +12,6 @@ var searchData=
   ['_5fforcenextroll',['_forceNextRoll',['../class_loot_1_1_rolling_strategies_1_1_normal_rolling_strategy.html#a8c0f0a5f0a494b6fc81480346515b848',1,'Loot::RollingStrategies::NormalRollingStrategy']]],
   ['_5fframe',['_frame',['../class_loot_1_1_u_i_1_1_tabs_1_1_soulforging_1_1_gui_soulgauge_1_1_gauge_drawing.html#aa929e167a77a73f618f8988c76f22d07',1,'Loot::UI::Tabs::Soulforging::GuiSoulgauge::GaugeDrawing']]],
   ['_5fglowmasktextures',['_glowmaskTextures',['../class_loot_1_1_api_1_1_mod_content_1_1_graphics_mod_content.html#a6f5d597c9144ca8857750c94bad530a7',1,'Loot::Api::ModContent::GraphicsModContent']]],
-  ['_5fhasshaderentities',['_hasShaderEntities',['../class_loot_1_1_api_1_1_graphics_1_1_graphics_global_item.html#a63a6df6e16cc59f35f45fb41625db2e9',1,'Loot::Api::Graphics::GraphicsGlobalItem']]],
   ['_5findex',['_index',['../class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_random_debuff.html#a040cdb393b0405729b6f18b65534d4f3',1,'Loot::Modifiers::WeaponModifiers::RandomDebuff']]],
   ['_5fkeystore',['_keyStore',['../class_loot_1_1_api_1_1_mod_content_1_1_graphics_mod_content.html#a8aabece4c6fef749e56cbc8696af103a',1,'Loot::Api::ModContent::GraphicsModContent']]],
   ['_5flastupdateuigametime',['_lastUpdateUiGameTime',['../class_loot_1_1_loot.html#a8706bf929344678026f2bb45e3d52a56',1,'Loot::Loot']]],
