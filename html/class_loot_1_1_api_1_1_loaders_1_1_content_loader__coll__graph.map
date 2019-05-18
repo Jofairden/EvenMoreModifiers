@@ -1,10 +1,2 @@
 <map id="Loot.Api.Loaders.ContentLoader" name="Loot.Api.Loaders.ContentLoader">
-<area shape="rect" id="node2" href="$class_loot_1_1_content_1_1_modifier_rarity_content.html" title="This class holds all loaded ModifierRarity content " alt="" coords="214,7,397,49"/>
-<area shape="rect" id="node3" href="$class_loot_1_1_api_1_1_content_1_1_loadable_content_base.html" title="LoadableContentBase\l\&lt; ModifierRarity \&gt;" alt="" coords="6,5,157,46"/>
-<area shape="rect" id="node4" href="$class_loot_1_1_content_1_1_modifier_effect_content.html" title="This class holds all loaded ModifierEffect content " alt="" coords="214,74,397,115"/>
-<area shape="rect" id="node5" href="$class_loot_1_1_api_1_1_content_1_1_loadable_content_base.html" title="LoadableContentBase\l\&lt; ModifierEffect \&gt;" alt="" coords="6,70,157,111"/>
-<area shape="rect" id="node6" href="$class_loot_1_1_content_1_1_modifier_content.html" title="This class holds all loaded Modifier content " alt="" coords="209,141,402,168"/>
-<area shape="rect" id="node7" href="$class_loot_1_1_api_1_1_content_1_1_loadable_content_base.html" title="LoadableContentBase\l\&lt; Modifier \&gt;" alt="" coords="6,135,157,177"/>
-<area shape="rect" id="node8" href="$class_loot_1_1_content_1_1_modifier_pool_content.html" title="This class holds all loaded ModifierPool content " alt="" coords="219,198,392,239"/>
-<area shape="rect" id="node9" href="$class_loot_1_1_api_1_1_content_1_1_loadable_content_base.html" title="LoadableContentBase\l\&lt; ModifierPool \&gt;" alt="" coords="6,201,157,242"/>
 </map>

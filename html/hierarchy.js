@@ -125,6 +125,9 @@ var hierarchy =
       [ "Loot.Api.Modifier.ModifierPool", "class_loot_1_1_api_1_1_modifier_1_1_modifier_pool.html", null ],
       [ "Loot.Api.Modifier.ModifierRarity", "class_loot_1_1_api_1_1_modifier_1_1_modifier_rarity.html", null ]
     ] ],
+    [ "Loot.Api.Builder.IPropertyBuilder< T >", "interface_loot_1_1_api_1_1_builder_1_1_i_property_builder.html", [
+      [ "Loot.Api.Builder.PropertyBuilder< T >", "class_loot_1_1_api_1_1_builder_1_1_property_builder.html", null ]
+    ] ],
     [ "Loot.Api.Strategy.IRollingStrategy< in in T >", "interface_loot_1_1_api_1_1_strategy_1_1_i_rolling_strategy.html", null ],
     [ "Loot.Api.Strategy.IRollingStrategy< RollingStrategyContext >", "interface_loot_1_1_api_1_1_strategy_1_1_i_rolling_strategy.html", [
       [ "Loot.RollingStrategies.NormalRollingStrategy", "class_loot_1_1_rolling_strategies_1_1_normal_rolling_strategy.html", null ]
@@ -155,12 +158,10 @@ var hierarchy =
       [ "LootTests.TestPools.TestPool", "class_loot_tests_1_1_test_pools_1_1_test_pool.html", null ]
     ] ],
     [ "Loot.Api.Modifier.ModifierProperties", "class_loot_1_1_api_1_1_modifier_1_1_modifier_properties.html", null ],
-    [ "Loot.Api.Modifier.ModifierPropertiesBuilder", "class_loot_1_1_api_1_1_modifier_1_1_modifier_properties_builder.html", null ],
     [ "LootTests.ModifierPropertiesTests", "class_loot_tests_1_1_modifier_properties_tests.html", null ],
     [ "ModifierRarity", "class_modifier_rarity.html", [
       [ "LootTests.TestRarities.TestRarity", "class_loot_tests_1_1_test_rarities_1_1_test_rarity.html", null ]
     ] ],
-    [ "Loot.Api.Modifier.ModifierTooltipBuilder", "class_loot_1_1_api_1_1_modifier_1_1_modifier_tooltip_builder.html", null ],
     [ "Loot.Api.Modifier.ModifierTooltipLine", "class_loot_1_1_api_1_1_modifier_1_1_modifier_tooltip_line.html", [
       [ "Loot.Api.Modifier.NegativeTooltipLine", "class_loot_1_1_api_1_1_modifier_1_1_negative_tooltip_line.html", null ],
       [ "Loot.Api.Modifier.PositiveTooltipLine", "class_loot_1_1_api_1_1_modifier_1_1_positive_tooltip_line.html", null ]
@@ -186,6 +187,12 @@ var hierarchy =
       [ "Loot.LootModWorld", "class_loot_1_1_loot_mod_world.html", null ]
     ] ],
     [ "Loot.Api.Ext.RollingUtils.Properties", "class_loot_1_1_api_1_1_ext_1_1_rolling_utils_1_1_properties.html", null ],
+    [ "PropertyBuilder< List< ModifierTooltipLine >>", null, [
+      [ "Loot.Api.Modifier.ModifierTooltipLine.ModifierTooltipBuilder", "class_loot_1_1_api_1_1_modifier_1_1_modifier_tooltip_line_1_1_modifier_tooltip_builder.html", null ]
+    ] ],
+    [ "Loot.Api.Builder.PropertyBuilder< ModifierProperties >", "class_loot_1_1_api_1_1_builder_1_1_property_builder.html", [
+      [ "Loot.Api.Modifier.ModifierProperties.ModifierPropertiesBuilder", "class_loot_1_1_api_1_1_modifier_1_1_modifier_properties_1_1_modifier_properties_builder.html", null ]
+    ] ],
     [ "Loot.Api.Loaders.RegistryLoader", "class_loot_1_1_api_1_1_loaders_1_1_registry_loader.html", null ],
     [ "Loot.Api.Strategy.RollingStrategyContext", "class_loot_1_1_api_1_1_strategy_1_1_rolling_strategy_context.html", null ],
     [ "Loot.Api.Strategy.RollingStrategyProperties", "class_loot_1_1_api_1_1_strategy_1_1_rolling_strategy_properties.html", null ],

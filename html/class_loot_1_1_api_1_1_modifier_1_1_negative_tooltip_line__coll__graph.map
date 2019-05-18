@@ -1,4 +1,3 @@
 <map id="Loot.Api.Modifier.NegativeTooltipLine" name="Loot.Api.Modifier.NegativeTooltipLine">
-<area shape="rect" id="node2" href="$class_loot_1_1_api_1_1_modifier_1_1_modifier_tooltip_line.html" title="Defines a tooltip line of a modifier A modifier can have multiple lines " alt="" coords="104,219,233,245"/>
-<area shape="rect" id="node4" href="$class_loot_1_1_api_1_1_modifier_1_1_modifier_tooltip_builder.html" title="Loot.Api.Modifier.Modifier\lTooltipBuilder" alt="" coords="84,113,255,154"/>
+<area shape="rect" id="node2" href="$class_loot_1_1_api_1_1_modifier_1_1_modifier_tooltip_line.html" title="Defines a tooltip line of a modifier A modifier can have multiple lines " alt="" coords="45,96,175,123"/>
 </map>

@@ -1,4 +1,3 @@
 <map id="Loot.Api.Modifier.Modifier.Clone" name="Loot.Api.Modifier.Modifier.Clone">
-<area shape="rect" id="node2" href="$class_loot_1_1_api_1_1_modifier_1_1_modifier_properties_builder.html#aabe157fa7ba774f0ca0fc3db57d6d4b5" title="Loot.Api.Modifier.Modifier\lPropertiesBuilder.Build" alt="" coords="232,5,403,46"/>
-<area shape="rect" id="node3" href="$class_loot_1_1_api_1_1_modifier_1_1_modifier.html#a69706cc0f7d159fd9e79e5849398a153" title="Loot.Api.Modifier.Modifier.\lGetModifierProperties" alt="" coords="230,70,405,111"/>
+<area shape="rect" id="node2" href="$class_loot_1_1_api_1_1_modifier_1_1_modifier.html#a69706cc0f7d159fd9e79e5849398a153" title="Loot.Api.Modifier.Modifier.\lGetModifierProperties" alt="" coords="230,5,405,46"/>
 </map>

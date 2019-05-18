@@ -30,6 +30,5 @@ var searchData=
   ['updatevanitycache',['UpdateVanityCache',['../class_loot_1_1_caching_1_1_modifier_cache_player.html#af61699888203f1029028f6ce61e3fbfa',1,'Loot::Caching::ModifierCachePlayer']]],
   ['updatevanityset',['UpdateVanitySet',['../class_loot_1_1_api_1_1_modifier_1_1_modifier.html#aac069f26f8e24210a6e22ab968cb79ac',1,'Loot::Api::Modifier::Modifier']]],
   ['useseffectattribute',['UsesEffectAttribute',['../class_loot_1_1_api_1_1_attributes_1_1_uses_effect_attribute.html#a329d7fc523f76eb0ce22870c353c7075',1,'Loot::Api::Attributes::UsesEffectAttribute']]],
-  ['usetimemultiplier',['UseTimeMultiplier',['../class_loot_1_1_api_1_1_delegators_1_1_modifier_delegator_player.html#a1a3b2a01117c9ea185d19fabc1f6a1e9',1,'Loot::Api::Delegators::ModifierDelegatorPlayer']]],
-  ['usingdefault',['UsingDefault',['../class_loot_1_1_api_1_1_modifier_1_1_modifier_properties_builder.html#a996fab72340f368748db45ee2859296a',1,'Loot.Api.Modifier.ModifierPropertiesBuilder.UsingDefault(ModifierProperties val)'],['../class_loot_1_1_api_1_1_modifier_1_1_modifier_properties_builder.html#a0ef49c0296ecde0ecf7d155eb4302427',1,'Loot.Api.Modifier.ModifierPropertiesBuilder.UsingDefault(ModifierPropertiesBuilder val)']]]
+  ['usetimemultiplier',['UseTimeMultiplier',['../class_loot_1_1_api_1_1_delegators_1_1_modifier_delegator_player.html#a1a3b2a01117c9ea185d19fabc1f6a1e9',1,'Loot::Api::Delegators::ModifierDelegatorPlayer']]]
 ];

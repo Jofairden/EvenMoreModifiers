@@ -181,7 +181,7 @@ Public Member Functions</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
-<tr class="memitem:aa5f05427d140bfcf38eaaa176845bfa8"><td class="memItemLeft" align="right" valign="top">IEnumerable&lt; <a class="el" href="class_loot_1_1_api_1_1_modifier_1_1_modifier_tooltip_line.html">ModifierTooltipLine</a>[]&gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_loot_1_1_api_1_1_modifier_1_1_modifier_pool.html#aa5f05427d140bfcf38eaaa176845bfa8">Description</a> =&gt; ActiveModifiers.Select(m =&gt; m.GetTooltip().Build())</td></tr>
+<tr class="memitem:aa5f05427d140bfcf38eaaa176845bfa8"><td class="memItemLeft" align="right" valign="top">IEnumerable&lt; <a class="el" href="class_loot_1_1_api_1_1_modifier_1_1_modifier_tooltip_line.html">ModifierTooltipLine</a>[]&gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_loot_1_1_api_1_1_modifier_1_1_modifier_pool.html#aa5f05427d140bfcf38eaaa176845bfa8">Description</a> =&gt; ActiveModifiers.Select(m =&gt; m.GetTooltip().Build().ToArray())</td></tr>
 <tr class="memdesc:aa5f05427d140bfcf38eaaa176845bfa8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns an enumerable of the tooltiplines of the active modifiers  <a href="#aa5f05427d140bfcf38eaaa176845bfa8">More...</a><br /></td></tr>
 <tr class="separator:aa5f05427d140bfcf38eaaa176845bfa8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a068bd6f2b76f41e749988fd4b200f41b"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_loot_1_1_api_1_1_modifier_1_1_modifier_pool.html#a068bd6f2b76f41e749988fd4b200f41b">Name</a> =&gt; GetType().Name</td></tr>
@@ -633,7 +633,7 @@ Private Attributes</h2></td></tr>
 
 <p>Definition at line <a class="el" href="_modifier_pool_8cs_source.html#l00301">301</a> of file <a class="el" href="_modifier_pool_8cs_source.html">ModifierPool.cs</a>.</p>
 
-<p>References <a class="el" href="_modifier_pool_8cs_source.html#l00050">Loot.Api.Modifier.ModifierPool.ActiveModifiers</a>, <a class="el" href="_modifier_pool_8cs_source.html#l00027">Loot.Api.Modifier.ModifierPool.Mod</a>, <a class="el" href="_modifier_pool_8cs_source.html#l00041">Loot.Api.Modifier.ModifierPool.Name</a>, <a class="el" href="_modifier_8cs_source.html#l00201">Loot.Api.Modifier.Modifier.Save()</a>, and <a class="el" href="_modifier_pool_8cs_source.html#l00301">Loot.Api.Modifier.ModifierPool.Save()</a>.</p>
+<p>References <a class="el" href="_modifier_pool_8cs_source.html#l00050">Loot.Api.Modifier.ModifierPool.ActiveModifiers</a>, <a class="el" href="_modifier_pool_8cs_source.html#l00027">Loot.Api.Modifier.ModifierPool.Mod</a>, <a class="el" href="_modifier_pool_8cs_source.html#l00041">Loot.Api.Modifier.ModifierPool.Name</a>, <a class="el" href="_modifier_8cs_source.html#l00203">Loot.Api.Modifier.Modifier.Save()</a>, and <a class="el" href="_modifier_pool_8cs_source.html#l00301">Loot.Api.Modifier.ModifierPool.Save()</a>.</p>
 
 <p>Referenced by <a class="el" href="_loot_mod_item_8cs_source.html#l00219">Loot.LootModItem.Save()</a>, and <a class="el" href="_modifier_pool_8cs_source.html#l00301">Loot.Api.Modifier.ModifierPool.Save()</a>.</p>
 <div class="fragment"><div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160;        {</div><div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160;        }</div></div><!-- fragment -->
@@ -713,7 +713,7 @@ Private Attributes</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">IEnumerable&lt;<a class="el" href="class_loot_1_1_api_1_1_modifier_1_1_modifier_tooltip_line.html">ModifierTooltipLine</a>[]&gt; Loot.Api.Modifier.ModifierPool.Description =&gt; ActiveModifiers.Select(m =&gt; m.GetTooltip().Build())</td>
+          <td class="memname">IEnumerable&lt;<a class="el" href="class_loot_1_1_api_1_1_modifier_1_1_modifier_tooltip_line.html">ModifierTooltipLine</a>[]&gt; Loot.Api.Modifier.ModifierPool.Description =&gt; ActiveModifiers.Select(m =&gt; m.GetTooltip().Build().ToArray())</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -929,7 +929,7 @@ Private Attributes</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespace_loot.html">Loot</a></li><li class="navelem"><a class="el" href="namespace_loot_1_1_api.html">Api</a></li><li class="navelem"><a class="el" href="namespace_loot_1_1_api_1_1_modifier.html">Modifier</a></li><li class="navelem"><a class="el" href="class_loot_1_1_api_1_1_modifier_1_1_modifier_pool.html">ModifierPool</a></li>
-    <li class="footer">Generated on Sat May 18 2019 18:19:52 for Even More Modifiers by
+    <li class="footer">Generated on Sat May 18 2019 19:31:31 for Even More Modifiers by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.11 </li>
   </ul>

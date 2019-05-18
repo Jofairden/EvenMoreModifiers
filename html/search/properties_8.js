@@ -7,5 +7,5 @@ var searchData=
   ['isbeingdelegated',['IsBeingDelegated',['../class_loot_1_1_api_1_1_modifier_1_1_modifier_effect.html#a357760af133873a3e9c8da1d294b0960',1,'Loot::Api::Modifier::ModifierEffect']]],
   ['ischeated',['IsCheated',['../class_loot_1_1_hacks_1_1_cheated_item_hack_global_item.html#af000d3af8fdf4e5db39cc2dfe8947498',1,'Loot::Hacks::CheatedItemHackGlobalItem']]],
   ['isloaded',['IsLoaded',['../class_loot_1_1_u_i_1_1_tabs_1_1_soulforging_1_1_gui_soulgauge_1_1_gauge_drawing.html#a0acc74d541720b9fd3a6411f51a658fe',1,'Loot::UI::Tabs::Soulforging::GuiSoulgauge::GaugeDrawing']]],
-  ['isunique',['IsUnique',['../class_loot_1_1_api_1_1_modifier_1_1_modifier_properties_builder.html#a95e885a2b0a112add570e04bf06849a3',1,'Loot::Api::Modifier::ModifierPropertiesBuilder']]]
+  ['isunique',['IsUnique',['../class_loot_1_1_api_1_1_modifier_1_1_modifier_properties.html#a62c77a43eb748f71ebf3b630efa4944e',1,'Loot::Api::Modifier::ModifierProperties']]]
 ];

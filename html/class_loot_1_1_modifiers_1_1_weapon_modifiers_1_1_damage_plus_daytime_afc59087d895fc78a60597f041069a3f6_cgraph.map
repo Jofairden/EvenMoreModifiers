@@ -1,5 +1,0 @@
-<map id="Loot.Modifiers.WeaponModifiers.DamagePlusDaytime.GetModifierProperties" name="Loot.Modifiers.WeaponModifiers.DamagePlusDaytime.GetModifierProperties">
-<area shape="rect" id="node2" href="$class_loot_1_1_api_1_1_modifier_1_1_modifier_properties_builder.html#a96d86f330a08927454f11a053d128abb" title="Loot.Api.Modifier.Modifier\lPropertiesBuilder.WithMaxMagnitude" alt="" coords="331,5,568,46"/>
-<area shape="rect" id="node3" href="$class_loot_1_1_api_1_1_modifier_1_1_modifier_properties_builder.html#a7456e2beca45c59246852f5403e60270" title="Loot.Api.Modifier.Modifier\lPropertiesBuilder.WithMinMagnitude" alt="" coords="333,70,566,111"/>
-<area shape="rect" id="node4" href="$class_loot_1_1_api_1_1_modifier_1_1_modifier_properties_builder.html#a8ec6b61335fc44f1cbaa989aa6280436" title="Loot.Api.Modifier.Modifier\lPropertiesBuilder.WithRollChance" alt="" coords="339,135,559,177"/>
-</map>

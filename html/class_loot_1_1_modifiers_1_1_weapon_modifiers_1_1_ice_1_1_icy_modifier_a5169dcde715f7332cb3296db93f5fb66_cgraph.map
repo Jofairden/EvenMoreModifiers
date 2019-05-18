@@ -1,6 +1,0 @@
-<map id="Loot.Modifiers.WeaponModifiers.Ice.IcyModifier.GetModifierProperties" name="Loot.Modifiers.WeaponModifiers.Ice.IcyModifier.GetModifierProperties">
-<area shape="rect" id="node2" href="$class_loot_1_1_api_1_1_modifier_1_1_modifier_properties_builder.html#a4062318756ff5b2af9aa9931ad6c6de0" title="Loot.Api.Modifier.Modifier\lPropertiesBuilder.IsUniqueModifier" alt="" coords="301,5,523,46"/>
-<area shape="rect" id="node3" href="$class_loot_1_1_api_1_1_modifier_1_1_modifier_properties_builder.html#a96d86f330a08927454f11a053d128abb" title="Loot.Api.Modifier.Modifier\lPropertiesBuilder.WithMaxMagnitude" alt="" coords="293,70,531,111"/>
-<area shape="rect" id="node4" href="$class_loot_1_1_api_1_1_modifier_1_1_modifier_properties_builder.html#a7456e2beca45c59246852f5403e60270" title="Loot.Api.Modifier.Modifier\lPropertiesBuilder.WithMinMagnitude" alt="" coords="295,135,529,177"/>
-<area shape="rect" id="node5" href="$class_loot_1_1_api_1_1_modifier_1_1_modifier_properties_builder.html#a8ec6b61335fc44f1cbaa989aa6280436" title="Loot.Api.Modifier.Modifier\lPropertiesBuilder.WithRollChance" alt="" coords="302,201,522,242"/>
-</map>

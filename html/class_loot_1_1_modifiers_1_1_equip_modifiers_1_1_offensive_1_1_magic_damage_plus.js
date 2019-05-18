@@ -1,6 +1,6 @@
 var class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_offensive_1_1_magic_damage_plus =
 [
-    [ "GetModifierProperties", "class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_offensive_1_1_magic_damage_plus.html#a87a8060903440ffdc3c737b90679f271", null ],
-    [ "GetTooltip", "class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_offensive_1_1_magic_damage_plus.html#a56490efe136d437299b5507f32d870c3", null ],
+    [ "GetModifierProperties", "class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_offensive_1_1_magic_damage_plus.html#a0289765bece3f70b53434bd5d1b5b7ed", null ],
+    [ "GetTooltip", "class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_offensive_1_1_magic_damage_plus.html#a67553bdb6b5c9724d940f4eecb3722fb", null ],
     [ "UpdateEquip", "class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_offensive_1_1_magic_damage_plus.html#ae6c11266ce9fd7485b5ae65f97ffe280", null ]
 ];

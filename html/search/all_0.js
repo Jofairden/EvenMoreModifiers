@@ -20,7 +20,6 @@ var searchData=
   ['_5fkeystore',['_keyStore',['../class_loot_1_1_api_1_1_mod_content_1_1_graphics_mod_content.html#a8aabece4c6fef749e56cbc8696af103a',1,'Loot::Api::ModContent::GraphicsModContent']]],
   ['_5flastupdateuigametime',['_lastUpdateUiGameTime',['../class_loot_1_1_loot.html#a8706bf929344678026f2bb45e3d52a56',1,'Loot::Loot']]],
   ['_5flen',['_len',['../class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_random_debuff.html#a9f5f155b2428a7ef22a8b81acf5cee09',1,'Loot::Modifiers::WeaponModifiers::RandomDebuff']]],
-  ['_5flines',['_lines',['../class_loot_1_1_api_1_1_modifier_1_1_modifier_tooltip_builder.html#ab90e4aa7fbea9725713473175ff80e27',1,'Loot::Api::Modifier::ModifierTooltipBuilder']]],
   ['_5fload',['_Load',['../class_loot_1_1_api_1_1_mod_content_1_1_texture_mod_content.html#a5483964e903411006cb4b32db799b657',1,'Loot::Api::ModContent::TextureModContent']]],
   ['_5flookupglowmasktable',['_lookupGlowmaskTable',['../class_loot_1_1_api_1_1_mod_content_1_1_graphics_mod_content.html#a2e5cac55290e1a35dcf04040740638a2',1,'Loot::Api::ModContent::GraphicsModContent']]],
   ['_5flookupshadertable',['_lookupShaderTable',['../class_loot_1_1_api_1_1_mod_content_1_1_graphics_mod_content.html#ad7f575df05532130ec2bab37f9cb3e87',1,'Loot::Api::ModContent::GraphicsModContent']]],

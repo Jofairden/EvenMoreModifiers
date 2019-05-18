@@ -14,7 +14,7 @@ var searchData=
   ['ismodifierrollableitem',['IsModifierRollableItem',['../class_loot_1_1_api_1_1_ext_1_1_item_utils.html#a5087f2159228e3a44d354d59e2d3894b',1,'Loot::Api::Ext::ItemUtils']]],
   ['ismouseusable',['IsMouseUsable',['../class_loot_1_1_caching_1_1_modifier_cache_player.html#a96a5dd3eaf244c895fcee713384fceb3',1,'Loot::Caching::ModifierCachePlayer']]],
   ['isnotequippedatall',['IsNotEquippedAtAll',['../class_loot_1_1_hacks_1_1_cheated_item_hack_global_item.html#a4ff1d27ea97fb4818cef025010d7cd6c',1,'Loot::Hacks::CheatedItemHackGlobalItem']]],
-  ['isuniquemodifier',['IsUniqueModifier',['../class_loot_1_1_api_1_1_modifier_1_1_modifier_properties_builder.html#a4062318756ff5b2af9aa9931ad6c6de0',1,'Loot::Api::Modifier::ModifierPropertiesBuilder']]],
+  ['isuniquemodifier',['IsUniqueModifier',['../class_loot_1_1_api_1_1_modifier_1_1_modifier_properties_1_1_modifier_properties_builder.html#aa1e4e7966c9899f70ded8543fd49117e',1,'Loot::Api::Modifier::ModifierProperties::ModifierPropertiesBuilder']]],
   ['isvanityset',['IsVanitySet',['../class_loot_1_1_api_1_1_modifier_1_1_modifier.html#a333da1c96aa9c72598047913534201a9',1,'Loot::Api::Modifier::Modifier']]],
   ['isweapon',['IsWeapon',['../class_loot_1_1_api_1_1_ext_1_1_item_utils.html#a5c9aeaf45d73accd3ae07d7b93f6bdc4',1,'Loot::Api::Ext::ItemUtils']]]
 ];

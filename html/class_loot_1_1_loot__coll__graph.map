@@ -1,8 +1,7 @@
 <map id="Loot.Loot" name="Loot.Loot">
-<area shape="rect" id="node2" href="$class_mod.html" title="Mod" alt="" coords="933,31,979,57"/>
-<area shape="rect" id="node3" href="$class_loot_1_1_api_1_1_mod_content_1_1_mod_content_manager.html" title="Loot.Api.ModContent.ModContent\lManager" alt="" coords="846,82,1066,123"/>
-<area shape="rect" id="node6" title="The GuiTabWindow is a window with tabs on the right side that are toggable The window will only displ..." alt="" coords="877,305,1035,332"/>
-<area shape="rect" id="node7" title="A UIState which primarily goal is to provide dragging on click functionality to another element (or i..." alt="" coords="523,396,650,423"/>
-<area shape="rect" id="node8" title="A UIState which primarily goal is to provide easy visibility toggling " alt="" coords="211,280,296,307"/>
-<area shape="rect" id="node9" href="$class_u_i_state.html" title="UIState" alt="" coords="5,280,72,307"/>
+<area shape="rect" id="node2" href="$class_mod.html" title="Mod" alt="" coords="902,377,949,404"/>
+<area shape="rect" id="node3" title="The GuiTabWindow is a window with tabs on the right side that are toggable The window will only displ..." alt="" coords="846,428,1005,455"/>
+<area shape="rect" id="node4" title="A UIState which primarily goal is to provide dragging on click functionality to another element (or i..." alt="" coords="523,144,650,171"/>
+<area shape="rect" id="node5" title="A UIState which primarily goal is to provide easy visibility toggling " alt="" coords="211,31,296,57"/>
+<area shape="rect" id="node6" href="$class_u_i_state.html" title="UIState" alt="" coords="5,5,72,32"/>
 </map>

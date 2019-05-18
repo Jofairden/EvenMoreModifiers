@@ -1,7 +1,7 @@
 var class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_damage_plus_daytime =
 [
-    [ "GetModifierProperties", "class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_damage_plus_daytime.html#afc59087d895fc78a60597f041069a3f6", null ],
-    [ "GetTooltip", "class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_damage_plus_daytime.html#a72d72eab10f6b0d9ee80830045071eb9", null ],
+    [ "GetModifierProperties", "class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_damage_plus_daytime.html#a8c8dbdf1b94082d1f920fb9ac04ab8db", null ],
+    [ "GetTooltip", "class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_damage_plus_daytime.html#a6476235df0054398e484602df6127fc5", null ],
     [ "GetWeaponDamage", "class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_damage_plus_daytime.html#aa722df60a58eb780f16cc8bff9033e2f", null ],
     [ "Load", "class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_damage_plus_daytime.html#a9e2688d024f67e0c88df900bcaa68da8", null ],
     [ "NetReceive", "class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_damage_plus_daytime.html#a7686dd0337f678fc097a8877f1519012", null ],

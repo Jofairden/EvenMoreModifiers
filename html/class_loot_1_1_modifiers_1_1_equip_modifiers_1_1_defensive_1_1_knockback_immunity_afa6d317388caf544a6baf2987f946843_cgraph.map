@@ -1,5 +1,0 @@
-<map id="Loot.Modifiers.EquipModifiers.Defensive.KnockbackImmunity.GetModifierProperties" name="Loot.Modifiers.EquipModifiers.Defensive.KnockbackImmunity.GetModifierProperties">
-<area shape="rect" id="node2" href="$class_loot_1_1_api_1_1_modifier_1_1_modifier_properties_builder.html#a4062318756ff5b2af9aa9931ad6c6de0" title="Loot.Api.Modifier.Modifier\lPropertiesBuilder.IsUniqueModifier" alt="" coords="329,5,551,46"/>
-<area shape="rect" id="node3" href="$class_loot_1_1_api_1_1_modifier_1_1_modifier_properties_builder.html#a459d3d14cb44d076a708905a887f0402" title="Loot.Api.Modifier.Modifier\lPropertiesBuilder.WithRarityLevel" alt="" coords="331,70,549,111"/>
-<area shape="rect" id="node4" href="$class_loot_1_1_api_1_1_modifier_1_1_modifier_properties_builder.html#a8ec6b61335fc44f1cbaa989aa6280436" title="Loot.Api.Modifier.Modifier\lPropertiesBuilder.WithRollChance" alt="" coords="330,135,550,177"/>
-</map>
