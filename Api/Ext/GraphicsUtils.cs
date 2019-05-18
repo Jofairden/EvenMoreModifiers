@@ -1,7 +1,7 @@
 using Microsoft.Xna.Framework.Graphics;
 using Terraria;
 
-namespace Loot.Api.Graphics
+namespace Loot.Api.Ext
 {
 	/// <summary>
 	/// Defines a set of utility methods for graphic subjects

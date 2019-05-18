@@ -70,7 +70,7 @@
     <Compile Include="Api\Graphics\GlowmaskEntity.cs" />
     <Compile Include="Api\Graphics\GlowmaskGlobalItem.cs" />
     <Compile Include="Api\Graphics\GraphicsEntity.cs" />
-    <Compile Include="Api\Graphics\GraphicsUtils.cs" />
+    <Compile Include="Api\Ext\GraphicsUtils.cs" />
     <Compile Include="Api\Graphics\ShaderDrawLayer.cs" />
     <Compile Include="Api\Graphics\ShaderDrawOffsetStyle.cs" />
     <Compile Include="Api\Graphics\ShaderEntity.cs" />

@@ -113,7 +113,7 @@ namespace Loot
 				// A pool is forced to roll
 				if (rollingStrategyProperties.ForceModifierPool != null)
 				{
-					ModifierPool = mod.GetModifierPool(rollingStrategyProperties.ForceModifierPool.GetType());
+					ModifierPool = ModUtils.GetModifierPool(rollingStrategyProperties.ForceModifierPool.GetType());
 					noForce = !ModifierPool?._CanRoll(ctx) ?? true;
 				}
 

@@ -1,1 +1,5 @@
-Weapons, armor, and accessories can all roll up to 4 modifiers that grant a wide variety of bonuses and effects. See the homepage for details and changelogs
+Adds a completely new custom systems for rolling modifiers on items (weapons, accessories and armor!)
+Modifiers are similar to vanilla prefixes, but much more powerful. They can change numerical stats of items, or alter them completely both in use and way they look!
+The mod also adds the ability to reforge regular armor items, this means you can start getting vanilla prefixes on them.
+
+See the homepage for greater detail about the mod.

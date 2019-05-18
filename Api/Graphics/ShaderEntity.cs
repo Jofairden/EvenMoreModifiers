@@ -1,3 +1,4 @@
+using Loot.Api.Ext;
 using Loot.Api.ModContent;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;

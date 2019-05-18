@@ -47,8 +47,8 @@ namespace Loot
 
 		public override void Unload()
 		{
-			Instance = null;
 			LoadingFunneler.Unload();
+			Instance = null;
 		}
 
 		public override void PreSaveAndQuit()
