@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['debuffchances',['DebuffChances',['../class_loot_1_1_modifiers_1_1_base_1_1_weapon_debuff_effect.html#aed029d66e2cf75109da14d1d1b25f72f',1,'Loot::Modifiers::Base::WeaponDebuffEffect']]],
+  ['debuffchances',['DebuffChances',['../class_loot_1_1_modifiers_1_1_base_1_1_weapon_debuff_effect.html#a013f891fb564f812f0b95f47255346ca',1,'Loot::Modifiers::Base::WeaponDebuffEffect']]],
   ['delegationtypes',['DelegationTypes',['../class_loot_1_1_api_1_1_attributes_1_1_auto_delegation.html#acc512fc4223169ba874452cea5f7e26f',1,'Loot::Api::Attributes::AutoDelegation']]],
   ['description',['Description',['../class_loot_1_1_api_1_1_modifier_1_1_modifier_pool.html#aa5f05427d140bfcf38eaaa176845bfa8',1,'Loot::Api::Modifier::ModifierPool']]],
   ['dodgechance',['DodgeChance',['../class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_defensive_1_1_dodge_effect.html#a71c70d1139baf2299281b2eb7b8a796f',1,'Loot::Modifiers::EquipModifiers::Defensive::DodgeEffect']]],

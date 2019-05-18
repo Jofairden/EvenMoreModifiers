@@ -4,6 +4,7 @@ var searchData=
   ['defaultproperties',['DefaultProperties',['../class_loot_1_1_api_1_1_modifier_1_1_modifier_properties_builder.html#abd535078034bd946c2f86743ea762fe5',1,'Loot::Api::Modifier::ModifierPropertiesBuilder']]],
   ['delegationlevel',['DelegationLevel',['../class_loot_1_1_api_1_1_attributes_1_1_delegation_prioritization_attribute.html#aabc4bf02c48d86710c9576fb7ce79a1e',1,'Loot::Api::Attributes::DelegationPrioritizationAttribute']]],
   ['delegationprioritization',['DelegationPrioritization',['../class_loot_1_1_api_1_1_attributes_1_1_delegation_prioritization_attribute.html#a8b5348b96dc63b96c895a0997597d509',1,'Loot::Api::Attributes::DelegationPrioritizationAttribute']]],
+  ['delegatorplayer',['DelegatorPlayer',['../class_loot_1_1_api_1_1_modifier_1_1_modifier_effect.html#aa1cf843033401de95b0bee42d6c52587',1,'Loot::Api::Modifier::ModifierEffect']]],
   ['destinationrectangle',['DestinationRectangle',['../class_loot_1_1_api_1_1_graphics_1_1_glowmask_entity.html#aee7122d14d7c1c18c123c1b77774c2af',1,'Loot.Api.Graphics.GlowmaskEntity.DestinationRectangle()'],['../class_loot_1_1_api_1_1_graphics_1_1_shader_entity.html#ab0ef1147d381d79d31c7d73bc62bd71f',1,'Loot.Api.Graphics.ShaderEntity.DestinationRectangle()']]],
   ['drawcolor',['DrawColor',['../class_loot_1_1_api_1_1_graphics_1_1_shader_entity.html#af59e4b198c0d4c01ce383c7e76dc387b',1,'Loot::Api::Graphics::ShaderEntity']]],
   ['drawdistance',['DrawDistance',['../class_loot_1_1_api_1_1_graphics_1_1_shader_entity.html#ae693cc04b6fc7dcbfa747979695a5013',1,'Loot::Api::Graphics::ShaderEntity']]],

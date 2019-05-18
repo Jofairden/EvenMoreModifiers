@@ -176,6 +176,7 @@ var hierarchy =
     ] ],
     [ "ModPlayer", "class_mod_player.html", [
       [ "Loot.Api.Delegators.ModifierDelegatorPlayer", "class_loot_1_1_api_1_1_delegators_1_1_modifier_delegator_player.html", null ],
+      [ "Loot.Api.Modifier.ModifierEffect", "class_loot_1_1_api_1_1_modifier_1_1_modifier_effect.html", null ],
       [ "Loot.Caching.ModifierCachePlayer", "class_loot_1_1_caching_1_1_modifier_cache_player.html", null ],
       [ "Loot.Hacks.TinkererArmorHackModPlayer", "class_loot_1_1_hacks_1_1_tinkerer_armor_hack_mod_player.html", null ]
     ] ],

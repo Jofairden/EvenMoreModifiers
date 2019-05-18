@@ -11,6 +11,8 @@ var searchData=
   ['dodrawsubject',['DoDrawSubject',['../class_loot_1_1_api_1_1_graphics_1_1_shader_entity.html#a95725767b0efbc061aebd061626c5125',1,'Loot::Api::Graphics::ShaderEntity']]],
   ['drawarmorcolor',['DrawArmorColor',['../class_loot_1_1_api_1_1_modifier_1_1_modifier.html#a5e36392404a5a0b9e98540638b07b15c',1,'Loot::Api::Modifier::Modifier']]],
   ['drawbody',['DrawBody',['../class_loot_1_1_api_1_1_modifier_1_1_modifier.html#a12c40b76169d209264cc1023b728dae5',1,'Loot::Api::Modifier::Modifier']]],
+  ['draweffects',['DrawEffects',['../class_loot_1_1_api_1_1_delegators_1_1_modifier_delegator_player.html#a47da2c0942b2a7ee86409e67cbb8c841',1,'Loot::Api::Delegators::ModifierDelegatorPlayer']]],
+  ['draweffectseventraiser',['DrawEffectsEventRaiser',['../class_loot_1_1_api_1_1_delegators_1_1_modifier_delegator_player.html#aae62ec3f9c02d695b579cfa0fcb9705f',1,'Loot::Api::Delegators::ModifierDelegatorPlayer']]],
   ['drawhair',['DrawHair',['../class_loot_1_1_api_1_1_modifier_1_1_modifier.html#a7e49907a9d65f18e42af9e13a6ebf070',1,'Loot::Api::Modifier::Modifier']]],
   ['drawhands',['DrawHands',['../class_loot_1_1_api_1_1_modifier_1_1_modifier.html#a6cce309e6032c17280cced2907514ed6',1,'Loot::Api::Modifier::Modifier']]],
   ['drawhead',['DrawHead',['../class_loot_1_1_api_1_1_modifier_1_1_modifier.html#a9751b00c53d0d8b2184f23d91d55a5e9',1,'Loot::Api::Modifier::Modifier']]],

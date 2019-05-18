@@ -34,12 +34,13 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "_accessory_modifier_8cs.html",
-"_modifier_pool_8cs.html",
-"class_loot_1_1_api_1_1_ext_1_1_mod_utils.html#a1d0fedb5231d428d9203719245f4b4a3",
-"class_loot_1_1_api_1_1_modifier_1_1_modifier_properties.html#a8962bf1f09ebf09ef01e9e465e0dac48",
-"class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_defensive_1_1_health_plus.html#a584a3b00764d9e7c6f722e40ee6b5eec",
-"class_loot_1_1_pools_1_1_null_modifier_pool.html#a1f65e09bbe837cf74f7ea55df609680a",
-"namespace_loot_1_1_modifiers_1_1_equip_modifiers.html"
+"_mana_shield_8cs_source.html",
+"class_loot_1_1_api_1_1_delegators_1_1_modifier_delegator_player.html#a2c07a1b0fce680beb9074c1854526a61",
+"class_loot_1_1_api_1_1_graphics_1_1_graphics_global_item.html#a91622cba55944a153f95a043ecb74e3a",
+"class_loot_1_1_api_1_1_modifier_1_1_modifier_properties_builder.html#aabe157fa7ba774f0ca0fc3db57d6d4b5",
+"class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_defensive_1_1_mana_shield_effect.html#a753d918c75cc473a02d47b8c946103b8",
+"class_loot_1_1_rarities_1_1_rare_rarity.html#aaa2b02caaa2664881260425688cedabd",
+"namespace_loot_1_1_u_i_1_1_tabs_1_1_cubing.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

@@ -8,6 +8,7 @@ var searchData=
   ['maxmagnitude',['MaxMagnitude',['../class_loot_1_1_api_1_1_modifier_1_1_modifier_properties.html#a0c60412a0d4e4e0b05536874def7d730',1,'Loot::Api::Modifier::ModifierProperties']]],
   ['method',['Method',['../struct_loot_1_1_api_1_1_modifier_1_1_modifier_context.html#a7035043f32e0affd5f869237a19765e4',1,'Loot::Api::Modifier::ModifierContext']]],
   ['minmagnitude',['MinMagnitude',['../class_loot_1_1_api_1_1_modifier_1_1_modifier_properties.html#a9b7cb9aab9eef897420a63b8169580cc',1,'Loot::Api::Modifier::ModifierProperties']]],
+  ['mod',['mod',['../class_loot_1_1_api_1_1_modifier_1_1_modifier_effect.html#a57ef4b182957f801f51e71bf71eb6864',1,'Loot::Api::Modifier::ModifierEffect']]],
   ['modcount',['ModCount',['../class_loot_1_1_api_1_1_loaders_1_1_registry_loader.html#abb7d0ffafb994e4330528d41feb468d1',1,'Loot::Api::Loaders::RegistryLoader']]],
   ['modifier',['Modifier',['../class_loot_1_1_api_1_1_loaders_1_1_content_loader.html#a347a72e4371307db6a2f8b8f43288fbd',1,'Loot::Api::Loaders::ContentLoader']]],
   ['modifiereffect',['ModifierEffect',['../class_loot_1_1_api_1_1_loaders_1_1_content_loader.html#a9913f3cfb687daafcdaa193be067dc15',1,'Loot::Api::Loaders::ContentLoader']]],

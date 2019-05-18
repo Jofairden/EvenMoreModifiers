@@ -1,18 +1,19 @@
 <map id="Loot.Api.Modifier.ModifierEffect" name="Loot.Api.Modifier.ModifierEffect">
-<area shape="rect" id="node5" href="$class_loot_1_1_effects_1_1_null_modifier_effect.html" title="Defines a &quot;Null&quot; effect which represents no effect safely Cannot be rolled normally ..." alt="" coords="459,5,626,46"/>
-<area shape="rect" id="node6" href="$class_loot_1_1_modifiers_1_1_base_1_1_weapon_debuff_effect.html" title="Loot.Modifiers.Base.Weapon\lDebuffEffect" alt="" coords="447,70,638,111"/>
-<area shape="rect" id="node7" href="$class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_defensive_1_1_dodge_effect.html" title="Loot.Modifiers.EquipModifiers.\lDefensive.DodgeEffect" alt="" coords="443,135,642,177"/>
-<area shape="rect" id="node8" href="$class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_defensive_1_1_immunity_effect.html" title="Loot.Modifiers.EquipModifiers.\lDefensive.ImmunityEffect" alt="" coords="443,201,642,242"/>
-<area shape="rect" id="node9" href="$class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_defensive_1_1_life_regen_effect.html" title="Loot.Modifiers.EquipModifiers.\lDefensive.LifeRegenEffect" alt="" coords="443,266,642,307"/>
-<area shape="rect" id="node10" href="$class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_defensive_1_1_mana_shield_effect.html" title="Loot.Modifiers.EquipModifiers.\lDefensive.ManaShieldEffect" alt="" coords="443,331,642,373"/>
-<area shape="rect" id="node11" href="$class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_defensive_1_1_percent_def_boost_effect.html" title="Loot.Modifiers.EquipModifiers.\lDefensive.PercentDefBoostEffect" alt="" coords="433,397,653,438"/>
-<area shape="rect" id="node12" href="$class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_defensive_1_1_survival_effect.html" title="Loot.Modifiers.EquipModifiers.\lDefensive.SurvivalEffect" alt="" coords="443,462,642,503"/>
-<area shape="rect" id="node13" href="$class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_offensive_1_1_crit_damage_plus_effect.html" title="Loot.Modifiers.EquipModifiers.\lOffensive.CritDamagePlusEffect" alt="" coords="436,527,649,569"/>
-<area shape="rect" id="node14" href="$class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_offensive_1_1_healthy_foes_effect.html" title="Loot.Modifiers.EquipModifiers.\lOffensive.HealthyFoesEffect" alt="" coords="443,593,642,634"/>
-<area shape="rect" id="node15" href="$class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_utility_1_1_light_effect.html" title="Loot.Modifiers.EquipModifiers.\lUtility.LightEffect" alt="" coords="443,658,642,699"/>
-<area shape="rect" id="node16" href="$class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_utility_1_1_luck_effect.html" title="Loot.Modifiers.EquipModifiers.\lUtility.LuckEffect" alt="" coords="443,723,642,765"/>
-<area shape="rect" id="node17" href="$class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_cursed_effect.html" title="Loot.Modifiers.WeaponModifiers.\lCursedEffect" alt="" coords="436,789,649,830"/>
-<area shape="rect" id="node2" href="$interface_loot_1_1_api_1_1_content_1_1_i_loadable_content.html" title="ILoadableContent" alt="" coords="23,353,147,380"/>
-<area shape="rect" id="node3" title="Used to restrict setting properties of ILoadableContent to internal only " alt="" coords="6,404,165,431"/>
-<area shape="rect" id="node4" href="$class_i_cloneable.html" title="ICloneable" alt="" coords="43,455,127,481"/>
+<area shape="rect" id="node6" href="$class_loot_1_1_effects_1_1_null_modifier_effect.html" title="Defines a &quot;Null&quot; effect which represents no effect safely Cannot be rolled normally ..." alt="" coords="459,5,626,46"/>
+<area shape="rect" id="node7" href="$class_loot_1_1_modifiers_1_1_base_1_1_weapon_debuff_effect.html" title="Loot.Modifiers.Base.Weapon\lDebuffEffect" alt="" coords="447,70,638,111"/>
+<area shape="rect" id="node8" href="$class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_defensive_1_1_dodge_effect.html" title="Loot.Modifiers.EquipModifiers.\lDefensive.DodgeEffect" alt="" coords="443,135,642,177"/>
+<area shape="rect" id="node9" href="$class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_defensive_1_1_immunity_effect.html" title="Loot.Modifiers.EquipModifiers.\lDefensive.ImmunityEffect" alt="" coords="443,201,642,242"/>
+<area shape="rect" id="node10" href="$class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_defensive_1_1_life_regen_effect.html" title="Loot.Modifiers.EquipModifiers.\lDefensive.LifeRegenEffect" alt="" coords="443,266,642,307"/>
+<area shape="rect" id="node11" href="$class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_defensive_1_1_mana_shield_effect.html" title="Loot.Modifiers.EquipModifiers.\lDefensive.ManaShieldEffect" alt="" coords="443,331,642,373"/>
+<area shape="rect" id="node12" href="$class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_defensive_1_1_percent_def_boost_effect.html" title="Loot.Modifiers.EquipModifiers.\lDefensive.PercentDefBoostEffect" alt="" coords="433,397,653,438"/>
+<area shape="rect" id="node13" href="$class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_defensive_1_1_survival_effect.html" title="Loot.Modifiers.EquipModifiers.\lDefensive.SurvivalEffect" alt="" coords="443,462,642,503"/>
+<area shape="rect" id="node14" href="$class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_offensive_1_1_crit_damage_plus_effect.html" title="Loot.Modifiers.EquipModifiers.\lOffensive.CritDamagePlusEffect" alt="" coords="436,527,649,569"/>
+<area shape="rect" id="node15" href="$class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_offensive_1_1_healthy_foes_effect.html" title="Loot.Modifiers.EquipModifiers.\lOffensive.HealthyFoesEffect" alt="" coords="443,593,642,634"/>
+<area shape="rect" id="node16" href="$class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_utility_1_1_light_effect.html" title="Loot.Modifiers.EquipModifiers.\lUtility.LightEffect" alt="" coords="443,658,642,699"/>
+<area shape="rect" id="node17" href="$class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_utility_1_1_luck_effect.html" title="Loot.Modifiers.EquipModifiers.\lUtility.LuckEffect" alt="" coords="443,723,642,765"/>
+<area shape="rect" id="node18" href="$class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_cursed_effect.html" title="Loot.Modifiers.WeaponModifiers.\lCursedEffect" alt="" coords="436,789,649,830"/>
+<area shape="rect" id="node2" href="$class_mod_player.html" title="ModPlayer" alt="" coords="43,328,127,355"/>
+<area shape="rect" id="node3" href="$interface_loot_1_1_api_1_1_content_1_1_i_loadable_content.html" title="ILoadableContent" alt="" coords="23,379,147,405"/>
+<area shape="rect" id="node4" title="Used to restrict setting properties of ILoadableContent to internal only " alt="" coords="6,429,165,456"/>
+<area shape="rect" id="node5" href="$class_i_cloneable.html" title="ICloneable" alt="" coords="43,480,127,507"/>
 </map>

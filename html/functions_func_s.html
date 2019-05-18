@@ -100,6 +100,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       <li><a href="functions_func_g.html#index_g"><span>g</span></a></li>
       <li><a href="functions_func_h.html#index_h"><span>h</span></a></li>
       <li><a href="functions_func_i.html#index_i"><span>i</span></a></li>
+      <li><a href="functions_func_k.html#index_k"><span>k</span></a></li>
       <li><a href="functions_func_l.html#index_l"><span>l</span></a></li>
       <li><a href="functions_func_m.html#index_m"><span>m</span></a></li>
       <li><a href="functions_func_n.html#index_n"><span>n</span></a></li>
@@ -109,7 +110,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       <li class="current"><a href="functions_func_s.html#index_s"><span>s</span></a></li>
       <li><a href="functions_func_t.html#index_t"><span>t</span></a></li>
       <li><a href="functions_func_u.html#index_u"><span>u</span></a></li>
-      <li><a href="functions_func_v.html#index_v"><span>v</span></a></li>
       <li><a href="functions_func_w.html#index_w"><span>w</span></a></li>
     </ul>
   </div>
@@ -168,6 +168,15 @@ $(document).ready(function(){initNavTree('functions_func_s.html','');});
 , <a class="el" href="class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_damage_plus_daytime.html#a723fbeb5b721580510d1c078780d8912">Loot.Modifiers.WeaponModifiers.DamagePlusDaytime</a>
 , <a class="el" href="class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_random_debuff.html#ae965bbb1e28d192f9f0dc212690e5fbe">Loot.Modifiers.WeaponModifiers.RandomDebuff</a>
 </li>
+<li>SendClientChanges()
+: <a class="el" href="class_loot_1_1_api_1_1_delegators_1_1_modifier_delegator_player.html#af7374d79f6f8fba1c81148e96f38eca1">Loot.Api.Delegators.ModifierDelegatorPlayer</a>
+</li>
+<li>SendCustomBiomes()
+: <a class="el" href="class_loot_1_1_api_1_1_modifier_1_1_modifier_effect.html#aa94c773d4d0ef1b83c15e5b7d574429f">Loot.Api.Modifier.ModifierEffect</a>
+</li>
+<li>SetControls()
+: <a class="el" href="class_loot_1_1_api_1_1_delegators_1_1_modifier_delegator_player.html#a46176c60ac0214cd1a9958d403f04762">Loot.Api.Delegators.ModifierDelegatorPlayer</a>
+</li>
 <li>SetDefaults()
 : <a class="el" href="class_loot_1_1_api_1_1_cubes_1_1_magical_cube.html#a0981ca7402151539f56a288badc17060">Loot.Api.Cubes.MagicalCube</a>
 , <a class="el" href="class_loot_1_1_api_1_1_modifier_1_1_modifier.html#a355110514c9aa62de0e2e216b6c93e86">Loot.Api.Modifier.Modifier</a>
@@ -188,9 +197,20 @@ $(document).ready(function(){initNavTree('functions_func_s.html','');});
 </li>
 <li>SetupStartInventory()
 : <a class="el" href="class_loot_1_1_api_1_1_delegators_1_1_modifier_delegator_player.html#aec12ba9b2f7fb3a5b10b75d43ec05b99">Loot.Api.Delegators.ModifierDelegatorPlayer</a>
+, <a class="el" href="class_loot_1_1_api_1_1_modifier_1_1_modifier_effect.html#af01efb698a6e2ccec7fb325010556448">Loot.Api.Modifier.ModifierEffect</a>
 </li>
 <li>ShaderEntity()
 : <a class="el" href="class_loot_1_1_api_1_1_graphics_1_1_shader_entity.html#a5830347edb93f3531b77a06c3be47edc">Loot.Api.Graphics.ShaderEntity</a>
+</li>
+<li>ShiftClickSlot()
+: <a class="el" href="class_loot_1_1_api_1_1_delegators_1_1_modifier_delegator_player.html#a5624ab51ab6877b7ba6d56f76fbb8a20">Loot.Api.Delegators.ModifierDelegatorPlayer</a>
+, <a class="el" href="class_loot_1_1_api_1_1_modifier_1_1_modifier_effect.html#a65e36596e251a11460d95cfdc9c663ef">Loot.Api.Modifier.ModifierEffect</a>
+</li>
+<li>Shoot()
+: <a class="el" href="class_loot_1_1_api_1_1_delegators_1_1_modifier_delegator_player.html#a9cef854956bb453d6edc69abb94d2050">Loot.Api.Delegators.ModifierDelegatorPlayer</a>
+</li>
+<li>ShootEventRaiser()
+: <a class="el" href="class_loot_1_1_api_1_1_delegators_1_1_modifier_delegator_player.html#ab0045c6d3a20b4d4ca929bacf68b1b21">Loot.Api.Delegators.ModifierDelegatorPlayer</a>
 </li>
 <li>ShouldBeIgnored()
 : <a class="el" href="class_loot_1_1_hacks_1_1_cheated_item_hack_global_item.html#a9f13de3739a0ea00394f7012a22552ae">Loot.Hacks.CheatedItemHackGlobalItem</a>
@@ -201,13 +221,16 @@ $(document).ready(function(){initNavTree('functions_func_s.html','');});
 <li>SurviveEvent()
 : <a class="el" href="class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_defensive_1_1_survival_effect.html#a2aa6042d52086127f021527eac61c7e4">Loot.Modifiers.EquipModifiers.Defensive.SurvivalEffect</a>
 </li>
+<li>SyncPlayer()
+: <a class="el" href="class_loot_1_1_api_1_1_delegators_1_1_modifier_delegator_player.html#aa7b238ef90e6302c9e1d2fc051542106">Loot.Api.Delegators.ModifierDelegatorPlayer</a>
+</li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Sat May 18 2019 15:23:47 for Even More Modifiers by
+    <li class="footer">Generated on Sat May 18 2019 16:33:05 for Even More Modifiers by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.11 </li>
   </ul>
