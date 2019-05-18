@@ -30,14 +30,20 @@ namespace Loot
 		public override bool InstancePerEntity => true;
 		public override bool CloneNewInstances => true;
 
-		public ModifierRarity ModifierRarity; // the current rarity
-		public ModifierPool ModifierPool; // the current pool of mods.
-		public bool HasRolled; // has rolled a pool
-		public bool SealedModifiers; // are modifiers unchangeable
+		public ModifierRarity ModifierRarity { get; internal set; } // the current rarity
+		public ModifierPool ModifierPool { get; internal set; } // the current pool of mods.
+		public bool HasRolled { get; internal set; } // has rolled a pool
+		public bool SealedModifiers { get; internal set; } // are modifiers unchangeable
 
 		// Non saved
-		public bool JustTinkerModified; // is just tinker modified: e.g. armor hacked
-		public bool SlottedInCubeUI; // is currently in cube UI slot
+		public bool JustTinkerModified { get; internal set; } // is just tinker modified: e.g. armor hacked
+		public bool SlottedInCubeUI { get; internal set; } // is currently in cube UI slot
+
+		/// <summary>
+		/// Keeps track of if the particular item was activated ('delegated')
+		/// Specific usecase see CursedEffect and modifier
+		/// </summary>
+		public bool IsActivated { get; internal set; }
 
 		private void InvalidateRolls()
 		{

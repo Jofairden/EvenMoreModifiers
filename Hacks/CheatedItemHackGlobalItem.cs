@@ -13,12 +13,6 @@ namespace Loot.Hacks
 		public override bool CloneNewInstances => true;
 
 		/// <summary>
-		/// Keeps track of if the particular item was activated ('delegated')
-		/// Specific usecase see CursedEffect and modifier
-		/// </summary>
-		public bool IsActivated { get; internal set; }
-
-		/// <summary>
 		/// Keeps track of if the item was activated (by another mod)
 		/// In this case activated means giving its regular bonuses
 		/// Example: anti social in vanity slots

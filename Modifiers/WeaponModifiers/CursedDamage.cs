@@ -29,7 +29,7 @@ namespace Loot.Modifiers.WeaponModifiers
 			Item checkItem = Main.mouseItem != null && !Main.mouseItem.IsAir ? Main.mouseItem : delegatorPlayer.player.HeldItem;
 
 			if (checkItem == null || checkItem.IsAir || !checkItem.IsWeapon()
-			    || !CheatedItemHackGlobalItem.Item(checkItem).IsActivated)
+			    || !LootModItem.GetItemInfo(checkItem).IsActivated)
 				return;
 
 			int c = LootModItem.GetActivePool(checkItem).Count(x => x.GetType() == typeof(CursedDamage));

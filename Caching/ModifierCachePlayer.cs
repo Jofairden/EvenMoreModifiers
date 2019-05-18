@@ -224,13 +224,13 @@ namespace Loot.Caching
 
 		private void AddDetachItem(Item item, Modifier modifier)
 		{
-			CheatedItemHackGlobalItem.Item(item).IsActivated = false;
+			LootModItem.GetItemInfo(item).IsActivated = false;
 			_detachList.Add((item, modifier));
 		}
 
 		private void AddAttachItem(Item item, Modifier modifier)
 		{
-			CheatedItemHackGlobalItem.Item(item).IsActivated = true;
+			LootModItem.GetItemInfo(item).IsActivated = true;
 			_attachList.Add((item, modifier));
 		}
 
