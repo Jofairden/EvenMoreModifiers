@@ -76,10 +76,10 @@ namespace Loot.RollingStrategies
 				}
 
 				rolledModifier.Properties =
-					rolledModifier.GetModifierProperties(modifierContext.Item).Build()
-						.RollMagnitudeAndPower(
-							magnitudePower: magnitudePower,
-							lukStat: luck);
+					rolledModifier.GetModifierProperties(modifierContext.Item)
+						.Build()
+						.RollMagnitudeAndPower(magnitudePower, luck);
+
 				rolledModifier.Roll(modifierContext, list);
 
 				// If the mod deemed to be unable to be added,

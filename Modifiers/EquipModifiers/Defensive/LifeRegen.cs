@@ -26,13 +26,13 @@ namespace Loot.Modifiers.EquipModifiers.Defensive
 	[UsesEffect(typeof(LifeRegenEffect))]
 	public class LifeRegen : EquipModifier
 	{
-		public override ModifierTooltipBuilder GetTooltip()
+		public override ModifierTooltipLine.ModifierTooltipBuilder GetTooltip()
 		{
 			return base.GetTooltip()
 				.WithPositive($"+{Properties.RoundedPower} life regen/minute");
 		}
 
-		public override ModifierPropertiesBuilder GetModifierProperties(Item item)
+		public override ModifierProperties.ModifierPropertiesBuilder GetModifierProperties(Item item)
 		{
 			return base.GetModifierProperties(item)
 				.WithMaxMagnitude(15f)

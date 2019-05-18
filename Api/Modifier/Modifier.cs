@@ -9,6 +9,8 @@ using Terraria;
 using Terraria.ModLoader;
 using Terraria.ModLoader.IO;
 using Terraria.Utilities;
+using static Loot.Api.Modifier.ModifierProperties;
+using static Loot.Api.Modifier.ModifierTooltipLine;
 
 namespace Loot.Api.Modifier
 {

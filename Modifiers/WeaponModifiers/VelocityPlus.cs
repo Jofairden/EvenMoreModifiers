@@ -6,21 +6,18 @@ namespace Loot.Modifiers.WeaponModifiers
 {
 	public class VelocityPlus : WeaponModifier
 	{
-		public override ModifierTooltipBuilder GetTooltip()
+		public override ModifierTooltipLine.ModifierTooltipBuilder GetTooltip()
 		{
 			return base.GetTooltip()
 				.WithPositive($"+{Properties.RoundedPower}% projectile velocity");
 		}
 
-		public override ModifierPropertiesBuilder GetModifierProperties(Item item)
+		public override ModifierProperties.ModifierPropertiesBuilder GetModifierProperties(Item item)
 		{
-			return new ModifierPropertiesBuilder
-			{
-				DefaultBuilder = base.GetModifierProperties(item),
-				MinMagnitude = 5f,
-				MaxMagnitude = 10f,
-				RoundPrecision = 1
-			};
+			return base.GetModifierProperties(item)
+				.WithMinMagnitude(5f)
+				.WithMaxMagnitude(10f)
+				.WithRoundPrecision(1);
 		}
 
 		public override bool CanRoll(ModifierContext ctx)

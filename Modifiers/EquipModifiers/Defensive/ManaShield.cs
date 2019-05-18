@@ -44,13 +44,13 @@ namespace Loot.Modifiers.EquipModifiers.Defensive
 	[UsesEffect(typeof(ManaShieldEffect))]
 	public class ManaShield : EquipModifier
 	{
-		public override ModifierTooltipBuilder GetTooltip()
+		public override ModifierTooltipLine.ModifierTooltipBuilder GetTooltip()
 		{
 			return base.GetTooltip()
 				.WithPositive($"+{Properties.RoundedPower}% of damage taken is redirected to mana");
 		}
 
-		public override ModifierPropertiesBuilder GetModifierProperties(Item item)
+		public override ModifierProperties.ModifierPropertiesBuilder GetModifierProperties(Item item)
 		{
 			return base.GetModifierProperties(item)
 				.WithMaxMagnitude(5f)

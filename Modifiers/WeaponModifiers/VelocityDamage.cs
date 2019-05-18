@@ -7,13 +7,13 @@ namespace Loot.Modifiers.WeaponModifiers
 {
 	public class VelocityDamage : WeaponModifier
 	{
-		public override ModifierTooltipBuilder GetTooltip()
+		public override ModifierTooltipLine.ModifierTooltipBuilder GetTooltip()
 		{
 			return base.GetTooltip()
 				.WithPositive($"Added damage based on player's velocity (multiplier: {Math.Round(Properties.RoundedPower / 2, 1)}x)");
 		}
 
-		public override ModifierPropertiesBuilder GetModifierProperties(Item item)
+		public override ModifierProperties.ModifierPropertiesBuilder GetModifierProperties(Item item)
 		{
 			return base.GetModifierProperties(item)
 				.WithMaxMagnitude(2)

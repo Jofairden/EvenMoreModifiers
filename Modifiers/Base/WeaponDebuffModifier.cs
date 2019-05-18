@@ -7,6 +7,8 @@ using Terraria;
 using Terraria.ID;
 using Terraria.Localization;
 using Terraria.ModLoader;
+using static Loot.Api.Modifier.ModifierProperties;
+using static Loot.Api.Modifier.ModifierTooltipLine;
 
 namespace Loot.Modifiers.Base
 {

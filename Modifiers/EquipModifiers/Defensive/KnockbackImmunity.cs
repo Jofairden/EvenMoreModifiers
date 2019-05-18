@@ -7,13 +7,13 @@ namespace Loot.Modifiers.EquipModifiers.Defensive
 {
 	public class KnockbackImmunity : EquipModifier
 	{
-		public override ModifierTooltipBuilder GetTooltip()
+		public override ModifierTooltipLine.ModifierTooltipBuilder GetTooltip()
 		{
 			return base.GetTooltip()
 				.WithPositive($"Knockback immunity");
 		}
 
-		public override ModifierPropertiesBuilder GetModifierProperties(Item item)
+		public override ModifierProperties.ModifierPropertiesBuilder GetModifierProperties(Item item)
 		{
 			return base.GetModifierProperties(item)
 				.WithRollChance(0.333f)

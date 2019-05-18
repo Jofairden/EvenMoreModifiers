@@ -8,13 +8,13 @@ namespace Loot.Modifiers.WeaponModifiers
 {
 	public class DamageWithManaCost : WeaponModifier
 	{
-		public override ModifierTooltipBuilder GetTooltip()
+		public override ModifierTooltipLine.ModifierTooltipBuilder GetTooltip()
 		{
 			return base.GetTooltip()
 				.WithPositive($"+{Properties.RoundedPower}% damage, but adds +{_manaCost} mana cost");
 		}
 
-		public override ModifierPropertiesBuilder GetModifierProperties(Item item)
+		public override ModifierProperties.ModifierPropertiesBuilder GetModifierProperties(Item item)
 		{
 			return base.GetModifierProperties(item)
 				.WithMinMagnitude(5f)

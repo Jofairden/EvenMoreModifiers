@@ -196,7 +196,7 @@ namespace Loot.UI.Tabs.Cubing
 
 			IEnumerable<ModifierTooltipLine[]> GetTooltipLines(Item item)
 				=> LootModItem.GetActivePool(item)
-					.Select(x => x.GetTooltip().Build())
+					.Select(x => x.GetTooltip().Build().ToArray())
 					.Take(4)
 					.Where(x => x != null);
 

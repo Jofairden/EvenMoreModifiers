@@ -11,7 +11,7 @@ namespace Loot.Modifiers.Base
 	/// </summary>
 	public abstract class EquipModifier : Modifier
 	{
-		public override ModifierPropertiesBuilder GetModifierProperties(Item item)
+		public override ModifierProperties.ModifierPropertiesBuilder GetModifierProperties(Item item)
 		{
 			return ModifierProperties.Builder
 				.WithMagnitudeStrength(item.IsAccessory() ? .6f : 1f);

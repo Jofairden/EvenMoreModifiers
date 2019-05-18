@@ -43,6 +43,9 @@
     <Reference Include="Microsoft.CSharp" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Api\Builder\IPropertyBuilder.cs" />
+    <Compile Include="Api\Builder\PropertyBuilder.cs" />
+    <Compile Include="Api\Graphics\GraphicsProperties.cs" />
     <Compile Include="Api\Modifier\ModifierContextMethod.cs" />
     <Compile Include="Hacks\BackwardsCompatibleHacks.cs" />
     <Compile Include="Hacks\CheatedItemHackGlobalItem.cs" />
@@ -90,7 +93,6 @@
     <Compile Include="Api\Modifier\ModifierEffect.cs" />
     <Compile Include="Api\Modifier\ModifierPool.cs" />
     <Compile Include="Api\Modifier\ModifierProperties.cs" />
-    <Compile Include="Api\Modifier\ModifierPropertiesBuilder.cs" />
     <Compile Include="Api\Modifier\ModifierRarity.cs" />
     <Compile Include="Api\Modifier\ModifierTooltipBuilder.cs" />
     <Compile Include="Api\Modifier\ModifierTooltipLine.cs" />

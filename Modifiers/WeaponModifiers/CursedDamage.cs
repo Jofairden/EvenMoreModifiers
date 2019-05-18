@@ -60,13 +60,13 @@ namespace Loot.Modifiers.WeaponModifiers
 	[UsesEffect(typeof(CursedEffect))]
 	public class CursedDamage : WeaponModifier
 	{
-		public override ModifierTooltipBuilder GetTooltip()
+		public override ModifierTooltipLine.ModifierTooltipBuilder GetTooltip()
 		{
 			return base.GetTooltip()
 				.WithPositive($"+{Properties.RoundedPower}% damage, but you are cursed while holding this item");
 		}
 
-		public override ModifierPropertiesBuilder GetModifierProperties(Item item)
+		public override ModifierProperties.ModifierPropertiesBuilder GetModifierProperties(Item item)
 		{
 			return base.GetModifierProperties(item)
 				.WithMinMagnitude(5f)

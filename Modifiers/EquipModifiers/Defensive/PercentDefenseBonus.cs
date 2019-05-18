@@ -27,13 +27,13 @@ namespace Loot.Modifiers.EquipModifiers.Defensive
 	[UsesEffect(typeof(PercentDefBoostEffect))]
 	public class PercentDefenseBonus : EquipModifier
 	{
-		public override ModifierTooltipBuilder GetTooltip()
+		public override ModifierTooltipLine.ModifierTooltipBuilder GetTooltip()
 		{
 			return base.GetTooltip()
 				.WithPositive($"+{Properties.RoundedPower}% defense");
 		}
 
-		public override ModifierPropertiesBuilder GetModifierProperties(Item item)
+		public override ModifierProperties.ModifierPropertiesBuilder GetModifierProperties(Item item)
 		{
 			return base.GetModifierProperties(item)
 				.WithMaxMagnitude(10f);

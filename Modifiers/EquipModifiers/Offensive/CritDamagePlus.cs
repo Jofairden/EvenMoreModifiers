@@ -50,13 +50,13 @@ namespace Loot.Modifiers.EquipModifiers.Offensive
 	[UsesEffect(typeof(CritDamagePlusEffect))]
 	public class CritDamagePlus : EquipModifier
 	{
-		public override ModifierTooltipBuilder GetTooltip()
+		public override ModifierTooltipLine.ModifierTooltipBuilder GetTooltip()
 		{
 			return base.GetTooltip()
 				.WithPositive($"+{Properties.RoundedPower}% crit multiplier");
 		}
 
-		public override ModifierPropertiesBuilder GetModifierProperties(Item item)
+		public override ModifierProperties.ModifierPropertiesBuilder GetModifierProperties(Item item)
 		{
 			return base.GetModifierProperties(item)
 				.WithMinMagnitude(5f)

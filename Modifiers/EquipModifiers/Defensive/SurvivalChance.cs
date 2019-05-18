@@ -36,7 +36,7 @@ namespace Loot.Modifiers.EquipModifiers.Defensive
 	public class SurvivalChance : EquipModifier
 	{
 		// TODO easier tooltip templating
-		public override ModifierTooltipBuilder GetTooltip()
+		public override ModifierTooltipLine.ModifierTooltipBuilder GetTooltip()
 		{
 			return base.GetTooltip()
 				.WithPositive($"+{Properties.RoundedPower}% chance to survive lethal blows"
@@ -44,7 +44,7 @@ namespace Loot.Modifiers.EquipModifiers.Defensive
 				);
 		}
 
-		public override ModifierPropertiesBuilder GetModifierProperties(Item item)
+		public override ModifierProperties.ModifierPropertiesBuilder GetModifierProperties(Item item)
 		{
 			return base.GetModifierProperties(item)
 				.WithMaxMagnitude(5f)

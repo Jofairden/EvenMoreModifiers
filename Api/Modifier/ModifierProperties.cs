@@ -1,5 +1,6 @@
 using System;
 using System.IO;
+using Loot.Api.Builder;
 using Terraria;
 using Terraria.ModLoader.IO;
 
@@ -10,17 +11,16 @@ namespace Loot.Api.Modifier
 	/// </summary>
 	public class ModifierProperties
 	{
-		public static ModifierPropertiesBuilder Builder
-			=> new ModifierPropertiesBuilder();
+		public static ModifierPropertiesBuilder Builder => new ModifierPropertiesBuilder();
 
-		public readonly float MinMagnitude;
-		public readonly float MaxMagnitude;
-		public readonly float MagnitudeStrength;
-		public readonly float BasePower;
-		public readonly float RarityLevel;
-		public readonly float RollChance;
-		public readonly int RoundPrecision;
-		public readonly bool IsUnique;
+		public float MinMagnitude { get; private set; } = 1f;
+		public float MaxMagnitude { get; private set; } = 1f;
+		public float MagnitudeStrength { get; private set; } = 1f;
+		public float BasePower { get; private set; } = 1f;
+		public float RarityLevel { get; private set; } = 1f;
+		public float RollChance { get; private set; } = 1f;
+		public int RoundPrecision { get; private set; } = 0;
+		public bool IsUnique { get; private set; } = false;
 		public float Magnitude { get; internal set; }
 		private float _power;
 
@@ -30,29 +30,17 @@ namespace Loot.Api.Modifier
 			internal set
 			{
 				_power = value;
-				RoundedPower = (float) Math.Round(value, RoundPrecision);
+				RoundedPower = (float)Math.Round(value, RoundPrecision);
 			}
 		}
 
 		public float RoundedPower { get; private set; }
 
-		public ModifierProperties(float minMagnitude = 1f, float maxMagnitude = 1f, float magnitudeStrength = 1f, float basePower = 1f, float rarityLevel = 1f, float rollChance = 1f, int roundPrecision = 0, bool isUnique = false)
-		{
-			MinMagnitude = minMagnitude;
-			MaxMagnitude = maxMagnitude;
-			MagnitudeStrength = magnitudeStrength;
-			BasePower = basePower;
-			RarityLevel = rarityLevel;
-			RollChance = rollChance;
-			RoundPrecision = roundPrecision;
-			IsUnique = isUnique;
-		}
-
 		public ModifierProperties RollMagnitudeAndPower(float magnitudePower = 1f, float lukStat = 0f)
 		{
 			Magnitude = RollMagnitude(magnitudePower, lukStat);
 
-			int iterations = (int) Math.Ceiling(lukStat) / 2;
+			int iterations = (int)Math.Ceiling(lukStat) / 2;
 
 			// makes you more lucky rolling better magnitudes
 			for (int i = 0; i < iterations; i++)
@@ -147,6 +135,78 @@ namespace Loot.Api.Modifier
 
 			prop.Load(item, tag);
 			return prop;
+		}
+
+		/// <summary>
+		/// The ModifierPropertiesBuilder implements the builder pattern for ModifierProperties
+		/// It provides a structured way to create ("build") an instance of ModifierProperties
+		/// It is used in <see cref="Modifier.GetModifierProperties"/> to dynamically build
+		/// the ModifierProperties for that Modifier.
+		/// </summary>
+		public class ModifierPropertiesBuilder : PropertyBuilder<ModifierProperties>
+		{
+			protected override ModifierProperties DefaultProperty
+			{
+				set
+				{
+					Property.MinMagnitude = value.MinMagnitude;
+					Property.MaxMagnitude = value.MaxMagnitude;
+					Property.MagnitudeStrength = value.MagnitudeStrength;
+					Property.BasePower = value.BasePower;
+					Property.RarityLevel = value.RarityLevel;
+					Property.RollChance = value.RollChance;
+					Property.RoundPrecision = value.RoundPrecision;
+					Property.IsUnique = value.IsUnique;
+				}
+			}
+
+			public ModifierPropertiesBuilder WithMinMagnitude(float val)
+			{
+				Property.MinMagnitude = val;
+				return this;
+			}
+
+			public ModifierPropertiesBuilder WithMaxMagnitude(float val)
+			{
+				Property.MaxMagnitude = val;
+				return this;
+			}
+
+			public ModifierPropertiesBuilder WithMagnitudeStrength(float val)
+			{
+				Property.MagnitudeStrength = val;
+				return this;
+			}
+
+			public ModifierPropertiesBuilder WithBasePower(float val)
+			{
+				Property.BasePower = val;
+				return this;
+			}
+
+			public ModifierPropertiesBuilder WithRarityLevel(float val)
+			{
+				Property.RarityLevel = val;
+				return this;
+			}
+
+			public ModifierPropertiesBuilder WithRollChance(float val)
+			{
+				Property.RollChance = val;
+				return this;
+			}
+
+			public ModifierPropertiesBuilder WithRoundPrecision(int val)
+			{
+				Property.RoundPrecision = val;
+				return this;
+			}
+
+			public ModifierPropertiesBuilder IsUniqueModifier(bool val)
+			{
+				Property.IsUnique = val;
+				return this;
+			}
 		}
 	}
 }

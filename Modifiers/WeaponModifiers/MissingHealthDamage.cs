@@ -6,13 +6,13 @@ namespace Loot.Modifiers.WeaponModifiers
 {
 	public class MissingHealthDamage : WeaponModifier
 	{
-		public override ModifierTooltipBuilder GetTooltip()
+		public override ModifierTooltipLine.ModifierTooltipBuilder GetTooltip()
 		{
 			return base.GetTooltip()
 				.WithPositive($"Up to +{Properties.RoundedPower}% damage based on missing health");
 		}
 
-		public override ModifierPropertiesBuilder GetModifierProperties(Item item)
+		public override ModifierProperties.ModifierPropertiesBuilder GetModifierProperties(Item item)
 		{
 			return base.GetModifierProperties(item)
 				.WithMinMagnitude(5f)

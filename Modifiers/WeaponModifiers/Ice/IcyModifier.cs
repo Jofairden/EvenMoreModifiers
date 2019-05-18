@@ -8,13 +8,13 @@ namespace Loot.Modifiers.WeaponModifiers.Ice
 	{
 		public override string UniqueName => "Icy";
 
-		public override ModifierTooltipBuilder GetTooltip()
+		public override ModifierTooltipLine.ModifierTooltipBuilder GetTooltip()
 		{
 			return base.GetTooltip()
 				.WithPositive($"Inflict frostburn on hit for {Properties.RoundedPower}s");
 		}
 
-		public override ModifierPropertiesBuilder GetModifierProperties(Item item)
+		public override ModifierProperties.ModifierPropertiesBuilder GetModifierProperties(Item item)
 		{
 			return base.GetModifierProperties(item)
 				.WithRollChance(0.125f)

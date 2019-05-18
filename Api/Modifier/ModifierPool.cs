@@ -105,7 +105,7 @@ namespace Loot.Api.Modifier
 		/// Returns an enumerable of the tooltiplines of the active modifiers
 		/// </summary>
 		public IEnumerable<ModifierTooltipLine[]> Description
-			=> ActiveModifiers.Select(m => m.GetTooltip().Build());
+			=> ActiveModifiers.Select(m => m.GetTooltip().Build().ToArray());
 
 		public virtual float RollChance => 1f;
 
