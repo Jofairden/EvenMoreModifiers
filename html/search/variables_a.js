@@ -1,8 +1,8 @@
 var searchData=
 [
-  ['liferegen',['LifeRegen',['../class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_defensive_1_1_life_regen_effect.html#ad9608aa93d67114e202131dc11f8838c',1,'Loot::Modifiers::EquipModifiers::Defensive::LifeRegenEffect']]],
-  ['lightcolor',['LightColor',['../class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_utility_1_1_light_effect.html#a67f9f5a85d8b4c7ecd9728a2e7d9a597',1,'Loot::Modifiers::EquipModifiers::Utility::LightEffect']]],
-  ['lightstrength',['LightStrength',['../class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_utility_1_1_light_effect.html#ad96f5653e50ebc2f3ca7675bdffe8de7',1,'Loot::Modifiers::EquipModifiers::Utility::LightEffect']]],
-  ['loaded',['Loaded',['../class_loot_1_1_loot.html#a515587a9028eb18ecd6f58b7f7f2ec38',1,'Loot::Loot']]],
-  ['luck',['Luck',['../class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_utility_1_1_luck_effect.html#a1c3731ce5ec33eb1aadfa246d6575755',1,'Loot::Modifiers::EquipModifiers::Utility::LuckEffect']]]
+  ['name',['Name',['../class_loot_1_1_api_1_1_modifier_1_1_modifier.html#aa79534221cd4d249a28e074ebaafc953',1,'Loot.Api.Modifier.Modifier.Name()'],['../class_loot_1_1_api_1_1_modifier_1_1_modifier_effect.html#a9cbec7b22dc09d2088f55f1651a5cadb',1,'Loot.Api.Modifier.ModifierEffect.Name()'],['../class_loot_1_1_api_1_1_modifier_1_1_modifier_pool.html#a068bd6f2b76f41e749988fd4b200f41b',1,'Loot.Api.Modifier.ModifierPool.Name()'],['../class_loot_1_1_api_1_1_modifier_1_1_modifier_rarity.html#af88a662965a43cbe5eda12e96db4a0fe',1,'Loot.Api.Modifier.ModifierRarity.Name()'],['../class_loot_tests_1_1_empty_mod_load_shell.html#a61cbd109567bbb13f684f0b2dfd56433',1,'LootTests.EmptyModLoadShell.Name()']]],
+  ['needsclear',['NeedsClear',['../class_loot_1_1_api_1_1_delegators_1_1_modifier_delegator_projectile.html#acc8ba01c1aa5bb14e5401ff23b01c9a2',1,'Loot::Api::Delegators::ModifierDelegatorProjectile']]],
+  ['needsupdate',['NeedsUpdate',['../class_loot_1_1_api_1_1_graphics_1_1_graphics_global_item.html#aef80af3f6816bbe4b8ca1476482fa028',1,'Loot::Api::Graphics::GraphicsGlobalItem']]],
+  ['normal',['Normal',['../class_loot_1_1_api_1_1_ext_1_1_rolling_utils_1_1_strategies.html#a58399e5b6537b46487cf2cc07cdd08fd',1,'Loot::Api::Ext::RollingUtils::Strategies']]],
+  ['npc',['NPC',['../struct_loot_1_1_api_1_1_modifier_1_1_modifier_context.html#ab39bcd589b27f182f57b23151fd30876',1,'Loot::Api::Modifier::ModifierContext']]]
 ];

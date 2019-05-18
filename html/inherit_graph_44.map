@@ -1,6 +1,6 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
 <area shape="rect" id="node1" href="$class_mod_player.html" title="ModPlayer" alt="" coords="6,77,90,104"/>
 <area shape="rect" id="node2" href="$class_loot_1_1_api_1_1_delegators_1_1_modifier_delegator_player.html" title="Holds player&#45;entity data and handles it " alt="" coords="139,5,325,46"/>
-<area shape="rect" id="node3" href="$class_loot_1_1_caching_1_1_modifier_cache_player.html" title="The following code caches the item held and items equipped by players When equips and held items chan..." alt="" coords="139,70,325,111"/>
+<area shape="rect" id="node3" href="$class_loot_1_1_caching_1_1_modifier_cache_player.html" title="Caches the item held and items equipped by players. When equips and held items change, their respective modifiers&#39; effects are automatically called to detach and attach their delegations. " alt="" coords="139,70,325,111"/>
 <area shape="rect" id="node4" href="$class_loot_1_1_hacks_1_1_tinkerer_armor_hack_mod_player.html" title="Currently handles armor hack to make armors reforge as accessories This is needed so that armor can b..." alt="" coords="145,135,319,177"/>
 </map>

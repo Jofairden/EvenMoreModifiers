@@ -1,4 +1,8 @@
 var searchData=
 [
-  ['usedestinationrectangle',['UseDestinationRectangle',['../class_loot_1_1_api_1_1_graphics_1_1_glowmask_entity.html#a2435c9c2f8592875062b96e36d1c006a',1,'Loot.Api.Graphics.GlowmaskEntity.UseDestinationRectangle()'],['../class_loot_1_1_api_1_1_graphics_1_1_shader_entity.html#a8afd6ae933ac6673a918f09462081a47',1,'Loot.Api.Graphics.ShaderEntity.UseDestinationRectangle()']]]
+  ['sealedmodifiers',['SealedModifiers',['../class_loot_1_1_loot_mod_item.html#a5e39094688732f2abf26f5ef302c8139',1,'Loot::LootModItem']]],
+  ['shaderid',['ShaderId',['../class_loot_1_1_api_1_1_graphics_1_1_shader_entity.html#ac92ec9d6a57aa81cb58f49edecb5c653',1,'Loot::Api::Graphics::ShaderEntity']]],
+  ['shadertexture',['ShaderTexture',['../class_loot_1_1_api_1_1_graphics_1_1_shader_entity.html#ae51082dc40f53436e407995cc48933c2',1,'Loot::Api::Graphics::ShaderEntity']]],
+  ['slottedincubeui',['SlottedInCubeUI',['../class_loot_1_1_loot_mod_item.html#a74269f8b4ef4ec8c4a03661940f3ef6c',1,'Loot::LootModItem']]],
+  ['subjecttexture',['SubjectTexture',['../class_loot_1_1_api_1_1_graphics_1_1_shader_entity.html#a3204e706729a9cdb782e090b55436f8c',1,'Loot::Api::Graphics::ShaderEntity']]]
 ];

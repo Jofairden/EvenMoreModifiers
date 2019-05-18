@@ -1,5 +1,5 @@
 <map id="Loot.LootModItem.OnCraft" name="Loot.LootModItem.OnCraft">
-<area shape="rect" id="node2" href="$class_loot_1_1_loot_mod_item.html#a2ba7096b58f248e995f9797f644f8c97" title="Loot.LootModItem.GetItemInfo" alt="" coords="236,60,436,87"/>
+<area shape="rect" id="node2" href="$class_loot_1_1_loot_mod_item.html#aeff8f5daada870d63e036956b4982de2" title="Loot.LootModItem.GetInfo" alt="" coords="249,60,423,87"/>
 <area shape="rect" id="node3" href="$class_loot_1_1_loot_mod_item.html#a2dc10fb19dd930077bf04891e076c88f" title="Attempts to roll new modifiers Has a set chance to hit a predefined pool of modifiers ..." alt="" coords="233,111,439,137"/>
 <area shape="rect" id="node4" href="$class_loot_1_1_api_1_1_ext_1_1_mod_utils.html#a907048acd3c21c89c6d87f91cd3237fa" title="Loot.Api.Ext.ModUtils.Get\lModifierRarity" alt="" coords="494,5,669,46"/>
 <area shape="rect" id="node5" href="$class_loot_1_1_api_1_1_ext_1_1_mod_utils.html#ac094c35ec592ea0728be3aa8d71a2b5f" title="Loot.Api.Ext.ModUtils.Get\lModifierPool" alt="" coords="494,70,669,111"/>

@@ -16,6 +16,5 @@ var searchData=
   ['isnotequippedatall',['IsNotEquippedAtAll',['../class_loot_1_1_hacks_1_1_cheated_item_hack_global_item.html#a4ff1d27ea97fb4818cef025010d7cd6c',1,'Loot::Hacks::CheatedItemHackGlobalItem']]],
   ['isuniquemodifier',['IsUniqueModifier',['../class_loot_1_1_api_1_1_modifier_1_1_modifier_properties_builder.html#a4062318756ff5b2af9aa9931ad6c6de0',1,'Loot::Api::Modifier::ModifierPropertiesBuilder']]],
   ['isvanityset',['IsVanitySet',['../class_loot_1_1_api_1_1_modifier_1_1_modifier.html#a333da1c96aa9c72598047913534201a9',1,'Loot::Api::Modifier::Modifier']]],
-  ['isweapon',['IsWeapon',['../class_loot_1_1_api_1_1_ext_1_1_item_utils.html#a5c9aeaf45d73accd3ae07d7b93f6bdc4',1,'Loot::Api::Ext::ItemUtils']]],
-  ['item',['Item',['../class_loot_1_1_hacks_1_1_cheated_item_hack_global_item.html#ae636816ccb0e87f24c6043489c1bb616',1,'Loot::Hacks::CheatedItemHackGlobalItem']]]
+  ['isweapon',['IsWeapon',['../class_loot_1_1_api_1_1_ext_1_1_item_utils.html#a5c9aeaf45d73accd3ae07d7b93f6bdc4',1,'Loot::Api::Ext::ItemUtils']]]
 ];

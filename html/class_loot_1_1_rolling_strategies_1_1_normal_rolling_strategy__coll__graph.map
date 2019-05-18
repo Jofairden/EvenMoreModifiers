@@ -1,14 +1,6 @@
 <map id="Loot.RollingStrategies.NormalRollingStrategy" name="Loot.RollingStrategies.NormalRollingStrategy">
-<area shape="rect" id="node2" href="$interface_loot_1_1_api_1_1_strategy_1_1_i_rolling_strategy.html" title="IRollingStrategy\&lt; Rolling\lStrategyContext \&gt;" alt="" coords="1137,659,1303,701"/>
-<area shape="rect" id="node3" href="$class_loot_1_1_api_1_1_strategy_1_1_rolling_strategy_properties.html" title="Defines properties that will be used when an item is being rolled in a IRollingStrategy&lt;T&gt; These can ..." alt="" coords="945,330,1111,371"/>
-<area shape="rect" id="node5" href="$class_loot_1_1_loot_mod_item.html" title="Defines an item that may be modified by modifiers from mods " alt="" coords="1157,788,1283,815"/>
-<area shape="rect" id="node7" href="$class_loot_1_1_api_1_1_modifier_1_1_modifier_rarity.html" title="Defines the rarity of a modifier " alt="" coords="736,357,907,398"/>
-<area shape="rect" id="node15" href="$class_loot_1_1_api_1_1_modifier_1_1_modifier_pool.html" title="Defines a modifier pool. A modifier pool holds a certain amount of effects in an array It allows to r..." alt="" coords="723,788,919,815"/>
-<area shape="rect" id="node6" href="$class_global_item.html" title="GlobalItem" alt="" coords="43,981,128,1008"/>
-<area shape="rect" id="node16" href="$class_loot_1_1_api_1_1_modifier_1_1_modifier.html" title="Defines a modifier, which is an unloaded GlobalItem Making it a GlobalItem gives easy access to all h..." alt="" coords="353,799,524,825"/>
-<area shape="rect" id="node8" href="$interface_loot_1_1_api_1_1_content_1_1_i_loadable_content.html" title="ILoadableContent" alt="" coords="23,865,147,892"/>
-<area shape="rect" id="node9" title="Used to restrict setting properties of ILoadableContent to internal only " alt="" coords="6,639,165,665"/>
-<area shape="rect" id="node10" href="$class_i_cloneable.html" title="ICloneable" alt="" coords="43,689,127,716"/>
-<area shape="rect" id="node20" href="$class_loot_1_1_api_1_1_attributes_1_1_populate_pool_from_attribute.html" title="Will populate a ModifierPool based on a namespace All Modifiers in that namespace will become part of..." alt="" coords="346,1069,531,1110"/>
-<area shape="rect" id="node21" href="$class_attribute.html" title="Attribute" alt="" coords="50,1101,121,1128"/>
+<area shape="rect" id="node2" href="$interface_loot_1_1_api_1_1_strategy_1_1_i_rolling_strategy.html" title="IRollingStrategy\&lt; Rolling\lStrategyContext \&gt;" alt="" coords="259,5,426,46"/>
+<area shape="rect" id="node3" href="$class_loot_1_1_api_1_1_strategy_1_1_rolling_strategy_properties.html" title="Defines properties that will be used when an item is being rolled in a IRollingStrategy&lt;T&gt; These can ..." alt="" coords="259,70,426,111"/>
+<area shape="rect" id="node5" href="$class_loot_1_1_loot_mod_item.html" title="Defines an item that may be modified by modifiers from mods " alt="" coords="279,136,406,163"/>
+<area shape="rect" id="node6" href="$class_global_item.html" title="GlobalItem" alt="" coords="5,136,91,163"/>
 </map>

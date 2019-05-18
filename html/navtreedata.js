@@ -34,9 +34,9 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "_accessory_modifier_8cs.html",
-"_modifier_effect_content_8cs.html",
-"class_loot_1_1_api_1_1_ext_1_1_mod_utils.html",
-"class_loot_1_1_api_1_1_modifier_1_1_modifier_properties.html#a4da982f0f6b391d5e46a32b61a9b6375",
+"_modifier_pool_8cs.html",
+"class_loot_1_1_api_1_1_ext_1_1_mod_utils.html#a12e31ed308dc5e0169dcdfd10f556a23",
+"class_loot_1_1_api_1_1_modifier_1_1_modifier_properties.html#a5c0d0e2b1972bcbcbc599134f0fc0dbf",
 "class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_defensive_1_1_health_plus.html#a08a50adb42c5989ed3aa8fa9f8b4d742",
 "class_loot_1_1_pools_1_1_null_modifier_pool.html#a14fe029d755e18ba07935131984d680d",
 "namespace_loot_1_1_modifiers_1_1_base.html"

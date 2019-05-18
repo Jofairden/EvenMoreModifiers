@@ -69,7 +69,8 @@ var hierarchy =
       ] ],
       [ "Loot.Hacks.CheatedItemHackGlobalItem", "class_loot_1_1_hacks_1_1_cheated_item_hack_global_item.html", null ],
       [ "Loot.Hacks.TinkererArmorHackGlobalItem", "class_loot_1_1_hacks_1_1_tinkerer_armor_hack_global_item.html", null ],
-      [ "Loot.LootModItem", "class_loot_1_1_loot_mod_item.html", null ]
+      [ "Loot.LootModItem", "class_loot_1_1_loot_mod_item.html", null ],
+      [ "Loot.ModSupport.WingSlotSupport.WingSlotSupportGlobalItem", "class_loot_1_1_mod_support_1_1_wing_slot_support_1_1_wing_slot_support_global_item.html", null ]
     ] ],
     [ "GlobalNPC", "class_global_n_p_c.html", [
       [ "Loot.Cubes.CubeShop", "class_loot_1_1_cubes_1_1_cube_shop.html", null ]

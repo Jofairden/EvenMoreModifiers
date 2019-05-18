@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['shaderid',['ShaderId',['../class_loot_1_1_api_1_1_graphics_1_1_shader_entity.html#ac92ec9d6a57aa81cb58f49edecb5c653',1,'Loot::Api::Graphics::ShaderEntity']]],
-  ['shadertexture',['ShaderTexture',['../class_loot_1_1_api_1_1_graphics_1_1_shader_entity.html#ae51082dc40f53436e407995cc48933c2',1,'Loot::Api::Graphics::ShaderEntity']]],
-  ['subjecttexture',['SubjectTexture',['../class_loot_1_1_api_1_1_graphics_1_1_shader_entity.html#a3204e706729a9cdb782e090b55436f8c',1,'Loot::Api::Graphics::ShaderEntity']]]
+  ['power',['Power',['../class_loot_1_1_api_1_1_modifier_1_1_modifier_properties.html#ab7cef419a42e5135ed1e3c30e5b0a8c0',1,'Loot.Api.Modifier.ModifierProperties.Power()'],['../interface_loot_tests_1_1_modifier_properties_tests_1_1_i_fake_properties.html#ae7529a0f8b8d95f5c067d1107aee30b2',1,'LootTests.ModifierPropertiesTests.IFakeProperties.Power()'],['../class_loot_tests_1_1_modifier_properties_tests_1_1_fake_properties.html#a123b7ddd1ad973d5ed0acbb3ccf7d1d8',1,'LootTests.ModifierPropertiesTests.FakeProperties.Power()']]],
+  ['properties',['Properties',['../class_loot_1_1_api_1_1_modifier_1_1_modifier.html#a293f173222666944dffe7957753d0d53',1,'Loot::Api::Modifier::Modifier']]]
 ];

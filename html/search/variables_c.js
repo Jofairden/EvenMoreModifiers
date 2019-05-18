@@ -1,8 +1,7 @@
 var searchData=
 [
-  ['name',['Name',['../class_loot_1_1_api_1_1_modifier_1_1_modifier.html#aa79534221cd4d249a28e074ebaafc953',1,'Loot.Api.Modifier.Modifier.Name()'],['../class_loot_1_1_api_1_1_modifier_1_1_modifier_effect.html#a9cbec7b22dc09d2088f55f1651a5cadb',1,'Loot.Api.Modifier.ModifierEffect.Name()'],['../class_loot_1_1_api_1_1_modifier_1_1_modifier_pool.html#a068bd6f2b76f41e749988fd4b200f41b',1,'Loot.Api.Modifier.ModifierPool.Name()'],['../class_loot_1_1_api_1_1_modifier_1_1_modifier_rarity.html#af88a662965a43cbe5eda12e96db4a0fe',1,'Loot.Api.Modifier.ModifierRarity.Name()'],['../class_loot_tests_1_1_empty_mod_load_shell.html#a61cbd109567bbb13f684f0b2dfd56433',1,'LootTests.EmptyModLoadShell.Name()']]],
-  ['needsclear',['NeedsClear',['../class_loot_1_1_api_1_1_delegators_1_1_modifier_delegator_projectile.html#acc8ba01c1aa5bb14e5401ff23b01c9a2',1,'Loot::Api::Delegators::ModifierDelegatorProjectile']]],
-  ['needsupdate',['NeedsUpdate',['../class_loot_1_1_api_1_1_graphics_1_1_graphics_global_item.html#aef80af3f6816bbe4b8ca1476482fa028',1,'Loot::Api::Graphics::GraphicsGlobalItem']]],
-  ['normal',['Normal',['../class_loot_1_1_api_1_1_ext_1_1_rolling_utils_1_1_strategies.html#a58399e5b6537b46487cf2cc07cdd08fd',1,'Loot::Api::Ext::RollingUtils::Strategies']]],
-  ['npc',['NPC',['../struct_loot_1_1_api_1_1_modifier_1_1_modifier_context.html#ab39bcd589b27f182f57b23151fd30876',1,'Loot::Api::Modifier::ModifierContext']]]
+  ['padding_5ffor_5fbox',['PADDING_FOR_BOX',['../class_loot_1_1_api_1_1_cubes_1_1_magical_cube.html#ac9438f7aace9a55a0efdf276d15a00b7',1,'Loot::Api::Cubes::MagicalCube']]],
+  ['percentdefboost',['PercentDefBoost',['../class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_defensive_1_1_percent_def_boost_effect.html#a6f264c4662973e973e6cda88dcc1ea36',1,'Loot::Modifiers::EquipModifiers::Defensive::PercentDefBoostEffect']]],
+  ['player',['Player',['../struct_loot_1_1_api_1_1_modifier_1_1_modifier_context.html#a428e7adb7c9e4518fed871a186e6f432',1,'Loot::Api::Modifier::ModifierContext']]],
+  ['properties',['Properties',['../class_loot_1_1_api_1_1_strategy_1_1_rolling_strategy_context.html#acd1a362b8faa3ecb8ba3e524ecb21387',1,'Loot.Api.Strategy.RollingStrategyContext.Properties()'],['../class_loot_1_1_rolling_strategies_1_1_normal_rolling_strategy.html#a83f959ed037bdadf92976ec89515e92e',1,'Loot.RollingStrategies.NormalRollingStrategy.properties()']]]
 ];

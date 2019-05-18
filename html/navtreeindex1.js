@@ -1,7 +1,5 @@
 var NAVTREEINDEX1 =
 {
-"_modifier_effect_content_8cs.html":[3,0,2,1],
-"_modifier_effect_content_8cs_source.html":[3,0,2,1],
 "_modifier_pool_8cs.html":[3,0,0,8,4],
 "_modifier_pool_8cs_source.html":[3,0,0,8,4],
 "_modifier_pool_content_8cs.html":[3,0,2,2],
@@ -92,10 +90,10 @@ var NAVTREEINDEX1 =
 "_thrown_crit_plus_8cs_source.html":[3,0,7,1,1,9],
 "_thrown_damage_plus_8cs.html":[3,0,7,1,1,10],
 "_thrown_damage_plus_8cs_source.html":[3,0,7,1,1,10],
-"_tinkerer_armor_hack_global_item_8cs.html":[3,0,5,3],
-"_tinkerer_armor_hack_global_item_8cs_source.html":[3,0,5,3],
-"_tinkerer_armor_hack_mod_player_8cs.html":[3,0,5,4],
-"_tinkerer_armor_hack_mod_player_8cs_source.html":[3,0,5,4],
+"_tinkerer_armor_hack_global_item_8cs.html":[3,0,5,2],
+"_tinkerer_armor_hack_global_item_8cs_source.html":[3,0,5,2],
+"_tinkerer_armor_hack_mod_player_8cs.html":[3,0,5,3],
+"_tinkerer_armor_hack_mod_player_8cs_source.html":[3,0,5,3],
 "_transcendent_rarity_8cs.html":[3,0,10,5],
 "_transcendent_rarity_8cs_source.html":[3,0,10,5],
 "_u_i_sounds_8cs.html":[3,0,12,0,0],
@@ -249,5 +247,7 @@ var NAVTREEINDEX1 =
 "class_loot_1_1_api_1_1_ext_1_1_item_utils.html#a7bc00dba1666136dfd6dc85ba36cff5b":[2,0,0,0,4,1,5],
 "class_loot_1_1_api_1_1_ext_1_1_item_utils.html#ab53a14a01de3de30e90c345c3a746a61":[2,0,0,0,4,1,3],
 "class_loot_1_1_api_1_1_ext_1_1_item_utils.html#acc5b051434cec09cf4975976804caf10":[2,0,0,0,4,1,0],
-"class_loot_1_1_api_1_1_ext_1_1_item_utils.html#ae792e1f909e3c3962ef858847d0ceeef":[2,0,0,0,4,1,2]
+"class_loot_1_1_api_1_1_ext_1_1_item_utils.html#ae792e1f909e3c3962ef858847d0ceeef":[2,0,0,0,4,1,2],
+"class_loot_1_1_api_1_1_ext_1_1_mod_utils.html":[2,0,0,0,4,2],
+"class_loot_1_1_api_1_1_ext_1_1_mod_utils.html#a0246e41051d8274a3aafd55d7952c4be":[2,0,0,0,4,2,25]
 };

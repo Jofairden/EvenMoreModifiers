@@ -4,7 +4,6 @@ var dir_1b4a44bb6da588583fa98f3019998a5f =
     [ "CheatedItemHackGlobalItem.cs", "_cheated_item_hack_global_item_8cs.html", [
       [ "CheatedItemHackGlobalItem", "class_loot_1_1_hacks_1_1_cheated_item_hack_global_item.html", "class_loot_1_1_hacks_1_1_cheated_item_hack_global_item" ]
     ] ],
-    [ "CubeUIHackGlobalItem.cs", "_cube_u_i_hack_global_item_8cs.html", null ],
     [ "TinkererArmorHackGlobalItem.cs", "_tinkerer_armor_hack_global_item_8cs.html", [
       [ "TinkererArmorHackGlobalItem", "class_loot_1_1_hacks_1_1_tinkerer_armor_hack_global_item.html", "class_loot_1_1_hacks_1_1_tinkerer_armor_hack_global_item" ]
     ] ],

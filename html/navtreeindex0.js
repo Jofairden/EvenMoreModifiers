@@ -36,8 +36,6 @@ var NAVTREEINDEX0 =
 "_cube_of_sealing_8cs_source.html":[3,0,3,1],
 "_cube_shop_8cs.html":[3,0,3,2],
 "_cube_shop_8cs_source.html":[3,0,3,2],
-"_cube_u_i_hack_global_item_8cs.html":[3,0,5,2],
-"_cube_u_i_hack_global_item_8cs_source.html":[3,0,5,2],
 "_cursed_damage_8cs.html":[3,0,7,2,3],
 "_cursed_damage_8cs_source.html":[3,0,7,2,3],
 "_damage_plus_8cs.html":[3,0,7,2,4],
@@ -249,5 +247,7 @@ var NAVTREEINDEX0 =
 "_modifier_delegator_projectile_8cs.html":[3,0,0,3,2],
 "_modifier_delegator_projectile_8cs_source.html":[3,0,0,3,2],
 "_modifier_effect_8cs.html":[3,0,0,8,3],
-"_modifier_effect_8cs_source.html":[3,0,0,8,3]
+"_modifier_effect_8cs_source.html":[3,0,0,8,3],
+"_modifier_effect_content_8cs.html":[3,0,2,1],
+"_modifier_effect_content_8cs_source.html":[3,0,2,1]
 };

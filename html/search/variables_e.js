@@ -1,7 +1,10 @@
 var searchData=
 [
-  ['padding_5ffor_5fbox',['PADDING_FOR_BOX',['../class_loot_1_1_api_1_1_cubes_1_1_magical_cube.html#ac9438f7aace9a55a0efdf276d15a00b7',1,'Loot::Api::Cubes::MagicalCube']]],
-  ['percentdefboost',['PercentDefBoost',['../class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_defensive_1_1_percent_def_boost_effect.html#a6f264c4662973e973e6cda88dcc1ea36',1,'Loot::Modifiers::EquipModifiers::Defensive::PercentDefBoostEffect']]],
-  ['player',['Player',['../struct_loot_1_1_api_1_1_modifier_1_1_modifier_context.html#a428e7adb7c9e4518fed871a186e6f432',1,'Loot::Api::Modifier::ModifierContext']]],
-  ['properties',['Properties',['../class_loot_1_1_api_1_1_strategy_1_1_rolling_strategy_context.html#acd1a362b8faa3ecb8ba3e524ecb21387',1,'Loot.Api.Strategy.RollingStrategyContext.Properties()'],['../class_loot_1_1_rolling_strategies_1_1_normal_rolling_strategy.html#a83f959ed037bdadf92976ec89515e92e',1,'Loot.RollingStrategies.NormalRollingStrategy.properties()']]]
+  ['save_5fversion',['SAVE_VERSION',['../class_loot_1_1_api_1_1_modifier_1_1_modifier_pool.html#ab4ef549fde3ff42d4996fc7ad345a411',1,'Loot.Api.Modifier.ModifierPool.SAVE_VERSION()'],['../class_loot_1_1_api_1_1_modifier_1_1_modifier_rarity.html#ac13c57615d5dc35f550e09558a6a9856',1,'Loot.Api.Modifier.ModifierRarity.SAVE_VERSION()'],['../class_loot_1_1_loot_mod_item.html#a054d25adc3b432a8589f90fbc886d111',1,'Loot.LootModItem.SAVE_VERSION()']]],
+  ['shaderentities',['ShaderEntities',['../class_loot_1_1_api_1_1_graphics_1_1_graphics_global_item.html#a91622cba55944a153f95a043ecb74e3a',1,'Loot::Api::Graphics::GraphicsGlobalItem']]],
+  ['snapshotcritmulti',['SnapshotCritMulti',['../class_loot_1_1_api_1_1_delegators_1_1_modifier_delegator_projectile.html#a3284b9dfdbe27b0ab70252afb6e1f4e7',1,'Loot::Api::Delegators::ModifierDelegatorProjectile']]],
+  ['snapshotdebuffchances',['SnapshotDebuffChances',['../class_loot_1_1_api_1_1_delegators_1_1_modifier_delegator_projectile.html#a2847bfcbe558620d4d3a887bb462fbed',1,'Loot::Api::Delegators::ModifierDelegatorProjectile']]],
+  ['snapshothealthyfoesmulti',['SnapshotHealthyFoesMulti',['../class_loot_1_1_api_1_1_delegators_1_1_modifier_delegator_projectile.html#a8bdbcca6449eb7b88be9d75862e3742c',1,'Loot::Api::Delegators::ModifierDelegatorProjectile']]],
+  ['strategy',['Strategy',['../struct_loot_1_1_api_1_1_modifier_1_1_modifier_context.html#a53cf0428d46c6cd3d3922c760e0798c8',1,'Loot::Api::Modifier::ModifierContext']]],
+  ['survivalchance',['SurvivalChance',['../class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_defensive_1_1_survival_effect.html#a3889be5b24052f27f7260a244825a4d3',1,'Loot::Modifiers::EquipModifiers::Defensive::SurvivalEffect']]]
 ];

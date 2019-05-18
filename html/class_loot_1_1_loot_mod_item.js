@@ -2,7 +2,7 @@ var class_loot_1_1_loot_mod_item =
 [
     [ "Clone", "class_loot_1_1_loot_mod_item.html#a0a30da95d1a71ec46c9ff1ea8a2a0bf6", null ],
     [ "GetActivePool", "class_loot_1_1_loot_mod_item.html#add1489001e88a446099fefcd8193852a", null ],
-    [ "GetItemInfo", "class_loot_1_1_loot_mod_item.html#a2ba7096b58f248e995f9797f644f8c97", null ],
+    [ "GetInfo", "class_loot_1_1_loot_mod_item.html#aeff8f5daada870d63e036956b4982de2", null ],
     [ "GetPrefixNormString", "class_loot_1_1_loot_mod_item.html#a0933b898369ef1a285c3acaaf1f8e53f", null ],
     [ "InvalidateRolls", "class_loot_1_1_loot_mod_item.html#a5b0da3bc74988a42fe0b4fc7a42f00e1", null ],
     [ "Load", "class_loot_1_1_loot_mod_item.html#abf189bb2ef446be92c178c62e356b129", null ],
@@ -16,12 +16,13 @@ var class_loot_1_1_loot_mod_item =
     [ "RollNewPool", "class_loot_1_1_loot_mod_item.html#a2dc10fb19dd930077bf04891e076c88f", null ],
     [ "Save", "class_loot_1_1_loot_mod_item.html#afabcec9bb71e5df318db98550e482d24", null ],
     [ "CloneNewInstances", "class_loot_1_1_loot_mod_item.html#a3edb22152bf73b1a0274057160ceb27c", null ],
-    [ "HasRolled", "class_loot_1_1_loot_mod_item.html#a3df96a7be288ab9273334200ec455a4e", null ],
     [ "InstancePerEntity", "class_loot_1_1_loot_mod_item.html#a5c2460f80cae10b2992b32b176bcf39f", null ],
+    [ "SAVE_VERSION", "class_loot_1_1_loot_mod_item.html#a054d25adc3b432a8589f90fbc886d111", null ],
+    [ "HasRolled", "class_loot_1_1_loot_mod_item.html#a3df96a7be288ab9273334200ec455a4e", null ],
+    [ "IsActivated", "class_loot_1_1_loot_mod_item.html#a3741dc771d55016b321e87de313ef1bd", null ],
     [ "JustTinkerModified", "class_loot_1_1_loot_mod_item.html#af8ddfce165b49c0e9ca6561b8afb96b9", null ],
     [ "ModifierPool", "class_loot_1_1_loot_mod_item.html#ab98f26190033d85fe3f7e1362a032d1c", null ],
     [ "ModifierRarity", "class_loot_1_1_loot_mod_item.html#aa7550eacacab94f1a9aa53492f686b2d", null ],
-    [ "SAVE_VERSION", "class_loot_1_1_loot_mod_item.html#a054d25adc3b432a8589f90fbc886d111", null ],
     [ "SealedModifiers", "class_loot_1_1_loot_mod_item.html#a5e39094688732f2abf26f5ef302c8139", null ],
     [ "SlottedInCubeUI", "class_loot_1_1_loot_mod_item.html#a74269f8b4ef4ec8c4a03661940f3ef6c", null ]
 ];
