@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using Loot.Api.Ext;
+using Loot.Api.Graphics;
 using Loot.Api.Loaders;
 using Loot.Api.Modifier;
 using Loot.Caching;
@@ -88,6 +89,7 @@ namespace Loot.Api.Delegators
 		{
 			// Initialize the effects list for this player
 			_modifierEffects = new List<ModifierEffect>();
+
 			// Need to initialize with a fresh set of new effect instances
 			foreach (var effect in ContentLoader.ModifierEffect.Content.Select(x => x.Value))
 			{

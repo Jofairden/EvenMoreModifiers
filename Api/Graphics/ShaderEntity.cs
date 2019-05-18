@@ -31,6 +31,7 @@ namespace Loot.Api.Graphics
 		public bool UseDestinationRectangle { get; set; }
 		public Rectangle? DestinationRectangle { get; set; }
 		public short Order { get; set; }
+		public bool SkipUpdatingDrawData { get; set; }
 
 		public ShaderEntity(object subjectIdentity, int shaderId, bool drawShader = true, ShaderDrawLayer drawLayer = ShaderDrawLayer.Back, ShaderDrawOffsetStyle drawOffsetStyle = ShaderDrawOffsetStyle.Default,
 			int numSegments = 8, int drawDistance = 4, Color? shaderDrawColor = null, bool useDestinationRectangle = true, short order = 0)
@@ -76,6 +77,8 @@ namespace Loot.Api.Graphics
 		/// </summary>
 		public void TryGettingDrawData(float rotation, float scale)
 		{
+			if (SkipUpdatingDrawData) return;
+
 			DrawData = new DrawData
 			{
 				color = DrawColor,
@@ -95,6 +98,8 @@ namespace Loot.Api.Graphics
 		// TODO custom animation logic
 		public void TryUpdatingDrawData(Texture2D texture)
 		{
+			if (SkipUpdatingDrawData) return;
+
 			var frame = texture.Frame();
 			DrawData.position = new Vector2
 			(
@@ -160,22 +165,24 @@ namespace Loot.Api.Graphics
 					if (DrawLayer == ShaderDrawLayer.Back)
 					{
 						DoDrawShader(ShaderTexture, spriteBatch);
-						DoDrawSubject(SubjectTexture, spriteBatch, lightColor, alphaColor);
+						DoDrawSubject(SubjectTexture, spriteBatch, lightColor);
 						glowmaskEntity?.DoDrawGlowmask(spriteBatch, lightColor, alphaColor, rotation, scale, Entity.whoAmI);
 					}
 					else if (DrawLayer == ShaderDrawLayer.Middle)
 					{
-						DoDrawSubject(SubjectTexture, spriteBatch, lightColor, alphaColor);
+						DoDrawSubject(SubjectTexture, spriteBatch, lightColor);
 						DoDrawShader(ShaderTexture, spriteBatch);
 						glowmaskEntity?.DoDrawGlowmask(spriteBatch, lightColor, alphaColor, rotation, scale, Entity.whoAmI);
 					}
 					else if (DrawLayer == ShaderDrawLayer.Front)
 					{
-						DoDrawSubject(SubjectTexture, spriteBatch, lightColor, alphaColor);
+						DoDrawSubject(SubjectTexture, spriteBatch, lightColor);
 						glowmaskEntity?.DoDrawGlowmask(spriteBatch, lightColor, alphaColor, rotation, scale, Entity.whoAmI);
 						DoDrawShader(ShaderTexture, spriteBatch);
 					}
 				}
+
+				SkipUpdatingDrawData = false;
 			}
 		}
 
@@ -202,7 +209,7 @@ namespace Loot.Api.Graphics
 		/// <summary>
 		/// Will draw the entity's regular sprite
 		/// </summary>
-		public void DoDrawSubject(Texture2D subjectTexture, SpriteBatch spriteBatch, Color lightColor, Color alphaColor)
+		public void DoDrawSubject(Texture2D subjectTexture, SpriteBatch spriteBatch, Color lightColor)
 		{
 			TryUpdatingDrawData(subjectTexture);
 			spriteBatch.Draw(subjectTexture, DrawData.position, DrawData.destinationRectangle, lightColor, DrawData.rotation, DrawData.origin, DrawData.scale, DrawData.effect, 0f);

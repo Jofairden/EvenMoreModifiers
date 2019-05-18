@@ -21,6 +21,7 @@ namespace Loot.Api.Graphics
 		public bool UseDestinationRectangle { get; set; }
 		public Rectangle? DestinationRectangle { get; set; }
 		public short Order { get; set; }
+		public bool SkipUpdatingDrawData { get; set; }
 
 		public GlowmaskEntity(object subjectIdentity, bool drawHitbox = false, bool drawGlowmask = true, bool useDestinationRectangle = true, short order = 0)
 			: base(subjectIdentity)

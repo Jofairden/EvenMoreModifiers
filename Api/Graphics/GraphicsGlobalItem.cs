@@ -13,14 +13,27 @@ namespace Loot.Api.Graphics
 	/// </summary>
 	public class GraphicsGlobalItem : GlobalItem
 	{
-		public List<ShaderEntity> ShaderEntities = new List<ShaderEntity>();
-		public List<GlowmaskEntity> GlowmaskEntities = new List<GlowmaskEntity>();
-		public bool NeedsUpdate = true;
+		public List<ShaderEntity> ShaderEntities { get; private set; } = new List<ShaderEntity>();
+		public List<GlowmaskEntity> GlowmaskEntities { get; private set; } = new List<GlowmaskEntity>();
+		public bool NeedsUpdate  = true;
 
 		public override bool InstancePerEntity => true;
 		public override bool CloneNewInstances => true;
 
-		private bool _hasShaderEntities => (ShaderEntities?.Count ?? 0) > 0;
+		public static GraphicsGlobalItem GetInfo(Item item) => item.GetGlobalItem<GraphicsGlobalItem>();
+
+		public bool HasShaders => (ShaderEntities?.Count ?? 0) > 0;
+		public bool HasGlowmasks => (GlowmaskEntities?.Count ?? 0) > 0;
+
+		public override void UpdateInventory(Item item, Player player)
+		{
+			UpdateEntities(item);
+		}
+
+		public override void UpdateEquip(Item item, Player player)
+		{
+			UpdateEntities(item);
+		}
 
 		public void UpdateEntities(Item item)
 		{
@@ -81,7 +94,7 @@ namespace Loot.Api.Graphics
 
 		public override void PostDrawInWorld(Item item, SpriteBatch spriteBatch, Color lightColor, Color alphaColor, float rotation, float scale, int whoAmI)
 		{
-			if (_hasShaderEntities) return;
+			if (HasShaders) return;
 
 			foreach (var entity in GlowmaskEntities)
 			{
