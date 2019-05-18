@@ -1,6 +1,7 @@
 var searchData=
 [
   ['immunity',['Immunity',['../class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_defensive_1_1_immunity_effect.html#aafd522ee7bcc6710cede2c86c606ab77',1,'Loot::Modifiers::EquipModifiers::Defensive::ImmunityEffect']]],
+  ['initfields',['InitFields',['../class_loot_1_1_core_1_1_system_1_1_strategy_1_1_normal_rolling_strategy.html#a86c4576ff47bc660fa69dc2202a8f437',1,'Loot::Core::System::Strategy::NormalRollingStrategy']]],
   ['initialize',['Initialize',['../class_loot_1_1_core_1_1_caching_1_1_modifier_cache_player.html#a1bda73c87adc036f152aff0d2ab733f9',1,'Loot.Core.Caching.ModifierCachePlayer.Initialize()'],['../class_loot_1_1_core_1_1_mod_content_1_1_graphics_mod_content.html#a8d2c308ba9d0de1ed6c0d82c4a2d5752',1,'Loot.Core.ModContent.GraphicsModContent.Initialize()'],['../class_loot_1_1_core_1_1_mod_content_1_1_texture_mod_content.html#a0ea5fcefc9c8760bfbba0d586395f9c4',1,'Loot.Core.ModContent.TextureModContent.Initialize()'],['../class_loot_1_1_e_m_m_world.html#a252c7a1b1f159d75b56c73f9a2c84811',1,'Loot.EMMWorld.Initialize()'],['../class_loot_1_1_modifier_player.html#a9bc8ae11cb88c3f5ebfca436fe7c7095',1,'Loot.ModifierPlayer.Initialize()']]],
   ['interactionlogic',['InteractionLogic',['../class_loot_1_1_u_i_1_1_core_1_1_u_i_cube_item_panel.html#a263c26a2a138651d908c338a3b1c2f8e',1,'Loot::UI::Core::UICubeItemPanel']]],
   ['invalidaterolls',['InvalidateRolls',['../class_loot_1_1_e_m_m_item.html#a3c96b9a7d32d86f9e9cfe88dcbdcf22a',1,'Loot::EMMItem']]],

@@ -125,7 +125,10 @@ var hierarchy =
       [ "Loot.Core.System.Modifier.ModifierPool", "class_loot_1_1_core_1_1_system_1_1_modifier_1_1_modifier_pool.html", null ],
       [ "Loot.Core.System.Modifier.ModifierRarity", "class_loot_1_1_core_1_1_system_1_1_modifier_1_1_modifier_rarity.html", null ]
     ] ],
-    [ "Loot.Core.Cubes.ItemRollProperties", "class_loot_1_1_core_1_1_cubes_1_1_item_roll_properties.html", null ],
+    [ "Loot.Core.System.Strategy.IRollingStrategy< in in T >", "interface_loot_1_1_core_1_1_system_1_1_strategy_1_1_i_rolling_strategy.html", null ],
+    [ "Loot.Core.System.Strategy.IRollingStrategy< RollingStrategyContext >", "interface_loot_1_1_core_1_1_system_1_1_strategy_1_1_i_rolling_strategy.html", [
+      [ "Loot.Core.System.Strategy.NormalRollingStrategy", "class_loot_1_1_core_1_1_system_1_1_strategy_1_1_normal_rolling_strategy.html", null ]
+    ] ],
     [ "Loot.Ext.ItemUtils", "class_loot_1_1_ext_1_1_item_utils.html", null ],
     [ "Loot.Core.System.Core.LoadableContentBase< T >", "class_loot_1_1_core_1_1_system_1_1_core_1_1_loadable_content_base.html", null ],
     [ "Loot.Core.System.Core.LoadableContentBase< Modifier.Modifier >", "class_loot_1_1_core_1_1_system_1_1_core_1_1_loadable_content_base.html", [
@@ -182,8 +185,13 @@ var hierarchy =
     [ "ModWorld", "class_mod_world.html", [
       [ "Loot.EMMWorld", "class_loot_1_1_e_m_m_world.html", null ]
     ] ],
+    [ "Loot.Ext.RollingUtils.Properties", "class_loot_1_1_ext_1_1_rolling_utils_1_1_properties.html", null ],
+    [ "Loot.Core.System.Strategy.RollingStrategyContext", "class_loot_1_1_core_1_1_system_1_1_strategy_1_1_rolling_strategy_context.html", null ],
+    [ "Loot.Core.System.Strategy.RollingStrategyProperties", "class_loot_1_1_core_1_1_system_1_1_strategy_1_1_rolling_strategy_properties.html", null ],
+    [ "Loot.Ext.RollingUtils", "class_loot_1_1_ext_1_1_rolling_utils.html", null ],
     [ "Loot.Sounds.Custom.SoundMaker", "class_loot_1_1_sounds_1_1_custom_1_1_sound_maker.html", null ],
     [ "Loot.UI.Common.Tabs.Soulforging.GuiSoulgauge.GaugeDrawing.STATIC", "class_loot_1_1_u_i_1_1_common_1_1_tabs_1_1_soulforging_1_1_gui_soulgauge_1_1_gauge_drawing_1_1_s_t_a_t_i_c.html", null ],
+    [ "Loot.Ext.RollingUtils.Strategies", "class_loot_1_1_ext_1_1_rolling_utils_1_1_strategies.html", null ],
     [ "Loot.Core.ModContent.TextureModContent", "class_loot_1_1_core_1_1_mod_content_1_1_texture_mod_content.html", [
       [ "Loot.Core.ModContent.GraphicsModContent", "class_loot_1_1_core_1_1_mod_content_1_1_graphics_mod_content.html", null ]
     ] ],

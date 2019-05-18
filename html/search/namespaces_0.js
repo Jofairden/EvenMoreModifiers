@@ -35,6 +35,7 @@ var searchData=
   ['sealing',['Sealing',['../namespace_loot_1_1_u_i_1_1_sealing.html',1,'Loot::UI']]],
   ['soulforging',['Soulforging',['../namespace_loot_1_1_u_i_1_1_common_1_1_tabs_1_1_soulforging.html',1,'Loot::UI::Common::Tabs']]],
   ['sounds',['Sounds',['../namespace_loot_1_1_sounds.html',1,'Loot']]],
+  ['strategy',['Strategy',['../namespace_loot_1_1_core_1_1_system_1_1_strategy.html',1,'Loot::Core::System']]],
   ['system',['System',['../namespace_loot_1_1_core_1_1_system.html',1,'Loot::Core']]],
   ['tabs',['Tabs',['../namespace_loot_1_1_u_i_1_1_common_1_1_tabs.html',1,'Loot::UI::Common']]],
   ['testmodifiers',['TestModifiers',['../namespace_loot_tests_1_1_test_modifiers.html',1,'LootTests']]],

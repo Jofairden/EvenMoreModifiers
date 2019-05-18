@@ -6,5 +6,6 @@ var struct_loot_1_1_core_1_1_system_1_1_modifier_1_1_modifier_context =
     [ "NPC", "struct_loot_1_1_core_1_1_system_1_1_modifier_1_1_modifier_context.html#a13c291a613b886429f9fca51e8045191", null ],
     [ "Player", "struct_loot_1_1_core_1_1_system_1_1_modifier_1_1_modifier_context.html#aea0036c153261904daad6d66cdc24d46", null ],
     [ "Rarity", "struct_loot_1_1_core_1_1_system_1_1_modifier_1_1_modifier_context.html#a54b74ff6b36076021486a342ab795d8b", null ],
-    [ "Recipe", "struct_loot_1_1_core_1_1_system_1_1_modifier_1_1_modifier_context.html#af71b9a33ed76d8c76024dde1556af95e", null ]
+    [ "Recipe", "struct_loot_1_1_core_1_1_system_1_1_modifier_1_1_modifier_context.html#af71b9a33ed76d8c76024dde1556af95e", null ],
+    [ "Strategy", "struct_loot_1_1_core_1_1_system_1_1_modifier_1_1_modifier_context.html#a825401a25b0fa77e5c3eef970fef6d64", null ]
 ];

@@ -7,5 +7,13 @@ var dir_be095b924e4dc9be2baa0c87645be4a4 =
     ] ],
     [ "ModUtils.cs", "_mod_utils_8cs.html", [
       [ "ModUtils", "class_loot_1_1_ext_1_1_mod_utils.html", "class_loot_1_1_ext_1_1_mod_utils" ]
+    ] ],
+    [ "RollingUtils.cs", "_rolling_utils_8cs.html", [
+      [ "Properties", "class_loot_1_1_ext_1_1_rolling_utils_1_1_properties.html", "class_loot_1_1_ext_1_1_rolling_utils_1_1_properties" ],
+      [ "RollingUtils", "class_loot_1_1_ext_1_1_rolling_utils.html", [
+        [ "Properties", "class_loot_1_1_ext_1_1_rolling_utils_1_1_properties.html", "class_loot_1_1_ext_1_1_rolling_utils_1_1_properties" ],
+        [ "Strategies", "class_loot_1_1_ext_1_1_rolling_utils_1_1_strategies.html", "class_loot_1_1_ext_1_1_rolling_utils_1_1_strategies" ]
+      ] ],
+      [ "Strategies", "class_loot_1_1_ext_1_1_rolling_utils_1_1_strategies.html", "class_loot_1_1_ext_1_1_rolling_utils_1_1_strategies" ]
     ] ]
 ];

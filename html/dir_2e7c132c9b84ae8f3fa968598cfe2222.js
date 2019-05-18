@@ -10,9 +10,6 @@ var dir_2e7c132c9b84ae8f3fa968598cfe2222 =
       [ "CubeShop", "class_loot_1_1_core_1_1_cubes_1_1_cube_shop.html", "class_loot_1_1_core_1_1_cubes_1_1_cube_shop" ]
     ] ],
     [ "CubeUIExtensions.cs", "_cube_u_i_extensions_8cs.html", null ],
-    [ "ItemRollProperties.cs", "_item_roll_properties_8cs.html", [
-      [ "ItemRollProperties", "class_loot_1_1_core_1_1_cubes_1_1_item_roll_properties.html", "class_loot_1_1_core_1_1_cubes_1_1_item_roll_properties" ]
-    ] ],
     [ "MagicalCube.cs", "_magical_cube_8cs.html", [
       [ "MagicalCube", "class_loot_1_1_core_1_1_cubes_1_1_magical_cube.html", "class_loot_1_1_core_1_1_cubes_1_1_magical_cube" ]
     ] ],

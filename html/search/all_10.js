@@ -13,8 +13,8 @@ var searchData=
   ['populatepoolfromattribute',['PopulatePoolFromAttribute',['../class_loot_1_1_core_1_1_attributes_1_1_populate_pool_from_attribute.html',1,'Loot::Core::Attributes']]],
   ['populatepoolfromattribute',['PopulatePoolFromAttribute',['../class_loot_1_1_core_1_1_attributes_1_1_populate_pool_from_attribute.html#ac2fd9a6d12e2fe00bc8ec4e4e33be9fc',1,'Loot::Core::Attributes::PopulatePoolFromAttribute']]],
   ['populatepoolfromattribute_2ecs',['PopulatePoolFromAttribute.cs',['../_populate_pool_from_attribute_8cs.html',1,'']]],
-  ['positivetooltipline',['PositiveTooltipLine',['../class_loot_1_1_core_1_1_system_1_1_modifier_1_1_positive_tooltip_line.html',1,'Loot::Core::System::Modifier']]],
   ['positivetooltipline',['PositiveTooltipLine',['../class_loot_1_1_core_1_1_system_1_1_modifier_1_1_positive_tooltip_line.html#ad8524c5426db52f8afe9d9463d4331a6',1,'Loot::Core::System::Modifier::PositiveTooltipLine']]],
+  ['positivetooltipline',['PositiveTooltipLine',['../class_loot_1_1_core_1_1_system_1_1_modifier_1_1_positive_tooltip_line.html',1,'Loot::Core::System::Modifier']]],
   ['postdrawinworld',['PostDrawInWorld',['../class_loot_1_1_core_1_1_graphics_1_1_glowmask_global_item.html#a8ca2dccba7be2346e906cc770972d544',1,'Loot::Core::Graphics::GlowmaskGlobalItem']]],
   ['posthurt',['PostHurt',['../class_loot_1_1_modifier_player.html#a630b89f9736ea750b3cef8ac4e3618db',1,'Loot.ModifierPlayer.PostHurt()'],['../namespace_loot_1_1_core_1_1_attributes.html#ae8ba07b4224e46d925c4cda7cc9b9624a3116ab6734d3ba4e7daaa3d656746be6',1,'Loot.Core.Attributes.PostHurt()']]],
   ['posthurteventraiser',['PostHurtEventRaiser',['../class_loot_1_1_modifier_player.html#aa96bd963061c7f6c14765cc0dabc0f66',1,'Loot::ModifierPlayer']]],
@@ -39,5 +39,6 @@ var searchData=
   ['preupdate',['PreUpdate',['../class_loot_1_1_modifier_player.html#a891c39b53a01d041f78120c51149f5c9',1,'Loot.ModifierPlayer.PreUpdate()'],['../namespace_loot_1_1_core_1_1_attributes.html#ae8ba07b4224e46d925c4cda7cc9b9624a4d6938dc46ac97dde005fab44a01386c',1,'Loot.Core.Attributes.PreUpdate()']]],
   ['preupdatevanityset',['PreUpdateVanitySet',['../class_loot_1_1_core_1_1_system_1_1_modifier_1_1_modifier.html#a6d9bbba87ccdffdd2397aa2aa1d01647',1,'Loot::Core::System::Modifier::Modifier']]],
   ['processtexture2d',['ProcessTexture2D',['../class_loot_1_1_core_1_1_mod_content_1_1_graphics_mod_content.html#abde34de8e18d3db268f2eb1a2221e70f',1,'Loot.Core.ModContent.GraphicsModContent.ProcessTexture2D()'],['../class_loot_1_1_core_1_1_mod_content_1_1_texture_mod_content.html#a2f31c2778cbaa3d50bd966c8df9b8166',1,'Loot.Core.ModContent.TextureModContent.ProcessTexture2D()']]],
-  ['properties',['Properties',['../class_loot_1_1_core_1_1_system_1_1_modifier_1_1_modifier.html#ae042b7c16b7eba526110c84854ff80f4',1,'Loot::Core::System::Modifier::Modifier']]]
+  ['properties',['Properties',['../class_loot_1_1_ext_1_1_rolling_utils_1_1_properties.html',1,'Loot::Ext::RollingUtils']]],
+  ['properties',['properties',['../class_loot_1_1_core_1_1_system_1_1_strategy_1_1_normal_rolling_strategy.html#a0b2024722bdd1b6289ed686f51742a8c',1,'Loot.Core.System.Strategy.NormalRollingStrategy.properties()'],['../class_loot_1_1_core_1_1_system_1_1_modifier_1_1_modifier.html#ae042b7c16b7eba526110c84854ff80f4',1,'Loot.Core.System.Modifier.Modifier.Properties()'],['../class_loot_1_1_core_1_1_system_1_1_strategy_1_1_rolling_strategy_context.html#aae19c5e453bb66e7a425b822a5de1d96',1,'Loot.Core.System.Strategy.RollingStrategyContext.Properties()']]]
 ];

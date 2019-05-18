@@ -1,3 +1,5 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="node1" href="$class_loot_1_1_core_1_1_cubes_1_1_item_roll_properties.html" title="Defines properties that will be used when an item is being rolled These can interact with the rolling..." alt="" coords="6,5,181,46"/>
+<area shape="rect" id="node1" href="$class_loot_1_1_core_1_1_graphics_1_1_graphics_entity.html" title="Loot.Core.Graphics.Graphics\lEntity" alt="" coords="6,38,197,79"/>
+<area shape="rect" id="node2" href="$class_loot_1_1_core_1_1_graphics_1_1_glowmask_entity.html" title="Defines a Glowmask entity, part of GraphicsEntity The entity defines a particular &#39;glowmask&#39; &quot;of&quot; the..." alt="" coords="246,5,447,46"/>
+<area shape="rect" id="node3" href="$class_loot_1_1_core_1_1_graphics_1_1_shader_entity.html" title="Defines a Shader entity, part of GraphicsEntity The entity defines a particular &#39;shader&#39; &quot;of&quot; the ent..." alt="" coords="257,70,437,111"/>
 </map>

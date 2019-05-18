@@ -1,5 +1,6 @@
 <map id="Loot.Core.System.Modifier.ModifierContext" name="Loot.Core.System.Modifier.ModifierContext">
-<area shape="rect" id="node5" href="$class_loot_1_1_core_1_1_system_1_1_modifier_1_1_modifier_rarity.html" title="Defines the rarity of a modifier " alt="" coords="345,194,527,235"/>
+<area shape="rect" id="node5" href="$class_loot_1_1_core_1_1_system_1_1_modifier_1_1_modifier_rarity.html" title="Defines the rarity of a modifier " alt="" coords="361,194,543,235"/>
 <area shape="rect" id="node6" href="$interface_loot_1_1_core_1_1_system_1_1_core_1_1_i_loadable_content.html" title="ILoadableContent" alt="" coords="23,5,147,32"/>
 <area shape="rect" id="node8" href="$class_i_cloneable.html" title="ICloneable" alt="" coords="43,107,127,133"/>
+<area shape="rect" id="node14" href="$interface_loot_1_1_core_1_1_system_1_1_strategy_1_1_i_rolling_strategy.html" title="Loot.Core.System.Strategy.\lIRollingStrategy\&lt; RollingStrategy\lContext \&gt;" alt="" coords="344,259,560,315"/>
 </map>

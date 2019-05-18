@@ -1,5 +1,0 @@
-<map id="Loot.Core.System.Modifier.Modifier.Roll" name="Loot.Core.System.Modifier.Modifier.Roll">
-<area shape="rect" id="node2" href="$class_loot_1_1_e_m_m_item.html#adb5a6b968d2055218bedb3f0ba3a4eee" title="Roll active modifiers, can roll up to n maximum effects Returns if any modifiers were activated ..." alt="" coords="238,12,453,39"/>
-<area shape="rect" id="node3" href="$class_loot_1_1_e_m_m_item.html#a3c96b9a7d32d86f9e9cfe88dcbdcf22a" title="Loot.EMMItem.InvalidateRolls" alt="" coords="502,12,701,39"/>
-<area shape="rect" id="node4" href="$class_loot_1_1_e_m_m_item.html#a024154a5db4ea5e828639527da0e5543" title="Loot.EMMItem.Load" alt="" coords="750,12,890,39"/>
-</map>

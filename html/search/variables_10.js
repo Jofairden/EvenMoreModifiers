@@ -8,5 +8,6 @@ var searchData=
   ['snapshotcritmulti',['SnapshotCritMulti',['../class_loot_1_1_modifier_projectile.html#a3d2f9e00273412d1bdce3e6a98db8545',1,'Loot::ModifierProjectile']]],
   ['snapshotdebuffchances',['SnapshotDebuffChances',['../class_loot_1_1_modifier_projectile.html#accd2bb8d03802fc71010e3f217537a7e',1,'Loot::ModifierProjectile']]],
   ['snapshothealthyfoesmulti',['SnapshotHealthyFoesMulti',['../class_loot_1_1_modifier_projectile.html#ad7f2f10d9e167d640a7aca27876396ba',1,'Loot::ModifierProjectile']]],
+  ['strategy',['Strategy',['../struct_loot_1_1_core_1_1_system_1_1_modifier_1_1_modifier_context.html#a825401a25b0fa77e5c3eef970fef6d64',1,'Loot::Core::System::Modifier::ModifierContext']]],
   ['survivalchance',['SurvivalChance',['../class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_defensive_1_1_survival_effect.html#a3889be5b24052f27f7260a244825a4d3',1,'Loot::Modifiers::EquipModifiers::Defensive::SurvivalEffect']]]
 ];

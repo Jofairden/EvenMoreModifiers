@@ -1,11 +1,5 @@
 var NAVTREEINDEX2 =
 {
-"class_loot_1_1_core_1_1_graphics_1_1_glowmask_entity.html#a4e638a376f43903cb01cfe689593ce3d":[2,0,0,0,3,0,0],
-"class_loot_1_1_core_1_1_graphics_1_1_glowmask_entity.html#a5377ef5ad755895a82720cc94c3399d3":[2,0,0,0,3,0,6],
-"class_loot_1_1_core_1_1_graphics_1_1_glowmask_entity.html#a6d248a7b0ac056dc92fc90b6b1d028ac":[2,0,0,0,3,0,3],
-"class_loot_1_1_core_1_1_graphics_1_1_glowmask_entity.html#a8583184fe3d2d8801ded5ba00be045b0":[2,0,0,0,3,0,8],
-"class_loot_1_1_core_1_1_graphics_1_1_glowmask_entity.html#abc2f9bb1f90cda0cc17c6851d18108d8":[2,0,0,0,3,0,9],
-"class_loot_1_1_core_1_1_graphics_1_1_glowmask_entity.html#ac5190fab9d2be10f1a048b5ea27c5272":[2,0,0,0,3,0,4],
 "class_loot_1_1_core_1_1_graphics_1_1_glowmask_entity.html#ac66e1767fe938f785eca9ff627bd91ee":[2,0,0,0,3,0,1],
 "class_loot_1_1_core_1_1_graphics_1_1_glowmask_entity.html#ae1591f4369be6aebfccc47e3480176ab":[2,0,0,0,3,0,2],
 "class_loot_1_1_core_1_1_graphics_1_1_glowmask_entity.html#ae6c1afc630970e591aff93f7af38f3f4":[2,0,0,0,3,0,10],
@@ -249,5 +243,11 @@ var NAVTREEINDEX2 =
 "class_loot_1_1_core_1_1_system_1_1_modifier_1_1_modifier_properties.html#ad4fa8b6821a576c30a884eefdedb7878":[2,0,0,0,5,3,5,18],
 "class_loot_1_1_core_1_1_system_1_1_modifier_1_1_modifier_properties.html#ad71fbad530844a0b6cae1aa458980d62":[2,0,0,0,5,3,5,20],
 "class_loot_1_1_core_1_1_system_1_1_modifier_1_1_modifier_properties.html#af22d2b1254560637ee7192c372b2139e":[2,0,0,0,5,3,5,1],
-"class_loot_1_1_core_1_1_system_1_1_modifier_1_1_modifier_properties.html#af8a8bd7521f2f14784e567e3f33ae226":[2,0,0,0,5,3,5,4]
+"class_loot_1_1_core_1_1_system_1_1_modifier_1_1_modifier_properties.html#af8a8bd7521f2f14784e567e3f33ae226":[2,0,0,0,5,3,5,4],
+"class_loot_1_1_core_1_1_system_1_1_modifier_1_1_modifier_properties_builder.html":[2,0,0,0,5,3,6],
+"class_loot_1_1_core_1_1_system_1_1_modifier_1_1_modifier_properties_builder.html#a061ee8a89fe25326e522308e7c7e13e4":[2,0,0,0,5,3,6,7],
+"class_loot_1_1_core_1_1_system_1_1_modifier_1_1_modifier_properties_builder.html#a1759a4e7ed5fb7e9f03bd24e640381d6":[2,0,0,0,5,3,6,13],
+"class_loot_1_1_core_1_1_system_1_1_modifier_1_1_modifier_properties_builder.html#a1fc275c1511bff232ffadacf41a9105b":[2,0,0,0,5,3,6,10],
+"class_loot_1_1_core_1_1_system_1_1_modifier_1_1_modifier_properties_builder.html#a471a1953f16b8e279377b0315b7dfb2a":[2,0,0,0,5,3,6,21],
+"class_loot_1_1_core_1_1_system_1_1_modifier_1_1_modifier_properties_builder.html#a5eb5e573d373cac67c2d99240e2cdd88":[2,0,0,0,5,3,6,12]
 };

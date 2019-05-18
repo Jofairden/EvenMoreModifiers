@@ -23,5 +23,6 @@ var searchData=
   ['withraritylevel',['WithRarityLevel',['../class_loot_1_1_core_1_1_system_1_1_modifier_1_1_modifier_properties_builder.html#aa8c32acd6679ec11b1e7f18e2c35a950',1,'Loot::Core::System::Modifier::ModifierPropertiesBuilder']]],
   ['withrollchance',['WithRollChance',['../class_loot_1_1_core_1_1_system_1_1_modifier_1_1_modifier_properties_builder.html#a5eb5e573d373cac67c2d99240e2cdd88',1,'Loot::Core::System::Modifier::ModifierPropertiesBuilder']]],
   ['withroundprecision',['WithRoundPrecision',['../class_loot_1_1_core_1_1_system_1_1_modifier_1_1_modifier_properties_builder.html#a1759a4e7ed5fb7e9f03bd24e640381d6',1,'Loot::Core::System::Modifier::ModifierPropertiesBuilder']]],
+  ['worldgen',['WorldGen',['../class_loot_1_1_ext_1_1_rolling_utils_1_1_properties.html#a422fbc1e3486cf7f83ee4dcd80553f35',1,'Loot::Ext::RollingUtils::Properties']]],
   ['worldgeneration',['WorldGeneration',['../namespace_loot_1_1_core_1_1_system_1_1_modifier.html#a296941ba969bd16212e7bb7bd358683da4a22bbb324fc4800e83b3fa0103e7bba',1,'Loot::Core::System::Modifier']]]
 ];

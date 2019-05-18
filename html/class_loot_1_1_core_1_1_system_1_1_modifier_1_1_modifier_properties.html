@@ -525,7 +525,7 @@ Private Attributes</h2></td></tr>
 
 <p>Definition at line <a class="el" href="_modifier_properties_8cs_source.html#l00051">51</a> of file <a class="el" href="_modifier_properties_8cs_source.html">ModifierProperties.cs</a>.</p>
 
-<p>Referenced by <a class="el" href="_modifier_properties_8cs_source.html#l00127">Loot.Core.System.Modifier.ModifierProperties.Load()</a>, and <a class="el" href="_e_m_m_item_8cs_source.html#l00167">Loot.EMMItem.RollNewModifiers()</a>.</p>
+<p>Referenced by <a class="el" href="_modifier_properties_8cs_source.html#l00127">Loot.Core.System.Modifier.ModifierProperties.Load()</a>.</p>
 <div class="fragment"><div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        {</div><div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;            <a class="code" href="class_loot_1_1_core_1_1_system_1_1_modifier_1_1_modifier_properties.html#ad4fa8b6821a576c30a884eefdedb7878">Magnitude</a> = <a class="code" href="class_loot_1_1_core_1_1_system_1_1_modifier_1_1_modifier_properties.html#af8a8bd7521f2f14784e567e3f33ae226">RollMagnitude</a>(magnitudePower, lukStat);</div><div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;</div><div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;            <span class="keywordtype">int</span> iterations = (int) Math.Ceiling(lukStat) / 2;</div><div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;</div><div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;            <span class="comment">// makes you more lucky rolling better magnitudes</span></div><div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; iterations; i++)</div><div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;            {</div><div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;                <span class="keywordtype">float</span> rolledMagnitude = <a class="code" href="class_loot_1_1_core_1_1_system_1_1_modifier_1_1_modifier_properties.html#af8a8bd7521f2f14784e567e3f33ae226">RollMagnitude</a>(magnitudePower, lukStat);</div><div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;                <span class="keywordflow">if</span> (rolledMagnitude &gt; <a class="code" href="class_loot_1_1_core_1_1_system_1_1_modifier_1_1_modifier_properties.html#ad4fa8b6821a576c30a884eefdedb7878">Magnitude</a>)</div><div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;                {</div><div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;                    <a class="code" href="class_loot_1_1_core_1_1_system_1_1_modifier_1_1_modifier_properties.html#ad4fa8b6821a576c30a884eefdedb7878">Magnitude</a> = rolledMagnitude;</div><div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;                }</div><div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;            }</div><div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;</div><div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;            <a class="code" href="class_loot_1_1_core_1_1_system_1_1_modifier_1_1_modifier_properties.html#a1675726421de799eb6aacde12699fc28">Power</a> = <a class="code" href="class_loot_1_1_core_1_1_system_1_1_modifier_1_1_modifier_properties.html#a303fbaa8c17e6787852fe39c5603369b">RollPower</a>();</div><div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;</div><div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;            <span class="keywordflow">return</span> <span class="keyword">this</span>;</div><div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;        }</div><div class="ttc" id="class_loot_1_1_core_1_1_system_1_1_modifier_1_1_modifier_properties_html_a1675726421de799eb6aacde12699fc28"><div class="ttname"><a href="class_loot_1_1_core_1_1_system_1_1_modifier_1_1_modifier_properties.html#a1675726421de799eb6aacde12699fc28">Loot.Core.System.Modifier.ModifierProperties.Power</a></div><div class="ttdeci">float Power</div><div class="ttdef"><b>Definition:</b> <a href="_modifier_properties_8cs_source.html#l00028">ModifierProperties.cs:28</a></div></div>
 <div class="ttc" id="class_loot_1_1_core_1_1_system_1_1_modifier_1_1_modifier_properties_html_af8a8bd7521f2f14784e567e3f33ae226"><div class="ttname"><a href="class_loot_1_1_core_1_1_system_1_1_modifier_1_1_modifier_properties.html#af8a8bd7521f2f14784e567e3f33ae226">Loot.Core.System.Modifier.ModifierProperties.RollMagnitude</a></div><div class="ttdeci">float RollMagnitude(float magnitudePower, float lukStat)</div><div class="ttdef"><b>Definition:</b> <a href="_modifier_properties_8cs_source.html#l00072">ModifierProperties.cs:72</a></div></div>
 <div class="ttc" id="class_loot_1_1_core_1_1_system_1_1_modifier_1_1_modifier_properties_html_a303fbaa8c17e6787852fe39c5603369b"><div class="ttname"><a href="class_loot_1_1_core_1_1_system_1_1_modifier_1_1_modifier_properties.html#a303fbaa8c17e6787852fe39c5603369b">Loot.Core.System.Modifier.ModifierProperties.RollPower</a></div><div class="ttdeci">float RollPower()</div><div class="ttdef"><b>Definition:</b> <a href="_modifier_properties_8cs_source.html#l00080">ModifierProperties.cs:80</a></div></div>
@@ -538,10 +538,7 @@ Private Attributes</h2></td></tr>
 <div id="dynsection-7-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="class_loot_1_1_core_1_1_system_1_1_modifier_1_1_modifier_properties_a19ebafa0ec052d922312b2172482b0f1_icgraph.png" border="0" usemap="#class_loot_1_1_core_1_1_system_1_1_modifier_1_1_modifier_properties_a19ebafa0ec052d922312b2172482b0f1_icgraph" alt=""/></div>
 <map name="class_loot_1_1_core_1_1_system_1_1_modifier_1_1_modifier_properties_a19ebafa0ec052d922312b2172482b0f1_icgraph" id="class_loot_1_1_core_1_1_system_1_1_modifier_1_1_modifier_properties_a19ebafa0ec052d922312b2172482b0f1_icgraph">
-<area shape="rect" id="node2" href="class_loot_1_1_core_1_1_system_1_1_modifier_1_1_modifier_properties.html#af22d2b1254560637ee7192c372b2139e" title="Loot.Core.System.Modifier.\lModifierProperties.Load" alt="" coords="286,29,469,70"/>
-<area shape="rect" id="node3" href="class_loot_1_1_e_m_m_item.html#adb5a6b968d2055218bedb3f0ba3a4eee" title="Roll active modifiers, can roll up to n maximum effects Returns if any modifiers were activated ..." alt="" coords="270,95,485,121"/>
-<area shape="rect" id="node4" href="class_loot_1_1_e_m_m_item.html#a3c96b9a7d32d86f9e9cfe88dcbdcf22a" title="Loot.EMMItem.InvalidateRolls" alt="" coords="534,95,733,121"/>
-<area shape="rect" id="node5" href="class_loot_1_1_e_m_m_item.html#a024154a5db4ea5e828639527da0e5543" title="Loot.EMMItem.Load" alt="" coords="782,95,922,121"/>
+<area shape="rect" id="node2" href="class_loot_1_1_core_1_1_system_1_1_modifier_1_1_modifier_properties.html#af22d2b1254560637ee7192c372b2139e" title="Loot.Core.System.Modifier.\lModifierProperties.Load" alt="" coords="270,29,453,70"/>
 </map>
 </div>
 </p>
@@ -710,8 +707,6 @@ Private Attributes</h2></td></tr>
 
 <p>Definition at line <a class="el" href="_modifier_properties_8cs_source.html#l00023">23</a> of file <a class="el" href="_modifier_properties_8cs_source.html">ModifierProperties.cs</a>.</p>
 
-<p>Referenced by <a class="el" href="_e_m_m_item_8cs_source.html#l00167">Loot.EMMItem.RollNewModifiers()</a>.</p>
-
 </div>
 </div>
 <a class="anchor" id="a42c95be286d4e60c8d7236c8d7168dbb"></a>
@@ -819,7 +814,7 @@ Private Attributes</h2></td></tr>
 
 <p>Definition at line <a class="el" href="_modifier_properties_8cs_source.html#l00024">24</a> of file <a class="el" href="_modifier_properties_8cs_source.html">ModifierProperties.cs</a>.</p>
 
-<p>Referenced by <a class="el" href="_modifier_8cs_source.html#l00104">Loot.Core.System.Modifier.Modifier.Clone()</a>, <a class="el" href="_modifier_8cs_source.html#l00146">Loot.Core.System.Modifier.Modifier.Load()</a>, <a class="el" href="_modifier_properties_8cs_source.html#l00100">Loot.Core.System.Modifier.ModifierProperties.NetSend()</a>, and <a class="el" href="_modifier_properties_8cs_source.html#l00111">Loot.Core.System.Modifier.ModifierProperties.Save()</a>.</p>
+<p>Referenced by <a class="el" href="_modifier_8cs_source.html#l00103">Loot.Core.System.Modifier.Modifier.Clone()</a>, <a class="el" href="_modifier_8cs_source.html#l00145">Loot.Core.System.Modifier.Modifier.Load()</a>, <a class="el" href="_modifier_properties_8cs_source.html#l00100">Loot.Core.System.Modifier.ModifierProperties.NetSend()</a>, and <a class="el" href="_modifier_properties_8cs_source.html#l00111">Loot.Core.System.Modifier.ModifierProperties.Save()</a>.</p>
 
 </div>
 </div>
@@ -843,7 +838,7 @@ Private Attributes</h2></td></tr>
 
 <p>Definition at line <a class="el" href="_modifier_properties_8cs_source.html#l00028">28</a> of file <a class="el" href="_modifier_properties_8cs_source.html">ModifierProperties.cs</a>.</p>
 
-<p>Referenced by <a class="el" href="_modifier_8cs_source.html#l00104">Loot.Core.System.Modifier.Modifier.Clone()</a>, <a class="el" href="_modifier_8cs_source.html#l00146">Loot.Core.System.Modifier.Modifier.Load()</a>, <a class="el" href="_modifier_properties_8cs_source.html#l00100">Loot.Core.System.Modifier.ModifierProperties.NetSend()</a>, and <a class="el" href="_modifier_properties_8cs_source.html#l00111">Loot.Core.System.Modifier.ModifierProperties.Save()</a>.</p>
+<p>Referenced by <a class="el" href="_modifier_8cs_source.html#l00103">Loot.Core.System.Modifier.Modifier.Clone()</a>, <a class="el" href="_modifier_8cs_source.html#l00145">Loot.Core.System.Modifier.Modifier.Load()</a>, <a class="el" href="_modifier_properties_8cs_source.html#l00100">Loot.Core.System.Modifier.ModifierProperties.NetSend()</a>, and <a class="el" href="_modifier_properties_8cs_source.html#l00111">Loot.Core.System.Modifier.ModifierProperties.Save()</a>.</p>
 
 </div>
 </div>
@@ -875,7 +870,7 @@ Private Attributes</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespace_loot.html">Loot</a></li><li class="navelem"><a class="el" href="namespace_loot_1_1_core.html">Core</a></li><li class="navelem"><a class="el" href="namespace_loot_1_1_core_1_1_system.html">System</a></li><li class="navelem"><a class="el" href="namespace_loot_1_1_core_1_1_system_1_1_modifier.html">Modifier</a></li><li class="navelem"><a class="el" href="class_loot_1_1_core_1_1_system_1_1_modifier_1_1_modifier_properties.html">ModifierProperties</a></li>
-    <li class="footer">Generated on Sun May 12 2019 22:33:52 for Even More Modifiers by
+    <li class="footer">Generated on Sat May 18 2019 10:41:03 for Even More Modifiers by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.11 </li>
   </ul>

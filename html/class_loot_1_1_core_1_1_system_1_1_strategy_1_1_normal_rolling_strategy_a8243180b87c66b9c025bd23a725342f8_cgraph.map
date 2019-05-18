@@ -1,0 +1,5 @@
+<map id="Loot.Core.System.Strategy.NormalRollingStrategy.Roll" name="Loot.Core.System.Strategy.NormalRollingStrategy.Roll">
+<area shape="rect" id="node2" href="$class_loot_1_1_core_1_1_system_1_1_modifier_1_1_modifier.html#ad2aad45e46dcecb2e67a977fce9513d9" title="Allows modders to do custom cloning here Happens after default cloning, which clones various info (mo..." alt="" coords="246,5,429,46"/>
+<area shape="rect" id="node3" href="$class_loot_1_1_modifier_player.html#a3e4b8a428276fb0205e9c0f166435bf0" title="Loot.ModifierPlayer.GetEffect" alt="" coords="240,71,435,97"/>
+<area shape="rect" id="node4" href="$class_loot_1_1_modifier_player.html#aae3e56a930507049c3b282b29fece4f1" title="Loot.ModifierPlayer.Player" alt="" coords="250,121,425,148"/>
+</map>

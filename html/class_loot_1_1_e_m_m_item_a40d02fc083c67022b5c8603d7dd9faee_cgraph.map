@@ -1,3 +1,7 @@
 <map id="Loot.EMMItem.OnCraft" name="Loot.EMMItem.OnCraft">
-<area shape="rect" id="node2" href="$class_loot_1_1_e_m_m_item.html#a7788b69f28ba9809f56f6ebc6c7a7b7f" title="Loot.EMMItem.GetItemInfo" alt="" coords="213,5,395,32"/>
+<area shape="rect" id="node2" href="$class_loot_1_1_e_m_m_item.html#a7788b69f28ba9809f56f6ebc6c7a7b7f" title="Loot.EMMItem.GetItemInfo" alt="" coords="217,20,399,47"/>
+<area shape="rect" id="node3" href="$class_loot_1_1_e_m_m_item.html#acc7371e3c489f848e1320ddbadff5647" title="Attempts to roll new modifiers Has a set chance to hit a predefined pool of modifiers ..." alt="" coords="214,71,402,97"/>
+<area shape="rect" id="node4" href="$class_loot_1_1_ext_1_1_mod_utils.html#a5fb5205c0c76bcc4add62f666ba5f65b" title="Loot.Ext.ModUtils.GetModifier\lRarity" alt="" coords="451,5,650,46"/>
+<area shape="rect" id="node5" href="$class_loot_1_1_e_m_m_item.html#a3c96b9a7d32d86f9e9cfe88dcbdcf22a" title="Loot.EMMItem.InvalidateRolls" alt="" coords="451,71,650,97"/>
+<area shape="rect" id="node6" href="$interface_loot_1_1_core_1_1_system_1_1_strategy_1_1_i_rolling_strategy.html#aa2b3c42ad851147c82162e01b069e565" title="Loot.Core.System.Strategy.\lIRollingStrategy.Roll" alt="" coords="458,122,643,163"/>
 </map>
