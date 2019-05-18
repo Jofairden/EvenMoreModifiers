@@ -17,7 +17,7 @@ namespace Loot.Modifiers.EquipModifiers.Utility
 
 		// OnInitialize can initialize an effect's values
 		// It is called when a player initializes its effects
-		public override void OnInitialize(ModifierDelegatorPlayer delegatorPlayer)
+		public override void OnInitialize()
 		{
 			// Setting Strength is not really needed, as the default
 			// value for floats is already 0f. Just for clarity's sake.
@@ -27,7 +27,7 @@ namespace Loot.Modifiers.EquipModifiers.Utility
 
 		// ResetEffects is called automatically if the effect is being delegated
 		// This is used to reset variables like you are used to in ModPlayer
-		public override void ResetEffects(ModifierDelegatorPlayer delegatorPlayer)
+		public override void ResetEffects()
 		{
 			LightStrength = 0f;
 			LightColor = Color.White;
@@ -72,7 +72,7 @@ namespace Loot.Modifiers.EquipModifiers.Utility
 
 		public override void UpdateEquip(Item item, Player player)
 		{
-			ModifierDelegatorPlayer.Player(player).GetEffect<LightEffect>().LightStrength += (int) Properties.RoundedPower;
+			ModifierDelegatorPlayer.GetPlayer(player).GetEffect<LightEffect>().LightStrength += (int) Properties.RoundedPower;
 		}
 	}
 }

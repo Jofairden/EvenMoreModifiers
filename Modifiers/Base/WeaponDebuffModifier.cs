@@ -12,14 +12,14 @@ namespace Loot.Modifiers.Base
 {
 	public class WeaponDebuffEffect : ModifierEffect
 	{
-		public IList<(int type, int time, float chance)> DebuffChances = new List<(int type, int time, float chance)>();
+		public List<(int type, int time, float chance)> DebuffChances = new List<(int type, int time, float chance)>();
 
-		public override void OnInitialize(ModifierDelegatorPlayer delegatorPlayer)
+		public override void OnInitialize()
 		{
 			DebuffChances = new List<(int type, int time, float chance)>();
 		}
 
-		public override void ResetEffects(ModifierDelegatorPlayer delegatorPlayer)
+		public override void ResetEffects()
 		{
 			DebuffChances.Clear();
 		}
@@ -83,7 +83,7 @@ namespace Loot.Modifiers.Base
 		// Required for minion/proj snapshotting
 		public override void HoldItem(Item item, Player player)
 		{
-			ModifierDelegatorPlayer.Player(player).GetEffect<WeaponDebuffEffect>()
+			ModifierDelegatorPlayer.GetPlayer(player).GetEffect<WeaponDebuffEffect>()
 				.DebuffChances
 				.Add((BuffType, BuffTime, Properties.RoundedPower / 100f * BuffInflictionChance));
 		}

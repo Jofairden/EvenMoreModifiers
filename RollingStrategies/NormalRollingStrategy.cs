@@ -67,7 +67,7 @@ namespace Loot.RollingStrategies
 
 				if (modifierContext.Player != null)
 				{
-					luck += ModifierDelegatorPlayer.Player(modifierContext.Player).GetEffect<LuckEffect>().Luck;
+					luck += ModifierDelegatorPlayer.GetPlayer(modifierContext.Player).GetEffect<LuckEffect>().Luck;
 				}
 				if (modifierContext.Rarity != null)
 				{

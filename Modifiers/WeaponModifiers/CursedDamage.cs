@@ -14,7 +14,7 @@ namespace Loot.Modifiers.WeaponModifiers
 	{
 		public int CurseCount;
 
-		public override void ResetEffects(ModifierDelegatorPlayer delegatorPlayer)
+		public override void ResetEffects()
 		{
 			CurseCount = 0;
 		}

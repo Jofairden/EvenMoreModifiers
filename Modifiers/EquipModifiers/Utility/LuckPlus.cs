@@ -12,7 +12,7 @@ namespace Loot.Modifiers.EquipModifiers.Utility
 	{
 		public float Luck;
 
-		public override void ResetEffects(ModifierDelegatorPlayer delegatorPlayer)
+		public override void ResetEffects()
 		{
 			Luck = 0f;
 		}
@@ -35,7 +35,7 @@ namespace Loot.Modifiers.EquipModifiers.Utility
 
 		public override void UpdateEquip(Item item, Player player)
 		{
-			ModifierDelegatorPlayer.Player(player).GetEffect<LuckEffect>().Luck += (int) Properties.RoundedPower;
+			ModifierDelegatorPlayer.GetPlayer(player).GetEffect<LuckEffect>().Luck += (int) Properties.RoundedPower;
 		}
 	}
 }

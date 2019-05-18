@@ -11,18 +11,18 @@ namespace Loot.Modifiers.EquipModifiers.Defensive
 	{
 		public float DodgeChance; // Dodge chance
 
-		public override void ResetEffects(ModifierDelegatorPlayer delegatorPlayer)
+		public override void ResetEffects()
 		{
 			DodgeChance = 0f;
 		}
 
 		[AutoDelegation("OnPreHurt")]
 		[DelegationPrioritization(DelegationPrioritization.Early, 99)]
-		private bool TryDodge(ModifierDelegatorPlayer delegatorPlayer, bool pvp, bool quiet, ref int damage, ref int hitDirection, ref bool crit, ref bool customDamage, ref bool playSound, ref bool genGore, ref PlayerDeathReason damageSource)
+		private bool TryDodge(bool pvp, bool quiet, ref int damage, ref int hitDirection, ref bool crit, ref bool customDamage, ref bool playSound, ref bool genGore, ref PlayerDeathReason damageSource)
 		{
 			if (Main.rand.NextFloat() < DodgeChance)
 			{
-				delegatorPlayer.player.NinjaDodge();
+				player.NinjaDodge();
 				return false;
 			}
 
@@ -48,7 +48,7 @@ namespace Loot.Modifiers.EquipModifiers.Defensive
 
 		public override void UpdateEquip(Item item, Player player)
 		{
-			ModifierDelegatorPlayer.Player(player).GetEffect<DodgeEffect>().DodgeChance += Properties.RoundedPower / 100f;
+			ModifierDelegatorPlayer.GetPlayer(player).GetEffect<DodgeEffect>().DodgeChance += Properties.RoundedPower / 100f;
 		}
 	}
 }

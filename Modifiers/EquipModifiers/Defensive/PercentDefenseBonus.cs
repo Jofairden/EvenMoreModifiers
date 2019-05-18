@@ -11,7 +11,7 @@ namespace Loot.Modifiers.EquipModifiers.Defensive
 	{
 		public float PercentDefBoost;
 
-		public override void ResetEffects(ModifierDelegatorPlayer delegatorPlayer)
+		public override void ResetEffects()
 		{
 			PercentDefBoost = 0f;
 		}
@@ -41,7 +41,7 @@ namespace Loot.Modifiers.EquipModifiers.Defensive
 
 		public override void UpdateEquip(Item item, Player player)
 		{
-			ModifierDelegatorPlayer.Player(player).GetEffect<PercentDefBoostEffect>().PercentDefBoost += Properties.RoundedPower / 100f;
+			ModifierDelegatorPlayer.GetPlayer(player).GetEffect<PercentDefBoostEffect>().PercentDefBoost += Properties.RoundedPower / 100f;
 		}
 	}
 }

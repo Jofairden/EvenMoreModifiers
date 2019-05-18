@@ -35,8 +35,14 @@ namespace Loot.Api.Attributes
 		}
 
 		private IEnumerable<string> GetTargetNames(IEnumerable<string> names)
-			=> names.Select(name => !name.StartsWith("On") ? $"On{name}" : name);
+			=> names.Select(GetFilteredName);
 
+		private string GetFilteredName(string name)
+		{
+			if (name.StartsWith("On")) name = name.Substring(2);
+			if (!name.EndsWith("Event")) name = $"{name}Event";
+			return name;
+		}
 		public void Attach(ModifierDelegatorPlayer delegatorPlayer, MethodInfo method, ModifierEffect effect)
 		{
 			foreach (string type in _delegationTypes)

@@ -89,7 +89,7 @@ namespace Loot.Caching
 		/// </summary>
 		private void UpdateAttachments()
 		{
-			ModifierDelegatorPlayer modDelegatorPlayer = ModifierDelegatorPlayer.Player(player);
+			ModifierDelegatorPlayer modDelegatorPlayer = ModifierDelegatorPlayer.GetPlayer(player);
 
 			// Manual detach
 			var detachEffects = GetModifierEffectsForDelegations(_detachList, modDelegatorPlayer, (e) => e.IsBeingDelegated && !_modifierEffects.Contains(e.GetType()));
@@ -110,7 +110,7 @@ namespace Loot.Caching
 			// Manual detach
 			foreach (var effect in detachEffects.Distinct())
 			{
-				modDelegatorPlayer.OnResetEffects -= effect.ResetEffects;
+				modDelegatorPlayer.ResetEffectsEvent -= effect.ResetEffects;
 				effect._DetachDelegations(modDelegatorPlayer);
 				effect.IsBeingDelegated = false;
 			}
@@ -118,7 +118,7 @@ namespace Loot.Caching
 			// Manual attach
 			foreach (var effect in attachEffects.Distinct())
 			{
-				modDelegatorPlayer.OnResetEffects += effect.ResetEffects;
+				modDelegatorPlayer.ResetEffectsEvent += effect.ResetEffects;
 				effect.AttachDelegations(modDelegatorPlayer);
 				effect.IsBeingDelegated = true;
 			}
@@ -283,7 +283,7 @@ namespace Loot.Caching
 				if (effectsAttribute == null)
 					continue;
 
-				ModifierDelegatorPlayer modDelegatorPlayer = ModifierDelegatorPlayer.Player(player);
+				ModifierDelegatorPlayer modDelegatorPlayer = ModifierDelegatorPlayer.GetPlayer(player);
 				foreach (Type effect in effectsAttribute.Effects)
 				{
 					var modEffect = modDelegatorPlayer.GetEffect(effect);

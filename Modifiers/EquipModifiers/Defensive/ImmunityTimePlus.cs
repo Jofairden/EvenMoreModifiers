@@ -10,7 +10,7 @@ namespace Loot.Modifiers.EquipModifiers.Defensive
 	{
 		public int BonusImmunityTime; // Extra immunity frames
 
-		public override void ResetEffects(ModifierDelegatorPlayer delegatorPlayer)
+		public override void ResetEffects()
 		{
 			BonusImmunityTime = 0;
 		}
@@ -47,7 +47,7 @@ namespace Loot.Modifiers.EquipModifiers.Defensive
 
 		public override void UpdateEquip(Item item, Player player)
 		{
-			ModifierDelegatorPlayer.Player(player).GetEffect<ImmunityEffect>().BonusImmunityTime += (int) Properties.RoundedPower;
+			ModifierDelegatorPlayer.GetPlayer(player).GetEffect<ImmunityEffect>().BonusImmunityTime += (int) Properties.RoundedPower;
 		}
 	}
 }

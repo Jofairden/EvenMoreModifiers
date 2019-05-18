@@ -11,12 +11,12 @@ namespace Loot.Modifiers.EquipModifiers.Offensive
 	{
 		public float Multiplier;
 
-		public override void OnInitialize(ModifierDelegatorPlayer delegatorPlayer)
+		public override void OnInitialize()
 		{
 			Multiplier = 1f;
 		}
 
-		public override void ResetEffects(ModifierDelegatorPlayer delegatorPlayer)
+		public override void ResetEffects()
 		{
 			Multiplier = 1f;
 		}
@@ -65,7 +65,7 @@ namespace Loot.Modifiers.EquipModifiers.Offensive
 
 		public override void UpdateEquip(Item item, Player player)
 		{
-			ModifierDelegatorPlayer.Player(player).GetEffect<CritDamagePlusEffect>().Multiplier += Properties.RoundedPower / 100f;
+			ModifierDelegatorPlayer.GetPlayer(player).GetEffect<CritDamagePlusEffect>().Multiplier += Properties.RoundedPower / 100f;
 		}
 	}
 }

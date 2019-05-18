@@ -10,7 +10,7 @@ namespace Loot.Modifiers.EquipModifiers.Defensive
 	{
 		public int LifeRegen;
 
-		public override void ResetEffects(ModifierDelegatorPlayer delegatorPlayer)
+		public override void ResetEffects()
 		{
 			LifeRegen = 0;
 		}
@@ -41,7 +41,7 @@ namespace Loot.Modifiers.EquipModifiers.Defensive
 
 		public override void UpdateEquip(Item item, Player player)
 		{
-			ModifierDelegatorPlayer.Player(player).GetEffect<LifeRegenEffect>().LifeRegen += (int) Properties.RoundedPower;
+			ModifierDelegatorPlayer.GetPlayer(player).GetEffect<LifeRegenEffect>().LifeRegen += (int) Properties.RoundedPower;
 		}
 	}
 }

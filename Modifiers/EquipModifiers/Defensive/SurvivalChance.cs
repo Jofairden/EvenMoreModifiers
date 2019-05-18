@@ -13,7 +13,7 @@ namespace Loot.Modifiers.EquipModifiers.Defensive
 		public float SurvivalChance; // Chance to survive lethal blow
 		public static readonly float MAX_SURVIVAL_CHANCE = 0.5f;
 
-		public override void ResetEffects(ModifierDelegatorPlayer delegatorPlayer)
+		public override void ResetEffects()
 		{
 			SurvivalChance = 0f;
 		}
@@ -53,7 +53,7 @@ namespace Loot.Modifiers.EquipModifiers.Defensive
 
 		public override void UpdateEquip(Item item, Player player)
 		{
-			ModifierDelegatorPlayer.Player(player).GetEffect<SurvivalEffect>().SurvivalChance += Properties.RoundedPower / 100f;
+			ModifierDelegatorPlayer.GetPlayer(player).GetEffect<SurvivalEffect>().SurvivalChance += Properties.RoundedPower / 100f;
 		}
 	}
 }

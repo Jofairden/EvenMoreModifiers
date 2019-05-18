@@ -12,7 +12,7 @@ namespace Loot.Modifiers.EquipModifiers.Defensive
 	{
 		public float ManaShield; // % of damage redirected to mana
 
-		public override void ResetEffects(ModifierDelegatorPlayer delegatorPlayer)
+		public override void ResetEffects()
 		{
 			ManaShield = 0f;
 		}
@@ -59,7 +59,7 @@ namespace Loot.Modifiers.EquipModifiers.Defensive
 
 		public override void UpdateEquip(Item item, Player player)
 		{
-			ModifierDelegatorPlayer.Player(player).GetEffect<ManaShieldEffect>().ManaShield += Properties.RoundedPower / 100f;
+			ModifierDelegatorPlayer.GetPlayer(player).GetEffect<ManaShieldEffect>().ManaShield += Properties.RoundedPower / 100f;
 		}
 	}
 }
