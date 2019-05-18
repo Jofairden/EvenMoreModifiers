@@ -68,13 +68,12 @@
     <Compile Include="Cubes\PoorCube.cs" />
     <Compile Include="Api\Cubes\RerollingCube.cs" />
     <Compile Include="Api\Graphics\GlowmaskEntity.cs" />
-    <Compile Include="Api\Graphics\GlowmaskGlobalItem.cs" />
     <Compile Include="Api\Graphics\GraphicsEntity.cs" />
     <Compile Include="Api\Ext\GraphicsUtils.cs" />
     <Compile Include="Api\Graphics\ShaderDrawLayer.cs" />
     <Compile Include="Api\Graphics\ShaderDrawOffsetStyle.cs" />
     <Compile Include="Api\Graphics\ShaderEntity.cs" />
-    <Compile Include="Api\Graphics\ShaderGlobalItem.cs" />
+    <Compile Include="Api\Graphics\GraphicsGlobalItem.cs" />
     <Compile Include="Api\ModContent\GraphicsModContent.cs" />
     <Compile Include="Api\ModContent\ModContentManager.cs" />
     <Compile Include="Api\ModContent\TextureModContent.cs" />

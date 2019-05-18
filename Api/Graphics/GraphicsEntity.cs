@@ -11,26 +11,32 @@ namespace Loot.Api.Graphics
 
 		protected GraphicsEntity(object subjectIdentity)
 		{
+			if (subjectIdentity == Identity) return;
+			SetIdentity(subjectIdentity);
+		}
+
+		internal void SetIdentity(object subjectIdentity)
+		{
 			Identity = subjectIdentity;
-			if (subjectIdentity is Entity)
+			if (subjectIdentity is Entity entity)
 			{
-				Entity = (Entity) subjectIdentity;
+				Entity = entity;
 			}
-			else if (subjectIdentity is ModItem)
+			else if (subjectIdentity is ModItem modItem)
 			{
-				Entity = ((ModItem) subjectIdentity).item;
+				Entity = modItem.item;
 			}
-			else if (subjectIdentity is ModNPC)
+			else if (subjectIdentity is ModNPC modNpc)
 			{
-				Entity = ((ModNPC) subjectIdentity).npc;
+				Entity = modNpc.npc;
 			}
-			else if (subjectIdentity is ModProjectile)
+			else if (subjectIdentity is ModProjectile modProjectile)
 			{
-				Entity = ((ModProjectile) subjectIdentity).projectile;
+				Entity = modProjectile.projectile;
 			}
-			else if (subjectIdentity is ModPlayer)
+			else if (subjectIdentity is ModPlayer modPlayer)
 			{
-				Entity = ((ModPlayer) subjectIdentity).player;
+				Entity = modPlayer.player;
 			}
 			else
 			{

@@ -150,8 +150,7 @@ namespace Loot
 				InvalidateRolls();
 			}
 
-			ctx.Item.GetGlobalItem<ShaderGlobalItem>().NeedsUpdate = true;
-			ctx.Item.GetGlobalItem<GlowmaskGlobalItem>().NeedsUpdate = true;
+			ctx.Item.GetGlobalItem<GraphicsGlobalItem>().NeedsUpdate = true;
 			return ModifierPool;
 		}
 
