@@ -1,6 +1,7 @@
 using System;
-using Loot.Core.Attributes;
-using Loot.Core.System.Modifier;
+using Loot.Api.Attributes;
+using Loot.Api.Delegators;
+using Loot.Api.Modifier;
 using Loot.Modifiers.Base;
 using Terraria;
 using Terraria.DataStructures;
@@ -12,18 +13,18 @@ namespace Loot.Modifiers.EquipModifiers.Defensive
 		public float SurvivalChance; // Chance to survive lethal blow
 		public static readonly float MAX_SURVIVAL_CHANCE = 0.5f;
 
-		public override void ResetEffects(ModifierPlayer player)
+		public override void ResetEffects(ModifierDelegatorPlayer delegatorPlayer)
 		{
 			SurvivalChance = 0f;
 		}
 
 		[AutoDelegation("OnPreKill")]
 		[DelegationPrioritization(DelegationPrioritization.Late, 900)]
-		private bool SurviveEvent(ModifierPlayer player, double damage, int hitDirection, bool pvp, ref bool playSound, ref bool genGore, ref PlayerDeathReason damageSource)
+		private bool SurviveEvent(ModifierDelegatorPlayer delegatorPlayer, double damage, int hitDirection, bool pvp, ref bool playSound, ref bool genGore, ref PlayerDeathReason damageSource)
 		{
 			if (Main.rand.NextFloat() < Math.Min(SurvivalChance, MAX_SURVIVAL_CHANCE))
 			{
-				player.player.statLife = 1;
+				delegatorPlayer.player.statLife = 1;
 				return false;
 			}
 
@@ -39,7 +40,7 @@ namespace Loot.Modifiers.EquipModifiers.Defensive
 		{
 			return base.GetTooltip()
 				.WithPositive($"+{Properties.RoundedPower}% chance to survive lethal blows"
-				              + $"{(Main.LocalPlayer.GetModPlayer<ModifierPlayer>().GetEffect<SurvivalEffect>().SurvivalChance >= SurvivalEffect.MAX_SURVIVAL_CHANCE ? $" (cap reached: {SurvivalEffect.MAX_SURVIVAL_CHANCE * 100f}%)" : "")}"
+				              + $"{(Main.LocalPlayer.GetModPlayer<ModifierDelegatorPlayer>().GetEffect<SurvivalEffect>().SurvivalChance >= SurvivalEffect.MAX_SURVIVAL_CHANCE ? $" (cap reached: {SurvivalEffect.MAX_SURVIVAL_CHANCE * 100f}%)" : "")}"
 				);
 		}
 
@@ -52,7 +53,7 @@ namespace Loot.Modifiers.EquipModifiers.Defensive
 
 		public override void UpdateEquip(Item item, Player player)
 		{
-			ModifierPlayer.Player(player).GetEffect<SurvivalEffect>().SurvivalChance += Properties.RoundedPower / 100f;
+			ModifierDelegatorPlayer.Player(player).GetEffect<SurvivalEffect>().SurvivalChance += Properties.RoundedPower / 100f;
 		}
 	}
 }

@@ -1,5 +1,6 @@
-using Loot.Core.Attributes;
-using Loot.Core.System.Modifier;
+using Loot.Api.Attributes;
+using Loot.Api.Delegators;
+using Loot.Api.Modifier;
 using Loot.Modifiers.Base;
 using Terraria;
 
@@ -9,15 +10,15 @@ namespace Loot.Modifiers.EquipModifiers.Defensive
 	{
 		public int LifeRegen;
 
-		public override void ResetEffects(ModifierPlayer player)
+		public override void ResetEffects(ModifierDelegatorPlayer delegatorPlayer)
 		{
 			LifeRegen = 0;
 		}
 
 		[AutoDelegation("OnUpdateLifeRegen")]
-		private void Regen(ModifierPlayer player)
+		private void Regen(ModifierDelegatorPlayer delegatorPlayer)
 		{
-			player.player.lifeRegen += LifeRegen / 30;
+			delegatorPlayer.player.lifeRegen += LifeRegen / 30;
 			LifeRegen %= 30;
 		}
 	}
@@ -40,7 +41,7 @@ namespace Loot.Modifiers.EquipModifiers.Defensive
 
 		public override void UpdateEquip(Item item, Player player)
 		{
-			ModifierPlayer.Player(player).GetEffect<LifeRegenEffect>().LifeRegen += (int) Properties.RoundedPower;
+			ModifierDelegatorPlayer.Player(player).GetEffect<LifeRegenEffect>().LifeRegen += (int) Properties.RoundedPower;
 		}
 	}
 }

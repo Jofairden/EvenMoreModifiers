@@ -1,5 +1,6 @@
-using Loot.Core.Attributes;
-using Loot.Core.System.Modifier;
+using Loot.Api.Attributes;
+using Loot.Api.Delegators;
+using Loot.Api.Modifier;
 using Loot.Modifiers.Base;
 using Terraria;
 
@@ -9,21 +10,21 @@ namespace Loot.Modifiers.EquipModifiers.Defensive
 	{
 		public int BonusImmunityTime; // Extra immunity frames
 
-		public override void ResetEffects(ModifierPlayer player)
+		public override void ResetEffects(ModifierDelegatorPlayer delegatorPlayer)
 		{
 			BonusImmunityTime = 0;
 		}
 
 		[AutoDelegation("OnPostHurt")]
 		[DelegationPrioritization(DelegationPrioritization.Late, 800)]
-		private void Immunity(ModifierPlayer player, bool pvp, bool quiet, double damage, int hitDirection, bool crit)
+		private void Immunity(ModifierDelegatorPlayer delegatorPlayer, bool pvp, bool quiet, double damage, int hitDirection, bool crit)
 		{
 			int frames = damage <= 1
 				? BonusImmunityTime / 2
 				: BonusImmunityTime;
-			if (player.player.immuneTime > 0)
+			if (delegatorPlayer.player.immuneTime > 0)
 			{
-				player.player.immuneTime += frames;
+				delegatorPlayer.player.immuneTime += frames;
 			}
 		}
 	}
@@ -46,7 +47,7 @@ namespace Loot.Modifiers.EquipModifiers.Defensive
 
 		public override void UpdateEquip(Item item, Player player)
 		{
-			ModifierPlayer.Player(player).GetEffect<ImmunityEffect>().BonusImmunityTime += (int) Properties.RoundedPower;
+			ModifierDelegatorPlayer.Player(player).GetEffect<ImmunityEffect>().BonusImmunityTime += (int) Properties.RoundedPower;
 		}
 	}
 }

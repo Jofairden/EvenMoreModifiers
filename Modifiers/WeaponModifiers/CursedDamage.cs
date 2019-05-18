@@ -1,8 +1,10 @@
 using System;
 using System.Linq;
-using Loot.Core.Attributes;
-using Loot.Core.System.Modifier;
-using Loot.Ext;
+using Loot.Api.Attributes;
+using Loot.Api.Delegators;
+using Loot.Api.Ext;
+using Loot.Api.Modifier;
+using Loot.Hacks;
 using Loot.Modifiers.Base;
 using Terraria;
 using Terraria.ID;
@@ -13,7 +15,7 @@ namespace Loot.Modifiers.WeaponModifiers
 	{
 		public int CurseCount;
 
-		public override void ResetEffects(ModifierPlayer player)
+		public override void ResetEffects(ModifierDelegatorPlayer delegatorPlayer)
 		{
 			CurseCount = 0;
 		}
@@ -22,18 +24,18 @@ namespace Loot.Modifiers.WeaponModifiers
 		// you can either specify by enum (safest) like here
 		// or by string (see below)
 		[AutoDelegation(DelegationTarget.PostUpdateEquips)]
-		private void CurseHolding(ModifierPlayer player)
+		private void CurseHolding(ModifierDelegatorPlayer delegatorPlayer)
 		{
-			Item checkItem = Main.mouseItem != null && !Main.mouseItem.IsAir ? Main.mouseItem : player.player.HeldItem;
+			Item checkItem = Main.mouseItem != null && !Main.mouseItem.IsAir ? Main.mouseItem : delegatorPlayer.player.HeldItem;
 
 			if (checkItem == null || checkItem.IsAir || !checkItem.IsWeapon()
-			    || !ActivatedModifierItem.Item(checkItem).IsActivated)
+			    || !CheatedItemHackGlobalItem.Item(checkItem).IsActivated)
 				return;
 
-			int c = EMMItem.GetActivePool(checkItem).Count(x => x.GetType() == typeof(CursedDamage));
+			int c = LootModItem.GetActivePool(checkItem).Count(x => x.GetType() == typeof(CursedDamage));
 			if (c > 0)
 			{
-				ModifierPlayer.Player(player.player).GetEffect<CursedEffect>().CurseCount += c;
+				ModifierDelegatorPlayer.Player(delegatorPlayer.player).GetEffect<CursedEffect>().CurseCount += c;
 			}
 		}
 
@@ -41,18 +43,18 @@ namespace Loot.Modifiers.WeaponModifiers
 		// in the form of a string. It can be preceded by "On"
 		// but it may also be left out.
 		[AutoDelegation("OnUpdateBadLifeRegen")]
-		private void Curse(ModifierPlayer player)
+		private void Curse(ModifierDelegatorPlayer delegatorPlayer)
 		{
-			if (CurseCount <= 0 || player.player.buffImmune[BuffID.Cursed])
+			if (CurseCount <= 0 || delegatorPlayer.player.buffImmune[BuffID.Cursed])
 				return;
 
-			if (player.player.lifeRegen > 0)
+			if (delegatorPlayer.player.lifeRegen > 0)
 			{
-				player.player.lifeRegen = 0;
+				delegatorPlayer.player.lifeRegen = 0;
 			}
 
-			player.player.lifeRegen -= 2 * CurseCount;
-			player.player.lifeRegenTime = 0;
+			delegatorPlayer.player.lifeRegen -= 2 * CurseCount;
+			delegatorPlayer.player.lifeRegenTime = 0;
 		}
 	}
 

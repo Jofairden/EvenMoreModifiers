@@ -1,5 +1,5 @@
-using Loot.Core.System.Modifier;
-using Loot.Ext;
+using Loot.Api.Ext;
+using Loot.Api.Modifier;
 
 namespace Loot.Modifiers.Base
 {

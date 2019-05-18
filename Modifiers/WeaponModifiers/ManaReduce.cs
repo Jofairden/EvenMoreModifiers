@@ -1,5 +1,5 @@
 using System;
-using Loot.Core.System.Modifier;
+using Loot.Api.Modifier;
 using Loot.Modifiers.Base;
 using Terraria;
 

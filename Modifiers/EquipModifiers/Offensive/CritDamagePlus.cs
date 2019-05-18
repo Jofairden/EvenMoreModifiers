@@ -1,6 +1,7 @@
 using System;
-using Loot.Core.Attributes;
-using Loot.Core.System.Modifier;
+using Loot.Api.Attributes;
+using Loot.Api.Delegators;
+using Loot.Api.Modifier;
 using Loot.Modifiers.Base;
 using Terraria;
 
@@ -10,19 +11,19 @@ namespace Loot.Modifiers.EquipModifiers.Offensive
 	{
 		public float Multiplier;
 
-		public override void OnInitialize(ModifierPlayer player)
+		public override void OnInitialize(ModifierDelegatorPlayer delegatorPlayer)
 		{
 			Multiplier = 1f;
 		}
 
-		public override void ResetEffects(ModifierPlayer player)
+		public override void ResetEffects(ModifierDelegatorPlayer delegatorPlayer)
 		{
 			Multiplier = 1f;
 		}
 
 		[AutoDelegation("OnModifyHitNPC")]
 		[DelegationPrioritization(DelegationPrioritization.Late, 999)]
-		public void ModifyHitNPC(ModifierPlayer player, Item item, NPC target, ref int damage, ref float knockback, ref bool crit)
+		public void ModifyHitNPC(ModifierDelegatorPlayer delegatorPlayer, Item item, NPC target, ref int damage, ref float knockback, ref bool crit)
 		{
 			if (crit)
 			{
@@ -32,7 +33,7 @@ namespace Loot.Modifiers.EquipModifiers.Offensive
 
 		[AutoDelegation("OnModifyHitPvp")]
 		[DelegationPrioritization(DelegationPrioritization.Late, 999)]
-		private void ModifyHitPvp(ModifierPlayer player, Item item, Player target, ref int damage, ref bool crit)
+		private void ModifyHitPvp(ModifierDelegatorPlayer delegatorPlayer, Item item, Player target, ref int damage, ref bool crit)
 		{
 			if (crit)
 			{
@@ -64,7 +65,7 @@ namespace Loot.Modifiers.EquipModifiers.Offensive
 
 		public override void UpdateEquip(Item item, Player player)
 		{
-			ModifierPlayer.Player(player).GetEffect<CritDamagePlusEffect>().Multiplier += Properties.RoundedPower / 100f;
+			ModifierDelegatorPlayer.Player(player).GetEffect<CritDamagePlusEffect>().Multiplier += Properties.RoundedPower / 100f;
 		}
 	}
 }

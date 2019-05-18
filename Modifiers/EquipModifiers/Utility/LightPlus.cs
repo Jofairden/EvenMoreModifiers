@@ -1,5 +1,6 @@
-using Loot.Core.Attributes;
-using Loot.Core.System.Modifier;
+using Loot.Api.Attributes;
+using Loot.Api.Delegators;
+using Loot.Api.Modifier;
 using Loot.Modifiers.Base;
 using Microsoft.Xna.Framework;
 using Terraria;
@@ -16,7 +17,7 @@ namespace Loot.Modifiers.EquipModifiers.Utility
 
 		// OnInitialize can initialize an effect's values
 		// It is called when a player initializes its effects
-		public override void OnInitialize(ModifierPlayer player)
+		public override void OnInitialize(ModifierDelegatorPlayer delegatorPlayer)
 		{
 			// Setting Strength is not really needed, as the default
 			// value for floats is already 0f. Just for clarity's sake.
@@ -26,7 +27,7 @@ namespace Loot.Modifiers.EquipModifiers.Utility
 
 		// ResetEffects is called automatically if the effect is being delegated
 		// This is used to reset variables like you are used to in ModPlayer
-		public override void ResetEffects(ModifierPlayer player)
+		public override void ResetEffects(ModifierDelegatorPlayer delegatorPlayer)
 		{
 			LightStrength = 0f;
 			LightColor = Color.White;
@@ -44,9 +45,9 @@ namespace Loot.Modifiers.EquipModifiers.Utility
 		// on ModifierPlayer's PostUpdate hook if this effect
 		// is being delegated
 		[AutoDelegation("OnPostUpdate")]
-		private void Light(ModifierPlayer player)
+		private void Light(ModifierDelegatorPlayer delegatorPlayer)
 		{
-			Lighting.AddLight(player.player.Center, LightColor.ToVector3() * .15f * LightStrength);
+			Lighting.AddLight(delegatorPlayer.player.Center, LightColor.ToVector3() * .15f * LightStrength);
 		}
 	}
 
@@ -71,7 +72,7 @@ namespace Loot.Modifiers.EquipModifiers.Utility
 
 		public override void UpdateEquip(Item item, Player player)
 		{
-			ModifierPlayer.Player(player).GetEffect<LightEffect>().LightStrength += (int) Properties.RoundedPower;
+			ModifierDelegatorPlayer.Player(player).GetEffect<LightEffect>().LightStrength += (int) Properties.RoundedPower;
 		}
 	}
 }

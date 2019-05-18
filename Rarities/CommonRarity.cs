@@ -1,6 +1,6 @@
-using Loot.Core.System.Modifier;
 using Microsoft.Xna.Framework;
 using System;
+using Loot.Api.Modifier;
 
 namespace Loot.Rarities
 {

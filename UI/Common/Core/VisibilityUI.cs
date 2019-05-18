@@ -7,7 +7,7 @@ namespace Loot.UI.Common.Core
 	/// <summary>
 	/// A UIState which primarily goal is to provide easy visibility toggling
 	/// </summary>
-	public abstract class VisibilityUI : UIState
+	internal abstract class VisibilityUI : UIState
 	{
 		public bool Visible;
 

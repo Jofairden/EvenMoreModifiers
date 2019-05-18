@@ -1,12 +1,12 @@
-using Loot.Core.ModContent;
-using Loot.UI.Common;
 using Loot.UI.Common.Core;
 using Microsoft.Xna.Framework;
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 using log4net;
-using Loot.Core.System.Loaders;
-using Loot.UI.Common.Tabs.Cubing;
+using Loot.Api.Loaders;
+using Loot.Api.ModContent;
+using Loot.UI;
+using Loot.UI.Tabs.Cubing;
 using Terraria;
 using Terraria.ModLoader;
 using Terraria.UI;

@@ -1,7 +1,8 @@
 using System;
 using System.Collections.Generic;
-using Loot.Core.Attributes;
-using Loot.Core.System.Modifier;
+using Loot.Api.Attributes;
+using Loot.Api.Delegators;
+using Loot.Api.Modifier;
 using Terraria;
 using Terraria.ID;
 using Terraria.Localization;
@@ -13,12 +14,12 @@ namespace Loot.Modifiers.Base
 	{
 		public IList<(int type, int time, float chance)> DebuffChances = new List<(int type, int time, float chance)>();
 
-		public override void OnInitialize(ModifierPlayer player)
+		public override void OnInitialize(ModifierDelegatorPlayer delegatorPlayer)
 		{
 			DebuffChances = new List<(int type, int time, float chance)>();
 		}
 
-		public override void ResetEffects(ModifierPlayer player)
+		public override void ResetEffects(ModifierDelegatorPlayer delegatorPlayer)
 		{
 			DebuffChances.Clear();
 		}
@@ -82,7 +83,7 @@ namespace Loot.Modifiers.Base
 		// Required for minion/proj snapshotting
 		public override void HoldItem(Item item, Player player)
 		{
-			ModifierPlayer.Player(player).GetEffect<WeaponDebuffEffect>()
+			ModifierDelegatorPlayer.Player(player).GetEffect<WeaponDebuffEffect>()
 				.DebuffChances
 				.Add((BuffType, BuffTime, Properties.RoundedPower / 100f * BuffInflictionChance));
 		}

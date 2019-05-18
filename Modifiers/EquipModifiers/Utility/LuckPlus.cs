@@ -1,5 +1,6 @@
-using Loot.Core.Attributes;
-using Loot.Core.System.Modifier;
+using Loot.Api.Attributes;
+using Loot.Api.Delegators;
+using Loot.Api.Modifier;
 using Loot.Modifiers.Base;
 using Terraria;
 
@@ -11,7 +12,7 @@ namespace Loot.Modifiers.EquipModifiers.Utility
 	{
 		public float Luck;
 
-		public override void ResetEffects(ModifierPlayer player)
+		public override void ResetEffects(ModifierDelegatorPlayer delegatorPlayer)
 		{
 			Luck = 0f;
 		}
@@ -34,7 +35,7 @@ namespace Loot.Modifiers.EquipModifiers.Utility
 
 		public override void UpdateEquip(Item item, Player player)
 		{
-			ModifierPlayer.Player(player).GetEffect<LuckEffect>().Luck += (int) Properties.RoundedPower;
+			ModifierDelegatorPlayer.Player(player).GetEffect<LuckEffect>().Luck += (int) Properties.RoundedPower;
 		}
 	}
 }

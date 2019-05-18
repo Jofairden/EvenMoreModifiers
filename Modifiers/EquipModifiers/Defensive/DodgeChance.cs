@@ -1,5 +1,6 @@
-using Loot.Core.Attributes;
-using Loot.Core.System.Modifier;
+using Loot.Api.Attributes;
+using Loot.Api.Delegators;
+using Loot.Api.Modifier;
 using Loot.Modifiers.Base;
 using Terraria;
 using Terraria.DataStructures;
@@ -10,18 +11,18 @@ namespace Loot.Modifiers.EquipModifiers.Defensive
 	{
 		public float DodgeChance; // Dodge chance
 
-		public override void ResetEffects(ModifierPlayer player)
+		public override void ResetEffects(ModifierDelegatorPlayer delegatorPlayer)
 		{
 			DodgeChance = 0f;
 		}
 
 		[AutoDelegation("OnPreHurt")]
 		[DelegationPrioritization(DelegationPrioritization.Early, 99)]
-		private bool TryDodge(ModifierPlayer player, bool pvp, bool quiet, ref int damage, ref int hitDirection, ref bool crit, ref bool customDamage, ref bool playSound, ref bool genGore, ref PlayerDeathReason damageSource)
+		private bool TryDodge(ModifierDelegatorPlayer delegatorPlayer, bool pvp, bool quiet, ref int damage, ref int hitDirection, ref bool crit, ref bool customDamage, ref bool playSound, ref bool genGore, ref PlayerDeathReason damageSource)
 		{
 			if (Main.rand.NextFloat() < DodgeChance)
 			{
-				player.player.NinjaDodge();
+				delegatorPlayer.player.NinjaDodge();
 				return false;
 			}
 
@@ -47,7 +48,7 @@ namespace Loot.Modifiers.EquipModifiers.Defensive
 
 		public override void UpdateEquip(Item item, Player player)
 		{
-			ModifierPlayer.Player(player).GetEffect<DodgeEffect>().DodgeChance += Properties.RoundedPower / 100f;
+			ModifierDelegatorPlayer.Player(player).GetEffect<DodgeEffect>().DodgeChance += Properties.RoundedPower / 100f;
 		}
 	}
 }

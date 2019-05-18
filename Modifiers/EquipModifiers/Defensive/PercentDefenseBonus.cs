@@ -1,6 +1,7 @@
 using System;
-using Loot.Core.Attributes;
-using Loot.Core.System.Modifier;
+using Loot.Api.Attributes;
+using Loot.Api.Delegators;
+using Loot.Api.Modifier;
 using Loot.Modifiers.Base;
 using Terraria;
 
@@ -10,16 +11,16 @@ namespace Loot.Modifiers.EquipModifiers.Defensive
 	{
 		public float PercentDefBoost;
 
-		public override void ResetEffects(ModifierPlayer player)
+		public override void ResetEffects(ModifierDelegatorPlayer delegatorPlayer)
 		{
 			PercentDefBoost = 0f;
 		}
 
 		[AutoDelegation("OnPostUpdateEquips")]
 		[DelegationPrioritization(DelegationPrioritization.Late, 999)]
-		private void DefBoost(ModifierPlayer player)
+		private void DefBoost(ModifierDelegatorPlayer delegatorPlayer)
 		{
-			player.player.statDefense = (int) Math.Ceiling(player.player.statDefense * (1 + PercentDefBoost));
+			delegatorPlayer.player.statDefense = (int) Math.Ceiling(delegatorPlayer.player.statDefense * (1 + PercentDefBoost));
 		}
 	}
 
@@ -40,7 +41,7 @@ namespace Loot.Modifiers.EquipModifiers.Defensive
 
 		public override void UpdateEquip(Item item, Player player)
 		{
-			ModifierPlayer.Player(player).GetEffect<PercentDefBoostEffect>().PercentDefBoost += Properties.RoundedPower / 100f;
+			ModifierDelegatorPlayer.Player(player).GetEffect<PercentDefBoostEffect>().PercentDefBoost += Properties.RoundedPower / 100f;
 		}
 	}
 }

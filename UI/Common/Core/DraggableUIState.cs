@@ -9,7 +9,7 @@ namespace Loot.UI.Common.Core
 	/// <summary>
 	/// A UIState which primarily goal is to provide dragging on click functionality to another element (or itself)
 	/// </summary>
-	public abstract class DraggableUIState : VisibilityUI
+	internal abstract class DraggableUIState : VisibilityUI
 	{
 		private int _dragging;
 
