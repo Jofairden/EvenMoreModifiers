@@ -7,6 +7,7 @@ using Loot.UI.Common.Controls.Panel;
 using Microsoft.Xna.Framework.Graphics;
 using System.Collections.Generic;
 using System.Linq;
+using Loot.Core.System.Strategy;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
@@ -27,7 +28,7 @@ namespace Loot.UI.Common.Tabs.Cubing
 
 		internal GuiCubeButton _cubeButton;
 		internal GuiCubeItemButton _itemButton;
-		internal ItemRollProperties _itemRollProperties;
+		internal RollingStrategyProperties RollingStrategyProperties;
 		internal GuiCubeSelector _guiCubeSelector;
 
 		private GuiImageButton _rerollButton;
@@ -37,7 +38,7 @@ namespace Loot.UI.Common.Tabs.Cubing
 		{
 			base.OnInitialize();
 
-			_itemRollProperties = new ItemRollProperties();
+			RollingStrategyProperties = new RollingStrategyProperties();
 
 			_cubeButton = new GuiCubeButton(
 				GuiButton.ButtonType.StoneOuterBevel,
@@ -98,8 +99,7 @@ namespace Loot.UI.Common.Tabs.Cubing
 		{
 			if (MatchesRerollRequirements())
 			{
-				_itemRollProperties = new ItemRollProperties();
-				_cubeButton.InteractionLogic(_itemButton.Item, _itemRollProperties);
+				RollingStrategyProperties = new RollingStrategyProperties();
 				_cubeButton.RecalculateStack();
 
 				if (_cubeButton.Item.stack <= 0)
@@ -164,10 +164,11 @@ namespace Loot.UI.Common.Tabs.Cubing
 				CustomData = new Dictionary<string, object>
 				{
 					{"Source", "CubeRerollUI"}
-				}
+				},
+				Strategy = _cubeButton.GetRollingStrategy(_itemButton.Item, RollingStrategyProperties)
 			};
 
-			var pool = EMMItem.GetItemInfo(newItem).RollNewPool(ctx, _itemRollProperties);
+			var pool = EMMItem.GetItemInfo(newItem).RollNewPool(ctx, RollingStrategyProperties);
 			pool?.ApplyModifiers(newItem);
 			_itemButton.Item = newItem.Clone();
 		}

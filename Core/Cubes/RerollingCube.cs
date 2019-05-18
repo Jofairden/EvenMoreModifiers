@@ -1,3 +1,4 @@
+using Loot.Core.System.Strategy;
 using Loot.UI.Common;
 using Loot.UI.Common.Tabs.Cubing;
 using Terraria;
@@ -31,8 +32,6 @@ namespace Loot.Core.Cubes
 			item.stack++;
 		}
 
-		public virtual void SetRollLogic(Item item, ItemRollProperties properties)
-		{
-		}
+		public abstract IRollingStrategy<RollingStrategyContext> GetRollingStrategy(Item item, RollingStrategyProperties properties);
 	}
 }

@@ -1,6 +1,3 @@
-using Loot.Core.System.Content;
-using Loot.Ext;
-
 namespace Loot.Core.System.Modifier
 {
 	/// <summary>

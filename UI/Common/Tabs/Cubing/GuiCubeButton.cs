@@ -1,4 +1,5 @@
 using Loot.Core.Cubes;
+using Loot.Core.System.Strategy;
 using Loot.Ext;
 using Loot.UI.Common.Controls.Button;
 using Microsoft.Xna.Framework;
@@ -44,10 +45,8 @@ namespace Loot.UI.Common.Tabs.Cubing
 			}
 		}
 
-		public void InteractionLogic(Item item, ItemRollProperties itemRollProperties)
-		{
-			((RerollingCube)Item.modItem).SetRollLogic(item, itemRollProperties);
-		}
+		public IRollingStrategy<RollingStrategyContext> GetRollingStrategy(Item item, RollingStrategyProperties rollingStrategyProperties) 
+			=> ((RerollingCube)Item.modItem).GetRollingStrategy(item, rollingStrategyProperties);
 
 		public void RecalculateStack()
 		{

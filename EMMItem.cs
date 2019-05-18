@@ -1,10 +1,7 @@
-using Loot.Core.Cubes;
 using Loot.Core.Graphics;
 using Loot.Core.System.Loaders;
 using Loot.Core.System.Modifier;
 using Loot.Ext;
-using Loot.Modifiers.EquipModifiers.Utility;
-using Loot.Pools;
 using Loot.Rarities;
 using Microsoft.Xna.Framework;
 using System;
@@ -12,10 +9,10 @@ using System.Collections.Generic;
 using System.Globalization;
 using System.IO;
 using System.Linq;
+using Loot.Core.System.Strategy;
 using Terraria;
 using Terraria.ModLoader;
 using Terraria.ModLoader.IO;
-using Terraria.Utilities;
 
 namespace Loot
 {
@@ -51,24 +48,24 @@ namespace Loot
 		/// Attempts to roll new modifiers
 		/// Has a set chance to hit a predefined pool of modifiers
 		/// </summary>
-		internal ModifierPool RollNewPool(ModifierContext ctx, ItemRollProperties itemRollProperties = null)
+		public ModifierPool RollNewPool(ModifierContext ctx, RollingStrategyProperties rollingStrategyProperties = null)
 		{
-			if (itemRollProperties == null)
+			if (rollingStrategyProperties == null)
 			{
-				itemRollProperties = new ItemRollProperties();
+				rollingStrategyProperties = new RollingStrategyProperties();
 			}
 
 			HasRolled = true;
 			bool noForce = true;
 
 			// Custom rarity provided
-			if (itemRollProperties.OverrideRollModifierRarity != null)
+			if (rollingStrategyProperties.OverrideRollModifierRarity != null)
 			{
-				ModifierRarity = itemRollProperties.OverrideRollModifierRarity.Invoke();
+				ModifierRarity = rollingStrategyProperties.OverrideRollModifierRarity.Invoke();
 			}
-			else if (itemRollProperties.ForceModifierRarity != null)
+			else if (rollingStrategyProperties.ForceModifierRarity != null)
 			{
-				ModifierRarity = itemRollProperties.ForceModifierRarity;
+				ModifierRarity = rollingStrategyProperties.ForceModifierRarity;
 			}
 			else if (ModifierRarity == null || ModifierRarity.Type == 0)
 			{
@@ -78,7 +75,7 @@ namespace Loot
 			ctx.Rarity = ModifierRarity;
 
 			// Upgrade rarity
-			if (itemRollProperties.CanUpgradeRarity(ctx)
+			if (rollingStrategyProperties.CanUpgradeRarity(ctx)
 				&& Main.rand.NextFloat() <= (ModifierRarity.UpgradeChance ?? 0f))
 			{
 				var newRarity = ModifierRarity.Upgrade;
@@ -89,7 +86,7 @@ namespace Loot
 				}
 			}
 			// Downgrade rarity
-			else if (itemRollProperties.CanDowngradeRarity(ctx)
+			else if (rollingStrategyProperties.CanDowngradeRarity(ctx)
 					&& Main.rand.NextFloat() <= (ModifierRarity.DowngradeChance ?? 0f))
 			{
 				var newRarity = ModifierRarity.Downgrade;
@@ -103,9 +100,9 @@ namespace Loot
 			ctx.Rarity = ModifierRarity;
 
 			// Custom pool provided
-			if (itemRollProperties.OverrideRollModifierPool != null)
+			if (rollingStrategyProperties.OverrideRollModifierPool != null)
 			{
-				ModifierPool = itemRollProperties.OverrideRollModifierPool.Invoke();
+				ModifierPool = rollingStrategyProperties.OverrideRollModifierPool.Invoke();
 				noForce = !ModifierPool?._CanRoll(ctx) ?? true;
 			}
 
@@ -113,9 +110,9 @@ namespace Loot
 			if (noForce)
 			{
 				// A pool is forced to roll
-				if (itemRollProperties.ForceModifierPool != null)
+				if (rollingStrategyProperties.ForceModifierPool != null)
 				{
-					ModifierPool = mod.GetModifierPool(itemRollProperties.ForceModifierPool.GetType());
+					ModifierPool = mod.GetModifierPool(rollingStrategyProperties.ForceModifierPool.GetType());
 					noForce = !ModifierPool?._CanRoll(ctx) ?? true;
 				}
 
@@ -123,7 +120,7 @@ namespace Loot
 				if (noForce)
 				{
 					// Try rolling a predefined (weighted) pool
-					bool rollPredefinedPool = Main.rand.NextFloat() <= itemRollProperties.RollPredefinedPoolChance;
+					bool rollPredefinedPool = Main.rand.NextFloat() <= rollingStrategyProperties.RollPredefinedPoolChance;
 					noForce = !rollPredefinedPool;
 
 					if (rollPredefinedPool)
@@ -147,7 +144,7 @@ namespace Loot
 			}
 
 			// Attempt rolling modifiers
-			if (!RollNewModifiers(ctx, itemRollProperties))
+			if (!ctx.Strategy?.Roll(ctx, new RollingStrategyContext(ctx.Item, rollingStrategyProperties)) ?? true)
 			{
 				InvalidateRolls();
 			}
@@ -155,89 +152,6 @@ namespace Loot
 			ctx.Item.GetGlobalItem<ShaderGlobalItem>().NeedsUpdate = true;
 			ctx.Item.GetGlobalItem<GlowmaskGlobalItem>().NeedsUpdate = true;
 			return ModifierPool;
-		}
-
-		// Forces the next roll to succeed
-		private bool _forceNextRoll;
-
-		/// <summary>
-		/// Roll active modifiers, can roll up to n maximum effects
-		/// Returns if any modifiers were activated
-		/// </summary>
-		private bool RollNewModifiers(ModifierContext ctx, ItemRollProperties itemRollProperties)
-		{
-			// Firstly, prepare a WeightedRandom list with modifiers
-			// that are rollable in this context
-			WeightedRandom<Modifier> wr = new WeightedRandom<Modifier>();
-			List<Modifier> list = new List<Modifier>();
-
-			foreach (var e in ModifierPool.GetRollableModifiers(ctx))
-			{
-				wr.Add(e, e.Properties.RollChance);
-			}
-
-			// Up to n times, try rolling a mod
-			// TODO since we can increase lines rolled, make it so that MaxRollableLines influences the number of rows drawn in the UI
-			for (int i = 0; i < itemRollProperties.MaxRollableLines; ++i)
-			{
-				// If there are no mods left, or we fail the roll, break.
-				if (wr.elements.Count <= 0
-					|| !_forceNextRoll
-					&& list.Count >= itemRollProperties.MinModifierRolls
-					&& Main.rand.NextFloat() > itemRollProperties.RollNextChance)
-				{
-					break;
-				}
-
-				_forceNextRoll = false;
-
-				// Get a next weighted random mod
-				// Clone the mod (new instance) and roll its properties, then roll it
-				Modifier rolledModifier = (Modifier)wr.Get().Clone();
-				float luck = itemRollProperties.ExtraLuck;
-				float magnitudePower = itemRollProperties.MagnitudePower;
-
-				if (ctx.Player != null)
-				{
-					luck += ModifierPlayer.Player(ctx.Player).GetEffect<LuckEffect>().Luck;
-				}
-				if (ctx.Rarity != null)
-				{
-					luck += ctx.Rarity.ExtraLuck;
-					magnitudePower += ctx.Rarity.ExtraMagnitudePower;
-				}
-
-				rolledModifier.Properties =
-					rolledModifier.GetModifierProperties(ctx.Item).Build()
-						.RollMagnitudeAndPower(
-							magnitudePower: magnitudePower,
-							lukStat: luck);
-				rolledModifier.Roll(ctx, list);
-
-				// If the mod deemed to be unable to be added,
-				// Force that the next roll is successful
-				// (no RNG on top of RNG)
-				if (!rolledModifier.PostRoll(ctx, list))
-				{
-					_forceNextRoll = true;
-					continue;
-				}
-
-				// The mod can be added
-				list.Add(rolledModifier);
-
-				// If it is a unique modifier, remove it from the list to be rolled
-				if (!rolledModifier.Properties.IsUnique)
-				{
-					continue;
-				}
-
-				wr.elements.RemoveAll(x => x.Item1.Type == rolledModifier.Type);
-				wr.needsRefresh = true;
-			}
-
-			ModifierPool.ActiveModifiers = list.ToArray();
-			return list.Any();
 		}
 
 		public override GlobalItem Clone(Item item, Item itemClone)

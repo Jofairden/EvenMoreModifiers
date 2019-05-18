@@ -3,7 +3,6 @@ using Loot.Core.System.Loaders;
 using Microsoft.Xna.Framework;
 using System;
 using System.IO;
-using Loot.Ext;
 using Terraria;
 using Terraria.ModLoader;
 using Terraria.ModLoader.IO;

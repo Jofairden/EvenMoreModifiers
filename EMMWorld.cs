@@ -1,4 +1,3 @@
-using Loot.Core.Cubes;
 using Loot.Core.System.Modifier;
 using Loot.Ext;
 using System;
@@ -81,44 +80,37 @@ namespace Loot
 				{
 					EMMItem itemInfo = EMMItem.GetItemInfo(item);
 					ModifierPool pool = itemInfo.ModifierPool;
-					UnifiedRandom rand = Main.rand != null ? Main.rand : WorldGen.genRand != null ? WorldGen.genRand : null;
+					UnifiedRandom rand = (Main.rand ?? WorldGen.genRand) ?? new UnifiedRandom();
+
 					if (itemInfo.HasRolled || pool != null)
-					{
 						continue;
-					}
 
 					itemInfo.HasRolled = true;
 
 					if (rand != null && rand.NextBool())
-					{
 						continue;
-					}
-
+					
 					ModifierContext ctx = new ModifierContext
 					{
 						Method = method,
-						Item = item
+						Item = item,
+						Strategy = RollingUtils.Strategies.Normal
 					};
 
-					if (obj is Chest chest)
+					switch (obj)
 					{
-						ctx.CustomData = new Dictionary<string, object>
-						{
-							{"chestData", new Tuple<int, int>(chest.x, chest.y)}
-						};
-					}
-					else if (obj is Player player)
-					{
-						ctx.Player = player;
+						case Chest chest:
+							ctx.CustomData = new Dictionary<string, object>
+							{
+								{"chestData", new Tuple<int, int>(chest.x, chest.y)}
+							};
+							break;
+						case Player player:
+							ctx.Player = player;
+							break;
 					}
 
-					ItemRollProperties itemRollProperties = new ItemRollProperties
-					{
-						MaxRollableLines = 2,
-						ExtraLuck = 0,
-						CanUpgradeRarity = context => false
-					};
-					pool = itemInfo.RollNewPool(ctx, itemRollProperties);
+					pool = itemInfo.RollNewPool(ctx, RollingUtils.Properties.WorldGen);
 					pool?.ApplyModifiers(item);
 				}
 			}

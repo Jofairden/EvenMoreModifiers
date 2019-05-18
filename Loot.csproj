@@ -57,7 +57,8 @@
     <Compile Include="Core\Cubes\CubeOfSealing.cs" />
     <Compile Include="Core\Cubes\CubeShop.cs" />
     <Compile Include="Core\Cubes\CubeUIExtensions.cs" />
-    <Compile Include="Core\Cubes\ItemRollProperties.cs" />
+    <Compile Include="Core\System\Strategy\NormalRollingStrategy.cs" />
+    <Compile Include="Core\System\Strategy\RollingStrategyProperties.cs" />
     <Compile Include="Core\Cubes\MagicalCube.cs" />
     <Compile Include="Core\Cubes\PoorCube.cs" />
     <Compile Include="Core\Cubes\RerollingCube.cs" />
@@ -76,8 +77,8 @@
     <Compile Include="Core\System\Content\ModifierEffectContent.cs" />
     <Compile Include="Core\System\Content\ModifierPoolContent.cs" />
     <Compile Include="Core\System\Content\ModifierRarityContent.cs" />
-    <Compile Include="Core\System\Core\LoadableContentBase.cs" />
-    <Compile Include="Core\System\Core\ILoadableContent.cs" />
+    <Compile Include="Core\System\Content\LoadableContentBase.cs" />
+    <Compile Include="Core\System\Content\ILoadableContent.cs" />
     <Compile Include="Core\System\Loaders\AssetLoader.cs" />
     <Compile Include="Core\System\Loaders\ContentLoader.cs" />
     <Compile Include="Core\System\Loaders\MainLoader.cs" />
@@ -93,6 +94,8 @@
     <Compile Include="Core\System\Modifier\NullModifierEffect.cs" />
     <Compile Include="Core\System\Modifier\NullModifierRarity.cs" />
     <Compile Include="Core\System\Modifier\NullModifier.cs" />
+    <Compile Include="Core\System\Strategy\IRollingStrategy.cs" />
+    <Compile Include="Core\System\Strategy\RollingStrategyContext.cs" />
     <Compile Include="EMMItem.cs" />
     <Compile Include="EMMPlayer.cs" />
     <Compile Include="EMMWorld.cs" />
@@ -104,6 +107,7 @@
     <Compile Include="Ext\ModSupport\WingSlotSupport.cs" />
     <Compile Include="Ext\ModUtils.cs" />
     <Compile Include="Core\System\Loaders\LoadingFunneler.cs" />
+    <Compile Include="Ext\RollingUtils.cs" />
     <Compile Include="Loot.cs" />
     <Compile Include="ModifierItem.cs" />
     <Compile Include="ModifierPlayer.cs" />

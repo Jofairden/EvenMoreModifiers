@@ -1,14 +1,14 @@
+using System;
 using Loot.Core.System.Modifier;
 using Microsoft.Xna.Framework;
-using System;
 
-namespace Loot.Core.Cubes
+namespace Loot.Core.System.Strategy
 {
 	/// <summary>
-	/// Defines properties that will be used when an item is being rolled
+	/// Defines properties that will be used when an item is being rolled in a <see cref="IRollingStrategy{T}"/>
 	/// These can interact with the rolling behavior, and even override certain things
 	/// </summary>
-	public sealed class ItemRollProperties
+	public sealed class RollingStrategyProperties
 	{
 		private int _minModifierRolls = 1;
 

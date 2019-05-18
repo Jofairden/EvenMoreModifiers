@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using Loot.Core.System.Strategy;
 using Terraria;
 
 namespace Loot.Core.System.Modifier
@@ -73,5 +74,6 @@ namespace Loot.Core.System.Modifier
 		public Item Item;
 		public Recipe Recipe;
 		public ModifierRarity Rarity;
+		public IRollingStrategy<RollingStrategyContext> Strategy;
 	}
 }

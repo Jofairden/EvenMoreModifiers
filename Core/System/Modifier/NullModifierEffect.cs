@@ -1,5 +1,3 @@
-using Microsoft.Xna.Framework;
-
 namespace Loot.Core.System.Modifier
 {
 	/// <summary>

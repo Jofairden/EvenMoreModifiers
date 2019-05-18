@@ -1,3 +1,4 @@
+using Loot.Core.System.Strategy;
 using Terraria;
 
 namespace Loot.Core.Cubes
@@ -26,6 +27,11 @@ namespace Loot.Core.Cubes
 		{
 			// TODO for now, just use cubing UI
 			base.RightClick(player);
+		}
+
+		public override IRollingStrategy<RollingStrategyContext> GetRollingStrategy(Item item, RollingStrategyProperties properties)
+		{
+			return null;
 		}
 	}
 }

@@ -1,5 +1,5 @@
-using Loot.Core.System.Loaders;
 using Loot.Core.System.Modifier;
+using Loot.Core.System.Strategy;
 using Loot.Ext;
 using Loot.Rarities;
 using Microsoft.Xna.Framework;
@@ -30,9 +30,8 @@ namespace Loot.Core.Cubes
 		{
 		}
 
-		public override void SetRollLogic(Item item, ItemRollProperties properties)
+		public override IRollingStrategy<RollingStrategyContext> GetRollingStrategy(Item item, RollingStrategyProperties properties)
 		{
-			base.SetRollLogic(item, properties);
 			var currentRarity = EMMItem.GetItemInfo(item).ModifierRarity;
 			bool isLegendary = currentRarity?.GetType() == typeof(LegendaryRarity);
 			bool isEpic = currentRarity?.GetType() == typeof(EpicRarity);
@@ -49,6 +48,7 @@ namespace Loot.Core.Cubes
 			{
 				properties.CanUpgradeRarity = ctx => ctx.Rarity.GetType() == typeof(CommonRarity);
 			}
+			return RollingUtils.Strategies.Normal;
 		}
 	}
 }

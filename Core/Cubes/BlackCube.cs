@@ -1,3 +1,5 @@
+using Loot.Core.System.Strategy;
+using Loot.Ext;
 using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.ModLoader;
@@ -27,12 +29,12 @@ namespace Loot.Core.Cubes
 		{
 		}
 
-		public override void SetRollLogic(Item item, ItemRollProperties properties)
+		public override IRollingStrategy<RollingStrategyContext> GetRollingStrategy(Item item, RollingStrategyProperties properties)
 		{
-			base.SetRollLogic(item, properties);
 			properties.MinModifierRolls = 4;
 			properties.MagnitudePower = 1.25f;
 			properties.ExtraLuck = 4;
+			return RollingUtils.Strategies.Normal;
 		}
 	}
 }
