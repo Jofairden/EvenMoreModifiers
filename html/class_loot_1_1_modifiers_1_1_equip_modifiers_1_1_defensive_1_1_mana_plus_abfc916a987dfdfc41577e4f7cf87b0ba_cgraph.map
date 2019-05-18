@@ -1,3 +1,3 @@
 <map id="Loot.Modifiers.EquipModifiers.Defensive.ManaPlus.GetTooltip" name="Loot.Modifiers.EquipModifiers.Defensive.ManaPlus.GetTooltip">
-<area shape="rect" id="node2" href="$class_loot_1_1_core_1_1_system_1_1_modifier_1_1_modifier_tooltip_builder.html#a084754ced4acb1fd18f49e2c57a65e08" title="Loot.Core.System.Modifier.\lModifierTooltipBuilder.WithPositive" alt="" coords="262,5,487,46"/>
+<area shape="rect" id="node2" href="$class_loot_1_1_api_1_1_modifier_1_1_modifier_tooltip_builder.html#a699b3d67238376c58ab3f82df21a75eb" title="Loot.Api.Modifier.Modifier\lTooltipBuilder.WithPositive" alt="" coords="261,5,440,46"/>
 </map>

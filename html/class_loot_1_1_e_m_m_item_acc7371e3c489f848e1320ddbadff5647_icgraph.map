@@ -1,7 +1,0 @@
-<map id="Loot.EMMItem.RollNewPool" name="Loot.EMMItem.RollNewPool">
-<area shape="rect" id="node2" href="$class_loot_1_1_e_m_m_world.html#af380c8373a9080f2d6144288c6aa87b4" title="Loot.EMMWorld.ModifyWorld\lGenTasks" alt="" coords="243,5,437,46"/>
-<area shape="rect" id="node3" href="$class_loot_1_1_e_m_m_item.html#a40d02fc083c67022b5c8603d7dd9faee" title="Loot.EMMItem.OnCraft" alt="" coords="261,71,419,97"/>
-<area shape="rect" id="node4" href="$class_loot_1_1_e_m_m_item.html#a9f88fc9f71c3313481fa4a2364d2c280" title="Loot.EMMItem.OnPickup" alt="" coords="255,121,425,148"/>
-<area shape="rect" id="node5" href="$class_loot_1_1_e_m_m_item.html#a3b707b45eb50ce917bbb0052cfa81855" title="Loot.EMMItem.PostReforge" alt="" coords="247,172,433,199"/>
-<area shape="rect" id="node6" href="$class_loot_1_1_u_i_1_1_rerolling_1_1_cube_reroll_u_i.html#a5ca047556452a0a6c2248712f1ba3f58" title="Loot.UI.Rerolling.CubeReroll\lUI.RerollModifierPool" alt="" coords="245,223,435,265"/>
-</map>

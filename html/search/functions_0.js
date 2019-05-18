@@ -1,8 +1,8 @@
 var searchData=
 [
-  ['_5fgetcontent',['_GetContent',['../class_loot_1_1_core_1_1_system_1_1_core_1_1_loadable_content_base.html#afae20e5c35df847fde648182321e1cd1',1,'Loot::Core::System::Core::LoadableContentBase']]],
-  ['_5fgetmodifiers',['_GetModifiers',['../class_loot_1_1_core_1_1_system_1_1_modifier_1_1_modifier_pool.html#a5db12adc9203317b1f4acd369297250d',1,'Loot::Core::System::Modifier::ModifierPool']]],
-  ['_5finitialize',['_Initialize',['../class_loot_1_1_core_1_1_mod_content_1_1_texture_mod_content.html#a117a64903dcc958b751f00e779521baf',1,'Loot::Core::ModContent::TextureModContent']]],
-  ['_5fload',['_Load',['../class_loot_1_1_core_1_1_mod_content_1_1_texture_mod_content.html#afcf0ab1051dcb274fff0153cab8d87b7',1,'Loot::Core::ModContent::TextureModContent']]],
-  ['_5funload',['_Unload',['../class_loot_1_1_core_1_1_mod_content_1_1_texture_mod_content.html#a515ba440e3c381e03a8f0e7ec62edd1b',1,'Loot::Core::ModContent::TextureModContent']]]
+  ['_5fgetcontent',['_GetContent',['../class_loot_1_1_api_1_1_content_1_1_loadable_content_base.html#a63042f72edac016539562d0fe6cd2b66',1,'Loot::Api::Content::LoadableContentBase']]],
+  ['_5fgetmodifiers',['_GetModifiers',['../class_loot_1_1_api_1_1_modifier_1_1_modifier_pool.html#a3faff99b666429f4169b961d74c7e297',1,'Loot::Api::Modifier::ModifierPool']]],
+  ['_5finitialize',['_Initialize',['../class_loot_1_1_api_1_1_mod_content_1_1_texture_mod_content.html#a783907f2422d0bbce3f42bb770870f26',1,'Loot::Api::ModContent::TextureModContent']]],
+  ['_5fload',['_Load',['../class_loot_1_1_api_1_1_mod_content_1_1_texture_mod_content.html#a5483964e903411006cb4b32db799b657',1,'Loot::Api::ModContent::TextureModContent']]],
+  ['_5funload',['_Unload',['../class_loot_1_1_api_1_1_mod_content_1_1_texture_mod_content.html#a22959659704467d1f5eaae99ce4d9476',1,'Loot::Api::ModContent::TextureModContent']]]
 ];

@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['shaderdrawlayer',['ShaderDrawLayer',['../namespace_loot_1_1_core_1_1_graphics.html#ab9bc623e11f3c37b99846ba9daf478d0',1,'Loot::Core::Graphics']]],
-  ['shaderdrawoffsetstyle',['ShaderDrawOffsetStyle',['../namespace_loot_1_1_core_1_1_graphics.html#a4d61ed486cee189a9ed5ea9ba0272c43',1,'Loot::Core::Graphics']]]
+  ['shaderdrawlayer',['ShaderDrawLayer',['../namespace_loot_1_1_api_1_1_graphics.html#a095b8ba39ff180d309a8a55bc545f0c8',1,'Loot::Api::Graphics']]],
+  ['shaderdrawoffsetstyle',['ShaderDrawOffsetStyle',['../namespace_loot_1_1_api_1_1_graphics.html#a0af38b100a6b27f942b382c12ab75bba',1,'Loot::Api::Graphics']]]
 ];

@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['delegationprioritization',['DelegationPrioritization',['../namespace_loot_1_1_core_1_1_attributes.html#ac51e8c3bfabd3413fe3be5ba253c1b8f',1,'Loot::Core::Attributes']]],
-  ['delegationtarget',['DelegationTarget',['../namespace_loot_1_1_core_1_1_attributes.html#ae8ba07b4224e46d925c4cda7cc9b9624',1,'Loot::Core::Attributes']]]
+  ['delegationprioritization',['DelegationPrioritization',['../namespace_loot_1_1_api_1_1_attributes.html#a4bb203b1609b5a3f73712bfde69dd986',1,'Loot::Api::Attributes']]],
+  ['delegationtarget',['DelegationTarget',['../namespace_loot_1_1_api_1_1_attributes.html#a96f1ebf800712ea4f5265d1e6ae9649d',1,'Loot::Api::Attributes']]]
 ];

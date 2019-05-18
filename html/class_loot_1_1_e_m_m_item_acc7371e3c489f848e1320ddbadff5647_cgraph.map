@@ -1,5 +1,0 @@
-<map id="Loot.EMMItem.RollNewPool" name="Loot.EMMItem.RollNewPool">
-<area shape="rect" id="node2" href="$class_loot_1_1_ext_1_1_mod_utils.html#a5fb5205c0c76bcc4add62f666ba5f65b" title="Loot.Ext.ModUtils.GetModifier\lRarity" alt="" coords="243,5,442,46"/>
-<area shape="rect" id="node3" href="$class_loot_1_1_e_m_m_item.html#a3c96b9a7d32d86f9e9cfe88dcbdcf22a" title="Loot.EMMItem.InvalidateRolls" alt="" coords="243,71,442,97"/>
-<area shape="rect" id="node4" href="$interface_loot_1_1_core_1_1_system_1_1_strategy_1_1_i_rolling_strategy.html#aa2b3c42ad851147c82162e01b069e565" title="Loot.Core.System.Strategy.\lIRollingStrategy.Roll" alt="" coords="250,122,435,163"/>
-</map>

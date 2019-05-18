@@ -1,0 +1,5 @@
+<map id="Loot.Api.Graphics.ShaderGlobalItem.PreDrawInWorld" name="Loot.Api.Graphics.ShaderGlobalItem.PreDrawInWorld">
+<area shape="rect" id="node2" href="$class_loot_1_1_api_1_1_graphics_1_1_shader_entity.html#a230c9c2e535853d661a0ab1208facae3" title="Will draw all the layers (subject, glowmask, shader) in the proper order " alt="" coords="241,5,429,46"/>
+<area shape="rect" id="node3" href="$class_loot_1_1_api_1_1_graphics_1_1_shader_global_item.html#a917d75a23b8ad07092fa9a916a687f4e" title="Loot.Api.Graphics.Shader\lGlobalItem.UpdateEntities" alt="" coords="247,70,422,111"/>
+<area shape="rect" id="node4" href="$class_loot_1_1_loot_mod_item.html#add1489001e88a446099fefcd8193852a" title="Loot.LootModItem.GetActivePool" alt="" coords="478,77,693,104"/>
+</map>

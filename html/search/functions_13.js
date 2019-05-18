@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['voideventraiser',['VoidEventRaiser',['../class_loot_1_1_modifier_player.html#ac79c0ce41c1940dae96aee8c45528db9',1,'Loot::ModifierPlayer']]]
+  ['voideventraiser',['VoidEventRaiser',['../class_loot_1_1_api_1_1_delegators_1_1_modifier_delegator_player.html#a062e4b3c6471f5ff3020e0f56286658a',1,'Loot::Api::Delegators::ModifierDelegatorPlayer']]]
 ];

@@ -26,8 +26,9 @@
 <area shape="rect" id="node31" href="$class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_utility_1_1_mining_speed_plus.html" title="Loot.Modifiers.EquipModifiers.\lUtility.MiningSpeedPlus" alt="" coords="563,1573,762,1614"/>
 <area shape="rect" id="node32" href="$class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_utility_1_1_move_speed_plus.html" title="Loot.Modifiers.EquipModifiers.\lUtility.MoveSpeedPlus" alt="" coords="563,1638,762,1679"/>
 <area shape="rect" id="node33" href="$class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_utility_1_1_wing_time_plus.html" title="Loot.Modifiers.EquipModifiers.\lUtility.WingTimePlus" alt="" coords="563,1703,762,1745"/>
-<area shape="rect" id="node2" href="$class_loot_1_1_core_1_1_system_1_1_modifier_1_1_modifier.html" title="Defines a modifier, which is an unloaded GlobalItem Making it a GlobalItem gives easy access to all h..." alt="" coords="214,861,282,888"/>
+<area shape="rect" id="node2" href="$class_loot_1_1_api_1_1_modifier_1_1_modifier.html" title="Defines a modifier, which is an unloaded GlobalItem Making it a GlobalItem gives easy access to all h..." alt="" coords="214,861,282,888"/>
 <area shape="rect" id="node3" href="$class_global_item.html" title="GlobalItem" alt="" coords="43,785,128,812"/>
-<area shape="rect" id="node4" href="$interface_loot_1_1_core_1_1_system_1_1_core_1_1_i_loadable_content.html" title="ILoadableContent" alt="" coords="23,836,147,863"/>
+<area shape="rect" id="node4" href="$interface_loot_1_1_api_1_1_content_1_1_i_loadable_content.html" title="ILoadableContent" alt="" coords="23,836,147,863"/>
+<area shape="rect" id="node5" title="Used to restrict setting properties of ILoadableContent to internal only " alt="" coords="6,887,165,913"/>
 <area shape="rect" id="node6" href="$class_i_cloneable.html" title="ICloneable" alt="" coords="43,937,127,964"/>
 </map>

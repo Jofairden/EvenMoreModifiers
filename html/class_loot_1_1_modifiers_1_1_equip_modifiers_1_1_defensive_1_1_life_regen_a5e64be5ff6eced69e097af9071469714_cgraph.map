@@ -1,4 +1,4 @@
 <map id="Loot.Modifiers.EquipModifiers.Defensive.LifeRegen.GetModifierProperties" name="Loot.Modifiers.EquipModifiers.Defensive.LifeRegen.GetModifierProperties">
-<area shape="rect" id="node2" href="$class_loot_1_1_core_1_1_system_1_1_modifier_1_1_modifier_properties_builder.html#af322e369df14e9bab51031fa400db131" title="Loot.Core.System.Modifier.\lModifierPropertiesBuilder.With\lMaxMagnitude" alt="" coords="329,5,527,61"/>
-<area shape="rect" id="node3" href="$class_loot_1_1_core_1_1_system_1_1_modifier_1_1_modifier_properties_builder.html#a5eb5e573d373cac67c2d99240e2cdd88" title="Loot.Core.System.Modifier.\lModifierPropertiesBuilder.With\lRollChance" alt="" coords="329,85,527,141"/>
+<area shape="rect" id="node2" href="$class_loot_1_1_api_1_1_modifier_1_1_modifier_properties_builder.html#a96d86f330a08927454f11a053d128abb" title="Loot.Api.Modifier.Modifier\lPropertiesBuilder.WithMaxMagnitude" alt="" coords="328,5,565,46"/>
+<area shape="rect" id="node3" href="$class_loot_1_1_api_1_1_modifier_1_1_modifier_properties_builder.html#a8ec6b61335fc44f1cbaa989aa6280436" title="Loot.Api.Modifier.Modifier\lPropertiesBuilder.WithRollChance" alt="" coords="337,70,557,111"/>
 </map>

@@ -1,11 +1,11 @@
 var searchData=
 [
-  ['idcount',['IdCount',['../class_loot_1_1_core_1_1_system_1_1_core_1_1_loadable_content_base.html#ae4bf3a9c71d5583324e8fb6a9af1df28',1,'Loot::Core::System::Core::LoadableContentBase']]],
-  ['identity',['Identity',['../class_loot_1_1_core_1_1_graphics_1_1_graphics_entity.html#a16e9d23fd60b5720a25452ea1c79e791',1,'Loot::Core::Graphics::GraphicsEntity']]],
-  ['initialized',['Initialized',['../class_loot_1_1_e_m_m_world.html#afa44d6920b7a7c946892d010b63467a2',1,'Loot::EMMWorld']]],
-  ['isactivated',['IsActivated',['../class_loot_1_1_activated_modifier_item.html#a0df38c30d670976ae033ac28631bda9b',1,'Loot::ActivatedModifierItem']]],
-  ['isbeingdelegated',['IsBeingDelegated',['../class_loot_1_1_core_1_1_system_1_1_modifier_1_1_modifier_effect.html#adc0c92a873761222dced3322b6a07ab5',1,'Loot::Core::System::Modifier::ModifierEffect']]],
-  ['ischeated',['IsCheated',['../class_loot_1_1_activated_modifier_item.html#a929d88e1d897e054cef88e564dd94637',1,'Loot::ActivatedModifierItem']]],
-  ['isloaded',['IsLoaded',['../class_loot_1_1_u_i_1_1_common_1_1_tabs_1_1_soulforging_1_1_gui_soulgauge_1_1_gauge_drawing.html#acc709451d39544135e5be3b0c3b16972',1,'Loot::UI::Common::Tabs::Soulforging::GuiSoulgauge::GaugeDrawing']]],
-  ['isunique',['IsUnique',['../class_loot_1_1_core_1_1_system_1_1_modifier_1_1_modifier_properties_builder.html#af78b2f65e8014a1cc7b1f2ea2eed63fd',1,'Loot::Core::System::Modifier::ModifierPropertiesBuilder']]]
+  ['idcount',['IdCount',['../class_loot_1_1_api_1_1_content_1_1_loadable_content_base.html#a883702ffb3ac76c39b8c006063ad01f5',1,'Loot::Api::Content::LoadableContentBase']]],
+  ['identity',['Identity',['../class_loot_1_1_api_1_1_graphics_1_1_graphics_entity.html#af0db7845e5206c44430803841c4f195f',1,'Loot::Api::Graphics::GraphicsEntity']]],
+  ['initialized',['Initialized',['../class_loot_1_1_loot_mod_world.html#a8c20134003150dc662ce290cb0eff71f',1,'Loot::LootModWorld']]],
+  ['isactivated',['IsActivated',['../class_loot_1_1_hacks_1_1_cheated_item_hack_global_item.html#afb62076eacce57923d7dd44708a5ea4f',1,'Loot::Hacks::CheatedItemHackGlobalItem']]],
+  ['isbeingdelegated',['IsBeingDelegated',['../class_loot_1_1_api_1_1_modifier_1_1_modifier_effect.html#a357760af133873a3e9c8da1d294b0960',1,'Loot::Api::Modifier::ModifierEffect']]],
+  ['ischeated',['IsCheated',['../class_loot_1_1_hacks_1_1_cheated_item_hack_global_item.html#af000d3af8fdf4e5db39cc2dfe8947498',1,'Loot::Hacks::CheatedItemHackGlobalItem']]],
+  ['isloaded',['IsLoaded',['../class_loot_1_1_u_i_1_1_tabs_1_1_soulforging_1_1_gui_soulgauge_1_1_gauge_drawing.html#a0acc74d541720b9fd3a6411f51a658fe',1,'Loot::UI::Tabs::Soulforging::GuiSoulgauge::GaugeDrawing']]],
+  ['isunique',['IsUnique',['../class_loot_1_1_api_1_1_modifier_1_1_modifier_properties_builder.html#a95e885a2b0a112add570e04bf06849a3',1,'Loot::Api::Modifier::ModifierPropertiesBuilder']]]
 ];

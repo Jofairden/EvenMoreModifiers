@@ -1,0 +1,7 @@
+<map id="Loot.Api.Modifier.ModifierContext" name="Loot.Api.Modifier.ModifierContext">
+<area shape="rect" id="node3" href="$class_loot_1_1_api_1_1_modifier_1_1_modifier_rarity.html" title="Defines the rarity of a modifier " alt="" coords="375,194,545,235"/>
+<area shape="rect" id="node4" href="$interface_loot_1_1_api_1_1_content_1_1_i_loadable_content.html" title="ILoadableContent" alt="" coords="23,5,147,32"/>
+<area shape="rect" id="node5" title="Used to restrict setting properties of ILoadableContent to internal only " alt="" coords="6,56,165,83"/>
+<area shape="rect" id="node6" href="$class_i_cloneable.html" title="ICloneable" alt="" coords="43,107,127,133"/>
+<area shape="rect" id="node14" href="$interface_loot_1_1_api_1_1_strategy_1_1_i_rolling_strategy.html" title="Loot.Api.Strategy.IRolling\lStrategy\&lt; RollingStrategyContext \&gt;" alt="" coords="345,377,575,418"/>
+</map>

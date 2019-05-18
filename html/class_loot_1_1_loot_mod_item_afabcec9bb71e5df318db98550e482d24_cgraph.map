@@ -1,0 +1,6 @@
+<map id="Loot.LootModItem.Save" name="Loot.LootModItem.Save">
+<area shape="rect" id="node2" href="$class_loot_1_1_loot_mod_item.html#a4f2565ba528e5d3c5f1c86a99976e9ea" title="Loot.LootModItem.NeedsSaving" alt="" coords="217,5,426,32"/>
+<area shape="rect" id="node3" href="$class_loot_1_1_api_1_1_modifier_1_1_modifier_rarity.html#a3581d1eca4b9e74ccbbd1c022b019032" title="Allows modder to do custom saving here Use the given TC to put data you want to save, which can be loaded using Load(Item,TagCompound) " alt="" coords="236,81,407,122"/>
+<area shape="rect" id="node4" href="$class_loot_1_1_api_1_1_modifier_1_1_modifier_pool.html#a310e2bf46e2621390dad5e401fc44781" title="Allows modder to do custom saving here Use the given TC to put data you want to save, which can be loaded using Load(Item, TagCompound) " alt="" coords="236,170,407,211"/>
+<area shape="rect" id="node5" href="$class_loot_1_1_api_1_1_modifier_1_1_modifier.html#ae0d12b4a4ac6c013a16701f30aad8907" title="Allows modder to do custom saving here Use the given TC to put data you want to save, which can be loaded using Load(Item,TagCompound) " alt="" coords="475,177,679,204"/>
+</map>

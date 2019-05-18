@@ -1,4 +1,4 @@
 <map id="Loot.Modifiers.WeaponModifiers.MissingHealthDamage.GetModifierProperties" name="Loot.Modifiers.WeaponModifiers.MissingHealthDamage.GetModifierProperties">
-<area shape="rect" id="node2" href="$class_loot_1_1_core_1_1_system_1_1_modifier_1_1_modifier_properties_builder.html#af322e369df14e9bab51031fa400db131" title="Loot.Core.System.Modifier.\lModifierPropertiesBuilder.With\lMaxMagnitude" alt="" coords="339,5,538,61"/>
-<area shape="rect" id="node3" href="$class_loot_1_1_core_1_1_system_1_1_modifier_1_1_modifier_properties_builder.html#a1fc275c1511bff232ffadacf41a9105b" title="Loot.Core.System.Modifier.\lModifierPropertiesBuilder.With\lMinMagnitude" alt="" coords="339,85,538,141"/>
+<area shape="rect" id="node2" href="$class_loot_1_1_api_1_1_modifier_1_1_modifier_properties_builder.html#a96d86f330a08927454f11a053d128abb" title="Loot.Api.Modifier.Modifier\lPropertiesBuilder.WithMaxMagnitude" alt="" coords="339,5,576,46"/>
+<area shape="rect" id="node3" href="$class_loot_1_1_api_1_1_modifier_1_1_modifier_properties_builder.html#a7456e2beca45c59246852f5403e60270" title="Loot.Api.Modifier.Modifier\lPropertiesBuilder.WithMinMagnitude" alt="" coords="341,70,574,111"/>
 </map>

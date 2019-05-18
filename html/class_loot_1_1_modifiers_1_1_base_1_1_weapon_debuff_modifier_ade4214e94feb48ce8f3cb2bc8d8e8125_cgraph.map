@@ -1,4 +1,4 @@
 <map id="Loot.Modifiers.Base.WeaponDebuffModifier.GetModifierProperties" name="Loot.Modifiers.Base.WeaponDebuffModifier.GetModifierProperties">
-<area shape="rect" id="node2" href="$class_loot_1_1_core_1_1_system_1_1_modifier_1_1_modifier_properties_builder.html#a1fc275c1511bff232ffadacf41a9105b" title="Loot.Core.System.Modifier.\lModifierPropertiesBuilder.With\lMinMagnitude" alt="" coords="291,5,490,61"/>
-<area shape="rect" id="node3" href="$class_loot_1_1_core_1_1_system_1_1_modifier_1_1_modifier_properties_builder.html#a1759a4e7ed5fb7e9f03bd24e640381d6" title="Loot.Core.System.Modifier.\lModifierPropertiesBuilder.With\lRoundPrecision" alt="" coords="291,85,490,141"/>
+<area shape="rect" id="node2" href="$class_loot_1_1_api_1_1_modifier_1_1_modifier_properties_builder.html#a7456e2beca45c59246852f5403e60270" title="Loot.Api.Modifier.Modifier\lPropertiesBuilder.WithMinMagnitude" alt="" coords="297,5,530,46"/>
+<area shape="rect" id="node3" href="$class_loot_1_1_api_1_1_modifier_1_1_modifier_properties_builder.html#a2f9a9b220833f2933314bbed6d90fb65" title="Loot.Api.Modifier.Modifier\lPropertiesBuilder.WithRoundPrecision" alt="" coords="291,70,535,111"/>
 </map>

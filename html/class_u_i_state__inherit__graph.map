@@ -1,8 +1,8 @@
 <map id="UIState" name="UIState">
-<area shape="rect" id="node2" href="$class_loot_1_1_u_i_1_1_common_1_1_core_1_1_visibility_u_i.html" title="A UIState which primarily goal is to provide easy visibility toggling " alt="" coords="12,80,233,107"/>
+<area shape="rect" id="node2" title="A UIState which primarily goal is to provide easy visibility toggling " alt="" coords="12,80,233,107"/>
 <area shape="rect" id="node5" href="$class_loot_1_1_u_i_1_1_core_1_1_visibility_u_i.html" title="A UIState which primarily goal is to provide easy visibility toggling " alt="" coords="262,80,425,107"/>
-<area shape="rect" id="node3" href="$class_loot_1_1_u_i_1_1_common_1_1_core_1_1_draggable_u_i_state.html" title="A UIState which primarily goal is to provide dragging on click functionality to another element (or i..." alt="" coords="5,155,221,197"/>
-<area shape="rect" id="node4" title="The GuiTabWindow is a window with tabs on the right side that are toggable The window will only displ..." alt="" coords="6,245,220,272"/>
+<area shape="rect" id="node3" title="A UIState which primarily goal is to provide dragging on click functionality to another element (or i..." alt="" coords="5,155,221,197"/>
+<area shape="rect" id="node4" title="The GuiTabWindow is a window with tabs on the right side that are toggable The window will only displ..." alt="" coords="34,245,192,272"/>
 <area shape="rect" id="node6" href="$class_loot_1_1_u_i_1_1_core_1_1_draggable_u_i_state.html" title="A UIState which primarily goal is to provide dragging on click functionality to another element (or i..." alt="" coords="247,163,452,189"/>
 <area shape="rect" id="node7" href="$class_loot_1_1_u_i_1_1_core_1_1_cube_u_i.html" title="Loot.UI.Core.CubeUI" alt="" coords="276,245,423,272"/>
 <area shape="rect" id="node8" href="$class_loot_1_1_u_i_1_1_rerolling_1_1_cube_reroll_u_i.html" title="A UIState that provides the ability to reroll an item&#39;s modifier " alt="" coords="139,320,341,347"/>

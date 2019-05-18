@@ -9,6 +9,9 @@ var dir_e0566f59f042068c187972f8b4893996 =
     [ "LegendaryRarity.cs", "_legendary_rarity_8cs.html", [
       [ "LegendaryRarity", "class_loot_1_1_rarities_1_1_legendary_rarity.html", "class_loot_1_1_rarities_1_1_legendary_rarity" ]
     ] ],
+    [ "NullModifierRarity.cs", "_null_modifier_rarity_8cs.html", [
+      [ "NullModifierRarity", "class_loot_1_1_rarities_1_1_null_modifier_rarity.html", "class_loot_1_1_rarities_1_1_null_modifier_rarity" ]
+    ] ],
     [ "RareRarity.cs", "_rare_rarity_8cs.html", [
       [ "RareRarity", "class_loot_1_1_rarities_1_1_rare_rarity.html", "class_loot_1_1_rarities_1_1_rare_rarity" ]
     ] ],

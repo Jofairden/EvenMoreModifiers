@@ -1,0 +1,6 @@
+<map id="Loot.LootModItem.ModifyTooltips" name="Loot.LootModItem.ModifyTooltips">
+<area shape="rect" id="node2" href="$class_loot_1_1_loot_mod_item.html#a2ba7096b58f248e995f9797f644f8c97" title="Loot.LootModItem.GetItemInfo" alt="" coords="269,5,469,32"/>
+<area shape="rect" id="node3" href="$class_loot_1_1_loot_mod_item.html#a0933b898369ef1a285c3acaaf1f8e53f" title="Loot.LootModItem.GetPrefix\lNormString" alt="" coords="276,57,463,98"/>
+<area shape="rect" id="node4" href="$class_loot_1_1_hacks_1_1_cheated_item_hack_global_item.html#ae636816ccb0e87f24c6043489c1bb616" title="Loot.Hacks.CheatedItemHack\lGlobalItem.Item" alt="" coords="270,122,469,163"/>
+<area shape="rect" id="node5" href="$class_loot_1_1_hacks_1_1_cheated_item_hack_global_item.html#a9f13de3739a0ea00394f7012a22552ae" title="Loot.Hacks.CheatedItemHack\lGlobalItem.ShouldBeIgnored" alt="" coords="270,187,469,229"/>
+</map>

@@ -1,5 +1,0 @@
-<map id="Loot.ModifierProjectile.ModifyHitPvp" name="Loot.ModifierProjectile.ModifyHitPvp">
-<area shape="rect" id="node2" href="$class_loot_1_1_modifier_projectile.html#a88bbc92630f212d5b2430cf54b4e82f2" title="Loot.ModifierProjectile.\lCritBonus" alt="" coords="208,5,363,46"/>
-<area shape="rect" id="node4" href="$class_loot_1_1_modifier_projectile.html#ab26593147c3a40e7c189323c09573efa" title="Loot.ModifierProjectile.\lHealthyBonus" alt="" coords="208,70,363,111"/>
-<area shape="rect" id="node3" href="$class_loot_1_1_modifier_projectile.html#aff9f2707bb1749988bff5e315fdf4c5c" title="Loot.ModifierProjectile.\lGetInfo" alt="" coords="411,5,565,46"/>
-</map>

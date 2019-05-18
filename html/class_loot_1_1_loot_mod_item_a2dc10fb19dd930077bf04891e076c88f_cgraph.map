@@ -1,0 +1,5 @@
+<map id="Loot.LootModItem.RollNewPool" name="Loot.LootModItem.RollNewPool">
+<area shape="rect" id="node2" href="$class_loot_1_1_api_1_1_ext_1_1_mod_utils.html#a907048acd3c21c89c6d87f91cd3237fa" title="Loot.Api.Ext.ModUtils.Get\lModifierRarity" alt="" coords="267,5,442,46"/>
+<area shape="rect" id="node3" href="$class_loot_1_1_loot_mod_item.html#a5b0da3bc74988a42fe0b4fc7a42f00e1" title="Loot.LootModItem.Invalidate\lRolls" alt="" coords="261,70,448,111"/>
+<area shape="rect" id="node4" href="$interface_loot_1_1_api_1_1_strategy_1_1_i_rolling_strategy.html#a2f42b3f88803995e4b69a97c67a15ad1" title="Loot.Api.Strategy.IRolling\lStrategy.Roll" alt="" coords="269,135,440,177"/>
+</map>

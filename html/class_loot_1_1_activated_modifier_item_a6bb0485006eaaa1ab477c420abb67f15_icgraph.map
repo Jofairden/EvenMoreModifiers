@@ -1,9 +1,0 @@
-<map id="Loot.ActivatedModifierItem.Item" name="Loot.ActivatedModifierItem.Item">
-<area shape="rect" id="node2" href="$class_loot_1_1_core_1_1_caching_1_1_modifier_cache_player.html#ad728fdbb9d7aa443caa7590a5418900a" title="Loot.Core.Caching.Modifier\lCachePlayer.AddAttachItem" alt="" coords="281,5,469,46"/>
-<area shape="rect" id="node3" href="$class_loot_1_1_core_1_1_caching_1_1_modifier_cache_player.html#a0a512b92fefcf5321f8bab88cade7a21" title="Loot.Core.Caching.Modifier\lCachePlayer.AddDetachItem" alt="" coords="279,70,471,111"/>
-<area shape="rect" id="node4" href="$class_loot_1_1_core_1_1_caching_1_1_modifier_cache_player.html#a09dd26996709c44592a74d1f1cb71751" title="Loot.Core.Caching.Modifier\lCachePlayer.CacheModifierEffects" alt="" coords="261,135,488,177"/>
-<area shape="rect" id="node5" href="$class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_cursed_effect.html#a7dbd3c5248a667a59b8a0c49636696cb" title="Loot.Modifiers.WeaponModifiers.\lCursedEffect.CurseHolding" alt="" coords="268,201,481,242"/>
-<area shape="rect" id="node6" href="$class_loot_1_1_e_m_m_item.html#a26adbebd59ab872c21d077b0b42904aa" title="Will modify vanilla tooltips to add additional information for the affected item&#39;s modifiers ..." alt="" coords="276,267,473,293"/>
-<area shape="rect" id="node7" href="$class_loot_1_1_activated_modifier_item.html#abb2bf22119b44d0f510356c4c978438a" title="Loot.ActivatedModifierItem.\lUpdateEquip" alt="" coords="283,318,466,359"/>
-<area shape="rect" id="node8" href="$class_loot_1_1_core_1_1_caching_1_1_modifier_cache_player.html#aa4daaef3e93cfec1180ec53e159ba4d7" title="Loot.Core.Caching.Modifier\lCachePlayer.UpdateVanityCache" alt="" coords="265,383,484,425"/>
-</map>

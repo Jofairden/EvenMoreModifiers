@@ -1,4 +1,4 @@
 <map id="Loot.Modifiers.EquipModifiers.Defensive.SurvivalChance.UpdateEquip" name="Loot.Modifiers.EquipModifiers.Defensive.SurvivalChance.UpdateEquip">
-<area shape="rect" id="node2" href="$class_loot_1_1_modifier_player.html#a3e4b8a428276fb0205e9c0f166435bf0" title="Loot.ModifierPlayer.GetEffect" alt="" coords="309,5,504,32"/>
-<area shape="rect" id="node3" href="$class_loot_1_1_modifier_player.html#aae3e56a930507049c3b282b29fece4f1" title="Loot.ModifierPlayer.Player" alt="" coords="319,56,494,83"/>
+<area shape="rect" id="node2" href="$class_loot_1_1_api_1_1_delegators_1_1_modifier_delegator_player.html#a72c8852644cbf7ad5548b23953bc2c48" title="Loot.Api.Delegators.Modifier\lDelegatorPlayer.GetEffect" alt="" coords="309,5,496,46"/>
+<area shape="rect" id="node3" href="$class_loot_1_1_api_1_1_delegators_1_1_modifier_delegator_player.html#acf66e74b7c0675f83f0b3c083cca8775" title="Loot.Api.Delegators.Modifier\lDelegatorPlayer.Player" alt="" coords="309,70,496,111"/>
 </map>

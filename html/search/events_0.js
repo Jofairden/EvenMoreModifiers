@@ -1,17 +1,17 @@
 var searchData=
 [
-  ['oninitialize',['OnInitialize',['../class_loot_1_1_modifier_player.html#ae508e6647350f479c05d39aa6ffc9d6a',1,'Loot::ModifierPlayer']]],
-  ['onmodifyhitnpc',['OnModifyHitNPC',['../class_loot_1_1_modifier_player.html#a3c38a2e5ef2bd3ffaf66e2b49c6de5b2',1,'Loot::ModifierPlayer']]],
-  ['onmodifyhitpvp',['OnModifyHitPvp',['../class_loot_1_1_modifier_player.html#a6c54743a82ef3944b48c7b15dfe2ef8f',1,'Loot::ModifierPlayer']]],
-  ['ononhitnpc',['OnOnHitNPC',['../class_loot_1_1_modifier_player.html#acb57e6fbf2a2209d49ac273813602185',1,'Loot::ModifierPlayer']]],
-  ['ononhitpvp',['OnOnHitPvp',['../class_loot_1_1_modifier_player.html#a0c968a1fb3e745edbc5c59fafeca4213',1,'Loot::ModifierPlayer']]],
-  ['onposthurt',['OnPostHurt',['../class_loot_1_1_modifier_player.html#a77dc747bbd0c051f0e042485912d10a0',1,'Loot::ModifierPlayer']]],
-  ['onpostupdate',['OnPostUpdate',['../class_loot_1_1_modifier_player.html#a514f991833601945f5b31b3bc28e5a2c',1,'Loot::ModifierPlayer']]],
-  ['onpostupdateequips',['OnPostUpdateEquips',['../class_loot_1_1_modifier_player.html#a33540a9304078ea536e9de48322732a2',1,'Loot::ModifierPlayer']]],
-  ['onprehurt',['OnPreHurt',['../class_loot_1_1_modifier_player.html#a529be07c466a1303c60206755ab98795',1,'Loot::ModifierPlayer']]],
-  ['onprekill',['OnPreKill',['../class_loot_1_1_modifier_player.html#affa674cbd4a730bfe5e58639e82bfa5f',1,'Loot::ModifierPlayer']]],
-  ['onpreupdate',['OnPreUpdate',['../class_loot_1_1_modifier_player.html#a0fde724e7550b077ca289c3e1c14b580',1,'Loot::ModifierPlayer']]],
-  ['onreseteffects',['OnResetEffects',['../class_loot_1_1_modifier_player.html#af61a3c0c3d1c1b32d511ba28c561cfd9',1,'Loot::ModifierPlayer']]],
-  ['onupdatebadliferegen',['OnUpdateBadLifeRegen',['../class_loot_1_1_modifier_player.html#a9212e684829429545c464740df4580f6',1,'Loot::ModifierPlayer']]],
-  ['onupdateliferegen',['OnUpdateLifeRegen',['../class_loot_1_1_modifier_player.html#ab8662229ce62e21d7902609fbc5ff659',1,'Loot::ModifierPlayer']]]
+  ['oninitialize',['OnInitialize',['../class_loot_1_1_api_1_1_delegators_1_1_modifier_delegator_player.html#aca69594a344b5ce6c4af57df6f5888f9',1,'Loot::Api::Delegators::ModifierDelegatorPlayer']]],
+  ['onmodifyhitnpc',['OnModifyHitNPC',['../class_loot_1_1_api_1_1_delegators_1_1_modifier_delegator_player.html#a9577da57dd6ea6f18a6e0657ffe7f862',1,'Loot::Api::Delegators::ModifierDelegatorPlayer']]],
+  ['onmodifyhitpvp',['OnModifyHitPvp',['../class_loot_1_1_api_1_1_delegators_1_1_modifier_delegator_player.html#a62443afe53ade90af48c8b81ff3d5f5e',1,'Loot::Api::Delegators::ModifierDelegatorPlayer']]],
+  ['ononhitnpc',['OnOnHitNPC',['../class_loot_1_1_api_1_1_delegators_1_1_modifier_delegator_player.html#af01ad38b9fc58168036c12fa3cf535d1',1,'Loot::Api::Delegators::ModifierDelegatorPlayer']]],
+  ['ononhitpvp',['OnOnHitPvp',['../class_loot_1_1_api_1_1_delegators_1_1_modifier_delegator_player.html#a0ef304f8a094239fab393f3d63824a66',1,'Loot::Api::Delegators::ModifierDelegatorPlayer']]],
+  ['onposthurt',['OnPostHurt',['../class_loot_1_1_api_1_1_delegators_1_1_modifier_delegator_player.html#aaf5fef83c27f65582e81469f887c0380',1,'Loot::Api::Delegators::ModifierDelegatorPlayer']]],
+  ['onpostupdate',['OnPostUpdate',['../class_loot_1_1_api_1_1_delegators_1_1_modifier_delegator_player.html#a74b6a6a3ab9875285d644e57cddfa6a3',1,'Loot::Api::Delegators::ModifierDelegatorPlayer']]],
+  ['onpostupdateequips',['OnPostUpdateEquips',['../class_loot_1_1_api_1_1_delegators_1_1_modifier_delegator_player.html#a6bb2cfc981f866064dc9b798f6169225',1,'Loot::Api::Delegators::ModifierDelegatorPlayer']]],
+  ['onprehurt',['OnPreHurt',['../class_loot_1_1_api_1_1_delegators_1_1_modifier_delegator_player.html#ad08ea73e175b39f0d98d48e69709c748',1,'Loot::Api::Delegators::ModifierDelegatorPlayer']]],
+  ['onprekill',['OnPreKill',['../class_loot_1_1_api_1_1_delegators_1_1_modifier_delegator_player.html#a7437f699a6abea80b9ee52a80ca1ac99',1,'Loot::Api::Delegators::ModifierDelegatorPlayer']]],
+  ['onpreupdate',['OnPreUpdate',['../class_loot_1_1_api_1_1_delegators_1_1_modifier_delegator_player.html#a76c1a389e382cd73ac2e74b18e577938',1,'Loot::Api::Delegators::ModifierDelegatorPlayer']]],
+  ['onreseteffects',['OnResetEffects',['../class_loot_1_1_api_1_1_delegators_1_1_modifier_delegator_player.html#a7d5e56d570928573f99f0c47a5ed6178',1,'Loot::Api::Delegators::ModifierDelegatorPlayer']]],
+  ['onupdatebadliferegen',['OnUpdateBadLifeRegen',['../class_loot_1_1_api_1_1_delegators_1_1_modifier_delegator_player.html#a68f6490ac78d144857cb9df6f5664f2c',1,'Loot::Api::Delegators::ModifierDelegatorPlayer']]],
+  ['onupdateliferegen',['OnUpdateLifeRegen',['../class_loot_1_1_api_1_1_delegators_1_1_modifier_delegator_player.html#a4bc1791780d758b04ee45fb932dd5960',1,'Loot::Api::Delegators::ModifierDelegatorPlayer']]]
 ];

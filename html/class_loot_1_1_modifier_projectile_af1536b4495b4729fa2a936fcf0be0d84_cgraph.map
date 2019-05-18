@@ -1,4 +1,0 @@
-<map id="Loot.ModifierProjectile.PreAI" name="Loot.ModifierProjectile.PreAI">
-<area shape="rect" id="node2" href="$class_loot_1_1_modifier_player.html#a3e4b8a428276fb0205e9c0f166435bf0" title="Loot.ModifierPlayer.GetEffect" alt="" coords="208,5,403,32"/>
-<area shape="rect" id="node3" href="$class_loot_1_1_modifier_projectile.html#aff9f2707bb1749988bff5e315fdf4c5c" title="Loot.ModifierProjectile.\lGetInfo" alt="" coords="228,57,383,98"/>
-</map>

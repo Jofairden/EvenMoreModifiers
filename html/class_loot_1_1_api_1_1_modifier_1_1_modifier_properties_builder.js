@@ -1,0 +1,27 @@
+var class_loot_1_1_api_1_1_modifier_1_1_modifier_properties_builder =
+[
+    [ "ModifierPropertiesBuilder", "class_loot_1_1_api_1_1_modifier_1_1_modifier_properties_builder.html#a253b80025eff5bfc5f500e0b34aba4f2", null ],
+    [ "ModifierPropertiesBuilder", "class_loot_1_1_api_1_1_modifier_1_1_modifier_properties_builder.html#a05a1b5ddbaba47768d562f553eaad067", null ],
+    [ "ModifierPropertiesBuilder", "class_loot_1_1_api_1_1_modifier_1_1_modifier_properties_builder.html#a924c0459153c52349680c4805d4625af", null ],
+    [ "Build", "class_loot_1_1_api_1_1_modifier_1_1_modifier_properties_builder.html#aabe157fa7ba774f0ca0fc3db57d6d4b5", null ],
+    [ "IsUniqueModifier", "class_loot_1_1_api_1_1_modifier_1_1_modifier_properties_builder.html#a4062318756ff5b2af9aa9931ad6c6de0", null ],
+    [ "UsingDefault", "class_loot_1_1_api_1_1_modifier_1_1_modifier_properties_builder.html#a996fab72340f368748db45ee2859296a", null ],
+    [ "UsingDefault", "class_loot_1_1_api_1_1_modifier_1_1_modifier_properties_builder.html#a0ef49c0296ecde0ecf7d155eb4302427", null ],
+    [ "WithBasePower", "class_loot_1_1_api_1_1_modifier_1_1_modifier_properties_builder.html#a461841503c45dd886e5433c8126c4041", null ],
+    [ "WithMagnitudeStrength", "class_loot_1_1_api_1_1_modifier_1_1_modifier_properties_builder.html#ade628f4222e2fc3a051783921585c78d", null ],
+    [ "WithMaxMagnitude", "class_loot_1_1_api_1_1_modifier_1_1_modifier_properties_builder.html#a96d86f330a08927454f11a053d128abb", null ],
+    [ "WithMinMagnitude", "class_loot_1_1_api_1_1_modifier_1_1_modifier_properties_builder.html#a7456e2beca45c59246852f5403e60270", null ],
+    [ "WithRarityLevel", "class_loot_1_1_api_1_1_modifier_1_1_modifier_properties_builder.html#a459d3d14cb44d076a708905a887f0402", null ],
+    [ "WithRollChance", "class_loot_1_1_api_1_1_modifier_1_1_modifier_properties_builder.html#a8ec6b61335fc44f1cbaa989aa6280436", null ],
+    [ "WithRoundPrecision", "class_loot_1_1_api_1_1_modifier_1_1_modifier_properties_builder.html#a2f9a9b220833f2933314bbed6d90fb65", null ],
+    [ "BasePower", "class_loot_1_1_api_1_1_modifier_1_1_modifier_properties_builder.html#a3419ec2603a14b9c33dfbe93543ebbc2", null ],
+    [ "DefaultBuilder", "class_loot_1_1_api_1_1_modifier_1_1_modifier_properties_builder.html#aa7eb431964590be5c1bee9af8a49f6fa", null ],
+    [ "DefaultProperties", "class_loot_1_1_api_1_1_modifier_1_1_modifier_properties_builder.html#abd535078034bd946c2f86743ea762fe5", null ],
+    [ "IsUnique", "class_loot_1_1_api_1_1_modifier_1_1_modifier_properties_builder.html#a95e885a2b0a112add570e04bf06849a3", null ],
+    [ "MagnitudeStrength", "class_loot_1_1_api_1_1_modifier_1_1_modifier_properties_builder.html#a79916091d3074618a3a795d5664a40bb", null ],
+    [ "MaxMagnitude", "class_loot_1_1_api_1_1_modifier_1_1_modifier_properties_builder.html#ade94c9b9c5746b6bb1fc3e01f45e32c5", null ],
+    [ "MinMagnitude", "class_loot_1_1_api_1_1_modifier_1_1_modifier_properties_builder.html#a26d282953c24bb47487df6ebdb82bd2a", null ],
+    [ "RarityLevel", "class_loot_1_1_api_1_1_modifier_1_1_modifier_properties_builder.html#a76138c16596093734ac52594a25344b8", null ],
+    [ "RollChance", "class_loot_1_1_api_1_1_modifier_1_1_modifier_properties_builder.html#a6745ab08a8f6033c5b45ae7da497d4ac", null ],
+    [ "RoundPrecision", "class_loot_1_1_api_1_1_modifier_1_1_modifier_properties_builder.html#aba94d27973e560e6e871f02a28b69306", null ]
+];

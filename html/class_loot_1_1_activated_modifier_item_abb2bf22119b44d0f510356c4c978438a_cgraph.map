@@ -1,5 +1,0 @@
-<map id="Loot.ActivatedModifierItem.UpdateEquip" name="Loot.ActivatedModifierItem.UpdateEquip">
-<area shape="rect" id="node2" href="$class_loot_1_1_activated_modifier_item.html#aedcb371be998be72f5e8d43064e0827f" title="Returns if the item is in a player&#39;s vanity slot " alt="" coords="250,5,433,46"/>
-<area shape="rect" id="node3" href="$class_loot_1_1_activated_modifier_item.html#a735629d51b2d3001807c835bf5cab4ff" title="Loot.ActivatedModifierItem.\lIsNotEquippedAtAll" alt="" coords="250,70,433,111"/>
-<area shape="rect" id="node4" href="$class_loot_1_1_activated_modifier_item.html#a6bb0485006eaaa1ab477c420abb67f15" title="Loot.ActivatedModifierItem.Item" alt="" coords="237,136,445,163"/>
-</map>

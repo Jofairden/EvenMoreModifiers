@@ -1,6 +1,0 @@
-<map id="Loot.EMMItem.PostReforge" name="Loot.EMMItem.PostReforge">
-<area shape="rect" id="node2" href="$class_loot_1_1_e_m_m_item.html#acc7371e3c489f848e1320ddbadff5647" title="Attempts to roll new modifiers Has a set chance to hit a predefined pool of modifiers ..." alt="" coords="241,71,429,97"/>
-<area shape="rect" id="node3" href="$class_loot_1_1_ext_1_1_mod_utils.html#a5fb5205c0c76bcc4add62f666ba5f65b" title="Loot.Ext.ModUtils.GetModifier\lRarity" alt="" coords="478,5,677,46"/>
-<area shape="rect" id="node4" href="$class_loot_1_1_e_m_m_item.html#a3c96b9a7d32d86f9e9cfe88dcbdcf22a" title="Loot.EMMItem.InvalidateRolls" alt="" coords="478,71,677,97"/>
-<area shape="rect" id="node5" href="$interface_loot_1_1_core_1_1_system_1_1_strategy_1_1_i_rolling_strategy.html#aa2b3c42ad851147c82162e01b069e565" title="Loot.Core.System.Strategy.\lIRollingStrategy.Roll" alt="" coords="485,122,670,163"/>
-</map>

@@ -1,4 +1,4 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="node1" href="$class_loot_1_1_core_1_1_mod_content_1_1_texture_mod_content.html" title="Loot.Core.ModContent.Texture\lModContent" alt="" coords="5,5,208,46"/>
-<area shape="rect" id="node2" href="$class_loot_1_1_core_1_1_mod_content_1_1_graphics_mod_content.html" title="Loot.Core.ModContent.Graphics\lModContent" alt="" coords="256,5,467,46"/>
+<area shape="rect" id="node1" href="$class_loot_1_1_api_1_1_content_1_1_loadable_content_base.html" title="Loot.Api.Content.Loadable\lContentBase\&lt; ModifierPool \&gt;" alt="" coords="5,5,200,46"/>
+<area shape="rect" id="node2" href="$class_loot_1_1_content_1_1_modifier_pool_content.html" title="This class holds all loaded ModifierPool content " alt="" coords="248,5,421,46"/>
 </map>

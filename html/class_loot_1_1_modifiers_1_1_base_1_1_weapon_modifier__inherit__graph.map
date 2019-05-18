@@ -13,9 +13,10 @@
 <area shape="rect" id="node20" href="$class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_speed_plus.html" title="Loot.Modifiers.WeaponModifiers.\lSpeedPlus" alt="" coords="571,723,784,765"/>
 <area shape="rect" id="node21" href="$class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_velocity_damage.html" title="Loot.Modifiers.WeaponModifiers.\lVelocityDamage" alt="" coords="571,789,784,830"/>
 <area shape="rect" id="node22" href="$class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_velocity_plus.html" title="Loot.Modifiers.WeaponModifiers.\lVelocityPlus" alt="" coords="571,854,784,895"/>
-<area shape="rect" id="node2" href="$class_loot_1_1_core_1_1_system_1_1_modifier_1_1_modifier.html" title="Defines a modifier, which is an unloaded GlobalItem Making it a GlobalItem gives easy access to all h..." alt="" coords="214,437,282,464"/>
+<area shape="rect" id="node2" href="$class_loot_1_1_api_1_1_modifier_1_1_modifier.html" title="Defines a modifier, which is an unloaded GlobalItem Making it a GlobalItem gives easy access to all h..." alt="" coords="214,437,282,464"/>
 <area shape="rect" id="node3" href="$class_global_item.html" title="GlobalItem" alt="" coords="43,361,128,388"/>
-<area shape="rect" id="node4" href="$interface_loot_1_1_core_1_1_system_1_1_core_1_1_i_loadable_content.html" title="ILoadableContent" alt="" coords="23,412,147,439"/>
+<area shape="rect" id="node4" href="$interface_loot_1_1_api_1_1_content_1_1_i_loadable_content.html" title="ILoadableContent" alt="" coords="23,412,147,439"/>
+<area shape="rect" id="node5" title="Used to restrict setting properties of ILoadableContent to internal only " alt="" coords="6,463,165,489"/>
 <area shape="rect" id="node6" href="$class_i_cloneable.html" title="ICloneable" alt="" coords="43,513,127,540"/>
 <area shape="rect" id="node8" href="$class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_random_debuff.html" title="Rolls a random debuff " alt="" coords="832,5,1045,46"/>
 <area shape="rect" id="node16" href="$class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_ice_1_1_icy_modifier.html" title="Loot.Modifiers.WeaponModifiers.\lIce.IcyModifier" alt="" coords="832,462,1045,503"/>

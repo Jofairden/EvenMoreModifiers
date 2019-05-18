@@ -1,9 +1,0 @@
-<map id="Loot.EMMItem.InvalidateRolls" name="Loot.EMMItem.InvalidateRolls">
-<area shape="rect" id="node2" href="$class_loot_1_1_e_m_m_item.html#a024154a5db4ea5e828639527da0e5543" title="Loot.EMMItem.Load" alt="" coords="278,56,418,83"/>
-<area shape="rect" id="node3" href="$class_loot_1_1_e_m_m_item.html#acc7371e3c489f848e1320ddbadff5647" title="Attempts to roll new modifiers Has a set chance to hit a predefined pool of modifiers ..." alt="" coords="254,107,442,133"/>
-<area shape="rect" id="node4" href="$class_loot_1_1_e_m_m_item.html#a40d02fc083c67022b5c8603d7dd9faee" title="Loot.EMMItem.OnCraft" alt="" coords="509,5,667,32"/>
-<area shape="rect" id="node5" href="$class_loot_1_1_e_m_m_item.html#a9f88fc9f71c3313481fa4a2364d2c280" title="Loot.EMMItem.OnPickup" alt="" coords="503,56,673,83"/>
-<area shape="rect" id="node6" href="$class_loot_1_1_e_m_m_item.html#a3b707b45eb50ce917bbb0052cfa81855" title="Loot.EMMItem.PostReforge" alt="" coords="495,107,681,133"/>
-<area shape="rect" id="node7" href="$class_loot_1_1_e_m_m_world.html#af380c8373a9080f2d6144288c6aa87b4" title="Loot.EMMWorld.ModifyWorld\lGenTasks" alt="" coords="491,158,685,199"/>
-<area shape="rect" id="node8" href="$class_loot_1_1_u_i_1_1_rerolling_1_1_cube_reroll_u_i.html#a5ca047556452a0a6c2248712f1ba3f58" title="Loot.UI.Rerolling.CubeReroll\lUI.RerollModifierPool" alt="" coords="493,223,683,265"/>
-</map>

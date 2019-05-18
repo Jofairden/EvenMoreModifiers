@@ -1,0 +1,6 @@
+<map id="Loot.Api.Graphics.GlowmaskGlobalItem.PostDrawInWorld" name="Loot.Api.Graphics.GlowmaskGlobalItem.PostDrawInWorld">
+<area shape="rect" id="node2" href="$class_loot_1_1_api_1_1_graphics_1_1_glowmask_entity.html#a80587cc9c2221617592ec37db1f033de" title="Will draw the glowmask texture " alt="" coords="245,5,437,46"/>
+<area shape="rect" id="node3" href="$class_loot_1_1_api_1_1_graphics_1_1_glowmask_entity.html#aad4a8a51bf7ab0e27f947a0a30aa1321" title="Will draw the hitbox around the entity " alt="" coords="245,70,437,111"/>
+<area shape="rect" id="node4" href="$class_loot_1_1_api_1_1_graphics_1_1_glowmask_global_item.html#acf2819f28ceca328dfa42c4c181670ec" title="Loot.Api.Graphics.Glowmask\lGlobalItem.UpdateEntities" alt="" coords="245,135,437,177"/>
+<area shape="rect" id="node5" href="$class_loot_1_1_loot_mod_item.html#add1489001e88a446099fefcd8193852a" title="Loot.LootModItem.GetActivePool" alt="" coords="486,143,701,169"/>
+</map>

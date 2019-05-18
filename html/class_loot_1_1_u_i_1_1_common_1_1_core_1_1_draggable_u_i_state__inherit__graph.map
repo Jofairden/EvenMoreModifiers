@@ -1,5 +1,0 @@
-<map id="Loot.UI.Common.Core.DraggableUIState" name="Loot.UI.Common.Core.DraggableUIState">
-<area shape="rect" id="node4" title="The GuiTabWindow is a window with tabs on the right side that are toggable The window will only displ..." alt="" coords="6,245,220,272"/>
-<area shape="rect" id="node2" href="$class_loot_1_1_u_i_1_1_common_1_1_core_1_1_visibility_u_i.html" title="A UIState which primarily goal is to provide easy visibility toggling " alt="" coords="71,80,156,107"/>
-<area shape="rect" id="node3" href="$class_u_i_state.html" title="UIState" alt="" coords="80,5,147,32"/>
-</map>

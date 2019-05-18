@@ -1,0 +1,27 @@
+var class_loot_1_1_caching_1_1_modifier_cache_player =
+[
+    [ "AddAttachItem", "class_loot_1_1_caching_1_1_modifier_cache_player.html#a4b83315309f67249c30ed1ec14f0c8ed", null ],
+    [ "AddDetachItem", "class_loot_1_1_caching_1_1_modifier_cache_player.html#aceb2cf61924cc7a73c58c8a3c317b48e", null ],
+    [ "CacheItemModifierEffects", "class_loot_1_1_caching_1_1_modifier_cache_player.html#aa2804e6b01433c48abb268401661b01d", null ],
+    [ "CacheModifierEffects", "class_loot_1_1_caching_1_1_modifier_cache_player.html#afa80aec29abdf1417c00b5b4a47fdfb6", null ],
+    [ "GetModifierEffectsForDelegations", "class_loot_1_1_caching_1_1_modifier_cache_player.html#aaea607b879ac3161b67e5c3a0ff61faa", null ],
+    [ "Initialize", "class_loot_1_1_caching_1_1_modifier_cache_player.html#ad3185daba78498a2d02b9617220b19fa", null ],
+    [ "IsMouseUsable", "class_loot_1_1_caching_1_1_modifier_cache_player.html#a96a5dd3eaf244c895fcee713384fceb3", null ],
+    [ "OrderDelegationList", "class_loot_1_1_caching_1_1_modifier_cache_player.html#a914a8d82e85e443e9240ecb54305cb99", null ],
+    [ "PostUpdate", "class_loot_1_1_caching_1_1_modifier_cache_player.html#a3315087b46c1a955f03465a9b9ff235f", null ],
+    [ "UpdateAttachments", "class_loot_1_1_caching_1_1_modifier_cache_player.html#a5cda7e47abe376866810b4e79be113c0", null ],
+    [ "UpdateCheatSheetCache", "class_loot_1_1_caching_1_1_modifier_cache_player.html#ad5da049c7bfcadd0c194bd97940bf0d3", null ],
+    [ "UpdateEquipsCache", "class_loot_1_1_caching_1_1_modifier_cache_player.html#abbb2189d7ca6b73b775d63fe96ef5cab", null ],
+    [ "UpdateHeldItemCache", "class_loot_1_1_caching_1_1_modifier_cache_player.html#ab2adef1dd8566c18c10e33621d3f7051", null ],
+    [ "UpdateMouseItemCache", "class_loot_1_1_caching_1_1_modifier_cache_player.html#a10051f827e24aaa158385ed5204289d7", null ],
+    [ "UpdateVanityCache", "class_loot_1_1_caching_1_1_modifier_cache_player.html#af61699888203f1029028f6ce61e3fbfa", null ],
+    [ "_attachList", "class_loot_1_1_caching_1_1_modifier_cache_player.html#a6c82409ee520b54f9c0248c923d8f858", null ],
+    [ "_detachList", "class_loot_1_1_caching_1_1_modifier_cache_player.html#a06b8235f1886d9fcfa44f3d490ef138c", null ],
+    [ "_forceEquipUpdate", "class_loot_1_1_caching_1_1_modifier_cache_player.html#a70a84ff6d5214a09a2ad765fe5926c5f", null ],
+    [ "_modifierEffects", "class_loot_1_1_caching_1_1_modifier_cache_player.html#a8f7252334cec4c3bad96d5d4c9b93513", null ],
+    [ "_oldCheatSheetEquips", "class_loot_1_1_caching_1_1_modifier_cache_player.html#a4bddd281525db8c7dc8b0744c637d7c4", null ],
+    [ "_oldEquips", "class_loot_1_1_caching_1_1_modifier_cache_player.html#a2684f04fb781bffc04a8ef6ba91112cc", null ],
+    [ "_oldMouseItem", "class_loot_1_1_caching_1_1_modifier_cache_player.html#ad271b788683758086f9bf4711cbdd88c", null ],
+    [ "_oldSelectedItem", "class_loot_1_1_caching_1_1_modifier_cache_player.html#a1311ec18574df7887da8eec70cec250b", null ],
+    [ "_oldVanityEquips", "class_loot_1_1_caching_1_1_modifier_cache_player.html#a48544f3f4ac4d8c9533f4cce1db86b70", null ]
+];

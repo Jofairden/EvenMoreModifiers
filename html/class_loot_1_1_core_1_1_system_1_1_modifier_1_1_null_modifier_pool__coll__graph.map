@@ -1,9 +1,0 @@
-<map id="Loot.Core.System.Modifier.NullModifierPool" name="Loot.Core.System.Modifier.NullModifierPool">
-<area shape="rect" id="node2" href="$class_loot_1_1_core_1_1_system_1_1_modifier_1_1_modifier_pool.html" title="Defines a modifier pool. A modifier pool holds a certain amount of effects in an array It allows to r..." alt="" coords="718,300,813,327"/>
-<area shape="rect" id="node3" href="$interface_loot_1_1_core_1_1_system_1_1_core_1_1_i_loadable_content.html" title="ILoadableContent" alt="" coords="23,468,147,495"/>
-<area shape="rect" id="node12" href="$class_loot_1_1_core_1_1_system_1_1_modifier_1_1_modifier.html" title="Defines a modifier, which is an unloaded GlobalItem Making it a GlobalItem gives easy access to all h..." alt="" coords="351,358,534,399"/>
-<area shape="rect" id="node5" href="$class_i_cloneable.html" title="ICloneable" alt="" coords="43,140,127,167"/>
-<area shape="rect" id="node7" href="$class_loot_1_1_core_1_1_attributes_1_1_populate_pool_from_attribute.html" title="Will populate a ModifierPool based on a namespace All Modifiers in that namespace will become part of..." alt="" coords="345,6,540,47"/>
-<area shape="rect" id="node8" href="$class_attribute.html" title="Attribute" alt="" coords="50,13,121,40"/>
-<area shape="rect" id="node13" href="$class_global_item.html" title="GlobalItem" alt="" coords="43,413,128,440"/>
-</map>

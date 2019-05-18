@@ -1,0 +1,4 @@
+<map id="Loot.Api.Modifier.ModifierPool.Clone" name="Loot.Api.Modifier.ModifierPool.Clone">
+<area shape="rect" id="node2" href="$class_loot_1_1_api_1_1_ext_1_1_mod_utils.html#afbc00f3c42e48c1a60ab9b8d5f915a86" title="Loot.Api.Ext.ModUtils.Get\lModifierPool" alt="" coords="225,5,399,46"/>
+<area shape="rect" id="node3" href="$class_loot_1_1_content_1_1_modifier_pool_content.html#ae53cdca27c86a7f90f347a4689662e7b" title="Returns a random weighted pool from all available pools that can apply " alt="" coords="225,70,399,111"/>
+</map>

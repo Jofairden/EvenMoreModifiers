@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['justtinkermodified',['JustTinkerModified',['../class_loot_1_1_e_m_m_item.html#aeedf28285dc4dfa1f1e8af141119a5af',1,'Loot::EMMItem']]]
+  ['justtinkermodified',['JustTinkerModified',['../class_loot_1_1_loot_mod_item.html#af8ddfce165b49c0e9ca6561b8afb96b9',1,'Loot::LootModItem']]]
 ];
