@@ -8,6 +8,7 @@ using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.ModLoader;
 using Terraria.ModLoader.IO;
+using Terraria.Utilities;
 
 namespace Loot.Api.Modifier
 {
@@ -226,6 +227,11 @@ namespace Loot.Api.Modifier
 			Apply(item);
 		}
 
+		public sealed override int ChoosePrefix(Item item, UnifiedRandom rand)
+		{
+			return base.ChoosePrefix(item, rand);
+		}
+
 		// The following hooks aren't applicable in instanced context, so we seal them here so they can't be used	
 		public sealed override GlobalItem Clone(Item item, Item itemClone) => base.Clone(item, itemClone);
 
@@ -238,6 +244,10 @@ namespace Loot.Api.Modifier
 		}
 
 		public sealed override void AnglerChat(int type, ref string chat, ref string catchLocation)
+		{
+		}
+
+		public sealed override void OnCraft(Item item, Recipe recipe)
 		{
 		}
 
@@ -273,9 +283,6 @@ namespace Loot.Api.Modifier
 		public sealed override string IsVanitySet(int head, int body, int legs) => base.IsVanitySet(head, body, legs);
 
 		// If modders wish to save/load data, they should use our custom save and load hooks
-		//public sealed override void Load(Item item, TagCompound tag)
-		//{
-		//}
 		public sealed override void LoadLegacy(Item item, BinaryReader reader)
 		{
 		}

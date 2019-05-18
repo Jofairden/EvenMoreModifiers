@@ -179,6 +179,21 @@ namespace Loot.Api.Delegators
 			return b;
 		}
 
+		public override void OnConsumeAmmo(Item item, Player player)
+		{
+			if (GetActivatedModifierItem(item).ShouldBeIgnored(item, player))
+			{
+				return;
+			}
+
+			base.OnConsumeAmmo(item, player);
+
+			foreach (Modifier.Modifier m in LootModItem.GetActivePool(item))
+			{
+				m.OnConsumeAmmo(item, player);
+			}
+		}
+
 		public override bool ConsumeItem(Item item, Player player)
 		{
 			if (GetActivatedModifierItem(item).ShouldBeIgnored(item, player))
@@ -194,6 +209,21 @@ namespace Loot.Api.Delegators
 			}
 
 			return b;
+		}
+
+		public override void OnConsumeItem(Item item, Player player)
+		{
+			if (GetActivatedModifierItem(item).ShouldBeIgnored(item, player))
+			{
+				return;
+			}
+
+			base.OnConsumeItem(item, player);
+
+			foreach (Modifier.Modifier m in LootModItem.GetActivePool(item))
+			{
+				m.OnConsumeItem(item, player);
+			}
 		}
 
 		public override Color? GetAlpha(Item item, Color lightColor)
@@ -234,6 +264,21 @@ namespace Loot.Api.Delegators
 			foreach (Modifier.Modifier m in LootModItem.GetActivePool(item))
 			{
 				m.GetWeaponCrit(item, player, ref crit);
+			}
+		}
+
+		public override void GetHealMana(Item item, Player player, bool quickHeal, ref int healValue)
+		{
+			if (GetActivatedModifierItem(item).ShouldBeIgnored(item, player))
+			{
+				return;
+			}
+
+			base.GetHealMana(item, player, quickHeal, ref healValue);
+	
+			foreach (Modifier.Modifier m in LootModItem.GetActivePool(item))
+			{
+				m.GetHealMana(item, player, quickHeal, ref healValue);
 			}
 		}
 
@@ -419,6 +464,19 @@ namespace Loot.Api.Delegators
 			return 1f;
 		}
 
+		public override void GetHealLife(Item item, Player player, bool quickHeal, ref int healValue)
+		{
+			if (GetActivatedModifierItem(item).ShouldBeIgnored(item, player))
+			{
+				return;
+			}
+
+			foreach (Modifier.Modifier m in LootModItem.GetActivePool(item))
+			{
+				m.GetHealLife(item, player, quickHeal, ref healValue);
+			}
+		}
+
 		public override void ModifyHitNPC(Item item, Player player, NPC target, ref int damage, ref float knockBack, ref bool crit)
 		{
 			if (GetActivatedModifierItem(item).ShouldBeIgnored(item, player))
@@ -448,38 +506,6 @@ namespace Loot.Api.Delegators
 				m.ModifyHitPvp(item, player, target, ref damage, ref crit);
 			}
 		}
-
-		// These are handled by EMMItem
-
-		//public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
-		//{
-		//	base.ModifyTooltips(item, tooltips);
-
-		//	ModifierPool pool = EMMItem.GetPool(item);
-		//	if (pool != null)
-		//		foreach (Modifier m in pool.ActiveModifiers)
-		//			m.ModifyTooltips(item, tooltips);
-		//}
-
-		//public override void NetReceive(Item item, BinaryReader reader)
-		//{
-		//	base.NetReceive(item, reader);
-
-		//	ModifierPool pool = EMMItem.GetPool(item);
-		//	if (pool != null)
-		//		foreach (Modifier m in pool.ActiveModifiers)
-		//			m.NetReceive(item, reader);
-		//}
-
-		//public override void NetSend(Item item, BinaryWriter writer)
-		//{
-		//	base.NetSend(item, writer);
-
-		//	ModifierPool pool = EMMItem.GetPool(item);
-		//	if (pool != null)
-		//		foreach (Modifier m in pool.ActiveModifiers)
-		//			m.NetSend(item, writer);
-		//}
 
 		public override bool NewPreReforge(Item item)
 		{
