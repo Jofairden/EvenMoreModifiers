@@ -55,14 +55,10 @@ namespace Loot.Caching
 			}
 
 			var outOfDateEquips = _oldCheatSheetEquips.Skip(curEquips.Length);
-			if (outOfDateEquips.Any())
-			{
-				Ready = false;
-			}
-
 			// for all disabled slots but still had a registered item, detach it
 			foreach (var item in outOfDateEquips.Where(x => x != null && !x.IsAir))
 			{
+				Ready = false;
 				foreach (Modifier m in LootModItem.GetActivePool(item))
 				{
 					AddDetachItem(item, m);

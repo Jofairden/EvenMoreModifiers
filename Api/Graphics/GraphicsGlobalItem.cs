@@ -1,6 +1,5 @@
 using System.Collections.Generic;
 using System.Linq;
-using Loot.Api.Modifier;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Terraria;
@@ -20,6 +19,8 @@ namespace Loot.Api.Graphics
 
 		public override bool InstancePerEntity => true;
 		public override bool CloneNewInstances => true;
+
+		private bool _hasShaderEntities => (ShaderEntities?.Count ?? 0) > 0;
 
 		public void UpdateEntities(Item item)
 		{
@@ -59,13 +60,10 @@ namespace Loot.Api.Graphics
 			NeedsUpdate = false;
 		}
 
-		private bool _hasShaderEntities;
 		public override bool PreDrawInWorld(Item item, SpriteBatch spriteBatch, Color lightColor, Color alphaColor, ref float rotation, ref float scale, int whoAmI)
 		{
 			bool flag = true;
 			UpdateEntities(item);
-
-			_hasShaderEntities = ShaderEntities.Count > 0;
 
 			for (int i = 0; i < ShaderEntities.Count; i++)
 			{
@@ -83,16 +81,15 @@ namespace Loot.Api.Graphics
 
 		public override void PostDrawInWorld(Item item, SpriteBatch spriteBatch, Color lightColor, Color alphaColor, float rotation, float scale, int whoAmI)
 		{
-			if (!_hasShaderEntities)
+			if (_hasShaderEntities) return;
+
+			foreach (var entity in GlowmaskEntities)
 			{
-				foreach (var entity in GlowmaskEntities)
+				if (entity != null)
 				{
-					if (entity != null)
-					{
-						entity.SetIdentity(item);
-						entity.DoDrawGlowmask(spriteBatch, lightColor, alphaColor, rotation, scale, whoAmI);
-						entity.DoDrawHitbox(spriteBatch);
-					}
+					entity.SetIdentity(item);
+					entity.DoDrawGlowmask(spriteBatch, lightColor, alphaColor, rotation, scale, whoAmI);
+					entity.DoDrawHitbox(spriteBatch);
 				}
 			}
 		}
