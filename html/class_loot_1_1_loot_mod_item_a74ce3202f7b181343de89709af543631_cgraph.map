@@ -1,6 +1,7 @@
 <map id="Loot.LootModItem.PostReforge" name="Loot.LootModItem.PostReforge">
-<area shape="rect" id="node2" href="$class_loot_1_1_loot_mod_item.html#a2dc10fb19dd930077bf04891e076c88f" title="Attempts to roll new modifiers Has a set chance to hit a predefined pool of modifiers ..." alt="" coords="259,77,466,104"/>
+<area shape="rect" id="node2" href="$class_loot_1_1_loot_mod_item.html#a2dc10fb19dd930077bf04891e076c88f" title="Attempts to roll new modifiers Has a set chance to hit a predefined pool of modifiers ..." alt="" coords="259,111,466,137"/>
 <area shape="rect" id="node3" href="$class_loot_1_1_api_1_1_ext_1_1_mod_utils.html#a907048acd3c21c89c6d87f91cd3237fa" title="Loot.Api.Ext.ModUtils.Get\lModifierRarity" alt="" coords="521,5,695,46"/>
-<area shape="rect" id="node4" href="$class_loot_1_1_loot_mod_item.html#a5b0da3bc74988a42fe0b4fc7a42f00e1" title="Loot.LootModItem.Invalidate\lRolls" alt="" coords="515,70,701,111"/>
-<area shape="rect" id="node5" href="$interface_loot_1_1_api_1_1_strategy_1_1_i_rolling_strategy.html#a2f42b3f88803995e4b69a97c67a15ad1" title="Loot.Api.Strategy.IRolling\lStrategy.Roll" alt="" coords="523,135,693,177"/>
+<area shape="rect" id="node4" href="$class_loot_1_1_api_1_1_ext_1_1_mod_utils.html#ac094c35ec592ea0728be3aa8d71a2b5f" title="Loot.Api.Ext.ModUtils.Get\lModifierPool" alt="" coords="521,70,695,111"/>
+<area shape="rect" id="node5" href="$class_loot_1_1_loot_mod_item.html#a5b0da3bc74988a42fe0b4fc7a42f00e1" title="Loot.LootModItem.Invalidate\lRolls" alt="" coords="515,135,701,177"/>
+<area shape="rect" id="node6" href="$interface_loot_1_1_api_1_1_strategy_1_1_i_rolling_strategy.html#a2f42b3f88803995e4b69a97c67a15ad1" title="Loot.Api.Strategy.IRolling\lStrategy.Roll" alt="" coords="523,201,693,242"/>
 </map>

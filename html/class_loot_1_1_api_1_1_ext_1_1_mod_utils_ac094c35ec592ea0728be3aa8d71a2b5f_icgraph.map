@@ -1,0 +1,7 @@
+<map id="Loot.Api.Ext.ModUtils.GetModifierPool" name="Loot.Api.Ext.ModUtils.GetModifierPool">
+<area shape="rect" id="node2" href="$class_loot_1_1_loot_mod_item.html#a2dc10fb19dd930077bf04891e076c88f" title="Attempts to roll new modifiers Has a set chance to hit a predefined pool of modifiers ..." alt="" coords="230,96,437,123"/>
+<area shape="rect" id="node3" href="$class_loot_1_1_loot_mod_world.html#ae3119839afddab6693c1f48fb4c38fd7" title="Loot.LootModWorld.Modify\lWorldGenTasks" alt="" coords="499,5,677,46"/>
+<area shape="rect" id="node4" href="$class_loot_1_1_loot_mod_item.html#a78bb40da8243931fd3d5028c8801b1b7" title="Loot.LootModItem.OnCraft" alt="" coords="499,71,677,97"/>
+<area shape="rect" id="node5" href="$class_loot_1_1_loot_mod_item.html#a77ebddb2c3dd25500e5152c7c3630401" title="Loot.LootModItem.OnPickup" alt="" coords="494,121,682,148"/>
+<area shape="rect" id="node6" href="$class_loot_1_1_loot_mod_item.html#a74ce3202f7b181343de89709af543631" title="Loot.LootModItem.PostReforge" alt="" coords="486,172,690,199"/>
+</map>

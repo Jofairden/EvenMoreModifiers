@@ -3,7 +3,7 @@ var searchData=
   ['back',['Back',['../namespace_loot_1_1_api_1_1_graphics.html#a095b8ba39ff180d309a8a55bc545f0c8a0557fa923dcee4d0f86b1409f5c2167f',1,'Loot::Api::Graphics']]],
   ['backwardscompatiblehacks_2ecs',['BackwardsCompatibleHacks.cs',['../_backwards_compatible_hacks_8cs.html',1,'']]],
   ['basepower',['BasePower',['../class_loot_1_1_api_1_1_modifier_1_1_modifier_properties.html#a137f55d2297367f01eb5823fd1459bee',1,'Loot.Api.Modifier.ModifierProperties.BasePower()'],['../class_loot_1_1_api_1_1_modifier_1_1_modifier_properties_builder.html#a3419ec2603a14b9c33dfbe93543ebbc2',1,'Loot.Api.Modifier.ModifierPropertiesBuilder.BasePower()'],['../interface_loot_tests_1_1_modifier_properties_tests_1_1_i_fake_properties.html#a9642ba6920d2cd36f73b0bd298181571',1,'LootTests.ModifierPropertiesTests.IFakeProperties.BasePower()'],['../class_loot_tests_1_1_modifier_properties_tests_1_1_fake_properties.html#a12173010bee876e88d0b3d6516b6ff1f',1,'LootTests.ModifierPropertiesTests.FakeProperties.BasePower()']]],
-  ['beginshaderbatch',['BeginShaderBatch',['../class_loot_1_1_api_1_1_graphics_1_1_graphics_utils.html#a41115e5af3333838f219abb8e8721804',1,'Loot::Api::Graphics::GraphicsUtils']]],
+  ['beginshaderbatch',['BeginShaderBatch',['../class_loot_1_1_api_1_1_ext_1_1_graphics_utils.html#abd21094e4b5cefd20b784e3829606e38',1,'Loot::Api::Ext::GraphicsUtils']]],
   ['blackcube',['BlackCube',['../class_loot_1_1_cubes_1_1_black_cube.html',1,'Loot::Cubes']]],
   ['blackcube_2ecs',['BlackCube.cs',['../_black_cube_8cs.html',1,'']]],
   ['bonusimmunitytime',['BonusImmunityTime',['../class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_defensive_1_1_immunity_effect.html#a96631e6c6e19cbd3d000f6b54467ce58',1,'Loot::Modifiers::EquipModifiers::Defensive::ImmunityEffect']]],

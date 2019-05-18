@@ -7,7 +7,6 @@ var searchData=
   ['addattachitem',['AddAttachItem',['../class_loot_1_1_caching_1_1_modifier_cache_player.html#a4b83315309f67249c30ed1ec14f0c8ed',1,'Loot::Caching::ModifierCachePlayer']]],
   ['addcontent',['AddContent',['../class_loot_1_1_api_1_1_content_1_1_loadable_content_base.html#a47ab7e0a596c9a05da4e9421a6a28e0e',1,'Loot.Api.Content.LoadableContentBase.AddContent()'],['../class_loot_1_1_api_1_1_loaders_1_1_registry_loader.html#a9cee663338cc830452df4c4bef614209',1,'Loot.Api.Loaders.RegistryLoader.AddContent()'],['../class_loot_1_1_api_1_1_mod_content_1_1_mod_content_manager.html#ae5ef267a4e66d49f60c30421ac953f26',1,'Loot.Api.ModContent.ModContentManager.AddContent()']]],
   ['adddetachitem',['AddDetachItem',['../class_loot_1_1_caching_1_1_modifier_cache_player.html#aceb2cf61924cc7a73c58c8a3c317b48e',1,'Loot::Caching::ModifierCachePlayer']]],
-  ['adddragging',['AddDragging',['../class_loot_1_1_u_i_1_1_core_1_1_draggable_u_i_state.html#aa916c4cd004d2e98dcdc8b5ef4dd770c',1,'Loot::UI::Core::DraggableUIState']]],
   ['addglowmasktexture',['AddGlowmaskTexture',['../class_loot_1_1_api_1_1_mod_content_1_1_graphics_mod_content.html#aacefb8ded314922a62b51fea5a810594',1,'Loot::Api::ModContent::GraphicsModContent']]],
   ['addmod',['AddMod',['../class_loot_1_1_api_1_1_loaders_1_1_loading_funneler.html#ac46e59f8438e9a99782b58e9b07f03d7',1,'Loot::Api::Loaders::LoadingFunneler']]],
   ['addrecipes',['AddRecipes',['../class_loot_1_1_loot.html#a9afccc75e56292d043923bb41284083c',1,'Loot::Loot']]],
@@ -35,8 +34,8 @@ var searchData=
   ['attachdelegations',['AttachDelegations',['../class_loot_1_1_api_1_1_modifier_1_1_modifier_effect.html#a4a1630f03d366d82c9f324c1354fc74e',1,'Loot::Api::Modifier::ModifierEffect']]],
   ['attemptdebuff',['AttemptDebuff',['../class_loot_1_1_api_1_1_delegators_1_1_modifier_delegator_projectile.html#a1c82a5fa936a3410af0da2e8a6224fd3',1,'Loot.Api.Delegators.ModifierDelegatorProjectile.AttemptDebuff(Projectile projectile, Player target)'],['../class_loot_1_1_api_1_1_delegators_1_1_modifier_delegator_projectile.html#a1ad8eae7a47bff067b78e8078ea84486',1,'Loot.Api.Delegators.ModifierDelegatorProjectile.AttemptDebuff(Projectile projectile, NPC target)']]],
   ['attribute',['Attribute',['../class_attribute.html',1,'']]],
-  ['autodelegation',['AutoDelegation',['../class_loot_1_1_api_1_1_attributes_1_1_auto_delegation.html#a49dcda252cc6325436d783aa150c453a',1,'Loot.Api.Attributes.AutoDelegation.AutoDelegation(params string[] types)'],['../class_loot_1_1_api_1_1_attributes_1_1_auto_delegation.html#ae605ed3b299b05aee32f26b3f658bf50',1,'Loot.Api.Attributes.AutoDelegation.AutoDelegation(params DelegationTarget[] targets)']]],
   ['autodelegation',['AutoDelegation',['../class_loot_1_1_api_1_1_attributes_1_1_auto_delegation.html',1,'Loot::Api::Attributes']]],
+  ['autodelegation',['AutoDelegation',['../class_loot_1_1_api_1_1_attributes_1_1_auto_delegation.html#a49dcda252cc6325436d783aa150c453a',1,'Loot.Api.Attributes.AutoDelegation.AutoDelegation(params string[] types)'],['../class_loot_1_1_api_1_1_attributes_1_1_auto_delegation.html#ae605ed3b299b05aee32f26b3f658bf50',1,'Loot.Api.Attributes.AutoDelegation.AutoDelegation(params DelegationTarget[] targets)']]],
   ['autodelegationattribute_2ecs',['AutoDelegationAttribute.cs',['../_auto_delegation_attribute_8cs.html',1,'']]],
   ['autoload',['Autoload',['../class_loot_1_1_api_1_1_modifier_1_1_modifier.html#a92cd5f3cabab223047f0dd904bd8dea0',1,'Loot::Api::Modifier::Modifier']]]
 ];

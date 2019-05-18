@@ -1,4 +1,0 @@
-<map id="Loot.UI.Core.UICubeSelectorPanel" name="Loot.UI.Core.UICubeSelectorPanel">
-<area shape="rect" id="node2" href="$class_loot_1_1_u_i_1_1_core_1_1_u_i_interactable_item_panel.html" title="UIInteractableItemPanel" alt="" coords="21,155,184,181"/>
-<area shape="rect" id="node3" href="$class_loot_1_1_u_i_1_1_core_1_1_u_i_item_panel.html" title="UIItemPanel" alt="" coords="55,80,149,107"/>
-</map>

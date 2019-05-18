@@ -1,4 +1,0 @@
-<map id="Loot.UI.Rerolling.CubeRerollUI.OnRerollClick" name="Loot.UI.Rerolling.CubeRerollUI.OnRerollClick">
-<area shape="rect" id="node2" href="$class_loot_1_1_u_i_1_1_core_1_1_u_i_cube_item_panel.html#a263c26a2a138651d908c338a3b1c2f8e" title="Loot.UI.Core.UICubeItemPanel.\lInteractionLogic" alt="" coords="243,5,453,46"/>
-<area shape="rect" id="node3" href="$class_loot_1_1_u_i_1_1_core_1_1_u_i_cube_item_panel.html#a8fb5d9deb444541ac0ec70dd97fbc9cd" title="Loot.UI.Core.UICubeItemPanel.\lRecalculateStack" alt="" coords="243,70,453,111"/>
-</map>

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['glowmaskentities',['GlowmaskEntities',['../class_loot_1_1_api_1_1_graphics_1_1_glowmask_global_item.html#aa7731b3bab19e0e02a6abaa3d29c176a',1,'Loot::Api::Graphics::GlowmaskGlobalItem']]]
+  ['glowmaskentities',['GlowmaskEntities',['../class_loot_1_1_api_1_1_graphics_1_1_graphics_global_item.html#a8402a0a2c6052961a9c88c9aaf628020',1,'Loot::Api::Graphics::GraphicsGlobalItem']]]
 ];

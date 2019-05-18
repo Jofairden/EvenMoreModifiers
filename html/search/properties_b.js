@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['order',['Order',['../class_loot_1_1_api_1_1_graphics_1_1_glowmask_entity.html#aa3a4a9b3e1a876207612a7afdad95e96',1,'Loot.Api.Graphics.GlowmaskEntity.Order()'],['../class_loot_1_1_api_1_1_graphics_1_1_shader_entity.html#a366b31550013e8a20188e6370004bbdd',1,'Loot.Api.Graphics.ShaderEntity.Order()']]],
-  ['overriderollmodifierpool',['OverrideRollModifierPool',['../class_loot_1_1_api_1_1_strategy_1_1_rolling_strategy_properties.html#a458753c75cb9220204737787b694fe71',1,'Loot::Api::Strategy::RollingStrategyProperties']]],
-  ['overriderollmodifierrarity',['OverrideRollModifierRarity',['../class_loot_1_1_api_1_1_strategy_1_1_rolling_strategy_properties.html#a55c1b9d01f59540b2fa8c0ac222f6f13',1,'Loot::Api::Strategy::RollingStrategyProperties']]]
+  ['power',['Power',['../class_loot_1_1_api_1_1_modifier_1_1_modifier_properties.html#ab7cef419a42e5135ed1e3c30e5b0a8c0',1,'Loot.Api.Modifier.ModifierProperties.Power()'],['../interface_loot_tests_1_1_modifier_properties_tests_1_1_i_fake_properties.html#ae7529a0f8b8d95f5c067d1107aee30b2',1,'LootTests.ModifierPropertiesTests.IFakeProperties.Power()'],['../class_loot_tests_1_1_modifier_properties_tests_1_1_fake_properties.html#a123b7ddd1ad973d5ed0acbb3ccf7d1d8',1,'LootTests.ModifierPropertiesTests.FakeProperties.Power()']]],
+  ['properties',['Properties',['../class_loot_1_1_api_1_1_modifier_1_1_modifier.html#a293f173222666944dffe7957753d0d53',1,'Loot::Api::Modifier::Modifier']]]
 ];

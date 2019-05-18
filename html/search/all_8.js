@@ -11,9 +11,6 @@ var searchData=
   ['healthyfoesbonus',['HealthyFoesBonus',['../class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_offensive_1_1_healthy_foes_bonus.html',1,'Loot::Modifiers::EquipModifiers::Offensive']]],
   ['healthyfoesbonus_2ecs',['HealthyFoesBonus.cs',['../_healthy_foes_bonus_8cs.html',1,'']]],
   ['healthyfoeseffect',['HealthyFoesEffect',['../class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_offensive_1_1_healthy_foes_effect.html',1,'Loot::Modifiers::EquipModifiers::Offensive']]],
-  ['hintonhover',['HintOnHover',['../class_loot_1_1_u_i_1_1_core_1_1_u_i_item_panel.html#aefbac3c468bc018f0eb34dfe8e74febb',1,'Loot::UI::Core::UIItemPanel']]],
-  ['hinttext',['HintText',['../class_loot_1_1_u_i_1_1_core_1_1_u_i_item_panel.html#a54c6a9ef0496d9bac8daea2c1038bc4a',1,'Loot::UI::Core::UIItemPanel']]],
-  ['hinttexture',['HintTexture',['../class_loot_1_1_u_i_1_1_core_1_1_u_i_item_panel.html#aaf61e540e0f40bc2807af64320a1ec21',1,'Loot::UI::Core::UIItemPanel']]],
   ['holditem',['HoldItem',['../class_loot_1_1_modifiers_1_1_base_1_1_weapon_debuff_modifier.html#aca769c3fc6e23cca2283f20b5f5a6a91',1,'Loot::Modifiers::Base::WeaponDebuffModifier']]],
   ['holdoutoffset',['HoldoutOffset',['../class_loot_1_1_api_1_1_modifier_1_1_modifier.html#a4bda9a48dadf38231a345ecdd889ff33',1,'Loot::Api::Modifier::Modifier']]],
   ['holdoutorigin',['HoldoutOrigin',['../class_loot_1_1_api_1_1_modifier_1_1_modifier.html#a49e175b079edcaee5572a3d5c3a5c2c1',1,'Loot::Api::Modifier::Modifier']]]

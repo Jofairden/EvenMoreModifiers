@@ -1,6 +1,0 @@
-var dir_55ec85451365f57a49d89a66b3376536 =
-[
-    [ "Core", "dir_b521195ba061c842ac99572909e85649.html", "dir_b521195ba061c842ac99572909e85649" ],
-    [ "Rerolling", "dir_ef152f8d3dc2194c12e63682ed6a3642.html", "dir_ef152f8d3dc2194c12e63682ed6a3642" ],
-    [ "Sealing", "dir_727e8515a356d1d04d0d6b57e10f2637.html", "dir_727e8515a356d1d04d0d6b57e10f2637" ]
-];

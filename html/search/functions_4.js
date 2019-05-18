@@ -11,10 +11,8 @@ var searchData=
   ['dodrawsubject',['DoDrawSubject',['../class_loot_1_1_api_1_1_graphics_1_1_shader_entity.html#a95725767b0efbc061aebd061626c5125',1,'Loot::Api::Graphics::ShaderEntity']]],
   ['drawarmorcolor',['DrawArmorColor',['../class_loot_1_1_api_1_1_modifier_1_1_modifier.html#a5e36392404a5a0b9e98540638b07b15c',1,'Loot::Api::Modifier::Modifier']]],
   ['drawbody',['DrawBody',['../class_loot_1_1_api_1_1_modifier_1_1_modifier.html#a12c40b76169d209264cc1023b728dae5',1,'Loot::Api::Modifier::Modifier']]],
-  ['drawchildren',['DrawChildren',['../class_loot_1_1_u_i_1_1_sealing_1_1_cube_seal_u_i.html#ab164f60a457a5c0b039acfffb42d3404',1,'Loot::UI::Sealing::CubeSealUI']]],
   ['drawhair',['DrawHair',['../class_loot_1_1_api_1_1_modifier_1_1_modifier.html#a7e49907a9d65f18e42af9e13a6ebf070',1,'Loot::Api::Modifier::Modifier']]],
   ['drawhands',['DrawHands',['../class_loot_1_1_api_1_1_modifier_1_1_modifier.html#a6cce309e6032c17280cced2907514ed6',1,'Loot::Api::Modifier::Modifier']]],
   ['drawhead',['DrawHead',['../class_loot_1_1_api_1_1_modifier_1_1_modifier.html#a9751b00c53d0d8b2184f23d91d55a5e9',1,'Loot::Api::Modifier::Modifier']]],
-  ['drawlegs',['DrawLegs',['../class_loot_1_1_api_1_1_modifier_1_1_modifier.html#a0306cde711540637f37f8752bddd1d11',1,'Loot::Api::Modifier::Modifier']]],
-  ['drawself',['DrawSelf',['../class_loot_1_1_u_i_1_1_core_1_1_draggable_u_i_state.html#a5a49dadcda72a7a8201471ccd31ed65e',1,'Loot.UI.Core.DraggableUIState.DrawSelf()'],['../class_loot_1_1_u_i_1_1_core_1_1_u_i_item_panel.html#ac116eb7838a1ee1a3ef19f78640d27ce',1,'Loot.UI.Core.UIItemPanel.DrawSelf()'],['../class_loot_1_1_u_i_1_1_core_1_1_u_i_modifier_panel.html#a355563f30deae9f97c927cd8afc2806f',1,'Loot.UI.Core.UIModifierPanel.DrawSelf()'],['../class_loot_1_1_u_i_1_1_sealing_1_1_cube_seal_u_i.html#af1b6fd77e0bd2f2ca9672d85de28bd07',1,'Loot.UI.Sealing.CubeSealUI.DrawSelf()']]]
+  ['drawlegs',['DrawLegs',['../class_loot_1_1_api_1_1_modifier_1_1_modifier.html#a0306cde711540637f37f8752bddd1d11',1,'Loot::Api::Modifier::Modifier']]]
 ];

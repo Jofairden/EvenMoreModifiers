@@ -16,7 +16,7 @@ var NAVTREE =
       [ "Class Members", "functions.html", [
         [ "All", "functions.html", "functions_dup" ],
         [ "Functions", "functions_func.html", "functions_func" ],
-        [ "Variables", "functions_vars.html", "functions_vars" ],
+        [ "Variables", "functions_vars.html", null ],
         [ "Properties", "functions_prop.html", null ],
         [ "Events", "functions_evnt.html", null ]
       ] ]
@@ -34,12 +34,12 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "_accessory_modifier_8cs.html",
-"_modifier_delegator_item_8cs.html",
-"class_loot_1_1_api_1_1_delegators_1_1_modifier_delegator_projectile.html#a54bcd9384b9ee04c9da7f36ceeb21789",
-"class_loot_1_1_api_1_1_modifier_1_1_modifier_effect.html#afe23acb4533e7193416cfc7511042840",
-"class_loot_1_1_modifiers_1_1_base_1_1_weapon_debuff_effect.html",
-"class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_random_debuff.html#a592f41a8643577673d94466f58788c13",
-"dir_8d7053df892edd93edb17b81284ede0e.html"
+"_modifier_effect_content_8cs.html",
+"class_loot_1_1_api_1_1_ext_1_1_mod_utils.html",
+"class_loot_1_1_api_1_1_modifier_1_1_modifier_properties.html#a4da982f0f6b391d5e46a32b61a9b6375",
+"class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_defensive_1_1_health_plus.html#a08a50adb42c5989ed3aa8fa9f8b4d742",
+"class_loot_1_1_pools_1_1_null_modifier_pool.html#a14fe029d755e18ba07935131984d680d",
+"namespace_loot_1_1_modifiers_1_1_base.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

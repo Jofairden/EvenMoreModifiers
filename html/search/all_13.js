@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['takeuseritemonclick',['TakeUserItemOnClick',['../class_loot_1_1_u_i_1_1_core_1_1_u_i_interactable_item_panel.html#ab5f69b6ce8dc468aa5192f701290ac53',1,'Loot::UI::Core::UIInteractableItemPanel']]],
   ['testapplymod',['TestApplyMod',['../class_loot_tests_1_1_test_modifiers_1_1_test_apply_mod.html',1,'LootTests::TestModifiers']]],
   ['testapplymod_2ecs',['TestApplyMod.cs',['../_test_apply_mod_8cs.html',1,'']]],
   ['testcubeui',['TestCubeUI',['../class_loot_tests_1_1_unit_tests.html#a814f679e0dc9b4f40e63ca4af0ffb76a',1,'LootTests::UnitTests']]],
@@ -32,13 +31,11 @@ var searchData=
   ['tinkererarmorhackglobalitem_2ecs',['TinkererArmorHackGlobalItem.cs',['../_tinkerer_armor_hack_global_item_8cs.html',1,'']]],
   ['tinkererarmorhackmodplayer',['TinkererArmorHackModPlayer',['../class_loot_1_1_hacks_1_1_tinkerer_armor_hack_mod_player.html',1,'Loot::Hacks']]],
   ['tinkererarmorhackmodplayer_2ecs',['TinkererArmorHackModPlayer.cs',['../_tinkerer_armor_hack_mod_player_8cs.html',1,'']]],
-  ['toggleui',['ToggleUI',['../class_loot_1_1_u_i_1_1_core_1_1_visibility_u_i.html#afc3e0627481bf8178c47cb66547eab6b',1,'Loot.UI.Core.VisibilityUI.ToggleUI()'],['../class_loot_1_1_u_i_1_1_rerolling_1_1_cube_reroll_u_i.html#a8996c95abe6f22fe80e03c2014b998e4',1,'Loot.UI.Rerolling.CubeRerollUI.ToggleUI()'],['../class_loot_1_1_u_i_1_1_sealing_1_1_cube_seal_u_i.html#abb1026cca3536d3331313a3c9b5e2a7f',1,'Loot.UI.Sealing.CubeSealUI.ToggleUI()']]],
   ['totalraritylevel',['TotalRarityLevel',['../class_loot_1_1_api_1_1_modifier_1_1_modifier_pool.html#a3f1670411648b5ec0fb148147139002a',1,'Loot::Api::Modifier::ModifierPool']]],
   ['transcendentrarity',['TranscendentRarity',['../class_loot_1_1_rarities_1_1_transcendent_rarity.html',1,'Loot::Rarities']]],
   ['transcendentrarity_2ecs',['TranscendentRarity.cs',['../_transcendent_rarity_8cs.html',1,'']]],
   ['trydodge',['TryDodge',['../class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_defensive_1_1_dodge_effect.html#a7f665975083b88c893b1b9f0dc1fcd41',1,'Loot::Modifiers::EquipModifiers::Defensive::DodgeEffect']]],
   ['trygettingdrawdata',['TryGettingDrawData',['../class_loot_1_1_api_1_1_graphics_1_1_shader_entity.html#a5dd3653f2b97b6803c7514c521ba682f',1,'Loot::Api::Graphics::ShaderEntity']]],
-  ['trysealingslotteditem',['TrySealingSlottedItem',['../class_loot_1_1_u_i_1_1_sealing_1_1_cube_seal_u_i.html#ac50d3f8802383f04041192e24d96643c',1,'Loot::UI::Sealing::CubeSealUI']]],
   ['tryupdatingdrawdata',['TryUpdatingDrawData',['../class_loot_1_1_api_1_1_graphics_1_1_shader_entity.html#acf1c1ad6961364dba81a43a45cd93354',1,'Loot::Api::Graphics::ShaderEntity']]],
   ['type',['Type',['../interface_loot_1_1_api_1_1_content_1_1_i_loadable_content.html#a039c9899214650e1b15089db4e494519',1,'Loot.Api.Content.ILoadableContent.Type()'],['../class_loot_1_1_api_1_1_modifier_1_1_modifier.html#a00272c6b0cf37328946e64f84432e861',1,'Loot.Api.Modifier.Modifier.Type()'],['../class_loot_1_1_api_1_1_modifier_1_1_modifier.html#a9f6466fac4a167425f1a78bd43a19c78',1,'Loot.Api.Modifier.Modifier.Type()'],['../class_loot_1_1_api_1_1_modifier_1_1_modifier_effect.html#a8bf6ab1782f4bebab7b23635c91ef5af',1,'Loot.Api.Modifier.ModifierEffect.Type()'],['../class_loot_1_1_api_1_1_modifier_1_1_modifier_effect.html#ae5726d7791e12f323c6806aa026b1dad',1,'Loot.Api.Modifier.ModifierEffect.Type()'],['../class_loot_1_1_api_1_1_modifier_1_1_modifier_pool.html#a2f287e4149200b9a640d30df16c20bc8',1,'Loot.Api.Modifier.ModifierPool.Type()'],['../class_loot_1_1_api_1_1_modifier_1_1_modifier_pool.html#a6e27a2c9307db6f135724246d2b8a9ab',1,'Loot.Api.Modifier.ModifierPool.Type()'],['../class_loot_1_1_api_1_1_modifier_1_1_modifier_rarity.html#a8e70c3e86f568d55214dc822e213a4d0',1,'Loot.Api.Modifier.ModifierRarity.Type()'],['../class_loot_1_1_api_1_1_modifier_1_1_modifier_rarity.html#a315260d1f52fb0c29ba7810c10792b47',1,'Loot.Api.Modifier.ModifierRarity.Type()']]]
 ];

@@ -7,6 +7,5 @@ var searchData=
   ['delegationprioritizationattribute_2ecs',['DelegationPrioritizationAttribute.cs',['../_delegation_prioritization_attribute_8cs.html',1,'']]],
   ['delegationtarget_2ecs',['DelegationTarget.cs',['../_delegation_target_8cs.html',1,'']]],
   ['dodgechance_2ecs',['DodgeChance.cs',['../_dodge_chance_8cs.html',1,'']]],
-  ['draggableuistate_2ecs',['DraggableUIState.cs',['../_u_i_2_common_2_core_2_draggable_u_i_state_8cs.html',1,'']]],
-  ['draggableuistate_2ecs',['DraggableUIState.cs',['../_ignored_2_core_2_draggable_u_i_state_8cs.html',1,'']]]
+  ['draggableuistate_2ecs',['DraggableUIState.cs',['../_draggable_u_i_state_8cs.html',1,'']]]
 ];
