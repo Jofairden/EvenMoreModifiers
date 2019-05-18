@@ -125,7 +125,7 @@ $(document).ready(function(){initNavTree('class_loot_1_1_cubes_1_1_poor_cube.htm
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="class_loot_1_1_cubes_1_1_poor_cube__inherit__graph.png" border="0" usemap="#_loot_8_cubes_8_poor_cube_inherit__map" alt="Inheritance graph"/></div>
 <map name="_loot_8_cubes_8_poor_cube_inherit__map" id="_loot_8_cubes_8_poor_cube_inherit__map">
-<area shape="rect" id="node2" href="class_loot_1_1_api_1_1_cubes_1_1_rerolling_cube.html" title="Defines a rerolling cube that opens the rerolling UI on right click The method M:SetRollLogic can be ..." alt="" coords="28,155,132,181"/>
+<area shape="rect" id="node2" href="class_loot_1_1_api_1_1_cubes_1_1_rerolling_cube.html" title="Defines a rerolling cube that opens the rerolling UI on right click The method M:GetRollingStrategy c..." alt="" coords="28,155,132,181"/>
 <area shape="rect" id="node3" href="class_loot_1_1_api_1_1_cubes_1_1_magical_cube.html" title="Defines a magical cube A magical cube is used to change modifiers on an item " alt="" coords="31,80,129,107"/>
 <area shape="rect" id="node4" href="class_mod_item.html" title="ModItem" alt="" coords="43,5,116,32"/>
 </map>
@@ -137,7 +137,7 @@ $(document).ready(function(){initNavTree('class_loot_1_1_cubes_1_1_poor_cube.htm
 <div id="dynsection-1-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="class_loot_1_1_cubes_1_1_poor_cube__coll__graph.png" border="0" usemap="#_loot_8_cubes_8_poor_cube_coll__map" alt="Collaboration graph"/></div>
 <map name="_loot_8_cubes_8_poor_cube_coll__map" id="_loot_8_cubes_8_poor_cube_coll__map">
-<area shape="rect" id="node2" href="class_loot_1_1_api_1_1_cubes_1_1_rerolling_cube.html" title="Defines a rerolling cube that opens the rerolling UI on right click The method M:SetRollLogic can be ..." alt="" coords="153,173,257,200"/>
+<area shape="rect" id="node2" href="class_loot_1_1_api_1_1_cubes_1_1_rerolling_cube.html" title="Defines a rerolling cube that opens the rerolling UI on right click The method M:GetRollingStrategy c..." alt="" coords="153,173,257,200"/>
 <area shape="rect" id="node3" href="class_loot_1_1_api_1_1_cubes_1_1_magical_cube.html" title="Defines a magical cube A magical cube is used to change modifiers on an item " alt="" coords="156,96,255,123"/>
 <area shape="rect" id="node4" href="class_mod_item.html" title="ModItem" alt="" coords="5,5,77,32"/>
 </map>
@@ -157,8 +157,6 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:adeaed7eafb09ce8757b79912d365f657 inherit pub_methods_class_loot_1_1_api_1_1_cubes_1_1_magical_cube"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2616afbfc23be4e353c44f7f17f566e5 inherit pub_methods_class_loot_1_1_api_1_1_cubes_1_1_magical_cube"><td class="memItemLeft" align="right" valign="top">override void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_loot_1_1_api_1_1_cubes_1_1_magical_cube.html#a2616afbfc23be4e353c44f7f17f566e5">ModifyTooltips</a> (List&lt; TooltipLine &gt; tooltips)</td></tr>
 <tr class="separator:a2616afbfc23be4e353c44f7f17f566e5 inherit pub_methods_class_loot_1_1_api_1_1_cubes_1_1_magical_cube"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab1c7d1e76498f92e3df4dba1351f05de inherit pub_methods_class_loot_1_1_api_1_1_cubes_1_1_magical_cube"><td class="memItemLeft" align="right" valign="top">override bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_loot_1_1_api_1_1_cubes_1_1_magical_cube.html#ab1c7d1e76498f92e3df4dba1351f05de">PreDrawTooltipLine</a> (DrawableTooltipLine line, ref int yOffset)</td></tr>
-<tr class="separator:ab1c7d1e76498f92e3df4dba1351f05de inherit pub_methods_class_loot_1_1_api_1_1_cubes_1_1_magical_cube"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0981ca7402151539f56a288badc17060 inherit pub_methods_class_loot_1_1_api_1_1_cubes_1_1_magical_cube"><td class="memItemLeft" align="right" valign="top">sealed override void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_loot_1_1_api_1_1_cubes_1_1_magical_cube.html#a0981ca7402151539f56a288badc17060">SetDefaults</a> ()</td></tr>
 <tr class="separator:a0981ca7402151539f56a288badc17060 inherit pub_methods_class_loot_1_1_api_1_1_cubes_1_1_magical_cube"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a040d6b45cbd97bff8224a789ecbc82bb inherit pub_methods_class_loot_1_1_api_1_1_cubes_1_1_magical_cube"><td class="memItemLeft" align="right" valign="top">override void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_loot_1_1_api_1_1_cubes_1_1_magical_cube.html#a040d6b45cbd97bff8224a789ecbc82bb">SetStaticDefaults</a> ()</td></tr>
@@ -386,7 +384,7 @@ Additional Inherited Members</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespace_loot.html">Loot</a></li><li class="navelem"><a class="el" href="namespace_loot_1_1_cubes.html">Cubes</a></li><li class="navelem"><a class="el" href="class_loot_1_1_cubes_1_1_poor_cube.html">PoorCube</a></li>
-    <li class="footer">Generated on Sat May 18 2019 14:43:57 for Even More Modifiers by
+    <li class="footer">Generated on Sat May 18 2019 15:23:46 for Even More Modifiers by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.11 </li>
   </ul>

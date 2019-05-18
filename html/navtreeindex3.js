@@ -1,6 +1,5 @@
 var NAVTREEINDEX3 =
 {
-"class_loot_1_1_api_1_1_modifier_1_1_modifier_properties.html#a5c0d0e2b1972bcbcbc599134f0fc0dbf":[2,0,0,0,8,4,5],
 "class_loot_1_1_api_1_1_modifier_1_1_modifier_properties.html#a8962bf1f09ebf09ef01e9e465e0dac48":[2,0,0,0,8,4,6],
 "class_loot_1_1_api_1_1_modifier_1_1_modifier_properties.html#a8c23efa9b9e17403ba179c6414876fcc":[2,0,0,0,8,4,18],
 "class_loot_1_1_api_1_1_modifier_1_1_modifier_properties.html#a9b7cb9aab9eef897420a63b8169580cc":[2,0,0,0,8,4,14],
@@ -249,5 +248,6 @@ var NAVTREEINDEX3 =
 "class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_defensive_1_1_dodge_effect.html#a71c70d1139baf2299281b2eb7b8a796f":[2,0,0,6,1,0,1,2],
 "class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_defensive_1_1_dodge_effect.html#a7f665975083b88c893b1b9f0dc1fcd41":[2,0,0,6,1,0,1,1],
 "class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_defensive_1_1_dodge_effect.html#ac3f874349fc89f1a20906d975cf0ddaf":[2,0,0,6,1,0,1,0],
-"class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_defensive_1_1_health_plus.html":[2,0,0,6,1,0,2]
+"class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_defensive_1_1_health_plus.html":[2,0,0,6,1,0,2],
+"class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_defensive_1_1_health_plus.html#a08a50adb42c5989ed3aa8fa9f8b4d742":[2,0,0,6,1,0,2,2]
 };

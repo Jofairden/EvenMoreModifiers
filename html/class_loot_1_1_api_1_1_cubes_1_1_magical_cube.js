@@ -2,7 +2,6 @@ var class_loot_1_1_api_1_1_cubes_1_1_magical_cube =
 [
     [ "CanRightClick", "class_loot_1_1_api_1_1_cubes_1_1_magical_cube.html#adeaed7eafb09ce8757b79912d365f657", null ],
     [ "ModifyTooltips", "class_loot_1_1_api_1_1_cubes_1_1_magical_cube.html#a2616afbfc23be4e353c44f7f17f566e5", null ],
-    [ "PreDrawTooltipLine", "class_loot_1_1_api_1_1_cubes_1_1_magical_cube.html#ab1c7d1e76498f92e3df4dba1351f05de", null ],
     [ "SafeDefaults", "class_loot_1_1_api_1_1_cubes_1_1_magical_cube.html#a7ac3381ae426b536171770645a82b01c", null ],
     [ "SafeStaticDefaults", "class_loot_1_1_api_1_1_cubes_1_1_magical_cube.html#aedf0828a4519c534bb99b8fadd7f11f7", null ],
     [ "SetDefaults", "class_loot_1_1_api_1_1_cubes_1_1_magical_cube.html#a0981ca7402151539f56a288badc17060", null ],

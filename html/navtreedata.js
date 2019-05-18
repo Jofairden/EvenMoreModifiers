@@ -35,11 +35,11 @@ var NAVTREEINDEX =
 [
 "_accessory_modifier_8cs.html",
 "_modifier_pool_8cs.html",
-"class_loot_1_1_api_1_1_ext_1_1_mod_utils.html#a12e31ed308dc5e0169dcdfd10f556a23",
-"class_loot_1_1_api_1_1_modifier_1_1_modifier_properties.html#a5c0d0e2b1972bcbcbc599134f0fc0dbf",
-"class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_defensive_1_1_health_plus.html#a08a50adb42c5989ed3aa8fa9f8b4d742",
-"class_loot_1_1_pools_1_1_null_modifier_pool.html#a14fe029d755e18ba07935131984d680d",
-"namespace_loot_1_1_modifiers_1_1_base.html"
+"class_loot_1_1_api_1_1_ext_1_1_mod_utils.html#a1d0fedb5231d428d9203719245f4b4a3",
+"class_loot_1_1_api_1_1_modifier_1_1_modifier_properties.html#a8962bf1f09ebf09ef01e9e465e0dac48",
+"class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_defensive_1_1_health_plus.html#a584a3b00764d9e7c6f722e40ee6b5eec",
+"class_loot_1_1_pools_1_1_null_modifier_pool.html#a1f65e09bbe837cf74f7ea55df609680a",
+"namespace_loot_1_1_modifiers_1_1_equip_modifiers.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

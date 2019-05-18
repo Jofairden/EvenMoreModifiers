@@ -1,6 +1,5 @@
 var NAVTREEINDEX4 =
 {
-"class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_defensive_1_1_health_plus.html#a08a50adb42c5989ed3aa8fa9f8b4d742":[2,0,0,6,1,0,2,2],
 "class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_defensive_1_1_health_plus.html#a584a3b00764d9e7c6f722e40ee6b5eec":[2,0,0,6,1,0,2,0],
 "class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_defensive_1_1_health_plus.html#ade047703cada529865cb296e93a9d2cc":[2,0,0,6,1,0,2,1],
 "class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_defensive_1_1_immunity_effect.html":[2,0,0,6,1,0,3],
@@ -249,5 +248,6 @@ var NAVTREEINDEX4 =
 "class_loot_1_1_pools_1_1_all_modifiers_pool.html#a29d4045130334736e25c0691ba50f927":[2,0,0,7,0,1],
 "class_loot_1_1_pools_1_1_all_modifiers_pool.html#aa4e49077e9fc8a32e8cb050578735eca":[2,0,0,7,0,0],
 "class_loot_1_1_pools_1_1_all_modifiers_pool.html#ae93a41e5573a438bb0161ea47febf614":[2,0,0,7,0,2],
-"class_loot_1_1_pools_1_1_null_modifier_pool.html":[2,0,0,7,1]
+"class_loot_1_1_pools_1_1_null_modifier_pool.html":[2,0,0,7,1],
+"class_loot_1_1_pools_1_1_null_modifier_pool.html#a14fe029d755e18ba07935131984d680d":[2,0,0,7,1,0]
 };

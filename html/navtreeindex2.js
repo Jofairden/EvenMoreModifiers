@@ -1,6 +1,5 @@
 var NAVTREEINDEX2 =
 {
-"class_loot_1_1_api_1_1_ext_1_1_mod_utils.html#a12e31ed308dc5e0169dcdfd10f556a23":[2,0,0,0,4,2,2],
 "class_loot_1_1_api_1_1_ext_1_1_mod_utils.html#a1d0fedb5231d428d9203719245f4b4a3":[2,0,0,0,4,2,13],
 "class_loot_1_1_api_1_1_ext_1_1_mod_utils.html#a28db1793fd6b9bda94be4f8a5271bf73":[2,0,0,0,4,2,24],
 "class_loot_1_1_api_1_1_ext_1_1_mod_utils.html#a37739d1831122c57dc83b89dbbbc623b":[2,0,0,0,4,2,3],
@@ -249,5 +248,6 @@ var NAVTREEINDEX2 =
 "class_loot_1_1_api_1_1_modifier_1_1_modifier_properties.html#a137f55d2297367f01eb5823fd1459bee":[2,0,0,0,8,4,9],
 "class_loot_1_1_api_1_1_modifier_1_1_modifier_properties.html#a1867b3fd8e0724d74f90de0674edbf95":[2,0,0,0,8,4,1],
 "class_loot_1_1_api_1_1_modifier_1_1_modifier_properties.html#a4da982f0f6b391d5e46a32b61a9b6375":[2,0,0,0,8,4,15],
-"class_loot_1_1_api_1_1_modifier_1_1_modifier_properties.html#a581c32d16ee3f8da02d0017c64cbb96d":[2,0,0,0,8,4,16]
+"class_loot_1_1_api_1_1_modifier_1_1_modifier_properties.html#a581c32d16ee3f8da02d0017c64cbb96d":[2,0,0,0,8,4,16],
+"class_loot_1_1_api_1_1_modifier_1_1_modifier_properties.html#a5c0d0e2b1972bcbcbc599134f0fc0dbf":[2,0,0,0,8,4,5]
 };
