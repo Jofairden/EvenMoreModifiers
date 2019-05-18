@@ -24,8 +24,8 @@ namespace Loot
 	{
 		private const int SAVE_VERSION = 3;
 
-		public static LootModItem GetItemInfo(Item item) => item.GetGlobalItem<LootModItem>();
-		public static IEnumerable<Modifier> GetActivePool(Item item) => GetItemInfo(item)?.ModifierPool?.ActiveModifiers ?? Enumerable.Empty<Modifier>();
+		public static LootModItem GetInfo(Item item) => item.GetGlobalItem<LootModItem>();
+		public static IEnumerable<Modifier> GetActivePool(Item item) => GetInfo(item)?.ModifierPool?.ActiveModifiers ?? Enumerable.Empty<Modifier>();
 
 		public override bool InstancePerEntity => true;
 		public override bool CloneNewInstances => true;
@@ -268,7 +268,7 @@ namespace Loot
 
 		public override void OnCraft(Item item, Recipe recipe)
 		{
-			ModifierPool pool = GetItemInfo(item).ModifierPool;
+			ModifierPool pool = GetInfo(item).ModifierPool;
 			if (!HasRolled && pool == null)
 			{
 				ModifierContext ctx = new ModifierContext
@@ -288,7 +288,7 @@ namespace Loot
 
 		public override bool OnPickup(Item item, Player player)
 		{
-			ModifierPool pool = GetItemInfo(item).ModifierPool;
+			ModifierPool pool = GetInfo(item).ModifierPool;
 			if (!HasRolled && pool == null)
 			{
 				ModifierContext ctx = new ModifierContext
@@ -366,7 +366,7 @@ namespace Loot
 		/// </summary>
 		public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
 		{
-			var pool = GetItemInfo(item).ModifierPool;
+			var pool = GetInfo(item).ModifierPool;
 			if (pool != null && pool.ActiveModifiers.Length > 0)
 			{
 				// the following part, recalculate the vanilla prefix tooltips
@@ -521,7 +521,7 @@ namespace Loot
 				}
 
 				// Insert modifier rarity
-				CheatedItemHackGlobalItem cheatedItemHackGlobalItem = CheatedItemHackGlobalItem.Item(item);
+				CheatedItemHackGlobalItem cheatedItemHackGlobalItem = CheatedItemHackGlobalItem.GetInfo(item);
 				bool isVanityIgnored = cheatedItemHackGlobalItem.ShouldBeIgnored(item, Main.LocalPlayer);
 
 				Color? inactiveColor = isVanityIgnored ? (Color?)Color.DarkSlateGray : null;

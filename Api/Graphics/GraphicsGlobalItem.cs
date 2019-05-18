@@ -2,7 +2,6 @@ using System.Collections.Generic;
 using System.Linq;
 using Loot.Api.Modifier;
 using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Audio;
 using Microsoft.Xna.Framework.Graphics;
 using Terraria;
 using Terraria.ModLoader;

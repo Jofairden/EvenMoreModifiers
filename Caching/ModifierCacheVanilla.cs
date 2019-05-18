@@ -21,7 +21,7 @@ namespace Loot.Caching
 				Ready = false;
 
 				// detach old first
-				if (oldEquip != null && !oldEquip.IsAir && CheatedItemHackGlobalItem.Item(oldEquip).IsCheated)
+				if (oldEquip != null && !oldEquip.IsAir && CheatedItemHackGlobalItem.GetInfo(oldEquip).IsCheated)
 				{
 					foreach (Modifier m in LootModItem.GetActivePool(oldEquip))
 					{
@@ -30,7 +30,7 @@ namespace Loot.Caching
 				}
 
 				// attach new
-				if (newEquip != null && !newEquip.IsAir && CheatedItemHackGlobalItem.Item(newEquip).IsCheated)
+				if (newEquip != null && !newEquip.IsAir && CheatedItemHackGlobalItem.GetInfo(newEquip).IsCheated)
 				{
 					foreach (Modifier m in LootModItem.GetActivePool(newEquip))
 					{

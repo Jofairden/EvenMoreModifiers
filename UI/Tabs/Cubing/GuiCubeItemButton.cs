@@ -21,7 +21,7 @@ namespace Loot.UI.Tabs.Cubing
 		{
 			if (!Item.IsAir)
 			{
-				LootModItem.GetItemInfo(Item).SlottedInCubeUI = false;
+				LootModItem.GetInfo(Item).SlottedInCubeUI = false;
 			}
 		}
 
@@ -29,7 +29,7 @@ namespace Loot.UI.Tabs.Cubing
 		{
 			if (!Item.IsAir)
 			{
-				LootModItem.GetItemInfo(Item).SlottedInCubeUI = true;
+				LootModItem.GetInfo(Item).SlottedInCubeUI = true;
 			}
 		}
 	}

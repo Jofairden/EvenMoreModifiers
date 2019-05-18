@@ -1,6 +1,5 @@
 using System.Collections.Generic;
 using System.Linq;
-using Loot.Api.Cubes;
 using Loot.Api.Ext;
 using Loot.Api.Modifier;
 using Loot.Api.Strategy;
@@ -43,7 +42,7 @@ namespace Loot.UI.Tabs.Cubing
 
 			_cubeButton = new GuiCubeButton(
 				GuiButton.ButtonType.StoneOuterBevel,
-				hintTexture: Loot.Instance.GetTexture( "Api/Cubes/MagicalCube"),
+				hintTexture: Loot.Instance.GetTexture("Api/Cubes/MagicalCube"),
 				hintText: "Place a cube here"
 			);
 			TabFrame.Append(_cubeButton);
@@ -83,6 +82,12 @@ namespace Loot.UI.Tabs.Cubing
 			Append(_guiCubeSelector);
 		}
 
+		public bool AcceptsCube(Item item)
+			=> _cubeButton.CanTakeItem(item);
+
+		public bool AcceptsItem(Item item)
+			=> _itemButton.CanTakeItem(item);
+
 		private bool MatchesRerollRequirements()
 		{
 			bool match = !_itemButton.Item.IsAir && !_cubeButton.Item.IsAir
@@ -110,7 +115,7 @@ namespace Loot.UI.Tabs.Cubing
 					return;
 				}
 
-				var info = LootModItem.GetItemInfo(_itemButton.Item);
+				var info = LootModItem.GetInfo(_itemButton.Item);
 				if (_cubeButton.Item.modItem is CubeOfSealing)
 				{
 					info.SealedModifiers = !info.SealedModifiers;
@@ -125,7 +130,7 @@ namespace Loot.UI.Tabs.Cubing
 				{
 					// Refresh item
 					Item newItem = GetClonedItem(_itemButton.Item);
-					LootModItem.GetItemInfo(newItem).ModifierPool = null; // unload previous pool
+					LootModItem.GetInfo(newItem).ModifierPool = null; // unload previous pool
 
 					// reroll pool
 					RerollModifiers(newItem);
@@ -169,7 +174,7 @@ namespace Loot.UI.Tabs.Cubing
 				Strategy = _cubeButton.GetRollingStrategy(_itemButton.Item, RollingStrategyProperties)
 			};
 
-			var pool = LootModItem.GetItemInfo(newItem).RollNewPool(ctx, RollingStrategyProperties);
+			var pool = LootModItem.GetInfo(newItem).RollNewPool(ctx, RollingStrategyProperties);
 			pool?.ApplyModifiers(newItem);
 			_itemButton.Item = newItem.Clone();
 		}

@@ -29,7 +29,7 @@ namespace Loot.UI.Tabs.Cubing
 			}
 
 			RecalculateStack();
-			if (Loot.Instance.GuiState.GetTab() is GuiCubingTab cubingTab)
+			if (Loot.Instance.GuiState.GetCurrentTab() is GuiCubingTab cubingTab)
 			{
 				cubingTab._guiCubeSelector.DetermineAvailableCubes();
 			}
@@ -39,7 +39,7 @@ namespace Loot.UI.Tabs.Cubing
 		{
 			Item.SetDefaults(type);
 			RecalculateStack();
-			if (Loot.Instance.GuiState.GetTab() is GuiCubingTab cubingTab)
+			if (Loot.Instance.GuiState.GetCurrentTab() is GuiCubingTab cubingTab)
 			{
 				cubingTab._guiCubeSelector.DetermineAvailableCubes();
 			}

@@ -261,7 +261,7 @@ namespace Loot.Api.Modifier
 						// however, it was saved on the pool in earlier versions, so we need to catch it here.
 						ModifierRarity preloadRarity = ModifierRarity._Load(item, tag.GetCompound("Rarity"));
 
-						LootModItem.GetItemInfo(item).ModifierRarity =
+						LootModItem.GetInfo(item).ModifierRarity =
 							preloadRarity ?? ContentLoader.ModifierRarity.GetContent(typeof(CommonRarity));
 					}
 

@@ -26,7 +26,7 @@ namespace Loot.RollingStrategies
 		private void InitFields(RollingStrategyContext strategyContext)
 		{
 			properties = strategyContext.Properties;
-			modifierItem = LootModItem.GetItemInfo(strategyContext.Item);
+			modifierItem = LootModItem.GetInfo(strategyContext.Item);
 		}
 
 		private WeightedRandom<Modifier> GetRandomList(ModifierContext context)

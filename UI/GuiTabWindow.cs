@@ -37,7 +37,7 @@ namespace Loot.UI
 			{GuiTabState.SOULFORGE, new GuiTabToggle(GuiTabState.SOULFORGE)}
 		};
 
-		public GuiTab GetTab()
+		public GuiTab GetCurrentTab()
 		{
 			_tabs.TryGetValue(_currentTabState, out _currentTab);
 			_currentTab?._GetPageHeight();
@@ -75,7 +75,7 @@ namespace Loot.UI
 				RemoveChild(_currentTab);
 			}
 
-			GetTab();
+			GetCurrentTab();
 			_header.SetHeader(_currentTab.Header);
 			Append(_currentTab);
 			_currentTab.Activate();

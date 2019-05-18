@@ -78,7 +78,7 @@ namespace Loot
 
 				foreach (var item in items)
 				{
-					LootModItem itemInfo = LootModItem.GetItemInfo(item);
+					LootModItem itemInfo = LootModItem.GetInfo(item);
 					ModifierPool pool = itemInfo.ModifierPool;
 					UnifiedRandom rand = (Main.rand ?? WorldGen.genRand) ?? new UnifiedRandom();
 

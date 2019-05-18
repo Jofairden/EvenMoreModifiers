@@ -28,14 +28,14 @@ namespace Loot.Hacks
 					// just put in reforge slot
 					if (Main.reforgeItem.IsAir && !Main.mouseItem.IsAir && Main.mouseItem.IsArmor())
 					{
-						var info = LootModItem.GetItemInfo(Main.mouseItem);
+						var info = LootModItem.GetInfo(Main.mouseItem);
 						Main.mouseItem.accessory = true;
 						info.JustTinkerModified = true;
 					}
 					// take out of reforge slot
 					else if (!Main.reforgeItem.IsAir && Main.mouseItem.IsAir && Main.reforgeItem.IsArmor())
 					{
-						var info = LootModItem.GetItemInfo(Main.reforgeItem);
+						var info = LootModItem.GetInfo(Main.reforgeItem);
 						Main.reforgeItem.accessory = false;
 						info.JustTinkerModified = false;
 					}

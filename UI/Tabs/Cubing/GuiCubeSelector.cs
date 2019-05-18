@@ -158,7 +158,7 @@ namespace Loot.UI.Tabs.Cubing
 
 		private void OnCubeClick(int type)
 		{
-			if (Loot.Instance.GuiState.GetTab() is GuiCubingTab cubingTab)
+			if (Loot.Instance.GuiState.GetCurrentTab() is GuiCubingTab cubingTab)
 			{
 				cubingTab._cubeButton.ChangeItem(type);
 			}

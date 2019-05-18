@@ -15,7 +15,7 @@ namespace Loot.Api.Delegators
 	{
 		public override bool InstancePerEntity => false;
 		public override bool CloneNewInstances => false;
-		private CheatedItemHackGlobalItem GetActivatedModifierItem(Item item) => CheatedItemHackGlobalItem.Item(item);
+		private CheatedItemHackGlobalItem GetActivatedModifierItem(Item item) => CheatedItemHackGlobalItem.GetInfo(item);
 
 		public override bool AltFunctionUse(Item item, Player player)
 		{

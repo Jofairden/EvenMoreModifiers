@@ -4,7 +4,6 @@ using Loot.Api.Attributes;
 using Loot.Api.Delegators;
 using Loot.Api.Ext;
 using Loot.Api.Modifier;
-using Loot.Hacks;
 using Loot.Modifiers.Base;
 using Terraria;
 using Terraria.ID;
@@ -29,13 +28,13 @@ namespace Loot.Modifiers.WeaponModifiers
 			Item checkItem = Main.mouseItem != null && !Main.mouseItem.IsAir ? Main.mouseItem : delegatorPlayer.player.HeldItem;
 
 			if (checkItem == null || checkItem.IsAir || !checkItem.IsWeapon()
-			    || !LootModItem.GetItemInfo(checkItem).IsActivated)
+			    || !LootModItem.GetInfo(checkItem).IsActivated)
 				return;
 
 			int c = LootModItem.GetActivePool(checkItem).Count(x => x.GetType() == typeof(CursedDamage));
 			if (c > 0)
 			{
-				ModifierDelegatorPlayer.Player(delegatorPlayer.player).GetEffect<CursedEffect>().CurseCount += c;
+				delegatorPlayer.GetEffect<CursedEffect>().CurseCount += c;
 			}
 		}
 

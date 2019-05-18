@@ -51,7 +51,17 @@ namespace Loot.Hacks
 				IsCheated = false;
 		}
 
-		public static CheatedItemHackGlobalItem Item(Item item)
+		public override void UpdateInventory(Item item, Player player)
+		{
+			IsCheated = false;
+		}
+
+		public override void PostUpdate(Item item)
+		{
+			IsCheated = false;
+		}
+
+		public static CheatedItemHackGlobalItem GetInfo(Item item)
 			=> item.GetGlobalItem<CheatedItemHackGlobalItem>();
 	}
 }

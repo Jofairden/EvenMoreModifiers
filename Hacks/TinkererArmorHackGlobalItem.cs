@@ -13,7 +13,7 @@ namespace Loot.Hacks
 		// Forces an accessory tinker
 		public override int ChoosePrefix(Item item, UnifiedRandom rand)
 		{
-			var info = LootModItem.GetItemInfo(item);
+			var info = LootModItem.GetInfo(item);
 			if (info.JustTinkerModified)
 			{
 				item.accessory = true;
@@ -25,7 +25,7 @@ namespace Loot.Hacks
 		// Reset accessory state after reforge
 		public override void PostReforge(Item item)
 		{
-			var info = LootModItem.GetItemInfo(item);
+			var info = LootModItem.GetInfo(item);
 			if (info.JustTinkerModified)
 			{
 				item.accessory = false;

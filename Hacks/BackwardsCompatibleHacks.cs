@@ -10,7 +10,7 @@ namespace Loot.Hacks
 
 		public sealed override void Load(Item item, TagCompound tag)
 		{
-			LootModItem.GetItemInfo(item).Load(item, tag);
+			LootModItem.GetInfo(item).Load(item, tag);
 		}
 
 		public sealed override TagCompound Save(Item item)

@@ -22,9 +22,8 @@ namespace Loot.Caching
 	 */
 
 	/// <summary>
-	/// The following code caches the item held and items equipped by players
-	/// When equips and held items change, their respective modifiers' effects are automatically
-	/// called to detach and attach their delegations
+	/// Caches the item held and items equipped by players.
+	/// When equips and held items change, their respective modifiers' effects are automatically called to detach and attach their delegations.
 	/// </summary>
 	public sealed partial class ModifierCachePlayer : ModPlayer
 	{
@@ -224,13 +223,13 @@ namespace Loot.Caching
 
 		private void AddDetachItem(Item item, Modifier modifier)
 		{
-			LootModItem.GetItemInfo(item).IsActivated = false;
+			LootModItem.GetInfo(item).IsActivated = false;
 			_detachList.Add((item, modifier));
 		}
 
 		private void AddAttachItem(Item item, Modifier modifier)
 		{
-			LootModItem.GetItemInfo(item).IsActivated = true;
+			LootModItem.GetInfo(item).IsActivated = true;
 			_attachList.Add((item, modifier));
 		}
 
@@ -256,7 +255,7 @@ namespace Loot.Caching
 				var equip = player.armor[k];
 				if (equip != null
 				    && !equip.IsAir
-				    && CheatedItemHackGlobalItem.Item(equip).IsCheated)
+				    && CheatedItemHackGlobalItem.GetInfo(equip).IsCheated)
 				{
 					CacheItemModifierEffects(equip);
 				}
