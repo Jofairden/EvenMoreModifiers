@@ -5,7 +5,6 @@ using Microsoft.Xna.Framework.Input;
 using Terraria;
 using Terraria.GameInput;
 using Terraria.ModLoader;
-using Terraria.UI.Chat;
 
 namespace Loot.Api.Cubes
 {

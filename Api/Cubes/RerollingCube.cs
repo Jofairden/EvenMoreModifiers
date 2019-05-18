@@ -7,8 +7,8 @@ namespace Loot.Api.Cubes
 {
 	/// <summary>
 	/// Defines a rerolling cube that opens the rerolling UI on right click
-	/// The method <see cref="M:SetRollLogic"/> can be overridden to provide
-	/// custom roll logic
+	/// The method <see cref="M:GetRollingStrategy"/> can be overridden to provide
+	/// custom roll properties
 	/// </summary>
 	public abstract class RerollingCube : MagicalCube
 	{

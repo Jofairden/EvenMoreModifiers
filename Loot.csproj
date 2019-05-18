@@ -60,7 +60,6 @@
     <Compile Include="Cubes\BlackCube.cs" />
     <Compile Include="Cubes\CubeOfSealing.cs" />
     <Compile Include="Cubes\CubeShop.cs" />
-    <Compile Include="Hacks\WingSlotUiHackGlobalItem.cs" />
     <Compile Include="Pools\WeaponModifierPool.cs" />
     <Compile Include="RollingStrategies\NormalRollingStrategy.cs" />
     <Compile Include="Api\Strategy\RollingStrategyProperties.cs" />
