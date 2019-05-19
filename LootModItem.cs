@@ -11,6 +11,7 @@ using Loot.Api.Loaders;
 using Loot.Api.Modifier;
 using Loot.Api.Strategy;
 using Loot.Hacks;
+using Loot.RollingStrategies;
 using Terraria;
 using Terraria.ModLoader;
 using Terraria.ModLoader.IO;
@@ -150,10 +151,13 @@ namespace Loot
 				}
 			}
 
-			// Attempt rolling modifiers
-			if (!ctx.Strategy?.Roll(ctx, new RollingStrategyContext(ctx.Item, rollingStrategyProperties)) ?? true)
+			if (ctx.Strategy != null)
 			{
-				InvalidateRolls();
+				// Attempt rolling modifiers
+				if (!ctx.Strategy.Roll(ctx, new RollingStrategyContext(ctx.Item, rollingStrategyProperties)))
+				{
+					InvalidateRolls();
+				}
 			}
 
 			ctx.Item.GetGlobalItem<GraphicsGlobalItem>().NeedsUpdate = true;
@@ -295,7 +299,8 @@ namespace Loot
 				{
 					Method = ModifierContextMethod.OnPickup,
 					Item = item,
-					Player = player
+					Player = player,
+					Strategy = RollingUtils.Strategies.Normal
 				};
 
 				pool = RollNewPool(ctx);
@@ -313,7 +318,8 @@ namespace Loot
 				{
 					Method = ModifierContextMethod.OnReforge,
 					Item = item,
-					Player = Main.LocalPlayer
+					Player = Main.LocalPlayer,
+					Strategy = RollingUtils.Strategies.Normal
 				};
 
 				ModifierPool pool = RollNewPool(ctx);

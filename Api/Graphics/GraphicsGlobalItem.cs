@@ -46,7 +46,6 @@ namespace Loot.Api.Graphics
 							 && !GlowmaskEntities.Any(x => x != null && x.NeedsUpdate))
 				return;
 
-
 			if (ShaderEntities != null)
 			{
 				ShaderEntities.Clear();

@@ -1,5 +1,7 @@
 using System.Collections.Generic;
+using Loot.Api.Ext;
 using Loot.Api.Strategy;
+using Loot.RollingStrategies;
 using Terraria;
 
 namespace Loot.Api.Modifier
@@ -49,7 +51,7 @@ namespace Loot.Api.Modifier
 	/// </item>
 	/// </list>
 	/// </summary>
-	public struct ModifierContext
+	public class ModifierContext
 	{
 		public IDictionary<string, object> CustomData;
 		public ModifierContextMethod Method;
@@ -58,6 +60,6 @@ namespace Loot.Api.Modifier
 		public Item Item;
 		public Recipe Recipe;
 		public ModifierRarity Rarity;
-		public IRollingStrategy<RollingStrategyContext> Strategy;
+		public IRollingStrategy<RollingStrategyContext> Strategy = RollingUtils.Strategies.Normal;
 	}
 }
