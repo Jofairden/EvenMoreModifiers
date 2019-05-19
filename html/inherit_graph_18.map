@@ -1,3 +1,5 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="node1" href="$class_loot_1_1_api_1_1_loaders_1_1_asset_loader.html" title="This Loader is responsible for loading graphics assets for a mod These include shader and glowmask te..." alt="" coords="5,5,203,32"/>
+<area shape="rect" id="node1" href="$class_loot_1_1_api_1_1_graphics_1_1_shaders_1_1_shader_draw_style.html" title="Loot.Api.Graphics.Shaders.\lShaderDrawStyle" alt="" coords="6,38,189,79"/>
+<area shape="rect" id="node2" href="$class_loot_1_1_api_1_1_graphics_1_1_shaders_1_1_alternate_shader_draw_style.html" title="Loot.Api.Graphics.Shaders.\lAlternateShaderDrawStyle" alt="" coords="238,5,421,46"/>
+<area shape="rect" id="node3" href="$class_loot_1_1_api_1_1_graphics_1_1_shaders_1_1_default_shader_draw_style.html" title="Loot.Api.Graphics.Shaders.\lDefaultShaderDrawStyle" alt="" coords="238,70,421,111"/>
 </map>

@@ -16,7 +16,9 @@ var searchData=
   ['allmodifierspool',['AllModifiersPool',['../class_loot_1_1_pools_1_1_all_modifiers_pool.html',1,'Loot::Pools']]],
   ['allmodifierspool',['AllModifiersPool',['../class_loot_1_1_pools_1_1_all_modifiers_pool.html#aa4e49077e9fc8a32e8cb050578735eca',1,'Loot::Pools::AllModifiersPool']]],
   ['allmodifierspool_2ecs',['AllModifiersPool.cs',['../_all_modifiers_pool_8cs.html',1,'']]],
-  ['alternate',['Alternate',['../namespace_loot_1_1_api_1_1_graphics.html#a0af38b100a6b27f942b382c12ab75bbaa918bba63d066b83c418905067fc5cfd1',1,'Loot::Api::Graphics']]],
+  ['alternate',['Alternate',['../class_loot_1_1_api_1_1_graphics_1_1_shaders_1_1_shader_draw_style_1_1_styles.html#aea9779ba45270ff3a14bcdd315b968a9',1,'Loot::Api::Graphics::Shaders::ShaderDrawStyle::Styles']]],
+  ['alternateshaderdrawstyle',['AlternateShaderDrawStyle',['../class_loot_1_1_api_1_1_graphics_1_1_shaders_1_1_alternate_shader_draw_style.html',1,'Loot::Api::Graphics::Shaders']]],
+  ['alternateshaderdrawstyle_2ecs',['AlternateShaderDrawStyle.cs',['../_alternate_shader_draw_style_8cs.html',1,'']]],
   ['ammoreduce',['AmmoReduce',['../class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_ammo_reduce.html',1,'Loot::Modifiers::WeaponModifiers']]],
   ['ammoreduce_2ecs',['AmmoReduce.cs',['../_ammo_reduce_8cs.html',1,'']]],
   ['anglerchat',['AnglerChat',['../class_loot_1_1_api_1_1_modifier_1_1_modifier.html#a3be0b560fbfa44a09c0e0ebb4ab31a9d',1,'Loot::Api::Modifier::Modifier']]],
@@ -36,8 +38,8 @@ var searchData=
   ['attachdelegations',['AttachDelegations',['../class_loot_1_1_api_1_1_modifier_1_1_modifier_effect.html#a4a1630f03d366d82c9f324c1354fc74e',1,'Loot::Api::Modifier::ModifierEffect']]],
   ['attemptdebuff',['AttemptDebuff',['../class_loot_1_1_api_1_1_delegators_1_1_modifier_delegator_projectile.html#a1c82a5fa936a3410af0da2e8a6224fd3',1,'Loot.Api.Delegators.ModifierDelegatorProjectile.AttemptDebuff(Projectile projectile, Player target)'],['../class_loot_1_1_api_1_1_delegators_1_1_modifier_delegator_projectile.html#a1ad8eae7a47bff067b78e8078ea84486',1,'Loot.Api.Delegators.ModifierDelegatorProjectile.AttemptDebuff(Projectile projectile, NPC target)']]],
   ['attribute',['Attribute',['../class_attribute.html',1,'']]],
-  ['autodelegation',['AutoDelegation',['../class_loot_1_1_api_1_1_attributes_1_1_auto_delegation.html#a49dcda252cc6325436d783aa150c453a',1,'Loot.Api.Attributes.AutoDelegation.AutoDelegation(params string[] types)'],['../class_loot_1_1_api_1_1_attributes_1_1_auto_delegation.html#ae605ed3b299b05aee32f26b3f658bf50',1,'Loot.Api.Attributes.AutoDelegation.AutoDelegation(params DelegationTarget[] targets)']]],
   ['autodelegation',['AutoDelegation',['../class_loot_1_1_api_1_1_attributes_1_1_auto_delegation.html',1,'Loot::Api::Attributes']]],
+  ['autodelegation',['AutoDelegation',['../class_loot_1_1_api_1_1_attributes_1_1_auto_delegation.html#a49dcda252cc6325436d783aa150c453a',1,'Loot.Api.Attributes.AutoDelegation.AutoDelegation(params string[] types)'],['../class_loot_1_1_api_1_1_attributes_1_1_auto_delegation.html#ae605ed3b299b05aee32f26b3f658bf50',1,'Loot.Api.Attributes.AutoDelegation.AutoDelegation(params DelegationTarget[] targets)']]],
   ['autodelegationattribute_2ecs',['AutoDelegationAttribute.cs',['../_auto_delegation_attribute_8cs.html',1,'']]],
   ['autoload',['Autoload',['../class_loot_1_1_api_1_1_modifier_1_1_modifier.html#a92cd5f3cabab223047f0dd904bd8dea0',1,'Loot.Api.Modifier.Modifier.Autoload()'],['../class_loot_1_1_api_1_1_modifier_1_1_modifier_effect.html#a0aec4bf4bf5f6f7b9f02319d32cb4bc7',1,'Loot.Api.Modifier.ModifierEffect.Autoload()']]]
 ];

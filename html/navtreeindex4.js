@@ -1,5 +1,11 @@
 var NAVTREEINDEX4 =
 {
+"class_loot_1_1_api_1_1_modifier_1_1_modifier_properties.html#abd2074ebe343ffa8149cfd52f2aaa89a":[2,0,0,0,9,4,3],
+"class_loot_1_1_api_1_1_modifier_1_1_modifier_properties.html#abf92e9183bb3df151175651100b06cc3":[2,0,0,0,9,4,9],
+"class_loot_1_1_api_1_1_modifier_1_1_modifier_properties.html#ac2228560a4666ad1a70488240753bc4e":[2,0,0,0,9,4,13],
+"class_loot_1_1_api_1_1_modifier_1_1_modifier_properties.html#ac4fbb667462734c067a4b0faf5f53828":[2,0,0,0,9,4,8],
+"class_loot_1_1_api_1_1_modifier_1_1_modifier_properties.html#ade2baa05e2177453cb3f546dd7b28692":[2,0,0,0,9,4,4],
+"class_loot_1_1_api_1_1_modifier_1_1_modifier_properties.html#af18f89d82094e1f65c8798f6dce8e08a":[2,0,0,0,9,4,15],
 "class_loot_1_1_api_1_1_modifier_1_1_modifier_properties_1_1_modifier_properties_builder.html":[2,0,0,0,9,4,0],
 "class_loot_1_1_api_1_1_modifier_1_1_modifier_properties_1_1_modifier_properties_builder.html#a04e0f7ba45783d1015434d74d696bef5":[2,0,0,0,9,4,0,6],
 "class_loot_1_1_api_1_1_modifier_1_1_modifier_properties_1_1_modifier_properties_builder.html#a2dea0a406e58a8bb2a77274d9dfe7fb5":[2,0,0,0,9,4,0,2],
@@ -243,11 +249,5 @@ var NAVTREEINDEX4 =
 "class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_defensive_1_1_life_regen_effect.html":[2,0,0,6,1,0,7],
 "class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_defensive_1_1_life_regen_effect.html#a08c0e63e5917d857d4bb9f3a7ee3d1bf":[2,0,0,6,1,0,7,0],
 "class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_defensive_1_1_life_regen_effect.html#a8d158c4493729895b8ba50abab4b2030":[2,0,0,6,1,0,7,1],
-"class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_defensive_1_1_life_regen_effect.html#ad9608aa93d67114e202131dc11f8838c":[2,0,0,6,1,0,7,2],
-"class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_defensive_1_1_mana_plus.html":[2,0,0,6,1,0,8],
-"class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_defensive_1_1_mana_plus.html#a28053948af4badc338528ee296f65646":[2,0,0,6,1,0,8,0],
-"class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_defensive_1_1_mana_plus.html#a42d1a4690a54e384faffedf8524e7265":[2,0,0,6,1,0,8,2],
-"class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_defensive_1_1_mana_plus.html#a95e3df605da75f4e1c7daae1275dfefd":[2,0,0,6,1,0,8,1],
-"class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_defensive_1_1_mana_shield.html":[2,0,0,6,1,0,9],
-"class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_defensive_1_1_mana_shield.html#a49130a309341147f64a03f690c536f37":[2,0,0,6,1,0,9,1]
+"class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_defensive_1_1_life_regen_effect.html#ad9608aa93d67114e202131dc11f8838c":[2,0,0,6,1,0,7,2]
 };

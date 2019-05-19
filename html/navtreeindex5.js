@@ -1,5 +1,11 @@
 var NAVTREEINDEX5 =
 {
+"class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_defensive_1_1_mana_plus.html":[2,0,0,6,1,0,8],
+"class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_defensive_1_1_mana_plus.html#a28053948af4badc338528ee296f65646":[2,0,0,6,1,0,8,0],
+"class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_defensive_1_1_mana_plus.html#a42d1a4690a54e384faffedf8524e7265":[2,0,0,6,1,0,8,2],
+"class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_defensive_1_1_mana_plus.html#a95e3df605da75f4e1c7daae1275dfefd":[2,0,0,6,1,0,8,1],
+"class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_defensive_1_1_mana_shield.html":[2,0,0,6,1,0,9],
+"class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_defensive_1_1_mana_shield.html#a49130a309341147f64a03f690c536f37":[2,0,0,6,1,0,9,1],
 "class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_defensive_1_1_mana_shield.html#ac880f56eba0e265c31d12ff809719745":[2,0,0,6,1,0,9,0],
 "class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_defensive_1_1_mana_shield.html#ad29f7dbdd1408e4f6f8946a89d04ba90":[2,0,0,6,1,0,9,2],
 "class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_defensive_1_1_mana_shield_effect.html":[2,0,0,6,1,0,10],
@@ -243,11 +249,5 @@ var NAVTREEINDEX5 =
 "class_loot_1_1_rarities_1_1_legendary_rarity.html#a9dc9e0604a769b5d37de8a8e925f70e7":[2,0,0,8,2,0],
 "class_loot_1_1_rarities_1_1_legendary_rarity.html#aa00b3f4ae38b2f9b27b364a698814815":[2,0,0,8,2,1],
 "class_loot_1_1_rarities_1_1_legendary_rarity.html#ac49691a5d4658d61a57098095d186120":[2,0,0,8,2,5],
-"class_loot_1_1_rarities_1_1_legendary_rarity.html#ae94e26e9cb18d7d5fb6414dc7a4caab9":[2,0,0,8,2,2],
-"class_loot_1_1_rarities_1_1_legendary_rarity.html#afdad54be0373e39fa79cddaed4983922":[2,0,0,8,2,6],
-"class_loot_1_1_rarities_1_1_null_modifier_rarity.html":[2,0,0,8,3],
-"class_loot_1_1_rarities_1_1_null_modifier_rarity.html#a332c5dee176c4a17e0aeae6c9121cbef":[2,0,0,8,3,0],
-"class_loot_1_1_rarities_1_1_null_modifier_rarity.html#ac289cd12837e7ee07b94be888e0ea593":[2,0,0,8,3,1],
-"class_loot_1_1_rarities_1_1_rare_rarity.html":[2,0,0,8,4],
-"class_loot_1_1_rarities_1_1_rare_rarity.html#a2ca8a5e3d7fba0c19213280eddb6834c":[2,0,0,8,4,5]
+"class_loot_1_1_rarities_1_1_legendary_rarity.html#ae94e26e9cb18d7d5fb6414dc7a4caab9":[2,0,0,8,2,2]
 };

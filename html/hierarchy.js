@@ -197,9 +197,14 @@ var hierarchy =
     [ "Loot.Api.Strategy.RollingStrategyContext", "class_loot_1_1_api_1_1_strategy_1_1_rolling_strategy_context.html", null ],
     [ "Loot.Api.Strategy.RollingStrategyProperties", "class_loot_1_1_api_1_1_strategy_1_1_rolling_strategy_properties.html", null ],
     [ "Loot.Api.Ext.RollingUtils", "class_loot_1_1_api_1_1_ext_1_1_rolling_utils.html", null ],
+    [ "Loot.Api.Graphics.Shaders.ShaderDrawStyle", "class_loot_1_1_api_1_1_graphics_1_1_shaders_1_1_shader_draw_style.html", [
+      [ "Loot.Api.Graphics.Shaders.AlternateShaderDrawStyle", "class_loot_1_1_api_1_1_graphics_1_1_shaders_1_1_alternate_shader_draw_style.html", null ],
+      [ "Loot.Api.Graphics.Shaders.DefaultShaderDrawStyle", "class_loot_1_1_api_1_1_graphics_1_1_shaders_1_1_default_shader_draw_style.html", null ]
+    ] ],
     [ "Loot.Sounds.Custom.SoundMaker", "class_loot_1_1_sounds_1_1_custom_1_1_sound_maker.html", null ],
     [ "Loot.UI.Tabs.Soulforging.GuiSoulgauge.GaugeDrawing.STATIC", "class_loot_1_1_u_i_1_1_tabs_1_1_soulforging_1_1_gui_soulgauge_1_1_gauge_drawing_1_1_s_t_a_t_i_c.html", null ],
     [ "Loot.Api.Ext.RollingUtils.Strategies", "class_loot_1_1_api_1_1_ext_1_1_rolling_utils_1_1_strategies.html", null ],
+    [ "Loot.Api.Graphics.Shaders.ShaderDrawStyle.Styles", "class_loot_1_1_api_1_1_graphics_1_1_shaders_1_1_shader_draw_style_1_1_styles.html", null ],
     [ "Loot.Api.ModContent.TextureModContent", "class_loot_1_1_api_1_1_mod_content_1_1_texture_mod_content.html", [
       [ "Loot.Api.ModContent.GraphicsModContent", "class_loot_1_1_api_1_1_mod_content_1_1_graphics_mod_content.html", null ]
     ] ],

@@ -8,7 +8,7 @@ var searchData=
   ['getcontent_3c_20t_20_3e',['GetContent&lt; T &gt;',['../class_loot_1_1_api_1_1_mod_content_1_1_mod_content_manager.html#ac0fd794d025eb9ebd8395166139dc84a',1,'Loot::Api::ModContent::ModContentManager']]],
   ['getdistinctmoditems_3c_20t_20_3e',['GetDistinctModItems&lt; T &gt;',['../class_loot_1_1_api_1_1_ext_1_1_item_utils.html#ab53a14a01de3de30e90c345c3a746a61',1,'Loot::Api::Ext::ItemUtils']]],
   ['getdrawframe',['GetDrawFrame',['../class_loot_1_1_u_i_1_1_tabs_1_1_soulforging_1_1_gui_soulgauge_1_1_gauge_drawing.html#a1fa8ad90b387ff3af5641e79fb4f20a6',1,'Loot::UI::Tabs::Soulforging::GuiSoulgauge::GaugeDrawing']]],
-  ['getdrawoffset',['GetDrawOffset',['../class_loot_1_1_api_1_1_graphics_1_1_shader_entity.html#a93128025a87068cfafdfdf86b0caa097',1,'Loot::Api::Graphics::ShaderEntity']]],
+  ['getdrawoffset',['GetDrawOffset',['../class_loot_1_1_api_1_1_graphics_1_1_shaders_1_1_alternate_shader_draw_style.html#a76a719c623fa6be64fb625de50b5ef98',1,'Loot.Api.Graphics.Shaders.AlternateShaderDrawStyle.GetDrawOffset()'],['../class_loot_1_1_api_1_1_graphics_1_1_shaders_1_1_default_shader_draw_style.html#af4c685b9dfd8f16106b0d707bbef4bc1',1,'Loot.Api.Graphics.Shaders.DefaultShaderDrawStyle.GetDrawOffset()'],['../class_loot_1_1_api_1_1_graphics_1_1_shaders_1_1_shader_draw_style.html#a79509a4382625cbf188210eaaa76ee9a',1,'Loot.Api.Graphics.Shaders.ShaderDrawStyle.GetDrawOffset()']]],
   ['getdyetraderreward',['GetDyeTraderReward',['../class_loot_1_1_api_1_1_delegators_1_1_modifier_delegator_player.html#a778cbdfc3c4802b43b0755892413f958',1,'Loot::Api::Delegators::ModifierDelegatorPlayer']]],
   ['geteffect',['GetEffect',['../class_loot_1_1_api_1_1_delegators_1_1_modifier_delegator_player.html#a72c8852644cbf7ad5548b23953bc2c48',1,'Loot::Api::Delegators::ModifierDelegatorPlayer']]],
   ['geteffect_3c_20t_20_3e',['GetEffect&lt; T &gt;',['../class_loot_1_1_api_1_1_delegators_1_1_modifier_delegator_player.html#aa4b2df39987d0501136e314e5e6952dd',1,'Loot::Api::Delegators::ModifierDelegatorPlayer']]],
@@ -16,7 +16,6 @@ var searchData=
   ['getfishinglevel',['GetFishingLevel',['../class_loot_1_1_api_1_1_delegators_1_1_modifier_delegator_player.html#ac3ed88aacb2a6b1d30fc935fb0b6a7a3',1,'Loot::Api::Delegators::ModifierDelegatorPlayer']]],
   ['getfishingleveleventraiser',['GetFishingLevelEventRaiser',['../class_loot_1_1_api_1_1_delegators_1_1_modifier_delegator_player.html#a6feba11cfe6064ba7e488efbe554c19d',1,'Loot::Api::Delegators::ModifierDelegatorPlayer']]],
   ['getformatteduniquename',['GetFormattedUniqueName',['../class_loot_1_1_api_1_1_modifier_1_1_modifier.html#af96f6cdd1915b178a44e9c9607a7b6d6',1,'Loot::Api::Modifier::Modifier']]],
-  ['getframerectangle',['GetFrameRectangle',['../class_loot_1_1_api_1_1_graphics_1_1_glowmask_entity.html#a55a66c53d6fdba054d7d07a955e87145',1,'Loot::Api::Graphics::GlowmaskEntity']]],
   ['getfrom',['GetFrom',['../class_loot_1_1_api_1_1_mod_content_1_1_texture_mod_content.html#a096bac02415cc68926126d80b4af702c',1,'Loot::Api::ModContent::TextureModContent']]],
   ['getglowmaskentity',['GetGlowmaskEntity',['../class_loot_1_1_api_1_1_modifier_1_1_modifier.html#aaf8fb20f01aa223a6cb6f7d5e3b894d9',1,'Loot::Api::Modifier::Modifier']]],
   ['getglowmasktexture',['GetGlowmaskTexture',['../class_loot_1_1_api_1_1_mod_content_1_1_graphics_mod_content.html#a8dcb79f4fa6153d2836272671e37c603',1,'Loot::Api::ModContent::GraphicsModContent']]],
@@ -77,6 +76,6 @@ var searchData=
   ['getweaponknockback',['GetWeaponKnockback',['../class_loot_1_1_api_1_1_delegators_1_1_modifier_delegator_player.html#ac27141a4ab3b9d48eccba6d0b523b667',1,'Loot.Api.Delegators.ModifierDelegatorPlayer.GetWeaponKnockback()'],['../class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_knockback_plus.html#ae48ee8465a88687760f649a0eff292aa',1,'Loot.Modifiers.WeaponModifiers.KnockbackPlus.GetWeaponKnockback()']]],
   ['getweaponknockbackeventraiser',['GetWeaponKnockbackEventRaiser',['../class_loot_1_1_api_1_1_delegators_1_1_modifier_delegator_player.html#a025cc5d43eab7892aafdf9e4d9945d27',1,'Loot::Api::Delegators::ModifierDelegatorPlayer']]],
   ['getweightedpool',['GetWeightedPool',['../class_loot_1_1_content_1_1_modifier_pool_content.html#ae53cdca27c86a7f90f347a4689662e7b',1,'Loot::Content::ModifierPoolContent']]],
-  ['glowmaskentity',['GlowmaskEntity',['../class_loot_1_1_api_1_1_graphics_1_1_glowmask_entity.html#a651b5410663db90c3b4e02fc2ffb06b1',1,'Loot::Api::Graphics::GlowmaskEntity']]],
+  ['glowmaskentity',['GlowmaskEntity',['../class_loot_1_1_api_1_1_graphics_1_1_glowmask_entity.html#a7b2b8fe994407cea2118a0976efd94d1',1,'Loot::Api::Graphics::GlowmaskEntity']]],
   ['graphicsentity',['GraphicsEntity',['../class_loot_1_1_api_1_1_graphics_1_1_graphics_entity.html#ab0696a32b1659bf07548f5c80283e90a',1,'Loot::Api::Graphics::GraphicsEntity']]]
 ];
