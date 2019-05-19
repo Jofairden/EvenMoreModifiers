@@ -1,23 +1,31 @@
 using System;
+using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Graphics;
 using Terraria;
+using Terraria.DataStructures;
 using Terraria.ModLoader;
 
 namespace Loot.Api.Graphics
 {
 	public abstract class GraphicsEntity
 	{
-		public object Identity { get; protected set; }
+		public DrawData DrawData;
+		public Color DrawColor { get; set; }
+		public bool SkipUpdatingDrawData { get; set; }
+		public bool SkipDrawing { get; set; }
+		public bool UseDestinationRectangle => DrawData.useDestinationRectangle;
+		public Rectangle? DestinationRectangle => DrawData.destinationRectangle;
+
 		public Entity Entity { get; protected set; }
 
 		protected GraphicsEntity(object subjectIdentity)
 		{
-			if (subjectIdentity == Identity) return;
+			if (subjectIdentity == Entity) return;
 			SetIdentity(subjectIdentity);
 		}
 
 		internal void SetIdentity(object subjectIdentity)
 		{
-			Identity = subjectIdentity;
 			if (subjectIdentity is Entity entity)
 			{
 				Entity = entity;
@@ -43,5 +51,77 @@ namespace Loot.Api.Graphics
 				throw new Exception($"Invalid subject for GraphicsEntityIdentity - {subjectIdentity}");
 			}
 		}
+
+		/// <summary>
+		/// Sets up drawing data initially
+		/// </summary>
+		public void TryGettingDrawData(float rotation, float scale)
+		{
+			if (SkipUpdatingDrawData) return;
+
+			DrawData = new DrawData
+			{
+				color = DrawColor,
+				effect = SpriteEffects.None,
+				rotation = rotation,
+				scale = new Vector2(scale, scale)
+			};
+
+			//if (Main.LocalPlayer.gravDir == -1)
+			//	DrawData.effect |= SpriteEffects.FlipVertically;
+			if (Entity.direction == -1)
+			{
+				DrawData.effect |= SpriteEffects.FlipHorizontally;
+			}
+		}
+
+		public void TryUpdatingDrawData(Texture2D texture)
+		{
+			if (SkipUpdatingDrawData) return;
+
+			var frame = texture.Frame();
+			DrawData.position = new Vector2
+			(
+				Entity.position.X - Main.screenPosition.X + Entity.width * 0.5f,
+				Entity.position.Y - Main.screenPosition.Y + Entity.height - texture.Height * 0.5f + 2f
+			);
+			DrawData.texture = texture;
+			DrawData.origin = frame.Size() * 0.5f;
+
+			if (UseDestinationRectangle)
+			{
+				if (DestinationRectangle.HasValue)
+				{
+					DrawData.destinationRectangle = DestinationRectangle.Value;
+				}
+				else
+				{
+					DrawData.destinationRectangle = frame;
+
+					if (Entity is NPC npc)
+					{
+						DrawData.destinationRectangle = npc.frame;
+					}
+					else if (Entity is Projectile projectile)
+					{
+						DrawData.destinationRectangle.Y = projectile.frame * projectile.height;
+					}
+				}
+			}
+		}
+
+		protected void DrawDrawData(SpriteBatch spriteBatch, DrawData data)
+		{
+			if (data.useDestinationRectangle)
+			{
+				spriteBatch.Draw(DrawData.texture, DrawData.destinationRectangle, DrawData.sourceRect, DrawData.color, DrawData.rotation, DrawData.origin, DrawData.effect, 0f);
+			}
+			else
+			{
+				spriteBatch.Draw(DrawData.texture, DrawData.position, DrawData.sourceRect, DrawData.color, DrawData.rotation, DrawData.origin, DrawData.scale, DrawData.effect, 0f);
+			}
+		}
+
+		protected abstract void LoadAssets(Item item);
 	}
 }

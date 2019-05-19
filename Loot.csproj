@@ -46,6 +46,9 @@
     <Compile Include="Api\Builder\IPropertyBuilder.cs" />
     <Compile Include="Api\Builder\PropertyBuilder.cs" />
     <Compile Include="Api\Graphics\GraphicsProperties.cs" />
+    <Compile Include="Api\Graphics\Shaders\AlternateShaderDrawStyle.cs" />
+    <Compile Include="Api\Graphics\Shaders\DefaultShaderDrawStyle.cs" />
+    <Compile Include="Api\Graphics\Shaders\ShaderDrawStyle.cs" />
     <Compile Include="Api\Modifier\ModifierContextMethod.cs" />
     <Compile Include="Hacks\BackwardsCompatibleHacks.cs" />
     <Compile Include="Hacks\CheatedItemHackGlobalItem.cs" />
@@ -74,7 +77,6 @@
     <Compile Include="Api\Graphics\GraphicsEntity.cs" />
     <Compile Include="Api\Ext\GraphicsUtils.cs" />
     <Compile Include="Api\Graphics\ShaderDrawLayer.cs" />
-    <Compile Include="Api\Graphics\ShaderDrawOffsetStyle.cs" />
     <Compile Include="Api\Graphics\ShaderEntity.cs" />
     <Compile Include="Api\Graphics\GraphicsGlobalItem.cs" />
     <Compile Include="Api\ModContent\GraphicsModContent.cs" />

@@ -1,15 +1,13 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Loot.Api.Graphics;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
-using MonoMod.Cil;
 using Terraria;
 using Terraria.DataStructures;
 using Terraria.ModLoader;
+using Main = On.Terraria.Main;
 
 namespace Loot.ModSupport
 {
@@ -21,56 +19,47 @@ namespace Loot.ModSupport
 
 		public override void AddClientSupport(Mod mod)
 		{
+			Main.DrawPlayer += MainOnDrawPlayer;
 			On.Terraria.DataStructures.DrawData.Draw += DrawDataOnDraw;
 			mod.Call("AddCustomPreDrawMethod", (Func<Player, Item, DrawData, bool>)CustomPreDraw);
 		}
 
+		private void MainOnDrawPlayer(Main.orig_DrawPlayer orig, Terraria.Main self, Player drawplayer, Vector2 position, float rotation, Vector2 rotationorigin, float shadow)
+		{
+			_cache.Clear();
+			orig(self, drawplayer, position, rotation, rotationorigin, shadow);
+		}
+
 		private void DrawDataOnDraw(On.Terraria.DataStructures.DrawData.orig_Draw orig, ref DrawData self, SpriteBatch sb)
 		{
-			bool found = false;
-			foreach ((DrawData drawData, Item item, ShaderEntity shaderEntity, GlowmaskEntity glowmaskEntity) in _drawDatas)
+			var data = self;
+			var cachedData = _cache.FirstOrDefault(x => x.Item1.texture == data.texture);
+			if (!cachedData.Equals(default))
 			{
-//				if (item.type == Terraria.ID.ItemID.GrenadeLauncher)
-//				{
-//					bool v = true;
-//				}
-				if (IsSameDrawData(drawData, self))
+				var shaderEntity = cachedData.Item3;
+				var glowmaskEntity = cachedData.Item4;
+				if (shaderEntity != null)
 				{
-					found = true;
-					if (glowmaskEntity != null)
-					{
-						glowmaskEntity.SkipUpdatingDrawData = true;
-						// glowmaskEntity.DrawData = drawData;
-						glowmaskEntity.SetIdentity(item);
-					}
-
-					if (shaderEntity != null)
-					{
-						shaderEntity.SkipUpdatingDrawData = true;
-						shaderEntity.DrawData = drawData;
-						shaderEntity.SetIdentity(item);
-						shaderEntity.DoDrawLayeredEntity(sb, drawData.color, drawData.color, drawData.scale.LengthSquared(), drawData.rotation, glowmaskEntity);
-					}
-					_drawDatas.RemoveAll(x => IsSameDrawData(x.Item1, drawData));
-					break;
+					shaderEntity.SkipUpdatingDrawData = true;
+					shaderEntity.DrawData = self;
+					shaderEntity.SetIdentity(cachedData.Item2);
+					shaderEntity.DoDrawLayeredEntity(sb, self.color, self.color, self.scale.LengthSquared(), self.rotation, glowmaskEntity);
+				} 
+				else if (glowmaskEntity != null)
+				{
+					glowmaskEntity.SkipUpdatingDrawData = true;
+					glowmaskEntity.DrawData = self;
+					glowmaskEntity.SetIdentity(cachedData.Item2);
+					glowmaskEntity.DoDrawGlowmask(sb, self.color, self.color, self.rotation, self.scale.LengthSquared(), glowmaskEntity.Entity.whoAmI);
 				}
 			}
-			if (!found)
+			else
 			{
 				orig(ref self, sb);
 			}
 		}
 
-		private readonly List<(DrawData, Item, ShaderEntity, GlowmaskEntity)> _drawDatas = new List<(DrawData, Item, ShaderEntity, GlowmaskEntity)>();
-
-		// I HATE STRUCTS!!!!!!!!!!!!!!!!!!
-		private bool IsSameDrawData(DrawData first, DrawData second)
-		{
-			// TODO doesn't work for shit with mounts.......
-			(Color, Rectangle, Vector2, Vector2) firstDecon = (first.color, first.destinationRectangle, first.origin, first.position);
-			(Color, Rectangle, Vector2, Vector2) secondDecon = (second.color, second.destinationRectangle, second.origin, second.position);
-			return Equals(firstDecon, secondDecon);
-		}
+		private readonly List<(DrawData, Item, ShaderEntity, GlowmaskEntity)> _cache = new List<(DrawData, Item, ShaderEntity, GlowmaskEntity)>();
 
 		private bool CustomPreDraw(Player player, Item item, DrawData drawDrata)
 		{
@@ -82,13 +71,16 @@ namespace Loot.ModSupport
 					ShaderEntity entity = info.ShaderEntities[i];
 					if (entity != null)
 					{
-						_drawDatas.Add((drawDrata, item, entity, info.GlowmaskEntities[i]));
+						_cache.Add((drawDrata, item, entity, info.GlowmaskEntities[i]));
 					}
 				}
 			}
 			else if (info.HasGlowmasks)
 			{
-				// TODO
+				foreach (var entity in info.GlowmaskEntities.Where(x => x != null))
+				{
+					_cache.Add((drawDrata, item, null, entity));
+				}
 			}
 			return true;
 		}
