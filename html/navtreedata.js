@@ -17,6 +17,7 @@ var NAVTREE =
         [ "All", "functions.html", "functions_dup" ],
         [ "Functions", "functions_func.html", "functions_func" ],
         [ "Variables", "functions_vars.html", null ],
+        [ "Enumerations", "functions_enum.html", null ],
         [ "Properties", "functions_prop.html", null ],
         [ "Events", "functions_evnt.html", null ]
       ] ]
@@ -34,13 +35,13 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "_accessory_modifier_8cs.html",
-"_magical_cube_8cs_source.html",
-"class_loot_1_1_api_1_1_delegators_1_1_modifier_delegator_player.html#a134427a69c7e9ddfe57e2cbb0cc78c75",
-"class_loot_1_1_api_1_1_graphics_1_1_graphics_entity.html#a0dd08b632ef766543e065095a827f083",
-"class_loot_1_1_api_1_1_modifier_1_1_modifier_properties.html#abd2074ebe343ffa8149cfd52f2aaa89a",
-"class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_defensive_1_1_mana_plus.html",
-"class_loot_1_1_rarities_1_1_legendary_rarity.html#afdad54be0373e39fa79cddaed4983922",
-"namespace_loot_1_1_pools.html"
+"_magic_damage_plus_8cs_source.html",
+"class_loot_1_1_api_1_1_delegators_1_1_modifier_delegator_player.html#a0d3eaeedc5b6929bf8592c938ec57ddc",
+"class_loot_1_1_api_1_1_graphics_1_1_glowmask_1_1_glowmask_entity.html#a6d316f5acd729f47fff93308e1e6d2d6",
+"class_loot_1_1_api_1_1_modifier_1_1_modifier_effect.html#ae5726d7791e12f323c6806aa026b1dad",
+"class_loot_1_1_modifiers_1_1_base_1_1_weapon_debuff_modifier.html#a9443016d43a9a6ac5683b512a5920e48",
+"class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_random_debuff.html#afd00707ca69335df5c63b32c39e5654f",
+"namespace_loot_1_1_api_1_1_cubes.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

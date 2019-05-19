@@ -1,4 +1,4 @@
 <map id="Loot.Api.ModContent.GraphicsModContent.Prepare" name="Loot.Api.ModContent.GraphicsModContent.Prepare">
-<area shape="rect" id="node2" href="$class_loot_1_1_api_1_1_graphics_1_1_glowmask_entity.html#afce566cf360f423c28e164c66f2feacc" title="Loot.Api.Graphics.Glowmask\lEntity.LoadAssets" alt="" coords="256,5,448,46"/>
-<area shape="rect" id="node3" href="$class_loot_1_1_api_1_1_graphics_1_1_shader_entity.html#a87128cbcb8c59786124f20a11a4b38eb" title="Loot.Api.Graphics.Shader\lEntity.LoadAssets" alt="" coords="267,70,437,111"/>
+<area shape="rect" id="node2" href="$class_loot_1_1_api_1_1_graphics_1_1_glowmask_1_1_glowmask_entity.html#a6d316f5acd729f47fff93308e1e6d2d6" title="Loot.Api.Graphics.Glowmask.\lGlowmaskEntity.LoadAssets" alt="" coords="257,5,453,46"/>
+<area shape="rect" id="node3" href="$class_loot_1_1_api_1_1_graphics_1_1_shader_1_1_shader_entity.html#a36f617655e7d6f9b7075d8ae25b66714" title="Loot.Api.Graphics.Shader.\lShaderEntity.LoadAssets" alt="" coords="267,70,442,111"/>
 </map>

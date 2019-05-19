@@ -34,7 +34,7 @@ var searchData=
   ['meleespeedmultiplier',['MeleeSpeedMultiplier',['../class_loot_1_1_api_1_1_delegators_1_1_modifier_delegator_player.html#a42ff6f000b205775b5896a2dd90a1eae',1,'Loot.Api.Delegators.ModifierDelegatorPlayer.MeleeSpeedMultiplier()'],['../namespace_loot_1_1_api_1_1_attributes.html#a96f1ebf800712ea4f5265d1e6ae9649dac73b436147c4b2739a5b0a24193d23fa',1,'Loot.Api.Attributes.MeleeSpeedMultiplier()']]],
   ['meleespeedmultiplierevent',['MeleeSpeedMultiplierEvent',['../class_loot_1_1_api_1_1_delegators_1_1_modifier_delegator_player.html#a7a842abae272e5c8b6579e0c930bce76',1,'Loot::Api::Delegators::ModifierDelegatorPlayer']]],
   ['method',['Method',['../struct_loot_1_1_api_1_1_modifier_1_1_modifier_context.html#a7035043f32e0affd5f869237a19765e4',1,'Loot::Api::Modifier::ModifierContext']]],
-  ['middle',['Middle',['../namespace_loot_1_1_api_1_1_graphics.html#a095b8ba39ff180d309a8a55bc545f0c8ab1ca34f82e83c52b010f86955f264e05',1,'Loot::Api::Graphics']]],
+  ['middle',['Middle',['../namespace_loot_1_1_api_1_1_graphics_1_1_shader.html#aa4b4a4e0082c8c4cfeea13c036a1fe19ab1ca34f82e83c52b010f86955f264e05',1,'Loot::Api::Graphics::Shader']]],
   ['miningspeedplus',['MiningSpeedPlus',['../class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_utility_1_1_mining_speed_plus.html',1,'Loot::Modifiers::EquipModifiers::Utility']]],
   ['miningspeedplus_2ecs',['MiningSpeedPlus.cs',['../_mining_speed_plus_8cs.html',1,'']]],
   ['miniondamageplus',['MinionDamagePlus',['../class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_offensive_1_1_minion_damage_plus.html',1,'Loot::Modifiers::EquipModifiers::Offensive']]],

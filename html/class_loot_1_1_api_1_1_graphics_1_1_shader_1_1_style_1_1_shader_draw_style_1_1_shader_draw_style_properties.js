@@ -1,0 +1,7 @@
+var class_loot_1_1_api_1_1_graphics_1_1_shader_1_1_style_1_1_shader_draw_style_1_1_shader_draw_style_properties =
+[
+    [ "ShaderDrawStylePropertiesBuilder", "class_loot_1_1_api_1_1_graphics_1_1_shader_1_1_style_1_1_shader_draw_style_1_1_shader_draw_stylee3fa1430b42fcf762048e88c567c6c51.html", "class_loot_1_1_api_1_1_graphics_1_1_shader_1_1_style_1_1_shader_draw_style_1_1_shader_draw_stylee3fa1430b42fcf762048e88c567c6c51" ],
+    [ "Builder", "class_loot_1_1_api_1_1_graphics_1_1_shader_1_1_style_1_1_shader_draw_style_1_1_shader_draw_style_properties.html#a14607fb21f1b69601e74c19c1a45736a", null ],
+    [ "DrawDistance", "class_loot_1_1_api_1_1_graphics_1_1_shader_1_1_style_1_1_shader_draw_style_1_1_shader_draw_style_properties.html#abed6e637d2f76428f919c24b8dab88c8", null ],
+    [ "NumSegments", "class_loot_1_1_api_1_1_graphics_1_1_shader_1_1_style_1_1_shader_draw_style_1_1_shader_draw_style_properties.html#ad16a52246e2019adac37a2618c5ab541", null ]
+];

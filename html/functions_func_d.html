@@ -84,6 +84,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       <li><a href="functions.html"><span>All</span></a></li>
       <li class="current"><a href="functions_func.html"><span>Functions</span></a></li>
       <li><a href="functions_vars.html"><span>Variables</span></a></li>
+      <li><a href="functions_enum.html"><span>Enumerations</span></a></li>
       <li><a href="functions_prop.html"><span>Properties</span></a></li>
       <li><a href="functions_evnt.html"><span>Events</span></a></li>
     </ul>
@@ -159,19 +160,20 @@ $(document).ready(function(){initNavTree('functions_func_d.html','');});
 : <a class="el" href="class_loot_1_1_api_1_1_modifier_1_1_modifier_effect.html#a76d10820f97e5f47e6386cb031740483">Loot.Api.Modifier.ModifierEffect</a>
 </li>
 <li>DoDrawGlowmask()
-: <a class="el" href="class_loot_1_1_api_1_1_graphics_1_1_glowmask_entity.html#a80587cc9c2221617592ec37db1f033de">Loot.Api.Graphics.GlowmaskEntity</a>
+: <a class="el" href="class_loot_1_1_api_1_1_graphics_1_1_glowmask_1_1_glowmask_entity.html#a712587fc2dbfa58408d59af46541ec43">Loot.Api.Graphics.Glowmask.GlowmaskEntity</a>
+, <a class="el" href="class_loot_1_1_api_1_1_graphics_1_1_shader_1_1_shader_entity.html#a222c782850d627a66f2a7fa15dbdb57e">Loot.Api.Graphics.Shader.ShaderEntity</a>
 </li>
 <li>DoDrawHitbox()
-: <a class="el" href="class_loot_1_1_api_1_1_graphics_1_1_glowmask_entity.html#aad4a8a51bf7ab0e27f947a0a30aa1321">Loot.Api.Graphics.GlowmaskEntity</a>
+: <a class="el" href="class_loot_1_1_api_1_1_graphics_1_1_glowmask_1_1_glowmask_entity.html#a21db72d77d2f065805b724bb74cdb2af">Loot.Api.Graphics.Glowmask.GlowmaskEntity</a>
 </li>
 <li>DoDrawLayeredEntity()
-: <a class="el" href="class_loot_1_1_api_1_1_graphics_1_1_shader_entity.html#a230c9c2e535853d661a0ab1208facae3">Loot.Api.Graphics.ShaderEntity</a>
+: <a class="el" href="class_loot_1_1_api_1_1_graphics_1_1_shader_1_1_shader_entity.html#a563de3ce969f6684100469c7d3a50c5a">Loot.Api.Graphics.Shader.ShaderEntity</a>
 </li>
 <li>DoDrawShader()
-: <a class="el" href="class_loot_1_1_api_1_1_graphics_1_1_shader_entity.html#adb250c69aa328340797e90d91b5a851e">Loot.Api.Graphics.ShaderEntity</a>
+: <a class="el" href="class_loot_1_1_api_1_1_graphics_1_1_shader_1_1_shader_entity.html#a95a1ff75e1206e484339cac8a6d0c292">Loot.Api.Graphics.Shader.ShaderEntity</a>
 </li>
 <li>DoDrawSubject()
-: <a class="el" href="class_loot_1_1_api_1_1_graphics_1_1_shader_entity.html#af08b655baac67cc26ea21766e9f60f22">Loot.Api.Graphics.ShaderEntity</a>
+: <a class="el" href="class_loot_1_1_api_1_1_graphics_1_1_shader_1_1_shader_entity.html#a1873d617dea22d1b06f79d095137351b">Loot.Api.Graphics.Shader.ShaderEntity</a>
 </li>
 <li>DrawArmorColor()
 : <a class="el" href="class_loot_1_1_api_1_1_modifier_1_1_modifier.html#a5e36392404a5a0b9e98540638b07b15c">Loot.Api.Modifier.Modifier</a>
@@ -179,14 +181,14 @@ $(document).ready(function(){initNavTree('functions_func_d.html','');});
 <li>DrawBody()
 : <a class="el" href="class_loot_1_1_api_1_1_modifier_1_1_modifier.html#a12c40b76169d209264cc1023b728dae5">Loot.Api.Modifier.Modifier</a>
 </li>
-<li>DrawDrawData()
-: <a class="el" href="class_loot_1_1_api_1_1_graphics_1_1_graphics_entity.html#a83a557b3ad3b2e15fdec0ad9906b76fb">Loot.Api.Graphics.GraphicsEntity</a>
-</li>
 <li>DrawEffects()
 : <a class="el" href="class_loot_1_1_api_1_1_delegators_1_1_modifier_delegator_player.html#a47da2c0942b2a7ee86409e67cbb8c841">Loot.Api.Delegators.ModifierDelegatorPlayer</a>
 </li>
 <li>DrawEffectsEventRaiser()
 : <a class="el" href="class_loot_1_1_api_1_1_delegators_1_1_modifier_delegator_player.html#aae62ec3f9c02d695b579cfa0fcb9705f">Loot.Api.Delegators.ModifierDelegatorPlayer</a>
+</li>
+<li>DrawEntity()
+: <a class="el" href="class_loot_1_1_api_1_1_graphics_1_1_graphics_entity.html#a1015a3c783710c8fedc05b2b0019b130">Loot.Api.Graphics.GraphicsEntity&lt; T &gt;</a>
 </li>
 <li>DrawHair()
 : <a class="el" href="class_loot_1_1_api_1_1_modifier_1_1_modifier.html#a7e49907a9d65f18e42af9e13a6ebf070">Loot.Api.Modifier.Modifier</a>
@@ -200,13 +202,18 @@ $(document).ready(function(){initNavTree('functions_func_d.html','');});
 <li>DrawLegs()
 : <a class="el" href="class_loot_1_1_api_1_1_modifier_1_1_modifier.html#a0306cde711540637f37f8752bddd1d11">Loot.Api.Modifier.Modifier</a>
 </li>
+<li>DrawShader()
+: <a class="el" href="class_loot_1_1_api_1_1_graphics_1_1_shader_1_1_style_1_1_around_shader_draw_style.html#aca81e008a11dbc9b5b9dc0346ff7d65b">Loot.Api.Graphics.Shader.Style.AroundShaderDrawStyle</a>
+, <a class="el" href="class_loot_1_1_api_1_1_graphics_1_1_shader_1_1_style_1_1_normal_shader_draw_style.html#a90eaff92eaf4d2b7742627c29188bcc0">Loot.Api.Graphics.Shader.Style.NormalShaderDrawStyle</a>
+, <a class="el" href="class_loot_1_1_api_1_1_graphics_1_1_shader_1_1_style_1_1_shader_draw_style.html#abecb591458558d05a52a25b54d557337">Loot.Api.Graphics.Shader.Style.ShaderDrawStyle</a>
+</li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Sun May 19 2019 13:29:07 for Even More Modifiers by
+    <li class="footer">Generated on Sun May 19 2019 17:14:46 for Even More Modifiers by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.11 </li>
   </ul>

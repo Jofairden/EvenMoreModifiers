@@ -78,9 +78,17 @@ var hierarchy =
     [ "GlobalProjectile", "class_global_projectile.html", [
       [ "Loot.Api.Delegators.ModifierDelegatorProjectile", "class_loot_1_1_api_1_1_delegators_1_1_modifier_delegator_projectile.html", null ]
     ] ],
-    [ "Loot.Api.Graphics.GraphicsEntity", "class_loot_1_1_api_1_1_graphics_1_1_graphics_entity.html", [
-      [ "Loot.Api.Graphics.GlowmaskEntity", "class_loot_1_1_api_1_1_graphics_1_1_glowmask_entity.html", null ],
-      [ "Loot.Api.Graphics.ShaderEntity", "class_loot_1_1_api_1_1_graphics_1_1_shader_entity.html", null ]
+    [ "Loot.Api.Graphics.GraphicsEntity< T >", "class_loot_1_1_api_1_1_graphics_1_1_graphics_entity.html", null ],
+    [ "Loot.Api.Graphics.GraphicsEntity< GlowmaskGraphicsProperties >", "class_loot_1_1_api_1_1_graphics_1_1_graphics_entity.html", [
+      [ "Loot.Api.Graphics.Glowmask.GlowmaskEntity", "class_loot_1_1_api_1_1_graphics_1_1_glowmask_1_1_glowmask_entity.html", null ]
+    ] ],
+    [ "Loot.Api.Graphics.GraphicsEntity< ShaderGraphicsProperties >", "class_loot_1_1_api_1_1_graphics_1_1_graphics_entity.html", [
+      [ "Loot.Api.Graphics.Shader.ShaderEntity", "class_loot_1_1_api_1_1_graphics_1_1_shader_1_1_shader_entity.html", null ]
+    ] ],
+    [ "Loot.Api.Graphics.GraphicsProperties", "class_loot_1_1_api_1_1_graphics_1_1_graphics_properties.html", [
+      [ "Loot.Api.Graphics.Glowmask.GlowmaskGraphicsProperties", "class_loot_1_1_api_1_1_graphics_1_1_glowmask_1_1_glowmask_graphics_properties.html", [
+        [ "Loot.Api.Graphics.Shader.ShaderGraphicsProperties", "class_loot_1_1_api_1_1_graphics_1_1_shader_1_1_shader_graphics_properties.html", null ]
+      ] ]
     ] ],
     [ "Loot.Api.Ext.GraphicsUtils", "class_loot_1_1_api_1_1_ext_1_1_graphics_utils.html", null ],
     [ "ICloneable", "class_i_cloneable.html", [
@@ -187,24 +195,37 @@ var hierarchy =
       [ "Loot.LootModWorld", "class_loot_1_1_loot_mod_world.html", null ]
     ] ],
     [ "Loot.Api.Ext.RollingUtils.Properties", "class_loot_1_1_api_1_1_ext_1_1_rolling_utils_1_1_properties.html", null ],
+    [ "Loot.Api.Builder.PropertyBuilder< GlowmaskGraphicsProperties >", "class_loot_1_1_api_1_1_builder_1_1_property_builder.html", [
+      [ "Loot.Api.Graphics.Glowmask.GlowmaskGraphicsProperties.GlowmaskGraphicsPropertiesBuilder", "class_loot_1_1_api_1_1_graphics_1_1_glowmask_1_1_glowmask_graphics_properties_1_1_glowmask_graphics_properties_builder.html", null ]
+    ] ],
+    [ "Loot.Api.Builder.PropertyBuilder< GraphicsProperties >", "class_loot_1_1_api_1_1_builder_1_1_property_builder.html", [
+      [ "Loot.Api.Graphics.GraphicsProperties.GraphicsPropertiesBuilder", "class_loot_1_1_api_1_1_graphics_1_1_graphics_properties_1_1_graphics_properties_builder.html", null ]
+    ] ],
     [ "PropertyBuilder< List< ModifierTooltipLine >>", null, [
       [ "Loot.Api.Modifier.ModifierTooltipLine.ModifierTooltipBuilder", "class_loot_1_1_api_1_1_modifier_1_1_modifier_tooltip_line_1_1_modifier_tooltip_builder.html", null ]
     ] ],
     [ "Loot.Api.Builder.PropertyBuilder< ModifierProperties >", "class_loot_1_1_api_1_1_builder_1_1_property_builder.html", [
       [ "Loot.Api.Modifier.ModifierProperties.ModifierPropertiesBuilder", "class_loot_1_1_api_1_1_modifier_1_1_modifier_properties_1_1_modifier_properties_builder.html", null ]
     ] ],
+    [ "Loot.Api.Builder.PropertyBuilder< ShaderDrawStyleProperties >", "class_loot_1_1_api_1_1_builder_1_1_property_builder.html", [
+      [ "Loot.Api.Graphics.Shader.Style.ShaderDrawStyle.ShaderDrawStyleProperties.ShaderDrawStylePropertiesBuilder", "class_loot_1_1_api_1_1_graphics_1_1_shader_1_1_style_1_1_shader_draw_style_1_1_shader_draw_stylee3fa1430b42fcf762048e88c567c6c51.html", null ]
+    ] ],
+    [ "Loot.Api.Builder.PropertyBuilder< ShaderGraphicsProperties >", "class_loot_1_1_api_1_1_builder_1_1_property_builder.html", [
+      [ "Loot.Api.Graphics.Shader.ShaderGraphicsProperties.ShaderGraphicsPropertiesBuilder", "class_loot_1_1_api_1_1_graphics_1_1_shader_1_1_shader_graphics_properties_1_1_shader_graphics_properties_builder.html", null ]
+    ] ],
     [ "Loot.Api.Loaders.RegistryLoader", "class_loot_1_1_api_1_1_loaders_1_1_registry_loader.html", null ],
     [ "Loot.Api.Strategy.RollingStrategyContext", "class_loot_1_1_api_1_1_strategy_1_1_rolling_strategy_context.html", null ],
     [ "Loot.Api.Strategy.RollingStrategyProperties", "class_loot_1_1_api_1_1_strategy_1_1_rolling_strategy_properties.html", null ],
     [ "Loot.Api.Ext.RollingUtils", "class_loot_1_1_api_1_1_ext_1_1_rolling_utils.html", null ],
-    [ "Loot.Api.Graphics.Shaders.ShaderDrawStyle", "class_loot_1_1_api_1_1_graphics_1_1_shaders_1_1_shader_draw_style.html", [
-      [ "Loot.Api.Graphics.Shaders.AlternateShaderDrawStyle", "class_loot_1_1_api_1_1_graphics_1_1_shaders_1_1_alternate_shader_draw_style.html", null ],
-      [ "Loot.Api.Graphics.Shaders.DefaultShaderDrawStyle", "class_loot_1_1_api_1_1_graphics_1_1_shaders_1_1_default_shader_draw_style.html", null ]
+    [ "Loot.Api.Graphics.Shader.Style.ShaderDrawStyle", "class_loot_1_1_api_1_1_graphics_1_1_shader_1_1_style_1_1_shader_draw_style.html", [
+      [ "Loot.Api.Graphics.Shader.Style.NormalShaderDrawStyle", "class_loot_1_1_api_1_1_graphics_1_1_shader_1_1_style_1_1_normal_shader_draw_style.html", [
+        [ "Loot.Api.Graphics.Shader.Style.AroundShaderDrawStyle", "class_loot_1_1_api_1_1_graphics_1_1_shader_1_1_style_1_1_around_shader_draw_style.html", null ]
+      ] ]
     ] ],
+    [ "Loot.Api.Graphics.Shader.Style.ShaderDrawStyle.ShaderDrawStyleProperties", "class_loot_1_1_api_1_1_graphics_1_1_shader_1_1_style_1_1_shader_draw_style_1_1_shader_draw_style_properties.html", null ],
     [ "Loot.Sounds.Custom.SoundMaker", "class_loot_1_1_sounds_1_1_custom_1_1_sound_maker.html", null ],
     [ "Loot.UI.Tabs.Soulforging.GuiSoulgauge.GaugeDrawing.STATIC", "class_loot_1_1_u_i_1_1_tabs_1_1_soulforging_1_1_gui_soulgauge_1_1_gauge_drawing_1_1_s_t_a_t_i_c.html", null ],
     [ "Loot.Api.Ext.RollingUtils.Strategies", "class_loot_1_1_api_1_1_ext_1_1_rolling_utils_1_1_strategies.html", null ],
-    [ "Loot.Api.Graphics.Shaders.ShaderDrawStyle.Styles", "class_loot_1_1_api_1_1_graphics_1_1_shaders_1_1_shader_draw_style_1_1_styles.html", null ],
     [ "Loot.Api.ModContent.TextureModContent", "class_loot_1_1_api_1_1_mod_content_1_1_texture_mod_content.html", [
       [ "Loot.Api.ModContent.GraphicsModContent", "class_loot_1_1_api_1_1_mod_content_1_1_graphics_mod_content.html", null ]
     ] ],

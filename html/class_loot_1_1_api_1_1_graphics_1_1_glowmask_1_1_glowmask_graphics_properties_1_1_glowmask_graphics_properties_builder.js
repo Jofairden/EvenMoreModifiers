@@ -1,0 +1,6 @@
+var class_loot_1_1_api_1_1_graphics_1_1_glowmask_1_1_glowmask_graphics_properties_1_1_glowmask_graphics_properties_builder =
+[
+    [ "SkipDrawing", "class_loot_1_1_api_1_1_graphics_1_1_glowmask_1_1_glowmask_graphics_properties_1_1_glowmask_graphics_properties_builder.html#a22f90dff0d3dc9544d61e710a863642f", null ],
+    [ "SkipDrawingGlowmask", "class_loot_1_1_api_1_1_graphics_1_1_glowmask_1_1_glowmask_graphics_properties_1_1_glowmask_graphics_properties_builder.html#ad4768634bb7a939b33cd5630e0e42548", null ],
+    [ "DefaultProperty", "class_loot_1_1_api_1_1_graphics_1_1_glowmask_1_1_glowmask_graphics_properties_1_1_glowmask_graphics_properties_builder.html#ab4afbe2122a31765f9dca6c8e281b410", null ]
+];

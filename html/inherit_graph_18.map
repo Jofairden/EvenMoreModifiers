@@ -1,5 +1,3 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="node1" href="$class_loot_1_1_api_1_1_graphics_1_1_shaders_1_1_shader_draw_style.html" title="Loot.Api.Graphics.Shaders.\lShaderDrawStyle" alt="" coords="6,38,189,79"/>
-<area shape="rect" id="node2" href="$class_loot_1_1_api_1_1_graphics_1_1_shaders_1_1_alternate_shader_draw_style.html" title="Loot.Api.Graphics.Shaders.\lAlternateShaderDrawStyle" alt="" coords="238,5,421,46"/>
-<area shape="rect" id="node3" href="$class_loot_1_1_api_1_1_graphics_1_1_shaders_1_1_default_shader_draw_style.html" title="Loot.Api.Graphics.Shaders.\lDefaultShaderDrawStyle" alt="" coords="238,70,421,111"/>
+<area shape="rect" id="node1" href="$class_loot_1_1_api_1_1_ext_1_1_rolling_utils.html" title="Loot.Api.Ext.RollingUtils" alt="" coords="5,5,171,32"/>
 </map>

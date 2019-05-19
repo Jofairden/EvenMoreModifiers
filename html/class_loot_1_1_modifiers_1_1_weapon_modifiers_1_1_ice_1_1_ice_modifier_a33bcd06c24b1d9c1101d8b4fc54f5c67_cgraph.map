@@ -1,0 +1,6 @@
+<map id="Loot.Modifiers.WeaponModifiers.Ice.IceModifier.GetShaderEntity" name="Loot.Modifiers.WeaponModifiers.Ice.IceModifier.GetShaderEntity">
+<area shape="rect" id="node2" href="$class_loot_1_1_api_1_1_builder_1_1_property_builder.html#a09f26523a7df83c5f819f2513c6b3f3f" title="Loot.Api.Builder.Property\lBuilder.Build" alt="" coords="317,5,483,46"/>
+<area shape="rect" id="node3" href="$class_loot_1_1_api_1_1_graphics_1_1_shader_1_1_shader_graphics_properties_1_1_shader_graphics_properties_builder.html#aeb3b3d53be660d5915047b2f86d48048" title="Loot.Api.Graphics.Shader.\lShaderGraphicsProperties.Shader\lGraphicsPropertiesBuilder.SkipDrawing\lSubject" alt="" coords="275,94,525,165"/>
+<area shape="rect" id="node4" href="$class_loot_1_1_api_1_1_graphics_1_1_shader_1_1_shader_graphics_properties_1_1_shader_graphics_properties_builder.html#a92eb40a53ce85487afeaafb60116ad5d" title="Loot.Api.Graphics.Shader.\lShaderGraphicsProperties.Shader\lGraphicsPropertiesBuilder.WithDrawLayer" alt="" coords="267,189,533,245"/>
+<area shape="rect" id="node5" href="$class_loot_1_1_api_1_1_graphics_1_1_shader_1_1_shader_graphics_properties_1_1_shader_graphics_properties_builder.html#a3edf62e86685e8669c71c9ab1f1ee466" title="Loot.Api.Graphics.Shader.\lShaderGraphicsProperties.Shader\lGraphicsPropertiesBuilder.WithShader\lDrawStyle" alt="" coords="277,270,523,341"/>
+</map>

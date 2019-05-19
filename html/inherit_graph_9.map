@@ -1,4 +1,4 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="node1" href="$class_loot_1_1_api_1_1_content_1_1_loadable_content_base.html" title="Loot.Api.Content.Loadable\lContentBase\&lt; ModifierRarity \&gt;" alt="" coords="5,5,208,46"/>
-<area shape="rect" id="node2" href="$class_loot_1_1_content_1_1_modifier_rarity_content.html" title="This class holds all loaded ModifierRarity content " alt="" coords="257,5,439,46"/>
+<area shape="rect" id="node1" href="$class_loot_1_1_api_1_1_builder_1_1_property_builder.html" title="Loot.Api.Builder.Property\lBuilder\&lt; ShaderGraphicsProperties \&gt;" alt="" coords="6,11,245,53"/>
+<area shape="rect" id="node2" href="$class_loot_1_1_api_1_1_graphics_1_1_shader_1_1_shader_graphics_properties_1_1_shader_graphics_properties_builder.html" title="Loot.Api.Graphics.Shader.\lShaderGraphicsProperties.Shader\lGraphicsPropertiesBuilder" alt="" coords="293,4,512,60"/>
 </map>

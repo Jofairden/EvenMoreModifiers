@@ -1,4 +1,0 @@
-<map id="Loot.Api.Graphics.GraphicsEntity" name="Loot.Api.Graphics.GraphicsEntity">
-<area shape="rect" id="node2" href="$class_loot_1_1_api_1_1_graphics_1_1_glowmask_entity.html" title="Defines a Glowmask entity, part of GraphicsEntity The entity defines a particular &#39;glowmask&#39; &quot;of&quot; the..." alt="" coords="5,97,197,138"/>
-<area shape="rect" id="node3" href="$class_loot_1_1_api_1_1_graphics_1_1_shader_entity.html" title="Defines a Shader entity, part of GraphicsEntity The entity defines a particular &#39;shader&#39; &quot;of&quot; the ent..." alt="" coords="221,97,392,138"/>
-</map>

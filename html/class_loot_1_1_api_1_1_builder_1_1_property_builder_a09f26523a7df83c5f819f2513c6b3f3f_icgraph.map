@@ -1,0 +1,6 @@
+<map id="Loot.Api.Builder.PropertyBuilder.Build" name="Loot.Api.Builder.PropertyBuilder.Build">
+<area shape="rect" id="node2" href="$class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_ice_1_1_ice_modifier.html#a33bcd06c24b1d9c1101d8b4fc54f5c67" title="Loot.Modifiers.WeaponModifiers.\lIce.IceModifier.GetShaderEntity" alt="" coords="247,5,460,46"/>
+<area shape="rect" id="node3" href="$class_loot_1_1_api_1_1_graphics_1_1_glowmask_1_1_glowmask_entity.html#a0af9b7b3d361cb5daf23db909dffd4c6" title="Loot.Api.Graphics.Glowmask.\lGlowmaskEntity.GlowmaskEntity" alt="" coords="244,70,463,111"/>
+<area shape="rect" id="node4" href="$class_loot_1_1_api_1_1_graphics_1_1_shader_1_1_style_1_1_shader_draw_style.html#a541aabfdf9ec8ca5184eca7860a7a5be" title="Loot.Api.Graphics.Shader.\lStyle.ShaderDrawStyle.ShaderDrawStyle" alt="" coords="221,135,485,177"/>
+<area shape="rect" id="node5" href="$class_loot_1_1_api_1_1_graphics_1_1_shader_1_1_shader_entity.html#a0adcf3c13dadde673ae207c7992e53c7" title="Loot.Api.Graphics.Shader.\lShaderEntity.ShaderEntity" alt="" coords="265,201,441,242"/>
+</map>

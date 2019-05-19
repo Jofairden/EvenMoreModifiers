@@ -1,4 +1,4 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="node1" href="$class_loot_1_1_api_1_1_builder_1_1_property_builder.html" title="Loot.Api.Builder.Property\lBuilder\&lt; ModifierProperties \&gt;" alt="" coords="6,5,197,46"/>
-<area shape="rect" id="node2" href="$class_loot_1_1_api_1_1_modifier_1_1_modifier_properties_1_1_modifier_properties_builder.html" title="The ModifierPropertiesBuilder implements the builder pattern for ModifierProperties It provides a str..." alt="" coords="246,5,477,46"/>
+<area shape="rect" id="node1" href="$class_loot_1_1_api_1_1_builder_1_1_property_builder.html" title="Loot.Api.Builder.Property\lBuilder\&lt; GlowmaskGraphicsProperties \&gt;" alt="" coords="5,11,264,53"/>
+<area shape="rect" id="node2" href="$class_loot_1_1_api_1_1_graphics_1_1_glowmask_1_1_glowmask_graphics_properties_1_1_glowmask_graphics_properties_builder.html" title="Loot.Api.Graphics.Glowmask.\lGlowmaskGraphicsProperties.Glowmask\lGraphicsPropertiesBuilder" alt="" coords="312,4,573,60"/>
 </map>

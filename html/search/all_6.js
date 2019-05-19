@@ -12,5 +12,5 @@ var searchData=
   ['frame',['FRAME',['../class_loot_1_1_u_i_1_1_tabs_1_1_soulforging_1_1_gui_soulgauge_1_1_gauge_drawing_1_1_a_n_i_m.html#ac85af808b4138d5836da54f4f5968719',1,'Loot::UI::Tabs::Soulforging::GuiSoulgauge::GaugeDrawing::ANIM']]],
   ['frameeffects',['FrameEffects',['../class_loot_1_1_api_1_1_delegators_1_1_modifier_delegator_player.html#ad095c7e6f4cb999b40b8abc826ad769c',1,'Loot::Api::Delegators::ModifierDelegatorPlayer']]],
   ['frameeffectsevent',['FrameEffectsEvent',['../class_loot_1_1_api_1_1_delegators_1_1_modifier_delegator_player.html#a3279e7b1f4bf5b94c4aa0183fc39ad31',1,'Loot::Api::Delegators::ModifierDelegatorPlayer']]],
-  ['front',['Front',['../namespace_loot_1_1_api_1_1_graphics.html#a095b8ba39ff180d309a8a55bc545f0c8a5835bab1ade0060909e31a06af2e2cde',1,'Loot::Api::Graphics']]]
+  ['front',['Front',['../namespace_loot_1_1_api_1_1_graphics_1_1_shader.html#aa4b4a4e0082c8c4cfeea13c036a1fe19a5835bab1ade0060909e31a06af2e2cde',1,'Loot::Api::Graphics::Shader']]]
 ];

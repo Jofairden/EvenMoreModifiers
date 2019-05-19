@@ -5,7 +5,7 @@ var searchData=
   ['emmloadertests_2ecs',['EMMLoaderTests.cs',['../_e_m_m_loader_tests_8cs.html',1,'']]],
   ['emptymodloadshell',['EmptyModLoadShell',['../class_loot_tests_1_1_empty_mod_load_shell.html',1,'LootTests']]],
   ['emptymodloadshell',['EmptyModLoadShell',['../class_loot_tests_1_1_empty_mod_load_shell.html#a47172d5c89980944c942b138f3f72b3d',1,'LootTests::EmptyModLoadShell']]],
-  ['entity',['Entity',['../class_loot_1_1_api_1_1_graphics_1_1_graphics_entity.html#a0dd08b632ef766543e065095a827f083',1,'Loot::Api::Graphics::GraphicsEntity']]],
+  ['entity',['Entity',['../class_loot_1_1_api_1_1_graphics_1_1_graphics_entity.html#a981a4e84ecdace67cedb08d9c9cfcf17',1,'Loot::Api::Graphics::GraphicsEntity']]],
   ['epicrarity',['EpicRarity',['../class_loot_1_1_rarities_1_1_epic_rarity.html',1,'Loot::Rarities']]],
   ['epicrarity_2ecs',['EpicRarity.cs',['../_epic_rarity_8cs.html',1,'']]],
   ['equipmodifier',['EquipModifier',['../class_loot_1_1_modifiers_1_1_base_1_1_equip_modifier.html',1,'Loot::Modifiers::Base']]],

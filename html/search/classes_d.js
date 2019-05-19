@@ -7,5 +7,9 @@ var searchData=
   ['positivetooltipline',['PositiveTooltipLine',['../class_loot_1_1_api_1_1_modifier_1_1_positive_tooltip_line.html',1,'Loot::Api::Modifier']]],
   ['properties',['Properties',['../class_loot_1_1_api_1_1_ext_1_1_rolling_utils_1_1_properties.html',1,'Loot::Api::Ext::RollingUtils']]],
   ['propertybuilder',['PropertyBuilder',['../class_loot_1_1_api_1_1_builder_1_1_property_builder.html',1,'Loot::Api::Builder']]],
-  ['propertybuilder_3c_20modifierproperties_20_3e',['PropertyBuilder&lt; ModifierProperties &gt;',['../class_loot_1_1_api_1_1_builder_1_1_property_builder.html',1,'Loot::Api::Builder']]]
+  ['propertybuilder_3c_20glowmaskgraphicsproperties_20_3e',['PropertyBuilder&lt; GlowmaskGraphicsProperties &gt;',['../class_loot_1_1_api_1_1_builder_1_1_property_builder.html',1,'Loot::Api::Builder']]],
+  ['propertybuilder_3c_20graphicsproperties_20_3e',['PropertyBuilder&lt; GraphicsProperties &gt;',['../class_loot_1_1_api_1_1_builder_1_1_property_builder.html',1,'Loot::Api::Builder']]],
+  ['propertybuilder_3c_20modifierproperties_20_3e',['PropertyBuilder&lt; ModifierProperties &gt;',['../class_loot_1_1_api_1_1_builder_1_1_property_builder.html',1,'Loot::Api::Builder']]],
+  ['propertybuilder_3c_20shaderdrawstyleproperties_20_3e',['PropertyBuilder&lt; ShaderDrawStyleProperties &gt;',['../class_loot_1_1_api_1_1_builder_1_1_property_builder.html',1,'Loot::Api::Builder']]],
+  ['propertybuilder_3c_20shadergraphicsproperties_20_3e',['PropertyBuilder&lt; ShaderGraphicsProperties &gt;',['../class_loot_1_1_api_1_1_builder_1_1_property_builder.html',1,'Loot::Api::Builder']]]
 ];
