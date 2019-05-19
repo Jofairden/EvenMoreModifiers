@@ -64,5 +64,5 @@ var searchData=
   ['curseholding',['CurseHolding',['../class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_cursed_effect.html#ac9bf924c10a79e2f02ab2abad3f6b6d9',1,'Loot::Modifiers::WeaponModifiers::CursedEffect']]],
   ['custom',['Custom',['../namespace_loot_1_1_api_1_1_modifier.html#ae6b4a5d186c8a445e2ecc0a9f695616ca90589c47f06eb971d548591f23c285af',1,'Loot::Api::Modifier']]],
   ['custombiomesmatch',['CustomBiomesMatch',['../class_loot_1_1_api_1_1_modifier_1_1_modifier_effect.html#a211fbf2654187d4a79519f4fd9d5095e',1,'Loot::Api::Modifier::ModifierEffect']]],
-  ['customdata',['CustomData',['../struct_loot_1_1_api_1_1_modifier_1_1_modifier_context.html#a59bbd971d2274706c14b54aad08246b8',1,'Loot::Api::Modifier::ModifierContext']]]
+  ['customdata',['CustomData',['../class_loot_1_1_api_1_1_modifier_1_1_modifier_context.html#a59bbd971d2274706c14b54aad08246b8',1,'Loot::Api::Modifier::ModifierContext']]]
 ];

@@ -17,7 +17,7 @@ var searchData=
   ['modifier',['Modifier',['../class_loot_1_1_api_1_1_modifier_1_1_modifier.html',1,'Loot::Api::Modifier']]],
   ['modifiercacheplayer',['ModifierCachePlayer',['../class_loot_1_1_caching_1_1_modifier_cache_player.html',1,'Loot::Caching']]],
   ['modifiercontent',['ModifierContent',['../class_loot_1_1_content_1_1_modifier_content.html',1,'Loot::Content']]],
-  ['modifiercontext',['ModifierContext',['../struct_loot_1_1_api_1_1_modifier_1_1_modifier_context.html',1,'Loot::Api::Modifier']]],
+  ['modifiercontext',['ModifierContext',['../class_loot_1_1_api_1_1_modifier_1_1_modifier_context.html',1,'Loot::Api::Modifier']]],
   ['modifierdelegatorplayer',['ModifierDelegatorPlayer',['../class_loot_1_1_api_1_1_delegators_1_1_modifier_delegator_player.html',1,'Loot::Api::Delegators']]],
   ['modifierdelegatorprojectile',['ModifierDelegatorProjectile',['../class_loot_1_1_api_1_1_delegators_1_1_modifier_delegator_projectile.html',1,'Loot::Api::Delegators']]],
   ['modifiereffect',['ModifierEffect',['../class_loot_1_1_api_1_1_modifier_1_1_modifier_effect.html',1,'Loot::Api::Modifier']]],

@@ -45,7 +45,7 @@ var searchData=
   ['isuniquemodifier',['IsUniqueModifier',['../class_loot_1_1_api_1_1_modifier_1_1_modifier_properties_1_1_modifier_properties_builder.html#aa1e4e7966c9899f70ded8543fd49117e',1,'Loot::Api::Modifier::ModifierProperties::ModifierPropertiesBuilder']]],
   ['isvanityset',['IsVanitySet',['../class_loot_1_1_api_1_1_modifier_1_1_modifier.html#a333da1c96aa9c72598047913534201a9',1,'Loot::Api::Modifier::Modifier']]],
   ['isweapon',['IsWeapon',['../class_loot_1_1_api_1_1_ext_1_1_item_utils.html#a5c9aeaf45d73accd3ae07d7b93f6bdc4',1,'Loot::Api::Ext::ItemUtils']]],
-  ['item',['Item',['../struct_loot_1_1_api_1_1_modifier_1_1_modifier_context.html#a98a1944bc1e44d1fc5bbc3f3cd2382ca',1,'Loot.Api.Modifier.ModifierContext.Item()'],['../class_loot_1_1_api_1_1_strategy_1_1_rolling_strategy_context.html#a370b85ba251227b3974ed1849266fd91',1,'Loot.Api.Strategy.RollingStrategyContext.Item()']]],
+  ['item',['Item',['../class_loot_1_1_api_1_1_modifier_1_1_modifier_context.html#a98a1944bc1e44d1fc5bbc3f3cd2382ca',1,'Loot.Api.Modifier.ModifierContext.Item()'],['../class_loot_1_1_api_1_1_strategy_1_1_rolling_strategy_context.html#a370b85ba251227b3974ed1849266fd91',1,'Loot.Api.Strategy.RollingStrategyContext.Item()']]],
   ['itemprefix',['ItemPrefix',['../class_loot_1_1_api_1_1_modifier_1_1_modifier_rarity.html#ade2568f62b9526b61372d84972f55bd2',1,'Loot::Api::Modifier::ModifierRarity']]],
   ['itemsuffix',['ItemSuffix',['../class_loot_1_1_api_1_1_modifier_1_1_modifier_rarity.html#adf57dd24db2a5d51bdf86650e0b946ab',1,'Loot::Api::Modifier::ModifierRarity']]],
   ['itemutils',['ItemUtils',['../class_loot_1_1_api_1_1_ext_1_1_item_utils.html',1,'Loot::Api::Ext']]],

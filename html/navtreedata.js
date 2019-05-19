@@ -38,10 +38,10 @@ var NAVTREEINDEX =
 "_magic_damage_plus_8cs_source.html",
 "class_loot_1_1_api_1_1_delegators_1_1_modifier_delegator_player.html#a0d3eaeedc5b6929bf8592c938ec57ddc",
 "class_loot_1_1_api_1_1_graphics_1_1_glowmask_1_1_glowmask_entity.html#a6d316f5acd729f47fff93308e1e6d2d6",
-"class_loot_1_1_api_1_1_modifier_1_1_modifier_effect.html#ae5726d7791e12f323c6806aa026b1dad",
-"class_loot_1_1_modifiers_1_1_base_1_1_weapon_debuff_modifier.html#a9443016d43a9a6ac5683b512a5920e48",
-"class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_random_debuff.html#afd00707ca69335df5c63b32c39e5654f",
-"namespace_loot_1_1_api_1_1_cubes.html"
+"class_loot_1_1_api_1_1_modifier_1_1_modifier_effect.html#aa39d1f4fc9f6eba8dcdf944f6db97c7e",
+"class_loot_1_1_modifiers_1_1_base_1_1_weapon_debuff_effect.html#a07609795be37e0443ba57ba9ab1e2ce3",
+"class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_random_debuff.html#a726558235a140f1b3d1985d79e9b87b0",
+"namespace_loot.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

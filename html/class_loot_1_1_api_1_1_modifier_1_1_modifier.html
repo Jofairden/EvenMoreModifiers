@@ -205,7 +205,7 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:acd48634af8d38bb15434ebb6277c74ee"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a92cd5f3cabab223047f0dd904bd8dea0"><td class="memItemLeft" align="right" valign="top">sealed override bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_loot_1_1_api_1_1_modifier_1_1_modifier.html#a92cd5f3cabab223047f0dd904bd8dea0">Autoload</a> (ref string name)</td></tr>
 <tr class="separator:a92cd5f3cabab223047f0dd904bd8dea0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a807106d8ec4216b05a8e6d7fcdefe30b"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_loot_1_1_api_1_1_modifier_1_1_modifier.html#a807106d8ec4216b05a8e6d7fcdefe30b">CanRoll</a> (<a class="el" href="struct_loot_1_1_api_1_1_modifier_1_1_modifier_context.html">ModifierContext</a> ctx)</td></tr>
+<tr class="memitem:a807106d8ec4216b05a8e6d7fcdefe30b"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_loot_1_1_api_1_1_modifier_1_1_modifier.html#a807106d8ec4216b05a8e6d7fcdefe30b">CanRoll</a> (<a class="el" href="class_loot_1_1_api_1_1_modifier_1_1_modifier_context.html">ModifierContext</a> ctx)</td></tr>
 <tr class="memdesc:a807106d8ec4216b05a8e6d7fcdefe30b"><td class="mdescLeft">&#160;</td><td class="mdescRight">If this <a class="el" href="class_loot_1_1_api_1_1_modifier_1_1_modifier.html" title="Defines a modifier, which is an unloaded GlobalItem Making it a GlobalItem gives easy access to all h...">Modifier</a> can roll at all in the given context Properties are available here, apart from magnitude and power  <a href="#a807106d8ec4216b05a8e6d7fcdefe30b">More...</a><br /></td></tr>
 <tr class="separator:a807106d8ec4216b05a8e6d7fcdefe30b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adca626b8e148a584240ede1783743b2f"><td class="memItemLeft" align="right" valign="top">sealed override void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_loot_1_1_api_1_1_modifier_1_1_modifier.html#adca626b8e148a584240ede1783743b2f">CaughtFishStack</a> (int type, ref int stack)</td></tr>
@@ -266,14 +266,14 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a4d02a5b51583f87b79de3f27f0fa2114"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a687846a9ff643e147199f318e9f233c6"><td class="memItemLeft" align="right" valign="top">sealed override void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_loot_1_1_api_1_1_modifier_1_1_modifier.html#a687846a9ff643e147199f318e9f233c6">OpenVanillaBag</a> (string context, Player player, int arg)</td></tr>
 <tr class="separator:a687846a9ff643e147199f318e9f233c6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abfd33a43ffa83a736a8ef1ab1c20ad1e"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_loot_1_1_api_1_1_modifier_1_1_modifier.html#abfd33a43ffa83a736a8ef1ab1c20ad1e">PostRoll</a> (<a class="el" href="struct_loot_1_1_api_1_1_modifier_1_1_modifier_context.html">ModifierContext</a> ctx, IEnumerable&lt; <a class="el" href="class_loot_1_1_api_1_1_modifier_1_1_modifier.html">Modifier</a> &gt; rolledModifiers)</td></tr>
+<tr class="memitem:abfd33a43ffa83a736a8ef1ab1c20ad1e"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_loot_1_1_api_1_1_modifier_1_1_modifier.html#abfd33a43ffa83a736a8ef1ab1c20ad1e">PostRoll</a> (<a class="el" href="class_loot_1_1_api_1_1_modifier_1_1_modifier_context.html">ModifierContext</a> ctx, IEnumerable&lt; <a class="el" href="class_loot_1_1_api_1_1_modifier_1_1_modifier.html">Modifier</a> &gt; rolledModifiers)</td></tr>
 <tr class="memdesc:abfd33a43ffa83a736a8ef1ab1c20ad1e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns if the modifier will actually be added after it is rolled. This is called after <a class="el" href="class_loot_1_1_api_1_1_modifier_1_1_modifier.html#a8b64100fd359b45dd390fff41de895bf" title="Allows modders to do something when the modifier is rolled in the given context The passed rolledModi...">Roll</a> is called This is used to be able to stop a modifier from being added after it has rolled If the roll is deemed illicit, the next roll is forced to succeed  <a href="#abfd33a43ffa83a736a8ef1ab1c20ad1e">More...</a><br /></td></tr>
 <tr class="separator:abfd33a43ffa83a736a8ef1ab1c20ad1e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aba3ab6ccf43c81882a20f014b74dc9b6"><td class="memItemLeft" align="right" valign="top">sealed override bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_loot_1_1_api_1_1_modifier_1_1_modifier.html#aba3ab6ccf43c81882a20f014b74dc9b6">PreOpenVanillaBag</a> (string context, Player player, int arg)</td></tr>
 <tr class="separator:aba3ab6ccf43c81882a20f014b74dc9b6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab7b2332c6b1b6b350977dc7b6daeec61"><td class="memItemLeft" align="right" valign="top">sealed override void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_loot_1_1_api_1_1_modifier_1_1_modifier.html#ab7b2332c6b1b6b350977dc7b6daeec61">PreUpdateVanitySet</a> (Player player, string set)</td></tr>
 <tr class="separator:ab7b2332c6b1b6b350977dc7b6daeec61"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8b64100fd359b45dd390fff41de895bf"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_loot_1_1_api_1_1_modifier_1_1_modifier.html#a8b64100fd359b45dd390fff41de895bf">Roll</a> (<a class="el" href="struct_loot_1_1_api_1_1_modifier_1_1_modifier_context.html">ModifierContext</a> ctx, IEnumerable&lt; <a class="el" href="class_loot_1_1_api_1_1_modifier_1_1_modifier.html">Modifier</a> &gt; rolledModifiers)</td></tr>
+<tr class="memitem:a8b64100fd359b45dd390fff41de895bf"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_loot_1_1_api_1_1_modifier_1_1_modifier.html#a8b64100fd359b45dd390fff41de895bf">Roll</a> (<a class="el" href="class_loot_1_1_api_1_1_modifier_1_1_modifier_context.html">ModifierContext</a> ctx, IEnumerable&lt; <a class="el" href="class_loot_1_1_api_1_1_modifier_1_1_modifier.html">Modifier</a> &gt; rolledModifiers)</td></tr>
 <tr class="memdesc:a8b64100fd359b45dd390fff41de895bf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Allows modders to do something when the modifier is rolled in the given context The passed rolledModifiers are already rolled modifiers on the item  <a href="#a8b64100fd359b45dd390fff41de895bf">More...</a><br /></td></tr>
 <tr class="separator:a8b64100fd359b45dd390fff41de895bf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae0d12b4a4ac6c013a16701f30aad8907"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_loot_1_1_api_1_1_modifier_1_1_modifier.html#ae0d12b4a4ac6c013a16701f30aad8907">Save</a> (Item item, TagCompound tag)</td></tr>
@@ -492,7 +492,7 @@ Properties</h2></td></tr>
         <tr>
           <td class="memname">virtual bool Loot.Api.Modifier.Modifier.CanRoll </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="struct_loot_1_1_api_1_1_modifier_1_1_modifier_context.html">ModifierContext</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="class_loot_1_1_api_1_1_modifier_1_1_modifier_context.html">ModifierContext</a>&#160;</td>
           <td class="paramname"><em>ctx</em></td><td>)</td>
           <td></td>
         </tr>
@@ -1337,7 +1337,7 @@ Properties</h2></td></tr>
         <tr>
           <td class="memname">virtual bool Loot.Api.Modifier.Modifier.PostRoll </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="struct_loot_1_1_api_1_1_modifier_1_1_modifier_context.html">ModifierContext</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="class_loot_1_1_api_1_1_modifier_1_1_modifier_context.html">ModifierContext</a>&#160;</td>
           <td class="paramname"><em>ctx</em>, </td>
         </tr>
         <tr>
@@ -1449,7 +1449,7 @@ Properties</h2></td></tr>
         <tr>
           <td class="memname">virtual void Loot.Api.Modifier.Modifier.Roll </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="struct_loot_1_1_api_1_1_modifier_1_1_modifier_context.html">ModifierContext</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="class_loot_1_1_api_1_1_modifier_1_1_modifier_context.html">ModifierContext</a>&#160;</td>
           <td class="paramname"><em>ctx</em>, </td>
         </tr>
         <tr>
@@ -1912,7 +1912,7 @@ Properties</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespace_loot.html">Loot</a></li><li class="navelem"><a class="el" href="namespace_loot_1_1_api.html">Api</a></li><li class="navelem"><a class="el" href="namespace_loot_1_1_api_1_1_modifier.html">Modifier</a></li><li class="navelem"><a class="el" href="class_loot_1_1_api_1_1_modifier_1_1_modifier.html">Modifier</a></li>
-    <li class="footer">Generated on Sun May 19 2019 17:14:46 for Even More Modifiers by
+    <li class="footer">Generated on Sun May 19 2019 21:32:44 for Even More Modifiers by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.11 </li>
   </ul>

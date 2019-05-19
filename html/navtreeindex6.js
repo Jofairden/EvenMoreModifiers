@@ -1,5 +1,14 @@
 var NAVTREEINDEX6 =
 {
+"class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_random_debuff.html#a726558235a140f1b3d1985d79e9b87b0":[2,0,0,6,2,11,12],
+"class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_random_debuff.html#a7edec10f8adbfe10a23db8eb9380b37d":[2,0,0,6,2,11,11],
+"class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_random_debuff.html#a81db9bc6bd21aeccfd8ca5b8a0f2f054":[2,0,0,6,2,11,4],
+"class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_random_debuff.html#a8390666b643ba19f22e54ac3847ede03":[2,0,0,6,2,11,13],
+"class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_random_debuff.html#a9f5f155b2428a7ef22a8b81acf5cee09":[2,0,0,6,2,11,10],
+"class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_random_debuff.html#ab0e283a0342c8d70069e523f8a6ca82f":[2,0,0,6,2,11,6],
+"class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_random_debuff.html#ac33528dedb0dc00afb03cf11b97ebe34":[2,0,0,6,2,11,7],
+"class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_random_debuff.html#adff461eba04f66de78cbcaa00387f4e8":[2,0,0,6,2,11,5],
+"class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_random_debuff.html#ae965bbb1e28d192f9f0dc212690e5fbe":[2,0,0,6,2,11,8],
 "class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_random_debuff.html#afd00707ca69335df5c63b32c39e5654f":[2,0,0,6,2,11,14],
 "class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_speed_plus.html":[2,0,0,6,2,12],
 "class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_speed_plus.html#a2d6667293b6926882713ebffad145bbb":[2,0,0,6,2,12,1],
@@ -166,8 +175,8 @@ var NAVTREEINDEX6 =
 "dir_f2b9c6d4dbfde26a38b315e00a2efac6.html":[3,0,4],
 "dir_f3e6d85b04d9f09a7e42d5218bf5ba51.html":[3,0,0,3],
 "files.html":[3,0],
-"functions.html":[2,3,0,0],
 "functions.html":[2,3,0],
+"functions.html":[2,3,0,0],
 "functions_a.html":[2,3,0,1],
 "functions_b.html":[2,3,0,2],
 "functions_c.html":[2,3,0,3],
@@ -240,14 +249,5 @@ var NAVTREEINDEX6 =
 "interface_loot_tests_1_1_modifier_properties_tests_1_1_i_fake_properties.html#a9642ba6920d2cd36f73b0bd298181571":[2,0,1,6,1,0],
 "interface_loot_tests_1_1_modifier_properties_tests_1_1_i_fake_properties.html#ae7529a0f8b8d95f5c067d1107aee30b2":[2,0,1,6,1,5],
 "md__home_travis_build_Jofairden_EvenMoreModifiers_README.html":[0],
-"namespace_loot.html":[1,0,0],
-"namespace_loot.html":[2,0,0],
-"namespace_loot_1_1_api.html":[2,0,0,0],
-"namespace_loot_1_1_api.html":[1,0,0,0],
-"namespace_loot_1_1_api_1_1_attributes.html":[2,0,0,0,0],
-"namespace_loot_1_1_api_1_1_attributes.html":[1,0,0,0,0],
-"namespace_loot_1_1_api_1_1_builder.html":[1,0,0,0,1],
-"namespace_loot_1_1_api_1_1_builder.html":[2,0,0,0,1],
-"namespace_loot_1_1_api_1_1_content.html":[2,0,0,0,2],
-"namespace_loot_1_1_api_1_1_content.html":[1,0,0,0,2]
+"namespace_loot.html":[2,0,0]
 };

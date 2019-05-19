@@ -53,7 +53,7 @@ var searchData=
   ['speedplus_2ecs',['SpeedPlus.cs',['../_speed_plus_8cs.html',1,'']]],
   ['static',['STATIC',['../class_loot_1_1_u_i_1_1_tabs_1_1_soulforging_1_1_gui_soulgauge_1_1_gauge_drawing_1_1_s_t_a_t_i_c.html',1,'Loot::UI::Tabs::Soulforging::GuiSoulgauge::GaugeDrawing']]],
   ['strategies',['Strategies',['../class_loot_1_1_api_1_1_ext_1_1_rolling_utils_1_1_strategies.html',1,'Loot::Api::Ext::RollingUtils']]],
-  ['strategy',['Strategy',['../struct_loot_1_1_api_1_1_modifier_1_1_modifier_context.html#a53cf0428d46c6cd3d3922c760e0798c8',1,'Loot::Api::Modifier::ModifierContext']]],
+  ['strategy',['Strategy',['../class_loot_1_1_api_1_1_modifier_1_1_modifier_context.html#a53cf0428d46c6cd3d3922c760e0798c8',1,'Loot::Api::Modifier::ModifierContext']]],
   ['subjecttexture',['SubjectTexture',['../class_loot_1_1_api_1_1_graphics_1_1_shader_1_1_shader_entity.html#af39fad10bf88f959f2e41597613054b8',1,'Loot::Api::Graphics::Shader::ShaderEntity']]],
   ['substringlastindex',['SubstringLastIndex',['../class_loot_1_1_api_1_1_mod_content_1_1_graphics_mod_content.html#ab22305b1a8487a899056c5d245f2f01b',1,'Loot::Api::ModContent::GraphicsModContent']]],
   ['survivalchance',['SurvivalChance',['../class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_defensive_1_1_survival_chance.html',1,'Loot::Modifiers::EquipModifiers::Defensive']]],

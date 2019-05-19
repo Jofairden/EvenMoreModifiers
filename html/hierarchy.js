@@ -161,7 +161,7 @@ var hierarchy =
       [ "LootTests.FakeMod", "class_loot_tests_1_1_fake_mod.html", null ]
     ] ],
     [ "Loot.Api.ModContent.ModContentManager", "class_loot_1_1_api_1_1_mod_content_1_1_mod_content_manager.html", null ],
-    [ "Loot.Api.Modifier.ModifierContext", "struct_loot_1_1_api_1_1_modifier_1_1_modifier_context.html", null ],
+    [ "Loot.Api.Modifier.ModifierContext", "class_loot_1_1_api_1_1_modifier_1_1_modifier_context.html", null ],
     [ "ModifierPool", "class_modifier_pool.html", [
       [ "LootTests.TestPools.TestPool", "class_loot_tests_1_1_test_pools_1_1_test_pool.html", null ]
     ] ],

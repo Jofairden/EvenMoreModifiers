@@ -4,7 +4,7 @@ var dir_d827ea726c706351b8cf4eef571cff13 =
       [ "Modifier", "class_loot_1_1_api_1_1_modifier_1_1_modifier.html", "class_loot_1_1_api_1_1_modifier_1_1_modifier" ]
     ] ],
     [ "ModifierContext.cs", "_modifier_context_8cs.html", [
-      [ "ModifierContext", "struct_loot_1_1_api_1_1_modifier_1_1_modifier_context.html", "struct_loot_1_1_api_1_1_modifier_1_1_modifier_context" ]
+      [ "ModifierContext", "class_loot_1_1_api_1_1_modifier_1_1_modifier_context.html", "class_loot_1_1_api_1_1_modifier_1_1_modifier_context" ]
     ] ],
     [ "ModifierContextMethod.cs", "_modifier_context_method_8cs.html", "_modifier_context_method_8cs" ],
     [ "ModifierEffect.cs", "_modifier_effect_8cs.html", [

@@ -19,7 +19,7 @@ var searchData=
   ['normalshaderdrawstyle',['NormalShaderDrawStyle',['../class_loot_1_1_api_1_1_graphics_1_1_shader_1_1_style_1_1_normal_shader_draw_style.html#a5974b2f5b00971eca39ea986b9e58381',1,'Loot::Api::Graphics::Shader::Style::NormalShaderDrawStyle']]],
   ['normalshaderdrawstyle',['NormalShaderDrawStyle',['../class_loot_1_1_api_1_1_graphics_1_1_shader_1_1_style_1_1_normal_shader_draw_style.html',1,'Loot::Api::Graphics::Shader::Style']]],
   ['normalshaderdrawstyle_2ecs',['NormalShaderDrawStyle.cs',['../_normal_shader_draw_style_8cs.html',1,'']]],
-  ['npc',['NPC',['../struct_loot_1_1_api_1_1_modifier_1_1_modifier_context.html#ab39bcd589b27f182f57b23151fd30876',1,'Loot::Api::Modifier::ModifierContext']]],
+  ['npc',['NPC',['../class_loot_1_1_api_1_1_modifier_1_1_modifier_context.html#ab39bcd589b27f182f57b23151fd30876',1,'Loot::Api::Modifier::ModifierContext']]],
   ['nullmodifier',['NullModifier',['../class_loot_1_1_modifiers_1_1_null_modifier.html',1,'Loot::Modifiers']]],
   ['nullmodifier',['NullModifier',['../class_loot_1_1_modifiers_1_1_null_modifier.html#af67f90947e7670419f6d506f79f8e829',1,'Loot::Modifiers::NullModifier']]],
   ['nullmodifier_2ecs',['NullModifier.cs',['../_null_modifier_8cs.html',1,'']]],
