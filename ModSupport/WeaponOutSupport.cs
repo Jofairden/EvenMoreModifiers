@@ -2,11 +2,14 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using Loot.Api.Graphics;
+using Loot.Api.Graphics.Glowmask;
+using Loot.Api.Graphics.Shader;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Terraria;
 using Terraria.DataStructures;
 using Terraria.ModLoader;
+using Terraria.UI;
 using Main = On.Terraria.Main;
 
 namespace Loot.ModSupport
@@ -26,6 +29,7 @@ namespace Loot.ModSupport
 
 		private void MainOnDrawPlayer(Main.orig_DrawPlayer orig, Terraria.Main self, Player drawplayer, Vector2 position, float rotation, Vector2 rotationorigin, float shadow)
 		{
+			_lightColor = null;
 			_cache.Clear();
 			orig(self, drawplayer, position, rotation, rotationorigin, shadow);
 		}
@@ -38,19 +42,20 @@ namespace Loot.ModSupport
 			{
 				var shaderEntity = cachedData.Item3;
 				var glowmaskEntity = cachedData.Item4;
+				var plr = cachedData.Item2;
+				_lightColor = _lightColor ?? Lighting.GetColor((int)(plr.MountedCenter.X / 16), (int)(plr.MountedCenter.Y / 16));
+
 				if (shaderEntity != null)
 				{
-					shaderEntity.SkipUpdatingDrawData = true;
+					shaderEntity.Properties.SkipUpdatingDrawData = true;
 					shaderEntity.DrawData = self;
-					shaderEntity.SetIdentity(cachedData.Item2);
-					shaderEntity.DoDrawLayeredEntity(sb, self.color, self.color, self.scale.LengthSquared(), self.rotation, glowmaskEntity);
-				} 
+					shaderEntity.DoDrawLayeredEntity(sb, _lightColor.Value, self.color, self.scale.LengthSquared(), self.rotation, glowmaskEntity);
+				}
 				else if (glowmaskEntity != null)
 				{
-					glowmaskEntity.SkipUpdatingDrawData = true;
+					glowmaskEntity.Properties.SkipUpdatingDrawData = true;
 					glowmaskEntity.DrawData = self;
-					glowmaskEntity.SetIdentity(cachedData.Item2);
-					glowmaskEntity.DoDrawGlowmask(sb, self.color, self.color, self.rotation, self.scale.LengthSquared(), glowmaskEntity.Entity.whoAmI);
+					glowmaskEntity.DoDrawGlowmask(sb, _lightColor.Value, self.color, self.rotation, self.scale.LengthSquared(), glowmaskEntity.Entity.whoAmI);
 				}
 			}
 			else
@@ -59,7 +64,8 @@ namespace Loot.ModSupport
 			}
 		}
 
-		private readonly List<(DrawData, Item, ShaderEntity, GlowmaskEntity)> _cache = new List<(DrawData, Item, ShaderEntity, GlowmaskEntity)>();
+		private Color? _lightColor;
+		private readonly List<(DrawData, Player, ShaderEntity, GlowmaskEntity)> _cache = new List<(DrawData, Player, ShaderEntity, GlowmaskEntity)>();
 
 		private bool CustomPreDraw(Player player, Item item, DrawData drawDrata)
 		{
@@ -71,7 +77,7 @@ namespace Loot.ModSupport
 					ShaderEntity entity = info.ShaderEntities[i];
 					if (entity != null)
 					{
-						_cache.Add((drawDrata, item, entity, info.GlowmaskEntities[i]));
+						_cache.Add((drawDrata, player, entity, info.GlowmaskEntities[i]));
 					}
 				}
 			}
@@ -79,7 +85,7 @@ namespace Loot.ModSupport
 			{
 				foreach (var entity in info.GlowmaskEntities.Where(x => x != null))
 				{
-					_cache.Add((drawDrata, item, null, entity));
+					_cache.Add((drawDrata, player, null, entity));
 				}
 			}
 			return true;

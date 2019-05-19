@@ -45,10 +45,12 @@
   <ItemGroup>
     <Compile Include="Api\Builder\IPropertyBuilder.cs" />
     <Compile Include="Api\Builder\PropertyBuilder.cs" />
+    <Compile Include="Api\Graphics\Glowmask\GlowmaskGraphicsProperties.cs" />
     <Compile Include="Api\Graphics\GraphicsProperties.cs" />
-    <Compile Include="Api\Graphics\Shaders\AlternateShaderDrawStyle.cs" />
-    <Compile Include="Api\Graphics\Shaders\DefaultShaderDrawStyle.cs" />
-    <Compile Include="Api\Graphics\Shaders\ShaderDrawStyle.cs" />
+    <Compile Include="Api\Graphics\Shader\ShaderGraphicsProperties.cs" />
+    <Compile Include="Api\Graphics\Shader\Style\AroundShaderDrawStyle.cs" />
+    <Compile Include="Api\Graphics\Shader\Style\NormalShaderDrawStyle.cs" />
+    <Compile Include="Api\Graphics\Shader\Style\ShaderDrawStyle.cs" />
     <Compile Include="Api\Modifier\ModifierContextMethod.cs" />
     <Compile Include="Hacks\BackwardsCompatibleHacks.cs" />
     <Compile Include="Hacks\CheatedItemHackGlobalItem.cs" />
@@ -73,11 +75,11 @@
     <Compile Include="Api\Cubes\MagicalCube.cs" />
     <Compile Include="Cubes\PoorCube.cs" />
     <Compile Include="Api\Cubes\RerollingCube.cs" />
-    <Compile Include="Api\Graphics\GlowmaskEntity.cs" />
+    <Compile Include="Api\Graphics\Glowmask\GlowmaskEntity.cs" />
     <Compile Include="Api\Graphics\GraphicsEntity.cs" />
     <Compile Include="Api\Ext\GraphicsUtils.cs" />
-    <Compile Include="Api\Graphics\ShaderDrawLayer.cs" />
-    <Compile Include="Api\Graphics\ShaderEntity.cs" />
+    <Compile Include="Api\Graphics\Shader\ShaderDrawLayer.cs" />
+    <Compile Include="Api\Graphics\Shader\ShaderEntity.cs" />
     <Compile Include="Api\Graphics\GraphicsGlobalItem.cs" />
     <Compile Include="Api\ModContent\GraphicsModContent.cs" />
     <Compile Include="Api\ModContent\ModContentManager.cs" />
@@ -209,6 +211,7 @@
     <Content Include="build.txt" />
     <Content Include="description.txt" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSHARP.Targets" />
   <PropertyGroup>
     <PostBuildEvent>"$(tMLServerPath)" -build "$(ProjectDir)\" -eac "$(TargetPath)"</PostBuildEvent>

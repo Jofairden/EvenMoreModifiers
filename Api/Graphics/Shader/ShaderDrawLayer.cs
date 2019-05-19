@@ -1,4 +1,4 @@
-namespace Loot.Api.Graphics
+namespace Loot.Api.Graphics.Shader
 {
 	public enum ShaderDrawLayer
 	{

@@ -1,5 +1,7 @@
 using System.Collections.Generic;
 using System.Linq;
+using Loot.Api.Graphics.Glowmask;
+using Loot.Api.Graphics.Shader;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Terraria;
@@ -15,7 +17,7 @@ namespace Loot.Api.Graphics
 	{
 		public List<ShaderEntity> ShaderEntities { get; private set; } = new List<ShaderEntity>();
 		public List<GlowmaskEntity> GlowmaskEntities { get; private set; } = new List<GlowmaskEntity>();
-		public bool NeedsUpdate  = true;
+		public bool NeedsUpdate = true;
 
 		public override bool InstancePerEntity => true;
 		public override bool CloneNewInstances => true;
@@ -39,10 +41,11 @@ namespace Loot.Api.Graphics
 		{
 			var pool = LootModItem.GetActivePool(item).ToArray();
 
-			if (!NeedsUpdate && ShaderEntities != null && !ShaderEntities.Any(x => x != null && x.NeedsUpdate) && !GlowmaskEntities.Any(x => x != null && x.NeedsUpdate))
-			{
+			if (!NeedsUpdate && ShaderEntities != null
+							 && !ShaderEntities.Any(x => x != null && x.NeedsUpdate)
+							 && !GlowmaskEntities.Any(x => x != null && x.NeedsUpdate))
 				return;
-			}
+
 
 			if (ShaderEntities != null)
 			{
@@ -51,6 +54,7 @@ namespace Loot.Api.Graphics
 				foreach (var m in pool)
 				{
 					var ent = m.GetShaderEntity(item);
+					ent?.SetIdentity(item);
 					ShaderEntities.Add(ent);
 				}
 
@@ -64,6 +68,7 @@ namespace Loot.Api.Graphics
 				foreach (var m in pool)
 				{
 					var ent = m.GetGlowmaskEntity(item);
+					ent?.SetIdentity(item);
 					GlowmaskEntities.Add(ent);
 				}
 
@@ -84,7 +89,6 @@ namespace Loot.Api.Graphics
 				if (entity != null)
 				{
 					flag = false;
-					entity.SetIdentity(item);
 					entity.DoDrawLayeredEntity(spriteBatch, lightColor, alphaColor, scale, rotation, GlowmaskEntities[i]);
 				}
 			}
@@ -100,7 +104,6 @@ namespace Loot.Api.Graphics
 			{
 				if (entity != null)
 				{
-					entity.SetIdentity(item);
 					entity.DoDrawGlowmask(spriteBatch, lightColor, alphaColor, rotation, scale, whoAmI);
 					entity.DoDrawHitbox(spriteBatch);
 				}

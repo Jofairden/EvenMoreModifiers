@@ -1,4 +1,6 @@
 using Loot.Api.Graphics;
+using Loot.Api.Graphics.Shader;
+using Loot.Api.Graphics.Shader.Style;
 using Loot.Modifiers.Base;
 using Microsoft.Xna.Framework;
 using Terraria;
@@ -12,9 +14,13 @@ namespace Loot.Modifiers.WeaponModifiers.Ice
 		public override ShaderEntity GetShaderEntity(Item item)
 		{
 			return new ShaderEntity(item,
-				GameShaders.Armor.GetShaderIdFromItemId(ItemID.HadesDye),
-				drawLayer: ShaderDrawLayer.Front,
-				shaderDrawColor: Color.AliceBlue
+				GameShaders.Armor.GetShaderIdFromItemId(ItemID.StardustDye),
+				Color.LightSkyBlue,
+				props: ShaderGraphicsProperties.Builder
+					.WithDrawLayer(ShaderDrawLayer.Front)
+					.WithShaderDrawStyle(new NormalShaderDrawStyle())
+					.SkipDrawingSubject(true)
+					.Build()
 			);
 		}
 	}

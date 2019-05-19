@@ -12,14 +12,14 @@ namespace Loot.Api.Ext
 		{
 			batch.End();
 			RasterizerState rasterizerState = Main.LocalPlayer.gravDir == 1f ? RasterizerState.CullCounterClockwise : RasterizerState.CullClockwise;
-			batch.Begin(SpriteSortMode.Immediate, BlendState.AlphaBlend, SamplerState.LinearClamp, DepthStencilState.None, rasterizerState, null, Main.GameViewMatrix.TransformationMatrix);
+			batch.Begin(SpriteSortMode.Immediate, BlendState.AlphaBlend, Main.DefaultSamplerState, DepthStencilState.None, rasterizerState, null, Main.GameViewMatrix.TransformationMatrix);
 		}
 
 		public static void ResetBatch(this SpriteBatch batch)
 		{
 			batch.End();
 			RasterizerState rasterizerState = Main.LocalPlayer.gravDir == 1f ? RasterizerState.CullCounterClockwise : RasterizerState.CullClockwise;
-			batch.Begin(SpriteSortMode.Deferred, BlendState.AlphaBlend, SamplerState.PointClamp, DepthStencilState.None, rasterizerState, null, Main.GameViewMatrix.TransformationMatrix);
+			batch.Begin(SpriteSortMode.Deferred, BlendState.AlphaBlend, Main.DefaultSamplerState, DepthStencilState.None, rasterizerState, null, Main.GameViewMatrix.TransformationMatrix);
 			//Main.pixelShader.CurrentTechnique.Passes[0].Apply();
 		}
 	}

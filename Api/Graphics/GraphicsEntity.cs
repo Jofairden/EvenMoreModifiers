@@ -7,16 +7,17 @@ using Terraria.ModLoader;
 
 namespace Loot.Api.Graphics
 {
-	public abstract class GraphicsEntity
+	public abstract class GraphicsEntity<T> where T : GraphicsProperties
 	{
 		public DrawData DrawData;
 		public Color DrawColor { get; set; }
-		public bool SkipUpdatingDrawData { get; set; }
-		public bool SkipDrawing { get; set; }
 		public bool UseDestinationRectangle => DrawData.useDestinationRectangle;
 		public Rectangle? DestinationRectangle => DrawData.destinationRectangle;
 
 		public Entity Entity { get; protected set; }
+		public T Properties { get; protected set; }
+		public short Order { get; protected set; }
+		public bool NeedsUpdate { get; set; }
 
 		protected GraphicsEntity(object subjectIdentity)
 		{
@@ -52,12 +53,14 @@ namespace Loot.Api.Graphics
 			}
 		}
 
+		protected abstract void LoadAssets(Item item);
+
 		/// <summary>
 		/// Sets up drawing data initially
 		/// </summary>
 		public void TryGettingDrawData(float rotation, float scale)
 		{
-			if (SkipUpdatingDrawData) return;
+			if (Properties.SkipUpdatingDrawData && !NeedsUpdate) return;
 
 			DrawData = new DrawData
 			{
@@ -77,7 +80,7 @@ namespace Loot.Api.Graphics
 
 		public void TryUpdatingDrawData(Texture2D texture)
 		{
-			if (SkipUpdatingDrawData) return;
+			if (Properties.SkipUpdatingDrawData && !NeedsUpdate) return;
 
 			var frame = texture.Frame();
 			DrawData.position = new Vector2
@@ -110,9 +113,9 @@ namespace Loot.Api.Graphics
 			}
 		}
 
-		protected void DrawDrawData(SpriteBatch spriteBatch, DrawData data)
+		public void DrawEntity(SpriteBatch spriteBatch)
 		{
-			if (data.useDestinationRectangle)
+			if (DrawData.useDestinationRectangle)
 			{
 				spriteBatch.Draw(DrawData.texture, DrawData.destinationRectangle, DrawData.sourceRect, DrawData.color, DrawData.rotation, DrawData.origin, DrawData.effect, 0f);
 			}
@@ -120,8 +123,7 @@ namespace Loot.Api.Graphics
 			{
 				spriteBatch.Draw(DrawData.texture, DrawData.position, DrawData.sourceRect, DrawData.color, DrawData.rotation, DrawData.origin, DrawData.scale, DrawData.effect, 0f);
 			}
+			NeedsUpdate = false;
 		}
-
-		protected abstract void LoadAssets(Item item);
 	}
 }
