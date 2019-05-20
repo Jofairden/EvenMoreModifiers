@@ -68,6 +68,7 @@
     <Compile Include="Cubes\BlackCube.cs" />
     <Compile Include="Cubes\CubeOfSealing.cs" />
     <Compile Include="Cubes\CubeShop.cs" />
+    <Compile Include="Hacks\UseItemEffectsHack.cs" />
     <Compile Include="ModSupport\WeaponOutSupport.cs" />
     <Compile Include="Pools\WeaponModifierPool.cs" />
     <Compile Include="RollingStrategies\NormalRollingStrategy.cs" />

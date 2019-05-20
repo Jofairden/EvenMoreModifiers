@@ -24,8 +24,8 @@ namespace Loot.Api.Graphics
 
 		public static GraphicsGlobalItem GetInfo(Item item) => item.GetGlobalItem<GraphicsGlobalItem>();
 
-		public bool HasShaders => (ShaderEntities?.Count ?? 0) > 0;
-		public bool HasGlowmasks => (GlowmaskEntities?.Count ?? 0) > 0;
+		public bool HasShaders => ShaderEntities.Count(x => x != null) > 0;
+		public bool HasGlowmasks => GlowmaskEntities.Count(x => x != null) > 0;
 
 		public override void UpdateInventory(Item item, Player player)
 		{

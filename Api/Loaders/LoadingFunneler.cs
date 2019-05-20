@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Reflection;
 using Loot.Api.ModContent;
 using Loot.Effects;
+using Loot.Hacks;
 using Loot.Modifiers;
 using Loot.ModSupport;
 using Loot.Pools;
@@ -84,6 +85,9 @@ namespace Loot.Api.Loaders
 
 			AssetLoader.RegisterAssets(Loot.Instance, "GraphicsAssets");
 			ModSupportTunneler.AddClientSupport();
+
+			// TODO IL patch management
+			new UseItemEffectsHack().Hack();
 		}
 
 		private static void UnloadMod()
