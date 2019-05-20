@@ -159,6 +159,8 @@ var NAVTREEINDEX1 =
 "_transcendent_rarity_8cs_source.html":[3,0,10,5],
 "_u_i_sounds_8cs.html":[3,0,12,0,0],
 "_u_i_sounds_8cs_source.html":[3,0,12,0,0],
+"_use_item_effects_hack_8cs.html":[3,0,5,4],
+"_use_item_effects_hack_8cs_source.html":[3,0,5,4],
 "_uses_effect_attribute_8cs.html":[3,0,0,0,5],
 "_uses_effect_attribute_8cs_source.html":[3,0,0,0,5],
 "_velocity_damage_8cs.html":[3,0,7,2,12],
@@ -247,7 +249,5 @@ var NAVTREEINDEX1 =
 "class_loot_1_1_api_1_1_delegators_1_1_modifier_delegator_player.html#a0409a1eac1bc879175cf67656ab93888":[2,0,0,0,4,0,62],
 "class_loot_1_1_api_1_1_delegators_1_1_modifier_delegator_player.html#a0522925812ef71168d280ec616d29bfb":[2,0,0,0,4,0,170],
 "class_loot_1_1_api_1_1_delegators_1_1_modifier_delegator_player.html#a06f5722b59a03b72726f7d37c2811ee7":[2,0,0,0,4,0,50],
-"class_loot_1_1_api_1_1_delegators_1_1_modifier_delegator_player.html#a08cbb382b9b60de7952eab218b07bd35":[2,0,0,0,4,0,142],
-"class_loot_1_1_api_1_1_delegators_1_1_modifier_delegator_player.html#a08f3df1f80cb7688911cea935986f855":[2,0,0,0,4,0,67],
-"class_loot_1_1_api_1_1_delegators_1_1_modifier_delegator_player.html#a0d3eaeedc5b6929bf8592c938ec57ddc":[2,0,0,0,4,0,19]
+"class_loot_1_1_api_1_1_delegators_1_1_modifier_delegator_player.html#a08cbb382b9b60de7952eab218b07bd35":[2,0,0,0,4,0,142]
 };

@@ -165,9 +165,9 @@ Static Public Member Functions</h2></td></tr>
 Public Attributes</h2></td></tr>
 <tr class="memitem:a2f82591370678bf0d2fa046050243de1"><td class="memItemLeft" align="right" valign="top">override bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_loot_1_1_api_1_1_graphics_1_1_graphics_global_item.html#a2f82591370678bf0d2fa046050243de1">CloneNewInstances</a> =&gt; true</td></tr>
 <tr class="separator:a2f82591370678bf0d2fa046050243de1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afbed847df908f32ebb491013a2377204"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_loot_1_1_api_1_1_graphics_1_1_graphics_global_item.html#afbed847df908f32ebb491013a2377204">HasGlowmasks</a> =&gt; (<a class="el" href="class_loot_1_1_api_1_1_graphics_1_1_graphics_global_item.html#a8402a0a2c6052961a9c88c9aaf628020">GlowmaskEntities</a>?.Count ?? 0) &gt; 0</td></tr>
+<tr class="memitem:afbed847df908f32ebb491013a2377204"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_loot_1_1_api_1_1_graphics_1_1_graphics_global_item.html#afbed847df908f32ebb491013a2377204">HasGlowmasks</a> =&gt; GlowmaskEntities.Count(x =&gt; x != null) &gt; 0</td></tr>
 <tr class="separator:afbed847df908f32ebb491013a2377204"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aeb94d876c68d13ae5b774a930c66f425"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_loot_1_1_api_1_1_graphics_1_1_graphics_global_item.html#aeb94d876c68d13ae5b774a930c66f425">HasShaders</a> =&gt; (<a class="el" href="class_loot_1_1_api_1_1_graphics_1_1_graphics_global_item.html#a91622cba55944a153f95a043ecb74e3a">ShaderEntities</a>?.Count ?? 0) &gt; 0</td></tr>
+<tr class="memitem:aeb94d876c68d13ae5b774a930c66f425"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_loot_1_1_api_1_1_graphics_1_1_graphics_global_item.html#aeb94d876c68d13ae5b774a930c66f425">HasShaders</a> =&gt; ShaderEntities.Count(x =&gt; x != null) &gt; 0</td></tr>
 <tr class="separator:aeb94d876c68d13ae5b774a930c66f425"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a005901cb26003dd0e81a83dcbd41656e"><td class="memItemLeft" align="right" valign="top">override bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_loot_1_1_api_1_1_graphics_1_1_graphics_global_item.html#a005901cb26003dd0e81a83dcbd41656e">InstancePerEntity</a> =&gt; true</td></tr>
 <tr class="separator:a005901cb26003dd0e81a83dcbd41656e"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -460,7 +460,7 @@ Properties</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">bool Loot.Api.Graphics.GraphicsGlobalItem.HasGlowmasks =&gt; (<a class="el" href="class_loot_1_1_api_1_1_graphics_1_1_graphics_global_item.html#a8402a0a2c6052961a9c88c9aaf628020">GlowmaskEntities</a>?.Count ?? 0) &gt; 0</td>
+          <td class="memname">bool Loot.Api.Graphics.GraphicsGlobalItem.HasGlowmasks =&gt; GlowmaskEntities.Count(x =&gt; x != null) &gt; 0</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -474,7 +474,7 @@ Properties</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">bool Loot.Api.Graphics.GraphicsGlobalItem.HasShaders =&gt; (<a class="el" href="class_loot_1_1_api_1_1_graphics_1_1_graphics_global_item.html#a91622cba55944a153f95a043ecb74e3a">ShaderEntities</a>?.Count ?? 0) &gt; 0</td>
+          <td class="memname">bool Loot.Api.Graphics.GraphicsGlobalItem.HasShaders =&gt; ShaderEntities.Count(x =&gt; x != null) &gt; 0</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -562,7 +562,7 @@ Properties</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespace_loot.html">Loot</a></li><li class="navelem"><a class="el" href="namespace_loot_1_1_api.html">Api</a></li><li class="navelem"><a class="el" href="namespace_loot_1_1_api_1_1_graphics.html">Graphics</a></li><li class="navelem"><a class="el" href="class_loot_1_1_api_1_1_graphics_1_1_graphics_global_item.html">GraphicsGlobalItem</a></li>
-    <li class="footer">Generated on Mon May 20 2019 11:37:38 for Even More Modifiers by
+    <li class="footer">Generated on Mon May 20 2019 12:45:35 for Even More Modifiers by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.11 </li>
   </ul>
