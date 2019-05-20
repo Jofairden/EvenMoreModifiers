@@ -1,6 +1,5 @@
 var NAVTREEINDEX6 =
 {
-"class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_random_debuff.html#a726558235a140f1b3d1985d79e9b87b0":[2,0,0,6,2,11,12],
 "class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_random_debuff.html#a7edec10f8adbfe10a23db8eb9380b37d":[2,0,0,6,2,11,11],
 "class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_random_debuff.html#a81db9bc6bd21aeccfd8ca5b8a0f2f054":[2,0,0,6,2,11,4],
 "class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_random_debuff.html#a8390666b643ba19f22e54ac3847ede03":[2,0,0,6,2,11,13],
@@ -175,8 +174,8 @@ var NAVTREEINDEX6 =
 "dir_f2b9c6d4dbfde26a38b315e00a2efac6.html":[3,0,4],
 "dir_f3e6d85b04d9f09a7e42d5218bf5ba51.html":[3,0,0,3],
 "files.html":[3,0],
-"functions.html":[2,3,0],
 "functions.html":[2,3,0,0],
+"functions.html":[2,3,0],
 "functions_a.html":[2,3,0,1],
 "functions_b.html":[2,3,0,2],
 "functions_c.html":[2,3,0,3],
@@ -249,5 +248,6 @@ var NAVTREEINDEX6 =
 "interface_loot_tests_1_1_modifier_properties_tests_1_1_i_fake_properties.html#a9642ba6920d2cd36f73b0bd298181571":[2,0,1,6,1,0],
 "interface_loot_tests_1_1_modifier_properties_tests_1_1_i_fake_properties.html#ae7529a0f8b8d95f5c067d1107aee30b2":[2,0,1,6,1,5],
 "md__home_travis_build_Jofairden_EvenMoreModifiers_README.html":[0],
-"namespace_loot.html":[2,0,0]
+"namespace_loot.html":[2,0,0],
+"namespace_loot.html":[1,0,0]
 };

@@ -1,6 +1,5 @@
 var NAVTREEINDEX2 =
 {
-"class_loot_1_1_api_1_1_delegators_1_1_modifier_delegator_player.html#a0d3eaeedc5b6929bf8592c938ec57ddc":[2,0,0,0,4,0,19],
 "class_loot_1_1_api_1_1_delegators_1_1_modifier_delegator_player.html#a0d47ec4f5bfbc1ca4e7ff607be97bde2":[2,0,0,0,4,0,145],
 "class_loot_1_1_api_1_1_delegators_1_1_modifier_delegator_player.html#a0df46a3e39444368a9ee94775d9fd22a":[2,0,0,0,4,0,117],
 "class_loot_1_1_api_1_1_delegators_1_1_modifier_delegator_player.html#a0f4d282a143f5a8f3b4cdb30fdd58834":[2,0,0,0,4,0,34],
@@ -249,5 +248,6 @@ var NAVTREEINDEX2 =
 "class_loot_1_1_api_1_1_graphics_1_1_glowmask_1_1_glowmask_entity.html":[2,0,0,0,6,0,0],
 "class_loot_1_1_api_1_1_graphics_1_1_glowmask_1_1_glowmask_entity.html#a0af9b7b3d361cb5daf23db909dffd4c6":[2,0,0,0,6,0,0,0],
 "class_loot_1_1_api_1_1_graphics_1_1_glowmask_1_1_glowmask_entity.html#a21db72d77d2f065805b724bb74cdb2af":[2,0,0,0,6,0,0,2],
-"class_loot_1_1_api_1_1_graphics_1_1_glowmask_1_1_glowmask_entity.html#a56e1279817255d18c9c52eee6769bbe4":[2,0,0,0,6,0,0,6]
+"class_loot_1_1_api_1_1_graphics_1_1_glowmask_1_1_glowmask_entity.html#a56e1279817255d18c9c52eee6769bbe4":[2,0,0,0,6,0,0,6],
+"class_loot_1_1_api_1_1_graphics_1_1_glowmask_1_1_glowmask_entity.html#a6d316f5acd729f47fff93308e1e6d2d6":[2,0,0,0,6,0,0,3]
 };
