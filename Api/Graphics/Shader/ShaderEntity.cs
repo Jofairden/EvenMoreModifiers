@@ -51,7 +51,8 @@ namespace Loot.Api.Graphics.Shader
 		/// <summary>
 		/// Will draw all the layers (subject, glowmask, shader) in the proper order 
 		/// </summary>
-		public void DoDrawLayeredEntity(SpriteBatch spriteBatch, Color lightColor, Color alphaColor, float scale, float rotation, GlowmaskEntity glowmaskEntity = null)
+		public void DoDrawLayeredEntity(SpriteBatch spriteBatch, Color lightColor, Color alphaColor, float scale, float rotation, GlowmaskEntity glowmaskEntity = null, 
+			Texture2D suppliedShaderTexture = null, Texture2D suppliedSubjectTexture = null, Texture2D suppliedGlowmaskTexture = null)
 		{
 			if (Properties.SkipDrawing) return;
 
@@ -59,27 +60,30 @@ namespace Loot.Api.Graphics.Shader
 			if (Entity is Item item) LoadAssets(item);
 			else Loot.Logger.Warn("Could not identify shader entity identity as item");
 
+			var useSubjectTexture = suppliedSubjectTexture ?? SubjectTexture;
+			var useShaderTexture = suppliedShaderTexture ?? ShaderTexture;
+			var useGlowmaskTexture = suppliedGlowmaskTexture;
 			// Assets present
-			if (SubjectTexture != null && ShaderTexture != null)
+			if (useSubjectTexture != null && useShaderTexture != null)
 			{
 				// Draw the subject based on the drawlayer
 				if (Properties.DrawLayer == ShaderDrawLayer.Back)
 				{
-					DoDrawShader(ShaderTexture, spriteBatch, lightColor);
-					DoDrawSubject(SubjectTexture, spriteBatch, lightColor);
-					DoDrawGlowmask(glowmaskEntity, spriteBatch, lightColor, alphaColor, rotation, scale, Entity.whoAmI);
+					DoDrawShader(useShaderTexture, spriteBatch, lightColor);
+					DoDrawSubject(useSubjectTexture, spriteBatch, lightColor);
+					DoDrawGlowmask(glowmaskEntity, spriteBatch, lightColor, alphaColor, rotation, scale, Entity.whoAmI, useGlowmaskTexture);
 				}
 				else if (Properties.DrawLayer == ShaderDrawLayer.Middle)
 				{
-					DoDrawSubject(SubjectTexture, spriteBatch, lightColor);
-					DoDrawShader(ShaderTexture, spriteBatch, lightColor);
-					DoDrawGlowmask(glowmaskEntity, spriteBatch, lightColor, alphaColor, rotation, scale, Entity.whoAmI);
+					DoDrawSubject(useSubjectTexture, spriteBatch, lightColor);
+					DoDrawShader(useShaderTexture, spriteBatch, lightColor);
+					DoDrawGlowmask(glowmaskEntity, spriteBatch, lightColor, alphaColor, rotation, scale, Entity.whoAmI, useGlowmaskTexture);
 				}
 				else if (Properties.DrawLayer == ShaderDrawLayer.Front)
 				{
-					DoDrawSubject(SubjectTexture, spriteBatch, lightColor);
-					DoDrawGlowmask(glowmaskEntity, spriteBatch, lightColor, alphaColor, rotation, scale, Entity.whoAmI);
-					DoDrawShader(ShaderTexture, spriteBatch, lightColor);
+					DoDrawSubject(useSubjectTexture, spriteBatch, lightColor);
+					DoDrawGlowmask(glowmaskEntity, spriteBatch, lightColor, alphaColor, rotation, scale, Entity.whoAmI, useGlowmaskTexture);
+					DoDrawShader(useShaderTexture, spriteBatch, lightColor);
 				}
 			}
 
@@ -106,9 +110,9 @@ namespace Loot.Api.Graphics.Shader
 			var drawDataTexture = DrawData.texture;
 			var drawDataColor = DrawData.color;
 
-			TryUpdatingDrawData(shaderTexture);
 			DrawData.texture = shaderTexture;
 			DrawData.color = lightColor;
+			TryUpdatingDrawData(shaderTexture);
 
 			spriteBatch.BeginShaderBatch();
 			GameShaders.Armor.Apply(ShaderId, Entity, DrawData);
@@ -132,10 +136,9 @@ namespace Loot.Api.Graphics.Shader
 			var drawDataColor = DrawData.color;
 			var drawDataTexture = DrawData.texture;
 
-			TryUpdatingDrawData(subjectTexture);
 			DrawData.color = lightColor;
 			DrawData.texture = subjectTexture;
-
+			TryUpdatingDrawData(subjectTexture);
 			DrawEntity(spriteBatch);
 
 			DrawData.color = drawDataColor;

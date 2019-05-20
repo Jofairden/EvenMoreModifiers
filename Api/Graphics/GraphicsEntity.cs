@@ -88,7 +88,6 @@ namespace Loot.Api.Graphics
 				Entity.position.X - Main.screenPosition.X + Entity.width * 0.5f,
 				Entity.position.Y - Main.screenPosition.Y + Entity.height - texture.Height * 0.5f + 2f
 			);
-			DrawData.texture = texture;
 			DrawData.origin = frame.Size() * 0.5f;
 
 			if (UseDestinationRectangle)

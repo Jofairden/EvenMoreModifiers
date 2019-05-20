@@ -45,20 +45,18 @@ namespace Loot.Api.Graphics.Glowmask
 			if (!Properties.SkipDrawing || !Properties.SkipDrawingGlowmask) return;
 
 			TryGettingDrawData(rotation, scale);
-			Texture2D drawTexture = suppliedGlowmask;
-			if (drawTexture == null)
-			{
-				if (Entity is Item item) LoadAssets(item);
-				else Loot.Logger.Warn($"Could not identify glowmask entity identity as item");
-				drawTexture = GlowmaskTexture;
-			}
+			if (Entity is Item item) LoadAssets(item);
+			else Loot.Logger.Warn("Could not identify shader entity identity as item");
+			Texture2D useGlowmaskTexture = suppliedGlowmask ?? GlowmaskTexture;
 
-			if (drawTexture != null)
+			if (useGlowmaskTexture != null)
 			{
 				var drawDataTexture = DrawData.texture;
 				var drawDataColor = DrawData.color;
 				var drawDataDestinationRectangle = DrawData.destinationRectangle;
-				TryUpdatingDrawData(drawTexture);
+				DrawData.texture = useGlowmaskTexture;
+				DrawData.color = lightColor;
+				TryUpdatingDrawData(useGlowmaskTexture);
 				DrawEntity(spriteBatch);
 				DrawData.texture = drawDataTexture;
 				DrawData.color = drawDataColor;

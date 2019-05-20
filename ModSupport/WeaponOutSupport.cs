@@ -39,10 +39,50 @@ namespace Loot.ModSupport
 
 		/// <summary>
 		/// Intercepts <see cref="DrawData.Draw"/> calls
-		/// <para>If the DrawData was cached, it came from WeaponOut and we do not call the original draw code</para>
-		/// <para>Instead, we call our custom draw code on the cached entities</para>
+		/// <para>If held weapon is a fist and the DrawData matches, call <see cref="DrawWeaponOutFists"/></para>
+		/// <para>If the DrawData was cached, it came from WeaponOut and call <see cref="DrawWeaponOutFromCache"/></para>
 		/// </summary>
 		private void DrawDataOnDraw(On.Terraria.DataStructures.DrawData.orig_Draw orig, ref DrawData self, SpriteBatch sb)
+		{
+			_lightColor = _lightColor ?? Lighting.GetColor((int)(Main.LocalPlayer.MountedCenter.X / 16), (int)(Main.LocalPlayer.MountedCenter.Y / 16));
+			if (!DrawWeaponOutFists(self, sb) && !DrawWeaponOutFromCache(self, sb))
+				orig(ref self, sb);
+		}
+
+		private bool DrawWeaponOutFists(DrawData self, SpriteBatch sb)
+		{
+			if (Main.LocalPlayer.HeldItem.useStyle != 102115116) return false;
+			bool isHandOn = Main.LocalPlayer.handon > 0 && self.texture == Main.accHandsOnTexture[Main.LocalPlayer.handon];
+			bool isHandOff = Main.LocalPlayer.handoff > 0 && self.texture == Main.accHandsOffTexture[Main.LocalPlayer.handoff];
+			if (!isHandOn && !isHandOff) return false;
+
+			var info = GraphicsGlobalItem.GetInfo(Main.LocalPlayer.HeldItem);
+			if (info.HasShaders)
+			{
+				for (int i = 0; i < info.ShaderEntities.Count; i++)
+				{
+					var entity = info.ShaderEntities[i];
+					if (entity == null) continue;
+					entity.Properties.SkipUpdatingDrawData = true;
+					entity.DrawData = self;
+					entity.DoDrawLayeredEntity(sb, _lightColor.Value, self.color, self.scale.LengthSquared(), self.rotation,
+						info.GlowmaskEntities[i], self.texture, self.texture, self.texture);
+				}
+
+				return true;
+			}
+
+			foreach (var entity in info.GlowmaskEntities.Where(x => x != null))
+			{
+				entity.Properties.SkipUpdatingDrawData = true;
+				entity.DrawData = self;
+				entity.DoDrawGlowmask(sb, _lightColor.Value, self.color, self.rotation, self.scale.LengthSquared(), entity.Entity.whoAmI, self.texture);
+			}
+
+			return info.HasGlowmasks;
+		}
+
+		private bool DrawWeaponOutFromCache(DrawData self, SpriteBatch sb)
 		{
 			var data = self;
 			var cachedDatas = _cache.Where(x => x.Item1.texture == data.texture).ToList();
@@ -68,11 +108,11 @@ namespace Loot.ModSupport
 						glowmaskEntity.DoDrawGlowmask(sb, _lightColor.Value, self.color, self.rotation, self.scale.LengthSquared(), glowmaskEntity.Entity.whoAmI);
 					}
 				}
+
+				return true;
 			}
-			else
-			{
-				orig(ref self, sb);
-			}
+
+			return false;
 		}
 
 		private Color? _lightColor;
