@@ -6,7 +6,7 @@ var searchData=
   ['detachdelegations',['DetachDelegations',['../class_loot_1_1_api_1_1_modifier_1_1_modifier_effect.html#a76d10820f97e5f47e6386cb031740483',1,'Loot::Api::Modifier::ModifierEffect']]],
   ['dodrawglowmask',['DoDrawGlowmask',['../class_loot_1_1_api_1_1_graphics_1_1_glowmask_1_1_glowmask_entity.html#a712587fc2dbfa58408d59af46541ec43',1,'Loot.Api.Graphics.Glowmask.GlowmaskEntity.DoDrawGlowmask()'],['../class_loot_1_1_api_1_1_graphics_1_1_shader_1_1_shader_entity.html#a222c782850d627a66f2a7fa15dbdb57e',1,'Loot.Api.Graphics.Shader.ShaderEntity.DoDrawGlowmask()']]],
   ['dodrawhitbox',['DoDrawHitbox',['../class_loot_1_1_api_1_1_graphics_1_1_glowmask_1_1_glowmask_entity.html#a21db72d77d2f065805b724bb74cdb2af',1,'Loot::Api::Graphics::Glowmask::GlowmaskEntity']]],
-  ['dodrawlayeredentity',['DoDrawLayeredEntity',['../class_loot_1_1_api_1_1_graphics_1_1_shader_1_1_shader_entity.html#a563de3ce969f6684100469c7d3a50c5a',1,'Loot::Api::Graphics::Shader::ShaderEntity']]],
+  ['dodrawlayeredentity',['DoDrawLayeredEntity',['../class_loot_1_1_api_1_1_graphics_1_1_shader_1_1_shader_entity.html#a1813ef7bcd6e6d7ea757355a83e5c326',1,'Loot::Api::Graphics::Shader::ShaderEntity']]],
   ['dodrawshader',['DoDrawShader',['../class_loot_1_1_api_1_1_graphics_1_1_shader_1_1_shader_entity.html#a95a1ff75e1206e484339cac8a6d0c292',1,'Loot::Api::Graphics::Shader::ShaderEntity']]],
   ['dodrawsubject',['DoDrawSubject',['../class_loot_1_1_api_1_1_graphics_1_1_shader_1_1_shader_entity.html#a1873d617dea22d1b06f79d095137351b',1,'Loot::Api::Graphics::Shader::ShaderEntity']]],
   ['drawarmorcolor',['DrawArmorColor',['../class_loot_1_1_api_1_1_modifier_1_1_modifier.html#a5e36392404a5a0b9e98540638b07b15c',1,'Loot::Api::Modifier::Modifier']]],
