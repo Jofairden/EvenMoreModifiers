@@ -125,7 +125,7 @@ namespace Loot.Api.Content
 
 		public T GetContent(uint type)
 		{
-			return type < IdCount ? (T)Content[type].Clone() : default(T);
+			return type < IdCount ? (T)Content[type].Clone() : default;
 		}
 
 		public ReadOnlyCollection<T> GetContent()

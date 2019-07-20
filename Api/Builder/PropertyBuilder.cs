@@ -1,5 +1,8 @@
 namespace Loot.Api.Builder
 {
+	/// <summary>
+	/// Defines an abstract implementation of <see cref="IPropertyBuilder{T}"/>
+	/// </summary>
 	public abstract class PropertyBuilder<T> : IPropertyBuilder<T> where T : class, new()
 	{
 		protected T Property = new T();

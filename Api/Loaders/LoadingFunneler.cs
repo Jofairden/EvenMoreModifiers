@@ -99,23 +99,24 @@ namespace Loot.Api.Loaders
 			//UnloadStaticRefs()
 		}
 
-		private static void UnloadStaticRefs()
-		{
-			// TODO causes trouble in unload?
-			// Attempt to unload our static variables
-			Stack<Type> typesToProcess = new Stack<Type>(Loot.Instance.Code.GetTypes());
-			while (typesToProcess.Count > 0)
-			{
-			    Type type = typesToProcess.Pop();
-			    foreach (FieldInfo info in type.GetFields(BindingFlags.Static | BindingFlags.Public | BindingFlags.NonPublic))
-			    {
-			        info.SetValue(null, info.FieldType.IsValueType ? Activator.CreateInstance(info.FieldType) : null);
-			    }
-			    foreach (Type nestedType in type.GetNestedTypes(BindingFlags.Static | BindingFlags.Public | BindingFlags.NonPublic))
-			    {
-			        typesToProcess.Push(nestedType);
-			    }
-			}
-		}
+		// TODO unused
+		//private static void UnloadStaticRefs()
+		//{
+		//	// TODO causes trouble in unload?
+		//	// Attempt to unload our static variables
+		//	Stack<Type> typesToProcess = new Stack<Type>(Loot.Instance.Code.GetTypes());
+		//	while (typesToProcess.Count > 0)
+		//	{
+		//	    Type type = typesToProcess.Pop();
+		//	    foreach (FieldInfo info in type.GetFields(BindingFlags.Static | BindingFlags.Public | BindingFlags.NonPublic))
+		//	    {
+		//	        info.SetValue(null, info.FieldType.IsValueType ? Activator.CreateInstance(info.FieldType) : null);
+		//	    }
+		//	    foreach (Type nestedType in type.GetNestedTypes(BindingFlags.Static | BindingFlags.Public | BindingFlags.NonPublic))
+		//	    {
+		//	        typesToProcess.Push(nestedType);
+		//	    }
+		//	}
+		//}
 	}
 }
