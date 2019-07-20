@@ -19,12 +19,11 @@ namespace Loot.Modifiers.WeaponModifiers
 				.WithMaxMagnitude(15f);
 		}
 
-		public override void GetWeaponDamage(Item item, Player player, ref int damage)
+		public override void ModifyWeaponDamage(Item item, Player player, ref float add, ref float mult, ref float flat)
 		{
-			base.GetWeaponDamage(item, player, ref damage);
-			// Formula ported from old mod
-			float mag = (Properties.RoundedPower * ((player.statLifeMax2 - player.statLife) / (float) player.statLifeMax2));
-			damage = (int) (damage * (1 + mag / 100));
+			base.ModifyWeaponDamage(item, player, ref add, ref mult, ref flat);
+			float mag = Properties.RoundedPower * ((player.statLifeMax2 - player.statLife) / (float)player.statLifeMax2);
+			add += 1 + mag / 100;
 		}
 	}
 }

@@ -79,10 +79,10 @@ namespace Loot.Modifiers.WeaponModifiers
 			return base.CanRoll(ctx) && ctx.Method != ModifierContextMethod.SetupStartInventory;
 		}
 
-		public override void GetWeaponDamage(Item item, Player player, ref int damage)
+		public override void ModifyWeaponDamage(Item item, Player player, ref float add, ref float mult, ref float flat)
 		{
-			base.GetWeaponDamage(item, player, ref damage);
-			damage = (int) Math.Ceiling(damage * (1 + Properties.RoundedPower / 100f));
+			base.ModifyWeaponDamage(item, player, ref add, ref mult, ref flat);
+			add += 1 + Properties.RoundedPower / 100f;
 		}
 	}
 }

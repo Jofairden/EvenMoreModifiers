@@ -60,12 +60,12 @@ namespace Loot.Modifiers.WeaponModifiers
 			tag.Add("duringDay", _duringDay);
 		}
 
-		public override void GetWeaponDamage(Item item, Player player, ref int damage)
+		public override void ModifyWeaponDamage(Item item, Player player, ref float add, ref float mult, ref float flat)
 		{
-			base.GetWeaponDamage(item, player, ref damage);
+			base.ModifyWeaponDamage(item, player, ref add, ref mult, ref flat);
 			if (_duringDay && Main.dayTime || !_duringDay && !Main.dayTime)
 			{
-				damage = (int) Math.Ceiling(damage * (1 + Properties.RoundedPower / 100));
+				add += 1 + Properties.RoundedPower / 100;
 			}
 		}
 	}

@@ -20,11 +20,11 @@ namespace Loot.Modifiers.WeaponModifiers
 				.WithRoundPrecision(1);
 		}
 
-		public override void GetWeaponDamage(Item item, Player player, ref int damage)
+		public override void ModifyWeaponDamage(Item item, Player player, ref float add, ref float mult, ref float flat)
 		{
-			base.GetWeaponDamage(item, player, ref damage);
+			base.ModifyWeaponDamage(item, player, ref add, ref mult, ref flat);
 			float magnitude = Properties.RoundedPower * player.velocity.Length() / 4;
-			damage = (int) (damage * (1 + magnitude / 100));
+			add += 1 + magnitude / 100;
 		}
 	}
 }

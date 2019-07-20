@@ -32,7 +32,7 @@ namespace Loot
 		internal GuiTabWindow GuiState;
 
 		internal static ModContentManager ModContentManager;
-		public static bool Loaded;
+		public static bool IsLoaded;
 
 		public override void Load()
 		{

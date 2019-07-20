@@ -282,18 +282,18 @@ namespace Loot.Api.Delegators
 			}
 		}
 
-		public override void GetWeaponDamage(Item item, Player player, ref int damage)
+		public override void ModifyWeaponDamage(Item item, Player player, ref float add, ref float mult, ref float flat)
 		{
 			if (GetActivatedModifierItem(item).ShouldBeIgnored(item, player))
 			{
 				return;
 			}
 
-			base.GetWeaponDamage(item, player, ref damage);
+			base.ModifyWeaponDamage(item, player, ref add, ref mult, ref flat);
 
 			foreach (Modifier.Modifier m in LootModItem.GetActivePool(item))
 			{
-				m.GetWeaponDamage(item, player, ref damage);
+				m.ModifyWeaponDamage(item, player, ref add, ref mult, ref flat);
 			}
 		}
 

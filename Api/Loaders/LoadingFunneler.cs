@@ -38,7 +38,7 @@ namespace Loot.Api.Loaders
 		internal static void Unload()
 		{
 			UnloadMod();
-			Loot.Loaded = false;
+			Loot.IsLoaded = false;
 		}
 
 		internal static void PostLoad()
@@ -47,7 +47,7 @@ namespace Loot.Api.Loaders
 			{
 				Loot.ModContentManager.Load();
 			}
-			Loot.Loaded = true;
+			Loot.IsLoaded = true;
 		}
 
 		// Load EMM for both Client and Server

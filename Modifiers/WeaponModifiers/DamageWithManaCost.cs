@@ -28,10 +28,10 @@ namespace Loot.Modifiers.WeaponModifiers
 			       && ctx.Item.mana == 0;
 		}
 
-		public override void GetWeaponDamage(Item item, Player player, ref int damage)
+		public override void ModifyWeaponDamage(Item item, Player player, ref float add, ref float mult, ref float flat)
 		{
-			base.GetWeaponDamage(item, player, ref damage);
-			damage = (int) Math.Ceiling(damage * (1 + Properties.RoundedPower / 100f));
+			base.ModifyWeaponDamage(item, player, ref add, ref mult, ref flat);
+			add += 1 + Properties.RoundedPower / 100f;
 		}
 
 		public override bool CanUseItem(Item item, Player player)
@@ -46,7 +46,7 @@ namespace Loot.Modifiers.WeaponModifiers
 		public override void Apply(Item item)
 		{
 			base.Apply(item);
-			_manaCost = Math.Max((int) ((float) item.useTime * (float) item.useTime / (float) GetMaxUseTime(item) / 10f), 1);
+			_manaCost = Math.Max((int) (item.useTime * (float) item.useTime / GetMaxUseTime(item) / 10f), 1);
 			item.mana += _manaCost;
 		}
 

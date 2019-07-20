@@ -86,5 +86,21 @@ namespace Loot.Api.Attributes
 				}
 			}
 		}
+
+		// TODO I forgot why I added this
+		//public bool IsMethodCompatibleWithDelegate<T>(MethodInfo method) where T : class
+		//{
+		//	Type delegateType = typeof(T);
+		//	MethodInfo delegateSignature = delegateType.GetMethod("Invoke");
+
+		//	bool parametersEqual = delegateSignature
+		//		.GetParameters()
+		//		.Select(x => x.ParameterType)
+		//		.SequenceEqual(method.GetParameters()
+		//			.Select(x => x.ParameterType));
+
+		//	return delegateSignature.ReturnType == method.ReturnType &&
+		//	       parametersEqual;
+		//}
 	}
 }
