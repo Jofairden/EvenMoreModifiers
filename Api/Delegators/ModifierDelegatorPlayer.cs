@@ -343,6 +343,13 @@ namespace Loot.Api.Delegators
 			ModifyHitByNPCEvent?.Invoke(npc, ref damage, ref crit);
 		}
 
+		public delegate void ModifyWeaponDamageEventRaiser(Item item, ref float add, ref float mult, ref float flat);
+		public event ModifyWeaponDamageEventRaiser ModifyWeaponDamageEvent;
+		public override void ModifyWeaponDamage(Item item, ref float add, ref float mult, ref float flat)
+		{
+			ModifyWeaponDamageEvent?.Invoke(item, ref add, ref mult, ref flat);
+		}
+
 		public event Action<NPC, int, bool> OnHitByNPCEvent;
 		public override void OnHitByNPC(NPC npc, int damage, bool crit)
 		{
@@ -483,13 +490,6 @@ namespace Loot.Api.Delegators
 		public override void GetHealMana(Item item, bool quickHeal, ref int healValue)
 		{
 			GetHealManaEvent?.Invoke(item, quickHeal, ref healValue);
-		}
-
-		public delegate void GetWeaponDamageEventRaiser(Item item, ref int damage);
-		public event GetWeaponDamageEventRaiser GetWeaponDamageEvent;
-		public override void GetWeaponDamage(Item item, ref int damage)
-		{
-			GetWeaponDamageEvent?.Invoke(item, ref damage);
 		}
 
 		public delegate void GetWeaponKnockbackEventRaiser(Item item, ref float knockback);
