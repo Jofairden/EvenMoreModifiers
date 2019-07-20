@@ -12,6 +12,11 @@ namespace Loot.Content
 	/// </summary>
 	public sealed class ModifierEffectContent : LoadableContentBase<ModifierEffect>
 	{
+		internal override void Load()
+		{
+			AddContent(typeof(NullModifierEffect), Loot.Instance);
+		}
+
 		internal override bool CheckContentPiece(ModifierEffect contentPiece)
 		{
 			//verbose GetCustomAttributes call

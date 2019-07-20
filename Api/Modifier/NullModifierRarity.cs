@@ -1,20 +1,15 @@
-using Loot.Api.Modifier;
+using Loot.Api.Attributes;
 using Microsoft.Xna.Framework;
 
-namespace Loot.Rarities
+namespace Loot.Api.Modifier
 {
 	/// <summary>
 	/// Defines a "Null" rarity which represents no rarity safely
 	/// Cannot be rolled normally
 	/// </summary>
+	[DoNotLoad]
 	public sealed class NullModifierRarity : ModifierRarity
 	{
-		public NullModifierRarity()
-		{
-			Mod = Loot.Instance;
-			Type = 0;
-		}
-
 		public override Color Color => Color.White;
 	}
 }

@@ -1,5 +1,5 @@
 using Loot.Api.ModContent;
-using Loot.Effects;
+using Loot.Api.Modifier;
 using Loot.Hacks;
 using Loot.Modifiers;
 using Loot.ModSupport;
@@ -17,18 +17,16 @@ namespace Loot.Api.Loaders
 	/// </summary>
 	public static class LoadingFunneler
 	{
-		public static void AddMod(Mod mod)
-		{
-			RegistryLoader.RegisterMod(mod);
-			RegistryLoader.AddContent(mod);
-		}
-
 		internal static void Load()
 		{
 			LoadMod();
 			if (!Main.dedServ)
 			{
 				LoadModForClient();
+			}
+			else
+			{
+				ModSupportTunneler.AddServerSupport();
 			}
 		}
 
@@ -52,22 +50,12 @@ namespace Loot.Api.Loaders
 		{
 			ModSupportTunneler.Init();
 
-			ContentLoader.Initialize();
-			ContentLoader.Load();
 			RegistryLoader.Initialize();
 			RegistryLoader.Load();
+			ContentLoader.Initialize();
+			ContentLoader.Load();
 
-			RegistryLoader.RegisterMod(Loot.Instance);
-			ContentLoader.Modifier.AddContent(typeof(NullModifier), Loot.Instance);
-			ContentLoader.ModifierPool.AddContent(typeof(NullModifierPool), Loot.Instance);
-			ContentLoader.ModifierRarity.AddContent(typeof(NullModifierRarity), Loot.Instance);
-			ContentLoader.ModifierEffect.AddContent(typeof(NullModifierEffect), Loot.Instance);
 			RegistryLoader.AddContent(Loot.Instance);
-
-			if (Main.dedServ)
-			{
-				ModSupportTunneler.AddServerSupport();
-			}
 		}
 
 		// Load EMM for Client only (this doesn't need to be loaded for server)

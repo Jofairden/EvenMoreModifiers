@@ -14,6 +14,11 @@ namespace Loot.Api.Loaders
 	/// </summary>
 	public static class AssetLoader
 	{
+		/// <summary>
+		/// Registers the assets folder for the given mod
+		/// </summary>
+		/// <param name="folder">The folder to register</param>
+		/// <param name="clearOwnTextures">Whether or not the original textures in the texture dictionary are replaced</param>
 		public static void RegisterAssets(Mod mod, string folder, bool clearOwnTextures = true)
 		{
 			RegistryLoader.CheckModLoading(mod, "RegisterAssets");

@@ -2,8 +2,8 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
+using Loot.Api.Attributes;
 using Loot.Api.Modifier;
-using Loot.Effects;
 using Loot.Modifiers;
 using Loot.Pools;
 using Loot.Rarities;
@@ -27,6 +27,7 @@ namespace Loot.Api.Loaders
 
 		internal static void Load()
 		{
+			Mods.Add(Loot.Instance.Name, Loot.Instance.Code);
 		}
 
 		internal static void Unload()
@@ -56,6 +57,15 @@ namespace Loot.Api.Loaders
 		}
 
 		/// <summary>
+		/// This method simply calls <see cref="RegisterMod"/> and then <see cref="AddContent"/>
+		/// </summary>
+		public static void AddMod(Mod mod)
+		{
+			RegisterMod(mod);
+			AddContent(mod);
+		}
+
+		/// <summary>
 		/// Registers specified mod, enabling autoloading for that mod
 		/// </summary>
 		public static void RegisterMod(Mod mod)
@@ -72,6 +82,11 @@ namespace Loot.Api.Loaders
 			ContentLoader.RegisterMod(mod);
 		}
 
+		/// <summary>
+		/// Adds content for the specified mod.
+		/// This will add all the <see cref="Modifier"/>, <see cref="ModifierRarity"/>, <see cref="ModifierPool"/> and <see cref="ModifierEffect"/> classes
+		/// </summary>
+		/// <param name="mod"></param>
 		public static void AddContent(Mod mod)
 		{
 			CheckModLoading(mod, "SetupContent");
@@ -81,13 +96,13 @@ namespace Loot.Api.Loaders
 				.Value
 				.GetTypes()
 				.OrderBy(x => x.FullName, StringComparer.InvariantCulture)
-				.Where(t => t.IsClass && !t.IsAbstract)
+				.Where(t => t.IsClass && !t.IsAbstract && t.GetCustomAttribute<DoNotLoadAttribute>() == null)
 				.ToList();
 
-			var rarities = ordered.Where(x => x.IsSubclassOf(typeof(ModifierRarity)) && x != typeof(NullModifierRarity));
-			var modifiers = ordered.Where(x => x.IsSubclassOf(typeof(Modifier.Modifier)) && x != typeof(NullModifier));
-			var pools = ordered.Where(x => x.IsSubclassOf(typeof(ModifierPool)) && x != typeof(NullModifierPool));
-			var effects = ordered.Where(x => x.IsSubclassOf(typeof(ModifierEffect)) && x != typeof(NullModifierEffect));
+			var rarities = ordered.Where(x => x.IsSubclassOf(typeof(ModifierRarity)));
+			var modifiers = ordered.Where(x => x.IsSubclassOf(typeof(Modifier.Modifier)));
+			var pools = ordered.Where(x => x.IsSubclassOf(typeof(ModifierPool)));
+			var effects = ordered.Where(x => x.IsSubclassOf(typeof(ModifierEffect)));
 
 			// Kinda meh, but no need to recheck here..
 			ContentLoader.SkipModChecks(true);

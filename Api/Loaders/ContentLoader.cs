@@ -40,6 +40,7 @@ namespace Loot.Api.Loaders
 
 		internal static void Load()
 		{
+			RegisterMod(Loot.Instance);
 			ModifierRarity._Load();
 			Modifier._Load();
 			ModifierPool._Load();

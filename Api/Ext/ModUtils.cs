@@ -2,7 +2,6 @@ using System;
 using System.Linq;
 using Loot.Api.Loaders;
 using Loot.Api.Modifier;
-using Loot.Effects;
 using Loot.Modifiers;
 using Loot.Pools;
 using Loot.Rarities;

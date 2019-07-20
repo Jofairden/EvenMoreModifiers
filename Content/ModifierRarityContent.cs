@@ -8,5 +8,9 @@ namespace Loot.Content
 	/// </summary>
 	public sealed class ModifierRarityContent : LoadableContentBase<ModifierRarity>
 	{
+		internal override void Load()
+		{
+			AddContent(typeof(NullModifierRarity), Loot.Instance);
+		}
 	}
 }

@@ -10,6 +10,11 @@ namespace Loot.Content
 	/// </summary>
 	public sealed class ModifierPoolContent : LoadableContentBase<ModifierPool>
 	{
+		internal override void Load()
+		{
+			AddContent(typeof(NullModifierPool), Loot.Instance);
+		}
+
 		internal override bool CheckContentPiece(ModifierPool contentPiece)
 		{
 			contentPiece.CacheAttributes();

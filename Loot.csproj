@@ -43,6 +43,7 @@
     <Reference Include="Microsoft.CSharp" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Api\Attributes\DoNotLoadAttribute.cs" />
     <Compile Include="Api\Builder\IPropertyBuilder.cs" />
     <Compile Include="Api\Builder\PropertyBuilder.cs" />
     <Compile Include="Api\Graphics\Glowmask\GlowmaskGraphicsProperties.cs" />
@@ -102,9 +103,9 @@
     <Compile Include="Api\Modifier\ModifierRarity.cs" />
     <Compile Include="Api\Modifier\ModifierTooltipBuilder.cs" />
     <Compile Include="Api\Modifier\ModifierTooltipLine.cs" />
-    <Compile Include="Effects\NullModifierEffect.cs" />
-    <Compile Include="Rarities\NullModifierRarity.cs" />
-    <Compile Include="Modifiers\NullModifier.cs" />
+    <Compile Include="Api\Modifier\NullModifierEffect.cs" />
+    <Compile Include="Api\Modifier\NullModifierRarity.cs" />
+    <Compile Include="Api\Modifier\NullModifier.cs" />
     <Compile Include="Api\Strategy\IRollingStrategy.cs" />
     <Compile Include="Api\Strategy\RollingStrategyContext.cs" />
     <Compile Include="LootModItem.cs" />
@@ -172,7 +173,7 @@
     <Compile Include="Modifiers\WeaponModifiers\VelocityPlus.cs" />
     <Compile Include="Pools\AccessoryModifierPool.cs" />
     <Compile Include="Pools\AllModifiersPool.cs" />
-    <Compile Include="Pools\NullModifierPool.cs" />
+    <Compile Include="Api\Modifier\NullModifierPool.cs" />
     <Compile Include="Rarities\CommonRarity.cs" />
     <Compile Include="Rarities\EpicRarity.cs" />
     <Compile Include="Rarities\LegendaryRarity.cs" />

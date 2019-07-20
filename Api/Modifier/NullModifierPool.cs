@@ -1,11 +1,12 @@
-using Loot.Api.Modifier;
+using Loot.Api.Attributes;
 
-namespace Loot.Pools
+namespace Loot.Api.Modifier
 {
 	/// <summary>
 	/// Defines a "Null" modifier which represents a pool with no modifiers
 	/// Cannot be rolled normally
 	/// </summary>
+	[DoNotLoad]
 	public sealed class NullModifierPool : ModifierPool
 	{
 		public override bool CanRoll(ModifierContext ctx) => false;
@@ -14,8 +15,6 @@ namespace Loot.Pools
 
 		public NullModifierPool()
 		{
-			Mod = Loot.Instance;
-			Type = 0;
 			ActiveModifiers = new Modifier[0];
 		}
 	}

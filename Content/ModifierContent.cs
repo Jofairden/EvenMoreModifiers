@@ -8,5 +8,9 @@ namespace Loot.Content
 	/// </summary>
 	public sealed class ModifierContent : LoadableContentBase<Modifier>
 	{
+		internal override void Load()
+		{
+			AddContent(typeof(NullModifier), Loot.Instance);
+		}
 	}
 }
