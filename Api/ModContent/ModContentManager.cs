@@ -5,6 +5,9 @@ using Terraria.ModLoader;
 
 namespace Loot.Api.ModContent
 {
+	/// <summary>
+	/// This class is responsible for managing instances of <see cref="TextureModContent"/> for registered mods.
+	/// </summary>
 	public class ModContentManager
 	{
 		private IDictionary<string, TextureModContent> _contents;
@@ -15,7 +18,6 @@ namespace Loot.Api.ModContent
 
 		public TextureModContent GetContent(Type type)
 			=> _modContents.FirstOrDefault(x => x.GetType() == type);
-
 
 		public TextureModContent GetContent(string key)
 			=> _contents.TryGetValue(key, out var modContent) ? modContent : null;

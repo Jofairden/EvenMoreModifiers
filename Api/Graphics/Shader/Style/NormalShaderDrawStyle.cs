@@ -1,8 +1,10 @@
 using Microsoft.Xna.Framework.Graphics;
-using Terraria.DataStructures;
 
 namespace Loot.Api.Graphics.Shader.Style
 {
+	/// <summary>
+	/// Defines a normal shader draw style
+	/// </summary>
 	public class NormalShaderDrawStyle : ShaderDrawStyle
 	{
 		public NormalShaderDrawStyle(ShaderDrawStyleProperties properties = null) : base(properties)

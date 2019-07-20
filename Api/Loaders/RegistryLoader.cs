@@ -12,9 +12,8 @@ using Terraria.ModLoader;
 namespace Loot.Api.Loaders
 {
 	/// <summary>
-	/// The MainLoader is responsible for loading mods into EMM
-	/// Mods can be registered and triggered to have their content
-	/// added via this class
+	/// This class is responsible for loading mods into Even More Modifiers
+	/// Mods can be registered and triggered to have their content added via this class
 	/// </summary>
 	public static class RegistryLoader
 	{

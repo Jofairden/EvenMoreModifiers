@@ -4,6 +4,9 @@ using Microsoft.Xna.Framework.Graphics;
 
 namespace Loot.Api.ModContent
 {
+	/// <summary>
+	/// An abstract class that contains a mapping of strings to texture instances
+	/// </summary>
 	public abstract class TextureModContent
 	{
 		protected IDictionary<string, Texture2D> _textures;

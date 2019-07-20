@@ -1,6 +1,3 @@
-using System;
-using System.Collections.Generic;
-using System.Reflection;
 using Loot.Api.ModContent;
 using Loot.Effects;
 using Loot.Hacks;

@@ -11,7 +11,7 @@ using Terraria.ModLoader;
 namespace Loot.Api.Ext
 {
 	/// <summary>
-	/// Defines a set of utility methods for <see cref="Mod"/>
+	/// Defines a set of utility methods for Mod class
 	/// </summary>
 	public static class ModUtils
 	{

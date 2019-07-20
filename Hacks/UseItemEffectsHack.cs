@@ -3,7 +3,6 @@ using Loot.Api.Graphics;
 using Microsoft.Xna.Framework.Graphics;
 using Terraria;
 using Terraria.DataStructures;
-using Terraria.ModLoader;
 
 namespace Loot.Hacks
 {

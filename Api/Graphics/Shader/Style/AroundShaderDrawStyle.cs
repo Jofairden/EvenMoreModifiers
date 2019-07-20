@@ -4,6 +4,9 @@ using Terraria;
 
 namespace Loot.Api.Graphics.Shader.Style
 {
+	/// <summary>
+	/// Defines a drawing style that will draw a shader around the subject
+	/// </summary>
 	public sealed class AroundShaderDrawStyle : NormalShaderDrawStyle
 	{
 		public enum OffsetStyle

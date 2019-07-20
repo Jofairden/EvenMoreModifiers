@@ -1,4 +1,3 @@
-using System;
 using Loot.Api.Modifier;
 using Loot.Modifiers.Base;
 using Terraria;

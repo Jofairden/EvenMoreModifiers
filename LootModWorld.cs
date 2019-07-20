@@ -11,6 +11,9 @@ using Terraria.World.Generation;
 
 namespace Loot
 {
+	/// <summary>
+	/// This class is responsible for generating modifiers when a world is being created.
+	/// </summary>
 	public class LootModWorld : ModWorld
 	{
 		// The world has not initialized yet, when it is first updated

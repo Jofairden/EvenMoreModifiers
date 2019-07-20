@@ -4,7 +4,6 @@ using System.Linq;
 using System.Reflection;
 using Loot.Api.Delegators;
 using Loot.Api.Modifier;
-using Terraria;
 
 namespace Loot.Api.Attributes
 {

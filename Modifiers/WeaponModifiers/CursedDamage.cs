@@ -1,4 +1,3 @@
-using System;
 using System.Linq;
 using Loot.Api.Attributes;
 using Loot.Api.Delegators;

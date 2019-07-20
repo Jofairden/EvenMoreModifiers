@@ -4,6 +4,9 @@ using Loot.Api.Graphics.Shader.Style;
 
 namespace Loot.Api.Graphics.Shader
 {
+	/// <summary>
+	/// Defines the <see cref="GraphicsProperties"/> for <see cref="ShaderEntity"/>s which derives from <see cref="GlowmaskGraphicsProperties"/>
+	/// </summary>
 	public class ShaderGraphicsProperties : GlowmaskGraphicsProperties
 	{
 		public new static ShaderGraphicsPropertiesBuilder Builder => new ShaderGraphicsPropertiesBuilder();
@@ -13,6 +16,9 @@ namespace Loot.Api.Graphics.Shader
 		public bool SkipDrawingSubject { get; set; }
 		public bool SkipDrawingShader { get; set; }
 
+		/// <summary>
+		/// A builder for <see cref="ShaderGraphicsProperties"/>
+		/// </summary>
 		public class ShaderGraphicsPropertiesBuilder : PropertyBuilder<ShaderGraphicsProperties>
 		{
 			protected override ShaderGraphicsProperties DefaultProperty

@@ -1,9 +1,11 @@
 using Loot.Api.Builder;
 using Microsoft.Xna.Framework.Graphics;
-using Terraria.DataStructures;
 
 namespace Loot.Api.Graphics.Shader.Style
 {
+	/// <summary>
+	/// Defines a shader drawstyle used by <see cref="ShaderEntity"/>
+	/// </summary>
 	public abstract class ShaderDrawStyle
 	{
 		public ShaderDrawStyleProperties Properties;

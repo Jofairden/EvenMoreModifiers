@@ -4,6 +4,9 @@ using Terraria.ModLoader;
 
 namespace Loot.Sounds
 {
+	/// <summary>
+	/// An internal helper class to play custom sounds
+	/// </summary>
 	internal static class SoundHelper
 	{
 		internal enum SoundType

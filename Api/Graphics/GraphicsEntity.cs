@@ -7,6 +7,10 @@ using Terraria.ModLoader;
 
 namespace Loot.Api.Graphics
 {
+	/// <summary>
+	/// Defines the base abstract of a GraphicsEntity
+	/// </summary>
+	/// <typeparam name="T"></typeparam>
 	public abstract class GraphicsEntity<T> where T : GraphicsProperties
 	{
 		public DrawData DrawData;

@@ -9,6 +9,9 @@ using Terraria.ModLoader;
 
 namespace Loot.Api.ModContent
 {
+	/// <summary>
+	/// This class stores glowmask and shader textures that can be looked up during drawing
+	/// </summary>
 	public class GraphicsModContent : TextureModContent
 	{
 		private IDictionary<string, Texture2D> _glowmaskTextures;

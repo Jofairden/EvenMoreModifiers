@@ -3,6 +3,9 @@ using Loot.RollingStrategies;
 
 namespace Loot.Api.Ext
 {
+	/// <summary>
+	/// Defines a set of rolling utilities
+	/// </summary>
 	public static class RollingUtils
 	{
 		public static class Properties

@@ -1,6 +1,5 @@
 using Loot.Api.Ext;
 using Loot.Api.Graphics.Glowmask;
-using Loot.Api.Graphics.Shader.Style;
 using Loot.Api.ModContent;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;

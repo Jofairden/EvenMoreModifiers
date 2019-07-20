@@ -1,7 +1,6 @@
 using System.Collections.Generic;
 using Loot.Api.Ext;
 using Loot.Api.Strategy;
-using Loot.RollingStrategies;
 using Terraria;
 
 namespace Loot.Api.Modifier

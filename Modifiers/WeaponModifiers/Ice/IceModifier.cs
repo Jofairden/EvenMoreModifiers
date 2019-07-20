@@ -1,4 +1,3 @@
-using Loot.Api.Graphics;
 using Loot.Api.Graphics.Shader;
 using Loot.Api.Graphics.Shader.Style;
 using Loot.Modifiers.Base;

@@ -2,7 +2,6 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using Loot.Api.Content;
-using Loot.Api.Graphics;
 using Loot.Api.Graphics.Glowmask;
 using Loot.Api.Graphics.Shader;
 using Loot.Api.Loaders;

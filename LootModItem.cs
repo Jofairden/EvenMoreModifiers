@@ -11,7 +11,6 @@ using Loot.Api.Loaders;
 using Loot.Api.Modifier;
 using Loot.Api.Strategy;
 using Loot.Hacks;
-using Loot.RollingStrategies;
 using Terraria;
 using Terraria.ModLoader;
 using Terraria.ModLoader.IO;

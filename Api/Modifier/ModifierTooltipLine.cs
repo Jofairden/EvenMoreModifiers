@@ -85,6 +85,9 @@ namespace Loot.Api.Modifier
 		}
 	}
 
+	/// <summary>
+	/// A <see cref="ModifierTooltipLine"/> with a Lime text color.
+	/// </summary>
 	public class PositiveTooltipLine : ModifierTooltipLine
 	{
 		public PositiveTooltipLine(string text = null)
@@ -94,6 +97,9 @@ namespace Loot.Api.Modifier
 		}
 	}
 
+	/// <summary>
+	/// A <see cref="ModifierTooltipLine"/> with a Red text color.
+	/// </summary>
 	public class NegativeTooltipLine : ModifierTooltipLine
 	{
 		public NegativeTooltipLine(string text = null)

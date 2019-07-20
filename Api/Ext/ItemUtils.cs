@@ -7,7 +7,7 @@ using Terraria.ModLoader;
 namespace Loot.Api.Ext
 {
 	/// <summary>
-	/// Defines a set of utility methods for <see cref="Item"/>
+	/// Defines a set of utility methods for Item class
 	/// </summary>
 	public static class ItemUtils
 	{

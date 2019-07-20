@@ -4,6 +4,9 @@ using Terraria.UI;
 
 namespace Loot.Api.Ext
 {
+	/// <summary>
+	/// Defines a set of utility methods for graphic related operations (internal)
+	/// </summary>
 	internal static class GuiUtils
 	{
 		internal const int SPACING = 25;

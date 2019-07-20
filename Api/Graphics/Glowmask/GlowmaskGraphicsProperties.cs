@@ -2,6 +2,9 @@ using Loot.Api.Builder;
 
 namespace Loot.Api.Graphics.Glowmask
 {
+	/// <summary>
+	/// Defines the <see cref="GraphicsProperties"/> for <see cref="GlowmaskEntity"/>s which derives from <see cref="GraphicsProperties"/>
+	/// </summary>
 	public class GlowmaskGraphicsProperties : GraphicsProperties
 	{
 		public new static GlowmaskGraphicsPropertiesBuilder Builder => new GlowmaskGraphicsPropertiesBuilder();

@@ -9,6 +9,9 @@ using Terraria.ModLoader;
 namespace Loot.Api.Delegators
 {
 	// TODO rework, make it like other delegators
+	/// <summary>
+	/// Provides delegation for projectiles
+	/// </summary>
 	public class ModifierDelegatorProjectile : GlobalProjectile
 	{
 		public override bool InstancePerEntity => true;
