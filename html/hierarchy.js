@@ -14,6 +14,7 @@ var hierarchy =
     [ "GlobalItem", "class_global_item.html", [
       [ "Loot.Api.Graphics.GraphicsGlobalItem", "class_loot_1_1_api_1_1_graphics_1_1_graphics_global_item.html", null ],
       [ "Loot.Api.Modifier.Modifier", "class_loot_1_1_api_1_1_modifier_1_1_modifier.html", [
+        [ "Loot.Api.Modifier.NullModifier", "class_loot_1_1_api_1_1_modifier_1_1_null_modifier.html", null ],
         [ "Loot.Modifiers.Base.AccessoryModifier", "class_loot_1_1_modifiers_1_1_base_1_1_accessory_modifier.html", null ],
         [ "Loot.Modifiers.Base.ArmorModifier", "class_loot_1_1_modifiers_1_1_base_1_1_armor_modifier.html", null ],
         [ "Loot.Modifiers.Base.EquipModifier", "class_loot_1_1_modifiers_1_1_base_1_1_equip_modifier.html", [
@@ -64,8 +65,7 @@ var hierarchy =
           [ "Loot.Modifiers.WeaponModifiers.SpeedPlus", "class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_speed_plus.html", null ],
           [ "Loot.Modifiers.WeaponModifiers.VelocityDamage", "class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_velocity_damage.html", null ],
           [ "Loot.Modifiers.WeaponModifiers.VelocityPlus", "class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_velocity_plus.html", null ]
-        ] ],
-        [ "Loot.Modifiers.NullModifier", "class_loot_1_1_modifiers_1_1_null_modifier.html", null ]
+        ] ]
       ] ],
       [ "Loot.Hacks.CheatedItemHackGlobalItem", "class_loot_1_1_hacks_1_1_cheated_item_hack_global_item.html", null ],
       [ "Loot.Hacks.TinkererArmorHackGlobalItem", "class_loot_1_1_hacks_1_1_tinkerer_armor_hack_global_item.html", null ],
@@ -94,7 +94,7 @@ var hierarchy =
     [ "ICloneable", "class_i_cloneable.html", [
       [ "Loot.Api.Modifier.Modifier", "class_loot_1_1_api_1_1_modifier_1_1_modifier.html", null ],
       [ "Loot.Api.Modifier.ModifierEffect", "class_loot_1_1_api_1_1_modifier_1_1_modifier_effect.html", [
-        [ "Loot.Effects.NullModifierEffect", "class_loot_1_1_effects_1_1_null_modifier_effect.html", null ],
+        [ "Loot.Api.Modifier.NullModifierEffect", "class_loot_1_1_api_1_1_modifier_1_1_null_modifier_effect.html", null ],
         [ "Loot.Modifiers.Base.WeaponDebuffEffect", "class_loot_1_1_modifiers_1_1_base_1_1_weapon_debuff_effect.html", null ],
         [ "Loot.Modifiers.EquipModifiers.Defensive.DodgeEffect", "class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_defensive_1_1_dodge_effect.html", null ],
         [ "Loot.Modifiers.EquipModifiers.Defensive.ImmunityEffect", "class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_defensive_1_1_immunity_effect.html", null ],
@@ -109,14 +109,14 @@ var hierarchy =
         [ "Loot.Modifiers.WeaponModifiers.CursedEffect", "class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_cursed_effect.html", null ]
       ] ],
       [ "Loot.Api.Modifier.ModifierPool", "class_loot_1_1_api_1_1_modifier_1_1_modifier_pool.html", [
-        [ "Loot.Pools.AllModifiersPool", "class_loot_1_1_pools_1_1_all_modifiers_pool.html", null ],
-        [ "Loot.Pools.NullModifierPool", "class_loot_1_1_pools_1_1_null_modifier_pool.html", null ]
+        [ "Loot.Api.Modifier.NullModifierPool", "class_loot_1_1_api_1_1_modifier_1_1_null_modifier_pool.html", null ],
+        [ "Loot.Pools.AllModifiersPool", "class_loot_1_1_pools_1_1_all_modifiers_pool.html", null ]
       ] ],
       [ "Loot.Api.Modifier.ModifierRarity", "class_loot_1_1_api_1_1_modifier_1_1_modifier_rarity.html", [
+        [ "Loot.Api.Modifier.NullModifierRarity", "class_loot_1_1_api_1_1_modifier_1_1_null_modifier_rarity.html", null ],
         [ "Loot.Rarities.CommonRarity", "class_loot_1_1_rarities_1_1_common_rarity.html", null ],
         [ "Loot.Rarities.EpicRarity", "class_loot_1_1_rarities_1_1_epic_rarity.html", null ],
         [ "Loot.Rarities.LegendaryRarity", "class_loot_1_1_rarities_1_1_legendary_rarity.html", null ],
-        [ "Loot.Rarities.NullModifierRarity", "class_loot_1_1_rarities_1_1_null_modifier_rarity.html", null ],
         [ "Loot.Rarities.RareRarity", "class_loot_1_1_rarities_1_1_rare_rarity.html", null ],
         [ "Loot.Rarities.TranscendentRarity", "class_loot_1_1_rarities_1_1_transcendent_rarity.html", null ]
       ] ]

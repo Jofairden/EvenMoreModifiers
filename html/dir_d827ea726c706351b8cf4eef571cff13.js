@@ -26,5 +26,17 @@ var dir_d827ea726c706351b8cf4eef571cff13 =
       [ "ModifierTooltipLine", "class_loot_1_1_api_1_1_modifier_1_1_modifier_tooltip_line.html", "class_loot_1_1_api_1_1_modifier_1_1_modifier_tooltip_line" ],
       [ "NegativeTooltipLine", "class_loot_1_1_api_1_1_modifier_1_1_negative_tooltip_line.html", "class_loot_1_1_api_1_1_modifier_1_1_negative_tooltip_line" ],
       [ "PositiveTooltipLine", "class_loot_1_1_api_1_1_modifier_1_1_positive_tooltip_line.html", "class_loot_1_1_api_1_1_modifier_1_1_positive_tooltip_line" ]
+    ] ],
+    [ "NullModifier.cs", "_null_modifier_8cs.html", [
+      [ "NullModifier", "class_loot_1_1_api_1_1_modifier_1_1_null_modifier.html", "class_loot_1_1_api_1_1_modifier_1_1_null_modifier" ]
+    ] ],
+    [ "NullModifierEffect.cs", "_null_modifier_effect_8cs.html", [
+      [ "NullModifierEffect", "class_loot_1_1_api_1_1_modifier_1_1_null_modifier_effect.html", null ]
+    ] ],
+    [ "NullModifierPool.cs", "_null_modifier_pool_8cs.html", [
+      [ "NullModifierPool", "class_loot_1_1_api_1_1_modifier_1_1_null_modifier_pool.html", "class_loot_1_1_api_1_1_modifier_1_1_null_modifier_pool" ]
+    ] ],
+    [ "NullModifierRarity.cs", "_null_modifier_rarity_8cs.html", [
+      [ "NullModifierRarity", "class_loot_1_1_api_1_1_modifier_1_1_null_modifier_rarity.html", "class_loot_1_1_api_1_1_modifier_1_1_null_modifier_rarity" ]
     ] ]
 ];

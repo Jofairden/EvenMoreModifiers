@@ -4,7 +4,6 @@ var files =
     [ "Caching", "dir_8d7053df892edd93edb17b81284ede0e.html", "dir_8d7053df892edd93edb17b81284ede0e" ],
     [ "Content", "dir_5d84ce16a2f51073794faf1f09c69187.html", "dir_5d84ce16a2f51073794faf1f09c69187" ],
     [ "Cubes", "dir_1192d0229b77cc2a588c4a570e282588.html", "dir_1192d0229b77cc2a588c4a570e282588" ],
-    [ "Effects", "dir_f2b9c6d4dbfde26a38b315e00a2efac6.html", "dir_f2b9c6d4dbfde26a38b315e00a2efac6" ],
     [ "Hacks", "dir_1b4a44bb6da588583fa98f3019998a5f.html", "dir_1b4a44bb6da588583fa98f3019998a5f" ],
     [ "LootTests", "dir_7da2562c6888a2bb9ae6fd4aa28aaf28.html", "dir_7da2562c6888a2bb9ae6fd4aa28aaf28" ],
     [ "Modifiers", "dir_d9effce6021c52ad5f41f041cf5402f7.html", "dir_d9effce6021c52ad5f41f041cf5402f7" ],

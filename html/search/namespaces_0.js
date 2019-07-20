@@ -17,7 +17,6 @@ var searchData=
   ['custom',['Custom',['../namespace_loot_1_1_sounds_1_1_custom.html',1,'Loot::Sounds']]],
   ['defensive',['Defensive',['../namespace_loot_1_1_modifiers_1_1_equip_modifiers_1_1_defensive.html',1,'Loot::Modifiers::EquipModifiers']]],
   ['delegators',['Delegators',['../namespace_loot_1_1_api_1_1_delegators.html',1,'Loot::Api']]],
-  ['effects',['Effects',['../namespace_loot_1_1_effects.html',1,'Loot']]],
   ['equipmodifiers',['EquipModifiers',['../namespace_loot_1_1_modifiers_1_1_equip_modifiers.html',1,'Loot::Modifiers']]],
   ['essencecrafting',['EssenceCrafting',['../namespace_loot_1_1_u_i_1_1_tabs_1_1_essence_crafting.html',1,'Loot::UI::Tabs']]],
   ['ext',['Ext',['../namespace_loot_1_1_api_1_1_ext.html',1,'Loot::Api']]],

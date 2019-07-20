@@ -8,6 +8,7 @@ var dir_d8c020c4a396ea8a8747dde522bf0bcb =
       [ "DelegationPrioritizationAttribute", "class_loot_1_1_api_1_1_attributes_1_1_delegation_prioritization_attribute.html", "class_loot_1_1_api_1_1_attributes_1_1_delegation_prioritization_attribute" ]
     ] ],
     [ "DelegationTarget.cs", "_delegation_target_8cs.html", "_delegation_target_8cs" ],
+    [ "DoNotLoadAttribute.cs", "_do_not_load_attribute_8cs.html", null ],
     [ "PopulatePoolFromAttribute.cs", "_populate_pool_from_attribute_8cs.html", [
       [ "PopulatePoolFromAttribute", "class_loot_1_1_api_1_1_attributes_1_1_populate_pool_from_attribute.html", "class_loot_1_1_api_1_1_attributes_1_1_populate_pool_from_attribute" ]
     ] ],

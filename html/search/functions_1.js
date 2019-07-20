@@ -4,7 +4,7 @@ var searchData=
   ['addcontent',['AddContent',['../class_loot_1_1_api_1_1_content_1_1_loadable_content_base.html#a47ab7e0a596c9a05da4e9421a6a28e0e',1,'Loot.Api.Content.LoadableContentBase.AddContent()'],['../class_loot_1_1_api_1_1_loaders_1_1_registry_loader.html#a9cee663338cc830452df4c4bef614209',1,'Loot.Api.Loaders.RegistryLoader.AddContent()'],['../class_loot_1_1_api_1_1_mod_content_1_1_mod_content_manager.html#ae5ef267a4e66d49f60c30421ac953f26',1,'Loot.Api.ModContent.ModContentManager.AddContent()']]],
   ['adddetachitem',['AddDetachItem',['../class_loot_1_1_caching_1_1_modifier_cache_player.html#aceb2cf61924cc7a73c58c8a3c317b48e',1,'Loot::Caching::ModifierCachePlayer']]],
   ['addglowmasktexture',['AddGlowmaskTexture',['../class_loot_1_1_api_1_1_mod_content_1_1_graphics_mod_content.html#aacefb8ded314922a62b51fea5a810594',1,'Loot::Api::ModContent::GraphicsModContent']]],
-  ['addmod',['AddMod',['../class_loot_1_1_api_1_1_loaders_1_1_loading_funneler.html#ac46e59f8438e9a99782b58e9b07f03d7',1,'Loot::Api::Loaders::LoadingFunneler']]],
+  ['addmod',['AddMod',['../class_loot_1_1_api_1_1_loaders_1_1_registry_loader.html#a6eeb348ad8dcad4b41a5064a61deef6b',1,'Loot::Api::Loaders::RegistryLoader']]],
   ['addrecipes',['AddRecipes',['../class_loot_1_1_loot.html#a9afccc75e56292d043923bb41284083c',1,'Loot::Loot']]],
   ['addshadertexture',['AddShaderTexture',['../class_loot_1_1_api_1_1_mod_content_1_1_graphics_mod_content.html#a40074cd5bddda7b52467323bfeab3623',1,'Loot::Api::ModContent::GraphicsModContent']]],
   ['addtexture',['AddTexture',['../class_loot_1_1_api_1_1_mod_content_1_1_texture_mod_content.html#a67a1adc959729e27606029e60a43713e',1,'Loot::Api::ModContent::TextureModContent']]],

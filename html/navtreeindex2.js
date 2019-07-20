@@ -1,5 +1,7 @@
 var NAVTREEINDEX2 =
 {
+"class_loot_1_1_api_1_1_delegators_1_1_modifier_delegator_player.html#a0522925812ef71168d280ec616d29bfb":[2,0,0,0,4,0,173],
+"class_loot_1_1_api_1_1_delegators_1_1_modifier_delegator_player.html#a06f5722b59a03b72726f7d37c2811ee7":[2,0,0,0,4,0,48],
 "class_loot_1_1_api_1_1_delegators_1_1_modifier_delegator_player.html#a08cbb382b9b60de7952eab218b07bd35":[2,0,0,0,4,0,145],
 "class_loot_1_1_api_1_1_delegators_1_1_modifier_delegator_player.html#a08f3df1f80cb7688911cea935986f855":[2,0,0,0,4,0,69],
 "class_loot_1_1_api_1_1_delegators_1_1_modifier_delegator_player.html#a0d3eaeedc5b6929bf8592c938ec57ddc":[2,0,0,0,4,0,19],
@@ -247,7 +249,5 @@ var NAVTREEINDEX2 =
 "class_loot_1_1_api_1_1_ext_1_1_mod_utils.html#afbc00f3c42e48c1a60ab9b8d5f915a86":[2,0,0,0,5,2,14],
 "class_loot_1_1_api_1_1_ext_1_1_mod_utils.html#afcf0ef0d123bc366a04ab0bd7f4598a0":[2,0,0,0,5,2,27],
 "class_loot_1_1_api_1_1_ext_1_1_rolling_utils.html":[2,0,0,0,5,3],
-"class_loot_1_1_api_1_1_ext_1_1_rolling_utils_1_1_properties.html":[2,0,0,0,5,3,0],
-"class_loot_1_1_api_1_1_ext_1_1_rolling_utils_1_1_properties.html#a304ee17ff6f2225daa9edd50460774e4":[2,0,0,0,5,3,0,0],
-"class_loot_1_1_api_1_1_ext_1_1_rolling_utils_1_1_strategies.html":[2,0,0,0,5,3,1]
+"class_loot_1_1_api_1_1_ext_1_1_rolling_utils_1_1_properties.html":[2,0,0,0,5,3,0]
 };

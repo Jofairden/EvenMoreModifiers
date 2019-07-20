@@ -1,5 +1,5 @@
 <map id="Loot.Api.Modifier.ModifierEffect" name="Loot.Api.Modifier.ModifierEffect">
-<area shape="rect" id="node6" href="$class_loot_1_1_effects_1_1_null_modifier_effect.html" title="Defines a &quot;Null&quot; effect which represents no effect safely Cannot be rolled normally ..." alt="" coords="487,5,661,47"/>
+<area shape="rect" id="node6" href="$class_loot_1_1_api_1_1_modifier_1_1_null_modifier_effect.html" title="Defines a &quot;Null&quot; effect which represents no effect safely Cannot be rolled normally ..." alt="" coords="471,5,677,47"/>
 <area shape="rect" id="node7" href="$class_loot_1_1_modifiers_1_1_base_1_1_weapon_debuff_effect.html" title="Loot.Modifiers.Base.Weapon\lDebuffEffect" alt="" coords="473,71,675,112"/>
 <area shape="rect" id="node8" href="$class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_defensive_1_1_dodge_effect.html" title="Loot.Modifiers.EquipModifiers.\lDefensive.DodgeEffect" alt="" coords="469,136,679,177"/>
 <area shape="rect" id="node9" href="$class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_defensive_1_1_immunity_effect.html" title="Loot.Modifiers.EquipModifiers.\lDefensive.ImmunityEffect" alt="" coords="469,201,679,243"/>

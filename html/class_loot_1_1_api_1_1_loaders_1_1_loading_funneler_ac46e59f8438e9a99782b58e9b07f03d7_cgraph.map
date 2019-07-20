@@ -1,4 +1,0 @@
-<map id="Loot.Api.Loaders.LoadingFunneler.AddMod" name="Loot.Api.Loaders.LoadingFunneler.AddMod">
-<area shape="rect" id="node2" href="$class_loot_1_1_api_1_1_loaders_1_1_registry_loader.html#a9cee663338cc830452df4c4bef614209" title="Loot.Api.Loaders.Registry\lLoader.AddContent" alt="" coords="236,5,419,47"/>
-<area shape="rect" id="node3" href="$class_loot_1_1_api_1_1_loaders_1_1_registry_loader.html#a33452857bba4db922793c67622192e28" title="Registers specified mod, enabling autoloading for that mod " alt="" coords="236,71,419,112"/>
-</map>
