@@ -26,10 +26,11 @@ addons:
       - doxygen-doc
       - graphviz
 
-before_install:
-    - sudo apt-add-repository -y ppa:mikepurvis/docs
-    - sudo apt-get update
-    - sudo apt-get install doxygen
+# The VM is now Ubuntu 16 which already had it
+#before_install:
+#    - sudo apt-add-repository -y ppa:mikepurvis/docs
+#    - sudo apt-get update
+#    - sudo apt-get install doxygen
       
 # Build your code e.g. by calling make
 script:
