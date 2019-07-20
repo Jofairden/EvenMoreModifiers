@@ -1,3 +1,3 @@
 <map id="Loot.Api.ModContent.TextureModContent" name="Loot.Api.ModContent.TextureModContent">
-<area shape="rect" id="node2" href="$class_loot_1_1_api_1_1_mod_content_1_1_graphics_mod_content.html" title="Loot.Api.ModContent.Graphics\lModContent" alt="" coords="5,95,221,136"/>
+<area shape="rect" id="node2" href="$class_loot_1_1_api_1_1_mod_content_1_1_graphics_mod_content.html" title="This class stores glowmask and shader textures that can be looked up during drawing ..." alt="" coords="5,95,221,136"/>
 </map>

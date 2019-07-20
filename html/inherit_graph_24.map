@@ -1,5 +1,5 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="node1" href="$class_loot_1_1_api_1_1_graphics_1_1_graphics_properties.html" title="Loot.Api.Graphics.Graphics\lProperties" alt="" coords="5,5,200,47"/>
-<area shape="rect" id="node2" href="$class_loot_1_1_api_1_1_graphics_1_1_glowmask_1_1_glowmask_graphics_properties.html" title="Loot.Api.Graphics.Glowmask.\lGlowmaskGraphicsProperties" alt="" coords="248,5,456,47"/>
-<area shape="rect" id="node3" href="$class_loot_1_1_api_1_1_graphics_1_1_shader_1_1_shader_graphics_properties.html" title="Loot.Api.Graphics.Shader.\lShaderGraphicsProperties" alt="" coords="504,5,693,47"/>
+<area shape="rect" id="node1" href="$class_loot_1_1_api_1_1_graphics_1_1_graphics_properties.html" title="Defines a set of properties for a GraphicsEntity&lt;T&gt; " alt="" coords="5,5,200,47"/>
+<area shape="rect" id="node2" href="$class_loot_1_1_api_1_1_graphics_1_1_glowmask_1_1_glowmask_graphics_properties.html" title="Defines the GraphicsProperties for GlowmaskEntitys which derives from GraphicsProperties ..." alt="" coords="248,5,456,47"/>
+<area shape="rect" id="node3" href="$class_loot_1_1_api_1_1_graphics_1_1_shader_1_1_shader_graphics_properties.html" title="Defines the GraphicsProperties for ShaderEntitys which derives from GlowmaskGraphicsProperties ..." alt="" coords="504,5,693,47"/>
 </map>

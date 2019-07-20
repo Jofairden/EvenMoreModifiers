@@ -117,6 +117,9 @@ $(document).ready(function(){initNavTree('class_loot_1_1_api_1_1_mod_content_1_1
 <div class="title">Loot.Api.ModContent.ModContentManager Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>This class is responsible for managing instances of <a class="el" href="class_loot_1_1_api_1_1_mod_content_1_1_texture_mod_content.html" title="An abstract class that contains a mapping of strings to texture instances ">TextureModContent</a> for registered mods.  
+ <a href="class_loot_1_1_api_1_1_mod_content_1_1_mod_content_manager.html#details">More...</a></p>
 <div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Collaboration diagram for Loot.Api.ModContent.ModContentManager:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
@@ -146,8 +149,9 @@ Private Attributes</h2></td></tr>
 <tr class="separator:a01a5f60b7dc3f14f1baedfc241b211c3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock">
-<p>Definition at line <a class="el" href="_mod_content_manager_8cs_source.html#l00008">8</a> of file <a class="el" href="_mod_content_manager_8cs_source.html">ModContentManager.cs</a>.</p>
+<div class="textblock"><p>This class is responsible for managing instances of <a class="el" href="class_loot_1_1_api_1_1_mod_content_1_1_texture_mod_content.html" title="An abstract class that contains a mapping of strings to texture instances ">TextureModContent</a> for registered mods. </p>
+
+<p>Definition at line <a class="el" href="_mod_content_manager_8cs_source.html#l00011">11</a> of file <a class="el" href="_mod_content_manager_8cs_source.html">ModContentManager.cs</a>.</p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
 <a class="anchor" id="ae5ef267a4e66d49f60c30421ac953f26"></a>
 <div class="memitem">
@@ -173,11 +177,11 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_mod_content_manager_8cs_source.html#l00023">23</a> of file <a class="el" href="_mod_content_manager_8cs_source.html">ModContentManager.cs</a>.</p>
+<p>Definition at line <a class="el" href="_mod_content_manager_8cs_source.html#l00025">25</a> of file <a class="el" href="_mod_content_manager_8cs_source.html">ModContentManager.cs</a>.</p>
 
-<p>References <a class="el" href="_texture_mod_content_8cs_source.html#l00043">Loot.Api.ModContent.TextureModContent._Load()</a>, and <a class="el" href="class_loot_1_1_api_1_1_mod_content_1_1_texture_mod_content.html#ad7699e61bc3a174d52c15663c4a7ffb1">Loot.Api.ModContent.TextureModContent.GetRegistryKey()</a>.</p>
-<div class="fragment"><div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;        {</div><div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;            <span class="keywordflow">if</span> (<a class="code" href="class_loot_1_1_api_1_1_mod_content_1_1_mod_content_manager.html#abb00ef809893f222f06406494b7239b0">_contents</a>.ContainsKey(key))</div><div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;            {</div><div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;                <span class="keywordflow">throw</span> <span class="keyword">new</span> Exception($<span class="stringliteral">&quot;Key &#39;{key}&#39; already present in ContentManager&quot;</span>);</div><div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;            }</div><div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;</div><div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;            <span class="keywordflow">if</span> (<a class="code" href="class_loot_1_1_api_1_1_mod_content_1_1_mod_content_manager.html#abb00ef809893f222f06406494b7239b0">_contents</a>.Values.Contains(textureModContent))</div><div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;            {</div><div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;                <a class="code" href="namespace_loot.html">Loot</a>.Logger.WarnFormat(<span class="stringliteral">&quot;ModContent with registry key {0} was already present&quot;</span>, textureModContent.GetRegistryKey());</div><div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;            }</div><div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;</div><div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;            textureModContent._Initialize();</div><div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;            <a class="code" href="class_loot_1_1_api_1_1_mod_content_1_1_mod_content_manager.html#abb00ef809893f222f06406494b7239b0">_contents</a>.Add(key, textureModContent);</div><div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        }</div><div class="ttc" id="namespace_loot_html"><div class="ttname"><a href="namespace_loot.html">Loot</a></div></div>
-<div class="ttc" id="class_loot_1_1_api_1_1_mod_content_1_1_mod_content_manager_html_abb00ef809893f222f06406494b7239b0"><div class="ttname"><a href="class_loot_1_1_api_1_1_mod_content_1_1_mod_content_manager.html#abb00ef809893f222f06406494b7239b0">Loot.Api.ModContent.ModContentManager._contents</a></div><div class="ttdeci">IDictionary&lt; string, TextureModContent &gt; _contents</div><div class="ttdef"><b>Definition:</b> <a href="_mod_content_manager_8cs_source.html#l00010">ModContentManager.cs:10</a></div></div>
+<p>References <a class="el" href="_texture_mod_content_8cs_source.html#l00046">Loot.Api.ModContent.TextureModContent._Load()</a>, and <a class="el" href="class_loot_1_1_api_1_1_mod_content_1_1_texture_mod_content.html#ad7699e61bc3a174d52c15663c4a7ffb1">Loot.Api.ModContent.TextureModContent.GetRegistryKey()</a>.</p>
+<div class="fragment"><div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;        {</div><div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;            <span class="keywordflow">if</span> (<a class="code" href="class_loot_1_1_api_1_1_mod_content_1_1_mod_content_manager.html#abb00ef809893f222f06406494b7239b0">_contents</a>.ContainsKey(key))</div><div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;            {</div><div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;                <span class="keywordflow">throw</span> <span class="keyword">new</span> Exception($<span class="stringliteral">&quot;Key &#39;{key}&#39; already present in ContentManager&quot;</span>);</div><div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;            }</div><div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;</div><div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;            <span class="keywordflow">if</span> (<a class="code" href="class_loot_1_1_api_1_1_mod_content_1_1_mod_content_manager.html#abb00ef809893f222f06406494b7239b0">_contents</a>.Values.Contains(textureModContent))</div><div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;            {</div><div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;                <a class="code" href="namespace_loot.html">Loot</a>.Logger.WarnFormat(<span class="stringliteral">&quot;ModContent with registry key {0} was already present&quot;</span>, textureModContent.GetRegistryKey());</div><div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;            }</div><div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;</div><div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;            textureModContent._Initialize();</div><div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;            <a class="code" href="class_loot_1_1_api_1_1_mod_content_1_1_mod_content_manager.html#abb00ef809893f222f06406494b7239b0">_contents</a>.Add(key, textureModContent);</div><div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;        }</div><div class="ttc" id="namespace_loot_html"><div class="ttname"><a href="namespace_loot.html">Loot</a></div></div>
+<div class="ttc" id="class_loot_1_1_api_1_1_mod_content_1_1_mod_content_manager_html_abb00ef809893f222f06406494b7239b0"><div class="ttname"><a href="class_loot_1_1_api_1_1_mod_content_1_1_mod_content_manager.html#abb00ef809893f222f06406494b7239b0">Loot.Api.ModContent.ModContentManager._contents</a></div><div class="ttdeci">IDictionary&lt; string, TextureModContent &gt; _contents</div><div class="ttdef"><b>Definition:</b> <a href="_mod_content_manager_8cs_source.html#l00013">ModContentManager.cs:13</a></div></div>
 </div><!-- fragment -->
 <p><div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-1-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
@@ -274,7 +278,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_mod_content_manager_8cs_source.html#l00010">10</a> of file <a class="el" href="_mod_content_manager_8cs_source.html">ModContentManager.cs</a>.</p>
+<p>Definition at line <a class="el" href="_mod_content_manager_8cs_source.html#l00013">13</a> of file <a class="el" href="_mod_content_manager_8cs_source.html">ModContentManager.cs</a>.</p>
 
 </div>
 </div>
@@ -296,7 +300,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_mod_content_manager_8cs_source.html#l00011">11</a> of file <a class="el" href="_mod_content_manager_8cs_source.html">ModContentManager.cs</a>.</p>
+<p>Definition at line <a class="el" href="_mod_content_manager_8cs_source.html#l00014">14</a> of file <a class="el" href="_mod_content_manager_8cs_source.html">ModContentManager.cs</a>.</p>
 
 </div>
 </div>
@@ -306,7 +310,7 @@ Private Attributes</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespace_loot.html">Loot</a></li><li class="navelem"><a class="el" href="namespace_loot_1_1_api.html">Api</a></li><li class="navelem"><a class="el" href="namespace_loot_1_1_api_1_1_mod_content.html">ModContent</a></li><li class="navelem"><a class="el" href="class_loot_1_1_api_1_1_mod_content_1_1_mod_content_manager.html">ModContentManager</a></li>
-    <li class="footer">Generated on Sat Jul 20 2019 11:09:23 for Even More Modifiers by
+    <li class="footer">Generated on Sat Jul 20 2019 14:25:40 for Even More Modifiers by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.11 </li>
   </ul>

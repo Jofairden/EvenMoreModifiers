@@ -1,4 +1,4 @@
 <map id="Loot.Api.Graphics.Shader.ShaderGraphicsProperties" name="Loot.Api.Graphics.Shader.ShaderGraphicsProperties">
-<area shape="rect" id="node2" href="$class_loot_1_1_api_1_1_graphics_1_1_glowmask_1_1_glowmask_graphics_properties.html" title="GlowmaskGraphicsProperties" alt="" coords="95,184,303,211"/>
-<area shape="rect" id="node3" href="$class_loot_1_1_api_1_1_graphics_1_1_graphics_properties.html" title="GraphicsProperties" alt="" coords="201,95,343,121"/>
+<area shape="rect" id="node2" href="$class_loot_1_1_api_1_1_graphics_1_1_glowmask_1_1_glowmask_graphics_properties.html" title="Defines the GraphicsProperties for GlowmaskEntitys which derives from GraphicsProperties ..." alt="" coords="95,184,303,211"/>
+<area shape="rect" id="node3" href="$class_loot_1_1_api_1_1_graphics_1_1_graphics_properties.html" title="Defines a set of properties for a GraphicsEntity&lt;T&gt; " alt="" coords="201,95,343,121"/>
 </map>

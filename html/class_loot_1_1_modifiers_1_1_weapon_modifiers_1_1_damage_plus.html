@@ -286,7 +286,7 @@ Additional Inherited Members</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock">
-<p>Definition at line <a class="el" href="_damage_plus_8cs_source.html#l00008">8</a> of file <a class="el" href="_damage_plus_8cs_source.html">DamagePlus.cs</a>.</p>
+<p>Definition at line <a class="el" href="_damage_plus_8cs_source.html#l00007">7</a> of file <a class="el" href="_damage_plus_8cs_source.html">DamagePlus.cs</a>.</p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
 <a class="anchor" id="a8aa01f7556d27b005468ec93cbf16652"></a>
 <div class="memitem">
@@ -312,8 +312,8 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Reimplemented from <a class="el" href="class_loot_1_1_api_1_1_modifier_1_1_modifier.html#a69706cc0f7d159fd9e79e5849398a153">Loot.Api.Modifier.Modifier</a>.</p>
 
-<p>Definition at line <a class="el" href="_damage_plus_8cs_source.html#l00016">16</a> of file <a class="el" href="_damage_plus_8cs_source.html">DamagePlus.cs</a>.</p>
-<div class="fragment"><div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;        {</div><div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;            <span class="keywordflow">return</span> base.GetModifierProperties(item)</div><div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;                .WithMaxMagnitude(10f);</div><div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;        }</div></div><!-- fragment -->
+<p>Definition at line <a class="el" href="_damage_plus_8cs_source.html#l00015">15</a> of file <a class="el" href="_damage_plus_8cs_source.html">DamagePlus.cs</a>.</p>
+<div class="fragment"><div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;        {</div><div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;            <span class="keywordflow">return</span> base.GetModifierProperties(item)</div><div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;                .WithMaxMagnitude(10f);</div><div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;        }</div></div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="ad92c80e413df28896414c1fc35c94111"></a>
@@ -339,8 +339,8 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Reimplemented from <a class="el" href="class_loot_1_1_api_1_1_modifier_1_1_modifier.html#a9492357b3c0ca662e25fff525da7ca6c">Loot.Api.Modifier.Modifier</a>.</p>
 
-<p>Definition at line <a class="el" href="_damage_plus_8cs_source.html#l00010">10</a> of file <a class="el" href="_damage_plus_8cs_source.html">DamagePlus.cs</a>.</p>
-<div class="fragment"><div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;        {</div><div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;            <span class="keywordflow">return</span> base.GetTooltip()</div><div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;                .WithPositive($<span class="stringliteral">&quot;+{Properties.RoundedPower}% damage&quot;</span>);</div><div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;        }</div></div><!-- fragment -->
+<p>Definition at line <a class="el" href="_damage_plus_8cs_source.html#l00009">9</a> of file <a class="el" href="_damage_plus_8cs_source.html">DamagePlus.cs</a>.</p>
+<div class="fragment"><div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;        {</div><div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;            <span class="keywordflow">return</span> base.GetTooltip()</div><div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;                .WithPositive($<span class="stringliteral">&quot;+{Properties.RoundedPower}% damage&quot;</span>);</div><div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;        }</div></div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="a10474530681343e039f7441d59a12b7b"></a>
@@ -385,9 +385,9 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_damage_plus_8cs_source.html#l00022">22</a> of file <a class="el" href="_damage_plus_8cs_source.html">DamagePlus.cs</a>.</p>
-<div class="fragment"><div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;        {</div><div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;            base.ModifyWeaponDamage(item, player, ref add, ref mult, ref flat);</div><div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;            add += 1 + <a class="code" href="class_loot_1_1_api_1_1_modifier_1_1_modifier.html#a293f173222666944dffe7957753d0d53">Properties</a>.<a class="code" href="class_loot_1_1_api_1_1_modifier_1_1_modifier_properties.html#a09da8a6b308c2029d376e4caae364972">RoundedPower</a> / 100f;</div><div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;        }</div><div class="ttc" id="class_loot_1_1_api_1_1_modifier_1_1_modifier_properties_html_a09da8a6b308c2029d376e4caae364972"><div class="ttname"><a href="class_loot_1_1_api_1_1_modifier_1_1_modifier_properties.html#a09da8a6b308c2029d376e4caae364972">Loot.Api.Modifier.ModifierProperties.RoundedPower</a></div><div class="ttdeci">float RoundedPower</div><div class="ttdef"><b>Definition:</b> <a href="_modifier_properties_8cs_source.html#l00037">ModifierProperties.cs:37</a></div></div>
-<div class="ttc" id="class_loot_1_1_api_1_1_modifier_1_1_modifier_html_a293f173222666944dffe7957753d0d53"><div class="ttname"><a href="class_loot_1_1_api_1_1_modifier_1_1_modifier.html#a293f173222666944dffe7957753d0d53">Loot.Api.Modifier.Modifier.Properties</a></div><div class="ttdeci">ModifierProperties Properties</div><div class="ttdef"><b>Definition:</b> <a href="_modifier_8cs_source.html#l00048">Modifier.cs:48</a></div></div>
+<p>Definition at line <a class="el" href="_damage_plus_8cs_source.html#l00021">21</a> of file <a class="el" href="_damage_plus_8cs_source.html">DamagePlus.cs</a>.</p>
+<div class="fragment"><div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;        {</div><div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;            base.ModifyWeaponDamage(item, player, ref add, ref mult, ref flat);</div><div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;            add += 1 + <a class="code" href="class_loot_1_1_api_1_1_modifier_1_1_modifier.html#a293f173222666944dffe7957753d0d53">Properties</a>.<a class="code" href="class_loot_1_1_api_1_1_modifier_1_1_modifier_properties.html#a09da8a6b308c2029d376e4caae364972">RoundedPower</a> / 100f;</div><div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;        }</div><div class="ttc" id="class_loot_1_1_api_1_1_modifier_1_1_modifier_properties_html_a09da8a6b308c2029d376e4caae364972"><div class="ttname"><a href="class_loot_1_1_api_1_1_modifier_1_1_modifier_properties.html#a09da8a6b308c2029d376e4caae364972">Loot.Api.Modifier.ModifierProperties.RoundedPower</a></div><div class="ttdeci">float RoundedPower</div><div class="ttdef"><b>Definition:</b> <a href="_modifier_properties_8cs_source.html#l00037">ModifierProperties.cs:37</a></div></div>
+<div class="ttc" id="class_loot_1_1_api_1_1_modifier_1_1_modifier_html_a293f173222666944dffe7957753d0d53"><div class="ttname"><a href="class_loot_1_1_api_1_1_modifier_1_1_modifier.html#a293f173222666944dffe7957753d0d53">Loot.Api.Modifier.Modifier.Properties</a></div><div class="ttdeci">ModifierProperties Properties</div><div class="ttdef"><b>Definition:</b> <a href="_modifier_8cs_source.html#l00047">Modifier.cs:47</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -397,7 +397,7 @@ Additional Inherited Members</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespace_loot.html">Loot</a></li><li class="navelem"><a class="el" href="namespace_loot_1_1_modifiers.html">Modifiers</a></li><li class="navelem"><a class="el" href="namespace_loot_1_1_modifiers_1_1_weapon_modifiers.html">WeaponModifiers</a></li><li class="navelem"><a class="el" href="class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_damage_plus.html">DamagePlus</a></li>
-    <li class="footer">Generated on Sat Jul 20 2019 11:09:24 for Even More Modifiers by
+    <li class="footer">Generated on Sat Jul 20 2019 14:25:41 for Even More Modifiers by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.11 </li>
   </ul>
