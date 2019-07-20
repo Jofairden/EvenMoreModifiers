@@ -43,6 +43,7 @@ namespace Loot.Api.Attributes
 			if (!name.EndsWith("Event")) name = $"{name}Event";
 			return name;
 		}
+
 		public void Attach(ModifierDelegatorPlayer delegatorPlayer, MethodInfo method, ModifierEffect effect)
 		{
 			foreach (string type in _delegationTypes)
@@ -57,9 +58,7 @@ namespace Loot.Api.Attributes
 					}
 					catch (Exception e)
 					{
-						Loot.Logger.Error(e);
-						Main.NewTextMultiline(e.ToString());
-						Main.NewText("An error just occurred. Please let the mod author know on the forums and show a screenshot of it", 255, 0, 0);
+						Loot.Logger.Error("An error just occurred. Please share this error log with the mod author.", e);
 					}
 				}
 			}
@@ -79,9 +78,7 @@ namespace Loot.Api.Attributes
 					}
 					catch (Exception e)
 					{
-						Loot.Logger.Error(e);
-						Main.NewTextMultiline(e.ToString());
-						Main.NewText("An error just occurred. Please let the mod author know on the forums and show a screenshot of it.", 255, 0, 0);
+						Loot.Logger.Error("An error just occurred. Please share this error log with the mod author.", e);
 					}
 				}
 			}
