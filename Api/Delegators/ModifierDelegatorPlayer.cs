@@ -350,6 +350,13 @@ namespace Loot.Api.Delegators
 			ModifyWeaponDamageEvent?.Invoke(item, ref add, ref mult, ref flat);
 		}
 
+		public delegate void ModifyManaCostEventRaiser(Item item, ref float reduce, ref float mult);
+		public event ModifyManaCostEventRaiser ModifyManaCostEvent;
+		public override void ModifyManaCost(Item item, ref float reduce, ref float mult)
+		{
+			ModifyManaCostEvent?.Invoke(item, ref reduce, ref mult);
+		}
+
 		public event Action<NPC, int, bool> OnHitByNPCEvent;
 		public override void OnHitByNPC(NPC npc, int damage, bool crit)
 		{

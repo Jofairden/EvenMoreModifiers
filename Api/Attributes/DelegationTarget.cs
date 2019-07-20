@@ -40,6 +40,7 @@ namespace Loot.Api.Attributes
 		ModifyNursePrice,
 		ModifyScreenPosition,
 		ModifyWeaponDamage,
+		ModifyManaCost,
 		ModifyZoom,
 		NaturalLifeRegen,
 		OnConsumeAmmo,
