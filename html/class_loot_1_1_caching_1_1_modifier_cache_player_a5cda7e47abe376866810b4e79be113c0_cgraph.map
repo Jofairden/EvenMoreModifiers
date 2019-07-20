@@ -1,5 +1,5 @@
 <map id="Loot.Caching.ModifierCachePlayer.UpdateAttachments" name="Loot.Caching.ModifierCachePlayer.UpdateAttachments">
-<area shape="rect" id="node2" href="$class_loot_1_1_api_1_1_attributes_1_1_auto_delegation.html#a8d4044ef4bc0944fdaa1d898abfe4e74" title="Loot.Api.Attributes.Auto\lDelegation.Attach" alt="" coords="253,5,414,46"/>
-<area shape="rect" id="node3" href="$class_loot_1_1_api_1_1_attributes_1_1_auto_delegation.html#ab29b06a0f27d6ea6b6ec21fcd4c647a3" title="Loot.Api.Attributes.Auto\lDelegation.Detach" alt="" coords="253,70,414,111"/>
-<area shape="rect" id="node4" href="$class_loot_1_1_api_1_1_delegators_1_1_modifier_delegator_player.html#ac728e8a48a5778c028b443d01eb9151d" title="Loot.Api.Delegators.Modifier\lDelegatorPlayer.GetPlayer" alt="" coords="240,135,427,177"/>
+<area shape="rect" id="node2" href="$class_loot_1_1_api_1_1_attributes_1_1_auto_delegation.html#a8d4044ef4bc0944fdaa1d898abfe4e74" title="Loot.Api.Attributes.Auto\lDelegation.Attach" alt="" coords="266,5,441,47"/>
+<area shape="rect" id="node3" href="$class_loot_1_1_api_1_1_attributes_1_1_auto_delegation.html#ab29b06a0f27d6ea6b6ec21fcd4c647a3" title="Loot.Api.Attributes.Auto\lDelegation.Detach" alt="" coords="266,71,441,112"/>
+<area shape="rect" id="node4" href="$class_loot_1_1_api_1_1_delegators_1_1_modifier_delegator_player.html#ac728e8a48a5778c028b443d01eb9151d" title="Loot.Api.Delegators.Modifier\lDelegatorPlayer.GetPlayer" alt="" coords="252,136,455,177"/>
 </map>

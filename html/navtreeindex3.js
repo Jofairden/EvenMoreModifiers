@@ -1,5 +1,9 @@
 var NAVTREEINDEX3 =
 {
+"class_loot_1_1_api_1_1_ext_1_1_rolling_utils_1_1_strategies.html#a58399e5b6537b46487cf2cc07cdd08fd":[2,0,0,0,5,3,1,0],
+"class_loot_1_1_api_1_1_graphics_1_1_glowmask_1_1_glowmask_entity.html":[2,0,0,0,6,0,0],
+"class_loot_1_1_api_1_1_graphics_1_1_glowmask_1_1_glowmask_entity.html#a0af9b7b3d361cb5daf23db909dffd4c6":[2,0,0,0,6,0,0,0],
+"class_loot_1_1_api_1_1_graphics_1_1_glowmask_1_1_glowmask_entity.html#a21db72d77d2f065805b724bb74cdb2af":[2,0,0,0,6,0,0,2],
 "class_loot_1_1_api_1_1_graphics_1_1_glowmask_1_1_glowmask_entity.html#a56e1279817255d18c9c52eee6769bbe4":[2,0,0,0,6,0,0,6],
 "class_loot_1_1_api_1_1_graphics_1_1_glowmask_1_1_glowmask_entity.html#a6d316f5acd729f47fff93308e1e6d2d6":[2,0,0,0,6,0,0,3],
 "class_loot_1_1_api_1_1_graphics_1_1_glowmask_1_1_glowmask_entity.html#a712587fc2dbfa58408d59af46541ec43":[2,0,0,0,6,0,0,1],
@@ -103,7 +107,6 @@ var NAVTREEINDEX3 =
 "class_loot_1_1_api_1_1_loaders_1_1_content_loader.html#ae0240f647e57d6676fc48b205101fef7":[2,0,0,0,7,1,2],
 "class_loot_1_1_api_1_1_loaders_1_1_loading_funneler.html":[2,0,0,0,7,2],
 "class_loot_1_1_api_1_1_loaders_1_1_loading_funneler.html#a3e577bdfc5a114a25e2b4072e3f6d345":[2,0,0,0,7,2,2],
-"class_loot_1_1_api_1_1_loaders_1_1_loading_funneler.html#a65c1694cfd67855722fab13990d264b0":[2,0,0,0,7,2,4],
 "class_loot_1_1_api_1_1_loaders_1_1_loading_funneler.html#a9fe9fd7f48e6c46385bab226e49f4522":[2,0,0,0,7,2,3],
 "class_loot_1_1_api_1_1_loaders_1_1_loading_funneler.html#aa114d53a23954537ab14f912f94caf21":[2,0,0,0,7,2,1],
 "class_loot_1_1_api_1_1_loaders_1_1_loading_funneler.html#ac46e59f8438e9a99782b58e9b07f03d7":[2,0,0,0,7,2,0],
@@ -246,8 +249,5 @@ var NAVTREEINDEX3 =
 "class_loot_1_1_api_1_1_modifier_1_1_modifier_effect.html#a6597ac87157369ead0e25a761b101f6e":[2,0,0,0,9,2,16],
 "class_loot_1_1_api_1_1_modifier_1_1_modifier_effect.html#a65e36596e251a11460d95cfdc9c663ef":[2,0,0,0,9,2,27],
 "class_loot_1_1_api_1_1_modifier_1_1_modifier_effect.html#a76d10820f97e5f47e6386cb031740483":[2,0,0,0,9,2,9],
-"class_loot_1_1_api_1_1_modifier_1_1_modifier_effect.html#a82d4e370c8105182c5dbe75f71f9e839":[2,0,0,0,9,2,36],
-"class_loot_1_1_api_1_1_modifier_1_1_modifier_effect.html#a82eeb01fc4893e0433b385b1de94736e":[2,0,0,0,9,2,6],
-"class_loot_1_1_api_1_1_modifier_1_1_modifier_effect.html#a8bf6ab1782f4bebab7b23635c91ef5af":[2,0,0,0,9,2,38],
-"class_loot_1_1_api_1_1_modifier_1_1_modifier_effect.html#a9738c9ded13fd7fe7001b119c27e92aa":[2,0,0,0,9,2,17]
+"class_loot_1_1_api_1_1_modifier_1_1_modifier_effect.html#a82d4e370c8105182c5dbe75f71f9e839":[2,0,0,0,9,2,36]
 };

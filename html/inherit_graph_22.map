@@ -1,4 +1,4 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="node1" href="$class_loot_1_1_api_1_1_graphics_1_1_graphics_entity.html" title="Loot.Api.Graphics.Graphics\lEntity\&lt; ShaderGraphicsProperties \&gt;" alt="" coords="5,5,237,46"/>
-<area shape="rect" id="node2" href="$class_loot_1_1_api_1_1_graphics_1_1_shader_1_1_shader_entity.html" title="Defines a Shader entity, part of GraphicsEntity&lt;T&gt; The entity defines a particular &#39;shader&#39; &quot;of&quot; the ..." alt="" coords="286,5,461,46"/>
+<area shape="rect" id="node1" href="$class_loot_1_1_api_1_1_graphics_1_1_graphics_entity.html" title="Loot.Api.Graphics.Graphics\lEntity\&lt; ShaderGraphicsProperties \&gt;" alt="" coords="5,5,260,47"/>
+<area shape="rect" id="node2" href="$class_loot_1_1_api_1_1_graphics_1_1_shader_1_1_shader_entity.html" title="Defines a Shader entity, part of GraphicsEntity&lt;T&gt; The entity defines a particular &#39;shader&#39; &quot;of&quot; the ..." alt="" coords="308,5,495,47"/>
 </map>

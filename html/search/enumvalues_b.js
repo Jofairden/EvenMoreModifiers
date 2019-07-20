@@ -12,8 +12,10 @@ var searchData=
   ['modifyhitnpcwithproj',['ModifyHitNPCWithProj',['../namespace_loot_1_1_api_1_1_attributes.html#a96f1ebf800712ea4f5265d1e6ae9649da26ac0cabda297de7df672a09bb671d75',1,'Loot::Api::Attributes']]],
   ['modifyhitpvp',['ModifyHitPvp',['../namespace_loot_1_1_api_1_1_attributes.html#a96f1ebf800712ea4f5265d1e6ae9649da6698fe79001921dbbb13382104fbafe0',1,'Loot::Api::Attributes']]],
   ['modifyhitpvpwithproj',['ModifyHitPvpWithProj',['../namespace_loot_1_1_api_1_1_attributes.html#a96f1ebf800712ea4f5265d1e6ae9649da9d804fdd922f3b5a1077dc581c290070',1,'Loot::Api::Attributes']]],
+  ['modifymanacost',['ModifyManaCost',['../namespace_loot_1_1_api_1_1_attributes.html#a96f1ebf800712ea4f5265d1e6ae9649da296a65c4d7b83802fdcc7db66c7e5e36',1,'Loot::Api::Attributes']]],
   ['modifynurseheal',['ModifyNurseHeal',['../namespace_loot_1_1_api_1_1_attributes.html#a96f1ebf800712ea4f5265d1e6ae9649da092697442ca65606b2f489b9f37ad943',1,'Loot::Api::Attributes']]],
   ['modifynurseprice',['ModifyNursePrice',['../namespace_loot_1_1_api_1_1_attributes.html#a96f1ebf800712ea4f5265d1e6ae9649da0e9bae6fd160a012d53230fe93114fbe',1,'Loot::Api::Attributes']]],
   ['modifyscreenposition',['ModifyScreenPosition',['../namespace_loot_1_1_api_1_1_attributes.html#a96f1ebf800712ea4f5265d1e6ae9649da0df118c0b9daf6728e06c46a8ca17992',1,'Loot::Api::Attributes']]],
+  ['modifyweapondamage',['ModifyWeaponDamage',['../namespace_loot_1_1_api_1_1_attributes.html#a96f1ebf800712ea4f5265d1e6ae9649da481804b66ccf2ceaae24d1bff764ac12',1,'Loot::Api::Attributes']]],
   ['modifyzoom',['ModifyZoom',['../namespace_loot_1_1_api_1_1_attributes.html#a96f1ebf800712ea4f5265d1e6ae9649da82b11f60cd9c3b69ccf137b00a35d715',1,'Loot::Api::Attributes']]]
 ];

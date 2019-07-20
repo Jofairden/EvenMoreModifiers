@@ -1,7 +1,7 @@
 <map id="Loot.Modifiers.EquipModifiers.Offensive.CritDamagePlusEffect" name="Loot.Modifiers.EquipModifiers.Offensive.CritDamagePlusEffect">
-<area shape="rect" id="node2" href="$class_loot_1_1_api_1_1_modifier_1_1_modifier_effect.html" title="A ModifierEffect signifies the effect of a modifier on a player It should house the implementation..." alt="" coords="206,80,308,107"/>
-<area shape="rect" id="node3" href="$class_mod_player.html" title="ModPlayer" alt="" coords="5,5,88,32"/>
-<area shape="rect" id="node4" href="$interface_loot_1_1_api_1_1_content_1_1_i_loadable_content.html" title="ILoadableContent" alt="" coords="113,5,236,32"/>
-<area shape="rect" id="node5" title="Used to restrict setting properties of ILoadableContent to internal only " alt="" coords="261,5,419,32"/>
-<area shape="rect" id="node6" href="$class_i_cloneable.html" title="ICloneable" alt="" coords="443,5,527,32"/>
+<area shape="rect" id="node2" href="$class_loot_1_1_api_1_1_modifier_1_1_modifier_effect.html" title="A ModifierEffect signifies the effect of a modifier on a player It should house the implementation..." alt="" coords="221,80,329,107"/>
+<area shape="rect" id="node3" href="$class_mod_player.html" title="ModPlayer" alt="" coords="5,5,93,32"/>
+<area shape="rect" id="node4" href="$interface_loot_1_1_api_1_1_content_1_1_i_loadable_content.html" title="Defines a piece of loadable content The interface is used in classes where the deriving class already..." alt="" coords="118,5,253,32"/>
+<area shape="rect" id="node5" title="Used to restrict setting properties of ILoadableContent to internal only This is done by marking the ..." alt="" coords="277,5,451,32"/>
+<area shape="rect" id="node6" href="$class_i_cloneable.html" title="ICloneable" alt="" coords="476,5,564,32"/>
 </map>

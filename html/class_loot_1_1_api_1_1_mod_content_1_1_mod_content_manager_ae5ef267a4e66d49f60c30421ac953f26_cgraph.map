@@ -1,4 +1,4 @@
 <map id="Loot.Api.ModContent.ModContentManager.AddContent" name="Loot.Api.ModContent.ModContentManager.AddContent">
-<area shape="rect" id="node2" href="$class_loot_1_1_api_1_1_mod_content_1_1_texture_mod_content.html#a5483964e903411006cb4b32db799b657" title="Loot.Api.ModContent.Texture\lModContent._Load" alt="" coords="275,5,469,46"/>
-<area shape="rect" id="node3" href="$class_loot_1_1_api_1_1_mod_content_1_1_texture_mod_content.html#ad7699e61bc3a174d52c15663c4a7ffb1" title="Loot.Api.ModContent.Texture\lModContent.GetRegistryKey" alt="" coords="275,70,469,111"/>
+<area shape="rect" id="node2" href="$class_loot_1_1_api_1_1_mod_content_1_1_texture_mod_content.html#a5483964e903411006cb4b32db799b657" title="Loot.Api.ModContent.Texture\lModContent._Load" alt="" coords="292,5,499,47"/>
+<area shape="rect" id="node3" href="$class_loot_1_1_api_1_1_mod_content_1_1_texture_mod_content.html#ad7699e61bc3a174d52c15663c4a7ffb1" title="Loot.Api.ModContent.Texture\lModContent.GetRegistryKey" alt="" coords="292,71,499,112"/>
 </map>

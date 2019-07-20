@@ -1,5 +1,6 @@
 var NAVTREEINDEX1 =
 {
+"_magic_damage_plus_8cs.html":[3,0,7,1,1,3],
 "_magic_damage_plus_8cs_source.html":[3,0,7,1,1,3],
 "_magical_cube_8cs.html":[3,0,0,3,0],
 "_magical_cube_8cs_source.html":[3,0,0,3,0],
@@ -244,10 +245,9 @@ var NAVTREEINDEX1 =
 "class_loot_1_1_api_1_1_cubes_1_1_rerolling_cube.html#a7ac06d08f372068d0272dd3c9c58f0af":[2,0,0,0,3,1,0],
 "class_loot_1_1_api_1_1_cubes_1_1_rerolling_cube.html#ac3577e96aa3361695cc753569c8db4cc":[2,0,0,0,3,1,2],
 "class_loot_1_1_api_1_1_delegators_1_1_modifier_delegator_player.html":[2,0,0,0,4,0],
-"class_loot_1_1_api_1_1_delegators_1_1_modifier_delegator_player.html#a0215376c9da0bca055ecec16e9d582db":[2,0,0,0,4,0,60],
-"class_loot_1_1_api_1_1_delegators_1_1_modifier_delegator_player.html#a025cc5d43eab7892aafdf9e4d9945d27":[2,0,0,0,4,0,29],
-"class_loot_1_1_api_1_1_delegators_1_1_modifier_delegator_player.html#a0409a1eac1bc879175cf67656ab93888":[2,0,0,0,4,0,62],
-"class_loot_1_1_api_1_1_delegators_1_1_modifier_delegator_player.html#a0522925812ef71168d280ec616d29bfb":[2,0,0,0,4,0,170],
-"class_loot_1_1_api_1_1_delegators_1_1_modifier_delegator_player.html#a06f5722b59a03b72726f7d37c2811ee7":[2,0,0,0,4,0,50],
-"class_loot_1_1_api_1_1_delegators_1_1_modifier_delegator_player.html#a08cbb382b9b60de7952eab218b07bd35":[2,0,0,0,4,0,142]
+"class_loot_1_1_api_1_1_delegators_1_1_modifier_delegator_player.html#a0215376c9da0bca055ecec16e9d582db":[2,0,0,0,4,0,62],
+"class_loot_1_1_api_1_1_delegators_1_1_modifier_delegator_player.html#a025cc5d43eab7892aafdf9e4d9945d27":[2,0,0,0,4,0,27],
+"class_loot_1_1_api_1_1_delegators_1_1_modifier_delegator_player.html#a0409a1eac1bc879175cf67656ab93888":[2,0,0,0,4,0,64],
+"class_loot_1_1_api_1_1_delegators_1_1_modifier_delegator_player.html#a0522925812ef71168d280ec616d29bfb":[2,0,0,0,4,0,173],
+"class_loot_1_1_api_1_1_delegators_1_1_modifier_delegator_player.html#a06f5722b59a03b72726f7d37c2811ee7":[2,0,0,0,4,0,48]
 };

@@ -1,5 +1,8 @@
 var NAVTREEINDEX4 =
 {
+"class_loot_1_1_api_1_1_modifier_1_1_modifier_effect.html#a82eeb01fc4893e0433b385b1de94736e":[2,0,0,0,9,2,6],
+"class_loot_1_1_api_1_1_modifier_1_1_modifier_effect.html#a8bf6ab1782f4bebab7b23635c91ef5af":[2,0,0,0,9,2,38],
+"class_loot_1_1_api_1_1_modifier_1_1_modifier_effect.html#a9738c9ded13fd7fe7001b119c27e92aa":[2,0,0,0,9,2,17],
 "class_loot_1_1_api_1_1_modifier_1_1_modifier_effect.html#aa1cf843033401de95b0bee42d6c52587":[2,0,0,0,9,2,34],
 "class_loot_1_1_api_1_1_modifier_1_1_modifier_effect.html#aa39d1f4fc9f6eba8dcdf944f6db97c7e":[2,0,0,0,9,2,10],
 "class_loot_1_1_api_1_1_modifier_1_1_modifier_effect.html#aa7aeaddc7295ff2e6b796f9674ac8ec1":[2,0,0,0,9,2,29],
@@ -201,7 +204,7 @@ var NAVTREEINDEX4 =
 "class_loot_1_1_hacks_1_1_tinkerer_armor_hack_mod_player.html":[2,0,0,5,2],
 "class_loot_1_1_hacks_1_1_tinkerer_armor_hack_mod_player.html#a120dd76b9fa05e295f4f61eb484d3e00":[2,0,0,5,2,0],
 "class_loot_1_1_loot.html":[2,0,0,12],
-"class_loot_1_1_loot.html#a515587a9028eb18ecd6f58b7f7f2ec38":[2,0,0,12,7],
+"class_loot_1_1_loot.html#a2d2a6b55f1a7b8cb46c3fb935d4a455f":[2,0,0,12,7],
 "class_loot_1_1_loot.html#a52ae642436e92b43a15d0a0ebbb9b25f":[2,0,0,12,1],
 "class_loot_1_1_loot.html#a583d8d3d69bdd106d25030c5309e37bc":[2,0,0,12,4],
 "class_loot_1_1_loot.html#a6d4f9879de408582ce87061a1e21dcc2":[2,0,0,12,3],
@@ -246,8 +249,5 @@ var NAVTREEINDEX4 =
 "class_loot_1_1_modifiers_1_1_base_1_1_accessory_modifier.html#ae186484501e88d593ac22c7caa0aaec8":[2,0,0,6,0,0,0],
 "class_loot_1_1_modifiers_1_1_base_1_1_armor_modifier.html":[2,0,0,6,0,1],
 "class_loot_1_1_modifiers_1_1_base_1_1_armor_modifier.html#a97daffac6116bc1fdc13e53e058ac394":[2,0,0,6,0,1,0],
-"class_loot_1_1_modifiers_1_1_base_1_1_equip_modifier.html":[2,0,0,6,0,2],
-"class_loot_1_1_modifiers_1_1_base_1_1_equip_modifier.html#a249bf16bde9a30be28b676115ab74b24":[2,0,0,6,0,2,1],
-"class_loot_1_1_modifiers_1_1_base_1_1_equip_modifier.html#a36bef56924e0ddb94a45ca984c3f7d92":[2,0,0,6,0,2,0],
-"class_loot_1_1_modifiers_1_1_base_1_1_weapon_debuff_effect.html":[2,0,0,6,0,3]
+"class_loot_1_1_modifiers_1_1_base_1_1_equip_modifier.html":[2,0,0,6,0,2]
 };

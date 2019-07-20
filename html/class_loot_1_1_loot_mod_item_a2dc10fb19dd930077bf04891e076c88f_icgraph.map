@@ -1,6 +1,6 @@
 <map id="Loot.LootModItem.RollNewPool" name="Loot.LootModItem.RollNewPool">
-<area shape="rect" id="node2" href="$class_loot_1_1_loot_mod_world.html#ae3119839afddab6693c1f48fb4c38fd7" title="Loot.LootModWorld.Modify\lWorldGenTasks" alt="" coords="275,5,453,46"/>
-<area shape="rect" id="node3" href="$class_loot_1_1_loot_mod_item.html#a78bb40da8243931fd3d5028c8801b1b7" title="Loot.LootModItem.OnCraft" alt="" coords="275,71,453,97"/>
-<area shape="rect" id="node4" href="$class_loot_1_1_loot_mod_item.html#a77ebddb2c3dd25500e5152c7c3630401" title="Loot.LootModItem.OnPickup" alt="" coords="270,121,458,148"/>
-<area shape="rect" id="node5" href="$class_loot_1_1_loot_mod_item.html#a74ce3202f7b181343de89709af543631" title="Loot.LootModItem.PostReforge" alt="" coords="262,172,466,199"/>
+<area shape="rect" id="node2" href="$class_loot_1_1_loot_mod_world.html#ae3119839afddab6693c1f48fb4c38fd7" title="Loot.LootModWorld.Modify\lWorldGenTasks" alt="" coords="286,5,474,47"/>
+<area shape="rect" id="node3" href="$class_loot_1_1_loot_mod_item.html#a78bb40da8243931fd3d5028c8801b1b7" title="Loot.LootModItem.OnCraft" alt="" coords="285,71,475,98"/>
+<area shape="rect" id="node4" href="$class_loot_1_1_loot_mod_item.html#a77ebddb2c3dd25500e5152c7c3630401" title="Loot.LootModItem.OnPickup" alt="" coords="279,122,481,149"/>
+<area shape="rect" id="node5" href="$class_loot_1_1_loot_mod_item.html#a74ce3202f7b181343de89709af543631" title="Loot.LootModItem.PostReforge" alt="" coords="271,173,489,199"/>
 </map>

@@ -1,23 +1,23 @@
 <map id="Loot.Modifiers.Base.WeaponModifier" name="Loot.Modifiers.Base.WeaponModifier">
-<area shape="rect" id="node7" href="$class_loot_1_1_modifiers_1_1_base_1_1_weapon_debuff_modifier.html" title="Defines a modifier that can inflict a debuff, applicable for weapons " alt="" coords="582,5,773,46"/>
-<area shape="rect" id="node9" href="$class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_ammo_reduce.html" title="Loot.Modifiers.WeaponModifiers.\lAmmoReduce" alt="" coords="571,70,784,111"/>
-<area shape="rect" id="node10" href="$class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_crit_plus.html" title="Loot.Modifiers.WeaponModifiers.\lCritPlus" alt="" coords="571,135,784,177"/>
-<area shape="rect" id="node11" href="$class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_cursed_damage.html" title="Loot.Modifiers.WeaponModifiers.\lCursedDamage" alt="" coords="571,201,784,242"/>
-<area shape="rect" id="node12" href="$class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_damage_plus.html" title="Loot.Modifiers.WeaponModifiers.\lDamagePlus" alt="" coords="571,266,784,307"/>
-<area shape="rect" id="node13" href="$class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_damage_plus_daytime.html" title="Loot.Modifiers.WeaponModifiers.\lDamagePlusDaytime" alt="" coords="571,331,784,373"/>
-<area shape="rect" id="node14" href="$class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_damage_with_mana_cost.html" title="Loot.Modifiers.WeaponModifiers.\lDamageWithManaCost" alt="" coords="571,397,784,438"/>
-<area shape="rect" id="node15" href="$class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_ice_1_1_ice_modifier.html" title="Loot.Modifiers.WeaponModifiers.\lIce.IceModifier" alt="" coords="571,462,784,503"/>
-<area shape="rect" id="node17" href="$class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_knockback_plus.html" title="Loot.Modifiers.WeaponModifiers.\lKnockbackPlus" alt="" coords="571,527,784,569"/>
-<area shape="rect" id="node18" href="$class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_mana_reduce.html" title="Loot.Modifiers.WeaponModifiers.\lManaReduce" alt="" coords="571,593,784,634"/>
-<area shape="rect" id="node19" href="$class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_missing_health_damage.html" title="Loot.Modifiers.WeaponModifiers.\lMissingHealthDamage" alt="" coords="571,658,784,699"/>
-<area shape="rect" id="node20" href="$class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_speed_plus.html" title="Loot.Modifiers.WeaponModifiers.\lSpeedPlus" alt="" coords="571,723,784,765"/>
-<area shape="rect" id="node21" href="$class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_velocity_damage.html" title="Loot.Modifiers.WeaponModifiers.\lVelocityDamage" alt="" coords="571,789,784,830"/>
-<area shape="rect" id="node22" href="$class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_velocity_plus.html" title="Loot.Modifiers.WeaponModifiers.\lVelocityPlus" alt="" coords="571,854,784,895"/>
-<area shape="rect" id="node2" href="$class_loot_1_1_api_1_1_modifier_1_1_modifier.html" title="Defines a modifier, which is an unloaded GlobalItem Making it a GlobalItem gives easy access to all h..." alt="" coords="214,437,282,464"/>
-<area shape="rect" id="node3" href="$class_global_item.html" title="GlobalItem" alt="" coords="43,361,128,388"/>
-<area shape="rect" id="node4" href="$interface_loot_1_1_api_1_1_content_1_1_i_loadable_content.html" title="ILoadableContent" alt="" coords="23,412,147,439"/>
-<area shape="rect" id="node5" title="Used to restrict setting properties of ILoadableContent to internal only " alt="" coords="6,463,165,489"/>
-<area shape="rect" id="node6" href="$class_i_cloneable.html" title="ICloneable" alt="" coords="43,513,127,540"/>
-<area shape="rect" id="node8" href="$class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_random_debuff.html" title="Rolls a random debuff " alt="" coords="832,5,1045,46"/>
-<area shape="rect" id="node16" href="$class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_ice_1_1_icy_modifier.html" title="Loot.Modifiers.WeaponModifiers.\lIce.IcyModifier" alt="" coords="832,462,1045,503"/>
+<area shape="rect" id="node7" href="$class_loot_1_1_modifiers_1_1_base_1_1_weapon_debuff_modifier.html" title="Defines a modifier that can inflict a debuff, applicable for weapons " alt="" coords="610,5,811,47"/>
+<area shape="rect" id="node9" href="$class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_ammo_reduce.html" title="Loot.Modifiers.WeaponModifiers.\lAmmoReduce" alt="" coords="597,71,824,112"/>
+<area shape="rect" id="node10" href="$class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_crit_plus.html" title="Loot.Modifiers.WeaponModifiers.\lCritPlus" alt="" coords="597,136,824,177"/>
+<area shape="rect" id="node11" href="$class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_cursed_damage.html" title="Loot.Modifiers.WeaponModifiers.\lCursedDamage" alt="" coords="597,201,824,243"/>
+<area shape="rect" id="node12" href="$class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_damage_plus.html" title="Loot.Modifiers.WeaponModifiers.\lDamagePlus" alt="" coords="597,267,824,308"/>
+<area shape="rect" id="node13" href="$class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_damage_plus_daytime.html" title="Loot.Modifiers.WeaponModifiers.\lDamagePlusDaytime" alt="" coords="597,332,824,373"/>
+<area shape="rect" id="node14" href="$class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_damage_with_mana_cost.html" title="Loot.Modifiers.WeaponModifiers.\lDamageWithManaCost" alt="" coords="597,397,824,439"/>
+<area shape="rect" id="node15" href="$class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_ice_1_1_ice_modifier.html" title="Loot.Modifiers.WeaponModifiers.\lIce.IceModifier" alt="" coords="597,463,824,504"/>
+<area shape="rect" id="node17" href="$class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_knockback_plus.html" title="Loot.Modifiers.WeaponModifiers.\lKnockbackPlus" alt="" coords="597,528,824,569"/>
+<area shape="rect" id="node18" href="$class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_mana_reduce.html" title="Loot.Modifiers.WeaponModifiers.\lManaReduce" alt="" coords="597,593,824,635"/>
+<area shape="rect" id="node19" href="$class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_missing_health_damage.html" title="Loot.Modifiers.WeaponModifiers.\lMissingHealthDamage" alt="" coords="597,659,824,700"/>
+<area shape="rect" id="node20" href="$class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_speed_plus.html" title="Loot.Modifiers.WeaponModifiers.\lSpeedPlus" alt="" coords="597,724,824,765"/>
+<area shape="rect" id="node21" href="$class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_velocity_damage.html" title="Loot.Modifiers.WeaponModifiers.\lVelocityDamage" alt="" coords="597,789,824,831"/>
+<area shape="rect" id="node22" href="$class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_velocity_plus.html" title="Loot.Modifiers.WeaponModifiers.\lVelocityPlus" alt="" coords="597,855,824,896"/>
+<area shape="rect" id="node2" href="$class_loot_1_1_api_1_1_modifier_1_1_modifier.html" title="Defines a modifier, which is an unloaded GlobalItem Making it a GlobalItem gives easy access to all h..." alt="" coords="228,438,300,465"/>
+<area shape="rect" id="node3" href="$class_global_item.html" title="GlobalItem" alt="" coords="47,362,138,389"/>
+<area shape="rect" id="node4" href="$interface_loot_1_1_api_1_1_content_1_1_i_loadable_content.html" title="Defines a piece of loadable content The interface is used in classes where the deriving class already..." alt="" coords="25,413,160,439"/>
+<area shape="rect" id="node5" title="Used to restrict setting properties of ILoadableContent to internal only This is done by marking the ..." alt="" coords="5,463,180,490"/>
+<area shape="rect" id="node6" href="$class_i_cloneable.html" title="ICloneable" alt="" coords="49,514,137,541"/>
+<area shape="rect" id="node8" href="$class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_random_debuff.html" title="Rolls a random debuff " alt="" coords="872,5,1099,47"/>
+<area shape="rect" id="node16" href="$class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_ice_1_1_icy_modifier.html" title="Loot.Modifiers.WeaponModifiers.\lIce.IcyModifier" alt="" coords="872,463,1099,504"/>
 </map>

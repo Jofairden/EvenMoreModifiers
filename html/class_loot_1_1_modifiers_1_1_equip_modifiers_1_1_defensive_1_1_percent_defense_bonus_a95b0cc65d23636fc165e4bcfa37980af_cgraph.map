@@ -1,4 +1,4 @@
 <map id="Loot.Modifiers.EquipModifiers.Defensive.PercentDefenseBonus.UpdateEquip" name="Loot.Modifiers.EquipModifiers.Defensive.PercentDefenseBonus.UpdateEquip">
-<area shape="rect" id="node2" href="$class_loot_1_1_api_1_1_delegators_1_1_modifier_delegator_player.html#a72c8852644cbf7ad5548b23953bc2c48" title="Loot.Api.Delegators.Modifier\lDelegatorPlayer.GetEffect" alt="" coords="349,5,536,46"/>
-<area shape="rect" id="node3" href="$class_loot_1_1_api_1_1_delegators_1_1_modifier_delegator_player.html#ac728e8a48a5778c028b443d01eb9151d" title="Loot.Api.Delegators.Modifier\lDelegatorPlayer.GetPlayer" alt="" coords="349,70,536,111"/>
+<area shape="rect" id="node2" href="$class_loot_1_1_api_1_1_delegators_1_1_modifier_delegator_player.html#a72c8852644cbf7ad5548b23953bc2c48" title="Loot.Api.Delegators.Modifier\lDelegatorPlayer.GetEffect" alt="" coords="371,5,573,47"/>
+<area shape="rect" id="node3" href="$class_loot_1_1_api_1_1_delegators_1_1_modifier_delegator_player.html#ac728e8a48a5778c028b443d01eb9151d" title="Loot.Api.Delegators.Modifier\lDelegatorPlayer.GetPlayer" alt="" coords="371,71,573,112"/>
 </map>

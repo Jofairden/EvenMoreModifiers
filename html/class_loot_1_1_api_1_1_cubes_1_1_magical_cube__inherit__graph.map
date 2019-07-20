@@ -1,7 +1,7 @@
 <map id="Loot.Api.Cubes.MagicalCube" name="Loot.Api.Cubes.MagicalCube">
-<area shape="rect" id="node3" href="$class_loot_1_1_api_1_1_cubes_1_1_rerolling_cube.html" title="Defines a rerolling cube that opens the rerolling UI on right click The method M:GetRollingStrategy c..." alt="" coords="178,155,376,181"/>
-<area shape="rect" id="node2" href="$class_mod_item.html" title="ModItem" alt="" coords="241,5,313,32"/>
-<area shape="rect" id="node4" href="$class_loot_1_1_cubes_1_1_black_cube.html" title="Loot.Cubes.BlackCube" alt="" coords="5,229,163,256"/>
-<area shape="rect" id="node5" href="$class_loot_1_1_cubes_1_1_cube_of_sealing.html" title="A cube of sealing is used to lock modifiers in place on an item " alt="" coords="187,229,368,256"/>
-<area shape="rect" id="node6" href="$class_loot_1_1_cubes_1_1_poor_cube.html" title="Loot.Cubes.PoorCube" alt="" coords="393,229,543,256"/>
+<area shape="rect" id="node3" href="$class_loot_1_1_api_1_1_cubes_1_1_rerolling_cube.html" title="Defines a rerolling cube that opens the rerolling UI on right click The method M:GetRollingStrategy c..." alt="" coords="187,155,395,181"/>
+<area shape="rect" id="node2" href="$class_mod_item.html" title="ModItem" alt="" coords="251,5,330,32"/>
+<area shape="rect" id="node4" href="$class_loot_1_1_cubes_1_1_black_cube.html" title="Loot.Cubes.BlackCube" alt="" coords="5,229,171,256"/>
+<area shape="rect" id="node5" href="$class_loot_1_1_cubes_1_1_cube_of_sealing.html" title="A cube of sealing is used to lock modifiers in place on an item " alt="" coords="195,229,387,256"/>
+<area shape="rect" id="node6" href="$class_loot_1_1_cubes_1_1_poor_cube.html" title="Loot.Cubes.PoorCube" alt="" coords="411,229,571,256"/>
 </map>

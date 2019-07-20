@@ -1,4 +1,4 @@
 <map id="Loot.Api.Graphics.Shader.Style.ShaderDrawStyle" name="Loot.Api.Graphics.Shader.Style.ShaderDrawStyle">
-<area shape="rect" id="node2" href="$class_loot_1_1_api_1_1_graphics_1_1_shader_1_1_style_1_1_normal_shader_draw_style.html" title="Loot.Api.Graphics.Shader.\lStyle.NormalShaderDrawStyle" alt="" coords="4,97,203,138"/>
-<area shape="rect" id="node3" href="$class_loot_1_1_api_1_1_graphics_1_1_shader_1_1_style_1_1_around_shader_draw_style.html" title="Loot.Api.Graphics.Shader.\lStyle.AroundShaderDrawStyle" alt="" coords="5,187,203,229"/>
+<area shape="rect" id="node2" href="$class_loot_1_1_api_1_1_graphics_1_1_shader_1_1_style_1_1_normal_shader_draw_style.html" title="Loot.Api.Graphics.Shader.\lStyle.NormalShaderDrawStyle" alt="" coords="5,95,220,136"/>
+<area shape="rect" id="node3" href="$class_loot_1_1_api_1_1_graphics_1_1_shader_1_1_style_1_1_around_shader_draw_style.html" title="Loot.Api.Graphics.Shader.\lStyle.AroundShaderDrawStyle" alt="" coords="5,184,220,225"/>
 </map>

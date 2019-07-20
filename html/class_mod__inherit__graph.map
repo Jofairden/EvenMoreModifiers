@@ -1,5 +1,5 @@
 <map id="Mod" name="Mod">
-<area shape="rect" id="node2" href="$class_loot_1_1_loot.html" title="Loot.Loot" alt="" coords="5,80,80,107"/>
-<area shape="rect" id="node3" href="$class_loot_tests_1_1_empty_mod_load_shell.html" title="LootTests.EmptyModLoadShell" alt="" coords="105,80,308,107"/>
-<area shape="rect" id="node4" href="$class_loot_tests_1_1_fake_mod.html" title="LootTests.FakeMod" alt="" coords="333,80,472,107"/>
+<area shape="rect" id="node2" href="$class_loot_1_1_loot.html" title="Loot.Loot" alt="" coords="5,80,88,107"/>
+<area shape="rect" id="node3" href="$class_loot_tests_1_1_empty_mod_load_shell.html" title="LootTests.EmptyModLoadShell" alt="" coords="112,80,328,107"/>
+<area shape="rect" id="node4" href="$class_loot_tests_1_1_fake_mod.html" title="LootTests.FakeMod" alt="" coords="353,80,495,107"/>
 </map>

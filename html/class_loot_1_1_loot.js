@@ -7,5 +7,5 @@ var class_loot_1_1_loot =
     [ "Unload", "class_loot_1_1_loot.html#a583d8d3d69bdd106d25030c5309e37bc", null ],
     [ "UpdateUI", "class_loot_1_1_loot.html#a7f296a7c4a011faca07302cf350881ef", null ],
     [ "_lastUpdateUiGameTime", "class_loot_1_1_loot.html#a8706bf929344678026f2bb45e3d52a56", null ],
-    [ "Loaded", "class_loot_1_1_loot.html#a515587a9028eb18ecd6f58b7f7f2ec38", null ]
+    [ "IsLoaded", "class_loot_1_1_loot.html#a2d2a6b55f1a7b8cb46c3fb935d4a455f", null ]
 ];

@@ -1,4 +1,4 @@
 <map id="Loot.Api.Loaders.RegistryLoader.AddContent" name="Loot.Api.Loaders.RegistryLoader.AddContent">
-<area shape="rect" id="node2" href="$class_loot_1_1_api_1_1_loaders_1_1_loading_funneler.html#ac46e59f8438e9a99782b58e9b07f03d7" title="Loot.Api.Loaders.Loading\lFunneler.AddMod" alt="" coords="227,5,397,46"/>
-<area shape="rect" id="node3" href="$class_loot_1_1_api_1_1_loaders_1_1_loading_funneler.html#aa114d53a23954537ab14f912f94caf21" title="Loot.Api.Loaders.Loading\lFunneler.LoadMod" alt="" coords="227,70,397,111"/>
+<area shape="rect" id="node2" href="$class_loot_1_1_api_1_1_loaders_1_1_loading_funneler.html#ac46e59f8438e9a99782b58e9b07f03d7" title="Loot.Api.Loaders.Loading\lFunneler.AddMod" alt="" coords="236,5,419,47"/>
+<area shape="rect" id="node3" href="$class_loot_1_1_api_1_1_loaders_1_1_loading_funneler.html#aa114d53a23954537ab14f912f94caf21" title="Loot.Api.Loaders.Loading\lFunneler.LoadMod" alt="" coords="236,71,419,112"/>
 </map>

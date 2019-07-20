@@ -1,5 +1,5 @@
 <map id="Loot.Cubes.PoorCube" name="Loot.Cubes.PoorCube">
-<area shape="rect" id="node2" href="$class_loot_1_1_api_1_1_cubes_1_1_rerolling_cube.html" title="Defines a rerolling cube that opens the rerolling UI on right click The method M:GetRollingStrategy c..." alt="" coords="153,173,257,200"/>
-<area shape="rect" id="node3" href="$class_loot_1_1_api_1_1_cubes_1_1_magical_cube.html" title="Defines a magical cube A magical cube is used to change modifiers on an item " alt="" coords="156,96,255,123"/>
-<area shape="rect" id="node4" href="$class_mod_item.html" title="ModItem" alt="" coords="5,5,77,32"/>
+<area shape="rect" id="node2" href="$class_loot_1_1_api_1_1_cubes_1_1_rerolling_cube.html" title="Defines a rerolling cube that opens the rerolling UI on right click The method M:GetRollingStrategy c..." alt="" coords="153,171,261,197"/>
+<area shape="rect" id="node3" href="$class_loot_1_1_api_1_1_cubes_1_1_magical_cube.html" title="Defines a magical cube A magical cube is used to change modifiers on an item " alt="" coords="156,95,259,121"/>
+<area shape="rect" id="node4" href="$class_mod_item.html" title="ModItem" alt="" coords="5,5,84,32"/>
 </map>

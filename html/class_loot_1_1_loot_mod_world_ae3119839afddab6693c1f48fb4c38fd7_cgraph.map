@@ -1,8 +1,8 @@
 <map id="Loot.LootModWorld.ModifyWorldGenTasks" name="Loot.LootModWorld.ModifyWorldGenTasks">
-<area shape="rect" id="node2" href="$class_loot_1_1_loot_mod_item.html#aeff8f5daada870d63e036956b4982de2" title="Loot.LootModItem.GetInfo" alt="" coords="249,60,423,87"/>
-<area shape="rect" id="node3" href="$class_loot_1_1_loot_mod_item.html#a2dc10fb19dd930077bf04891e076c88f" title="Attempts to roll new modifiers Has a set chance to hit a predefined pool of modifiers ..." alt="" coords="233,111,439,137"/>
-<area shape="rect" id="node4" href="$class_loot_1_1_api_1_1_ext_1_1_mod_utils.html#ac094c35ec592ea0728be3aa8d71a2b5f" title="Loot.Api.Ext.ModUtils.Get\lModifierPool" alt="" coords="494,5,669,46"/>
-<area shape="rect" id="node5" href="$class_loot_1_1_api_1_1_ext_1_1_mod_utils.html#a907048acd3c21c89c6d87f91cd3237fa" title="Loot.Api.Ext.ModUtils.Get\lModifierRarity" alt="" coords="494,70,669,111"/>
-<area shape="rect" id="node6" href="$class_loot_1_1_loot_mod_item.html#a5b0da3bc74988a42fe0b4fc7a42f00e1" title="Loot.LootModItem.Invalidate\lRolls" alt="" coords="488,135,675,177"/>
-<area shape="rect" id="node7" href="$interface_loot_1_1_api_1_1_strategy_1_1_i_rolling_strategy.html#a2f42b3f88803995e4b69a97c67a15ad1" title="Loot.Api.Strategy.IRolling\lStrategy.Roll" alt="" coords="496,201,667,242"/>
+<area shape="rect" id="node2" href="$class_loot_1_1_loot_mod_item.html#aeff8f5daada870d63e036956b4982de2" title="Loot.LootModItem.GetInfo" alt="" coords="256,61,444,87"/>
+<area shape="rect" id="node3" href="$class_loot_1_1_loot_mod_item.html#a2dc10fb19dd930077bf04891e076c88f" title="Attempts to roll new modifiers Has a set chance to hit a predefined pool of modifiers ..." alt="" coords="241,111,459,138"/>
+<area shape="rect" id="node4" href="$class_loot_1_1_api_1_1_ext_1_1_mod_utils.html#ac094c35ec592ea0728be3aa8d71a2b5f" title="Loot.Api.Ext.ModUtils.Get\lModifierPool" alt="" coords="516,5,700,47"/>
+<area shape="rect" id="node5" href="$class_loot_1_1_api_1_1_ext_1_1_mod_utils.html#a907048acd3c21c89c6d87f91cd3237fa" title="Loot.Api.Ext.ModUtils.Get\lModifierRarity" alt="" coords="516,71,700,112"/>
+<area shape="rect" id="node6" href="$class_loot_1_1_loot_mod_item.html#a5b0da3bc74988a42fe0b4fc7a42f00e1" title="Loot.LootModItem.Invalidate\lRolls" alt="" coords="507,136,709,177"/>
+<area shape="rect" id="node7" href="$interface_loot_1_1_api_1_1_strategy_1_1_i_rolling_strategy.html#a2f42b3f88803995e4b69a97c67a15ad1" title="Loot.Api.Strategy.IRolling\lStrategy.Roll" alt="" coords="519,201,697,243"/>
 </map>

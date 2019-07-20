@@ -1,5 +1,5 @@
 <map id="Loot.Modifiers.WeaponModifiers.CursedEffect.CurseHolding" name="Loot.Modifiers.WeaponModifiers.CursedEffect.CurseHolding">
-<area shape="rect" id="node2" href="$class_loot_1_1_loot_mod_item.html#add1489001e88a446099fefcd8193852a" title="Loot.LootModItem.GetActivePool" alt="" coords="267,5,482,32"/>
-<area shape="rect" id="node3" href="$class_loot_1_1_api_1_1_delegators_1_1_modifier_delegator_player.html#a72c8852644cbf7ad5548b23953bc2c48" title="Loot.Api.Delegators.Modifier\lDelegatorPlayer.GetEffect" alt="" coords="281,57,468,98"/>
-<area shape="rect" id="node4" href="$class_loot_1_1_loot_mod_item.html#aeff8f5daada870d63e036956b4982de2" title="Loot.LootModItem.GetInfo" alt="" coords="287,123,462,149"/>
+<area shape="rect" id="node2" href="$class_loot_1_1_loot_mod_item.html#add1489001e88a446099fefcd8193852a" title="Loot.LootModItem.GetActivePool" alt="" coords="280,5,511,32"/>
+<area shape="rect" id="node3" href="$class_loot_1_1_api_1_1_delegators_1_1_modifier_delegator_player.html#a72c8852644cbf7ad5548b23953bc2c48" title="Loot.Api.Delegators.Modifier\lDelegatorPlayer.GetEffect" alt="" coords="294,57,497,98"/>
+<area shape="rect" id="node4" href="$class_loot_1_1_loot_mod_item.html#aeff8f5daada870d63e036956b4982de2" title="Loot.LootModItem.GetInfo" alt="" coords="301,123,489,149"/>
 </map>

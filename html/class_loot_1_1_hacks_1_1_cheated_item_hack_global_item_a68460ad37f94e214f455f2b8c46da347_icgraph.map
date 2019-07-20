@@ -1,5 +1,5 @@
 <map id="Loot.Hacks.CheatedItemHackGlobalItem.GetInfo" name="Loot.Hacks.CheatedItemHackGlobalItem.GetInfo">
-<area shape="rect" id="node2" href="$class_loot_1_1_caching_1_1_modifier_cache_player.html#afa80aec29abdf1417c00b5b4a47fdfb6" title="Loot.Caching.ModifierCache\lPlayer.CacheModifierEffects" alt="" coords="267,5,456,46"/>
-<area shape="rect" id="node3" href="$class_loot_1_1_loot_mod_item.html#a659e2501754628252742c8842a8437e4" title="Will modify vanilla tooltips to add additional information for the affected item&#39;s modifiers ..." alt="" coords="253,71,469,97"/>
-<area shape="rect" id="node4" href="$class_loot_1_1_caching_1_1_modifier_cache_player.html#af61699888203f1029028f6ce61e3fbfa" title="Loot.Caching.ModifierCache\lPlayer.UpdateVanityCache" alt="" coords="268,122,455,163"/>
+<area shape="rect" id="node2" href="$class_loot_1_1_caching_1_1_modifier_cache_player.html#afa80aec29abdf1417c00b5b4a47fdfb6" title="Loot.Caching.ModifierCache\lPlayer.CacheModifierEffects" alt="" coords="281,5,480,47"/>
+<area shape="rect" id="node3" href="$class_loot_1_1_loot_mod_item.html#a659e2501754628252742c8842a8437e4" title="Will modify vanilla tooltips to add additional information for the affected item&#39;s modifiers ..." alt="" coords="265,71,496,98"/>
+<area shape="rect" id="node4" href="$class_loot_1_1_caching_1_1_modifier_cache_player.html#af61699888203f1029028f6ce61e3fbfa" title="Loot.Caching.ModifierCache\lPlayer.UpdateVanityCache" alt="" coords="281,123,480,164"/>
 </map>

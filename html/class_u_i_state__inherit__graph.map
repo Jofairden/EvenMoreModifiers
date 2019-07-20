@@ -1,5 +1,5 @@
 <map id="UIState" name="UIState">
-<area shape="rect" id="node2" title="A UIState which primarily goal is to provide easy visibility toggling " alt="" coords="5,80,227,107"/>
-<area shape="rect" id="node3" title="A UIState which primarily goal is to provide dragging on click functionality to another element (or i..." alt="" coords="7,155,224,197"/>
-<area shape="rect" id="node4" title="The GuiTabWindow is a window with tabs on the right side that are toggable The window will only displ..." alt="" coords="37,245,195,272"/>
+<area shape="rect" id="node2" title="A UIState which primarily goal is to provide easy visibility toggling " alt="" coords="7,80,239,107"/>
+<area shape="rect" id="node3" title="A UIState which primarily goal is to provide dragging on click functionality to another element (or i..." alt="" coords="5,155,240,196"/>
+<area shape="rect" id="node4" title="The GuiTabWindow is a window with tabs on the right side that are toggable The window will only displ..." alt="" coords="43,244,203,271"/>
 </map>
