@@ -52,8 +52,8 @@ namespace Loot.Api.Content
 
 		internal void _Unload()
 		{
-			Map.Clear();
-			Content.Clear();
+			Map?.Clear();
+			Content?.Clear();
 			IdCount = 0;
 
 			Unload();

@@ -49,10 +49,10 @@ namespace Loot.Api.Loaders
 
 		internal static void Unload()
 		{
-			ModifierRarity._Unload();
-			Modifier._Unload();
-			ModifierPool._Unload();
-			ModifierEffect._Unload();
+			ModifierRarity?._Unload();
+			Modifier?._Unload();
+			ModifierPool?._Unload();
+			ModifierEffect?._Unload();
 		}
 
 		internal static void RegisterMod(Mod mod)

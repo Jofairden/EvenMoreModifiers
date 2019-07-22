@@ -32,7 +32,7 @@ namespace Loot.Api.Loaders
 
 		internal static void Unload()
 		{
-			Mods.Clear();
+			Mods?.Clear();
 		}
 
 		internal static void CheckModLoading(Mod mod, string source)
