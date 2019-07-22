@@ -4,7 +4,7 @@ using Loot.Api.Builder;
 using Terraria;
 using Terraria.ModLoader.IO;
 
-namespace Loot.Api.Modifier
+namespace Loot.Api.Core
 {
 	/// <summary>
 	/// Defines the properties of a modifier

@@ -1,3 +1,4 @@
+using Loot.Api.Core;
 using Loot.Content;
 using Terraria.ModLoader;
 
@@ -53,6 +54,16 @@ namespace Loot.Api.Loaders
 			Modifier?._Unload();
 			ModifierPool?._Unload();
 			ModifierEffect?._Unload();
+
+			UnloadNullSingletons();
+		}
+
+		internal static void UnloadNullSingletons()
+		{
+			NullModifier.INSTANCE = null;
+			NullModifierEffect.INSTANCE = null;
+			NullModifierPool.INSTANCE = null;
+			NullModifierRarity.INSTANCE = null;
 		}
 
 		internal static void RegisterMod(Mod mod)

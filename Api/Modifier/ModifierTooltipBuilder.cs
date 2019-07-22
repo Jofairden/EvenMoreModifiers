@@ -1,4 +1,0 @@
-namespace Loot.Api.Modifier
-{
-
-}

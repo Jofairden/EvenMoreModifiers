@@ -7,7 +7,7 @@ using Terraria;
 using Terraria.ModLoader;
 using Terraria.ModLoader.IO;
 
-namespace Loot.Api.Modifier
+namespace Loot.Api.Core
 {
 	/// <summary>
 	/// Defines the rarity of a modifier

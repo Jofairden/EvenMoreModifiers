@@ -1,9 +1,9 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using Loot.Api.Core;
 using Loot.Api.Ext;
 using Loot.Api.Loaders;
-using Loot.Api.Modifier;
 using Loot.Caching;
 using Microsoft.Xna.Framework;
 using Terraria;

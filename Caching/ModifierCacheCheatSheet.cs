@@ -1,6 +1,6 @@
 using System.Linq;
 using CheatSheet;
-using Loot.Api.Modifier;
+using Loot.Api.Core;
 
 namespace Loot.Caching
 {

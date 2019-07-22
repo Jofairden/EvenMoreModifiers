@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using System.Linq;
+using Loot.Api.Core;
 using Loot.Api.Delegators;
-using Loot.Api.Modifier;
 using Loot.Api.Strategy;
 using Loot.Modifiers.EquipModifiers.Utility;
 using Terraria;

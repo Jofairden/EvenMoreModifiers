@@ -1,4 +1,5 @@
 using System.Collections.ObjectModel;
+using Loot.Api.Core;
 using Loot.Hacks;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
@@ -26,7 +27,7 @@ namespace Loot.Api.Delegators
 
 			bool b = base.AltFunctionUse(item, player);
 
-			foreach (Modifier.Modifier m in LootModItem.GetActivePool(item))
+			foreach (Modifier m in LootModItem.GetActivePool(item))
 			{
 				b &= m.AltFunctionUse(item, player);
 			}
@@ -43,7 +44,7 @@ namespace Loot.Api.Delegators
 
 			bool b = base.CanEquipAccessory(item, player, slot);
 
-			foreach (Modifier.Modifier m in LootModItem.GetActivePool(item))
+			foreach (Modifier m in LootModItem.GetActivePool(item))
 			{
 				b &= m.CanEquipAccessory(item, player, slot);
 			}
@@ -60,7 +61,7 @@ namespace Loot.Api.Delegators
 
 			bool? b = base.CanHitNPC(item, player, target);
 
-			foreach (Modifier.Modifier m in LootModItem.GetActivePool(item))
+			foreach (Modifier m in LootModItem.GetActivePool(item))
 			{
 				b &= m.CanHitNPC(item, player, target);
 			}
@@ -77,7 +78,7 @@ namespace Loot.Api.Delegators
 
 			bool b = base.CanHitPvp(item, player, target);
 
-			foreach (Modifier.Modifier m in LootModItem.GetActivePool(item))
+			foreach (Modifier m in LootModItem.GetActivePool(item))
 			{
 				b &= m.CanHitPvp(item, player, target);
 			}
@@ -94,7 +95,7 @@ namespace Loot.Api.Delegators
 
 			bool b = base.CanPickup(item, player);
 
-			foreach (Modifier.Modifier m in LootModItem.GetActivePool(item))
+			foreach (Modifier m in LootModItem.GetActivePool(item))
 			{
 				b &= m.CanPickup(item, player);
 			}
@@ -111,7 +112,7 @@ namespace Loot.Api.Delegators
 
 			bool b = base.CanRightClick(item);
 
-			foreach (Modifier.Modifier m in LootModItem.GetActivePool(item))
+			foreach (Modifier m in LootModItem.GetActivePool(item))
 			{
 				b &= m.CanRightClick(item);
 			}
@@ -128,7 +129,7 @@ namespace Loot.Api.Delegators
 
 			bool b = base.CanUseItem(item, player);
 
-			foreach (Modifier.Modifier m in LootModItem.GetActivePool(item))
+			foreach (Modifier m in LootModItem.GetActivePool(item))
 			{
 				b &= m.CanUseItem(item, player);
 			}
@@ -149,7 +150,7 @@ namespace Loot.Api.Delegators
 				return p;
 			}
 
-			foreach (Modifier.Modifier m in LootModItem.GetActivePool(item))
+			foreach (Modifier m in LootModItem.GetActivePool(item))
 			{
 				p = m.ChoosePrefix(item, rand);
 				// TODO which modifier takes precedence ?
@@ -171,7 +172,7 @@ namespace Loot.Api.Delegators
 
 			bool b = base.ConsumeAmmo(item, player);
 
-			foreach (Modifier.Modifier m in LootModItem.GetActivePool(item))
+			foreach (Modifier m in LootModItem.GetActivePool(item))
 			{
 				b &= m.ConsumeAmmo(item, player);
 			}
@@ -188,7 +189,7 @@ namespace Loot.Api.Delegators
 
 			base.OnConsumeAmmo(item, player);
 
-			foreach (Modifier.Modifier m in LootModItem.GetActivePool(item))
+			foreach (Modifier m in LootModItem.GetActivePool(item))
 			{
 				m.OnConsumeAmmo(item, player);
 			}
@@ -203,7 +204,7 @@ namespace Loot.Api.Delegators
 
 			bool b = base.ConsumeItem(item, player);
 
-			foreach (Modifier.Modifier m in LootModItem.GetActivePool(item))
+			foreach (Modifier m in LootModItem.GetActivePool(item))
 			{
 				b &= m.ConsumeItem(item, player);
 			}
@@ -220,7 +221,7 @@ namespace Loot.Api.Delegators
 
 			base.OnConsumeItem(item, player);
 
-			foreach (Modifier.Modifier m in LootModItem.GetActivePool(item))
+			foreach (Modifier m in LootModItem.GetActivePool(item))
 			{
 				m.OnConsumeItem(item, player);
 			}
@@ -239,7 +240,7 @@ namespace Loot.Api.Delegators
 				return a;
 			}
 
-			foreach (Modifier.Modifier m in LootModItem.GetActivePool(item))
+			foreach (Modifier m in LootModItem.GetActivePool(item))
 			{
 				a = m.GetAlpha(item, lightColor);
 				// TODO which modifier takes precedence ?
@@ -261,7 +262,7 @@ namespace Loot.Api.Delegators
 
 			base.GetWeaponCrit(item, player, ref crit);
 
-			foreach (Modifier.Modifier m in LootModItem.GetActivePool(item))
+			foreach (Modifier m in LootModItem.GetActivePool(item))
 			{
 				m.GetWeaponCrit(item, player, ref crit);
 			}
@@ -276,7 +277,7 @@ namespace Loot.Api.Delegators
 
 			base.GetHealMana(item, player, quickHeal, ref healValue);
 	
-			foreach (Modifier.Modifier m in LootModItem.GetActivePool(item))
+			foreach (Modifier m in LootModItem.GetActivePool(item))
 			{
 				m.GetHealMana(item, player, quickHeal, ref healValue);
 			}
@@ -291,7 +292,7 @@ namespace Loot.Api.Delegators
 
 			base.ModifyWeaponDamage(item, player, ref add, ref mult, ref flat);
 
-			foreach (Modifier.Modifier m in LootModItem.GetActivePool(item))
+			foreach (Modifier m in LootModItem.GetActivePool(item))
 			{
 				m.ModifyWeaponDamage(item, player, ref add, ref mult, ref flat);
 			}
@@ -306,7 +307,7 @@ namespace Loot.Api.Delegators
 
 			base.GetWeaponKnockback(item, player, ref knockback);
 
-			foreach (Modifier.Modifier m in LootModItem.GetActivePool(item))
+			foreach (Modifier m in LootModItem.GetActivePool(item))
 			{
 				m.GetWeaponKnockback(item, player, ref knockback);
 			}
@@ -321,7 +322,7 @@ namespace Loot.Api.Delegators
 
 			base.GrabRange(item, player, ref grabRange);
 
-			foreach (Modifier.Modifier m in LootModItem.GetActivePool(item))
+			foreach (Modifier m in LootModItem.GetActivePool(item))
 			{
 				m.GrabRange(item, player, ref grabRange);
 			}
@@ -336,7 +337,7 @@ namespace Loot.Api.Delegators
 
 			bool b = base.GrabStyle(item, player);
 
-			foreach (Modifier.Modifier m in LootModItem.GetActivePool(item))
+			foreach (Modifier m in LootModItem.GetActivePool(item))
 			{
 				b &= m.GrabStyle(item, player);
 			}
@@ -353,7 +354,7 @@ namespace Loot.Api.Delegators
 
 			base.HoldItem(item, player);
 
-			foreach (Modifier.Modifier m in LootModItem.GetActivePool(item))
+			foreach (Modifier m in LootModItem.GetActivePool(item))
 			{
 				m.HoldItem(item, player);
 			}
@@ -368,7 +369,7 @@ namespace Loot.Api.Delegators
 
 			bool b = base.HoldItemFrame(item, player);
 
-			foreach (Modifier.Modifier m in LootModItem.GetActivePool(item))
+			foreach (Modifier m in LootModItem.GetActivePool(item))
 			{
 				b &= m.HoldItemFrame(item, player);
 			}
@@ -385,7 +386,7 @@ namespace Loot.Api.Delegators
 
 			base.HoldStyle(item, player);
 
-			foreach (Modifier.Modifier m in LootModItem.GetActivePool(item))
+			foreach (Modifier m in LootModItem.GetActivePool(item))
 			{
 				m.HoldStyle(item, player);
 			}
@@ -400,7 +401,7 @@ namespace Loot.Api.Delegators
 
 			base.HorizontalWingSpeeds(item, player, ref speed, ref acceleration);
 
-			foreach (Modifier.Modifier m in LootModItem.GetActivePool(item))
+			foreach (Modifier m in LootModItem.GetActivePool(item))
 			{
 				m.HorizontalWingSpeeds(item, player, ref speed, ref acceleration);
 			}
@@ -415,7 +416,7 @@ namespace Loot.Api.Delegators
 
 			bool b = base.ItemSpace(item, player);
 
-			foreach (Modifier.Modifier m in LootModItem.GetActivePool(item))
+			foreach (Modifier m in LootModItem.GetActivePool(item))
 			{
 				b &= m.ItemSpace(item, player);
 			}
@@ -432,7 +433,7 @@ namespace Loot.Api.Delegators
 
 			base.MeleeEffects(item, player, hitbox);
 
-			foreach (Modifier.Modifier m in LootModItem.GetActivePool(item))
+			foreach (Modifier m in LootModItem.GetActivePool(item))
 			{
 				m.MeleeEffects(item, player, hitbox);
 			}
@@ -451,7 +452,7 @@ namespace Loot.Api.Delegators
 				return mult;
 			}
 
-			foreach (Modifier.Modifier m in LootModItem.GetActivePool(item))
+			foreach (Modifier m in LootModItem.GetActivePool(item))
 			{
 				mult = m.MeleeSpeedMultiplier(item, player);
 				// TODO which modifier takes precedence ?
@@ -471,7 +472,7 @@ namespace Loot.Api.Delegators
 				return;
 			}
 
-			foreach (Modifier.Modifier m in LootModItem.GetActivePool(item))
+			foreach (Modifier m in LootModItem.GetActivePool(item))
 			{
 				m.GetHealLife(item, player, quickHeal, ref healValue);
 			}
@@ -486,7 +487,7 @@ namespace Loot.Api.Delegators
 
 			base.ModifyHitNPC(item, player, target, ref damage, ref knockBack, ref crit);
 
-			foreach (Modifier.Modifier m in LootModItem.GetActivePool(item))
+			foreach (Modifier m in LootModItem.GetActivePool(item))
 			{
 				m.ModifyHitNPC(item, player, target, ref damage, ref knockBack, ref crit);
 			}
@@ -501,7 +502,7 @@ namespace Loot.Api.Delegators
 
 			base.ModifyHitPvp(item, player, target, ref damage, ref crit);
 
-			foreach (Modifier.Modifier m in LootModItem.GetActivePool(item))
+			foreach (Modifier m in LootModItem.GetActivePool(item))
 			{
 				m.ModifyHitPvp(item, player, target, ref damage, ref crit);
 			}
@@ -516,7 +517,7 @@ namespace Loot.Api.Delegators
 
 			bool b = base.NewPreReforge(item);
 
-			foreach (Modifier.Modifier m in LootModItem.GetActivePool(item))
+			foreach (Modifier m in LootModItem.GetActivePool(item))
 			{
 				b &= m.NewPreReforge(item);
 			}
@@ -533,7 +534,7 @@ namespace Loot.Api.Delegators
 
 			base.OnCraft(item, recipe);
 
-			foreach (Modifier.Modifier m in LootModItem.GetActivePool(item))
+			foreach (Modifier m in LootModItem.GetActivePool(item))
 			{
 				m.OnCraft(item, recipe);
 			}
@@ -548,7 +549,7 @@ namespace Loot.Api.Delegators
 
 			base.OnHitNPC(item, player, target, damage, knockBack, crit);
 
-			foreach (Modifier.Modifier m in LootModItem.GetActivePool(item))
+			foreach (Modifier m in LootModItem.GetActivePool(item))
 			{
 				m.OnHitNPC(item, player, target, damage, knockBack, crit);
 			}
@@ -563,7 +564,7 @@ namespace Loot.Api.Delegators
 
 			base.OnHitPvp(item, player, target, damage, crit);
 
-			foreach (Modifier.Modifier m in LootModItem.GetActivePool(item))
+			foreach (Modifier m in LootModItem.GetActivePool(item))
 			{
 				m.OnHitPvp(item, player, target, damage, crit);
 			}
@@ -578,7 +579,7 @@ namespace Loot.Api.Delegators
 
 			bool b = base.OnPickup(item, player);
 
-			foreach (Modifier.Modifier m in LootModItem.GetActivePool(item))
+			foreach (Modifier m in LootModItem.GetActivePool(item))
 			{
 				b &= m.OnPickup(item, player);
 			}
@@ -595,7 +596,7 @@ namespace Loot.Api.Delegators
 
 			base.PickAmmo(item, player, ref type, ref speed, ref damage, ref knockback);
 
-			foreach (Modifier.Modifier m in LootModItem.GetActivePool(item))
+			foreach (Modifier m in LootModItem.GetActivePool(item))
 			{
 				m.PickAmmo(item, player, ref type, ref speed, ref damage, ref knockback);
 			}
@@ -610,7 +611,7 @@ namespace Loot.Api.Delegators
 
 			base.PostDrawInInventory(item, spriteBatch, position, frame, drawColor, itemColor, origin, scale);
 
-			foreach (Modifier.Modifier m in LootModItem.GetActivePool(item))
+			foreach (Modifier m in LootModItem.GetActivePool(item))
 			{
 				m.PostDrawInInventory(item, spriteBatch, position, frame, drawColor, itemColor, origin, scale);
 			}
@@ -625,7 +626,7 @@ namespace Loot.Api.Delegators
 
 			base.PostDrawInWorld(item, spriteBatch, lightColor, alphaColor, rotation, scale, whoAmI);
 
-			foreach (Modifier.Modifier m in LootModItem.GetActivePool(item))
+			foreach (Modifier m in LootModItem.GetActivePool(item))
 			{
 				m.PostDrawInWorld(item, spriteBatch, lightColor, alphaColor, rotation, scale, whoAmI);
 			}
@@ -640,7 +641,7 @@ namespace Loot.Api.Delegators
 
 			base.PostDrawTooltip(item, lines);
 
-			foreach (Modifier.Modifier m in LootModItem.GetActivePool(item))
+			foreach (Modifier m in LootModItem.GetActivePool(item))
 			{
 				m.PostDrawTooltip(item, lines);
 			}
@@ -655,7 +656,7 @@ namespace Loot.Api.Delegators
 
 			base.PostDrawTooltipLine(item, line);
 
-			foreach (Modifier.Modifier m in LootModItem.GetActivePool(item))
+			foreach (Modifier m in LootModItem.GetActivePool(item))
 			{
 				m.PostDrawTooltipLine(item, line);
 			}
@@ -670,7 +671,7 @@ namespace Loot.Api.Delegators
 
 			base.PostReforge(item);
 
-			foreach (Modifier.Modifier m in LootModItem.GetActivePool(item))
+			foreach (Modifier m in LootModItem.GetActivePool(item))
 			{
 				m.PostReforge(item);
 			}
@@ -685,7 +686,7 @@ namespace Loot.Api.Delegators
 
 			base.PostUpdate(item);
 
-			foreach (Modifier.Modifier m in LootModItem.GetActivePool(item))
+			foreach (Modifier m in LootModItem.GetActivePool(item))
 			{
 				m.PostUpdate(item);
 			}
@@ -700,7 +701,7 @@ namespace Loot.Api.Delegators
 
 			bool b = base.PreDrawInInventory(item, spriteBatch, position, frame, drawColor, itemColor, origin, scale);
 
-			foreach (Modifier.Modifier m in LootModItem.GetActivePool(item))
+			foreach (Modifier m in LootModItem.GetActivePool(item))
 			{
 				b &= m.PreDrawInInventory(item, spriteBatch, position, frame, drawColor, itemColor, origin, scale);
 			}
@@ -717,7 +718,7 @@ namespace Loot.Api.Delegators
 
 			bool b = base.PreDrawInWorld(item, spriteBatch, lightColor, alphaColor, ref rotation, ref scale, whoAmI);
 
-			foreach (Modifier.Modifier m in LootModItem.GetActivePool(item))
+			foreach (Modifier m in LootModItem.GetActivePool(item))
 			{
 				b &= m.PreDrawInWorld(item, spriteBatch, lightColor, alphaColor, ref rotation, ref scale, whoAmI);
 			}
@@ -734,7 +735,7 @@ namespace Loot.Api.Delegators
 
 			bool b = base.PreDrawTooltip(item, lines, ref x, ref y);
 
-			foreach (Modifier.Modifier m in LootModItem.GetActivePool(item))
+			foreach (Modifier m in LootModItem.GetActivePool(item))
 			{
 				b &= m.PreDrawTooltip(item, lines, ref x, ref y);
 			}
@@ -751,7 +752,7 @@ namespace Loot.Api.Delegators
 
 			bool b = base.PreDrawTooltipLine(item, line, ref yOffset);
 
-			foreach (Modifier.Modifier m in LootModItem.GetActivePool(item))
+			foreach (Modifier m in LootModItem.GetActivePool(item))
 			{
 				b &= m.PreDrawTooltipLine(item, line, ref yOffset);
 			}
@@ -768,7 +769,7 @@ namespace Loot.Api.Delegators
 
 			bool b = base.ReforgePrice(item, ref reforgePrice, ref canApplyDiscount);
 
-			foreach (Modifier.Modifier m in LootModItem.GetActivePool(item))
+			foreach (Modifier m in LootModItem.GetActivePool(item))
 			{
 				b &= m.ReforgePrice(item, ref reforgePrice, ref canApplyDiscount);
 			}
@@ -785,7 +786,7 @@ namespace Loot.Api.Delegators
 
 			base.RightClick(item, player);
 
-			foreach (Modifier.Modifier m in LootModItem.GetActivePool(item))
+			foreach (Modifier m in LootModItem.GetActivePool(item))
 			{
 				m.RightClick(item, player);
 			}
@@ -800,7 +801,7 @@ namespace Loot.Api.Delegators
 
 			base.SetDefaults(item);
 
-			foreach (Modifier.Modifier m in LootModItem.GetActivePool(item))
+			foreach (Modifier m in LootModItem.GetActivePool(item))
 			{
 				m.SetDefaults(item);
 			}
@@ -817,7 +818,7 @@ namespace Loot.Api.Delegators
 
 			bool b = base.Shoot(item, player, ref position, ref speedX, ref speedY, ref type, ref damage, ref knockBack);
 
-			foreach (Modifier.Modifier m in LootModItem.GetActivePool(item))
+			foreach (Modifier m in LootModItem.GetActivePool(item))
 			{
 				b &= m.Shoot(item, player, ref position, ref speedX, ref speedY, ref type, ref damage, ref knockBack);
 			}
@@ -834,7 +835,7 @@ namespace Loot.Api.Delegators
 
 			base.Update(item, ref gravity, ref maxFallSpeed);
 
-			foreach (Modifier.Modifier m in LootModItem.GetActivePool(item))
+			foreach (Modifier m in LootModItem.GetActivePool(item))
 			{
 				m.Update(item, ref gravity, ref maxFallSpeed);
 			}
@@ -849,7 +850,7 @@ namespace Loot.Api.Delegators
 
 			base.UpdateAccessory(item, player, hideVisual);
 
-			foreach (Modifier.Modifier m in LootModItem.GetActivePool(item))
+			foreach (Modifier m in LootModItem.GetActivePool(item))
 			{
 				m.UpdateAccessory(item, player, hideVisual);
 			}
@@ -864,7 +865,7 @@ namespace Loot.Api.Delegators
 
 			base.UpdateEquip(item, player);
 
-			foreach (Modifier.Modifier m in LootModItem.GetActivePool(item))
+			foreach (Modifier m in LootModItem.GetActivePool(item))
 			{
 				m.UpdateEquip(item, player);
 			}
@@ -879,7 +880,7 @@ namespace Loot.Api.Delegators
 
 			base.UpdateInventory(item, player);
 
-			foreach (Modifier.Modifier m in LootModItem.GetActivePool(item))
+			foreach (Modifier m in LootModItem.GetActivePool(item))
 			{
 				m.UpdateInventory(item, player);
 			}
@@ -894,7 +895,7 @@ namespace Loot.Api.Delegators
 
 			bool b = base.UseItem(item, player);
 
-			foreach (Modifier.Modifier m in LootModItem.GetActivePool(item))
+			foreach (Modifier m in LootModItem.GetActivePool(item))
 			{
 				b &= m.UseItem(item, player);
 			}
@@ -911,7 +912,7 @@ namespace Loot.Api.Delegators
 
 			bool b = base.UseItemFrame(item, player);
 
-			foreach (Modifier.Modifier m in LootModItem.GetActivePool(item))
+			foreach (Modifier m in LootModItem.GetActivePool(item))
 			{
 				b &= m.UseItemFrame(item, player);
 			}
@@ -928,7 +929,7 @@ namespace Loot.Api.Delegators
 
 			base.UseItemHitbox(item, player, ref hitbox, ref noHitbox);
 
-			foreach (Modifier.Modifier m in LootModItem.GetActivePool(item))
+			foreach (Modifier m in LootModItem.GetActivePool(item))
 			{
 				m.UseItemHitbox(item, player, ref hitbox, ref noHitbox);
 			}
@@ -943,7 +944,7 @@ namespace Loot.Api.Delegators
 
 			base.UseStyle(item, player);
 
-			foreach (Modifier.Modifier m in LootModItem.GetActivePool(item))
+			foreach (Modifier m in LootModItem.GetActivePool(item))
 			{
 				m.UseStyle(item, player);
 			}
@@ -962,7 +963,7 @@ namespace Loot.Api.Delegators
 				return f;
 			}
 
-			foreach (Modifier.Modifier m in LootModItem.GetActivePool(item))
+			foreach (Modifier m in LootModItem.GetActivePool(item))
 			{
 				f = m.UseTimeMultiplier(item, player);
 				// TODO which modifier takes precedence ?
@@ -984,7 +985,7 @@ namespace Loot.Api.Delegators
 
 			base.VerticalWingSpeeds(item, player, ref ascentWhenFalling, ref ascentWhenRising, ref maxCanAscendMultiplier, ref maxAscentMultiplier, ref constantAscend);
 
-			foreach (Modifier.Modifier m in LootModItem.GetActivePool(item))
+			foreach (Modifier m in LootModItem.GetActivePool(item))
 			{
 				m.VerticalWingSpeeds(item, player, ref ascentWhenFalling, ref ascentWhenRising, ref maxCanAscendMultiplier, ref maxAscentMultiplier, ref constantAscend);
 			}

@@ -1,6 +1,6 @@
 using Loot.Api.Attributes;
+using Loot.Api.Core;
 using Loot.Api.Ext;
-using Loot.Api.Modifier;
 
 namespace Loot.Pools
 {

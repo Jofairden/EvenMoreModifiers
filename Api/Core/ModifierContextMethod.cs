@@ -1,4 +1,4 @@
-namespace Loot.Api.Modifier
+namespace Loot.Api.Core
 {
 	/// <summary>
 	/// Defines a method for a context in which a Modifier might be rolled

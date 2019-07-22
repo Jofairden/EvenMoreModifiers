@@ -1,6 +1,6 @@
 using Loot.Api.Attributes;
+using Loot.Api.Core;
 using Loot.Api.Delegators;
-using Loot.Api.Modifier;
 using Loot.Modifiers.Base;
 using Microsoft.Xna.Framework;
 using Terraria;

@@ -1,5 +1,5 @@
 using System;
-using Loot.Api.Modifier;
+using Loot.Api.Core;
 using Microsoft.Xna.Framework;
 
 namespace Loot.Api.Strategy

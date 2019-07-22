@@ -1,14 +1,14 @@
 using System;
 using System.Collections.Generic;
 using Loot.Api.Attributes;
+using Loot.Api.Core;
 using Loot.Api.Delegators;
-using Loot.Api.Modifier;
 using Terraria;
 using Terraria.ID;
 using Terraria.Localization;
 using Terraria.ModLoader;
-using static Loot.Api.Modifier.ModifierProperties;
-using static Loot.Api.Modifier.ModifierTooltipLine;
+using static Loot.Api.Core.ModifierProperties;
+using static Loot.Api.Core.ModifierTooltipLine;
 
 namespace Loot.Modifiers.Base
 {

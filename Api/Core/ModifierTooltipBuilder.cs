@@ -1,0 +1,4 @@
+namespace Loot.Api.Core
+{
+
+}

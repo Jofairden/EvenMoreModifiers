@@ -10,10 +10,8 @@ using Terraria;
 using Terraria.ModLoader;
 using Terraria.ModLoader.IO;
 using Terraria.Utilities;
-using static Loot.Api.Modifier.ModifierProperties;
-using static Loot.Api.Modifier.ModifierTooltipLine;
 
-namespace Loot.Api.Modifier
+namespace Loot.Api.Core
 {
 	/// <summary>
 	/// Defines a modifier, which is an unloaded GlobalItem
@@ -46,10 +44,10 @@ namespace Loot.Api.Modifier
 
 		public ModifierProperties Properties { get; internal set; }
 
-		public virtual ModifierTooltipBuilder GetTooltip()
+		public virtual ModifierTooltipLine.ModifierTooltipBuilder GetTooltip()
 			=> ModifierTooltipLine.Builder;
 
-		public virtual ModifierPropertiesBuilder GetModifierProperties(Item item)
+		public virtual ModifierProperties.ModifierPropertiesBuilder GetModifierProperties(Item item)
 			=> ModifierProperties.Builder;
 
 		/* Global

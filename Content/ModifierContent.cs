@@ -1,5 +1,5 @@
 using Loot.Api.Content;
-using Loot.Api.Modifier;
+using Loot.Api.Core;
 
 namespace Loot.Content
 {
@@ -10,7 +10,7 @@ namespace Loot.Content
 	{
 		internal override void Load()
 		{
-			AddContent(typeof(NullModifier), Loot.Instance);
+			AddContent(NullModifier.INSTANCE, Loot.Instance);
 		}
 	}
 }

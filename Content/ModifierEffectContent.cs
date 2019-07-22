@@ -3,7 +3,7 @@ using System.Linq;
 using System.Reflection;
 using Loot.Api.Attributes;
 using Loot.Api.Content;
-using Loot.Api.Modifier;
+using Loot.Api.Core;
 
 namespace Loot.Content
 {
@@ -14,7 +14,7 @@ namespace Loot.Content
 	{
 		internal override void Load()
 		{
-			AddContent(typeof(NullModifierEffect), Loot.Instance);
+			AddContent(NullModifierEffect.INSTANCE, Loot.Instance);
 		}
 
 		internal override bool CheckContentPiece(ModifierEffect contentPiece)

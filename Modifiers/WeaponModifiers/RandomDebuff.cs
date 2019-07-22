@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using Loot.Api.Modifier;
+using Loot.Api.Core;
 using Loot.Modifiers.Base;
 using Terraria;
 using Terraria.ID;

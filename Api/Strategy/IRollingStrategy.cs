@@ -1,4 +1,4 @@
-using Loot.Api.Modifier;
+using Loot.Api.Core;
 
 namespace Loot.Api.Strategy
 {

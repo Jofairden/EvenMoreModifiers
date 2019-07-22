@@ -1,4 +1,4 @@
-using Loot.Api.Modifier;
+using Loot.Api.Core;
 using Loot.Modifiers.Base;
 using Terraria;
 using Terraria.ID;

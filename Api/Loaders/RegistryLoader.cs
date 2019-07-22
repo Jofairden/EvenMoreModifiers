@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
 using Loot.Api.Attributes;
-using Loot.Api.Modifier;
+using Loot.Api.Core;
 using Loot.Modifiers;
 using Loot.Pools;
 using Loot.Rarities;
@@ -100,7 +100,7 @@ namespace Loot.Api.Loaders
 				.ToList();
 
 			var rarities = ordered.Where(x => x.IsSubclassOf(typeof(ModifierRarity)));
-			var modifiers = ordered.Where(x => x.IsSubclassOf(typeof(Modifier.Modifier)));
+			var modifiers = ordered.Where(x => x.IsSubclassOf(typeof(Modifier)));
 			var pools = ordered.Where(x => x.IsSubclassOf(typeof(ModifierPool)));
 			var effects = ordered.Where(x => x.IsSubclassOf(typeof(ModifierEffect)));
 

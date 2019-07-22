@@ -1,7 +1,7 @@
 using System;
 using System.Linq;
+using Loot.Api.Core;
 using Loot.Api.Loaders;
-using Loot.Api.Modifier;
 using Loot.Modifiers;
 using Loot.Pools;
 using Loot.Rarities;
@@ -21,7 +21,7 @@ namespace Loot.Api.Ext
 
 		public static AllModifiersPool GetAllModifiersPool(this Mod mod) => Loot.Instance.GetModifierPool<AllModifiersPool>();
 
-		public static Modifier.Modifier GetModifier(Type type) => ContentLoader.Modifier.GetContent(type);
+		public static Modifier GetModifier(Type type) => ContentLoader.Modifier.GetContent(type);
 		public static ModifierPool GetModifierPool(Type type) => ContentLoader.ModifierPool.GetContent(type);
 		public static ModifierRarity GetModifierRarity(Type type) => ContentLoader.ModifierRarity.GetContent(type);
 		public static ModifierEffect GetModifierEffect(Type type) => ContentLoader.ModifierEffect.GetContent(type);
@@ -44,21 +44,21 @@ namespace Loot.Api.Ext
 		public static uint GetModifierRarityType(this Mod mod, Type type) => GetModifierRarityType(mod, type.Name);
 		public static uint GetModifierRarityType(this Mod mod, string name) => GetModifierRarity(mod, name)?.Type ?? 0;
 
-		public static T GetModifier<T>(this Mod mod) where T : Modifier.Modifier => (T)GetModifier(mod, typeof(T).Name);
-		public static Modifier.Modifier GetModifier(this Mod mod, Type type) => GetModifier(mod, type.Name);
+		public static T GetModifier<T>(this Mod mod) where T : Modifier => (T)GetModifier(mod, typeof(T).Name);
+		public static Modifier GetModifier(this Mod mod, Type type) => GetModifier(mod, type.Name);
 
-		public static Modifier.Modifier GetModifier(this Mod mod, string name)
+		public static Modifier GetModifier(this Mod mod, string name)
 		{
 			if (ContentLoader.Modifier.Map.TryGetValue(mod.Name, out var v))
 			{
 				var fod = v.FirstOrDefault(x => x.Value.Name.Equals(name));
-				return (Modifier.Modifier)fod.Value.Clone();
+				return (Modifier)fod.Value.Clone();
 			}
 
 			return null;
 		}
 
-		public static uint GetModifierType<T>(this Mod mod) where T : Modifier.Modifier => GetModifierType(mod, typeof(T).Name);
+		public static uint GetModifierType<T>(this Mod mod) where T : Modifier => GetModifierType(mod, typeof(T).Name);
 		public static uint GetModifierType(this Mod mod, Type type) => GetModifierType(mod, type.Name);
 		public static uint GetModifierType(this Mod mod, string name) => GetModifier(mod, name)?.Type ?? 0;
 

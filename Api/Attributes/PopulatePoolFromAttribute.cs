@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
+using Loot.Api.Core;
 using Terraria.ModLoader;
 
 namespace Loot.Api.Attributes
@@ -80,7 +81,7 @@ namespace Loot.Api.Attributes
 				.GetTypes()
 				.Where(type =>
 					type.IsClass
-					&& type.IsSubclassOf(typeof(Modifier.Modifier))
+					&& type.IsSubclassOf(typeof(Modifier))
 					&& type.Namespace != null && type.Namespace.StartsWith(ns));
 		}
 	}

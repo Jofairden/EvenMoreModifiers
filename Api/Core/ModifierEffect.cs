@@ -11,7 +11,7 @@ using Terraria;
 using Terraria.ModLoader;
 using Terraria.ModLoader.IO;
 
-namespace Loot.Api.Modifier
+namespace Loot.Api.Core
 {
 	/// <summary>
 	/// A ModifierEffect signifies the effect of a modifier on a player

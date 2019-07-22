@@ -7,13 +7,12 @@ using Loot.Api.Attributes;
 using Loot.Api.Content;
 using Loot.Api.Ext;
 using Loot.Api.Loaders;
-using Loot.Modifiers;
 using Loot.Rarities;
 using Terraria;
 using Terraria.ModLoader;
 using Terraria.ModLoader.IO;
 
-namespace Loot.Api.Modifier
+namespace Loot.Api.Core
 {
 	/// <summary>
 	/// Defines a modifier pool. A modifier pool holds a certain amount of effects in an array

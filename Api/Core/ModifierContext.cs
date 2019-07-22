@@ -3,7 +3,7 @@ using Loot.Api.Ext;
 using Loot.Api.Strategy;
 using Terraria;
 
-namespace Loot.Api.Modifier
+namespace Loot.Api.Core
 {
 	/// <summary>
 	/// Defines a context in which a Modifier might be rolled

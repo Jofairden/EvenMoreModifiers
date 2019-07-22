@@ -1,5 +1,4 @@
 using Loot.Api.ModContent;
-using Loot.Api.Modifier;
 using Loot.Hacks;
 using Loot.Modifiers;
 using Loot.ModSupport;

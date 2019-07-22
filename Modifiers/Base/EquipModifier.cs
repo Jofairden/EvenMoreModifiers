@@ -1,5 +1,5 @@
+using Loot.Api.Core;
 using Loot.Api.Ext;
-using Loot.Api.Modifier;
 using Terraria;
 
 namespace Loot.Modifiers.Base

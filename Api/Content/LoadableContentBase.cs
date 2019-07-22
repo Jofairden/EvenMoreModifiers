@@ -73,6 +73,11 @@ namespace Loot.Api.Content
 		public void AddContent(Type type, Mod mod)
 		{
 			T contentPiece = (T)Activator.CreateInstance(type);
+			AddContent(contentPiece, mod);
+		}
+
+		public void AddContent(T contentPiece, Mod mod)
+		{
 			if (!typeof(ILoadableContentSetter).IsAssignableFrom(typeof(T)))
 			{
 				throw new Exception("Invalid type passed to AddContent");

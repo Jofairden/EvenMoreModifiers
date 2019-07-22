@@ -1,6 +1,6 @@
 using System.Linq;
 using Loot.Api.Content;
-using Loot.Api.Modifier;
+using Loot.Api.Core;
 using Terraria.Utilities;
 
 namespace Loot.Content
@@ -12,7 +12,7 @@ namespace Loot.Content
 	{
 		internal override void Load()
 		{
-			AddContent(typeof(NullModifierPool), Loot.Instance);
+			AddContent(NullModifierPool.INSTANCE, Loot.Instance);
 		}
 
 		internal override bool CheckContentPiece(ModifierPool contentPiece)
