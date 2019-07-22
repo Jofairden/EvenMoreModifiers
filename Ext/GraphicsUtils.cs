@@ -1,12 +1,12 @@
 using Microsoft.Xna.Framework.Graphics;
 using Terraria;
 
-namespace Loot.Api.Ext
+namespace Loot.Ext
 {
 	/// <summary>
 	/// Defines a set of utility methods for graphic subjects
 	/// </summary>
-	public static class GraphicsUtils
+	internal static class GraphicsUtils
 	{
 		public static void BeginShaderBatch(this SpriteBatch batch)
 		{

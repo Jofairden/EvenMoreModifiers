@@ -1,12 +1,8 @@
 using Loot.Api.ModContent;
 using Loot.Hacks;
-using Loot.Modifiers;
 using Loot.ModSupport;
-using Loot.Pools;
-using Loot.Rarities;
 using Loot.UI;
 using Terraria;
-using Terraria.ModLoader;
 using Terraria.UI;
 
 namespace Loot.Api.Loaders

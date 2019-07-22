@@ -53,6 +53,7 @@
     <Compile Include="Api\Graphics\Shader\Style\NormalShaderDrawStyle.cs" />
     <Compile Include="Api\Graphics\Shader\Style\ShaderDrawStyle.cs" />
     <Compile Include="Api\Core\ModifierContextMethod.cs" />
+    <Compile Include="Attributes\StaticAssetAttribute.cs" />
     <Compile Include="Hacks\BackwardsCompatibleHacks.cs" />
     <Compile Include="Hacks\CheatedItemHackGlobalItem.cs" />
     <Compile Include="Api\Attributes\DelegationPrioritization.cs" />
@@ -79,7 +80,7 @@
     <Compile Include="Api\Cubes\RerollingCube.cs" />
     <Compile Include="Api\Graphics\Glowmask\GlowmaskEntity.cs" />
     <Compile Include="Api\Graphics\GraphicsEntity.cs" />
-    <Compile Include="Api\Ext\GraphicsUtils.cs" />
+    <Compile Include="Ext\GraphicsUtils.cs" />
     <Compile Include="Api\Graphics\Shader\ShaderDrawLayer.cs" />
     <Compile Include="Api\Graphics\Shader\ShaderEntity.cs" />
     <Compile Include="Api\Graphics\GraphicsGlobalItem.cs" />
@@ -101,7 +102,6 @@
     <Compile Include="Api\Core\ModifierPool.cs" />
     <Compile Include="Api\Core\ModifierProperties.cs" />
     <Compile Include="Api\Core\ModifierRarity.cs" />
-    <Compile Include="Api\Core\ModifierTooltipBuilder.cs" />
     <Compile Include="Api\Core\ModifierTooltipLine.cs" />
     <Compile Include="Api\Core\NullModifierEffect.cs" />
     <Compile Include="Api\Core\NullModifierRarity.cs" />
@@ -111,7 +111,7 @@
     <Compile Include="LootModItem.cs" />
     <Compile Include="Hacks\TinkererArmorHackModPlayer.cs" />
     <Compile Include="LootModWorld.cs" />
-    <Compile Include="Api\Ext\GuiUtils.cs" />
+    <Compile Include="Ext\GuiUtils.cs" />
     <Compile Include="Api\Ext\ItemUtils.cs" />
     <Compile Include="ModSupport\CheatSheetSupport.cs" />
     <Compile Include="ModSupport\ModSupportTunneler.cs" />

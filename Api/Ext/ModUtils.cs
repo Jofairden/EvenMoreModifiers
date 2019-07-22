@@ -2,9 +2,7 @@ using System;
 using System.Linq;
 using Loot.Api.Core;
 using Loot.Api.Loaders;
-using Loot.Modifiers;
 using Loot.Pools;
-using Loot.Rarities;
 using Terraria.ModLoader;
 
 namespace Loot.Api.Ext

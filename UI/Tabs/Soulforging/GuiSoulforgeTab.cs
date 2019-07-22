@@ -1,4 +1,4 @@
-using Loot.Api.Ext;
+using Loot.Ext;
 using Loot.UI.Common.Controls.Button;
 
 namespace Loot.UI.Tabs.Soulforging

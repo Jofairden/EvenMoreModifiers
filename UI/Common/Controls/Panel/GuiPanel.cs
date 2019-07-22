@@ -1,4 +1,4 @@
-using Loot.Api.Ext;
+using Loot.Ext;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 

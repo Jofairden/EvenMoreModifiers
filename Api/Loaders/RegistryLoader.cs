@@ -4,9 +4,6 @@ using System.Linq;
 using System.Reflection;
 using Loot.Api.Attributes;
 using Loot.Api.Core;
-using Loot.Modifiers;
-using Loot.Pools;
-using Loot.Rarities;
 using Terraria.ModLoader;
 
 namespace Loot.Api.Loaders

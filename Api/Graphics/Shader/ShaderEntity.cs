@@ -1,6 +1,6 @@
-using Loot.Api.Ext;
 using Loot.Api.Graphics.Glowmask;
 using Loot.Api.ModContent;
+using Loot.Ext;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Terraria;

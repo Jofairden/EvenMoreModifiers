@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using Loot.Api.Cubes;
 using Loot.Api.Ext;
+using Loot.Ext;
 using Loot.UI.Common.Controls.Button;
 using Loot.UI.Common.Controls.Panel;
 using Microsoft.Xna.Framework;
