@@ -54,6 +54,7 @@
     <Compile Include="Api\Graphics\Shader\Style\ShaderDrawStyle.cs" />
     <Compile Include="Api\Core\ModifierContextMethod.cs" />
     <Compile Include="Attributes\StaticAssetAttribute.cs" />
+    <Compile Include="Ext\ReflectUtils.cs" />
     <Compile Include="Hacks\BackwardsCompatibleHacks.cs" />
     <Compile Include="Hacks\CheatedItemHackGlobalItem.cs" />
     <Compile Include="Api\Attributes\DelegationPrioritization.cs" />
@@ -181,6 +182,7 @@
     <Compile Include="Rarities\TranscendentRarity.cs" />
     <Compile Include="Sounds\Custom\UISounds.cs" />
     <Compile Include="Sounds\SoundHelper.cs" />
+    <Compile Include="UI\Common\Assets.cs" />
     <Compile Include="UI\Common\Controls\Button\GuiArrowButton.cs" />
     <Compile Include="UI\Common\Controls\Button\GuiButton.cs" />
     <Compile Include="UI\Common\Controls\Button\GuiImageButton.cs" />

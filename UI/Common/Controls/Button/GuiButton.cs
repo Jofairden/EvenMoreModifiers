@@ -15,12 +15,11 @@ namespace Loot.UI.Common.Controls.Button
 			Parchment
 		}
 
-		private readonly Texture2D _texture;
+		private static Texture2D _texture => Assets.Textures.GUI.ButtonTexture;
 		protected ButtonType _buttonType;
 
 		internal GuiButton(ButtonType buttonType) : base(new Vector2(WIDTH, HEIGHT), new Vector2(10, 10))
 		{
-			_texture = Loot.Instance.GetTexture("UI/Common/Controls/Button/GuiButton");
 			_buttonType = buttonType;
 		}
 

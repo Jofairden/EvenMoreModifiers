@@ -14,7 +14,7 @@ namespace Loot.UI.Common.Controls.Button
 			DEFAULT = RIGHT
 		}
 
-		private readonly Texture2D _btnTexture;
+		private static Texture2D _btnTexture => Assets.Textures.GUI.ArrowButtonTexture;
 		public bool CanBeClicked;
 		public string HoverText;
 		private readonly ArrowDirection _arrowDirection;
@@ -36,7 +36,6 @@ namespace Loot.UI.Common.Controls.Button
 
 		public GuiArrowButton(ArrowDirection direction)
 		{
-			_btnTexture = Loot.Instance.GetTexture("UI/Common/Controls/Button/GuiArrowButton");
 			_arrowDirection = direction;
 		}
 

@@ -1,7 +1,13 @@
+using System;
+using System.Diagnostics;
+using System.Reflection;
 using Loot.Api.ModContent;
+using Loot.Attributes;
+using Loot.Ext;
 using Loot.Hacks;
 using Loot.ModSupport;
 using Loot.UI;
+using Microsoft.Xna.Framework.Graphics;
 using Terraria;
 using Terraria.UI;
 
@@ -10,7 +16,7 @@ namespace Loot.Api.Loaders
 	/// <summary>
 	/// The LoadingFunneler's purpose is to funnel all loading and unloading to one class
 	/// </summary>
-	public static class LoadingFunneler
+	internal static class LoadingFunneler
 	{
 		internal static void Load()
 		{
@@ -56,6 +62,8 @@ namespace Loot.Api.Loaders
 		// Load EMM for Client only (this doesn't need to be loaded for server)
 		private static void LoadModForClient()
 		{
+			LoadStaticAssets();
+
 			Loot.ModContentManager = new ModContentManager();
 			Loot.ModContentManager.Initialize(Loot.Instance);
 
@@ -76,7 +84,34 @@ namespace Loot.Api.Loaders
 			RegistryLoader.Unload();
 			Loot.ModContentManager?.Unload();
 			Loot.ModContentManager = null;
-			//UnloadStaticRefs()
+			UnloadStaticAssets();
+		}
+
+		private static void LoadStaticAssets()
+		{
+			foreach (var mem in ReflectUtils.GetStaticAssetTypes())
+			{
+				var attr = (StaticAssetAttribute)mem.GetCustomAttribute(typeof(StaticAssetAttribute));
+				Debug.Assert(attr != null);
+				if (mem is PropertyInfo prop && prop.PropertyType == typeof(Texture2D))
+					prop.SetValue(null, attr.LoadTexture2D());
+				if (mem is FieldInfo field && field.FieldType == typeof(Texture2D))
+					field.SetValue(null, attr.LoadTexture2D());
+			}
+		}
+
+		private static void UnloadStaticAssets()
+		{
+			foreach (var mem in ReflectUtils.GetStaticAssetTypes())
+			{
+				if (!mem.GetType().IsValueType || Nullable.GetUnderlyingType(mem.GetType()) != null)
+				{
+					if (mem is PropertyInfo prop)
+						prop.SetValue(null, null);
+					if (mem is FieldInfo field)
+						field.SetValue(null, null);
+				}
+			}
 		}
 
 		// TODO unused

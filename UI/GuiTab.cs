@@ -1,4 +1,5 @@
 using Loot.Ext;
+using Loot.UI.Common;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Terraria;
@@ -27,18 +28,11 @@ namespace Loot.UI
 		}
 
 		protected UIElement TabFrame;
-		protected Texture2D _topTexture;
-		protected Texture2D _middleTexture;
-		protected Texture2D _bottomTexture;
+		protected static Texture2D _topTexture => Assets.Textures.GUI.PanelTopTexture;
+		protected static Texture2D _middleTexture => Assets.Textures.GUI.PanelTileTexture;
+		protected static Texture2D _bottomTexture => Assets.Textures.GUI.PanelBottomTexture;
 
 		public int TotalHeight => _topTexture.Height + _pageHeight + _bottomTexture.Height;
-
-		protected GuiTab()
-		{
-			_topTexture = Loot.Instance.GetTexture("UI/GuiPanelTop");
-			_middleTexture = Loot.Instance.GetTexture("UI/GuiPanelTile");
-			_bottomTexture = Loot.Instance.GetTexture("UI/GuiPanelBottom");
-		}
 
 		public override void OnInitialize()
 		{

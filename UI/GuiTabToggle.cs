@@ -1,3 +1,4 @@
+using Loot.UI.Common;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Terraria.GameContent.UI.Elements;
@@ -50,11 +51,11 @@ namespace Loot.UI
 			{
 				default:
 				case GuiTabState.CUBING:
-					return Loot.Instance.GetTexture("UI/GuiTabCubing");
+					return Assets.Textures.GUI.Tabs.CubingTabTexture;
 				case GuiTabState.ESSENCE:
-					return Loot.Instance.GetTexture("UI/GuiTabEssencecraft");
+					return Assets.Textures.GUI.Tabs.EssenceCraftTexture;
 				case GuiTabState.SOULFORGE:
-					return Loot.Instance.GetTexture("UI/GuiTabSoulforge");
+					return Assets.Textures.GUI.Tabs.SoulforgeTexture;
 			}
 		}
 

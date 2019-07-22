@@ -1,4 +1,6 @@
+using Loot.Attributes;
 using Loot.Ext;
+using Loot.UI.Common;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Terraria;
@@ -8,20 +10,11 @@ namespace Loot.UI
 {
 	internal class GuiCloseButton : UIElement
 	{
-		private readonly Texture2D _btnTexture;
-		private readonly Texture2D _chainsTexture;
-
-		public GuiCloseButton()
-		{
-			_btnTexture = Loot.Instance.GetTexture("UI/GuiCloseButton");
-			_chainsTexture = Loot.Instance.GetTexture("UI/GuiCloseButtonChains");
-		}
-
 		public override void OnInitialize()
 		{
-			Width.Set(_btnTexture.Width, 0);
-			Height.Set(_btnTexture.Height, 0);
-			Top.Set(20 + _chainsTexture.Height, 0);
+			Width.Set(Assets.Textures.GUI.CloseButtonTexture.Width, 0);
+			Height.Set(Assets.Textures.GUI.CloseButtonTexture.Height, 0);
+			Top.Set(20 + Assets.Textures.GUI.CloseButtonChainsTexture.Height, 0);
 			Left.Set(422, 0);
 		}
 
@@ -33,20 +26,22 @@ namespace Loot.UI
 				return new Rectangle(parentBounds.X + off.X, parentBounds.Y + off.Y, (int)bounds.X, (int)bounds.Y);
 			}
 
+			var _btn = Assets.Textures.GUI.CloseButtonTexture;
 			spriteBatch.Draw(
-				_btnTexture,
+				_btn,
 				parentBounds,
 				Color.White
 			);
 
+			var _chains = Assets.Textures.GUI.CloseButtonChainsTexture;
 			Point offset = new Point(
 				0,
-				-_chainsTexture.Height
+				-_chains.Height
 			);
 
-			Rectangle rectangle = _chainsTexture.BoundsFromParent(BoundsWithOffset(_chainsTexture.Size(), offset));
+			Rectangle rectangle = _chains.BoundsFromParent(BoundsWithOffset(_chains.Size(), offset));
 			spriteBatch.Draw(
-				_chainsTexture,
+				_chains,
 				rectangle,
 				Color.White
 			);

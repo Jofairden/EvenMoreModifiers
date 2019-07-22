@@ -6,11 +6,10 @@ namespace Loot.UI.Common.Controls.Panel
 {
 	internal class GuiPanel : GuiFramedElement
 	{
-		private readonly Texture2D _texture;
+		private static Texture2D _texture => Assets.Textures.GUI.PanelTexture;
 
 		public GuiPanel() : base(new Vector2(316, 50), new Vector2(10, 10))
 		{
-			_texture = Loot.Instance.GetTexture("UI/Common/Controls/Panel/GuiPanel");
 		}
 
 		protected override void DrawSelf(SpriteBatch spriteBatch)
