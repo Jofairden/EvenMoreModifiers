@@ -1,0 +1,9 @@
+<map id="Loot.Api.Core.ModifierPool" name="Loot.Api.Core.ModifierPool">
+<area shape="rect" id="node2" href="$interface_loot_1_1_api_1_1_content_1_1_i_loadable_content.html" title="Defines a piece of loadable content The interface is used in classes where the deriving class already..." alt="" coords="25,11,160,38"/>
+<area shape="rect" id="node10" href="$class_loot_1_1_api_1_1_core_1_1_modifier.html" title="Defines a modifier, which is an unloaded GlobalItem Making it a GlobalItem gives easy access to all h..." alt="" coords="375,223,538,250"/>
+<area shape="rect" id="node3" title="Used to restrict setting properties of ILoadableContent to internal only This is done by marking the ..." alt="" coords="5,95,180,122"/>
+<area shape="rect" id="node4" href="$class_i_cloneable.html" title="ICloneable" alt="" coords="49,153,137,179"/>
+<area shape="rect" id="node11" href="$class_global_item.html" title="GlobalItem" alt="" coords="47,274,138,301"/>
+<area shape="rect" id="node13" href="$class_loot_1_1_api_1_1_attributes_1_1_populate_pool_from_attribute.html" title="Will populate a ModifierPool based on a namespace All Modifiers in that namespace will become part of..." alt="" coords="356,489,557,531"/>
+<area shape="rect" id="node14" href="$class_attribute.html" title="Attribute" alt="" coords="53,497,132,523"/>
+</map>

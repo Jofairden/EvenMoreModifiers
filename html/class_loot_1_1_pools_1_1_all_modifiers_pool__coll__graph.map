@@ -1,10 +1,10 @@
 <map id="Loot.Pools.AllModifiersPool" name="Loot.Pools.AllModifiersPool">
-<area shape="rect" id="node2" href="$class_loot_1_1_api_1_1_modifier_1_1_modifier_pool.html" title="Defines a modifier pool. A modifier pool holds a certain amount of effects in an array It allows to r..." alt="" coords="755,348,853,375"/>
-<area shape="rect" id="node3" href="$interface_loot_1_1_api_1_1_content_1_1_i_loadable_content.html" title="Defines a piece of loadable content The interface is used in classes where the deriving class already..." alt="" coords="25,315,160,341"/>
-<area shape="rect" id="node7" href="$class_loot_1_1_api_1_1_modifier_1_1_modifier.html" title="Defines a modifier, which is an unloaded GlobalItem Making it a GlobalItem gives easy access to all h..." alt="" coords="376,348,557,375"/>
-<area shape="rect" id="node4" title="Used to restrict setting properties of ILoadableContent to internal only This is done by marking the ..." alt="" coords="5,155,180,181"/>
-<area shape="rect" id="node5" href="$class_i_cloneable.html" title="ICloneable" alt="" coords="49,487,137,513"/>
-<area shape="rect" id="node8" href="$class_global_item.html" title="GlobalItem" alt="" coords="47,428,138,455"/>
-<area shape="rect" id="node14" href="$class_loot_1_1_api_1_1_attributes_1_1_populate_pool_from_attribute.html" title="Will populate a ModifierPool based on a namespace All Modifiers in that namespace will become part of..." alt="" coords="366,71,567,113"/>
-<area shape="rect" id="node15" href="$class_attribute.html" title="Attribute" alt="" coords="53,79,132,105"/>
+<area shape="rect" id="node2" href="$class_loot_1_1_api_1_1_core_1_1_modifier_pool.html" title="Defines a modifier pool. A modifier pool holds a certain amount of effects in an array It allows to r..." alt="" coords="735,347,833,373"/>
+<area shape="rect" id="node3" href="$interface_loot_1_1_api_1_1_content_1_1_i_loadable_content.html" title="Defines a piece of loadable content The interface is used in classes where the deriving class already..." alt="" coords="25,423,160,449"/>
+<area shape="rect" id="node11" href="$class_loot_1_1_api_1_1_core_1_1_modifier.html" title="Defines a modifier, which is an unloaded GlobalItem Making it a GlobalItem gives easy access to all h..." alt="" coords="375,288,538,315"/>
+<area shape="rect" id="node4" title="Used to restrict setting properties of ILoadableContent to internal only This is done by marking the ..." alt="" coords="5,91,180,117"/>
+<area shape="rect" id="node5" href="$class_i_cloneable.html" title="ICloneable" alt="" coords="49,248,137,275"/>
+<area shape="rect" id="node12" href="$class_global_item.html" title="GlobalItem" alt="" coords="47,364,138,391"/>
+<area shape="rect" id="node14" href="$class_loot_1_1_api_1_1_attributes_1_1_populate_pool_from_attribute.html" title="Will populate a ModifierPool based on a namespace All Modifiers in that namespace will become part of..." alt="" coords="356,7,557,49"/>
+<area shape="rect" id="node15" href="$class_attribute.html" title="Attribute" alt="" coords="53,15,132,41"/>
 </map>

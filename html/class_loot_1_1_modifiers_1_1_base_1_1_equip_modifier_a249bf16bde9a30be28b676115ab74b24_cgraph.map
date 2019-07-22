@@ -1,3 +1,3 @@
 <map id="Loot.Modifiers.Base.EquipModifier.GetModifierProperties" name="Loot.Modifiers.Base.EquipModifier.GetModifierProperties">
-<area shape="rect" id="node2" href="$class_loot_1_1_api_1_1_modifier_1_1_modifier_properties_1_1_modifier_properties_builder.html#a2dea0a406e58a8bb2a77274d9dfe7fb5" title="Loot.Api.Modifier.Modifier\lProperties.ModifierPropertiesBuilder.\lWithMagnitudeStrength" alt="" coords="267,5,520,61"/>
+<area shape="rect" id="node2" href="$class_loot_1_1_api_1_1_core_1_1_modifier_properties_1_1_modifier_properties_builder.html#a1b07cc34e7631a3f522c0a1043368608" title="Loot.Api.Core.ModifierProperties.\lModifierPropertiesBuilder.WithMagnitude\lStrength" alt="" coords="267,5,545,61"/>
 </map>

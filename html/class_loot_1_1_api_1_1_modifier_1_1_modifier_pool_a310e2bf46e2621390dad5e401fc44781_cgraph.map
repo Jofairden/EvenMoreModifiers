@@ -1,3 +1,0 @@
-<map id="Loot.Api.Modifier.ModifierPool.Save" name="Loot.Api.Modifier.ModifierPool.Save">
-<area shape="rect" id="node2" href="$class_loot_1_1_api_1_1_modifier_1_1_modifier.html#ae0d12b4a4ac6c013a16701f30aad8907" title="Allows modder to do custom saving here Use the given TC to put data you want to save, which can be loaded using Load(Item,TagCompound) " alt="" coords="235,37,451,63"/>
-</map>

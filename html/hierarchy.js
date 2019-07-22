@@ -12,9 +12,8 @@ var hierarchy =
     [ "Loot.UI.Tabs.Soulforging.GuiSoulgauge.GaugeDrawing", "class_loot_1_1_u_i_1_1_tabs_1_1_soulforging_1_1_gui_soulgauge_1_1_gauge_drawing.html", null ],
     [ "GenPass", "class_gen_pass.html", null ],
     [ "GlobalItem", "class_global_item.html", [
-      [ "Loot.Api.Graphics.GraphicsGlobalItem", "class_loot_1_1_api_1_1_graphics_1_1_graphics_global_item.html", null ],
-      [ "Loot.Api.Modifier.Modifier", "class_loot_1_1_api_1_1_modifier_1_1_modifier.html", [
-        [ "Loot.Api.Modifier.NullModifier", "class_loot_1_1_api_1_1_modifier_1_1_null_modifier.html", null ],
+      [ "Loot.Api.Core.Modifier", "class_loot_1_1_api_1_1_core_1_1_modifier.html", [
+        [ "Loot.Api.Core.NullModifier", "class_loot_1_1_api_1_1_core_1_1_null_modifier.html", null ],
         [ "Loot.Modifiers.Base.AccessoryModifier", "class_loot_1_1_modifiers_1_1_base_1_1_accessory_modifier.html", null ],
         [ "Loot.Modifiers.Base.ArmorModifier", "class_loot_1_1_modifiers_1_1_base_1_1_armor_modifier.html", null ],
         [ "Loot.Modifiers.Base.EquipModifier", "class_loot_1_1_modifiers_1_1_base_1_1_equip_modifier.html", [
@@ -67,6 +66,7 @@ var hierarchy =
           [ "Loot.Modifiers.WeaponModifiers.VelocityPlus", "class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_velocity_plus.html", null ]
         ] ]
       ] ],
+      [ "Loot.Api.Graphics.GraphicsGlobalItem", "class_loot_1_1_api_1_1_graphics_1_1_graphics_global_item.html", null ],
       [ "Loot.Hacks.CheatedItemHackGlobalItem", "class_loot_1_1_hacks_1_1_cheated_item_hack_global_item.html", null ],
       [ "Loot.Hacks.TinkererArmorHackGlobalItem", "class_loot_1_1_hacks_1_1_tinkerer_armor_hack_global_item.html", null ],
       [ "Loot.LootModItem", "class_loot_1_1_loot_mod_item.html", null ],
@@ -90,11 +90,10 @@ var hierarchy =
         [ "Loot.Api.Graphics.Shader.ShaderGraphicsProperties", "class_loot_1_1_api_1_1_graphics_1_1_shader_1_1_shader_graphics_properties.html", null ]
       ] ]
     ] ],
-    [ "Loot.Api.Ext.GraphicsUtils", "class_loot_1_1_api_1_1_ext_1_1_graphics_utils.html", null ],
     [ "ICloneable", "class_i_cloneable.html", [
-      [ "Loot.Api.Modifier.Modifier", "class_loot_1_1_api_1_1_modifier_1_1_modifier.html", null ],
-      [ "Loot.Api.Modifier.ModifierEffect", "class_loot_1_1_api_1_1_modifier_1_1_modifier_effect.html", [
-        [ "Loot.Api.Modifier.NullModifierEffect", "class_loot_1_1_api_1_1_modifier_1_1_null_modifier_effect.html", null ],
+      [ "Loot.Api.Core.Modifier", "class_loot_1_1_api_1_1_core_1_1_modifier.html", null ],
+      [ "Loot.Api.Core.ModifierEffect", "class_loot_1_1_api_1_1_core_1_1_modifier_effect.html", [
+        [ "Loot.Api.Core.NullModifierEffect", "class_loot_1_1_api_1_1_core_1_1_null_modifier_effect.html", null ],
         [ "Loot.Modifiers.Base.WeaponDebuffEffect", "class_loot_1_1_modifiers_1_1_base_1_1_weapon_debuff_effect.html", null ],
         [ "Loot.Modifiers.EquipModifiers.Defensive.DodgeEffect", "class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_defensive_1_1_dodge_effect.html", null ],
         [ "Loot.Modifiers.EquipModifiers.Defensive.ImmunityEffect", "class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_defensive_1_1_immunity_effect.html", null ],
@@ -108,12 +107,12 @@ var hierarchy =
         [ "Loot.Modifiers.EquipModifiers.Utility.LuckEffect", "class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_utility_1_1_luck_effect.html", null ],
         [ "Loot.Modifiers.WeaponModifiers.CursedEffect", "class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_cursed_effect.html", null ]
       ] ],
-      [ "Loot.Api.Modifier.ModifierPool", "class_loot_1_1_api_1_1_modifier_1_1_modifier_pool.html", [
-        [ "Loot.Api.Modifier.NullModifierPool", "class_loot_1_1_api_1_1_modifier_1_1_null_modifier_pool.html", null ],
+      [ "Loot.Api.Core.ModifierPool", "class_loot_1_1_api_1_1_core_1_1_modifier_pool.html", [
+        [ "Loot.Api.Core.NullModifierPool", "class_loot_1_1_api_1_1_core_1_1_null_modifier_pool.html", null ],
         [ "Loot.Pools.AllModifiersPool", "class_loot_1_1_pools_1_1_all_modifiers_pool.html", null ]
       ] ],
-      [ "Loot.Api.Modifier.ModifierRarity", "class_loot_1_1_api_1_1_modifier_1_1_modifier_rarity.html", [
-        [ "Loot.Api.Modifier.NullModifierRarity", "class_loot_1_1_api_1_1_modifier_1_1_null_modifier_rarity.html", null ],
+      [ "Loot.Api.Core.ModifierRarity", "class_loot_1_1_api_1_1_core_1_1_modifier_rarity.html", [
+        [ "Loot.Api.Core.NullModifierRarity", "class_loot_1_1_api_1_1_core_1_1_null_modifier_rarity.html", null ],
         [ "Loot.Rarities.CommonRarity", "class_loot_1_1_rarities_1_1_common_rarity.html", null ],
         [ "Loot.Rarities.EpicRarity", "class_loot_1_1_rarities_1_1_epic_rarity.html", null ],
         [ "Loot.Rarities.LegendaryRarity", "class_loot_1_1_rarities_1_1_legendary_rarity.html", null ],
@@ -128,10 +127,10 @@ var hierarchy =
       [ "LootTests.ModifierPropertiesTests.FakeProperties", "class_loot_tests_1_1_modifier_properties_tests_1_1_fake_properties.html", null ]
     ] ],
     [ "Loot.Api.Content.ILoadableContent", "interface_loot_1_1_api_1_1_content_1_1_i_loadable_content.html", [
-      [ "Loot.Api.Modifier.Modifier", "class_loot_1_1_api_1_1_modifier_1_1_modifier.html", null ],
-      [ "Loot.Api.Modifier.ModifierEffect", "class_loot_1_1_api_1_1_modifier_1_1_modifier_effect.html", null ],
-      [ "Loot.Api.Modifier.ModifierPool", "class_loot_1_1_api_1_1_modifier_1_1_modifier_pool.html", null ],
-      [ "Loot.Api.Modifier.ModifierRarity", "class_loot_1_1_api_1_1_modifier_1_1_modifier_rarity.html", null ]
+      [ "Loot.Api.Core.Modifier", "class_loot_1_1_api_1_1_core_1_1_modifier.html", null ],
+      [ "Loot.Api.Core.ModifierEffect", "class_loot_1_1_api_1_1_core_1_1_modifier_effect.html", null ],
+      [ "Loot.Api.Core.ModifierPool", "class_loot_1_1_api_1_1_core_1_1_modifier_pool.html", null ],
+      [ "Loot.Api.Core.ModifierRarity", "class_loot_1_1_api_1_1_core_1_1_modifier_rarity.html", null ]
     ] ],
     [ "Loot.Api.Builder.IPropertyBuilder< T >", "interface_loot_1_1_api_1_1_builder_1_1_i_property_builder.html", [
       [ "Loot.Api.Builder.PropertyBuilder< T >", "class_loot_1_1_api_1_1_builder_1_1_property_builder.html", null ]
@@ -161,18 +160,21 @@ var hierarchy =
       [ "LootTests.FakeMod", "class_loot_tests_1_1_fake_mod.html", null ]
     ] ],
     [ "Loot.Api.ModContent.ModContentManager", "class_loot_1_1_api_1_1_mod_content_1_1_mod_content_manager.html", null ],
-    [ "Loot.Api.Modifier.ModifierContext", "class_loot_1_1_api_1_1_modifier_1_1_modifier_context.html", null ],
+    [ "Modifier", "class_modifier.html", [
+      [ "LootTests.TestModifiers.TestApplyMod", "class_loot_tests_1_1_test_modifiers_1_1_test_apply_mod.html", null ]
+    ] ],
+    [ "Loot.Api.Core.ModifierContext", "class_loot_1_1_api_1_1_core_1_1_modifier_context.html", null ],
     [ "ModifierPool", "class_modifier_pool.html", [
       [ "LootTests.TestPools.TestPool", "class_loot_tests_1_1_test_pools_1_1_test_pool.html", null ]
     ] ],
-    [ "Loot.Api.Modifier.ModifierProperties", "class_loot_1_1_api_1_1_modifier_1_1_modifier_properties.html", null ],
+    [ "Loot.Api.Core.ModifierProperties", "class_loot_1_1_api_1_1_core_1_1_modifier_properties.html", null ],
     [ "LootTests.ModifierPropertiesTests", "class_loot_tests_1_1_modifier_properties_tests.html", null ],
     [ "ModifierRarity", "class_modifier_rarity.html", [
       [ "LootTests.TestRarities.TestRarity", "class_loot_tests_1_1_test_rarities_1_1_test_rarity.html", null ]
     ] ],
-    [ "Loot.Api.Modifier.ModifierTooltipLine", "class_loot_1_1_api_1_1_modifier_1_1_modifier_tooltip_line.html", [
-      [ "Loot.Api.Modifier.NegativeTooltipLine", "class_loot_1_1_api_1_1_modifier_1_1_negative_tooltip_line.html", null ],
-      [ "Loot.Api.Modifier.PositiveTooltipLine", "class_loot_1_1_api_1_1_modifier_1_1_positive_tooltip_line.html", null ]
+    [ "Loot.Api.Core.ModifierTooltipLine", "class_loot_1_1_api_1_1_core_1_1_modifier_tooltip_line.html", [
+      [ "Loot.Api.Core.NegativeTooltipLine", "class_loot_1_1_api_1_1_core_1_1_negative_tooltip_line.html", null ],
+      [ "Loot.Api.Core.PositiveTooltipLine", "class_loot_1_1_api_1_1_core_1_1_positive_tooltip_line.html", null ]
     ] ],
     [ "ModItem", "class_mod_item.html", [
       [ "Loot.Api.Cubes.MagicalCube", "class_loot_1_1_api_1_1_cubes_1_1_magical_cube.html", [
@@ -184,8 +186,8 @@ var hierarchy =
       ] ]
     ] ],
     [ "ModPlayer", "class_mod_player.html", [
+      [ "Loot.Api.Core.ModifierEffect", "class_loot_1_1_api_1_1_core_1_1_modifier_effect.html", null ],
       [ "Loot.Api.Delegators.ModifierDelegatorPlayer", "class_loot_1_1_api_1_1_delegators_1_1_modifier_delegator_player.html", null ],
-      [ "Loot.Api.Modifier.ModifierEffect", "class_loot_1_1_api_1_1_modifier_1_1_modifier_effect.html", null ],
       [ "Loot.Caching.ModifierCachePlayer", "class_loot_1_1_caching_1_1_modifier_cache_player.html", null ],
       [ "Loot.Hacks.TinkererArmorHackModPlayer", "class_loot_1_1_hacks_1_1_tinkerer_armor_hack_mod_player.html", null ]
     ] ],
@@ -202,10 +204,10 @@ var hierarchy =
       [ "Loot.Api.Graphics.GraphicsProperties.GraphicsPropertiesBuilder", "class_loot_1_1_api_1_1_graphics_1_1_graphics_properties_1_1_graphics_properties_builder.html", null ]
     ] ],
     [ "PropertyBuilder< List< ModifierTooltipLine >>", null, [
-      [ "Loot.Api.Modifier.ModifierTooltipLine.ModifierTooltipBuilder", "class_loot_1_1_api_1_1_modifier_1_1_modifier_tooltip_line_1_1_modifier_tooltip_builder.html", null ]
+      [ "Loot.Api.Core.ModifierTooltipLine.ModifierTooltipBuilder", "class_loot_1_1_api_1_1_core_1_1_modifier_tooltip_line_1_1_modifier_tooltip_builder.html", null ]
     ] ],
     [ "Loot.Api.Builder.PropertyBuilder< ModifierProperties >", "class_loot_1_1_api_1_1_builder_1_1_property_builder.html", [
-      [ "Loot.Api.Modifier.ModifierProperties.ModifierPropertiesBuilder", "class_loot_1_1_api_1_1_modifier_1_1_modifier_properties_1_1_modifier_properties_builder.html", null ]
+      [ "Loot.Api.Core.ModifierProperties.ModifierPropertiesBuilder", "class_loot_1_1_api_1_1_core_1_1_modifier_properties_1_1_modifier_properties_builder.html", null ]
     ] ],
     [ "Loot.Api.Builder.PropertyBuilder< ShaderDrawStyleProperties >", "class_loot_1_1_api_1_1_builder_1_1_property_builder.html", [
       [ "Loot.Api.Graphics.Shader.Style.ShaderDrawStyle.ShaderDrawStyleProperties.ShaderDrawStylePropertiesBuilder", "class_loot_1_1_api_1_1_graphics_1_1_shader_1_1_style_1_1_shader_draw_style_1_1_shader_draw_stylee3fa1430b42fcf762048e88c567c6c51.html", null ]
@@ -230,8 +232,5 @@ var hierarchy =
       [ "Loot.Api.ModContent.GraphicsModContent", "class_loot_1_1_api_1_1_mod_content_1_1_graphics_mod_content.html", null ]
     ] ],
     [ "UIState", "class_u_i_state.html", null ],
-    [ "LootTests.UnitTests", "class_loot_tests_1_1_unit_tests.html", null ],
-    [ "Modifier", null, [
-      [ "LootTests.TestModifiers.TestApplyMod", "class_loot_tests_1_1_test_modifiers_1_1_test_apply_mod.html", null ]
-    ] ]
+    [ "LootTests.UnitTests", "class_loot_tests_1_1_unit_tests.html", null ]
 ];

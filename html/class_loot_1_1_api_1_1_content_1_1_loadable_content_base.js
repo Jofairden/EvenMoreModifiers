@@ -2,6 +2,7 @@ var class_loot_1_1_api_1_1_content_1_1_loadable_content_base =
 [
     [ "_GetContent", "class_loot_1_1_api_1_1_content_1_1_loadable_content_base.html#a63042f72edac016539562d0fe6cd2b66", null ],
     [ "AddContent", "class_loot_1_1_api_1_1_content_1_1_loadable_content_base.html#a47ab7e0a596c9a05da4e9421a6a28e0e", null ],
+    [ "AddContent", "class_loot_1_1_api_1_1_content_1_1_loadable_content_base.html#a2efe935d619fb742971f7a9b5b004a89", null ],
     [ "GetContent", "class_loot_1_1_api_1_1_content_1_1_loadable_content_base.html#a6579887c0322ab8906c9554f8d288708", null ],
     [ "GetContent", "class_loot_1_1_api_1_1_content_1_1_loadable_content_base.html#a4f3a813914d4052f62a884b70daff81d", null ],
     [ "GetContent", "class_loot_1_1_api_1_1_content_1_1_loadable_content_base.html#a70ef60558dd118d40e58a512cd295028", null ],

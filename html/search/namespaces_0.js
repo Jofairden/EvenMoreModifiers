@@ -1,6 +1,7 @@
 var searchData=
 [
   ['api',['Api',['../namespace_loot_1_1_api.html',1,'Loot']]],
+  ['attributes',['Attributes',['../namespace_loot_1_1_attributes.html',1,'Loot']]],
   ['attributes',['Attributes',['../namespace_loot_1_1_api_1_1_attributes.html',1,'Loot::Api']]],
   ['base',['Base',['../namespace_loot_1_1_modifiers_1_1_base.html',1,'Loot::Modifiers']]],
   ['builder',['Builder',['../namespace_loot_1_1_api_1_1_builder.html',1,'Loot::Api']]],
@@ -11,6 +12,7 @@ var searchData=
   ['content',['Content',['../namespace_loot_1_1_api_1_1_content.html',1,'Loot::Api']]],
   ['controls',['Controls',['../namespace_loot_1_1_u_i_1_1_common_1_1_controls.html',1,'Loot::UI::Common']]],
   ['core',['Core',['../namespace_loot_1_1_u_i_1_1_common_1_1_core.html',1,'Loot::UI::Common']]],
+  ['core',['Core',['../namespace_loot_1_1_api_1_1_core.html',1,'Loot::Api']]],
   ['cubes',['Cubes',['../namespace_loot_1_1_cubes.html',1,'Loot']]],
   ['cubes',['Cubes',['../namespace_loot_1_1_api_1_1_cubes.html',1,'Loot::Api']]],
   ['cubing',['Cubing',['../namespace_loot_1_1_u_i_1_1_tabs_1_1_cubing.html',1,'Loot::UI::Tabs']]],
@@ -20,6 +22,7 @@ var searchData=
   ['equipmodifiers',['EquipModifiers',['../namespace_loot_1_1_modifiers_1_1_equip_modifiers.html',1,'Loot::Modifiers']]],
   ['essencecrafting',['EssenceCrafting',['../namespace_loot_1_1_u_i_1_1_tabs_1_1_essence_crafting.html',1,'Loot::UI::Tabs']]],
   ['ext',['Ext',['../namespace_loot_1_1_api_1_1_ext.html',1,'Loot::Api']]],
+  ['ext',['Ext',['../namespace_loot_1_1_ext.html',1,'Loot']]],
   ['glowmask',['Glowmask',['../namespace_loot_1_1_api_1_1_graphics_1_1_glowmask.html',1,'Loot::Api::Graphics']]],
   ['graphics',['Graphics',['../namespace_loot_1_1_api_1_1_graphics.html',1,'Loot::Api']]],
   ['hacks',['Hacks',['../namespace_loot_1_1_hacks.html',1,'Loot']]],
@@ -28,7 +31,6 @@ var searchData=
   ['loot',['Loot',['../namespace_loot.html',1,'']]],
   ['loottests',['LootTests',['../namespace_loot_tests.html',1,'']]],
   ['modcontent',['ModContent',['../namespace_loot_1_1_api_1_1_mod_content.html',1,'Loot::Api']]],
-  ['modifier',['Modifier',['../namespace_loot_1_1_api_1_1_modifier.html',1,'Loot::Api']]],
   ['modifiers',['Modifiers',['../namespace_loot_1_1_modifiers.html',1,'Loot']]],
   ['modsupport',['ModSupport',['../namespace_loot_1_1_mod_support.html',1,'Loot']]],
   ['offensive',['Offensive',['../namespace_loot_1_1_modifiers_1_1_equip_modifiers_1_1_offensive.html',1,'Loot::Modifiers::EquipModifiers']]],

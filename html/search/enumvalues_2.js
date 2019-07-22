@@ -8,5 +8,5 @@ var searchData=
   ['canhitpvpwithproj',['CanHitPvpWithProj',['../namespace_loot_1_1_api_1_1_attributes.html#a96f1ebf800712ea4f5265d1e6ae9649da2a93bad7332e1f66c15d4493122da409',1,'Loot::Api::Attributes']]],
   ['catchfish',['CatchFish',['../namespace_loot_1_1_api_1_1_attributes.html#a96f1ebf800712ea4f5265d1e6ae9649da08caf5efab0bc1f9594a1bf90078acf3',1,'Loot::Api::Attributes']]],
   ['consumeammo',['ConsumeAmmo',['../namespace_loot_1_1_api_1_1_attributes.html#a96f1ebf800712ea4f5265d1e6ae9649dabc3096b7714aa76b50a6b5987220dac3',1,'Loot::Api::Attributes']]],
-  ['custom',['Custom',['../namespace_loot_1_1_api_1_1_modifier.html#ae6b4a5d186c8a445e2ecc0a9f695616ca90589c47f06eb971d548591f23c285af',1,'Loot::Api::Modifier']]]
+  ['custom',['Custom',['../namespace_loot_1_1_api_1_1_core.html#a2fe26ee9cffa16c663ab49599e1949b4a90589c47f06eb971d548591f23c285af',1,'Loot::Api::Core']]]
 ];

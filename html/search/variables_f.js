@@ -6,6 +6,6 @@ var searchData=
   ['tex_5ffull',['TEX_FULL',['../class_loot_1_1_u_i_1_1_tabs_1_1_soulforging_1_1_gui_soulgauge_1_1_gauge_drawing_1_1_s_t_a_t_i_c.html#aa694cf8844afff51dc3ae37c5b1e7b85',1,'Loot::UI::Tabs::Soulforging::GuiSoulgauge::GaugeDrawing::STATIC']]],
   ['tex_5fsixty',['TEX_SIXTY',['../class_loot_1_1_u_i_1_1_tabs_1_1_soulforging_1_1_gui_soulgauge_1_1_gauge_drawing_1_1_a_n_i_m.html#a09b04b5a55daadef70ace62b1ff8b5ab',1,'Loot::UI::Tabs::Soulforging::GuiSoulgauge::GaugeDrawing::ANIM']]],
   ['tex_5ftwenty',['TEX_TWENTY',['../class_loot_1_1_u_i_1_1_tabs_1_1_soulforging_1_1_gui_soulgauge_1_1_gauge_drawing_1_1_a_n_i_m.html#adc180e7a4a062b0c56ea879b04d757ef',1,'Loot::UI::Tabs::Soulforging::GuiSoulgauge::GaugeDrawing::ANIM']]],
-  ['text',['Text',['../class_loot_1_1_api_1_1_modifier_1_1_modifier_tooltip_line.html#ac3180894943557015db308a609b186e1',1,'Loot::Api::Modifier::ModifierTooltipLine']]],
-  ['totalraritylevel',['TotalRarityLevel',['../class_loot_1_1_api_1_1_modifier_1_1_modifier_pool.html#a3f1670411648b5ec0fb148147139002a',1,'Loot::Api::Modifier::ModifierPool']]]
+  ['text',['Text',['../class_loot_1_1_api_1_1_core_1_1_modifier_tooltip_line.html#a438eeabf63646d287a2ccb048601f375',1,'Loot::Api::Core::ModifierTooltipLine']]],
+  ['totalraritylevel',['TotalRarityLevel',['../class_loot_1_1_api_1_1_core_1_1_modifier_pool.html#ac3ca1151f7d0378a0eaaa6bb6493ebdf',1,'Loot::Api::Core::ModifierPool']]]
 ];

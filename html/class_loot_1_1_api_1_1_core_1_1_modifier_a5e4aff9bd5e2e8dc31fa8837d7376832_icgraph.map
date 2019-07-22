@@ -1,0 +1,5 @@
+<map id="Loot.Api.Core.Modifier.GetModifierProperties" name="Loot.Api.Core.Modifier.GetModifierProperties">
+<area shape="rect" id="node2" href="$class_loot_1_1_api_1_1_core_1_1_modifier.html#ae1d7cdc155ee49a05826dddcb4cca172" title="Loot.Api.Core.Modifier.Clone" alt="" coords="246,5,447,32"/>
+<area shape="rect" id="node3" href="$class_loot_1_1_api_1_1_core_1_1_modifier.html#ac1c8559af0d0c829e2ebb671fa1805d9" title="Allows modder to do custom loading here Use the given TC to pull data you saved using Save(Item..." alt="" coords="249,80,445,107"/>
+<area shape="rect" id="node4" href="$class_loot_1_1_rolling_strategies_1_1_normal_rolling_strategy.html#aedd88de5f2b914ce16a673332850ae01" title="Loot.RollingStrategies.Normal\lRollingStrategy.Roll" alt="" coords="241,131,452,173"/>
+</map>

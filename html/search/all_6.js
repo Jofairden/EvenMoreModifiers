@@ -3,7 +3,7 @@ var searchData=
   ['fakemod',['FakeMod',['../class_loot_tests_1_1_fake_mod.html',1,'LootTests']]],
   ['fakeproperties',['FakeProperties',['../class_loot_tests_1_1_modifier_properties_tests_1_1_fake_properties.html',1,'LootTests::ModifierPropertiesTests']]],
   ['fillvanillanamescache',['FillVanillaNamesCache',['../class_loot_1_1_api_1_1_mod_content_1_1_graphics_mod_content.html#a7686c6ddac773e1a8a69c1ab9295c997',1,'Loot::Api::ModContent::GraphicsModContent']]],
-  ['firstload',['FirstLoad',['../namespace_loot_1_1_api_1_1_modifier.html#ae6b4a5d186c8a445e2ecc0a9f695616caa5382010e77d31e27da44053b5fee5f0',1,'Loot::Api::Modifier']]],
+  ['firstload',['FirstLoad',['../namespace_loot_1_1_api_1_1_core.html#a2fe26ee9cffa16c663ab49599e1949b4aa5382010e77d31e27da44053b5fee5f0',1,'Loot::Api::Core']]],
   ['firsttick',['FirstTick',['../class_loot_1_1_api_1_1_delegators_1_1_modifier_delegator_projectile.html#aa6ab364c916537cef43c5d79fbdaa7d9',1,'Loot::Api::Delegators::ModifierDelegatorProjectile']]],
   ['fishingplus',['FishingPlus',['../class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_utility_1_1_fishing_plus.html',1,'Loot::Modifiers::EquipModifiers::Utility']]],
   ['fishingplus_2ecs',['FishingPlus.cs',['../_fishing_plus_8cs.html',1,'']]],

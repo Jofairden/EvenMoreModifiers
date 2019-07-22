@@ -14,6 +14,5 @@ var searchData=
   ['graphicsglobalitem',['GraphicsGlobalItem',['../class_loot_1_1_api_1_1_graphics_1_1_graphics_global_item.html',1,'Loot::Api::Graphics']]],
   ['graphicsmodcontent',['GraphicsModContent',['../class_loot_1_1_api_1_1_mod_content_1_1_graphics_mod_content.html',1,'Loot::Api::ModContent']]],
   ['graphicsproperties',['GraphicsProperties',['../class_loot_1_1_api_1_1_graphics_1_1_graphics_properties.html',1,'Loot::Api::Graphics']]],
-  ['graphicspropertiesbuilder',['GraphicsPropertiesBuilder',['../class_loot_1_1_api_1_1_graphics_1_1_graphics_properties_1_1_graphics_properties_builder.html',1,'Loot::Api::Graphics::GraphicsProperties']]],
-  ['graphicsutils',['GraphicsUtils',['../class_loot_1_1_api_1_1_ext_1_1_graphics_utils.html',1,'Loot::Api::Ext']]]
+  ['graphicspropertiesbuilder',['GraphicsPropertiesBuilder',['../class_loot_1_1_api_1_1_graphics_1_1_graphics_properties_1_1_graphics_properties_builder.html',1,'Loot::Api::Graphics::GraphicsProperties']]]
 ];

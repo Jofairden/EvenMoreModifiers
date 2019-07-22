@@ -14,8 +14,8 @@ var searchData=
   ['healthyfoesbonus_2ecs',['HealthyFoesBonus.cs',['../_healthy_foes_bonus_8cs.html',1,'']]],
   ['healthyfoeseffect',['HealthyFoesEffect',['../class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_offensive_1_1_healthy_foes_effect.html',1,'Loot::Modifiers::EquipModifiers::Offensive']]],
   ['holditem',['HoldItem',['../class_loot_1_1_modifiers_1_1_base_1_1_weapon_debuff_modifier.html#aca769c3fc6e23cca2283f20b5f5a6a91',1,'Loot::Modifiers::Base::WeaponDebuffModifier']]],
-  ['holdoutoffset',['HoldoutOffset',['../class_loot_1_1_api_1_1_modifier_1_1_modifier.html#a4bda9a48dadf38231a345ecdd889ff33',1,'Loot::Api::Modifier::Modifier']]],
-  ['holdoutorigin',['HoldoutOrigin',['../class_loot_1_1_api_1_1_modifier_1_1_modifier.html#a49e175b079edcaee5572a3d5c3a5c2c1',1,'Loot::Api::Modifier::Modifier']]],
+  ['holdoutoffset',['HoldoutOffset',['../class_loot_1_1_api_1_1_core_1_1_modifier.html#ab26ea493195ae131cb20ca0dcee13287',1,'Loot::Api::Core::Modifier']]],
+  ['holdoutorigin',['HoldoutOrigin',['../class_loot_1_1_api_1_1_core_1_1_modifier.html#a07a692657247beb50098adb8aebdd984',1,'Loot::Api::Core::Modifier']]],
   ['hurt',['Hurt',['../class_loot_1_1_api_1_1_delegators_1_1_modifier_delegator_player.html#a7ef11cadc08d752df2c9fb9999d5102c',1,'Loot.Api.Delegators.ModifierDelegatorPlayer.Hurt()'],['../namespace_loot_1_1_api_1_1_attributes.html#a96f1ebf800712ea4f5265d1e6ae9649da62c8a2522be2668b5452181d07dd8964',1,'Loot.Api.Attributes.Hurt()']]],
   ['hurtevent',['HurtEvent',['../class_loot_1_1_api_1_1_delegators_1_1_modifier_delegator_player.html#a8db0af3ff913ae431a5620e0269aa32b',1,'Loot::Api::Delegators::ModifierDelegatorPlayer']]]
 ];

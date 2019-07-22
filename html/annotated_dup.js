@@ -9,6 +9,7 @@ var annotated_dup =
     [ "GlobalProjectile", "class_global_projectile.html", null ],
     [ "ICloneable", "class_i_cloneable.html", null ],
     [ "Mod", "class_mod.html", null ],
+    [ "Modifier", "class_modifier.html", null ],
     [ "ModifierPool", "class_modifier_pool.html", null ],
     [ "ModifierRarity", "class_modifier_rarity.html", null ],
     [ "ModItem", "class_mod_item.html", null ],

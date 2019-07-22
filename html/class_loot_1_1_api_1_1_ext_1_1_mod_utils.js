@@ -1,9 +1,9 @@
 var class_loot_1_1_api_1_1_ext_1_1_mod_utils =
 [
     [ "GetAllModifiersPool", "class_loot_1_1_api_1_1_ext_1_1_mod_utils.html#aef1589f7e1a455c33f67621dfedcb178", null ],
-    [ "GetModifier", "class_loot_1_1_api_1_1_ext_1_1_mod_utils.html#adde645aff645105c621237dc84bfc225", null ],
-    [ "GetModifier", "class_loot_1_1_api_1_1_ext_1_1_mod_utils.html#a12e31ed308dc5e0169dcdfd10f556a23", null ],
-    [ "GetModifier", "class_loot_1_1_api_1_1_ext_1_1_mod_utils.html#a37739d1831122c57dc83b89dbbbc623b", null ],
+    [ "GetModifier", "class_loot_1_1_api_1_1_ext_1_1_mod_utils.html#a0f7308382126405e808389efbba4b4e0", null ],
+    [ "GetModifier", "class_loot_1_1_api_1_1_ext_1_1_mod_utils.html#ad919959f72d1c9b44b1fc1fc1deede10", null ],
+    [ "GetModifier", "class_loot_1_1_api_1_1_ext_1_1_mod_utils.html#a2a1f890777d8afec4796649aea64eb51", null ],
     [ "GetModifier< T >", "class_loot_1_1_api_1_1_ext_1_1_mod_utils.html#a632f9b5c6b508c6c5dc4724525d937bb", null ],
     [ "GetModifierEffect", "class_loot_1_1_api_1_1_ext_1_1_mod_utils.html#a4fbf4cf33bbfdafbedc171501d6a1051", null ],
     [ "GetModifierEffect", "class_loot_1_1_api_1_1_ext_1_1_mod_utils.html#a8a0ac4aa26a1abfea186a423821bedc7", null ],

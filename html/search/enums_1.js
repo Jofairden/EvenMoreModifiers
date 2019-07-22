@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['modifiercontextmethod',['ModifierContextMethod',['../namespace_loot_1_1_api_1_1_modifier.html#ae6b4a5d186c8a445e2ecc0a9f695616c',1,'Loot::Api::Modifier']]]
+  ['modifiercontextmethod',['ModifierContextMethod',['../namespace_loot_1_1_api_1_1_core.html#a2fe26ee9cffa16c663ab49599e1949b4',1,'Loot::Api::Core']]]
 ];

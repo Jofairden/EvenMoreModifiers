@@ -1,0 +1,4 @@
+<map id="Loot.Api.Core.ModifierTooltipLine" name="Loot.Api.Core.ModifierTooltipLine">
+<area shape="rect" id="node2" href="$class_loot_1_1_api_1_1_core_1_1_negative_tooltip_line.html" title="A ModifierTooltipLine with a Red text color. " alt="" coords="5,80,240,107"/>
+<area shape="rect" id="node3" href="$class_loot_1_1_api_1_1_core_1_1_positive_tooltip_line.html" title="A ModifierTooltipLine with a Lime text color. " alt="" coords="264,80,491,107"/>
+</map>

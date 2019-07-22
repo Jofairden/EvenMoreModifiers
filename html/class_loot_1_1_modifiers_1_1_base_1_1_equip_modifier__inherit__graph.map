@@ -26,7 +26,7 @@
 <area shape="rect" id="node31" href="$class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_utility_1_1_mining_speed_plus.html" title="Loot.Modifiers.EquipModifiers.\lUtility.MiningSpeedPlus" alt="" coords="593,1573,803,1615"/>
 <area shape="rect" id="node32" href="$class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_utility_1_1_move_speed_plus.html" title="Loot.Modifiers.EquipModifiers.\lUtility.MoveSpeedPlus" alt="" coords="593,1639,803,1680"/>
 <area shape="rect" id="node33" href="$class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_utility_1_1_wing_time_plus.html" title="Loot.Modifiers.EquipModifiers.\lUtility.WingTimePlus" alt="" coords="593,1704,803,1745"/>
-<area shape="rect" id="node2" href="$class_loot_1_1_api_1_1_modifier_1_1_modifier.html" title="Defines a modifier, which is an unloaded GlobalItem Making it a GlobalItem gives easy access to all h..." alt="" coords="228,862,300,889"/>
+<area shape="rect" id="node2" href="$class_loot_1_1_api_1_1_core_1_1_modifier.html" title="Defines a modifier, which is an unloaded GlobalItem Making it a GlobalItem gives easy access to all h..." alt="" coords="228,862,300,889"/>
 <area shape="rect" id="node3" href="$class_global_item.html" title="GlobalItem" alt="" coords="47,786,138,813"/>
 <area shape="rect" id="node4" href="$interface_loot_1_1_api_1_1_content_1_1_i_loadable_content.html" title="Defines a piece of loadable content The interface is used in classes where the deriving class already..." alt="" coords="25,837,160,863"/>
 <area shape="rect" id="node5" title="Used to restrict setting properties of ILoadableContent to internal only This is done by marking the ..." alt="" coords="5,887,180,914"/>
