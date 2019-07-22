@@ -9,7 +9,7 @@ var searchData=
   ['fishingplus_2ecs',['FishingPlus.cs',['../_fishing_plus_8cs.html',1,'']]],
   ['forcemodifierpool',['ForceModifierPool',['../class_loot_1_1_api_1_1_strategy_1_1_rolling_strategy_properties.html#a0a59d2791ff2a73511b38954c88b216e',1,'Loot::Api::Strategy::RollingStrategyProperties']]],
   ['forcemodifierrarity',['ForceModifierRarity',['../class_loot_1_1_api_1_1_strategy_1_1_rolling_strategy_properties.html#a21cf1e3644f7197549af1369bf884323',1,'Loot::Api::Strategy::RollingStrategyProperties']]],
-  ['frame',['FRAME',['../class_loot_1_1_u_i_1_1_tabs_1_1_soulforging_1_1_gui_soulgauge_1_1_gauge_drawing_1_1_a_n_i_m.html#ac85af808b4138d5836da54f4f5968719',1,'Loot::UI::Tabs::Soulforging::GuiSoulgauge::GaugeDrawing::ANIM']]],
+  ['frame',['FRAME',['../class_loot_1_1_u_i_1_1_tabs_1_1_soulforging_1_1_gui_soulgauge_1_1_gauge_drawing.html#a4085e61fb782c2daa97e2d6be0a1b7b9',1,'Loot::UI::Tabs::Soulforging::GuiSoulgauge::GaugeDrawing']]],
   ['frameeffects',['FrameEffects',['../class_loot_1_1_api_1_1_delegators_1_1_modifier_delegator_player.html#ad095c7e6f4cb999b40b8abc826ad769c',1,'Loot::Api::Delegators::ModifierDelegatorPlayer']]],
   ['frameeffectsevent',['FrameEffectsEvent',['../class_loot_1_1_api_1_1_delegators_1_1_modifier_delegator_player.html#a3279e7b1f4bf5b94c4aa0183fc39ad31',1,'Loot::Api::Delegators::ModifierDelegatorPlayer']]],
   ['front',['Front',['../namespace_loot_1_1_api_1_1_graphics_1_1_shader.html#aa4b4a4e0082c8c4cfeea13c036a1fe19a5835bab1ade0060909e31a06af2e2cde',1,'Loot::Api::Graphics::Shader']]]

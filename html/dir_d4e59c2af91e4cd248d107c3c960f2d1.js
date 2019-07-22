@@ -6,9 +6,7 @@ var dir_d4e59c2af91e4cd248d107c3c960f2d1 =
     [ "ContentLoader.cs", "_content_loader_8cs.html", [
       [ "ContentLoader", "class_loot_1_1_api_1_1_loaders_1_1_content_loader.html", "class_loot_1_1_api_1_1_loaders_1_1_content_loader" ]
     ] ],
-    [ "LoadingFunneler.cs", "_loading_funneler_8cs.html", [
-      [ "LoadingFunneler", "class_loot_1_1_api_1_1_loaders_1_1_loading_funneler.html", "class_loot_1_1_api_1_1_loaders_1_1_loading_funneler" ]
-    ] ],
+    [ "LoadingFunneler.cs", "_loading_funneler_8cs.html", null ],
     [ "RegistryLoader.cs", "_registry_loader_8cs.html", [
       [ "RegistryLoader", "class_loot_1_1_api_1_1_loaders_1_1_registry_loader.html", "class_loot_1_1_api_1_1_loaders_1_1_registry_loader" ]
     ] ]

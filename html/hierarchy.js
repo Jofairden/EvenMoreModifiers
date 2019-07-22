@@ -1,6 +1,5 @@
 var hierarchy =
 [
-    [ "Loot.UI.Tabs.Soulforging.GuiSoulgauge.GaugeDrawing.ANIM", "class_loot_1_1_u_i_1_1_tabs_1_1_soulforging_1_1_gui_soulgauge_1_1_gauge_drawing_1_1_a_n_i_m.html", null ],
     [ "Loot.Api.Loaders.AssetLoader", "class_loot_1_1_api_1_1_loaders_1_1_asset_loader.html", null ],
     [ "Attribute", "class_attribute.html", [
       [ "Loot.Api.Attributes.AutoDelegation", "class_loot_1_1_api_1_1_attributes_1_1_auto_delegation.html", null ],
@@ -153,7 +152,6 @@ var hierarchy =
     [ "Loot.Api.Content.LoadableContentBase< ModifierRarity >", "class_loot_1_1_api_1_1_content_1_1_loadable_content_base.html", [
       [ "Loot.Content.ModifierRarityContent", "class_loot_1_1_content_1_1_modifier_rarity_content.html", null ]
     ] ],
-    [ "Loot.Api.Loaders.LoadingFunneler", "class_loot_1_1_api_1_1_loaders_1_1_loading_funneler.html", null ],
     [ "Mod", "class_mod.html", [
       [ "Loot.Loot", "class_loot_1_1_loot.html", null ],
       [ "LootTests.EmptyModLoadShell", "class_loot_tests_1_1_empty_mod_load_shell.html", null ],
@@ -226,7 +224,6 @@ var hierarchy =
     ] ],
     [ "Loot.Api.Graphics.Shader.Style.ShaderDrawStyle.ShaderDrawStyleProperties", "class_loot_1_1_api_1_1_graphics_1_1_shader_1_1_style_1_1_shader_draw_style_1_1_shader_draw_style_properties.html", null ],
     [ "Loot.Sounds.Custom.SoundMaker", "class_loot_1_1_sounds_1_1_custom_1_1_sound_maker.html", null ],
-    [ "Loot.UI.Tabs.Soulforging.GuiSoulgauge.GaugeDrawing.STATIC", "class_loot_1_1_u_i_1_1_tabs_1_1_soulforging_1_1_gui_soulgauge_1_1_gauge_drawing_1_1_s_t_a_t_i_c.html", null ],
     [ "Loot.Api.Ext.RollingUtils.Strategies", "class_loot_1_1_api_1_1_ext_1_1_rolling_utils_1_1_strategies.html", null ],
     [ "Loot.Api.ModContent.TextureModContent", "class_loot_1_1_api_1_1_mod_content_1_1_texture_mod_content.html", [
       [ "Loot.Api.ModContent.GraphicsModContent", "class_loot_1_1_api_1_1_mod_content_1_1_graphics_mod_content.html", null ]

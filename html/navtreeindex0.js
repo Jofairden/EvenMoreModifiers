@@ -16,6 +16,8 @@ var NAVTREEINDEX0 =
 "_assembly_info_8cs_source.html":[3,0,7,0,0],
 "_asset_loader_8cs.html":[3,0,0,8,0],
 "_asset_loader_8cs_source.html":[3,0,0,8,0],
+"_assets_8cs.html":[3,0,14,0,2],
+"_assets_8cs_source.html":[3,0,14,0,2],
 "_auto_delegation_attribute_8cs.html":[3,0,0,0,0],
 "_auto_delegation_attribute_8cs_source.html":[3,0,0,0,0],
 "_backwards_compatible_hacks_8cs.html":[3,0,6,0],
@@ -247,7 +249,5 @@ var NAVTREEINDEX0 =
 "_loot_mod_item_8cs.html":[3,0,16],
 "_loot_mod_item_8cs_source.html":[3,0,16],
 "_loot_mod_world_8cs.html":[3,0,17],
-"_loot_mod_world_8cs_source.html":[3,0,17],
-"_luck_plus_8cs.html":[3,0,8,1,2,2],
-"_luck_plus_8cs_source.html":[3,0,8,1,2,2]
+"_loot_mod_world_8cs_source.html":[3,0,17]
 };

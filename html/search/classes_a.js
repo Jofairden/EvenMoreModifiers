@@ -10,7 +10,6 @@ var searchData=
   ['loadablecontentbase_3c_20modifiereffect_20_3e',['LoadableContentBase&lt; ModifierEffect &gt;',['../class_loot_1_1_api_1_1_content_1_1_loadable_content_base.html',1,'Loot::Api::Content']]],
   ['loadablecontentbase_3c_20modifierpool_20_3e',['LoadableContentBase&lt; ModifierPool &gt;',['../class_loot_1_1_api_1_1_content_1_1_loadable_content_base.html',1,'Loot::Api::Content']]],
   ['loadablecontentbase_3c_20modifierrarity_20_3e',['LoadableContentBase&lt; ModifierRarity &gt;',['../class_loot_1_1_api_1_1_content_1_1_loadable_content_base.html',1,'Loot::Api::Content']]],
-  ['loadingfunneler',['LoadingFunneler',['../class_loot_1_1_api_1_1_loaders_1_1_loading_funneler.html',1,'Loot::Api::Loaders']]],
   ['loot',['Loot',['../class_loot_1_1_loot.html',1,'Loot']]],
   ['lootmoditem',['LootModItem',['../class_loot_1_1_loot_mod_item.html',1,'Loot']]],
   ['lootmodworld',['LootModWorld',['../class_loot_1_1_loot_mod_world.html',1,'Loot']]],

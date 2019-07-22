@@ -37,7 +37,7 @@ var searchData=
   ['ischeated',['IsCheated',['../class_loot_1_1_hacks_1_1_cheated_item_hack_global_item.html#af000d3af8fdf4e5db39cc2dfe8947498',1,'Loot::Hacks::CheatedItemHackGlobalItem']]],
   ['isininventory',['IsInInventory',['../class_loot_1_1_hacks_1_1_cheated_item_hack_global_item.html#a82a1858cf6fb605fc5fde863bda73163',1,'Loot::Hacks::CheatedItemHackGlobalItem']]],
   ['isinvanitysot',['IsInVanitySot',['../class_loot_1_1_hacks_1_1_cheated_item_hack_global_item.html#af1e7d34c4f0f37bf555f99c1bc6ed145',1,'Loot::Hacks::CheatedItemHackGlobalItem']]],
-  ['isloaded',['IsLoaded',['../class_loot_1_1_loot.html#a2d2a6b55f1a7b8cb46c3fb935d4a455f',1,'Loot.Loot.IsLoaded()'],['../class_loot_1_1_u_i_1_1_tabs_1_1_soulforging_1_1_gui_soulgauge_1_1_gauge_drawing.html#a0acc74d541720b9fd3a6411f51a658fe',1,'Loot.UI.Tabs.Soulforging.GuiSoulgauge.GaugeDrawing.IsLoaded()']]],
+  ['isloaded',['IsLoaded',['../class_loot_1_1_loot.html#a2d2a6b55f1a7b8cb46c3fb935d4a455f',1,'Loot::Loot']]],
   ['ismodifierrollableitem',['IsModifierRollableItem',['../class_loot_1_1_api_1_1_ext_1_1_item_utils.html#a5087f2159228e3a44d354d59e2d3894b',1,'Loot::Api::Ext::ItemUtils']]],
   ['ismouseusable',['IsMouseUsable',['../class_loot_1_1_caching_1_1_modifier_cache_player.html#a96a5dd3eaf244c895fcee713384fceb3',1,'Loot::Caching::ModifierCachePlayer']]],
   ['isnotequippedatall',['IsNotEquippedAtAll',['../class_loot_1_1_hacks_1_1_cheated_item_hack_global_item.html#a4ff1d27ea97fb4818cef025010d7cd6c',1,'Loot::Hacks::CheatedItemHackGlobalItem']]],

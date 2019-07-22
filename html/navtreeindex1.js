@@ -1,5 +1,7 @@
 var NAVTREEINDEX1 =
 {
+"_luck_plus_8cs.html":[3,0,8,1,2,2],
+"_luck_plus_8cs_source.html":[3,0,8,1,2,2],
 "_magic_crit_plus_8cs.html":[3,0,8,1,1,2],
 "_magic_crit_plus_8cs_source.html":[3,0,8,1,1,2],
 "_magic_damage_plus_8cs.html":[3,0,8,1,1,3],
@@ -107,6 +109,8 @@ var NAVTREEINDEX1 =
 "_ranged_damage_plus_8cs_source.html":[3,0,8,1,1,8],
 "_rare_rarity_8cs.html":[3,0,11,3],
 "_rare_rarity_8cs_source.html":[3,0,11,3],
+"_reflect_utils_8cs.html":[3,0,5,2],
+"_reflect_utils_8cs_source.html":[3,0,5,2],
 "_registry_loader_8cs.html":[3,0,0,8,3],
 "_registry_loader_8cs_source.html":[3,0,0,8,3],
 "_rerolling_cube_8cs.html":[3,0,0,4,1],
@@ -245,9 +249,5 @@ var NAVTREEINDEX1 =
 "class_loot_1_1_api_1_1_core_1_1_modifier.html#a403ce3ca5d454e91e73e35d2e986d587":[2,0,0,0,3,0,52],
 "class_loot_1_1_api_1_1_core_1_1_modifier.html#a45000fa4fd06d6bbe8c10fabfb1d5e3e":[2,0,0,0,3,0,16],
 "class_loot_1_1_api_1_1_core_1_1_modifier.html#a45b67f799ff8f94554e76f04e7f4e93e":[2,0,0,0,3,0,41],
-"class_loot_1_1_api_1_1_core_1_1_modifier.html#a469ec2f60500bef22faeb67d915c9f00":[2,0,0,0,3,0,4],
-"class_loot_1_1_api_1_1_core_1_1_modifier.html#a4709897f03d4f2b01d23b259653148df":[2,0,0,0,3,0,43],
-"class_loot_1_1_api_1_1_core_1_1_modifier.html#a472f77a7247c0359ce7c72f2cfc1ffad":[2,0,0,0,3,0,2],
-"class_loot_1_1_api_1_1_core_1_1_modifier.html#a475b33d1e1326f5aab9185fb49573d98":[2,0,0,0,3,0,15],
-"class_loot_1_1_api_1_1_core_1_1_modifier.html#a4cb48a778415924f689058a7927cf776":[2,0,0,0,3,0,26]
+"class_loot_1_1_api_1_1_core_1_1_modifier.html#a469ec2f60500bef22faeb67d915c9f00":[2,0,0,0,3,0,4]
 };

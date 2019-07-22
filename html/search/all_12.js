@@ -51,7 +51,6 @@ var searchData=
   ['soundmaker',['SoundMaker',['../class_loot_1_1_sounds_1_1_custom_1_1_sound_maker.html',1,'Loot::Sounds::Custom']]],
   ['speedplus',['SpeedPlus',['../class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_speed_plus.html',1,'Loot::Modifiers::WeaponModifiers']]],
   ['speedplus_2ecs',['SpeedPlus.cs',['../_speed_plus_8cs.html',1,'']]],
-  ['static',['STATIC',['../class_loot_1_1_u_i_1_1_tabs_1_1_soulforging_1_1_gui_soulgauge_1_1_gauge_drawing_1_1_s_t_a_t_i_c.html',1,'Loot::UI::Tabs::Soulforging::GuiSoulgauge::GaugeDrawing']]],
   ['staticassetattribute_2ecs',['StaticAssetAttribute.cs',['../_static_asset_attribute_8cs.html',1,'']]],
   ['strategies',['Strategies',['../class_loot_1_1_api_1_1_ext_1_1_rolling_utils_1_1_strategies.html',1,'Loot::Api::Ext::RollingUtils']]],
   ['strategy',['Strategy',['../class_loot_1_1_api_1_1_core_1_1_modifier_context.html#a5af917cadcc7b436f4c3939016e563d5',1,'Loot::Api::Core::ModifierContext']]],

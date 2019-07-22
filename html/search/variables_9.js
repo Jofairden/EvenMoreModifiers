@@ -1,9 +1,9 @@
 var searchData=
 [
   ['manashield',['ManaShield',['../class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_defensive_1_1_mana_shield_effect.html#a610e0ddc09e723990f9b6df76445faf5',1,'Loot::Modifiers::EquipModifiers::Defensive::ManaShieldEffect']]],
-  ['max_5fframe',['MAX_FRAME',['../class_loot_1_1_u_i_1_1_tabs_1_1_soulforging_1_1_gui_soulgauge_1_1_gauge_drawing_1_1_a_n_i_m.html#ab48406c8748685b95b9cd5898fb3e142',1,'Loot::UI::Tabs::Soulforging::GuiSoulgauge::GaugeDrawing::ANIM']]],
+  ['max_5fframe',['MAX_FRAME',['../class_loot_1_1_u_i_1_1_tabs_1_1_soulforging_1_1_gui_soulgauge_1_1_gauge_drawing.html#ae0ad6d5c63d1a3de77764388a66efb6d',1,'Loot::UI::Tabs::Soulforging::GuiSoulgauge::GaugeDrawing']]],
   ['max_5fsurvival_5fchance',['MAX_SURVIVAL_CHANCE',['../class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_defensive_1_1_survival_effect.html#a4abe39a78d554976536a956b6ebe04cb',1,'Loot::Modifiers::EquipModifiers::Defensive::SurvivalEffect']]],
-  ['max_5ftick',['MAX_TICK',['../class_loot_1_1_u_i_1_1_tabs_1_1_soulforging_1_1_gui_soulgauge_1_1_gauge_drawing_1_1_a_n_i_m.html#a3bfb3e1599981cb6f8302ede9f4dca14',1,'Loot::UI::Tabs::Soulforging::GuiSoulgauge::GaugeDrawing::ANIM']]],
+  ['max_5ftick',['MAX_TICK',['../class_loot_1_1_u_i_1_1_tabs_1_1_soulforging_1_1_gui_soulgauge_1_1_gauge_drawing.html#a588f470925d82a297a1817130fc6adf6',1,'Loot::UI::Tabs::Soulforging::GuiSoulgauge::GaugeDrawing']]],
   ['method',['Method',['../class_loot_1_1_api_1_1_core_1_1_modifier_context.html#a9f62f65b07471fd268ac3e0907619b1d',1,'Loot::Api::Core::ModifierContext']]],
   ['mod',['mod',['../class_loot_1_1_api_1_1_core_1_1_modifier_effect.html#af12049b0679abb2bbe8329c1383b3542',1,'Loot::Api::Core::ModifierEffect']]],
   ['modcount',['ModCount',['../class_loot_1_1_api_1_1_loaders_1_1_registry_loader.html#abb7d0ffafb994e4330528d41feb468d1',1,'Loot::Api::Loaders::RegistryLoader']]],

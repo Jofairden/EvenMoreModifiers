@@ -1,3 +1,0 @@
-<map id="Loot.Api.Loaders.LoadingFunneler.LoadMod" name="Loot.Api.Loaders.LoadingFunneler.LoadMod">
-<area shape="rect" id="node2" href="$class_loot_1_1_api_1_1_loaders_1_1_registry_loader.html#a9cee663338cc830452df4c4bef614209" title="Adds content for the specified mod. This will add all the Modifier, ModifierRarity, ModifierPool and ModifierEffect classes " alt="" coords="236,5,419,47"/>
-</map>
