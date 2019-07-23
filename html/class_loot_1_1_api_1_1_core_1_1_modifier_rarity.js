@@ -15,7 +15,6 @@ var class_loot_1_1_api_1_1_core_1_1_modifier_rarity =
     [ "Name", "class_loot_1_1_api_1_1_core_1_1_modifier_rarity.html#a60ee02ecd019e24c5e94d3eeaee15539", null ],
     [ "OverrideNameColor", "class_loot_1_1_api_1_1_core_1_1_modifier_rarity.html#a7480780adff1d6423a0018cd4c70eafc", null ],
     [ "RarityName", "class_loot_1_1_api_1_1_core_1_1_modifier_rarity.html#a879378a8b210e059c90a431ce694dd5d", null ],
-    [ "SAVE_VERSION", "class_loot_1_1_api_1_1_core_1_1_modifier_rarity.html#a85f06ee3fa8d0e2dab48cc84e79b2cae", null ],
     [ "Upgrade", "class_loot_1_1_api_1_1_core_1_1_modifier_rarity.html#a4ecb09a977dbb7567e52612916ee1a0a", null ],
     [ "UpgradeChance", "class_loot_1_1_api_1_1_core_1_1_modifier_rarity.html#a9eab32853154fe47dc7e76f5f11f1dd7", null ],
     [ "Color", "class_loot_1_1_api_1_1_core_1_1_modifier_rarity.html#a9064e08ec10d232a82d09298d7eac8f6", null ],

@@ -1,5 +1,11 @@
 var NAVTREEINDEX3 =
 {
+"class_loot_1_1_api_1_1_delegators_1_1_modifier_delegator_player.html#a1eda7b5cfb8ec1afada80c3db716268b":[2,0,0,0,5,0,181],
+"class_loot_1_1_api_1_1_delegators_1_1_modifier_delegator_player.html#a24580c245ce01e8f40045134ac8b53d5":[2,0,0,0,5,0,25],
+"class_loot_1_1_api_1_1_delegators_1_1_modifier_delegator_player.html#a24e885fd2991723513394bf2cb1a06f8":[2,0,0,0,5,0,50],
+"class_loot_1_1_api_1_1_delegators_1_1_modifier_delegator_player.html#a256987ec0dfee3a59d267a66cac300f7":[2,0,0,0,5,0,1],
+"class_loot_1_1_api_1_1_delegators_1_1_modifier_delegator_player.html#a2679a2796cea3f1558490f7711e37b24":[2,0,0,0,5,0,42],
+"class_loot_1_1_api_1_1_delegators_1_1_modifier_delegator_player.html#a2ad0fa17a6c077238d37ec1fb5882f0d":[2,0,0,0,5,0,53],
 "class_loot_1_1_api_1_1_delegators_1_1_modifier_delegator_player.html#a2c07a1b0fce680beb9074c1854526a61":[2,0,0,0,5,0,28],
 "class_loot_1_1_api_1_1_delegators_1_1_modifier_delegator_player.html#a2cc730d42ec42b6413d19156fe5f0695":[2,0,0,0,5,0,90],
 "class_loot_1_1_api_1_1_delegators_1_1_modifier_delegator_player.html#a2d036492f264ef1b5d80184fce739500":[2,0,0,0,5,0,89],
@@ -243,11 +249,5 @@ var NAVTREEINDEX3 =
 "class_loot_1_1_api_1_1_graphics_1_1_graphics_entity.html#a1015a3c783710c8fedc05b2b0019b130":[2,0,0,0,7,2,1],
 "class_loot_1_1_api_1_1_graphics_1_1_graphics_entity.html#a31fe3ee01717e224f2eebc1be47d7a18":[2,0,0,0,7,2,12],
 "class_loot_1_1_api_1_1_graphics_1_1_graphics_entity.html#a84e5b84625a265e521c089e52bfc7044":[2,0,0,0,7,2,10],
-"class_loot_1_1_api_1_1_graphics_1_1_graphics_entity.html#a86a57e826b2e0351e5a40c016e4610a7":[2,0,0,0,7,2,8],
-"class_loot_1_1_api_1_1_graphics_1_1_graphics_entity.html#a981a4e84ecdace67cedb08d9c9cfcf17":[2,0,0,0,7,2,9],
-"class_loot_1_1_api_1_1_graphics_1_1_graphics_entity.html#a9f9f0e4fb4450f027fb404e5f710fc1a":[2,0,0,0,7,2,2],
-"class_loot_1_1_api_1_1_graphics_1_1_graphics_entity.html#aafa4471df577dc728d9229a595dfe47d":[2,0,0,0,7,2,4],
-"class_loot_1_1_api_1_1_graphics_1_1_graphics_entity.html#ac8b0cb2c2acfba391c7e099fc8c87909":[2,0,0,0,7,2,5],
-"class_loot_1_1_api_1_1_graphics_1_1_graphics_entity.html#ad4d29104327f958211361d7634d6c17f":[2,0,0,0,7,2,11],
-"class_loot_1_1_api_1_1_graphics_1_1_graphics_entity.html#ae9e1992927e01fd8b2d36166608cab46":[2,0,0,0,7,2,3]
+"class_loot_1_1_api_1_1_graphics_1_1_graphics_entity.html#a86a57e826b2e0351e5a40c016e4610a7":[2,0,0,0,7,2,8]
 };

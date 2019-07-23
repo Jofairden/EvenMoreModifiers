@@ -28,6 +28,7 @@ var searchData=
   ['hacks',['Hacks',['../namespace_loot_1_1_hacks.html',1,'Loot']]],
   ['ice',['Ice',['../namespace_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_ice.html',1,'Loot::Modifiers::WeaponModifiers']]],
   ['ilediting',['ILEditing',['../namespace_loot_1_1_i_l_editing.html',1,'Loot']]],
+  ['io',['IO',['../namespace_loot_1_1_i_o.html',1,'Loot']]],
   ['loaders',['Loaders',['../namespace_loot_1_1_api_1_1_loaders.html',1,'Loot::Api']]],
   ['loot',['Loot',['../namespace_loot.html',1,'']]],
   ['loottests',['LootTests',['../namespace_loot_tests.html',1,'']]],

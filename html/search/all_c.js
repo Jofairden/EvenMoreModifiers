@@ -28,6 +28,7 @@ var searchData=
   ['hacks',['Hacks',['../namespace_loot_1_1_hacks.html',1,'Loot']]],
   ['ice',['Ice',['../namespace_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_ice.html',1,'Loot::Modifiers::WeaponModifiers']]],
   ['ilediting',['ILEditing',['../namespace_loot_1_1_i_l_editing.html',1,'Loot']]],
+  ['io',['IO',['../namespace_loot_1_1_i_o.html',1,'Loot']]],
   ['late',['Late',['../namespace_loot_1_1_api_1_1_attributes.html#a4bb203b1609b5a3f73712bfde69dd986ad9359722ca1b596c94882e47ad970cb5',1,'Loot::Api::Attributes']]],
   ['legendaryrarity',['LegendaryRarity',['../class_loot_1_1_rarities_1_1_legendary_rarity.html',1,'Loot::Rarities']]],
   ['legendaryrarity_2ecs',['LegendaryRarity.cs',['../_legendary_rarity_8cs.html',1,'']]],

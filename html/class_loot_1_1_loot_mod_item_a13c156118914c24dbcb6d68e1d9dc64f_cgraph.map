@@ -1,0 +1,4 @@
+<map id="Loot.LootModItem.NetReceive" name="Loot.LootModItem.NetReceive">
+<area shape="rect" id="node2" href="$class_loot_1_1_api_1_1_core_1_1_modifier_rarity.html#a670264b3ad6fc98e090cb90f8a1194ee" title="Allows the modder to do custom NetReceive " alt="" coords="267,5,467,47"/>
+<area shape="rect" id="node3" href="$class_loot_1_1_api_1_1_core_1_1_modifier_pool.html#aa5b96b8e76764284373e2481763b34b8" title="Allows the modder to do custom NetReceive " alt="" coords="270,71,463,112"/>
+</map>

@@ -14,7 +14,6 @@ var class_loot_1_1_api_1_1_core_1_1_modifier_pool =
     [ "Description", "class_loot_1_1_api_1_1_core_1_1_modifier_pool.html#a49caac7e84963be03663773d29b77622", null ],
     [ "Name", "class_loot_1_1_api_1_1_core_1_1_modifier_pool.html#a54825bdaf3ddec7784828ff746fe369e", null ],
     [ "RollChance", "class_loot_1_1_api_1_1_core_1_1_modifier_pool.html#aa37ea09bdcae41fc71676dd74e13c346", null ],
-    [ "SAVE_VERSION", "class_loot_1_1_api_1_1_core_1_1_modifier_pool.html#acd0643faefb57b033a77a709d7a4950a", null ],
     [ "TotalRarityLevel", "class_loot_1_1_api_1_1_core_1_1_modifier_pool.html#ac3ca1151f7d0378a0eaaa6bb6493ebdf", null ],
     [ "UniqueNames", "class_loot_1_1_api_1_1_core_1_1_modifier_pool.html#a40b428dde0944e56ef398f4498429a12", null ],
     [ "ActiveModifiers", "class_loot_1_1_api_1_1_core_1_1_modifier_pool.html#a5ae4b9df70e91aa9da627ba6f3f31008", null ],

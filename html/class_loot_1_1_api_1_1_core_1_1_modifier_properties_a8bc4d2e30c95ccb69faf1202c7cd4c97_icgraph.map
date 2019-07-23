@@ -1,4 +1,3 @@
 <map id="Loot.Api.Core.ModifierProperties.RollMagnitudeAndPower" name="Loot.Api.Core.ModifierProperties.RollMagnitudeAndPower">
-<area shape="rect" id="node2" href="$class_loot_1_1_api_1_1_core_1_1_modifier_properties.html#afb4f0770c6a7ae4e09199fc6ce473930" title="Loot.Api.Core.ModifierProperties.Load" alt="" coords="284,29,547,56"/>
-<area shape="rect" id="node3" href="$class_loot_1_1_rolling_strategies_1_1_normal_rolling_strategy.html#aedd88de5f2b914ce16a673332850ae01" title="Loot.RollingStrategies.Normal\lRollingStrategy.Roll" alt="" coords="310,81,521,122"/>
+<area shape="rect" id="node2" href="$class_loot_1_1_rolling_strategies_1_1_normal_rolling_strategy.html#aedd88de5f2b914ce16a673332850ae01" title="Loot.RollingStrategies.Normal\lRollingStrategy.Roll" alt="" coords="284,5,495,47"/>
 </map>
