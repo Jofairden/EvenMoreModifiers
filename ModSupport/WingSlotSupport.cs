@@ -36,7 +36,7 @@ namespace Loot.ModSupport
 
 		private static bool RightClickFunctionalityRequirements(Item item)
 		{
-			if (ModSupportTunneler.GetSupport<WingSlotSupport>().IsInvalid && item.wingSlot > 0)
+			if (ModSupportTunneler.GetModSupport<WingSlotSupport>().IsInvalid && item.wingSlot > 0)
 				return false;
 
 			return !PlayerInput.WritingText
@@ -100,7 +100,7 @@ namespace Loot.ModSupport
 				    || !(ui.GetCurrentTab() is GuiCubingTab cubingTab))
 					return;
 
-				if ((ModSupportTunneler.GetSupport<WingSlotSupport>().IsInvalid && item.wingSlot > 0) // block wings if low version if wingslot
+				if ((ModSupportTunneler.GetModSupport<WingSlotSupport>().IsInvalid && item.wingSlot > 0) // block wings if low version if wingslot
 				    || !cubingTab.AcceptsItem(item)
 				    || LootModItem.GetInfo(item).SlottedInCubeUI)
 					return;

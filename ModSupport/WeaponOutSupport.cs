@@ -49,9 +49,12 @@ namespace Loot.ModSupport
 				orig(ref self, sb);
 		}
 
+		// Specific useStyle used for WO's fists
+		private const int WEAPONOUT_FISTS_USESTYLE = 102115116;
+
 		private bool DrawWeaponOutFists(DrawData self, SpriteBatch sb)
 		{
-			if (Main.LocalPlayer.HeldItem.useStyle != 102115116) return false;
+			if (Main.LocalPlayer.HeldItem.useStyle != WEAPONOUT_FISTS_USESTYLE) return false;
 			bool isHandOn = Main.LocalPlayer.handon > 0 && self.texture == Main.accHandsOnTexture[Main.LocalPlayer.handon];
 			bool isHandOff = Main.LocalPlayer.handoff > 0 && self.texture == Main.accHandsOffTexture[Main.LocalPlayer.handoff];
 			if (!isHandOn && !isHandOff) return false;
@@ -85,14 +88,14 @@ namespace Loot.ModSupport
 		private bool DrawWeaponOutFromCache(DrawData self, SpriteBatch sb)
 		{
 			var data = self;
-			var cachedDatas = _cache.Where(x => x.Item1.texture == data.texture).ToList();
+			var cachedDatas = _cache.Where(x => x.drawData.texture == data.texture).ToList();
 			if (cachedDatas.Any())
 			{
 				foreach (var cachedData in cachedDatas)
 				{
-					var shaderEntity = cachedData.Item3;
-					var glowmaskEntity = cachedData.Item4;
-					var plr = cachedData.Item2;
+					var shaderEntity = cachedData.shaderEntity;
+					var glowmaskEntity = cachedData.glowmaskEntity;
+					var plr = cachedData.player;
 					_lightColor = _lightColor ?? Lighting.GetColor((int)(plr.MountedCenter.X / 16), (int)(plr.MountedCenter.Y / 16));
 
 					if (shaderEntity != null)
@@ -116,7 +119,8 @@ namespace Loot.ModSupport
 		}
 
 		private Color? _lightColor;
-		private readonly List<(DrawData, Player, ShaderEntity, GlowmaskEntity)> _cache = new List<(DrawData, Player, ShaderEntity, GlowmaskEntity)>();
+		private readonly List<(DrawData drawData, Player player, ShaderEntity shaderEntity, GlowmaskEntity glowmaskEntity)> _cache
+			= new List<(DrawData, Player, ShaderEntity, GlowmaskEntity)>();
 
 		/// <summary>
 		/// WeaponOut will send us respective <see cref="DrawData"/>s for weapons being drawn

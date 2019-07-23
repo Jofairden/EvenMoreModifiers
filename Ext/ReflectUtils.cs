@@ -13,9 +13,10 @@ namespace Loot.Ext
 			=> GetLootNonAbstractClasses(t => t.IsSubclassOf(typeof(ILEdit)));
 
 		public static IEnumerable<MemberInfo> GetStaticAssetTypes()
-		{
-			return GetStaticAssetTypesTailRec(Loot.Instance.Code.GetTypes(), typeof(StaticAssetAttribute));
-		}
+			=> GetStaticAssetTypesTailRec(Loot.Instance.Code.GetTypes(), typeof(StaticAssetAttribute));
+
+		public static IEnumerable<Type> GetLootNonAbstractClasses(Func<Type, bool> fun = null)
+			=> Loot.Instance.Code.GetTypes().Where(t => t.IsClass && !t.IsAbstract && (fun?.Invoke(t) ?? true));
 
 		// Tailrecursive call to iterate over all nested types
 		private static IEnumerable<MemberInfo> GetStaticAssetTypesTailRec(Type[] arr, Type attr, IEnumerable<MemberInfo> list = null, IEnumerable<Type> toCheck = null)
@@ -39,8 +40,5 @@ namespace Loot.Ext
 
 			return types;
 		}
-
-		private static IEnumerable<Type> GetLootNonAbstractClasses(Func<Type, bool> fun = null)
-			=> Loot.Instance.Code.GetTypes().Where(t => t.IsClass && !t.IsAbstract && (fun?.Invoke(t) ?? true));
 	}
 }

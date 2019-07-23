@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
+using Loot.Ext;
 using Terraria.ModLoader;
 
 namespace Loot.ModSupport
@@ -14,9 +15,9 @@ namespace Loot.ModSupport
 	{
 		private static List<ModSupport> _modSupporters;
 
-		public static T GetSupport<T>() where T : ModSupport
+		public static T GetModSupport<T>() where T : ModSupport
 		{
-			return (T) _modSupporters?.FirstOrDefault(s => s.GetType() == typeof(T) || s.GetType().IsAssignableFrom(typeof(T)));
+			return (T)_modSupporters?.FirstOrDefault(s => s.GetType() == typeof(T) || s.GetType().IsAssignableFrom(typeof(T)));
 		}
 
 		public static void Init()
@@ -54,18 +55,11 @@ namespace Loot.ModSupport
 
 		private static IEnumerable<ModSupport> GetSupporters()
 		{
-			if (_modSupporters == null)
-			{
-				// Not loaded yet, load them dynamically
-				string root = typeof(ModSupportTunneler).Namespace;
-				_modSupporters = Assembly.GetExecutingAssembly().GetTypes()
-					.Where(t => t.IsClass && !t.IsAbstract && t.Namespace != null && t.Namespace.StartsWith(root)
-					            && t.IsSubclassOf(typeof(ModSupport)))
-					.Select(t => (ModSupport) Activator.CreateInstance(t))
-					.ToList();
-			}
-
-			return _modSupporters;
+			return _modSupporters ??
+				   (_modSupporters =
+					   ReflectUtils.GetLootNonAbstractClasses(t => t.IsSubclassOf(typeof(ModSupport)))
+					   .Select(t => (ModSupport)Activator.CreateInstance(t))
+					   .ToList());
 		}
 	}
 }
