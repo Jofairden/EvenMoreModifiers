@@ -40,7 +40,7 @@ namespace Loot
 			LoadingFunneler.Load();
 		}
 
-		public override void AddRecipes()
+		public override void PostAddRecipes()
 		{
 			LoadingFunneler.PostLoad();
 		}

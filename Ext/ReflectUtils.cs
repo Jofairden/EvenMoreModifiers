@@ -3,11 +3,15 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
 using Loot.Attributes;
+using Loot.ILEditing;
 
 namespace Loot.Ext
 {
 	internal static class ReflectUtils
 	{
+		public static IEnumerable<Type> GetILEdits()
+			=> GetLootNonAbstractClasses(t => t.IsSubclassOf(typeof(ILEdit)));
+
 		public static IEnumerable<MemberInfo> GetStaticAssetTypes()
 		{
 			return GetStaticAssetTypesTailRec(Loot.Instance.Code.GetTypes(), typeof(StaticAssetAttribute));
@@ -35,5 +39,8 @@ namespace Loot.Ext
 
 			return types;
 		}
+
+		private static IEnumerable<Type> GetLootNonAbstractClasses(Func<Type, bool> fun = null)
+			=> Loot.Instance.Code.GetTypes().Where(t => t.IsClass && !t.IsAbstract && (fun?.Invoke(t) ?? true));
 	}
 }

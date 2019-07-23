@@ -1,10 +1,12 @@
 using System;
 using System.Diagnostics;
+using System.Linq;
 using System.Reflection;
 using Loot.Api.ModContent;
 using Loot.Attributes;
 using Loot.Ext;
 using Loot.Hacks;
+using Loot.ILEditing;
 using Loot.ModSupport;
 using Loot.UI;
 using Microsoft.Xna.Framework.Graphics;
@@ -43,6 +45,7 @@ namespace Loot.Api.Loaders
 			{
 				Loot.ModContentManager.Load();
 			}
+			LoadILEdits();
 			Loot.IsLoaded = true;
 		}
 
@@ -73,9 +76,6 @@ namespace Loot.Api.Loaders
 
 			AssetLoader.RegisterAssets(Loot.Instance, "GraphicsAssets");
 			ModSupportTunneler.AddClientSupport();
-
-			// TODO IL patch management
-			new UseItemEffectsHack().Hack();
 		}
 
 		private static void UnloadMod()
@@ -111,6 +111,15 @@ namespace Loot.Api.Loaders
 					if (mem is FieldInfo field)
 						field.SetValue(null, null);
 				}
+			}
+		}
+
+		private static void LoadILEdits()
+		{
+			foreach (var type in ReflectUtils.GetILEdits())
+			{
+				// We do not need to store IL Edits after application: tModLoader auto unloads edits
+				((ILEdit)Activator.CreateInstance(type)).Apply(Main.dedServ);
 			}
 		}
 

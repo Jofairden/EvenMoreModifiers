@@ -59,7 +59,6 @@
     <Compile Include="Hacks\CheatedItemHackGlobalItem.cs" />
     <Compile Include="Api\Attributes\DelegationPrioritization.cs" />
     <Compile Include="Api\Content\ILoadableContentSetter.cs" />
-    <Compile Include="Hacks\TinkererArmorHackGlobalItem.cs" />
     <Compile Include="Api\Attributes\AutoDelegationAttribute.cs" />
     <Compile Include="Api\Attributes\DelegationPrioritizationAttribute.cs" />
     <Compile Include="Api\Attributes\DelegationTarget.cs" />
@@ -71,7 +70,9 @@
     <Compile Include="Cubes\BlackCube.cs" />
     <Compile Include="Cubes\CubeOfSealing.cs" />
     <Compile Include="Cubes\CubeShop.cs" />
-    <Compile Include="Hacks\UseItemEffectsHack.cs" />
+    <Compile Include="ILEditing\WeaponDrawEffectsPatch.cs" />
+    <Compile Include="ILEditing\ILEdit.cs" />
+    <Compile Include="ILEditing\ItemPrefixPatch.cs" />
     <Compile Include="ModSupport\WeaponOutSupport.cs" />
     <Compile Include="Pools\WeaponModifierPool.cs" />
     <Compile Include="RollingStrategies\NormalRollingStrategy.cs" />
@@ -110,7 +111,6 @@
     <Compile Include="Api\Strategy\IRollingStrategy.cs" />
     <Compile Include="Api\Strategy\RollingStrategyContext.cs" />
     <Compile Include="LootModItem.cs" />
-    <Compile Include="Hacks\TinkererArmorHackModPlayer.cs" />
     <Compile Include="LootModWorld.cs" />
     <Compile Include="Ext\GuiUtils.cs" />
     <Compile Include="Api\Ext\ItemUtils.cs" />

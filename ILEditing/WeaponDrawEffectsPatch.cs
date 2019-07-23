@@ -4,13 +4,17 @@ using Microsoft.Xna.Framework.Graphics;
 using Terraria;
 using Terraria.DataStructures;
 
-namespace Loot.Hacks
+namespace Loot.ILEditing
 {
-	internal class UseItemEffectsHack
+	/// <summary>
+	/// This patch makes custom effect draw on items being used
+	/// </summary>
+	internal class WeaponDrawEffectsPatch : ILEdit
 	{
-		public void Hack()
+		public override void Apply(bool dedServ)
 		{
-			On.Terraria.DataStructures.DrawData.Draw += DrawDataOnDraw;
+			if (!dedServ)
+				On.Terraria.DataStructures.DrawData.Draw += DrawDataOnDraw;
 		}
 
 		private void DrawDataOnDraw(On.Terraria.DataStructures.DrawData.orig_Draw orig, ref DrawData self, SpriteBatch sb)
