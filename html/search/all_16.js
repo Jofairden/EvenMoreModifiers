@@ -3,6 +3,7 @@ var searchData=
   ['weapondebuffeffect',['WeaponDebuffEffect',['../class_loot_1_1_modifiers_1_1_base_1_1_weapon_debuff_effect.html',1,'Loot::Modifiers::Base']]],
   ['weapondebuffmodifier',['WeaponDebuffModifier',['../class_loot_1_1_modifiers_1_1_base_1_1_weapon_debuff_modifier.html',1,'Loot::Modifiers::Base']]],
   ['weapondebuffmodifier_2ecs',['WeaponDebuffModifier.cs',['../_weapon_debuff_modifier_8cs.html',1,'']]],
+  ['weapondraweffectspatch_2ecs',['WeaponDrawEffectsPatch.cs',['../_weapon_draw_effects_patch_8cs.html',1,'']]],
   ['weaponmodifier',['WeaponModifier',['../class_loot_1_1_modifiers_1_1_base_1_1_weapon_modifier.html',1,'Loot::Modifiers::Base']]],
   ['weaponmodifier_2ecs',['WeaponModifier.cs',['../_weapon_modifier_8cs.html',1,'']]],
   ['weaponmodifierpool_2ecs',['WeaponModifierPool.cs',['../_weapon_modifier_pool_8cs.html',1,'']]],

@@ -8,7 +8,5 @@ var searchData=
   ['thorns_2ecs',['Thorns.cs',['../_thorns_8cs.html',1,'']]],
   ['throwncritplus_2ecs',['ThrownCritPlus.cs',['../_thrown_crit_plus_8cs.html',1,'']]],
   ['throwndamageplus_2ecs',['ThrownDamagePlus.cs',['../_thrown_damage_plus_8cs.html',1,'']]],
-  ['tinkererarmorhackglobalitem_2ecs',['TinkererArmorHackGlobalItem.cs',['../_tinkerer_armor_hack_global_item_8cs.html',1,'']]],
-  ['tinkererarmorhackmodplayer_2ecs',['TinkererArmorHackModPlayer.cs',['../_tinkerer_armor_hack_mod_player_8cs.html',1,'']]],
   ['transcendentrarity_2ecs',['TranscendentRarity.cs',['../_transcendent_rarity_8cs.html',1,'']]]
 ];

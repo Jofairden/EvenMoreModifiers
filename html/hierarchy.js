@@ -67,7 +67,6 @@ var hierarchy =
       ] ],
       [ "Loot.Api.Graphics.GraphicsGlobalItem", "class_loot_1_1_api_1_1_graphics_1_1_graphics_global_item.html", null ],
       [ "Loot.Hacks.CheatedItemHackGlobalItem", "class_loot_1_1_hacks_1_1_cheated_item_hack_global_item.html", null ],
-      [ "Loot.Hacks.TinkererArmorHackGlobalItem", "class_loot_1_1_hacks_1_1_tinkerer_armor_hack_global_item.html", null ],
       [ "Loot.LootModItem", "class_loot_1_1_loot_mod_item.html", null ],
       [ "Loot.ModSupport.WingSlotSupport.WingSlotSupportGlobalItem", "class_loot_1_1_mod_support_1_1_wing_slot_support_1_1_wing_slot_support_global_item.html", null ]
     ] ],
@@ -186,8 +185,7 @@ var hierarchy =
     [ "ModPlayer", "class_mod_player.html", [
       [ "Loot.Api.Core.ModifierEffect", "class_loot_1_1_api_1_1_core_1_1_modifier_effect.html", null ],
       [ "Loot.Api.Delegators.ModifierDelegatorPlayer", "class_loot_1_1_api_1_1_delegators_1_1_modifier_delegator_player.html", null ],
-      [ "Loot.Caching.ModifierCachePlayer", "class_loot_1_1_caching_1_1_modifier_cache_player.html", null ],
-      [ "Loot.Hacks.TinkererArmorHackModPlayer", "class_loot_1_1_hacks_1_1_tinkerer_armor_hack_mod_player.html", null ]
+      [ "Loot.Caching.ModifierCachePlayer", "class_loot_1_1_caching_1_1_modifier_cache_player.html", null ]
     ] ],
     [ "ModSound", "class_mod_sound.html", null ],
     [ "Loot.Api.Ext.ModUtils", "class_loot_1_1_api_1_1_ext_1_1_mod_utils.html", null ],

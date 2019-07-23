@@ -5,7 +5,6 @@ var searchData=
   ['adddetachitem',['AddDetachItem',['../class_loot_1_1_caching_1_1_modifier_cache_player.html#aceb2cf61924cc7a73c58c8a3c317b48e',1,'Loot::Caching::ModifierCachePlayer']]],
   ['addglowmasktexture',['AddGlowmaskTexture',['../class_loot_1_1_api_1_1_mod_content_1_1_graphics_mod_content.html#aacefb8ded314922a62b51fea5a810594',1,'Loot::Api::ModContent::GraphicsModContent']]],
   ['addmod',['AddMod',['../class_loot_1_1_api_1_1_loaders_1_1_registry_loader.html#a6eeb348ad8dcad4b41a5064a61deef6b',1,'Loot::Api::Loaders::RegistryLoader']]],
-  ['addrecipes',['AddRecipes',['../class_loot_1_1_loot.html#a9afccc75e56292d043923bb41284083c',1,'Loot::Loot']]],
   ['addshadertexture',['AddShaderTexture',['../class_loot_1_1_api_1_1_mod_content_1_1_graphics_mod_content.html#a40074cd5bddda7b52467323bfeab3623',1,'Loot::Api::ModContent::GraphicsModContent']]],
   ['addtexture',['AddTexture',['../class_loot_1_1_api_1_1_mod_content_1_1_texture_mod_content.html#a67a1adc959729e27606029e60a43713e',1,'Loot::Api::ModContent::TextureModContent']]],
   ['addto',['AddTo',['../class_loot_1_1_api_1_1_mod_content_1_1_texture_mod_content.html#afb1ff4b4d50c96d1220811db03cc81cd',1,'Loot::Api::ModContent::TextureModContent']]],

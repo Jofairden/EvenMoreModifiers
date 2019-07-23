@@ -9,7 +9,6 @@ var searchData=
   ['adddetachitem',['AddDetachItem',['../class_loot_1_1_caching_1_1_modifier_cache_player.html#aceb2cf61924cc7a73c58c8a3c317b48e',1,'Loot::Caching::ModifierCachePlayer']]],
   ['addglowmasktexture',['AddGlowmaskTexture',['../class_loot_1_1_api_1_1_mod_content_1_1_graphics_mod_content.html#aacefb8ded314922a62b51fea5a810594',1,'Loot::Api::ModContent::GraphicsModContent']]],
   ['addmod',['AddMod',['../class_loot_1_1_api_1_1_loaders_1_1_registry_loader.html#a6eeb348ad8dcad4b41a5064a61deef6b',1,'Loot::Api::Loaders::RegistryLoader']]],
-  ['addrecipes',['AddRecipes',['../class_loot_1_1_loot.html#a9afccc75e56292d043923bb41284083c',1,'Loot::Loot']]],
   ['addshadertexture',['AddShaderTexture',['../class_loot_1_1_api_1_1_mod_content_1_1_graphics_mod_content.html#a40074cd5bddda7b52467323bfeab3623',1,'Loot::Api::ModContent::GraphicsModContent']]],
   ['addtexture',['AddTexture',['../class_loot_1_1_api_1_1_mod_content_1_1_texture_mod_content.html#a67a1adc959729e27606029e60a43713e',1,'Loot::Api::ModContent::TextureModContent']]],
   ['addto',['AddTo',['../class_loot_1_1_api_1_1_mod_content_1_1_texture_mod_content.html#afb1ff4b4d50c96d1220811db03cc81cd',1,'Loot::Api::ModContent::TextureModContent']]],
@@ -39,8 +38,8 @@ var searchData=
   ['attachdelegations',['AttachDelegations',['../class_loot_1_1_api_1_1_core_1_1_modifier_effect.html#a6b3ce73614f8662043b995fe6f8b584d',1,'Loot::Api::Core::ModifierEffect']]],
   ['attemptdebuff',['AttemptDebuff',['../class_loot_1_1_api_1_1_delegators_1_1_modifier_delegator_projectile.html#a1c82a5fa936a3410af0da2e8a6224fd3',1,'Loot.Api.Delegators.ModifierDelegatorProjectile.AttemptDebuff(Projectile projectile, Player target)'],['../class_loot_1_1_api_1_1_delegators_1_1_modifier_delegator_projectile.html#a1ad8eae7a47bff067b78e8078ea84486',1,'Loot.Api.Delegators.ModifierDelegatorProjectile.AttemptDebuff(Projectile projectile, NPC target)']]],
   ['attribute',['Attribute',['../class_attribute.html',1,'']]],
-  ['autodelegation',['AutoDelegation',['../class_loot_1_1_api_1_1_attributes_1_1_auto_delegation.html',1,'Loot::Api::Attributes']]],
   ['autodelegation',['AutoDelegation',['../class_loot_1_1_api_1_1_attributes_1_1_auto_delegation.html#a49dcda252cc6325436d783aa150c453a',1,'Loot.Api.Attributes.AutoDelegation.AutoDelegation(params string[] types)'],['../class_loot_1_1_api_1_1_attributes_1_1_auto_delegation.html#ae605ed3b299b05aee32f26b3f658bf50',1,'Loot.Api.Attributes.AutoDelegation.AutoDelegation(params DelegationTarget[] targets)']]],
+  ['autodelegation',['AutoDelegation',['../class_loot_1_1_api_1_1_attributes_1_1_auto_delegation.html',1,'Loot::Api::Attributes']]],
   ['autodelegationattribute_2ecs',['AutoDelegationAttribute.cs',['../_auto_delegation_attribute_8cs.html',1,'']]],
   ['autoload',['Autoload',['../class_loot_1_1_api_1_1_core_1_1_modifier.html#a469ec2f60500bef22faeb67d915c9f00',1,'Loot.Api.Core.Modifier.Autoload()'],['../class_loot_1_1_api_1_1_core_1_1_modifier_effect.html#a20914308ecccc9e798f167aac21a3cbc',1,'Loot.Api.Core.ModifierEffect.Autoload()']]]
 ];

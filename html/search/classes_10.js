@@ -7,7 +7,5 @@ var searchData=
   ['thorns',['Thorns',['../class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_defensive_1_1_thorns.html',1,'Loot::Modifiers::EquipModifiers::Defensive']]],
   ['throwncritplus',['ThrownCritPlus',['../class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_offensive_1_1_thrown_crit_plus.html',1,'Loot::Modifiers::EquipModifiers::Offensive']]],
   ['throwndamageplus',['ThrownDamagePlus',['../class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_offensive_1_1_thrown_damage_plus.html',1,'Loot::Modifiers::EquipModifiers::Offensive']]],
-  ['tinkererarmorhackglobalitem',['TinkererArmorHackGlobalItem',['../class_loot_1_1_hacks_1_1_tinkerer_armor_hack_global_item.html',1,'Loot::Hacks']]],
-  ['tinkererarmorhackmodplayer',['TinkererArmorHackModPlayer',['../class_loot_1_1_hacks_1_1_tinkerer_armor_hack_mod_player.html',1,'Loot::Hacks']]],
   ['transcendentrarity',['TranscendentRarity',['../class_loot_1_1_rarities_1_1_transcendent_rarity.html',1,'Loot::Rarities']]]
 ];

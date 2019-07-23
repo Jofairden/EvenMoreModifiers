@@ -7,6 +7,7 @@ var files =
     [ "Cubes", "dir_1192d0229b77cc2a588c4a570e282588.html", "dir_1192d0229b77cc2a588c4a570e282588" ],
     [ "Ext", "dir_be095b924e4dc9be2baa0c87645be4a4.html", "dir_be095b924e4dc9be2baa0c87645be4a4" ],
     [ "Hacks", "dir_1b4a44bb6da588583fa98f3019998a5f.html", "dir_1b4a44bb6da588583fa98f3019998a5f" ],
+    [ "ILEditing", "dir_70492fc8b21abb30f0a82aa9de3c5b2f.html", "dir_70492fc8b21abb30f0a82aa9de3c5b2f" ],
     [ "LootTests", "dir_7da2562c6888a2bb9ae6fd4aa28aaf28.html", "dir_7da2562c6888a2bb9ae6fd4aa28aaf28" ],
     [ "Modifiers", "dir_d9effce6021c52ad5f41f041cf5402f7.html", "dir_d9effce6021c52ad5f41f041cf5402f7" ],
     [ "ModSupport", "dir_7b647f925c1990a9075b1e5840abb40d.html", "dir_7b647f925c1990a9075b1e5840abb40d" ],

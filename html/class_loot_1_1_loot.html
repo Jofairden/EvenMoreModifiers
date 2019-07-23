@@ -145,12 +145,12 @@ $(document).ready(function(){initNavTree('class_loot_1_1_loot.html','');});
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a9afccc75e56292d043923bb41284083c"><td class="memItemLeft" align="right" valign="top">override void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_loot_1_1_loot.html#a9afccc75e56292d043923bb41284083c">AddRecipes</a> ()</td></tr>
-<tr class="separator:a9afccc75e56292d043923bb41284083c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a52ae642436e92b43a15d0a0ebbb9b25f"><td class="memItemLeft" align="right" valign="top">override void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_loot_1_1_loot.html#a52ae642436e92b43a15d0a0ebbb9b25f">Load</a> ()</td></tr>
 <tr class="separator:a52ae642436e92b43a15d0a0ebbb9b25f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a73e8658a1a40dd26c2b9b2e6d3c200c8"><td class="memItemLeft" align="right" valign="top">override void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_loot_1_1_loot.html#a73e8658a1a40dd26c2b9b2e6d3c200c8">ModifyInterfaceLayers</a> (List&lt; GameInterfaceLayer &gt; layers)</td></tr>
 <tr class="separator:a73e8658a1a40dd26c2b9b2e6d3c200c8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a977383ef02e8aa216fb3c49840a806df"><td class="memItemLeft" align="right" valign="top">override void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_loot_1_1_loot.html#a977383ef02e8aa216fb3c49840a806df">PostAddRecipes</a> ()</td></tr>
+<tr class="separator:a977383ef02e8aa216fb3c49840a806df"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6d4f9879de408582ce87061a1e21dcc2"><td class="memItemLeft" align="right" valign="top">override void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_loot_1_1_loot.html#a6d4f9879de408582ce87061a1e21dcc2">PreSaveAndQuit</a> ()</td></tr>
 <tr class="separator:a6d4f9879de408582ce87061a1e21dcc2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a583d8d3d69bdd106d25030c5309e37bc"><td class="memItemLeft" align="right" valign="top">override void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_loot_1_1_loot.html#a583d8d3d69bdd106d25030c5309e37bc">Unload</a> ()</td></tr>
@@ -172,23 +172,6 @@ Private Attributes</h2></td></tr>
 <div class="textblock">
 <p>Definition at line <a class="el" href="_loot_8cs_source.html#l00026">26</a> of file <a class="el" href="_loot_8cs_source.html">Loot.cs</a>.</p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
-<a class="anchor" id="a9afccc75e56292d043923bb41284083c"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">override void Loot.Loot.AddRecipes </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Definition at line <a class="el" href="_loot_8cs_source.html#l00043">43</a> of file <a class="el" href="_loot_8cs_source.html">Loot.cs</a>.</p>
-<div class="fragment"><div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        {</div><div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;            LoadingFunneler.PostLoad();</div><div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        }</div></div><!-- fragment -->
-</div>
-</div>
 <a class="anchor" id="a52ae642436e92b43a15d0a0ebbb9b25f"></a>
 <div class="memitem">
 <div class="memproto">
@@ -238,6 +221,23 @@ Private Attributes</h2></td></tr>
 <p>Definition at line <a class="el" href="_loot_8cs_source.html#l00075">75</a> of file <a class="el" href="_loot_8cs_source.html">Loot.cs</a>.</p>
 <div class="fragment"><div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;        {</div><div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;            <span class="keywordtype">int</span> mouseTextIndex = layers.FindIndex(layer =&gt; layer.Name.Equals(<span class="stringliteral">&quot;Vanilla: Mouse Text&quot;</span>));</div><div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;            <span class="keywordflow">if</span> (mouseTextIndex != -1)</div><div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;            {</div><div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;                layers.Insert(mouseTextIndex, <span class="keyword">new</span> LegacyGameInterfaceLayer(</div><div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;                    <span class="stringliteral">&quot;Loot: GuiInterface&quot;</span>,</div><div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;                    delegate</div><div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;                    {</div><div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;                        <span class="keywordflow">if</span> (GuiInterface?.CurrentState is VisibilityUI visibilityUi</div><div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;                            &amp;&amp; visibilityUi.Visible &amp;&amp; <a class="code" href="class_loot_1_1_loot.html#a8706bf929344678026f2bb45e3d52a56">_lastUpdateUiGameTime</a> != null)</div><div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;                        {</div><div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;                            GuiInterface.Draw(Main.spriteBatch, _lastUpdateUiGameTime);</div><div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;                        }</div><div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;                        <span class="keywordflow">return</span> <span class="keyword">true</span>;</div><div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;                    },</div><div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;                    InterfaceScaleType.UI));</div><div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;            }</div><div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;        }</div><div class="ttc" id="class_loot_1_1_loot_html_a8706bf929344678026f2bb45e3d52a56"><div class="ttname"><a href="class_loot_1_1_loot.html#a8706bf929344678026f2bb45e3d52a56">Loot.Loot._lastUpdateUiGameTime</a></div><div class="ttdeci">GameTime _lastUpdateUiGameTime</div><div class="ttdef"><b>Definition:</b> <a href="_loot_8cs_source.html#l00064">Loot.cs:64</a></div></div>
 </div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="a977383ef02e8aa216fb3c49840a806df"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">override void Loot.Loot.PostAddRecipes </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_loot_8cs_source.html#l00043">43</a> of file <a class="el" href="_loot_8cs_source.html">Loot.cs</a>.</p>
+<div class="fragment"><div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        {</div><div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;            LoadingFunneler.PostLoad();</div><div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        }</div></div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="a6d4f9879de408582ce87061a1e21dcc2"></a>
@@ -344,7 +344,7 @@ Private Attributes</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespace_loot.html">Loot</a></li><li class="navelem"><a class="el" href="class_loot_1_1_loot.html">Loot</a></li>
-    <li class="footer">Generated on Mon Jul 22 2019 17:20:04 for Even More Modifiers by
+    <li class="footer">Generated on Tue Jul 23 2019 15:22:44 for Even More Modifiers by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.11 </li>
   </ul>

@@ -8,6 +8,7 @@ var searchData=
   ['idcount',['IdCount',['../class_loot_1_1_api_1_1_content_1_1_loadable_content_base.html#a883702ffb3ac76c39b8c006063ad01f5',1,'Loot::Api::Content::LoadableContentBase']]],
   ['ifakemod',['IFakeMod',['../interface_loot_tests_1_1_i_fake_mod.html',1,'LootTests']]],
   ['ifakeproperties',['IFakeProperties',['../interface_loot_tests_1_1_modifier_properties_tests_1_1_i_fake_properties.html',1,'LootTests::ModifierPropertiesTests']]],
+  ['iledit_2ecs',['ILEdit.cs',['../_i_l_edit_8cs.html',1,'']]],
   ['iloadablecontent',['ILoadableContent',['../interface_loot_1_1_api_1_1_content_1_1_i_loadable_content.html',1,'Loot::Api::Content']]],
   ['iloadablecontent_2ecs',['ILoadableContent.cs',['../_i_loadable_content_8cs.html',1,'']]],
   ['iloadablecontentsetter_2ecs',['ILoadableContentSetter.cs',['../_i_loadable_content_setter_8cs.html',1,'']]],
@@ -47,6 +48,7 @@ var searchData=
   ['isweapon',['IsWeapon',['../class_loot_1_1_api_1_1_ext_1_1_item_utils.html#a5c9aeaf45d73accd3ae07d7b93f6bdc4',1,'Loot::Api::Ext::ItemUtils']]],
   ['item',['Item',['../class_loot_1_1_api_1_1_core_1_1_modifier_context.html#a0ac49f905defb2953278d716b4821c67',1,'Loot.Api.Core.ModifierContext.Item()'],['../class_loot_1_1_api_1_1_strategy_1_1_rolling_strategy_context.html#a370b85ba251227b3974ed1849266fd91',1,'Loot.Api.Strategy.RollingStrategyContext.Item()']]],
   ['itemprefix',['ItemPrefix',['../class_loot_1_1_api_1_1_core_1_1_modifier_rarity.html#ac7df5b8c0965512f768fe9449ac6dae0',1,'Loot::Api::Core::ModifierRarity']]],
+  ['itemprefixpatch_2ecs',['ItemPrefixPatch.cs',['../_item_prefix_patch_8cs.html',1,'']]],
   ['itemsuffix',['ItemSuffix',['../class_loot_1_1_api_1_1_core_1_1_modifier_rarity.html#a69a40f927f6b4008e880ffcbfdc267eb',1,'Loot::Api::Core::ModifierRarity']]],
   ['itemutils',['ItemUtils',['../class_loot_1_1_api_1_1_ext_1_1_item_utils.html',1,'Loot::Api::Ext']]],
   ['itemutils_2ecs',['ItemUtils.cs',['../_item_utils_8cs.html',1,'']]]
