@@ -7,7 +7,6 @@ using Loot.Api.Attributes;
 using Loot.Api.Content;
 using Loot.Api.Ext;
 using Loot.Api.Loaders;
-using Loot.Rarities;
 using Terraria;
 using Terraria.ModLoader;
 using Terraria.ModLoader.IO;
@@ -21,8 +20,6 @@ namespace Loot.Api.Core
 	/// </summary>
 	public abstract class ModifierPool : ILoadableContent, ILoadableContentSetter, ICloneable
 	{
-		private const int SAVE_VERSION = 3;
-
 		public Mod Mod { get; internal set; }
 
 		Mod ILoadableContentSetter.Mod
@@ -164,48 +161,11 @@ namespace Loot.Api.Core
 		{
 		}
 
-		protected internal static ModifierPool _NetReceive(Item item, BinaryReader reader)
-		{
-			string type = reader.ReadString();
-			string modName = reader.ReadString();
-
-			ModifierPool p = ContentLoader.ModifierPool.GetContent(modName, type);
-			if (p == null)
-			{
-				throw new Exception($"Modifier _NetReceive error for {modName}");
-			}
-
-			int activeModifiersSize = reader.ReadInt32();
-			var list = new List<Modifier>();
-			for (int i = 0; i < activeModifiersSize; ++i)
-			{
-				list.Add(Modifier._NetReceive(item, reader));
-			}
-
-			p.ActiveModifiers = list.ToArray();
-			p.NetReceive(item, reader);
-			return p;
-		}
-
 		/// <summary>
 		/// Allows modder to do custom NetSend here
 		/// </summary>
 		public virtual void NetSend(Item item, BinaryWriter writer)
 		{
-		}
-
-		protected internal static void _NetSend(ModifierPool modifierPool, Item item, BinaryWriter writer)
-		{
-			writer.Write(modifierPool.Name);
-			writer.Write(modifierPool.Mod.Name);
-
-			writer.Write(modifierPool.ActiveModifiers.Length);
-			for (int i = 0; i < modifierPool.ActiveModifiers.Length; ++i)
-			{
-				Modifier._NetSend(modifierPool.ActiveModifiers[i], item, writer);
-			}
-
-			modifierPool.NetSend(item, writer);
 		}
 
 		/// <summary>
@@ -216,82 +176,6 @@ namespace Loot.Api.Core
 		{
 		}
 
-		protected internal static ModifierPool _Load(Item item, TagCompound tag)
-		{
-			if (tag == null || tag.ContainsKey("EMMErr:PoolNullErr"))
-			{
-				return null;
-			}
-
-			string modName = tag.GetString("ModName");
-
-			if (RegistryLoader.Mods.TryGetValue(modName, out var assembly))
-			{
-				// If we manage to load null here, that means some pool got unloaded
-				ModifierPool p = null;
-				var saveVersion = tag.ContainsKey("ModifierPoolSaveVersion") ? tag.GetInt("ModifierPoolSaveVersion") : 1;
-
-				string poolTypeName = tag.GetString("Type");
-
-				// adapt by save version
-				if (saveVersion == 1)
-				{
-					// in first save version, modifiers were saved by full assembly namespace
-					//m = (ModifierPool)Activator.CreateInstance(assembly.GetType(tag.GetString("Type")));// we modified saving
-					poolTypeName = poolTypeName.Substring(poolTypeName.LastIndexOf('.') + 1);
-					p = ContentLoader.ModifierPool.GetContent(modName, poolTypeName);
-				}
-				else if (saveVersion >= 2)
-				{
-					// from saveVersion 2 and onwards, they are saved by assembly (mod) and type name
-					p = ContentLoader.ModifierPool.GetContent(modName, poolTypeName);
-				}
-
-				// if we have a pool
-				if (p != null)
-				{
-					// saveVersion 1, no longer needed. Type and Mod is already created by new instance
-					//m.Type = tag.Get<uint>("ModifierType");
-					// m.Mod = ModLoader.GetMod(modname);
-					// preload rarity
-					if (saveVersion < 3)
-					{
-						// Since save version 3, the rarity is no longer saved on the pool, rather on the item itself
-						// however, it was saved on the pool in earlier versions, so we need to catch it here.
-						ModifierRarity preloadRarity = ModifierRarity._Load(item, tag.GetCompound("Rarity"));
-
-						LootModItem.GetInfo(item).ModifierRarity =
-							preloadRarity ?? ContentLoader.ModifierRarity.GetContent(typeof(CommonRarity));
-					}
-
-					int activeModifiers = tag.GetAsInt("ActiveModifiers");
-					if (activeModifiers > 0)
-					{
-						var list = new List<Modifier>();
-						for (int i = 0; i < activeModifiers; ++i)
-						{
-							// preload to take unloaded modifiers into account
-							var loaded = Modifier._Load(item, tag.Get<TagCompound>($"ActiveModifier{i}"));
-							if (loaded != null)
-							{
-								list.Add(loaded);
-							}
-						}
-
-						p.ActiveModifiers = list.ToArray();
-					}
-
-					p.Load(item, tag);
-					return p;
-				}
-
-				return null;
-			}
-
-			Loot.Logger.ErrorFormat("There was a load error for modifierpool, TC: {0}", tag);
-			return null;
-		}
-
 		/// <summary>
 		/// Allows modder to do custom saving here
 		/// Use the given TC to put data you want to save, which can be loaded using <see cref="Load(Item, TagCompound)"/>
@@ -299,31 +183,6 @@ namespace Loot.Api.Core
 		/// <param name="tag"></param>
 		public virtual void Save(Item item, TagCompound tag)
 		{
-		}
-
-		protected internal static TagCompound Save(Item item, ModifierPool modifierPool)
-		{
-			if (modifierPool == null)
-			{
-				return new TagCompound { { "EMMErr:PoolNullErr", "ModifierPool was null err" } };
-			}
-
-			var tag = new TagCompound
-			{
-				{"Type", modifierPool.GetType().Name},
-				//{ "ModifierType", modifierPool.Type }, //Used to be saved in saveVersion 1
-				{"ModName", modifierPool.Mod.Name},
-				{"ModifierPoolSaveVersion", SAVE_VERSION}, // increments each time save is changed
-				{"ActiveModifiers", modifierPool.ActiveModifiers.Length}
-			};
-
-			for (int i = 0; i < modifierPool.ActiveModifiers.Length; ++i)
-			{
-				tag.Add($"ActiveModifier{i}", Modifier.Save(item, modifierPool.ActiveModifiers[i]));
-			}
-
-			modifierPool.Save(item, tag);
-			return tag;
 		}
 	}
 }

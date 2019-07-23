@@ -1,4 +1,3 @@
-using Loot.Attributes;
 using Loot.Ext;
 using Loot.UI.Common;
 using Microsoft.Xna.Framework;

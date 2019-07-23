@@ -11,6 +11,7 @@ using Loot.Api.Graphics;
 using Loot.Api.Loaders;
 using Loot.Api.Strategy;
 using Loot.Hacks;
+using Loot.IO;
 using Terraria;
 using Terraria.ModLoader;
 using Terraria.ModLoader.IO;
@@ -190,18 +191,18 @@ namespace Loot
 					if (saveVersion < 3)
 					{
 						// Rarity should be set by pool loading
-						ModifierPool = ModifierPool._Load(item, tag);
+						ModifierPool = ModifierPoolIO.Load(item, tag);
 					}
 					else
 					{
-						ModifierRarity = ModifierRarity._Load(item, tag.GetCompound("ModifierRarity"));
-						ModifierPool = ModifierPool._Load(item, tag.GetCompound("ModifierPool"));
+						ModifierRarity = ModifierRarityIO.Load(item, tag.GetCompound("ModifierRarity"));
+						ModifierPool = ModifierPoolIO.Load(item, tag.GetCompound("ModifierPool"));
 					}
 				}
 				else // SaveVersion 1
 				{
 					HasRolled = tag.GetBool("HasRolled");
-					ModifierPool = ModifierPool._Load(item, tag);
+					ModifierPool = ModifierPoolIO.Load(item, tag);
 				}
 
 				if (ModifierPool != null)
@@ -227,8 +228,8 @@ namespace Loot
 				{"SaveVersion", SAVE_VERSION},
 				{"SealedModifiers", SealedModifiers},
 				{"HasRolled", HasRolled},
-				{"ModifierRarity", ModifierRarity.Save(item, ModifierRarity)},
-				{"ModifierPool", ModifierPool.Save(item, ModifierPool)}
+				{"ModifierRarity", ModifierRarityIO.Save(item, ModifierRarity)},
+				{"ModifierPool", ModifierPoolIO.Save(item, ModifierPool)}
 			};
 
 			return tag;
@@ -241,8 +242,8 @@ namespace Loot
 		{
 			if (reader.ReadBoolean())
 			{
-				ModifierRarity = ModifierRarity._NetReceive(item, reader); // Since SaveVersion 3
-				ModifierPool = ModifierPool._NetReceive(item, reader);
+				ModifierRarity = ModifierRarityIO.NetReceive(item, reader); // Since SaveVersion 3
+				ModifierPool = ModifierPoolIO.NetReceive(item, reader);
 			}
 
 			HasRolled = reader.ReadBoolean();
@@ -259,8 +260,8 @@ namespace Loot
 			writer.Write(hasPool);
 			if (hasPool)
 			{
-				ModifierRarity._NetSend(ModifierRarity, item, writer); // Since SaveVersion 3
-				ModifierPool._NetSend(ModifierPool, item, writer);
+				ModifierRarityIO.NetSend(ModifierRarity, item, writer); // Since SaveVersion 3
+				ModifierPoolIO.NetSend(ModifierPool, item, writer);
 			}
 
 			writer.Write(HasRolled);

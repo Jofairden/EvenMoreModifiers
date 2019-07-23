@@ -4,7 +4,6 @@ using System.IO;
 using Loot.Api.Content;
 using Loot.Api.Graphics.Glowmask;
 using Loot.Api.Graphics.Shader;
-using Loot.Api.Loaders;
 using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.ModLoader;
@@ -112,33 +111,6 @@ namespace Loot.Api.Core
 			return clone;
 		}
 
-		protected internal static Modifier _NetReceive(Item item, BinaryReader reader)
-		{
-			string type = reader.ReadString();
-			string modName = reader.ReadString();
-			ModifierProperties properties = ModifierProperties._NetReceive(item, reader);
-
-			Modifier m = ContentLoader.Modifier.GetContent(modName, type);
-			if (m != null)
-			{
-				m.Properties = m.GetModifierProperties(item).Build();
-				m.Properties.Magnitude = properties.Magnitude;
-				m.Properties.Power = properties.Power;
-				m.NetReceive(item, reader);
-				return m;
-			}
-
-			throw new Exception($"Modifier _NetReceive error for {modName}");
-		}
-
-		protected internal static void _NetSend(Modifier modifier, Item item, BinaryWriter writer)
-		{
-			writer.Write(modifier.GetType().Name);
-			writer.Write(modifier.Mod.Name);
-			ModifierProperties._NetSend(item, modifier.Properties, writer);
-			modifier.NetSend(item, writer);
-		}
-
 		/// <summary>
 		/// Allows modder to do custom loading here
 		/// Use the given TC to pull data you saved using <see cref="Save(Item,TagCompound)"/>
@@ -148,73 +120,12 @@ namespace Loot.Api.Core
 		{
 		}
 
-		protected internal static Modifier _Load(Item item, TagCompound tag)
-		{
-			string modName = tag.GetString("ModName");
-
-			if (RegistryLoader.Mods.TryGetValue(modName, out var assembly))
-			{
-				// If we load a null here, it means a modifier is unloaded
-				Modifier m = null;
-
-				var saveVersion = tag.ContainsKey("ModifierSaveVersion") ? tag.GetInt("ModifierSaveVersion") : 1;
-
-				string modifierTypeName = tag.GetString("Type");
-
-				// adapt by save version
-				if (saveVersion == 1)
-				{
-					// in first save version, modifiers were saved by full assembly namespace
-					//m = (ModifierPool)Activator.CreateInstance(assembly.GetType(tag.GetString("Type")));// we modified saving
-					modifierTypeName = modifierTypeName.Substring(modifierTypeName.LastIndexOf('.') + 1);
-					m = ContentLoader.Modifier.GetContent(modName, modifierTypeName);
-				}
-				else if (saveVersion >= 2)
-				{
-					// from saveVersion 2 and onwards, they are saved by assembly (mod) and type name
-					m = ContentLoader.Modifier.GetContent(modName, modifierTypeName);
-				}
-
-				if (m != null)
-				{
-					// saveVersion 1, no longer needed. Type and Mod is already created by new instance
-					//m.Type = tag.Get<uint>("ModifierType");
-					//m.Mod = ModLoader.GetMod(modname);
-					var p = ModifierProperties._Load(item, tag.GetCompound("ModifierProperties"));
-					m.Properties = m.GetModifierProperties(item).Build();
-					m.Properties.Magnitude = p.Magnitude;
-					m.Properties.Power = p.Power;
-					m.Load(item, tag);
-					return m;
-				}
-
-				return null;
-			}
-
-			Loot.Logger.ErrorFormat("There was a load error for modifier, TC: {0}", tag);
-			return null;
-		}
-
 		/// <summary>
 		/// Allows modder to do custom saving here
 		/// Use the given TC to put data you want to save, which can be loaded using <see cref="Load(Item,TagCompound)"/>
 		/// </summary>
 		public virtual void Save(Item item, TagCompound tag)
 		{
-		}
-
-		protected internal static TagCompound Save(Item item, Modifier modifier)
-		{
-			var tag = new TagCompound
-			{
-				{"Type", modifier.GetType().Name},
-				//{ "ModifierType", modifier.Type }, //Used to be saved in saveVersion 1
-				{"ModName", modifier.Mod.Name},
-				{"ModifierProperties", ModifierProperties._Save(item, modifier.Properties)},
-				{"ModifierSaveVersion", 2}
-			};
-			modifier.Save(item, tag);
-			return tag;
 		}
 
 		// Never autoload us

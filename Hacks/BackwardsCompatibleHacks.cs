@@ -4,6 +4,7 @@ using Terraria.ModLoader.IO;
 
 namespace Loot.Hacks
 {
+	// This is here so old (alpha) classes convert to the new classes
 	internal sealed class EMMItem : GlobalItem
 	{
 		public sealed override bool NeedsSaving(Item item) => false;

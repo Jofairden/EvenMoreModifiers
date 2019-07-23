@@ -1,11 +1,9 @@
 using System;
 using System.Diagnostics;
-using System.Linq;
 using System.Reflection;
 using Loot.Api.ModContent;
 using Loot.Attributes;
 using Loot.Ext;
-using Loot.Hacks;
 using Loot.ILEditing;
 using Loot.ModSupport;
 using Loot.UI;

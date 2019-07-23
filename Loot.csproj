@@ -73,6 +73,10 @@
     <Compile Include="ILEditing\WeaponDrawEffectsPatch.cs" />
     <Compile Include="ILEditing\ILEdit.cs" />
     <Compile Include="ILEditing\ItemPrefixPatch.cs" />
+    <Compile Include="IO\ModifierIO.cs" />
+    <Compile Include="IO\ModifierPoolIO.cs" />
+    <Compile Include="IO\ModifierPropertiesIO.cs" />
+    <Compile Include="IO\ModifierRarityIO.cs" />
     <Compile Include="ModSupport\WeaponOutSupport.cs" />
     <Compile Include="Pools\WeaponModifierPool.cs" />
     <Compile Include="RollingStrategies\NormalRollingStrategy.cs" />

@@ -74,67 +74,16 @@ namespace Loot.Api.Core
 		{
 		}
 
-		internal static ModifierProperties _NetReceive(Item item, BinaryReader reader)
-		{
-			var p = new ModifierProperties
-			{
-				Magnitude = reader.ReadSingle(),
-				Power = reader.ReadSingle()
-			};
-			p.NetReceive(item, reader);
-			return p;
-		}
-
 		public virtual void NetSend(Item item, BinaryWriter writer)
 		{
-		}
-
-		internal static void _NetSend(Item item, ModifierProperties properties, BinaryWriter writer)
-		{
-			writer.Write(properties.Magnitude);
-			writer.Write(properties.Power);
-			properties.NetSend(item, writer);
 		}
 
 		public virtual void Save(Item item, TagCompound tag)
 		{
 		}
 
-		internal static TagCompound _Save(Item item, ModifierProperties properties)
-		{
-			var tc = new TagCompound
-			{
-				{"Magnitude", properties.Magnitude},
-				{"Power", properties.Power},
-				{"ModifierPropertiesSaveVersion", 1}
-			};
-			properties.Save(item, tc);
-			return tc;
-		}
-
 		public virtual void Load(Item item, TagCompound tag)
 		{
-		}
-
-		internal static ModifierProperties _Load(Item item, TagCompound tag)
-		{
-			ModifierProperties prop;
-			try
-			{
-				prop = new ModifierProperties
-				{
-					Magnitude = tag.GetFloat("Magnitude"),
-					Power = tag.GetFloat("Power")
-				};
-			}
-			catch (Exception)
-			{
-				// Something was wrong with the TC, roll new values
-				prop = new ModifierProperties().RollMagnitudeAndPower();
-			}
-
-			prop.Load(item, tag);
-			return prop;
 		}
 
 		/// <summary>
