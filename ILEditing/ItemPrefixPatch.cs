@@ -33,16 +33,11 @@ namespace Loot.ILEditing
 			// Clone cursor
 			var retCursor = cursor.Clone();
 			// Go after the vanilla false return statement
-			bool ret = retCursor.TryGotoNext(MoveType.After, i => i.OpCode == OpCodes.Ret);
-			if (!ret || retCursor.Next == null)
-			{
-				// we didn't find the ret instruction or we ended at end of function (debug)
-				// in this case, look for the br instruction that branches to ret
-				retCursor = cursor.Clone(); // refresh
-				retCursor.TryGotoNext(MoveType.After, i => i.OpCode == OpCodes.Br);
-				// after this we should be inbetween the br and ldloc0 instructions
-				// we can now emit our new label after the br instruction to move past the branching
-			}
+			// we may find either a return op or a br (branching) op for debug
+			// in debug there is one ret op at the end of method, with br ops branching to it
+			// so we can match either one and we will be in the right position.
+			retCursor.TryGotoNext(MoveType.After, i => i.OpCode == OpCodes.Ret || i.OpCode == OpCodes.Br);
+
 			// If our emitted delegate holds true, transfer control to our label
 			cursor.Emit(OpCodes.Brtrue, retCursor.MarkLabel());
 			// We essentially "goto" our new label is the item is armor, skipping the return or branching
