@@ -179,6 +179,23 @@ namespace Loot.UI.Tabs.Cubing
 			_itemButton.Item = newItem.Clone();
 		}
 
+		public void GiveBackItemIfNeeded()
+		{
+			if (!_itemButton.Item.IsAir)
+			{
+				LootModItem.GetInfo(_itemButton.Item).SlottedInCubeUI = false;
+				Main.LocalPlayer.QuickSpawnClonedItem(_itemButton.Item, _itemButton.Item.stack);
+			}
+		}
+
+		public void OverrideSlottedItem(Item newItem)
+		{
+			_itemButton.Item = newItem.Clone();
+			LootModItem.GetInfo(_itemButton.Item).SlottedInCubeUI = true;
+			UpdateModifiersInGui();
+			Main.PlaySound(SoundID.Grab);
+		}
+
 		private void UpdateModifiersInGui()
 		{
 			foreach (var panel in _modifierPanels)

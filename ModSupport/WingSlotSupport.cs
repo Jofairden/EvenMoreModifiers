@@ -47,16 +47,8 @@ namespace Loot.ModSupport
 
 		private static void SwapItems(GuiCubingTab cubingTab, Item item)
 		{
-			var itemPanel = cubingTab._itemButton;
-			if (!itemPanel.Item.IsAir)
-			{
-				LootModItem.GetInfo(itemPanel.Item).SlottedInCubeUI = false;
-				Main.LocalPlayer.QuickSpawnClonedItem(itemPanel.Item, itemPanel.Item.stack);
-			}
-
-			Main.PlaySound(SoundID.Grab);
-			itemPanel.Item = item.Clone();
-			LootModItem.GetInfo(itemPanel.Item).SlottedInCubeUI = true;
+			cubingTab.GiveBackItemIfNeeded();
+			cubingTab.OverrideSlottedItem(item);
 		}
 
 		public class WingSlotSupportGlobalItem : GlobalItem
