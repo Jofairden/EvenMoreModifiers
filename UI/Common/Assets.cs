@@ -35,6 +35,9 @@ namespace Loot.UI.Common
 				[StaticAsset("UI/Common/Controls/Panel/GuiPanel")]
 				public static Texture2D PanelTexture;
 
+				[StaticAsset("Tiles/LunarCube")]
+				public static Texture2D LunarCubeTexture;
+
 				internal static class Tabs
 				{
 					[StaticAsset("UI/GuiTabCubing")]
