@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using Loot.Api.Core;
 using Microsoft.Xna.Framework;
 
@@ -68,5 +69,10 @@ namespace Loot.Api.Strategy
 		/// Gives extra luck when rolling modifiers
 		/// </summary>
 		public float ExtraLuck { get; set; } = 0f;
+
+		/// <summary>
+		/// Returns a list of lines that will be rolled initially
+		/// </summary>
+		public Func<List<Modifier>> PresetLines { get; set; }
 	}
 }

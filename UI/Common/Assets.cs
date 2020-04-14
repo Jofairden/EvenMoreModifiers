@@ -7,6 +7,9 @@ namespace Loot.UI.Common
 	{
 		internal static class Textures
 		{
+			[StaticAsset("Placeholder")]
+			public static Texture2D PlaceholderTexture;
+
 			internal static class GUI
 			{
 				[StaticAsset("UI/GuiCloseButton")]
@@ -37,6 +40,7 @@ namespace Loot.UI.Common
 
 				[StaticAsset("Tiles/LunarCube")]
 				public static Texture2D LunarCubeTexture;
+
 
 				internal static class Tabs
 				{

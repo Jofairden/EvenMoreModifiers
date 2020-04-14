@@ -1,3 +1,6 @@
+using Loot.Api.Strategy;
+using Terraria;
+
 namespace Loot.Essences
 {
 	enum EssenceTier
@@ -41,14 +44,6 @@ Tier: {GetTierText()}
 Used in an essence crafting device");
 		}
 
-		public virtual void PreRoll() // context + params
-		{
-
-		}
-
-		public virtual void PostRoll() // context + params + result
-		{
-
-		}
+		public abstract RollingStrategy GetRollingStrategy(Item item, RollingStrategyProperties properties);
 	}
 }

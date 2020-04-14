@@ -106,7 +106,10 @@ namespace Loot.Api.Strategy
 
 		public virtual List<Modifier> PreRoll(ModifierPool drawPool, ModifierContext modifierContext, RollingStrategyProperties properties)
 		{
-			return new List<Modifier>();
+			var preset = properties.PresetLines();
+			preset.ForEach(x => RollProperties(x, preset, modifierContext, properties));
+			preset.ForEach(x => x.Roll(modifierContext, preset));
+			return preset;
 		}
 
 		public virtual void PostRoll(ref List<Modifier> modifiers, ModifierPool drawPool, ModifierContext modifierContext, RollingStrategyProperties properties)
@@ -135,23 +138,7 @@ namespace Loot.Api.Strategy
 			// Get a next weighted random mod
 			// Clone the mod (new instance) and roll its properties, then roll it
 			Modifier rolledModifier = (Modifier)weightedRandom.Get().Clone();
-			float luck = properties.ExtraLuck;
-			float magnitudePower = properties.MagnitudePower;
-
-			if (modifierContext.Player != null)
-			{
-				luck += ModifierDelegatorPlayer.GetPlayer(modifierContext.Player).GetEffect<LuckEffect>().Luck;
-			}
-			if (modifierContext.Rarity != null)
-			{
-				luck += modifierContext.Rarity.ExtraLuck;
-				magnitudePower += modifierContext.Rarity.ExtraMagnitudePower;
-			}
-
-			rolledModifier.Properties =
-				rolledModifier.GetModifierProperties(modifierContext.Item)
-					.Build()
-					.RollMagnitudeAndPower(magnitudePower, luck);
+			RollProperties(rolledModifier, currentModifiers, modifierContext, properties);
 
 			rolledModifier.Roll(modifierContext, currentModifiers);
 
@@ -169,6 +156,27 @@ namespace Loot.Api.Strategy
 
 		public virtual void PostRollLine(ref List<Modifier> modifiers, Modifier line, ModifierPool drawPool, ModifierContext modifierContext, RollingStrategyProperties properties)
 		{
+		}
+
+		private void RollProperties(Modifier modifier, List<Modifier> modifiers, ModifierContext modifierContext, RollingStrategyProperties properties)
+		{
+			float luck = properties.ExtraLuck;
+			float magnitudePower = properties.MagnitudePower;
+
+			if (modifierContext.Player != null)
+			{
+				luck += ModifierDelegatorPlayer.GetPlayer(modifierContext.Player).GetEffect<LuckEffect>().Luck;
+			}
+			if (modifierContext.Rarity != null)
+			{
+				luck += modifierContext.Rarity.ExtraLuck;
+				magnitudePower += modifierContext.Rarity.ExtraMagnitudePower;
+			}
+
+			modifier.Properties =
+				modifier.GetModifierProperties(modifierContext.Item)
+					.Build()
+					.RollMagnitudeAndPower(magnitudePower, luck);
 		}
 	}
 
