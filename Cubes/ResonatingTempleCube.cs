@@ -7,16 +7,14 @@ using Terraria.ModLoader;
 
 namespace Loot.Cubes
 {
-	public class BlackCube : RerollingCube
+	class ResonatingTempleCube : RerollingCube
 	{
-		protected override string CubeName => "Black Cube";
-		protected override Color? OverrideNameColor => Color.LightSlateGray;
+		protected override string CubeName => "Resonating Temple Cube";
+		protected override Color? OverrideNameColor => Color.PeachPuff;
 
 		protected override TooltipLine ExtraTooltip => new TooltipLine(mod, "BlackCube::Description::Add_Box",
-			"Always rolls 4 lines" +
-			"\nMaximum potential: Legendary" +
-			"\nCan roll 25% stronger modifiers" +
-			"\n+4 luck with this cube")
+			"Resonates with power\n" +
+			"Does nothing special for now")
 		{
 			overrideColor = OverrideNameColor
 		};
@@ -32,9 +30,6 @@ namespace Loot.Cubes
 
 		public override RollingStrategy GetRollingStrategy(Item item, RollingStrategyProperties properties)
 		{
-			properties.MinModifierRolls = 4;
-			properties.MagnitudePower = 1.25f;
-			properties.ExtraLuck = 4;
 			return RollingUtils.Strategies.Default;
 		}
 	}
