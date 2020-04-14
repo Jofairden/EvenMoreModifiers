@@ -4,7 +4,7 @@ var class_loot_1_1_api_1_1_delegators_1_1_modifier_delegator_projectile =
     [ "AttemptDebuff", "class_loot_1_1_api_1_1_delegators_1_1_modifier_delegator_projectile.html#a1ad8eae7a47bff067b78e8078ea84486", null ],
     [ "Clone", "class_loot_1_1_api_1_1_delegators_1_1_modifier_delegator_projectile.html#adc191884f2c21b8bf6e179112d797a9b", null ],
     [ "CritBonus", "class_loot_1_1_api_1_1_delegators_1_1_modifier_delegator_projectile.html#a99c0dfb74203b973a4f369a4cab41b8f", null ],
-    [ "GetInfo", "class_loot_1_1_api_1_1_delegators_1_1_modifier_delegator_projectile.html#af1540ebef16e5b33d2281de0c96d9e54", null ],
+    [ "GetInfo", "class_loot_1_1_api_1_1_delegators_1_1_modifier_delegator_projectile.html#a29554f15ca2b41dc3794750548719159", null ],
     [ "HealthyBonus", "class_loot_1_1_api_1_1_delegators_1_1_modifier_delegator_projectile.html#a2ad51373293e492be7709dc305af1b83", null ],
     [ "HealthyBonus", "class_loot_1_1_api_1_1_delegators_1_1_modifier_delegator_projectile.html#a45f6f880354454dc50263b96968c0b1a", null ],
     [ "ModifyHitNPC", "class_loot_1_1_api_1_1_delegators_1_1_modifier_delegator_projectile.html#a75c21ff4ea8b8009e44d6828148662b2", null ],

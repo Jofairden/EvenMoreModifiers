@@ -1,9 +1,5 @@
 var NAVTREEINDEX6 =
 {
-"class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_knockback_plus.html#a7188b09d04874e02468bfb339f44807e":[2,0,0,5,2,8,1],
-"class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_knockback_plus.html#ae48ee8465a88687760f649a0eff292aa":[2,0,0,5,2,8,3],
-"class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_mana_reduce.html":[2,0,0,5,2,9],
-"class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_mana_reduce.html#a402f7e34cbec96db9f572d318a84a9ba":[2,0,0,5,2,9,3],
 "class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_mana_reduce.html#a675636bf2e4c960a03cee5ca27b112d0":[2,0,0,5,2,9,0],
 "class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_mana_reduce.html#a842191d9e985f8d973086aca7d17173d":[2,0,0,5,2,9,2],
 "class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_mana_reduce.html#ab688b8bd192fba37336d97ead4c2dc46":[2,0,0,5,2,9,1],
@@ -189,8 +185,8 @@ var NAVTREEINDEX6 =
 "dir_f0b8d3380d5649deec2d780f35ec3ac5.html":[3,0,8],
 "dir_f3e6d85b04d9f09a7e42d5218bf5ba51.html":[3,0,0,4],
 "files.html":[3,0],
-"functions.html":[2,3,0],
 "functions.html":[2,3,0,0],
+"functions.html":[2,3,0],
 "functions_a.html":[2,3,0,1],
 "functions_b.html":[2,3,0,2],
 "functions_c.html":[2,3,0,3],
@@ -249,5 +245,9 @@ var NAVTREEINDEX6 =
 "interface_loot_1_1_api_1_1_content_1_1_i_loadable_content.html":[2,0,0,0,2,0],
 "interface_loot_1_1_api_1_1_content_1_1_i_loadable_content.html#a039c9899214650e1b15089db4e494519":[2,0,0,0,2,0,2],
 "interface_loot_1_1_api_1_1_content_1_1_i_loadable_content.html#a2f71452bd0e4d0f98fae6682b9794a38":[2,0,0,0,2,0,0],
-"interface_loot_1_1_api_1_1_content_1_1_i_loadable_content.html#a6ff162a22fae141dcb692481aef2b873":[2,0,0,0,2,0,1]
+"interface_loot_1_1_api_1_1_content_1_1_i_loadable_content.html#a6ff162a22fae141dcb692481aef2b873":[2,0,0,0,2,0,1],
+"interface_loot_1_1_api_1_1_strategy_1_1_i_rolling_strategy.html":[2,0,0,0,10,0],
+"interface_loot_1_1_api_1_1_strategy_1_1_i_rolling_strategy.html#a2f42b3f88803995e4b69a97c67a15ad1":[2,0,0,0,10,0,0],
+"interface_loot_tests_1_1_i_fake_mod.html":[2,0,1,5],
+"interface_loot_tests_1_1_i_fake_mod.html#a7c1bcb9cb983e9e403ceacb27ce26e20":[2,0,1,5,0]
 };

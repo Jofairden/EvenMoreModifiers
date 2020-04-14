@@ -1,7 +1,5 @@
 var NAVTREEINDEX3 =
 {
-"class_loot_1_1_api_1_1_delegators_1_1_modifier_delegator_player.html#a1eda7b5cfb8ec1afada80c3db716268b":[2,0,0,0,5,0,181],
-"class_loot_1_1_api_1_1_delegators_1_1_modifier_delegator_player.html#a24580c245ce01e8f40045134ac8b53d5":[2,0,0,0,5,0,25],
 "class_loot_1_1_api_1_1_delegators_1_1_modifier_delegator_player.html#a24e885fd2991723513394bf2cb1a06f8":[2,0,0,0,5,0,50],
 "class_loot_1_1_api_1_1_delegators_1_1_modifier_delegator_player.html#a256987ec0dfee3a59d267a66cac300f7":[2,0,0,0,5,0,1],
 "class_loot_1_1_api_1_1_delegators_1_1_modifier_delegator_player.html#a2679a2796cea3f1558490f7711e37b24":[2,0,0,0,5,0,42],
@@ -165,6 +163,7 @@ var NAVTREEINDEX3 =
 "class_loot_1_1_api_1_1_delegators_1_1_modifier_delegator_projectile.html#a1ad8eae7a47bff067b78e8078ea84486":[2,0,0,0,5,1,1],
 "class_loot_1_1_api_1_1_delegators_1_1_modifier_delegator_projectile.html#a1c82a5fa936a3410af0da2e8a6224fd3":[2,0,0,0,5,1,0],
 "class_loot_1_1_api_1_1_delegators_1_1_modifier_delegator_projectile.html#a2847bfcbe558620d4d3a887bb462fbed":[2,0,0,0,5,1,19],
+"class_loot_1_1_api_1_1_delegators_1_1_modifier_delegator_projectile.html#a29554f15ca2b41dc3794750548719159":[2,0,0,0,5,1,4],
 "class_loot_1_1_api_1_1_delegators_1_1_modifier_delegator_projectile.html#a2ad51373293e492be7709dc305af1b83":[2,0,0,0,5,1,5],
 "class_loot_1_1_api_1_1_delegators_1_1_modifier_delegator_projectile.html#a3284b9dfdbe27b0ab70252afb6e1f4e7":[2,0,0,0,5,1,18],
 "class_loot_1_1_api_1_1_delegators_1_1_modifier_delegator_projectile.html#a45f6f880354454dc50263b96968c0b1a":[2,0,0,0,5,1,6],
@@ -180,7 +179,6 @@ var NAVTREEINDEX3 =
 "class_loot_1_1_api_1_1_delegators_1_1_modifier_delegator_projectile.html#ab86a0fecb0ce89d2e34fda7f0ccd2fa1":[2,0,0,0,5,1,16],
 "class_loot_1_1_api_1_1_delegators_1_1_modifier_delegator_projectile.html#acc8ba01c1aa5bb14e5401ff23b01c9a2":[2,0,0,0,5,1,17],
 "class_loot_1_1_api_1_1_delegators_1_1_modifier_delegator_projectile.html#adc191884f2c21b8bf6e179112d797a9b":[2,0,0,0,5,1,2],
-"class_loot_1_1_api_1_1_delegators_1_1_modifier_delegator_projectile.html#af1540ebef16e5b33d2281de0c96d9e54":[2,0,0,0,5,1,4],
 "class_loot_1_1_api_1_1_delegators_1_1_modifier_delegator_projectile.html#af9a377bb0b42fffddb5a85cc33876752":[2,0,0,0,5,1,10],
 "class_loot_1_1_api_1_1_ext_1_1_item_utils.html":[2,0,0,0,6,0],
 "class_loot_1_1_api_1_1_ext_1_1_item_utils.html#a39754c98802bdbdc8f0c2af7ef56ab62":[2,0,0,0,6,0,1],
@@ -249,5 +247,7 @@ var NAVTREEINDEX3 =
 "class_loot_1_1_api_1_1_graphics_1_1_graphics_entity.html#a1015a3c783710c8fedc05b2b0019b130":[2,0,0,0,7,2,1],
 "class_loot_1_1_api_1_1_graphics_1_1_graphics_entity.html#a31fe3ee01717e224f2eebc1be47d7a18":[2,0,0,0,7,2,12],
 "class_loot_1_1_api_1_1_graphics_1_1_graphics_entity.html#a84e5b84625a265e521c089e52bfc7044":[2,0,0,0,7,2,10],
-"class_loot_1_1_api_1_1_graphics_1_1_graphics_entity.html#a86a57e826b2e0351e5a40c016e4610a7":[2,0,0,0,7,2,8]
+"class_loot_1_1_api_1_1_graphics_1_1_graphics_entity.html#a86a57e826b2e0351e5a40c016e4610a7":[2,0,0,0,7,2,8],
+"class_loot_1_1_api_1_1_graphics_1_1_graphics_entity.html#a981a4e84ecdace67cedb08d9c9cfcf17":[2,0,0,0,7,2,9],
+"class_loot_1_1_api_1_1_graphics_1_1_graphics_entity.html#a9f9f0e4fb4450f027fb404e5f710fc1a":[2,0,0,0,7,2,2]
 };

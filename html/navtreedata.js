@@ -36,12 +36,12 @@ var NAVTREEINDEX =
 [
 "_accessory_modifier_8cs.html",
 "_loot_mod_item_8cs.html",
-"class_loot_1_1_api_1_1_core_1_1_modifier.html#a2b52650351c01dc699190b1641de5255",
-"class_loot_1_1_api_1_1_delegators_1_1_modifier_delegator_player.html#a1eda7b5cfb8ec1afada80c3db716268b",
-"class_loot_1_1_api_1_1_graphics_1_1_graphics_entity.html#a981a4e84ecdace67cedb08d9c9cfcf17",
-"class_loot_1_1_loot_mod_item.html#aa7550eacacab94f1a9aa53492f686b2d",
-"class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_knockback_plus.html#a7188b09d04874e02468bfb339f44807e",
-"interface_loot_1_1_api_1_1_strategy_1_1_i_rolling_strategy.html"
+"class_loot_1_1_api_1_1_core_1_1_modifier.html#a2d17e1a1ba7e07e10976ab7e228c3767",
+"class_loot_1_1_api_1_1_delegators_1_1_modifier_delegator_player.html#a24e885fd2991723513394bf2cb1a06f8",
+"class_loot_1_1_api_1_1_graphics_1_1_graphics_entity.html#aafa4471df577dc728d9229a595dfe47d",
+"class_loot_1_1_loot_mod_item.html#aeff8f5daada870d63e036956b4982de2",
+"class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_mana_reduce.html#a675636bf2e4c960a03cee5ca27b112d0",
+"interface_loot_tests_1_1_i_fake_mod.html#a80e09370e4c7b7709da84c4f54e2437a"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

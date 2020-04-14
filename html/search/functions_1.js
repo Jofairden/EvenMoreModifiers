@@ -1,10 +1,9 @@
 var searchData=
 [
   ['addattachitem',['AddAttachItem',['../class_loot_1_1_caching_1_1_modifier_cache_player.html#a4b83315309f67249c30ed1ec14f0c8ed',1,'Loot::Caching::ModifierCachePlayer']]],
-  ['addcontent',['AddContent',['../class_loot_1_1_api_1_1_content_1_1_loadable_content_base.html#a47ab7e0a596c9a05da4e9421a6a28e0e',1,'Loot.Api.Content.LoadableContentBase.AddContent(Type type, Mod mod)'],['../class_loot_1_1_api_1_1_content_1_1_loadable_content_base.html#a2efe935d619fb742971f7a9b5b004a89',1,'Loot.Api.Content.LoadableContentBase.AddContent(T contentPiece, Mod mod)'],['../class_loot_1_1_api_1_1_loaders_1_1_registry_loader.html#a9cee663338cc830452df4c4bef614209',1,'Loot.Api.Loaders.RegistryLoader.AddContent()'],['../class_loot_1_1_api_1_1_mod_content_1_1_mod_content_manager.html#ae5ef267a4e66d49f60c30421ac953f26',1,'Loot.Api.ModContent.ModContentManager.AddContent()']]],
+  ['addcontent',['AddContent',['../class_loot_1_1_api_1_1_mod_content_1_1_mod_content_manager.html#ae5ef267a4e66d49f60c30421ac953f26',1,'Loot::Api::ModContent::ModContentManager']]],
   ['adddetachitem',['AddDetachItem',['../class_loot_1_1_caching_1_1_modifier_cache_player.html#aceb2cf61924cc7a73c58c8a3c317b48e',1,'Loot::Caching::ModifierCachePlayer']]],
   ['addglowmasktexture',['AddGlowmaskTexture',['../class_loot_1_1_api_1_1_mod_content_1_1_graphics_mod_content.html#aacefb8ded314922a62b51fea5a810594',1,'Loot::Api::ModContent::GraphicsModContent']]],
-  ['addmod',['AddMod',['../class_loot_1_1_api_1_1_loaders_1_1_registry_loader.html#a6eeb348ad8dcad4b41a5064a61deef6b',1,'Loot::Api::Loaders::RegistryLoader']]],
   ['addshadertexture',['AddShaderTexture',['../class_loot_1_1_api_1_1_mod_content_1_1_graphics_mod_content.html#a40074cd5bddda7b52467323bfeab3623',1,'Loot::Api::ModContent::GraphicsModContent']]],
   ['addtexture',['AddTexture',['../class_loot_1_1_api_1_1_mod_content_1_1_texture_mod_content.html#a67a1adc959729e27606029e60a43713e',1,'Loot::Api::ModContent::TextureModContent']]],
   ['addto',['AddTo',['../class_loot_1_1_api_1_1_mod_content_1_1_texture_mod_content.html#afb1ff4b4d50c96d1220811db03cc81cd',1,'Loot::Api::ModContent::TextureModContent']]],
