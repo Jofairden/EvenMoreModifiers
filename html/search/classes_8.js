@@ -1,5 +1,6 @@
 var searchData=
 [
+  ['icecube',['IceCube',['../class_loot_1_1_cubes_1_1_ice_cube.html',1,'Loot::Cubes']]],
   ['icemodifier',['IceModifier',['../class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_ice_1_1_ice_modifier.html',1,'Loot::Modifiers::WeaponModifiers::Ice']]],
   ['icloneable',['ICloneable',['../class_i_cloneable.html',1,'']]],
   ['icyessence',['IcyEssence',['../class_loot_1_1_essences_1_1_icy_essence.html',1,'Loot::Essences']]],

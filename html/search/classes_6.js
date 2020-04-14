@@ -13,5 +13,7 @@ var searchData=
   ['graphicsglobalitem',['GraphicsGlobalItem',['../class_loot_1_1_api_1_1_graphics_1_1_graphics_global_item.html',1,'Loot::Api::Graphics']]],
   ['graphicsmodcontent',['GraphicsModContent',['../class_loot_1_1_api_1_1_mod_content_1_1_graphics_mod_content.html',1,'Loot::Api::ModContent']]],
   ['graphicsproperties',['GraphicsProperties',['../class_loot_1_1_api_1_1_graphics_1_1_graphics_properties.html',1,'Loot::Api::Graphics']]],
-  ['graphicspropertiesbuilder',['GraphicsPropertiesBuilder',['../class_loot_1_1_api_1_1_graphics_1_1_graphics_properties_1_1_graphics_properties_builder.html',1,'Loot::Api::Graphics::GraphicsProperties']]]
+  ['graphicspropertiesbuilder',['GraphicsPropertiesBuilder',['../class_loot_1_1_api_1_1_graphics_1_1_graphics_properties_1_1_graphics_properties_builder.html',1,'Loot::Api::Graphics::GraphicsProperties']]],
+  ['guiessencebutton',['GuiEssenceButton',['../class_loot_1_1_u_i_1_1_tabs_1_1_essence_crafting_1_1_gui_essence_button.html',1,'Loot::UI::Tabs::EssenceCrafting']]],
+  ['guiessenceitembutton',['GuiEssenceItemButton',['../class_loot_1_1_u_i_1_1_tabs_1_1_essence_crafting_1_1_gui_essence_item_button.html',1,'Loot::UI::Tabs::EssenceCrafting']]]
 ];

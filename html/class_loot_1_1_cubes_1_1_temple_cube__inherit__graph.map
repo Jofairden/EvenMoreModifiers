@@ -1,0 +1,5 @@
+<map id="Loot.Cubes.TempleCube" name="Loot.Cubes.TempleCube">
+<area shape="rect" id="node2" href="$class_loot_1_1_api_1_1_cubes_1_1_rerolling_cube.html" title="Defines a rerolling cube that opens the rerolling UI on right click The method M:GetRollingStrategy c..." alt="" coords="39,155,147,181"/>
+<area shape="rect" id="node3" href="$class_loot_1_1_api_1_1_cubes_1_1_magical_cube.html" title="Defines a magical cube A magical cube is used to change modifiers on an item " alt="" coords="42,80,145,107"/>
+<area shape="rect" id="node4" href="$class_mod_item.html" title="ModItem" alt="" coords="54,5,133,32"/>
+</map>

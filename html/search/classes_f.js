@@ -7,6 +7,7 @@ var searchData=
   ['shaderentity',['ShaderEntity',['../class_loot_1_1_api_1_1_graphics_1_1_shader_1_1_shader_entity.html',1,'Loot::Api::Graphics::Shader']]],
   ['shadergraphicsproperties',['ShaderGraphicsProperties',['../class_loot_1_1_api_1_1_graphics_1_1_shader_1_1_shader_graphics_properties.html',1,'Loot::Api::Graphics::Shader']]],
   ['shadergraphicspropertiesbuilder',['ShaderGraphicsPropertiesBuilder',['../class_loot_1_1_api_1_1_graphics_1_1_shader_1_1_shader_graphics_properties_1_1_shader_graphics_properties_builder.html',1,'Loot::Api::Graphics::Shader::ShaderGraphicsProperties']]],
+  ['slatecube',['SlateCube',['../class_loot_1_1_cubes_1_1_slate_cube.html',1,'Loot::Cubes']]],
   ['soundmaker',['SoundMaker',['../class_loot_1_1_sounds_1_1_custom_1_1_sound_maker.html',1,'Loot::Sounds::Custom']]],
   ['speedplus',['SpeedPlus',['../class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_speed_plus.html',1,'Loot::Modifiers::WeaponModifiers']]],
   ['strategies',['Strategies',['../class_loot_1_1_api_1_1_ext_1_1_rolling_utils_1_1_strategies.html',1,'Loot::Api::Ext::RollingUtils']]],

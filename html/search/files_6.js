@@ -15,6 +15,8 @@ var searchData=
   ['guicubeitembutton_2ecs',['GuiCubeItemButton.cs',['../_gui_cube_item_button_8cs.html',1,'']]],
   ['guicubeselector_2ecs',['GuiCubeSelector.cs',['../_gui_cube_selector_8cs.html',1,'']]],
   ['guicubingtab_2ecs',['GuiCubingTab.cs',['../_gui_cubing_tab_8cs.html',1,'']]],
+  ['guiessencebutton_2ecs',['GuiEssenceButton.cs',['../_gui_essence_button_8cs.html',1,'']]],
+  ['guiessenceitembutton_2ecs',['GuiEssenceItemButton.cs',['../_gui_essence_item_button_8cs.html',1,'']]],
   ['guiessencetab_2ecs',['GuiEssenceTab.cs',['../_gui_essence_tab_8cs.html',1,'']]],
   ['guiframedelement_2ecs',['GuiFramedElement.cs',['../_gui_framed_element_8cs.html',1,'']]],
   ['guiheader_2ecs',['GuiHeader.cs',['../_gui_header_8cs.html',1,'']]],

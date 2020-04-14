@@ -1,6 +1,8 @@
 var searchData=
 [
   ['i',['I',['../namespace_loot_1_1_essences.html#ac9b296a1b5ad55972d15c1f8550de14badd7536794b63bf90eccfd37f9b147d7f',1,'Loot::Essences']]],
+  ['icecube',['IceCube',['../class_loot_1_1_cubes_1_1_ice_cube.html',1,'Loot::Cubes']]],
+  ['icecube_2ecs',['IceCube.cs',['../_ice_cube_8cs.html',1,'']]],
   ['icemodifier',['IceModifier',['../class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_ice_1_1_ice_modifier.html',1,'Loot::Modifiers::WeaponModifiers::Ice']]],
   ['icemodifier_2ecs',['IceModifier.cs',['../_ice_modifier_8cs.html',1,'']]],
   ['icloneable',['ICloneable',['../class_i_cloneable.html',1,'']]],

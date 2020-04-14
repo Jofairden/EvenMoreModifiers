@@ -13,6 +13,8 @@ var searchData=
   ['healthyfoesbonus',['HealthyFoesBonus',['../class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_offensive_1_1_healthy_foes_bonus.html',1,'Loot::Modifiers::EquipModifiers::Offensive']]],
   ['healthyfoesbonus_2ecs',['HealthyFoesBonus.cs',['../_healthy_foes_bonus_8cs.html',1,'']]],
   ['healthyfoeseffect',['HealthyFoesEffect',['../class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_offensive_1_1_healthy_foes_effect.html',1,'Loot::Modifiers::EquipModifiers::Offensive']]],
+  ['hellcube',['HellCube',['../class_loot_1_1_cubes_1_1_hell_cube.html',1,'Loot::Cubes']]],
+  ['hellcube_2ecs',['HellCube.cs',['../_hell_cube_8cs.html',1,'']]],
   ['holditem',['HoldItem',['../class_loot_1_1_modifiers_1_1_base_1_1_weapon_debuff_modifier.html#aca769c3fc6e23cca2283f20b5f5a6a91',1,'Loot::Modifiers::Base::WeaponDebuffModifier']]],
   ['holdoutoffset',['HoldoutOffset',['../class_loot_1_1_api_1_1_core_1_1_modifier.html#ab26ea493195ae131cb20ca0dcee13287',1,'Loot::Api::Core::Modifier']]],
   ['holdoutorigin',['HoldoutOrigin',['../class_loot_1_1_api_1_1_core_1_1_modifier.html#a07a692657247beb50098adb8aebdd984',1,'Loot::Api::Core::Modifier']]],

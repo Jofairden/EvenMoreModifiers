@@ -87,6 +87,8 @@ var hierarchy =
         [ "Loot.Api.Graphics.Shader.ShaderGraphicsProperties", "class_loot_1_1_api_1_1_graphics_1_1_shader_1_1_shader_graphics_properties.html", null ]
       ] ]
     ] ],
+    [ "Loot.UI.Tabs.EssenceCrafting.GuiEssenceButton", "class_loot_1_1_u_i_1_1_tabs_1_1_essence_crafting_1_1_gui_essence_button.html", null ],
+    [ "Loot.UI.Tabs.EssenceCrafting.GuiEssenceItemButton", "class_loot_1_1_u_i_1_1_tabs_1_1_essence_crafting_1_1_gui_essence_item_button.html", null ],
     [ "ICloneable", "class_i_cloneable.html", [
       [ "Loot.Api.Core.Modifier", "class_loot_1_1_api_1_1_core_1_1_modifier.html", null ],
       [ "Loot.Api.Core.ModifierEffect", "class_loot_1_1_api_1_1_core_1_1_modifier_effect.html", [
@@ -177,8 +179,16 @@ var hierarchy =
       [ "Loot.Api.Cubes.MagicalCube", "class_loot_1_1_api_1_1_cubes_1_1_magical_cube.html", [
         [ "Loot.Api.Cubes.RerollingCube", "class_loot_1_1_api_1_1_cubes_1_1_rerolling_cube.html", [
           [ "Loot.Cubes.BlackCube", "class_loot_1_1_cubes_1_1_black_cube.html", null ],
+          [ "Loot.Cubes.CopperCube", "class_loot_1_1_cubes_1_1_copper_cube.html", null ],
           [ "Loot.Cubes.CubeOfSealing", "class_loot_1_1_cubes_1_1_cube_of_sealing.html", null ],
-          [ "Loot.Cubes.PoorCube", "class_loot_1_1_cubes_1_1_poor_cube.html", null ]
+          [ "Loot.Cubes.HellCube", "class_loot_1_1_cubes_1_1_hell_cube.html", null ],
+          [ "Loot.Cubes.IceCube", "class_loot_1_1_cubes_1_1_ice_cube.html", null ],
+          [ "Loot.Cubes.PoorCube", "class_loot_1_1_cubes_1_1_poor_cube.html", null ],
+          [ "Loot.Cubes.ResonatingTempleCube", "class_loot_1_1_cubes_1_1_resonating_temple_cube.html", null ],
+          [ "Loot.Cubes.SlateCube", "class_loot_1_1_cubes_1_1_slate_cube.html", null ],
+          [ "Loot.Cubes.TempleCube", "class_loot_1_1_cubes_1_1_temple_cube.html", null ],
+          [ "Loot.Cubes.VioletCube", "class_loot_1_1_cubes_1_1_violet_cube.html", null ],
+          [ "Loot.Cubes.VoidCube", "class_loot_1_1_cubes_1_1_void_cube.html", null ]
         ] ]
       ] ],
       [ "Loot.Essences.TempItem", "class_loot_1_1_essences_1_1_temp_item.html", [
@@ -236,5 +246,6 @@ var hierarchy =
       [ "Loot.Api.ModContent.GraphicsModContent", "class_loot_1_1_api_1_1_mod_content_1_1_graphics_mod_content.html", null ]
     ] ],
     [ "UIState", "class_u_i_state.html", null ],
-    [ "LootTests.UnitTests", "class_loot_tests_1_1_unit_tests.html", null ]
+    [ "LootTests.UnitTests", "class_loot_tests_1_1_unit_tests.html", null ],
+    [ "UIElement", null, null ]
 ];

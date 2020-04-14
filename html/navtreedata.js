@@ -16,7 +16,7 @@ var NAVTREE =
       [ "Class Members", "functions.html", [
         [ "All", "functions.html", "functions_dup" ],
         [ "Functions", "functions_func.html", "functions_func" ],
-        [ "Variables", "functions_vars.html", null ],
+        [ "Variables", "functions_vars.html", "functions_vars" ],
         [ "Enumerations", "functions_enum.html", null ],
         [ "Properties", "functions_prop.html", null ],
         [ "Events", "functions_evnt.html", null ]
@@ -35,13 +35,14 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "_accessory_modifier_8cs.html",
-"_legendary_rarity_8cs.html",
-"class_loot_1_1_api_1_1_builder_1_1_property_builder.html#a26ee6e1eed7894354dabf936e06845d1",
-"class_loot_1_1_api_1_1_delegators_1_1_modifier_delegator_player.html#a06f5722b59a03b72726f7d37c2811ee7",
-"class_loot_1_1_api_1_1_graphics_1_1_glowmask_1_1_glowmask_entity.html#a21db72d77d2f065805b724bb74cdb2af",
-"class_loot_1_1_essences_1_1_temp_item.html",
-"class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_cursed_damage.html",
-"functions_func_f.html"
+"_immunity_time_plus_8cs.html",
+"class_loot_1_1_api_1_1_attributes_1_1_auto_delegation.html#ab29b06a0f27d6ea6b6ec21fcd4c647a3",
+"class_loot_1_1_api_1_1_core_1_1_null_modifier_rarity.html#ae6006e4e22f031e78f3cf587355c0b04",
+"class_loot_1_1_api_1_1_ext_1_1_mod_utils.html#aaf3de9d61daf460e117c03ffa9e3bd30",
+"class_loot_1_1_cubes_1_1_copper_cube.html#a54a6bdff1b817e20330eb595251fb3f0",
+"class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_offensive_1_1_magic_crit_plus.html#a69e5f0eca037e8760318bea0d1dfab40",
+"class_loot_tests_1_1_unit_tests.html#a8dfb4b0ce8cc2c2cc4d7648c0575230d",
+"namespace_loot_tests.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

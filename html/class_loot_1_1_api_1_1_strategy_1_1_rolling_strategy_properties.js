@@ -12,6 +12,7 @@ var class_loot_1_1_api_1_1_strategy_1_1_rolling_strategy_properties =
     [ "MinModifierRolls", "class_loot_1_1_api_1_1_strategy_1_1_rolling_strategy_properties.html#a7d2024286e3234f52b7e337660776eec", null ],
     [ "OverrideRollModifierPool", "class_loot_1_1_api_1_1_strategy_1_1_rolling_strategy_properties.html#a458753c75cb9220204737787b694fe71", null ],
     [ "OverrideRollModifierRarity", "class_loot_1_1_api_1_1_strategy_1_1_rolling_strategy_properties.html#a55c1b9d01f59540b2fa8c0ac222f6f13", null ],
+    [ "PresetLines", "class_loot_1_1_api_1_1_strategy_1_1_rolling_strategy_properties.html#ad862266f4f0f5cc4a8b4a83d5e5a52c0", null ],
     [ "RollNextChance", "class_loot_1_1_api_1_1_strategy_1_1_rolling_strategy_properties.html#aa43f45c9e2bc35203bbeee82d0ae4a90", null ],
     [ "RollPredefinedPoolChance", "class_loot_1_1_api_1_1_strategy_1_1_rolling_strategy_properties.html#a4c2b292beececda52bb6d86e02a2fa74", null ]
 ];

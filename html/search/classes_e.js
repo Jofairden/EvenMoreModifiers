@@ -6,6 +6,7 @@ var searchData=
   ['rarerarity',['RareRarity',['../class_loot_1_1_rarities_1_1_rare_rarity.html',1,'Loot::Rarities']]],
   ['registryloader',['RegistryLoader',['../class_loot_1_1_api_1_1_loaders_1_1_registry_loader.html',1,'Loot::Api::Loaders']]],
   ['rerollingcube',['RerollingCube',['../class_loot_1_1_api_1_1_cubes_1_1_rerolling_cube.html',1,'Loot::Api::Cubes']]],
+  ['resonatingtemplecube',['ResonatingTempleCube',['../class_loot_1_1_cubes_1_1_resonating_temple_cube.html',1,'Loot::Cubes']]],
   ['rollingstrategy',['RollingStrategy',['../class_loot_1_1_api_1_1_strategy_1_1_rolling_strategy.html',1,'Loot::Api::Strategy']]],
   ['rollingstrategyproperties',['RollingStrategyProperties',['../class_loot_1_1_api_1_1_strategy_1_1_rolling_strategy_properties.html',1,'Loot::Api::Strategy']]],
   ['rollingutils',['RollingUtils',['../class_loot_1_1_api_1_1_ext_1_1_rolling_utils.html',1,'Loot::Api::Ext']]]
