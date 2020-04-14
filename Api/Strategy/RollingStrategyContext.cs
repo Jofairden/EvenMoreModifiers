@@ -3,7 +3,7 @@ using Terraria;
 namespace Loot.Api.Strategy
 {
 	/// <summary>
-	/// The context for a <see cref="IRollingStrategy{T}"/>
+	/// The context in which a rolling strategy is executed
 	/// </summary>
 	public class RollingStrategyContext
 	{

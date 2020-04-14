@@ -9,19 +9,21 @@ namespace Loot.IO
 {
 	internal static class ModifierRarityIO
 	{
+		public const int SAVE_VERSION = 14;
+
 		public static ModifierRarity NetReceive(Item item, BinaryReader reader)
 		{
 			string type = reader.ReadString();
 			string modName = reader.ReadString();
 
-			ModifierRarity r = ContentLoader.ModifierRarity.GetContent(modName, type);
-			if (r == null)
+			ModifierRarity rarity = ContentLoader.ModifierRarity.GetContent(modName, type);
+			if (rarity == null)
 			{
 				throw new Exception($"ModifierRarity _NetReceive error for {modName}");
 			}
 
-			r.NetReceive(item, reader);
-			return r;
+			rarity.NetReceive(item, reader);
+			return rarity;
 		}
 
 		public static void NetSend(ModifierRarity rarity, Item item, BinaryWriter writer)
@@ -35,51 +37,35 @@ namespace Loot.IO
 		{
 			if (tag == null || tag.ContainsKey("EMMErr:RarityNullErr"))
 			{
-				return null;
+				return NullModifierRarity.INSTANCE;
 			}
 
 			string modName = tag.GetString("ModName");
 
 			if (RegistryLoader.Mods.TryGetValue(modName, out var assembly))
 			{
-				// If we load a null here, it means a rarity is unloaded
-				ModifierRarity r = null;
+				var saveVersion = tag.ContainsKey("SaveVersion") ? tag.GetInt("SaveVersion") : 1;
 
-				var saveVersion = tag.ContainsKey("ModifierRaritySaveVersion") ? tag.GetInt("ModifierRaritySaveVersion") : 1;
+				if (saveVersion < 14)
+				{
+					return NullModifierRarity.INSTANCE;
+				}
 
 				string rarityTypeName = tag.GetString("Type");
-
-				// adapt by save version
-				if (saveVersion == 1)
+				var rarity = ContentLoader.ModifierRarity.GetContent(modName, rarityTypeName);
+				if (rarity == null)
 				{
-					// in first save version, modifiers were saved by full assembly namespace
-					//m = (ModifierPool)Activator.CreateInstance(assembly.GetType(tag.GetString("Type")));// we modified saving
-					rarityTypeName = rarityTypeName.Substring(rarityTypeName.LastIndexOf('.') + 1);
-					r = ContentLoader.ModifierRarity.GetContent(modName, rarityTypeName);
-				}
-				else if (saveVersion >= 2)
-				{
-					// from saveVersion 2 and onwards, they are saved by assembly (mod) and type name
-					r = ContentLoader.ModifierRarity.GetContent(modName, rarityTypeName);
+					return NullModifierRarity.INSTANCE;
 				}
 
-				if (r != null)
-				{
-					//saveVersion 1, no longer needed.Type and Mod is already created by new instance
-					//r.Type = tag.Get<uint>("RarityType");
-					//r.Mod = ModLoader.GetMod(modname);
-					r.Load(item, tag);
-					return r;
-				}
-
-				return null;
+				rarity.Load(item, tag);
+				return rarity;
 			}
 
 			Loot.Logger.ErrorFormat("There was a load error for modifierrarity, TC: {0}", tag);
-			return null;
+			return NullModifierRarity.INSTANCE;
 		}
 
-		public const int SAVE_VERSION = 2;
 		public static TagCompound Save(Item item, ModifierRarity rarity)
 		{
 			if (rarity == null)
@@ -91,9 +77,8 @@ namespace Loot.IO
 			var tag = new TagCompound
 			{
 				{"Type", rarity.GetType().Name},
-				//{ "RarityType", rarity.Type },// saveVersion 1
 				{"ModName", rarity.Mod.Name},
-				{"ModifierRaritySaveVersion", SAVE_VERSION}
+				{"SaveVersion", SAVE_VERSION}
 			};
 			rarity.Save(item, tag);
 			return tag;

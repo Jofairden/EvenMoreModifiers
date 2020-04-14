@@ -1,8 +1,8 @@
 using System;
 using System.Diagnostics;
 using System.Reflection;
+using Loot.Api.Attributes;
 using Loot.Api.ModContent;
-using Loot.Attributes;
 using Loot.Ext;
 using Loot.ILEditing;
 using Loot.ModSupport;

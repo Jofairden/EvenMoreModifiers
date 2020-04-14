@@ -45,7 +45,7 @@ namespace Loot.UI.Tabs.Cubing
 			}
 		}
 
-		public IRollingStrategy<RollingStrategyContext> GetRollingStrategy(Item item, RollingStrategyProperties rollingStrategyProperties) 
+		public RollingStrategy<RollingStrategyContext> GetRollingStrategy(Item item, RollingStrategyProperties rollingStrategyProperties)
 			=> ((RerollingCube)Item.modItem).GetRollingStrategy(item, rollingStrategyProperties);
 
 		public void RecalculateStack()

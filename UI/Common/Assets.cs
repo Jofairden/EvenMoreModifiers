@@ -1,4 +1,4 @@
-using Loot.Attributes;
+using Loot.Api.Attributes;
 using Microsoft.Xna.Framework.Graphics;
 
 namespace Loot.UI.Common

@@ -8,6 +8,8 @@ namespace Loot.IO
 {
 	internal static class ModifierPropertiesIO
 	{
+		public const int SAVE_VERSION = 14;
+
 		public static ModifierProperties NetReceive(Item item, BinaryReader reader)
 		{
 			var p = new ModifierProperties
@@ -39,7 +41,6 @@ namespace Loot.IO
 			}
 			catch (Exception)
 			{
-				// Something was wrong with the TC, roll new values
 				prop = new ModifierProperties().RollMagnitudeAndPower();
 			}
 
@@ -47,14 +48,13 @@ namespace Loot.IO
 			return prop;
 		}
 
-		public const int SAVE_VERSION = 1;
 		public static TagCompound Save(Item item, ModifierProperties properties)
 		{
 			var tc = new TagCompound
 			{
 				{"Magnitude", properties.Magnitude},
 				{"Power", properties.Power},
-				{"ModifierPropertiesSaveVersion", SAVE_VERSION}
+				{"SaveVersion", SAVE_VERSION}
 			};
 			properties.Save(item, tc);
 			return tc;

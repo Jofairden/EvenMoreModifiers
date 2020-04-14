@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using Loot.Api.Attributes;
 
 namespace Loot.Api.Core
@@ -7,7 +8,7 @@ namespace Loot.Api.Core
 	/// Cannot be rolled normally
 	/// </summary>
 	[DoNotLoad]
-	public sealed class NullModifierPool : ModifierPool
+	public sealed class NullModifierPool : FiniteModifierPool
 	{
 		private static NullModifierPool _singleton;
 		public static NullModifierPool INSTANCE
@@ -20,9 +21,8 @@ namespace Loot.Api.Core
 
 		public override float RollChance => 0f;
 
-		private NullModifierPool()
+		public NullModifierPool(List<Modifier> modifiers = null) : base(modifiers)
 		{
-			ActiveModifiers = new Modifier[0];
 		}
 	}
 }

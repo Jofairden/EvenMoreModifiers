@@ -13,6 +13,22 @@ using Terraria.ModLoader.IO;
 
 namespace Loot.Api.Core
 {
+	[DoNotLoad]
+	public class FiniteModifierPool : ModifierPool
+	{
+		public readonly List<Modifier> Modifiers;
+
+		public FiniteModifierPool(List<Modifier> modifiers)
+		{
+			Modifiers = modifiers ?? new List<Modifier>();
+		}
+
+		public void Apply(Item item)
+		{
+			Modifiers.ForEach(mod => mod.Apply(item));
+		}
+	}
+
 	/// <summary>
 	/// Defines a modifier pool. A modifier pool holds a certain amount of effects in an array
 	/// It allows to roll a 'themed' item if it hits an already defined pool
@@ -35,18 +51,6 @@ namespace Loot.Api.Core
 		}
 
 		public string Name => GetType().Name;
-
-		public IEnumerable<string> UniqueNames =>
-			ActiveModifiers
-				.Where(x => x.UniqueName != string.Empty)
-				.Select(x => x.UniqueName);
-
-		private Modifier[] _activeModifiers = new Modifier[0];
-		public Modifier[] ActiveModifiers
-		{
-			get => _activeModifiers.Where(x => x.GetType() != typeof(NullModifier)).ToArray();
-			protected internal set => _activeModifiers = value;
-		}
 
 		private PopulatePoolFromAttribute _populatePoolFrom;
 
@@ -91,17 +95,17 @@ namespace Loot.Api.Core
 		protected internal IEnumerable<Modifier> GetRollableModifiers(ModifierContext ctx)
 			=> _GetModifiers().Where(x => x._CanRoll(ctx));
 
-		/// <summary>
-		/// Returns the sum of the rarity levels of the active modifiers
-		/// </summary>
-		public float TotalRarityLevel
-			=> ActiveModifiers.Select(m => m.Properties.RarityLevel).DefaultIfEmpty(0).Sum();
+		///// <summary>
+		///// Returns the sum of the rarity levels of the active modifiers
+		///// </summary>
+		//public float TotalRarityLevel
+		//	=> ActiveModifiers.Select(m => m.Properties.RarityLevel).DefaultIfEmpty(0).Sum();
 
-		/// <summary>
-		/// Returns an enumerable of the tooltiplines of the active modifiers
-		/// </summary>
-		public IEnumerable<ModifierTooltipLine[]> Description
-			=> ActiveModifiers.Select(m => m.GetTooltip().Build().ToArray());
+		///// <summary>
+		///// Returns an enumerable of the tooltiplines of the active modifiers
+		///// </summary>
+		//public IEnumerable<ModifierTooltipLine[]> Description
+		//	=> ActiveModifiers.Select(m => m.GetTooltip().Build().ToArray());
 
 		public virtual float RollChance => 1f;
 
@@ -127,10 +131,10 @@ namespace Loot.Api.Core
 		/// <param name="item">The item to apply to, which is passed to <see cref="Modifier.Apply"/></param>
 		internal void ApplyModifiers(Item item)
 		{
-			foreach (Modifier m in ActiveModifiers)
-			{
-				m.Apply(item);
-			}
+			//foreach (Modifier m in ActiveModifiers)
+			//{
+			//	m.Apply(item);
+			//}
 		}
 
 		/// <summary>
@@ -146,10 +150,10 @@ namespace Loot.Api.Core
 			ModifierPool clone = (ModifierPool)MemberwiseClone();
 			clone.Type = Type;
 			clone.Mod = Mod;
-			clone.ActiveModifiers =
-				ActiveModifiers?
-					.Select(x => (Modifier)x?.Clone() ?? Loot.Instance.GetNullModifier())
-					.ToArray();
+			//clone.ActiveModifiers =
+			//	ActiveModifiers?
+			//		.Select(x => (Modifier)x?.Clone() ?? Loot.Instance.GetNullModifier())
+			//		.ToArray();
 			Clone(ref clone);
 			return clone;
 		}

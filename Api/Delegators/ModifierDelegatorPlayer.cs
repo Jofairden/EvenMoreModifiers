@@ -38,18 +38,18 @@ namespace Loot.Api.Delegators
 		/*****************
 		 *** OVERRIDES ***
 		 *****************/
-		public override void SetupStartInventory(IList<Item> items, bool mediumcoreDeath)
-		{
-			if (!mediumcoreDeath)
-			{
-				LootModWorld.WorldGenModifiersPass.GenerateModifiers(null, ModifierContextMethod.SetupStartInventory, items.Where(x => !x.IsAir && x.IsModifierRollableItem()), player);
-			}
-		}
+		//public override void SetupStartInventory(IList<Item> items, bool mediumcoreDeath)
+		//{
+		//	if (!mediumcoreDeath)
+		//	{
+		//		LootModWorld.WorldGenModifiersPass.GenerateModifiers(null, ModifierContextMethod.SetupStartInventory, items.Where(x => !x.IsAir && x.IsModifierRollableItem()), player);
+		//	}
+		//}
 
-		public override void OnEnterWorld(Player player)
-		{
-			LootModWorld.WorldGenModifiersPass.GenerateModifiers(null, ModifierContextMethod.FirstLoad, player.inventory.Where(x => !x.IsAir && x.IsModifierRollableItem()).Concat(player.armor.Where(x => !x.IsAir && !x.IsModifierRollableItem())), player);
-		}
+		//public override void OnEnterWorld(Player player)
+		//{
+		//	LootModWorld.WorldGenModifiersPass.GenerateModifiers(null, ModifierContextMethod.FirstLoad, player.inventory.Where(x => !x.IsAir && x.IsModifierRollableItem()).Concat(player.armor.Where(x => !x.IsAir && !x.IsModifierRollableItem())), player);
+		//}
 
 		public event Action<Player> OnRespawnEvent;
 		public override void OnRespawn(Player player)

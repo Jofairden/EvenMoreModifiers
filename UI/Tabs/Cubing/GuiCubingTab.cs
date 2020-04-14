@@ -130,7 +130,7 @@ namespace Loot.UI.Tabs.Cubing
 				{
 					// Refresh item
 					Item newItem = GetClonedItem(_itemButton.Item);
-					LootModItem.GetInfo(newItem).ModifierPool = null; // unload previous pool
+					LootModItem.GetInfo(newItem).Modifiers = NullModifierPool.INSTANCE; // unload previous pool
 
 					// reroll pool
 					RerollModifiers(newItem);
@@ -173,10 +173,7 @@ namespace Loot.UI.Tabs.Cubing
 				},
 				Strategy = _cubeButton.GetRollingStrategy(_itemButton.Item, RollingStrategyProperties)
 			};
-
-			var pool = LootModItem.GetInfo(newItem).RollNewPool(ctx, RollingStrategyProperties);
-			pool?.ApplyModifiers(newItem);
-			_itemButton.Item = newItem.Clone();
+			_itemButton.Item = newItem.RerollModifiers(ctx, RollingStrategyProperties);
 		}
 
 		public void GiveBackItemIfNeeded()

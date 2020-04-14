@@ -1,6 +1,9 @@
+using System.Collections.Generic;
 using System.Linq;
 using Loot.Api.Content;
 using Loot.Api.Core;
+using Loot.Api.Ext;
+using Loot.Pools;
 using Terraria.Utilities;
 
 namespace Loot.Content
@@ -10,6 +13,10 @@ namespace Loot.Content
 	/// </summary>
 	public sealed class ModifierPoolContent : LoadableContentBase<ModifierPool>
 	{
+		public ModifierPool NullPool => Content[0];
+		public ModifierPool AllPool => Loot.Instance.GetModifierPool<AllModifiersPool>();
+		internal IEnumerable<ModifierPool> Pools => Content.Select(x => x.Value);
+
 		internal override void Load()
 		{
 			AddContent(NullModifierPool.INSTANCE, Loot.Instance);
@@ -19,23 +26,6 @@ namespace Loot.Content
 		{
 			contentPiece.CacheAttributes();
 			return true;
-		}
-
-		/// <summary>
-		/// Returns a random weighted pool from all available pools that can apply
-		/// </summary>
-		/// <param name="ctx"></param>
-		/// <returns><see cref="ModifierPool"/></returns>
-		public ModifierPool GetWeightedPool(ModifierContext ctx)
-		{
-			var wr = new WeightedRandom<ModifierPool>();
-			foreach (var m in Content.Where(x => x.Value._CanRoll(ctx) && x.Value.Type > 0))
-			{
-				wr.Add(m.Value, m.Value.RollChance);
-			}
-
-			var mod = wr.Get();
-			return (ModifierPool)mod?.Clone();
 		}
 	}
 }

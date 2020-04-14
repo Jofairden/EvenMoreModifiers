@@ -1,7 +1,7 @@
 using System;
 using Microsoft.Xna.Framework.Graphics;
 
-namespace Loot.Attributes
+namespace Loot.Api.Attributes
 {
 	[AttributeUsage(AttributeTargets.Property | AttributeTargets.Field)]
 	internal sealed class StaticAssetAttribute : Attribute

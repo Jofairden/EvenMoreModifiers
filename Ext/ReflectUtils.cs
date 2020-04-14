@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
-using Loot.Attributes;
+using Loot.Api.Attributes;
 using Loot.ILEditing;
 
 namespace Loot.Ext

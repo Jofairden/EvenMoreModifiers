@@ -31,9 +31,9 @@ namespace Loot.Cubes
 		{
 		}
 
-		public override IRollingStrategy<RollingStrategyContext> GetRollingStrategy(Item item, RollingStrategyProperties properties)
+		public override RollingStrategy<RollingStrategyContext> GetRollingStrategy(Item item, RollingStrategyProperties properties)
 		{
-			var currentRarity = LootModItem.GetInfo(item).ModifierRarity;
+			var currentRarity = LootModItem.GetInfo(item).Rarity;
 			bool isLegendary = currentRarity?.GetType() == typeof(LegendaryRarity);
 			bool isEpic = currentRarity?.GetType() == typeof(EpicRarity);
 			bool forcedDowngrade = currentRarity != null && isLegendary || isEpic;

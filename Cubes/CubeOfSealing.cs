@@ -30,7 +30,7 @@ namespace Loot.Cubes
 			base.RightClick(player);
 		}
 
-		public override IRollingStrategy<RollingStrategyContext> GetRollingStrategy(Item item, RollingStrategyProperties properties)
+		public override RollingStrategy<RollingStrategyContext> GetRollingStrategy(Item item, RollingStrategyProperties properties)
 		{
 			return null;
 		}

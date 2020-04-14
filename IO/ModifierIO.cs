@@ -9,6 +9,8 @@ namespace Loot.IO
 {
 	internal static class ModifierIO
 	{
+		public const int SAVE_VERSION = 14;
+
 		public static Modifier NetReceive(Item item, BinaryReader reader)
 		{
 			string type = reader.ReadString();
@@ -42,57 +44,42 @@ namespace Loot.IO
 
 			if (RegistryLoader.Mods.TryGetValue(modName, out var assembly))
 			{
-				// If we load a null here, it means a modifier is unloaded
-				Modifier m = null;
-
-				var saveVersion = tag.ContainsKey("ModifierSaveVersion") ? tag.GetInt("ModifierSaveVersion") : 1;
-
-				string modifierTypeName = tag.GetString("Type");
+				var saveVersion = tag.ContainsKey("SaveVersion") ? tag.GetInt("SaveVersion") : 1;
 
 				// adapt by save version
-				if (saveVersion == 1)
+				if (saveVersion < 14)
 				{
-					// in first save version, modifiers were saved by full assembly namespace
-					//m = (ModifierPool)Activator.CreateInstance(assembly.GetType(tag.GetString("Type")));// we modified saving
-					modifierTypeName = modifierTypeName.Substring(modifierTypeName.LastIndexOf('.') + 1);
-					m = ContentLoader.Modifier.GetContent(modName, modifierTypeName);
-				}
-				else if (saveVersion >= 2)
-				{
-					// from saveVersion 2 and onwards, they are saved by assembly (mod) and type name
-					m = ContentLoader.Modifier.GetContent(modName, modifierTypeName);
+					return NullModifier.INSTANCE;
 				}
 
-				if (m != null)
+				string modifierTypeName = tag.GetString("Type");
+				var modifier = ContentLoader.Modifier.GetContent(modName, modifierTypeName);
+				if (modifier == null)
 				{
-					// saveVersion 1, no longer needed. Type and Mod is already created by new instance
-					//m.Type = tag.Get<uint>("ModifierType");
-					//m.Mod = ModLoader.GetMod(modname);
-					var p = ModifierPropertiesIO.Load(item, tag.GetCompound("ModifierProperties"));
-					m.Properties = m.GetModifierProperties(item).Build();
-					m.Properties.Magnitude = p.Magnitude;
-					m.Properties.Power = p.Power;
-					m.Load(item, tag);
-					return m;
+					return NullModifier.INSTANCE;
 				}
 
-				return null;
+				var p = ModifierPropertiesIO.Load(item, tag.GetCompound("ModifierProperties"));
+				modifier.Properties = modifier.GetModifierProperties(item).Build();
+				modifier.Properties.Magnitude = p.Magnitude;
+				modifier.Properties.Power = p.Power;
+				modifier.Load(item, tag);
+				return modifier;
+
 			}
 
 			Loot.Logger.ErrorFormat("There was a load error for modifier, TC: {0}", tag);
-			return null;
+			return NullModifier.INSTANCE;
 		}
 
-		public const int SAVE_VERSION = 2;
 		public static TagCompound Save(Item item, Modifier modifier)
 		{
 			var tag = new TagCompound
 			{
 				{"Type", modifier.GetType().Name},
-				//{ "ModifierType", modifier.Type }, //Used to be saved in saveVersion 1
 				{"ModName", modifier.Mod.Name},
 				{"ModifierProperties", ModifierPropertiesIO.Save(item, modifier.Properties)},
-				{"ModifierSaveVersion", SAVE_VERSION}
+				{"SaveVersion", SAVE_VERSION}
 			};
 			modifier.Save(item, tag);
 			return tag;

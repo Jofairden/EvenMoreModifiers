@@ -59,6 +59,8 @@ namespace Loot.Api.Core
 		public Item Item;
 		public Recipe Recipe;
 		public ModifierRarity Rarity;
-		public IRollingStrategy<RollingStrategyContext> Strategy = RollingUtils.Strategies.Normal;
+		public RollingStrategy<RollingStrategyContext> Strategy = RollingUtils.Strategies.Normal;
+		public ModifierPool Pool;
+		public List<ModifierPool> PoolSet;
 	}
 }

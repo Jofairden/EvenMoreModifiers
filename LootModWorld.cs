@@ -52,83 +52,83 @@ namespace Loot
 			}
 
 			Initialized = true;
-			foreach (var chest in Main.chest.Where(chest => chest != null && chest.x > 0 && chest.y > 0))
-			{
-				WorldGenModifiersPass.GenerateModifiers(null, ModifierContextMethod.FirstLoad, chest.item.Where(x => !x.IsAir), chest);
-			}
+			//foreach (var chest in Main.chest.Where(chest => chest != null && chest.x > 0 && chest.y > 0))
+			//{
+			//	WorldGenModifiersPass.GenerateModifiers(null, ModifierContextMethod.FirstLoad, chest.item.Where(x => !x.IsAir), chest);
+			//}
 		}
 
 		// TODO hardmode task, generate better modifiers in new biomes etc.
 
 		public override void ModifyWorldGenTasks(List<GenPass> tasks, ref float totalWeight)
 		{
-			tasks.Add(new WorldGenModifiersPass("EvenMoreModifiers:WorldGenModifiersPass", 1));
+			//tasks.Add(new WorldGenModifiersPass("EvenMoreModifiers:WorldGenModifiersPass", 1));
 		}
 
-		internal sealed class WorldGenModifiersPass : GenPass
-		{
-			public WorldGenModifiersPass(string name, float loadWeight) : base(name, loadWeight)
-			{
-			}
+		//internal sealed class WorldGenModifiersPass : GenPass
+		//{
+		//	public WorldGenModifiersPass(string name, float loadWeight) : base(name, loadWeight)
+		//	{
+		//	}
 
-			// Attempt rolling modifiers on items
-			internal static void GenerateModifiers(GenerationProgress progress, ModifierContextMethod method, IEnumerable<Item> items, object obj = null)
-			{
-				if (progress != null)
-				{
-					progress.Message = "Generating modifiers on generated items...";
-				}
+		//	// Attempt rolling modifiers on items
+		//	internal static void GenerateModifiers(GenerationProgress progress, ModifierContextMethod method, IEnumerable<Item> items, object obj = null)
+		//	{
+		//		if (progress != null)
+		//		{
+		//			progress.Message = "Generating modifiers on generated items...";
+		//		}
 
-				foreach (var item in items)
-				{
-					LootModItem itemInfo = LootModItem.GetInfo(item);
-					ModifierPool pool = itemInfo.ModifierPool;
-					UnifiedRandom rand = (Main.rand ?? WorldGen.genRand) ?? new UnifiedRandom();
+		//		foreach (var item in items)
+		//		{
+		//			LootModItem itemInfo = LootModItem.GetInfo(item);
+		//			ModifierPool pool = itemInfo.ModifierPool;
+		//			UnifiedRandom rand = (Main.rand ?? WorldGen.genRand) ?? new UnifiedRandom();
 
-					if (itemInfo.HasRolled || pool != null)
-						continue;
+		//			if (itemInfo.HasRolled || pool != null)
+		//				continue;
 
-					itemInfo.HasRolled = true;
+		//			itemInfo.HasRolled = true;
 
-					if (rand != null && rand.NextBool())
-						continue;
+		//			if (rand != null && rand.NextBool())
+		//				continue;
 					
-					ModifierContext ctx = new ModifierContext
-					{
-						Method = method,
-						Item = item,
-						Strategy = RollingUtils.Strategies.Normal
-					};
+		//			ModifierContext ctx = new ModifierContext
+		//			{
+		//				Method = method,
+		//				Item = item,
+		//				Strategy = RollingUtils.Strategies.Normal
+		//			};
 
-					switch (obj)
-					{
-						case Chest chest:
-							ctx.CustomData = new Dictionary<string, object>
-							{
-								{"chestData", new Tuple<int, int>(chest.x, chest.y)}
-							};
-							break;
-						case Player player:
-							ctx.Player = player;
-							break;
-					}
+		//			switch (obj)
+		//			{
+		//				case Chest chest:
+		//					ctx.CustomData = new Dictionary<string, object>
+		//					{
+		//						{"chestData", new Tuple<int, int>(chest.x, chest.y)}
+		//					};
+		//					break;
+		//				case Player player:
+		//					ctx.Player = player;
+		//					break;
+		//			}
 
-					pool = itemInfo.RollNewPool(ctx, RollingUtils.Properties.WorldGen);
-					pool?.ApplyModifiers(item);
-				}
-			}
+		//			pool = itemInfo.RollNewPool(ctx, RollingUtils.Properties.WorldGen);
+		//			pool?.ApplyModifiers(item);
+		//		}
+		//	}
 
-			public override void Apply(GenerationProgress progress)
-			{
-				Initialized = true;
-				foreach (var chest in Main.chest.Where(chest => chest != null && chest.x > 0 && chest.y > 0))
-				{
-					GenerateModifiers(progress,
-						ModifierContextMethod.WorldGeneration,
-						chest.item.Where(x => x != null && !x.IsAir && x.IsModifierRollableItem()),
-						chest);
-				}
-			}
-		}
+		//	public override void Apply(GenerationProgress progress)
+		//	{
+		//		Initialized = true;
+		//		foreach (var chest in Main.chest.Where(chest => chest != null && chest.x > 0 && chest.y > 0))
+		//		{
+		//			GenerateModifiers(progress,
+		//				ModifierContextMethod.WorldGeneration,
+		//				chest.item.Where(x => x != null && !x.IsAir && x.IsModifierRollableItem()),
+		//				chest);
+		//		}
+		//	}
+		//}
 	}
 }

@@ -32,6 +32,6 @@ namespace Loot.Api.Cubes
 			item.stack++;
 		}
 
-		public abstract IRollingStrategy<RollingStrategyContext> GetRollingStrategy(Item item, RollingStrategyProperties properties);
+		public abstract RollingStrategy<RollingStrategyContext> GetRollingStrategy(Item item, RollingStrategyProperties properties);
 	}
 }

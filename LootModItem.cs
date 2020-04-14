@@ -23,16 +23,17 @@ namespace Loot
 	/// </summary>
 	public sealed class LootModItem : GlobalItem
 	{
-		private const int SAVE_VERSION = 3;
+		private const int SAVE_VERSION = 14;
 
 		public static LootModItem GetInfo(Item item) => item.GetGlobalItem<LootModItem>();
-		public static IEnumerable<Modifier> GetActivePool(Item item) => GetInfo(item)?.ModifierPool?.ActiveModifiers ?? Enumerable.Empty<Modifier>();
+		public static List<Modifier> GetActivePool(Item item) => GetInfo(item).Modifiers?.Modifiers ?? new List<Modifier>();
 
 		public override bool InstancePerEntity => true;
 		public override bool CloneNewInstances => true;
 
-		public ModifierRarity ModifierRarity { get; internal set; } // the current rarity
-		public ModifierPool ModifierPool { get; internal set; } // the current pool of mods.
+		public ModifierRarity Rarity { get; internal set; } // the current rarity
+		public FiniteModifierPool Modifiers { get; internal set; } // the current pool of mods.
+
 		public bool HasRolled { get; internal set; } // has rolled a pool
 		public bool SealedModifiers { get; internal set; } // are modifiers unchangeable
 
@@ -48,127 +49,127 @@ namespace Loot
 
 		private void InvalidateRolls()
 		{
-			ModifierRarity = mod.GetNullModifierRarity();
-			ModifierPool = mod.GetNullModifierPool();
+			Rarity = mod.GetNullModifierRarity();
+			Modifiers = mod.GetNullModifierPool();
 		}
 
 		/// <summary>
 		/// Attempts to roll new modifiers
 		/// Has a set chance to hit a predefined pool of modifiers
 		/// </summary>
-		public ModifierPool RollNewPool(ModifierContext ctx, RollingStrategyProperties rollingStrategyProperties = null)
-		{
-			if (rollingStrategyProperties == null)
-			{
-				rollingStrategyProperties = new RollingStrategyProperties();
-			}
+		//public ModifierPool RollNewPool(ModifierContext ctx, RollingStrategyProperties rollingStrategyProperties = null)
+		//{
+		//	if (rollingStrategyProperties == null)
+		//	{
+		//		rollingStrategyProperties = new RollingStrategyProperties();
+		//	}
 
-			HasRolled = true;
-			bool noForce = true;
+		//	HasRolled = true;
+		//	bool noForce = true;
 
-			// Custom rarity provided
-			if (rollingStrategyProperties.OverrideRollModifierRarity != null)
-			{
-				ModifierRarity = rollingStrategyProperties.OverrideRollModifierRarity.Invoke();
-			}
-			else if (rollingStrategyProperties.ForceModifierRarity != null)
-			{
-				ModifierRarity = rollingStrategyProperties.ForceModifierRarity;
-			}
-			else if (ModifierRarity == null || ModifierRarity.Type == 0)
-			{
-				ModifierRarity = mod.GetModifierRarity<CommonRarity>();
-			}
+		//	// Custom rarity provided
+		//	if (rollingStrategyProperties.OverrideRollModifierRarity != null)
+		//	{
+		//		Rarity = rollingStrategyProperties.OverrideRollModifierRarity.Invoke();
+		//	}
+		//	else if (rollingStrategyProperties.ForceModifierRarity != null)
+		//	{
+		//		Rarity = rollingStrategyProperties.ForceModifierRarity;
+		//	}
+		//	else if (Rarity == null || Rarity.Type == 0)
+		//	{
+		//		Rarity = mod.GetModifierRarity<CommonRarity>();
+		//	}
 
-			ctx.Rarity = ModifierRarity;
+		//	ctx.Rarity = Rarity;
 
-			// Upgrade rarity
-			if (rollingStrategyProperties.CanUpgradeRarity(ctx)
-				&& Main.rand.NextFloat() <= (ModifierRarity.UpgradeChance ?? 0f))
-			{
-				var newRarity = ModifierRarity.Upgrade;
-				var newFromLoader = ModUtils.GetModifierRarity(newRarity);
-				if (newRarity != null && newFromLoader != null)
-				{
-					ModifierRarity = newFromLoader;
-				}
-			}
-			// Downgrade rarity
-			else if (rollingStrategyProperties.CanDowngradeRarity(ctx)
-					&& Main.rand.NextFloat() <= (ModifierRarity.DowngradeChance ?? 0f))
-			{
-				var newRarity = ModifierRarity.Downgrade;
-				var newFromLoader = ModUtils.GetModifierRarity(newRarity);
-				if (newRarity != null && newFromLoader != null)
-				{
-					ModifierRarity = newFromLoader;
-				}
-			}
+		//	// Upgrade rarity
+		//	if (rollingStrategyProperties.CanUpgradeRarity(ctx)
+		//		&& Main.rand.NextFloat() <= (Rarity.UpgradeChance ?? 0f))
+		//	{
+		//		var newRarity = Rarity.Upgrade;
+		//		var newFromLoader = ModUtils.GetModifierRarity(newRarity);
+		//		if (newRarity != null && newFromLoader != null)
+		//		{
+		//			Rarity = newFromLoader;
+		//		}
+		//	}
+		//	// Downgrade rarity
+		//	else if (rollingStrategyProperties.CanDowngradeRarity(ctx)
+		//			&& Main.rand.NextFloat() <= (Rarity.DowngradeChance ?? 0f))
+		//	{
+		//		var newRarity = Rarity.Downgrade;
+		//		var newFromLoader = ModUtils.GetModifierRarity(newRarity);
+		//		if (newRarity != null && newFromLoader != null)
+		//		{
+		//			Rarity = newFromLoader;
+		//		}
+		//	}
 
-			ctx.Rarity = ModifierRarity;
+		//	ctx.Rarity = Rarity;
 
-			// Custom pool provided
-			if (rollingStrategyProperties.OverrideRollModifierPool != null)
-			{
-				ModifierPool = rollingStrategyProperties.OverrideRollModifierPool.Invoke();
-				noForce = !ModifierPool?._CanRoll(ctx) ?? true;
-			}
+		//	// Custom pool provided
+		//	if (rollingStrategyProperties.OverrideRollModifierPool != null)
+		//	{
+		//		ModifierPool = rollingStrategyProperties.OverrideRollModifierPool.Invoke();
+		//		noForce = !ModifierPool?._CanRoll(ctx) ?? true;
+		//	}
 
-			// No behavior provided
-			if (noForce)
-			{
-				// A pool is forced to roll
-				if (rollingStrategyProperties.ForceModifierPool != null)
-				{
-					ModifierPool = ModUtils.GetModifierPool(rollingStrategyProperties.ForceModifierPool.GetType());
-					noForce = !ModifierPool?._CanRoll(ctx) ?? true;
-				}
+		//	// No behavior provided
+		//	if (noForce)
+		//	{
+		//		// A pool is forced to roll
+		//		if (rollingStrategyProperties.ForceModifierPool != null)
+		//		{
+		//			ModifierPool = ModUtils.GetModifierPool(rollingStrategyProperties.ForceModifierPool.GetType());
+		//			noForce = !ModifierPool?._CanRoll(ctx) ?? true;
+		//		}
 
-				// No pool forced to roll or it's not valid
-				if (noForce)
-				{
-					// Try rolling a predefined (weighted) pool
-					bool rollPredefinedPool = Main.rand.NextFloat() <= rollingStrategyProperties.RollPredefinedPoolChance;
-					noForce = !rollPredefinedPool;
+		//		// No pool forced to roll or it's not valid
+		//		if (noForce)
+		//		{
+		//			// Try rolling a predefined (weighted) pool
+		//			bool rollPredefinedPool = Main.rand.NextFloat() <= rollingStrategyProperties.RollPredefinedPoolChance;
+		//			noForce = !rollPredefinedPool;
 
-					if (rollPredefinedPool)
-					{
-						// GetWeightedPool already checks _CanRoll
-						ModifierPool = ContentLoader.ModifierPool.GetWeightedPool(ctx);
-						noForce = ModifierPool == null || !ModifierPool._CanRoll(ctx);
-					}
+		//			if (rollPredefinedPool)
+		//			{
+		//				// GetWeightedPool already checks _CanRoll
+		//				ModifierPool = ContentLoader.ModifierPool.GetWeightedPool(ctx);
+		//				noForce = ModifierPool == null || !ModifierPool._CanRoll(ctx);
+		//			}
 
-					// Roll from all modifiers
-					if (noForce)
-					{
-						ModifierPool = mod.GetAllModifiersPool();
-						if (!ModifierPool._CanRoll(ctx))
-						{
-							InvalidateRolls();
-							return null;
-						}
-					}
-				}
-			}
+		//			// Roll from all modifiers
+		//			if (noForce)
+		//			{
+		//				ModifierPool = mod.GetAllModifiersPool();
+		//				if (!ModifierPool._CanRoll(ctx))
+		//				{
+		//					InvalidateRolls();
+		//					return null;
+		//				}
+		//			}
+		//		}
+		//	}
 
-			if (ctx.Strategy != null)
-			{
-				// Attempt rolling modifiers
-				if (!ctx.Strategy.Roll(ctx, new RollingStrategyContext(ctx.Item, rollingStrategyProperties)))
-				{
-					InvalidateRolls();
-				}
-			}
+		//	if (ctx.Strategy != null)
+		//	{
+		//		// Attempt rolling modifiers
+		//		if (!ctx.Strategy.Roll(ctx, new RollingStrategyContext(ctx.Item, rollingStrategyProperties)))
+		//		{
+		//			InvalidateRolls();
+		//		}
+		//	}
 
-			ctx.Item.GetGlobalItem<GraphicsGlobalItem>().NeedsUpdate = true;
-			return ModifierPool;
-		}
+		//	ctx.Item.GetGlobalItem<GraphicsGlobalItem>().NeedsUpdate = true;
+		//	return ModifierPool;
+		//}
 
 		public override GlobalItem Clone(Item item, Item itemClone)
 		{
 			LootModItem clone = (LootModItem)base.Clone(item, itemClone);
-			clone.ModifierRarity = (ModifierRarity)ModifierRarity?.Clone() ?? mod.GetNullModifierRarity();
-			clone.ModifierPool = (ModifierPool)ModifierPool?.Clone() ?? mod.GetNullModifierPool();
+			clone.Rarity = (ModifierRarity)Rarity?.Clone() ?? mod.GetNullModifierRarity();
+			clone.Modifiers = (FiniteModifierPool)Modifiers?.Clone() ?? mod.GetNullModifierPool();
 			// there is no need to apply here, we already cloned the item which stats are already modified by its pool
 			return clone;
 		}
@@ -180,42 +181,20 @@ namespace Loot
 			{
 				InvalidateRolls();
 			}
-			else
+			else if (tag.ContainsKey("SaveVersion"))
 			{
-				// SaveVersion >= 2
-				if (tag.ContainsKey("SaveVersion"))
+				int saveVersion = tag.GetInt("SaveVersion");
+				if (saveVersion < 14)
 				{
-					int saveVersion = tag.GetInt("SaveVersion");
+					InvalidateRolls();
+				}
+				else
+				{
+					Rarity = ModifierRarityIO.Load(item, tag.GetCompound("ModifierRarity"));
+					Modifiers = ModifierPoolIO.Load(item, tag.GetCompound("ModifierPool"));
 					SealedModifiers = tag.GetBool("SealedModifiers");
 					HasRolled = tag.GetBool("HasRolled");
-					if (saveVersion < 3)
-					{
-						// Rarity should be set by pool loading
-						ModifierPool = ModifierPoolIO.Load(item, tag);
-					}
-					else
-					{
-						ModifierRarity = ModifierRarityIO.Load(item, tag.GetCompound("ModifierRarity"));
-						ModifierPool = ModifierPoolIO.Load(item, tag.GetCompound("ModifierPool"));
-					}
-				}
-				else // SaveVersion 1
-				{
-					HasRolled = tag.GetBool("HasRolled");
-					ModifierPool = ModifierPoolIO.Load(item, tag);
-				}
-
-				if (ModifierPool != null)
-				{
-					// enforce illegitimate rolls to go away
-					if (ModifierPool.ActiveModifiers == null || ModifierPool.ActiveModifiers.Length <= 0)
-					{
-						InvalidateRolls();
-					}
-					else
-					{
-						ModifierPool.ApplyModifiers(item);
-					}
+					Modifiers.Apply(item);
 				}
 			}
 		}
@@ -228,104 +207,106 @@ namespace Loot
 				{"SaveVersion", SAVE_VERSION},
 				{"SealedModifiers", SealedModifiers},
 				{"HasRolled", HasRolled},
-				{"ModifierRarity", ModifierRarityIO.Save(item, ModifierRarity)},
-				{"ModifierPool", ModifierPoolIO.Save(item, ModifierPool)}
+				{"ModifierRarity", ModifierRarityIO.Save(item, Rarity)},
+				{"ModifierPool", ModifierPoolIO.Save(item, Modifiers)}
 			};
 
 			return tag;
 		}
 
 		public override bool NeedsSaving(Item item)
-			=> ModifierPool != null || HasRolled;
+			=> Modifiers != null || HasRolled;
 
 		public override void NetReceive(Item item, BinaryReader reader)
 		{
-			if (reader.ReadBoolean())
+			bool hasPool = reader.ReadBoolean();
+
+			if (hasPool)
 			{
-				ModifierRarity = ModifierRarityIO.NetReceive(item, reader); // Since SaveVersion 3
-				ModifierPool = ModifierPoolIO.NetReceive(item, reader);
+				Rarity = ModifierRarityIO.NetReceive(item, reader);
+				Modifiers = ModifierPoolIO.NetReceive(item, reader);
 			}
 
 			HasRolled = reader.ReadBoolean();
-			SealedModifiers = reader.ReadBoolean(); // Since SaveVersion 2
-
-			ModifierPool?.ApplyModifiers(item);
-
+			SealedModifiers = reader.ReadBoolean();
 			JustTinkerModified = reader.ReadBoolean();
+
+			item.UpdateModifiers(Modifiers.Modifiers);
 		}
 
 		public override void NetSend(Item item, BinaryWriter writer)
 		{
-			bool hasPool = ModifierPool != null;
+			bool hasPool = Modifiers != null;
 			writer.Write(hasPool);
+
 			if (hasPool)
 			{
-				ModifierRarityIO.NetSend(ModifierRarity, item, writer); // Since SaveVersion 3
-				ModifierPoolIO.NetSend(ModifierPool, item, writer);
+				ModifierRarityIO.NetSend(Rarity, item, writer);
+				ModifierPoolIO.NetSend(Modifiers, item, writer);
 			}
 
 			writer.Write(HasRolled);
-			writer.Write(SealedModifiers); // Since SaveVersion 2
+			writer.Write(SealedModifiers);
 
 			writer.Write(JustTinkerModified);
 		}
 
-		public override void OnCraft(Item item, Recipe recipe)
-		{
-			ModifierPool pool = GetInfo(item).ModifierPool;
-			if (!HasRolled && pool == null)
-			{
-				ModifierContext ctx = new ModifierContext
-				{
-					Method = ModifierContextMethod.OnCraft,
-					Item = item,
-					Player = Main.LocalPlayer,
-					Recipe = recipe
-				};
+		//public override void OnCraft(Item item, Recipe recipe)
+		//{
+		//	ModifierPool pool = GetInfo(item).ModifierPool;
+		//	if (!HasRolled && pool == null)
+		//	{
+		//		ModifierContext ctx = new ModifierContext
+		//		{
+		//			Method = ModifierContextMethod.OnCraft,
+		//			Item = item,
+		//			Player = Main.LocalPlayer,
+		//			Recipe = recipe
+		//		};
 
-				pool = RollNewPool(ctx);
-				pool?.ApplyModifiers(item);
-			}
+		//		pool = RollNewPool(ctx);
+		//		pool?.ApplyModifiers(item);
+		//	}
 
-			base.OnCraft(item, recipe);
-		}
+		//	base.OnCraft(item, recipe);
+		//}
 
-		public override bool OnPickup(Item item, Player player)
-		{
-			ModifierPool pool = GetInfo(item).ModifierPool;
-			if (!HasRolled && pool == null)
-			{
-				ModifierContext ctx = new ModifierContext
-				{
-					Method = ModifierContextMethod.OnPickup,
-					Item = item,
-					Player = player,
-					Strategy = RollingUtils.Strategies.Normal
-				};
+		//public override bool OnPickup(Item item, Player player)
+		//{
+		//	ModifierPool pool = GetInfo(item).ModifierPool;
+		//	if (!HasRolled && pool == null)
+		//	{
+		//		ModifierContext ctx = new ModifierContext
+		//		{
+		//			Method = ModifierContextMethod.OnPickup,
+		//			Item = item,
+		//			Player = player,
+		//			Strategy = RollingUtils.Strategies.Normal
+		//		};
 
-				pool = RollNewPool(ctx);
-				pool?.ApplyModifiers(item);
-			}
+		//		pool = RollNewPool(ctx);
+		//		pool?.ApplyModifiers(item);
+		//	}
 
-			return base.OnPickup(item, player);
-		}
+		//	return base.OnPickup(item, player);
+		//}
 
-		public override void PostReforge(Item item)
-		{
-			if (!SealedModifiers)
-			{
-				ModifierContext ctx = new ModifierContext
-				{
-					Method = ModifierContextMethod.OnReforge,
-					Item = item,
-					Player = Main.LocalPlayer,
-					Strategy = RollingUtils.Strategies.Normal
-				};
+		//public override void PostReforge(Item item)
+		//{
+		//	if (!SealedModifiers)
+		//	{
+		//		ModifierContext ctx = new ModifierContext
+		//		{
+		//			Method = ModifierContextMethod.OnReforge,
+		//			Item = item,
+		//			Player = Main.LocalPlayer,
+		//			Strategy = RollingUtils.Strategies.Normal
+		//		};
 
-				ModifierPool pool = RollNewPool(ctx);
-				pool?.ApplyModifiers(item);
-			}
-		}
+		//		ModifierPool pool = RollNewPool(ctx);
+		//		pool?.ApplyModifiers(item);
+		//	}
+		//}
 
 		private string GetPrefixNormString(float cpStat, float rStat, ref double num, ref Color? color)
 		{
@@ -361,10 +342,10 @@ namespace Loot
 
 			color = new Color((byte)(190f * defColorVal), (byte)(120f * defColorVal), (byte)(120f * defColorVal), alphaColor);
 			return diffStat.ToString(CultureInfo.InvariantCulture); /* + Lang.tip[39].Value;*/
-																	//if (num12 < 0.0)
-																	//{
-																	//	array3[num4] = true;
-																	//}
+			//if (num12 < 0.0)
+			//{
+			//	array3[num4] = true;
+			//}
 		}
 
 		/// <summary>
@@ -372,8 +353,8 @@ namespace Loot
 		/// </summary>
 		public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
 		{
-			var pool = GetInfo(item).ModifierPool;
-			if (pool != null && pool.ActiveModifiers.Length > 0)
+			var pool = Modifiers;
+			if (pool != null && pool.Modifiers.Any())
 			{
 				// the following part, recalculate the vanilla prefix tooltips
 				// this is because our mods modify the stats, which was never intended by vanilla, causing the differences to be innacurate and bugged
@@ -508,19 +489,19 @@ namespace Loot
 				{
 					var namelayer = tooltips[i];
 
-					if (ModifierRarity.ItemPrefix != null)
+					if (Rarity.ItemPrefix != null)
 					{
-						namelayer.text = $"{ModifierRarity.ItemPrefix} {namelayer.text}";
+						namelayer.text = $"{Rarity.ItemPrefix} {namelayer.text}";
 					}
 
-					if (ModifierRarity.ItemSuffix != null)
+					if (Rarity.ItemSuffix != null)
 					{
-						namelayer.text = $"{namelayer.text} {ModifierRarity.ItemSuffix}";
+						namelayer.text = $"{namelayer.text} {Rarity.ItemSuffix}";
 					}
 
-					if (ModifierRarity.OverrideNameColor != null)
+					if (Rarity.OverrideNameColor != null)
 					{
-						namelayer.overrideColor = ModifierRarity.OverrideNameColor;
+						namelayer.overrideColor = Rarity.OverrideNameColor;
 					}
 
 					tooltips[i] = namelayer;
@@ -533,12 +514,12 @@ namespace Loot
 				Color? inactiveColor = isVanityIgnored ? (Color?)Color.DarkSlateGray : null;
 
 				i = tooltips.Count;
-				tooltips.Insert(i, new TooltipLine(mod, "Loot: Modifier:Rarity", $"[{ModifierRarity.RarityName}]{(isVanityIgnored ? " [IGNORED]" : "")}")
+				tooltips.Insert(i, new TooltipLine(mod, "Loot: Modifier:Rarity", $"[{Rarity.RarityName}]{(isVanityIgnored ? " [IGNORED]" : "")}")
 				{
-					overrideColor = inactiveColor ?? ModifierRarity.Color * Main.inventoryScale
+					overrideColor = inactiveColor ?? Rarity.Color * Main.inventoryScale
 				});
 
-				foreach (var modifier in pool.ActiveModifiers)
+				foreach (var modifier in pool.Modifiers)
 				{
 					foreach (var tt in modifier.GetTooltip().Build())
 					{
@@ -558,7 +539,7 @@ namespace Loot
 					tooltips.Insert(++i, ttl);
 				}
 
-				foreach (var e in pool.ActiveModifiers)
+				foreach (var e in pool.Modifiers)
 				{
 					e.ModifyTooltips(item, tooltips);
 				}
