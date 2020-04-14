@@ -1,5 +1,11 @@
 var NAVTREEINDEX3 =
 {
+"class_loot_1_1_api_1_1_delegators_1_1_modifier_delegator_player.html#a1ce9358e5cbac1886a17d685da7ece2c":[2,0,0,0,5,0,134],
+"class_loot_1_1_api_1_1_delegators_1_1_modifier_delegator_player.html#a1d00138c05cc485b70dbb16a432a930b":[2,0,0,0,5,0,70],
+"class_loot_1_1_api_1_1_delegators_1_1_modifier_delegator_player.html#a1e2512eaef9ce4425aa672a9a270f2da":[2,0,0,0,5,0,100],
+"class_loot_1_1_api_1_1_delegators_1_1_modifier_delegator_player.html#a1e65fa03e5fea7aeacb92799a3db15a6":[2,0,0,0,5,0,171],
+"class_loot_1_1_api_1_1_delegators_1_1_modifier_delegator_player.html#a1eda7b5cfb8ec1afada80c3db716268b":[2,0,0,0,5,0,181],
+"class_loot_1_1_api_1_1_delegators_1_1_modifier_delegator_player.html#a24580c245ce01e8f40045134ac8b53d5":[2,0,0,0,5,0,25],
 "class_loot_1_1_api_1_1_delegators_1_1_modifier_delegator_player.html#a24e885fd2991723513394bf2cb1a06f8":[2,0,0,0,5,0,50],
 "class_loot_1_1_api_1_1_delegators_1_1_modifier_delegator_player.html#a256987ec0dfee3a59d267a66cac300f7":[2,0,0,0,5,0,1],
 "class_loot_1_1_api_1_1_delegators_1_1_modifier_delegator_player.html#a2679a2796cea3f1558490f7711e37b24":[2,0,0,0,5,0,42],
@@ -243,11 +249,5 @@ var NAVTREEINDEX3 =
 "class_loot_1_1_api_1_1_graphics_1_1_glowmask_1_1_glowmask_graphics_properties_1_1_glowmask_graphics_properties_builder.html#a22f90dff0d3dc9544d61e710a863642f":[2,0,0,0,7,0,1,0,0],
 "class_loot_1_1_api_1_1_graphics_1_1_glowmask_1_1_glowmask_graphics_properties_1_1_glowmask_graphics_properties_builder.html#ab4afbe2122a31765f9dca6c8e281b410":[2,0,0,0,7,0,1,0,2],
 "class_loot_1_1_api_1_1_graphics_1_1_glowmask_1_1_glowmask_graphics_properties_1_1_glowmask_graphics_properties_builder.html#ad4768634bb7a939b33cd5630e0e42548":[2,0,0,0,7,0,1,0,1],
-"class_loot_1_1_api_1_1_graphics_1_1_graphics_entity.html":[2,0,0,0,7,2],
-"class_loot_1_1_api_1_1_graphics_1_1_graphics_entity.html#a1015a3c783710c8fedc05b2b0019b130":[2,0,0,0,7,2,1],
-"class_loot_1_1_api_1_1_graphics_1_1_graphics_entity.html#a31fe3ee01717e224f2eebc1be47d7a18":[2,0,0,0,7,2,12],
-"class_loot_1_1_api_1_1_graphics_1_1_graphics_entity.html#a84e5b84625a265e521c089e52bfc7044":[2,0,0,0,7,2,10],
-"class_loot_1_1_api_1_1_graphics_1_1_graphics_entity.html#a86a57e826b2e0351e5a40c016e4610a7":[2,0,0,0,7,2,8],
-"class_loot_1_1_api_1_1_graphics_1_1_graphics_entity.html#a981a4e84ecdace67cedb08d9c9cfcf17":[2,0,0,0,7,2,9],
-"class_loot_1_1_api_1_1_graphics_1_1_graphics_entity.html#a9f9f0e4fb4450f027fb404e5f710fc1a":[2,0,0,0,7,2,2]
+"class_loot_1_1_api_1_1_graphics_1_1_graphics_entity.html":[2,0,0,0,7,2]
 };

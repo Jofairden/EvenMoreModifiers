@@ -1,5 +1,11 @@
 var NAVTREEINDEX5 =
 {
+"class_loot_1_1_loot_mod_item.html#a77ebddb2c3dd25500e5152c7c3630401":[2,0,0,12,11],
+"class_loot_1_1_loot_mod_item.html#a78bb40da8243931fd3d5028c8801b1b7":[2,0,0,12,10],
+"class_loot_1_1_loot_mod_item.html#aa7550eacacab94f1a9aa53492f686b2d":[2,0,0,12,22],
+"class_loot_1_1_loot_mod_item.html#ab98f26190033d85fe3f7e1362a032d1c":[2,0,0,12,21],
+"class_loot_1_1_loot_mod_item.html#abf189bb2ef446be92c178c62e356b129":[2,0,0,12,5],
+"class_loot_1_1_loot_mod_item.html#add1489001e88a446099fefcd8193852a":[2,0,0,12,1],
 "class_loot_1_1_loot_mod_item.html#aeff8f5daada870d63e036956b4982de2":[2,0,0,12,2],
 "class_loot_1_1_loot_mod_item.html#af8ddfce165b49c0e9ca6561b8afb96b9":[2,0,0,12,20],
 "class_loot_1_1_loot_mod_item.html#afabcec9bb71e5df318db98550e482d24":[2,0,0,12,14],
@@ -243,11 +249,5 @@ var NAVTREEINDEX5 =
 "class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_ice_1_1_icy_modifier.html#a889ba084cc47f491b86e850385ffae91":[2,0,0,5,2,0,1,3],
 "class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_ice_1_1_icy_modifier.html#a9ac91b89fe641634a683fc499684d138":[2,0,0,5,2,0,1,2],
 "class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_ice_1_1_icy_modifier.html#aa1ab9424ad8005d2f30c5eb2bcb1d509":[2,0,0,5,2,0,1,1],
-"class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_knockback_plus.html":[2,0,0,5,2,8],
-"class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_knockback_plus.html#a0b7e4278fa4252ef4c5674dd51cdb1a1":[2,0,0,5,2,8,0],
-"class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_knockback_plus.html#a34cfe56629b27db906178ecc5b13745b":[2,0,0,5,2,8,2],
-"class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_knockback_plus.html#a7188b09d04874e02468bfb339f44807e":[2,0,0,5,2,8,1],
-"class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_knockback_plus.html#ae48ee8465a88687760f649a0eff292aa":[2,0,0,5,2,8,3],
-"class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_mana_reduce.html":[2,0,0,5,2,9],
-"class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_mana_reduce.html#a402f7e34cbec96db9f572d318a84a9ba":[2,0,0,5,2,9,3]
+"class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_knockback_plus.html":[2,0,0,5,2,8]
 };

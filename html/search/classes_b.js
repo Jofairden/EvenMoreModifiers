@@ -23,8 +23,8 @@ var searchData=
   ['modifierdelegatorprojectile',['ModifierDelegatorProjectile',['../class_loot_1_1_api_1_1_delegators_1_1_modifier_delegator_projectile.html',1,'Loot::Api::Delegators']]],
   ['modifiereffect',['ModifierEffect',['../class_loot_1_1_api_1_1_core_1_1_modifier_effect.html',1,'Loot::Api::Core']]],
   ['modifiereffectcontent',['ModifierEffectContent',['../class_loot_1_1_content_1_1_modifier_effect_content.html',1,'Loot::Content']]],
-  ['modifierpool',['ModifierPool',['../class_modifier_pool.html',1,'']]],
   ['modifierpool',['ModifierPool',['../class_loot_1_1_api_1_1_core_1_1_modifier_pool.html',1,'Loot::Api::Core']]],
+  ['modifierpool',['ModifierPool',['../class_modifier_pool.html',1,'']]],
   ['modifierpoolcontent',['ModifierPoolContent',['../class_loot_1_1_content_1_1_modifier_pool_content.html',1,'Loot::Content']]],
   ['modifierproperties',['ModifierProperties',['../class_loot_1_1_api_1_1_core_1_1_modifier_properties.html',1,'Loot::Api::Core']]],
   ['modifierpropertiesbuilder',['ModifierPropertiesBuilder',['../class_loot_1_1_api_1_1_core_1_1_modifier_properties_1_1_modifier_properties_builder.html',1,'Loot::Api::Core::ModifierProperties']]],
@@ -37,6 +37,7 @@ var searchData=
   ['moditem',['ModItem',['../class_mod_item.html',1,'']]],
   ['modplayer',['ModPlayer',['../class_mod_player.html',1,'']]],
   ['modsound',['ModSound',['../class_mod_sound.html',1,'']]],
+  ['modtile',['ModTile',['../class_mod_tile.html',1,'']]],
   ['modutils',['ModUtils',['../class_loot_1_1_api_1_1_ext_1_1_mod_utils.html',1,'Loot::Api::Ext']]],
   ['modworld',['ModWorld',['../class_mod_world.html',1,'']]],
   ['movespeedplus',['MoveSpeedPlus',['../class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_utility_1_1_move_speed_plus.html',1,'Loot::Modifiers::EquipModifiers::Utility']]]

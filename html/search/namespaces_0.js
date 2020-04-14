@@ -49,6 +49,7 @@ var searchData=
   ['testmodifiers',['TestModifiers',['../namespace_loot_tests_1_1_test_modifiers.html',1,'LootTests']]],
   ['testpools',['TestPools',['../namespace_loot_tests_1_1_test_pools.html',1,'LootTests']]],
   ['testrarities',['TestRarities',['../namespace_loot_tests_1_1_test_rarities.html',1,'LootTests']]],
+  ['tiles',['Tiles',['../namespace_loot_1_1_tiles.html',1,'Loot']]],
   ['ui',['UI',['../namespace_loot_1_1_u_i.html',1,'Loot']]],
   ['utility',['Utility',['../namespace_loot_1_1_modifiers_1_1_equip_modifiers_1_1_utility.html',1,'Loot::Modifiers::EquipModifiers']]],
   ['weaponmodifiers',['WeaponModifiers',['../namespace_loot_1_1_modifiers_1_1_weapon_modifiers.html',1,'Loot::Modifiers']]]

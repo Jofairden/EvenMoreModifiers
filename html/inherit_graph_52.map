@@ -1,3 +1,4 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="node1" href="$class_u_i_state.html" title="UIState" alt="" coords="5,5,76,32"/>
+<area shape="rect" id="node1" href="$class_mod_world.html" title="ModWorld" alt="" coords="5,5,88,32"/>
+<area shape="rect" id="node2" href="$class_loot_1_1_loot_mod_world.html" title="This class is responsible for generating modifiers when a world is being created. ..." alt="" coords="136,5,279,32"/>
 </map>

@@ -15,6 +15,7 @@ var annotated_dup =
     [ "ModItem", "class_mod_item.html", null ],
     [ "ModPlayer", "class_mod_player.html", null ],
     [ "ModSound", "class_mod_sound.html", null ],
+    [ "ModTile", "class_mod_tile.html", null ],
     [ "ModWorld", "class_mod_world.html", null ],
     [ "UIState", "class_u_i_state.html", null ]
 ];

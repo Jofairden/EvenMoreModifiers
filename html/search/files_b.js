@@ -38,5 +38,7 @@ var searchData=
   ['modsupport_2ecs',['ModSupport.cs',['../_mod_support_8cs.html',1,'']]],
   ['modsupporttunneler_2ecs',['ModSupportTunneler.cs',['../_mod_support_tunneler_8cs.html',1,'']]],
   ['modutils_2ecs',['ModUtils.cs',['../_mod_utils_8cs.html',1,'']]],
-  ['movespeedplus_2ecs',['MoveSpeedPlus.cs',['../_move_speed_plus_8cs.html',1,'']]]
+  ['movespeedplus_2ecs',['MoveSpeedPlus.cs',['../_move_speed_plus_8cs.html',1,'']]],
+  ['mysteriousworkbench_2ecs',['MysteriousWorkbench.cs',['../_mysterious_workbench_8cs.html',1,'']]],
+  ['mysteriousworkbenchitem_2ecs',['MysteriousWorkbenchItem.cs',['../_mysterious_workbench_item_8cs.html',1,'']]]
 ];

@@ -16,6 +16,7 @@ var files =
     [ "Rarities", "dir_e0566f59f042068c187972f8b4893996.html", "dir_e0566f59f042068c187972f8b4893996" ],
     [ "RollingStrategies", "dir_8337618e8cb8b0980cdb8acf8bc310e0.html", "dir_8337618e8cb8b0980cdb8acf8bc310e0" ],
     [ "Sounds", "dir_39b9972f69123432ab2c3e40729b7fd5.html", "dir_39b9972f69123432ab2c3e40729b7fd5" ],
+    [ "Tiles", "dir_8d9dbd953f0f9e8d5bb4e7983a7538d3.html", "dir_8d9dbd953f0f9e8d5bb4e7983a7538d3" ],
     [ "UI", "dir_53ff6e473d46d4e442ba5a7ce9f895e3.html", "dir_53ff6e473d46d4e442ba5a7ce9f895e3" ],
     [ "Loot.cs", "_loot_8cs.html", [
       [ "Loot", "class_loot_1_1_loot.html", "class_loot_1_1_loot" ]

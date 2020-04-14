@@ -188,6 +188,7 @@ var hierarchy =
       [ "Loot.Caching.ModifierCachePlayer", "class_loot_1_1_caching_1_1_modifier_cache_player.html", null ]
     ] ],
     [ "ModSound", "class_mod_sound.html", null ],
+    [ "ModTile", "class_mod_tile.html", null ],
     [ "Loot.Api.Ext.ModUtils", "class_loot_1_1_api_1_1_ext_1_1_mod_utils.html", null ],
     [ "ModWorld", "class_mod_world.html", [
       [ "Loot.LootModWorld", "class_loot_1_1_loot_mod_world.html", null ]
