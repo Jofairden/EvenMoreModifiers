@@ -6,7 +6,6 @@ using Loot.UI.Tabs.Cubing;
 using Microsoft.Xna.Framework.Input;
 using Terraria;
 using Terraria.GameInput;
-using Terraria.ID;
 using Terraria.ModLoader;
 
 namespace Loot.ModSupport
@@ -47,7 +46,7 @@ namespace Loot.ModSupport
 
 		private static void SwapItems(GuiCubingTab cubingTab, Item item)
 		{
-			cubingTab.GiveBackItemIfNeeded();
+			cubingTab.GiveBackSlottedItem();
 			cubingTab.OverrideSlottedItem(item);
 		}
 

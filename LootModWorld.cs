@@ -1,12 +1,7 @@
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using Loot.Api.Core;
-using Loot.Api.Ext;
-using Terraria;
 using Terraria.ModLoader;
 using Terraria.ModLoader.IO;
-using Terraria.Utilities;
 using Terraria.World.Generation;
 
 namespace Loot

@@ -4,7 +4,6 @@ using Loot.Api.Content;
 using Loot.Api.Core;
 using Loot.Api.Ext;
 using Loot.Pools;
-using Terraria.Utilities;
 
 namespace Loot.Content
 {

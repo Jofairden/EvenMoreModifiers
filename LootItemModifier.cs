@@ -8,11 +8,11 @@ namespace Loot
 {
 	static class LootItemModifier
 	{
-		public static Item RerollModifiers(this Item item, ModifierContext context, RollingStrategyProperties properties)
+		public static Item RerollModifiers(this Item item, RollingStrategy strategy, ModifierContext context, RollingStrategyProperties properties)
 		{
 			var refItem = item.Clone();
 			var pool = ModifierPoolMechanism.GetPool(context);
-			var selected = ModifierMechanism.RollModifiers(item, pool, context, properties);
+			var selected = item.RollModifiers(strategy, pool, context, properties);
 			return refItem.UpdateModifiers(selected);
 		}
 

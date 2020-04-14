@@ -20,7 +20,8 @@ namespace Loot.Api.Ext
 
 		public static class Strategies
 		{
-			public static NormalRollingStrategy Normal => new NormalRollingStrategy();
+			public static DefaultRollingStrategy Default => new DefaultRollingStrategy();
+			public static SealingRollingStrategy Sealing => new SealingRollingStrategy();
 		}
 	}
 }

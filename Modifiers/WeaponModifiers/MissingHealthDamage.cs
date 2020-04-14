@@ -22,8 +22,8 @@ namespace Loot.Modifiers.WeaponModifiers
 		public override void ModifyWeaponDamage(Item item, Player player, ref float add, ref float mult, ref float flat)
 		{
 			base.ModifyWeaponDamage(item, player, ref add, ref mult, ref flat);
-			float mag = Properties.RoundedPower * ((player.statLifeMax2 - player.statLife) / (float)player.statLifeMax2);
-			add += 1 + mag / 100;
+			float mag = Properties.RoundedPower * ((player.statLifeMax2 - player.statLife) / (float)player.statLifeMax2); 
+			add += mag / 100;
 		}
 	}
 }

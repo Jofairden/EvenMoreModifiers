@@ -64,7 +64,7 @@ namespace Loot.Modifiers.WeaponModifiers
 			base.ModifyWeaponDamage(item, player, ref add, ref mult, ref flat);
 			if (_duringDay && Main.dayTime || !_duringDay && !Main.dayTime)
 			{
-				add += 1 + Properties.RoundedPower / 100;
+				add += Properties.RoundedPower / 100;
 			}
 		}
 	}

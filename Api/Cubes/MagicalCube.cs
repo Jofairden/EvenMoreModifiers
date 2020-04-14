@@ -1,9 +1,6 @@
 using System.Collections.Generic;
 using System.Linq;
 using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Input;
-using Terraria;
-using Terraria.GameInput;
 using Terraria.ModLoader;
 
 namespace Loot.Api.Cubes
@@ -39,8 +36,6 @@ namespace Loot.Api.Cubes
 		{
 		}
 
-		public override bool CanRightClick() => !PlayerInput.WritingText && Main.hasFocus && Main.keyState.IsKeyDown(Keys.LeftControl);
-
 		public override void ModifyTooltips(List<TooltipLine> tooltips)
 		{
 			base.ModifyTooltips(tooltips);
@@ -65,31 +60,5 @@ namespace Loot.Api.Cubes
 				}
 			}
 		}
-
-		private const int PADDING_FOR_BOX = 2;
-
-		// TODO ModConfig configurable
-		// Highlight important parts
-//		public override bool PreDrawTooltipLine(DrawableTooltipLine line, ref int yOffset)
-//		{
-//			if (line.mod.Equals("Terraria") && line.Name.Equals("ItemName")
-//			    || line.mod.Equals("Loot") && line.Name.EndsWith("::Add_Box"))
-//			{
-//				var stringSize = ChatManager.GetStringSize(Main.fontMouseText, line.text, Vector2.One);
-//				int widthForBox = (int) stringSize.X + PADDING_FOR_BOX * 2;
-//				int heightForBox = (int) Main.fontMouseText.MeasureString(line.text).Y + PADDING_FOR_BOX * 2;
-//
-//				Vector2 drawPosForBox = new Vector2(line.X - PADDING_FOR_BOX, line.Y - PADDING_FOR_BOX * 2);
-//				Rectangle drawRectForBox = new Rectangle((int) drawPosForBox.X, (int) drawPosForBox.Y, widthForBox, heightForBox);
-//				Main.spriteBatch.Draw(Main.magicPixel, drawRectForBox, Main.mouseTextColorReal);
-//
-//				if (line.Name.Equals("ItemName"))
-//				{
-//					line.X += (int) (widthForBox / 2 - PADDING_FOR_BOX) - (int) line.font.MeasureString(line.text).X / 2;
-//				}
-//			}
-//
-//			return true;
-//		}
 	}
 }

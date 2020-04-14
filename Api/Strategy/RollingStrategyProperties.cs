@@ -18,7 +18,7 @@ namespace Loot.Api.Strategy
 		public int MinModifierRolls
 		{
 			get => _minModifierRolls;
-			set => _minModifierRolls = (int)MathHelper.Max(value, 1);
+			set => _minModifierRolls = value;
 		}
 
 		private int _maxRollableLines = 4;
@@ -29,7 +29,7 @@ namespace Loot.Api.Strategy
 		public int MaxRollableLines
 		{
 			get => _maxRollableLines;
-			set => _maxRollableLines = (int)MathHelper.Clamp(value, 1f, 4f);
+			set => _maxRollableLines = value;
 		}
 
 		/// <summary>

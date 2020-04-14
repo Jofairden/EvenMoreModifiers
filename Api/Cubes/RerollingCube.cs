@@ -1,6 +1,4 @@
 using Loot.Api.Strategy;
-using Loot.UI;
-using Loot.UI.Tabs.Cubing;
 using Terraria;
 
 namespace Loot.Api.Cubes
@@ -15,23 +13,11 @@ namespace Loot.Api.Cubes
 		public override void SetStaticDefaults()
 		{
 			DisplayName.SetDefault(CubeName);
-			Tooltip.SetDefault("Press left control and right click to open cube UI" +
-							   "\nAllows rerolling modifiers of an item" +
-							   "\nSlotted cube is consumed upon use");
+			Tooltip.SetDefault(@"Can reroll the magical properties of an item
+There only seems to be use for this item at a specific workbench");
 			SafeStaticDefaults();
 		}
 
-		public override void RightClick(Player player)
-		{
-			var gui = Loot.Instance.GuiState;
-			gui.ToggleUI(Loot.Instance.GuiInterface);
-			// Force the cubing tab and set the active cube
-			gui.UpdateTabTo(GuiTabState.CUBING);
-			gui.GetTab<GuiCubingTab>()._cubeButton.ChangeItem(item.type);
-			// Must be after recalc, otherwise it affects the calculated stack
-			item.stack++;
-		}
-
-		public abstract RollingStrategy<RollingStrategyContext> GetRollingStrategy(Item item, RollingStrategyProperties properties);
+		public abstract RollingStrategy GetRollingStrategy(Item item, RollingStrategyProperties properties);
 	}
 }

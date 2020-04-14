@@ -1,4 +1,3 @@
-using Loot.Rarities;
 using Microsoft.Xna.Framework;
 using System;
 using System.Collections.Generic;
@@ -7,9 +6,6 @@ using System.IO;
 using System.Linq;
 using Loot.Api.Core;
 using Loot.Api.Ext;
-using Loot.Api.Graphics;
-using Loot.Api.Loaders;
-using Loot.Api.Strategy;
 using Loot.Hacks;
 using Loot.IO;
 using Terraria;
@@ -354,7 +350,7 @@ namespace Loot
 		public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
 		{
 			var pool = Modifiers;
-			if (pool != null && pool.Modifiers.Any())
+			if (pool != null)
 			{
 				// the following part, recalculate the vanilla prefix tooltips
 				// this is because our mods modify the stats, which was never intended by vanilla, causing the differences to be innacurate and bugged
@@ -507,17 +503,22 @@ namespace Loot
 					tooltips[i] = namelayer;
 				}
 
-				// Insert modifier rarity
+
 				CheatedItemHackGlobalItem cheatedItemHackGlobalItem = CheatedItemHackGlobalItem.GetInfo(item);
 				bool isVanityIgnored = cheatedItemHackGlobalItem.ShouldBeIgnored(item, Main.LocalPlayer);
-
 				Color? inactiveColor = isVanityIgnored ? (Color?)Color.DarkSlateGray : null;
+				// Insert modifier rarity
 
-				i = tooltips.Count;
-				tooltips.Insert(i, new TooltipLine(mod, "Loot: Modifier:Rarity", $"[{Rarity.RarityName}]{(isVanityIgnored ? " [IGNORED]" : "")}")
+				if (!(Rarity is NullModifierRarity))
 				{
-					overrideColor = inactiveColor ?? Rarity.Color * Main.inventoryScale
-				});
+					i = tooltips.Count;
+					tooltips.Insert(i, new TooltipLine(mod, "Loot: Modifier:Rarity", $"[{Rarity.RarityName}]{(isVanityIgnored ? " [IGNORED]" : "")}")
+					{
+						overrideColor = inactiveColor ?? Rarity.Color * Main.inventoryScale
+					});
+				}
+
+				i = tooltips.Count - 1;
 
 				foreach (var modifier in pool.Modifiers)
 				{

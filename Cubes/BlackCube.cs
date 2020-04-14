@@ -30,12 +30,12 @@ namespace Loot.Cubes
 		{
 		}
 
-		public override RollingStrategy<RollingStrategyContext> GetRollingStrategy(Item item, RollingStrategyProperties properties)
+		public override RollingStrategy GetRollingStrategy(Item item, RollingStrategyProperties properties)
 		{
 			properties.MinModifierRolls = 4;
 			properties.MagnitudePower = 1.25f;
 			properties.ExtraLuck = 4;
-			return RollingUtils.Strategies.Normal;
+			return RollingUtils.Strategies.Default;
 		}
 	}
 }

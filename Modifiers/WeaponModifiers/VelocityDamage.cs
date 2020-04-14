@@ -24,7 +24,7 @@ namespace Loot.Modifiers.WeaponModifiers
 		{
 			base.ModifyWeaponDamage(item, player, ref add, ref mult, ref flat);
 			float magnitude = Properties.RoundedPower * player.velocity.Length() / 4;
-			add += 1 + magnitude / 100;
+			add += magnitude / 100;
 		}
 	}
 }

@@ -21,7 +21,7 @@ namespace Loot.Modifiers.WeaponModifiers
 		public override void ModifyWeaponDamage(Item item, Player player, ref float add, ref float mult, ref float flat)
 		{
 			base.ModifyWeaponDamage(item, player, ref add, ref mult, ref flat);
-			add += 1 + Properties.RoundedPower / 100f;
+			add += Properties.RoundedPower / 100f;
 		}
 	}
 }

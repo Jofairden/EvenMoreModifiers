@@ -1,5 +1,6 @@
 using Loot.Api.Cubes;
 using Loot.Api.Strategy;
+using Loot.RollingStrategies;
 using Terraria;
 
 namespace Loot.Cubes
@@ -24,15 +25,9 @@ namespace Loot.Cubes
 			item.value = Item.buyPrice(silver: 50);
 		}
 
-		public override void RightClick(Player player)
+		public override RollingStrategy GetRollingStrategy(Item item, RollingStrategyProperties properties)
 		{
-			// TODO for now, just use cubing UI
-			base.RightClick(player);
-		}
-
-		public override RollingStrategy<RollingStrategyContext> GetRollingStrategy(Item item, RollingStrategyProperties properties)
-		{
-			return null;
+			return new SealingRollingStrategy();
 		}
 	}
 }

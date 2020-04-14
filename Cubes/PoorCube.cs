@@ -31,7 +31,7 @@ namespace Loot.Cubes
 		{
 		}
 
-		public override RollingStrategy<RollingStrategyContext> GetRollingStrategy(Item item, RollingStrategyProperties properties)
+		public override RollingStrategy GetRollingStrategy(Item item, RollingStrategyProperties properties)
 		{
 			var currentRarity = LootModItem.GetInfo(item).Rarity;
 			bool isLegendary = currentRarity?.GetType() == typeof(LegendaryRarity);
@@ -49,7 +49,7 @@ namespace Loot.Cubes
 			{
 				properties.CanUpgradeRarity = ctx => ctx.Rarity.GetType() == typeof(CommonRarity);
 			}
-			return RollingUtils.Strategies.Normal;
+			return RollingUtils.Strategies.Default;
 		}
 	}
 }

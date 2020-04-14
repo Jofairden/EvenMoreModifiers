@@ -1,9 +1,10 @@
 using System.Collections.Generic;
 using System.Linq;
 using Loot.Api.Core;
+using Loot.Api.Mechanism;
 using Loot.Api.Strategy;
-using Loot.Cubes;
 using Loot.Ext;
+using Loot.RollingStrategies;
 using Loot.Sounds;
 using Loot.UI.Common.Controls.Button;
 using Loot.UI.Common.Controls.Panel;
@@ -93,7 +94,6 @@ namespace Loot.UI.Tabs.Cubing
 			bool match = !_itemButton.Item.IsAir && !_cubeButton.Item.IsAir
 						 && _itemButton.CanTakeItem(_itemButton.Item)
 						 && _cubeButton.CanTakeItem(_cubeButton.Item);
-			//&& !EMMItem.GetItemInfo(_itemButton.Item).SealedModifiers // omitted for now
 
 			bool hasItem = Main.LocalPlayer.inventory.Any(x => x.type == _cubeButton.Item.type)
 						   || Main.mouseItem?.type == _cubeButton?.Item?.type;
@@ -103,46 +103,56 @@ namespace Loot.UI.Tabs.Cubing
 
 		private void HandleRerollButtonClick(UIMouseEvent evt, UIElement listeningElement)
 		{
-			if (MatchesRerollRequirements())
-			{
-				RollingStrategyProperties = new RollingStrategyProperties();
-				_cubeButton.RecalculateStack();
-
-				if (_cubeButton.Item.stack <= 0)
-				{
-					SoundHelper.PlayCustomSound(SoundHelper.SoundType.Decline);
-					_cubeButton.Item.TurnToAir();
-					return;
-				}
-
-				var info = LootModItem.GetInfo(_itemButton.Item);
-				if (_cubeButton.Item.modItem is CubeOfSealing)
-				{
-					info.SealedModifiers = !info.SealedModifiers;
-					SoundHelper.PlayCustomSound(info.SealedModifiers ? SoundHelper.SoundType.GainSeal : SoundHelper.SoundType.LoseSeal);
-					ConsumeCubes();
-				}
-				else if (info.SealedModifiers)
-				{
-					SoundHelper.PlayCustomSound(SoundHelper.SoundType.Decline);
-				}
-				else
-				{
-					// Refresh item
-					Item newItem = GetClonedItem(_itemButton.Item);
-					LootModItem.GetInfo(newItem).Modifiers = NullModifierPool.INSTANCE; // unload previous pool
-
-					// reroll pool
-					RerollModifiers(newItem);
-					UpdateModifiersInGui();
-					ConsumeCubes();
-					Main.PlaySound(SoundID.Item37, -1, -1);
-				}
-			}
-			else
+			if (!MatchesRerollRequirements())
 			{
 				SoundHelper.PlayCustomSound(SoundHelper.SoundType.Decline);
+				return;
 			}
+
+			RollingStrategyProperties = new RollingStrategyProperties();
+			_cubeButton.RecalculateStack();
+
+			if (_cubeButton.Item.stack <= 0)
+			{
+				SoundHelper.PlayCustomSound(SoundHelper.SoundType.Decline);
+				_cubeButton.Item.TurnToAir();
+				return;
+			}
+
+			var item = GetClonedItem(_itemButton.Item);
+			var info = LootModItem.GetInfo(item);
+			var strategy = _cubeButton.GetRollingStrategy(item, RollingStrategyProperties);
+
+			// Sealed and not allowed to roll
+			if (info.SealedModifiers && !(strategy is SealingRollingStrategy))
+			{
+				SoundHelper.PlayCustomSound(SoundHelper.SoundType.Decline);
+				return;
+			}
+
+			// Roll new lines
+			var context = new ModifierContext
+			{
+				Method = ModifierContextMethod.OnCubeReroll,
+				Item = item,
+				Player = Main.LocalPlayer,
+				CustomData = new Dictionary<string, object>
+					{
+						{"Source", "CubeRerollUI"}
+					},
+				Strategy = _cubeButton.GetRollingStrategy(_itemButton.Item, RollingStrategyProperties)
+			};
+			var rolled = strategy._Roll(ModifierPoolMechanism.GetPool(context), context, RollingStrategyProperties);
+			LootModItem.GetInfo(item).Modifiers = NullModifierPool.INSTANCE; // unload previous pool
+			if (rolled.Any())
+			{
+				item.UpdateModifiers(rolled);
+			}
+			strategy.PlaySoundEffect(item);
+			_itemButton.Item = item;
+
+			ConsumeCubes();
+			UpdateModifiersInGui();
 		}
 
 		private Item GetClonedItem(Item toClone)
@@ -158,31 +168,6 @@ namespace Loot.UI.Tabs.Cubing
 			}
 			clone.stack = toClone.stack;
 			return clone;
-		}
-
-		private void RerollModifiers(Item newItem)
-		{
-			ModifierContext ctx = new ModifierContext
-			{
-				Method = ModifierContextMethod.OnCubeReroll,
-				Item = newItem,
-				Player = Main.LocalPlayer,
-				CustomData = new Dictionary<string, object>
-				{
-					{"Source", "CubeRerollUI"}
-				},
-				Strategy = _cubeButton.GetRollingStrategy(_itemButton.Item, RollingStrategyProperties)
-			};
-			_itemButton.Item = newItem.RerollModifiers(ctx, RollingStrategyProperties);
-		}
-
-		public void GiveBackItemIfNeeded()
-		{
-			if (!_itemButton.Item.IsAir)
-			{
-				LootModItem.GetInfo(_itemButton.Item).SlottedInCubeUI = false;
-				Main.LocalPlayer.QuickSpawnClonedItem(_itemButton.Item, _itemButton.Item.stack);
-			}
 		}
 
 		public void OverrideSlottedItem(Item newItem)

@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.IO;
 using Loot.Api.Core;
 using Loot.Api.Loaders;
-using Loot.Rarities;
 using Terraria;
 using Terraria.ModLoader.IO;
 
