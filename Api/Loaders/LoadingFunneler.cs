@@ -39,6 +39,7 @@ namespace Loot.Api.Loaders
 
 		internal static void PostLoad()
 		{
+			RegistryLoader.ProcessMods();
 			if (!Main.dedServ)
 			{
 				Loot.ModContentManager.Load();
@@ -56,8 +57,6 @@ namespace Loot.Api.Loaders
 			RegistryLoader.Load();
 			ContentLoader.Initialize();
 			ContentLoader.Load();
-
-			RegistryLoader.AddContent(Loot.Instance);
 		}
 
 		// Load EMM for Client only (this doesn't need to be loaded for server)

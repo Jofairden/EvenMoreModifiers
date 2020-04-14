@@ -22,7 +22,10 @@ namespace Loot.Api.Loaders
 		public static void RegisterAssets(Mod mod, string folder, bool clearOwnTextures = true)
 		{
 			RegistryLoader.CheckModLoading(mod, "RegisterAssets");
-			RegistryLoader.CheckModRegistered(mod);
+			if (!RegistryLoader.CheckModRegistered(mod, "RegisterAssets", false))
+			{
+				throw new NullReferenceException($"Mod {mod.Name} must be registered before calling RegisterAssets");
+			}
 
 			if (Loot.ModContentManager == null)
 			{

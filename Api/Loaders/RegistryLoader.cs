@@ -14,52 +14,55 @@ namespace Loot.Api.Loaders
 	/// </summary>
 	public static class RegistryLoader
 	{
-		internal static IDictionary<string, Assembly> Mods;
+		internal static IDictionary<string, Mod> Mods;
 		public static int ModCount => Mods.Count;
 
 		internal static void Initialize()
 		{
-			Mods = new Dictionary<string, Assembly>();
+			Mods = new Dictionary<string, Mod>();
 		}
 
 		internal static void Load()
 		{
-			Mods.Add(Loot.Instance.Name, Loot.Instance.Code);
+			Mods.Add(Loot.Instance.Name, Loot.Instance);
 		}
 
 		internal static void Unload()
 		{
 			Mods?.Clear();
+			Mods = null;
 		}
 
-		internal static void CheckModLoading(Mod mod, string source)
+		internal static void CheckModLoading(Mod mod, string source, bool invert = false)
 		{
 			if (mod == null)
 			{
 				throw new NullReferenceException($"Mod is null in {source}");
 			}
 
-			if (mod.GetType().GetField("loading", BindingFlags.Instance | BindingFlags.NonPublic)?.GetValue(mod) is bool b && !b)
+			if (mod.GetType().GetField("loading", BindingFlags.Instance | BindingFlags.NonPublic)?.GetValue(mod) is bool b)
 			{
-				throw new Exception($"{source} can only be called from Mod.Load or Mod.Autoload");
+				if (!invert && !b)
+				{
+					throw new Exception($"{source} can only be called from Mod.Load or Mod.Autoload");
+				}
+
+				if (invert && b)
+				{
+					throw new Exception($"{source} can only be called if mod {mod.Name} is already loaded");
+				}
 			}
 		}
 
-		internal static void CheckModRegistered(Mod mod)
+		internal static bool CheckModRegistered(Mod mod, string source, bool @throw = true)
 		{
-			if (!Mods.ContainsKey(mod.Name))
+			bool modIsPresent = Mods.ContainsKey(mod.Name);
+			if (modIsPresent && @throw)
 			{
-				throw new Exception($"Mod {mod.Name} is not registered, please register before adding");
+				throw new Exception($"Mod {mod.Name} is already registered in {source}");
 			}
-		}
 
-		/// <summary>
-		/// This method simply calls <see cref="RegisterMod"/> and then <see cref="AddContent"/>
-		/// </summary>
-		public static void AddMod(Mod mod)
-		{
-			RegisterMod(mod);
-			AddContent(mod);
+			return modIsPresent;
 		}
 
 		/// <summary>
@@ -68,15 +71,18 @@ namespace Loot.Api.Loaders
 		public static void RegisterMod(Mod mod)
 		{
 			CheckModLoading(mod, "RegisterMod");
-			if (Mods.ContainsKey(mod.Name))
-			{
-				throw new Exception($"Mod {mod.Name} is already registered");
-			}
+			CheckModRegistered(mod, "RegisterMod");
 
-			Assembly code = mod.Code;
-
-			Mods.Add(new KeyValuePair<string, Assembly>(mod.Name, code));
+			Mods.Add(new KeyValuePair<string, Mod>(mod.Name, mod));
 			ContentLoader.RegisterMod(mod);
+		}
+
+		internal static void ProcessMods()
+		{
+			foreach (var kvp in Mods)
+			{
+				AddContent(kvp.Value);
+			}
 		}
 
 		/// <summary>
@@ -84,13 +90,13 @@ namespace Loot.Api.Loaders
 		/// This will add all the <see cref="Modifier"/>, <see cref="ModifierRarity"/>, <see cref="ModifierPool"/> and <see cref="ModifierEffect"/> classes
 		/// </summary>
 		/// <param name="mod"></param>
-		public static void AddContent(Mod mod)
+		internal static void AddContent(Mod mod)
 		{
-			CheckModLoading(mod, "SetupContent");
-			CheckModRegistered(mod);
+			CheckModLoading(mod, "SetupContent", invert: true);
 
 			var ordered = Mods.FirstOrDefault(x => x.Key.Equals(mod.Name))
 				.Value
+				.Code
 				.GetTypes()
 				.OrderBy(x => x.FullName, StringComparer.InvariantCulture)
 				.Where(t => t.IsClass && !t.IsAbstract && t.GetCustomAttribute<DoNotLoadAttribute>() == null)

@@ -29,7 +29,7 @@ namespace Loot.Hacks
 
 		public sealed override void Load(TagCompound tag)
 		{
-			mod.GetModWorld<LootModWorld>().Load(tag);
+			ModContent.GetInstance<LootModWorld>().Load(tag);
 		}
 	}
 }

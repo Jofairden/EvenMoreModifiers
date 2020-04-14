@@ -12,9 +12,9 @@ namespace Loot.Cubes
 		{
 			if (type == NPCID.Wizard || type == NPCID.TravellingMerchant)
 			{
-				shop.item[nextSlot++].SetDefaults(Loot.Instance.ItemType<PoorCube>());
-				shop.item[nextSlot++].SetDefaults(Loot.Instance.ItemType<CubeOfSealing>());
-				shop.item[nextSlot++].SetDefaults(Loot.Instance.ItemType<BlackCube>());
+				shop.item[nextSlot++].SetDefaults(ModContent.ItemType<PoorCube>());
+				shop.item[nextSlot++].SetDefaults(ModContent.ItemType<CubeOfSealing>());
+				shop.item[nextSlot++].SetDefaults(ModContent.ItemType<BlackCube>());
 			}
 		}
 	}

@@ -24,10 +24,8 @@ namespace Loot.Api.Delegators
 			return clone;
 		}
 
-		public ModifierDelegatorProjectile GetInfo(Projectile projectile, Mod givenMod = null)
-			=> givenMod == null
-				? projectile.GetGlobalProjectile<ModifierDelegatorProjectile>()
-				: projectile.GetGlobalProjectile<ModifierDelegatorProjectile>(givenMod);
+		public ModifierDelegatorProjectile GetInfo(Projectile projectile)
+			=> projectile.GetGlobalProjectile<ModifierDelegatorProjectile>();
 
 		public bool NeedsClear;
 		public bool FirstTick;

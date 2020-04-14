@@ -15,7 +15,7 @@ namespace Loot.Api.Content
 	/// </summary>
 	public abstract class LoadableContentBase<T> where T : ILoadableContent, ICloneable
 	{
-		internal Dictionary<string, List<KeyValuePair<string, T>>> Map;
+		internal Dictionary<string, List<(string name, T content)>> Map;
 		internal Dictionary<uint, T> Content;
 
 		internal bool SkipModChecks;
@@ -31,7 +31,7 @@ namespace Loot.Api.Content
 
 		internal void _Initialize()
 		{
-			Map = new Dictionary<string, List<KeyValuePair<string, T>>>();
+			Map = new Dictionary<string, List<(string, T)>>();
 			Content = new Dictionary<uint, T>();
 
 			Initialize();
@@ -65,18 +65,18 @@ namespace Loot.Api.Content
 
 		internal void AddMod(Mod mod)
 		{
-			Map.Add(mod.Name, new List<KeyValuePair<string, T>>());
+			Map.Add(mod.Name, new List<(string, T)>());
 		}
 
 		internal virtual bool CheckContentPiece(T contentPiece) => true;
 
-		public void AddContent(Type type, Mod mod)
+		internal void AddContent(Type type, Mod mod)
 		{
-			T contentPiece = (T)Activator.CreateInstance(type);
+			T contentPiece = (T) Activator.CreateInstance(type);
 			AddContent(contentPiece, mod);
 		}
 
-		public void AddContent(T contentPiece, Mod mod)
+		internal void AddContent(T contentPiece, Mod mod)
 		{
 			if (!typeof(ILoadableContentSetter).IsAssignableFrom(typeof(T)))
 			{
@@ -87,7 +87,6 @@ namespace Loot.Api.Content
 			if (!SkipModChecks)
 			{
 				RegistryLoader.CheckModLoading(mod, s);
-				RegistryLoader.CheckModRegistered(mod);
 			}
 
 			if (!Map.TryGetValue(mod.Name, out var lrm))
@@ -100,40 +99,40 @@ namespace Loot.Api.Content
 				throw new Exception($"A problem occurred trying to add {s}");
 			}
 
-			if (lrm.Exists(x => x.Key.Equals(contentPiece.Name)))
+			if (lrm.Exists(x => x.name.Equals(contentPiece.Name)))
 			{
 				throw new Exception($"You have already added {s}");
 			}
 
-			((ILoadableContentSetter)contentPiece).Mod = mod;
-			((ILoadableContentSetter)contentPiece).Type = GetNextId();
+			((ILoadableContentSetter) contentPiece).Mod = mod;
+			((ILoadableContentSetter) contentPiece).Type = GetNextId();
 			Content[contentPiece.Type] = contentPiece;
-			Map[mod.Name].Add(new KeyValuePair<string, T>(contentPiece.Name, contentPiece));
+			Map[mod.Name].Add((contentPiece.Name, contentPiece));
 		}
 
 		public T GetContent(Type type)
 		{
 			T contentPiece = Content.Values.FirstOrDefault(x => x.GetType().FullName == type.FullName);
-			return (T)contentPiece?.Clone();
+			return (T) contentPiece?.Clone();
 		}
 
 		public T GetContent(string modName, string contentKey)
 		{
 			T contentPiece = _GetContent(modName, contentKey);
-			return (T)contentPiece?.Clone();
+			return (T) contentPiece?.Clone();
 		}
 
 		private T _GetContent(string modName, string key)
 		{
-			return Map[modName].FirstOrDefault(x => x.Key.Equals(key)).Value;
+			return Map[modName].FirstOrDefault(x => x.name.Equals(key)).content;
 		}
 
 		public T GetContent(uint type)
 		{
-			return type < IdCount ? (T)Content[type].Clone() : default;
+			return type < IdCount ? (T) Content[type].Clone() : default;
 		}
 
 		public ReadOnlyCollection<T> GetContent()
-			=> Content.Select(e => (T)e.Value?.Clone()).ToList().AsReadOnly();
+			=> Content.Select(e => (T) e.Value?.Clone()).ToList().AsReadOnly();
 	}
 }

@@ -31,8 +31,8 @@ namespace Loot.Api.Ext
 		{
 			if (ContentLoader.ModifierRarity.Map.TryGetValue(mod.Name, out var v))
 			{
-				var fod = v.FirstOrDefault(x => x.Value.Name.Equals(name));
-				return (ModifierRarity)fod.Value.Clone();
+				var fod = v.FirstOrDefault(x => x.content.Name.Equals(name));
+				return (ModifierRarity)fod.content.Clone();
 			}
 
 			return null;
@@ -49,8 +49,8 @@ namespace Loot.Api.Ext
 		{
 			if (ContentLoader.Modifier.Map.TryGetValue(mod.Name, out var v))
 			{
-				var fod = v.FirstOrDefault(x => x.Value.Name.Equals(name));
-				return (Modifier)fod.Value.Clone();
+				var fod = v.FirstOrDefault(x => x.content.Name.Equals(name));
+				return (Modifier)fod.content.Clone();
 			}
 
 			return null;
@@ -67,8 +67,8 @@ namespace Loot.Api.Ext
 		{
 			if (ContentLoader.ModifierPool.Map.TryGetValue(mod.Name, out var v))
 			{
-				var fod = v.FirstOrDefault(x => x.Value.Name.Equals(name));
-				return (ModifierPool)fod.Value.Clone();
+				var fod = v.FirstOrDefault(x => x.content.Name.Equals(name));
+				return (ModifierPool)fod.content.Clone();
 			}
 
 			return null;
@@ -85,8 +85,8 @@ namespace Loot.Api.Ext
 		{
 			if (ContentLoader.ModifierEffect.Map.TryGetValue(mod.Name, out var v))
 			{
-				var fod = v.FirstOrDefault(x => x.Value.Name.Equals(name));
-				return (ModifierEffect)fod.Value.Clone();
+				var fod = v.FirstOrDefault(x => x.content.Name.Equals(name));
+				return (ModifierEffect)fod.content.Clone();
 			}
 
 			return null;
