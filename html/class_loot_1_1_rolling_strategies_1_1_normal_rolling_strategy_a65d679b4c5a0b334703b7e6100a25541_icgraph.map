@@ -1,0 +1,4 @@
+<map id="Loot.RollingStrategies.NormalRollingStrategy.Roll" name="Loot.RollingStrategies.NormalRollingStrategy.Roll">
+<area shape="rect" id="node2" href="$class_loot_1_1_api_1_1_mechanism_1_1_modifier_mechanism.html#a04d74afa540161a631160051fca29159" title="Loot.Api.Mechanism.Modifier\lMechanism.RollModifiers" alt="" coords="264,5,469,47"/>
+<area shape="rect" id="node3" href="$class_loot_1_1_loot_item_modifier.html#ae2ee474189d324c264c9e02ace009e21" title="Loot.LootItemModifier.Reroll\lModifiers" alt="" coords="517,5,716,47"/>
+</map>

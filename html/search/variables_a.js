@@ -1,8 +1,16 @@
 var searchData=
 [
-  ['name',['Name',['../class_loot_1_1_api_1_1_core_1_1_modifier.html#a7f7e62dee8feacd051cf9a8afd69e470',1,'Loot.Api.Core.Modifier.Name()'],['../class_loot_1_1_api_1_1_core_1_1_modifier_effect.html#a2e784ba6c85c174f6abb9b69f9b82c7b',1,'Loot.Api.Core.ModifierEffect.Name()'],['../class_loot_1_1_api_1_1_core_1_1_modifier_pool.html#a54825bdaf3ddec7784828ff746fe369e',1,'Loot.Api.Core.ModifierPool.Name()'],['../class_loot_1_1_api_1_1_core_1_1_modifier_rarity.html#a60ee02ecd019e24c5e94d3eeaee15539',1,'Loot.Api.Core.ModifierRarity.Name()'],['../class_loot_tests_1_1_empty_mod_load_shell.html#a61cbd109567bbb13f684f0b2dfd56433',1,'LootTests.EmptyModLoadShell.Name()']]],
-  ['needsclear',['NeedsClear',['../class_loot_1_1_api_1_1_delegators_1_1_modifier_delegator_projectile.html#acc8ba01c1aa5bb14e5401ff23b01c9a2',1,'Loot::Api::Delegators::ModifierDelegatorProjectile']]],
-  ['needsupdate',['NeedsUpdate',['../class_loot_1_1_api_1_1_graphics_1_1_graphics_global_item.html#aef80af3f6816bbe4b8ca1476482fa028',1,'Loot::Api::Graphics::GraphicsGlobalItem']]],
-  ['normal',['Normal',['../class_loot_1_1_api_1_1_ext_1_1_rolling_utils_1_1_strategies.html#a58399e5b6537b46487cf2cc07cdd08fd',1,'Loot::Api::Ext::RollingUtils::Strategies']]],
-  ['npc',['NPC',['../class_loot_1_1_api_1_1_core_1_1_modifier_context.html#aa39c77bc911264117f79ad4099f6b890',1,'Loot::Api::Core::ModifierContext']]]
+  ['manashield',['ManaShield',['../class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_defensive_1_1_mana_shield_effect.html#a610e0ddc09e723990f9b6df76445faf5',1,'Loot::Modifiers::EquipModifiers::Defensive::ManaShieldEffect']]],
+  ['max_5fframe',['MAX_FRAME',['../class_loot_1_1_u_i_1_1_tabs_1_1_soulforging_1_1_gui_soulgauge_1_1_gauge_drawing.html#ae0ad6d5c63d1a3de77764388a66efb6d',1,'Loot::UI::Tabs::Soulforging::GuiSoulgauge::GaugeDrawing']]],
+  ['max_5fsurvival_5fchance',['MAX_SURVIVAL_CHANCE',['../class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_defensive_1_1_survival_effect.html#a4abe39a78d554976536a956b6ebe04cb',1,'Loot::Modifiers::EquipModifiers::Defensive::SurvivalEffect']]],
+  ['max_5ftick',['MAX_TICK',['../class_loot_1_1_u_i_1_1_tabs_1_1_soulforging_1_1_gui_soulgauge_1_1_gauge_drawing.html#a588f470925d82a297a1817130fc6adf6',1,'Loot::UI::Tabs::Soulforging::GuiSoulgauge::GaugeDrawing']]],
+  ['method',['Method',['../class_loot_1_1_api_1_1_core_1_1_modifier_context.html#a9f62f65b07471fd268ac3e0907619b1d',1,'Loot::Api::Core::ModifierContext']]],
+  ['mod',['mod',['../class_loot_1_1_api_1_1_core_1_1_modifier_effect.html#af12049b0679abb2bbe8329c1383b3542',1,'Loot::Api::Core::ModifierEffect']]],
+  ['modcount',['ModCount',['../class_loot_1_1_api_1_1_loaders_1_1_registry_loader.html#abb7d0ffafb994e4330528d41feb468d1',1,'Loot::Api::Loaders::RegistryLoader']]],
+  ['modifier',['Modifier',['../class_loot_1_1_api_1_1_loaders_1_1_content_loader.html#a347a72e4371307db6a2f8b8f43288fbd',1,'Loot::Api::Loaders::ContentLoader']]],
+  ['modifiereffect',['ModifierEffect',['../class_loot_1_1_api_1_1_loaders_1_1_content_loader.html#a9913f3cfb687daafcdaa193be067dc15',1,'Loot::Api::Loaders::ContentLoader']]],
+  ['modifierpool',['ModifierPool',['../class_loot_1_1_api_1_1_loaders_1_1_content_loader.html#ae0240f647e57d6676fc48b205101fef7',1,'Loot::Api::Loaders::ContentLoader']]],
+  ['modifierrarity',['ModifierRarity',['../class_loot_1_1_api_1_1_loaders_1_1_content_loader.html#a8fe225e940b7355e008727657746f676',1,'Loot::Api::Loaders::ContentLoader']]],
+  ['modifiers',['Modifiers',['../class_loot_1_1_api_1_1_core_1_1_finite_modifier_pool.html#a9c0ad5ef7aaf7751921a0e0de2e13b92',1,'Loot::Api::Core::FiniteModifierPool']]],
+  ['multiplier',['Multiplier',['../class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_offensive_1_1_crit_damage_plus_effect.html#a53c341a3eaf111fc14bb0f1c1f723573',1,'Loot.Modifiers.EquipModifiers.Offensive.CritDamagePlusEffect.Multiplier()'],['../class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_offensive_1_1_healthy_foes_effect.html#a6c73fcce1e789bd7c2d546e493269cf9',1,'Loot.Modifiers.EquipModifiers.Offensive.HealthyFoesEffect.Multiplier()']]]
 ];

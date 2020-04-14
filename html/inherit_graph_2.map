@@ -1,4 +1,4 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="node1" href="$class_global_n_p_c.html" title="GlobalNPC" alt="" coords="5,5,95,32"/>
-<area shape="rect" id="node2" href="$class_loot_1_1_cubes_1_1_cube_shop.html" title="Loot.Cubes.CubeShop" alt="" coords="143,5,307,32"/>
+<area shape="rect" id="node1" href="$class_global_projectile.html" title="GlobalProjectile" alt="" coords="5,13,125,39"/>
+<area shape="rect" id="node2" href="$class_loot_1_1_api_1_1_delegators_1_1_modifier_delegator_projectile.html" title="Provides delegation for projectiles " alt="" coords="173,5,376,47"/>
 </map>

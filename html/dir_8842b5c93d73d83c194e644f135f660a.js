@@ -11,6 +11,7 @@ var dir_8842b5c93d73d83c194e644f135f660a =
       [ "ModifierEffect", "class_loot_1_1_api_1_1_core_1_1_modifier_effect.html", "class_loot_1_1_api_1_1_core_1_1_modifier_effect" ]
     ] ],
     [ "ModifierPool.cs", "_modifier_pool_8cs.html", [
+      [ "FiniteModifierPool", "class_loot_1_1_api_1_1_core_1_1_finite_modifier_pool.html", "class_loot_1_1_api_1_1_core_1_1_finite_modifier_pool" ],
       [ "ModifierPool", "class_loot_1_1_api_1_1_core_1_1_modifier_pool.html", "class_loot_1_1_api_1_1_core_1_1_modifier_pool" ]
     ] ],
     [ "ModifierProperties.cs", "_modifier_properties_8cs.html", [

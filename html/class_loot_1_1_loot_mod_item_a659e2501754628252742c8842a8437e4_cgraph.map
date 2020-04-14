@@ -1,6 +1,5 @@
 <map id="Loot.LootModItem.ModifyTooltips" name="Loot.LootModItem.ModifyTooltips">
-<area shape="rect" id="node2" href="$class_loot_1_1_loot_mod_item.html#aeff8f5daada870d63e036956b4982de2" title="Loot.LootModItem.GetInfo" alt="" coords="296,5,484,32"/>
-<area shape="rect" id="node3" href="$class_loot_1_1_hacks_1_1_cheated_item_hack_global_item.html#a68460ad37f94e214f455f2b8c46da347" title="Loot.Hacks.CheatedItemHack\lGlobalItem.GetInfo" alt="" coords="284,57,496,98"/>
-<area shape="rect" id="node4" href="$class_loot_1_1_loot_mod_item.html#a0933b898369ef1a285c3acaaf1f8e53f" title="Loot.LootModItem.GetPrefix\lNormString" alt="" coords="290,122,490,163"/>
-<area shape="rect" id="node5" href="$class_loot_1_1_hacks_1_1_cheated_item_hack_global_item.html#a9f13de3739a0ea00394f7012a22552ae" title="Loot.Hacks.CheatedItemHack\lGlobalItem.ShouldBeIgnored" alt="" coords="284,187,496,229"/>
+<area shape="rect" id="node2" href="$class_loot_1_1_hacks_1_1_cheated_item_hack_global_item.html#a68460ad37f94e214f455f2b8c46da347" title="Loot.Hacks.CheatedItemHack\lGlobalItem.GetInfo" alt="" coords="284,5,496,47"/>
+<area shape="rect" id="node3" href="$class_loot_1_1_loot_mod_item.html#a0933b898369ef1a285c3acaaf1f8e53f" title="Loot.LootModItem.GetPrefix\lNormString" alt="" coords="290,71,490,112"/>
+<area shape="rect" id="node4" href="$class_loot_1_1_hacks_1_1_cheated_item_hack_global_item.html#a9f13de3739a0ea00394f7012a22552ae" title="Loot.Hacks.CheatedItemHack\lGlobalItem.ShouldBeIgnored" alt="" coords="284,136,496,177"/>
 </map>

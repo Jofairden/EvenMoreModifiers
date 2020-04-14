@@ -1,3 +1,9 @@
 <map id="Loot.Content.ModifierPoolContent" name="Loot.Content.ModifierPoolContent">
-<area shape="rect" id="node2" href="$class_loot_1_1_api_1_1_content_1_1_loadable_content_base.html" title="LoadableContentBase\l\&lt; ModifierPool \&gt;" alt="" coords="17,5,180,47"/>
+<area shape="rect" id="node2" href="$class_loot_1_1_api_1_1_content_1_1_loadable_content_base.html" title="LoadableContentBase\l\&lt; ModifierPool \&gt;" alt="" coords="533,66,695,107"/>
+<area shape="rect" id="node3" href="$class_loot_1_1_api_1_1_core_1_1_modifier_pool.html" title="Defines a modifier pool. A modifier pool holds a certain amount of effects in an array It allows to r..." alt="" coords="519,132,709,159"/>
+<area shape="rect" id="node4" href="$interface_loot_1_1_api_1_1_content_1_1_i_loadable_content.html" title="Defines a piece of loadable content The interface is used in classes where the deriving class already..." alt="" coords="167,5,301,32"/>
+<area shape="rect" id="node5" title="Used to restrict setting properties of ILoadableContent to internal only This is done by marking the ..." alt="" coords="147,56,321,83"/>
+<area shape="rect" id="node6" href="$class_i_cloneable.html" title="ICloneable" alt="" coords="190,107,278,133"/>
+<area shape="rect" id="node9" href="$class_loot_1_1_api_1_1_attributes_1_1_populate_pool_from_attribute.html" title="Will populate a ModifierPool based on a namespace All Modifiers in that namespace will become part of..." alt="" coords="133,259,335,301"/>
+<area shape="rect" id="node10" href="$class_attribute.html" title="Attribute" alt="" coords="5,267,84,293"/>
 </map>

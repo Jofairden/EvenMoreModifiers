@@ -35,13 +35,13 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "_accessory_modifier_8cs.html",
-"_loot_8cs.html",
-"class_loot_1_1_api_1_1_core_1_1_modifier.html#a03f45e565fe40af3291835ab4a125966",
-"class_loot_1_1_api_1_1_delegators_1_1_modifier_delegator_player.html#a1ce9358e5cbac1886a17d685da7ece2c",
-"class_loot_1_1_api_1_1_graphics_1_1_graphics_entity.html#a1015a3c783710c8fedc05b2b0019b130",
-"class_loot_1_1_loot_mod_item.html#a77ebddb2c3dd25500e5152c7c3630401",
-"class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_knockback_plus.html#a0b7e4278fa4252ef4c5674dd51cdb1a1",
-"interface_loot_1_1_api_1_1_content_1_1_i_loadable_content.html"
+"_loot_item_modifier_8cs.html",
+"class_loot_1_1_api_1_1_content_1_1_loadable_content_base.html#a6579887c0322ab8906c9554f8d288708",
+"class_loot_1_1_api_1_1_delegators_1_1_modifier_delegator_player.html#a1540eb6f2ebccb9c2ddc016fb42a84c6",
+"class_loot_1_1_api_1_1_graphics_1_1_glowmask_1_1_glowmask_graphics_properties_1_1_glowmask_graphics_properties_builder.html#a22f90dff0d3dc9544d61e710a863642f",
+"class_loot_1_1_loot_mod_item.html#a054d25adc3b432a8589f90fbc886d111",
+"class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_damage_with_mana_cost.html#a5110d94334c83fe8ba26b42b15cf14e8",
+"hierarchy.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

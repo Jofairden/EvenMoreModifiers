@@ -9,7 +9,5 @@ var searchData=
   ['immunityeffect',['ImmunityEffect',['../class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_defensive_1_1_immunity_effect.html',1,'Loot::Modifiers::EquipModifiers::Defensive']]],
   ['immunitytimeplus',['ImmunityTimePlus',['../class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_defensive_1_1_immunity_time_plus.html',1,'Loot::Modifiers::EquipModifiers::Defensive']]],
   ['ipropertybuilder',['IPropertyBuilder',['../interface_loot_1_1_api_1_1_builder_1_1_i_property_builder.html',1,'Loot::Api::Builder']]],
-  ['irollingstrategy',['IRollingStrategy',['../interface_loot_1_1_api_1_1_strategy_1_1_i_rolling_strategy.html',1,'Loot::Api::Strategy']]],
-  ['irollingstrategy_3c_20rollingstrategycontext_20_3e',['IRollingStrategy&lt; RollingStrategyContext &gt;',['../interface_loot_1_1_api_1_1_strategy_1_1_i_rolling_strategy.html',1,'Loot::Api::Strategy']]],
   ['itemutils',['ItemUtils',['../class_loot_1_1_api_1_1_ext_1_1_item_utils.html',1,'Loot::Api::Ext']]]
 ];

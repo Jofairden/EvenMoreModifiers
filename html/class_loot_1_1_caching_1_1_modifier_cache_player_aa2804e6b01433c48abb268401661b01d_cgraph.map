@@ -1,5 +1,5 @@
 <map id="Loot.Caching.ModifierCachePlayer.CacheItemModifierEffects" name="Loot.Caching.ModifierCachePlayer.CacheItemModifierEffects">
-<area shape="rect" id="node2" href="$class_loot_1_1_loot_mod_item.html#add1489001e88a446099fefcd8193852a" title="Loot.LootModItem.GetActivePool" alt="" coords="280,5,511,32"/>
+<area shape="rect" id="node2" href="$class_loot_1_1_loot_mod_item.html#aac5f831aad1d691114d6c020c247406f" title="Loot.LootModItem.GetActivePool" alt="" coords="280,5,511,32"/>
 <area shape="rect" id="node3" href="$class_loot_1_1_api_1_1_delegators_1_1_modifier_delegator_player.html#a72c8852644cbf7ad5548b23953bc2c48" title="Loot.Api.Delegators.Modifier\lDelegatorPlayer.GetEffect" alt="" coords="294,57,497,98"/>
 <area shape="rect" id="node4" href="$class_loot_1_1_api_1_1_delegators_1_1_modifier_delegator_player.html#ac728e8a48a5778c028b443d01eb9151d" title="Loot.Api.Delegators.Modifier\lDelegatorPlayer.GetPlayer" alt="" coords="294,122,497,163"/>
 </map>

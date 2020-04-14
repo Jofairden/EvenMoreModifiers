@@ -9,6 +9,7 @@ var dir_544b296d2f08bf51de5fe6633e756eae =
     [ "Ext", "dir_27d9ed40d7f2ffdfd844c02ea881b877.html", "dir_27d9ed40d7f2ffdfd844c02ea881b877" ],
     [ "Graphics", "dir_5d072a607addd64f2c359d7a1fc1d1b0.html", "dir_5d072a607addd64f2c359d7a1fc1d1b0" ],
     [ "Loaders", "dir_d4e59c2af91e4cd248d107c3c960f2d1.html", "dir_d4e59c2af91e4cd248d107c3c960f2d1" ],
+    [ "Mechanism", "dir_d585826474a7d2cf678fc685d61779d3.html", "dir_d585826474a7d2cf678fc685d61779d3" ],
     [ "ModContent", "dir_a3c796a0271d96326ef8dedd2a017e35.html", "dir_a3c796a0271d96326ef8dedd2a017e35" ],
     [ "Strategy", "dir_2fdc81532c8d147a9069517a0248649e.html", "dir_2fdc81532c8d147a9069517a0248649e" ]
 ];

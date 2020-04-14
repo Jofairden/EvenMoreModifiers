@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['forcemodifierpool',['ForceModifierPool',['../class_loot_1_1_api_1_1_strategy_1_1_rolling_strategy_properties.html#a0a59d2791ff2a73511b38954c88b216e',1,'Loot::Api::Strategy::RollingStrategyProperties']]],
-  ['forcemodifierrarity',['ForceModifierRarity',['../class_loot_1_1_api_1_1_strategy_1_1_rolling_strategy_properties.html#a21cf1e3644f7197549af1369bf884323',1,'Loot::Api::Strategy::RollingStrategyProperties']]]
+  ['glowmaskentities',['GlowmaskEntities',['../class_loot_1_1_api_1_1_graphics_1_1_graphics_global_item.html#a8402a0a2c6052961a9c88c9aaf628020',1,'Loot::Api::Graphics::GraphicsGlobalItem']]],
+  ['glowmasktexture',['GlowmaskTexture',['../class_loot_1_1_api_1_1_graphics_1_1_glowmask_1_1_glowmask_entity.html#abcb31bfd841170a4677e40760b37e863',1,'Loot::Api::Graphics::Glowmask::GlowmaskEntity']]]
 ];

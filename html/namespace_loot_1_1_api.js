@@ -9,6 +9,7 @@ var namespace_loot_1_1_api =
     [ "Ext", "namespace_loot_1_1_api_1_1_ext.html", "namespace_loot_1_1_api_1_1_ext" ],
     [ "Graphics", "namespace_loot_1_1_api_1_1_graphics.html", "namespace_loot_1_1_api_1_1_graphics" ],
     [ "Loaders", "namespace_loot_1_1_api_1_1_loaders.html", "namespace_loot_1_1_api_1_1_loaders" ],
+    [ "Mechanism", "namespace_loot_1_1_api_1_1_mechanism.html", "namespace_loot_1_1_api_1_1_mechanism" ],
     [ "ModContent", "namespace_loot_1_1_api_1_1_mod_content.html", "namespace_loot_1_1_api_1_1_mod_content" ],
     [ "Strategy", "namespace_loot_1_1_api_1_1_strategy.html", "namespace_loot_1_1_api_1_1_strategy" ]
 ];

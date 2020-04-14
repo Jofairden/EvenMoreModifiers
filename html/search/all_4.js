@@ -19,7 +19,6 @@ var searchData=
   ['delegationtarget_2ecs',['DelegationTarget.cs',['../_delegation_target_8cs.html',1,'']]],
   ['delegationtypes',['DelegationTypes',['../class_loot_1_1_api_1_1_attributes_1_1_auto_delegation.html#acc512fc4223169ba874452cea5f7e26f',1,'Loot::Api::Attributes::AutoDelegation']]],
   ['delegatorplayer',['DelegatorPlayer',['../class_loot_1_1_api_1_1_core_1_1_modifier_effect.html#af294927a079288b1df34cd3becbcd5bf',1,'Loot::Api::Core::ModifierEffect']]],
-  ['description',['Description',['../class_loot_1_1_api_1_1_core_1_1_modifier_pool.html#a49caac7e84963be03663773d29b77622',1,'Loot::Api::Core::ModifierPool']]],
   ['destinationrectangle',['DestinationRectangle',['../class_loot_1_1_api_1_1_graphics_1_1_graphics_entity.html#ac8b0cb2c2acfba391c7e099fc8c87909',1,'Loot::Api::Graphics::GraphicsEntity']]],
   ['detach',['Detach',['../class_loot_1_1_api_1_1_attributes_1_1_auto_delegation.html#ab29b06a0f27d6ea6b6ec21fcd4c647a3',1,'Loot::Api::Attributes::AutoDelegation']]],
   ['detachdelegations',['DetachDelegations',['../class_loot_1_1_api_1_1_core_1_1_modifier_effect.html#ac59918aa5cffd5949d5400fb13118208',1,'Loot::Api::Core::ModifierEffect']]],

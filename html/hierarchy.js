@@ -9,7 +9,6 @@ var hierarchy =
     ] ],
     [ "Loot.Api.Loaders.ContentLoader", "class_loot_1_1_api_1_1_loaders_1_1_content_loader.html", null ],
     [ "Loot.UI.Tabs.Soulforging.GuiSoulgauge.GaugeDrawing", "class_loot_1_1_u_i_1_1_tabs_1_1_soulforging_1_1_gui_soulgauge_1_1_gauge_drawing.html", null ],
-    [ "GenPass", "class_gen_pass.html", null ],
     [ "GlobalItem", "class_global_item.html", [
       [ "Loot.Api.Core.Modifier", "class_loot_1_1_api_1_1_core_1_1_modifier.html", [
         [ "Loot.Api.Core.NullModifier", "class_loot_1_1_api_1_1_core_1_1_null_modifier.html", null ],
@@ -106,7 +105,9 @@ var hierarchy =
         [ "Loot.Modifiers.WeaponModifiers.CursedEffect", "class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_cursed_effect.html", null ]
       ] ],
       [ "Loot.Api.Core.ModifierPool", "class_loot_1_1_api_1_1_core_1_1_modifier_pool.html", [
-        [ "Loot.Api.Core.NullModifierPool", "class_loot_1_1_api_1_1_core_1_1_null_modifier_pool.html", null ],
+        [ "Loot.Api.Core.FiniteModifierPool", "class_loot_1_1_api_1_1_core_1_1_finite_modifier_pool.html", [
+          [ "Loot.Api.Core.NullModifierPool", "class_loot_1_1_api_1_1_core_1_1_null_modifier_pool.html", null ]
+        ] ],
         [ "Loot.Pools.AllModifiersPool", "class_loot_1_1_pools_1_1_all_modifiers_pool.html", null ]
       ] ],
       [ "Loot.Api.Core.ModifierRarity", "class_loot_1_1_api_1_1_core_1_1_modifier_rarity.html", [
@@ -133,10 +134,6 @@ var hierarchy =
     [ "Loot.Api.Builder.IPropertyBuilder< T >", "interface_loot_1_1_api_1_1_builder_1_1_i_property_builder.html", [
       [ "Loot.Api.Builder.PropertyBuilder< T >", "class_loot_1_1_api_1_1_builder_1_1_property_builder.html", null ]
     ] ],
-    [ "Loot.Api.Strategy.IRollingStrategy< in in T >", "interface_loot_1_1_api_1_1_strategy_1_1_i_rolling_strategy.html", null ],
-    [ "Loot.Api.Strategy.IRollingStrategy< RollingStrategyContext >", "interface_loot_1_1_api_1_1_strategy_1_1_i_rolling_strategy.html", [
-      [ "Loot.RollingStrategies.NormalRollingStrategy", "class_loot_1_1_rolling_strategies_1_1_normal_rolling_strategy.html", null ]
-    ] ],
     [ "Loot.Api.Ext.ItemUtils", "class_loot_1_1_api_1_1_ext_1_1_item_utils.html", null ],
     [ "Loot.Api.Content.LoadableContentBase< T >", "class_loot_1_1_api_1_1_content_1_1_loadable_content_base.html", null ],
     [ "Loot.Api.Content.LoadableContentBase< Modifier >", "class_loot_1_1_api_1_1_content_1_1_loadable_content_base.html", [
@@ -151,6 +148,7 @@ var hierarchy =
     [ "Loot.Api.Content.LoadableContentBase< ModifierRarity >", "class_loot_1_1_api_1_1_content_1_1_loadable_content_base.html", [
       [ "Loot.Content.ModifierRarityContent", "class_loot_1_1_content_1_1_modifier_rarity_content.html", null ]
     ] ],
+    [ "Loot.LootItemModifier", "class_loot_1_1_loot_item_modifier.html", null ],
     [ "Mod", "class_mod.html", [
       [ "Loot.Loot", "class_loot_1_1_loot.html", null ],
       [ "LootTests.EmptyModLoadShell", "class_loot_tests_1_1_empty_mod_load_shell.html", null ],
@@ -161,9 +159,11 @@ var hierarchy =
       [ "LootTests.TestModifiers.TestApplyMod", "class_loot_tests_1_1_test_modifiers_1_1_test_apply_mod.html", null ]
     ] ],
     [ "Loot.Api.Core.ModifierContext", "class_loot_1_1_api_1_1_core_1_1_modifier_context.html", null ],
+    [ "Loot.Api.Mechanism.ModifierMechanism", "class_loot_1_1_api_1_1_mechanism_1_1_modifier_mechanism.html", null ],
     [ "ModifierPool", "class_modifier_pool.html", [
       [ "LootTests.TestPools.TestPool", "class_loot_tests_1_1_test_pools_1_1_test_pool.html", null ]
     ] ],
+    [ "Loot.Api.Mechanism.ModifierPoolMechanism", "class_loot_1_1_api_1_1_mechanism_1_1_modifier_pool_mechanism.html", null ],
     [ "Loot.Api.Core.ModifierProperties", "class_loot_1_1_api_1_1_core_1_1_modifier_properties.html", null ],
     [ "LootTests.ModifierPropertiesTests", "class_loot_tests_1_1_modifier_properties_tests.html", null ],
     [ "ModifierRarity", "class_modifier_rarity.html", [
@@ -213,6 +213,10 @@ var hierarchy =
       [ "Loot.Api.Graphics.Shader.ShaderGraphicsProperties.ShaderGraphicsPropertiesBuilder", "class_loot_1_1_api_1_1_graphics_1_1_shader_1_1_shader_graphics_properties_1_1_shader_graphics_properties_builder.html", null ]
     ] ],
     [ "Loot.Api.Loaders.RegistryLoader", "class_loot_1_1_api_1_1_loaders_1_1_registry_loader.html", null ],
+    [ "Loot.Api.Strategy.RollingStrategy< T >", "class_loot_1_1_api_1_1_strategy_1_1_rolling_strategy.html", null ],
+    [ "Loot.Api.Strategy.RollingStrategy< RollingStrategyContext >", "class_loot_1_1_api_1_1_strategy_1_1_rolling_strategy.html", [
+      [ "Loot.RollingStrategies.NormalRollingStrategy", "class_loot_1_1_rolling_strategies_1_1_normal_rolling_strategy.html", null ]
+    ] ],
     [ "Loot.Api.Strategy.RollingStrategyContext", "class_loot_1_1_api_1_1_strategy_1_1_rolling_strategy_context.html", null ],
     [ "Loot.Api.Strategy.RollingStrategyProperties", "class_loot_1_1_api_1_1_strategy_1_1_rolling_strategy_properties.html", null ],
     [ "Loot.Api.Ext.RollingUtils", "class_loot_1_1_api_1_1_ext_1_1_rolling_utils.html", null ],

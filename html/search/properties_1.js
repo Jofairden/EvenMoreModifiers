@@ -1,7 +1,8 @@
 var searchData=
 [
-  ['basepower',['BasePower',['../class_loot_1_1_api_1_1_core_1_1_modifier_properties.html#ab68a019c929ffbbb52387df94a944740',1,'Loot.Api.Core.ModifierProperties.BasePower()'],['../interface_loot_tests_1_1_modifier_properties_tests_1_1_i_fake_properties.html#a9642ba6920d2cd36f73b0bd298181571',1,'LootTests.ModifierPropertiesTests.IFakeProperties.BasePower()'],['../class_loot_tests_1_1_modifier_properties_tests_1_1_fake_properties.html#a12173010bee876e88d0b3d6516b6ff1f',1,'LootTests.ModifierPropertiesTests.FakeProperties.BasePower()']]],
-  ['buffinflictionchance',['BuffInflictionChance',['../class_loot_1_1_modifiers_1_1_base_1_1_weapon_debuff_modifier.html#a7571137ddc6c2761784dd1981a229ffc',1,'Loot::Modifiers::Base::WeaponDebuffModifier']]],
-  ['bufftime',['BuffTime',['../class_loot_1_1_modifiers_1_1_base_1_1_weapon_debuff_modifier.html#a1928b0291f5b423150664a4895e8e0b7',1,'Loot::Modifiers::Base::WeaponDebuffModifier']]],
-  ['bufftype',['BuffType',['../class_loot_1_1_modifiers_1_1_base_1_1_weapon_debuff_modifier.html#a3586d92f47338c29501a5b44b15d13a5',1,'Loot::Modifiers::Base::WeaponDebuffModifier']]]
+  ['candowngraderarity',['CanDowngradeRarity',['../class_loot_1_1_api_1_1_strategy_1_1_rolling_strategy_properties.html#abcc5efcf51877b8ed5661d9832790c56',1,'Loot::Api::Strategy::RollingStrategyProperties']]],
+  ['canupgraderarity',['CanUpgradeRarity',['../class_loot_1_1_api_1_1_strategy_1_1_rolling_strategy_properties.html#a3da17c5be3b2e7b66c95c9ed0572909d',1,'Loot::Api::Strategy::RollingStrategyProperties']]],
+  ['code',['Code',['../interface_loot_tests_1_1_i_fake_mod.html#a7c1bcb9cb983e9e403ceacb27ce26e20',1,'LootTests.IFakeMod.Code()'],['../class_loot_tests_1_1_fake_mod.html#a0179dfae696a90aedd587ddf39033b90',1,'LootTests.FakeMod.Code()']]],
+  ['color',['Color',['../class_loot_1_1_api_1_1_core_1_1_modifier_rarity.html#a9064e08ec10d232a82d09298d7eac8f6',1,'Loot::Api::Core::ModifierRarity']]],
+  ['cubename',['CubeName',['../class_loot_1_1_api_1_1_cubes_1_1_magical_cube.html#a5110daf4b65aa2f1d50326e750388967',1,'Loot::Api::Cubes::MagicalCube']]]
 ];

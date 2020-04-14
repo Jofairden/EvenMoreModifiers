@@ -12,6 +12,7 @@ var dir_d8c020c4a396ea8a8747dde522bf0bcb =
     [ "PopulatePoolFromAttribute.cs", "_populate_pool_from_attribute_8cs.html", [
       [ "PopulatePoolFromAttribute", "class_loot_1_1_api_1_1_attributes_1_1_populate_pool_from_attribute.html", "class_loot_1_1_api_1_1_attributes_1_1_populate_pool_from_attribute" ]
     ] ],
+    [ "StaticAssetAttribute.cs", "_static_asset_attribute_8cs.html", null ],
     [ "UsesEffectAttribute.cs", "_uses_effect_attribute_8cs.html", [
       [ "UsesEffectAttribute", "class_loot_1_1_api_1_1_attributes_1_1_uses_effect_attribute.html", "class_loot_1_1_api_1_1_attributes_1_1_uses_effect_attribute" ]
     ] ]

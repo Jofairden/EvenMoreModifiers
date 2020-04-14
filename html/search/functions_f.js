@@ -10,7 +10,6 @@ var searchData=
   ['posthurt',['PostHurt',['../class_loot_1_1_api_1_1_delegators_1_1_modifier_delegator_player.html#aa6782293699ecd43cac17377a78469ee',1,'Loot::Api::Delegators::ModifierDelegatorPlayer']]],
   ['postitemcheck',['PostItemCheck',['../class_loot_1_1_api_1_1_delegators_1_1_modifier_delegator_player.html#aa910e222bc7ddc458c19caa74c18ec38',1,'Loot::Api::Delegators::ModifierDelegatorPlayer']]],
   ['postnurseheal',['PostNurseHeal',['../class_loot_1_1_api_1_1_delegators_1_1_modifier_delegator_player.html#a3817a4262ecb7f7966f42f3d6260e54e',1,'Loot::Api::Delegators::ModifierDelegatorPlayer']]],
-  ['postreforge',['PostReforge',['../class_loot_1_1_loot_mod_item.html#a74ce3202f7b181343de89709af543631',1,'Loot::LootModItem']]],
   ['postroll',['PostRoll',['../class_loot_1_1_api_1_1_core_1_1_modifier.html#aae380fed634f6c2f938d4d14264fc3bc',1,'Loot.Api.Core.Modifier.PostRoll()'],['../class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_random_debuff.html#a81db9bc6bd21aeccfd8ca5b8a0f2f054',1,'Loot.Modifiers.WeaponModifiers.RandomDebuff.PostRoll()']]],
   ['postsaveplayer',['PostSavePlayer',['../class_loot_1_1_api_1_1_core_1_1_modifier_effect.html#a2a83f8159e3f4d2960a8737439d960eb',1,'Loot::Api::Core::ModifierEffect']]],
   ['postsellitem',['PostSellItem',['../class_loot_1_1_api_1_1_core_1_1_modifier_effect.html#a5399afba1cda7d7ef666e91369931026',1,'Loot::Api::Core::ModifierEffect']]],

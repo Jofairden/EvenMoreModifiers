@@ -12,6 +12,7 @@ var namespace_loot =
     [ "Sounds", "namespace_loot_1_1_sounds.html", "namespace_loot_1_1_sounds" ],
     [ "UI", "namespace_loot_1_1_u_i.html", "namespace_loot_1_1_u_i" ],
     [ "Loot", "class_loot_1_1_loot.html", "class_loot_1_1_loot" ],
+    [ "LootItemModifier", "class_loot_1_1_loot_item_modifier.html", "class_loot_1_1_loot_item_modifier" ],
     [ "LootModItem", "class_loot_1_1_loot_mod_item.html", "class_loot_1_1_loot_mod_item" ],
     [ "LootModWorld", "class_loot_1_1_loot_mod_world.html", "class_loot_1_1_loot_mod_world" ]
 ];

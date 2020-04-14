@@ -110,7 +110,6 @@ $(document).ready(function(){initNavTree('class_loot_1_1_loot_mod_world.html',''
 
 <div class="header">
   <div class="summary">
-<a href="#nested-classes">Classes</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#properties">Properties</a> &#124;
 <a href="class_loot_1_1_loot_mod_world-members.html">List of all members</a>  </div>
@@ -142,18 +141,13 @@ $(document).ready(function(){initNavTree('class_loot_1_1_loot_mod_world.html',''
 </map>
 <center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
-Classes</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><b>WorldGenModifiersPass</b></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a51b6b461ae88204f3d721a9d5ff398d7"><td class="memItemLeft" align="right" valign="top">override void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_loot_1_1_loot_mod_world.html#a51b6b461ae88204f3d721a9d5ff398d7">Initialize</a> ()</td></tr>
 <tr class="separator:a51b6b461ae88204f3d721a9d5ff398d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a229347096fa42943d75c27d6b8814dbd"><td class="memItemLeft" align="right" valign="top">override void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_loot_1_1_loot_mod_world.html#a229347096fa42943d75c27d6b8814dbd">Load</a> (TagCompound tag)</td></tr>
 <tr class="separator:a229347096fa42943d75c27d6b8814dbd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae3119839afddab6693c1f48fb4c38fd7"><td class="memItemLeft" align="right" valign="top">override void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_loot_1_1_loot_mod_world.html#ae3119839afddab6693c1f48fb4c38fd7">ModifyWorldGenTasks</a> (List&lt; <a class="el" href="class_gen_pass.html">GenPass</a> &gt; tasks, ref float totalWeight)</td></tr>
+<tr class="memitem:ae3119839afddab6693c1f48fb4c38fd7"><td class="memItemLeft" align="right" valign="top">override void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_loot_1_1_loot_mod_world.html#ae3119839afddab6693c1f48fb4c38fd7">ModifyWorldGenTasks</a> (List&lt; GenPass &gt; tasks, ref float totalWeight)</td></tr>
 <tr class="separator:ae3119839afddab6693c1f48fb4c38fd7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9556ab6f2bf65a32af7de45d84876e0e"><td class="memItemLeft" align="right" valign="top">override void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_loot_1_1_loot_mod_world.html#a9556ab6f2bf65a32af7de45d84876e0e">PostUpdate</a> ()</td></tr>
 <tr class="separator:a9556ab6f2bf65a32af7de45d84876e0e"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -219,7 +213,7 @@ Properties</h2></td></tr>
         <tr>
           <td class="memname">override void Loot.LootModWorld.ModifyWorldGenTasks </td>
           <td>(</td>
-          <td class="paramtype">List&lt; <a class="el" href="class_gen_pass.html">GenPass</a> &gt;&#160;</td>
+          <td class="paramtype">List&lt; GenPass &gt;&#160;</td>
           <td class="paramname"><em>tasks</em>, </td>
         </tr>
         <tr>
@@ -237,26 +231,7 @@ Properties</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Definition at line <a class="el" href="_loot_mod_world_8cs_source.html#l00063">63</a> of file <a class="el" href="_loot_mod_world_8cs_source.html">LootModWorld.cs</a>.</p>
-
-<p>References <a class="el" href="_modifier_context_8cs_source.html#l00055">Loot.Api.Core.ModifierContext.CustomData</a>, <a class="el" href="class_loot_1_1_loot_mod_item.html#aeff8f5daada870d63e036956b4982de2">Loot.LootModItem.GetInfo()</a>, <a class="el" href="_loot_mod_item_8cs_source.html#l00036">Loot.LootModItem.HasRolled</a>, <a class="el" href="_loot_mod_world_8cs_source.html#l00020">Loot.LootModWorld.Initialized</a>, <a class="el" href="_loot_mod_item_8cs_source.html#l00035">Loot.LootModItem.ModifierPool</a>, <a class="el" href="_rolling_utils_8cs_source.html#l00023">Loot.Api.Ext.RollingUtils.Strategies.Normal</a>, <a class="el" href="_modifier_context_8cs_source.html#l00057">Loot.Api.Core.ModifierContext.Player</a>, <a class="el" href="_loot_mod_item_8cs_source.html#l00059">Loot.LootModItem.RollNewPool()</a>, and <a class="el" href="_rolling_utils_8cs_source.html#l00013">Loot.Api.Ext.RollingUtils.Properties.WorldGen</a>.</p>
-<div class="fragment"><div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;        {</div><div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;            tasks.Add(<span class="keyword">new</span> WorldGenModifiersPass(<span class="stringliteral">&quot;EvenMoreModifiers:WorldGenModifiersPass&quot;</span>, 1));</div><div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;        }</div></div><!-- fragment -->
-<p><div id="dynsection-2" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-2-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
-<div id="dynsection-2-summary" class="dynsummary" style="display:block;">
-</div>
-<div id="dynsection-2-content" class="dyncontent" style="display:none;">
-<div class="center"><img src="class_loot_1_1_loot_mod_world_ae3119839afddab6693c1f48fb4c38fd7_cgraph.png" border="0" usemap="#class_loot_1_1_loot_mod_world_ae3119839afddab6693c1f48fb4c38fd7_cgraph" alt=""/></div>
-<map name="class_loot_1_1_loot_mod_world_ae3119839afddab6693c1f48fb4c38fd7_cgraph" id="class_loot_1_1_loot_mod_world_ae3119839afddab6693c1f48fb4c38fd7_cgraph">
-<area shape="rect" id="node2" href="class_loot_1_1_loot_mod_item.html#aeff8f5daada870d63e036956b4982de2" title="Loot.LootModItem.GetInfo" alt="" coords="256,61,444,87"/>
-<area shape="rect" id="node3" href="class_loot_1_1_loot_mod_item.html#a2dc10fb19dd930077bf04891e076c88f" title="Attempts to roll new modifiers Has a set chance to hit a predefined pool of modifiers ..." alt="" coords="241,111,459,138"/>
-<area shape="rect" id="node4" href="class_loot_1_1_api_1_1_ext_1_1_mod_utils.html#ac094c35ec592ea0728be3aa8d71a2b5f" title="Loot.Api.Ext.ModUtils.Get\lModifierPool" alt="" coords="516,5,700,47"/>
-<area shape="rect" id="node5" href="class_loot_1_1_api_1_1_ext_1_1_mod_utils.html#a907048acd3c21c89c6d87f91cd3237fa" title="Loot.Api.Ext.ModUtils.Get\lModifierRarity" alt="" coords="516,71,700,112"/>
-<area shape="rect" id="node6" href="class_loot_1_1_loot_mod_item.html#a5b0da3bc74988a42fe0b4fc7a42f00e1" title="Loot.LootModItem.Invalidate\lRolls" alt="" coords="507,136,709,177"/>
-<area shape="rect" id="node7" href="interface_loot_1_1_api_1_1_strategy_1_1_i_rolling_strategy.html#a2f42b3f88803995e4b69a97c67a15ad1" title="Loot.Api.Strategy.IRolling\lStrategy.Roll" alt="" coords="519,201,697,243"/>
-</map>
-</div>
-</p>
-
+<div class="fragment"><div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;        {</div><div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;            <span class="comment">//tasks.Add(new WorldGenModifiersPass(&quot;EvenMoreModifiers:WorldGenModifiersPass&quot;, 1));</span></div><div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;        }</div></div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="a9556ab6f2bf65a32af7de45d84876e0e"></a>
@@ -275,8 +250,7 @@ Properties</h2></td></tr>
 <p>Definition at line <a class="el" href="_loot_mod_world_8cs_source.html#l00047">47</a> of file <a class="el" href="_loot_mod_world_8cs_source.html">LootModWorld.cs</a>.</p>
 
 <p>References <a class="el" href="_loot_mod_world_8cs_source.html#l00020">Loot.LootModWorld.Initialized</a>.</p>
-<div class="fragment"><div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        {</div><div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;            <span class="keywordflow">if</span> (<a class="code" href="class_loot_1_1_loot_mod_world.html#a8c20134003150dc662ce290cb0eff71f">Initialized</a>)</div><div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;            {</div><div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;                <span class="keywordflow">return</span>;</div><div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;            }</div><div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;</div><div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;            <a class="code" href="class_loot_1_1_loot_mod_world.html#a8c20134003150dc662ce290cb0eff71f">Initialized</a> = <span class="keyword">true</span>;</div><div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;            <span class="keywordflow">foreach</span> (var chest <span class="keywordflow">in</span> Main.chest.Where(chest =&gt; chest != null &amp;&amp; chest.x &gt; 0 &amp;&amp; chest.y &gt; 0))</div><div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;            {</div><div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;                WorldGenModifiersPass.GenerateModifiers(null, <a class="code" href="namespace_loot_1_1_api_1_1_core.html#a2fe26ee9cffa16c663ab49599e1949b4">ModifierContextMethod</a>.FirstLoad, chest.item.Where(x =&gt; !x.IsAir), chest);</div><div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;            }</div><div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;        }</div><div class="ttc" id="namespace_loot_1_1_api_1_1_core_html_a2fe26ee9cffa16c663ab49599e1949b4"><div class="ttname"><a href="namespace_loot_1_1_api_1_1_core.html#a2fe26ee9cffa16c663ab49599e1949b4">Loot.Api.Core.ModifierContextMethod</a></div><div class="ttdeci">ModifierContextMethod</div><div class="ttdoc">Defines a method for a context in which a Modifier might be rolled Used in ModifierContext ...</div><div class="ttdef"><b>Definition:</b> <a href="_modifier_context_method_8cs_source.html#l00007">ModifierContextMethod.cs:7</a></div></div>
-<div class="ttc" id="class_loot_1_1_loot_mod_world_html_a8c20134003150dc662ce290cb0eff71f"><div class="ttname"><a href="class_loot_1_1_loot_mod_world.html#a8c20134003150dc662ce290cb0eff71f">Loot.LootModWorld.Initialized</a></div><div class="ttdeci">static bool Initialized</div><div class="ttdef"><b>Definition:</b> <a href="_loot_mod_world_8cs_source.html#l00020">LootModWorld.cs:20</a></div></div>
+<div class="fragment"><div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        {</div><div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;            <span class="keywordflow">if</span> (<a class="code" href="class_loot_1_1_loot_mod_world.html#a8c20134003150dc662ce290cb0eff71f">Initialized</a>)</div><div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;            {</div><div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;                <span class="keywordflow">return</span>;</div><div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;            }</div><div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;</div><div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;            <a class="code" href="class_loot_1_1_loot_mod_world.html#a8c20134003150dc662ce290cb0eff71f">Initialized</a> = <span class="keyword">true</span>;</div><div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;            <span class="comment">//foreach (var chest in Main.chest.Where(chest =&gt; chest != null &amp;&amp; chest.x &gt; 0 &amp;&amp; chest.y &gt; 0))</span></div><div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;            <span class="comment">//{</span></div><div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;            <span class="comment">//  WorldGenModifiersPass.GenerateModifiers(null, ModifierContextMethod.FirstLoad, chest.item.Where(x =&gt; !x.IsAir), chest);</span></div><div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;            <span class="comment">//}</span></div><div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;        }</div><div class="ttc" id="class_loot_1_1_loot_mod_world_html_a8c20134003150dc662ce290cb0eff71f"><div class="ttname"><a href="class_loot_1_1_loot_mod_world.html#a8c20134003150dc662ce290cb0eff71f">Loot.LootModWorld.Initialized</a></div><div class="ttdeci">static bool Initialized</div><div class="ttdef"><b>Definition:</b> <a href="_loot_mod_world_8cs_source.html#l00020">LootModWorld.cs:20</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -321,7 +295,7 @@ Properties</h2></td></tr>
 
 <p>Definition at line <a class="el" href="_loot_mod_world_8cs_source.html#l00020">20</a> of file <a class="el" href="_loot_mod_world_8cs_source.html">LootModWorld.cs</a>.</p>
 
-<p>Referenced by <a class="el" href="_loot_mod_world_8cs_source.html#l00022">Loot.LootModWorld.Initialize()</a>, <a class="el" href="_loot_mod_world_8cs_source.html#l00035">Loot.LootModWorld.Load()</a>, <a class="el" href="_loot_mod_world_8cs_source.html#l00063">Loot.LootModWorld.ModifyWorldGenTasks()</a>, <a class="el" href="_loot_mod_world_8cs_source.html#l00047">Loot.LootModWorld.PostUpdate()</a>, and <a class="el" href="_loot_mod_world_8cs_source.html#l00027">Loot.LootModWorld.Save()</a>.</p>
+<p>Referenced by <a class="el" href="_loot_mod_world_8cs_source.html#l00022">Loot.LootModWorld.Initialize()</a>, <a class="el" href="_loot_mod_world_8cs_source.html#l00035">Loot.LootModWorld.Load()</a>, <a class="el" href="_loot_mod_world_8cs_source.html#l00047">Loot.LootModWorld.PostUpdate()</a>, and <a class="el" href="_loot_mod_world_8cs_source.html#l00027">Loot.LootModWorld.Save()</a>.</p>
 
 </div>
 </div>
@@ -331,7 +305,7 @@ Properties</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespace_loot.html">Loot</a></li><li class="navelem"><a class="el" href="class_loot_1_1_loot_mod_world.html">LootModWorld</a></li>
-    <li class="footer">Generated on Tue Apr 14 2020 16:34:36 for Even More Modifiers by
+    <li class="footer">Generated on Tue Apr 14 2020 19:42:15 for Even More Modifiers by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.11 </li>
   </ul>

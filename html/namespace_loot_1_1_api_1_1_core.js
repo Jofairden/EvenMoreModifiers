@@ -1,5 +1,6 @@
 var namespace_loot_1_1_api_1_1_core =
 [
+    [ "FiniteModifierPool", "class_loot_1_1_api_1_1_core_1_1_finite_modifier_pool.html", "class_loot_1_1_api_1_1_core_1_1_finite_modifier_pool" ],
     [ "Modifier", "class_loot_1_1_api_1_1_core_1_1_modifier.html", "class_loot_1_1_api_1_1_core_1_1_modifier" ],
     [ "ModifierContext", "class_loot_1_1_api_1_1_core_1_1_modifier_context.html", "class_loot_1_1_api_1_1_core_1_1_modifier_context" ],
     [ "ModifierEffect", "class_loot_1_1_api_1_1_core_1_1_modifier_effect.html", "class_loot_1_1_api_1_1_core_1_1_modifier_effect" ],

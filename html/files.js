@@ -1,7 +1,6 @@
 var files =
 [
     [ "Api", "dir_544b296d2f08bf51de5fe6633e756eae.html", "dir_544b296d2f08bf51de5fe6633e756eae" ],
-    [ "Attributes", "dir_b0042ee456942418372c77b54a97b664.html", "dir_b0042ee456942418372c77b54a97b664" ],
     [ "Caching", "dir_8d7053df892edd93edb17b81284ede0e.html", "dir_8d7053df892edd93edb17b81284ede0e" ],
     [ "Content", "dir_5d84ce16a2f51073794faf1f09c69187.html", "dir_5d84ce16a2f51073794faf1f09c69187" ],
     [ "Cubes", "dir_1192d0229b77cc2a588c4a570e282588.html", "dir_1192d0229b77cc2a588c4a570e282588" ],
@@ -20,6 +19,9 @@ var files =
     [ "UI", "dir_53ff6e473d46d4e442ba5a7ce9f895e3.html", "dir_53ff6e473d46d4e442ba5a7ce9f895e3" ],
     [ "Loot.cs", "_loot_8cs.html", [
       [ "Loot", "class_loot_1_1_loot.html", "class_loot_1_1_loot" ]
+    ] ],
+    [ "LootItemModifier.cs", "_loot_item_modifier_8cs.html", [
+      [ "LootItemModifier", "class_loot_1_1_loot_item_modifier.html", "class_loot_1_1_loot_item_modifier" ]
     ] ],
     [ "LootModItem.cs", "_loot_mod_item_8cs.html", [
       [ "LootModItem", "class_loot_1_1_loot_mod_item.html", "class_loot_1_1_loot_mod_item" ]

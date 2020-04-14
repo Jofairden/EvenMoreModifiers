@@ -10,6 +10,6 @@ var searchData=
   ['normalshaderdrawstyle',['NormalShaderDrawStyle',['../class_loot_1_1_api_1_1_graphics_1_1_shader_1_1_style_1_1_normal_shader_draw_style.html#a5974b2f5b00971eca39ea986b9e58381',1,'Loot::Api::Graphics::Shader::Style::NormalShaderDrawStyle']]],
   ['nullmodifier',['NullModifier',['../class_loot_1_1_api_1_1_core_1_1_null_modifier.html#a39fe117934c048d787714f5e54e49e4f',1,'Loot::Api::Core::NullModifier']]],
   ['nullmodifiereffect',['NullModifierEffect',['../class_loot_1_1_api_1_1_core_1_1_null_modifier_effect.html#a9ebe840be19a910ed6a96727d1ca5a21',1,'Loot::Api::Core::NullModifierEffect']]],
-  ['nullmodifierpool',['NullModifierPool',['../class_loot_1_1_api_1_1_core_1_1_null_modifier_pool.html#a62e65497bf919e159d763dee0819485b',1,'Loot::Api::Core::NullModifierPool']]],
+  ['nullmodifierpool',['NullModifierPool',['../class_loot_1_1_api_1_1_core_1_1_null_modifier_pool.html#aa306fd3712b434832bfb87dfeb7deb99',1,'Loot::Api::Core::NullModifierPool']]],
   ['nullmodifierrarity',['NullModifierRarity',['../class_loot_1_1_api_1_1_core_1_1_null_modifier_rarity.html#a172e21f1238be791b150d8a20057be47',1,'Loot::Api::Core::NullModifierRarity']]]
 ];

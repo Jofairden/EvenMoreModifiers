@@ -37,7 +37,7 @@
 <area shape="rect" id="node35" href="$class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_utility_1_1_light_effect.html" title="Loot.Modifiers.EquipModifiers.\lUtility.LightEffect" alt="" coords="400,1280,611,1321"/>
 <area shape="rect" id="node36" href="$class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_utility_1_1_luck_effect.html" title="Loot.Modifiers.EquipModifiers.\lUtility.LuckEffect" alt="" coords="400,1345,611,1387"/>
 <area shape="rect" id="node37" href="$class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_cursed_effect.html" title="Loot.Modifiers.WeaponModifiers.\lCursedEffect" alt="" coords="392,1411,619,1452"/>
-<area shape="rect" id="node39" href="$class_loot_1_1_api_1_1_core_1_1_null_modifier_pool.html" title="Defines a &quot;Null&quot; modifier which represents a pool with no modifiers Cannot be rolled normally ..." alt="" coords="399,1477,612,1503"/>
+<area shape="rect" id="node39" href="$class_loot_1_1_api_1_1_core_1_1_finite_modifier_pool.html" title="Loot.Api.Core.FiniteModifierPool" alt="" coords="394,1477,617,1503"/>
 <area shape="rect" id="node41" href="$class_loot_1_1_pools_1_1_all_modifiers_pool.html" title="A modifier pool that always consists of all modifiers Cannot be rolled normally " alt="" coords="410,1578,601,1605"/>
 <area shape="rect" id="node44" href="$class_loot_1_1_api_1_1_core_1_1_null_modifier_rarity.html" title="Defines a &quot;Null&quot; rarity which represents no rarity safely Cannot be rolled normally ..." alt="" coords="412,1680,599,1721"/>
 <area shape="rect" id="node45" href="$class_loot_1_1_rarities_1_1_common_rarity.html" title="Describes the common rarity, which every item starts with " alt="" coords="405,1746,605,1773"/>

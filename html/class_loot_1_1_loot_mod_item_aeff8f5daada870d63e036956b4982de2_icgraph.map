@@ -1,12 +1,8 @@
 <map id="Loot.LootModItem.GetInfo" name="Loot.LootModItem.GetInfo">
-<area shape="rect" id="node2" href="$class_loot_1_1_caching_1_1_modifier_cache_player.html#a4b83315309f67249c30ed1ec14f0c8ed" title="Loot.Caching.ModifierCache\lPlayer.AddAttachItem" alt="" coords="257,5,456,47"/>
-<area shape="rect" id="node3" href="$class_loot_1_1_caching_1_1_modifier_cache_player.html#aceb2cf61924cc7a73c58c8a3c317b48e" title="Loot.Caching.ModifierCache\lPlayer.AddDetachItem" alt="" coords="257,71,456,112"/>
-<area shape="rect" id="node4" href="$class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_cursed_effect.html#ac9bf924c10a79e2f02ab2abad3f6b6d9" title="Loot.Modifiers.WeaponModifiers.\lCursedEffect.CurseHolding" alt="" coords="243,136,470,177"/>
-<area shape="rect" id="node5" href="$class_loot_1_1_cubes_1_1_poor_cube.html#a7e7db954e89e1dfcaf08581aaa513d13" title="Loot.Cubes.PoorCube.GetRolling\lStrategy" alt="" coords="243,201,470,243"/>
-<area shape="rect" id="node6" href="$class_loot_1_1_rolling_strategies_1_1_normal_rolling_strategy.html#a4a1472448f128bdee78171278ca691a3" title="Loot.RollingStrategies.Normal\lRollingStrategy.InitFields" alt="" coords="251,267,462,308"/>
-<area shape="rect" id="node7" href="$class_loot_1_1_mod_support_1_1_wing_slot_support_1_1_wing_slot_support_global_item.html#aa8f9692b866ea8631d7816615437e21d" title="Loot.ModSupport.WingSlot\lSupport.WingSlotSupportGlobal\lItem.ModifyTooltips" alt="" coords="245,331,468,387"/>
-<area shape="rect" id="node8" href="$class_loot_1_1_loot_mod_item.html#a659e2501754628252742c8842a8437e4" title="Will modify vanilla tooltips to add additional information for the affected item&#39;s modifiers ..." alt="" coords="241,411,472,438"/>
-<area shape="rect" id="node9" href="$class_loot_1_1_loot_mod_world.html#ae3119839afddab6693c1f48fb4c38fd7" title="Loot.LootModWorld.Modify\lWorldGenTasks" alt="" coords="263,463,451,504"/>
-<area shape="rect" id="node10" href="$class_loot_1_1_loot_mod_item.html#a78bb40da8243931fd3d5028c8801b1b7" title="Loot.LootModItem.OnCraft" alt="" coords="261,529,452,555"/>
-<area shape="rect" id="node11" href="$class_loot_1_1_loot_mod_item.html#a77ebddb2c3dd25500e5152c7c3630401" title="Loot.LootModItem.OnPickup" alt="" coords="256,579,457,606"/>
+<area shape="rect" id="node2" href="$class_loot_1_1_caching_1_1_modifier_cache_player.html#a4b83315309f67249c30ed1ec14f0c8ed" title="Loot.Caching.ModifierCache\lPlayer.AddAttachItem" alt="" coords="255,5,454,47"/>
+<area shape="rect" id="node3" href="$class_loot_1_1_caching_1_1_modifier_cache_player.html#aceb2cf61924cc7a73c58c8a3c317b48e" title="Loot.Caching.ModifierCache\lPlayer.AddDetachItem" alt="" coords="255,71,454,112"/>
+<area shape="rect" id="node4" href="$class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_cursed_effect.html#ac9bf924c10a79e2f02ab2abad3f6b6d9" title="Loot.Modifiers.WeaponModifiers.\lCursedEffect.CurseHolding" alt="" coords="241,136,468,177"/>
+<area shape="rect" id="node5" href="$class_loot_1_1_cubes_1_1_poor_cube.html#ac62018bcc84a5582fd706680ae778d6f" title="Loot.Cubes.PoorCube.GetRolling\lStrategy" alt="" coords="241,201,468,243"/>
+<area shape="rect" id="node6" href="$class_loot_1_1_mod_support_1_1_wing_slot_support_1_1_wing_slot_support_global_item.html#aa8f9692b866ea8631d7816615437e21d" title="Loot.ModSupport.WingSlot\lSupport.WingSlotSupportGlobal\lItem.ModifyTooltips" alt="" coords="243,266,466,322"/>
+<area shape="rect" id="node7" href="$class_loot_1_1_loot_item_modifier.html#afe2068389c4a0b5080a747a571dbb716" title="Loot.LootItemModifier.Update\lModifiers" alt="" coords="249,345,460,387"/>
 </map>

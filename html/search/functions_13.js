@@ -19,6 +19,7 @@ var searchData=
   ['updatehelditemcache',['UpdateHeldItemCache',['../class_loot_1_1_caching_1_1_modifier_cache_player.html#ab2adef1dd8566c18c10e33621d3f7051',1,'Loot::Caching::ModifierCachePlayer']]],
   ['updateinventory',['UpdateInventory',['../class_loot_1_1_api_1_1_graphics_1_1_graphics_global_item.html#abb7b4f1ee44de96a6a624d97786f4bb2',1,'Loot.Api.Graphics.GraphicsGlobalItem.UpdateInventory()'],['../class_loot_1_1_hacks_1_1_cheated_item_hack_global_item.html#a627f1f9e224529cee1bca2d882b229b2',1,'Loot.Hacks.CheatedItemHackGlobalItem.UpdateInventory()']]],
   ['updateliferegen',['UpdateLifeRegen',['../class_loot_1_1_api_1_1_delegators_1_1_modifier_delegator_player.html#a6fe2b542c23b3ecea623083b05aea672',1,'Loot::Api::Delegators::ModifierDelegatorPlayer']]],
+  ['updatemodifiers',['UpdateModifiers',['../class_loot_1_1_loot_item_modifier.html#afe2068389c4a0b5080a747a571dbb716',1,'Loot::LootItemModifier']]],
   ['updatemouseitemcache',['UpdateMouseItemCache',['../class_loot_1_1_caching_1_1_modifier_cache_player.html#a10051f827e24aaa158385ed5204289d7',1,'Loot::Caching::ModifierCachePlayer']]],
   ['updateui',['UpdateUI',['../class_loot_1_1_loot.html#a7f296a7c4a011faca07302cf350881ef',1,'Loot::Loot']]],
   ['updatevanityaccessories',['UpdateVanityAccessories',['../class_loot_1_1_api_1_1_delegators_1_1_modifier_delegator_player.html#a611b5b6edcf886d528082e3713a18374',1,'Loot::Api::Delegators::ModifierDelegatorPlayer']]],

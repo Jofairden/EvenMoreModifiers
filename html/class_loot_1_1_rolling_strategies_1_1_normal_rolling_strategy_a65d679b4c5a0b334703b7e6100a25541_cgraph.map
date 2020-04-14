@@ -1,0 +1,4 @@
+<map id="Loot.RollingStrategies.NormalRollingStrategy.Roll" name="Loot.RollingStrategies.NormalRollingStrategy.Roll">
+<area shape="rect" id="node2" href="$class_loot_1_1_api_1_1_delegators_1_1_modifier_delegator_player.html#a72c8852644cbf7ad5548b23953bc2c48" title="Loot.Api.Delegators.Modifier\lDelegatorPlayer.GetEffect" alt="" coords="264,5,467,47"/>
+<area shape="rect" id="node3" href="$class_loot_1_1_api_1_1_delegators_1_1_modifier_delegator_player.html#ac728e8a48a5778c028b443d01eb9151d" title="Loot.Api.Delegators.Modifier\lDelegatorPlayer.GetPlayer" alt="" coords="264,71,467,112"/>
+</map>

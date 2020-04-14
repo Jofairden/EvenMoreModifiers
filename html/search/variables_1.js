@@ -1,8 +1,4 @@
 var searchData=
 [
-  ['bonusimmunitytime',['BonusImmunityTime',['../class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_defensive_1_1_immunity_effect.html#a96631e6c6e19cbd3d000f6b54467ce58',1,'Loot::Modifiers::EquipModifiers::Defensive::ImmunityEffect']]],
-  ['buffinflictionchance',['BuffInflictionChance',['../class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_random_debuff.html#a726558235a140f1b3d1985d79e9b87b0',1,'Loot::Modifiers::WeaponModifiers::RandomDebuff']]],
-  ['bufftime',['BuffTime',['../class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_random_debuff.html#a8390666b643ba19f22e54ac3847ede03',1,'Loot::Modifiers::WeaponModifiers::RandomDebuff']]],
-  ['bufftype',['BuffType',['../class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_random_debuff.html#afd00707ca69335df5c63b32c39e5654f',1,'Loot::Modifiers::WeaponModifiers::RandomDebuff']]],
-  ['builder',['Builder',['../class_loot_1_1_api_1_1_core_1_1_modifier_properties.html#a58ac15db0da3dba8b5b0948c56ad7d29',1,'Loot.Api.Core.ModifierProperties.Builder()'],['../class_loot_1_1_api_1_1_graphics_1_1_glowmask_1_1_glowmask_graphics_properties.html#a0fda21621787fb01f0e20cdf06308d87',1,'Loot.Api.Graphics.Glowmask.GlowmaskGraphicsProperties.Builder()'],['../class_loot_1_1_api_1_1_graphics_1_1_graphics_properties.html#a297c6239e6d2299f10822019a7be42cf',1,'Loot.Api.Graphics.GraphicsProperties.Builder()'],['../class_loot_1_1_api_1_1_graphics_1_1_shader_1_1_shader_graphics_properties.html#aea8f2114a7349572ef8ac682407c081c',1,'Loot.Api.Graphics.Shader.ShaderGraphicsProperties.Builder()'],['../class_loot_1_1_api_1_1_graphics_1_1_shader_1_1_style_1_1_shader_draw_style_1_1_shader_draw_style_properties.html#a14607fb21f1b69601e74c19c1a45736a',1,'Loot.Api.Graphics.Shader.Style.ShaderDrawStyle.ShaderDrawStyleProperties.Builder()']]]
+  ['allpool',['AllPool',['../class_loot_1_1_content_1_1_modifier_pool_content.html#a30f120eba7d0bc01a222ae7da0ad3028',1,'Loot::Content::ModifierPoolContent']]]
 ];

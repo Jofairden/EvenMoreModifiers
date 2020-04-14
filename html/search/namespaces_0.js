@@ -1,7 +1,6 @@
 var searchData=
 [
   ['api',['Api',['../namespace_loot_1_1_api.html',1,'Loot']]],
-  ['attributes',['Attributes',['../namespace_loot_1_1_attributes.html',1,'Loot']]],
   ['attributes',['Attributes',['../namespace_loot_1_1_api_1_1_attributes.html',1,'Loot::Api']]],
   ['base',['Base',['../namespace_loot_1_1_modifiers_1_1_base.html',1,'Loot::Modifiers']]],
   ['builder',['Builder',['../namespace_loot_1_1_api_1_1_builder.html',1,'Loot::Api']]],
@@ -32,6 +31,7 @@ var searchData=
   ['loaders',['Loaders',['../namespace_loot_1_1_api_1_1_loaders.html',1,'Loot::Api']]],
   ['loot',['Loot',['../namespace_loot.html',1,'']]],
   ['loottests',['LootTests',['../namespace_loot_tests.html',1,'']]],
+  ['mechanism',['Mechanism',['../namespace_loot_1_1_api_1_1_mechanism.html',1,'Loot::Api']]],
   ['modcontent',['ModContent',['../namespace_loot_1_1_api_1_1_mod_content.html',1,'Loot::Api']]],
   ['modifiers',['Modifiers',['../namespace_loot_1_1_modifiers.html',1,'Loot']]],
   ['modsupport',['ModSupport',['../namespace_loot_1_1_mod_support.html',1,'Loot']]],

@@ -1,5 +1,6 @@
 <map id="Loot.LootModItem.Load" name="Loot.LootModItem.Load">
-<area shape="rect" id="node2" href="$class_loot_1_1_loot_mod_item.html#a5b0da3bc74988a42fe0b4fc7a42f00e1" title="Loot.LootModItem.Invalidate\lRolls" alt="" coords="241,5,443,47"/>
-<area shape="rect" id="node3" href="$class_loot_1_1_api_1_1_core_1_1_modifier_rarity.html#a7110bee35992e4ae249cd55caf41726e" title="Allows modder to do custom loading here Use the given TagCompound to pull data you saved using Save(I..." alt="" coords="227,71,457,98"/>
-<area shape="rect" id="node4" href="$class_loot_1_1_api_1_1_core_1_1_modifier_pool.html#a407884ad1901e591ff6faa419a5dc2aa" title="Allows modder to do custom loading here Use the given TC to pull data you saved using Save(Item..." alt="" coords="230,122,454,149"/>
+<area shape="rect" id="node2" href="$class_loot_1_1_api_1_1_core_1_1_finite_modifier_pool.html#a5f3652431e621370e322ea90041a0618" title="Loot.Api.Core.FiniteModifier\lPool.Apply" alt="" coords="245,5,439,47"/>
+<area shape="rect" id="node3" href="$class_loot_1_1_loot_mod_item.html#a5b0da3bc74988a42fe0b4fc7a42f00e1" title="Loot.LootModItem.Invalidate\lRolls" alt="" coords="241,71,443,112"/>
+<area shape="rect" id="node4" href="$class_loot_1_1_api_1_1_core_1_1_modifier_rarity.html#a7110bee35992e4ae249cd55caf41726e" title="Allows modder to do custom loading here Use the given TagCompound to pull data you saved using Save(I..." alt="" coords="227,137,457,163"/>
+<area shape="rect" id="node5" href="$class_loot_1_1_api_1_1_core_1_1_modifier_pool.html#a407884ad1901e591ff6faa419a5dc2aa" title="Allows modder to do custom loading here Use the given TC to pull data you saved using Save(Item..." alt="" coords="230,187,454,214"/>
 </map>

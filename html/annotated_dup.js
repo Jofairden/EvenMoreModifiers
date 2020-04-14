@@ -3,7 +3,6 @@ var annotated_dup =
     [ "Loot", "namespace_loot.html", "namespace_loot" ],
     [ "LootTests", "namespace_loot_tests.html", "namespace_loot_tests" ],
     [ "Attribute", "class_attribute.html", null ],
-    [ "GenPass", "class_gen_pass.html", null ],
     [ "GlobalItem", "class_global_item.html", null ],
     [ "GlobalNPC", "class_global_n_p_c.html", null ],
     [ "GlobalProjectile", "class_global_projectile.html", null ],

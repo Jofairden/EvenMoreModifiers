@@ -11,6 +11,7 @@ var searchData=
   ['loadablecontentbase_3c_20modifierpool_20_3e',['LoadableContentBase&lt; ModifierPool &gt;',['../class_loot_1_1_api_1_1_content_1_1_loadable_content_base.html',1,'Loot::Api::Content']]],
   ['loadablecontentbase_3c_20modifierrarity_20_3e',['LoadableContentBase&lt; ModifierRarity &gt;',['../class_loot_1_1_api_1_1_content_1_1_loadable_content_base.html',1,'Loot::Api::Content']]],
   ['loot',['Loot',['../class_loot_1_1_loot.html',1,'Loot']]],
+  ['lootitemmodifier',['LootItemModifier',['../class_loot_1_1_loot_item_modifier.html',1,'Loot']]],
   ['lootmoditem',['LootModItem',['../class_loot_1_1_loot_mod_item.html',1,'Loot']]],
   ['lootmodworld',['LootModWorld',['../class_loot_1_1_loot_mod_world.html',1,'Loot']]],
   ['luckeffect',['LuckEffect',['../class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_utility_1_1_luck_effect.html',1,'Loot::Modifiers::EquipModifiers::Utility']]],

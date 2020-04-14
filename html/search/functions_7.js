@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['getactivepool',['GetActivePool',['../class_loot_1_1_loot_mod_item.html#add1489001e88a446099fefcd8193852a',1,'Loot::LootModItem']]],
+  ['getactivepool',['GetActivePool',['../class_loot_1_1_loot_mod_item.html#aac5f831aad1d691114d6c020c247406f',1,'Loot::LootModItem']]],
   ['getallmodifierspool',['GetAllModifiersPool',['../class_loot_1_1_api_1_1_ext_1_1_mod_utils.html#aef1589f7e1a455c33f67621dfedcb178',1,'Loot::Api::Ext::ModUtils']]],
   ['getbuffname',['GetBuffName',['../class_loot_1_1_modifiers_1_1_base_1_1_weapon_debuff_modifier.html#a9443016d43a9a6ac5683b512a5920e48',1,'Loot::Modifiers::Base::WeaponDebuffModifier']]],
   ['getclasses',['GetClasses',['../class_loot_1_1_api_1_1_attributes_1_1_populate_pool_from_attribute.html#a37fa09c3e2ae3ad8a51e92c64ac7b9b8',1,'Loot::Api::Attributes::PopulatePoolFromAttribute']]],
@@ -53,16 +53,15 @@ var searchData=
   ['getnullmodifierpool',['GetNullModifierPool',['../class_loot_1_1_api_1_1_ext_1_1_mod_utils.html#adaa248d7b447296e363c8a5510d7c42f',1,'Loot::Api::Ext::ModUtils']]],
   ['getnullmodifierrarity',['GetNullModifierRarity',['../class_loot_1_1_api_1_1_ext_1_1_mod_utils.html#ad8e0fc78b2da0747fc6104ed6d1addcf',1,'Loot::Api::Ext::ModUtils']]],
   ['getplayer',['GetPlayer',['../class_loot_1_1_api_1_1_delegators_1_1_modifier_delegator_player.html#ac728e8a48a5778c028b443d01eb9151d',1,'Loot::Api::Delegators::ModifierDelegatorPlayer']]],
+  ['getpool',['GetPool',['../class_loot_1_1_api_1_1_mechanism_1_1_modifier_pool_mechanism.html#aeaf604b6f4d61cf4a21c2eaba9db19ce',1,'Loot::Api::Mechanism::ModifierPoolMechanism']]],
   ['getprefixnormstring',['GetPrefixNormString',['../class_loot_1_1_loot_mod_item.html#a0933b898369ef1a285c3acaaf1f8e53f',1,'Loot::LootModItem']]],
   ['getpreparedasset',['GetPreparedAsset',['../class_loot_1_1_api_1_1_mod_content_1_1_graphics_mod_content.html#ae4eddb1374a2d7b8dda6b64851db2a9c',1,'Loot::Api::ModContent::GraphicsModContent']]],
   ['getpreparedglowmask',['GetPreparedGlowmask',['../class_loot_1_1_api_1_1_mod_content_1_1_graphics_mod_content.html#a692b6693b5fd53080ea7b747eae23525',1,'Loot::Api::ModContent::GraphicsModContent']]],
   ['getpreparedshader',['GetPreparedShader',['../class_loot_1_1_api_1_1_mod_content_1_1_graphics_mod_content.html#aa76b23eae9f85be15348637803dbcb06',1,'Loot::Api::ModContent::GraphicsModContent']]],
   ['getpreparedtexture',['GetPreparedTexture',['../class_loot_1_1_api_1_1_mod_content_1_1_graphics_mod_content.html#a47f4b82bcb64acb3ee93cb38b435e9a4',1,'Loot::Api::ModContent::GraphicsModContent']]],
-  ['getrandomlist',['GetRandomList',['../class_loot_1_1_rolling_strategies_1_1_normal_rolling_strategy.html#a9f558511385b33c13d25bbfb3af6f427',1,'Loot::RollingStrategies::NormalRollingStrategy']]],
   ['getregistrykey',['GetRegistryKey',['../class_loot_1_1_api_1_1_mod_content_1_1_graphics_mod_content.html#a9c29f7de0cba3a26f94ef42947580fb6',1,'Loot.Api.ModContent.GraphicsModContent.GetRegistryKey()'],['../class_loot_1_1_api_1_1_mod_content_1_1_texture_mod_content.html#ad7699e61bc3a174d52c15663c4a7ffb1',1,'Loot.Api.ModContent.TextureModContent.GetRegistryKey()']]],
-  ['getrollablemodifiers',['GetRollableModifiers',['../class_loot_1_1_rolling_strategies_1_1_normal_rolling_strategy.html#af5972b0ac649eb7911c1db10543e9d63',1,'Loot::RollingStrategies::NormalRollingStrategy']]],
   ['getrolledindex',['GetRolledIndex',['../class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_random_debuff.html#a397d3a64474f03a8adf50b1f9a96baa4',1,'Loot::Modifiers::WeaponModifiers::RandomDebuff']]],
-  ['getrollingstrategy',['GetRollingStrategy',['../class_loot_1_1_api_1_1_cubes_1_1_rerolling_cube.html#a7ac06d08f372068d0272dd3c9c58f0af',1,'Loot.Api.Cubes.RerollingCube.GetRollingStrategy()'],['../class_loot_1_1_cubes_1_1_black_cube.html#a9c1bc8bb75c41d0d817d3f751f563c9b',1,'Loot.Cubes.BlackCube.GetRollingStrategy()'],['../class_loot_1_1_cubes_1_1_cube_of_sealing.html#a6d5901f639b148d688311cb57d7c7645',1,'Loot.Cubes.CubeOfSealing.GetRollingStrategy()'],['../class_loot_1_1_cubes_1_1_poor_cube.html#a7e7db954e89e1dfcaf08581aaa513d13',1,'Loot.Cubes.PoorCube.GetRollingStrategy()']]],
+  ['getrollingstrategy',['GetRollingStrategy',['../class_loot_1_1_api_1_1_cubes_1_1_rerolling_cube.html#a7aead8c3e8cc0687e4a095b732ffe172',1,'Loot.Api.Cubes.RerollingCube.GetRollingStrategy()'],['../class_loot_1_1_cubes_1_1_black_cube.html#a441b6623b5cb75e1642b97a170f8e5bb',1,'Loot.Cubes.BlackCube.GetRollingStrategy()'],['../class_loot_1_1_cubes_1_1_cube_of_sealing.html#a070ac2c211d60a89f82d25d75465e8e7',1,'Loot.Cubes.CubeOfSealing.GetRollingStrategy()'],['../class_loot_1_1_cubes_1_1_poor_cube.html#ac62018bcc84a5582fd706680ae778d6f',1,'Loot.Cubes.PoorCube.GetRollingStrategy()']]],
   ['getshaderentity',['GetShaderEntity',['../class_loot_1_1_api_1_1_core_1_1_modifier.html#a50d1978d76a3276ef7788ea684c38636',1,'Loot.Api.Core.Modifier.GetShaderEntity()'],['../class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_ice_1_1_ice_modifier.html#a33bcd06c24b1d9c1101d8b4fc54f5c67',1,'Loot.Modifiers.WeaponModifiers.Ice.IceModifier.GetShaderEntity()']]],
   ['getshadertexture',['GetShaderTexture',['../class_loot_1_1_api_1_1_mod_content_1_1_graphics_mod_content.html#adc3335d7f1fae2773da00172aeb8b3cc',1,'Loot::Api::ModContent::GraphicsModContent']]],
   ['gettargetnames',['GetTargetNames',['../class_loot_1_1_api_1_1_attributes_1_1_auto_delegation.html#a198fe34a3bc655bd7763cadf063b593a',1,'Loot::Api::Attributes::AutoDelegation']]],
@@ -73,7 +72,7 @@ var searchData=
   ['getweaponcriteventraiser',['GetWeaponCritEventRaiser',['../class_loot_1_1_api_1_1_delegators_1_1_modifier_delegator_player.html#a24580c245ce01e8f40045134ac8b53d5',1,'Loot::Api::Delegators::ModifierDelegatorPlayer']]],
   ['getweaponknockback',['GetWeaponKnockback',['../class_loot_1_1_api_1_1_delegators_1_1_modifier_delegator_player.html#ac27141a4ab3b9d48eccba6d0b523b667',1,'Loot.Api.Delegators.ModifierDelegatorPlayer.GetWeaponKnockback()'],['../class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_knockback_plus.html#ae48ee8465a88687760f649a0eff292aa',1,'Loot.Modifiers.WeaponModifiers.KnockbackPlus.GetWeaponKnockback()']]],
   ['getweaponknockbackeventraiser',['GetWeaponKnockbackEventRaiser',['../class_loot_1_1_api_1_1_delegators_1_1_modifier_delegator_player.html#a025cc5d43eab7892aafdf9e4d9945d27',1,'Loot::Api::Delegators::ModifierDelegatorPlayer']]],
-  ['getweightedpool',['GetWeightedPool',['../class_loot_1_1_content_1_1_modifier_pool_content.html#ae53cdca27c86a7f90f347a4689662e7b',1,'Loot::Content::ModifierPoolContent']]],
+  ['getweightedpool',['GetWeightedPool',['../class_loot_1_1_api_1_1_mechanism_1_1_modifier_pool_mechanism.html#a299b0f47323a7965a018999a42f6bb80',1,'Loot::Api::Mechanism::ModifierPoolMechanism']]],
   ['glowmaskentity',['GlowmaskEntity',['../class_loot_1_1_api_1_1_graphics_1_1_glowmask_1_1_glowmask_entity.html#a0af9b7b3d361cb5daf23db909dffd4c6',1,'Loot::Api::Graphics::Glowmask::GlowmaskEntity']]],
   ['graphicsentity',['GraphicsEntity',['../class_loot_1_1_api_1_1_graphics_1_1_graphics_entity.html#af7b2d2fb29c15ad8b50c367220c222b1',1,'Loot::Api::Graphics::GraphicsEntity']]]
 ];

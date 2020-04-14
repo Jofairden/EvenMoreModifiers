@@ -21,7 +21,6 @@ var searchData=
   ['throwncritplus_2ecs',['ThrownCritPlus.cs',['../_thrown_crit_plus_8cs.html',1,'']]],
   ['throwndamageplus',['ThrownDamagePlus',['../class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_offensive_1_1_thrown_damage_plus.html',1,'Loot::Modifiers::EquipModifiers::Offensive']]],
   ['throwndamageplus_2ecs',['ThrownDamagePlus.cs',['../_thrown_damage_plus_8cs.html',1,'']]],
-  ['totalraritylevel',['TotalRarityLevel',['../class_loot_1_1_api_1_1_core_1_1_modifier_pool.html#ac3ca1151f7d0378a0eaaa6bb6493ebdf',1,'Loot::Api::Core::ModifierPool']]],
   ['transcendentrarity',['TranscendentRarity',['../class_loot_1_1_rarities_1_1_transcendent_rarity.html',1,'Loot::Rarities']]],
   ['transcendentrarity_2ecs',['TranscendentRarity.cs',['../_transcendent_rarity_8cs.html',1,'']]],
   ['trydodge',['TryDodge',['../class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_defensive_1_1_dodge_effect.html#a6c8b5fa11fb96e25d7ce544201a72b9c',1,'Loot::Modifiers::EquipModifiers::Defensive::DodgeEffect']]],

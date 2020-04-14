@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['_5factivemodifiers',['_activeModifiers',['../class_loot_1_1_api_1_1_core_1_1_modifier_pool.html#a585520cff0af6a6dca278f5b1b0b4b99',1,'Loot::Api::Core::ModifierPool']]],
   ['_5factivetexture',['_activeTexture',['../class_loot_1_1_u_i_1_1_tabs_1_1_soulforging_1_1_gui_soulgauge_1_1_gauge_drawing.html#aaff014739dee1e5b1789261efcc7b4d3',1,'Loot::UI::Tabs::Soulforging::GuiSoulgauge::GaugeDrawing']]],
   ['_5fattachlist',['_attachList',['../class_loot_1_1_caching_1_1_modifier_cache_player.html#a6c82409ee520b54f9c0248c923d8f858',1,'Loot::Caching::ModifierCachePlayer']]],
   ['_5fcontents',['_contents',['../class_loot_1_1_api_1_1_mod_content_1_1_mod_content_manager.html#abb00ef809893f222f06406494b7239b0',1,'Loot::Api::ModContent::ModContentManager']]],
@@ -9,7 +8,6 @@ var searchData=
   ['_5fduringday',['_duringDay',['../class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_damage_plus_daytime.html#ae7e52f4f581d8c27a3b628957b8e3d5b',1,'Loot::Modifiers::WeaponModifiers::DamagePlusDaytime']]],
   ['_5feffects',['_effects',['../class_loot_1_1_api_1_1_attributes_1_1_uses_effect_attribute.html#afca98ef4f1daeb05c4eccdb4d29f2c4b',1,'Loot::Api::Attributes::UsesEffectAttribute']]],
   ['_5fforceequipupdate',['_forceEquipUpdate',['../class_loot_1_1_caching_1_1_modifier_cache_player.html#a70a84ff6d5214a09a2ad765fe5926c5f',1,'Loot::Caching::ModifierCachePlayer']]],
-  ['_5fforcenextroll',['_forceNextRoll',['../class_loot_1_1_rolling_strategies_1_1_normal_rolling_strategy.html#a8c0f0a5f0a494b6fc81480346515b848',1,'Loot::RollingStrategies::NormalRollingStrategy']]],
   ['_5fframe',['_frame',['../class_loot_1_1_u_i_1_1_tabs_1_1_soulforging_1_1_gui_soulgauge_1_1_gauge_drawing.html#aa929e167a77a73f618f8988c76f22d07',1,'Loot::UI::Tabs::Soulforging::GuiSoulgauge::GaugeDrawing']]],
   ['_5fgetcontent',['_GetContent',['../class_loot_1_1_api_1_1_content_1_1_loadable_content_base.html#a63042f72edac016539562d0fe6cd2b66',1,'Loot::Api::Content::LoadableContentBase']]],
   ['_5fgetmodifiers',['_GetModifiers',['../class_loot_1_1_api_1_1_core_1_1_modifier_pool.html#ab3ec8cd287a79a49e51cfa349c7aefa2',1,'Loot::Api::Core::ModifierPool']]],

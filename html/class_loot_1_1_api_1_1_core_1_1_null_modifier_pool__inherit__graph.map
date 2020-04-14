@@ -1,6 +1,7 @@
 <map id="Loot.Api.Core.NullModifierPool" name="Loot.Api.Core.NullModifierPool">
-<area shape="rect" id="node2" href="$class_loot_1_1_api_1_1_core_1_1_modifier_pool.html" title="Defines a modifier pool. A modifier pool holds a certain amount of effects in an array It allows to r..." alt="" coords="202,80,301,107"/>
-<area shape="rect" id="node3" href="$interface_loot_1_1_api_1_1_content_1_1_i_loadable_content.html" title="Defines a piece of loadable content The interface is used in classes where the deriving class already..." alt="" coords="5,5,140,32"/>
-<area shape="rect" id="node4" title="Used to restrict setting properties of ILoadableContent to internal only This is done by marking the ..." alt="" coords="164,5,339,32"/>
-<area shape="rect" id="node5" href="$class_i_cloneable.html" title="ICloneable" alt="" coords="363,5,451,32"/>
+<area shape="rect" id="node2" href="$class_loot_1_1_api_1_1_core_1_1_finite_modifier_pool.html" title="FiniteModifierPool" alt="" coords="185,155,317,181"/>
+<area shape="rect" id="node3" href="$class_loot_1_1_api_1_1_core_1_1_modifier_pool.html" title="Defines a modifier pool. A modifier pool holds a certain amount of effects in an array It allows to r..." alt="" coords="202,80,301,107"/>
+<area shape="rect" id="node4" href="$interface_loot_1_1_api_1_1_content_1_1_i_loadable_content.html" title="Defines a piece of loadable content The interface is used in classes where the deriving class already..." alt="" coords="5,5,140,32"/>
+<area shape="rect" id="node5" title="Used to restrict setting properties of ILoadableContent to internal only This is done by marking the ..." alt="" coords="164,5,339,32"/>
+<area shape="rect" id="node6" href="$class_i_cloneable.html" title="ICloneable" alt="" coords="363,5,451,32"/>
 </map>
