@@ -2,6 +2,7 @@ var searchData=
 [
   ['icemodifier',['IceModifier',['../class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_ice_1_1_ice_modifier.html',1,'Loot::Modifiers::WeaponModifiers::Ice']]],
   ['icloneable',['ICloneable',['../class_i_cloneable.html',1,'']]],
+  ['icyessence',['IcyEssence',['../class_loot_1_1_essences_1_1_icy_essence.html',1,'Loot::Essences']]],
   ['icymodifier',['IcyModifier',['../class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_ice_1_1_icy_modifier.html',1,'Loot::Modifiers::WeaponModifiers::Ice']]],
   ['ifakemod',['IFakeMod',['../interface_loot_tests_1_1_i_fake_mod.html',1,'LootTests']]],
   ['ifakeproperties',['IFakeProperties',['../interface_loot_tests_1_1_modifier_properties_tests_1_1_i_fake_properties.html',1,'LootTests::ModifierPropertiesTests']]],

@@ -180,6 +180,11 @@ var hierarchy =
           [ "Loot.Cubes.CubeOfSealing", "class_loot_1_1_cubes_1_1_cube_of_sealing.html", null ],
           [ "Loot.Cubes.PoorCube", "class_loot_1_1_cubes_1_1_poor_cube.html", null ]
         ] ]
+      ] ],
+      [ "Loot.Essences.TempItem", "class_loot_1_1_essences_1_1_temp_item.html", [
+        [ "Loot.Essences.EssenceItem", "class_loot_1_1_essences_1_1_essence_item.html", [
+          [ "Loot.Essences.IcyEssence", "class_loot_1_1_essences_1_1_icy_essence.html", null ]
+        ] ]
       ] ]
     ] ],
     [ "ModPlayer", "class_mod_player.html", [

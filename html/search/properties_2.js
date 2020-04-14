@@ -4,6 +4,7 @@ var searchData=
   ['delegationlevel',['DelegationLevel',['../class_loot_1_1_api_1_1_attributes_1_1_delegation_prioritization_attribute.html#aabc4bf02c48d86710c9576fb7ce79a1e',1,'Loot::Api::Attributes::DelegationPrioritizationAttribute']]],
   ['delegationprioritization',['DelegationPrioritization',['../class_loot_1_1_api_1_1_attributes_1_1_delegation_prioritization_attribute.html#a8b5348b96dc63b96c895a0997597d509',1,'Loot::Api::Attributes::DelegationPrioritizationAttribute']]],
   ['delegatorplayer',['DelegatorPlayer',['../class_loot_1_1_api_1_1_core_1_1_modifier_effect.html#af294927a079288b1df34cd3becbcd5bf',1,'Loot::Api::Core::ModifierEffect']]],
+  ['description',['Description',['../class_loot_1_1_essences_1_1_essence_item.html#af1df582fda43ba01637672777df13db1',1,'Loot::Essences::EssenceItem']]],
   ['drawcolor',['DrawColor',['../class_loot_1_1_api_1_1_graphics_1_1_graphics_entity.html#a86a57e826b2e0351e5a40c016e4610a7',1,'Loot::Api::Graphics::GraphicsEntity']]],
   ['drawdistance',['DrawDistance',['../class_loot_1_1_api_1_1_graphics_1_1_shader_1_1_style_1_1_shader_draw_style_1_1_shader_draw_style_properties.html#abed6e637d2f76428f919c24b8dab88c8',1,'Loot::Api::Graphics::Shader::Style::ShaderDrawStyle::ShaderDrawStyleProperties']]],
   ['drawhitbox',['DrawHitbox',['../class_loot_1_1_api_1_1_graphics_1_1_glowmask_1_1_glowmask_entity.html#ab3d82781067236d5f06e2e64ccf30926',1,'Loot::Api::Graphics::Glowmask::GlowmaskEntity']]],

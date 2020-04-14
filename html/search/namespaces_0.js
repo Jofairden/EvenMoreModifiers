@@ -20,6 +20,7 @@ var searchData=
   ['delegators',['Delegators',['../namespace_loot_1_1_api_1_1_delegators.html',1,'Loot::Api']]],
   ['equipmodifiers',['EquipModifiers',['../namespace_loot_1_1_modifiers_1_1_equip_modifiers.html',1,'Loot::Modifiers']]],
   ['essencecrafting',['EssenceCrafting',['../namespace_loot_1_1_u_i_1_1_tabs_1_1_essence_crafting.html',1,'Loot::UI::Tabs']]],
+  ['essences',['Essences',['../namespace_loot_1_1_essences.html',1,'Loot']]],
   ['ext',['Ext',['../namespace_loot_1_1_api_1_1_ext.html',1,'Loot::Api']]],
   ['ext',['Ext',['../namespace_loot_1_1_ext.html',1,'Loot']]],
   ['glowmask',['Glowmask',['../namespace_loot_1_1_api_1_1_graphics_1_1_glowmask.html',1,'Loot::Api::Graphics']]],

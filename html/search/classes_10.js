@@ -1,5 +1,6 @@
 var searchData=
 [
+  ['tempitem',['TempItem',['../class_loot_1_1_essences_1_1_temp_item.html',1,'Loot::Essences']]],
   ['testapplymod',['TestApplyMod',['../class_loot_tests_1_1_test_modifiers_1_1_test_apply_mod.html',1,'LootTests::TestModifiers']]],
   ['testpool',['TestPool',['../class_loot_tests_1_1_test_pools_1_1_test_pool.html',1,'LootTests::TestPools']]],
   ['testrarity',['TestRarity',['../class_loot_tests_1_1_test_rarities_1_1_test_rarity.html',1,'LootTests::TestRarities']]],

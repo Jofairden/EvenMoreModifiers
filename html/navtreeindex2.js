@@ -1,5 +1,17 @@
 var NAVTREEINDEX2 =
 {
+"class_loot_1_1_api_1_1_builder_1_1_property_builder.html#a26ee6e1eed7894354dabf936e06845d1":[2,0,0,0,1,1,5],
+"class_loot_1_1_api_1_1_builder_1_1_property_builder.html#a402f4eb18275aa04c94893c3fc769428":[2,0,0,0,1,1,1],
+"class_loot_1_1_api_1_1_builder_1_1_property_builder.html#a61086f4d3661af8069a4c8d08f048853":[2,0,0,0,1,1,7],
+"class_loot_1_1_api_1_1_builder_1_1_property_builder.html#a63c782e10cab800d277191a93ad4077b":[2,0,0,0,1,1,0],
+"class_loot_1_1_api_1_1_builder_1_1_property_builder.html#ad134e113f2922fbd8ec83b0f291de74a":[2,0,0,0,1,1,4],
+"class_loot_1_1_api_1_1_builder_1_1_property_builder.html#aeb8a4ffa5362573534f27dadc8483415":[2,0,0,0,1,1,6],
+"class_loot_1_1_api_1_1_builder_1_1_property_builder.html#af1ebfa3d7c5e536ffeb2ca30dc27e7a1":[2,0,0,0,1,1,2],
+"class_loot_1_1_api_1_1_content_1_1_loadable_content_base.html":[2,0,0,0,2,1],
+"class_loot_1_1_api_1_1_content_1_1_loadable_content_base.html#a34036ef22ccd421e5ecb24dc5bf95324":[2,0,0,0,2,1,4],
+"class_loot_1_1_api_1_1_content_1_1_loadable_content_base.html#a4f3a813914d4052f62a884b70daff81d":[2,0,0,0,2,1,2],
+"class_loot_1_1_api_1_1_content_1_1_loadable_content_base.html#a5b4c16e05a17901999396e8f407a2262":[2,0,0,0,2,1,5],
+"class_loot_1_1_api_1_1_content_1_1_loadable_content_base.html#a63042f72edac016539562d0fe6cd2b66":[2,0,0,0,2,1,0],
 "class_loot_1_1_api_1_1_content_1_1_loadable_content_base.html#a6579887c0322ab8906c9554f8d288708":[2,0,0,0,2,1,1],
 "class_loot_1_1_api_1_1_content_1_1_loadable_content_base.html#a70ef60558dd118d40e58a512cd295028":[2,0,0,0,2,1,3],
 "class_loot_1_1_api_1_1_content_1_1_loadable_content_base.html#a883702ffb3ac76c39b8c006063ad01f5":[2,0,0,0,2,1,6],
@@ -237,17 +249,5 @@ var NAVTREEINDEX2 =
 "class_loot_1_1_api_1_1_cubes_1_1_rerolling_cube.html#a7aead8c3e8cc0687e4a095b732ffe172":[2,0,0,0,4,1,0],
 "class_loot_1_1_api_1_1_cubes_1_1_rerolling_cube.html#ac3577e96aa3361695cc753569c8db4cc":[2,0,0,0,4,1,2],
 "class_loot_1_1_api_1_1_delegators_1_1_modifier_delegator_player.html":[2,0,0,0,5,0],
-"class_loot_1_1_api_1_1_delegators_1_1_modifier_delegator_player.html#a0215376c9da0bca055ecec16e9d582db":[2,0,0,0,5,0,62],
-"class_loot_1_1_api_1_1_delegators_1_1_modifier_delegator_player.html#a025cc5d43eab7892aafdf9e4d9945d27":[2,0,0,0,5,0,27],
-"class_loot_1_1_api_1_1_delegators_1_1_modifier_delegator_player.html#a0409a1eac1bc879175cf67656ab93888":[2,0,0,0,5,0,64],
-"class_loot_1_1_api_1_1_delegators_1_1_modifier_delegator_player.html#a0522925812ef71168d280ec616d29bfb":[2,0,0,0,5,0,171],
-"class_loot_1_1_api_1_1_delegators_1_1_modifier_delegator_player.html#a06f5722b59a03b72726f7d37c2811ee7":[2,0,0,0,5,0,48],
-"class_loot_1_1_api_1_1_delegators_1_1_modifier_delegator_player.html#a08cbb382b9b60de7952eab218b07bd35":[2,0,0,0,5,0,143],
-"class_loot_1_1_api_1_1_delegators_1_1_modifier_delegator_player.html#a08f3df1f80cb7688911cea935986f855":[2,0,0,0,5,0,68],
-"class_loot_1_1_api_1_1_delegators_1_1_modifier_delegator_player.html#a0d3eaeedc5b6929bf8592c938ec57ddc":[2,0,0,0,5,0,19],
-"class_loot_1_1_api_1_1_delegators_1_1_modifier_delegator_player.html#a0d47ec4f5bfbc1ca4e7ff607be97bde2":[2,0,0,0,5,0,146],
-"class_loot_1_1_api_1_1_delegators_1_1_modifier_delegator_player.html#a0df46a3e39444368a9ee94775d9fd22a":[2,0,0,0,5,0,117],
-"class_loot_1_1_api_1_1_delegators_1_1_modifier_delegator_player.html#a0f4d282a143f5a8f3b4cdb30fdd58834":[2,0,0,0,5,0,32],
-"class_loot_1_1_api_1_1_delegators_1_1_modifier_delegator_player.html#a107ad560af9a73c85cd0a823f64dfddd":[2,0,0,0,5,0,176],
-"class_loot_1_1_api_1_1_delegators_1_1_modifier_delegator_player.html#a134427a69c7e9ddfe57e2cbb0cc78c75":[2,0,0,0,5,0,21]
+"class_loot_1_1_api_1_1_delegators_1_1_modifier_delegator_player.html#a0215376c9da0bca055ecec16e9d582db":[2,0,0,0,5,0,62]
 };

@@ -1,13 +1,18 @@
 var searchData=
 [
+  ['i',['I',['../namespace_loot_1_1_essences.html#ac9b296a1b5ad55972d15c1f8550de14badd7536794b63bf90eccfd37f9b147d7f',1,'Loot::Essences']]],
   ['icemodifier',['IceModifier',['../class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_ice_1_1_ice_modifier.html',1,'Loot::Modifiers::WeaponModifiers::Ice']]],
   ['icemodifier_2ecs',['IceModifier.cs',['../_ice_modifier_8cs.html',1,'']]],
   ['icloneable',['ICloneable',['../class_i_cloneable.html',1,'']]],
+  ['icyessence',['IcyEssence',['../class_loot_1_1_essences_1_1_icy_essence.html',1,'Loot::Essences']]],
+  ['icyessence_2ecs',['IcyEssence.cs',['../_icy_essence_8cs.html',1,'']]],
   ['icymodifier',['IcyModifier',['../class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_ice_1_1_icy_modifier.html',1,'Loot::Modifiers::WeaponModifiers::Ice']]],
   ['icymodifier_2ecs',['IcyModifier.cs',['../_icy_modifier_8cs.html',1,'']]],
   ['idcount',['IdCount',['../class_loot_1_1_api_1_1_content_1_1_loadable_content_base.html#a883702ffb3ac76c39b8c006063ad01f5',1,'Loot::Api::Content::LoadableContentBase']]],
   ['ifakemod',['IFakeMod',['../interface_loot_tests_1_1_i_fake_mod.html',1,'LootTests']]],
   ['ifakeproperties',['IFakeProperties',['../interface_loot_tests_1_1_modifier_properties_tests_1_1_i_fake_properties.html',1,'LootTests::ModifierPropertiesTests']]],
+  ['ii',['II',['../namespace_loot_1_1_essences.html#ac9b296a1b5ad55972d15c1f8550de14ba66cc12e3c6d68de3fef6de89cf033f67',1,'Loot::Essences']]],
+  ['iii',['III',['../namespace_loot_1_1_essences.html#ac9b296a1b5ad55972d15c1f8550de14ba51ac4581fa82be87a28f7c080e026ae6',1,'Loot::Essences']]],
   ['iledit_2ecs',['ILEdit.cs',['../_i_l_edit_8cs.html',1,'']]],
   ['iloadablecontent',['ILoadableContent',['../interface_loot_1_1_api_1_1_content_1_1_i_loadable_content.html',1,'Loot::Api::Content']]],
   ['iloadablecontent_2ecs',['ILoadableContent.cs',['../_i_loadable_content_8cs.html',1,'']]],
@@ -47,5 +52,6 @@ var searchData=
   ['itemprefixpatch_2ecs',['ItemPrefixPatch.cs',['../_item_prefix_patch_8cs.html',1,'']]],
   ['itemsuffix',['ItemSuffix',['../class_loot_1_1_api_1_1_core_1_1_modifier_rarity.html#a69a40f927f6b4008e880ffcbfdc267eb',1,'Loot::Api::Core::ModifierRarity']]],
   ['itemutils',['ItemUtils',['../class_loot_1_1_api_1_1_ext_1_1_item_utils.html',1,'Loot::Api::Ext']]],
-  ['itemutils_2ecs',['ItemUtils.cs',['../_item_utils_8cs.html',1,'']]]
+  ['itemutils_2ecs',['ItemUtils.cs',['../_item_utils_8cs.html',1,'']]],
+  ['iv',['IV',['../namespace_loot_1_1_essences.html#ac9b296a1b5ad55972d15c1f8550de14bacf482c5807b62034beeabdb795c5a689',1,'Loot::Essences']]]
 ];

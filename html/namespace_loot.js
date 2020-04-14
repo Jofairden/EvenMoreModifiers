@@ -4,6 +4,7 @@ var namespace_loot =
     [ "Caching", "namespace_loot_1_1_caching.html", "namespace_loot_1_1_caching" ],
     [ "Content", "namespace_loot_1_1_content.html", "namespace_loot_1_1_content" ],
     [ "Cubes", "namespace_loot_1_1_cubes.html", "namespace_loot_1_1_cubes" ],
+    [ "Essences", "namespace_loot_1_1_essences.html", "namespace_loot_1_1_essences" ],
     [ "Hacks", "namespace_loot_1_1_hacks.html", "namespace_loot_1_1_hacks" ],
     [ "Modifiers", "namespace_loot_1_1_modifiers.html", "namespace_loot_1_1_modifiers" ],
     [ "Pools", "namespace_loot_1_1_pools.html", "namespace_loot_1_1_pools" ],
