@@ -1,10 +1,11 @@
 <map id="Loot.LootModItem.GetActivePool" name="Loot.LootModItem.GetActivePool">
 <area shape="rect" id="node2" href="$class_loot_1_1_caching_1_1_modifier_cache_player.html#aa2804e6b01433c48abb268401661b01d" title="Loot.Caching.ModifierCache\lPlayer.CacheItemModifierEffects" alt="" coords="284,5,511,47"/>
 <area shape="rect" id="node3" href="$class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_cursed_effect.html#ac9bf924c10a79e2f02ab2abad3f6b6d9" title="Loot.Modifiers.WeaponModifiers.\lCursedEffect.CurseHolding" alt="" coords="284,71,511,112"/>
-<area shape="rect" id="node4" href="$class_loot_1_1_caching_1_1_modifier_cache_player.html#ad5da049c7bfcadd0c194bd97940bf0d3" title="Loot.Caching.ModifierCache\lPlayer.UpdateCheatSheetCache" alt="" coords="284,136,511,177"/>
-<area shape="rect" id="node5" href="$class_loot_1_1_api_1_1_graphics_1_1_graphics_global_item.html#a2d66ad8c4e7150a278198810b01c91fe" title="Loot.Api.Graphics.Graphics\lGlobalItem.UpdateEntities" alt="" coords="300,201,495,243"/>
-<area shape="rect" id="node6" href="$class_loot_1_1_caching_1_1_modifier_cache_player.html#abbb2189d7ca6b73b775d63fe96ef5cab" title="Loot.Caching.ModifierCache\lPlayer.UpdateEquipsCache" alt="" coords="298,267,497,308"/>
-<area shape="rect" id="node7" href="$class_loot_1_1_caching_1_1_modifier_cache_player.html#ab2adef1dd8566c18c10e33621d3f7051" title="Loot.Caching.ModifierCache\lPlayer.UpdateHeldItemCache" alt="" coords="293,332,502,373"/>
-<area shape="rect" id="node8" href="$class_loot_1_1_caching_1_1_modifier_cache_player.html#a10051f827e24aaa158385ed5204289d7" title="Loot.Caching.ModifierCache\lPlayer.UpdateMouseItemCache" alt="" coords="286,397,509,439"/>
-<area shape="rect" id="node9" href="$class_loot_1_1_caching_1_1_modifier_cache_player.html#af61699888203f1029028f6ce61e3fbfa" title="Loot.Caching.ModifierCache\lPlayer.UpdateVanityCache" alt="" coords="298,463,497,504"/>
+<area shape="rect" id="node4" href="$class_loot_1_1_rolling_strategies_1_1_sealing_rolling_strategy.html#a8fdbe094a5eeabad09a1b2406594c751" title="Loot.RollingStrategies.Sealing\lRollingStrategy.PreRoll" alt="" coords="292,136,503,177"/>
+<area shape="rect" id="node5" href="$class_loot_1_1_caching_1_1_modifier_cache_player.html#ad5da049c7bfcadd0c194bd97940bf0d3" title="Loot.Caching.ModifierCache\lPlayer.UpdateCheatSheetCache" alt="" coords="284,201,511,243"/>
+<area shape="rect" id="node6" href="$class_loot_1_1_api_1_1_graphics_1_1_graphics_global_item.html#a2d66ad8c4e7150a278198810b01c91fe" title="Loot.Api.Graphics.Graphics\lGlobalItem.UpdateEntities" alt="" coords="300,267,495,308"/>
+<area shape="rect" id="node7" href="$class_loot_1_1_caching_1_1_modifier_cache_player.html#abbb2189d7ca6b73b775d63fe96ef5cab" title="Loot.Caching.ModifierCache\lPlayer.UpdateEquipsCache" alt="" coords="298,332,497,373"/>
+<area shape="rect" id="node8" href="$class_loot_1_1_caching_1_1_modifier_cache_player.html#ab2adef1dd8566c18c10e33621d3f7051" title="Loot.Caching.ModifierCache\lPlayer.UpdateHeldItemCache" alt="" coords="293,397,502,439"/>
+<area shape="rect" id="node9" href="$class_loot_1_1_caching_1_1_modifier_cache_player.html#a10051f827e24aaa158385ed5204289d7" title="Loot.Caching.ModifierCache\lPlayer.UpdateMouseItemCache" alt="" coords="286,463,509,504"/>
+<area shape="rect" id="node10" href="$class_loot_1_1_caching_1_1_modifier_cache_player.html#af61699888203f1029028f6ce61e3fbfa" title="Loot.Caching.ModifierCache\lPlayer.UpdateVanityCache" alt="" coords="298,528,497,569"/>
 </map>

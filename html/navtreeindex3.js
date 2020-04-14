@@ -1,8 +1,5 @@
 var NAVTREEINDEX3 =
 {
-"class_loot_1_1_api_1_1_delegators_1_1_modifier_delegator_player.html#a025cc5d43eab7892aafdf9e4d9945d27":[2,0,0,0,5,0,27],
-"class_loot_1_1_api_1_1_delegators_1_1_modifier_delegator_player.html#a0409a1eac1bc879175cf67656ab93888":[2,0,0,0,5,0,64],
-"class_loot_1_1_api_1_1_delegators_1_1_modifier_delegator_player.html#a0522925812ef71168d280ec616d29bfb":[2,0,0,0,5,0,171],
 "class_loot_1_1_api_1_1_delegators_1_1_modifier_delegator_player.html#a06f5722b59a03b72726f7d37c2811ee7":[2,0,0,0,5,0,48],
 "class_loot_1_1_api_1_1_delegators_1_1_modifier_delegator_player.html#a08cbb382b9b60de7952eab218b07bd35":[2,0,0,0,5,0,143],
 "class_loot_1_1_api_1_1_delegators_1_1_modifier_delegator_player.html#a08f3df1f80cb7688911cea935986f855":[2,0,0,0,5,0,68],
@@ -249,5 +246,8 @@ var NAVTREEINDEX3 =
 "class_loot_1_1_api_1_1_ext_1_1_rolling_utils_1_1_properties.html":[2,0,0,0,6,2,0],
 "class_loot_1_1_api_1_1_ext_1_1_rolling_utils_1_1_properties.html#a304ee17ff6f2225daa9edd50460774e4":[2,0,0,0,6,2,0,0],
 "class_loot_1_1_api_1_1_ext_1_1_rolling_utils_1_1_strategies.html":[2,0,0,0,6,2,1],
-"class_loot_1_1_api_1_1_ext_1_1_rolling_utils_1_1_strategies.html#a58399e5b6537b46487cf2cc07cdd08fd":[2,0,0,0,6,2,1,0]
+"class_loot_1_1_api_1_1_ext_1_1_rolling_utils_1_1_strategies.html#a8ee1decca58f3bc7df6124881e3c8663":[2,0,0,0,6,2,1,0],
+"class_loot_1_1_api_1_1_ext_1_1_rolling_utils_1_1_strategies.html#ad0f1969174ae3ae8cb2f53a08c919584":[2,0,0,0,6,2,1,1],
+"class_loot_1_1_api_1_1_graphics_1_1_glowmask_1_1_glowmask_entity.html":[2,0,0,0,7,0,0],
+"class_loot_1_1_api_1_1_graphics_1_1_glowmask_1_1_glowmask_entity.html#a0af9b7b3d361cb5daf23db909dffd4c6":[2,0,0,0,7,0,0,0]
 };

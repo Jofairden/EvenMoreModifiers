@@ -7,8 +7,6 @@ var searchData=
   ['registryloader',['RegistryLoader',['../class_loot_1_1_api_1_1_loaders_1_1_registry_loader.html',1,'Loot::Api::Loaders']]],
   ['rerollingcube',['RerollingCube',['../class_loot_1_1_api_1_1_cubes_1_1_rerolling_cube.html',1,'Loot::Api::Cubes']]],
   ['rollingstrategy',['RollingStrategy',['../class_loot_1_1_api_1_1_strategy_1_1_rolling_strategy.html',1,'Loot::Api::Strategy']]],
-  ['rollingstrategy_3c_20rollingstrategycontext_20_3e',['RollingStrategy&lt; RollingStrategyContext &gt;',['../class_loot_1_1_api_1_1_strategy_1_1_rolling_strategy.html',1,'Loot::Api::Strategy']]],
-  ['rollingstrategycontext',['RollingStrategyContext',['../class_loot_1_1_api_1_1_strategy_1_1_rolling_strategy_context.html',1,'Loot::Api::Strategy']]],
   ['rollingstrategyproperties',['RollingStrategyProperties',['../class_loot_1_1_api_1_1_strategy_1_1_rolling_strategy_properties.html',1,'Loot::Api::Strategy']]],
   ['rollingutils',['RollingUtils',['../class_loot_1_1_api_1_1_ext_1_1_rolling_utils.html',1,'Loot::Api::Ext']]]
 ];

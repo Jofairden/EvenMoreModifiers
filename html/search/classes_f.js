@@ -1,5 +1,6 @@
 var searchData=
 [
+  ['sealingrollingstrategy',['SealingRollingStrategy',['../class_loot_1_1_rolling_strategies_1_1_sealing_rolling_strategy.html',1,'Loot::RollingStrategies']]],
   ['shaderdrawstyle',['ShaderDrawStyle',['../class_loot_1_1_api_1_1_graphics_1_1_shader_1_1_style_1_1_shader_draw_style.html',1,'Loot::Api::Graphics::Shader::Style']]],
   ['shaderdrawstyleproperties',['ShaderDrawStyleProperties',['../class_loot_1_1_api_1_1_graphics_1_1_shader_1_1_style_1_1_shader_draw_style_1_1_shader_draw_style_properties.html',1,'Loot::Api::Graphics::Shader::Style::ShaderDrawStyle']]],
   ['shaderdrawstylepropertiesbuilder',['ShaderDrawStylePropertiesBuilder',['../class_loot_1_1_api_1_1_graphics_1_1_shader_1_1_style_1_1_shader_draw_style_1_1_shader_draw_stylee3fa1430b42fcf762048e88c567c6c51.html',1,'Loot::Api::Graphics::Shader::Style::ShaderDrawStyle::ShaderDrawStyleProperties']]],

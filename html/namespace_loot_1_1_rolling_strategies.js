@@ -1,4 +1,5 @@
 var namespace_loot_1_1_rolling_strategies =
 [
-    [ "NormalRollingStrategy", "class_loot_1_1_rolling_strategies_1_1_normal_rolling_strategy.html", "class_loot_1_1_rolling_strategies_1_1_normal_rolling_strategy" ]
+    [ "DefaultRollingStrategy", "class_loot_1_1_rolling_strategies_1_1_default_rolling_strategy.html", null ],
+    [ "SealingRollingStrategy", "class_loot_1_1_rolling_strategies_1_1_sealing_rolling_strategy.html", "class_loot_1_1_rolling_strategies_1_1_sealing_rolling_strategy" ]
 ];

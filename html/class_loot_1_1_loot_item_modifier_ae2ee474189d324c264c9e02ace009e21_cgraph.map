@@ -1,7 +1,0 @@
-<map id="Loot.LootItemModifier.RerollModifiers" name="Loot.LootItemModifier.RerollModifiers">
-<area shape="rect" id="node2" href="$class_loot_1_1_api_1_1_mechanism_1_1_modifier_pool_mechanism.html#aeaf604b6f4d61cf4a21c2eaba9db19ce" title="Loot.Api.Mechanism.Modifier\lPoolMechanism.GetPool" alt="" coords="252,5,457,47"/>
-<area shape="rect" id="node3" href="$class_loot_1_1_api_1_1_mechanism_1_1_modifier_mechanism.html#a04d74afa540161a631160051fca29159" title="Loot.Api.Mechanism.Modifier\lMechanism.RollModifiers" alt="" coords="252,71,457,112"/>
-<area shape="rect" id="node4" href="$class_loot_1_1_rolling_strategies_1_1_normal_rolling_strategy.html#a65d679b4c5a0b334703b7e6100a25541" title="Loot.RollingStrategies.Normal\lRollingStrategy.Roll" alt="" coords="505,71,716,112"/>
-<area shape="rect" id="node5" href="$class_loot_1_1_api_1_1_delegators_1_1_modifier_delegator_player.html#ac728e8a48a5778c028b443d01eb9151d" title="Loot.Api.Delegators.Modifier\lDelegatorPlayer.GetPlayer" alt="" coords="764,37,967,79"/>
-<area shape="rect" id="node6" href="$class_loot_1_1_api_1_1_delegators_1_1_modifier_delegator_player.html#a72c8852644cbf7ad5548b23953bc2c48" title="Loot.Api.Delegators.Modifier\lDelegatorPlayer.GetEffect" alt="" coords="764,103,967,144"/>
-</map>

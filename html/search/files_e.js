@@ -9,7 +9,6 @@ var searchData=
   ['registryloader_2ecs',['RegistryLoader.cs',['../_registry_loader_8cs.html',1,'']]],
   ['rerollingcube_2ecs',['RerollingCube.cs',['../_rerolling_cube_8cs.html',1,'']]],
   ['rollingstrategy_2ecs',['RollingStrategy.cs',['../_rolling_strategy_8cs.html',1,'']]],
-  ['rollingstrategycontext_2ecs',['RollingStrategyContext.cs',['../_rolling_strategy_context_8cs.html',1,'']]],
   ['rollingstrategyproperties_2ecs',['RollingStrategyProperties.cs',['../_rolling_strategy_properties_8cs.html',1,'']]],
   ['rollingutils_2ecs',['RollingUtils.cs',['../_rolling_utils_8cs.html',1,'']]]
 ];

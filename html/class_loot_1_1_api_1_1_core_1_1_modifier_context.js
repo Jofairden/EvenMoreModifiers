@@ -9,5 +9,5 @@ var class_loot_1_1_api_1_1_core_1_1_modifier_context =
     [ "PoolSet", "class_loot_1_1_api_1_1_core_1_1_modifier_context.html#a3a96f2f661dd21dcdc91a2cdccfcca80", null ],
     [ "Rarity", "class_loot_1_1_api_1_1_core_1_1_modifier_context.html#ac8515205510010bd7dd0498ce5eeec83", null ],
     [ "Recipe", "class_loot_1_1_api_1_1_core_1_1_modifier_context.html#a00f5b63051ca683b254658427fe643bf", null ],
-    [ "Strategy", "class_loot_1_1_api_1_1_core_1_1_modifier_context.html#ae0773d79dc8cf1a6ac462f1ae932ff73", null ]
+    [ "Strategy", "class_loot_1_1_api_1_1_core_1_1_modifier_context.html#af9f825a22f25c34e3d70fcf2eaafa2d7", null ]
 ];

@@ -2,7 +2,10 @@
 <area shape="rect" id="node2" href="$class_loot_1_1_caching_1_1_modifier_cache_player.html#a4b83315309f67249c30ed1ec14f0c8ed" title="Loot.Caching.ModifierCache\lPlayer.AddAttachItem" alt="" coords="255,5,454,47"/>
 <area shape="rect" id="node3" href="$class_loot_1_1_caching_1_1_modifier_cache_player.html#aceb2cf61924cc7a73c58c8a3c317b48e" title="Loot.Caching.ModifierCache\lPlayer.AddDetachItem" alt="" coords="255,71,454,112"/>
 <area shape="rect" id="node4" href="$class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_cursed_effect.html#ac9bf924c10a79e2f02ab2abad3f6b6d9" title="Loot.Modifiers.WeaponModifiers.\lCursedEffect.CurseHolding" alt="" coords="241,136,468,177"/>
-<area shape="rect" id="node5" href="$class_loot_1_1_cubes_1_1_poor_cube.html#ac62018bcc84a5582fd706680ae778d6f" title="Loot.Cubes.PoorCube.GetRolling\lStrategy" alt="" coords="241,201,468,243"/>
-<area shape="rect" id="node6" href="$class_loot_1_1_mod_support_1_1_wing_slot_support_1_1_wing_slot_support_global_item.html#aa8f9692b866ea8631d7816615437e21d" title="Loot.ModSupport.WingSlot\lSupport.WingSlotSupportGlobal\lItem.ModifyTooltips" alt="" coords="243,266,466,322"/>
-<area shape="rect" id="node7" href="$class_loot_1_1_loot_item_modifier.html#afe2068389c4a0b5080a747a571dbb716" title="Loot.LootItemModifier.Update\lModifiers" alt="" coords="249,345,460,387"/>
+<area shape="rect" id="node5" href="$class_loot_1_1_cubes_1_1_poor_cube.html#a3d764ee7954a507f441910615ad6dccd" title="Loot.Cubes.PoorCube.GetRolling\lStrategy" alt="" coords="241,201,468,243"/>
+<area shape="rect" id="node6" href="$class_loot_1_1_api_1_1_strategy_1_1_rolling_strategy.html#afbc119ee487665c80b4e82badf6be2d9" title="Loot.Api.Strategy.Rolling\lStrategy.InitFields" alt="" coords="267,267,442,308"/>
+<area shape="rect" id="node7" href="$class_loot_1_1_mod_support_1_1_wing_slot_support_1_1_wing_slot_support_global_item.html#aa8f9692b866ea8631d7816615437e21d" title="Loot.ModSupport.WingSlot\lSupport.WingSlotSupportGlobal\lItem.ModifyTooltips" alt="" coords="243,331,466,387"/>
+<area shape="rect" id="node8" href="$class_loot_1_1_rolling_strategies_1_1_sealing_rolling_strategy.html#a107b3f878a71cf09be6931867cc3c29f" title="Loot.RollingStrategies.Sealing\lRollingStrategy.PlaySoundEffect" alt="" coords="243,411,466,452"/>
+<area shape="rect" id="node9" href="$class_loot_1_1_rolling_strategies_1_1_sealing_rolling_strategy.html#a3d3c9402ce782559447b8619b4069bc6" title="Loot.RollingStrategies.Sealing\lRollingStrategy.PostRoll" alt="" coords="249,476,460,517"/>
+<area shape="rect" id="node10" href="$class_loot_1_1_loot_item_modifier.html#afe2068389c4a0b5080a747a571dbb716" title="Loot.LootItemModifier.Update\lModifiers" alt="" coords="249,541,460,583"/>
 </map>

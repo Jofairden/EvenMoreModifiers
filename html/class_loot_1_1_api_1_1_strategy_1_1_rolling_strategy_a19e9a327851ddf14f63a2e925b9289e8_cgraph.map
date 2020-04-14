@@ -1,0 +1,9 @@
+<map id="Loot.Api.Strategy.RollingStrategy.RollLine" name="Loot.Api.Strategy.RollingStrategy.RollLine">
+<area shape="rect" id="node2" href="$class_loot_1_1_api_1_1_core_1_1_modifier.html#a2d17e1a1ba7e07e10976ab7e228c3767" title="Allows modders to do custom cloning here Happens after default cloning, which clones various info (mo..." alt="" coords="243,5,444,32"/>
+<area shape="rect" id="node3" href="$class_loot_1_1_api_1_1_delegators_1_1_modifier_delegator_player.html#a72c8852644cbf7ad5548b23953bc2c48" title="Loot.Api.Delegators.Modifier\lDelegatorPlayer.GetEffect" alt="" coords="242,57,445,98"/>
+<area shape="rect" id="node4" href="$class_loot_1_1_api_1_1_core_1_1_modifier.html#a5e4aff9bd5e2e8dc31fa8837d7376832" title="Loot.Api.Core.Modifier.Get\lModifierProperties" alt="" coords="249,122,437,163"/>
+<area shape="rect" id="node5" href="$class_loot_1_1_api_1_1_delegators_1_1_modifier_delegator_player.html#ac728e8a48a5778c028b443d01eb9151d" title="Loot.Api.Delegators.Modifier\lDelegatorPlayer.GetPlayer" alt="" coords="242,187,445,229"/>
+<area shape="rect" id="node6" href="$class_loot_1_1_api_1_1_core_1_1_modifier.html#aae380fed634f6c2f938d4d14264fc3bc" title="Returns if the modifier will actually be added after it is rolled. This is called after Roll is calle..." alt="" coords="236,253,451,280"/>
+<area shape="rect" id="node7" href="$class_loot_1_1_api_1_1_core_1_1_modifier.html#ae91f2ee157cf43c80602b6f5ed7207a6" title="Allows modders to do something when the modifier is rolled in the given context The passed rolledModi..." alt="" coords="250,304,437,331"/>
+<area shape="rect" id="node8" href="$class_loot_1_1_api_1_1_core_1_1_modifier_properties.html#a8bc4d2e30c95ccb69faf1202c7cd4c97" title="Loot.Api.Core.ModifierProperties.\lRollMagnitudeAndPower" alt="" coords="228,355,459,397"/>
+</map>

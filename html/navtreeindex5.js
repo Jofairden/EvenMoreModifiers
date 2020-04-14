@@ -1,5 +1,9 @@
 var NAVTREEINDEX5 =
 {
+"class_loot_1_1_essences_1_1_temp_item.html":[2,0,0,4,2],
+"class_loot_1_1_essences_1_1_temp_item.html#a51dcb99aba30629007f2bf4b2a5f884c":[2,0,0,4,2,0],
+"class_loot_1_1_essences_1_1_temp_item.html#aeb7343e63e32fca430da5cf99b2aae2d":[2,0,0,4,2,1],
+"class_loot_1_1_hacks_1_1_cheated_item_hack_global_item.html":[2,0,0,5,0],
 "class_loot_1_1_hacks_1_1_cheated_item_hack_global_item.html#a0f2ab09a6f5638de0a210ad7e67b1676":[2,0,0,5,0,10],
 "class_loot_1_1_hacks_1_1_cheated_item_hack_global_item.html#a4f7aeea90d4108790769a0649ca55a3b":[2,0,0,5,0,7],
 "class_loot_1_1_hacks_1_1_cheated_item_hack_global_item.html#a4ff1d27ea97fb4818cef025010d7cd6c":[2,0,0,5,0,3],
@@ -22,7 +26,7 @@ var NAVTREEINDEX5 =
 "class_loot_1_1_loot.html#a8706bf929344678026f2bb45e3d52a56":[2,0,0,12,6],
 "class_loot_1_1_loot.html#a977383ef02e8aa216fb3c49840a806df":[2,0,0,12,2],
 "class_loot_1_1_loot_item_modifier.html":[2,0,0,13],
-"class_loot_1_1_loot_item_modifier.html#ae2ee474189d324c264c9e02ace009e21":[2,0,0,13,0],
+"class_loot_1_1_loot_item_modifier.html#a4dc8fe390c9ba4e29636e428288b9d85":[2,0,0,13,0],
 "class_loot_1_1_loot_item_modifier.html#afe2068389c4a0b5080a747a571dbb716":[2,0,0,13,1],
 "class_loot_1_1_loot_mod_item.html":[2,0,0,14],
 "class_loot_1_1_loot_mod_item.html#a054d25adc3b432a8589f90fbc886d111":[2,0,0,14,13],
@@ -245,9 +249,5 @@ var NAVTREEINDEX5 =
 "class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_crit_plus.html#a6d51c218f3a04ec29e1e51ee3569b9a2":[2,0,0,6,2,2,0],
 "class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_crit_plus.html#a6df7b6b9f9a7c53c96bf6be910b1c682":[2,0,0,6,2,2,1],
 "class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_crit_plus.html#abf21f175ab2600c346764639e76ccd7f":[2,0,0,6,2,2,3],
-"class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_crit_plus.html#ad4da3d398fa4926258def46456a8d323":[2,0,0,6,2,2,2],
-"class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_cursed_damage.html":[2,0,0,6,2,3],
-"class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_cursed_damage.html#a557acf6db5f0ee6efca16729ebbbb24f":[2,0,0,6,2,3,1],
-"class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_cursed_damage.html#a6eca89c46387e297b7abb62e040cbfaf":[2,0,0,6,2,3,0],
-"class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_cursed_damage.html#a727e08a2b8f8786f2730f63cd2ec858a":[2,0,0,6,2,3,2]
+"class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_crit_plus.html#ad4da3d398fa4926258def46456a8d323":[2,0,0,6,2,2,2]
 };

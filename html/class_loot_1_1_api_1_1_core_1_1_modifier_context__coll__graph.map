@@ -1,10 +1,13 @@
 <map id="Loot.Api.Core.ModifierContext" name="Loot.Api.Core.ModifierContext">
-<area shape="rect" id="node2" href="$class_loot_1_1_api_1_1_strategy_1_1_rolling_strategy.html" title="Loot.Api.Strategy.Rolling\lStrategy\&lt; RollingStrategyContext \&gt;" alt="" coords="521,83,773,125"/>
-<area shape="rect" id="node4" href="$class_loot_1_1_api_1_1_core_1_1_modifier_pool.html" title="Defines a modifier pool. A modifier pool holds a certain amount of effects in an array It allows to r..." alt="" coords="553,200,742,227"/>
-<area shape="rect" id="node5" href="$interface_loot_1_1_api_1_1_content_1_1_i_loadable_content.html" title="Defines a piece of loadable content The interface is used in classes where the deriving class already..." alt="" coords="167,91,301,117"/>
-<area shape="rect" id="node14" href="$class_loot_1_1_api_1_1_core_1_1_modifier_rarity.html" title="Defines the rarity of a modifier " alt="" coords="548,368,747,395"/>
-<area shape="rect" id="node6" title="Used to restrict setting properties of ILoadableContent to internal only This is done by marking the ..." alt="" coords="147,285,321,312"/>
-<area shape="rect" id="node7" href="$class_i_cloneable.html" title="ICloneable" alt="" coords="190,352,278,379"/>
-<area shape="rect" id="node10" href="$class_loot_1_1_api_1_1_attributes_1_1_populate_pool_from_attribute.html" title="Will populate a ModifierPool based on a namespace All Modifiers in that namespace will become part of..." alt="" coords="133,15,335,57"/>
-<area shape="rect" id="node11" href="$class_attribute.html" title="Attribute" alt="" coords="5,23,84,49"/>
+<area shape="rect" id="node3" href="$class_loot_1_1_api_1_1_core_1_1_modifier_pool.html" title="Defines a modifier pool. A modifier pool holds a certain amount of effects in an array It allows to r..." alt="" coords="662,251,851,277"/>
+<area shape="rect" id="node4" href="$interface_loot_1_1_api_1_1_content_1_1_i_loadable_content.html" title="Defines a piece of loadable content The interface is used in classes where the deriving class already..." alt="" coords="303,357,437,384"/>
+<area shape="rect" id="node13" href="$class_loot_1_1_api_1_1_core_1_1_modifier_rarity.html" title="Defines the rarity of a modifier " alt="" coords="657,447,856,473"/>
+<area shape="rect" id="node5" title="Used to restrict setting properties of ILoadableContent to internal only This is done by marking the ..." alt="" coords="283,208,457,235"/>
+<area shape="rect" id="node6" href="$class_i_cloneable.html" title="ICloneable" alt="" coords="326,275,414,301"/>
+<area shape="rect" id="node9" href="$class_loot_1_1_api_1_1_attributes_1_1_populate_pool_from_attribute.html" title="Will populate a ModifierPool based on a namespace All Modifiers in that namespace will become part of..." alt="" coords="269,14,471,55"/>
+<area shape="rect" id="node10" href="$class_attribute.html" title="Attribute" alt="" coords="11,21,90,48"/>
+<area shape="rect" id="node17" href="$class_loot_1_1_api_1_1_strategy_1_1_rolling_strategy.html" title="Loot.Api.Strategy.Rolling\lStrategy" alt="" coords="669,563,844,605"/>
+<area shape="rect" id="node18" href="$class_loot_1_1_api_1_1_strategy_1_1_rolling_strategy_properties.html" title="Defines properties that will be used when an item is being rolled in a IRollingStrategy&lt;T&gt; These can ..." alt="" coords="283,801,457,842"/>
+<area shape="rect" id="node20" href="$class_loot_1_1_loot_mod_item.html" title="Defines an item that may be modified by modifiers from mods " alt="" coords="301,717,439,744"/>
+<area shape="rect" id="node21" href="$class_global_item.html" title="GlobalItem" alt="" coords="5,733,96,760"/>
 </map>

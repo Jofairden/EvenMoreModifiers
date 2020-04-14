@@ -35,13 +35,13 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "_accessory_modifier_8cs.html",
-"_life_regen_8cs.html",
+"_legendary_rarity_8cs.html",
 "class_loot_1_1_api_1_1_builder_1_1_property_builder.html#a26ee6e1eed7894354dabf936e06845d1",
-"class_loot_1_1_api_1_1_delegators_1_1_modifier_delegator_player.html#a025cc5d43eab7892aafdf9e4d9945d27",
-"class_loot_1_1_api_1_1_graphics_1_1_glowmask_1_1_glowmask_entity.html",
-"class_loot_1_1_hacks_1_1_cheated_item_hack_global_item.html#a0f2ab09a6f5638de0a210ad7e67b1676",
-"class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_cursed_damage.html#ac8e2e07c0d15ce32bcac198c201ce2e3",
-"functions_func_o.html"
+"class_loot_1_1_api_1_1_delegators_1_1_modifier_delegator_player.html#a06f5722b59a03b72726f7d37c2811ee7",
+"class_loot_1_1_api_1_1_graphics_1_1_glowmask_1_1_glowmask_entity.html#a21db72d77d2f065805b724bb74cdb2af",
+"class_loot_1_1_essences_1_1_temp_item.html",
+"class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_cursed_damage.html",
+"functions_func_f.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

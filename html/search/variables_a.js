@@ -9,6 +9,7 @@ var searchData=
   ['modcount',['ModCount',['../class_loot_1_1_api_1_1_loaders_1_1_registry_loader.html#abb7d0ffafb994e4330528d41feb468d1',1,'Loot::Api::Loaders::RegistryLoader']]],
   ['modifier',['Modifier',['../class_loot_1_1_api_1_1_loaders_1_1_content_loader.html#a347a72e4371307db6a2f8b8f43288fbd',1,'Loot::Api::Loaders::ContentLoader']]],
   ['modifiereffect',['ModifierEffect',['../class_loot_1_1_api_1_1_loaders_1_1_content_loader.html#a9913f3cfb687daafcdaa193be067dc15',1,'Loot::Api::Loaders::ContentLoader']]],
+  ['modifieritem',['modifierItem',['../class_loot_1_1_api_1_1_strategy_1_1_rolling_strategy.html#ad0baf789435680c7972ed51523054a89',1,'Loot::Api::Strategy::RollingStrategy']]],
   ['modifierpool',['ModifierPool',['../class_loot_1_1_api_1_1_loaders_1_1_content_loader.html#ae0240f647e57d6676fc48b205101fef7',1,'Loot::Api::Loaders::ContentLoader']]],
   ['modifierrarity',['ModifierRarity',['../class_loot_1_1_api_1_1_loaders_1_1_content_loader.html#a8fe225e940b7355e008727657746f676',1,'Loot::Api::Loaders::ContentLoader']]],
   ['modifiers',['Modifiers',['../class_loot_1_1_api_1_1_core_1_1_finite_modifier_pool.html#a9c0ad5ef7aaf7751921a0e0de2e13b92',1,'Loot::Api::Core::FiniteModifierPool']]],

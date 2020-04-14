@@ -1,6 +1,7 @@
 var searchData=
 [
   ['debuffchances',['DebuffChances',['../class_loot_1_1_modifiers_1_1_base_1_1_weapon_debuff_effect.html#a013f891fb564f812f0b95f47255346ca',1,'Loot::Modifiers::Base::WeaponDebuffEffect']]],
+  ['default',['Default',['../class_loot_1_1_api_1_1_ext_1_1_rolling_utils_1_1_strategies.html#a8ee1decca58f3bc7df6124881e3c8663',1,'Loot::Api::Ext::RollingUtils::Strategies']]],
   ['delegationtypes',['DelegationTypes',['../class_loot_1_1_api_1_1_attributes_1_1_auto_delegation.html#acc512fc4223169ba874452cea5f7e26f',1,'Loot::Api::Attributes::AutoDelegation']]],
   ['description',['Description',['../class_loot_1_1_essences_1_1_icy_essence.html#a0c55752b13eb0fa62ca58213ffe798ee',1,'Loot::Essences::IcyEssence']]],
   ['destinationrectangle',['DestinationRectangle',['../class_loot_1_1_api_1_1_graphics_1_1_graphics_entity.html#ac8b0cb2c2acfba391c7e099fc8c87909',1,'Loot::Api::Graphics::GraphicsEntity']]],

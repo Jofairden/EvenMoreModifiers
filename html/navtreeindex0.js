@@ -48,6 +48,8 @@ var NAVTREEINDEX0 =
 "_damage_plus_daytime_8cs_source.html":[3,0,10,2,5],
 "_damage_with_mana_cost_8cs.html":[3,0,10,2,6],
 "_damage_with_mana_cost_8cs_source.html":[3,0,10,2,6],
+"_default_rolling_strategy_8cs.html":[3,0,14,0],
+"_default_rolling_strategy_8cs_source.html":[3,0,14,0],
 "_delegation_prioritization_8cs.html":[3,0,0,0,1],
 "_delegation_prioritization_8cs.html#a4bb203b1609b5a3f73712bfde69dd986":[3,0,0,0,1,0],
 "_delegation_prioritization_8cs.html#a4bb203b1609b5a3f73712bfde69dd986a1dec90af1a623cee26f9b2a40d9f648b":[3,0,0,0,1,0,0],
@@ -247,7 +249,5 @@ var NAVTREEINDEX0 =
 "_knockback_immunity_8cs.html":[3,0,10,1,0,3],
 "_knockback_immunity_8cs_source.html":[3,0,10,1,0,3],
 "_knockback_plus_8cs.html":[3,0,10,2,7],
-"_knockback_plus_8cs_source.html":[3,0,10,2,7],
-"_legendary_rarity_8cs.html":[3,0,13,2],
-"_legendary_rarity_8cs_source.html":[3,0,13,2]
+"_knockback_plus_8cs_source.html":[3,0,10,2,7]
 };

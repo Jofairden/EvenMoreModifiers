@@ -119,14 +119,14 @@ $(document).ready(function(){initNavTree('class_loot_1_1_api_1_1_mechanism_1_1_m
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
-<tr class="memitem:a04d74afa540161a631160051fca29159"><td class="memItemLeft" align="right" valign="top">static List&lt; <a class="el" href="class_loot_1_1_api_1_1_core_1_1_modifier.html">Modifier</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_loot_1_1_api_1_1_mechanism_1_1_modifier_mechanism.html#a04d74afa540161a631160051fca29159">RollModifiers</a> (Item item, <a class="el" href="class_loot_1_1_api_1_1_core_1_1_modifier_pool.html">ModifierPool</a> pool, <a class="el" href="class_loot_1_1_api_1_1_core_1_1_modifier_context.html">ModifierContext</a> context, <a class="el" href="class_loot_1_1_api_1_1_strategy_1_1_rolling_strategy_properties.html">RollingStrategyProperties</a> properties)</td></tr>
-<tr class="separator:a04d74afa540161a631160051fca29159"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a688b8e92f22d5571ec2022d18a8529a5"><td class="memItemLeft" align="right" valign="top">static List&lt; <a class="el" href="class_loot_1_1_api_1_1_core_1_1_modifier.html">Modifier</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_loot_1_1_api_1_1_mechanism_1_1_modifier_mechanism.html#a688b8e92f22d5571ec2022d18a8529a5">RollModifiers</a> (this Item item, <a class="el" href="class_loot_1_1_api_1_1_strategy_1_1_rolling_strategy.html">RollingStrategy</a> strategy, <a class="el" href="class_loot_1_1_api_1_1_core_1_1_modifier_pool.html">ModifierPool</a> pool, <a class="el" href="class_loot_1_1_api_1_1_core_1_1_modifier_context.html">ModifierContext</a> context, <a class="el" href="class_loot_1_1_api_1_1_strategy_1_1_rolling_strategy_properties.html">RollingStrategyProperties</a> properties)</td></tr>
+<tr class="separator:a688b8e92f22d5571ec2022d18a8529a5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock">
-<p>Definition at line <a class="el" href="_modifier_mechanism_8cs_source.html#l00013">13</a> of file <a class="el" href="_modifier_mechanism_8cs_source.html">ModifierMechanism.cs</a>.</p>
+<p>Definition at line <a class="el" href="_modifier_mechanism_8cs_source.html#l00008">8</a> of file <a class="el" href="_modifier_mechanism_8cs_source.html">ModifierMechanism.cs</a>.</p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
-<a class="anchor" id="a04d74afa540161a631160051fca29159"></a>
+<a class="anchor" id="a688b8e92f22d5571ec2022d18a8529a5"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -136,8 +136,14 @@ Static Public Member Functions</h2></td></tr>
         <tr>
           <td class="memname">static List&lt;<a class="el" href="class_loot_1_1_api_1_1_core_1_1_modifier.html">Modifier</a>&gt; Loot.Api.Mechanism.ModifierMechanism.RollModifiers </td>
           <td>(</td>
-          <td class="paramtype">Item&#160;</td>
+          <td class="paramtype">this Item&#160;</td>
           <td class="paramname"><em>item</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_loot_1_1_api_1_1_strategy_1_1_rolling_strategy.html">RollingStrategy</a>&#160;</td>
+          <td class="paramname"><em>strategy</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -170,41 +176,8 @@ Static Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_modifier_mechanism_8cs_source.html#l00015">15</a> of file <a class="el" href="_modifier_mechanism_8cs_source.html">ModifierMechanism.cs</a>.</p>
-
-<p>References <a class="el" href="_normal_rolling_strategy_8cs_source.html#l00110">Loot.RollingStrategies.NormalRollingStrategy.Roll()</a>.</p>
-
-<p>Referenced by <a class="el" href="_loot_item_modifier_8cs_source.html#l00011">Loot.LootItemModifier.RerollModifiers()</a>.</p>
-<div class="fragment"><div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;        {</div><div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;            <span class="keywordflow">return</span> <span class="keyword">new</span> <a class="code" href="class_loot_1_1_rolling_strategies_1_1_normal_rolling_strategy.html">NormalRollingStrategy</a>().<a class="code" href="class_loot_1_1_rolling_strategies_1_1_normal_rolling_strategy.html#a65d679b4c5a0b334703b7e6100a25541">Roll</a>(</div><div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;                pool,</div><div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;                context,</div><div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;                <span class="keyword">new</span> <a class="code" href="class_loot_1_1_api_1_1_strategy_1_1_rolling_strategy_context.html">RollingStrategyContext</a>(item, properties)</div><div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;            );</div><div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;        }</div><div class="ttc" id="class_loot_1_1_api_1_1_strategy_1_1_rolling_strategy_context_html"><div class="ttname"><a href="class_loot_1_1_api_1_1_strategy_1_1_rolling_strategy_context.html">Loot.Api.Strategy.RollingStrategyContext</a></div><div class="ttdoc">The context in which a rolling strategy is executed </div><div class="ttdef"><b>Definition:</b> <a href="_rolling_strategy_context_8cs_source.html#l00008">RollingStrategyContext.cs:8</a></div></div>
-<div class="ttc" id="class_loot_1_1_rolling_strategies_1_1_normal_rolling_strategy_html_a65d679b4c5a0b334703b7e6100a25541"><div class="ttname"><a href="class_loot_1_1_rolling_strategies_1_1_normal_rolling_strategy.html#a65d679b4c5a0b334703b7e6100a25541">Loot.RollingStrategies.NormalRollingStrategy.Roll</a></div><div class="ttdeci">override List&lt; Modifier &gt; Roll(ModifierPool pool, ModifierContext modifierContext, RollingStrategyContext strategyContext)</div><div class="ttdef"><b>Definition:</b> <a href="_normal_rolling_strategy_8cs_source.html#l00110">NormalRollingStrategy.cs:110</a></div></div>
-<div class="ttc" id="class_loot_1_1_rolling_strategies_1_1_normal_rolling_strategy_html"><div class="ttname"><a href="class_loot_1_1_rolling_strategies_1_1_normal_rolling_strategy.html">Loot.RollingStrategies.NormalRollingStrategy</a></div><div class="ttdoc">A normal rolling strategy, follows normal behavior </div><div class="ttdef"><b>Definition:</b> <a href="_normal_rolling_strategy_8cs_source.html#l00016">NormalRollingStrategy.cs:16</a></div></div>
-</div><!-- fragment -->
-<p><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
-<div id="dynsection-0-summary" class="dynsummary" style="display:block;">
-</div>
-<div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><img src="class_loot_1_1_api_1_1_mechanism_1_1_modifier_mechanism_a04d74afa540161a631160051fca29159_cgraph.png" border="0" usemap="#class_loot_1_1_api_1_1_mechanism_1_1_modifier_mechanism_a04d74afa540161a631160051fca29159_cgraph" alt=""/></div>
-<map name="class_loot_1_1_api_1_1_mechanism_1_1_modifier_mechanism_a04d74afa540161a631160051fca29159_cgraph" id="class_loot_1_1_api_1_1_mechanism_1_1_modifier_mechanism_a04d74afa540161a631160051fca29159_cgraph">
-<area shape="rect" id="node2" href="class_loot_1_1_rolling_strategies_1_1_normal_rolling_strategy.html#a65d679b4c5a0b334703b7e6100a25541" title="Loot.RollingStrategies.Normal\lRollingStrategy.Roll" alt="" coords="259,39,469,80"/>
-<area shape="rect" id="node3" href="class_loot_1_1_api_1_1_delegators_1_1_modifier_delegator_player.html#ac728e8a48a5778c028b443d01eb9151d" title="Loot.Api.Delegators.Modifier\lDelegatorPlayer.GetPlayer" alt="" coords="517,5,720,47"/>
-<area shape="rect" id="node4" href="class_loot_1_1_api_1_1_delegators_1_1_modifier_delegator_player.html#a72c8852644cbf7ad5548b23953bc2c48" title="Loot.Api.Delegators.Modifier\lDelegatorPlayer.GetEffect" alt="" coords="517,71,720,112"/>
-</map>
-</div>
-</p>
-
-<p><div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-1-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-1-summary" class="dynsummary" style="display:block;">
-</div>
-<div id="dynsection-1-content" class="dyncontent" style="display:none;">
-<div class="center"><img src="class_loot_1_1_api_1_1_mechanism_1_1_modifier_mechanism_a04d74afa540161a631160051fca29159_icgraph.png" border="0" usemap="#class_loot_1_1_api_1_1_mechanism_1_1_modifier_mechanism_a04d74afa540161a631160051fca29159_icgraph" alt=""/></div>
-<map name="class_loot_1_1_api_1_1_mechanism_1_1_modifier_mechanism_a04d74afa540161a631160051fca29159_icgraph" id="class_loot_1_1_api_1_1_mechanism_1_1_modifier_mechanism_a04d74afa540161a631160051fca29159_icgraph">
-<area shape="rect" id="node2" href="class_loot_1_1_loot_item_modifier.html#ae2ee474189d324c264c9e02ace009e21" title="Loot.LootItemModifier.Reroll\lModifiers" alt="" coords="259,5,457,47"/>
-</map>
-</div>
-</p>
-
+<p>Definition at line <a class="el" href="_modifier_mechanism_8cs_source.html#l00010">10</a> of file <a class="el" href="_modifier_mechanism_8cs_source.html">ModifierMechanism.cs</a>.</p>
+<div class="fragment"><div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;        {</div><div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;            <span class="keywordflow">return</span> strategy._Roll(pool, context, properties);</div><div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;        }</div></div><!-- fragment -->
 </div>
 </div>
 </div><!-- contents -->
@@ -213,7 +186,7 @@ Static Public Member Functions</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespace_loot.html">Loot</a></li><li class="navelem"><a class="el" href="namespace_loot_1_1_api.html">Api</a></li><li class="navelem"><a class="el" href="namespace_loot_1_1_api_1_1_mechanism.html">Mechanism</a></li><li class="navelem"><a class="el" href="class_loot_1_1_api_1_1_mechanism_1_1_modifier_mechanism.html">ModifierMechanism</a></li>
-    <li class="footer">Generated on Tue Apr 14 2020 19:43:21 for Even More Modifiers by
+    <li class="footer">Generated on Tue Apr 14 2020 21:18:17 for Even More Modifiers by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.11 </li>
   </ul>

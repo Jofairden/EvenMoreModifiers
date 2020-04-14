@@ -1,5 +1,9 @@
 var NAVTREEINDEX6 =
 {
+"class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_cursed_damage.html":[2,0,0,6,2,3],
+"class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_cursed_damage.html#a557acf6db5f0ee6efca16729ebbbb24f":[2,0,0,6,2,3,1],
+"class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_cursed_damage.html#a6eca89c46387e297b7abb62e040cbfaf":[2,0,0,6,2,3,0],
+"class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_cursed_damage.html#a727e08a2b8f8786f2730f63cd2ec858a":[2,0,0,6,2,3,2],
 "class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_cursed_damage.html#ac8e2e07c0d15ce32bcac198c201ce2e3":[2,0,0,6,2,3,3],
 "class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_cursed_effect.html":[2,0,0,6,2,4],
 "class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_cursed_effect.html#a3c54a27c233436d348c35874d1516a11":[2,0,0,6,2,4,0],
@@ -122,8 +126,12 @@ var NAVTREEINDEX6 =
 "class_loot_1_1_rarities_1_1_transcendent_rarity.html#ac56798b1f670265445cfcd73774df92f":[2,0,0,8,4,7],
 "class_loot_1_1_rarities_1_1_transcendent_rarity.html#acbad8a00a821c7cf4e18e330cf7c5268":[2,0,0,8,4,6],
 "class_loot_1_1_rarities_1_1_transcendent_rarity.html#ad7a43d7257f38a8c805a146ef0058ac4":[2,0,0,8,4,4],
-"class_loot_1_1_rolling_strategies_1_1_normal_rolling_strategy.html":[2,0,0,9,0],
-"class_loot_1_1_rolling_strategies_1_1_normal_rolling_strategy.html#a65d679b4c5a0b334703b7e6100a25541":[2,0,0,9,0,0],
+"class_loot_1_1_rolling_strategies_1_1_default_rolling_strategy.html":[2,0,0,9,0],
+"class_loot_1_1_rolling_strategies_1_1_sealing_rolling_strategy.html":[2,0,0,9,1],
+"class_loot_1_1_rolling_strategies_1_1_sealing_rolling_strategy.html#a107b3f878a71cf09be6931867cc3c29f":[2,0,0,9,1,0],
+"class_loot_1_1_rolling_strategies_1_1_sealing_rolling_strategy.html#a3d3c9402ce782559447b8619b4069bc6":[2,0,0,9,1,1],
+"class_loot_1_1_rolling_strategies_1_1_sealing_rolling_strategy.html#a8fdbe094a5eeabad09a1b2406594c751":[2,0,0,9,1,2],
+"class_loot_1_1_rolling_strategies_1_1_sealing_rolling_strategy.html#aa70c3544d1b64ff93af4a565fe8318f5":[2,0,0,9,1,3],
 "class_loot_1_1_sounds_1_1_custom_1_1_sound_maker.html":[2,0,0,10,0,0],
 "class_loot_1_1_sounds_1_1_custom_1_1_sound_maker.html#ad0c71bae603b16c6e98848e2dbc675df":[2,0,0,10,0,0,0],
 "class_loot_tests_1_1_empty_mod_load_shell.html":[2,0,1,3],
@@ -241,13 +249,5 @@ var NAVTREEINDEX6 =
 "functions_func_b.html":[2,3,1,2],
 "functions_func_c.html":[2,3,1,3],
 "functions_func_d.html":[2,3,1,4],
-"functions_func_e.html":[2,3,1,5],
-"functions_func_f.html":[2,3,1,6],
-"functions_func_g.html":[2,3,1,7],
-"functions_func_h.html":[2,3,1,8],
-"functions_func_i.html":[2,3,1,9],
-"functions_func_k.html":[2,3,1,10],
-"functions_func_l.html":[2,3,1,11],
-"functions_func_m.html":[2,3,1,12],
-"functions_func_n.html":[2,3,1,13]
+"functions_func_e.html":[2,3,1,5]
 };

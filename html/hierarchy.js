@@ -218,11 +218,10 @@ var hierarchy =
       [ "Loot.Api.Graphics.Shader.ShaderGraphicsProperties.ShaderGraphicsPropertiesBuilder", "class_loot_1_1_api_1_1_graphics_1_1_shader_1_1_shader_graphics_properties_1_1_shader_graphics_properties_builder.html", null ]
     ] ],
     [ "Loot.Api.Loaders.RegistryLoader", "class_loot_1_1_api_1_1_loaders_1_1_registry_loader.html", null ],
-    [ "Loot.Api.Strategy.RollingStrategy< T >", "class_loot_1_1_api_1_1_strategy_1_1_rolling_strategy.html", null ],
-    [ "Loot.Api.Strategy.RollingStrategy< RollingStrategyContext >", "class_loot_1_1_api_1_1_strategy_1_1_rolling_strategy.html", [
-      [ "Loot.RollingStrategies.NormalRollingStrategy", "class_loot_1_1_rolling_strategies_1_1_normal_rolling_strategy.html", null ]
+    [ "Loot.Api.Strategy.RollingStrategy", "class_loot_1_1_api_1_1_strategy_1_1_rolling_strategy.html", [
+      [ "Loot.RollingStrategies.DefaultRollingStrategy", "class_loot_1_1_rolling_strategies_1_1_default_rolling_strategy.html", null ],
+      [ "Loot.RollingStrategies.SealingRollingStrategy", "class_loot_1_1_rolling_strategies_1_1_sealing_rolling_strategy.html", null ]
     ] ],
-    [ "Loot.Api.Strategy.RollingStrategyContext", "class_loot_1_1_api_1_1_strategy_1_1_rolling_strategy_context.html", null ],
     [ "Loot.Api.Strategy.RollingStrategyProperties", "class_loot_1_1_api_1_1_strategy_1_1_rolling_strategy_properties.html", null ],
     [ "Loot.Api.Ext.RollingUtils", "class_loot_1_1_api_1_1_ext_1_1_rolling_utils.html", null ],
     [ "Loot.Api.Graphics.Shader.Style.ShaderDrawStyle", "class_loot_1_1_api_1_1_graphics_1_1_shader_1_1_style_1_1_shader_draw_style.html", [

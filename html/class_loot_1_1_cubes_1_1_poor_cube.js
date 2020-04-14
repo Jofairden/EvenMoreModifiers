@@ -1,6 +1,6 @@
 var class_loot_1_1_cubes_1_1_poor_cube =
 [
-    [ "GetRollingStrategy", "class_loot_1_1_cubes_1_1_poor_cube.html#ac62018bcc84a5582fd706680ae778d6f", null ],
+    [ "GetRollingStrategy", "class_loot_1_1_cubes_1_1_poor_cube.html#a3d764ee7954a507f441910615ad6dccd", null ],
     [ "SafeDefaults", "class_loot_1_1_cubes_1_1_poor_cube.html#ae3035cf83d6fc48a862c214b96319ba2", null ],
     [ "SafeStaticDefaults", "class_loot_1_1_cubes_1_1_poor_cube.html#aa4b0e4245beef702046775f54706b4d5", null ],
     [ "CubeName", "class_loot_1_1_cubes_1_1_poor_cube.html#abf64e4fbdffadcab8aef753cefc9ce2c", null ],
