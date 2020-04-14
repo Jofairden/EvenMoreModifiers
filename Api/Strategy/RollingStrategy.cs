@@ -106,7 +106,7 @@ namespace Loot.Api.Strategy
 
 		public virtual List<Modifier> PreRoll(ModifierPool drawPool, ModifierContext modifierContext, RollingStrategyProperties properties)
 		{
-			var preset = properties.PresetLines();
+			var preset = properties?.PresetLines?.Invoke() ?? new List<Modifier>();
 			preset.ForEach(x => RollProperties(x, preset, modifierContext, properties));
 			preset.ForEach(x => x.Roll(modifierContext, preset));
 			return preset;
