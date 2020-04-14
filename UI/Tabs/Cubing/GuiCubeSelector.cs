@@ -44,7 +44,7 @@ namespace Loot.UI.Tabs.Cubing
 				_currentOffset--;
 				btn.CanBeClicked = _maxOffset > 0 && _currentOffset > 0;
 				_arrowRight.CanBeClicked = _maxOffset > 0 && _currentOffset < _maxOffset;
-				UpdateCubeFrame();
+				DetermineAvailableCubes();
 			};
 			Append(_arrowLeft);
 
@@ -55,7 +55,7 @@ namespace Loot.UI.Tabs.Cubing
 				_currentOffset++;
 				_arrowLeft.CanBeClicked = _maxOffset > 0 && _currentOffset > 0;
 				btn.CanBeClicked = _maxOffset > 0 && _currentOffset < _maxOffset;
-				UpdateCubeFrame();
+				DetermineAvailableCubes();
 			};
 			Append(_arrowRight);
 		}
@@ -98,20 +98,31 @@ namespace Loot.UI.Tabs.Cubing
 		{
 			_cubes.Clear();
 
-			var items =
+			var foundItems =
 				Main.LocalPlayer.inventory.GetDistinctModItems<RerollingCube>()
-					.Select(i => (name: i.item.Name, i.item.type, stack: Main.LocalPlayer.inventory.CountItemStack(i.item.type, true)))
-					.ToList();
+					.Select(i => (name: i.item.Name, i.item.type, stack: Main.LocalPlayer.inventory.CountItemStack(i.item.type, true)));
 
-			_maxOffset = (int)Math.Floor(items.Count / (CUBES_PER_PAGE + 1f));
-			_arrowLeft.CanBeClicked = _maxOffset > 0;
-			_arrowRight.CanBeClicked = _maxOffset > 0;
+			var foundCount = foundItems.Count();
+
+			if (_currentOffset > 0)
+			{
+				foundItems = foundItems.Skip(_currentOffset * CUBES_PER_PAGE);
+			}
+
+			var items = foundItems.Take(CUBES_PER_PAGE).ToList();
+
+
+			_maxOffset = (int)Math.Floor(foundCount / (CUBES_PER_PAGE + 1f));
+			_arrowLeft.CanBeClicked = _maxOffset > 0 && _currentOffset > 0;
+			_arrowRight.CanBeClicked = _maxOffset > 0 && _currentOffset < _maxOffset;
+
 
 			for (int i = 0; i < items.Count; i++)
 			{
 				var (name, type, stack) = items[i];
 				var button = new GuiItemButton(GuiButton.ButtonType.StoneOuterBevel, type, stack, hintOnHover: $"Click to use {name}")
 				{
+					Left = new StyleDimension(15f, 0f),
 					DrawBackground = false,
 					DrawScale = 0.75f,
 					DrawStack = true,
@@ -144,7 +155,7 @@ namespace Loot.UI.Tabs.Cubing
 				//SetSelectedCube(rememberedSelection);
 
 				int i = 0;
-				var elementSet = _cubes.Skip(_currentOffset * CUBES_PER_PAGE).ToList();
+				var elementSet = _cubes.ToList();
 				foreach (var element in elementSet)
 				{
 					if (i > 0)
