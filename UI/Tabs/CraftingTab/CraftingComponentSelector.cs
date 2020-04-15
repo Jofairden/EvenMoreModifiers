@@ -1,7 +1,6 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using Loot.Api.Cubes;
 using Loot.Api.Ext;
 using Loot.Ext;
 using Loot.UI.Common.Controls.Button;
@@ -9,26 +8,25 @@ using Loot.UI.Common.Controls.Panel;
 using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.GameContent.UI.Elements;
+using Terraria.ModLoader;
 using Terraria.UI;
 
-namespace Loot.UI.Tabs.Cubing
+namespace Loot.UI.Tabs.CraftingTab
 {
-	/// <summary>
-	/// The cube selector is a panel below the cubing UI used to easily insert a cube into the UI
-	/// </summary>
-	internal class GuiCubeSelector : GuiPanel
+	internal class CraftingComponentSelector<T> : GuiPanel where T : ModItem
 	{
-		private const string NO_CUBES_FOUND = "No cubes found in inventory";
-		private const int CUBES_PER_PAGE = 5;
+		public virtual string NotFoundString() => "No components found in inventory";
+		public virtual int ComponentsPerPage() => 5;
+		public Func<int, bool> OnComponentClick;
 
-		private readonly List<UIElement> _cubes = new List<UIElement>();
+		private readonly List<UIElement> _components = new List<UIElement>();
 		private readonly GuiArrowButton _arrowLeft;
 		private readonly GuiArrowButton _arrowRight;
 
 		private int _maxOffset;
 		private int _currentOffset;
 
-		public GuiCubeSelector()
+		public CraftingComponentSelector()
 		{
 			_arrowLeft = new GuiArrowButton(GuiArrowButton.ArrowDirection.LEFT) { HoverText = "Previous" };
 			_arrowRight = new GuiArrowButton(GuiArrowButton.ArrowDirection.RIGHT) { HoverText = "Next" };
@@ -44,7 +42,7 @@ namespace Loot.UI.Tabs.Cubing
 				_currentOffset--;
 				btn.CanBeClicked = _maxOffset > 0 && _currentOffset > 0;
 				_arrowRight.CanBeClicked = _maxOffset > 0 && _currentOffset < _maxOffset;
-				DetermineAvailableCubes();
+				CalculateAvailableComponents();
 			};
 			Append(_arrowLeft);
 
@@ -55,15 +53,18 @@ namespace Loot.UI.Tabs.Cubing
 				_currentOffset++;
 				_arrowLeft.CanBeClicked = _maxOffset > 0 && _currentOffset > 0;
 				btn.CanBeClicked = _maxOffset > 0 && _currentOffset < _maxOffset;
-				DetermineAvailableCubes();
+				CalculateAvailableComponents();
 			};
 			Append(_arrowRight);
+
+			HAlign = 0.5f;
+			VAlign = 1f;
 		}
 
 		private GuiItemButton _lastSelected;
 
 		// TODO select/deselect not working? (scale/color??)
-		public void DeselectPreviousCube()
+		public void DeselectPreviousComponent()
 		{
 			if (_lastSelected != null)
 			{
@@ -74,11 +75,11 @@ namespace Loot.UI.Tabs.Cubing
 			}
 		}
 
-		private void SetSelectedCube(UIElement element)
+		private void SetSelectedComponent(UIElement element)
 		{
 			if (element != null && element is GuiItemButton itemButton)
 			{
-				DeselectPreviousCube();
+				DeselectPreviousComponent();
 				itemButton.DrawScale = 0.88f;
 				itemButton.DynamicScaling = false;
 				itemButton.DrawColor = Color.White;
@@ -86,33 +87,25 @@ namespace Loot.UI.Tabs.Cubing
 			}
 		}
 
-		public void SetSelectedCubeByType(int type)
+		public void CalculateAvailableComponents()
 		{
-			SetSelectedCube(
-				_cubes.FirstOrDefault(x => x is GuiItemButton itemButton
-										   && itemButton.Item.type == type)
-			);
-		}
-
-		public void DetermineAvailableCubes()
-		{
-			_cubes.Clear();
+			_components.Clear();
 
 			var foundItems =
-				Main.LocalPlayer.inventory.GetDistinctModItems<RerollingCube>()
+				Main.LocalPlayer.inventory.GetDistinctModItems<T>()
 					.Select(i => (name: i.item.Name, i.item.type, stack: Main.LocalPlayer.inventory.CountItemStack(i.item.type, true)));
 
 			var foundCount = foundItems.Count();
 
 			if (_currentOffset > 0)
 			{
-				foundItems = foundItems.Skip(_currentOffset * CUBES_PER_PAGE);
+				foundItems = foundItems.Skip(_currentOffset * ComponentsPerPage());
 			}
 
-			var items = foundItems.Take(CUBES_PER_PAGE).ToList();
+			var items = foundItems.Take(ComponentsPerPage()).ToList();
 
 
-			_maxOffset = (int)Math.Floor(foundCount / (CUBES_PER_PAGE + 1f));
+			_maxOffset = (int)Math.Floor(foundCount / (ComponentsPerPage() + 1f));
 			_arrowLeft.CanBeClicked = _maxOffset > 0 && _currentOffset > 0;
 			_arrowRight.CanBeClicked = _maxOffset > 0 && _currentOffset < _maxOffset;
 
@@ -131,21 +124,24 @@ namespace Loot.UI.Tabs.Cubing
 				button.OnMouseOver += (evt, element) => { Main.PlaySound(12); };
 				button.OnClick += (evt, element) =>
 				{
-					OnCubeClick(type);
-					SetSelectedCube(element);
+					if (OnComponentClick(type))
+					{
+						SetSelectedComponent(element);
+					}
+					
 				};
-				_cubes.Add(button);
+				_components.Add(button);
 			}
 
-			UpdateCubeFrame();
+			UpdateComponentFrame();
 		}
 
-		private void UpdateCubeFrame()
+		private void UpdateComponentFrame()
 		{
 			Frame.RemoveAllChildren();
-			if (!_cubes.Any())
+			if (!_components.Any())
 			{
-				Frame.Append(new UIText(NO_CUBES_FOUND));
+				Frame.Append(new UIText(NotFoundString()));
 			}
 			else
 			{
@@ -155,7 +151,7 @@ namespace Loot.UI.Tabs.Cubing
 				//SetSelectedCube(rememberedSelection);
 
 				int i = 0;
-				var elementSet = _cubes.ToList();
+				var elementSet = _components.ToList();
 				foreach (var element in elementSet)
 				{
 					if (i > 0)
@@ -165,14 +161,6 @@ namespace Loot.UI.Tabs.Cubing
 					Frame.Append(element);
 					i++;
 				}
-			}
-		}
-
-		private void OnCubeClick(int type)
-		{
-			if (Loot.Instance.GuiState.GetCurrentTab() is GuiCubingTab cubingTab)
-			{
-				cubingTab._cubeButton.ChangeItem(type);
 			}
 		}
 	}

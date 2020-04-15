@@ -41,6 +41,9 @@ namespace Loot.UI.Common
 				[StaticAsset("Tiles/LunarCube")]
 				public static Texture2D LunarCubeTexture;
 
+				[StaticAsset("Api/Cubes/MagicalCube")]
+				public static Texture2D MagicalCubeTexture;
+
 
 				internal static class Tabs
 				{

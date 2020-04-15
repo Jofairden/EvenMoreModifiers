@@ -23,6 +23,15 @@ namespace Loot.UI
 
 		public abstract int GetPageHeight();
 
+		public virtual void OnShow()
+		{
+
+		}
+
+		public virtual void OnHide()
+		{
+
+		}
 		internal virtual void ToggleUI(bool visible)
 		{
 		}

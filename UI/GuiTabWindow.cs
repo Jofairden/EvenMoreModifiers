@@ -75,10 +75,12 @@ namespace Loot.UI
 				RemoveChild(_currentTab);
 			}
 
+			_currentTab?.OnHide();
 			GetCurrentTab();
 			_header.SetHeader(_currentTab.Header);
 			Append(_currentTab);
 			_currentTab.Activate();
+			_currentTab.OnShow();
 			UpdateWindow();
 		}
 
@@ -128,7 +130,6 @@ namespace Loot.UI
 			}
 
 			_toggles[_currentTabState].SetActive(true);
-			UpdateTab();
 			CenterWindow();
 		}
 

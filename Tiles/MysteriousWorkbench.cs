@@ -96,7 +96,7 @@ namespace Loot.Tiles
 
 				if (Loot.Instance.GuiState.Visible
 					&& Loot.Instance.GuiState.GetCurrentTab() is GuiCubingTab tab
-					&& !tab._cubeButton.Item.IsAir)
+					&& !tab.ComponentButton.Item.IsAir)
 				{
 
 					Vector2 zero = Main.drawToScreen
