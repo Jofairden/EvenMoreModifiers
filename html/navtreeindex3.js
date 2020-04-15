@@ -1,5 +1,9 @@
 var NAVTREEINDEX3 =
 {
+"class_loot_1_1_api_1_1_core_1_1_null_modifier_rarity.html":[2,0,0,0,3,12],
+"class_loot_1_1_api_1_1_core_1_1_null_modifier_rarity.html#a088df56d32e2827c1ab2fa105daa9058":[2,0,0,0,3,12,3],
+"class_loot_1_1_api_1_1_core_1_1_null_modifier_rarity.html#a172e21f1238be791b150d8a20057be47":[2,0,0,0,3,12,0],
+"class_loot_1_1_api_1_1_core_1_1_null_modifier_rarity.html#a8c82b2e94ad63f4531419faa7be89b9b":[2,0,0,0,3,12,1],
 "class_loot_1_1_api_1_1_core_1_1_null_modifier_rarity.html#ae6006e4e22f031e78f3cf587355c0b04":[2,0,0,0,3,12,2],
 "class_loot_1_1_api_1_1_core_1_1_positive_tooltip_line.html":[2,0,0,0,3,13],
 "class_loot_1_1_api_1_1_core_1_1_positive_tooltip_line.html#a811090f485b7b7cd23b52449ff4abfa1":[2,0,0,0,3,13,0],
@@ -245,9 +249,5 @@ var NAVTREEINDEX3 =
 "class_loot_1_1_api_1_1_ext_1_1_mod_utils.html#a7e6f72f134a11f45330f54b56f651193":[2,0,0,0,6,1,29],
 "class_loot_1_1_api_1_1_ext_1_1_mod_utils.html#a8a0ac4aa26a1abfea186a423821bedc7":[2,0,0,0,6,1,6],
 "class_loot_1_1_api_1_1_ext_1_1_mod_utils.html#a907048acd3c21c89c6d87f91cd3237fa":[2,0,0,0,6,1,19],
-"class_loot_1_1_api_1_1_ext_1_1_mod_utils.html#a92a8f1e2f447737c66142a5426263e25":[2,0,0,0,6,1,20],
-"class_loot_1_1_api_1_1_ext_1_1_mod_utils.html#a979072856c45ef1261adce660d7f9ad5":[2,0,0,0,6,1,7],
-"class_loot_1_1_api_1_1_ext_1_1_mod_utils.html#a9f3874fcfaf383f35dc85d86ff0b8ccc":[2,0,0,0,6,1,23],
-"class_loot_1_1_api_1_1_ext_1_1_mod_utils.html#aa38bfed41cc6527c4e4755f11c9b5bd4":[2,0,0,0,6,1,11],
-"class_loot_1_1_api_1_1_ext_1_1_mod_utils.html#aa404c157a3024b71fc4e5f05005b32a1":[2,0,0,0,6,1,15]
+"class_loot_1_1_api_1_1_ext_1_1_mod_utils.html#a92a8f1e2f447737c66142a5426263e25":[2,0,0,0,6,1,20]
 };

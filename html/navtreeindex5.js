@@ -1,5 +1,9 @@
 var NAVTREEINDEX5 =
 {
+"class_loot_1_1_cubes_1_1_black_cube.html#ac351b0741e4a76b61a2e7cb4f9da5ce5":[2,0,0,3,0,3],
+"class_loot_1_1_cubes_1_1_black_cube.html#ad2fe6a7e12b1530d9852b3fcd8a175b1":[2,0,0,3,0,1],
+"class_loot_1_1_cubes_1_1_copper_cube.html":[2,0,0,3,1],
+"class_loot_1_1_cubes_1_1_copper_cube.html#a44259b789893320dfc2dc92c16336b8b":[2,0,0,3,1,4],
 "class_loot_1_1_cubes_1_1_copper_cube.html#a54a6bdff1b817e20330eb595251fb3f0":[2,0,0,3,1,0],
 "class_loot_1_1_cubes_1_1_copper_cube.html#a5819b4550abdd9a67869c80593828ffe":[2,0,0,3,1,1],
 "class_loot_1_1_cubes_1_1_copper_cube.html#a8fbd4864dc318805c74376b5c5553265":[2,0,0,3,1,2],
@@ -245,9 +249,5 @@ var NAVTREEINDEX5 =
 "class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_offensive_1_1_healthy_foes_effect.html#a536a89f0caf2b29e34dccfc914412bdc":[2,0,0,6,1,1,3,0],
 "class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_offensive_1_1_healthy_foes_effect.html#a6c73fcce1e789bd7c2d546e493269cf9":[2,0,0,6,1,1,3,5],
 "class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_offensive_1_1_healthy_foes_effect.html#a7ce274065e4361703daab20a772d3da0":[2,0,0,6,1,1,3,2],
-"class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_offensive_1_1_healthy_foes_effect.html#a968fbc771ef0dff1e633b50777f3da8a":[2,0,0,6,1,1,3,1],
-"class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_offensive_1_1_healthy_foes_effect.html#ab71d6ef6d8492844ceabc87c7b9ea22e":[2,0,0,6,1,1,3,4],
-"class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_offensive_1_1_healthy_foes_effect.html#aefa32661eb9a53285120c9cb3d532490":[2,0,0,6,1,1,3,3],
-"class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_offensive_1_1_magic_crit_plus.html":[2,0,0,6,1,1,4],
-"class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_offensive_1_1_magic_crit_plus.html#a2a4ac40ece74be2c601cbdc42881c4cc":[2,0,0,6,1,1,4,1]
+"class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_offensive_1_1_healthy_foes_effect.html#a968fbc771ef0dff1e633b50777f3da8a":[2,0,0,6,1,1,3,1]
 };

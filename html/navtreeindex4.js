@@ -1,5 +1,9 @@
 var NAVTREEINDEX4 =
 {
+"class_loot_1_1_api_1_1_ext_1_1_mod_utils.html#a979072856c45ef1261adce660d7f9ad5":[2,0,0,0,6,1,7],
+"class_loot_1_1_api_1_1_ext_1_1_mod_utils.html#a9f3874fcfaf383f35dc85d86ff0b8ccc":[2,0,0,0,6,1,23],
+"class_loot_1_1_api_1_1_ext_1_1_mod_utils.html#aa38bfed41cc6527c4e4755f11c9b5bd4":[2,0,0,0,6,1,11],
+"class_loot_1_1_api_1_1_ext_1_1_mod_utils.html#aa404c157a3024b71fc4e5f05005b32a1":[2,0,0,0,6,1,15],
 "class_loot_1_1_api_1_1_ext_1_1_mod_utils.html#aaf3de9d61daf460e117c03ffa9e3bd30":[2,0,0,0,6,1,18],
 "class_loot_1_1_api_1_1_ext_1_1_mod_utils.html#ab6a1cd4f462f7b0a78d1f6a626f0784e":[2,0,0,0,6,1,28],
 "class_loot_1_1_api_1_1_ext_1_1_mod_utils.html#abe922b330ce53086cee211229870dd8e":[2,0,0,0,6,1,9],
@@ -245,9 +249,5 @@ var NAVTREEINDEX4 =
 "class_loot_1_1_cubes_1_1_black_cube.html#a0b18d324091f0bf89b061e9af6baf4ef":[2,0,0,3,0,5],
 "class_loot_1_1_cubes_1_1_black_cube.html#a5f7916d9995addc834ff1108765f4480":[2,0,0,3,0,2],
 "class_loot_1_1_cubes_1_1_black_cube.html#a85a2ecf7e382c6883d813bbc1e78f0a8":[2,0,0,3,0,0],
-"class_loot_1_1_cubes_1_1_black_cube.html#ab10dd9e544479d0ff3b2dad4bf765fe1":[2,0,0,3,0,4],
-"class_loot_1_1_cubes_1_1_black_cube.html#ac351b0741e4a76b61a2e7cb4f9da5ce5":[2,0,0,3,0,3],
-"class_loot_1_1_cubes_1_1_black_cube.html#ad2fe6a7e12b1530d9852b3fcd8a175b1":[2,0,0,3,0,1],
-"class_loot_1_1_cubes_1_1_copper_cube.html":[2,0,0,3,1],
-"class_loot_1_1_cubes_1_1_copper_cube.html#a44259b789893320dfc2dc92c16336b8b":[2,0,0,3,1,4]
+"class_loot_1_1_cubes_1_1_black_cube.html#ab10dd9e544479d0ff3b2dad4bf765fe1":[2,0,0,3,0,4]
 };

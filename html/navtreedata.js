@@ -35,14 +35,14 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "_accessory_modifier_8cs.html",
-"_immunity_time_plus_8cs.html",
-"class_loot_1_1_api_1_1_attributes_1_1_auto_delegation.html#ab29b06a0f27d6ea6b6ec21fcd4c647a3",
-"class_loot_1_1_api_1_1_core_1_1_null_modifier_rarity.html#ae6006e4e22f031e78f3cf587355c0b04",
-"class_loot_1_1_api_1_1_ext_1_1_mod_utils.html#aaf3de9d61daf460e117c03ffa9e3bd30",
-"class_loot_1_1_cubes_1_1_copper_cube.html#a54a6bdff1b817e20330eb595251fb3f0",
-"class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_offensive_1_1_magic_crit_plus.html#a69e5f0eca037e8760318bea0d1dfab40",
-"class_loot_tests_1_1_unit_tests.html#a8dfb4b0ce8cc2c2cc4d7648c0575230d",
-"namespace_loot_tests.html"
+"_icy_essence_8cs.html",
+"class_loot_1_1_api_1_1_attributes_1_1_auto_delegation.html",
+"class_loot_1_1_api_1_1_core_1_1_null_modifier_rarity.html",
+"class_loot_1_1_api_1_1_ext_1_1_mod_utils.html#a979072856c45ef1261adce660d7f9ad5",
+"class_loot_1_1_cubes_1_1_black_cube.html#ac351b0741e4a76b61a2e7cb4f9da5ce5",
+"class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_offensive_1_1_healthy_foes_effect.html#ab71d6ef6d8492844ceabc87c7b9ea22e",
+"class_loot_tests_1_1_unit_tests.html#a853eab844d4a461588ea50a00c4c6966",
+"namespace_loot_1_1_u_i_1_1_tabs_1_1_essence_crafting.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

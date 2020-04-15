@@ -12,6 +12,7 @@ var searchData=
   ['controls',['Controls',['../namespace_loot_1_1_u_i_1_1_common_1_1_controls.html',1,'Loot::UI::Common']]],
   ['core',['Core',['../namespace_loot_1_1_u_i_1_1_common_1_1_core.html',1,'Loot::UI::Common']]],
   ['core',['Core',['../namespace_loot_1_1_api_1_1_core.html',1,'Loot::Api']]],
+  ['craftingtab',['CraftingTab',['../namespace_loot_1_1_u_i_1_1_tabs_1_1_crafting_tab.html',1,'Loot::UI::Tabs']]],
   ['cubes',['Cubes',['../namespace_loot_1_1_cubes.html',1,'Loot']]],
   ['cubes',['Cubes',['../namespace_loot_1_1_api_1_1_cubes.html',1,'Loot::Api']]],
   ['cubing',['Cubing',['../namespace_loot_1_1_u_i_1_1_tabs_1_1_cubing.html',1,'Loot::UI::Tabs']]],

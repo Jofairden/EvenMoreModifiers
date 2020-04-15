@@ -87,7 +87,6 @@ var hierarchy =
         [ "Loot.Api.Graphics.Shader.ShaderGraphicsProperties", "class_loot_1_1_api_1_1_graphics_1_1_shader_1_1_shader_graphics_properties.html", null ]
       ] ]
     ] ],
-    [ "Loot.UI.Tabs.EssenceCrafting.GuiEssenceButton", "class_loot_1_1_u_i_1_1_tabs_1_1_essence_crafting_1_1_gui_essence_button.html", null ],
     [ "Loot.UI.Tabs.EssenceCrafting.GuiEssenceItemButton", "class_loot_1_1_u_i_1_1_tabs_1_1_essence_crafting_1_1_gui_essence_item_button.html", null ],
     [ "ICloneable", "class_i_cloneable.html", [
       [ "Loot.Api.Core.Modifier", "class_loot_1_1_api_1_1_core_1_1_modifier.html", null ],

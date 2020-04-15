@@ -1,5 +1,9 @@
 var NAVTREEINDEX1 =
 {
+"_icy_essence_8cs.html":[3,0,4,1],
+"_icy_essence_8cs_source.html":[3,0,4,1],
+"_icy_modifier_8cs.html":[3,0,10,2,0,1],
+"_icy_modifier_8cs_source.html":[3,0,10,2,0,1],
 "_immunity_time_plus_8cs.html":[3,0,10,1,0,2],
 "_immunity_time_plus_8cs_source.html":[3,0,10,1,0,2],
 "_item_prefix_patch_8cs.html":[3,0,7,1],
@@ -245,9 +249,5 @@ var NAVTREEINDEX1 =
 "class_global_item.html":[2,0,3],
 "class_global_n_p_c.html":[2,0,4],
 "class_global_projectile.html":[2,0,5],
-"class_i_cloneable.html":[2,0,6],
-"class_loot_1_1_api_1_1_attributes_1_1_auto_delegation.html":[2,0,0,0,0,0],
-"class_loot_1_1_api_1_1_attributes_1_1_auto_delegation.html#a198fe34a3bc655bd7763cadf063b593a":[2,0,0,0,0,0,5],
-"class_loot_1_1_api_1_1_attributes_1_1_auto_delegation.html#a49dcda252cc6325436d783aa150c453a":[2,0,0,0,0,0,0],
-"class_loot_1_1_api_1_1_attributes_1_1_auto_delegation.html#a8d4044ef4bc0944fdaa1d898abfe4e74":[2,0,0,0,0,0,2]
+"class_i_cloneable.html":[2,0,6]
 };

@@ -1,5 +1,9 @@
 var NAVTREEINDEX2 =
 {
+"class_loot_1_1_api_1_1_attributes_1_1_auto_delegation.html":[2,0,0,0,0,0],
+"class_loot_1_1_api_1_1_attributes_1_1_auto_delegation.html#a198fe34a3bc655bd7763cadf063b593a":[2,0,0,0,0,0,5],
+"class_loot_1_1_api_1_1_attributes_1_1_auto_delegation.html#a49dcda252cc6325436d783aa150c453a":[2,0,0,0,0,0,0],
+"class_loot_1_1_api_1_1_attributes_1_1_auto_delegation.html#a8d4044ef4bc0944fdaa1d898abfe4e74":[2,0,0,0,0,0,2],
 "class_loot_1_1_api_1_1_attributes_1_1_auto_delegation.html#ab29b06a0f27d6ea6b6ec21fcd4c647a3":[2,0,0,0,0,0,3],
 "class_loot_1_1_api_1_1_attributes_1_1_auto_delegation.html#acc512fc4223169ba874452cea5f7e26f":[2,0,0,0,0,0,7],
 "class_loot_1_1_api_1_1_attributes_1_1_auto_delegation.html#ae605ed3b299b05aee32f26b3f658bf50":[2,0,0,0,0,0,1],
@@ -245,9 +249,5 @@ var NAVTREEINDEX2 =
 "class_loot_1_1_api_1_1_core_1_1_null_modifier_pool.html#a2ba758d8bde3b344e9d3691c173ca999":[2,0,0,0,3,11,3],
 "class_loot_1_1_api_1_1_core_1_1_null_modifier_pool.html#aa306fd3712b434832bfb87dfeb7deb99":[2,0,0,0,3,11,0],
 "class_loot_1_1_api_1_1_core_1_1_null_modifier_pool.html#ac7e3851ec3ef89a061f043d4f636d785":[2,0,0,0,3,11,4],
-"class_loot_1_1_api_1_1_core_1_1_null_modifier_pool.html#ad2a3c9c59b3b089b477525fc96f6eba1":[2,0,0,0,3,11,2],
-"class_loot_1_1_api_1_1_core_1_1_null_modifier_rarity.html":[2,0,0,0,3,12],
-"class_loot_1_1_api_1_1_core_1_1_null_modifier_rarity.html#a088df56d32e2827c1ab2fa105daa9058":[2,0,0,0,3,12,3],
-"class_loot_1_1_api_1_1_core_1_1_null_modifier_rarity.html#a172e21f1238be791b150d8a20057be47":[2,0,0,0,3,12,0],
-"class_loot_1_1_api_1_1_core_1_1_null_modifier_rarity.html#a8c82b2e94ad63f4531419faa7be89b9b":[2,0,0,0,3,12,1]
+"class_loot_1_1_api_1_1_core_1_1_null_modifier_pool.html#ad2a3c9c59b3b089b477525fc96f6eba1":[2,0,0,0,3,11,2]
 };
