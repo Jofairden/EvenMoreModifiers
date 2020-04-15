@@ -96,6 +96,8 @@ namespace Loot.UI.Tabs.CraftingTab
 					.Select(i => (name: i.item.Name, i.item.type, stack: Main.LocalPlayer.inventory.CountItemStack(i.item.type, true)));
 
 			var foundCount = foundItems.Count();
+			_maxOffset = (int)Math.Floor(foundCount / (ComponentsPerPage() + 1f));
+			if (_maxOffset < _currentOffset) _currentOffset = _maxOffset;
 
 			if (_currentOffset > 0)
 			{
@@ -105,7 +107,6 @@ namespace Loot.UI.Tabs.CraftingTab
 			var items = foundItems.Take(ComponentsPerPage()).ToList();
 
 
-			_maxOffset = (int)Math.Floor(foundCount / (ComponentsPerPage() + 1f));
 			_arrowLeft.CanBeClicked = _maxOffset > 0 && _currentOffset > 0;
 			_arrowRight.CanBeClicked = _maxOffset > 0 && _currentOffset < _maxOffset;
 
