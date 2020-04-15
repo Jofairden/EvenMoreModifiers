@@ -22,7 +22,7 @@ namespace Loot.Essences
 				Loot.Instance.GetModifier<IcyModifier>()
 			};
 			properties.MaxRollableLines = 2;
-			return RollingUtils.Strategies.Default;
+			return base.GetRollingStrategy(item, properties);
 		}
 	}
 }

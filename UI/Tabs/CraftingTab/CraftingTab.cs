@@ -92,12 +92,35 @@ namespace Loot.UI.Tabs.CraftingTab
 			bool hasItem = Main.LocalPlayer.inventory.Any(x => x.type == ComponentButton.Item.type)
 			               || Main.mouseItem?.type == ComponentButton?.Item?.type;
 
-			return match && hasItem;
+
+			// TODO make this better
+			RollingStrategyProperties = new RollingStrategyProperties();
+			var ctx = GetContext(ItemButton.Item);
+			var strategy = ctx.Strategy;
+			var preRolledLines = strategy.PreRoll(ModifierPoolMechanism.GetPool(ctx), ctx, RollingStrategyProperties);
+			bool badStrategy = preRolledLines.Any(x => !x.CanRoll(ctx));
+
+			return !badStrategy && match && hasItem;
 		}
 
 		public override void OnShow()
 		{
 			ComponentSelector?.CalculateAvailableComponents();
+		}
+
+		private ModifierContext GetContext(Item item)
+		{
+			return new ModifierContext
+			{
+				Method = ModifierContextMethod.OnCubeReroll,
+				Item = item,
+				Player = Main.LocalPlayer,
+				CustomData = new Dictionary<string, object>
+				{
+					{"Source", "CubeRerollUI"}
+				},
+				Strategy = ComponentButton.GetRollingStrategy(ItemButton.Item, RollingStrategyProperties)
+			};
 		}
 
 		private void HandleCraftButtonClick(UIMouseEvent evt, UIElement listeningElement)
@@ -130,17 +153,7 @@ namespace Loot.UI.Tabs.CraftingTab
 			}
 
 			// Roll new lines
-			var context = new ModifierContext
-			{
-				Method = ModifierContextMethod.OnCubeReroll,
-				Item = item,
-				Player = Main.LocalPlayer,
-				CustomData = new Dictionary<string, object>
-				{
-					{"Source", "CubeRerollUI"}
-				},
-				Strategy = ComponentButton.GetRollingStrategy(ItemButton.Item, RollingStrategyProperties)
-			};
+			var context = GetContext(item);
 			var rolled = strategy._Roll(ModifierPoolMechanism.GetPool(context), context, RollingStrategyProperties);
 			LootModItem.GetInfo(item).Modifiers = NullModifierPool.INSTANCE; // unload previous pool
 			if (rolled.Any())

@@ -1,3 +1,4 @@
+using Loot.Api.Ext;
 using Loot.Api.Strategy;
 using Terraria;
 
@@ -44,6 +45,15 @@ Tier: {GetTierText()}
 Used in an essence crafting device");
 		}
 
-		public abstract RollingStrategy GetRollingStrategy(Item item, RollingStrategyProperties properties);
+		public virtual RollingStrategy GetRollingStrategy(Item item, RollingStrategyProperties properties)
+		{
+			properties.MaxRollableLines = 3;
+			properties.MinModifierRolls = 1;
+			if (Main.rand.NextBool(5))
+				properties.MinModifierRolls = 2;
+			if (Main.rand.NextBool(10))
+				properties.ExtraLuck += 1;
+			return RollingUtils.Strategies.Default;
+		}
 	}
 }

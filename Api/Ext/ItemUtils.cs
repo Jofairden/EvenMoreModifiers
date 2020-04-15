@@ -21,7 +21,7 @@ namespace Loot.Api.Ext
 				.Where(x => !x.IsAir
 				            && x.modItem is T)
 				.GroupBy(x => x.type)
-				.Select(g => (T) g.First().modItem);
+				.Select(g => (T)g.First().modItem);
 
 		public static int CountModItemStack<T>(this Item[] inventory, bool includeMouseItem = false) where T : ModItem
 			=> CountItemStack(inventory, includeMouseItem, item => item.modItem is T);

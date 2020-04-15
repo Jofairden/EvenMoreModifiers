@@ -1,13 +1,8 @@
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Loot.Api.Core;
 using Loot.Api.Ext;
 using Loot.Api.Strategy;
 using Loot.Modifiers.EquipModifiers.Defensive;
-using Loot.Modifiers.WeaponModifiers;
 using Terraria;
 
 namespace Loot.Essences
@@ -24,7 +19,7 @@ namespace Loot.Essences
 			{
 				Loot.Instance.GetModifier<DodgeChance>()
 			};
-			return RollingUtils.Strategies.Default;
+			return base.GetRollingStrategy(item, properties);
 		}
 	}
 }

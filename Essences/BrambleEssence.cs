@@ -1,8 +1,4 @@
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Loot.Api.Core;
 using Loot.Api.Ext;
 using Loot.Api.Strategy;
@@ -23,7 +19,7 @@ namespace Loot.Essences
 			{
 				Loot.Instance.GetModifier<Thorns>()
 			};
-			return RollingUtils.Strategies.Default;
+			return base.GetRollingStrategy(item, properties);
 		}
 	}
 }

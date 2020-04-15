@@ -1,7 +1,6 @@
 using System;
 using System.Collections.Generic;
 using Loot.Api.Core;
-using Microsoft.Xna.Framework;
 
 namespace Loot.Api.Strategy
 {
