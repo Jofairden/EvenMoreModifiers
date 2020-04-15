@@ -1,5 +1,5 @@
 author = Jofairden
-version = 1.0
+version = 15.04.20
 displayName = Even More Modifiers
 homepage = https://zond.tech/emm
 hideCode = false
