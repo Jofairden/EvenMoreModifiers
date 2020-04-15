@@ -9,5 +9,6 @@ var searchData=
   ['lootitemmodifier_2ecs',['LootItemModifier.cs',['../_loot_item_modifier_8cs.html',1,'']]],
   ['lootmoditem_2ecs',['LootModItem.cs',['../_loot_mod_item_8cs.html',1,'']]],
   ['lootmodworld_2ecs',['LootModWorld.cs',['../_loot_mod_world_8cs.html',1,'']]],
-  ['luckplus_2ecs',['LuckPlus.cs',['../_luck_plus_8cs.html',1,'']]]
+  ['luckplus_2ecs',['LuckPlus.cs',['../_luck_plus_8cs.html',1,'']]],
+  ['luckyessence_2ecs',['LuckyEssence.cs',['../_lucky_essence_8cs.html',1,'']]]
 ];

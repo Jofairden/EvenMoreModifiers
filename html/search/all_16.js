@@ -1,5 +1,6 @@
 var searchData=
 [
+  ['wardingessence_2ecs',['WardingEssence.cs',['../_warding_essence_8cs.html',1,'']]],
   ['weapondebuffeffect',['WeaponDebuffEffect',['../class_loot_1_1_modifiers_1_1_base_1_1_weapon_debuff_effect.html',1,'Loot::Modifiers::Base']]],
   ['weapondebuffmodifier',['WeaponDebuffModifier',['../class_loot_1_1_modifiers_1_1_base_1_1_weapon_debuff_modifier.html',1,'Loot::Modifiers::Base']]],
   ['weapondebuffmodifier_2ecs',['WeaponDebuffModifier.cs',['../_weapon_debuff_modifier_8cs.html',1,'']]],

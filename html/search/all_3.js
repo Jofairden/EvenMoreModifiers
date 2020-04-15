@@ -67,6 +67,7 @@ var searchData=
   ['curseddamage',['CursedDamage',['../class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_cursed_damage.html',1,'Loot::Modifiers::WeaponModifiers']]],
   ['curseddamage_2ecs',['CursedDamage.cs',['../_cursed_damage_8cs.html',1,'']]],
   ['cursedeffect',['CursedEffect',['../class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_cursed_effect.html',1,'Loot::Modifiers::WeaponModifiers']]],
+  ['cursedessence_2ecs',['CursedEssence.cs',['../_cursed_essence_8cs.html',1,'']]],
   ['curseholding',['CurseHolding',['../class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_cursed_effect.html#ac9bf924c10a79e2f02ab2abad3f6b6d9',1,'Loot::Modifiers::WeaponModifiers::CursedEffect']]],
   ['custom',['Custom',['../namespace_loot_1_1_api_1_1_core.html#a2fe26ee9cffa16c663ab49599e1949b4a90589c47f06eb971d548591f23c285af',1,'Loot::Api::Core']]],
   ['custombiomesmatch',['CustomBiomesMatch',['../class_loot_1_1_api_1_1_core_1_1_modifier_effect.html#a43f1f3f1d42d8647659a5b8d3138f01e',1,'Loot::Api::Core::ModifierEffect']]],

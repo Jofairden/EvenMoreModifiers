@@ -1,5 +1,5 @@
 <map id="Loot.Essences.EssenceItem" name="Loot.Essences.EssenceItem">
-<area shape="rect" id="node4" href="$class_loot_1_1_essences_1_1_icy_essence.html" title="Loot.Essences.IcyEssence" alt="" coords="11,229,199,256"/>
-<area shape="rect" id="node2" href="$class_loot_1_1_essences_1_1_temp_item.html" title="TempItem" alt="" coords="63,80,148,107"/>
-<area shape="rect" id="node3" href="$class_mod_item.html" title="ModItem" alt="" coords="66,5,145,32"/>
+<area shape="rect" id="node8" href="$class_loot_1_1_essences_1_1_icy_essence.html" title="Loot.Essences.IcyEssence" alt="" coords="533,208,721,235"/>
+<area shape="rect" id="node2" href="$class_loot_1_1_essences_1_1_temp_item.html" title="TempItem" alt="" coords="132,208,217,235"/>
+<area shape="rect" id="node3" href="$class_mod_item.html" title="ModItem" alt="" coords="5,208,84,235"/>
 </map>

@@ -35,14 +35,14 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "_accessory_modifier_8cs.html",
-"_icy_essence_8cs.html",
-"class_loot_1_1_api_1_1_attributes_1_1_auto_delegation.html",
-"class_loot_1_1_api_1_1_core_1_1_null_modifier_rarity.html",
-"class_loot_1_1_api_1_1_ext_1_1_mod_utils.html#a979072856c45ef1261adce660d7f9ad5",
-"class_loot_1_1_cubes_1_1_black_cube.html#ac351b0741e4a76b61a2e7cb4f9da5ce5",
-"class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_offensive_1_1_healthy_foes_effect.html#ab71d6ef6d8492844ceabc87c7b9ea22e",
-"class_loot_tests_1_1_unit_tests.html#a853eab844d4a461588ea50a00c4c6966",
-"namespace_loot_1_1_u_i_1_1_tabs_1_1_essence_crafting.html"
+"_i_loadable_content_setter_8cs.html",
+"_weapon_modifier_8cs.html",
+"class_loot_1_1_api_1_1_core_1_1_negative_tooltip_line.html#a0089fd7932d8e6bc86c64d79e8c8e63e",
+"class_loot_1_1_api_1_1_ext_1_1_mod_utils.html#a0f7308382126405e808389efbba4b4e0",
+"class_loot_1_1_caching_1_1_modifier_cache_player.html#ad271b788683758086f9bf4711cbdd88c",
+"class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_offensive_1_1_crit_damage_plus_effect.html",
+"class_loot_tests_1_1_modifier_properties_tests_1_1_fake_properties.html#a320b707f957b865ede1860b003e770ed",
+"namespace_loot_1_1_sounds_1_1_custom.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

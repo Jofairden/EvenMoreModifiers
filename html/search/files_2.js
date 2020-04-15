@@ -12,5 +12,6 @@ var searchData=
   ['critplus_2ecs',['CritPlus.cs',['../_crit_plus_8cs.html',1,'']]],
   ['cubeofsealing_2ecs',['CubeOfSealing.cs',['../_cube_of_sealing_8cs.html',1,'']]],
   ['cubeshop_2ecs',['CubeShop.cs',['../_cube_shop_8cs.html',1,'']]],
-  ['curseddamage_2ecs',['CursedDamage.cs',['../_cursed_damage_8cs.html',1,'']]]
+  ['curseddamage_2ecs',['CursedDamage.cs',['../_cursed_damage_8cs.html',1,'']]],
+  ['cursedessence_2ecs',['CursedEssence.cs',['../_cursed_essence_8cs.html',1,'']]]
 ];
