@@ -53,8 +53,6 @@ namespace Loot
 
 		public override void PreSaveAndQuit()
 		{
-			// If we quit we must give back the item in slot if it's there
-			GuiState.GetTab<GuiCubingTab>().GiveBackSlottedItem();
 			if (GuiState.Visible)
 			{
 				GuiState.ToggleUI(GuiInterface);

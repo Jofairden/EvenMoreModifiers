@@ -347,7 +347,7 @@ namespace Loot.UI.Tabs.CraftingTab
 
 		public void GiveBackSlottedItem()
 		{
-			if (!ItemButton.Item?.IsAir ?? false)
+			if (!ItemButton?.Item?.IsAir ?? false)
 			{
 				// Runs only in SP or client, so this is safe
 				ItemButton.Item.noGrabDelay = 0;
