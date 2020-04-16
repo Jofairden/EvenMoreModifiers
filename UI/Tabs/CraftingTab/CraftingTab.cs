@@ -17,20 +17,39 @@ using Terraria.UI;
 
 namespace Loot.UI.Tabs.CraftingTab
 {
+	// Because fuck generics
+	interface ICraftingTab
+	{
+		bool AcceptsItem(Item item);
+		void GiveBackSlottedItem();
+		void OverrideSlottedItem(Item newItem);
+	}
+
 	/**
 	 * Defines a generic crafting tab
 	 * Used with cube crafting and essence crafting
 	 */
-	internal abstract class CraftingTab<T> : GuiTab where T : ModItem
+	internal abstract class CraftingTab<T> : GuiTab, ICraftingTab where T : ModItem
 	{
 		public override int GetPageHeight() => 100;
 
 		internal abstract CraftingComponentButton GetComponentButton();
+		protected abstract ModifierContextMethod CraftMethod { get; }
 
-		public abstract bool AcceptsItem(Item item);
+		protected virtual Dictionary<string, object> CustomData => new Dictionary<string, object>
+		{
+			{
+				"Source", "Crafting"
+			}
+		};
+
+		public virtual bool AcceptsItem(Item item)
+		{
+			return ItemButton?.CanTakeItem(item) ?? false;
+		}
 
 		internal CraftingComponentButton ComponentButton;
-		internal GuiCubeItemButton ItemButton;
+		internal GuiCraftItemButton ItemButton;
 		internal RollingStrategyProperties RollingStrategyProperties;
 		internal CraftingComponentSelector<T> ComponentSelector;
 
@@ -44,14 +63,43 @@ namespace Loot.UI.Tabs.CraftingTab
 			RollingStrategyProperties = new RollingStrategyProperties();
 
 			ComponentButton = GetComponentButton();
+			ComponentButton.OnItemChange += item =>
+			{
+				ComponentSelector.CalculateAvailableComponents(ItemButton.Item);
+				if (!ItemButton.Item.IsAir && !IsStrategyAllowed())
+				{
+					ComponentButton.Item.TurnToAir();
+				}
+			};
 			TabFrame.Append(ComponentButton);
 
-			ItemButton = new GuiCubeItemButton(
+			ItemButton = new GuiCraftItemButton(
 				GuiButton.ButtonType.Parchment,
 				hintTexture: ModContent.GetTexture("Terraria/Item_24"),
 				hintText: "Place an item to here"
 			);
-			ItemButton.OnClick += (evt, element) => { UpdateModifiersInGui(); };
+			ItemButton.CanTakeItemAction += IsStrategyAllowed;
+			ItemButton.PreOnClickAction += () =>
+			{
+				if (!ItemButton.Item.IsAir)
+				{
+					LootModItem.GetInfo(ItemButton.Item).SlottedInUI = false;
+				}
+			};
+			ItemButton.OnItemChange += item =>
+			{
+				ComponentSelector.CalculateAvailableComponents(ItemButton.Item);
+				if (!ComponentSelector.IsAvailable(ComponentButton.Item.type))
+				{
+					ComponentButton.Item.TurnToAir();
+				}
+
+				if (!item.IsAir)
+				{
+					LootModItem.GetInfo(item).SlottedInUI = true;
+				}
+				UpdateModifiersInGui();
+			};
 			TabFrame.Append(ItemButton.Below(ComponentButton));
 
 			_modifierPanels = new GuiTextPanel[4];
@@ -69,13 +117,28 @@ namespace Loot.UI.Tabs.CraftingTab
 
 			Texture2D craftTexture = ModContent.GetTexture("Terraria/UI/Craft_Toggle_3");
 			_craftButton = new GuiImageButton(GuiButton.ButtonType.StoneOuterBevel, craftTexture);
-			_craftButton.OnClick += HandleCraftButtonClick;
+			_craftButton.OnClick += (evt, element) =>
+			{
+				if (!ComponentSelector.IsAvailable(ComponentButton.Item.type))
+				{
+					ComponentButton.Item.TurnToAir();
+				}
+
+				HandleCraftButtonClick(evt, element);
+			};
 
 			TabFrame.Append(_craftButton.Below(ItemButton));
 
 			ComponentSelector = new CraftingComponentSelector<T>();
 			ComponentSelector.OnComponentClick += type =>
 			{
+				ComponentSelector.CalculateAvailableComponents();
+				if (!ComponentSelector.IsAvailable(type))
+				{
+					ComponentButton.Item.TurnToAir();
+					return false;
+				}
+
 				ComponentButton.ChangeItem(type);
 				return true;
 			};
@@ -86,41 +149,41 @@ namespace Loot.UI.Tabs.CraftingTab
 		private bool CraftRequirementsMet()
 		{
 			bool match = !ItemButton.Item.IsAir && !ComponentButton.Item.IsAir
-			                                    && ItemButton.CanTakeItem(ItemButton.Item)
-			                                    && ComponentButton.CanTakeItem(ComponentButton.Item);
+												&& ItemButton.CanTakeItem(ItemButton.Item)
+												&& ComponentButton.CanTakeItem(ComponentButton.Item);
 			if (!match) return false;
 
 			bool hasItem = Main.LocalPlayer.inventory.Any(x => x.type == ComponentButton.Item.type)
-			               || Main.mouseItem?.type == ComponentButton?.Item?.type;
+						   || Main.mouseItem?.type == ComponentButton?.Item?.type;
 
 			if (!hasItem) return false;
+			return IsStrategyAllowed();
+		}
 
-			// TODO make this better
+		// TODO make this better
+		private bool IsStrategyAllowed(Item overrideItem = null)
+		{
 			RollingStrategyProperties = new RollingStrategyProperties();
-			var ctx = GetContext(ItemButton.Item);
+			var ctx = GetContext(overrideItem ?? ItemButton.Item);
 			var strategy = ctx.Strategy;
 			var preRolledLines = strategy.PreRoll(ModifierPoolMechanism.GetPool(ctx), ctx, RollingStrategyProperties);
-			bool badStrategy = preRolledLines.Any(x => !x.CanRoll(ctx));
-
-			return !badStrategy;
+			return preRolledLines.All(x => x.CanRoll(ctx));
 		}
 
 		public override void OnShow()
 		{
-			ComponentSelector?.CalculateAvailableComponents();
+			ComponentSelector?.CalculateAvailableComponents(ItemButton.Item);
+			UpdateModifiersInGui();
 		}
 
 		private ModifierContext GetContext(Item item)
 		{
 			return new ModifierContext
 			{
-				Method = ModifierContextMethod.OnCubeReroll,
+				Method = CraftMethod,
 				Item = item,
 				Player = Main.LocalPlayer,
-				CustomData = new Dictionary<string, object>
-				{
-					{"Source", "CubeRerollUI"}
-				},
+				CustomData = this.CustomData,
 				Strategy = ComponentButton.GetRollingStrategy(ItemButton.Item, RollingStrategyProperties)
 			};
 		}
@@ -188,8 +251,8 @@ namespace Loot.UI.Tabs.CraftingTab
 
 		public void OverrideSlottedItem(Item newItem)
 		{
-			ItemButton.Item = newItem.Clone();
-			LootModItem.GetInfo(ItemButton.Item).SlottedInCubeUI = true;
+			ItemButton.ChangeItem(0, newItem.Clone());
+			LootModItem.GetInfo(ItemButton.Item).SlottedInUI = true;
 			UpdateModifiersInGui();
 			Main.PlaySound(SoundID.Grab);
 		}
@@ -264,7 +327,7 @@ namespace Loot.UI.Tabs.CraftingTab
 			}
 
 			ComponentButton.RecalculateStack();
-			ComponentSelector.CalculateAvailableComponents();
+			ComponentSelector.CalculateAvailableComponents(ItemButton.Item);
 
 			// No slotted cubes available
 			if (ComponentButton.Item.stack <= 0)
@@ -276,11 +339,7 @@ namespace Loot.UI.Tabs.CraftingTab
 		internal override void ToggleUI(bool visible)
 		{
 			base.ToggleUI(visible);
-			if (visible)
-			{
-				UpdateModifiersInGui();
-			}
-			else
+			if (!visible)
 			{
 				GiveBackSlottedItem();
 			}

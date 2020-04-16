@@ -33,9 +33,9 @@ namespace Loot.UI.Tabs.CraftingTab
 			RecalculateStack();
 		}
 
-		public void ChangeItem(int type)
+		public override void ChangeItem(int type, Item item = null)
 		{
-			Item.SetDefaults(type);
+			base.ChangeItem(type, item);
 			RecalculateStack();
 		}
 
@@ -46,6 +46,7 @@ namespace Loot.UI.Tabs.CraftingTab
 			if (Item.stack <= 0)
 			{
 				Item.TurnToAir();
+				OnItemChange?.Invoke(Item);
 			}
 		}
 	}

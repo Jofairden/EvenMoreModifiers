@@ -35,7 +35,7 @@ namespace Loot
 
 		// Non saved
 		public bool JustTinkerModified { get; internal set; } // is just tinker modified: e.g. armor hacked
-		public bool SlottedInCubeUI { get; internal set; } // is currently in cube UI slot
+		public bool SlottedInUI { get; internal set; } // is currently in cube UI slot
 
 		/// <summary>
 		/// Keeps track of if the particular item was activated ('delegated')

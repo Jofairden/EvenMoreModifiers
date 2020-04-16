@@ -1,3 +1,4 @@
+using System;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Terraria;
@@ -10,6 +11,7 @@ namespace Loot.UI.Common.Controls.Button
 	{
 		protected bool RightClickFunctionalityEnabled = true;
 		protected bool TakeUserItemOnClick = true;
+		public Action<Item> OnItemChange;
 
 		public bool PerformRegularClickInteraction { get; protected internal set; } = true;
 
@@ -74,13 +76,31 @@ namespace Loot.UI.Common.Controls.Button
 						// Reset item
 						if (Item.stack <= 0)
 						{
-							Item.TurnToAir();
+							ChangeItem(0);
 						}
 					}
 				}
 			}
 
 			PostOnRightClick();
+		}
+
+		public virtual void ChangeItem(int type, Item item = null)
+		{
+			if (item != null)
+			{
+				Item = item;
+			}
+			else if (type == 0)
+			{
+				Item.TurnToAir();
+			}
+			else
+			{
+				Item.SetDefaults(type);
+			}
+
+			OnItemChange?.Invoke(Item);
 		}
 
 		public virtual bool CanTakeItem(Item givenItem) => !givenItem.IsAir;
@@ -116,7 +136,7 @@ namespace Loot.UI.Common.Controls.Button
 							Main.mouseItem = Item.Clone();
 						}
 
-						Item.TurnToAir();
+						ChangeItem(0);
 					}
 					// Mouse has an item
 					// Can take mouse item
@@ -160,7 +180,7 @@ namespace Loot.UI.Common.Controls.Button
 								Main.mouseItem = tmp;
 							}
 
-							Item = tmp2;
+							ChangeItem(0, tmp2);
 						}
 					}
 				}
@@ -170,7 +190,7 @@ namespace Loot.UI.Common.Controls.Button
 				{
 					Main.PlaySound(SoundID.Grab);
 					Main.playerInventory = true;
-					Item = Main.mouseItem.Clone();
+					ChangeItem(0, Main.mouseItem.Clone());
 					if (TakeUserItemOnClick)
 					{
 						Main.mouseItem.TurnToAir();

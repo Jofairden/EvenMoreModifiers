@@ -1,3 +1,4 @@
+using Loot.Api.Ext;
 using Loot.Api.Strategy;
 using Loot.Essences;
 using Loot.UI.Tabs.CraftingTab;
@@ -16,7 +17,7 @@ namespace Loot.UI.Tabs.EssenceCrafting
 			=> givenItem.modItem is EssenceItem;
 
 		public override RollingStrategy GetRollingStrategy(Item item, RollingStrategyProperties rollingStrategyProperties)
-			=> ((EssenceItem)Item.modItem).GetRollingStrategy(item, rollingStrategyProperties);
+			=> ((EssenceItem) Item.modItem)?.GetRollingStrategy(item, rollingStrategyProperties) ?? RollingUtils.Strategies.Default;
 
 	}
 }

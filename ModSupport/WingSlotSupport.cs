@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using Loot.Api.Cubes;
 using Loot.UI;
+using Loot.UI.Tabs.CraftingTab;
 using Loot.UI.Tabs.Cubing;
 using Microsoft.Xna.Framework.Input;
 using Terraria;
@@ -44,10 +45,10 @@ namespace Loot.ModSupport
 				   && Loot.Instance.GuiInterface.CurrentState != null;
 		}
 
-		private static void SwapItems(GuiCubingTab cubingTab, Item item)
+		private static void SwapItems(ICraftingTab craftingTab, Item item)
 		{
-			cubingTab.GiveBackSlottedItem();
-			cubingTab.OverrideSlottedItem(item);
+			craftingTab.GiveBackSlottedItem();
+			craftingTab.OverrideSlottedItem(item);
 		}
 
 		public class WingSlotSupportGlobalItem : GlobalItem
@@ -59,10 +60,10 @@ namespace Loot.ModSupport
 					return false;
 
 				if (!(Loot.Instance.GuiInterface.CurrentState is GuiTabWindow ui)
-					|| !(ui.GetCurrentTab() is GuiCubingTab cubingTab))
+					|| !(ui.GetCurrentTab() is ICraftingTab tab))
 					return false;
 
-				return ui.Visible && cubingTab.AcceptsItem(item);
+				return ui.Visible && tab.AcceptsItem(item);
 			}
 
 			// Auto slot item in UI if possible
@@ -74,12 +75,12 @@ namespace Loot.ModSupport
 				// regardless of our forced right click functionality in CanRightClick
 				// by which we need to assume any possible item can be passed into this hook
 				if (!(Loot.Instance.GuiInterface.CurrentState is GuiTabWindow ui)
-					|| !(ui.GetCurrentTab() is GuiCubingTab cubingTab))
+					|| !(ui.GetCurrentTab() is ICraftingTab tab))
 					return;
 
-				if (RightClickFunctionalityRequirements(item) && !(item.modItem is MagicalCube) && ui.Visible && cubingTab.AcceptsItem(item))
+				if (RightClickFunctionalityRequirements(item) && !(item.modItem is MagicalCube) && ui.Visible && tab.AcceptsItem(item))
 				{
-					SwapItems(cubingTab, item);
+					SwapItems(tab, item);
 					// else // item has innate right click or mod allows it, do nothing
 				}
 			}
@@ -88,12 +89,12 @@ namespace Loot.ModSupport
 			public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
 			{
 				if (!(Loot.Instance.GuiInterface.CurrentState is GuiTabWindow ui)
-				    || !(ui.GetCurrentTab() is GuiCubingTab cubingTab))
+				    || !(ui.GetCurrentTab() is ICraftingTab tab))
 					return;
 
 				if ((ModSupportTunneler.GetModSupport<WingSlotSupport>().IsInvalid && item.wingSlot > 0) // block wings if low version if wingslot
-				    || !cubingTab.AcceptsItem(item)
-				    || LootModItem.GetInfo(item).SlottedInCubeUI)
+				    || !tab.AcceptsItem(item)
+				    || LootModItem.GetInfo(item).SlottedInUI)
 					return;
 
 				var i = tooltips.FindIndex(x => x.mod.Equals("Terraria") && x.Name.Equals("ItemName"));

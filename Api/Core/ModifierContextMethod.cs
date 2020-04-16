@@ -13,6 +13,7 @@ namespace Loot.Api.Core
 		FirstLoad,
 		OnPickup,
 		Custom,
-		OnCubeReroll
+		OnCubeReroll,
+		OnEssenceReroll
 	}
 }

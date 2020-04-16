@@ -1,4 +1,5 @@
 using Loot.Api.Cubes;
+using Loot.Api.Ext;
 using Loot.Api.Strategy;
 using Loot.UI.Tabs.CraftingTab;
 using Microsoft.Xna.Framework.Graphics;
@@ -19,7 +20,7 @@ namespace Loot.UI.Tabs.Cubing
 
 		public override RollingStrategy GetRollingStrategy(Item item, RollingStrategyProperties rollingStrategyProperties)
 		{
-			return ((RerollingCube)Item.modItem).GetRollingStrategy(item, rollingStrategyProperties);
+			return ((RerollingCube) Item.modItem)?.GetRollingStrategy(item, rollingStrategyProperties) ?? RollingUtils.Strategies.Default;
 		}
 	}
 }
