@@ -1,6 +1,6 @@
 <map id="Loot.RollingStrategies.DefaultRollingStrategy" name="Loot.RollingStrategies.DefaultRollingStrategy">
-<area shape="rect" id="node2" href="$class_loot_1_1_api_1_1_strategy_1_1_rolling_strategy.html" title="RollingStrategy" alt="" coords="265,213,382,240"/>
+<area shape="rect" id="node2" href="$class_loot_1_1_api_1_1_strategy_1_1_rolling_strategy.html" title="RollingStrategy" alt="" coords="262,213,379,240"/>
 <area shape="rect" id="node3" href="$class_loot_1_1_api_1_1_strategy_1_1_rolling_strategy_properties.html" title="Defines properties that will be used when an item is being rolled in a IRollingStrategy&lt;T&gt; These can ..." alt="" coords="5,109,180,151"/>
-<area shape="rect" id="node5" href="$class_loot_1_1_loot_mod_item.html" title="Defines an item that may be modified by modifiers from mods " alt="" coords="254,117,393,143"/>
-<area shape="rect" id="node6" href="$class_global_item.html" title="GlobalItem" alt="" coords="278,5,369,32"/>
+<area shape="rect" id="node5" href="$class_loot_1_1_loot_mod_item.html" title="Defines an item that may be modified by modifiers from mods " alt="" coords="251,117,390,143"/>
+<area shape="rect" id="node6" href="$class_global_item.html" title="GlobalItem" alt="" coords="275,5,366,32"/>
 </map>

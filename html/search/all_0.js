@@ -24,7 +24,7 @@ var searchData=
   ['_5flookuptable',['_lookupTable',['../class_loot_1_1_api_1_1_mod_content_1_1_graphics_mod_content.html#a07042203b7e92590108b6e0b1928796e',1,'Loot::Api::ModContent::GraphicsModContent']]],
   ['_5fmanacost',['_manaCost',['../class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_damage_with_mana_cost.html#a9e123eec4ffabf52130c98b882c90774',1,'Loot::Modifiers::WeaponModifiers::DamageWithManaCost']]],
   ['_5fmaxrollablelines',['_maxRollableLines',['../class_loot_1_1_api_1_1_strategy_1_1_rolling_strategy_properties.html#a157dd78c08cd4ffed5c96e734223c776',1,'Loot::Api::Strategy::RollingStrategyProperties']]],
-  ['_5fminmodifierrolls',['_minModifierRolls',['../class_loot_1_1_api_1_1_strategy_1_1_rolling_strategy_properties.html#ab8030f3ea53c5750c1245c30f7d8a14b',1,'Loot::Api::Strategy::RollingStrategyProperties']]],
+  ['_5fminrollablelines',['_minRollableLines',['../class_loot_1_1_api_1_1_strategy_1_1_rolling_strategy_properties.html#aaafb16812e18b640529b326da4ab168b',1,'Loot::Api::Strategy::RollingStrategyProperties']]],
   ['_5fmodcontents',['_modContents',['../class_loot_1_1_api_1_1_mod_content_1_1_mod_content_manager.html#a01a5f60b7dc3f14f1baedfc241b211c3',1,'Loot::Api::ModContent::ModContentManager']]],
   ['_5fmodifiereffects',['_modifierEffects',['../class_loot_1_1_api_1_1_delegators_1_1_modifier_delegator_player.html#a735a2ecd7d6203ba68278d1ca6a62a9e',1,'Loot.Api.Delegators.ModifierDelegatorPlayer._modifierEffects()'],['../class_loot_1_1_caching_1_1_modifier_cache_player.html#a8f7252334cec4c3bad96d5d4c9b93513',1,'Loot.Caching.ModifierCachePlayer._modifierEffects()']]],
   ['_5fmodshell',['_modShell',['../class_loot_tests_1_1_unit_tests.html#a8dfb4b0ce8cc2c2cc4d7648c0575230d',1,'LootTests::UnitTests']]],
