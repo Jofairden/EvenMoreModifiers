@@ -63,6 +63,7 @@ namespace Loot.UI.Common.Controls.Button
 				if (CanBeClicked)
 				{
 					drawColor = Color.White;
+					Main.hoverItemName = HoverText;
 					// This is needed because the current arrows are outside
 					// the UI frame causing vanilla mouse behavior to not register
 					if (Main.mouseLeft && Main.mouseLeftRelease)
@@ -70,7 +71,6 @@ namespace Loot.UI.Common.Controls.Button
 						Click(new UIMouseEvent(this, Main.MouseScreen));
 					}
 				}
-				Main.hoverItemName = HoverText;
 			}
 
 			spriteBatch.Draw(
