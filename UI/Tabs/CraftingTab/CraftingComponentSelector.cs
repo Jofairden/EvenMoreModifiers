@@ -6,6 +6,7 @@ using Loot.Api.Cubes;
 using Loot.Api.Ext;
 using Loot.Api.Mechanism;
 using Loot.Api.Strategy;
+using Loot.Cubes;
 using Loot.Essences;
 using Loot.Ext;
 using Loot.UI.Common.Controls.Button;
@@ -116,6 +117,10 @@ namespace Loot.UI.Tabs.CraftingTab
 
 			// TODO this is very baaad
 			RollingStrategy strategy = null;
+			if (component is CubeOfSealing)
+			{
+				return true;
+			}
 			if (component is RerollingCube cube)
 			{
 				strategy = cube.GetRollingStrategy(item, props);
@@ -124,6 +129,7 @@ namespace Loot.UI.Tabs.CraftingTab
 			{
 				strategy = essence.GetRollingStrategy(item, props);
 			}
+
 			var ctx = GetContext(item);
 			ctx.Strategy = strategy;
 			var preRolledLines = strategy?.PreRoll(ModifierPoolMechanism.GetPool(ctx), ctx, props);
