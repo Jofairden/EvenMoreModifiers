@@ -8,6 +8,7 @@ var _modifier_context_method_8cs =
       [ "FirstLoad", "_modifier_context_method_8cs.html#a2fe26ee9cffa16c663ab49599e1949b4aa5382010e77d31e27da44053b5fee5f0", null ],
       [ "OnPickup", "_modifier_context_method_8cs.html#a2fe26ee9cffa16c663ab49599e1949b4a66571fead888a69cec1b7b611dedb790", null ],
       [ "Custom", "_modifier_context_method_8cs.html#a2fe26ee9cffa16c663ab49599e1949b4a90589c47f06eb971d548591f23c285af", null ],
-      [ "OnCubeReroll", "_modifier_context_method_8cs.html#a2fe26ee9cffa16c663ab49599e1949b4acc452c93d23e37450cd2613e785935db", null ]
+      [ "OnCubeReroll", "_modifier_context_method_8cs.html#a2fe26ee9cffa16c663ab49599e1949b4acc452c93d23e37450cd2613e785935db", null ],
+      [ "OnEssenceReroll", "_modifier_context_method_8cs.html#a2fe26ee9cffa16c663ab49599e1949b4aecca63c63e3a01af86275741be69a766", null ]
     ] ]
 ];

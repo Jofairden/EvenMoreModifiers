@@ -6,6 +6,7 @@ var searchData=
   ['icemodifier',['IceModifier',['../class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_ice_1_1_ice_modifier.html',1,'Loot::Modifiers::WeaponModifiers::Ice']]],
   ['icemodifier_2ecs',['IceModifier.cs',['../_ice_modifier_8cs.html',1,'']]],
   ['icloneable',['ICloneable',['../class_i_cloneable.html',1,'']]],
+  ['icraftingtab',['ICraftingTab',['../interface_loot_1_1_u_i_1_1_tabs_1_1_crafting_tab_1_1_i_crafting_tab.html',1,'Loot::UI::Tabs::CraftingTab']]],
   ['icyessence',['IcyEssence',['../class_loot_1_1_essences_1_1_icy_essence.html',1,'Loot::Essences']]],
   ['icyessence_2ecs',['IcyEssence.cs',['../_icy_essence_8cs.html',1,'']]],
   ['icymodifier',['IcyModifier',['../class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_ice_1_1_icy_modifier.html',1,'Loot::Modifiers::WeaponModifiers::Ice']]],

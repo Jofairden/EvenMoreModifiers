@@ -10,6 +10,6 @@ var searchData=
   ['skipdrawingshader',['SkipDrawingShader',['../class_loot_1_1_api_1_1_graphics_1_1_shader_1_1_shader_graphics_properties.html#a00b382bdef5e9b18c58c938a41547f71',1,'Loot::Api::Graphics::Shader::ShaderGraphicsProperties']]],
   ['skipdrawingsubject',['SkipDrawingSubject',['../class_loot_1_1_api_1_1_graphics_1_1_shader_1_1_shader_graphics_properties.html#a3a72bfa515814daccd04dfee465dbeab',1,'Loot::Api::Graphics::Shader::ShaderGraphicsProperties']]],
   ['skipupdatingdrawdata',['SkipUpdatingDrawData',['../class_loot_1_1_api_1_1_graphics_1_1_graphics_properties.html#a2640c72511fbba594bb815799133ec5a',1,'Loot::Api::Graphics::GraphicsProperties']]],
-  ['slottedincubeui',['SlottedInCubeUI',['../class_loot_1_1_loot_mod_item.html#a74269f8b4ef4ec8c4a03661940f3ef6c',1,'Loot::LootModItem']]],
+  ['slottedinui',['SlottedInUI',['../class_loot_1_1_loot_mod_item.html#a7afab53f1ff801043c7a18bc2cfd8cd4',1,'Loot::LootModItem']]],
   ['subjecttexture',['SubjectTexture',['../class_loot_1_1_api_1_1_graphics_1_1_shader_1_1_shader_entity.html#af39fad10bf88f959f2e41597613054b8',1,'Loot::Api::Graphics::Shader::ShaderEntity']]]
 ];

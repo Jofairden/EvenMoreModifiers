@@ -1,5 +1,6 @@
 var NAVTREEINDEX2 =
 {
+"_weapon_draw_effects_patch_8cs_source.html":[3,0,7,2],
 "_weapon_modifier_8cs.html":[3,0,10,0,4],
 "_weapon_modifier_8cs_source.html":[3,0,10,0,4],
 "_weapon_modifier_pool_8cs.html":[3,0,12,2],
@@ -248,6 +249,5 @@ var NAVTREEINDEX2 =
 "class_loot_1_1_api_1_1_core_1_1_modifier_tooltip_line_1_1_modifier_tooltip_builder.html#aa1f27ebededeeac4cba0cd3ccda4062f":[2,0,0,0,3,7,0,1],
 "class_loot_1_1_api_1_1_core_1_1_modifier_tooltip_line_1_1_modifier_tooltip_builder.html#aaf13d37046545da481bbba761007d9ac":[2,0,0,0,3,7,0,5],
 "class_loot_1_1_api_1_1_core_1_1_modifier_tooltip_line_1_1_modifier_tooltip_builder.html#abf617fd2ec43f7bab7c3a0f806e61d2f":[2,0,0,0,3,7,0,0],
-"class_loot_1_1_api_1_1_core_1_1_modifier_tooltip_line_1_1_modifier_tooltip_builder.html#ae832cc70fa89bd869f897908bf78eba7":[2,0,0,0,3,7,0,6],
-"class_loot_1_1_api_1_1_core_1_1_negative_tooltip_line.html":[2,0,0,0,3,8]
+"class_loot_1_1_api_1_1_core_1_1_modifier_tooltip_line_1_1_modifier_tooltip_builder.html#ae832cc70fa89bd869f897908bf78eba7":[2,0,0,0,3,7,0,6]
 };

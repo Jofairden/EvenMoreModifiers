@@ -3,6 +3,7 @@ var searchData=
   ['onconsumeammo',['OnConsumeAmmo',['../namespace_loot_1_1_api_1_1_attributes.html#a96f1ebf800712ea4f5265d1e6ae9649da0115a864eb548eca070a70a5b3435f86',1,'Loot::Api::Attributes']]],
   ['oncraft',['OnCraft',['../namespace_loot_1_1_api_1_1_core.html#a2fe26ee9cffa16c663ab49599e1949b4a9858a8b8d69b5a5efe42d85db54bb469',1,'Loot::Api::Core']]],
   ['oncubereroll',['OnCubeReroll',['../namespace_loot_1_1_api_1_1_core.html#a2fe26ee9cffa16c663ab49599e1949b4acc452c93d23e37450cd2613e785935db',1,'Loot::Api::Core']]],
+  ['onessencereroll',['OnEssenceReroll',['../namespace_loot_1_1_api_1_1_core.html#a2fe26ee9cffa16c663ab49599e1949b4aecca63c63e3a01af86275741be69a766',1,'Loot::Api::Core']]],
   ['onhitanything',['OnHitAnything',['../namespace_loot_1_1_api_1_1_attributes.html#a96f1ebf800712ea4f5265d1e6ae9649da46809cdf1473de6c0ab63896ff641f8d',1,'Loot::Api::Attributes']]],
   ['onhitbynpc',['OnHitByNPC',['../namespace_loot_1_1_api_1_1_attributes.html#a96f1ebf800712ea4f5265d1e6ae9649da2d5c465a8f9166daf623d861ae4a0865',1,'Loot::Api::Attributes']]],
   ['onhitbyprojectile',['OnHitByProjectile',['../namespace_loot_1_1_api_1_1_attributes.html#a96f1ebf800712ea4f5265d1e6ae9649dabeb83b3c84994a99b18dae78ee66ffa2',1,'Loot::Api::Attributes']]],

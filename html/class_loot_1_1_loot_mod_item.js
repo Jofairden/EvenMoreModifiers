@@ -20,5 +20,5 @@ var class_loot_1_1_loot_mod_item =
     [ "Modifiers", "class_loot_1_1_loot_mod_item.html#a8b4b3efe43de8216d5bcf569a07735c8", null ],
     [ "Rarity", "class_loot_1_1_loot_mod_item.html#a392072af79d5f399bc7fc670074ef9d1", null ],
     [ "SealedModifiers", "class_loot_1_1_loot_mod_item.html#a5e39094688732f2abf26f5ef302c8139", null ],
-    [ "SlottedInCubeUI", "class_loot_1_1_loot_mod_item.html#a74269f8b4ef4ec8c4a03661940f3ef6c", null ]
+    [ "SlottedInUI", "class_loot_1_1_loot_mod_item.html#a7afab53f1ff801043c7a18bc2cfd8cd4", null ]
 ];

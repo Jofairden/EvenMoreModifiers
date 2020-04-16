@@ -1,5 +1,6 @@
 var NAVTREEINDEX5 =
 {
+"class_loot_1_1_caching_1_1_modifier_cache_player.html#aceb2cf61924cc7a73c58c8a3c317b48e":[2,0,0,1,0,1],
 "class_loot_1_1_caching_1_1_modifier_cache_player.html#ad271b788683758086f9bf4711cbdd88c":[2,0,0,1,0,21],
 "class_loot_1_1_caching_1_1_modifier_cache_player.html#ad3185daba78498a2d02b9617220b19fa":[2,0,0,1,0,5],
 "class_loot_1_1_caching_1_1_modifier_cache_player.html#ad5da049c7bfcadd0c194bd97940bf0d3":[2,0,0,1,0,10],
@@ -89,11 +90,12 @@ var NAVTREEINDEX5 =
 "class_loot_1_1_cubes_1_1_void_cube.html#ac6ba63741a731575ed022c435749ac5c":[2,0,0,3,11,1],
 "class_loot_1_1_cubes_1_1_void_cube.html#aff963f9b2ea525825f13a6b2c4656840":[2,0,0,3,11,5],
 "class_loot_1_1_essences_1_1_essence_item.html":[2,0,0,4,0],
-"class_loot_1_1_essences_1_1_essence_item.html#a34166a587210fe2a46e4c00fd3de0658":[2,0,0,4,0,2],
+"class_loot_1_1_essences_1_1_essence_item.html#a34166a587210fe2a46e4c00fd3de0658":[2,0,0,4,0,3],
+"class_loot_1_1_essences_1_1_essence_item.html#a3be1605062b3fc48a17752609dea85cb":[2,0,0,4,0,2],
 "class_loot_1_1_essences_1_1_essence_item.html#aa1aaf59b683767cb9393b9cc5c7f05eb":[2,0,0,4,0,1],
 "class_loot_1_1_essences_1_1_essence_item.html#abb10090f29949282aa4e502707615210":[2,0,0,4,0,0],
-"class_loot_1_1_essences_1_1_essence_item.html#ad0ccdd6bf18714c1d8e349cdb9e400ea":[2,0,0,4,0,4],
-"class_loot_1_1_essences_1_1_essence_item.html#af1df582fda43ba01637672777df13db1":[2,0,0,4,0,3],
+"class_loot_1_1_essences_1_1_essence_item.html#ad0ccdd6bf18714c1d8e349cdb9e400ea":[2,0,0,4,0,5],
+"class_loot_1_1_essences_1_1_essence_item.html#af1df582fda43ba01637672777df13db1":[2,0,0,4,0,4],
 "class_loot_1_1_essences_1_1_icy_essence.html":[2,0,0,4,1],
 "class_loot_1_1_essences_1_1_icy_essence.html#a0c55752b13eb0fa62ca58213ffe798ee":[2,0,0,4,1,1],
 "class_loot_1_1_essences_1_1_icy_essence.html#a1be78832df8f517c1f9eb7cc1a6bb255":[2,0,0,4,1,2],
@@ -141,7 +143,7 @@ var NAVTREEINDEX5 =
 "class_loot_1_1_loot_mod_item.html#a5c2460f80cae10b2992b32b176bcf39f":[2,0,0,14,12],
 "class_loot_1_1_loot_mod_item.html#a5e39094688732f2abf26f5ef302c8139":[2,0,0,14,19],
 "class_loot_1_1_loot_mod_item.html#a659e2501754628252742c8842a8437e4":[2,0,0,14,6],
-"class_loot_1_1_loot_mod_item.html#a74269f8b4ef4ec8c4a03661940f3ef6c":[2,0,0,14,20],
+"class_loot_1_1_loot_mod_item.html#a7afab53f1ff801043c7a18bc2cfd8cd4":[2,0,0,14,20],
 "class_loot_1_1_loot_mod_item.html#a8b4b3efe43de8216d5bcf569a07735c8":[2,0,0,14,17],
 "class_loot_1_1_loot_mod_item.html#aac5f831aad1d691114d6c020c247406f":[2,0,0,14,1],
 "class_loot_1_1_loot_mod_item.html#abf189bb2ef446be92c178c62e356b129":[2,0,0,14,5],
@@ -247,7 +249,5 @@ var NAVTREEINDEX5 =
 "class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_defensive_1_1_thorns.html#adb7181adb355af5f3af07f2a43417a29":[2,0,0,6,1,0,15,2],
 "class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_defensive_1_1_thorns.html#af74aa8929a126d5044574f5ed193d4ac":[2,0,0,6,1,0,15,0],
 "class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_offensive_1_1_crit_damage_plus.html":[2,0,0,6,1,1,0],
-"class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_offensive_1_1_crit_damage_plus.html#a3e9ca56dd6669a12aa4104f959111093":[2,0,0,6,1,1,0,1],
-"class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_offensive_1_1_crit_damage_plus.html#abb44419d1adb6e06ea059d64232ce908":[2,0,0,6,1,1,0,0],
-"class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_offensive_1_1_crit_damage_plus.html#ae72f5516e13bb3180179f306de537416":[2,0,0,6,1,1,0,2]
+"class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_offensive_1_1_crit_damage_plus.html#a3e9ca56dd6669a12aa4104f959111093":[2,0,0,6,1,1,0,1]
 };

@@ -1,5 +1,6 @@
 var NAVTREEINDEX3 =
 {
+"class_loot_1_1_api_1_1_core_1_1_negative_tooltip_line.html":[2,0,0,0,3,8],
 "class_loot_1_1_api_1_1_core_1_1_negative_tooltip_line.html#a0089fd7932d8e6bc86c64d79e8c8e63e":[2,0,0,0,3,8,0],
 "class_loot_1_1_api_1_1_core_1_1_null_modifier.html":[2,0,0,0,3,9],
 "class_loot_1_1_api_1_1_core_1_1_null_modifier.html#a065271d033f5d5dc2ab2adb19fe9c6aa":[2,0,0,0,3,9,3],
@@ -248,6 +249,5 @@ var NAVTREEINDEX3 =
 "class_loot_1_1_api_1_1_ext_1_1_item_utils.html#ab53a14a01de3de30e90c345c3a746a61":[2,0,0,0,6,0,3],
 "class_loot_1_1_api_1_1_ext_1_1_item_utils.html#acc5b051434cec09cf4975976804caf10":[2,0,0,0,6,0,0],
 "class_loot_1_1_api_1_1_ext_1_1_item_utils.html#ae792e1f909e3c3962ef858847d0ceeef":[2,0,0,0,6,0,2],
-"class_loot_1_1_api_1_1_ext_1_1_mod_utils.html":[2,0,0,0,6,1],
-"class_loot_1_1_api_1_1_ext_1_1_mod_utils.html#a0246e41051d8274a3aafd55d7952c4be":[2,0,0,0,6,1,25]
+"class_loot_1_1_api_1_1_ext_1_1_mod_utils.html":[2,0,0,0,6,1]
 };

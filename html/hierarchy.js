@@ -120,6 +120,7 @@ var hierarchy =
         [ "Loot.Rarities.TranscendentRarity", "class_loot_1_1_rarities_1_1_transcendent_rarity.html", null ]
       ] ]
     ] ],
+    [ "Loot.UI.Tabs.CraftingTab.ICraftingTab", "interface_loot_1_1_u_i_1_1_tabs_1_1_crafting_tab_1_1_i_crafting_tab.html", null ],
     [ "LootTests.IFakeMod", "interface_loot_tests_1_1_i_fake_mod.html", [
       [ "LootTests.FakeMod", "class_loot_tests_1_1_fake_mod.html", null ]
     ] ],

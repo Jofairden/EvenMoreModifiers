@@ -1,5 +1,7 @@
 var NAVTREEINDEX6 =
 {
+"class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_offensive_1_1_crit_damage_plus.html#abb44419d1adb6e06ea059d64232ce908":[2,0,0,6,1,1,0,0],
+"class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_offensive_1_1_crit_damage_plus.html#ae72f5516e13bb3180179f306de537416":[2,0,0,6,1,1,0,2],
 "class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_offensive_1_1_crit_damage_plus_effect.html":[2,0,0,6,1,1,1],
 "class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_offensive_1_1_crit_damage_plus_effect.html#a09089551108b4e8b2c112f0c5baba146":[2,0,0,6,1,1,1,4],
 "class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_offensive_1_1_crit_damage_plus_effect.html#a53c341a3eaf111fc14bb0f1c1f723573":[2,0,0,6,1,1,1,5],
@@ -232,10 +234,10 @@ var NAVTREEINDEX6 =
 "class_loot_1_1_rolling_strategies_1_1_sealing_rolling_strategy.html#aa70c3544d1b64ff93af4a565fe8318f5":[2,0,0,9,1,3],
 "class_loot_1_1_sounds_1_1_custom_1_1_sound_maker.html":[2,0,0,10,0,0],
 "class_loot_1_1_sounds_1_1_custom_1_1_sound_maker.html#ad0c71bae603b16c6e98848e2dbc675df":[2,0,0,10,0,0,0],
-"class_loot_1_1_u_i_1_1_tabs_1_1_essence_crafting_1_1_gui_essence_item_button.html":[2,0,0,11,1,0,0],
-"class_loot_1_1_u_i_1_1_tabs_1_1_essence_crafting_1_1_gui_essence_item_button.html#a5432675267181e0a98387f0856a98568":[2,0,0,11,1,0,0,0],
-"class_loot_1_1_u_i_1_1_tabs_1_1_essence_crafting_1_1_gui_essence_item_button.html#a751e02e960ad6d0ec0ffa55fd39f3a93":[2,0,0,11,1,0,0,2],
-"class_loot_1_1_u_i_1_1_tabs_1_1_essence_crafting_1_1_gui_essence_item_button.html#a7ee66ef9dc84ec016a9745f3dee064c4":[2,0,0,11,1,0,0,1],
+"class_loot_1_1_u_i_1_1_tabs_1_1_essence_crafting_1_1_gui_essence_item_button.html":[2,0,0,11,1,1,0],
+"class_loot_1_1_u_i_1_1_tabs_1_1_essence_crafting_1_1_gui_essence_item_button.html#a5432675267181e0a98387f0856a98568":[2,0,0,11,1,1,0,0],
+"class_loot_1_1_u_i_1_1_tabs_1_1_essence_crafting_1_1_gui_essence_item_button.html#a751e02e960ad6d0ec0ffa55fd39f3a93":[2,0,0,11,1,1,0,2],
+"class_loot_1_1_u_i_1_1_tabs_1_1_essence_crafting_1_1_gui_essence_item_button.html#a7ee66ef9dc84ec016a9745f3dee064c4":[2,0,0,11,1,1,0,1],
 "class_loot_tests_1_1_empty_mod_load_shell.html":[2,0,1,3],
 "class_loot_tests_1_1_empty_mod_load_shell.html#a47172d5c89980944c942b138f3f72b3d":[2,0,1,3,0],
 "class_loot_tests_1_1_empty_mod_load_shell.html#a61cbd109567bbb13f684f0b2dfd56433":[2,0,1,3,2],
@@ -247,7 +249,5 @@ var NAVTREEINDEX6 =
 "class_loot_tests_1_1_modifier_properties_tests.html#a1eb103535c5e3d05db7bf9aee5295f51":[2,0,1,6,5],
 "class_loot_tests_1_1_modifier_properties_tests.html#aa1a78dda87f808698d9ab65fddd79b7a":[2,0,1,6,3],
 "class_loot_tests_1_1_modifier_properties_tests.html#ab1e7cdfb8137e42398aa342056397084":[2,0,1,6,2],
-"class_loot_tests_1_1_modifier_properties_tests_1_1_fake_properties.html":[2,0,1,6,0],
-"class_loot_tests_1_1_modifier_properties_tests_1_1_fake_properties.html#a12173010bee876e88d0b3d6516b6ff1f":[2,0,1,6,0,1],
-"class_loot_tests_1_1_modifier_properties_tests_1_1_fake_properties.html#a123b7ddd1ad973d5ed0acbb3ccf7d1d8":[2,0,1,6,0,6]
+"class_loot_tests_1_1_modifier_properties_tests_1_1_fake_properties.html":[2,0,1,6,0]
 };

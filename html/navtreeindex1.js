@@ -96,6 +96,7 @@ var NAVTREEINDEX1 =
 "_modifier_context_method_8cs.html#a2fe26ee9cffa16c663ab49599e1949b4a9858a8b8d69b5a5efe42d85db54bb469":[3,0,0,3,2,0,1],
 "_modifier_context_method_8cs.html#a2fe26ee9cffa16c663ab49599e1949b4aa5382010e77d31e27da44053b5fee5f0":[3,0,0,3,2,0,4],
 "_modifier_context_method_8cs.html#a2fe26ee9cffa16c663ab49599e1949b4acc452c93d23e37450cd2613e785935db":[3,0,0,3,2,0,7],
+"_modifier_context_method_8cs.html#a2fe26ee9cffa16c663ab49599e1949b4aecca63c63e3a01af86275741be69a766":[3,0,0,3,2,0,8],
 "_modifier_context_method_8cs_source.html":[3,0,0,3,2],
 "_modifier_delegator_item_8cs.html":[3,0,0,5,0],
 "_modifier_delegator_item_8cs_source.html":[3,0,0,5,0],
@@ -248,6 +249,5 @@ var NAVTREEINDEX1 =
 "_warding_essence_8cs_source.html":[3,0,4,10],
 "_weapon_debuff_modifier_8cs.html":[3,0,10,0,3],
 "_weapon_debuff_modifier_8cs_source.html":[3,0,10,0,3],
-"_weapon_draw_effects_patch_8cs.html":[3,0,7,2],
-"_weapon_draw_effects_patch_8cs_source.html":[3,0,7,2]
+"_weapon_draw_effects_patch_8cs.html":[3,0,7,2]
 };

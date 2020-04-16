@@ -36,13 +36,13 @@ var NAVTREEINDEX =
 [
 "_accessory_modifier_8cs.html",
 "_i_loadable_content_setter_8cs.html",
-"_weapon_modifier_8cs.html",
-"class_loot_1_1_api_1_1_core_1_1_negative_tooltip_line.html#a0089fd7932d8e6bc86c64d79e8c8e63e",
-"class_loot_1_1_api_1_1_ext_1_1_mod_utils.html#a0f7308382126405e808389efbba4b4e0",
-"class_loot_1_1_caching_1_1_modifier_cache_player.html#ad271b788683758086f9bf4711cbdd88c",
-"class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_offensive_1_1_crit_damage_plus_effect.html",
-"class_loot_tests_1_1_modifier_properties_tests_1_1_fake_properties.html#a320b707f957b865ede1860b003e770ed",
-"namespace_loot_1_1_sounds_1_1_custom.html"
+"_weapon_draw_effects_patch_8cs_source.html",
+"class_loot_1_1_api_1_1_core_1_1_negative_tooltip_line.html",
+"class_loot_1_1_api_1_1_ext_1_1_mod_utils.html#a0246e41051d8274a3aafd55d7952c4be",
+"class_loot_1_1_caching_1_1_modifier_cache_player.html#aceb2cf61924cc7a73c58c8a3c317b48e",
+"class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_offensive_1_1_crit_damage_plus.html#abb44419d1adb6e06ea059d64232ce908",
+"class_loot_tests_1_1_modifier_properties_tests_1_1_fake_properties.html#a12173010bee876e88d0b3d6516b6ff1f",
+"namespace_loot_1_1_rarities.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';
