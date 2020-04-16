@@ -32,7 +32,7 @@ namespace Loot.Essences
 				case EssenceTier.IV:
 					return "[c/eb984e:4]";
 				case EssenceTier.V:
-					return "[c/9b59b6:4]";
+					return "[c/9b59b6:5]";
 			}
 		}
 
@@ -48,7 +48,8 @@ Used in an essence crafting device");
 
 		public override void SetDefaults()
 		{
-			item.rare = (int) Tier;
+			item.rare = (int)Tier + 1;
+			item.maxStack = 999;
 		}
 
 		public virtual RollingStrategy GetRollingStrategy(Item item, RollingStrategyProperties properties)
