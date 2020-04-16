@@ -15,27 +15,33 @@ namespace Loot.Tiles
 {
 	internal sealed class MysteriousWorkbench : ModTile
 	{
-		private const int size = 16;
-		private const int padding = 2;
+		private const int Size = 16;
+		private const int Padding = 2;
 
 		public override void SetDefaults()
 		{
 			Main.tileLighted[Type] = true;
 			Main.tileNoAttach[Type] = true;
 			Main.tileFrameImportant[Type] = true;
+			Main.tileSpelunker[Type] = true;
+			Main.tileShine2[Type] = true;
+			Main.tileShine[Type] = 1200;
+			//TileID.Sets.HasOutlines[Type] = true;
 
 			TileObjectData.newTile.Width = 4;
 			TileObjectData.newTile.Height = 3;
 			TileObjectData.newTile.AnchorBottom = new AnchorData(AnchorType.SolidTile, TileObjectData.newTile.Width, 0);
 			TileObjectData.newTile.UsesCustomCanPlace = true;
-			TileObjectData.newTile.CoordinateWidth = size;
-			TileObjectData.newTile.CoordinatePadding = padding;
-			TileObjectData.newTile.CoordinateHeights = new int[] { size, size, size };
+			TileObjectData.newTile.CoordinateWidth = Size;
+			TileObjectData.newTile.CoordinatePadding = Padding;
+			TileObjectData.newTile.CoordinateHeights = new int[] {Size, Size, Size};
 			//TileObjectData.newTile.HookPostPlaceMyPlayer = new PlacementHook(mod.GetTileEntity<DeconstructorTE>().Hook_AfterPlacement, -1, 0, true);
 			TileObjectData.newTile.Origin = new Point16(2, 2);
 			TileObjectData.newTile.DrawYOffset = 2;
+			TileObjectData.newTile.LavaDeath = false;
+
 			TileObjectData.addTile(Type);
-			AddToArray(ref TileID.Sets.RoomNeeds.CountsAsTable);
+			//AddToArray(ref TileID.Sets.RoomNeeds.CountsAsTable);
 
 			ModTranslation name = CreateMapEntryName();
 			name.SetDefault("MysteriousWorkbench");
@@ -44,14 +50,37 @@ namespace Loot.Tiles
 			disableSmartCursor = true;
 		}
 
+		public override void MouseOver(int i, int j)
+		{
+			if (Main.LocalPlayer.mouseInterface) return;
+			Player player = Main.LocalPlayer;
+			Tile tile = Main.tile[i, j];
+			player.noThrow = 2;
+			player.showItemIcon = true;
+			// player.showItemIconText = "MysteriousWorkbench";
+			player.showItemIcon2 = ModContent.ItemType<MysteriousWorkbenchItem>();
+		}
+
+		public override void MouseOverFar(int i, int j)
+		{
+			MouseOver(i, j);
+			Player player = Main.LocalPlayer;
+			if (player.showItemIconText == "")
+			{
+				player.showItemIcon = false;
+				player.showItemIcon2 = 0;
+			}
+		}
+
 		public override bool NewRightClick(int i, int j)
 		{
 			Tile tile = Main.tile[i, j];
-			if (tile.type == Type)
+			Main.mouseRightRelease = false;
+
+			if (tile.type == Type && Main.LocalPlayer.Distance(new Point16(i, j).ToWorldCoordinates()) <= 15 * 16f)
 			{
 				Loot.Instance.GuiState.ToggleUI(Loot.Instance.GuiInterface);
 				return true;
-
 			}
 
 			return false;
@@ -64,10 +93,18 @@ namespace Loot.Tiles
 
 			if (tile.type == Type)
 			{
-				var sine = (float)Math.Sin(Main.essScale * 0.50f);
+				var sine = (float) Math.Sin(Main.essScale * 0.50f);
 				r = 0.05f + 0.35f * sine * useColor.R * 0.01f;
 				g = 0.05f + 0.35f * sine * useColor.G * 0.01f;
 				b = 0.05f + 0.35f * sine * useColor.B * 0.01f;
+			}
+		}
+
+		public override void DrawEffects(int i, int j, SpriteBatch spriteBatch, ref Color drawColor, ref int nextSpecialDrawIndex)
+		{
+			if (Loot.Instance.GuiState.Visible && Main.LocalPlayer.Distance(new Point16(i, j).ToWorldCoordinates()) > 15 * 16f)
+			{
+				Loot.Instance.GuiState.ToggleUI(Loot.Instance.GuiInterface);
 			}
 		}
 
@@ -90,15 +127,14 @@ namespace Loot.Tiles
 			var tile = Main.tile[i, j];
 			// Only draw from top left tile
 			if (tile.type == Type
-				&& tile.IsTopLeftFrame())
+			    && tile.IsTopLeftFrame())
 			{
-				var top = tile.GetTopLeftFrame(i, j, size, padding);
+				var top = tile.GetTopLeftFrame(i, j, Size, Padding);
 
 				if (Loot.Instance.GuiState.Visible
-					&& Loot.Instance.GuiState.GetCurrentTab() is GuiCubingTab tab
-					&& !tab.ComponentButton.Item.IsAir)
+				    && Loot.Instance.GuiState.GetCurrentTab() is GuiCubingTab tab
+				    && !tab.ComponentButton.Item.IsAir)
 				{
-
 					Vector2 zero = Main.drawToScreen
 						? Vector2.Zero
 						: new Vector2(Main.offScreenRange, Main.offScreenRange);
@@ -112,7 +148,7 @@ namespace Loot.Tiles
 					// tiles draw every 5 ticks, so we can safely increment here
 					frame = (frame + 0.75f) % 8;
 					spriteBatch.Draw(animTexture, position + zero,
-						new Rectangle(0, frameHeight * (int)frame, frameWidth, frameHeight), Color.White, 0f, origin, 1f,
+						new Rectangle(0, frameHeight * (int) frame, frameWidth, frameHeight), Color.White, 0f, origin, 1f,
 						SpriteEffects.None, 0f);
 				}
 			}

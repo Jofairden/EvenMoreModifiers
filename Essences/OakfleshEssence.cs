@@ -11,7 +11,7 @@ namespace Loot.Essences
 	{
 		public override EssenceTier Tier => EssenceTier.I;
 
-		public override string Description => "Grants a power that boosts defenses";
+		public override string Description => "Grants a power that boosts your defense";
 
 		public override RollingStrategy GetRollingStrategy(Item item, RollingStrategyProperties properties)
 		{

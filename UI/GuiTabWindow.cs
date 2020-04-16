@@ -27,14 +27,14 @@ namespace Loot.UI
 		{
 			{GuiTabState.CUBING, new GuiCubingTab()},
 			{GuiTabState.ESSENCE, new GuiEssenceTab()},
-			{GuiTabState.SOULFORGE, new GuiSoulforgeTab()},
+			// {GuiTabState.SOULFORGE, new GuiSoulforgeTab()},
 		};
 
 		internal readonly Dictionary<GuiTabState, GuiTabToggle> _toggles = new Dictionary<GuiTabState, GuiTabToggle>
 		{
 			{GuiTabState.CUBING, new GuiTabToggle(GuiTabState.CUBING)},
 			{GuiTabState.ESSENCE, new GuiTabToggle(GuiTabState.ESSENCE)},
-			{GuiTabState.SOULFORGE, new GuiTabToggle(GuiTabState.SOULFORGE)}
+			// {GuiTabState.SOULFORGE, new GuiTabToggle(GuiTabState.SOULFORGE)}
 		};
 
 		public GuiTab GetCurrentTab()
@@ -56,7 +56,7 @@ namespace Loot.UI
 				return;
 			}
 
-			SoundHelper.PlayCustomSound(SoundHelper.SoundType.OpenUI);
+			//SoundHelper.PlayCustomSound(SoundHelper.SoundType.OpenUI);
 			UpdateTabTo(toggle.TargetState);
 		}
 
@@ -139,9 +139,18 @@ namespace Loot.UI
 
 			if (Visible)
 			{
+				Main.playerInventory = true;
 				UpdateTab();
 			}
 			_currentTab?.ToggleUI(Visible);
+		}
+
+		public override void Update(GameTime gameTime)
+		{
+			if (Visible && !Main.playerInventory)
+			{
+				ToggleUI(Loot.Instance.GuiInterface);
+			}
 		}
 
 		public override void Draw(SpriteBatch spriteBatch)
