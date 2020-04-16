@@ -10,15 +10,20 @@ namespace Loot.Api.Strategy
 	/// </summary>
 	public sealed class RollingStrategyProperties
 	{
-		private int _minModifierRolls = 1;
+		private int _minRollableLines = 1;
 
 		/// <summary>
 		/// The minimum amount of modifiers to roll
 		/// </summary>
-		public int MinModifierRolls
+		public int MinRollableLines
 		{
-			get => _minModifierRolls;
-			set => _minModifierRolls = value;
+			get => _minRollableLines;
+			set
+			{
+				_minRollableLines = value;
+				if (value > MaxRollableLines)
+					MaxRollableLines = value;
+			}
 		}
 
 		private int _maxRollableLines = 2;

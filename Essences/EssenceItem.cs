@@ -55,9 +55,9 @@ Used in an essence crafting device");
 		public virtual RollingStrategy GetRollingStrategy(Item item, RollingStrategyProperties properties)
 		{
 			properties.MaxRollableLines = 3;
-			properties.MinModifierRolls = 1;
+			properties.MinRollableLines = 1;
 			if (Main.rand.NextBool(5))
-				properties.MinModifierRolls = 2;
+				properties.MinRollableLines = 2;
 			if (Main.rand.NextBool(10))
 				properties.ExtraLuck += 1;
 			return RollingUtils.Strategies.Default;

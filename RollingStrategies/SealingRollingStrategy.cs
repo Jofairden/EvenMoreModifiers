@@ -15,7 +15,7 @@ namespace Loot.RollingStrategies
 
 		public override List<Modifier> Roll(List<Modifier> currentModifiers, ModifierPool drawPool, ModifierContext modifierContext, RollingStrategyProperties properties)
 		{
-			properties.MinModifierRolls = 0;
+			properties.MinRollableLines = 0;
 			properties.MaxRollableLines = 0;
 			return base.Roll(currentModifiers, drawPool, modifierContext, properties);
 		}
