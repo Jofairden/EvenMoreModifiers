@@ -79,8 +79,8 @@ namespace Loot.Api.Strategy
 
 			var list = currentModifiers;
 
-			if (properties.MinModifierRolls > properties.MaxRollableLines)
-				properties.MaxRollableLines = properties.MinModifierRolls;
+			if (properties.MinRollableLines > properties.MaxRollableLines)
+				properties.MaxRollableLines = properties.MinRollableLines;
 
 			// Up to n times, try rolling a mod
 			for (int i = 0; i < properties.MaxRollableLines; ++i)
@@ -132,7 +132,7 @@ namespace Loot.Api.Strategy
 			// If there are no mods left, or we fail the roll, break.
 			if (weightedRandom.elements.Count <= 0
 				|| !_forceNextRoll
-				&& currentModifiers.Count >= properties.MinModifierRolls
+				&& currentModifiers.Count >= properties.MinRollableLines
 				&& Main.rand.NextFloat() > properties.RollNextChance)
 			{
 				return null;

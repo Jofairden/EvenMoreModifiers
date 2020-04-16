@@ -32,7 +32,7 @@ namespace Loot.Cubes
 
 		public override RollingStrategy GetRollingStrategy(Item item, RollingStrategyProperties properties)
 		{
-			properties.MinModifierRolls = 4;
+			properties.MinRollableLines = 4;
 			properties.MagnitudePower = 1.25f;
 			properties.ExtraLuck = 4;
 			return RollingUtils.Strategies.Default;
