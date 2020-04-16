@@ -33,6 +33,8 @@ namespace Loot.Api.Strategy
 			return wr;
 		}
 
+
+
 		internal List<Modifier> _Roll(ModifierPool pool, ModifierContext modifierContext, RollingStrategyProperties properties)
 		{
 			InitFields(modifierContext.Item, properties);
@@ -76,6 +78,9 @@ namespace Loot.Api.Strategy
 			}
 
 			var list = currentModifiers;
+
+			if (properties.MinModifierRolls > properties.MaxRollableLines)
+				properties.MaxRollableLines = properties.MinModifierRolls;
 
 			// Up to n times, try rolling a mod
 			for (int i = 0; i < properties.MaxRollableLines; ++i)
