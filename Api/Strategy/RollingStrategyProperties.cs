@@ -21,7 +21,7 @@ namespace Loot.Api.Strategy
 			set => _minModifierRolls = value;
 		}
 
-		private int _maxRollableLines = 4;
+		private int _maxRollableLines = 2;
 
 		/// <summary>
 		/// The maximum amount of modifiers that can roll
