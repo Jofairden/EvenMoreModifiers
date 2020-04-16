@@ -88,10 +88,12 @@ namespace Loot.UI.Tabs.CraftingTab
 			bool match = !ItemButton.Item.IsAir && !ComponentButton.Item.IsAir
 			                                    && ItemButton.CanTakeItem(ItemButton.Item)
 			                                    && ComponentButton.CanTakeItem(ComponentButton.Item);
+			if (!match) return false;
 
 			bool hasItem = Main.LocalPlayer.inventory.Any(x => x.type == ComponentButton.Item.type)
 			               || Main.mouseItem?.type == ComponentButton?.Item?.type;
 
+			if (!hasItem) return false;
 
 			// TODO make this better
 			RollingStrategyProperties = new RollingStrategyProperties();
@@ -100,7 +102,7 @@ namespace Loot.UI.Tabs.CraftingTab
 			var preRolledLines = strategy.PreRoll(ModifierPoolMechanism.GetPool(ctx), ctx, RollingStrategyProperties);
 			bool badStrategy = preRolledLines.Any(x => !x.CanRoll(ctx));
 
-			return !badStrategy && match && hasItem;
+			return !badStrategy;
 		}
 
 		public override void OnShow()
