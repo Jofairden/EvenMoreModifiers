@@ -1,3 +1,4 @@
+using System;
 using Loot.Api.Ext;
 using Loot.Api.Strategy;
 using Terraria;
@@ -43,6 +44,11 @@ namespace Loot.Essences
 Tier: {GetTierText()}
 {Description}
 Used in an essence crafting device");
+		}
+
+		public override void SetDefaults()
+		{
+			item.rare = (int) Tier;
 		}
 
 		public virtual RollingStrategy GetRollingStrategy(Item item, RollingStrategyProperties properties)

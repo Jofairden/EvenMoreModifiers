@@ -11,7 +11,7 @@ namespace Loot.Essences
 	{
 		public override EssenceTier Tier => EssenceTier.I;
 
-		public override string Description => "Grants a more power based on missing health";
+		public override string Description => "Grants more power based on missing health";
 
 		public override RollingStrategy GetRollingStrategy(Item item, RollingStrategyProperties properties)
 		{
