@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using Loot.Api.Core;
+using Loot.Api.Graphics;
 using Loot.Api.Mechanism;
 using Loot.Api.Strategy;
 using Loot.Ext;
@@ -225,6 +226,7 @@ namespace Loot.UI.Tabs.CraftingTab
 			{
 				item.UpdateModifiers(rolled);
 			}
+			item.GetGlobalItem<GraphicsGlobalItem>().UpdateEntities(item.Clone());
 
 			strategy.PlaySoundEffect(item);
 			ItemButton.Item = item;

@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using System.Linq;
 using Loot.Api.Core;
 using Loot.Api.Delegators;
+using Loot.Api.Graphics;
 using Loot.Modifiers.EquipModifiers.Utility;
 using Terraria;
 using Terraria.ID;
@@ -41,6 +42,7 @@ namespace Loot.Api.Strategy
 			var list = PreRoll(pool, modifierContext, properties);
 			list = Roll(list, pool, modifierContext, properties);
 			PostRoll(ref list, pool, modifierContext, properties);
+			modifierContext.Item.GetGlobalItem<GraphicsGlobalItem>().NeedsUpdate = true;
 			return list;
 		}
 
