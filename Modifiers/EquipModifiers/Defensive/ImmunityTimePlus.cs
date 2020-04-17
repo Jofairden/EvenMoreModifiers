@@ -17,14 +17,14 @@ namespace Loot.Modifiers.EquipModifiers.Defensive
 
 		[AutoDelegation("OnPostHurt")]
 		[DelegationPrioritization(DelegationPrioritization.Late, 800)]
-		private void Immunity(ModifierDelegatorPlayer delegatorPlayer, bool pvp, bool quiet, double damage, int hitDirection, bool crit)
+		private void Immunity(bool pvp, bool quiet, double damage, int hitDirection, bool crit)
 		{
 			int frames = damage <= 1
 				? BonusImmunityTime / 2
 				: BonusImmunityTime;
-			if (delegatorPlayer.player.immuneTime > 0)
+			if (player.immuneTime > 0)
 			{
-				delegatorPlayer.player.immuneTime += frames;
+				player.immuneTime += frames;
 			}
 		}
 	}

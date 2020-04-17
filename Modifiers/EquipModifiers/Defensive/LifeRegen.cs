@@ -16,9 +16,9 @@ namespace Loot.Modifiers.EquipModifiers.Defensive
 		}
 
 		[AutoDelegation("OnUpdateLifeRegen")]
-		private void Regen(ModifierDelegatorPlayer delegatorPlayer)
+		private void Regen()
 		{
-			delegatorPlayer.player.lifeRegen += LifeRegen / 30;
+			player.lifeRegen += LifeRegen / 30;
 			LifeRegen %= 30;
 		}
 	}

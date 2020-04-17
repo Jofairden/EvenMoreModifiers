@@ -23,7 +23,7 @@ namespace Loot.Modifiers.EquipModifiers.Offensive
 
 		[AutoDelegation("OnModifyHitNPC")]
 		[DelegationPrioritization(DelegationPrioritization.Late, 998)]
-		public void ModifyHitNPC(ModifierDelegatorPlayer delegatorPlayer, Item item, NPC target, ref int damage, ref float knockback, ref bool crit)
+		public void ModifyHitNPC(Item item, NPC target, ref int damage, ref float knockback, ref bool crit)
 		{
 			if (target.life == target.lifeMax)
 			{
@@ -33,7 +33,7 @@ namespace Loot.Modifiers.EquipModifiers.Offensive
 
 		[AutoDelegation("OnModifyHitPvp")]
 		[DelegationPrioritization(DelegationPrioritization.Late, 998)]
-		private void ModifyHitPvp(ModifierDelegatorPlayer delegatorPlayer, Item item, Player target, ref int damage, ref bool crit)
+		private void ModifyHitPvp(Item item, Player target, ref int damage, ref bool crit)
 		{
 			if (target.statLife == target.statLifeMax2)
 			{

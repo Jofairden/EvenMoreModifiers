@@ -45,9 +45,9 @@ namespace Loot.Modifiers.EquipModifiers.Utility
 		// on ModifierPlayer's PostUpdate hook if this effect
 		// is being delegated
 		[AutoDelegation("OnPostUpdate")]
-		private void Light(ModifierDelegatorPlayer delegatorPlayer)
+		private void Light()
 		{
-			Lighting.AddLight(delegatorPlayer.player.Center, LightColor.ToVector3() * .15f * LightStrength);
+			Lighting.AddLight(player.Center, LightColor.ToVector3() * .15f * LightStrength);
 		}
 	}
 

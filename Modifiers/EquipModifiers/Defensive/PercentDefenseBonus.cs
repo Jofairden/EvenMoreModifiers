@@ -18,9 +18,9 @@ namespace Loot.Modifiers.EquipModifiers.Defensive
 
 		[AutoDelegation("OnPostUpdateEquips")]
 		[DelegationPrioritization(DelegationPrioritization.Late, 999)]
-		private void DefBoost(ModifierDelegatorPlayer delegatorPlayer)
+		private void DefBoost()
 		{
-			delegatorPlayer.player.statDefense = (int) Math.Ceiling(delegatorPlayer.player.statDefense * (1 + PercentDefBoost));
+			player.statDefense = (int) Math.Ceiling(player.statDefense * (1 + PercentDefBoost));
 		}
 	}
 

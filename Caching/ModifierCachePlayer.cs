@@ -64,7 +64,7 @@ namespace Loot.Caching
 			foreach (var delegationTuple in list)
 			{
 				var effectsAttribute =
-					delegationTuple.item
+					delegationTuple.modifier
 						.GetType()
 						.GetCustomAttribute<UsesEffectAttribute>();
 

@@ -19,22 +19,22 @@ namespace Loot.Modifiers.EquipModifiers.Defensive
 
 		[AutoDelegation("OnPreHurt")]
 		[DelegationPrioritization(DelegationPrioritization.Late, 100)]
-		private bool ManaBlock(ModifierDelegatorPlayer delegatorPlayer, bool pvp, bool quiet, ref int damage, ref int hitDirection, ref bool crit, ref bool customDamage, ref bool playSound, ref bool genGore, ref PlayerDeathReason damageSource)
+		private bool ManaBlock(bool pvp, bool quiet, ref int damage, ref int hitDirection, ref bool crit, ref bool customDamage, ref bool playSound, ref bool genGore, ref PlayerDeathReason damageSource)
 		{
 			// If we have a mana shield (% damage redirected to mana)
 			// Then try to redirect the damage
 			int manaBlock = (int) Math.Ceiling(damage * ManaShield) * 2;
-			if (manaBlock > 0 && delegatorPlayer.player.statMana > 0)
+			if (manaBlock > 0 && player.statMana > 0)
 			{
 				// We cannot block more than how much mana we have
-				if (manaBlock > delegatorPlayer.player.statMana)
+				if (manaBlock > player.statMana)
 				{
-					manaBlock = delegatorPlayer.player.statMana;
+					manaBlock = player.statMana;
 				}
 
 				damage -= manaBlock / 2;
-				delegatorPlayer.player.statMana -= manaBlock;
-				delegatorPlayer.player.manaRegenDelay = Math.Max(delegatorPlayer.player.manaRegenDelay, 120);
+				player.statMana -= manaBlock;
+				player.manaRegenDelay = Math.Max(player.manaRegenDelay, 120);
 			}
 
 			return true;

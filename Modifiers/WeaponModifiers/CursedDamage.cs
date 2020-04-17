@@ -22,9 +22,9 @@ namespace Loot.Modifiers.WeaponModifiers
 		// you can either specify by enum (safest) like here
 		// or by string (see below)
 		[AutoDelegation(DelegationTarget.PostUpdateEquips)]
-		private void CurseHolding(ModifierDelegatorPlayer delegatorPlayer)
+		private void CurseHolding()
 		{
-			Item checkItem = Main.mouseItem != null && !Main.mouseItem.IsAir ? Main.mouseItem : delegatorPlayer.player.HeldItem;
+			Item checkItem = Main.mouseItem != null && !Main.mouseItem.IsAir ? Main.mouseItem : player.HeldItem;
 
 			if (checkItem == null || checkItem.IsAir || !checkItem.IsWeapon()
 			    || !LootModItem.GetInfo(checkItem).IsActivated)
@@ -33,7 +33,7 @@ namespace Loot.Modifiers.WeaponModifiers
 			int c = LootModItem.GetActivePool(checkItem).Count(x => x.GetType() == typeof(CursedDamage));
 			if (c > 0)
 			{
-				delegatorPlayer.GetEffect<CursedEffect>().CurseCount += c;
+				DelegatorPlayer.GetEffect<CursedEffect>().CurseCount += c;
 			}
 		}
 
@@ -41,18 +41,18 @@ namespace Loot.Modifiers.WeaponModifiers
 		// in the form of a string. It can be preceded by "On"
 		// but it may also be left out.
 		[AutoDelegation("OnUpdateBadLifeRegen")]
-		private void Curse(ModifierDelegatorPlayer delegatorPlayer)
+		private void Curse()
 		{
-			if (CurseCount <= 0 || delegatorPlayer.player.buffImmune[BuffID.Cursed])
+			if (CurseCount <= 0 || player.buffImmune[BuffID.Cursed])
 				return;
 
-			if (delegatorPlayer.player.lifeRegen > 0)
+			if (player.lifeRegen > 0)
 			{
-				delegatorPlayer.player.lifeRegen = 0;
+				player.lifeRegen = 0;
 			}
 
-			delegatorPlayer.player.lifeRegen -= 2 * CurseCount;
-			delegatorPlayer.player.lifeRegenTime = 0;
+			player.lifeRegen -= 2 * CurseCount;
+			player.lifeRegenTime = 0;
 		}
 	}
 
