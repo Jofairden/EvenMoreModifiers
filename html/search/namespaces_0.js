@@ -43,6 +43,7 @@ var searchData=
   ['rarities',['Rarities',['../namespace_loot_1_1_rarities.html',1,'Loot']]],
   ['rollingstrategies',['RollingStrategies',['../namespace_loot_1_1_rolling_strategies.html',1,'Loot']]],
   ['shader',['Shader',['../namespace_loot_1_1_api_1_1_graphics_1_1_shader.html',1,'Loot::Api::Graphics']]],
+  ['soulforging',['Soulforging',['../namespace_loot_1_1_soulforging.html',1,'Loot']]],
   ['soulforging',['Soulforging',['../namespace_loot_1_1_u_i_1_1_tabs_1_1_soulforging.html',1,'Loot::UI::Tabs']]],
   ['sounds',['Sounds',['../namespace_loot_1_1_sounds.html',1,'Loot']]],
   ['strategy',['Strategy',['../namespace_loot_1_1_api_1_1_strategy.html',1,'Loot::Api']]],

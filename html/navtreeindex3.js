@@ -1,5 +1,15 @@
 var NAVTREEINDEX3 =
 {
+"class_loot_1_1_api_1_1_core_1_1_modifier_tooltip_line.html#a504e541699b24660a41aef7b8e8531c0":[2,0,0,0,3,7,1],
+"class_loot_1_1_api_1_1_core_1_1_modifier_tooltip_line_1_1_modifier_tooltip_builder.html":[2,0,0,0,3,7,0],
+"class_loot_1_1_api_1_1_core_1_1_modifier_tooltip_line_1_1_modifier_tooltip_builder.html#a51630293e016aaec9e9c6135758724be":[2,0,0,0,3,7,0,4],
+"class_loot_1_1_api_1_1_core_1_1_modifier_tooltip_line_1_1_modifier_tooltip_builder.html#a719bbc8d3f925ba724170e9fea46be1e":[2,0,0,0,3,7,0,7],
+"class_loot_1_1_api_1_1_core_1_1_modifier_tooltip_line_1_1_modifier_tooltip_builder.html#a8ce46c91ee372acfb4861ab4a95df67b":[2,0,0,0,3,7,0,2],
+"class_loot_1_1_api_1_1_core_1_1_modifier_tooltip_line_1_1_modifier_tooltip_builder.html#a9691fa76091ea7d3b770f246da8620d5":[2,0,0,0,3,7,0,3],
+"class_loot_1_1_api_1_1_core_1_1_modifier_tooltip_line_1_1_modifier_tooltip_builder.html#aa1f27ebededeeac4cba0cd3ccda4062f":[2,0,0,0,3,7,0,1],
+"class_loot_1_1_api_1_1_core_1_1_modifier_tooltip_line_1_1_modifier_tooltip_builder.html#aaf13d37046545da481bbba761007d9ac":[2,0,0,0,3,7,0,5],
+"class_loot_1_1_api_1_1_core_1_1_modifier_tooltip_line_1_1_modifier_tooltip_builder.html#abf617fd2ec43f7bab7c3a0f806e61d2f":[2,0,0,0,3,7,0,0],
+"class_loot_1_1_api_1_1_core_1_1_modifier_tooltip_line_1_1_modifier_tooltip_builder.html#ae832cc70fa89bd869f897908bf78eba7":[2,0,0,0,3,7,0,6],
 "class_loot_1_1_api_1_1_core_1_1_negative_tooltip_line.html":[2,0,0,0,3,8],
 "class_loot_1_1_api_1_1_core_1_1_negative_tooltip_line.html#a0089fd7932d8e6bc86c64d79e8c8e63e":[2,0,0,0,3,8,0],
 "class_loot_1_1_api_1_1_core_1_1_null_modifier.html":[2,0,0,0,3,9],
@@ -30,6 +40,7 @@ var NAVTREEINDEX3 =
 "class_loot_1_1_api_1_1_cubes_1_1_magical_cube.html#a2616afbfc23be4e353c44f7f17f566e5":[2,0,0,0,4,0,0],
 "class_loot_1_1_api_1_1_cubes_1_1_magical_cube.html#a5110daf4b65aa2f1d50326e750388967":[2,0,0,0,4,0,7],
 "class_loot_1_1_api_1_1_cubes_1_1_magical_cube.html#a58442e417a5cfb2a4033f67654925ab9":[2,0,0,0,4,0,6],
+"class_loot_1_1_api_1_1_cubes_1_1_magical_cube.html#a67b8c1d92557181484f609971cdc21cf":[2,0,0,0,4,0,8],
 "class_loot_1_1_api_1_1_cubes_1_1_magical_cube.html#a7ac3381ae426b536171770645a82b01c":[2,0,0,0,4,0,1],
 "class_loot_1_1_api_1_1_cubes_1_1_magical_cube.html#a89fef49e0937d47f83afe048adce27a0":[2,0,0,0,4,0,5],
 "class_loot_1_1_api_1_1_cubes_1_1_magical_cube.html#aedf0828a4519c534bb99b8fadd7f11f7":[2,0,0,0,4,0,2],
@@ -238,16 +249,5 @@ var NAVTREEINDEX3 =
 "class_loot_1_1_api_1_1_delegators_1_1_modifier_delegator_projectile.html#aaa8f21cd519b5b3153f58de1d0ca99c6":[2,0,0,0,5,1,9],
 "class_loot_1_1_api_1_1_delegators_1_1_modifier_delegator_projectile.html#ab86a0fecb0ce89d2e34fda7f0ccd2fa1":[2,0,0,0,5,1,16],
 "class_loot_1_1_api_1_1_delegators_1_1_modifier_delegator_projectile.html#acc8ba01c1aa5bb14e5401ff23b01c9a2":[2,0,0,0,5,1,17],
-"class_loot_1_1_api_1_1_delegators_1_1_modifier_delegator_projectile.html#adc191884f2c21b8bf6e179112d797a9b":[2,0,0,0,5,1,2],
-"class_loot_1_1_api_1_1_delegators_1_1_modifier_delegator_projectile.html#af9a377bb0b42fffddb5a85cc33876752":[2,0,0,0,5,1,10],
-"class_loot_1_1_api_1_1_ext_1_1_item_utils.html":[2,0,0,0,6,0],
-"class_loot_1_1_api_1_1_ext_1_1_item_utils.html#a39754c98802bdbdc8f0c2af7ef56ab62":[2,0,0,0,6,0,1],
-"class_loot_1_1_api_1_1_ext_1_1_item_utils.html#a472c2ba9d1fe59517fceffa8b0540398":[2,0,0,0,6,0,4],
-"class_loot_1_1_api_1_1_ext_1_1_item_utils.html#a5087f2159228e3a44d354d59e2d3894b":[2,0,0,0,6,0,6],
-"class_loot_1_1_api_1_1_ext_1_1_item_utils.html#a5c9aeaf45d73accd3ae07d7b93f6bdc4":[2,0,0,0,6,0,7],
-"class_loot_1_1_api_1_1_ext_1_1_item_utils.html#a7bc00dba1666136dfd6dc85ba36cff5b":[2,0,0,0,6,0,5],
-"class_loot_1_1_api_1_1_ext_1_1_item_utils.html#ab53a14a01de3de30e90c345c3a746a61":[2,0,0,0,6,0,3],
-"class_loot_1_1_api_1_1_ext_1_1_item_utils.html#acc5b051434cec09cf4975976804caf10":[2,0,0,0,6,0,0],
-"class_loot_1_1_api_1_1_ext_1_1_item_utils.html#ae792e1f909e3c3962ef858847d0ceeef":[2,0,0,0,6,0,2],
-"class_loot_1_1_api_1_1_ext_1_1_mod_utils.html":[2,0,0,0,6,1]
+"class_loot_1_1_api_1_1_delegators_1_1_modifier_delegator_projectile.html#adc191884f2c21b8bf6e179112d797a9b":[2,0,0,0,5,1,2]
 };

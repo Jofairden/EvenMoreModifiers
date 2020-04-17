@@ -15,6 +15,7 @@ var files =
     [ "Pools", "dir_8232852bcbd60c76b3eb01f40ee29a4a.html", "dir_8232852bcbd60c76b3eb01f40ee29a4a" ],
     [ "Rarities", "dir_e0566f59f042068c187972f8b4893996.html", "dir_e0566f59f042068c187972f8b4893996" ],
     [ "RollingStrategies", "dir_8337618e8cb8b0980cdb8acf8bc310e0.html", "dir_8337618e8cb8b0980cdb8acf8bc310e0" ],
+    [ "Soulforging", "dir_dae1be2d05860a90964da6ca57e2e552.html", "dir_dae1be2d05860a90964da6ca57e2e552" ],
     [ "Sounds", "dir_39b9972f69123432ab2c3e40729b7fd5.html", "dir_39b9972f69123432ab2c3e40729b7fd5" ],
     [ "Tiles", "dir_8d9dbd953f0f9e8d5bb4e7983a7538d3.html", "dir_8d9dbd953f0f9e8d5bb4e7983a7538d3" ],
     [ "UI", "dir_53ff6e473d46d4e442ba5a7ce9f895e3.html", "dir_53ff6e473d46d4e442ba5a7ce9f895e3" ],

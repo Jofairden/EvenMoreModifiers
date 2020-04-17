@@ -7,5 +7,6 @@ var class_loot_1_1_api_1_1_cubes_1_1_magical_cube =
     [ "SetStaticDefaults", "class_loot_1_1_api_1_1_cubes_1_1_magical_cube.html#a040d6b45cbd97bff8224a789ecbc82bb", null ],
     [ "ExtraTooltip", "class_loot_1_1_api_1_1_cubes_1_1_magical_cube.html#a89fef49e0937d47f83afe048adce27a0", null ],
     [ "OverrideNameColor", "class_loot_1_1_api_1_1_cubes_1_1_magical_cube.html#a58442e417a5cfb2a4033f67654925ab9", null ],
-    [ "CubeName", "class_loot_1_1_api_1_1_cubes_1_1_magical_cube.html#a5110daf4b65aa2f1d50326e750388967", null ]
+    [ "CubeName", "class_loot_1_1_api_1_1_cubes_1_1_magical_cube.html#a5110daf4b65aa2f1d50326e750388967", null ],
+    [ "EssenceCraftCost", "class_loot_1_1_api_1_1_cubes_1_1_magical_cube.html#a67b8c1d92557181484f609971cdc21cf", null ]
 ];

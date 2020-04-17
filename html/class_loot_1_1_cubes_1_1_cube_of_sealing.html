@@ -172,6 +172,8 @@ Protected Member Functions</h2></td></tr>
 Protected Attributes</h2></td></tr>
 <tr class="memitem:a0a7127a5cf1b9137405d2d13e025117d"><td class="memItemLeft" align="right" valign="top">override string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_loot_1_1_cubes_1_1_cube_of_sealing.html#a0a7127a5cf1b9137405d2d13e025117d">CubeName</a> =&gt; &quot;Sealing Cube&quot;</td></tr>
 <tr class="separator:a0a7127a5cf1b9137405d2d13e025117d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac5ffcb16bf24d1d1c5b4b1d34aa6d715"><td class="memItemLeft" align="right" valign="top">override int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_loot_1_1_cubes_1_1_cube_of_sealing.html#ac5ffcb16bf24d1d1c5b4b1d34aa6d715">EssenceCraftCost</a> =&gt; 10</td></tr>
+<tr class="separator:ac5ffcb16bf24d1d1c5b4b1d34aa6d715"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pro_attribs_class_loot_1_1_api_1_1_cubes_1_1_magical_cube"><td colspan="2" onclick="javascript:toggleInherit('pro_attribs_class_loot_1_1_api_1_1_cubes_1_1_magical_cube')"><img src="closed.png" alt="-"/>&#160;Protected Attributes inherited from <a class="el" href="class_loot_1_1_api_1_1_cubes_1_1_magical_cube.html">Loot.Api.Cubes.MagicalCube</a></td></tr>
 <tr class="memitem:a89fef49e0937d47f83afe048adce27a0 inherit pro_attribs_class_loot_1_1_api_1_1_cubes_1_1_magical_cube"><td class="memItemLeft" align="right" valign="top">virtual TooltipLine&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_loot_1_1_api_1_1_cubes_1_1_magical_cube.html#a89fef49e0937d47f83afe048adce27a0">ExtraTooltip</a> =&gt; null</td></tr>
 <tr class="separator:a89fef49e0937d47f83afe048adce27a0 inherit pro_attribs_class_loot_1_1_api_1_1_cubes_1_1_magical_cube"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -183,6 +185,8 @@ Additional Inherited Members</h2></td></tr>
 <tr class="inherit_header properties_class_loot_1_1_api_1_1_cubes_1_1_magical_cube"><td colspan="2" onclick="javascript:toggleInherit('properties_class_loot_1_1_api_1_1_cubes_1_1_magical_cube')"><img src="closed.png" alt="-"/>&#160;Properties inherited from <a class="el" href="class_loot_1_1_api_1_1_cubes_1_1_magical_cube.html">Loot.Api.Cubes.MagicalCube</a></td></tr>
 <tr class="memitem:a5110daf4b65aa2f1d50326e750388967 inherit properties_class_loot_1_1_api_1_1_cubes_1_1_magical_cube"><td class="memItemLeft" align="right" valign="top">abstract string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_loot_1_1_api_1_1_cubes_1_1_magical_cube.html#a5110daf4b65aa2f1d50326e750388967">CubeName</a><code> [get]</code></td></tr>
 <tr class="separator:a5110daf4b65aa2f1d50326e750388967 inherit properties_class_loot_1_1_api_1_1_cubes_1_1_magical_cube"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a67b8c1d92557181484f609971cdc21cf inherit properties_class_loot_1_1_api_1_1_cubes_1_1_magical_cube"><td class="memItemLeft" align="right" valign="top">abstract int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_loot_1_1_api_1_1_cubes_1_1_magical_cube.html#a67b8c1d92557181484f609971cdc21cf">EssenceCraftCost</a><code> [get]</code></td></tr>
+<tr class="separator:a67b8c1d92557181484f609971cdc21cf inherit properties_class_loot_1_1_api_1_1_cubes_1_1_magical_cube"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>A cube of sealing is used to lock modifiers in place on an item </p>
@@ -223,8 +227,8 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Implements <a class="el" href="class_loot_1_1_api_1_1_cubes_1_1_rerolling_cube.html#ab43429afb4bcc8672a178cdb75006fed">Loot.Api.Cubes.RerollingCube</a>.</p>
 
-<p>Definition at line <a class="el" href="_cube_of_sealing_8cs_source.html#l00026">26</a> of file <a class="el" href="_cube_of_sealing_8cs_source.html">CubeOfSealing.cs</a>.</p>
-<div class="fragment"><div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;        {</div><div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;            <span class="keywordflow">return</span> <span class="keyword">new</span> <a class="code" href="class_loot_1_1_rolling_strategies_1_1_sealing_rolling_strategy.html">SealingRollingStrategy</a>();</div><div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;        }</div><div class="ttc" id="class_loot_1_1_rolling_strategies_1_1_sealing_rolling_strategy_html"><div class="ttname"><a href="class_loot_1_1_rolling_strategies_1_1_sealing_rolling_strategy.html">Loot.RollingStrategies.SealingRollingStrategy</a></div><div class="ttdef"><b>Definition:</b> <a href="_sealing_rolling_strategy_8cs_source.html#l00009">SealingRollingStrategy.cs:9</a></div></div>
+<p>Definition at line <a class="el" href="_cube_of_sealing_8cs_source.html#l00027">27</a> of file <a class="el" href="_cube_of_sealing_8cs_source.html">CubeOfSealing.cs</a>.</p>
+<div class="fragment"><div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;        {</div><div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;            <span class="keywordflow">return</span> <span class="keyword">new</span> <a class="code" href="class_loot_1_1_rolling_strategies_1_1_sealing_rolling_strategy.html">SealingRollingStrategy</a>();</div><div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;        }</div><div class="ttc" id="class_loot_1_1_rolling_strategies_1_1_sealing_rolling_strategy_html"><div class="ttname"><a href="class_loot_1_1_rolling_strategies_1_1_sealing_rolling_strategy.html">Loot.RollingStrategies.SealingRollingStrategy</a></div><div class="ttdef"><b>Definition:</b> <a href="_sealing_rolling_strategy_8cs_source.html#l00009">SealingRollingStrategy.cs:9</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -251,8 +255,8 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Reimplemented from <a class="el" href="class_loot_1_1_api_1_1_cubes_1_1_magical_cube.html#a7ac3381ae426b536171770645a82b01c">Loot.Api.Cubes.MagicalCube</a>.</p>
 
-<p>Definition at line <a class="el" href="_cube_of_sealing_8cs_source.html#l00021">21</a> of file <a class="el" href="_cube_of_sealing_8cs_source.html">CubeOfSealing.cs</a>.</p>
-<div class="fragment"><div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;        {</div><div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;            item.value = Item.buyPrice(silver: 50);</div><div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;        }</div></div><!-- fragment -->
+<p>Definition at line <a class="el" href="_cube_of_sealing_8cs_source.html#l00022">22</a> of file <a class="el" href="_cube_of_sealing_8cs_source.html">CubeOfSealing.cs</a>.</p>
+<div class="fragment"><div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;        {</div><div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;            item.value = Item.buyPrice(copper: 1);</div><div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;        }</div></div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="a50700b25ce8547f4420157c0f4fce724"></a>
@@ -278,8 +282,8 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Reimplemented from <a class="el" href="class_loot_1_1_api_1_1_cubes_1_1_magical_cube.html#aedf0828a4519c534bb99b8fadd7f11f7">Loot.Api.Cubes.MagicalCube</a>.</p>
 
-<p>Definition at line <a class="el" href="_cube_of_sealing_8cs_source.html#l00015">15</a> of file <a class="el" href="_cube_of_sealing_8cs_source.html">CubeOfSealing.cs</a>.</p>
-<div class="fragment"><div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;        {</div><div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;            Tooltip.SetDefault(<span class="stringliteral">&quot;Allows sealing an item&#39;s modifiers&quot;</span> +</div><div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;                               <span class="stringliteral">&quot;\nSealing modifiers means they cannot be changed&quot;</span>);</div><div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;        }</div></div><!-- fragment -->
+<p>Definition at line <a class="el" href="_cube_of_sealing_8cs_source.html#l00016">16</a> of file <a class="el" href="_cube_of_sealing_8cs_source.html">CubeOfSealing.cs</a>.</p>
+<div class="fragment"><div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;        {</div><div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;            Tooltip.SetDefault(<span class="stringliteral">&quot;Allows sealing an item&#39;s modifiers&quot;</span> +</div><div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;                               <span class="stringliteral">&quot;\nSealing modifiers means they cannot be changed&quot;</span>);</div><div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;        }</div></div><!-- fragment -->
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
@@ -301,6 +305,28 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="_cube_of_sealing_8cs_source.html#l00014">14</a> of file <a class="el" href="_cube_of_sealing_8cs_source.html">CubeOfSealing.cs</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ac5ffcb16bf24d1d1c5b4b1d34aa6d715"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">override int Loot.Cubes.CubeOfSealing.EssenceCraftCost =&gt; 10</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
 <p>Definition at line <a class="el" href="_cube_of_sealing_8cs_source.html#l00013">13</a> of file <a class="el" href="_cube_of_sealing_8cs_source.html">CubeOfSealing.cs</a>.</p>
 
 </div>
@@ -311,7 +337,7 @@ Additional Inherited Members</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespace_loot.html">Loot</a></li><li class="navelem"><a class="el" href="namespace_loot_1_1_cubes.html">Cubes</a></li><li class="navelem"><a class="el" href="class_loot_1_1_cubes_1_1_cube_of_sealing.html">CubeOfSealing</a></li>
-    <li class="footer">Generated on Thu Apr 16 2020 20:28:17 for Even More Modifiers by
+    <li class="footer">Generated on Fri Apr 17 2020 11:47:37 for Even More Modifiers by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.11 </li>
   </ul>

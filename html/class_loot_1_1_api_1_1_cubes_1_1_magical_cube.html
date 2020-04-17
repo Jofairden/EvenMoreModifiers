@@ -182,6 +182,8 @@ Protected Attributes</h2></td></tr>
 Properties</h2></td></tr>
 <tr class="memitem:a5110daf4b65aa2f1d50326e750388967"><td class="memItemLeft" align="right" valign="top">abstract string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_loot_1_1_api_1_1_cubes_1_1_magical_cube.html#a5110daf4b65aa2f1d50326e750388967">CubeName</a><code> [get]</code></td></tr>
 <tr class="separator:a5110daf4b65aa2f1d50326e750388967"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a67b8c1d92557181484f609971cdc21cf"><td class="memItemLeft" align="right" valign="top">abstract int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_loot_1_1_api_1_1_cubes_1_1_magical_cube.html#a67b8c1d92557181484f609971cdc21cf">EssenceCraftCost</a><code> [get]</code></td></tr>
+<tr class="separator:a67b8c1d92557181484f609971cdc21cf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Defines a magical cube A magical cube is used to change modifiers on an item </p>
@@ -202,9 +204,9 @@ Properties</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_magical_cube_8cs_source.html#l00039">39</a> of file <a class="el" href="_magical_cube_8cs_source.html">MagicalCube.cs</a>.</p>
-<div class="fragment"><div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        {</div><div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;            base.ModifyTooltips(tooltips);</div><div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;</div><div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;            var tts = tooltips.Where(x =&gt; x.mod.Equals(<span class="stringliteral">&quot;Terraria&quot;</span>));</div><div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;</div><div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;            <span class="keywordflow">if</span> (<a class="code" href="class_loot_1_1_api_1_1_cubes_1_1_magical_cube.html#a58442e417a5cfb2a4033f67654925ab9">OverrideNameColor</a> != null)</div><div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;            {</div><div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;                var itemName = tts.FirstOrDefault(x =&gt; x.Name.Equals(<span class="stringliteral">&quot;ItemName&quot;</span>));</div><div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;                <span class="keywordflow">if</span> (itemName != null)</div><div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;                {</div><div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;                    itemName.overrideColor = <a class="code" href="class_loot_1_1_api_1_1_cubes_1_1_magical_cube.html#a58442e417a5cfb2a4033f67654925ab9">OverrideNameColor</a>.Value;</div><div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;                }</div><div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;            }</div><div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;</div><div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;            <span class="keywordflow">if</span> (<a class="code" href="class_loot_1_1_api_1_1_cubes_1_1_magical_cube.html#a89fef49e0937d47f83afe048adce27a0">ExtraTooltip</a> != null)</div><div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;            {</div><div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;                var desc = tts.Last(x =&gt; x.Name.StartsWith(<span class="stringliteral">&quot;Tooltip&quot;</span>));</div><div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;                <span class="keywordflow">if</span> (desc != null)</div><div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;                {</div><div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;                    tooltips.Insert(tooltips.IndexOf(desc) + 1, <a class="code" href="class_loot_1_1_api_1_1_cubes_1_1_magical_cube.html#a89fef49e0937d47f83afe048adce27a0">ExtraTooltip</a>);</div><div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;                }</div><div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;            }</div><div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;        }</div><div class="ttc" id="class_loot_1_1_api_1_1_cubes_1_1_magical_cube_html_a89fef49e0937d47f83afe048adce27a0"><div class="ttname"><a href="class_loot_1_1_api_1_1_cubes_1_1_magical_cube.html#a89fef49e0937d47f83afe048adce27a0">Loot.Api.Cubes.MagicalCube.ExtraTooltip</a></div><div class="ttdeci">virtual TooltipLine ExtraTooltip</div><div class="ttdef"><b>Definition:</b> <a href="_magical_cube_8cs_source.html#l00016">MagicalCube.cs:16</a></div></div>
-<div class="ttc" id="class_loot_1_1_api_1_1_cubes_1_1_magical_cube_html_a58442e417a5cfb2a4033f67654925ab9"><div class="ttname"><a href="class_loot_1_1_api_1_1_cubes_1_1_magical_cube.html#a58442e417a5cfb2a4033f67654925ab9">Loot.Api.Cubes.MagicalCube.OverrideNameColor</a></div><div class="ttdeci">virtual Color OverrideNameColor</div><div class="ttdef"><b>Definition:</b> <a href="_magical_cube_8cs_source.html#l00015">MagicalCube.cs:15</a></div></div>
+<p>Definition at line <a class="el" href="_magical_cube_8cs_source.html#l00041">41</a> of file <a class="el" href="_magical_cube_8cs_source.html">MagicalCube.cs</a>.</p>
+<div class="fragment"><div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        {</div><div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;            base.ModifyTooltips(tooltips);</div><div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;</div><div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;            var tts = tooltips.Where(x =&gt; x.mod.Equals(<span class="stringliteral">&quot;Terraria&quot;</span>));</div><div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;</div><div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;            <span class="keywordflow">if</span> (<a class="code" href="class_loot_1_1_api_1_1_cubes_1_1_magical_cube.html#a58442e417a5cfb2a4033f67654925ab9">OverrideNameColor</a> != null)</div><div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;            {</div><div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;                var itemName = tts.FirstOrDefault(x =&gt; x.Name.Equals(<span class="stringliteral">&quot;ItemName&quot;</span>));</div><div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;                <span class="keywordflow">if</span> (itemName != null)</div><div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;                {</div><div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;                    itemName.overrideColor = <a class="code" href="class_loot_1_1_api_1_1_cubes_1_1_magical_cube.html#a58442e417a5cfb2a4033f67654925ab9">OverrideNameColor</a>.Value;</div><div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;                }</div><div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;            }</div><div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;</div><div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;            <span class="keywordflow">if</span> (<a class="code" href="class_loot_1_1_api_1_1_cubes_1_1_magical_cube.html#a89fef49e0937d47f83afe048adce27a0">ExtraTooltip</a> != null)</div><div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;            {</div><div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;                var desc = tts.Last(x =&gt; x.Name.StartsWith(<span class="stringliteral">&quot;Tooltip&quot;</span>));</div><div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;                <span class="keywordflow">if</span> (desc != null)</div><div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;                {</div><div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;                    tooltips.Insert(tooltips.IndexOf(desc) + 1, <a class="code" href="class_loot_1_1_api_1_1_cubes_1_1_magical_cube.html#a89fef49e0937d47f83afe048adce27a0">ExtraTooltip</a>);</div><div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;                }</div><div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;            }</div><div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;        }</div><div class="ttc" id="class_loot_1_1_api_1_1_cubes_1_1_magical_cube_html_a89fef49e0937d47f83afe048adce27a0"><div class="ttname"><a href="class_loot_1_1_api_1_1_cubes_1_1_magical_cube.html#a89fef49e0937d47f83afe048adce27a0">Loot.Api.Cubes.MagicalCube.ExtraTooltip</a></div><div class="ttdeci">virtual TooltipLine ExtraTooltip</div><div class="ttdef"><b>Definition:</b> <a href="_magical_cube_8cs_source.html#l00018">MagicalCube.cs:18</a></div></div>
+<div class="ttc" id="class_loot_1_1_api_1_1_cubes_1_1_magical_cube_html_a58442e417a5cfb2a4033f67654925ab9"><div class="ttname"><a href="class_loot_1_1_api_1_1_cubes_1_1_magical_cube.html#a58442e417a5cfb2a4033f67654925ab9">Loot.Api.Cubes.MagicalCube.OverrideNameColor</a></div><div class="ttdeci">virtual Color OverrideNameColor</div><div class="ttdef"><b>Definition:</b> <a href="_magical_cube_8cs_source.html#l00017">MagicalCube.cs:17</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -231,8 +233,8 @@ Properties</h2></td></tr>
 
 <p>Reimplemented in <a class="el" href="class_loot_1_1_cubes_1_1_poor_cube.html#ae3035cf83d6fc48a862c214b96319ba2">Loot.Cubes.PoorCube</a>, <a class="el" href="class_loot_1_1_cubes_1_1_black_cube.html#ad2fe6a7e12b1530d9852b3fcd8a175b1">Loot.Cubes.BlackCube</a>, <a class="el" href="class_loot_1_1_cubes_1_1_resonating_temple_cube.html#aa8d3a2404dfb898d1ce258a4e6bc43dd">Loot.Cubes.ResonatingTempleCube</a>, <a class="el" href="class_loot_1_1_cubes_1_1_copper_cube.html#a5819b4550abdd9a67869c80593828ffe">Loot.Cubes.CopperCube</a>, <a class="el" href="class_loot_1_1_cubes_1_1_cube_of_sealing.html#a31f9f3c6111b1a651781dc5729f0f8c8">Loot.Cubes.CubeOfSealing</a>, <a class="el" href="class_loot_1_1_cubes_1_1_hell_cube.html#a7104c6fa66b3f083a27fe116898abbd6">Loot.Cubes.HellCube</a>, <a class="el" href="class_loot_1_1_cubes_1_1_ice_cube.html#ae5c5b7dcb9023b7afa222a3dff6ddfb3">Loot.Cubes.IceCube</a>, <a class="el" href="class_loot_1_1_cubes_1_1_slate_cube.html#a1890a7da06044e45ecefc81f559450c6">Loot.Cubes.SlateCube</a>, <a class="el" href="class_loot_1_1_cubes_1_1_temple_cube.html#a9a0c3eb4d855030c70529e4f66984304">Loot.Cubes.TempleCube</a>, <a class="el" href="class_loot_1_1_cubes_1_1_violet_cube.html#ad103e900a957953db81ca02bcf808807">Loot.Cubes.VioletCube</a>, and <a class="el" href="class_loot_1_1_cubes_1_1_void_cube.html#ac6ba63741a731575ed022c435749ac5c">Loot.Cubes.VoidCube</a>.</p>
 
-<p>Definition at line <a class="el" href="_magical_cube_8cs_source.html#l00035">35</a> of file <a class="el" href="_magical_cube_8cs_source.html">MagicalCube.cs</a>.</p>
-<div class="fragment"><div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        {</div><div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        }</div></div><!-- fragment -->
+<p>Definition at line <a class="el" href="_magical_cube_8cs_source.html#l00037">37</a> of file <a class="el" href="_magical_cube_8cs_source.html">MagicalCube.cs</a>.</p>
+<div class="fragment"><div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        {</div><div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;        }</div></div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="aedf0828a4519c534bb99b8fadd7f11f7"></a>
@@ -258,8 +260,8 @@ Properties</h2></td></tr>
 
 <p>Reimplemented in <a class="el" href="class_loot_1_1_cubes_1_1_poor_cube.html#aa4b0e4245beef702046775f54706b4d5">Loot.Cubes.PoorCube</a>, <a class="el" href="class_loot_1_1_cubes_1_1_black_cube.html#a5f7916d9995addc834ff1108765f4480">Loot.Cubes.BlackCube</a>, <a class="el" href="class_loot_1_1_cubes_1_1_resonating_temple_cube.html#aee48d64f3bdcd2c75fb88b8704e3fc4b">Loot.Cubes.ResonatingTempleCube</a>, <a class="el" href="class_loot_1_1_cubes_1_1_copper_cube.html#a8fbd4864dc318805c74376b5c5553265">Loot.Cubes.CopperCube</a>, <a class="el" href="class_loot_1_1_cubes_1_1_hell_cube.html#a40185adcc3826c48c721b3a096a56d40">Loot.Cubes.HellCube</a>, <a class="el" href="class_loot_1_1_cubes_1_1_ice_cube.html#a34a956a6b44569d589c0394bc5e3cc88">Loot.Cubes.IceCube</a>, <a class="el" href="class_loot_1_1_cubes_1_1_slate_cube.html#aed74e3dd6684d45efa7fd7aecd6c2461">Loot.Cubes.SlateCube</a>, <a class="el" href="class_loot_1_1_cubes_1_1_temple_cube.html#a8312260001cfc8da4f4e731b2bda52ea">Loot.Cubes.TempleCube</a>, <a class="el" href="class_loot_1_1_cubes_1_1_violet_cube.html#a4a2baa0fcce3d8d6694c999eab33aa48">Loot.Cubes.VioletCube</a>, <a class="el" href="class_loot_1_1_cubes_1_1_void_cube.html#ab47edb014bac1aa45880b93984d1827b">Loot.Cubes.VoidCube</a>, and <a class="el" href="class_loot_1_1_cubes_1_1_cube_of_sealing.html#a50700b25ce8547f4420157c0f4fce724">Loot.Cubes.CubeOfSealing</a>.</p>
 
-<p>Definition at line <a class="el" href="_magical_cube_8cs_source.html#l00031">31</a> of file <a class="el" href="_magical_cube_8cs_source.html">MagicalCube.cs</a>.</p>
-<div class="fragment"><div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;        {</div><div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;        }</div></div><!-- fragment -->
+<p>Definition at line <a class="el" href="_magical_cube_8cs_source.html#l00033">33</a> of file <a class="el" href="_magical_cube_8cs_source.html">MagicalCube.cs</a>.</p>
+<div class="fragment"><div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        {</div><div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        }</div></div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="a0981ca7402151539f56a288badc17060"></a>
@@ -275,8 +277,8 @@ Properties</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_magical_cube_8cs_source.html#l00018">18</a> of file <a class="el" href="_magical_cube_8cs_source.html">MagicalCube.cs</a>.</p>
-<div class="fragment"><div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;        {</div><div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;            item.Size = <span class="keyword">new</span> Vector2(36);</div><div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;            item.maxStack = 999;</div><div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;            item.consumable = <span class="keyword">false</span>;</div><div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;            <a class="code" href="class_loot_1_1_api_1_1_cubes_1_1_magical_cube.html#a7ac3381ae426b536171770645a82b01c">SafeDefaults</a>();</div><div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;        }</div><div class="ttc" id="class_loot_1_1_api_1_1_cubes_1_1_magical_cube_html_a7ac3381ae426b536171770645a82b01c"><div class="ttname"><a href="class_loot_1_1_api_1_1_cubes_1_1_magical_cube.html#a7ac3381ae426b536171770645a82b01c">Loot.Api.Cubes.MagicalCube.SafeDefaults</a></div><div class="ttdeci">virtual void SafeDefaults()</div><div class="ttdef"><b>Definition:</b> <a href="_magical_cube_8cs_source.html#l00035">MagicalCube.cs:35</a></div></div>
+<p>Definition at line <a class="el" href="_magical_cube_8cs_source.html#l00020">20</a> of file <a class="el" href="_magical_cube_8cs_source.html">MagicalCube.cs</a>.</p>
+<div class="fragment"><div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;        {</div><div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;            item.Size = <span class="keyword">new</span> Vector2(36);</div><div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;            item.maxStack = 999;</div><div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;            item.consumable = <span class="keyword">false</span>;</div><div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;            <a class="code" href="class_loot_1_1_api_1_1_cubes_1_1_magical_cube.html#a7ac3381ae426b536171770645a82b01c">SafeDefaults</a>();</div><div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;        }</div><div class="ttc" id="class_loot_1_1_api_1_1_cubes_1_1_magical_cube_html_a7ac3381ae426b536171770645a82b01c"><div class="ttname"><a href="class_loot_1_1_api_1_1_cubes_1_1_magical_cube.html#a7ac3381ae426b536171770645a82b01c">Loot.Api.Cubes.MagicalCube.SafeDefaults</a></div><div class="ttdeci">virtual void SafeDefaults()</div><div class="ttdef"><b>Definition:</b> <a href="_magical_cube_8cs_source.html#l00037">MagicalCube.cs:37</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -293,8 +295,8 @@ Properties</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_magical_cube_8cs_source.html#l00026">26</a> of file <a class="el" href="_magical_cube_8cs_source.html">MagicalCube.cs</a>.</p>
-<div class="fragment"><div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;        {</div><div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;            <a class="code" href="class_loot_1_1_api_1_1_cubes_1_1_magical_cube.html#aedf0828a4519c534bb99b8fadd7f11f7">SafeStaticDefaults</a>();</div><div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;        }</div><div class="ttc" id="class_loot_1_1_api_1_1_cubes_1_1_magical_cube_html_aedf0828a4519c534bb99b8fadd7f11f7"><div class="ttname"><a href="class_loot_1_1_api_1_1_cubes_1_1_magical_cube.html#aedf0828a4519c534bb99b8fadd7f11f7">Loot.Api.Cubes.MagicalCube.SafeStaticDefaults</a></div><div class="ttdeci">virtual void SafeStaticDefaults()</div><div class="ttdef"><b>Definition:</b> <a href="_magical_cube_8cs_source.html#l00031">MagicalCube.cs:31</a></div></div>
+<p>Definition at line <a class="el" href="_magical_cube_8cs_source.html#l00028">28</a> of file <a class="el" href="_magical_cube_8cs_source.html">MagicalCube.cs</a>.</p>
+<div class="fragment"><div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;        {</div><div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;            <a class="code" href="class_loot_1_1_api_1_1_cubes_1_1_magical_cube.html#aedf0828a4519c534bb99b8fadd7f11f7">SafeStaticDefaults</a>();</div><div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        }</div><div class="ttc" id="class_loot_1_1_api_1_1_cubes_1_1_magical_cube_html_aedf0828a4519c534bb99b8fadd7f11f7"><div class="ttname"><a href="class_loot_1_1_api_1_1_cubes_1_1_magical_cube.html#aedf0828a4519c534bb99b8fadd7f11f7">Loot.Api.Cubes.MagicalCube.SafeStaticDefaults</a></div><div class="ttdeci">virtual void SafeStaticDefaults()</div><div class="ttdef"><b>Definition:</b> <a href="_magical_cube_8cs_source.html#l00033">MagicalCube.cs:33</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -317,7 +319,7 @@ Properties</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_magical_cube_8cs_source.html#l00016">16</a> of file <a class="el" href="_magical_cube_8cs_source.html">MagicalCube.cs</a>.</p>
+<p>Definition at line <a class="el" href="_magical_cube_8cs_source.html#l00018">18</a> of file <a class="el" href="_magical_cube_8cs_source.html">MagicalCube.cs</a>.</p>
 
 </div>
 </div>
@@ -339,7 +341,7 @@ Properties</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_magical_cube_8cs_source.html#l00015">15</a> of file <a class="el" href="_magical_cube_8cs_source.html">MagicalCube.cs</a>.</p>
+<p>Definition at line <a class="el" href="_magical_cube_8cs_source.html#l00017">17</a> of file <a class="el" href="_magical_cube_8cs_source.html">MagicalCube.cs</a>.</p>
 
 </div>
 </div>
@@ -362,6 +364,28 @@ Properties</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="_magical_cube_8cs_source.html#l00016">16</a> of file <a class="el" href="_magical_cube_8cs_source.html">MagicalCube.cs</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a67b8c1d92557181484f609971cdc21cf"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">abstract int Loot.Api.Cubes.MagicalCube.EssenceCraftCost</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">get</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
 <p>Definition at line <a class="el" href="_magical_cube_8cs_source.html#l00014">14</a> of file <a class="el" href="_magical_cube_8cs_source.html">MagicalCube.cs</a>.</p>
 
 </div>
@@ -372,7 +396,7 @@ Properties</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespace_loot.html">Loot</a></li><li class="navelem"><a class="el" href="namespace_loot_1_1_api.html">Api</a></li><li class="navelem"><a class="el" href="namespace_loot_1_1_api_1_1_cubes.html">Cubes</a></li><li class="navelem"><a class="el" href="class_loot_1_1_api_1_1_cubes_1_1_magical_cube.html">MagicalCube</a></li>
-    <li class="footer">Generated on Thu Apr 16 2020 20:28:16 for Even More Modifiers by
+    <li class="footer">Generated on Fri Apr 17 2020 11:47:37 for Even More Modifiers by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.11 </li>
   </ul>

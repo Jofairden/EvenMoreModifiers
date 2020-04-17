@@ -35,14 +35,14 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "_accessory_modifier_8cs.html",
-"_i_loadable_content_setter_8cs.html",
-"_weapon_draw_effects_patch_8cs_source.html",
-"class_loot_1_1_api_1_1_core_1_1_negative_tooltip_line.html",
-"class_loot_1_1_api_1_1_ext_1_1_mod_utils.html#a0246e41051d8274a3aafd55d7952c4be",
-"class_loot_1_1_caching_1_1_modifier_cache_player.html#aceb2cf61924cc7a73c58c8a3c317b48e",
-"class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_offensive_1_1_crit_damage_plus.html#abb44419d1adb6e06ea059d64232ce908",
-"class_loot_tests_1_1_modifier_properties_tests_1_1_fake_properties.html#a12173010bee876e88d0b3d6516b6ff1f",
-"namespace_loot_1_1_rarities.html"
+"_i_property_builder_8cs.html",
+"_violet_cube_8cs_source.html",
+"class_loot_1_1_api_1_1_core_1_1_modifier_tooltip_line.html#a504e541699b24660a41aef7b8e8531c0",
+"class_loot_1_1_api_1_1_delegators_1_1_modifier_delegator_projectile.html#af9a377bb0b42fffddb5a85cc33876752",
+"class_loot_1_1_caching_1_1_modifier_cache_player.html#a4bddd281525db8c7dc8b0744c637d7c4",
+"class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_defensive_1_1_percent_def_boost_effect.html#ab2073dab944097a9a19a6eaa4c677cbe",
+"class_loot_1_1_rolling_strategies_1_1_sealing_rolling_strategy.html#a8fdbe094a5eeabad09a1b2406594c751",
+"namespace_loot_1_1_i_o.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

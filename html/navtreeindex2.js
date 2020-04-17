@@ -1,5 +1,15 @@
 var NAVTREEINDEX2 =
 {
+"_violet_cube_8cs_source.html":[3,0,3,9],
+"_visibility_u_i_8cs.html":[3,0,18,0,1,1],
+"_visibility_u_i_8cs_source.html":[3,0,18,0,1,1],
+"_void_cube_8cs.html":[3,0,3,10],
+"_void_cube_8cs_source.html":[3,0,3,10],
+"_warding_essence_8cs.html":[3,0,4,10],
+"_warding_essence_8cs_source.html":[3,0,4,10],
+"_weapon_debuff_modifier_8cs.html":[3,0,10,0,3],
+"_weapon_debuff_modifier_8cs_source.html":[3,0,10,0,3],
+"_weapon_draw_effects_patch_8cs.html":[3,0,7,2],
 "_weapon_draw_effects_patch_8cs_source.html":[3,0,7,2],
 "_weapon_modifier_8cs.html":[3,0,10,0,4],
 "_weapon_modifier_8cs_source.html":[3,0,10,0,4],
@@ -239,15 +249,5 @@ var NAVTREEINDEX2 =
 "class_loot_1_1_api_1_1_core_1_1_modifier_rarity.html#ac7df5b8c0965512f768fe9449ac6dae0":[2,0,0,0,3,6,10],
 "class_loot_1_1_api_1_1_core_1_1_modifier_rarity.html#aea0c4c9ace0c930cf0f7b2873bc21c70":[2,0,0,0,3,6,5],
 "class_loot_1_1_api_1_1_core_1_1_modifier_tooltip_line.html":[2,0,0,0,3,7],
-"class_loot_1_1_api_1_1_core_1_1_modifier_tooltip_line.html#a438eeabf63646d287a2ccb048601f375":[2,0,0,0,3,7,2],
-"class_loot_1_1_api_1_1_core_1_1_modifier_tooltip_line.html#a504e541699b24660a41aef7b8e8531c0":[2,0,0,0,3,7,1],
-"class_loot_1_1_api_1_1_core_1_1_modifier_tooltip_line_1_1_modifier_tooltip_builder.html":[2,0,0,0,3,7,0],
-"class_loot_1_1_api_1_1_core_1_1_modifier_tooltip_line_1_1_modifier_tooltip_builder.html#a51630293e016aaec9e9c6135758724be":[2,0,0,0,3,7,0,4],
-"class_loot_1_1_api_1_1_core_1_1_modifier_tooltip_line_1_1_modifier_tooltip_builder.html#a719bbc8d3f925ba724170e9fea46be1e":[2,0,0,0,3,7,0,7],
-"class_loot_1_1_api_1_1_core_1_1_modifier_tooltip_line_1_1_modifier_tooltip_builder.html#a8ce46c91ee372acfb4861ab4a95df67b":[2,0,0,0,3,7,0,2],
-"class_loot_1_1_api_1_1_core_1_1_modifier_tooltip_line_1_1_modifier_tooltip_builder.html#a9691fa76091ea7d3b770f246da8620d5":[2,0,0,0,3,7,0,3],
-"class_loot_1_1_api_1_1_core_1_1_modifier_tooltip_line_1_1_modifier_tooltip_builder.html#aa1f27ebededeeac4cba0cd3ccda4062f":[2,0,0,0,3,7,0,1],
-"class_loot_1_1_api_1_1_core_1_1_modifier_tooltip_line_1_1_modifier_tooltip_builder.html#aaf13d37046545da481bbba761007d9ac":[2,0,0,0,3,7,0,5],
-"class_loot_1_1_api_1_1_core_1_1_modifier_tooltip_line_1_1_modifier_tooltip_builder.html#abf617fd2ec43f7bab7c3a0f806e61d2f":[2,0,0,0,3,7,0,0],
-"class_loot_1_1_api_1_1_core_1_1_modifier_tooltip_line_1_1_modifier_tooltip_builder.html#ae832cc70fa89bd869f897908bf78eba7":[2,0,0,0,3,7,0,6]
+"class_loot_1_1_api_1_1_core_1_1_modifier_tooltip_line.html#a438eeabf63646d287a2ccb048601f375":[2,0,0,0,3,7,2]
 };

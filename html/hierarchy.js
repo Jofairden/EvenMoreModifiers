@@ -69,9 +69,7 @@ var hierarchy =
       [ "Loot.LootModItem", "class_loot_1_1_loot_mod_item.html", null ],
       [ "Loot.ModSupport.WingSlotSupport.WingSlotSupportGlobalItem", "class_loot_1_1_mod_support_1_1_wing_slot_support_1_1_wing_slot_support_global_item.html", null ]
     ] ],
-    [ "GlobalNPC", "class_global_n_p_c.html", [
-      [ "Loot.Cubes.CubeShop", "class_loot_1_1_cubes_1_1_cube_shop.html", null ]
-    ] ],
+    [ "GlobalNPC", "class_global_n_p_c.html", null ],
     [ "GlobalProjectile", "class_global_projectile.html", [
       [ "Loot.Api.Delegators.ModifierDelegatorProjectile", "class_loot_1_1_api_1_1_delegators_1_1_modifier_delegator_projectile.html", null ]
     ] ],
