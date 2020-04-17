@@ -1,5 +1,7 @@
 var NAVTREEINDEX2 =
 {
+"_velocity_plus_8cs_source.html":[3,0,10,2,13],
+"_violet_cube_8cs.html":[3,0,3,9],
 "_violet_cube_8cs_source.html":[3,0,3,9],
 "_visibility_u_i_8cs.html":[3,0,18,0,1,1],
 "_visibility_u_i_8cs_source.html":[3,0,18,0,1,1],
@@ -247,7 +249,5 @@ var NAVTREEINDEX2 =
 "class_loot_1_1_api_1_1_core_1_1_modifier_rarity.html#aa1b4ab4e19fe49625c3075b314a34895":[2,0,0,0,3,6,4],
 "class_loot_1_1_api_1_1_core_1_1_modifier_rarity.html#ab54f5856bcc956fc7da3308feed166fd":[2,0,0,0,3,6,20],
 "class_loot_1_1_api_1_1_core_1_1_modifier_rarity.html#ac7df5b8c0965512f768fe9449ac6dae0":[2,0,0,0,3,6,10],
-"class_loot_1_1_api_1_1_core_1_1_modifier_rarity.html#aea0c4c9ace0c930cf0f7b2873bc21c70":[2,0,0,0,3,6,5],
-"class_loot_1_1_api_1_1_core_1_1_modifier_tooltip_line.html":[2,0,0,0,3,7],
-"class_loot_1_1_api_1_1_core_1_1_modifier_tooltip_line.html#a438eeabf63646d287a2ccb048601f375":[2,0,0,0,3,7,2]
+"class_loot_1_1_api_1_1_core_1_1_modifier_rarity.html#aea0c4c9ace0c930cf0f7b2873bc21c70":[2,0,0,0,3,6,5]
 };

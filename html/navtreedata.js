@@ -35,14 +35,14 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "_accessory_modifier_8cs.html",
-"_i_property_builder_8cs.html",
-"_violet_cube_8cs_source.html",
-"class_loot_1_1_api_1_1_core_1_1_modifier_tooltip_line.html#a504e541699b24660a41aef7b8e8531c0",
-"class_loot_1_1_api_1_1_delegators_1_1_modifier_delegator_projectile.html#af9a377bb0b42fffddb5a85cc33876752",
-"class_loot_1_1_caching_1_1_modifier_cache_player.html#a4b83315309f67249c30ed1ec14f0c8ed",
-"class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_defensive_1_1_percent_def_boost_effect.html#a8d1b005cddcb3d13b4023815380b9572",
-"class_loot_1_1_rolling_strategies_1_1_sealing_rolling_strategy.html#a3d3c9402ce782559447b8619b4069bc6",
-"namespace_loot_1_1_i_l_editing.html"
+"_i_loadable_content_setter_8cs.html",
+"_velocity_plus_8cs_source.html",
+"class_loot_1_1_api_1_1_core_1_1_modifier_tooltip_line.html",
+"class_loot_1_1_api_1_1_delegators_1_1_modifier_delegator_projectile.html#acc8ba01c1aa5bb14e5401ff23b01c9a2",
+"class_loot_1_1_caching_1_1_modifier_cache_player.html#a3315087b46c1a955f03465a9b9ff235f",
+"class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_defensive_1_1_percent_def_boost_effect.html",
+"class_loot_1_1_rolling_strategies_1_1_sealing_rolling_strategy.html",
+"namespace_loot_1_1_api_1_1_strategy.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

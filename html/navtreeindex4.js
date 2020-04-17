@@ -1,5 +1,7 @@
 var NAVTREEINDEX4 =
 {
+"class_loot_1_1_api_1_1_delegators_1_1_modifier_delegator_projectile.html#acc8ba01c1aa5bb14e5401ff23b01c9a2":[2,0,0,0,5,1,17],
+"class_loot_1_1_api_1_1_delegators_1_1_modifier_delegator_projectile.html#adc191884f2c21b8bf6e179112d797a9b":[2,0,0,0,5,1,2],
 "class_loot_1_1_api_1_1_delegators_1_1_modifier_delegator_projectile.html#af9a377bb0b42fffddb5a85cc33876752":[2,0,0,0,5,1,10],
 "class_loot_1_1_api_1_1_ext_1_1_item_utils.html":[2,0,0,0,6,0],
 "class_loot_1_1_api_1_1_ext_1_1_item_utils.html#a39754c98802bdbdc8f0c2af7ef56ab62":[2,0,0,0,6,0,1],
@@ -247,7 +249,5 @@ var NAVTREEINDEX4 =
 "class_loot_1_1_caching_1_1_modifier_cache_player.html#a06b8235f1886d9fcfa44f3d490ef138c":[2,0,0,1,0,16],
 "class_loot_1_1_caching_1_1_modifier_cache_player.html#a10051f827e24aaa158385ed5204289d7":[2,0,0,1,0,13],
 "class_loot_1_1_caching_1_1_modifier_cache_player.html#a1311ec18574df7887da8eec70cec250b":[2,0,0,1,0,22],
-"class_loot_1_1_caching_1_1_modifier_cache_player.html#a2684f04fb781bffc04a8ef6ba91112cc":[2,0,0,1,0,20],
-"class_loot_1_1_caching_1_1_modifier_cache_player.html#a3315087b46c1a955f03465a9b9ff235f":[2,0,0,1,0,8],
-"class_loot_1_1_caching_1_1_modifier_cache_player.html#a48544f3f4ac4d8c9533f4cce1db86b70":[2,0,0,1,0,23]
+"class_loot_1_1_caching_1_1_modifier_cache_player.html#a2684f04fb781bffc04a8ef6ba91112cc":[2,0,0,1,0,20]
 };

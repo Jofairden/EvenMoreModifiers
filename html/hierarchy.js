@@ -8,6 +8,7 @@ var hierarchy =
       [ "Loot.Api.Attributes.UsesEffectAttribute", "class_loot_1_1_api_1_1_attributes_1_1_uses_effect_attribute.html", null ]
     ] ],
     [ "Loot.Api.Loaders.ContentLoader", "class_loot_1_1_api_1_1_loaders_1_1_content_loader.html", null ],
+    [ "Loot.UI.Tabs.Soulforging.CubeCraftRow", "class_loot_1_1_u_i_1_1_tabs_1_1_soulforging_1_1_cube_craft_row.html", null ],
     [ "Loot.UI.Tabs.Soulforging.GuiSoulgauge.GaugeDrawing", "class_loot_1_1_u_i_1_1_tabs_1_1_soulforging_1_1_gui_soulgauge_1_1_gauge_drawing.html", null ],
     [ "GlobalItem", "class_global_item.html", [
       [ "Loot.Api.Core.Modifier", "class_loot_1_1_api_1_1_core_1_1_modifier.html", [

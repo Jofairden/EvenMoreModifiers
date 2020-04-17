@@ -1,5 +1,7 @@
 var NAVTREEINDEX6 =
 {
+"class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_defensive_1_1_percent_def_boost_effect.html":[2,0,0,6,1,0,11],
+"class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_defensive_1_1_percent_def_boost_effect.html#a6f264c4662973e973e6cda88dcc1ea36":[2,0,0,6,1,0,11,2],
 "class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_defensive_1_1_percent_def_boost_effect.html#a8d1b005cddcb3d13b4023815380b9572":[2,0,0,6,1,0,11,0],
 "class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_defensive_1_1_percent_def_boost_effect.html#ab2073dab944097a9a19a6eaa4c677cbe":[2,0,0,6,1,0,11,1],
 "class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_defensive_1_1_percent_defense_bonus.html":[2,0,0,6,1,0,12],
@@ -247,7 +249,5 @@ var NAVTREEINDEX6 =
 "class_loot_1_1_rarities_1_1_transcendent_rarity.html#ac56798b1f670265445cfcd73774df92f":[2,0,0,8,4,7],
 "class_loot_1_1_rarities_1_1_transcendent_rarity.html#acbad8a00a821c7cf4e18e330cf7c5268":[2,0,0,8,4,6],
 "class_loot_1_1_rarities_1_1_transcendent_rarity.html#ad7a43d7257f38a8c805a146ef0058ac4":[2,0,0,8,4,4],
-"class_loot_1_1_rolling_strategies_1_1_default_rolling_strategy.html":[2,0,0,9,0],
-"class_loot_1_1_rolling_strategies_1_1_sealing_rolling_strategy.html":[2,0,0,9,1],
-"class_loot_1_1_rolling_strategies_1_1_sealing_rolling_strategy.html#a107b3f878a71cf09be6931867cc3c29f":[2,0,0,9,1,0]
+"class_loot_1_1_rolling_strategies_1_1_default_rolling_strategy.html":[2,0,0,9,0]
 };

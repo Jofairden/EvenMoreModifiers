@@ -1,7 +1,7 @@
 var searchData=
 [
   ['unload',['Unload',['../class_loot_1_1_api_1_1_mod_content_1_1_graphics_mod_content.html#a0826afdd3b12633f5fb5042c4a117960',1,'Loot.Api.ModContent.GraphicsModContent.Unload()'],['../class_loot_1_1_api_1_1_mod_content_1_1_texture_mod_content.html#aecec7023f4b4ea0cd892890b8cd5c725',1,'Loot.Api.ModContent.TextureModContent.Unload()'],['../class_loot_1_1_loot.html#a583d8d3d69bdd106d25030c5309e37bc',1,'Loot.Loot.Unload()']]],
-  ['update',['Update',['../class_loot_1_1_u_i_1_1_tabs_1_1_soulforging_1_1_gui_soulgauge_1_1_gauge_drawing.html#a2479ccad959b87b7c4d4816e655aeed3',1,'Loot::UI::Tabs::Soulforging::GuiSoulgauge::GaugeDrawing']]],
+  ['update',['Update',['../class_loot_1_1_u_i_1_1_tabs_1_1_soulforging_1_1_cube_craft_row.html#a354ea8d95acc5981e8ee231454bf799d',1,'Loot.UI.Tabs.Soulforging.CubeCraftRow.Update()'],['../class_loot_1_1_u_i_1_1_tabs_1_1_soulforging_1_1_gui_soulgauge_1_1_gauge_drawing.html#a2479ccad959b87b7c4d4816e655aeed3',1,'Loot.UI.Tabs.Soulforging.GuiSoulgauge.GaugeDrawing.Update()']]],
   ['updateaccessory',['UpdateAccessory',['../class_loot_1_1_hacks_1_1_cheated_item_hack_global_item.html#acc91f72960ba20ffc7e8a760a4695e4c',1,'Loot::Hacks::CheatedItemHackGlobalItem']]],
   ['updatearmorset',['UpdateArmorSet',['../class_loot_1_1_api_1_1_core_1_1_modifier.html#ac4925cfe55295465bbbe05a921d4d507',1,'Loot::Api::Core::Modifier']]],
   ['updateattachments',['UpdateAttachments',['../class_loot_1_1_caching_1_1_modifier_cache_player.html#a5cda7e47abe376866810b4e79be113c0',1,'Loot::Caching::ModifierCachePlayer']]],
@@ -22,6 +22,7 @@ var searchData=
   ['updateliferegen',['UpdateLifeRegen',['../class_loot_1_1_api_1_1_delegators_1_1_modifier_delegator_player.html#a6fe2b542c23b3ecea623083b05aea672',1,'Loot::Api::Delegators::ModifierDelegatorPlayer']]],
   ['updatemodifiers',['UpdateModifiers',['../class_loot_1_1_loot_item_modifier.html#afe2068389c4a0b5080a747a571dbb716',1,'Loot::LootItemModifier']]],
   ['updatemouseitemcache',['UpdateMouseItemCache',['../class_loot_1_1_caching_1_1_modifier_cache_player.html#a10051f827e24aaa158385ed5204289d7',1,'Loot::Caching::ModifierCachePlayer']]],
+  ['updatetext',['UpdateText',['../class_loot_1_1_u_i_1_1_tabs_1_1_soulforging_1_1_cube_craft_row.html#ab750e4056e5d56d581b30b4bdf6639fc',1,'Loot::UI::Tabs::Soulforging::CubeCraftRow']]],
   ['updateui',['UpdateUI',['../class_loot_1_1_loot.html#a7f296a7c4a011faca07302cf350881ef',1,'Loot::Loot']]],
   ['updatevanityaccessories',['UpdateVanityAccessories',['../class_loot_1_1_api_1_1_delegators_1_1_modifier_delegator_player.html#a611b5b6edcf886d528082e3713a18374',1,'Loot::Api::Delegators::ModifierDelegatorPlayer']]],
   ['updatevanitycache',['UpdateVanityCache',['../class_loot_1_1_caching_1_1_modifier_cache_player.html#af61699888203f1029028f6ce61e3fbfa',1,'Loot::Caching::ModifierCachePlayer']]],
