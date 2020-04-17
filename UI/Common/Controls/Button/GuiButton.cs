@@ -12,7 +12,8 @@ namespace Loot.UI.Common.Controls.Button
 		{
 			StoneInnerBevel,
 			StoneOuterBevel,
-			Parchment
+			Parchment,
+			None
 		}
 
 		private static Texture2D _texture => Assets.Textures.GUI.ButtonTexture;
@@ -40,12 +41,15 @@ namespace Loot.UI.Common.Controls.Button
 		protected override void DrawSelf(SpriteBatch spriteBatch)
 		{
 			//base.DrawSelf(spriteBatch);
-			spriteBatch.Draw(
-				_texture,
-				GetOuterDimensions().Position(),
-				GetDrawRectangle(),
-				Color.White
-			);
+			if (_buttonType != ButtonType.None)
+			{
+				spriteBatch.Draw(
+					_texture,
+					GetOuterDimensions().Position(),
+					GetDrawRectangle(),
+					Color.White
+				);
+			}
 
 			//#if DEBUG
 			//			spriteBatch.Draw(

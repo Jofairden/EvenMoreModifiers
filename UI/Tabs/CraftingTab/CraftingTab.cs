@@ -77,7 +77,7 @@ namespace Loot.UI.Tabs.CraftingTab
 			ItemButton = new GuiCraftItemButton(
 				GuiButton.ButtonType.Parchment,
 				hintTexture: ModContent.GetTexture("Terraria/Item_24"),
-				hintText: "Place an item to here"
+				hintText: "Place an item here"
 			);
 			ItemButton.CanTakeItemAction += IsStrategyAllowed;
 			ItemButton.PreOnClickAction += () =>

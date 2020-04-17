@@ -11,7 +11,7 @@ namespace Loot.Cubes
 {
 	public class PoorCube : RerollingCube
 	{
-		protected override int EssenceCraftCost => 10;
+		public override int EssenceCraftCost => 10;
 		protected override string CubeName => "Poor Cube";
 		protected override Color? OverrideNameColor => Color.White;
 

@@ -10,7 +10,7 @@ namespace Loot.Cubes
 	/// </summary>
 	public class CubeOfSealing : RerollingCube
 	{
-		protected override int EssenceCraftCost => 10;
+		public override int EssenceCraftCost => 10;
 		protected override string CubeName => "Sealing Cube";
 
 		protected override void SafeStaticDefaults()

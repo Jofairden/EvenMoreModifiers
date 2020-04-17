@@ -37,12 +37,12 @@ namespace Loot.UI.Common.Controls.Button
 		public GuiArrowButton(ArrowDirection direction)
 		{
 			_arrowDirection = direction;
+			Width.Set(_btnTexture.Width, 0);
+			Height.Set(_btnTexture.Height, 0);
 		}
 
 		public override void OnInitialize()
 		{
-			Width.Set(_btnTexture.Width, 0);
-			Height.Set(_btnTexture.Height, 0);
 			OnClick += (evt, element) =>
 			{
 				if (CanBeClicked)

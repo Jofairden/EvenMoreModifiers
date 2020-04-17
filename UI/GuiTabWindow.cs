@@ -100,6 +100,8 @@ namespace Loot.UI
 
 		public override void OnInitialize()
 		{
+			base.OnInitialize();
+
 			Width.Set(422, 0);
 
 			_header = new GuiHeader();
@@ -147,6 +149,8 @@ namespace Loot.UI
 
 		public override void Update(GameTime gameTime)
 		{
+			base.Update(gameTime);
+
 			if (Visible && !Main.playerInventory)
 			{
 				ToggleUI(Loot.Instance.GuiInterface);
@@ -156,6 +160,7 @@ namespace Loot.UI
 		public override void Draw(SpriteBatch spriteBatch)
 		{
 			base.Draw(spriteBatch);
+
 			if (IsMouseHovering || MouseOverUI())
 			{
 				Main.LocalPlayer.mouseInterface = true;

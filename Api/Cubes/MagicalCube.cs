@@ -11,7 +11,7 @@ namespace Loot.Api.Cubes
 	/// </summary>
 	public abstract class MagicalCube : ModItem
 	{
-		protected abstract int EssenceCraftCost { get; }
+		public abstract int EssenceCraftCost { get; }
 
 		protected abstract string CubeName { get; }
 		protected virtual Color? OverrideNameColor => null;

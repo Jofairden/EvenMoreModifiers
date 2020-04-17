@@ -24,13 +24,15 @@ namespace Loot.UI.Common.Controls.Panel
 
 		public void UpdateText(string line)
 		{
-			_text?.SetText(line);
-			_text?.Top.Set(Main.fontMouseText.MeasureString(line).Y * 0.375f, 0);
+			if (_text == null) return;
+			_text.SetText(line);
+			_text.Left.Pixels = GuiTab.PADDING;
+			_text.Top.Set(Main.fontMouseText.MeasureString(line).Y * 0.375f, 0);
 		}
 
 		public void ResetText()
 		{
-			_text?.SetText(DEFAULT_TEXT);
+			UpdateText(DEFAULT_TEXT);
 		}
 
 		protected override void DrawSelf(SpriteBatch spriteBatch)
