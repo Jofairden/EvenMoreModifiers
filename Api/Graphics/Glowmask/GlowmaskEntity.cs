@@ -15,7 +15,6 @@ namespace Loot.Api.Graphics.Glowmask
 	public class GlowmaskEntity : GraphicsEntity<GlowmaskGraphicsProperties>
 	{
 		public bool DrawHitbox { get; set; } // mostly for debug purposes
-		public bool NeedsUpdate { get; set; }
 		public Texture2D GlowmaskTexture { get; protected set; }
 
 		public GlowmaskEntity(object subjectIdentity, bool drawHitbox = false, short order = 0, Color? drawColor = null,
@@ -23,7 +22,6 @@ namespace Loot.Api.Graphics.Glowmask
 			: base(subjectIdentity)
 		{
 			DrawHitbox = drawHitbox;
-			NeedsUpdate = false;
 			Order = order;
 			DrawColor = drawColor ?? Color.White;
 			Properties = props ?? GlowmaskGraphicsProperties.Builder.Build();

@@ -3,6 +3,8 @@ using System.Linq;
 using Loot.Api.Core;
 using Loot.Api.Delegators;
 using Loot.Api.Graphics;
+using Loot.Api.Graphics.Glowmask;
+using Loot.Api.Graphics.Shader;
 using Loot.Modifiers.EquipModifiers.Utility;
 using Terraria;
 using Terraria.ID;
@@ -34,15 +36,13 @@ namespace Loot.Api.Strategy
 			return wr;
 		}
 
-
-
 		internal List<Modifier> _Roll(ModifierPool pool, ModifierContext modifierContext, RollingStrategyProperties properties)
 		{
 			InitFields(modifierContext.Item, properties);
 			var list = PreRoll(pool, modifierContext, properties);
 			list = Roll(list, pool, modifierContext, properties);
 			PostRoll(ref list, pool, modifierContext, properties);
-			modifierContext.Item.GetGlobalItem<GraphicsGlobalItem>().NeedsUpdate = true;
+			GraphicsGlobalItem.UpdateGraphicsEntities(list, modifierContext.Item);
 			return list;
 		}
 

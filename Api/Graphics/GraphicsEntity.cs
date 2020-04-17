@@ -21,7 +21,7 @@ namespace Loot.Api.Graphics
 		public Entity Entity { get; protected set; }
 		public T Properties { get; protected set; }
 		public short Order { get; protected set; }
-		public bool NeedsUpdate { get; set; }
+		public bool NeedsUpdate { get; set; } = true;
 
 		protected GraphicsEntity(object subjectIdentity)
 		{
@@ -31,11 +31,7 @@ namespace Loot.Api.Graphics
 
 		internal void SetIdentity(object subjectIdentity)
 		{
-			if (subjectIdentity is Entity entity)
-			{
-				Entity = entity;
-			}
-			else if (subjectIdentity is ModItem modItem)
+			if (subjectIdentity is ModItem modItem)
 			{
 				Entity = modItem.item;
 			}
@@ -50,6 +46,10 @@ namespace Loot.Api.Graphics
 			else if (subjectIdentity is ModPlayer modPlayer)
 			{
 				Entity = modPlayer.player;
+			}
+			else if (subjectIdentity is Entity entity)
+			{
+				Entity = entity;
 			}
 			else
 			{
@@ -82,15 +82,20 @@ namespace Loot.Api.Graphics
 			}
 		}
 
+		private float offY;
+		private float offX;
+
 		public void TryUpdatingDrawData(Texture2D texture)
 		{
 			if (Properties.SkipUpdatingDrawData && !NeedsUpdate) return;
 
 			var frame = texture.Frame();
+			offX = Main.screenPosition.X - texture.Width * 0.5f;
+			offY = Main.screenPosition.Y - texture.Height * 0.5f;
 			DrawData.position = new Vector2
 			(
-				Entity.position.X - Main.screenPosition.X + Entity.width * 0.5f,
-				Entity.position.Y - Main.screenPosition.Y + Entity.height - texture.Height * 0.5f + 2f
+				Entity.position.X - offX,
+				Entity.position.Y - offY
 			);
 			DrawData.origin = frame.Size() * 0.5f;
 

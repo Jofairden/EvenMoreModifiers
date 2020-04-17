@@ -6,6 +6,7 @@ using System.IO;
 using System.Linq;
 using Loot.Api.Core;
 using Loot.Api.Ext;
+using Loot.Api.Graphics;
 using Loot.Hacks;
 using Loot.IO;
 using Terraria;
@@ -191,6 +192,7 @@ namespace Loot
 					SealedModifiers = tag.GetBool("SealedModifiers");
 					HasRolled = tag.GetBool("HasRolled");
 					Modifiers.Apply(item);
+					GraphicsGlobalItem.UpdateGraphicsEntities(Modifiers.Modifiers, item);
 				}
 			}
 		}

@@ -26,7 +26,6 @@ namespace Loot.Api.Graphics.Shader
 		{
 			ShaderId = shaderId;
 			DrawColor = shaderDrawColor ?? Color.White;
-			NeedsUpdate = false;
 			Order = order;
 			Properties = props ?? ShaderGraphicsProperties.Builder.Build();
 		}
@@ -62,6 +61,7 @@ namespace Loot.Api.Graphics.Shader
 			var useSubjectTexture = suppliedSubjectTexture ?? SubjectTexture;
 			var useShaderTexture = suppliedShaderTexture ?? ShaderTexture;
 			var useGlowmaskTexture = suppliedGlowmaskTexture;
+
 			// Assets present
 			if (useSubjectTexture != null && useShaderTexture != null)
 			{

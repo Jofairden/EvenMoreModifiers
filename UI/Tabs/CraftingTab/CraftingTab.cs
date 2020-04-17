@@ -226,8 +226,6 @@ namespace Loot.UI.Tabs.CraftingTab
 			{
 				item.UpdateModifiers(rolled);
 			}
-			item.GetGlobalItem<GraphicsGlobalItem>().UpdateEntities(item.Clone());
-
 			strategy.PlaySoundEffect(item);
 			ItemButton.Item = item;
 

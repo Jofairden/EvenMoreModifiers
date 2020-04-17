@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using System.Linq;
+using Loot.Api.Core;
 using Loot.Api.Graphics.Glowmask;
 using Loot.Api.Graphics.Shader;
 using Microsoft.Xna.Framework;
@@ -15,9 +16,8 @@ namespace Loot.Api.Graphics
 	/// </summary>
 	public class GraphicsGlobalItem : GlobalItem
 	{
-		public List<ShaderEntity> ShaderEntities { get; private set; } = new List<ShaderEntity>();
-		public List<GlowmaskEntity> GlowmaskEntities { get; private set; } = new List<GlowmaskEntity>();
-		public bool NeedsUpdate = true;
+		public List<ShaderEntity> ShaderEntities { get; internal set; } = new List<ShaderEntity>();
+		public List<GlowmaskEntity> GlowmaskEntities { get; internal set; } = new List<GlowmaskEntity>();
 
 		public override bool InstancePerEntity => true;
 		public override bool CloneNewInstances => true;
@@ -27,60 +27,36 @@ namespace Loot.Api.Graphics
 		public bool HasShaders => ShaderEntities.Count(x => x != null) > 0;
 		public bool HasGlowmasks => GlowmaskEntities.Count(x => x != null) > 0;
 
-		public override void UpdateInventory(Item item, Player player)
+		public static void UpdateGraphicsEntities(List<Modifier> modifiers, Item item)
 		{
-			UpdateEntities(item);
+			var info = item.GetGlobalItem<GraphicsGlobalItem>();
+			info.ShaderEntities = modifiers.Select(mod => mod.GetShaderEntity(item)).OrderBy(mod => mod?.Order ?? 0).ToList();
+			info.GlowmaskEntities = modifiers.Select(mod => mod.GetGlowmaskEntity(item)).OrderBy(mod => mod?.Order ?? 0).ToList();
+			var clone = item.Clone();
+			info.ShaderEntities.ForEach(mod => mod?.SetIdentity(clone));
+			info.GlowmaskEntities.ForEach(mod => mod?.SetIdentity(clone));
 		}
 
 		public override void UpdateEquip(Item item, Player player)
 		{
-			UpdateEntities(item);
+			UpdateIdentity(item);
 		}
 
-		public void UpdateEntities(Item item)
+		public override void UpdateInventory(Item item, Player player)
 		{
-			var pool = LootModItem.GetActivePool(item).ToArray();
+			UpdateIdentity(item);
+		}
 
-			if (!NeedsUpdate && ShaderEntities != null
-							 && !ShaderEntities.Any(x => x != null && x.NeedsUpdate)
-							 && !GlowmaskEntities.Any(x => x != null && x.NeedsUpdate))
-				return;
-
-			if (ShaderEntities != null)
-			{
-				ShaderEntities.Clear();
-
-				foreach (var m in pool)
-				{
-					var ent = m.GetShaderEntity(item);
-					ent?.SetIdentity(item);
-					ShaderEntities.Add(ent);
-				}
-
-				ShaderEntities = new List<ShaderEntity>(ShaderEntities.OrderBy(x => x?.Order ?? 0));
-			}
-
-			if (GlowmaskEntities != null)
-			{
-				GlowmaskEntities.Clear();
-
-				foreach (var m in pool)
-				{
-					var ent = m.GetGlowmaskEntity(item);
-					ent?.SetIdentity(item);
-					GlowmaskEntities.Add(ent);
-				}
-
-				GlowmaskEntities = new List<GlowmaskEntity>(GlowmaskEntities.OrderBy(x => x?.Order ?? 0));
-			}
-
-			NeedsUpdate = false;
+		public void UpdateIdentity(Item item)
+		{
+			ShaderEntities.ForEach(entity => entity?.SetIdentity(item));
+			GlowmaskEntities.ForEach(entity => entity?.SetIdentity(item));
 		}
 
 		public override bool PreDrawInWorld(Item item, SpriteBatch spriteBatch, Color lightColor, Color alphaColor, ref float rotation, ref float scale, int whoAmI)
 		{
 			bool flag = true;
-			UpdateEntities(item);
+			UpdateIdentity(item);
 
 			for (int i = 0; i < ShaderEntities.Count; i++)
 			{
