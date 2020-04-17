@@ -9,6 +9,7 @@ namespace Loot.Cubes
 {
 	class HellCube : RerollingCube
 	{
+		protected override int EssenceCraftCost => 10;
 		protected override string CubeName => "Hell Cube";
 		protected override Color? OverrideNameColor => Color.PeachPuff;
 

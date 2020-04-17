@@ -11,6 +11,7 @@ namespace Loot.Cubes
 {
 	public class PoorCube : RerollingCube
 	{
+		protected override int EssenceCraftCost => 10;
 		protected override string CubeName => "Poor Cube";
 		protected override Color? OverrideNameColor => Color.White;
 
@@ -24,7 +25,7 @@ namespace Loot.Cubes
 
 		protected override void SafeDefaults()
 		{
-			item.value = Item.buyPrice(copper: 30);
+			item.value = Item.buyPrice(copper: 1);
 		}
 
 		protected override void SafeStaticDefaults()

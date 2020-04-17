@@ -10,6 +10,7 @@ namespace Loot.Cubes
 	/// </summary>
 	public class CubeOfSealing : RerollingCube
 	{
+		protected override int EssenceCraftCost => 10;
 		protected override string CubeName => "Sealing Cube";
 
 		protected override void SafeStaticDefaults()
@@ -20,7 +21,7 @@ namespace Loot.Cubes
 
 		protected override void SafeDefaults()
 		{
-			item.value = Item.buyPrice(silver: 50);
+			item.value = Item.buyPrice(copper: 1);
 		}
 
 		public override RollingStrategy GetRollingStrategy(Item item, RollingStrategyProperties properties)
