@@ -236,8 +236,8 @@ Static Public Attributes</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
 Private Member Functions</h2></td></tr>
-<tr class="memitem:a2aa6042d52086127f021527eac61c7e4"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_defensive_1_1_survival_effect.html#a2aa6042d52086127f021527eac61c7e4">SurviveEvent</a> (<a class="el" href="class_loot_1_1_api_1_1_delegators_1_1_modifier_delegator_player.html">ModifierDelegatorPlayer</a> delegatorPlayer, double damage, int hitDirection, bool pvp, ref bool playSound, ref bool genGore, ref PlayerDeathReason damageSource)</td></tr>
-<tr class="separator:a2aa6042d52086127f021527eac61c7e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8e98019383a8f52b45f28571b4db99bf"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_defensive_1_1_survival_effect.html#a8e98019383a8f52b45f28571b4db99bf">SurviveEvent</a> (double damage, int hitDirection, bool pvp, ref bool playSound, ref bool genGore, ref PlayerDeathReason damageSource)</td></tr>
+<tr class="separator:a8e98019383a8f52b45f28571b4db99bf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
@@ -297,7 +297,7 @@ Additional Inherited Members</h2></td></tr>
 </div><!-- fragment -->
 </div>
 </div>
-<a class="anchor" id="a2aa6042d52086127f021527eac61c7e4"></a>
+<a class="anchor" id="a8e98019383a8f52b45f28571b4db99bf"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -307,12 +307,6 @@ Additional Inherited Members</h2></td></tr>
         <tr>
           <td class="memname">bool Loot.Modifiers.EquipModifiers.Defensive.SurvivalEffect.SurviveEvent </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="class_loot_1_1_api_1_1_delegators_1_1_modifier_delegator_player.html">ModifierDelegatorPlayer</a>&#160;</td>
-          <td class="paramname"><em>delegatorPlayer</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
           <td class="paramtype">double&#160;</td>
           <td class="paramname"><em>damage</em>, </td>
         </tr>
@@ -360,7 +354,8 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Definition at line <a class="el" href="_survival_chance_8cs_source.html#l00023">23</a> of file <a class="el" href="_survival_chance_8cs_source.html">SurvivalChance.cs</a>.</p>
-<div class="fragment"><div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;        {</div><div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;            <span class="keywordflow">if</span> (Main.rand.NextFloat() &lt; Math.Min(<a class="code" href="class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_defensive_1_1_survival_effect.html#a3889be5b24052f27f7260a244825a4d3">SurvivalChance</a>, <a class="code" href="class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_defensive_1_1_survival_effect.html#a4abe39a78d554976536a956b6ebe04cb">MAX_SURVIVAL_CHANCE</a>))</div><div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;            {</div><div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;                delegatorPlayer.player.statLife = 1;</div><div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;                <span class="keywordflow">return</span> <span class="keyword">false</span>;</div><div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;            }</div><div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;</div><div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;            <span class="keywordflow">return</span> <span class="keyword">true</span>;</div><div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;        }</div><div class="ttc" id="class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_defensive_1_1_survival_effect_html_a4abe39a78d554976536a956b6ebe04cb"><div class="ttname"><a href="class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_defensive_1_1_survival_effect.html#a4abe39a78d554976536a956b6ebe04cb">Loot.Modifiers.EquipModifiers.Defensive.SurvivalEffect.MAX_SURVIVAL_CHANCE</a></div><div class="ttdeci">static readonly float MAX_SURVIVAL_CHANCE</div><div class="ttdef"><b>Definition:</b> <a href="_survival_chance_8cs_source.html#l00014">SurvivalChance.cs:14</a></div></div>
+<div class="fragment"><div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;        {</div><div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;            <span class="keywordflow">if</span> (Main.rand.NextFloat() &lt; Math.Min(<a class="code" href="class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_defensive_1_1_survival_effect.html#a3889be5b24052f27f7260a244825a4d3">SurvivalChance</a>, <a class="code" href="class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_defensive_1_1_survival_effect.html#a4abe39a78d554976536a956b6ebe04cb">MAX_SURVIVAL_CHANCE</a>))</div><div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;            {</div><div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;                <a class="code" href="class_loot_1_1_api_1_1_core_1_1_modifier_effect.html#aae94b3a83d431d3ca7e7274a9b12a4ef">player</a>.statLife = 1;</div><div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;                <span class="keywordflow">return</span> <span class="keyword">false</span>;</div><div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;            }</div><div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;</div><div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;            <span class="keywordflow">return</span> <span class="keyword">true</span>;</div><div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;        }</div><div class="ttc" id="class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_defensive_1_1_survival_effect_html_a4abe39a78d554976536a956b6ebe04cb"><div class="ttname"><a href="class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_defensive_1_1_survival_effect.html#a4abe39a78d554976536a956b6ebe04cb">Loot.Modifiers.EquipModifiers.Defensive.SurvivalEffect.MAX_SURVIVAL_CHANCE</a></div><div class="ttdeci">static readonly float MAX_SURVIVAL_CHANCE</div><div class="ttdef"><b>Definition:</b> <a href="_survival_chance_8cs_source.html#l00014">SurvivalChance.cs:14</a></div></div>
+<div class="ttc" id="class_loot_1_1_api_1_1_core_1_1_modifier_effect_html_aae94b3a83d431d3ca7e7274a9b12a4ef"><div class="ttname"><a href="class_loot_1_1_api_1_1_core_1_1_modifier_effect.html#aae94b3a83d431d3ca7e7274a9b12a4ef">Loot.Api.Core.ModifierEffect.player</a></div><div class="ttdeci">new Player player</div><div class="ttdef"><b>Definition:</b> <a href="_modifier_effect_8cs_source.html#l00042">ModifierEffect.cs:42</a></div></div>
 <div class="ttc" id="class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_defensive_1_1_survival_effect_html_a3889be5b24052f27f7260a244825a4d3"><div class="ttname"><a href="class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_defensive_1_1_survival_effect.html#a3889be5b24052f27f7260a244825a4d3">Loot.Modifiers.EquipModifiers.Defensive.SurvivalEffect.SurvivalChance</a></div><div class="ttdeci">float SurvivalChance</div><div class="ttdef"><b>Definition:</b> <a href="_survival_chance_8cs_source.html#l00013">SurvivalChance.cs:13</a></div></div>
 </div><!-- fragment -->
 </div>
@@ -410,7 +405,7 @@ Additional Inherited Members</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespace_loot.html">Loot</a></li><li class="navelem"><a class="el" href="namespace_loot_1_1_modifiers.html">Modifiers</a></li><li class="navelem"><a class="el" href="namespace_loot_1_1_modifiers_1_1_equip_modifiers.html">EquipModifiers</a></li><li class="navelem"><a class="el" href="namespace_loot_1_1_modifiers_1_1_equip_modifiers_1_1_defensive.html">Defensive</a></li><li class="navelem"><a class="el" href="class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_defensive_1_1_survival_effect.html">SurvivalEffect</a></li>
-    <li class="footer">Generated on Fri Apr 17 2020 12:24:27 for Even More Modifiers by
+    <li class="footer">Generated on Fri Apr 17 2020 13:14:31 for Even More Modifiers by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.11 </li>
   </ul>

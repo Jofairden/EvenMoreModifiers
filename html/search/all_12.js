@@ -65,7 +65,7 @@ var searchData=
   ['survivalchance',['SurvivalChance',['../class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_defensive_1_1_survival_effect.html#a3889be5b24052f27f7260a244825a4d3',1,'Loot::Modifiers::EquipModifiers::Defensive::SurvivalEffect']]],
   ['survivalchance_2ecs',['SurvivalChance.cs',['../_survival_chance_8cs.html',1,'']]],
   ['survivaleffect',['SurvivalEffect',['../class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_defensive_1_1_survival_effect.html',1,'Loot::Modifiers::EquipModifiers::Defensive']]],
-  ['surviveevent',['SurviveEvent',['../class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_defensive_1_1_survival_effect.html#a2aa6042d52086127f021527eac61c7e4',1,'Loot::Modifiers::EquipModifiers::Defensive::SurvivalEffect']]],
+  ['surviveevent',['SurviveEvent',['../class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_defensive_1_1_survival_effect.html#a8e98019383a8f52b45f28571b4db99bf',1,'Loot::Modifiers::EquipModifiers::Defensive::SurvivalEffect']]],
   ['syncplayer',['SyncPlayer',['../class_loot_1_1_api_1_1_delegators_1_1_modifier_delegator_player.html#aa7b238ef90e6302c9e1d2fc051542106',1,'Loot::Api::Delegators::ModifierDelegatorPlayer']]],
   ['syncplayerevent',['SyncPlayerEvent',['../class_loot_1_1_api_1_1_delegators_1_1_modifier_delegator_player.html#a8b083dd975e0cb636c4369e6da00267b',1,'Loot::Api::Delegators::ModifierDelegatorPlayer']]]
 ];

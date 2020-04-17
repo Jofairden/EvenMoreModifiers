@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['immunity',['Immunity',['../class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_defensive_1_1_immunity_effect.html#a3c3b2a739aeb7df48c8bd48a1ea18855',1,'Loot::Modifiers::EquipModifiers::Defensive::ImmunityEffect']]],
+  ['immunity',['Immunity',['../class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_defensive_1_1_immunity_effect.html#a501a4109fadcaf79b0cc2701fde6ba8e',1,'Loot::Modifiers::EquipModifiers::Defensive::ImmunityEffect']]],
   ['initfields',['InitFields',['../class_loot_1_1_api_1_1_strategy_1_1_rolling_strategy.html#afbc119ee487665c80b4e82badf6be2d9',1,'Loot::Api::Strategy::RollingStrategy']]],
   ['initialize',['Initialize',['../class_loot_1_1_api_1_1_delegators_1_1_modifier_delegator_player.html#a9a8055044771739c87948ee4e95f8244',1,'Loot.Api.Delegators.ModifierDelegatorPlayer.Initialize()'],['../class_loot_1_1_api_1_1_mod_content_1_1_graphics_mod_content.html#a3b5927c03838b9be382db3fbf03cdaf9',1,'Loot.Api.ModContent.GraphicsModContent.Initialize()'],['../class_loot_1_1_api_1_1_mod_content_1_1_texture_mod_content.html#a1363fcb4817c5b30b8aa140148976b6f',1,'Loot.Api.ModContent.TextureModContent.Initialize()'],['../class_loot_1_1_caching_1_1_modifier_cache_player.html#ad3185daba78498a2d02b9617220b19fa',1,'Loot.Caching.ModifierCachePlayer.Initialize()'],['../class_loot_1_1_loot_mod_world.html#a51b6b461ae88204f3d721a9d5ff398d7',1,'Loot.LootModWorld.Initialize()']]],
   ['invalidaterolls',['InvalidateRolls',['../class_loot_1_1_loot_mod_item.html#a5b0da3bc74988a42fe0b4fc7a42f00e1',1,'Loot::LootModItem']]],

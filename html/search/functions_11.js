@@ -22,6 +22,6 @@ var searchData=
   ['skipdrawingshader',['SkipDrawingShader',['../class_loot_1_1_api_1_1_graphics_1_1_shader_1_1_shader_graphics_properties_1_1_shader_graphics_properties_builder.html#aa56bc965295673055990085da26ca7db',1,'Loot::Api::Graphics::Shader::ShaderGraphicsProperties::ShaderGraphicsPropertiesBuilder']]],
   ['skipdrawingsubject',['SkipDrawingSubject',['../class_loot_1_1_api_1_1_graphics_1_1_shader_1_1_shader_graphics_properties_1_1_shader_graphics_properties_builder.html#aeb3b3d53be660d5915047b2f86d48048',1,'Loot::Api::Graphics::Shader::ShaderGraphicsProperties::ShaderGraphicsPropertiesBuilder']]],
   ['substringlastindex',['SubstringLastIndex',['../class_loot_1_1_api_1_1_mod_content_1_1_graphics_mod_content.html#ab22305b1a8487a899056c5d245f2f01b',1,'Loot::Api::ModContent::GraphicsModContent']]],
-  ['surviveevent',['SurviveEvent',['../class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_defensive_1_1_survival_effect.html#a2aa6042d52086127f021527eac61c7e4',1,'Loot::Modifiers::EquipModifiers::Defensive::SurvivalEffect']]],
+  ['surviveevent',['SurviveEvent',['../class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_defensive_1_1_survival_effect.html#a8e98019383a8f52b45f28571b4db99bf',1,'Loot::Modifiers::EquipModifiers::Defensive::SurvivalEffect']]],
   ['syncplayer',['SyncPlayer',['../class_loot_1_1_api_1_1_delegators_1_1_modifier_delegator_player.html#aa7b238ef90e6302c9e1d2fc051542106',1,'Loot::Api::Delegators::ModifierDelegatorPlayer']]]
 ];

@@ -20,7 +20,7 @@ var searchData=
   ['iloadablecontent',['ILoadableContent',['../interface_loot_1_1_api_1_1_content_1_1_i_loadable_content.html',1,'Loot::Api::Content']]],
   ['iloadablecontent_2ecs',['ILoadableContent.cs',['../_i_loadable_content_8cs.html',1,'']]],
   ['iloadablecontentsetter_2ecs',['ILoadableContentSetter.cs',['../_i_loadable_content_setter_8cs.html',1,'']]],
-  ['immunity',['Immunity',['../class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_defensive_1_1_immunity_effect.html#a3c3b2a739aeb7df48c8bd48a1ea18855',1,'Loot::Modifiers::EquipModifiers::Defensive::ImmunityEffect']]],
+  ['immunity',['Immunity',['../class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_defensive_1_1_immunity_effect.html#a501a4109fadcaf79b0cc2701fde6ba8e',1,'Loot::Modifiers::EquipModifiers::Defensive::ImmunityEffect']]],
   ['immunityeffect',['ImmunityEffect',['../class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_defensive_1_1_immunity_effect.html',1,'Loot::Modifiers::EquipModifiers::Defensive']]],
   ['immunitytimeplus',['ImmunityTimePlus',['../class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_defensive_1_1_immunity_time_plus.html',1,'Loot::Modifiers::EquipModifiers::Defensive']]],
   ['immunitytimeplus_2ecs',['ImmunityTimePlus.cs',['../_immunity_time_plus_8cs.html',1,'']]],

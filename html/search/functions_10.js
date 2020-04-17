@@ -2,7 +2,7 @@ var searchData=
 [
   ['readonly',['readonly',['../class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_random_debuff.html#adff461eba04f66de78cbcaa00387f4e8',1,'Loot::Modifiers::WeaponModifiers::RandomDebuff']]],
   ['receivecustombiomes',['ReceiveCustomBiomes',['../class_loot_1_1_api_1_1_core_1_1_modifier_effect.html#aa524f1e239e435719884942bbc339950',1,'Loot::Api::Core::ModifierEffect']]],
-  ['regen',['Regen',['../class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_defensive_1_1_life_regen_effect.html#a08c0e63e5917d857d4bb9f3a7ee3d1bf',1,'Loot::Modifiers::EquipModifiers::Defensive::LifeRegenEffect']]],
+  ['regen',['Regen',['../class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_defensive_1_1_life_regen_effect.html#a19cf2d06ea8d500b31a47f0010c88281',1,'Loot::Modifiers::EquipModifiers::Defensive::LifeRegenEffect']]],
   ['registerassets',['RegisterAssets',['../class_loot_1_1_api_1_1_loaders_1_1_asset_loader.html#af7c1d3b54345e5dce474d99638c34a2f',1,'Loot::Api::Loaders::AssetLoader']]],
   ['registermod',['RegisterMod',['../class_loot_1_1_api_1_1_loaders_1_1_registry_loader.html#a33452857bba4db922793c67622192e28',1,'Loot::Api::Loaders::RegistryLoader']]],
   ['rerollmodifiers',['RerollModifiers',['../class_loot_1_1_loot_item_modifier.html#a4dc8fe390c9ba4e29636e428288b9d85',1,'Loot::LootItemModifier']]],

@@ -1,6 +1,6 @@
 <map id="Loot.LootModItem.GetActivePool" name="Loot.LootModItem.GetActivePool">
 <area shape="rect" id="node2" href="$class_loot_1_1_caching_1_1_modifier_cache_player.html#aa2804e6b01433c48abb268401661b01d" title="Loot.Caching.ModifierCache\lPlayer.CacheItemModifierEffects" alt="" coords="284,5,511,47"/>
-<area shape="rect" id="node3" href="$class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_cursed_effect.html#ac9bf924c10a79e2f02ab2abad3f6b6d9" title="Loot.Modifiers.WeaponModifiers.\lCursedEffect.CurseHolding" alt="" coords="284,71,511,112"/>
+<area shape="rect" id="node3" href="$class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_cursed_effect.html#a7a871cc67dde9bc1dd192c9c6bc86914" title="Loot.Modifiers.WeaponModifiers.\lCursedEffect.CurseHolding" alt="" coords="284,71,511,112"/>
 <area shape="rect" id="node4" href="$class_loot_1_1_rolling_strategies_1_1_sealing_rolling_strategy.html#a8fdbe094a5eeabad09a1b2406594c751" title="Loot.RollingStrategies.Sealing\lRollingStrategy.PreRoll" alt="" coords="292,136,503,177"/>
 <area shape="rect" id="node5" href="$class_loot_1_1_caching_1_1_modifier_cache_player.html#ad5da049c7bfcadd0c194bd97940bf0d3" title="Loot.Caching.ModifierCache\lPlayer.UpdateCheatSheetCache" alt="" coords="284,201,511,243"/>
 <area shape="rect" id="node6" href="$class_loot_1_1_caching_1_1_modifier_cache_player.html#abbb2189d7ca6b73b775d63fe96ef5cab" title="Loot.Caching.ModifierCache\lPlayer.UpdateEquipsCache" alt="" coords="298,267,497,308"/>

@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['defboost',['DefBoost',['../class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_defensive_1_1_percent_def_boost_effect.html#a587fc5bf3b1337bd5a3e315901bd2f5b',1,'Loot::Modifiers::EquipModifiers::Defensive::PercentDefBoostEffect']]],
+  ['defboost',['DefBoost',['../class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_defensive_1_1_percent_def_boost_effect.html#a8d1b005cddcb3d13b4023815380b9572',1,'Loot::Modifiers::EquipModifiers::Defensive::PercentDefBoostEffect']]],
   ['delegationprioritizationattribute',['DelegationPrioritizationAttribute',['../class_loot_1_1_api_1_1_attributes_1_1_delegation_prioritization_attribute.html#a46b343cde7086af1e23697a9a5dc17b6',1,'Loot::Api::Attributes::DelegationPrioritizationAttribute']]],
   ['detach',['Detach',['../class_loot_1_1_api_1_1_attributes_1_1_auto_delegation.html#ab29b06a0f27d6ea6b6ec21fcd4c647a3',1,'Loot::Api::Attributes::AutoDelegation']]],
   ['detachdelegations',['DetachDelegations',['../class_loot_1_1_api_1_1_core_1_1_modifier_effect.html#ac59918aa5cffd5949d5400fb13118208',1,'Loot::Api::Core::ModifierEffect']]],
