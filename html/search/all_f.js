@@ -1,7 +1,9 @@
 var searchData=
 [
   ['oakfleshessence_2ecs',['OakfleshEssence.cs',['../_oakflesh_essence_8cs.html',1,'']]],
-  ['offsetstyle',['OffsetStyle',['../class_loot_1_1_api_1_1_graphics_1_1_shader_1_1_style_1_1_around_shader_draw_style.html#a2bebdd36fcbe0e1db644c903b8a22487',1,'Loot.Api.Graphics.Shader.Style.AroundShaderDrawStyle.OffsetStyle()'],['../class_loot_1_1_api_1_1_graphics_1_1_shader_1_1_style_1_1_around_shader_draw_style.html#a6e71002cb9624082d8b091fc76869648',1,'Loot.Api.Graphics.Shader.Style.AroundShaderDrawStyle.offsetStyle()']]],
+  ['offsetstyle',['offsetStyle',['../class_loot_1_1_api_1_1_graphics_1_1_shader_1_1_style_1_1_around_shader_draw_style.html#a6e71002cb9624082d8b091fc76869648',1,'Loot.Api.Graphics.Shader.Style.AroundShaderDrawStyle.offsetStyle()'],['../class_loot_1_1_api_1_1_graphics_1_1_shader_1_1_style_1_1_around_shader_draw_style.html#a2bebdd36fcbe0e1db644c903b8a22487',1,'Loot.Api.Graphics.Shader.Style.AroundShaderDrawStyle.OffsetStyle()']]],
+  ['offx',['offX',['../class_loot_1_1_api_1_1_graphics_1_1_graphics_entity.html#a46e6fc17b252daf3e88ff8e884b6fd13',1,'Loot::Api::Graphics::GraphicsEntity']]],
+  ['offy',['offY',['../class_loot_1_1_api_1_1_graphics_1_1_graphics_entity.html#a6d9c1c4519d6981b9f0d94ee59bda120',1,'Loot::Api::Graphics::GraphicsEntity']]],
   ['onconsumeammo',['OnConsumeAmmo',['../class_loot_1_1_api_1_1_delegators_1_1_modifier_delegator_player.html#a0409a1eac1bc879175cf67656ab93888',1,'Loot.Api.Delegators.ModifierDelegatorPlayer.OnConsumeAmmo()'],['../namespace_loot_1_1_api_1_1_attributes.html#a96f1ebf800712ea4f5265d1e6ae9649da0115a864eb548eca070a70a5b3435f86',1,'Loot.Api.Attributes.OnConsumeAmmo()']]],
   ['onconsumeammoevent',['OnConsumeAmmoEvent',['../class_loot_1_1_api_1_1_delegators_1_1_modifier_delegator_player.html#a438a4a7a4d8f3ea04a5d6c977ace8ae6',1,'Loot::Api::Delegators::ModifierDelegatorPlayer']]],
   ['oncraft',['OnCraft',['../class_loot_1_1_api_1_1_core_1_1_modifier.html#ad306ee360ef3e7cd91e27b1e29607015',1,'Loot.Api.Core.Modifier.OnCraft()'],['../namespace_loot_1_1_api_1_1_core.html#a2fe26ee9cffa16c663ab49599e1949b4a9858a8b8d69b5a5efe42d85db54bb469',1,'Loot.Api.Core.OnCraft()']]],

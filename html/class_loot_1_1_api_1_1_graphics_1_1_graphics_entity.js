@@ -7,6 +7,8 @@ var class_loot_1_1_api_1_1_graphics_1_1_graphics_entity =
     [ "TryUpdatingDrawData", "class_loot_1_1_api_1_1_graphics_1_1_graphics_entity.html#aafa4471df577dc728d9229a595dfe47d", null ],
     [ "DestinationRectangle", "class_loot_1_1_api_1_1_graphics_1_1_graphics_entity.html#ac8b0cb2c2acfba391c7e099fc8c87909", null ],
     [ "DrawData", "class_loot_1_1_api_1_1_graphics_1_1_graphics_entity.html#aef4e6488b930f8bd44379f3850a4abef", null ],
+    [ "offX", "class_loot_1_1_api_1_1_graphics_1_1_graphics_entity.html#a46e6fc17b252daf3e88ff8e884b6fd13", null ],
+    [ "offY", "class_loot_1_1_api_1_1_graphics_1_1_graphics_entity.html#a6d9c1c4519d6981b9f0d94ee59bda120", null ],
     [ "UseDestinationRectangle", "class_loot_1_1_api_1_1_graphics_1_1_graphics_entity.html#af6e6409e2633e577e57b3f71bc7903d2", null ],
     [ "DrawColor", "class_loot_1_1_api_1_1_graphics_1_1_graphics_entity.html#a86a57e826b2e0351e5a40c016e4610a7", null ],
     [ "Entity", "class_loot_1_1_api_1_1_graphics_1_1_graphics_entity.html#a981a4e84ecdace67cedb08d9c9cfcf17", null ],
