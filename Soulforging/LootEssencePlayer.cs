@@ -14,6 +14,8 @@ namespace Loot.Soulforging
 
 		public int GainEssence(int amount)
 		{
+			if (!ModContent.GetInstance<LootEssenceWorld>().SoulforgingUnlocked) return 0;
+
 			var player = Main.LocalPlayer;
 			var gain = amount + BonusEssenceGain;
 			Essence += gain;
@@ -23,6 +25,8 @@ namespace Loot.Soulforging
 
 		public void RecalcTopEssence()
 		{
+			if (!ModContent.GetInstance<LootEssenceWorld>().SoulforgingUnlocked) return;
+
 			var amount = 1000;
 			if (NPC.downedBoss1) amount += 100;
 			if (NPC.downedBoss2) amount += 500;

@@ -10,8 +10,9 @@ namespace Loot.Soulforging
 		{
 			if (item.modItem is MagicalCube cube)
 			{
-				ModContent.GetInstance<LootRecipeWorld>().UnlockCube(cube.item.type);
+				ModContent.GetInstance<LootEssenceWorld>().UnlockCube(cube.item.type);
 			}
+			// TODO if item is soul, unlock soulforging
 		}
 	}
 }
