@@ -26,6 +26,7 @@ namespace Loot.Soulforging
 				var player = Main.LocalPlayer.GetModPlayer<LootEssencePlayer>();
 				tooltips.Insert(i+1, new TooltipLine(mod, "Loot: SoulLantern:BonusEssenceGain", $"You gain {player.BonusEssenceGain} bonus essence every 10 kills."));
 				tooltips.Insert(i+2, new TooltipLine(mod, "Loot: SoulLantern:SoulWeapon", $"You have no soul weapon equipped and have no additional powers."));
+				tooltips.Insert(i+3, new TooltipLine(mod, "Loot: SoulLantern:TotalEssence", $"You have collected {player.Essence} essence."));
 			}
 		}
 	}

@@ -27,14 +27,14 @@ namespace Loot.UI
 		{
 			{GuiTabState.CUBING, new GuiCubingTab()},
 			{GuiTabState.ESSENCE, new GuiEssenceTab()},
-			// {GuiTabState.SOULFORGE, new GuiSoulforgeTab()},
+			{GuiTabState.SOULFORGE, new GuiSoulforgeTab()},
 		};
 
 		internal readonly Dictionary<GuiTabState, GuiTabToggle> _toggles = new Dictionary<GuiTabState, GuiTabToggle>
 		{
 			{GuiTabState.CUBING, new GuiTabToggle(GuiTabState.CUBING)},
 			{GuiTabState.ESSENCE, new GuiTabToggle(GuiTabState.ESSENCE)},
-			// {GuiTabState.SOULFORGE, new GuiTabToggle(GuiTabState.SOULFORGE)}
+			{GuiTabState.SOULFORGE, new GuiTabToggle(GuiTabState.SOULFORGE)}
 		};
 
 		public GuiTab GetCurrentTab()

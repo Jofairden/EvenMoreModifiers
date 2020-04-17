@@ -1,3 +1,4 @@
+using Loot.Soulforging;
 using Loot.UI.Common;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
@@ -81,8 +82,26 @@ namespace Loot.UI.Tabs.Soulforging
 			}
 		}
 
+		public int GetRelativePercentage()
+		{
+			var player = Main.LocalPlayer.GetModPlayer<LootEssencePlayer>();
+			return (int)((float)player.Essence / (float)player.TopEssence * 100f);
+		}
+
+		public GaugeLevel GetGaugeLevel()
+		{
+			var relative = GetRelativePercentage();
+			if (relative <= 0) return GaugeLevel.ZERO;
+			if (relative <= 20) return GaugeLevel.TWENTY;
+			if (relative <= 40) return GaugeLevel.FOURTY;
+			if (relative <= 60) return GaugeLevel.SIXTY;
+			if (relative <= 80) return GaugeLevel.EIGHTY;
+			if (relative <= 100) return GaugeLevel.HUNDRED;
+			return GaugeLevel.ZERO;
+		}
+
 		// TODO this wouldn't be stored here, test for now
-		public GaugeLevel GaugeLevel = GaugeLevel.HUNDRED;
+		public GaugeLevel GaugeLevel => GetGaugeLevel();
 		public Texture2D DrawTexture => GaugeDrawing.GetTextureByLevel(GaugeLevel);
 
 		public override void OnInitialize()
@@ -94,10 +113,11 @@ namespace Loot.UI.Tabs.Soulforging
 
 		protected override void DrawSelf(SpriteBatch spriteBatch)
 		{
+			var player = Main.LocalPlayer.GetModPlayer<LootEssencePlayer>();
 			if (IsMouseHovering)
 			{
 				Main.hoverItemName =
-					$"Soul level: {GaugeText(GaugeLevel)}%";
+					$"Soul level: {GetRelativePercentage()}% (Total essence: {player.Essence})";
 			}
 
 			GaugeDrawing.Update();
