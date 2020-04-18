@@ -40,10 +40,12 @@ var NAVTREEINDEX0 =
 "_copper_cube_8cs_source.html":[3,0,3,1],
 "_crafting_component_button_8cs.html":[3,0,18,1,0,0],
 "_crafting_component_button_8cs_source.html":[3,0,18,1,0,0],
-"_crafting_component_selector_8cs.html":[3,0,18,1,0,1],
-"_crafting_component_selector_8cs_source.html":[3,0,18,1,0,1],
-"_crafting_tab_8cs.html":[3,0,18,1,0,2],
-"_crafting_tab_8cs_source.html":[3,0,18,1,0,2],
+"_crafting_component_link_8cs.html":[3,0,18,1,0,1],
+"_crafting_component_link_8cs_source.html":[3,0,18,1,0,1],
+"_crafting_component_selector_8cs.html":[3,0,18,1,0,2],
+"_crafting_component_selector_8cs_source.html":[3,0,18,1,0,2],
+"_crafting_tab_8cs.html":[3,0,18,1,0,3],
+"_crafting_tab_8cs_source.html":[3,0,18,1,0,3],
 "_crit_damage_plus_8cs.html":[3,0,10,1,1,0],
 "_crit_damage_plus_8cs_source.html":[3,0,10,1,1,0],
 "_crit_plus_8cs.html":[3,0,10,2,2],
@@ -247,7 +249,5 @@ var NAVTREEINDEX0 =
 "_healthy_foes_bonus_8cs.html":[3,0,10,1,1,1],
 "_healthy_foes_bonus_8cs_source.html":[3,0,10,1,1,1],
 "_hell_cube_8cs.html":[3,0,3,3],
-"_hell_cube_8cs_source.html":[3,0,3,3],
-"_i_l_edit_8cs.html":[3,0,7,0],
-"_i_l_edit_8cs_source.html":[3,0,7,0]
+"_hell_cube_8cs_source.html":[3,0,3,3]
 };

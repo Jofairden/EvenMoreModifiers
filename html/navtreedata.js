@@ -35,14 +35,14 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "_accessory_modifier_8cs.html",
-"_i_loadable_content_8cs.html",
-"_velocity_damage_8cs_source.html",
-"class_loot_1_1_api_1_1_core_1_1_modifier_rarity.html#ac7df5b8c0965512f768fe9449ac6dae0",
-"class_loot_1_1_api_1_1_delegators_1_1_modifier_delegator_projectile.html#aaa8f21cd519b5b3153f58de1d0ca99c6",
-"class_loot_1_1_caching_1_1_modifier_cache_player.html#a1311ec18574df7887da8eec70cec250b",
-"class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_defensive_1_1_mana_shield_effect.html#a753d918c75cc473a02d47b8c946103b8",
-"class_loot_1_1_rarities_1_1_transcendent_rarity.html#ad7a43d7257f38a8c805a146ef0058ac4",
-"namespace_loot_1_1_api_1_1_mod_content.html"
+"_i_l_edit_8cs.html",
+"_uses_effect_attribute_8cs_source.html",
+"class_loot_1_1_api_1_1_core_1_1_modifier_rarity.html#aa1b4ab4e19fe49625c3075b314a34895",
+"class_loot_1_1_api_1_1_delegators_1_1_modifier_delegator_projectile.html#a9fe7a8036fa9ada63b264a8f352b823e",
+"class_loot_1_1_caching_1_1_modifier_cache_player.html#a06b8235f1886d9fcfa44f3d490ef138c",
+"class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_defensive_1_1_mana_shield_effect.html",
+"class_loot_1_1_rarities_1_1_transcendent_rarity.html#ac56798b1f670265445cfcd73774df92f",
+"namespace_loot_1_1_api_1_1_graphics.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

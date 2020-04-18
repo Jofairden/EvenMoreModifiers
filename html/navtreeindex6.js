@@ -1,5 +1,7 @@
 var NAVTREEINDEX6 =
 {
+"class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_defensive_1_1_mana_shield_effect.html":[2,0,0,6,1,0,10],
+"class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_defensive_1_1_mana_shield_effect.html#a610e0ddc09e723990f9b6df76445faf5":[2,0,0,6,1,0,10,2],
 "class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_defensive_1_1_mana_shield_effect.html#a753d918c75cc473a02d47b8c946103b8":[2,0,0,6,1,0,10,1],
 "class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_defensive_1_1_mana_shield_effect.html#aff35a70efe867fbb6860693b1ef9a6c3":[2,0,0,6,1,0,10,0],
 "class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_defensive_1_1_percent_def_boost_effect.html":[2,0,0,6,1,0,11],
@@ -247,7 +249,5 @@ var NAVTREEINDEX6 =
 "class_loot_1_1_rarities_1_1_transcendent_rarity.html#a855d52d244677a9d5f80d75a300076c2":[2,0,0,8,4,0],
 "class_loot_1_1_rarities_1_1_transcendent_rarity.html#a8cf9ad827ed9a913f42ca95bb230f472":[2,0,0,8,4,3],
 "class_loot_1_1_rarities_1_1_transcendent_rarity.html#a8dbb35b100a3a9f4e73190728df87668":[2,0,0,8,4,2],
-"class_loot_1_1_rarities_1_1_transcendent_rarity.html#ab3e203e33c70a5a8833a79fea1da782d":[2,0,0,8,4,1],
-"class_loot_1_1_rarities_1_1_transcendent_rarity.html#ac56798b1f670265445cfcd73774df92f":[2,0,0,8,4,7],
-"class_loot_1_1_rarities_1_1_transcendent_rarity.html#acbad8a00a821c7cf4e18e330cf7c5268":[2,0,0,8,4,6]
+"class_loot_1_1_rarities_1_1_transcendent_rarity.html#ab3e203e33c70a5a8833a79fea1da782d":[2,0,0,8,4,1]
 };

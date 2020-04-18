@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['modifiercontextmethod',['ModifierContextMethod',['../namespace_loot_1_1_api_1_1_core.html#a2fe26ee9cffa16c663ab49599e1949b4',1,'Loot::Api::Core']]]
+  ['essencetier',['EssenceTier',['../namespace_loot_1_1_essences.html#ac9b296a1b5ad55972d15c1f8550de14b',1,'Loot::Essences']]]
 ];

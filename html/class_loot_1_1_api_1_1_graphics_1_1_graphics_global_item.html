@@ -412,7 +412,7 @@ Properties</h2></td></tr>
 
 <p>References <a class="el" href="_graphics_global_item_8cs_source.html#l00019">Loot.Api.Graphics.GraphicsGlobalItem.ShaderEntities</a>.</p>
 
-<p>Referenced by <a class="el" href="_rolling_strategy_8cs_source.html#l00029">Loot.Api.Strategy.RollingStrategy.GetRandomList()</a>, and <a class="el" href="_loot_mod_item_8cs_source.html#l00174">Loot.LootModItem.Load()</a>.</p>
+<p>Referenced by <a class="el" href="_rolling_strategy_8cs_source.html#l00027">Loot.Api.Strategy.RollingStrategy.GetRandomList()</a>, and <a class="el" href="_loot_mod_item_8cs_source.html#l00174">Loot.LootModItem.Load()</a>.</p>
 <div class="fragment"><div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        {</div><div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;            var info = item.GetGlobalItem&lt;GraphicsGlobalItem&gt;();</div><div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;            info.ShaderEntities = modifiers.Select(mod =&gt; mod.GetShaderEntity(item)).OrderBy(mod =&gt; mod?.Order ?? 0).ToList();</div><div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;            info.GlowmaskEntities = modifiers.Select(mod =&gt; mod.GetGlowmaskEntity(item)).OrderBy(mod =&gt; mod?.Order ?? 0).ToList();</div><div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;            var clone = item.Clone();</div><div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;            info.ShaderEntities.ForEach(mod =&gt; mod?.SetIdentity(clone));</div><div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;            info.GlowmaskEntities.ForEach(mod =&gt; mod?.SetIdentity(clone));</div><div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        }</div></div><!-- fragment -->
 <p><div id="dynsection-3" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-3-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
@@ -588,7 +588,7 @@ Properties</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespace_loot.html">Loot</a></li><li class="navelem"><a class="el" href="namespace_loot_1_1_api.html">Api</a></li><li class="navelem"><a class="el" href="namespace_loot_1_1_api_1_1_graphics.html">Graphics</a></li><li class="navelem"><a class="el" href="class_loot_1_1_api_1_1_graphics_1_1_graphics_global_item.html">GraphicsGlobalItem</a></li>
-    <li class="footer">Generated on Sat Apr 18 2020 11:23:29 for Even More Modifiers by
+    <li class="footer">Generated on Sat Apr 18 2020 16:25:57 for Even More Modifiers by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.11 </li>
   </ul>

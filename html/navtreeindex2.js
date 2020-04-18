@@ -1,5 +1,7 @@
 var NAVTREEINDEX2 =
 {
+"_uses_effect_attribute_8cs_source.html":[3,0,0,0,7],
+"_velocity_damage_8cs.html":[3,0,10,2,12],
 "_velocity_damage_8cs_source.html":[3,0,10,2,12],
 "_velocity_plus_8cs.html":[3,0,10,2,13],
 "_velocity_plus_8cs_source.html":[3,0,10,2,13],
@@ -247,7 +249,5 @@ var NAVTREEINDEX2 =
 "class_loot_1_1_api_1_1_core_1_1_modifier_rarity.html#a879378a8b210e059c90a431ce694dd5d":[2,0,0,0,3,6,14],
 "class_loot_1_1_api_1_1_core_1_1_modifier_rarity.html#a8a79dc4948871f6b8ee2357bc192b168":[2,0,0,0,3,6,1],
 "class_loot_1_1_api_1_1_core_1_1_modifier_rarity.html#a9064e08ec10d232a82d09298d7eac8f6":[2,0,0,0,3,6,17],
-"class_loot_1_1_api_1_1_core_1_1_modifier_rarity.html#a9eab32853154fe47dc7e76f5f11f1dd7":[2,0,0,0,3,6,16],
-"class_loot_1_1_api_1_1_core_1_1_modifier_rarity.html#aa1b4ab4e19fe49625c3075b314a34895":[2,0,0,0,3,6,4],
-"class_loot_1_1_api_1_1_core_1_1_modifier_rarity.html#ab54f5856bcc956fc7da3308feed166fd":[2,0,0,0,3,6,20]
+"class_loot_1_1_api_1_1_core_1_1_modifier_rarity.html#a9eab32853154fe47dc7e76f5f11f1dd7":[2,0,0,0,3,6,16]
 };

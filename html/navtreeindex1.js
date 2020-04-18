@@ -1,5 +1,7 @@
 var NAVTREEINDEX1 =
 {
+"_i_l_edit_8cs.html":[3,0,7,0],
+"_i_l_edit_8cs_source.html":[3,0,7,0],
 "_i_loadable_content_8cs.html":[3,0,0,2,0],
 "_i_loadable_content_8cs_source.html":[3,0,0,2,0],
 "_i_loadable_content_setter_8cs.html":[3,0,0,2,1],
@@ -247,7 +249,5 @@ var NAVTREEINDEX1 =
 "_transcendent_rarity_8cs_source.html":[3,0,13,4],
 "_u_i_sounds_8cs.html":[3,0,16,0,0],
 "_u_i_sounds_8cs_source.html":[3,0,16,0,0],
-"_uses_effect_attribute_8cs.html":[3,0,0,0,7],
-"_uses_effect_attribute_8cs_source.html":[3,0,0,0,7],
-"_velocity_damage_8cs.html":[3,0,10,2,12]
+"_uses_effect_attribute_8cs.html":[3,0,0,0,7]
 };

@@ -170,7 +170,7 @@ Private Attributes</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock">
-<p>Definition at line <a class="el" href="_loot_8cs_source.html#l00026">26</a> of file <a class="el" href="_loot_8cs_source.html">Loot.cs</a>.</p>
+<p>Definition at line <a class="el" href="_loot_8cs_source.html#l00025">25</a> of file <a class="el" href="_loot_8cs_source.html">Loot.cs</a>.</p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
 <a class="anchor" id="a52ae642436e92b43a15d0a0ebbb9b25f"></a>
 <div class="memitem">
@@ -185,10 +185,10 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_loot_8cs_source.html#l00037">37</a> of file <a class="el" href="_loot_8cs_source.html">Loot.cs</a>.</p>
+<p>Definition at line <a class="el" href="_loot_8cs_source.html#l00036">36</a> of file <a class="el" href="_loot_8cs_source.html">Loot.cs</a>.</p>
 
 <p>Referenced by <a class="el" href="_tests_8cs_source.html#l00040">LootTests.UnitTests.LogEMMLoaderEntries()</a>.</p>
-<div class="fragment"><div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        {</div><div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;            Instance = <span class="keyword">this</span>;</div><div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;            LoadingFunneler.<a class="code" href="class_loot_1_1_loot.html#a52ae642436e92b43a15d0a0ebbb9b25f">Load</a>();</div><div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        }</div><div class="ttc" id="class_loot_1_1_loot_html_a52ae642436e92b43a15d0a0ebbb9b25f"><div class="ttname"><a href="class_loot_1_1_loot.html#a52ae642436e92b43a15d0a0ebbb9b25f">Loot.Loot.Load</a></div><div class="ttdeci">override void Load()</div><div class="ttdef"><b>Definition:</b> <a href="_loot_8cs_source.html#l00037">Loot.cs:37</a></div></div>
+<div class="fragment"><div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        {</div><div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;            Instance = <span class="keyword">this</span>;</div><div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;            LoadingFunneler.<a class="code" href="class_loot_1_1_loot.html#a52ae642436e92b43a15d0a0ebbb9b25f">Load</a>();</div><div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        }</div><div class="ttc" id="class_loot_1_1_loot_html_a52ae642436e92b43a15d0a0ebbb9b25f"><div class="ttname"><a href="class_loot_1_1_loot.html#a52ae642436e92b43a15d0a0ebbb9b25f">Loot.Loot.Load</a></div><div class="ttdeci">override void Load()</div><div class="ttdef"><b>Definition:</b> <a href="_loot_8cs_source.html#l00036">Loot.cs:36</a></div></div>
 </div><!-- fragment -->
 <p><div id="dynsection-2" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-2-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
@@ -218,8 +218,8 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_loot_8cs_source.html#l00073">73</a> of file <a class="el" href="_loot_8cs_source.html">Loot.cs</a>.</p>
-<div class="fragment"><div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;        {</div><div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;            <span class="keywordtype">int</span> mouseTextIndex = layers.FindIndex(layer =&gt; layer.Name.Equals(<span class="stringliteral">&quot;Vanilla: Mouse Text&quot;</span>));</div><div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;            <span class="keywordflow">if</span> (mouseTextIndex != -1)</div><div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;            {</div><div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;                layers.Insert(mouseTextIndex, <span class="keyword">new</span> LegacyGameInterfaceLayer(</div><div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;                    <span class="stringliteral">&quot;Loot: GuiInterface&quot;</span>,</div><div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;                    delegate</div><div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;                    {</div><div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;                        <span class="keywordflow">if</span> (GuiInterface?.CurrentState is VisibilityUI visibilityUi</div><div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;                            &amp;&amp; visibilityUi.Visible &amp;&amp; <a class="code" href="class_loot_1_1_loot.html#a8706bf929344678026f2bb45e3d52a56">_lastUpdateUiGameTime</a> != null)</div><div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;                        {</div><div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;                            GuiInterface.Draw(Main.spriteBatch, _lastUpdateUiGameTime);</div><div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;                        }</div><div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;                        <span class="keywordflow">return</span> <span class="keyword">true</span>;</div><div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;                    },</div><div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;                    InterfaceScaleType.UI));</div><div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;            }</div><div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;        }</div><div class="ttc" id="class_loot_1_1_loot_html_a8706bf929344678026f2bb45e3d52a56"><div class="ttname"><a href="class_loot_1_1_loot.html#a8706bf929344678026f2bb45e3d52a56">Loot.Loot._lastUpdateUiGameTime</a></div><div class="ttdeci">GameTime _lastUpdateUiGameTime</div><div class="ttdef"><b>Definition:</b> <a href="_loot_8cs_source.html#l00062">Loot.cs:62</a></div></div>
+<p>Definition at line <a class="el" href="_loot_8cs_source.html#l00072">72</a> of file <a class="el" href="_loot_8cs_source.html">Loot.cs</a>.</p>
+<div class="fragment"><div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;        {</div><div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;            <span class="keywordtype">int</span> mouseTextIndex = layers.FindIndex(layer =&gt; layer.Name.Equals(<span class="stringliteral">&quot;Vanilla: Mouse Text&quot;</span>));</div><div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;            <span class="keywordflow">if</span> (mouseTextIndex != -1)</div><div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;            {</div><div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;                layers.Insert(mouseTextIndex, <span class="keyword">new</span> LegacyGameInterfaceLayer(</div><div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;                    <span class="stringliteral">&quot;Loot: GuiInterface&quot;</span>,</div><div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;                    delegate</div><div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;                    {</div><div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;                        <span class="keywordflow">if</span> (GuiInterface?.CurrentState is VisibilityUI visibilityUi</div><div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;                            &amp;&amp; visibilityUi.Visible &amp;&amp; <a class="code" href="class_loot_1_1_loot.html#a8706bf929344678026f2bb45e3d52a56">_lastUpdateUiGameTime</a> != null)</div><div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;                        {</div><div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;                            GuiInterface.Draw(Main.spriteBatch, _lastUpdateUiGameTime);</div><div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;                        }</div><div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;                        <span class="keywordflow">return</span> <span class="keyword">true</span>;</div><div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;                    },</div><div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;                    InterfaceScaleType.UI));</div><div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;            }</div><div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;        }</div><div class="ttc" id="class_loot_1_1_loot_html_a8706bf929344678026f2bb45e3d52a56"><div class="ttname"><a href="class_loot_1_1_loot.html#a8706bf929344678026f2bb45e3d52a56">Loot.Loot._lastUpdateUiGameTime</a></div><div class="ttdeci">GameTime _lastUpdateUiGameTime</div><div class="ttdef"><b>Definition:</b> <a href="_loot_8cs_source.html#l00061">Loot.cs:61</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -236,8 +236,8 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_loot_8cs_source.html#l00043">43</a> of file <a class="el" href="_loot_8cs_source.html">Loot.cs</a>.</p>
-<div class="fragment"><div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        {</div><div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;            LoadingFunneler.PostLoad();</div><div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        }</div></div><!-- fragment -->
+<p>Definition at line <a class="el" href="_loot_8cs_source.html#l00042">42</a> of file <a class="el" href="_loot_8cs_source.html">Loot.cs</a>.</p>
+<div class="fragment"><div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        {</div><div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;            LoadingFunneler.PostLoad();</div><div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        }</div></div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="a6d4f9879de408582ce87061a1e21dcc2"></a>
@@ -253,8 +253,8 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_loot_8cs_source.html#l00054">54</a> of file <a class="el" href="_loot_8cs_source.html">Loot.cs</a>.</p>
-<div class="fragment"><div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        {</div><div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;            <span class="keywordflow">if</span> (GuiState.Visible)</div><div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;            {</div><div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;                GuiState.ToggleUI(GuiInterface);</div><div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;            }</div><div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;        }</div></div><!-- fragment -->
+<p>Definition at line <a class="el" href="_loot_8cs_source.html#l00053">53</a> of file <a class="el" href="_loot_8cs_source.html">Loot.cs</a>.</p>
+<div class="fragment"><div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        {</div><div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;            <span class="keywordflow">if</span> (GuiState.Visible)</div><div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;            {</div><div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;                GuiState.ToggleUI(GuiInterface);</div><div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;            }</div><div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;        }</div></div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="a583d8d3d69bdd106d25030c5309e37bc"></a>
@@ -270,8 +270,8 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_loot_8cs_source.html#l00048">48</a> of file <a class="el" href="_loot_8cs_source.html">Loot.cs</a>.</p>
-<div class="fragment"><div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        {</div><div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;            LoadingFunneler.Unload();</div><div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;            Instance = null;</div><div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        }</div></div><!-- fragment -->
+<p>Definition at line <a class="el" href="_loot_8cs_source.html#l00047">47</a> of file <a class="el" href="_loot_8cs_source.html">Loot.cs</a>.</p>
+<div class="fragment"><div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        {</div><div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;            LoadingFunneler.Unload();</div><div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;            Instance = null;</div><div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;        }</div></div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="a7f296a7c4a011faca07302cf350881ef"></a>
@@ -288,8 +288,8 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_loot_8cs_source.html#l00064">64</a> of file <a class="el" href="_loot_8cs_source.html">Loot.cs</a>.</p>
-<div class="fragment"><div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;        {</div><div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;            <a class="code" href="class_loot_1_1_loot.html#a8706bf929344678026f2bb45e3d52a56">_lastUpdateUiGameTime</a> = gameTime;</div><div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;            <span class="keywordflow">if</span> (GuiInterface?.CurrentState != null)</div><div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;            {</div><div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;                GuiInterface.Update(gameTime);</div><div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;            }</div><div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;        }</div><div class="ttc" id="class_loot_1_1_loot_html_a8706bf929344678026f2bb45e3d52a56"><div class="ttname"><a href="class_loot_1_1_loot.html#a8706bf929344678026f2bb45e3d52a56">Loot.Loot._lastUpdateUiGameTime</a></div><div class="ttdeci">GameTime _lastUpdateUiGameTime</div><div class="ttdef"><b>Definition:</b> <a href="_loot_8cs_source.html#l00062">Loot.cs:62</a></div></div>
+<p>Definition at line <a class="el" href="_loot_8cs_source.html#l00063">63</a> of file <a class="el" href="_loot_8cs_source.html">Loot.cs</a>.</p>
+<div class="fragment"><div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;        {</div><div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;            <a class="code" href="class_loot_1_1_loot.html#a8706bf929344678026f2bb45e3d52a56">_lastUpdateUiGameTime</a> = gameTime;</div><div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;            <span class="keywordflow">if</span> (GuiInterface?.CurrentState != null)</div><div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;            {</div><div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;                GuiInterface.Update(gameTime);</div><div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;            }</div><div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;        }</div><div class="ttc" id="class_loot_1_1_loot_html_a8706bf929344678026f2bb45e3d52a56"><div class="ttname"><a href="class_loot_1_1_loot.html#a8706bf929344678026f2bb45e3d52a56">Loot.Loot._lastUpdateUiGameTime</a></div><div class="ttdeci">GameTime _lastUpdateUiGameTime</div><div class="ttdef"><b>Definition:</b> <a href="_loot_8cs_source.html#l00061">Loot.cs:61</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -312,7 +312,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_loot_8cs_source.html#l00062">62</a> of file <a class="el" href="_loot_8cs_source.html">Loot.cs</a>.</p>
+<p>Definition at line <a class="el" href="_loot_8cs_source.html#l00061">61</a> of file <a class="el" href="_loot_8cs_source.html">Loot.cs</a>.</p>
 
 </div>
 </div>
@@ -334,7 +334,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_loot_8cs_source.html#l00035">35</a> of file <a class="el" href="_loot_8cs_source.html">Loot.cs</a>.</p>
+<p>Definition at line <a class="el" href="_loot_8cs_source.html#l00034">34</a> of file <a class="el" href="_loot_8cs_source.html">Loot.cs</a>.</p>
 
 </div>
 </div>
@@ -344,7 +344,7 @@ Private Attributes</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespace_loot.html">Loot</a></li><li class="navelem"><a class="el" href="class_loot_1_1_loot.html">Loot</a></li>
-    <li class="footer">Generated on Sat Apr 18 2020 11:23:28 for Even More Modifiers by
+    <li class="footer">Generated on Sat Apr 18 2020 16:25:57 for Even More Modifiers by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.11 </li>
   </ul>
