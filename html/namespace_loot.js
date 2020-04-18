@@ -10,6 +10,7 @@ var namespace_loot =
     [ "Pools", "namespace_loot_1_1_pools.html", "namespace_loot_1_1_pools" ],
     [ "Rarities", "namespace_loot_1_1_rarities.html", "namespace_loot_1_1_rarities" ],
     [ "RollingStrategies", "namespace_loot_1_1_rolling_strategies.html", "namespace_loot_1_1_rolling_strategies" ],
+    [ "Soulforging", "namespace_loot_1_1_soulforging.html", "namespace_loot_1_1_soulforging" ],
     [ "Sounds", "namespace_loot_1_1_sounds.html", "namespace_loot_1_1_sounds" ],
     [ "UI", "namespace_loot_1_1_u_i.html", "namespace_loot_1_1_u_i" ],
     [ "Loot", "class_loot_1_1_loot.html", "class_loot_1_1_loot" ],

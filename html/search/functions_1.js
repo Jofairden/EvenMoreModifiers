@@ -1,6 +1,7 @@
 var searchData=
 [
   ['acceptsitem',['AcceptsItem',['../interface_loot_1_1_u_i_1_1_tabs_1_1_crafting_tab_1_1_i_crafting_tab.html#af94027944282c04354f815269623ca77',1,'Loot::UI::Tabs::CraftingTab::ICraftingTab']]],
+  ['action',['Action',['../class_loot_1_1_soulforging_1_1_essence_command.html#a7d5ed0cd3b72e4ca1890d80c2dbc46b2',1,'Loot::Soulforging::EssenceCommand']]],
   ['addattachitem',['AddAttachItem',['../class_loot_1_1_caching_1_1_modifier_cache_player.html#a4b83315309f67249c30ed1ec14f0c8ed',1,'Loot::Caching::ModifierCachePlayer']]],
   ['addcontent',['AddContent',['../class_loot_1_1_api_1_1_mod_content_1_1_mod_content_manager.html#ae5ef267a4e66d49f60c30421ac953f26',1,'Loot::Api::ModContent::ModContentManager']]],
   ['adddetachitem',['AddDetachItem',['../class_loot_1_1_caching_1_1_modifier_cache_player.html#aceb2cf61924cc7a73c58c8a3c317b48e',1,'Loot::Caching::ModifierCachePlayer']]],

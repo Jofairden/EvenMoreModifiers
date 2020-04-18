@@ -157,6 +157,9 @@ var hierarchy =
       [ "LootTests.EmptyModLoadShell", "class_loot_tests_1_1_empty_mod_load_shell.html", null ],
       [ "LootTests.FakeMod", "class_loot_tests_1_1_fake_mod.html", null ]
     ] ],
+    [ "ModCommand", null, [
+      [ "Loot.Soulforging.EssenceCommand", "class_loot_1_1_soulforging_1_1_essence_command.html", null ]
+    ] ],
     [ "Loot.Api.ModContent.ModContentManager", "class_loot_1_1_api_1_1_mod_content_1_1_mod_content_manager.html", null ],
     [ "Modifier", "class_modifier.html", [
       [ "LootTests.TestModifiers.TestApplyMod", "class_loot_tests_1_1_test_modifiers_1_1_test_apply_mod.html", null ]

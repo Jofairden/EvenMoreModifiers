@@ -157,6 +157,8 @@ var NAVTREEINDEX0 =
 "_epic_rarity_8cs_source.html":[3,0,13,1],
 "_equip_modifier_8cs.html":[3,0,10,0,2],
 "_equip_modifier_8cs_source.html":[3,0,10,0,2],
+"_essence_command_8cs.html":[3,0,15,0],
+"_essence_command_8cs_source.html":[3,0,15,0],
 "_essence_item_8cs.html":[3,0,4,3],
 "_essence_item_8cs.html#ac9b296a1b5ad55972d15c1f8550de14b":[3,0,4,3,1],
 "_essence_item_8cs.html#ac9b296a1b5ad55972d15c1f8550de14ba51ac4581fa82be87a28f7c080e026ae6":[3,0,4,3,1,2],
@@ -247,7 +249,5 @@ var NAVTREEINDEX0 =
 "_health_plus_8cs.html":[3,0,10,1,0,1],
 "_health_plus_8cs_source.html":[3,0,10,1,0,1],
 "_healthy_foes_bonus_8cs.html":[3,0,10,1,1,1],
-"_healthy_foes_bonus_8cs_source.html":[3,0,10,1,1,1],
-"_hell_cube_8cs.html":[3,0,3,3],
-"_hell_cube_8cs_source.html":[3,0,3,3]
+"_healthy_foes_bonus_8cs_source.html":[3,0,10,1,1,1]
 };

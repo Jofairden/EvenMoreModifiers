@@ -83,7 +83,7 @@ var searchData=
   ['getweaponknockbackevent',['GetWeaponKnockbackEvent',['../class_loot_1_1_api_1_1_delegators_1_1_modifier_delegator_player.html#a4c44fac7bc914801b1df4a285e1c1fe3',1,'Loot::Api::Delegators::ModifierDelegatorPlayer']]],
   ['getweaponknockbackeventraiser',['GetWeaponKnockbackEventRaiser',['../class_loot_1_1_api_1_1_delegators_1_1_modifier_delegator_player.html#a025cc5d43eab7892aafdf9e4d9945d27',1,'Loot::Api::Delegators::ModifierDelegatorPlayer']]],
   ['getweightedpool',['GetWeightedPool',['../class_loot_1_1_api_1_1_mechanism_1_1_modifier_pool_mechanism.html#a299b0f47323a7965a018999a42f6bb80',1,'Loot::Api::Mechanism::ModifierPoolMechanism']]],
-  ['givebackslotteditem',['GiveBackSlottedItem',['../interface_loot_1_1_u_i_1_1_tabs_1_1_crafting_tab_1_1_i_crafting_tab.html#a88329c4312d907f28e2d9bdd3871ad53',1,'Loot::UI::Tabs::CraftingTab::ICraftingTab']]],
+  ['givebackitems',['GiveBackItems',['../interface_loot_1_1_u_i_1_1_tabs_1_1_crafting_tab_1_1_i_crafting_tab.html#a1a79abf5f7ce677db1de77f32299d081',1,'Loot::UI::Tabs::CraftingTab::ICraftingTab']]],
   ['globalitem',['GlobalItem',['../class_global_item.html',1,'']]],
   ['globalnpc',['GlobalNPC',['../class_global_n_p_c.html',1,'']]],
   ['globalprojectile',['GlobalProjectile',['../class_global_projectile.html',1,'']]],

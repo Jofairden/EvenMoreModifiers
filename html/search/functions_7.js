@@ -75,7 +75,7 @@ var searchData=
   ['getweaponknockback',['GetWeaponKnockback',['../class_loot_1_1_api_1_1_delegators_1_1_modifier_delegator_player.html#ac27141a4ab3b9d48eccba6d0b523b667',1,'Loot.Api.Delegators.ModifierDelegatorPlayer.GetWeaponKnockback()'],['../class_loot_1_1_modifiers_1_1_weapon_modifiers_1_1_knockback_plus.html#ae48ee8465a88687760f649a0eff292aa',1,'Loot.Modifiers.WeaponModifiers.KnockbackPlus.GetWeaponKnockback()']]],
   ['getweaponknockbackeventraiser',['GetWeaponKnockbackEventRaiser',['../class_loot_1_1_api_1_1_delegators_1_1_modifier_delegator_player.html#a025cc5d43eab7892aafdf9e4d9945d27',1,'Loot::Api::Delegators::ModifierDelegatorPlayer']]],
   ['getweightedpool',['GetWeightedPool',['../class_loot_1_1_api_1_1_mechanism_1_1_modifier_pool_mechanism.html#a299b0f47323a7965a018999a42f6bb80',1,'Loot::Api::Mechanism::ModifierPoolMechanism']]],
-  ['givebackslotteditem',['GiveBackSlottedItem',['../interface_loot_1_1_u_i_1_1_tabs_1_1_crafting_tab_1_1_i_crafting_tab.html#a88329c4312d907f28e2d9bdd3871ad53',1,'Loot::UI::Tabs::CraftingTab::ICraftingTab']]],
+  ['givebackitems',['GiveBackItems',['../interface_loot_1_1_u_i_1_1_tabs_1_1_crafting_tab_1_1_i_crafting_tab.html#a1a79abf5f7ce677db1de77f32299d081',1,'Loot::UI::Tabs::CraftingTab::ICraftingTab']]],
   ['glowmaskentity',['GlowmaskEntity',['../class_loot_1_1_api_1_1_graphics_1_1_glowmask_1_1_glowmask_entity.html#a0af9b7b3d361cb5daf23db909dffd4c6',1,'Loot::Api::Graphics::Glowmask::GlowmaskEntity']]],
   ['graphicsentity',['GraphicsEntity',['../class_loot_1_1_api_1_1_graphics_1_1_graphics_entity.html#af7b2d2fb29c15ad8b50c367220c222b1',1,'Loot::Api::Graphics::GraphicsEntity']]]
 ];

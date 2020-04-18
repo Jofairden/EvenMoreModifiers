@@ -1,5 +1,7 @@
 var NAVTREEINDEX4 =
 {
+"class_loot_1_1_api_1_1_delegators_1_1_modifier_delegator_projectile.html#a8bdbcca6449eb7b88be9d75862e3742c":[2,0,0,0,5,1,20],
+"class_loot_1_1_api_1_1_delegators_1_1_modifier_delegator_projectile.html#a99c0dfb74203b973a4f369a4cab41b8f":[2,0,0,0,5,1,3],
 "class_loot_1_1_api_1_1_delegators_1_1_modifier_delegator_projectile.html#a9fe7a8036fa9ada63b264a8f352b823e":[2,0,0,0,5,1,8],
 "class_loot_1_1_api_1_1_delegators_1_1_modifier_delegator_projectile.html#aa6ab364c916537cef43c5d79fbdaa7d9":[2,0,0,0,5,1,15],
 "class_loot_1_1_api_1_1_delegators_1_1_modifier_delegator_projectile.html#aaa8f21cd519b5b3153f58de1d0ca99c6":[2,0,0,0,5,1,9],
@@ -247,7 +249,5 @@ var NAVTREEINDEX4 =
 "class_loot_1_1_api_1_1_strategy_1_1_rolling_strategy_properties.html#aa43f45c9e2bc35203bbeee82d0ae4a90":[2,0,0,0,11,1,13],
 "class_loot_1_1_api_1_1_strategy_1_1_rolling_strategy_properties.html#aa81e20d835b33b238a566ec8379dcd52":[2,0,0,0,11,1,9],
 "class_loot_1_1_api_1_1_strategy_1_1_rolling_strategy_properties.html#aaafb16812e18b640529b326da4ab168b":[2,0,0,0,11,1,1],
-"class_loot_1_1_api_1_1_strategy_1_1_rolling_strategy_properties.html#abcc5efcf51877b8ed5661d9832790c56":[2,0,0,0,11,1,2],
-"class_loot_1_1_api_1_1_strategy_1_1_rolling_strategy_properties.html#ad862266f4f0f5cc4a8b4a83d5e5a52c0":[2,0,0,0,11,1,12],
-"class_loot_1_1_caching_1_1_modifier_cache_player.html":[2,0,0,1,0]
+"class_loot_1_1_api_1_1_strategy_1_1_rolling_strategy_properties.html#abcc5efcf51877b8ed5661d9832790c56":[2,0,0,0,11,1,2]
 };

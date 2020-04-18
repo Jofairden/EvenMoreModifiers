@@ -1,5 +1,7 @@
 var NAVTREEINDEX3 =
 {
+"class_loot_1_1_api_1_1_core_1_1_modifier_rarity.html#a9064e08ec10d232a82d09298d7eac8f6":[2,0,0,0,3,6,17],
+"class_loot_1_1_api_1_1_core_1_1_modifier_rarity.html#a9eab32853154fe47dc7e76f5f11f1dd7":[2,0,0,0,3,6,16],
 "class_loot_1_1_api_1_1_core_1_1_modifier_rarity.html#aa1b4ab4e19fe49625c3075b314a34895":[2,0,0,0,3,6,4],
 "class_loot_1_1_api_1_1_core_1_1_modifier_rarity.html#ab54f5856bcc956fc7da3308feed166fd":[2,0,0,0,3,6,20],
 "class_loot_1_1_api_1_1_core_1_1_modifier_rarity.html#ac7df5b8c0965512f768fe9449ac6dae0":[2,0,0,0,3,6,10],
@@ -247,7 +249,5 @@ var NAVTREEINDEX3 =
 "class_loot_1_1_api_1_1_delegators_1_1_modifier_delegator_projectile.html#a54bcd9384b9ee04c9da7f36ceeb21789":[2,0,0,0,5,1,12],
 "class_loot_1_1_api_1_1_delegators_1_1_modifier_delegator_projectile.html#a5b9be04fda8a8f61a7e14b21f0999379":[2,0,0,0,5,1,11],
 "class_loot_1_1_api_1_1_delegators_1_1_modifier_delegator_projectile.html#a6f85f01c83f566945e4eb00494e06ba5":[2,0,0,0,5,1,14],
-"class_loot_1_1_api_1_1_delegators_1_1_modifier_delegator_projectile.html#a75c21ff4ea8b8009e44d6828148662b2":[2,0,0,0,5,1,7],
-"class_loot_1_1_api_1_1_delegators_1_1_modifier_delegator_projectile.html#a8bdbcca6449eb7b88be9d75862e3742c":[2,0,0,0,5,1,20],
-"class_loot_1_1_api_1_1_delegators_1_1_modifier_delegator_projectile.html#a99c0dfb74203b973a4f369a4cab41b8f":[2,0,0,0,5,1,3]
+"class_loot_1_1_api_1_1_delegators_1_1_modifier_delegator_projectile.html#a75c21ff4ea8b8009e44d6828148662b2":[2,0,0,0,5,1,7]
 };
