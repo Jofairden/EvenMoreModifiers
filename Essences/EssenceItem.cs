@@ -1,4 +1,3 @@
-using System;
 using Loot.Api.Ext;
 using Loot.Api.Strategy;
 using Terraria;

@@ -1,7 +1,6 @@
 using Loot.UI.Common.Controls.Button;
 using Microsoft.Xna.Framework.Graphics;
 using Terraria;
-using Terraria.UI;
 
 namespace Loot.UI.Tabs.Soulforging
 {

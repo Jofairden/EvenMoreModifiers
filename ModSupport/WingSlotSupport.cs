@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using Loot.Api.Cubes;
 using Loot.UI;
 using Loot.UI.Tabs.CraftingTab;
-using Loot.UI.Tabs.Cubing;
 using Microsoft.Xna.Framework.Input;
 using Terraria;
 using Terraria.GameInput;

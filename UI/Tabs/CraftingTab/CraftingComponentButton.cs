@@ -1,7 +1,5 @@
-using Loot.Api.Ext;
 using Loot.Api.Strategy;
 using Loot.UI.Common.Controls.Button;
-using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Terraria;
 using Terraria.UI;
@@ -14,6 +12,8 @@ namespace Loot.UI.Tabs.CraftingTab
 	 */
 	internal abstract class CraftingComponentButton : GuiInteractableItemButton
 	{
+		public CraftingComponentLink Link;
+
 		internal CraftingComponentButton(ButtonType buttonType, int netId = 0, int stack = 0, Texture2D hintTexture = null, string hintText = null, string hintOnHover = null) : base(buttonType, netId, stack, hintTexture, hintText, hintOnHover)
 		{
 			RightClickFunctionalityEnabled = false;
@@ -25,29 +25,36 @@ namespace Loot.UI.Tabs.CraftingTab
 
 		public override void PostOnClick(UIMouseEvent evt, UIElement e)
 		{
-			if (Item.IsAir)
-			{
-				return;
-			}
 
-			RecalculateStack();
 		}
 
 		public override void ChangeItem(int type, Item item = null)
 		{
-			base.ChangeItem(type, item);
-			RecalculateStack();
+			if (item != null)
+			{
+				SetLink(new CraftingComponentLink(item, CraftingComponentLink.ComponentSource.Dynamic));
+			}
+			else
+			{
+				var component = new Item();
+				component.SetDefaults(type);
+				SetLink(new CraftingComponentLink(component, CraftingComponentLink.ComponentSource.Dynamic));
+			}
 		}
 
-		public void RecalculateStack()
+		public void SetLink(CraftingComponentLink link)
 		{
-			Item.stack = Main.LocalPlayer.inventory.CountItemStack(Item.type, true);
-			Item.stack = (int)MathHelper.Clamp(Item.stack, 0f, 999f);
-			if (Item.stack <= 0)
+			if (link == null)
 			{
 				Item.TurnToAir();
-				OnItemChange?.Invoke(Item);
+				Link = null;
 			}
+			else
+			{
+				Link = link;
+				Item = Link.Component.Clone();
+			}
+			OnItemChange?.Invoke(Item);
 		}
 	}
 }

@@ -1,6 +1,5 @@
 using System.Collections.Generic;
 using System.Linq;
-using Loot.Sounds;
 using Loot.UI.Common.Core;
 using Loot.UI.Tabs.Cubing;
 using Loot.UI.Tabs.EssenceCrafting;

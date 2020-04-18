@@ -23,13 +23,16 @@ namespace Loot.UI.Tabs.CraftingTab
 	{
 		public virtual string NotFoundString() => "No components found in inventory";
 		public virtual int ComponentsPerPage() => 5;
-		public Func<int, bool> OnComponentClick;
 
-		private readonly Dictionary<int, int> _availability = new Dictionary<int, int>();
 		private readonly List<UIElement> _components = new List<UIElement>();
 		private readonly GuiArrowButton _arrowLeft;
 		private readonly GuiArrowButton _arrowRight;
 		private GuiItemButton _lastSelected;
+
+		internal List<CraftingComponentLink> ComponentLinks = new List<CraftingComponentLink>();
+		internal Func<Item, IEnumerable<CraftingComponentLink>> FindComponents;
+		internal Func<CraftingComponentLink, Item, bool> VerifyComponent;
+		internal Func<CraftingComponentLink, bool> OnComponentClick;
 
 		private int _maxOffset;
 		private int _currentOffset;
@@ -38,6 +41,9 @@ namespace Loot.UI.Tabs.CraftingTab
 		{
 			_arrowLeft = new GuiArrowButton(GuiArrowButton.ArrowDirection.LEFT) { HoverText = "Previous" };
 			_arrowRight = new GuiArrowButton(GuiArrowButton.ArrowDirection.RIGHT) { HoverText = "Next" };
+			OnComponentClick += _OnComponentClick;
+			FindComponents += _FindComponents;
+			VerifyComponent += _VerifyComponent;
 		}
 
 		public override void OnInitialize()
@@ -69,9 +75,62 @@ namespace Loot.UI.Tabs.CraftingTab
 			VAlign = 1f;
 		}
 
+		private bool _OnComponentClick(CraftingComponentLink link)
+		{
+			// When a component is clicked, we need to re-verify that the link to it still exists and is still valid
+			CalculateAvailableComponents();
+			return link?.Component.modItem is MagicalCube && link.Component.stack > 0;
+		}
+
+		private bool _VerifyComponent(CraftingComponentLink link, Item item)
+		{
+			var props = new RollingStrategyProperties();
+			if (!(link.Component.modItem is T))
+			{
+				return false;
+			}
+
+			var component = link.Component.modItem;
+			RollingStrategy strategy = null;
+
+			if (component is CubeOfSealing)
+			{
+				return true;
+			}
+			if (component is RerollingCube cube)
+			{
+				strategy = cube.GetRollingStrategy(item, props);
+			}
+			else if (component is EssenceItem essence)
+			{
+				strategy = essence.GetRollingStrategy(item, props);
+			}
+
+			var ctx = GetContext(item);
+			ctx.Strategy = strategy;
+			var preRolledLines = strategy?.PreRoll(ModifierPoolMechanism.GetPool(ctx), ctx, props);
+			return preRolledLines?.All(x => x.CanRoll(ctx)) ?? false;
+		}
+
+		private IEnumerable<CraftingComponentLink> _FindComponents(Item item)
+		{
+			return Main.LocalPlayer.inventory.GetDistinctModItems<T>()
+				.Select(x =>
+				{
+					var component = x as ModItem;
+					component.item.stack = Main.LocalPlayer.inventory.CountItemStack(component.item.type, true);
+					return new CraftingComponentLink(component.item, CraftingComponentLink.ComponentSource.Inventory);
+				});
+		}
+
 		public bool IsAvailable(int type)
 		{
-			return _availability.ContainsKey(type);
+			return ComponentLinks.Any(x => x.Component.type == type);
+		}
+
+		public IEnumerable<CraftingComponentLink> GetComponentLinks(int type)
+		{
+			return ComponentLinks.Where(x => x.Component.type == type);
 		}
 
 		// TODO select/deselect not working? (scale/color??)
@@ -107,48 +166,18 @@ namespace Loot.UI.Tabs.CraftingTab
 			};
 		}
 
-		private bool IsStrategyAllowed(ModItem component, Item item)
-		{
-			var props = new RollingStrategyProperties();
-			if (!(component is T))
-			{
-				return false;
-			}
-
-			// TODO this is very baaad
-			RollingStrategy strategy = null;
-			if (component is CubeOfSealing)
-			{
-				return true;
-			}
-			if (component is RerollingCube cube)
-			{
-				strategy = cube.GetRollingStrategy(item, props);
-			}
-			else if (component is EssenceItem essence)
-			{
-				strategy = essence.GetRollingStrategy(item, props);
-			}
-
-			var ctx = GetContext(item);
-			ctx.Strategy = strategy;
-			var preRolledLines = strategy?.PreRoll(ModifierPoolMechanism.GetPool(ctx), ctx, props);
-			return preRolledLines?.All(x => x.CanRoll(ctx)) ?? false;
-		}
-
-
 		public void CalculateAvailableComponents(Item item = null)
 		{
 			_components.Clear();
-			_availability.Clear();
+			ComponentLinks.Clear();
 
-			// TODO This is kind bad too
-			var foundItems =
-				item != null && !item.IsAir
-					? Main.LocalPlayer.inventory.GetDistinctModItems<T>().Where(x => IsStrategyAllowed(x, item))
-					: Main.LocalPlayer.inventory.GetDistinctModItems<T>();
+			ComponentLinks = FindComponents?.GetInvocationList().SelectMany(x => (IEnumerable<CraftingComponentLink>)x.DynamicInvoke(item)).ToList() ?? new List<CraftingComponentLink>();
 
-			var selection = foundItems.Select(i => (name: i.item.Name, i.item.type, stack: Main.LocalPlayer.inventory.CountItemStack(i.item.type, true)));
+			if (item != null && !item.IsAir)
+				ComponentLinks = ComponentLinks.Where(x => VerifyComponent?.GetInvocationList().Select(y => (bool)y.DynamicInvoke(x, item)).All(z => z) ?? false)
+					.ToList();
+
+			var selection = ComponentLinks.AsEnumerable();
 
 			var foundCount = selection.Count();
 			_maxOffset = (int)Math.Floor(foundCount / (ComponentsPerPage() + 1f));
@@ -164,10 +193,11 @@ namespace Loot.UI.Tabs.CraftingTab
 			_arrowLeft.CanBeClicked = _maxOffset > 0 && _currentOffset > 0;
 			_arrowRight.CanBeClicked = _maxOffset > 0 && _currentOffset < _maxOffset;
 
-			for (int i = 0; i < items.Count; i++)
+			foreach (var link in items)
 			{
-				var (name, type, stack) = items[i];
-				_availability[type] = stack;
+				var name = link.Component.Name;
+				var type = link.Component.type;
+				var stack = link.Component.stack;
 
 				var button = new GuiItemButton(GuiButton.ButtonType.StoneOuterBevel, type, stack, hintOnHover: $"Click to use {name}")
 				{
@@ -180,7 +210,7 @@ namespace Loot.UI.Tabs.CraftingTab
 				button.OnMouseOver += (evt, element) => { Main.PlaySound(12); };
 				button.OnClick += (evt, element) =>
 				{
-					if (OnComponentClick(type))
+					if (OnComponentClick?.GetInvocationList().All(x => (bool)x.DynamicInvoke(link)) ?? false)
 					{
 						SetSelectedComponent(element);
 					}

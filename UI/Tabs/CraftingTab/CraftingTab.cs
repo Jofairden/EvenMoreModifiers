@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using Loot.Api.Core;
-using Loot.Api.Graphics;
+using Loot.Api.Cubes;
 using Loot.Api.Mechanism;
 using Loot.Api.Strategy;
 using Loot.Ext;
@@ -69,7 +69,7 @@ namespace Loot.UI.Tabs.CraftingTab
 				ComponentSelector.CalculateAvailableComponents(ItemButton.Item);
 				if (!ItemButton.Item.IsAir && !IsStrategyAllowed())
 				{
-					ComponentButton.Item.TurnToAir();
+					ComponentButton.SetLink(null);
 				}
 			};
 			TabFrame.Append(ComponentButton);
@@ -92,7 +92,7 @@ namespace Loot.UI.Tabs.CraftingTab
 				ComponentSelector.CalculateAvailableComponents(ItemButton.Item);
 				if (!ComponentSelector.IsAvailable(ComponentButton.Item.type))
 				{
-					ComponentButton.Item.TurnToAir();
+					ComponentButton.SetLink(null);
 				}
 
 				if (!item.IsAir)
@@ -120,9 +120,10 @@ namespace Loot.UI.Tabs.CraftingTab
 			_craftButton = new GuiImageButton(GuiButton.ButtonType.StoneOuterBevel, craftTexture);
 			_craftButton.OnClick += (evt, element) =>
 			{
+				ComponentSelector.CalculateAvailableComponents(ItemButton.Item);
 				if (!ComponentSelector.IsAvailable(ComponentButton.Item.type))
 				{
-					ComponentButton.Item.TurnToAir();
+					ComponentButton.SetLink(null);
 				}
 
 				HandleCraftButtonClick(evt, element);
@@ -131,16 +132,10 @@ namespace Loot.UI.Tabs.CraftingTab
 			TabFrame.Append(_craftButton.Below(ItemButton));
 
 			ComponentSelector = new CraftingComponentSelector<T>();
-			ComponentSelector.OnComponentClick += type =>
+			ComponentSelector.OnComponentClick += link =>
 			{
-				ComponentSelector.CalculateAvailableComponents();
-				if (!ComponentSelector.IsAvailable(type))
-				{
-					ComponentButton.Item.TurnToAir();
-					return false;
-				}
-
-				ComponentButton.ChangeItem(type);
+				if (link == null) return false;
+				ComponentButton.SetLink(link);
 				return true;
 			};
 			Height.Set(Height.Pixels + ComponentSelector.Height.Pixels, 0);
@@ -149,16 +144,10 @@ namespace Loot.UI.Tabs.CraftingTab
 
 		private bool CraftRequirementsMet()
 		{
-			bool match = !ItemButton.Item.IsAir && !ComponentButton.Item.IsAir
-												&& ItemButton.CanTakeItem(ItemButton.Item)
-												&& ComponentButton.CanTakeItem(ComponentButton.Item);
-			if (!match) return false;
-
-			bool hasItem = Main.LocalPlayer.inventory.Any(x => x.type == ComponentButton.Item.type)
-						   || Main.mouseItem?.type == ComponentButton?.Item?.type;
-
-			if (!hasItem) return false;
-			return IsStrategyAllowed();
+			return ComponentButton.Link?.Component.modItem is MagicalCube
+						 && ItemButton.CanTakeItem(ItemButton.Item)
+						 && ComponentButton.CanTakeItem(ComponentButton.Item)
+						 && IsStrategyAllowed();
 		}
 
 		// TODO make this better
@@ -198,12 +187,11 @@ namespace Loot.UI.Tabs.CraftingTab
 			}
 
 			RollingStrategyProperties = new RollingStrategyProperties();
-			ComponentButton.RecalculateStack();
 
 			if (ComponentButton.Item.stack <= 0)
 			{
 				SoundHelper.PlayCustomSound(SoundHelper.SoundType.Decline);
-				ComponentButton.Item.TurnToAir();
+				ComponentButton.SetLink(null);
 				return;
 			}
 
@@ -302,38 +290,13 @@ namespace Loot.UI.Tabs.CraftingTab
 
 		private void ConsumeComponents()
 		{
-			bool checkMouse = true;
-			// Remove stack from player's inventory
-			// .Take 58 because 59th slot is MouseItem for some reason.
-			foreach (Item item in Main.LocalPlayer.inventory.Take(58))
+			ComponentButton.Link.Component.stack--;
+			ComponentButton.Item.stack--;
+			if (ComponentButton.Link.Component.stack <= 0)
 			{
-				if (item.type == ComponentButton.Item.type)
-				{
-					checkMouse = false;
-					item.stack--;
-					break;
-				}
+				ComponentButton.SetLink(null);
 			}
-
-			if (checkMouse)
-			{
-				// This check should be redundant; otherwise we should never have reached this point
-				//if (Main.mouseItem?.type == _cubePanel.item.type)
-				Main.mouseItem.stack--;
-				if (Main.mouseItem.stack <= 0)
-				{
-					Main.mouseItem.TurnToAir();
-				}
-			}
-
-			ComponentButton.RecalculateStack();
 			ComponentSelector.CalculateAvailableComponents(ItemButton.Item);
-
-			// No slotted cubes available
-			if (ComponentButton.Item.stack <= 0)
-			{
-				ComponentButton.Item.TurnToAir();
-			}
 		}
 
 		internal override void ToggleUI(bool visible)

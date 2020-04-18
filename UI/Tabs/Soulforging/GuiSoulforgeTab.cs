@@ -1,14 +1,11 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using Loot.Api.Cubes;
 using Loot.Ext;
 using Loot.Soulforging;
 using Loot.UI.Common;
 using Loot.UI.Common.Controls.Button;
 using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Graphics;
-using Mono.CompilerServices.SymbolWriter;
 using Terraria;
 using Terraria.GameContent.UI.Elements;
 using Terraria.ModLoader;
@@ -111,6 +108,16 @@ namespace Loot.UI.Tabs.Soulforging
 				UpdateActiveRows();
 				ShouldUpdate = false;
 			}
+		}
+
+		public List<Item> GetAvailableCubes()
+		{
+			return Cubes.Where(item => item.stack > 0).ToList();
+		}
+
+		public int CountCubes(int type)
+		{
+			return Cubes.FirstOrDefault(x => x.type == type)?.stack ?? 0;
 		}
 
 		private List<Item> Cubes = new List<Item>();

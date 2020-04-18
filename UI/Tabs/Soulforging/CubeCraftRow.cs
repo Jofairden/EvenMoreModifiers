@@ -6,6 +6,7 @@ using Loot.UI.Common.Controls.Button;
 using Loot.UI.Common.Controls.Panel;
 using Microsoft.Xna.Framework;
 using Terraria;
+using Terraria.ID;
 using Terraria.ModLoader;
 using Terraria.UI;
 
@@ -76,6 +77,7 @@ namespace Loot.UI.Tabs.Soulforging
 			var info = Main.LocalPlayer.GetModPlayer<LootEssencePlayer>();
 			if (info.Essence >= CraftingCost)
 			{
+				Main.PlaySound(SoundID.Item37, -1, -1);
 				Cube.stack++;
 				CubeButton.Item = Cube.Clone();
 				info.UseEssence(CraftingCost);

@@ -1,7 +1,6 @@
 using System.Linq;
 using Loot.Api.Attributes;
 using Loot.Api.Core;
-using Loot.Api.Delegators;
 using Loot.Api.Ext;
 using Loot.Modifiers.Base;
 using Terraria;

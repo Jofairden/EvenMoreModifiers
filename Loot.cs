@@ -6,7 +6,6 @@ using log4net;
 using Loot.Api.Loaders;
 using Loot.Api.ModContent;
 using Loot.UI;
-using Loot.UI.Tabs.Cubing;
 using Terraria;
 using Terraria.ModLoader;
 using Terraria.UI;

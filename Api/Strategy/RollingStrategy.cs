@@ -3,8 +3,6 @@ using System.Linq;
 using Loot.Api.Core;
 using Loot.Api.Delegators;
 using Loot.Api.Graphics;
-using Loot.Api.Graphics.Glowmask;
-using Loot.Api.Graphics.Shader;
 using Loot.Modifiers.EquipModifiers.Utility;
 using Terraria;
 using Terraria.ID;

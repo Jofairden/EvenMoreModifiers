@@ -1,11 +1,12 @@
 using System.Collections.Generic;
+using System.Linq;
 using Loot.Api.Core;
 using Loot.Api.Cubes;
 using Loot.UI.Common;
 using Loot.UI.Common.Controls.Button;
 using Loot.UI.Tabs.CraftingTab;
 using Loot.UI.Tabs.EssenceCrafting;
-using Terraria;
+using Loot.UI.Tabs.Soulforging;
 
 namespace Loot.UI.Tabs.Cubing
 {
@@ -43,6 +44,18 @@ namespace Loot.UI.Tabs.Cubing
 				ItemButton.ChangeItem(0, essenceTab.ItemButton.Item.Clone());
 				essenceTab.ItemButton.Item.TurnToAir();
 			}
+		}
+
+		public override void OnInitialize()
+		{
+			base.OnInitialize();
+
+			ComponentSelector.FindComponents += item =>
+			{
+				var tab = Loot.Instance.GuiState.GetTab<GuiSoulforgeTab>();
+				return tab.GetAvailableCubes()
+					.Select(x => new CraftingComponentLink(x, CraftingComponentLink.ComponentSource.Soulforge));
+			};
 		}
 	}
 }

@@ -5,7 +5,6 @@ using Loot.UI.Common;
 using Loot.UI.Common.Controls.Button;
 using Loot.UI.Tabs.CraftingTab;
 using Loot.UI.Tabs.Cubing;
-using Terraria;
 
 namespace Loot.UI.Tabs.EssenceCrafting
 {
