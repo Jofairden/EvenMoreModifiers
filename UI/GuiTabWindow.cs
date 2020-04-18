@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using Loot.UI.Common.Core;
@@ -143,6 +144,10 @@ namespace Loot.UI
 				Main.playerInventory = true;
 				UpdateTab();
 			}
+			else
+			{
+				GiveBackItems();
+			}
 			_currentTab?.ToggleUI(Visible);
 		}
 
@@ -170,6 +175,14 @@ namespace Loot.UI
 		{
 			var rect = new Rectangle((int)Left.Pixels, (int)Top.Pixels, (int)Width.Pixels, (int)Height.Pixels);
 			return rect.Contains(Main.MouseScreen.ToPoint());
+		}
+
+		public void GiveBackItems()
+		{
+			foreach (var tab in _tabs.Values)
+			{
+				tab.GiveBackItems();
+			}
 		}
 	}
 }

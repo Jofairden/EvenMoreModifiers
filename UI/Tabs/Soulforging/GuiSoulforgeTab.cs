@@ -115,11 +115,6 @@ namespace Loot.UI.Tabs.Soulforging
 			return Cubes.Where(item => item.stack > 0).ToList();
 		}
 
-		public int CountCubes(int type)
-		{
-			return Cubes.FirstOrDefault(x => x.type == type)?.stack ?? 0;
-		}
-
 		private List<Item> Cubes = new List<Item>();
 		private List<CubeCraftRow> CubeRows = new List<CubeCraftRow>();
 		private List<CubeCraftRow> ActiveRows = new List<CubeCraftRow>();
@@ -181,6 +176,20 @@ namespace Loot.UI.Tabs.Soulforging
 		{
 			base.OnShow();
 			ShouldUpdate = true;
+		}
+
+		public override void GiveBackItems()
+		{
+			CubeRows.ForEach(row =>
+			{
+				if (!row.CubeButton.Item.IsAir)
+				{
+					row.CubeButton.Item.noGrabDelay = 0;
+					Main.LocalPlayer.GetItem(Main.myPlayer, row.CubeButton.Item.Clone());
+					row.CubeButton.Item.TurnToAir();
+					row.Cube.TurnToAir();
+				}
+			});
 		}
 	}
 }

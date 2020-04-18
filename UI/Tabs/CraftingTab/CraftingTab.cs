@@ -22,7 +22,7 @@ namespace Loot.UI.Tabs.CraftingTab
 	interface ICraftingTab
 	{
 		bool AcceptsItem(Item item);
-		void GiveBackSlottedItem();
+		void GiveBackItems();
 		void OverrideSlottedItem(Item newItem);
 	}
 
@@ -299,16 +299,7 @@ namespace Loot.UI.Tabs.CraftingTab
 			ComponentSelector.CalculateAvailableComponents(ItemButton.Item);
 		}
 
-		internal override void ToggleUI(bool visible)
-		{
-			base.ToggleUI(visible);
-			if (!visible)
-			{
-				GiveBackSlottedItem();
-			}
-		}
-
-		public void GiveBackSlottedItem()
+		public override void GiveBackItems()
 		{
 			if (!ItemButton?.Item?.IsAir ?? false)
 			{

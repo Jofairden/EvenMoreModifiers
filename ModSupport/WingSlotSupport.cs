@@ -46,7 +46,7 @@ namespace Loot.ModSupport
 
 		private static void SwapItems(ICraftingTab craftingTab, Item item)
 		{
-			craftingTab.GiveBackSlottedItem();
+			craftingTab.GiveBackItems();
 			craftingTab.OverrideSlottedItem(item);
 		}
 

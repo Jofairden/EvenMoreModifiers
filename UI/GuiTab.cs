@@ -36,6 +36,11 @@ namespace Loot.UI
 		{
 		}
 
+		public virtual void GiveBackItems()
+		{
+
+		}
+
 		protected UIElement TabFrame;
 		protected static Texture2D _topTexture => Assets.Textures.GUI.PanelTopTexture;
 		protected static Texture2D _middleTexture => Assets.Textures.GUI.PanelTileTexture;
