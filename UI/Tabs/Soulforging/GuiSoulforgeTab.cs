@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using Loot.Api.Cubes;
 using Loot.Ext;
 using Loot.Soulforging;
 using Loot.UI.Common;
@@ -35,7 +36,7 @@ namespace Loot.UI.Tabs.Soulforging
 		private int CurrentPage = 1;
 		private int MaxPages = 1;
 		private const int MAX_ROWS_PER_PAGE = 7;
-		private bool ShouldUpdate;
+		private bool ShouldUpdate = true;
 
 		public override void OnInitialize()
 		{
@@ -72,7 +73,7 @@ namespace Loot.UI.Tabs.Soulforging
 			ArrowLeft = new GuiArrowButton(GuiArrowButton.ArrowDirection.LEFT)
 			{
 				HoverText = "Previous",
-				Top = new StyleDimension(29, 1.0f)
+				Top = new StyleDimension(24, 1.0f)
 			};
 			ArrowLeft.WhenClicked += (evt, element, btn) =>
 			{
@@ -83,7 +84,7 @@ namespace Loot.UI.Tabs.Soulforging
 			{
 				HoverText = "Next",
 				Left = new StyleDimension(-15, 0f),
-				Top = new StyleDimension(29, 1.0f)
+				Top = new StyleDimension(24, 1.0f)
 			}.RightOf(ArrowLeft);
 			ArrowRight.WhenClicked += (evt, element, btn) =>
 			{
@@ -95,7 +96,7 @@ namespace Loot.UI.Tabs.Soulforging
 
 			Paginator = new UIText("1/1")
 			{
-				Top = new StyleDimension(30, 1.0f)
+				Top = new StyleDimension(24, 1.0f)
 			}.LeftOf(ArrowLeft);
 			Paginator.Left.Pixels = -(ArrowLeft.Width.Pixels - 25) / 2f;
 			TabFrame.Append(Paginator);
@@ -106,34 +107,65 @@ namespace Loot.UI.Tabs.Soulforging
 			base.Update(gameTime);
 			if (ShouldUpdate)
 			{
-				UpdateCubeRows();
+				CalculateRubeRows();
+				UpdateActiveRows();
 				ShouldUpdate = false;
 			}
 		}
 
-		private List<UIElement> CubeRows = new List<UIElement>();
+		private List<Item> Cubes = new List<Item>();
+		private List<CubeCraftRow> CubeRows = new List<CubeCraftRow>();
+		private List<CubeCraftRow> ActiveRows = new List<CubeCraftRow>();
 
-		private void UpdateCubeRows()
+		private void CalculateRubeRows()
 		{
-			CubeRows.ForEach(x => TabFrame.RemoveChild(x));
+			ActiveRows.ForEach(x => TabFrame.RemoveChild(x));
 			CubeRows.Clear();
-			UIElement previous = Soulgauge;
 
 			var world = ModContent.GetInstance<LootEssenceWorld>();
 			var count = world.UnlockedCubes.Count;
-			MaxPages = (int) Math.Ceiling(count / (float)MAX_ROWS_PER_PAGE);
+			MaxPages = (int)Math.Ceiling(count / (float)MAX_ROWS_PER_PAGE);
 			ArrowRight.CanBeClicked = MaxPages > 1 && CurrentPage != MaxPages;
 			ArrowLeft.CanBeClicked = MaxPages > 1 && CurrentPage != 1;
 			Paginator.SetText($"{CurrentPage}/{MaxPages}");
 
-			foreach (var cube in world.UnlockedCubes.Skip((CurrentPage - 1) * MAX_ROWS_PER_PAGE).Take(MAX_ROWS_PER_PAGE).ToList())
+			foreach (var cube in world.UnlockedCubes)
 			{
 				var row = new CubeCraftRow(cube);
 				row.Activate();
 				row.UpdateText();
+				CubeRows.Add(row);
+				row.OnCubeUpdate += item =>
+				{
+					Cubes.First(x => x.type == item.type).stack = item.stack;
+				};
+
+				if (Cubes.All(item => item.type != cube))
+				{
+					var item = new Item();
+					item.SetDefaults(cube);
+					item.stack = 0;
+					Cubes.Add(item);
+				}
+				else
+				{
+					row.Cube = Cubes.First(x => x.type == cube);
+					row.CubeButton.ChangeItem(0, row.Cube);
+				}
+			}
+		}
+
+		private void UpdateActiveRows()
+		{
+			ActiveRows.Clear();
+			UIElement previous = Soulgauge;
+
+			foreach (var row in CubeRows.Skip((CurrentPage - 1) * MAX_ROWS_PER_PAGE).Take(MAX_ROWS_PER_PAGE).ToList())
+			{
+				row.Cube = Cubes.First(item => item.type == row.Type);
 				row.Below(previous);
 				TabFrame.Append(row);
-				CubeRows.Add(row);
+				ActiveRows.Add(row);
 				previous = row;
 			}
 		}
@@ -141,7 +173,7 @@ namespace Loot.UI.Tabs.Soulforging
 		public override void OnShow()
 		{
 			base.OnShow();
-			UpdateCubeRows();
+			ShouldUpdate = true;
 		}
 	}
 }

@@ -23,6 +23,12 @@ namespace Loot.Soulforging
 			return Essence;
 		}
 
+		public int UseEssence(int amount)
+		{
+			Essence -= amount;
+			return Essence;
+		}
+
 		public void RecalcTopEssence()
 		{
 			if (!ModContent.GetInstance<LootEssenceWorld>().SoulforgingUnlocked) return;

@@ -1,18 +1,24 @@
+using System;
 using Loot.Api.Cubes;
 using Loot.Ext;
+using Loot.Soulforging;
 using Loot.UI.Common.Controls.Button;
 using Loot.UI.Common.Controls.Panel;
 using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.ModLoader;
+using Terraria.UI;
 
 namespace Loot.UI.Tabs.Soulforging
 {
 	class CubeCraftRow : GuiFramedElement
 	{
-		private Item Cube;
+		internal int Type;
+		internal Item Cube;
+		internal Action<Item> OnCubeUpdate;
+
 		private int CraftingCost;
-		private GuiInteractableItemButton CubeButton;
+		internal CubeCraftButton CubeButton;
 		private GuiTextPanel Panel;
 		private GuiImageButton CraftButton;
 
@@ -25,18 +31,22 @@ namespace Loot.UI.Tabs.Soulforging
 
 		public CubeCraftRow(int type) : base(new Vector2(400, 55), new Vector2(0, 0))
 		{
+			Type = type;
 			Cube = new Item();
 			Cube.SetDefaults(type);
+			Cube.stack = 0;
 		}
 
 		public override void OnInitialize()
 		{
 			base.OnInitialize();
 
-			CubeButton = new GuiInteractableItemButton(
+			CubeButton = new CubeCraftButton(
 				GuiButton.ButtonType.StoneInnerBevel,
-				hintTexture: Main.itemTexture[Cube.type]
+				hintTexture: Main.itemTexture[Type]
 			);
+			CubeButton.Item = Cube;
+			CubeButton.OnClick += CubeButtonOnOnClick;
 			Frame.Append(CubeButton);
 
 			Panel = new GuiTextPanel();
@@ -46,19 +56,30 @@ namespace Loot.UI.Tabs.Soulforging
 			CraftButton = new GuiImageButton(GuiButton.ButtonType.None, ModContent.GetTexture("Terraria/UI/Craft_Toggle_3"));
 			CraftButton.Left.Percent = 1.0f;
 			CraftButton.Left.Pixels = -CraftButton.Width.Pixels - GuiTab.PADDING;
+			CraftButton.OnClick += CraftCube;
 			Panel.Append(CraftButton);
 		}
 
-		public override void Update(GameTime gameTime)
+		private void CubeButtonOnOnClick(UIMouseEvent evt, UIElement listeningelement)
 		{
-			base.Update(gameTime);
-
-			if (IsMouseHovering)
+			if (CubeButton.Item.stack > 0 && Main.mouseItem.IsAir)
 			{
-				if (CubeButton.IsMouseHovering)
-				{
-					Main.hoverItemName = Cube.HoverName;
-				}
+				Main.mouseItem = Cube.Clone();
+				Cube.stack = 0;
+				CubeButton.Item = Cube.Clone();
+				OnCubeUpdate?.Invoke(Cube);
+			}
+		}
+
+		private void CraftCube(UIMouseEvent evt, UIElement listeningelement)
+		{
+			var info = Main.LocalPlayer.GetModPlayer<LootEssencePlayer>();
+			if (info.Essence >= CraftingCost)
+			{
+				Cube.stack++;
+				CubeButton.Item = Cube.Clone();
+				info.UseEssence(CraftingCost);
+				OnCubeUpdate?.Invoke(Cube);
 			}
 		}
 	}

@@ -15,6 +15,7 @@ namespace Loot.UI.Common.Controls.Button
 		public bool DrawStack { get; protected internal set; } = true;
 		public bool ShowOnlyHintOnHover { get; protected internal set; } = false;
 		public float DrawScale { get; protected internal set; } = 1f;
+		public int ShowStackFrom { get; protected internal set; } = 2;
 
 		public bool DynamicScaling
 		{
@@ -139,7 +140,7 @@ namespace Loot.UI.Common.Controls.Button
 
 			Item.modItem?.PostDrawInInventory(spriteBatch, drawPosition, frame, drawColor, drawColor, Vector2.Zero, drawScale);
 
-			if (!DrawStack || !(Item?.stack > 1))
+			if (!DrawStack || !(Item?.stack >= ShowStackFrom))
 			{
 				return;
 			}
