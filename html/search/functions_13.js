@@ -1,7 +1,7 @@
 var searchData=
 [
   ['unload',['Unload',['../class_loot_1_1_api_1_1_mod_content_1_1_graphics_mod_content.html#a0826afdd3b12633f5fb5042c4a117960',1,'Loot.Api.ModContent.GraphicsModContent.Unload()'],['../class_loot_1_1_api_1_1_mod_content_1_1_texture_mod_content.html#aecec7023f4b4ea0cd892890b8cd5c725',1,'Loot.Api.ModContent.TextureModContent.Unload()'],['../class_loot_1_1_loot.html#a583d8d3d69bdd106d25030c5309e37bc',1,'Loot.Loot.Unload()']]],
-  ['update',['Update',['../class_loot_1_1_u_i_1_1_tabs_1_1_soulforging_1_1_cube_craft_row.html#a354ea8d95acc5981e8ee231454bf799d',1,'Loot.UI.Tabs.Soulforging.CubeCraftRow.Update()'],['../class_loot_1_1_u_i_1_1_tabs_1_1_soulforging_1_1_gui_soulgauge_1_1_gauge_drawing.html#a2479ccad959b87b7c4d4816e655aeed3',1,'Loot.UI.Tabs.Soulforging.GuiSoulgauge.GaugeDrawing.Update()']]],
+  ['update',['Update',['../class_loot_1_1_u_i_1_1_tabs_1_1_soulforging_1_1_gui_soulgauge_1_1_gauge_drawing.html#a2479ccad959b87b7c4d4816e655aeed3',1,'Loot::UI::Tabs::Soulforging::GuiSoulgauge::GaugeDrawing']]],
   ['updateaccessory',['UpdateAccessory',['../class_loot_1_1_hacks_1_1_cheated_item_hack_global_item.html#acc91f72960ba20ffc7e8a760a4695e4c',1,'Loot::Hacks::CheatedItemHackGlobalItem']]],
   ['updatearmorset',['UpdateArmorSet',['../class_loot_1_1_api_1_1_core_1_1_modifier.html#ac4925cfe55295465bbbe05a921d4d507',1,'Loot::Api::Core::Modifier']]],
   ['updateattachments',['UpdateAttachments',['../class_loot_1_1_caching_1_1_modifier_cache_player.html#a5cda7e47abe376866810b4e79be113c0',1,'Loot::Caching::ModifierCachePlayer']]],

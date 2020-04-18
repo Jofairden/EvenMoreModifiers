@@ -10,6 +10,7 @@ var searchData=
   ['craftingtab_2ecs',['CraftingTab.cs',['../_crafting_tab_8cs.html',1,'']]],
   ['critdamageplus_2ecs',['CritDamagePlus.cs',['../_crit_damage_plus_8cs.html',1,'']]],
   ['critplus_2ecs',['CritPlus.cs',['../_crit_plus_8cs.html',1,'']]],
+  ['cubecraftbutton_2ecs',['CubeCraftButton.cs',['../_cube_craft_button_8cs.html',1,'']]],
   ['cubecraftrow_2ecs',['CubeCraftRow.cs',['../_cube_craft_row_8cs.html',1,'']]],
   ['cubeofsealing_2ecs',['CubeOfSealing.cs',['../_cube_of_sealing_8cs.html',1,'']]],
   ['curseddamage_2ecs',['CursedDamage.cs',['../_cursed_damage_8cs.html',1,'']]],

@@ -1,5 +1,7 @@
 var NAVTREEINDEX5 =
 {
+"class_loot_1_1_caching_1_1_modifier_cache_player.html#a1311ec18574df7887da8eec70cec250b":[2,0,0,1,0,22],
+"class_loot_1_1_caching_1_1_modifier_cache_player.html#a2684f04fb781bffc04a8ef6ba91112cc":[2,0,0,1,0,20],
 "class_loot_1_1_caching_1_1_modifier_cache_player.html#a3315087b46c1a955f03465a9b9ff235f":[2,0,0,1,0,8],
 "class_loot_1_1_caching_1_1_modifier_cache_player.html#a48544f3f4ac4d8c9533f4cce1db86b70":[2,0,0,1,0,23],
 "class_loot_1_1_caching_1_1_modifier_cache_player.html#a4b83315309f67249c30ed1ec14f0c8ed":[2,0,0,1,0,0],
@@ -247,7 +249,5 @@ var NAVTREEINDEX5 =
 "class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_defensive_1_1_mana_shield.html#ac880f56eba0e265c31d12ff809719745":[2,0,0,6,1,0,9,0],
 "class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_defensive_1_1_mana_shield.html#ad29f7dbdd1408e4f6f8946a89d04ba90":[2,0,0,6,1,0,9,2],
 "class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_defensive_1_1_mana_shield_effect.html":[2,0,0,6,1,0,10],
-"class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_defensive_1_1_mana_shield_effect.html#a610e0ddc09e723990f9b6df76445faf5":[2,0,0,6,1,0,10,2],
-"class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_defensive_1_1_mana_shield_effect.html#a753d918c75cc473a02d47b8c946103b8":[2,0,0,6,1,0,10,1],
-"class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_defensive_1_1_mana_shield_effect.html#aff35a70efe867fbb6860693b1ef9a6c3":[2,0,0,6,1,0,10,0]
+"class_loot_1_1_modifiers_1_1_equip_modifiers_1_1_defensive_1_1_mana_shield_effect.html#a610e0ddc09e723990f9b6df76445faf5":[2,0,0,6,1,0,10,2]
 };
