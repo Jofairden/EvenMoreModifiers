@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using System.Linq;
+using Terraria;
 using Terraria.ModLoader;
 using Terraria.ModLoader.IO;
 
@@ -23,16 +24,37 @@ namespace Loot.Soulforging
 
 		public override TagCompound Save()
 		{
+			var items = new Dictionary<string, List<string>>();
+			foreach (var type in UnlockedCubes)
+			{
+				var item = new Item();
+				item.SetDefaults(type);
+				if (!items.ContainsKey(item.modItem.mod.Name)) items.Add(item.modItem.mod.Name, new List<string>());
+				items[item.modItem.mod.Name].Add(item.modItem.Name);
+			}
+			var tc = new TagCompound();
+			foreach (string mod in items.Keys)
+			{
+				tc.Add(mod, items[mod]);
+			}
 			return new TagCompound
 			{
-				{"UnlockedCubes", UnlockedCubes.ToList()},
+				{"UnlockedCubes", tc},
 				{"SoulforgingUnlocked", SoulforgingUnlocked}
 			};
 		}
 
 		public override void Load(TagCompound tag)
 		{
-			UnlockedCubes = new HashSet<int>(tag.GetList<int>("UnlockedCubes"));
+			foreach (var kvp in tag.GetCompound("UnlockedCubes"))
+			{
+				var mod = kvp.Key;
+				var items = kvp.Value as List<string>;
+				items.ForEach(item =>
+				{
+					UnlockedCubes.Add(ModLoader.GetMod(mod).ItemType(item));
+				});
+			}
 			SoulforgingUnlocked = tag.GetBool("SoulforgingUnlocked");
 		}
 	}

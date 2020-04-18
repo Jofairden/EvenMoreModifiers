@@ -34,7 +34,7 @@ namespace Loot.UI.Tabs.Soulforging
 			base.OnInitialize();
 
 			CubeButton = new GuiInteractableItemButton(
-				GuiButton.ButtonType.StoneOuterBevel,
+				GuiButton.ButtonType.StoneInnerBevel,
 				hintTexture: Main.itemTexture[Cube.type]
 			);
 			Frame.Append(CubeButton);

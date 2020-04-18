@@ -8,6 +8,7 @@ using Loot.UI.Common.Controls.Button;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Mono.CompilerServices.SymbolWriter;
+using Terraria;
 using Terraria.GameContent.UI.Elements;
 using Terraria.ModLoader;
 using Terraria.UI;
